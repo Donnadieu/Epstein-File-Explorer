@@ -43,7 +43,49 @@ shared/
 - **personDocuments**: Many-to-many linking people to documents with context
 - **timelineEvents**: Chronological events with categories and significance levels
 
+## Data Pipeline
+```
+scripts/pipeline/
+  run-pipeline.ts        - Master pipeline orchestrator with stage system
+  doj-scraper.ts         - DOJ catalog scraper (with age cookie bypass)
+  wikipedia-scraper.ts   - Wikipedia person data scraper
+  db-loader.ts           - Database loader (persons, documents, connections, import-downloads)
+  document-downloader.ts - Document download manager
+  pdf-processor.ts       - PDF text extraction
+  entity-extractor.ts    - Entity/relationship extraction from text
+tmp/
+  download-epstein-all.sh - Bash script for bulk DOJ PDF downloads with probe discovery
+```
+
+### Pipeline Commands
+```bash
+npx tsx scripts/pipeline/run-pipeline.ts quick          # Fast: Wikipedia + persons + connections
+npx tsx scripts/pipeline/run-pipeline.ts import-downloads # Import downloaded PDFs to DB
+npx tsx scripts/pipeline/db-loader.ts import-downloads    # Direct import from filesystem
+bash tmp/download-epstein-all.sh                          # Download all DOJ data sets
+bash tmp/download-epstein-all.sh 6                        # Download specific data set
+bash tmp/download-epstein-all.sh 1 3                      # Download data sets 1-3
+```
+
+### Download Script Details
+- Uses `justiceGovAgeVerified=true` cookie to bypass age verification
+- Fetches page 0 of each data set listing, then probes EFTA number ranges for remaining files
+- Sequential HEAD requests with rate limiting (0.3s per 50 checks) to avoid DOJ rate limiting
+- Resume support: skips already-downloaded files
+- Downloads saved to `~/Downloads/epstein-disclosures/data-set-{N}/`
+- URL lists saved to `~/Downloads/epstein-disclosures/urls/`
+
+## Current Database Stats
+- **103 persons** (91 from Wikipedia + 12 seed)
+- **630 documents** (540 DOJ catalog + 70 imported PDFs + 20 seed)
+- **171 connections** (145 extracted from descriptions + 26 seed)
+- **33 timeline events**
+
 ## Recent Changes
 - Initial build: Feb 2026
 - Database seeded with 20 real individuals, 20 documents, 26 connections, 33 timeline events
 - All data sourced from publicly available DOJ releases and court records
+- Wikipedia scraper: extracted 91 persons with descriptions, aliases, categories
+- DOJ download pipeline: bash script with probe-based discovery, 149 PDFs downloaded (DS5-7)
+- DB import pipeline: `import-downloads` stage to load downloaded PDFs into database
+- DOJ scraper updated with age cookie for Playwright and fetch
