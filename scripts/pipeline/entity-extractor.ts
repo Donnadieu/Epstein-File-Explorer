@@ -68,6 +68,21 @@ const FALSE_POSITIVES = new Set([
   "july", "august", "september", "october", "november", "december",
   "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday",
   "data set", "page count", "file name", "the fbi", "the doj",
+  "court reporting", "court reporting transcription", "court authorized",
+  "grand jury", "grand jury exhibit", "federal grand jury", "acting grand jury",
+  "minor victim", "jane doe", "jane doe number", "john doe",
+  "defense counsel", "special agent", "assistant united states attorney",
+  "confidential information", "carney reporting", "video services",
+  "reporter fink", "signature date", "police department",
+  "palm beach police", "palm beach police department", "palm beach county",
+  "west palm beach", "west palm", "beach county",
+  "new york city", "new mexico", "southern district",
+  "united states code", "did epstein", "did maxwell",
+  "teterboro airport", "little saint james", "little st james",
+  "non prosecution", "plea agreement", "government exhibit",
+  "exhibit number", "case number", "docket number",
+  "district court", "circuit court", "supreme court",
+  "attorney general", "state attorney", "assistant attorney",
 ]);
 
 function extractPersonNames(text: string, fileName: string): Map<string, ExtractedEntity> {

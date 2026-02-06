@@ -1,12 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const DOWNLOADS_DIR = path.join(process.env.HOME || "/home/runner", "Downloads", "epstein-disclosures");
 const DATA_DIR = path.resolve(__dirname, "../../data");
-const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const EXTRACTION_LOG = path.join(DATA_DIR, "extraction-log.json");
 
@@ -18,7 +19,7 @@ export interface ExtractedDocument {
   pageCount: number;
   metadata: Record<string, any>;
   extractedAt: string;
-  method: "pdf-parse" | "ocr" | "image-metadata";
+  method: "pdfjs" | "ocr" | "image-metadata";
   fileType: string;
   fileSizeBytes: number;
 }
@@ -52,44 +53,57 @@ function saveLog(log: ExtractionLog) {
 }
 
 async function extractPdfText(filePath: string): Promise<{ text: string; pageCount: number; metadata: Record<string, any> }> {
-  const pdfParse = (await import("pdf-parse")).default;
-
   const buffer = fs.readFileSync(filePath);
-  const result = await pdfParse(buffer);
+  const data = new Uint8Array(buffer);
 
-  return {
-    text: result.text || "",
-    pageCount: result.numpages || 0,
-    metadata: {
-      title: result.info?.Title || "",
-      author: result.info?.Author || "",
-      creator: result.info?.Creator || "",
-      producer: result.info?.Producer || "",
-      creationDate: result.info?.CreationDate || "",
-      modDate: result.info?.ModDate || "",
-    },
-  };
-}
+  try {
+    const doc = await pdfjsLib.getDocument({
+      data,
+      useSystemFonts: true,
+      disableAutoFetch: true,
+      isEvalSupported: false,
+    }).promise;
 
-function extractImageMetadata(filePath: string): { text: string; metadata: Record<string, any> } {
-  const stats = fs.statSync(filePath);
-  const ext = path.extname(filePath).toLowerCase();
+    let fullText = "";
+    const pageCount = doc.numPages;
 
-  return {
-    text: "",
-    metadata: {
-      fileType: ext.replace(".", ""),
-      fileSize: stats.size,
-      created: stats.birthtime.toISOString(),
-      modified: stats.mtime.toISOString(),
-      requiresOCR: true,
-    },
-  };
+    for (let i = 1; i <= pageCount; i++) {
+      try {
+        const page = await doc.getPage(i);
+        const content = await page.getTextContent();
+        const pageText = content.items
+          .map((item: any) => item.str)
+          .join(" ")
+          .replace(/\s+/g, " ")
+          .trim();
+        if (pageText.length > 0) {
+          fullText += pageText + "\n\n";
+        }
+      } catch {
+      }
+    }
+
+    let metadata: Record<string, any> = {};
+    try {
+      const meta = await doc.getMetadata();
+      metadata = {
+        title: (meta?.info as any)?.Title || "",
+        author: (meta?.info as any)?.Author || "",
+        creator: (meta?.info as any)?.Creator || "",
+        producer: (meta?.info as any)?.Producer || "",
+      };
+    } catch {
+    }
+
+    return { text: fullText.trim(), pageCount, metadata };
+  } catch (error: any) {
+    console.warn(`    PDF parse error: ${error.message?.substring(0, 100)}`);
+    return { text: "", pageCount: 0, metadata: { error: error.message } };
+  }
 }
 
 async function processFile(filePath: string, dataSetId: number, log: ExtractionLog): Promise<ExtractedDocument | null> {
   const fileName = path.basename(filePath);
-  const ext = path.extname(filePath).toLowerCase();
 
   if (log.processed.includes(filePath)) {
     return null;
@@ -97,86 +111,34 @@ async function processFile(filePath: string, dataSetId: number, log: ExtractionL
 
   try {
     const stats = fs.statSync(filePath);
-    let result: ExtractedDocument;
+    const ext = path.extname(filePath).toLowerCase();
 
-    if (ext === ".pdf") {
-      console.log(`  Processing PDF: ${fileName}`);
-      const extracted = await extractPdfText(filePath);
-
-      result = {
-        filePath,
-        fileName,
-        dataSetId,
-        text: extracted.text,
-        pageCount: extracted.pageCount,
-        metadata: extracted.metadata,
-        extractedAt: new Date().toISOString(),
-        method: "pdf-parse",
-        fileType: "pdf",
-        fileSizeBytes: stats.size,
-      };
-
-      log.totalPages += extracted.pageCount;
-      log.totalChars += extracted.text.length;
-    } else if ([".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff"].includes(ext)) {
-      console.log(`  Cataloging image: ${fileName}`);
-      const imgData = extractImageMetadata(filePath);
-
-      result = {
-        filePath,
-        fileName,
-        dataSetId,
-        text: imgData.text,
-        pageCount: 0,
-        metadata: imgData.metadata,
-        extractedAt: new Date().toISOString(),
-        method: "image-metadata",
-        fileType: ext.replace(".", ""),
-        fileSizeBytes: stats.size,
-      };
-    } else if ([".mp4", ".avi", ".mov", ".wmv", ".mkv"].includes(ext)) {
-      console.log(`  Cataloging video: ${fileName}`);
-
-      result = {
-        filePath,
-        fileName,
-        dataSetId,
-        text: "",
-        pageCount: 0,
-        metadata: {
-          fileType: ext.replace(".", ""),
-          fileSize: stats.size,
-          created: stats.birthtime.toISOString(),
-          modified: stats.mtime.toISOString(),
-          requiresVideoAnalysis: true,
-        },
-        extractedAt: new Date().toISOString(),
-        method: "image-metadata",
-        fileType: ext.replace(".", ""),
-        fileSizeBytes: stats.size,
-      };
-    } else {
-      console.log(`  Reading text file: ${fileName}`);
-      const text = fs.readFileSync(filePath, "utf-8");
-
-      result = {
-        filePath,
-        fileName,
-        dataSetId,
-        text,
-        pageCount: 1,
-        metadata: {},
-        extractedAt: new Date().toISOString(),
-        method: "pdf-parse",
-        fileType: ext.replace(".", ""),
-        fileSizeBytes: stats.size,
-      };
-
-      log.totalChars += text.length;
+    if (ext !== ".pdf") {
+      return null;
     }
 
+    const extracted = await extractPdfText(filePath);
+
+    const result: ExtractedDocument = {
+      filePath,
+      fileName,
+      dataSetId,
+      text: extracted.text,
+      pageCount: extracted.pageCount,
+      metadata: extracted.metadata,
+      extractedAt: new Date().toISOString(),
+      method: "pdfjs",
+      fileType: "pdf",
+      fileSizeBytes: stats.size,
+    };
+
+    log.totalPages += extracted.pageCount;
+    log.totalChars += extracted.text.length;
     log.processed.push(filePath);
-    saveLog(log);
+
+    if (log.processed.length % 20 === 0) {
+      saveLog(log);
+    }
 
     return result;
   } catch (error: any) {
@@ -187,52 +149,6 @@ async function processFile(filePath: string, dataSetId: number, log: ExtractionL
   }
 }
 
-function findFiles(dir: string, extensions?: string[]): Array<{ path: string; dataSetId: number }> {
-  const results: Array<{ path: string; dataSetId: number }> = [];
-
-  if (!fs.existsSync(dir)) return results;
-
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-
-    if (entry.isDirectory()) {
-      const dataSetMatch = entry.name.match(/data-set-(\d+)/);
-      const dataSetId = dataSetMatch ? parseInt(dataSetMatch[1], 10) : 0;
-
-      const subFiles = findFilesInDir(fullPath, dataSetId, extensions);
-      results.push(...subFiles);
-    } else if (entry.isFile()) {
-      const ext = path.extname(entry.name).toLowerCase();
-      if (!extensions || extensions.includes(ext)) {
-        results.push({ path: fullPath, dataSetId: 0 });
-      }
-    }
-  }
-
-  return results;
-}
-
-function findFilesInDir(dir: string, dataSetId: number, extensions?: string[]): Array<{ path: string; dataSetId: number }> {
-  const results: Array<{ path: string; dataSetId: number }> = [];
-
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      results.push(...findFilesInDir(fullPath, dataSetId, extensions));
-    } else if (entry.isFile()) {
-      const ext = path.extname(entry.name).toLowerCase();
-      if (!extensions || extensions.includes(ext)) {
-        results.push({ path: fullPath, dataSetId });
-      }
-    }
-  }
-
-  return results;
-}
-
 export async function processDocuments(options: {
   inputDir?: string;
   dataSetIds?: number[];
@@ -240,25 +156,47 @@ export async function processDocuments(options: {
   maxFiles?: number;
   outputDir?: string;
 }): Promise<ExtractedDocument[]> {
-  console.log("\n=== Document Processor ===\n");
+  console.log("\n=== PDF Text Extractor ===\n");
 
   const {
     inputDir = DOWNLOADS_DIR,
-    fileTypes = [".pdf"],
     maxFiles = Infinity,
     outputDir = EXTRACTED_DIR,
   } = options;
 
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-  const allFiles = findFiles(inputDir, fileTypes);
+  const allFiles: Array<{ path: string; dataSetId: number }> = [];
+
+  if (fs.existsSync(inputDir)) {
+    const dirs = fs.readdirSync(inputDir)
+      .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(inputDir, d)).isDirectory())
+      .sort();
+
+    for (const dir of dirs) {
+      const dsMatch = dir.match(/data-set-(\d+)/);
+      if (!dsMatch) continue;
+      const dsId = parseInt(dsMatch[1], 10);
+
+      if (options.dataSetIds && !options.dataSetIds.includes(dsId)) continue;
+
+      const dsPath = path.join(inputDir, dir);
+      const files = fs.readdirSync(dsPath)
+        .filter(f => f.toLowerCase().endsWith(".pdf"))
+        .map(f => ({ path: path.join(dsPath, f), dataSetId: dsId }));
+
+      allFiles.push(...files);
+    }
+  }
+
   const filesToProcess = allFiles.slice(0, maxFiles);
-
-  console.log(`Found ${allFiles.length} files, processing ${filesToProcess.length}`);
+  console.log(`Found ${allFiles.length} PDFs, processing ${filesToProcess.length}`);
 
   const log = loadLog();
   const results: ExtractedDocument[] = [];
   let processed = 0;
+  let skipped = 0;
 
   for (const file of filesToProcess) {
     const result = await processFile(file.path, file.dataSetId, log);
@@ -268,28 +206,29 @@ export async function processDocuments(options: {
       const outputFile = path.join(
         outputDir,
         `ds${result.dataSetId}`,
-        `${path.basename(result.fileName, path.extname(result.fileName))}.json`
+        `${path.basename(result.fileName, ".pdf")}.json`
       );
       const outputSubDir = path.dirname(outputFile);
       if (!fs.existsSync(outputSubDir)) fs.mkdirSync(outputSubDir, { recursive: true });
-
       fs.writeFileSync(outputFile, JSON.stringify(result, null, 2));
+      processed++;
+    } else {
+      skipped++;
     }
 
-    processed++;
-    if (processed % 50 === 0) {
-      console.log(`\nProgress: ${processed}/${filesToProcess.length} files processed`);
-      console.log(`Total pages extracted: ${log.totalPages}`);
-      console.log(`Total characters: ${log.totalChars.toLocaleString()}\n`);
+    if ((processed + skipped) % 25 === 0) {
+      console.log(`  Progress: ${processed} extracted, ${skipped} skipped, ${log.totalPages} total pages, ${log.totalChars.toLocaleString()} chars`);
     }
   }
 
-  console.log("\n=== Processing Summary ===");
-  console.log(`Files processed: ${results.length}`);
+  saveLog(log);
+
+  console.log("\n=== Extraction Summary ===");
+  console.log(`Files extracted: ${processed}`);
+  console.log(`Files skipped: ${skipped}`);
   console.log(`Files failed: ${log.failed.length}`);
   console.log(`Total pages: ${log.totalPages}`);
   console.log(`Total text chars: ${log.totalChars.toLocaleString()}`);
-  console.log(`Output directory: ${outputDir}`);
 
   return results;
 }
@@ -301,8 +240,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--input" && args[i + 1]) {
       options.inputDir = args[++i];
-    } else if (args[i] === "--types" && args[i + 1]) {
-      options.fileTypes = args[++i].split(",").map(t => t.startsWith(".") ? t : `.${t}`);
+    } else if (args[i] === "--data-sets" && args[i + 1]) {
+      options.dataSetIds = args[++i].split(",").map(Number);
     } else if (args[i] === "--max" && args[i + 1]) {
       options.maxFiles = parseInt(args[++i], 10);
     } else if (args[i] === "--output" && args[i + 1]) {
