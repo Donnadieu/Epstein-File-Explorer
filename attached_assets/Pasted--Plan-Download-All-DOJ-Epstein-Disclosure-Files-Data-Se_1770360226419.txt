@@ -1,0 +1,66 @@
+# Plan: Download All DOJ Epstein Disclosure Files (Data Sets 1-12)
+
+## Context
+
+The DOJ Epstein disclosures at `justice.gov/epstein/doj-disclosures` contain 12 data sets, each with paginated file listings (~50 PDF files per page). Two key challenges were identified and solved during testing:
+
+1. **Age verification gate** — PDF downloads redirect to `/age-verify`. Bypassed by sending the cookie `justiceGovAgeVerified=true` (tested and confirmed working).
+2. **Rate limiting** — the site returns 403 on rapid requests. Mitigated with 2s delays between page fetches and 1s between downloads.
+
+**Tested and confirmed:**
+- `curl` with browser User-Agent + age cookie returns PDFs (HTTP 200, `application/pdf`)
+- PDF link extraction via `grep -oE 'href="[^"]*\.pdf"'` works
+- Pagination detection via `grep -oE 'page=[0-9]+'` works (returns max page number)
+
+## Approach
+
+Create a single bash script: `tmp/download-epstein-all.sh`
+
+### Script logic
+
+```
+For each data set N (1-12):
+  1. mkdir -p ~/Downloads/epstein-disclosures/data-set-N/
+  2. Fetch page 0, extract max page number from pagination links
+  3. For each page (0 to max):
+     - curl the listing page with User-Agent header
+     - grep all .pdf href URLs, append to urls.txt
+     - sleep 2s
+  4. For each URL in urls.txt:
+     - Skip if file already exists (resume support)
+     - curl -L -O with User-Agent + cookie "justiceGovAgeVerified=true" + --retry 3
+     - Log failures to failed.txt
+     - sleep 1s
+  5. Print summary for data set
+```
+
+### Key curl flags (tested)
+```bash
+# Page scraping
+curl -s -H "User-Agent: Mozilla/5.0 ..." "$PAGE_URL"
+
+# PDF download (must include -L for redirect + cookie)
+curl -s -L -O --retry 3 \
+  -H "User-Agent: Mozilla/5.0 ..." \
+  -b "justiceGovAgeVerified=true" \
+  "$PDF_URL"
+```
+
+### Output directory
+```
+~/Downloads/epstein-disclosures/
+  data-set-1/     (~3,200 PDFs)
+  data-set-2/     (~650 PDFs)
+  ...
+  data-set-12/    (~150 PDFs)
+  failed.txt
+```
+
+## File to create
+- `tmp/download-epstein-all.sh`
+
+## Verification
+- Run: `bash tmp/download-epstein-all.sh`
+- Check counts: `for d in ~/Downloads/epstein-disclosures/data-set-*/; do echo "$(basename $d): $(ls "$d"/*.pdf 2>/dev/null | wc -l) files"; done`
+- Check failures: `cat ~/Downloads/epstein-disclosures/failed.txt`
+- Spot check: `file ~/Downloads/epstein-disclosures/data-set-1/EFTA00000001.pdf` (should say "PDF document")
