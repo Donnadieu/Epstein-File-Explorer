@@ -2,6 +2,7 @@ import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import { chromium, type Browser, type BrowserContext } from "playwright";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +12,39 @@ const EPSTEIN_BASE = `${BASE_URL}/epstein`;
 const DOJ_DISCLOSURES = `${EPSTEIN_BASE}/doj-disclosures`;
 const COURT_RECORDS = `${EPSTEIN_BASE}/court-records`;
 const FOIA_RECORDS = `${EPSTEIN_BASE}/foia-records`;
+
+let _browser: Browser | null = null;
+let _context: BrowserContext | null = null;
+
+async function getBrowserContext(): Promise<BrowserContext> {
+  if (_context) return _context;
+  _browser = await chromium.launch({ headless: true });
+  _context = await _browser.newContext({
+    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  });
+  return _context;
+}
+
+async function closeBrowser(): Promise<void> {
+  if (_context) { await _context.close(); _context = null; }
+  if (_browser) { await _browser.close(); _browser = null; }
+}
+
+async function fetchPageWithBrowser(url: string): Promise<string> {
+  const context = await getBrowserContext();
+  const page = await context.newPage();
+  try {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+    await page.waitForTimeout(1000);
+    const html = await page.content();
+    return html;
+  } catch (error: any) {
+    console.warn(`  Browser fetch failed for ${url}: ${error.message}`);
+    return "";
+  } finally {
+    await page.close();
+  }
+}
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
 const RAW_DIR = path.join(DATA_DIR, "raw");
@@ -169,7 +203,7 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
   const baseUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
   console.log(`  Scraping ${dataSet.name} from ${baseUrl}...`);
 
-  const firstPageHtml = await fetchPage(baseUrl);
+  const firstPageHtml = await fetchPageWithBrowser(baseUrl);
   if (!firstPageHtml) {
     console.log(`    No content found`);
     return {
@@ -186,9 +220,9 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
   console.log(`    Page 0: ${allFiles.length} files, ${lastPage + 1} total pages`);
 
   for (let page = 1; page <= lastPage; page++) {
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 800));
     const pageUrl = `${baseUrl}?page=${page}`;
-    const html = await fetchPage(pageUrl);
+    const html = await fetchPageWithBrowser(pageUrl);
     if (!html) continue;
 
     const pageFiles = extractFileLinks(html, dataSet.id);
@@ -221,7 +255,7 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
 
 async function scrapeCourtRecords(): Promise<DOJDataSet> {
   console.log("  Scraping Court Records...");
-  const html = await fetchPage(COURT_RECORDS);
+  const html = await fetchPageWithBrowser(COURT_RECORDS);
   const files = html ? extractFileLinks(html, 100) : [];
 
   console.log(`    Found ${files.length} court record links`);
@@ -239,7 +273,7 @@ async function scrapeCourtRecords(): Promise<DOJDataSet> {
 
 async function scrapeFOIARecords(): Promise<DOJDataSet> {
   console.log("  Scraping FOIA Records...");
-  const html = await fetchPage(FOIA_RECORDS);
+  const html = await fetchPageWithBrowser(FOIA_RECORDS);
   const files = html ? extractFileLinks(html, 200) : [];
 
   console.log(`    Found ${files.length} FOIA record links`);
@@ -276,6 +310,8 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
 
   const foiaRecords = await scrapeFOIARecords();
   dataSets.push(foiaRecords);
+
+  await closeBrowser();
 
   const totalFiles = dataSets.reduce((sum, ds) => sum + ds.files.length, 0);
 
