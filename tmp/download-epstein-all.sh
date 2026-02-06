@@ -183,8 +183,8 @@ probe_remaining_files() {
 
     current=$((current + 1))
 
-    if [ $((checked % 100)) -eq 0 ]; then
-      sleep 0.5
+    if [ $((checked % 50)) -eq 0 ]; then
+      sleep 0.3
     fi
   done
 
