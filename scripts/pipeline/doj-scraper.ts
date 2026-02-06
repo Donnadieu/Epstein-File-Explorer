@@ -126,21 +126,75 @@ function extractFileLinks(html: string, dataSetId: number): DOJFile[] {
   return files;
 }
 
+function extractPaginationInfo(html: string): { lastPage: number } {
+  const $ = cheerio.load(html);
+  let lastPage = 0;
+
+  $("a[href*='page=']").each((_i, el) => {
+    const text = $(el).text().trim();
+    const href = $(el).attr("href") || "";
+    const match = href.match(/page=(\d+)/);
+    if (match) {
+      const pageNum = parseInt(match[1], 10);
+      if (pageNum > lastPage) lastPage = pageNum;
+    }
+    if (text === "Last" && match) {
+      lastPage = parseInt(match[1], 10);
+    }
+  });
+
+  return { lastPage };
+}
+
 async function scrapeDataSet(dataSet: { id: number; name: string; description: string }): Promise<DOJDataSet> {
-  const url = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
-  console.log(`  Scraping ${dataSet.name} from ${url}...`);
+  const baseUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
+  console.log(`  Scraping ${dataSet.name} from ${baseUrl}...`);
 
-  const html = await fetchPage(url);
-  const files = html ? extractFileLinks(html, dataSet.id) : [];
+  const firstPageHtml = await fetchPage(baseUrl);
+  if (!firstPageHtml) {
+    console.log(`    No content found`);
+    return {
+      id: dataSet.id, name: dataSet.name, url: baseUrl,
+      description: dataSet.description, files: [],
+      pillar: "doj-disclosures", scrapedAt: new Date().toISOString(),
+    };
+  }
 
-  console.log(`    Found ${files.length} file links`);
+  const allFiles: DOJFile[] = extractFileLinks(firstPageHtml, dataSet.id);
+  const seenUrls = new Set(allFiles.map(f => f.url));
+  const { lastPage } = extractPaginationInfo(firstPageHtml);
+
+  console.log(`    Page 0: ${allFiles.length} files, ${lastPage + 1} total pages`);
+
+  for (let page = 1; page <= lastPage; page++) {
+    await new Promise(r => setTimeout(r, 500));
+    const pageUrl = `${baseUrl}?page=${page}`;
+    const html = await fetchPage(pageUrl);
+    if (!html) continue;
+
+    const pageFiles = extractFileLinks(html, dataSet.id);
+    let newCount = 0;
+    for (const f of pageFiles) {
+      if (!seenUrls.has(f.url)) {
+        seenUrls.add(f.url);
+        allFiles.push(f);
+        newCount++;
+      }
+    }
+
+    if (page % 10 === 0 || page === lastPage) {
+      console.log(`    Page ${page}/${lastPage}: +${newCount} files (total: ${allFiles.length})`);
+    }
+  }
+
+  console.log(`    Total: ${allFiles.length} file links from ${lastPage + 1} pages`);
 
   return {
     id: dataSet.id,
     name: dataSet.name,
-    url,
+    url: baseUrl,
     description: dataSet.description,
-    files,
+    files: allFiles,
     pillar: "doj-disclosures",
     scrapedAt: new Date().toISOString(),
   };
