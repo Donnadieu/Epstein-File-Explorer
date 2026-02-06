@@ -306,6 +306,115 @@ function inferTags(description: string): string[] {
   return tags.length > 0 ? tags : ["DOJ disclosure"];
 }
 
+export async function importDownloadedFiles(downloadDir?: string): Promise<number> {
+  const baseDir = downloadDir || path.join(process.env.HOME || "/home/runner", "Downloads", "epstein-disclosures");
+
+  if (!fs.existsSync(baseDir)) {
+    console.error(`Download directory not found: ${baseDir}`);
+    return 0;
+  }
+
+  const urlsDir = path.join(baseDir, "urls");
+  let loaded = 0;
+  let skipped = 0;
+
+  const dataSets = fs.readdirSync(baseDir)
+    .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(baseDir, d)).isDirectory())
+    .sort();
+
+  console.log(`Found ${dataSets.length} data set directories in ${baseDir}`);
+
+  for (const dsDir of dataSets) {
+    const dsMatch = dsDir.match(/data-set-(\d+)/);
+    if (!dsMatch) continue;
+    const dsNum = parseInt(dsMatch[1], 10);
+
+    const dsPath = path.join(baseDir, dsDir);
+    const files = fs.readdirSync(dsPath).filter(f => f.toLowerCase().endsWith(".pdf"));
+
+    const urlsFile = path.join(urlsDir, `data-set-${dsNum}-urls.txt`);
+    const urlMap = new Map<string, string>();
+    if (fs.existsSync(urlsFile)) {
+      const urls = fs.readFileSync(urlsFile, "utf-8").split("\n").filter(Boolean);
+      for (const url of urls) {
+        const fname = url.split("/").pop() || "";
+        const decoded = decodeURIComponent(fname);
+        urlMap.set(decoded, url);
+        urlMap.set(fname, url);
+      }
+    }
+
+    const dsInfo = KNOWN_DATA_SET_INFO[dsNum];
+    const dsName = dsInfo?.name || `Data Set ${dsNum}`;
+    const dsDesc = dsInfo?.description || `DOJ Epstein disclosure files from Data Set ${dsNum}`;
+
+    console.log(`  Processing ${dsName}: ${files.length} PDF files...`);
+
+    let dsLoaded = 0;
+    let dsSkipped = 0;
+
+    for (const file of files) {
+      const sourceUrl = urlMap.get(file) || `https://www.justice.gov/epstein/files/DataSet%20${dsNum}/${encodeURIComponent(file)}`;
+
+      const existing = await db
+        .select()
+        .from(documents)
+        .where(sql`${documents.sourceUrl} = ${sourceUrl}`)
+        .limit(1);
+
+      if (existing.length > 0) {
+        skipped++;
+        dsSkipped++;
+        continue;
+      }
+
+      const efta = file.replace(/\.pdf$/i, "");
+      const fileStat = fs.statSync(path.join(dsPath, file));
+      const fileSizeKB = Math.round(fileStat.size / 1024);
+      const docType = inferDocumentType(dsDesc);
+
+      try {
+        await db.insert(documents).values({
+          title: `${efta} (${dsName})`,
+          description: `${dsDesc}. File: ${efta}. Size: ${fileSizeKB}KB.`,
+          documentType: docType,
+          dataSet: String(dsNum),
+          sourceUrl,
+          datePublished: "2026-01-30",
+          isRedacted: true,
+          tags: [`data-set-${dsNum}`, "DOJ disclosure", "PDF", docType],
+        });
+        loaded++;
+        dsLoaded++;
+      } catch (error: any) {
+        if (!error.message.includes("duplicate")) {
+          console.warn(`    Error loading ${file}: ${error.message}`);
+        }
+      }
+    }
+
+    console.log(`    ${dsName}: ${dsLoaded} loaded, ${dsSkipped} skipped`);
+  }
+
+  console.log(`\n  Total: ${loaded} new documents imported, ${skipped} skipped`);
+  return loaded;
+}
+
+const KNOWN_DATA_SET_INFO: Record<number, { name: string; description: string }> = {
+  1: { name: "Data Set 1", description: "FBI investigative files, flight logs, contact books, and early case documents from the Palm Beach investigation (2005-2008)" },
+  2: { name: "Data Set 2", description: "FBI 302 interview reports, police reports from Palm Beach, and early correspondence between Epstein's legal team and federal prosecutors" },
+  3: { name: "Data Set 3", description: "FBI investigative files including victim statements, witness interviews, and law enforcement correspondence" },
+  4: { name: "Data Set 4", description: "FBI Form 302 interview summaries documenting victim statements and recruitment patterns at Epstein's properties" },
+  5: { name: "Data Set 5", description: "Grand jury transcripts, SDNY investigation documents, and indictment materials from the 2019 federal case" },
+  6: { name: "Data Set 6", description: "Search warrant applications, property inventories from FBI raids on Manhattan mansion, Palm Beach estate, and private island" },
+  7: { name: "Data Set 7", description: "Financial records including wire transfers, bank statements, and property transaction documents" },
+  8: { name: "Data Set 8", description: "Surveillance footage summaries, MCC records, property records for Little St. James Island, and death investigation materials" },
+  9: { name: "Data Set 9", description: "High-value communication records: private email correspondence between Epstein and prominent individuals, internal DOJ correspondence regarding the 2008 NPA" },
+  10: { name: "Data Set 10", description: "Visual and forensic media: 180,000+ images and 2,000+ videos seized from Epstein's properties. Female faces redacted for victim protection" },
+  11: { name: "Data Set 11", description: "Financial ledgers, additional flight manifests beyond previously published logs, and property seizure records" },
+  12: { name: "Data Set 12", description: "Supplemental and late productions: approximately 150 documents requiring prolonged legal review, released January 30, 2026" },
+};
+
 export async function extractConnectionsFromDescriptions(): Promise<number> {
   console.log("Extracting connections from person descriptions...");
 
@@ -438,15 +547,19 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       await loadExtractedEntities(process.argv[3]);
     } else if (command === "extract-connections") {
       await extractConnectionsFromDescriptions();
+    } else if (command === "import-downloads") {
+      await importDownloadedFiles(process.argv[3]);
     } else if (command === "update-counts") {
       await updateDocumentCounts();
     } else {
       console.log("Usage: npx tsx scripts/pipeline/db-loader.ts <command>");
       console.log("Commands:");
-      console.log("  persons [file]     - Load persons from JSON file");
-      console.log("  documents [file]   - Load documents from DOJ catalog");
-      console.log("  entities [file]    - Load extracted entities");
-      console.log("  update-counts      - Recalculate document/connection counts");
+      console.log("  persons [file]       - Load persons from JSON file");
+      console.log("  documents [file]     - Load documents from DOJ catalog");
+      console.log("  entities [file]      - Load extracted entities");
+      console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
+      console.log("  extract-connections  - Extract relationships from descriptions");
+      console.log("  update-counts        - Recalculate document/connection counts");
     }
 
     process.exit(0);

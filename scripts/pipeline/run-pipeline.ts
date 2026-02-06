@@ -3,7 +3,7 @@ import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 import { downloadDocuments } from "./document-downloader";
 import { processDocuments } from "./pdf-processor";
 import { extractEntities } from "./entity-extractor";
-import { loadPersonsFromFile, loadDocumentsFromCatalog, loadExtractedEntities, extractConnectionsFromDescriptions, updateDocumentCounts } from "./db-loader";
+import { loadPersonsFromFile, loadDocumentsFromCatalog, loadExtractedEntities, extractConnectionsFromDescriptions, updateDocumentCounts, importDownloadedFiles } from "./db-loader";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -30,6 +30,7 @@ const STAGES = [
   "extract",
   "load-persons",
   "load-documents",
+  "import-downloads",
   "load-entities",
   "extract-connections",
   "update-counts",
@@ -62,6 +63,7 @@ STAGES:
   extract          Run NLP entity extraction on processed documents
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
+  import-downloads Import downloaded PDFs from filesystem into database
   load-entities    Load extracted entities into PostgreSQL database
   extract-connections  Extract relationships from person descriptions
   update-counts    Recalculate document/connection counts per person
@@ -144,6 +146,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "load-documents":
         await loadDocumentsFromCatalog();
+        break;
+
+      case "import-downloads":
+        await importDownloadedFiles();
         break;
 
       case "load-entities":

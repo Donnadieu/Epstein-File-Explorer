@@ -22,6 +22,12 @@ async function getBrowserContext(): Promise<BrowserContext> {
   _context = await _browser.newContext({
     userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
   });
+  await _context.addCookies([{
+    name: "justiceGovAgeVerified",
+    value: "true",
+    domain: "www.justice.gov",
+    path: "/",
+  }]);
   return _context;
 }
 
@@ -96,6 +102,7 @@ async function fetchPage(url: string, retries = 2): Promise<string> {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
+    "Cookie": "justiceGovAgeVerified=true",
     "Sec-Fetch-Dest": "document",
     "Sec-Fetch-Mode": "navigate",
     "Sec-Fetch-Site": "none",
