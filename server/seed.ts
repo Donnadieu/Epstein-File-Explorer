@@ -3,12 +3,15 @@ import { persons, documents, connections, personDocuments, timelineEvents } from
 import { sql } from "drizzle-orm";
 
 export async function seedDatabase() {
-  const [existing] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
-  if (existing.count > 0) {
+  const [existingDocs] = await db.select({ count: sql<number>`count(*)::int` }).from(documents);
+  if (existingDocs.count > 0) {
     return;
   }
 
   console.log("Seeding database with Epstein files data...");
+
+  const [existingPersons] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const hasPersons = existingPersons.count > 0;
 
   const personData = [
     {
@@ -255,6 +258,29 @@ export async function seedDatabase() {
 
   const createdPersons = [];
   for (const p of personData) {
+    if (hasPersons) {
+      const [existing] = await db
+        .select()
+        .from(persons)
+        .where(sql`LOWER(${persons.name}) = LOWER(${p.name})`)
+        .limit(1);
+
+      if (existing) {
+        await db.update(persons).set({
+          aliases: p.aliases,
+          role: p.role,
+          description: p.description,
+          status: p.status,
+          nationality: p.nationality,
+          occupation: p.occupation,
+          documentCount: p.documentCount,
+          connectionCount: p.connectionCount,
+          category: p.category,
+        }).where(sql`id = ${existing.id}`);
+        createdPersons.push(existing);
+        continue;
+      }
+    }
     const [created] = await db.insert(persons).values(p).returning();
     createdPersons.push(created);
   }

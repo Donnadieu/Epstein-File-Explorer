@@ -44,8 +44,8 @@ export default function DocumentsPage() {
     queryKey: ["/api/documents"],
   });
 
-  const documentTypes = ["all", ...new Set(documents?.map((d) => d.documentType) || [])];
-  const dataSets = ["all", ...new Set(documents?.filter((d) => d.dataSet).map((d) => d.dataSet!) || [])].sort();
+  const documentTypes = ["all", ...Array.from(new Set(documents?.map((d) => d.documentType) || []))];
+  const dataSets = ["all", ...Array.from(new Set(documents?.filter((d) => d.dataSet).map((d) => d.dataSet!) || []))].sort();
 
   const filtered = documents?.filter((doc) => {
     const matchesSearch =
@@ -169,17 +169,19 @@ export default function DocumentsPage() {
                           <div className="flex items-start justify-between gap-2">
                             <span className="text-sm font-semibold">{doc.title}</span>
                             {doc.sourceUrl && (
-                              <a
-                                href={doc.sourceUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
+                              <Button
+                                variant="ghost"
+                                size="icon"
                                 className="shrink-0"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                }}
+                                data-testid={`button-source-${doc.id}`}
                               >
-                                <Button variant="ghost" size="icon" className="w-7 h-7">
-                                  <ExternalLink className="w-3 h-3" />
-                                </Button>
-                              </a>
+                                <ExternalLink className="w-3 h-3" />
+                              </Button>
                             )}
                           </div>
                           {doc.description && (
