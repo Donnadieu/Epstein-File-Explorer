@@ -57,29 +57,48 @@ const KNOWN_DATA_SETS: Array<{ id: number; name: string; description: string }> 
   { id: 12, name: "Data Set 12", description: "Supplemental and late productions: approximately 150 documents requiring prolonged legal review, released January 30, 2026" },
 ];
 
-async function fetchPage(url: string): Promise<string> {
+async function fetchPage(url: string, retries = 2): Promise<string> {
   const headers: Record<string, string> = {
-    "User-Agent": "Mozilla/5.0 (compatible; EpsteinFilesExplorer/1.0; research)",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
   };
 
-  try {
-    const response = await fetch(url, {
-      headers,
-      redirect: "follow",
-    });
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const response = await fetch(url, {
+        headers,
+        redirect: "follow",
+      });
 
-    if (!response.ok) {
-      console.warn(`  Warning: HTTP ${response.status} for ${url}`);
+      if (response.status === 403 || response.status === 429) {
+        const wait = (attempt + 1) * 3000;
+        console.warn(`    Rate limited (${response.status}), waiting ${wait / 1000}s (attempt ${attempt + 1}/${retries + 1})...`);
+        await new Promise(r => setTimeout(r, wait));
+        continue;
+      }
+
+      if (!response.ok) {
+        console.warn(`  Warning: HTTP ${response.status} for ${url}`);
+        return "";
+      }
+
+      return await response.text();
+    } catch (error: any) {
+      if (attempt < retries) {
+        await new Promise(r => setTimeout(r, 2000));
+        continue;
+      }
+      console.warn(`  Warning: Failed to fetch ${url}: ${error.message}`);
       return "";
     }
-
-    return await response.text();
-  } catch (error: any) {
-    console.warn(`  Warning: Failed to fetch ${url}: ${error.message}`);
-    return "";
   }
+  return "";
 }
 
 function extractFileLinks(html: string, dataSetId: number): DOJFile[] {
