@@ -206,7 +206,7 @@ export default function SearchPage() {
                     <Users className="w-4 h-4 text-primary" /> People
                   </h3>
                   {data.persons.slice(0, 5).map((person) => (
-                    <PersonResult key={person.id} person={person} />
+                    <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />
                   ))}
                 </div>
               )}
@@ -216,7 +216,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />
                   ))}
                 </div>
               )}
@@ -234,14 +234,14 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="people" className="mt-4 flex flex-col gap-2">
-              {data?.persons?.map((person) => <PersonResult key={person.id} person={person} />)}
+              {data?.persons?.map((person) => <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.persons || data.persons.length === 0) && (
                 <EmptyState type="people" query={query} />
               )}
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
-              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} />)}
+              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.documents || data.documents.length === 0) && (
                 <EmptyState type="documents" query={query} />
               )}
@@ -260,8 +260,11 @@ export default function SearchPage() {
   );
 }
 
-function PersonResult({ person }: { person: Person }) {
-  const { isBookmarked, toggleBookmark } = useBookmarks();
+function PersonResult({ person, isBookmarked, toggleBookmark }: {
+  person: Person;
+  isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
+  toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
+}) {
   const bookmarked = isBookmarked("person", person.id);
   const initials = person.name
     .split(" ")
@@ -292,7 +295,7 @@ function PersonResult({ person }: { person: Person }) {
               e.stopPropagation();
               toggleBookmark("person", person.id, undefined, person.name);
             }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity ${
+            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
               bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
             }`}
             aria-label={bookmarked ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
@@ -306,8 +309,11 @@ function PersonResult({ person }: { person: Person }) {
   );
 }
 
-function DocumentResult({ doc }: { doc: Document }) {
-  const { isBookmarked, toggleBookmark } = useBookmarks();
+function DocumentResult({ doc, isBookmarked, toggleBookmark }: {
+  doc: Document;
+  isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
+  toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
+}) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
     "court filing": Scale,
@@ -344,7 +350,7 @@ function DocumentResult({ doc }: { doc: Document }) {
               e.stopPropagation();
               toggleBookmark("document", doc.id, undefined, doc.title);
             }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity ${
+            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
               bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
             }`}
             aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
