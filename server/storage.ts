@@ -1,15 +1,16 @@
 import {
   persons, documents, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking,
+  pipelineJobs, budgetTracking, bookmarks,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
   type PersonDocument, type InsertPersonDocument,
   type TimelineEvent, type InsertTimelineEvent,
   type PipelineJob, type BudgetTracking,
+  type Bookmark, type InsertBookmark,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, ilike, or, sql, desc, asc } from "drizzle-orm";
+import { eq, and, ilike, or, sql, desc, asc, inArray } from "drizzle-orm";
 
 export interface IStorage {
   getPersons(): Promise<Person[]>;
@@ -34,9 +35,20 @@ export interface IStorage {
   getNetworkData(): Promise<{ persons: Person[]; connections: any[] }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
 
+  getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
+  getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+
+  getBookmarks(): Promise<Bookmark[]>;
+  createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
+  deleteBookmark(id: number): Promise<boolean>;
+
   getPipelineJobs(status?: string): Promise<PipelineJob[]>;
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
   getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }>;
+}
+
+function escapeLikePattern(input: string): string {
+  return input.replace(/[\\%_]/g, (ch) => `\\${ch}`);
 }
 
 export class DatabaseStorage implements IStorage {
@@ -84,15 +96,24 @@ export class DatabaseStorage implements IStorage {
       .from(connections)
       .where(eq(connections.personId2, id));
 
+    const personIds = new Set<number>();
+    for (const conn of connsFrom) personIds.add(conn.personId2);
+    for (const conn of connsTo) personIds.add(conn.personId1);
+
+    const connPersons = personIds.size > 0
+      ? await db.select().from(persons).where(inArray(persons.id, Array.from(personIds)))
+      : [];
+    const personMap = new Map(connPersons.map(p => [p.id, p]));
+
     const allConns = [];
     for (const conn of connsFrom) {
-      const otherPerson = await this.getPerson(conn.personId2);
+      const otherPerson = personMap.get(conn.personId2);
       if (otherPerson) {
         allConns.push({ ...conn, person: otherPerson });
       }
     }
     for (const conn of connsTo) {
-      const otherPerson = await this.getPerson(conn.personId1);
+      const otherPerson = personMap.get(conn.personId1);
       if (otherPerson) {
         allConns.push({ ...conn, person: otherPerson });
       }
@@ -179,16 +200,17 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getStats() {
-    const [personResult] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
-    const [documentResult] = await db.select({ count: sql<number>`count(*)::int` }).from(documents);
-    const [connectionResult] = await db.select({ count: sql<number>`count(*)::int` }).from(connections);
-    const [eventResult] = await db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents);
-
+    const [personResult, documentResult, connectionResult, eventResult] = await Promise.all([
+      db.select({ count: sql<number>`count(*)::int` }).from(persons),
+      db.select({ count: sql<number>`count(*)::int` }).from(documents),
+      db.select({ count: sql<number>`count(*)::int` }).from(connections),
+      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents),
+    ]);
     return {
-      personCount: personResult.count,
-      documentCount: documentResult.count,
-      connectionCount: connectionResult.count,
-      eventCount: eventResult.count,
+      personCount: personResult[0].count,
+      documentCount: documentResult[0].count,
+      connectionCount: connectionResult[0].count,
+      eventCount: eventResult[0].count,
     };
   }
 
@@ -196,9 +218,10 @@ export class DatabaseStorage implements IStorage {
     const allPersons = await this.getPersons();
     const allConnections = await db.select().from(connections);
 
+    const personMap = new Map(allPersons.map(p => [p.id, p]));
     const enrichedConnections = allConnections.map((conn) => {
-      const p1 = allPersons.find((p) => p.id === conn.personId1);
-      const p2 = allPersons.find((p) => p.id === conn.personId2);
+      const p1 = personMap.get(conn.personId1);
+      const p2 = personMap.get(conn.personId2);
       return {
         ...conn,
         person1Name: p1?.name || "Unknown",
@@ -210,7 +233,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async search(query: string) {
-    const searchPattern = `%${query}%`;
+    const searchPattern = `%${escapeLikePattern(query)}%`;
 
     const matchedPersons = await db
       .select()
@@ -255,6 +278,59 @@ export class DatabaseStorage implements IStorage {
       documents: matchedDocuments,
       events: matchedEvents,
     };
+  }
+
+  async getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }> {
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / limit);
+    const offset = (page - 1) * limit;
+    const data = await db.select().from(persons).orderBy(desc(persons.documentCount)).limit(limit).offset(offset);
+    return { data, total, page, totalPages };
+  }
+
+  async getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(documents);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / limit);
+    const offset = (page - 1) * limit;
+    const data = await db.select().from(documents).orderBy(asc(documents.id)).limit(limit).offset(offset);
+    return { data, total, page, totalPages };
+  }
+
+  async getBookmarks(): Promise<Bookmark[]> {
+    return db.select().from(bookmarks).orderBy(desc(bookmarks.createdAt));
+  }
+
+  async createBookmark(bookmark: InsertBookmark): Promise<Bookmark> {
+    // Cast needed: drizzle-zod's InsertBookmark resolves to {} due to .omit() type issue
+    const bk = bookmark as { userId?: string; entityType: string; entityId?: number | null; searchQuery?: string | null; label?: string | null };
+    const [created] = await db.insert(bookmarks).values(bookmark)
+      .onConflictDoNothing()
+      .returning();
+    if (!created) {
+      // Duplicate bookmark — return the existing one
+      const existing = await db.select().from(bookmarks).where(
+        bk.searchQuery
+          ? and(
+              eq(bookmarks.userId, bk.userId ?? "anonymous"),
+              eq(bookmarks.entityType, bk.entityType),
+              eq(bookmarks.searchQuery, bk.searchQuery),
+            )
+          : and(
+              eq(bookmarks.userId, bk.userId ?? "anonymous"),
+              eq(bookmarks.entityType, bk.entityType),
+              eq(bookmarks.entityId, bk.entityId!),
+            )
+      );
+      return existing[0];
+    }
+    return created;
+  }
+
+  async deleteBookmark(id: number): Promise<boolean> {
+    const result = await db.delete(bookmarks).where(eq(bookmarks.id, id)).returning();
+    return result.length > 0;
   }
 
   async getPipelineJobs(status?: string): Promise<PipelineJob[]> {

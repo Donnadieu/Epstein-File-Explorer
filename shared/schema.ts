@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, timestamp, boolean, jsonb, index } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, timestamp, boolean, jsonb, index, uniqueIndex } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
@@ -165,3 +165,28 @@ export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
 });
+
+export const bookmarks = pgTable("bookmarks", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  userId: text("user_id").notNull().default("anonymous"),
+  entityType: text("entity_type").notNull(), // 'person' | 'document' | 'search'
+  entityId: integer("entity_id"),
+  searchQuery: text("search_query"),
+  label: text("label"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  index("idx_bookmarks_user_entity").on(table.userId, table.entityType),
+  // Two partial unique indexes: one for entity bookmarks (person/document),
+  // one for search bookmarks. A single index on (userId, entityType, entityId)
+  // doesn't work because PostgreSQL treats NULLs as distinct.
+  uniqueIndex("idx_bookmarks_entity_unique")
+    .on(table.userId, table.entityType, table.entityId)
+    .where(sql`entity_id IS NOT NULL`),
+  uniqueIndex("idx_bookmarks_search_unique")
+    .on(table.userId, table.entityType, table.searchQuery)
+    .where(sql`search_query IS NOT NULL`),
+]);
+
+export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ id: true, createdAt: true });
+export type Bookmark = typeof bookmarks.$inferSelect;
+export type InsertBookmark = z.infer<typeof insertBookmarkSchema>;
