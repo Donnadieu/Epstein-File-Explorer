@@ -2,7 +2,7 @@ import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { chromium, type Browser, type BrowserContext } from "playwright";
+import { chromium, type Browser, type BrowserContext, type Page } from "playwright";
 import pLimit from "p-limit";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -17,16 +17,34 @@ const FOIA_RECORDS = `${EPSTEIN_BASE}/foia-records`;
 let _browser: Browser | null = null;
 let _context: BrowserContext | null = null;
 
+// Use headed mode (visible browser) to bypass Akamai bot detection for pagination
+// Set DOJ_HEADED=1 env var or pass --headed CLI flag
+const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--headed");
+
 async function getBrowserContext(): Promise<BrowserContext> {
   if (_context) return _context;
-  _browser = await chromium.launch({ headless: true });
-  _context = await _browser.newContext({
-    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  _browser = await chromium.launch({
+    headless: !USE_HEADED,
+    args: [
+      "--disable-blink-features=AutomationControlled",
+      "--no-sandbox",
+    ],
   });
+  if (USE_HEADED) console.log("  (Running in headed mode — visible browser window)");
+  _context = await _browser.newContext({
+    userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    viewport: { width: 1920, height: 1080 },
+    locale: "en-US",
+  });
+  // Hide the webdriver property that Akamai checks
+  await _context.addInitScript(() => {
+    Object.defineProperty(navigator, "webdriver", { get: () => false });
+  });
+  // Pre-set age verification cookie to bypass age gate redirects
   await _context.addCookies([{
     name: "justiceGovAgeVerified",
     value: "true",
-    domain: "www.justice.gov",
+    domain: ".justice.gov",
     path: "/",
   }]);
   return _context;
@@ -37,14 +55,193 @@ async function closeBrowser(): Promise<void> {
   if (_browser) { await _browser.close(); _browser = null; }
 }
 
+/** Solve the Akamai bot challenge ("I am not a robot") if present. */
+async function solveBotChallenge(page: Page): Promise<boolean> {
+  const isChallenge = await page.evaluate(() => {
+    return document.body?.innerHTML?.includes("reauth") ||
+      !!document.querySelector("input[value='I am not a robot']");
+  });
+
+  if (!isChallenge) return false;
+
+  console.log("      Bot challenge detected, solving...");
+  // Wait for the abuse-deterrent.js script to define SHA256/setCookie
+  await page.waitForTimeout(2000);
+
+  const button = page.locator("input[value='I am not a robot']");
+  if (await button.isVisible({ timeout: 3000 }).catch(() => false)) {
+    await button.click();
+    await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(3000);
+
+    // Check if challenge reappears (may need multiple attempts)
+    const stillChallenge = await page.evaluate(() =>
+      !!document.querySelector("input[value='I am not a robot']")
+    );
+    if (stillChallenge) {
+      console.log("      Challenge persisted, retrying...");
+      await page.waitForTimeout(2000);
+      await button.click().catch(() => {});
+      await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
+      await page.waitForTimeout(3000);
+    }
+  }
+  return true;
+}
+
+/** Click the age verification "Yes" button if present. */
+async function handleAgeGate(page: Page): Promise<void> {
+  const hasAgeGate = await page.evaluate(() =>
+    document.body?.innerText?.includes("Are you 18 years of age or older")
+  );
+  if (!hasAgeGate) return;
+
+  console.log("      Age gate found, clicking Yes...");
+  // Use JavaScript click to bypass overlay that intercepts pointer events
+  const clicked = await page.evaluate(() => {
+    const btn = document.querySelector("#age-button-yes") as HTMLButtonElement;
+    if (btn) { btn.click(); return true; }
+    // Fallback: find any button with "Yes" text
+    const buttons = document.querySelectorAll("button");
+    for (const b of buttons) {
+      if (b.textContent?.trim() === "Yes") { b.click(); return true; }
+    }
+    return false;
+  });
+
+  if (clicked) {
+    await page.waitForLoadState("load", { timeout: 10000 }).catch(() => {});
+    await page.waitForTimeout(2000);
+  }
+}
+
+/** Navigate to a URL with bot challenge and age gate handling. */
+async function navigateAndPrepare(page: Page, url: string): Promise<boolean> {
+  await page.goto(url, { waitUntil: "load", timeout: 30000 });
+  await page.waitForTimeout(3000);
+
+  await solveBotChallenge(page);
+  await handleAgeGate(page);
+
+  // Verify we have actual content (not a blocked/empty page)
+  const hasContent = await page.evaluate(() => {
+    const links = document.querySelectorAll("a[href*='.pdf'], a[href*='/files/']");
+    const hasPager = !!document.querySelector("nav.usa-pagination");
+    return links.length > 0 || hasPager;
+  });
+
+  return hasContent;
+}
+
+/** Extract file links directly from a Playwright page (no cheerio needed). */
+async function extractFileLinksFromPage(page: Page, dataSetId: number): Promise<DOJFile[]> {
+  return page.evaluate((args) => {
+    const { dataSetId, baseUrl } = args;
+    const files: Array<{ title: string; url: string; fileType: string; dataSetId: number }> = [];
+    const seen = new Set<string>();
+    const extensions = [".pdf", ".zip", ".jpg", ".jpeg", ".png", ".mp4", ".avi", ".mov", ".doc", ".docx", ".xls", ".xlsx", ".csv", ".txt"];
+
+    document.querySelectorAll("a[href]").forEach(el => {
+      const href = el.getAttribute("href") || "";
+      if (href.includes("mailto:")) return;
+
+      const isFile = extensions.some(ext => href.toLowerCase().endsWith(ext));
+      const isMedia = href.includes("/files/") || href.includes("/media/") || href.includes("/sites/default/files/");
+
+      if ((isFile || isMedia) && href.length > 0) {
+        const fullUrl = href.startsWith("http") ? href : `${baseUrl}${href.startsWith("/") ? "" : "/"}${href}`;
+        if (seen.has(fullUrl)) return;
+        seen.add(fullUrl);
+
+        const pathname = fullUrl.split("?")[0].split("#")[0];
+        const lastSegment = pathname.split("/").pop() || "";
+        const dotIdx = lastSegment.lastIndexOf(".");
+        const ext = dotIdx > 0 ? lastSegment.slice(dotIdx + 1).toLowerCase() : "unknown";
+        const text = el.textContent?.trim() || fullUrl.split("/").pop() || "";
+
+        files.push({ title: text, url: fullUrl, fileType: ext, dataSetId });
+      }
+    });
+
+    return files;
+  }, { dataSetId, baseUrl: BASE_URL });
+}
+
+/** Get the last page number from the pagination widget only (not the whole page). */
+async function getLastPageFromPager(page: Page): Promise<number> {
+  return page.evaluate(() => {
+    const pager = document.querySelector("nav.usa-pagination");
+    if (!pager) return 0;
+
+    let lastPage = 0;
+    pager.querySelectorAll("a[href*='page=']").forEach(a => {
+      const href = a.getAttribute("href") || "";
+      const match = href.match(/page=(\d+)/);
+      if (match) {
+        const num = parseInt(match[1], 10);
+        if (num > lastPage) lastPage = num;
+      }
+    });
+    return lastPage;
+  });
+}
+
+/** Click the Next pagination link within the pager widget. Returns false if no Next link. */
+async function clickNextPage(page: Page): Promise<boolean> {
+  const nextLink = page.locator("nav.usa-pagination li.usa-pagination__item--next a, nav.usa-pagination a[aria-label='Next page']").first();
+
+  if (!await nextLink.isVisible({ timeout: 2000 }).catch(() => false)) {
+    // Also try by text content within the pager
+    const altNext = page.locator("nav.usa-pagination a:has-text('Next')").first();
+    if (!await altNext.isVisible({ timeout: 1000 }).catch(() => false)) {
+      return false;
+    }
+    await altNext.click();
+  } else {
+    await nextLink.click();
+  }
+
+  await page.waitForTimeout(2000);
+  await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
+  await solveBotChallenge(page);
+  return true;
+}
+
+/** Fetch a URL from within the Playwright page context (inherits all Akamai cookies/tokens). */
+async function fetchPageViaPlaywright(page: Page, url: string): Promise<string> {
+  try {
+    return await page.evaluate(async (fetchUrl) => {
+      const resp = await fetch(fetchUrl, {
+        credentials: "include",
+        headers: { "Accept": "text/html,application/xhtml+xml" },
+      });
+      if (!resp.ok) return "";
+      const text = await resp.text();
+      // Check if we got the bot challenge instead of real content
+      if (text.includes("reauth") && text.includes("I am not a robot")) return "";
+      return text;
+    }, url);
+  } catch {
+    return "";
+  }
+}
+
+/** Extract cookies from Playwright context as a header string for use in fetch requests. */
+async function extractCookieHeader(): Promise<string> {
+  const context = await getBrowserContext();
+  const cookies = await context.cookies();
+  return cookies.map(c => `${c.name}=${c.value}`).join("; ");
+}
+
 async function fetchPageWithBrowser(url: string): Promise<string> {
   const context = await getBrowserContext();
   const page = await context.newPage();
   try {
-    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
-    await page.waitForTimeout(1000);
-    const html = await page.content();
-    return html;
+    await page.goto(url, { waitUntil: "load", timeout: 30000 });
+    await page.waitForTimeout(3000);
+    await solveBotChallenge(page);
+    await handleAgeGate(page);
+    return await page.content();
   } catch (error: any) {
     console.warn(`  Browser fetch failed for ${url}: ${error.message}`);
     return "";
@@ -65,6 +262,7 @@ export interface DOJDataSet {
   files: DOJFile[];
   pillar: "doj-disclosures" | "court-records" | "foia" | "house-oversight";
   scrapedAt: string;
+  pageCount?: number;
 }
 
 export interface DOJFile {
@@ -211,60 +409,128 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
   const baseUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
   console.log(`  Scraping ${dataSet.name} from ${baseUrl}...`);
 
-  const firstPageHtml = await fetchPageWithBrowser(baseUrl);
-  if (!firstPageHtml) {
-    console.log(`    No content found`);
-    return {
-      id: dataSet.id, name: dataSet.name, url: baseUrl,
-      description: dataSet.description, files: [],
-      pillar: "doj-disclosures", scrapedAt: new Date().toISOString(),
-    };
-  }
+  const context = await getBrowserContext();
+  const page = await context.newPage();
 
-  const allFiles: DOJFile[] = extractFileLinks(firstPageHtml, dataSet.id);
-  const seenUrls = new Set(allFiles.map(f => f.url));
-  const { lastPage } = extractPaginationInfo(firstPageHtml);
+  try {
+    const hasContent = await navigateAndPrepare(page, baseUrl);
+    if (!hasContent) {
+      console.log(`    No content found (page may be blocked)`);
+      return {
+        id: dataSet.id, name: dataSet.name, url: baseUrl,
+        description: dataSet.description, files: [],
+        pillar: "doj-disclosures", scrapedAt: new Date().toISOString(),
+      };
+    }
 
-  console.log(`    Page 0: ${allFiles.length} files, ${lastPage + 1} total pages`);
+    const allFiles: DOJFile[] = [];
+    const seenUrls = new Set<string>();
+    const lastPage = await getLastPageFromPager(page);
 
-  for (let page = 1; page <= lastPage; page++) {
-    await new Promise(r => setTimeout(r, 800));
-    const pageUrl = `${baseUrl}?page=${page}`;
-    const html = await fetchPageWithBrowser(pageUrl);
-    if (!html) continue;
+    // Extract files from page 0
+    const p0Files = await extractFileLinksFromPage(page, dataSet.id);
+    for (const f of p0Files) {
+      if (!seenUrls.has(f.url)) { seenUrls.add(f.url); allFiles.push(f); }
+    }
+    console.log(`    Page 0: ${allFiles.length} files, ${lastPage + 1} total pages`);
 
-    const pageFiles = extractFileLinks(html, dataSet.id);
-    let newCount = 0;
-    for (const f of pageFiles) {
-      if (!seenUrls.has(f.url)) {
-        seenUrls.add(f.url);
-        allFiles.push(f);
-        newCount++;
+    // Navigate through subsequent pages
+    // In headed mode: click pagination links (works like a real human)
+    // In headless mode: try in-page fetch, then fall back to click
+    let emptyPages = 0;
+    let paginationBlocked = false;
+
+    for (let pageNum = 1; pageNum <= lastPage; pageNum++) {
+      let pageFiles: DOJFile[] = [];
+      let gotPage = false;
+
+      if (USE_HEADED) {
+        // Headed mode: click "Next" link like a human would
+        const nextClicked = await clickNextPage(page);
+        if (nextClicked) {
+          await page.waitForTimeout(1500 + Math.random() * 1000);
+          pageFiles = await extractFileLinksFromPage(page, dataSet.id);
+          gotPage = true;
+        }
+      } else {
+        // Headless mode: try in-page fetch first (avoids Akamai 403)
+        const pageHtml = await fetchPageViaPlaywright(page, `${baseUrl}?page=${pageNum}`);
+        if (pageHtml) {
+          pageFiles = extractFileLinks(pageHtml, dataSet.id);
+          gotPage = true;
+        } else {
+          // Fallback: try clicking Next
+          const nextClicked = await clickNextPage(page);
+          if (nextClicked) {
+            pageFiles = await extractFileLinksFromPage(page, dataSet.id);
+            gotPage = true;
+          }
+        }
       }
+
+      if (!gotPage) {
+        if (!paginationBlocked) {
+          console.log(`    Page ${pageNum}: pagination blocked, remaining files will be found by probe`);
+          paginationBlocked = true;
+        }
+        break;
+      }
+
+      let newCount = 0;
+      for (const f of pageFiles) {
+        if (!seenUrls.has(f.url)) { seenUrls.add(f.url); allFiles.push(f); newCount++; }
+      }
+
+      if (pageNum % 10 === 0 || pageNum === lastPage) {
+        console.log(`    Page ${pageNum}/${lastPage}: +${newCount} files (total: ${allFiles.length})`);
+      }
+
+      // Stop if 3 consecutive pages have no new files
+      if (newCount === 0) {
+        emptyPages++;
+        if (emptyPages >= 3) {
+          console.log(`    Stopping: ${emptyPages} consecutive pages with no new files`);
+          break;
+        }
+      } else {
+        emptyPages = 0;
+      }
+
+      // Rate limit
+      await new Promise(r => setTimeout(r, USE_HEADED ? 1000 : 500));
     }
 
-    if (page % 10 === 0 || page === lastPage) {
-      console.log(`    Page ${page}/${lastPage}: +${newCount} files (total: ${allFiles.length})`);
-    }
+    console.log(`    Total: ${allFiles.length} file links`);
+
+    return {
+      id: dataSet.id,
+      name: dataSet.name,
+      url: baseUrl,
+      description: dataSet.description,
+      files: allFiles,
+      pillar: "doj-disclosures",
+      scrapedAt: new Date().toISOString(),
+      pageCount: lastPage + 1,
+    };
+  } finally {
+    await page.close();
   }
-
-  console.log(`    Total: ${allFiles.length} file links from ${lastPage + 1} pages`);
-
-  return {
-    id: dataSet.id,
-    name: dataSet.name,
-    url: baseUrl,
-    description: dataSet.description,
-    files: allFiles,
-    pillar: "doj-disclosures",
-    scrapedAt: new Date().toISOString(),
-  };
 }
 
 async function scrapeCourtRecords(): Promise<DOJDataSet> {
   console.log("  Scraping Court Records...");
-  const html = await fetchPageWithBrowser(COURT_RECORDS);
-  const files = html ? extractFileLinks(html, 100) : [];
+  const context = await getBrowserContext();
+  const page = await context.newPage();
+  let files: DOJFile[] = [];
+
+  try {
+    const hasContent = await navigateAndPrepare(page, COURT_RECORDS);
+    if (hasContent) {
+      files = await extractFileLinksFromPage(page, 100);
+    }
+  } finally {
+    await page.close();
+  }
 
   console.log(`    Found ${files.length} court record links`);
 
@@ -281,8 +547,18 @@ async function scrapeCourtRecords(): Promise<DOJDataSet> {
 
 async function scrapeFOIARecords(): Promise<DOJDataSet> {
   console.log("  Scraping FOIA Records...");
-  const html = await fetchPageWithBrowser(FOIA_RECORDS);
-  const files = html ? extractFileLinks(html, 200) : [];
+  const context = await getBrowserContext();
+  const page = await context.newPage();
+  let files: DOJFile[] = [];
+
+  try {
+    const hasContent = await navigateAndPrepare(page, FOIA_RECORDS);
+    if (hasContent) {
+      files = await extractFileLinksFromPage(page, 200);
+    }
+  } finally {
+    await page.close();
+  }
 
   console.log(`    Found ${files.length} FOIA record links`);
 
@@ -340,6 +616,12 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
   console.log(`Total data sets: ${dataSets.length}`);
   console.log(`Total file links discovered: ${totalFiles}`);
 
+  console.log("\n=== RESULTS ===");
+  for (const ds of dataSets) {
+    console.log(`  ${ds.name}: ${ds.files.length} files`);
+  }
+  console.log(`\nTotal: ${totalFiles} files`);
+
   return catalog;
 }
 
@@ -348,25 +630,35 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
 // Discovers files not linked on paginated listing pages.
 
 const PROBE_EXTENSIONS = ["pdf", "jpg", "jpeg", "png", "mp4"] as const;
-const MAX_CONSECUTIVE_MISSES = 500;
-const PROBE_CONCURRENCY = 15;
-const PROBE_BATCH_SIZE = 100;
-const PROBE_BATCH_DELAY_MS = 300;
+const DEFAULT_MAX_CONSECUTIVE_MISSES = 500;
+const PROBE_CONCURRENCY = 30;
+const PROBE_BATCH_SIZE = 200;
+const PROBE_BATCH_DELAY_MS = 200;
 
 const PROBE_HEADERS: Record<string, string> = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
   "Cookie": "justiceGovAgeVerified=true",
 };
 
-async function sendHeadRequest(url: string): Promise<boolean> {
+async function sendHeadRequest(url: string, cookieHeader?: string): Promise<boolean> {
   try {
+    const headers: Record<string, string> = { ...PROBE_HEADERS };
+    if (cookieHeader) {
+      headers["Cookie"] = cookieHeader;
+    }
     const resp = await fetch(url, {
       method: "HEAD",
-      headers: PROBE_HEADERS,
+      headers,
       redirect: "follow",
       signal: AbortSignal.timeout(10_000),
     });
-    return resp.status === 200;
+    if (resp.status !== 200) return false;
+
+    // Validate this is an actual file, not the Akamai bot challenge page
+    // The bot challenge returns text/html with ~9172 bytes for ALL URLs
+    const contentType = resp.headers.get("content-type") || "";
+    const contentLength = parseInt(resp.headers.get("content-length") || "0", 10);
+    return !contentType.includes("text/html") && contentLength > 10000;
   } catch {
     return false;
   }
@@ -385,19 +677,37 @@ async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
     return [];
   }
 
+  // Solve bot challenge first so cookies are available for HEAD requests
+  // Also extract page count from the pager to estimate file range
+  const context = await getBrowserContext();
+  const probePage = await context.newPage();
+  let lastPage = 0;
+  try {
+    const listingUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
+    await navigateAndPrepare(probePage, listingUrl);
+    lastPage = await getLastPageFromPager(probePage);
+  } finally {
+    await probePage.close();
+  }
+  const cookieHeader = await extractCookieHeader();
+
+  // Use stored pageCount from catalog if live pager extraction failed
+  const pageCount = lastPage > 0 ? lastPage + 1 : (dataSet.pageCount || 1);
+
   const firstNum = Math.min(...eftaNums);
   const lastNum = Math.max(...eftaNums);
   const knownUrls = new Set(dataSet.files.map(f => f.url));
 
-  // Fetch pagination to estimate search range (mirrors bash approach)
-  const listingUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
-  const html = await fetchPage(listingUrl);
-  const { lastPage } = extractPaginationInfo(html);
-  const estimatedTotal = (lastPage + 1) * 50;
-  const searchRange = Math.min(estimatedTotal * 3, 50000);
+  // Estimate search range from page count (each page has ~50 files)
+  const estimatedTotal = Math.max(dataSet.files.length, pageCount * 50);
+  const searchRange = Math.min(estimatedTotal * 3, 100000);
   const rangeEnd = lastNum + searchRange;
 
-  console.log(`    EFTA range: ${firstNum}..${rangeEnd} (last known: ${lastNum}, est. ~${estimatedTotal} files)`);
+  // Scale consecutive miss limit based on expected file density
+  // DS with 64 pages = ~3200 files, so allow up to 6400 misses
+  const maxConsecutiveMisses = Math.min(Math.max(DEFAULT_MAX_CONSECUTIVE_MISSES, pageCount * 100), 10000);
+
+  console.log(`    EFTA range: ${firstNum}..${rangeEnd} (last known: ${lastNum}, est. ~${estimatedTotal} files, max misses: ${maxConsecutiveMisses})`);
   console.log(`    Extensions: ${PROBE_EXTENSIONS.join(", ")} | Concurrency: ${PROBE_CONCURRENCY}`);
 
   const discovered: DOJFile[] = [];
@@ -405,7 +715,7 @@ async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
   let checked = 0;
   const dsPath = `https://www.justice.gov/epstein/files/DataSet%20${dataSet.id}`;
 
-  for (let batchStart = firstNum; batchStart <= rangeEnd && consecutiveMisses < MAX_CONSECUTIVE_MISSES; batchStart += PROBE_BATCH_SIZE) {
+  for (let batchStart = firstNum; batchStart <= rangeEnd && consecutiveMisses < maxConsecutiveMisses; batchStart += PROBE_BATCH_SIZE) {
     const batchEnd = Math.min(batchStart + PROBE_BATCH_SIZE, rangeEnd + 1);
     const batchResults = new Map<number, DOJFile[]>();
     const probes: Promise<void>[] = [];
@@ -422,7 +732,7 @@ async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
           continue;
         }
         probes.push(limit(async () => {
-          if (await sendHeadRequest(url)) {
+          if (await sendHeadRequest(url, cookieHeader)) {
             batchResults.get(n)!.push({ title: `${eftaId}.${ext}`, url, fileType: ext, dataSetId: dataSet.id });
           }
         }));
@@ -452,7 +762,7 @@ async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
         consecutiveMisses++;
       }
 
-      if (consecutiveMisses >= MAX_CONSECUTIVE_MISSES) break;
+      if (consecutiveMisses >= maxConsecutiveMisses) break;
     }
 
     if (checked % 500 < PROBE_BATCH_SIZE) {
@@ -462,8 +772,8 @@ async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
     await new Promise(r => setTimeout(r, PROBE_BATCH_DELAY_MS));
   }
 
-  const stopReason = consecutiveMisses >= MAX_CONSECUTIVE_MISSES
-    ? `${MAX_CONSECUTIVE_MISSES} consecutive misses`
+  const stopReason = consecutiveMisses >= maxConsecutiveMisses
+    ? `${maxConsecutiveMisses} consecutive misses`
     : "reached range end";
   console.log(`    Done: +${discovered.length} new files (checked ${checked}, stopped: ${stopReason})`);
 
