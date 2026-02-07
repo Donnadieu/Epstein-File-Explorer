@@ -7,6 +7,7 @@ import { sql, eq } from "drizzle-orm";
 import type { RawPerson } from "./wikipedia-scraper";
 import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
 import type { EntityExtractionResult, ExtractedEntity, ExtractedRelationship } from "./entity-extractor";
+import { classifyAllDocuments } from "./media-classifier";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -551,6 +552,11 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       await importDownloadedFiles(process.argv[3]);
     } else if (command === "update-counts") {
       await updateDocumentCounts();
+    } else if (command === "classify-media") {
+      await classifyAllDocuments({
+        downloadDir: process.argv[3],
+        reclassify: process.argv.includes("--reclassify"),
+      });
     } else {
       console.log("Usage: npx tsx scripts/pipeline/db-loader.ts <command>");
       console.log("Commands:");
@@ -560,6 +566,7 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
+      console.log("  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)");
     }
 
     process.exit(0);
