@@ -1,10 +1,12 @@
 import {
   persons, documents, connections, personDocuments, timelineEvents,
+  pipelineJobs, budgetTracking,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
   type PersonDocument, type InsertPersonDocument,
   type TimelineEvent, type InsertTimelineEvent,
+  type PipelineJob, type BudgetTracking,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, ilike, or, sql, desc, asc } from "drizzle-orm";
@@ -31,6 +33,10 @@ export interface IStorage {
   getStats(): Promise<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[] }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
+
+  getPipelineJobs(status?: string): Promise<PipelineJob[]>;
+  getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
+  getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -248,6 +254,51 @@ export class DatabaseStorage implements IStorage {
       persons: matchedPersons,
       documents: matchedDocuments,
       events: matchedEvents,
+    };
+  }
+
+  async getPipelineJobs(status?: string): Promise<PipelineJob[]> {
+    if (status) {
+      return db.select().from(pipelineJobs).where(eq(pipelineJobs.status, status)).orderBy(desc(pipelineJobs.createdAt));
+    }
+    return db.select().from(pipelineJobs).orderBy(desc(pipelineJobs.createdAt));
+  }
+
+  async getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }> {
+    const [pending] = await db.select({ count: sql<number>`count(*)::int` }).from(pipelineJobs).where(eq(pipelineJobs.status, "pending"));
+    const [running] = await db.select({ count: sql<number>`count(*)::int` }).from(pipelineJobs).where(eq(pipelineJobs.status, "running"));
+    const [completed] = await db.select({ count: sql<number>`count(*)::int` }).from(pipelineJobs).where(eq(pipelineJobs.status, "completed"));
+    const [failed] = await db.select({ count: sql<number>`count(*)::int` }).from(pipelineJobs).where(eq(pipelineJobs.status, "failed"));
+    return {
+      pending: pending.count,
+      running: running.count,
+      completed: completed.count,
+      failed: failed.count,
+    };
+  }
+
+  async getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }> {
+    const [totals] = await db.select({
+      totalCostCents: sql<number>`coalesce(sum(${budgetTracking.costCents}), 0)::int`,
+      totalInputTokens: sql<number>`coalesce(sum(${budgetTracking.inputTokens}), 0)::int`,
+      totalOutputTokens: sql<number>`coalesce(sum(${budgetTracking.outputTokens}), 0)::int`,
+    }).from(budgetTracking);
+
+    const modelRows = await db.select({
+      model: budgetTracking.model,
+      cost: sql<number>`coalesce(sum(${budgetTracking.costCents}), 0)::int`,
+    }).from(budgetTracking).groupBy(budgetTracking.model);
+
+    const byModel: Record<string, number> = {};
+    for (const row of modelRows) {
+      byModel[row.model] = row.cost;
+    }
+
+    return {
+      totalCostCents: totals.totalCostCents,
+      totalInputTokens: totals.totalInputTokens,
+      totalOutputTokens: totals.totalOutputTokens,
+      byModel,
     };
   }
 }

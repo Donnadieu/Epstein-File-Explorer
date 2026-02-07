@@ -97,5 +97,33 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/pipeline/jobs", async (req, res) => {
+    try {
+      const status = req.query.status as string | undefined;
+      const jobs = await storage.getPipelineJobs(status);
+      res.json(jobs);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch pipeline jobs" });
+    }
+  });
+
+  app.get("/api/pipeline/stats", async (_req, res) => {
+    try {
+      const stats = await storage.getPipelineStats();
+      res.json(stats);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch pipeline stats" });
+    }
+  });
+
+  app.get("/api/budget", async (_req, res) => {
+    try {
+      const summary = await storage.getBudgetSummary();
+      res.json(summary);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch budget summary" });
+    }
+  });
+
   return httpServer;
 }
