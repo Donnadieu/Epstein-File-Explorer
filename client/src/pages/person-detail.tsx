@@ -18,6 +18,8 @@ import {
   AlertTriangle,
   ExternalLink,
 } from "lucide-react";
+import { PersonHoverCard } from "@/components/person-hover-card";
+import { ExportButton } from "@/components/export-button";
 import type { Person, Document, Connection } from "@shared/schema";
 
 interface PersonDetail extends Person {
@@ -188,7 +190,15 @@ export default function PersonDetail() {
 
         <TabsContent value="connections" className="mt-4">
           {person.connections && person.connections.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="flex flex-col gap-3">
+              <div className="flex justify-end">
+                <ExportButton
+                  endpoint={`/api/export/persons`}
+                  filename={`${person.name.toLowerCase().replace(/\s+/g, "-")}-connections`}
+                  label="Export"
+                />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {person.connections.map((conn) => {
                 const connPerson = conn.person;
                 const connInitials = connPerson.name
@@ -206,7 +216,9 @@ export default function PersonDetail() {
                             <AvatarFallback className="text-xs font-medium bg-muted">{connInitials}</AvatarFallback>
                           </Avatar>
                           <div className="flex flex-col gap-1 min-w-0 flex-1">
-                            <span className="text-sm font-semibold">{connPerson.name}</span>
+                            <PersonHoverCard person={connPerson}>
+                              <span className="text-sm font-semibold hover:underline">{connPerson.name}</span>
+                            </PersonHoverCard>
                             <Badge variant="outline" className="text-[10px] w-fit">{conn.connectionType}</Badge>
                             {conn.description && (
                               <p className="text-xs text-muted-foreground mt-0.5">{conn.description}</p>
@@ -218,6 +230,7 @@ export default function PersonDetail() {
                   </Link>
                 );
               })}
+              </div>
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-12 gap-2">
