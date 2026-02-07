@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, timestamp, boolean, jsonb, index } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, timestamp, boolean, jsonb, index, uniqueIndex } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
@@ -174,7 +174,10 @@ export const bookmarks = pgTable("bookmarks", {
   searchQuery: text("search_query"),
   label: text("label"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
-});
+}, (table) => [
+  index("idx_bookmarks_user_entity").on(table.userId, table.entityType),
+  uniqueIndex("idx_bookmarks_unique").on(table.userId, table.entityType, table.entityId),
+]);
 
 export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ id: true, createdAt: true });
 export type Bookmark = typeof bookmarks.$inferSelect;

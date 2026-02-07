@@ -49,9 +49,16 @@ export function useUrlFilters<T extends FilterConfig>(defaults: T): [T, (key: ke
     writeToUrl(next);
   }, [writeToUrl]);
 
-  // Read from URL on mount
+  // Read from URL on mount and listen for browser back/forward
   useEffect(() => {
     setFilters(readFromUrl());
+
+    function onPopState() {
+      setFilters(readFromUrl());
+    }
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, [readFromUrl]);
 
   return [filters, setFilter, resetFilters];

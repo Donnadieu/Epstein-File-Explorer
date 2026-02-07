@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist";
-import type { PDFDocumentProxy } from "pdfjs-dist";
+import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -35,7 +35,7 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
-  const renderTaskRef = useRef<any>(null);
+  const renderTaskRef = useRef<RenderTask | null>(null);
 
   const [viewerState, setViewerState] = useState<ViewerState>("loading");
   const [errorMessage, setErrorMessage] = useState("");
@@ -53,7 +53,7 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
 
       // Cancel any ongoing render
       if (renderTaskRef.current) {
-        (renderTaskRef.current as any).cancel?.();
+        renderTaskRef.current.cancel();
         renderTaskRef.current = null;
       }
 
@@ -70,8 +70,8 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
         canvas.style.height = `${viewport.height}px`;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const renderTask = page.render({ canvasContext: ctx, viewport });
-        renderTaskRef.current = renderTask as any;
+        const renderTask = page.render({ canvasContext: ctx, viewport, canvas });
+        renderTaskRef.current = renderTask;
         await renderTask.promise;
         renderTaskRef.current = null;
       } catch (err: any) {
