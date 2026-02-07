@@ -27,6 +27,7 @@ interface PipelineConfig {
   priority?: number;
   batchSize?: number;
   concurrency?: number;
+  retryFailed?: boolean;
 }
 
 const STAGES = [
@@ -168,6 +169,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           maxFiles: config.maxDownloads,
           rateLimitMs: config.rateLimitMs,
           fileTypes: config.fileTypes,
+          retryFailed: config.retryFailed,
         });
         break;
 
@@ -319,6 +321,8 @@ async function main() {
       config.batchSize = parseInt(args[++i], 10);
     } else if (arg === "--concurrency" && args[i + 1]) {
       config.concurrency = parseInt(args[++i], 10);
+    } else if (arg === "--retry-failed") {
+      config.retryFailed = true;
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {
