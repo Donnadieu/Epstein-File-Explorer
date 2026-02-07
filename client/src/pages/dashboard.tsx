@@ -16,6 +16,8 @@ import {
   AlertTriangle,
   Scale,
 } from "lucide-react";
+import { PersonHoverCard } from "@/components/person-hover-card";
+import { ExportButton } from "@/components/export-button";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 
 function StatCard({
@@ -78,7 +80,9 @@ function PersonCard({ person }: { person: Person }) {
               </AvatarFallback>
             </Avatar>
             <div className="flex flex-col gap-1 min-w-0 flex-1">
-              <span className="text-sm font-semibold truncate" data-testid={`text-person-name-${person.id}`}>{person.name}</span>
+              <PersonHoverCard person={person}>
+                <span className="text-sm font-semibold truncate hover:underline" data-testid={`text-person-name-${person.id}`}>{person.name}</span>
+              </PersonHoverCard>
               <span className="text-xs text-muted-foreground truncate">{person.occupation || person.role}</span>
               <div className="flex items-center gap-2 flex-wrap mt-1">
                 <Badge variant="secondary" className={`text-[10px] ${categoryColors[person.category] || ""}`}>
@@ -199,11 +203,14 @@ export default function Dashboard() {
               <TrendingUp className="w-4 h-4 text-primary" />
               Key Individuals
             </h2>
-            <Link href="/people">
-              <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-all-people">
-                View all <ArrowRight className="w-3 h-3" />
-              </Button>
-            </Link>
+            <div className="flex items-center gap-2">
+              <ExportButton endpoint="/api/export/persons" filename="persons" label="Export" />
+              <Link href="/people">
+                <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-all-people">
+                  View all <ArrowRight className="w-3 h-3" />
+                </Button>
+              </Link>
+            </div>
           </div>
           {peopleLoading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
