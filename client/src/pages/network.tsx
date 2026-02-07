@@ -76,6 +76,9 @@ export default function NetworkPage() {
   const [keywordFilter, setKeywordFilter] = useState("");
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
   const [includeUndated, setIncludeUndated] = useState(false);
+  const [nodeSizeScale, setNodeSizeScale] = useState(50);
+  const [linkOpacity, setLinkOpacity] = useState(30);
+  const [timeRange, setTimeRange] = useState<[number, number]>([1960, 2025]);
   const [connectionTypeFilters, setConnectionTypeFilters] = useState<Set<string>>(
     new Set(connectionTypeSet)
   );
@@ -122,6 +125,8 @@ export default function NetworkPage() {
         const matchesType = conn.connectionType.toLowerCase().includes(kw);
         if (!matchesDescription && !matchesType) return false;
       }
+      // Note: timeRange and includeUndated filters are ready but the connections
+      // schema has no date field yet. When date data is added, filter here.
       return true;
     });
 
@@ -143,17 +148,18 @@ export default function NetworkPage() {
       );
       // Show matching persons and their direct connections
       filteredPersons = filteredPersons.filter((p) => matchingIds.has(p.id));
-      const searchFilteredIds = new Set(filteredPersons.map((p) => p.id));
-      // Also include persons connected to matching ones
+      const originalMatchIds = new Set(filteredPersons.map((p) => p.id));
+      const searchFilteredIds = new Set(originalMatchIds);
+      // Also include persons directly connected to matching ones (1-hop only)
       filteredConnections.forEach((conn) => {
-        if (searchFilteredIds.has(conn.personId1)) {
+        if (originalMatchIds.has(conn.personId1)) {
           const p = networkData.persons.find((pp) => pp.id === conn.personId2);
           if (p && !searchFilteredIds.has(p.id)) {
             filteredPersons.push(p);
             searchFilteredIds.add(p.id);
           }
         }
-        if (searchFilteredIds.has(conn.personId2)) {
+        if (originalMatchIds.has(conn.personId2)) {
           const p = networkData.persons.find((pp) => pp.id === conn.personId1);
           if (p && !searchFilteredIds.has(p.id)) {
             filteredPersons.push(p);
@@ -195,6 +201,18 @@ export default function NetworkPage() {
     return { nodes, links };
   }, [networkData, searchQuery, keywordFilter, connectionTypeFilters]);
 
+  // Sync selectedNode with current graphData when filters change
+  useEffect(() => {
+    if (selectedNode) {
+      const updatedNode = graphData.nodes.find((n) => n.id === selectedNode.id);
+      if (updatedNode) {
+        setSelectedNode(updatedNode);
+      } else {
+        setSelectedNode(null);
+      }
+    }
+  }, [graphData]);
+
   // Extract unique tags and document types from data
   const contentTags = useMemo(() => {
     if (!networkData) return [];
@@ -225,7 +243,8 @@ export default function NetworkPage() {
   const nodeCanvasObject = useCallback(
     (node: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
       const label = node.name as string;
-      const size = Math.max(2, Math.sqrt(node.val || 1) * 2.5);
+      const sizeMultiplier = nodeSizeScale / 50;
+      const size = Math.max(2, Math.sqrt(node.val || 1) * 2.5 * sizeMultiplier);
       const isSelected = selectedNode?.id === node.id;
       const color = node.color || "#3b82f6";
 
@@ -253,7 +272,7 @@ export default function NetworkPage() {
         ctx.fillText(label, node.x, node.y + size + 2);
       }
     },
-    [selectedNode]
+    [selectedNode, nodeSizeScale]
   );
 
   const linkCanvasObject = useCallback(
@@ -262,14 +281,15 @@ export default function NetworkPage() {
       const end = link.target;
       if (!start || !end || typeof start.x !== "number") return;
 
+      const opacity = (linkOpacity / 100).toFixed(2);
       ctx.beginPath();
       ctx.moveTo(start.x, start.y);
       ctx.lineTo(end.x, end.y);
-      ctx.strokeStyle = "rgba(100, 140, 200, 0.12)";
+      ctx.strokeStyle = `rgba(100, 140, 200, ${opacity})`;
       ctx.lineWidth = 0.5;
       ctx.stroke();
     },
-    []
+    [linkOpacity]
   );
 
   const toggleConnectionType = (type: string) => {
@@ -353,8 +373,10 @@ export default function NetworkPage() {
             <div className="space-y-2">
               <label className="text-[11px] text-slate-400">Node size</label>
               <Slider
-                defaultValue={[50]}
+                value={[nodeSizeScale]}
+                onValueChange={(v) => setNodeSizeScale(v[0])}
                 max={100}
+                min={10}
                 step={1}
                 className="[&_[role=slider]]:h-3 [&_[role=slider]]:w-3 [&_[role=slider]]:border-blue-500 [&_[role=slider]]:bg-[#0d1220] [&_.bg-primary]:bg-blue-500 [&_.bg-secondary]:bg-[#1a2040]"
               />
@@ -362,7 +384,8 @@ export default function NetworkPage() {
             <div className="space-y-2">
               <label className="text-[11px] text-slate-400">Link opacity</label>
               <Slider
-                defaultValue={[30]}
+                value={[linkOpacity]}
+                onValueChange={(v) => setLinkOpacity(v[0])}
                 max={100}
                 step={1}
                 className="[&_[role=slider]]:h-3 [&_[role=slider]]:w-3 [&_[role=slider]]:border-blue-500 [&_[role=slider]]:bg-[#0d1220] [&_.bg-primary]:bg-blue-500 [&_.bg-secondary]:bg-[#1a2040]"
@@ -385,10 +408,11 @@ export default function NetworkPage() {
             {/* Time Range */}
             <div className="space-y-2">
               <label className="text-[11px] text-slate-400">
-                Time range: 1960 - 2025
+                Time range: {timeRange[0]} - {timeRange[1]}
               </label>
               <Slider
-                defaultValue={[1960, 2025]}
+                value={timeRange}
+                onValueChange={(v) => setTimeRange([v[0], v[1]])}
                 min={1960}
                 max={2025}
                 step={1}
@@ -546,7 +570,8 @@ export default function NetworkPage() {
           nodeId="id"
           nodeCanvasObject={nodeCanvasObject}
           nodePointerAreaPaint={(node: any, color, ctx) => {
-            const size = Math.max(2, Math.sqrt(node.val || 1) * 2.5);
+            const sizeMultiplier = nodeSizeScale / 50;
+            const size = Math.max(2, Math.sqrt(node.val || 1) * 2.5 * sizeMultiplier);
             ctx.beginPath();
             ctx.arc(node.x, node.y, size + 4, 0, 2 * Math.PI);
             ctx.fillStyle = color;
