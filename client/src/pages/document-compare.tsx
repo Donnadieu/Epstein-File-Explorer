@@ -28,7 +28,7 @@ interface DocumentWithPersons extends Document {
 }
 
 interface DocsPage {
-  documents: Document[];
+  data: Document[];
   total: number;
 }
 
@@ -118,7 +118,7 @@ export default function DocumentComparePage() {
   const [docBId, setDocBId] = useState<string | null>(searchParams.get("b"));
 
   const { data: docsPage, isLoading: listLoading } = useDocumentsList();
-  const documents = docsPage?.documents ?? [];
+  const documents = docsPage?.data ?? [];
   const { data: docA, isLoading: loadingA } = useDocumentDetail(docAId);
   const { data: docB, isLoading: loadingB } = useDocumentDetail(docBId);
 

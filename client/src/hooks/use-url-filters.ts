@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 type FilterConfig = Record<string, string>;
 
@@ -9,9 +9,9 @@ type FilterConfig = Record<string, string>;
 export function useUrlFilters<T extends FilterConfig>(defaults: T): [T, (key: keyof T, value: string) => void, () => void] {
   const defaultsRef = useRef(defaults);
 
-  const [filters, setFilters] = useState<T>(() => {
+  const readFromUrl = useCallback((): T => {
     const params = new URLSearchParams(window.location.search);
-    const result = { ...defaults };
+    const result = { ...defaultsRef.current };
     for (const key of Object.keys(result)) {
       const urlVal = params.get(key);
       if (urlVal !== null) {
@@ -19,7 +19,9 @@ export function useUrlFilters<T extends FilterConfig>(defaults: T): [T, (key: ke
       }
     }
     return result;
-  });
+  }, []);
+
+  const [filters, setFilters] = useState<T>(readFromUrl);
 
   const writeToUrl = useCallback((updated: T) => {
     const params = new URLSearchParams();
@@ -46,6 +48,18 @@ export function useUrlFilters<T extends FilterConfig>(defaults: T): [T, (key: ke
     setFilters(next);
     writeToUrl(next);
   }, [writeToUrl]);
+
+  // Read from URL on mount and listen for browser back/forward
+  useEffect(() => {
+    setFilters(readFromUrl());
+
+    function onPopState() {
+      setFilters(readFromUrl());
+    }
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [readFromUrl]);
 
   return [filters, setFilter, resetFilters];
 }

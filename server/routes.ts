@@ -1,6 +1,45 @@
 import type { Express, Response } from "express";
 import { createServer, type Server } from "http";
+import { Readable } from "stream";
+import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
+
+const ALLOWED_PDF_DOMAINS = [
+  "www.justice.gov",
+  "justice.gov",
+  "www.courtlistener.com",
+  "courtlistener.com",
+  "storage.courtlistener.com",
+  "www.uscourts.gov",
+  "uscourts.gov",
+  "archive.org",
+  "ia800500.us.archive.org",
+];
+
+function isAllowedPdfUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return ALLOWED_PDF_DOMAINS.some(
+      (d) => parsed.hostname === d || parsed.hostname.endsWith("." + d)
+    );
+  } catch {
+    return false;
+  }
+}
+
+const exportRateLimiter = new Map<string, { count: number; resetAt: number }>();
+
+function checkExportRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = exportRateLimiter.get(ip);
+  if (!entry || now > entry.resetAt) {
+    exportRateLimiter.set(ip, { count: 1, resetAt: now + 60_000 });
+    return true;
+  }
+  if (entry.count >= 10) return false;
+  entry.count++;
+  return true;
+}
 
 function escapeCsvField(value: string): string {
   if (value.includes(",") || value.includes('"') || value.includes("\n")) {
@@ -51,6 +90,11 @@ export async function registerRoutes(
     }
   });
 
+  /**
+   * GET /api/persons
+   * Without ?page: returns Person[] (full array)
+   * With ?page=N&limit=M: returns { data: Person[], total, page, totalPages }
+   */
   app.get("/api/persons", async (req, res) => {
     try {
       const pagination = parsePaginationParams(req.query);
@@ -79,6 +123,11 @@ export async function registerRoutes(
     }
   });
 
+  /**
+   * GET /api/documents
+   * Without ?page: returns Document[] (full array)
+   * With ?page=N&limit=M: returns { data: Document[], total, page, totalPages }
+   */
   app.get("/api/documents", async (req, res) => {
     try {
       const pagination = parsePaginationParams(req.query);
@@ -122,22 +171,51 @@ export async function registerRoutes(
         return res.status(404).json({ error: "No source URL for this document" });
       }
 
-      const response = await fetch(doc.sourceUrl);
-      if (!response.ok) {
-        return res.status(502).json({ error: "Failed to fetch PDF from source" });
+      if (!isAllowedPdfUrl(doc.sourceUrl)) {
+        return res.status(403).json({ error: "Source URL domain not allowed" });
       }
 
-      const contentType = response.headers.get("content-type") || "application/pdf";
-      const contentLength = response.headers.get("content-length");
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 30_000);
 
-      res.setHeader("Content-Type", contentType);
-      if (contentLength) {
-        res.setHeader("Content-Length", contentLength);
+      try {
+        const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+        clearTimeout(timeout);
+
+        if (!response.ok) {
+          return res.status(502).json({ error: "Failed to fetch PDF from source" });
+        }
+
+        const contentType = response.headers.get("content-type") || "";
+        if (!contentType.includes("pdf") && !contentType.includes("octet-stream")) {
+          return res.status(502).json({ error: "Source did not return a PDF" });
+        }
+
+        const contentLength = response.headers.get("content-length");
+        const MAX_SIZE = 50 * 1024 * 1024; // 50MB
+        if (contentLength && parseInt(contentLength) > MAX_SIZE) {
+          return res.status(413).json({ error: "PDF exceeds maximum size limit" });
+        }
+
+        res.setHeader("Content-Type", "application/pdf");
+        if (contentLength) {
+          res.setHeader("Content-Length", contentLength);
+        }
+        res.setHeader("Cache-Control", "public, max-age=86400");
+
+        if (response.body) {
+          Readable.fromWeb(response.body as any).pipe(res);
+        } else {
+          const arrayBuffer = await response.arrayBuffer();
+          res.send(Buffer.from(arrayBuffer));
+        }
+      } catch (err: any) {
+        clearTimeout(timeout);
+        if (err.name === "AbortError") {
+          return res.status(504).json({ error: "PDF fetch timed out" });
+        }
+        throw err;
       }
-      res.setHeader("Cache-Control", "public, max-age=86400");
-
-      const arrayBuffer = await response.arrayBuffer();
-      res.send(Buffer.from(arrayBuffer));
     } catch (error) {
       res.status(500).json({ error: "Failed to proxy PDF" });
     }
@@ -214,19 +292,25 @@ export async function registerRoutes(
 
   app.post("/api/bookmarks", async (req, res) => {
     try {
-      const { entityType, entityId, searchQuery, label, userId } = req.body;
+      const { entityType, entityId, searchQuery, label } = req.body;
       if (!entityType || !["person", "document", "search"].includes(entityType)) {
         return res.status(400).json({ error: "entityType must be 'person', 'document', or 'search'" });
       }
-      const bookmark = await storage.createBookmark({
+
+      const parsed = insertBookmarkSchema.parse({
         entityType,
         entityId: entityId ?? null,
         searchQuery: searchQuery ?? null,
         label: label ?? null,
-        userId: userId ?? "anonymous",
+        userId: "anonymous", // Never accept userId from client
       });
+
+      const bookmark = await storage.createBookmark(parsed);
       res.status(201).json(bookmark);
-    } catch (error) {
+    } catch (error: any) {
+      if (error?.name === "ZodError") {
+        return res.status(400).json({ error: "Invalid bookmark data", details: error.errors });
+      }
       res.status(500).json({ error: "Failed to create bookmark" });
     }
   });
@@ -252,6 +336,9 @@ export async function registerRoutes(
   const documentCsvHeaders = ["id", "title", "documentType", "dataSet", "datePublished", "dateOriginal", "pageCount", "isRedacted", "processingStatus", "aiAnalysisStatus"];
 
   app.get("/api/export/persons", async (req, res) => {
+    if (!checkExportRateLimit(req.ip || "unknown")) {
+      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
+    }
     try {
       const format = (req.query.format as string) || "json";
       const persons = await storage.getPersons();
@@ -262,6 +349,9 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/documents", async (req, res) => {
+    if (!checkExportRateLimit(req.ip || "unknown")) {
+      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
+    }
     try {
       const format = (req.query.format as string) || "json";
       const documents = await storage.getDocuments();
@@ -272,6 +362,9 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/search", async (req, res) => {
+    if (!checkExportRateLimit(req.ip || "unknown")) {
+      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
+    }
     try {
       const query = (req.query.q as string) || "";
       const format = (req.query.format as string) || "json";

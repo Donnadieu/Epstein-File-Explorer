@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -54,6 +54,14 @@ export default function SearchPage() {
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
 
+  const handleSavedSearchSelect = useCallback((searchQuery: string) => {
+    setQuery(searchQuery);
+  }, []);
+
+  const handleHistorySelect = useCallback((term: string) => {
+    setQuery(term);
+  }, []);
+
   const searchIsBookmarked = isBookmarked("search", undefined, query);
 
   return (
@@ -71,7 +79,7 @@ export default function SearchPage() {
       {/* Saved Searches */}
       <SavedSearches
         savedSearches={searchBookmarks}
-        onSelect={setQuery}
+        onSelect={handleSavedSearchSelect}
         onRemove={deleteBookmark}
       />
 
@@ -113,7 +121,7 @@ export default function SearchPage() {
                 key={term}
                 variant="outline"
                 className="cursor-pointer text-[11px] text-muted-foreground/70 hover:text-foreground"
-                onClick={() => setQuery(term)}
+                onClick={() => handleHistorySelect(term)}
                 data-testid={`history-${term.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {term}
@@ -139,11 +147,24 @@ export default function SearchPage() {
               <Sparkles className="w-3 h-3" /> Popular searches
             </span>
             <div className="flex items-center gap-2 flex-wrap justify-center">
-              {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein", "witness testimony", "financial records", "travel records"].map((term) => (
+              {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein"].map((term) => (
                 <Badge
                   key={term}
                   variant="outline"
                   className="cursor-pointer"
+                  onClick={() => setQuery(term)}
+                  data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  {term}
+                </Badge>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 flex-wrap justify-center mt-1">
+              {["witness testimony", "financial records", "travel records"].map((term) => (
+                <Badge
+                  key={term}
+                  variant="outline"
+                  className="cursor-pointer text-muted-foreground/60"
                   onClick={() => setQuery(term)}
                   data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
                 >
@@ -185,7 +206,7 @@ export default function SearchPage() {
                     <Users className="w-4 h-4 text-primary" /> People
                   </h3>
                   {data.persons.slice(0, 5).map((person) => (
-                    <PersonResult key={person.id} person={person} />
+                    <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />
                   ))}
                 </div>
               )}
@@ -195,7 +216,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />
                   ))}
                 </div>
               )}
@@ -213,14 +234,14 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="people" className="mt-4 flex flex-col gap-2">
-              {data?.persons?.map((person) => <PersonResult key={person.id} person={person} />)}
+              {data?.persons?.map((person) => <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.persons || data.persons.length === 0) && (
                 <EmptyState type="people" query={query} />
               )}
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
-              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} />)}
+              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.documents || data.documents.length === 0) && (
                 <EmptyState type="documents" query={query} />
               )}
@@ -239,8 +260,11 @@ export default function SearchPage() {
   );
 }
 
-function PersonResult({ person }: { person: Person }) {
-  const { isBookmarked, toggleBookmark } = useBookmarks();
+function PersonResult({ person, isBookmarked, toggleBookmark }: {
+  person: Person;
+  isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
+  toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
+}) {
   const bookmarked = isBookmarked("person", person.id);
   const initials = person.name
     .split(" ")
@@ -271,7 +295,7 @@ function PersonResult({ person }: { person: Person }) {
               e.stopPropagation();
               toggleBookmark("person", person.id, undefined, person.name);
             }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity ${
+            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
               bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
             }`}
             aria-label={bookmarked ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
@@ -285,8 +309,11 @@ function PersonResult({ person }: { person: Person }) {
   );
 }
 
-function DocumentResult({ doc }: { doc: Document }) {
-  const { isBookmarked, toggleBookmark } = useBookmarks();
+function DocumentResult({ doc, isBookmarked, toggleBookmark }: {
+  doc: Document;
+  isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
+  toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
+}) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
     "court filing": Scale,
@@ -323,7 +350,7 @@ function DocumentResult({ doc }: { doc: Document }) {
               e.stopPropagation();
               toggleBookmark("document", doc.id, undefined, doc.title);
             }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity ${
+            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
               bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
             }`}
             aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}

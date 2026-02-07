@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from "react";
+import { useEffect, useCallback, useState, useRef } from "react";
 
 export interface ShortcutDef {
   keys: string;
@@ -8,7 +8,7 @@ export interface ShortcutDef {
 
 export function useKeyboardShortcuts(navigate: (path: string) => void) {
   const [showHelp, setShowHelp] = useState(false);
-  const [pendingG, setPendingG] = useState(false);
+  const pendingGRef = useRef(false);
 
   const closeHelp = useCallback(() => setShowHelp(false), []);
 
@@ -49,14 +49,14 @@ export function useKeyboardShortcuts(navigate: (path: string) => void) {
       }
 
       // "g" prefix shortcuts (two-key chords)
-      if (e.key === "g" && !pendingG) {
-        setPendingG(true);
-        gTimer = setTimeout(() => setPendingG(false), 800);
+      if (e.key === "g" && !pendingGRef.current) {
+        pendingGRef.current = true;
+        gTimer = setTimeout(() => { pendingGRef.current = false; }, 800);
         return;
       }
 
-      if (pendingG) {
-        setPendingG(false);
+      if (pendingGRef.current) {
+        pendingGRef.current = false;
         if (gTimer) clearTimeout(gTimer);
 
         const gMap: Record<string, string> = {
@@ -81,14 +81,17 @@ export function useKeyboardShortcuts(navigate: (path: string) => void) {
       window.removeEventListener("keydown", handler);
       if (gTimer) clearTimeout(gTimer);
     };
-  }, [navigate, pendingG]);
+  }, [navigate]);
 
   return { showHelp, closeHelp };
 }
 
+const isMac = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform);
+const modKey = isMac ? "Cmd" : "Ctrl";
+
 export const shortcutsList: { keys: string; label: string }[] = [
   { keys: "/", label: "Focus search" },
-  { keys: "Cmd+K", label: "Focus search (from anywhere)" },
+  { keys: `${modKey}+K`, label: "Focus search (from anywhere)" },
   { keys: "g p", label: "Go to People" },
   { keys: "g d", label: "Go to Documents" },
   { keys: "g t", label: "Go to Timeline" },
