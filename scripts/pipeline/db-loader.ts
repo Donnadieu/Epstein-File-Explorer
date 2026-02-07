@@ -309,7 +309,7 @@ function inferTags(description: string): string[] {
 }
 
 export async function importDownloadedFiles(downloadDir?: string): Promise<number> {
-  const baseDir = downloadDir || path.join(process.env.HOME || "/home/runner", "Downloads", "epstein-disclosures");
+  const baseDir = downloadDir || path.join(DATA_DIR, "downloads");
 
   if (!fs.existsSync(baseDir)) {
     console.error(`Download directory not found: ${baseDir}`);

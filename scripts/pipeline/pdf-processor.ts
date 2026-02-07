@@ -6,8 +6,8 @@ import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DOWNLOADS_DIR = path.join(process.env.HOME || "/home/runner", "Downloads", "epstein-disclosures");
 const DATA_DIR = path.resolve(__dirname, "../../data");
+const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const EXTRACTION_LOG = path.join(DATA_DIR, "extraction-log.json");
 

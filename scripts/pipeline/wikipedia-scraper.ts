@@ -1,7 +1,9 @@
+import "dotenv/config";
 import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import OpenAI from "openai";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +13,21 @@ const PERSONS_FILE = path.join(DATA_DIR, "persons-raw.json");
 
 const WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/Prominent_individuals_mentioned_in_the_Epstein_files";
 const EPSTEIN_FILES_URL = "https://en.wikipedia.org/wiki/Epstein_files";
+
+const DEEPSEEK_MODEL = "deepseek-chat";
+const CLASSIFY_BATCH_SIZE = 25;
+
+let _deepseek: OpenAI | null = null;
+function getDeepSeek(): OpenAI | null {
+  if (!process.env.DEEPSEEK_API_KEY) return null;
+  if (!_deepseek) {
+    _deepseek = new OpenAI({
+      baseURL: "https://api.deepseek.com",
+      apiKey: process.env.DEEPSEEK_API_KEY,
+    });
+  }
+  return _deepseek;
+}
 
 export interface RawPerson {
   name: string;
@@ -236,6 +253,101 @@ function parseWikipediaSections(html: string): RawPerson[] {
   return persons;
 }
 
+const CLASSIFY_SYSTEM_PROMPT = `You are classifying individuals mentioned in the Jeffrey Epstein case files.
+
+For each person, return a JSON array with objects containing:
+{
+  "name": "exact name as provided",
+  "category": one of: "key figure", "associate", "victim", "witness", "legal", "political", "law enforcement", "staff", "media", "academic", "other",
+  "occupation": "their primary occupation (e.g. 'Financier', 'US President', 'Defense Attorney')",
+  "status": one of: "named", "convicted", "deceased", "victim", "acquitted",
+  "role": "their role in the Epstein case (e.g. 'Co-conspirator', 'Named in flight logs', 'Defense Attorney')"
+}
+
+Category definitions:
+- key figure: Epstein, Maxwell, and direct co-conspirators (people charged, convicted, or named as co-conspirators)
+- victim: Confirmed or alleged victims/survivors
+- witness: People who testified or provided witness statements
+- legal: Attorneys, judges, prosecutors involved in the case
+- political: Politicians, government officials, royalty
+- law enforcement: FBI agents, police, investigators
+- staff: Epstein's employees, pilots, household staff
+- media: Journalists, TV hosts, media figures
+- academic: Professors, scientists, researchers
+- associate: Social connections, business associates not fitting other categories
+- other: Does not fit any category
+
+Respond with a JSON array only. No explanation.`;
+
+interface AIClassification {
+  name: string;
+  category: string;
+  occupation: string;
+  status: string;
+  role: string;
+}
+
+async function classifyWithAI(persons: RawPerson[]): Promise<RawPerson[]> {
+  const client = getDeepSeek();
+  if (!client) {
+    console.log("  No DEEPSEEK_API_KEY — using regex classification fallback");
+    return persons;
+  }
+
+  console.log(`\nClassifying ${persons.length} persons with DeepSeek AI...`);
+  const classified = [...persons];
+  const nameToIndex = new Map<string, number>();
+  classified.forEach((p, i) => nameToIndex.set(p.name.toLowerCase(), i));
+
+  for (let i = 0; i < persons.length; i += CLASSIFY_BATCH_SIZE) {
+    const batch = persons.slice(i, i + CLASSIFY_BATCH_SIZE);
+    const batchNum = Math.floor(i / CLASSIFY_BATCH_SIZE) + 1;
+    const totalBatches = Math.ceil(persons.length / CLASSIFY_BATCH_SIZE);
+    console.log(`  Batch ${batchNum}/${totalBatches} (${batch.length} persons)...`);
+
+    const userMessage = batch
+      .map((p, j) => `${j + 1}. Name: "${p.name}" — Description: "${p.description}"`)
+      .join("\n");
+
+    try {
+      const response = await client.chat.completions.create({
+        model: DEEPSEEK_MODEL,
+        messages: [
+          { role: "system", content: CLASSIFY_SYSTEM_PROMPT },
+          { role: "user", content: `Classify these individuals. Use the description to determine their role in the Epstein case.\n\n${userMessage}` },
+        ],
+        temperature: 0.1,
+      });
+
+      const content = response.choices[0]?.message?.content?.trim();
+      if (!content) {
+        console.log(`    ⚠️ Empty response — keeping regex classifications for this batch`);
+        continue;
+      }
+
+      const jsonStr = content.replace(/^```json?\n?/, "").replace(/\n?```$/, "");
+      const results: AIClassification[] = JSON.parse(jsonStr);
+
+      for (const result of results) {
+        const idx = nameToIndex.get(result.name.toLowerCase());
+        if (idx !== undefined) {
+          classified[idx].category = result.category;
+          classified[idx].occupation = result.occupation;
+          classified[idx].status = result.status;
+          classified[idx].role = result.role;
+        }
+      }
+
+      console.log(`    ✅ Classified ${results.length} persons`);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.log(`    ⚠️ AI classification failed: ${msg} — keeping regex fallback for this batch`);
+    }
+  }
+
+  return classified;
+}
+
 export async function scrapeWikipediaPersons(): Promise<RawPerson[]> {
   console.log("\n=== Wikipedia Epstein Files Person Scraper ===\n");
 
@@ -263,16 +375,18 @@ export async function scrapeWikipediaPersons(): Promise<RawPerson[]> {
 
   console.log(`\nTotal unique individuals: ${combined.length}`);
 
+  const aiClassified = await classifyWithAI(combined);
+
   const byCategory: Record<string, number> = {};
-  for (const p of combined) {
+  for (const p of aiClassified) {
     byCategory[p.category] = (byCategory[p.category] || 0) + 1;
   }
   console.log("By category:", byCategory);
 
-  fs.writeFileSync(PERSONS_FILE, JSON.stringify(combined, null, 2));
+  fs.writeFileSync(PERSONS_FILE, JSON.stringify(aiClassified, null, 2));
   console.log(`\nSaved to ${PERSONS_FILE}`);
 
-  return combined;
+  return aiClassified;
 }
 
 if (process.argv[1]?.includes(path.basename(__filename))) {

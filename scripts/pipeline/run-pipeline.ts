@@ -1,15 +1,22 @@
 import "dotenv/config";
-import { scrapeDOJCatalog, probeAndMergeCatalog } from "./doj-scraper";
-import { scrapeWikipediaPersons } from "./wikipedia-scraper";
-import { downloadDocuments } from "./document-downloader";
-import { processDocuments } from "./pdf-processor";
-import { extractEntities } from "./entity-extractor";
-import { runAIAnalysis } from "./ai-analyzer";
-import { loadPersonsFromFile, loadDocumentsFromCatalog, loadExtractedEntities, extractConnectionsFromDescriptions, updateDocumentCounts, importDownloadedFiles } from "./db-loader";
-import { classifyAllDocuments } from "./media-classifier";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import { runAIAnalysis } from "./ai-analyzer";
+import {
+  extractConnectionsFromDescriptions,
+  importDownloadedFiles,
+  loadDocumentsFromCatalog,
+  loadExtractedEntities,
+  loadPersonsFromFile,
+  updateDocumentCounts,
+} from "./db-loader";
+import { downloadDocuments } from "./document-downloader";
+import { probeAndMergeCatalog, scrapeDOJCatalog } from "./doj-scraper";
+import { extractEntities } from "./entity-extractor";
+import { classifyAllDocuments } from "./media-classifier";
+import { processDocuments } from "./pdf-processor";
+import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -74,7 +81,6 @@ STAGES:
   download         Download documents from DOJ (PDFs, images, etc.)
   process          Extract text from downloaded PDFs via OCR/parsing
   extract          Run NLP entity extraction on processed documents
-  classify-media   Classify downloaded files by media type (pdf, image, video, etc.)
   analyze-ai       Run AI analysis on processed documents (DeepSeek)
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
@@ -177,7 +183,9 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
         await processDocuments({
           dataSetIds: config.dataSetIds,
           maxFiles: config.maxProcessFiles,
-          fileTypes: config.fileTypes?.map(t => t.startsWith(".") ? t : `.${t}`),
+          fileTypes: config.fileTypes?.map((t) =>
+            t.startsWith(".") ? t : `.${t}`,
+          ),
         });
         break;
 
@@ -239,13 +247,28 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
 const MEDIA_TYPE_MAP: Record<string, string> = {
   ".pdf": "document",
-  ".doc": "document", ".docx": "document",
-  ".txt": "document", ".rtf": "document",
-  ".xls": "spreadsheet", ".xlsx": "spreadsheet", ".csv": "spreadsheet",
-  ".jpg": "image", ".jpeg": "image", ".png": "image",
-  ".gif": "image", ".bmp": "image", ".tiff": "image", ".tif": "image",
-  ".mp4": "video", ".avi": "video", ".mov": "video", ".wmv": "video", ".mkv": "video",
-  ".mp3": "audio", ".wav": "audio", ".m4a": "audio",
+  ".doc": "document",
+  ".docx": "document",
+  ".txt": "document",
+  ".rtf": "document",
+  ".xls": "spreadsheet",
+  ".xlsx": "spreadsheet",
+  ".csv": "spreadsheet",
+  ".jpg": "image",
+  ".jpeg": "image",
+  ".png": "image",
+  ".gif": "image",
+  ".bmp": "image",
+  ".tiff": "image",
+  ".tif": "image",
+  ".mp4": "video",
+  ".avi": "video",
+  ".mov": "video",
+  ".wmv": "video",
+  ".mkv": "video",
+  ".mp3": "audio",
+  ".wav": "audio",
+  ".m4a": "audio",
 };
 
 async function classifyMedia(config: PipelineConfig): Promise<void> {
@@ -255,14 +278,23 @@ async function classifyMedia(config: PipelineConfig): Promise<void> {
     return;
   }
 
-  const dirs = fs.readdirSync(downloadsDir)
-    .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(downloadsDir, d)).isDirectory());
+  const dirs = fs
+    .readdirSync(downloadsDir)
+    .filter(
+      (d) =>
+        d.startsWith("data-set-") &&
+        fs.statSync(path.join(downloadsDir, d)).isDirectory(),
+    );
 
   if (config.dataSetIds?.length) {
-    dirs.splice(0, dirs.length, ...dirs.filter(d => {
-      const m = d.match(/data-set-(\d+)/);
-      return m && config.dataSetIds!.includes(parseInt(m[1], 10));
-    }));
+    dirs.splice(
+      0,
+      dirs.length,
+      ...dirs.filter((d) => {
+        const m = d.match(/data-set-(\d+)/);
+        return m && config.dataSetIds!.includes(parseInt(m[1], 10));
+      }),
+    );
   }
 
   const counts: Record<string, number> = {};
@@ -280,13 +312,24 @@ async function classifyMedia(config: PipelineConfig): Promise<void> {
     }
   }
 
-  console.log(`\nClassified ${classified} files across ${dirs.length} data sets:`);
-  for (const [type, count] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
+  console.log(
+    `\nClassified ${classified} files across ${dirs.length} data sets:`,
+  );
+  for (const [type, count] of Object.entries(counts).sort(
+    (a, b) => b[1] - a[1],
+  )) {
     console.log(`  ${type}: ${count}`);
   }
 
   const outputFile = path.join(DATA_DIR, "media-classification.json");
-  fs.writeFileSync(outputFile, JSON.stringify({ classified, counts, classifiedAt: new Date().toISOString() }, null, 2));
+  fs.writeFileSync(
+    outputFile,
+    JSON.stringify(
+      { classified, counts, classifiedAt: new Date().toISOString() },
+      null,
+      2,
+    ),
+  );
   console.log(`Classification saved to ${outputFile}`);
 }
 
@@ -326,15 +369,34 @@ async function main() {
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {
-      config.stages = ["scrape-wikipedia", "load-persons", "extract-connections", "update-counts"];
+      config.stages = [
+        "scrape-wikipedia",
+        "load-persons",
+        "extract-connections",
+        "update-counts",
+      ];
     } else if (arg === "full-discovery") {
       config.stages = [
-        "scrape-doj", "scrape-wikipedia", "download", "process", "extract",
-        "classify-media", "load-persons", "load-documents", "import-downloads",
-        "load-entities", "extract-connections", "update-counts",
+        "scrape-doj",
+        "scrape-wikipedia",
+        "download",
+        "process",
+        "extract",
+        "classify-media",
+        "load-persons",
+        "load-documents",
+        "import-downloads",
+        "load-entities",
+        "extract-connections",
+        "update-counts",
       ];
     } else if (arg === "analyze-priority") {
-      config.stages = ["classify-media", "analyze-ai", "load-entities", "update-counts"];
+      config.stages = [
+        "classify-media",
+        "analyze-ai",
+        "load-entities",
+        "update-counts",
+      ];
     } else if (STAGES.includes(arg)) {
       config.stages.push(arg);
     } else {
@@ -353,7 +415,9 @@ async function main() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
   const pipelineStart = Date.now();
-  console.log(`\nStarting pipeline with stages: ${config.stages.join(" → ")}\n`);
+  console.log(
+    `\nStarting pipeline with stages: ${config.stages.join(" → ")}\n`,
+  );
 
   const results: Record<string, string> = {};
 
@@ -363,7 +427,9 @@ async function main() {
       results[stage] = "SUCCESS";
     } catch (error: any) {
       results[stage] = `FAILED: ${error.message}`;
-      console.error(`\nPipeline stopped at stage '${stage}'. Remaining stages skipped.`);
+      console.error(
+        `\nPipeline stopped at stage '${stage}'. Remaining stages skipped.`,
+      );
       break;
     }
   }
