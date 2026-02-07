@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { scrapeDOJCatalog, probeAndMergeCatalog } from "./doj-scraper";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 import { downloadDocuments } from "./document-downloader";

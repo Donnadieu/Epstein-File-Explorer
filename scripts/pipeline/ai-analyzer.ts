@@ -10,18 +10,24 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const AI_OUTPUT_DIR = path.join(DATA_DIR, "ai-analyzed");
 
-const DEEPSEEK_MODEL = "deepseek/deepseek-chat-v3-0324";
+const DEEPSEEK_MODEL = "deepseek-chat";
 const MAX_CHUNK_CHARS = 24000;
 const MIN_TEXT_LENGTH = 200;
 
-// DeepSeek pricing per million tokens (approximate)
-const DEEPSEEK_INPUT_COST_PER_M = 14; // cents per million input tokens
-const DEEPSEEK_OUTPUT_COST_PER_M = 28; // cents per million output tokens
+// DeepSeek direct pricing per million tokens
+const DEEPSEEK_INPUT_COST_PER_M = 0.27; // cents per million input tokens
+const DEEPSEEK_OUTPUT_COST_PER_M = 1.10; // cents per million output tokens
 
-const openrouter = new OpenAI({
-  baseURL: process.env.AI_INTEGRATIONS_OPENROUTER_BASE_URL,
-  apiKey: process.env.AI_INTEGRATIONS_OPENROUTER_API_KEY,
-});
+let _deepseek: OpenAI | null = null;
+function getDeepSeek(): OpenAI {
+  if (!_deepseek) {
+    _deepseek = new OpenAI({
+      baseURL: "https://api.deepseek.com",
+      apiKey: process.env.DEEPSEEK_API_KEY,
+    });
+  }
+  return _deepseek;
+}
 
 export interface AIAnalysisResult {
   fileName: string;
@@ -385,7 +391,7 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
     const chunkLabel = chunks.length > 1 ? ` (chunk ${i + 1}/${chunks.length})` : "";
 
     try {
-      const response = await openrouter.chat.completions.create({
+      const response = await getDeepSeek().chat.completions.create({
         model: DEEPSEEK_MODEL,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
