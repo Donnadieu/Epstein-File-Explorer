@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, timestamp, boolean, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, timestamp, boolean, jsonb, index } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
@@ -32,7 +32,24 @@ export const documents = pgTable("documents", {
   isRedacted: boolean("is_redacted").default(false),
   keyExcerpt: text("key_excerpt"),
   tags: text("tags").array(),
-});
+  mediaType: text("media_type"),
+  processingStatus: text("processing_status").default("pending"),
+  aiAnalysisStatus: text("ai_analysis_status").default("pending"),
+  fileSizeBytes: integer("file_size_bytes"),
+  fileHash: text("file_hash"),
+  localPath: text("local_path"),
+  eftaNumber: text("efta_number"),
+  mimeType: text("mime_type"),
+  extractedTextLength: integer("extracted_text_length"),
+  aiCostCents: integer("ai_cost_cents").default(0),
+}, (table) => [
+  index("idx_documents_processing_status").on(table.processingStatus),
+  index("idx_documents_media_type").on(table.mediaType),
+  index("idx_documents_data_set").on(table.dataSet),
+  index("idx_documents_efta_number").on(table.eftaNumber),
+  index("idx_documents_source_url").on(table.sourceUrl),
+  index("idx_documents_ai_analysis_status").on(table.aiAnalysisStatus),
+]);
 
 export const connections = pgTable("connections", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -99,6 +116,41 @@ export type PersonDocument = typeof personDocuments.$inferSelect;
 export type InsertPersonDocument = z.infer<typeof insertPersonDocumentSchema>;
 export type TimelineEvent = typeof timelineEvents.$inferSelect;
 export type InsertTimelineEvent = z.infer<typeof insertTimelineEventSchema>;
+
+export const pipelineJobs = pgTable("pipeline_jobs", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  documentId: integer("document_id").references(() => documents.id),
+  jobType: text("job_type").notNull(),
+  status: text("status").notNull().default("pending"),
+  priority: integer("priority").notNull().default(0),
+  attempts: integer("attempts").notNull().default(0),
+  maxAttempts: integer("max_attempts").notNull().default(3),
+  errorMessage: text("error_message"),
+  metadata: jsonb("metadata"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  startedAt: timestamp("started_at"),
+  completedAt: timestamp("completed_at"),
+});
+
+export const budgetTracking = pgTable("budget_tracking", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  date: text("date").notNull(),
+  model: text("model").notNull(),
+  inputTokens: integer("input_tokens").notNull().default(0),
+  outputTokens: integer("output_tokens").notNull().default(0),
+  costCents: integer("cost_cents").notNull().default(0),
+  documentId: integer("document_id").references(() => documents.id),
+  jobType: text("job_type"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertPipelineJobSchema = createInsertSchema(pipelineJobs).omit({ id: true });
+export const insertBudgetTrackingSchema = createInsertSchema(budgetTracking).omit({ id: true });
+
+export type PipelineJob = typeof pipelineJobs.$inferSelect;
+export type InsertPipelineJob = z.infer<typeof insertPipelineJobSchema>;
+export type BudgetTracking = typeof budgetTracking.$inferSelect;
+export type InsertBudgetTracking = z.infer<typeof insertBudgetTrackingSchema>;
 
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
