@@ -1,4 +1,4 @@
-import { scrapeDOJCatalog } from "./doj-scraper";
+import { scrapeDOJCatalog, probeAndMergeCatalog } from "./doj-scraper";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 import { downloadDocuments } from "./document-downloader";
 import { processDocuments } from "./pdf-processor";
@@ -24,6 +24,7 @@ interface PipelineConfig {
 
 const STAGES = [
   "scrape-doj",
+  "probe-doj",
   "scrape-wikipedia",
   "download",
   "process",
@@ -57,6 +58,7 @@ USAGE:
 STAGES:
   all              Run all stages in order
   scrape-doj       Scrape DOJ Epstein Library for document catalog
+  probe-doj        Probe sequential EFTA numbers via HEAD requests to discover unlisted files
   scrape-wikipedia Scrape Wikipedia for comprehensive person list
   download         Download documents from DOJ (PDFs, images, etc.)
   process          Extract text from downloaded PDFs via OCR/parsing
@@ -113,6 +115,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
     switch (stage) {
       case "scrape-doj":
         await scrapeDOJCatalog();
+        break;
+
+      case "probe-doj":
+        await probeAndMergeCatalog(config.dataSetIds);
         break;
 
       case "scrape-wikipedia":
