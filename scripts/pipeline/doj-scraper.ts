@@ -21,7 +21,7 @@ const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--he
 // Persistent Chrome profile directory — preserves cookies/state across runs
 const CHROME_PROFILE_DIR = path.resolve(__dirname, "../../data/.chrome-profile");
 
-async function getBrowserContext(): Promise<BrowserContext> {
+export async function getBrowserContext(): Promise<BrowserContext> {
   if (_context) return _context;
 
   // Ensure profile directory exists
@@ -66,7 +66,7 @@ async function getBrowserContext(): Promise<BrowserContext> {
   return _context;
 }
 
-async function closeBrowser(): Promise<void> {
+export async function closeBrowser(): Promise<void> {
   // Persistent context owns the browser lifecycle — closing it closes everything
   if (_context) { await _context.close(); _context = null; }
 }
@@ -224,7 +224,7 @@ async function clickNextPage(page: Page): Promise<boolean> {
 }
 
 /** Extract cookies from Playwright context as a header string for use in fetch requests. */
-async function extractCookieHeader(): Promise<string> {
+export async function extractCookieHeader(): Promise<string> {
   const context = await getBrowserContext();
   const cookies = await context.cookies();
   return cookies.map(c => `${c.name}=${c.value}`).join("; ");

@@ -9,6 +9,7 @@ import { db } from "../../server/db";
 import { documents } from "../../shared/schema";
 import { sql, eq } from "drizzle-orm";
 import type { DOJFile, DOJCatalog } from "./doj-scraper";
+import { getBrowserContext, extractCookieHeader, closeBrowser } from "./doj-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,9 +20,9 @@ const PROGRESS_FILE = path.join(DATA_DIR, "download-progress.json");
 const CATALOG_FILE = path.join(DATA_DIR, "doj-catalog.json");
 
 const STREAM_THRESHOLD = 10 * 1024 * 1024; // 10MB — use streaming writes above this
-const MAX_CONCURRENCY = 5;
-const RATE_LIMIT_PER_SEC = 3;
-const RATE_INTERVAL_MS = Math.ceil(1000 / RATE_LIMIT_PER_SEC); // ~334ms between requests
+const MAX_CONCURRENCY = 2;
+const BASE_INTERVAL_MS = 1500; // 1.5s base delay between requests
+const JITTER_MS = 1000;       // up to 1s random jitter (1.5–2.5s total)
 
 interface DownloadProgress {
   completed: Record<string, { hash: string; localPath: string; bytes: number }>;
@@ -108,13 +109,14 @@ async function computeHash(filePath: string): Promise<string> {
   });
 }
 
-/** Rate-limiter: token-bucket at RATE_LIMIT_PER_SEC req/s */
+/** Rate-limiter: fixed delay + random jitter to avoid triggering Akamai WAF */
 let lastRequestTime = 0;
 async function throttle(): Promise<void> {
   const now = Date.now();
+  const delay = BASE_INTERVAL_MS + Math.random() * JITTER_MS;
   const elapsed = now - lastRequestTime;
-  if (elapsed < RATE_INTERVAL_MS) {
-    await new Promise((r) => setTimeout(r, RATE_INTERVAL_MS - elapsed));
+  if (elapsed < delay) {
+    await new Promise((r) => setTimeout(r, delay - elapsed));
   }
   lastRequestTime = Date.now();
 }
@@ -124,6 +126,7 @@ async function downloadFile(
   outputDir: string,
   progress: DownloadProgress,
   retries: number = 3,
+  cookieHeader?: string,
 ): Promise<DownloadResult> {
   const filename = safeFilename(file.url);
   const dataSetDir = path.join(outputDir, `data-set-${file.dataSetId}`);
@@ -156,12 +159,27 @@ async function downloadFile(
     try {
       await throttle();
 
+      // Mimic a real browser click on a PDF link from the dataset listing page
+      const dsNum = file.dataSetId;
+      const referer = `https://www.justice.gov/epstein/doj-disclosures/data-set-${dsNum}-files`;
+      const headers: Record<string, string> = {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+        Accept: "application/pdf,application/octet-stream,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        Referer: referer,
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "same-origin",
+        "sec-fetch-user": "?1",
+      };
+      if (cookieHeader) {
+        headers["Cookie"] = cookieHeader;
+      }
+
       const response = await fetch(file.url, {
-        headers: {
-          "User-Agent":
-            "Mozilla/5.0 (compatible; EpsteinFilesExplorer/1.0; research)",
-          Accept: "*/*",
-        },
+        headers,
         redirect: "follow",
       });
 
@@ -272,6 +290,7 @@ export async function downloadDocuments(options: {
   maxFiles?: number;
   concurrency?: number;
   rateLimitMs?: number;
+  retryFailed?: boolean;
 }): Promise<void> {
   console.log("\n=== DOJ Document Downloader (Parallel) ===\n");
 
@@ -280,6 +299,7 @@ export async function downloadDocuments(options: {
     fileTypes,
     maxFiles = Infinity,
     concurrency = MAX_CONCURRENCY,
+    retryFailed = false,
   } = options;
 
   if (!fs.existsSync(CATALOG_FILE)) {
@@ -304,21 +324,45 @@ export async function downloadDocuments(options: {
   files = files.slice(0, maxFiles);
 
   const progress = loadProgress();
+  const failedSet = new Set(progress.failed);
 
-  // Filter out already-completed URLs
-  const pending = files.filter((f) => !progress.completed[f.url]);
+  let pending: typeof files;
+  if (retryFailed) {
+    // Only retry previously failed URLs, clear them from the failed list
+    pending = files.filter((f) => failedSet.has(f.url) && !progress.completed[f.url]);
+    progress.failed = progress.failed.filter((url) => !pending.some((f) => f.url === url));
+    console.log(`Retry mode: ${pending.length} previously failed URLs\n`);
+  } else {
+    // Normal mode: skip completed AND previously failed URLs
+    pending = files.filter((f) => !progress.completed[f.url] && !failedSet.has(f.url));
+  }
 
   console.log(`Total catalog files: ${files.length}`);
   console.log(`Already downloaded:  ${files.length - pending.length}`);
   console.log(`Remaining:           ${pending.length}`);
   console.log(`Concurrency:         ${concurrency} parallel downloads`);
-  console.log(`Rate limit:          ${RATE_LIMIT_PER_SEC} req/sec`);
+  console.log(`Rate limit:          ~${(1000 / BASE_INTERVAL_MS).toFixed(1)} req/sec (with jitter)`);
   console.log(`Stream threshold:    ${formatBytes(STREAM_THRESHOLD)}`);
   console.log(`Output directory:    ${DOWNLOADS_DIR}\n`);
 
   if (pending.length === 0) {
     console.log("Nothing to download — all files already completed.");
     return;
+  }
+
+  // Obtain Akamai bot challenge cookies from the persistent Chrome profile.
+  // Without these, DOJ returns 404 for all file downloads.
+  let cookieHeader: string | undefined;
+  try {
+    console.log("Obtaining Akamai cookies from browser session...");
+    await getBrowserContext();
+    cookieHeader = await extractCookieHeader();
+    await closeBrowser();
+    if (cookieHeader) {
+      console.log(`Cookie header obtained (${cookieHeader.length} chars)\n`);
+    }
+  } catch (err: any) {
+    console.warn(`Warning: Could not obtain cookies (${err.message}). Downloads may fail.\n`);
   }
 
   const limit = pLimit(concurrency);
@@ -328,7 +372,7 @@ export async function downloadDocuments(options: {
 
   const tasks = pending.map((file) =>
     limit(async () => {
-      const result = await downloadFile(file, DOWNLOADS_DIR, progress, 3);
+      const result = await downloadFile(file, DOWNLOADS_DIR, progress, 3, cookieHeader);
 
       if (result.success) {
         downloadedCount++;
@@ -388,6 +432,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.maxFiles = parseInt(args[++i], 10);
     } else if (args[i] === "--concurrency" && args[i + 1]) {
       options.concurrency = parseInt(args[++i], 10);
+    } else if (args[i] === "--retry-failed") {
+      options.retryFailed = true;
     }
   }
 
