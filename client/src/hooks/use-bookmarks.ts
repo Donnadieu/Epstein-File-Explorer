@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { Bookmark } from "@shared/schema";
@@ -35,9 +36,9 @@ export function useBookmarks() {
     },
   });
 
-  const searchBookmarks = bookmarks.filter((b) => b.entityType === "search");
-  const personBookmarks = bookmarks.filter((b) => b.entityType === "person");
-  const documentBookmarks = bookmarks.filter((b) => b.entityType === "document");
+  const searchBookmarks = useMemo(() => bookmarks.filter((b) => b.entityType === "search"), [bookmarks]);
+  const personBookmarks = useMemo(() => bookmarks.filter((b) => b.entityType === "person"), [bookmarks]);
+  const documentBookmarks = useMemo(() => bookmarks.filter((b) => b.entityType === "document"), [bookmarks]);
 
   function isBookmarked(entityType: string, entityId?: number, searchQuery?: string): Bookmark | undefined {
     return bookmarks.find((b) => {

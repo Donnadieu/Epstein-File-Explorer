@@ -68,6 +68,7 @@ export default function NetworkGraph({
   const containerRef = useRef<HTMLDivElement>(null);
   const simulationRef = useRef<ReturnType<typeof forceSimulation<GraphNode>> | null>(null);
   const zoomRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null);
+  const selectedPersonIdRef = useRef(selectedPersonId);
   const [tooltip, setTooltip] = useState<{
     x: number;
     y: number;
@@ -215,7 +216,7 @@ export default function NetworkGraph({
 
     // Click handler
     nodeGroup.on("click", (_event, d) => {
-      onSelectPerson(selectedPersonId === d.id ? null : d.id);
+      onSelectPerson(selectedPersonIdRef.current === d.id ? null : d.id);
     });
 
     // Hover handlers
@@ -307,12 +308,18 @@ export default function NetworkGraph({
     });
   }, [selectedPersonId, searchQuery, connections]);
 
+  useEffect(() => {
+    selectedPersonIdRef.current = selectedPersonId;
+  }, [selectedPersonId]);
+
   return (
     <div ref={containerRef} className="relative w-full h-full min-h-[400px]">
       <svg
         ref={svgRef}
         className="w-full h-full bg-background rounded-lg border border-border"
         style={{ touchAction: "none" }}
+        role="img"
+        aria-label="Network graph showing connections between people"
       />
 
       {/* Zoom controls */}
