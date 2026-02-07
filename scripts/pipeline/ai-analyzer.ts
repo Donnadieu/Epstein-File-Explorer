@@ -14,6 +14,10 @@ const DEEPSEEK_MODEL = "deepseek/deepseek-chat-v3-0324";
 const MAX_CHUNK_CHARS = 24000;
 const MIN_TEXT_LENGTH = 200;
 
+// DeepSeek pricing per million tokens (approximate)
+const DEEPSEEK_INPUT_COST_PER_M = 14; // cents per million input tokens
+const DEEPSEEK_OUTPUT_COST_PER_M = 28; // cents per million output tokens
+
 const openrouter = new OpenAI({
   baseURL: process.env.AI_INTEGRATIONS_OPENROUTER_BASE_URL,
   apiKey: process.env.AI_INTEGRATIONS_OPENROUTER_API_KEY,
@@ -57,6 +61,163 @@ export interface AIEvent {
   significance: number;
   personsInvolved: string[];
 }
+
+export type AnalysisTier = 0 | 1;
+
+export interface TieredAnalysisResult extends AIAnalysisResult {
+  tier: AnalysisTier;
+  costCents: number;
+  inputTokens: number;
+  outputTokens: number;
+}
+
+// --- Tier 0: Rule-based classification (FREE) ---
+
+const DOCUMENT_TYPE_PATTERNS: [RegExp, string][] = [
+  [/flight\s+log|manifest|passenger|aircraft|tail\s+number|teterboro/i, "flight log"],
+  [/deposition|testimony|sworn|under\s+oath|direct\s+examination|cross.?examination/i, "deposition"],
+  [/grand\s+jury|indictment|true\s+bill|presentment/i, "grand jury transcript"],
+  [/search\s+warrant|inventory|seized|raid/i, "search warrant"],
+  [/fbi|302|investigation|bureau|special\s+agent/i, "fbi report"],
+  [/email|correspondence|from:\s*\S|to:\s*\S|subject:\s*\S/i, "email"],
+  [/court|filing|motion|order|docket|plea/i, "court filing"],
+  [/financial|bank|wire\s+transfer|account|transaction/i, "financial record"],
+  [/contact|address\s+book|phone\s+number|rolodex/i, "contact list"],
+  [/property|real\s+estate|island|little\s+st/i, "property record"],
+  [/police|report|incident|complaint/i, "police report"],
+];
+
+const TIER0_KNOWN_PERSONS: [string, string, AIPersonMention["category"]][] = [
+  ["jeffrey epstein", "Defendant/Subject", "key figure"],
+  ["ghislaine maxwell", "Co-conspirator/Associate", "key figure"],
+  ["virginia giuffre", "Victim/Plaintiff", "victim"],
+  ["virginia roberts", "Victim/Plaintiff", "victim"],
+  ["prince andrew", "Associate/Named Individual", "political"],
+  ["alan dershowitz", "Defense Attorney", "legal"],
+  ["jean-luc brunel", "Associate/Recruiter", "associate"],
+  ["sarah kellen", "Assistant/Associate", "staff"],
+  ["les wexner", "Financial Associate", "associate"],
+  ["alexander acosta", "Prosecutor (NPA)", "legal"],
+  ["bill clinton", "Associate/Named Individual", "political"],
+  ["donald trump", "Associate/Named Individual", "political"],
+  ["nadia marcinkova", "Victim/Associate", "victim"],
+  ["johanna sjoberg", "Victim/Witness", "victim"],
+  ["adriana ross", "Associate", "associate"],
+  ["lesley groff", "Executive Assistant", "staff"],
+  ["bill gates", "Associate", "associate"],
+  ["bill richardson", "Associate/Named Individual", "political"],
+  ["george mitchell", "Associate/Named Individual", "political"],
+  ["ehud barak", "Associate/Named Individual", "political"],
+  ["leon black", "Financial Associate", "associate"],
+  ["glenn dubin", "Financial Associate", "associate"],
+  ["eva andersson-dubin", "Associate", "associate"],
+  ["larry summers", "Associate/Named Individual", "political"],
+  ["naomi campbell", "Associate", "associate"],
+  ["kevin spacey", "Associate", "associate"],
+  ["david copperfield", "Associate", "associate"],
+  ["woody allen", "Associate", "associate"],
+  ["reid hoffman", "Associate", "associate"],
+  ["sergey brin", "Associate", "associate"],
+  ["richard branson", "Associate", "associate"],
+  ["peter mandelson", "Associate/Named Individual", "political"],
+  ["sarah ferguson", "Associate", "associate"],
+  ["steve bannon", "Associate/Named Individual", "political"],
+  ["peter attia", "Associate", "associate"],
+  ["marvin minsky", "Associate/Academic", "associate"],
+  ["lawrence krauss", "Associate/Academic", "associate"],
+  ["stephen hawking", "Associate/Academic", "associate"],
+  ["leon botstein", "Associate/Academic", "associate"],
+  ["katie couric", "Associate", "associate"],
+  ["martha stewart", "Associate", "associate"],
+  ["chris tucker", "Associate", "associate"],
+];
+
+const DATE_PATTERN = /\b((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}|\d{1,2}\/\d{1,2}\/\d{2,4}|\d{4}-\d{2}-\d{2})\b/gi;
+const LOCATION_PATTERNS = [
+  /(?:Palm Beach|New York|Manhattan|Little St\.? James|U\.?S\.? Virgin Islands|Zorro Ranch|New Mexico|Teterboro|London|Paris)/gi,
+];
+
+function escapeRegex(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function properCase(str: string): string {
+  return str.split(/\s+/).map(w =>
+    w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  ).join(" ");
+}
+
+function inferDocumentTypeFromText(text: string): string {
+  for (const [pattern, docType] of DOCUMENT_TYPE_PATTERNS) {
+    if (pattern.test(text)) return docType;
+  }
+  return "government record";
+}
+
+function inferDateFromText(text: string): string | null {
+  const match = text.match(DATE_PATTERN);
+  return match ? match[0] : null;
+}
+
+function extractLocationsFromText(text: string): string[] {
+  const locs = new Set<string>();
+  for (const pattern of LOCATION_PATTERNS) {
+    const regex = new RegExp(pattern.source, pattern.flags);
+    let m;
+    while ((m = regex.exec(text)) !== null) {
+      locs.add(m[0]);
+    }
+  }
+  return Array.from(locs);
+}
+
+export function analyzeDocumentTier0(text: string, fileName: string, dataSet: string): TieredAnalysisResult {
+  const persons: AIPersonMention[] = [];
+
+  for (const [name, role, category] of TIER0_KNOWN_PERSONS) {
+    const regex = new RegExp(`\\b${escapeRegex(name)}\\b`, "gi");
+    const matches = text.match(regex);
+    if (matches && matches.length > 0) {
+      const contextMatch = text.match(new RegExp(`.{0,80}${escapeRegex(name)}.{0,80}`, "i"));
+      persons.push({
+        name: properCase(name),
+        role,
+        category,
+        context: contextMatch ? contextMatch[0].trim() : `Mentioned in ${fileName}`,
+        mentionCount: matches.length,
+      });
+    }
+  }
+
+  const documentType = inferDocumentTypeFromText(text);
+  const dateOriginal = inferDateFromText(text);
+  const locations = extractLocationsFromText(text);
+
+  const firstChunk = text.slice(0, 500).replace(/\s+/g, " ").trim();
+  const summary = persons.length > 0
+    ? `${documentType} from Data Set ${dataSet} mentioning ${persons.slice(0, 3).map(p => p.name).join(", ")}${persons.length > 3 ? " and others" : ""}. ${firstChunk.slice(0, 150)}...`
+    : `${documentType} from Data Set ${dataSet}. ${firstChunk.slice(0, 200)}...`;
+
+  return {
+    fileName,
+    dataSet,
+    documentType,
+    dateOriginal,
+    summary,
+    persons,
+    connections: [],
+    events: [],
+    locations,
+    keyFacts: [],
+    analyzedAt: new Date().toISOString(),
+    tier: 0,
+    costCents: 0,
+    inputTokens: 0,
+    outputTokens: 0,
+  };
+}
+
+// --- Tier 1: DeepSeek AI analysis ---
 
 const SYSTEM_PROMPT = `You are an expert analyst reviewing publicly released Epstein case documents from the US Department of Justice. Your job is to extract structured information from document text.
 
@@ -201,11 +362,23 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
   return merged;
 }
 
-async function analyzeDocument(text: string, fileName: string, dataSet: string): Promise<AIAnalysisResult> {
+function calculateCostCents(inputTokens: number, outputTokens: number): number {
+  const inputCost = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M;
+  const outputCost = (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
+  return Math.ceil((inputCost + outputCost) * 100) / 100; // round to nearest 0.01 cent
+}
+
+interface AnalyzeChunkResult {
+  analysis: AIAnalysisResult;
+  inputTokens: number;
+  outputTokens: number;
+}
+
+async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet: string): Promise<{ result: AIAnalysisResult; inputTokens: number; outputTokens: number }> {
   const chunks = chunkText(text, MAX_CHUNK_CHARS);
   console.log(`  Analyzing ${fileName} (${text.length} chars, ${chunks.length} chunk(s))...`);
 
-  const chunkResults: AIAnalysisResult[] = [];
+  const chunkResults: AnalyzeChunkResult[] = [];
 
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
@@ -231,6 +404,10 @@ async function analyzeDocument(text: string, fileName: string, dataSet: string):
         continue;
       }
 
+      const usage = response.usage;
+      const inTok = usage?.prompt_tokens ?? 0;
+      const outTok = usage?.completion_tokens ?? 0;
+
       content = content.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
 
       let parsed: any;
@@ -247,17 +424,21 @@ async function analyzeDocument(text: string, fileName: string, dataSet: string):
       }
 
       chunkResults.push({
-        fileName,
-        dataSet,
-        documentType: parsed.documentType || "other",
-        dateOriginal: parsed.dateOriginal || null,
-        summary: parsed.summary || "",
-        persons: (parsed.persons || []).filter((p: any) => p.name && p.name.length > 2),
-        connections: parsed.connections || [],
-        events: parsed.events || [],
-        locations: parsed.locations || [],
-        keyFacts: parsed.keyFacts || [],
-        analyzedAt: new Date().toISOString(),
+        analysis: {
+          fileName,
+          dataSet,
+          documentType: parsed.documentType || "other",
+          dateOriginal: parsed.dateOriginal || null,
+          summary: parsed.summary || "",
+          persons: (parsed.persons || []).filter((p: any) => p.name && p.name.length > 2),
+          connections: parsed.connections || [],
+          events: parsed.events || [],
+          locations: parsed.locations || [],
+          keyFacts: parsed.keyFacts || [],
+          analyzedAt: new Date().toISOString(),
+        },
+        inputTokens: inTok,
+        outputTokens: outTok,
       });
 
       if (chunks.length > 1 && i < chunks.length - 1) {
@@ -275,26 +456,59 @@ async function analyzeDocument(text: string, fileName: string, dataSet: string):
 
   if (chunkResults.length === 0) {
     return {
-      fileName,
-      dataSet,
-      documentType: "other",
-      dateOriginal: null,
-      summary: "Unable to analyze document",
-      persons: [],
-      connections: [],
-      events: [],
-      locations: [],
-      keyFacts: [],
-      analyzedAt: new Date().toISOString(),
+      result: {
+        fileName,
+        dataSet,
+        documentType: "other",
+        dateOriginal: null,
+        summary: "Unable to analyze document",
+        persons: [],
+        connections: [],
+        events: [],
+        locations: [],
+        keyFacts: [],
+        analyzedAt: new Date().toISOString(),
+      },
+      inputTokens: 0,
+      outputTokens: 0,
     };
   }
 
-  return mergeAnalyses(chunkResults);
+  const totalInput = chunkResults.reduce((sum, c) => sum + c.inputTokens, 0);
+  const totalOutput = chunkResults.reduce((sum, c) => sum + c.outputTokens, 0);
+  const merged = mergeAnalyses(chunkResults.map(c => c.analysis));
+
+  return { result: merged, inputTokens: totalInput, outputTokens: totalOutput };
+}
+
+export async function analyzeDocumentTiered(
+  text: string,
+  fileName: string,
+  dataSet: string,
+  tier: AnalysisTier,
+): Promise<TieredAnalysisResult> {
+  if (tier === 0) {
+    return analyzeDocumentTier0(text, fileName, dataSet);
+  }
+
+  // Tier 1: DeepSeek API
+  const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(text, fileName, dataSet);
+  const costCents = calculateCostCents(inputTokens, outputTokens);
+
+  return {
+    ...result,
+    tier: 1,
+    costCents,
+    inputTokens,
+    outputTokens,
+  };
 }
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+// --- Legacy API: backward-compatible runAIAnalysis ---
 
 export async function runAIAnalysis(options: {
   inputDir?: string;
@@ -376,7 +590,7 @@ export async function runAIAnalysis(options: {
 
   for (const doc of docsToAnalyze) {
     try {
-      const result = await analyzeDocument(doc.text, doc.file, doc.dataSet);
+      const { result } = await analyzeDocumentWithTokens(doc.text, doc.file, doc.dataSet);
 
       const outFile = path.join(outputDir, `${doc.file}.json`);
       fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
