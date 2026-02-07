@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { chromium, type Browser, type BrowserContext } from "playwright";
+import pLimit from "p-limit";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -342,6 +343,177 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
   return catalog;
 }
 
+// ===== PROBE-BASED DISCOVERY =====
+// Complements HTML scraping by sending HEAD requests for sequential EFTA numbers.
+// Discovers files not linked on paginated listing pages.
+
+const PROBE_EXTENSIONS = ["pdf", "jpg", "jpeg", "png", "mp4"] as const;
+const MAX_CONSECUTIVE_MISSES = 500;
+const PROBE_CONCURRENCY = 15;
+const PROBE_BATCH_SIZE = 100;
+const PROBE_BATCH_DELAY_MS = 300;
+
+const PROBE_HEADERS: Record<string, string> = {
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  "Cookie": "justiceGovAgeVerified=true",
+};
+
+async function sendHeadRequest(url: string): Promise<boolean> {
+  try {
+    const resp = await fetch(url, {
+      method: "HEAD",
+      headers: PROBE_HEADERS,
+      redirect: "follow",
+      signal: AbortSignal.timeout(10_000),
+    });
+    return resp.status === 200;
+  } catch {
+    return false;
+  }
+}
+
+async function probeDataSet(dataSet: DOJDataSet): Promise<DOJFile[]> {
+  const limit = pLimit(PROBE_CONCURRENCY);
+
+  const eftaNums = dataSet.files
+    .map(f => f.title.match(/EFTA(\d+)/))
+    .filter((m): m is RegExpMatchArray => m !== null)
+    .map(m => parseInt(m[1], 10));
+
+  if (eftaNums.length === 0) {
+    console.log(`    No EFTA files in catalog, skipping probe`);
+    return [];
+  }
+
+  const firstNum = Math.min(...eftaNums);
+  const lastNum = Math.max(...eftaNums);
+  const knownUrls = new Set(dataSet.files.map(f => f.url));
+
+  // Fetch pagination to estimate search range (mirrors bash approach)
+  const listingUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
+  const html = await fetchPage(listingUrl);
+  const { lastPage } = extractPaginationInfo(html);
+  const estimatedTotal = (lastPage + 1) * 50;
+  const searchRange = Math.min(estimatedTotal * 3, 50000);
+  const rangeEnd = lastNum + searchRange;
+
+  console.log(`    EFTA range: ${firstNum}..${rangeEnd} (last known: ${lastNum}, est. ~${estimatedTotal} files)`);
+  console.log(`    Extensions: ${PROBE_EXTENSIONS.join(", ")} | Concurrency: ${PROBE_CONCURRENCY}`);
+
+  const discovered: DOJFile[] = [];
+  let consecutiveMisses = 0;
+  let checked = 0;
+  const dsPath = `https://www.justice.gov/epstein/files/DataSet%20${dataSet.id}`;
+
+  for (let batchStart = firstNum; batchStart <= rangeEnd && consecutiveMisses < MAX_CONSECUTIVE_MISSES; batchStart += PROBE_BATCH_SIZE) {
+    const batchEnd = Math.min(batchStart + PROBE_BATCH_SIZE, rangeEnd + 1);
+    const batchResults = new Map<number, DOJFile[]>();
+    const probes: Promise<void>[] = [];
+
+    for (let n = batchStart; n < batchEnd; n++) {
+      const padded = String(n).padStart(8, "0");
+      const eftaId = `EFTA${padded}`;
+      batchResults.set(n, []);
+
+      for (const ext of PROBE_EXTENSIONS) {
+        const url = `${dsPath}/${eftaId}.${ext}`;
+        if (knownUrls.has(url)) {
+          batchResults.get(n)!.push({ title: `${eftaId}.${ext}`, url, fileType: ext, dataSetId: dataSet.id });
+          continue;
+        }
+        probes.push(limit(async () => {
+          if (await sendHeadRequest(url)) {
+            batchResults.get(n)!.push({ title: `${eftaId}.${ext}`, url, fileType: ext, dataSetId: dataSet.id });
+          }
+        }));
+      }
+    }
+
+    await Promise.all(probes);
+
+    // Process in EFTA-number order for consecutive-miss tracking
+    for (let n = batchStart; n < batchEnd; n++) {
+      checked++;
+      const found = batchResults.get(n)!;
+      const padded = String(n).padStart(8, "0");
+      const isKnown = PROBE_EXTENSIONS.some(ext =>
+        knownUrls.has(`${dsPath}/EFTA${padded}.${ext}`)
+      );
+
+      if (found.length > 0 || isKnown) {
+        for (const f of found) {
+          if (!knownUrls.has(f.url)) {
+            discovered.push(f);
+            knownUrls.add(f.url);
+          }
+        }
+        consecutiveMisses = 0;
+      } else {
+        consecutiveMisses++;
+      }
+
+      if (consecutiveMisses >= MAX_CONSECUTIVE_MISSES) break;
+    }
+
+    if (checked % 500 < PROBE_BATCH_SIZE) {
+      console.log(`    Checked ${checked}: +${discovered.length} new files (${consecutiveMisses} consecutive misses)`);
+    }
+
+    await new Promise(r => setTimeout(r, PROBE_BATCH_DELAY_MS));
+  }
+
+  const stopReason = consecutiveMisses >= MAX_CONSECUTIVE_MISSES
+    ? `${MAX_CONSECUTIVE_MISSES} consecutive misses`
+    : "reached range end";
+  console.log(`    Done: +${discovered.length} new files (checked ${checked}, stopped: ${stopReason})`);
+
+  return discovered;
+}
+
+export async function probeAndMergeCatalog(dataSetFilter?: number[]): Promise<DOJCatalog> {
+  console.log("\n=== EFTA Probe-Based Discovery ===\n");
+
+  if (!fs.existsSync(CATALOG_FILE)) {
+    throw new Error("No existing catalog found at " + CATALOG_FILE + ". Run HTML scraper first.");
+  }
+
+  const catalog: DOJCatalog = JSON.parse(fs.readFileSync(CATALOG_FILE, "utf-8"));
+  console.log(`Existing catalog: ${catalog.totalFiles} files across ${catalog.dataSets.length} data sets\n`);
+
+  let totalDiscovered = 0;
+
+  for (const ds of catalog.dataSets) {
+    if (ds.id > 12) continue;
+    if (dataSetFilter && !dataSetFilter.includes(ds.id)) continue;
+
+    console.log(`  [Data Set ${ds.id}] ${ds.name} (${ds.files.length} known files)`);
+    const newFiles = await probeDataSet(ds);
+
+    if (newFiles.length > 0) {
+      ds.files.push(...newFiles);
+      totalDiscovered += newFiles.length;
+    }
+    console.log();
+  }
+
+  catalog.totalFiles = catalog.dataSets.reduce((sum, ds) => sum + ds.files.length, 0);
+  catalog.lastScraped = new Date().toISOString();
+
+  fs.writeFileSync(CATALOG_FILE, JSON.stringify(catalog, null, 2));
+  console.log(`Probe complete: discovered ${totalDiscovered} new files`);
+  console.log(`Updated catalog: ${catalog.totalFiles} total files`);
+  console.log(`Saved to ${CATALOG_FILE}`);
+
+  return catalog;
+}
+
 if (process.argv[1]?.includes(path.basename(__filename))) {
-  scrapeDOJCatalog().catch(console.error);
+  const mode = process.argv[2];
+  if (mode === "probe") {
+    const dsArg = process.argv[3];
+    const filter = dsArg ? dsArg.split(",").map(Number) : undefined;
+    probeAndMergeCatalog(filter).catch(console.error);
+  } else {
+    scrapeDOJCatalog().catch(console.error);
+  }
 }
