@@ -8,6 +8,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeft,
+  ArrowLeftRight,
   FileText,
   Clock,
   ExternalLink,
@@ -67,11 +68,18 @@ export default function DocumentDetailPage() {
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto w-full">
-      <Link href="/documents">
-        <Button variant="ghost" size="sm" className="gap-1 -ml-2" data-testid="button-back">
-          <ArrowLeft className="w-4 h-4" /> Documents
-        </Button>
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link href="/documents">
+          <Button variant="ghost" size="sm" className="gap-1 -ml-2" data-testid="button-back">
+            <ArrowLeft className="w-4 h-4" /> Documents
+          </Button>
+        </Link>
+        <Link href={`/documents/compare?a=${doc.id}`}>
+          <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
+            <ArrowLeftRight className="w-4 h-4" /> Compare
+          </Button>
+        </Link>
+      </div>
 
       <div className="flex flex-col gap-4">
         <div className="flex items-start gap-4">
