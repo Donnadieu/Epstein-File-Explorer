@@ -5,6 +5,7 @@ import { processDocuments } from "./pdf-processor";
 import { extractEntities } from "./entity-extractor";
 import { runAIAnalysis } from "./ai-analyzer";
 import { loadPersonsFromFile, loadDocumentsFromCatalog, loadExtractedEntities, extractConnectionsFromDescriptions, updateDocumentCounts, importDownloadedFiles } from "./db-loader";
+import { classifyAllDocuments } from "./media-classifier";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -38,6 +39,7 @@ const STAGES = [
   "load-persons",
   "load-documents",
   "import-downloads",
+  "classify-media",
   "load-entities",
   "extract-connections",
   "update-counts",
@@ -73,6 +75,7 @@ STAGES:
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
+  classify-media   Classify documents by media type and set AI priority
   load-entities    Load extracted entities into PostgreSQL database
   extract-connections  Extract relationships from person descriptions
   update-counts    Recalculate document/connection counts per person
@@ -194,6 +197,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "import-downloads":
         await importDownloadedFiles();
+        break;
+
+      case "classify-media":
+        await classifyAllDocuments();
         break;
 
       case "load-entities":
