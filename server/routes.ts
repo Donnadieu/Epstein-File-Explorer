@@ -86,6 +86,42 @@ export async function registerRoutes(
     }
   });
 
+  // Proxy PDF content to avoid CORS issues with DOJ source URLs
+  app.get("/api/documents/:id/pdf", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const doc = await storage.getDocumentWithDetails(id);
+      if (!doc) {
+        return res.status(404).json({ error: "Document not found" });
+      }
+      if (!doc.sourceUrl) {
+        return res.status(404).json({ error: "No source URL for this document" });
+      }
+
+      const response = await fetch(doc.sourceUrl);
+      if (!response.ok) {
+        return res.status(502).json({ error: "Failed to fetch PDF from source" });
+      }
+
+      const contentType = response.headers.get("content-type") || "application/pdf";
+      const contentLength = response.headers.get("content-length");
+
+      res.setHeader("Content-Type", contentType);
+      if (contentLength) {
+        res.setHeader("Content-Length", contentLength);
+      }
+      res.setHeader("Cache-Control", "public, max-age=86400");
+
+      const arrayBuffer = await response.arrayBuffer();
+      res.send(Buffer.from(arrayBuffer));
+    } catch (error) {
+      res.status(500).json({ error: "Failed to proxy PDF" });
+    }
+  });
+
   app.get("/api/timeline", async (_req, res) => {
     try {
       const events = await storage.getTimelineEvents();

@@ -17,7 +17,9 @@ import {
   BookOpen,
   Hash,
   Layers,
+  Eye,
 } from "lucide-react";
+import PdfViewer from "@/components/pdf-viewer";
 import type { Document, Person } from "@shared/schema";
 
 interface DocumentDetail extends Document {
@@ -152,6 +154,18 @@ export default function DocumentDetailPage() {
           </a>
         )}
       </div>
+
+      {doc.sourceUrl && (
+        <>
+          <Separator />
+          <div className="flex flex-col gap-2">
+            <h2 className="text-sm font-semibold flex items-center gap-2">
+              <Eye className="w-4 h-4 text-primary" /> Document Viewer
+            </h2>
+            <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl} />
+          </div>
+        </>
+      )}
 
       {doc.keyExcerpt && (
         <>
