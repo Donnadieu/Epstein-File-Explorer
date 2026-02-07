@@ -1,12 +1,13 @@
 import {
   persons, documents, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking,
+  pipelineJobs, budgetTracking, bookmarks,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
   type PersonDocument, type InsertPersonDocument,
   type TimelineEvent, type InsertTimelineEvent,
   type PipelineJob, type BudgetTracking,
+  type Bookmark, type InsertBookmark,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, ilike, or, sql, desc, asc } from "drizzle-orm";
@@ -33,6 +34,13 @@ export interface IStorage {
   getStats(): Promise<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[] }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
+
+  getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
+  getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+
+  getBookmarks(): Promise<Bookmark[]>;
+  createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
+  deleteBookmark(id: number): Promise<boolean>;
 
   getPipelineJobs(status?: string): Promise<PipelineJob[]>;
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
@@ -255,6 +263,38 @@ export class DatabaseStorage implements IStorage {
       documents: matchedDocuments,
       events: matchedEvents,
     };
+  }
+
+  async getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }> {
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / limit);
+    const offset = (page - 1) * limit;
+    const data = await db.select().from(persons).orderBy(desc(persons.documentCount)).limit(limit).offset(offset);
+    return { data, total, page, totalPages };
+  }
+
+  async getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(documents);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / limit);
+    const offset = (page - 1) * limit;
+    const data = await db.select().from(documents).orderBy(asc(documents.id)).limit(limit).offset(offset);
+    return { data, total, page, totalPages };
+  }
+
+  async getBookmarks(): Promise<Bookmark[]> {
+    return db.select().from(bookmarks).orderBy(desc(bookmarks.createdAt));
+  }
+
+  async createBookmark(bookmark: InsertBookmark): Promise<Bookmark> {
+    const [created] = await db.insert(bookmarks).values(bookmark).returning();
+    return created;
+  }
+
+  async deleteBookmark(id: number): Promise<boolean> {
+    const result = await db.delete(bookmarks).where(eq(bookmarks.id, id)).returning();
+    return result.length > 0;
   }
 
   async getPipelineJobs(status?: string): Promise<PipelineJob[]> {
