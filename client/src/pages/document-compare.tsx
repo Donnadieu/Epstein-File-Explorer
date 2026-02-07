@@ -77,6 +77,41 @@ function BoolBadge({ value }: { value: boolean | null | undefined }) {
   return <Minus className="w-3 h-3 text-muted-foreground/40" />;
 }
 
+function TagList({ tags }: { tags: string[] | null | undefined }) {
+  if (!tags?.length) return null;
+  return (
+    <div className="flex flex-wrap gap-1">
+      {tags.map((t) => <Badge key={t} variant="outline" className="text-[10px]">{t}</Badge>)}
+    </div>
+  );
+}
+
+function PersonBadges({
+  persons,
+  otherPersons,
+}: {
+  persons: { id: number; name: string; mentionType: string }[] | undefined;
+  otherPersons: { id: number; name: string; mentionType: string }[] | undefined;
+}) {
+  if (!persons?.length) {
+    return <span className="text-xs text-muted-foreground">None</span>;
+  }
+  const otherIds = new Set(otherPersons?.map((p) => p.id));
+  return (
+    <div className="flex flex-wrap gap-1">
+      {persons.map((p) => (
+        <Badge
+          key={p.id}
+          variant={otherIds.has(p.id) ? "default" : "secondary"}
+          className="text-[10px]"
+        >
+          {p.name}
+        </Badge>
+      ))}
+    </div>
+  );
+}
+
 export default function DocumentComparePage() {
   const searchParams = new URLSearchParams(window.location.search);
   const [docAId, setDocAId] = useState<string | null>(searchParams.get("a"));
@@ -190,20 +225,8 @@ export default function DocumentComparePage() {
             {(docA.tags?.length || docB.tags?.length) && (
               <ComparisonRow
                 label="Tags"
-                valueA={
-                  docA.tags?.length ? (
-                    <div className="flex flex-wrap gap-1">
-                      {docA.tags.map((t) => <Badge key={t} variant="outline" className="text-[10px]">{t}</Badge>)}
-                    </div>
-                  ) : ""
-                }
-                valueB={
-                  docB.tags?.length ? (
-                    <div className="flex flex-wrap gap-1">
-                      {docB.tags.map((t) => <Badge key={t} variant="outline" className="text-[10px]">{t}</Badge>)}
-                    </div>
-                  ) : ""
-                }
+                valueA={<TagList tags={docA.tags} />}
+                valueB={<TagList tags={docB.tags} />}
               />
             )}
 
@@ -212,46 +235,8 @@ export default function DocumentComparePage() {
             {/* People mentioned comparison */}
             <ComparisonRow
               label="People Mentioned"
-              valueA={
-                docA.persons?.length ? (
-                  <div className="flex flex-wrap gap-1">
-                    {docA.persons.map((p) => {
-                      const inBoth = docB.persons?.some((bp) => bp.id === p.id);
-                      return (
-                        <Badge
-                          key={p.id}
-                          variant={inBoth ? "default" : "secondary"}
-                          className="text-[10px]"
-                        >
-                          {p.name}
-                        </Badge>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  <span className="text-xs text-muted-foreground">None</span>
-                )
-              }
-              valueB={
-                docB.persons?.length ? (
-                  <div className="flex flex-wrap gap-1">
-                    {docB.persons.map((p) => {
-                      const inBoth = docA.persons?.some((ap) => ap.id === p.id);
-                      return (
-                        <Badge
-                          key={p.id}
-                          variant={inBoth ? "default" : "secondary"}
-                          className="text-[10px]"
-                        >
-                          {p.name}
-                        </Badge>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  <span className="text-xs text-muted-foreground">None</span>
-                )
-              }
+              valueA={<PersonBadges persons={docA.persons} otherPersons={docB.persons} />}
+              valueB={<PersonBadges persons={docB.persons} otherPersons={docA.persons} />}
             />
 
             {docA.keyExcerpt || docB.keyExcerpt ? (

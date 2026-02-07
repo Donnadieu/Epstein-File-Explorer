@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Express, Response } from "express";
 import { createServer, type Server } from "http";
 import { Readable } from "stream";
 import { insertBookmarkSchema } from "@shared/schema";
@@ -41,14 +41,39 @@ function checkExportRateLimit(ip: string): boolean {
   return true;
 }
 
-function escapeCsvField(value: unknown): string {
-  const str = String(value ?? "");
-  return str.includes(",") || str.includes('"') || str.includes("\n")
-    ? `"${str.replace(/"/g, '""')}"` : str;
+function escapeCsvField(value: string): string {
+  if (value.includes(",") || value.includes('"') || value.includes("\n")) {
+    return `"${value.replace(/"/g, '""')}"`;
+  }
+  return value;
 }
 
-function toCsvRow(headers: string[], obj: Record<string, unknown>): string {
-  return headers.map(h => escapeCsvField(obj[h])).join(",");
+function toCsv<T extends Record<string, unknown>>(headers: string[], rows: T[]): string {
+  const lines = [headers.join(",")];
+  for (const row of rows) {
+    lines.push(headers.map((h) => escapeCsvField(String(row[h] ?? ""))).join(","));
+  }
+  return lines.join("\n");
+}
+
+function parsePaginationParams(query: Record<string, unknown>): { page: number; limit: number } | null {
+  const pageParam = query.page as string | undefined;
+  if (!pageParam) return null;
+  const page = Math.max(1, parseInt(pageParam) || 1);
+  const limit = Math.min(100, Math.max(1, parseInt((query.limit as string) || "50") || 50));
+  return { page, limit };
+}
+
+function sendExport(res: Response, data: unknown, filename: string, format: string, csvFn?: () => string): void {
+  if (format === "csv" && csvFn) {
+    res.setHeader("Content-Type", "text/csv");
+    res.setHeader("Content-Disposition", `attachment; filename=${filename}.csv`);
+    res.send(csvFn());
+    return;
+  }
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Content-Disposition", `attachment; filename=${filename}.json`);
+  res.json(data);
 }
 
 export async function registerRoutes(
@@ -72,18 +97,11 @@ export async function registerRoutes(
    */
   app.get("/api/persons", async (req, res) => {
     try {
-      const pageParam = req.query.page as string | undefined;
-      const limitParam = req.query.limit as string | undefined;
-
-      if (pageParam) {
-        const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
-        const result = await storage.getPersonsPaginated(page, limit);
-        return res.json(result);
+      const pagination = parsePaginationParams(req.query);
+      if (pagination) {
+        return res.json(await storage.getPersonsPaginated(pagination.page, pagination.limit));
       }
-
-      const persons = await storage.getPersons();
-      res.json(persons);
+      res.json(await storage.getPersons());
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch persons" });
     }
@@ -112,18 +130,11 @@ export async function registerRoutes(
    */
   app.get("/api/documents", async (req, res) => {
     try {
-      const pageParam = req.query.page as string | undefined;
-      const limitParam = req.query.limit as string | undefined;
-
-      if (pageParam) {
-        const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
-        const result = await storage.getDocumentsPaginated(page, limit);
-        return res.json(result);
+      const pagination = parsePaginationParams(req.query);
+      if (pagination) {
+        return res.json(await storage.getDocumentsPaginated(pagination.page, pagination.limit));
       }
-
-      const documents = await storage.getDocuments();
-      res.json(documents);
+      res.json(await storage.getDocuments());
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
     }
@@ -321,6 +332,9 @@ export async function registerRoutes(
   });
 
   // Data export routes
+  const personCsvHeaders = ["id", "name", "role", "description", "status", "nationality", "occupation", "category", "documentCount", "connectionCount"];
+  const documentCsvHeaders = ["id", "title", "documentType", "dataSet", "datePublished", "dateOriginal", "pageCount", "isRedacted", "processingStatus", "aiAnalysisStatus"];
+
   app.get("/api/export/persons", async (req, res) => {
     if (!checkExportRateLimit(req.ip || "unknown")) {
       return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
@@ -328,21 +342,7 @@ export async function registerRoutes(
     try {
       const format = (req.query.format as string) || "json";
       const persons = await storage.getPersons();
-
-      if (format === "csv") {
-        const headers = ["id", "name", "role", "description", "status", "nationality", "occupation", "category", "documentCount", "connectionCount"];
-        const csvRows = [headers.join(",")];
-        for (const p of persons) {
-          csvRows.push(toCsvRow(headers, p as unknown as Record<string, unknown>));
-        }
-        res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", "attachment; filename=persons.csv");
-        return res.send(csvRows.join("\n"));
-      }
-
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Content-Disposition", "attachment; filename=persons.json");
-      res.json(persons);
+      sendExport(res, persons, "persons", format, () => toCsv(personCsvHeaders, persons as any[]));
     } catch (error) {
       res.status(500).json({ error: "Failed to export persons" });
     }
@@ -355,21 +355,7 @@ export async function registerRoutes(
     try {
       const format = (req.query.format as string) || "json";
       const documents = await storage.getDocuments();
-
-      if (format === "csv") {
-        const headers = ["id", "title", "documentType", "dataSet", "datePublished", "dateOriginal", "pageCount", "isRedacted", "processingStatus", "aiAnalysisStatus"];
-        const csvRows = [headers.join(",")];
-        for (const d of documents) {
-          csvRows.push(toCsvRow(headers, d as unknown as Record<string, unknown>));
-        }
-        res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", "attachment; filename=documents.csv");
-        return res.send(csvRows.join("\n"));
-      }
-
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Content-Disposition", "attachment; filename=documents.json");
-      res.json(documents);
+      sendExport(res, documents, "documents", format, () => toCsv(documentCsvHeaders, documents as any[]));
     } catch (error) {
       res.status(500).json({ error: "Failed to export documents" });
     }
@@ -388,26 +374,13 @@ export async function registerRoutes(
       }
 
       const results = await storage.search(query);
-
-      res.setHeader("Content-Type", format === "csv" ? "text/csv" : "application/json");
-      res.setHeader("Content-Disposition", `attachment; filename=search-results.${format === "csv" ? "csv" : "json"}`);
-
-      if (format === "csv") {
-        const headers = ["type", "id", "name_or_title", "description"];
-        const rows = [headers.join(",")];
-        for (const p of results.persons) {
-          rows.push(toCsvRow(headers, { type: "person", id: p.id, name_or_title: p.name, description: p.description }));
-        }
-        for (const d of results.documents) {
-          rows.push(toCsvRow(headers, { type: "document", id: d.id, name_or_title: d.title, description: d.description }));
-        }
-        for (const e of results.events) {
-          rows.push(toCsvRow(headers, { type: "event", id: e.id, name_or_title: e.title, description: e.description }));
-        }
-        return res.send(rows.join("\n"));
-      }
-
-      res.json(results);
+      sendExport(res, results, "search-results", format, () => {
+        const rows: { type: string; id: number; name_or_title: string; description: string }[] = [];
+        for (const p of results.persons) rows.push({ type: "person", id: p.id, name_or_title: p.name, description: p.description || "" });
+        for (const d of results.documents) rows.push({ type: "document", id: d.id, name_or_title: d.title, description: d.description || "" });
+        for (const e of results.events) rows.push({ type: "event", id: e.id, name_or_title: e.title, description: e.description || "" });
+        return toCsv(["type", "id", "name_or_title", "description"], rows as any[]);
+      });
     } catch (error) {
       res.status(500).json({ error: "Failed to export search results" });
     }

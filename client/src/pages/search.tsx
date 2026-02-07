@@ -153,7 +153,7 @@ export default function SearchPage() {
                   variant="outline"
                   className="cursor-pointer"
                   onClick={() => setQuery(term)}
-                  data-testid={`badge-suggestion-${term.toLowerCase().replace(" ", "-")}`}
+                  data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {term}
                 </Badge>
