@@ -425,14 +425,33 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
 
   const dataSets: DOJDataSet[] = [];
 
+  const saveCatalog = () => {
+    const totalFiles = dataSets.reduce((sum, ds) => sum + ds.files.length, 0);
+    const catalog: DOJCatalog = {
+      dataSets,
+      totalFiles,
+      lastScraped: new Date().toISOString(),
+      sources: [
+        DOJ_DISCLOSURES,
+        COURT_RECORDS,
+        FOIA_RECORDS,
+        "https://oversight.house.gov/release/oversight-committee-releases-epstein-records-provided-by-the-department-of-justice/",
+      ],
+    };
+    fs.writeFileSync(CATALOG_FILE, JSON.stringify(catalog, null, 2));
+    return { catalog, totalFiles };
+  };
+
   for (const ds of KNOWN_DATA_SETS) {
     const result = await scrapeDataSet(ds);
     dataSets.push(result);
+    saveCatalog();
     await new Promise(r => setTimeout(r, 1000));
   }
 
   const courtRecords = await scrapeCourtRecords();
   dataSets.push(courtRecords);
+  saveCatalog();
   await new Promise(r => setTimeout(r, 1000));
 
   const foiaRecords = await scrapeFOIARecords();
@@ -440,21 +459,7 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
 
   await closeBrowser();
 
-  const totalFiles = dataSets.reduce((sum, ds) => sum + ds.files.length, 0);
-
-  const catalog: DOJCatalog = {
-    dataSets,
-    totalFiles,
-    lastScraped: new Date().toISOString(),
-    sources: [
-      DOJ_DISCLOSURES,
-      COURT_RECORDS,
-      FOIA_RECORDS,
-      "https://oversight.house.gov/release/oversight-committee-releases-epstein-records-provided-by-the-department-of-justice/",
-    ],
-  };
-
-  fs.writeFileSync(CATALOG_FILE, JSON.stringify(catalog, null, 2));
+  const { catalog, totalFiles } = saveCatalog();
   console.log(`\nCatalog saved to ${CATALOG_FILE}`);
   console.log(`Total data sets: ${dataSets.length}`);
   console.log(`Total file links discovered: ${totalFiles}`);
