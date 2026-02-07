@@ -1,8 +1,7 @@
-import * as cheerio from "cheerio";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { chromium, type Browser, type BrowserContext, type Page } from "playwright";
+import { chromium, type BrowserContext, type Page } from "playwright";
 import pLimit from "p-limit";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,29 +13,46 @@ const DOJ_DISCLOSURES = `${EPSTEIN_BASE}/doj-disclosures`;
 const COURT_RECORDS = `${EPSTEIN_BASE}/court-records`;
 const FOIA_RECORDS = `${EPSTEIN_BASE}/foia-records`;
 
-let _browser: Browser | null = null;
 let _context: BrowserContext | null = null;
 
-// Use headed mode (visible browser) to bypass Akamai bot detection for pagination
-// Set DOJ_HEADED=1 env var or pass --headed CLI flag
+// Use headed mode to see the browser window (DOJ_HEADED=1 or --headed flag)
 const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--headed");
+
+// Persistent Chrome profile directory — preserves cookies/state across runs
+const CHROME_PROFILE_DIR = path.resolve(__dirname, "../../data/.chrome-profile");
 
 async function getBrowserContext(): Promise<BrowserContext> {
   if (_context) return _context;
-  _browser = await chromium.launch({
+
+  // Ensure profile directory exists
+  if (!fs.existsSync(CHROME_PROFILE_DIR)) {
+    fs.mkdirSync(CHROME_PROFILE_DIR, { recursive: true });
+  }
+
+  const launchOptions: Parameters<typeof chromium.launchPersistentContext>[1] = {
+    channel: "chrome",
     headless: !USE_HEADED,
     args: [
       "--disable-blink-features=AutomationControlled",
       "--no-sandbox",
     ],
-  });
-  if (USE_HEADED) console.log("  (Running in headed mode — visible browser window)");
-  _context = await _browser.newContext({
-    userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     viewport: { width: 1920, height: 1080 },
     locale: "en-US",
-  });
-  // Hide the webdriver property that Akamai checks
+  };
+
+  try {
+    _context = await chromium.launchPersistentContext(CHROME_PROFILE_DIR, launchOptions);
+    console.log("  Using system Chrome with persistent profile");
+  } catch (err: any) {
+    // Fall back to bundled Chromium if system Chrome isn't available
+    console.warn(`  System Chrome not available (${err.message}), falling back to bundled Chromium`);
+    delete launchOptions.channel;
+    _context = await chromium.launchPersistentContext(CHROME_PROFILE_DIR, launchOptions);
+  }
+
+  if (USE_HEADED) console.log("  (Running in headed mode — visible browser window)");
+
+  // Defense-in-depth: hide webdriver property
   await _context.addInitScript(() => {
     Object.defineProperty(navigator, "webdriver", { get: () => false });
   });
@@ -51,8 +67,8 @@ async function getBrowserContext(): Promise<BrowserContext> {
 }
 
 async function closeBrowser(): Promise<void> {
+  // Persistent context owns the browser lifecycle — closing it closes everything
   if (_context) { await _context.close(); _context = null; }
-  if (_browser) { await _browser.close(); _browser = null; }
 }
 
 /** Solve the Akamai bot challenge ("I am not a robot") if present. */
@@ -207,47 +223,11 @@ async function clickNextPage(page: Page): Promise<boolean> {
   return true;
 }
 
-/** Fetch a URL from within the Playwright page context (inherits all Akamai cookies/tokens). */
-async function fetchPageViaPlaywright(page: Page, url: string): Promise<string> {
-  try {
-    return await page.evaluate(async (fetchUrl) => {
-      const resp = await fetch(fetchUrl, {
-        credentials: "include",
-        headers: { "Accept": "text/html,application/xhtml+xml" },
-      });
-      if (!resp.ok) return "";
-      const text = await resp.text();
-      // Check if we got the bot challenge instead of real content
-      if (text.includes("reauth") && text.includes("I am not a robot")) return "";
-      return text;
-    }, url);
-  } catch {
-    return "";
-  }
-}
-
 /** Extract cookies from Playwright context as a header string for use in fetch requests. */
 async function extractCookieHeader(): Promise<string> {
   const context = await getBrowserContext();
   const cookies = await context.cookies();
   return cookies.map(c => `${c.name}=${c.value}`).join("; ");
-}
-
-async function fetchPageWithBrowser(url: string): Promise<string> {
-  const context = await getBrowserContext();
-  const page = await context.newPage();
-  try {
-    await page.goto(url, { waitUntil: "load", timeout: 30000 });
-    await page.waitForTimeout(3000);
-    await solveBotChallenge(page);
-    await handleAgeGate(page);
-    return await page.content();
-  } catch (error: any) {
-    console.warn(`  Browser fetch failed for ${url}: ${error.message}`);
-    return "";
-  } finally {
-    await page.close();
-  }
 }
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
@@ -296,115 +276,6 @@ const KNOWN_DATA_SETS: Array<{ id: number; name: string; description: string }> 
   { id: 12, name: "Data Set 12", description: "Supplemental and late productions: approximately 150 documents requiring prolonged legal review, released January 30, 2026" },
 ];
 
-async function fetchPage(url: string, retries = 2): Promise<string> {
-  const headers: Record<string, string> = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Cookie": "justiceGovAgeVerified=true",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "none",
-    "Sec-Fetch-User": "?1",
-    "Upgrade-Insecure-Requests": "1",
-  };
-
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const response = await fetch(url, {
-        headers,
-        redirect: "follow",
-      });
-
-      if (response.status === 403 || response.status === 429) {
-        const wait = (attempt + 1) * 3000;
-        console.warn(`    Rate limited (${response.status}), waiting ${wait / 1000}s (attempt ${attempt + 1}/${retries + 1})...`);
-        await new Promise(r => setTimeout(r, wait));
-        continue;
-      }
-
-      if (!response.ok) {
-        console.warn(`  Warning: HTTP ${response.status} for ${url}`);
-        return "";
-      }
-
-      return await response.text();
-    } catch (error: any) {
-      if (attempt < retries) {
-        await new Promise(r => setTimeout(r, 2000));
-        continue;
-      }
-      console.warn(`  Warning: Failed to fetch ${url}: ${error.message}`);
-      return "";
-    }
-  }
-  return "";
-}
-
-function extractFileLinks(html: string, dataSetId: number): DOJFile[] {
-  const $ = cheerio.load(html);
-  const files: DOJFile[] = [];
-
-  $("a[href]").each((_i, el) => {
-    const href = $(el).attr("href") || "";
-    const text = $(el).text().trim();
-
-    const fileExtensions = [".pdf", ".zip", ".jpg", ".jpeg", ".png", ".mp4", ".avi", ".mov", ".doc", ".docx", ".xls", ".xlsx", ".csv", ".txt"];
-    const isFile = fileExtensions.some(ext => href.toLowerCase().endsWith(ext));
-
-    if (isFile && href.length > 0) {
-      const fullUrl = href.startsWith("http") ? href : `${BASE_URL}${href.startsWith("/") ? "" : "/"}${href}`;
-      const extension = path.extname(href).toLowerCase().replace(".", "");
-
-      files.push({
-        title: text || path.basename(href),
-        url: fullUrl,
-        fileType: extension,
-        dataSetId,
-      });
-    }
-  });
-
-  $("a[href*='/files/'], a[href*='/media/'], a[href*='/sites/default/files/']").each((_i, el) => {
-    const href = $(el).attr("href") || "";
-    const text = $(el).text().trim();
-
-    if (!files.some(f => f.url.includes(href))) {
-      const fullUrl = href.startsWith("http") ? href : `${BASE_URL}${href.startsWith("/") ? "" : "/"}${href}`;
-      const extension = path.extname(href).toLowerCase().replace(".", "") || "unknown";
-
-      files.push({
-        title: text || path.basename(href),
-        url: fullUrl,
-        fileType: extension,
-        dataSetId,
-      });
-    }
-  });
-
-  return files;
-}
-
-function extractPaginationInfo(html: string): { lastPage: number } {
-  const $ = cheerio.load(html);
-  let lastPage = 0;
-
-  $("a[href*='page=']").each((_i, el) => {
-    const text = $(el).text().trim();
-    const href = $(el).attr("href") || "";
-    const match = href.match(/page=(\d+)/);
-    if (match) {
-      const pageNum = parseInt(match[1], 10);
-      if (pageNum > lastPage) lastPage = pageNum;
-    }
-    if (text === "Last" && match) {
-      lastPage = parseInt(match[1], 10);
-    }
-  });
-
-  return { lastPage };
-}
-
 async function scrapeDataSet(dataSet: { id: number; name: string; description: string }): Promise<DOJDataSet> {
   const baseUrl = `${DOJ_DISCLOSURES}/data-set-${dataSet.id}-files`;
   console.log(`  Scraping ${dataSet.name} from ${baseUrl}...`);
@@ -434,47 +305,19 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
     }
     console.log(`    Page 0: ${allFiles.length} files, ${lastPage + 1} total pages`);
 
-    // Navigate through subsequent pages
-    // In headed mode: click pagination links (works like a real human)
-    // In headless mode: try in-page fetch, then fall back to click
+    // Navigate through subsequent pages using click navigation
+    // System Chrome with persistent profile passes Akamai checks for pagination
     let emptyPages = 0;
-    let paginationBlocked = false;
 
     for (let pageNum = 1; pageNum <= lastPage; pageNum++) {
-      let pageFiles: DOJFile[] = [];
-      let gotPage = false;
-
-      if (USE_HEADED) {
-        // Headed mode: click "Next" link like a human would
-        const nextClicked = await clickNextPage(page);
-        if (nextClicked) {
-          await page.waitForTimeout(1500 + Math.random() * 1000);
-          pageFiles = await extractFileLinksFromPage(page, dataSet.id);
-          gotPage = true;
-        }
-      } else {
-        // Headless mode: try in-page fetch first (avoids Akamai 403)
-        const pageHtml = await fetchPageViaPlaywright(page, `${baseUrl}?page=${pageNum}`);
-        if (pageHtml) {
-          pageFiles = extractFileLinks(pageHtml, dataSet.id);
-          gotPage = true;
-        } else {
-          // Fallback: try clicking Next
-          const nextClicked = await clickNextPage(page);
-          if (nextClicked) {
-            pageFiles = await extractFileLinksFromPage(page, dataSet.id);
-            gotPage = true;
-          }
-        }
-      }
-
-      if (!gotPage) {
-        if (!paginationBlocked) {
-          console.log(`    Page ${pageNum}: pagination blocked, remaining files will be found by probe`);
-          paginationBlocked = true;
-        }
+      const nextClicked = await clickNextPage(page);
+      if (!nextClicked) {
+        console.log(`    Page ${pageNum}: no Next link found, stopping pagination`);
         break;
       }
+
+      await page.waitForTimeout(1500 + Math.random() * 1000);
+      const pageFiles = await extractFileLinksFromPage(page, dataSet.id);
 
       let newCount = 0;
       for (const f of pageFiles) {
@@ -496,8 +339,8 @@ async function scrapeDataSet(dataSet: { id: number; name: string; description: s
         emptyPages = 0;
       }
 
-      // Rate limit
-      await new Promise(r => setTimeout(r, USE_HEADED ? 1000 : 500));
+      // Rate limit between pages
+      await new Promise(r => setTimeout(r, 1000));
     }
 
     console.log(`    Total: ${allFiles.length} file links`);
