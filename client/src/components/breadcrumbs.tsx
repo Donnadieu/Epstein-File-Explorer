@@ -25,18 +25,19 @@ const staticRoutes: Record<string, string> = {
   compare: "Compare",
 };
 
+function parseDetailId(segments: string[], prefix: string): string | undefined {
+  if (segments[0] === prefix && segments[1] && !isNaN(Number(segments[1]))) {
+    return segments[1];
+  }
+  return undefined;
+}
+
 export function AppBreadcrumbs() {
   const [location] = useLocation();
-
   const segments = location.split("/").filter(Boolean);
 
-  // Detect if we're on a person or document detail page
-  const isPersonDetail = segments[0] === "people" && segments[1] && !isNaN(Number(segments[1]));
-  const isDocumentDetail = segments[0] === "documents" && segments[1] && segments[1] !== "compare" && !isNaN(Number(segments[1]));
-  const isDocumentCompare = segments[0] === "documents" && segments[1] === "compare";
-
-  const personId = isPersonDetail ? segments[1] : undefined;
-  const documentId = isDocumentDetail ? segments[1] : undefined;
+  const personId = parseDetailId(segments, "people");
+  const documentId = segments[1] !== "compare" ? parseDetailId(segments, "documents") : undefined;
 
   const { data: person } = useQuery<Person>({
     queryKey: ["/api/persons", personId],
@@ -52,19 +53,17 @@ export function AppBreadcrumbs() {
 
   const crumbs: BreadcrumbSegment[] = [];
 
-  if (isPersonDetail) {
+  if (personId) {
     crumbs.push({ label: "People", href: "/people" });
     crumbs.push({ label: person?.name || `Person #${personId}` });
-  } else if (isDocumentDetail) {
+  } else if (documentId) {
     crumbs.push({ label: "Documents", href: "/documents" });
     crumbs.push({ label: document?.title || `Document #${documentId}` });
-  } else if (isDocumentCompare) {
+  } else if (segments[0] === "documents" && segments[1] === "compare") {
     crumbs.push({ label: "Documents", href: "/documents" });
     crumbs.push({ label: "Compare" });
   } else {
-    // Static route like /people, /documents, /timeline, etc.
-    const label = staticRoutes[segments[0]] || segments[0];
-    crumbs.push({ label });
+    crumbs.push({ label: staticRoutes[segments[0]] || segments[0] });
   }
 
   return (

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -54,14 +54,6 @@ export default function SearchPage() {
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
 
-  const handleSavedSearchSelect = useCallback((searchQuery: string) => {
-    setQuery(searchQuery);
-  }, []);
-
-  const handleHistorySelect = useCallback((term: string) => {
-    setQuery(term);
-  }, []);
-
   const searchIsBookmarked = isBookmarked("search", undefined, query);
 
   return (
@@ -79,7 +71,7 @@ export default function SearchPage() {
       {/* Saved Searches */}
       <SavedSearches
         savedSearches={searchBookmarks}
-        onSelect={handleSavedSearchSelect}
+        onSelect={setQuery}
         onRemove={deleteBookmark}
       />
 
@@ -121,7 +113,7 @@ export default function SearchPage() {
                 key={term}
                 variant="outline"
                 className="cursor-pointer text-[11px] text-muted-foreground/70 hover:text-foreground"
-                onClick={() => handleHistorySelect(term)}
+                onClick={() => setQuery(term)}
                 data-testid={`history-${term.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {term}
@@ -147,24 +139,11 @@ export default function SearchPage() {
               <Sparkles className="w-3 h-3" /> Popular searches
             </span>
             <div className="flex items-center gap-2 flex-wrap justify-center">
-              {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein"].map((term) => (
+              {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein", "witness testimony", "financial records", "travel records"].map((term) => (
                 <Badge
                   key={term}
                   variant="outline"
                   className="cursor-pointer"
-                  onClick={() => setQuery(term)}
-                  data-testid={`badge-suggestion-${term.toLowerCase().replace(" ", "-")}`}
-                >
-                  {term}
-                </Badge>
-              ))}
-            </div>
-            <div className="flex items-center gap-2 flex-wrap justify-center mt-1">
-              {["witness testimony", "financial records", "travel records"].map((term) => (
-                <Badge
-                  key={term}
-                  variant="outline"
-                  className="cursor-pointer text-muted-foreground/60"
                   onClick={() => setQuery(term)}
                   data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
                 >

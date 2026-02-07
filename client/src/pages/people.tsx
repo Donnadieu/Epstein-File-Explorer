@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
+import { usePagination } from "@/hooks/use-pagination";
 import type { Person } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -83,11 +84,7 @@ export default function PeoplePage() {
 
   const categories = ["all", ...new Set(persons?.map((p) => p.category) || [])];
 
-  const totalItems = filtered?.length || 0;
-  const totalPages = Math.max(1, Math.ceil(totalItems / ITEMS_PER_PAGE));
-  const currentPage = Math.min(Math.max(1, parseInt(filters.page) || 1), totalPages);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginated = filtered?.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const { paginated, totalItems, totalPages, currentPage, startIndex } = usePagination(filtered, filters.page, ITEMS_PER_PAGE);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -157,11 +154,9 @@ export default function PeoplePage() {
         </div>
       ) : (
         <>
-          <div className="flex items-center justify-between">
-            <p className="text-xs text-muted-foreground">
-              Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} individuals
-            </p>
-          </div>
+          <p className="text-xs text-muted-foreground">
+            Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} individuals
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {paginated?.map((person) => {
               const initials = person.name

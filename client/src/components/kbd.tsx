@@ -1,3 +1,11 @@
+const keySymbols: Record<string, string> = {
+  Cmd: "\u2318",
+  Esc: "\u238b",
+  Shift: "\u21e7",
+  Alt: "\u2325",
+  Ctrl: "\u2303",
+};
+
 export function Kbd({ keys }: { keys: string }) {
   const parts = keys.split(/([+ ])/);
   return (
@@ -15,7 +23,7 @@ export function Kbd({ keys }: { keys: string }) {
             key={i}
             className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 text-[11px] font-mono font-medium rounded border bg-muted text-muted-foreground"
           >
-            {part === "Cmd" ? "\u2318" : part === "Esc" ? "\u238b" : part}
+            {keySymbols[part] ?? part}
           </kbd>
         );
       })}
