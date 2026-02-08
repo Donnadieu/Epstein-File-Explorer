@@ -148,16 +148,6 @@ export function isSamePerson(a: Person, b: Person): boolean {
     }
   }
 
-  // Single-name matching: "Epstein" matches "Jeffrey Epstein"
-  if (partsA.length === 1 && partsB.length >= 2) {
-    if (partsA[0] === partsB[partsB.length - 1]) return true;
-    if (partsB[0].startsWith(partsA[0]) || partsA[0].startsWith(partsB[0])) return true;
-  }
-  if (partsB.length === 1 && partsA.length >= 2) {
-    if (partsB[0] === partsA[partsA.length - 1]) return true;
-    if (partsA[0].startsWith(partsB[0]) || partsB[0].startsWith(partsA[0])) return true;
-  }
-
   // Check against aliases
   const aliasesA = (a.aliases ?? []).map(normalizeName);
   const aliasesB = (b.aliases ?? []).map(normalizeName);
@@ -362,7 +352,7 @@ export class DatabaseStorage implements IStorage {
 
   async getTimelineEvents(): Promise<TimelineEvent[]> {
     return db.select().from(timelineEvents)
-      .where(sql`${timelineEvents.date} >= '1950'`)
+      .where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`)
       .orderBy(asc(timelineEvents.date));
   }
 
@@ -376,7 +366,7 @@ export class DatabaseStorage implements IStorage {
       db.select({ count: sql<number>`count(*)::int` }).from(persons),
       db.select({ count: sql<number>`count(*)::int` }).from(documents),
       db.select({ count: sql<number>`count(*)::int` }).from(connections),
-      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents),
+      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
     ]);
     return {
       personCount: personResult[0].count,

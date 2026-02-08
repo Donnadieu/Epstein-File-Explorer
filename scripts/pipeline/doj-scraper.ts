@@ -416,19 +416,32 @@ async function scrapeFOIARecords(): Promise<DOJDataSet> {
   };
 }
 
-export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
+export async function scrapeDOJCatalog(dataSetFilter?: number[]): Promise<DOJCatalog> {
+  const filterLabel = dataSetFilter ? `data sets ${dataSetFilter.join(", ")}` : "all 12 data sets + court records + FOIA records";
   console.log("\n=== DOJ Epstein Library Catalog Scraper ===\n");
-  console.log("Scraping all 12 data sets + court records + FOIA records...\n");
+  console.log(`Scraping ${filterLabel}...\n`);
 
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(RAW_DIR)) fs.mkdirSync(RAW_DIR, { recursive: true });
 
-  const dataSets: DOJDataSet[] = [];
+  // Load existing catalog so we can merge in new data sets
+  let existingDataSets: DOJDataSet[] = [];
+  if (fs.existsSync(CATALOG_FILE)) {
+    try {
+      const existing: DOJCatalog = JSON.parse(fs.readFileSync(CATALOG_FILE, "utf-8"));
+      existingDataSets = existing.dataSets;
+    } catch {}
+  }
+
+  // Start with existing data sets that we're NOT re-scraping
+  const dataSets: DOJDataSet[] = dataSetFilter
+    ? existingDataSets.filter(ds => !dataSetFilter.includes(ds.id))
+    : [];
 
   const saveCatalog = () => {
     const totalFiles = dataSets.reduce((sum, ds) => sum + ds.files.length, 0);
     const catalog: DOJCatalog = {
-      dataSets,
+      dataSets: [...dataSets].sort((a, b) => a.id - b.id),
       totalFiles,
       lastScraped: new Date().toISOString(),
       sources: [
@@ -442,20 +455,30 @@ export async function scrapeDOJCatalog(): Promise<DOJCatalog> {
     return { catalog, totalFiles };
   };
 
+  const shouldScrapeDS = (id: number) => !dataSetFilter || dataSetFilter.includes(id);
+
   for (const ds of KNOWN_DATA_SETS) {
+    if (!shouldScrapeDS(ds.id)) {
+      console.log(`  Skipping Data Set ${ds.id} (already cataloged, ${existingDataSets.find(e => e.id === ds.id)?.files.length ?? 0} files)\n`);
+      continue;
+    }
     const result = await scrapeDataSet(ds);
     dataSets.push(result);
     saveCatalog();
     await new Promise(r => setTimeout(r, 1000));
   }
 
-  const courtRecords = await scrapeCourtRecords();
-  dataSets.push(courtRecords);
-  saveCatalog();
-  await new Promise(r => setTimeout(r, 1000));
+  if (shouldScrapeDS(100)) {
+    const courtRecords = await scrapeCourtRecords();
+    dataSets.push(courtRecords);
+    saveCatalog();
+    await new Promise(r => setTimeout(r, 1000));
+  }
 
-  const foiaRecords = await scrapeFOIARecords();
-  dataSets.push(foiaRecords);
+  if (shouldScrapeDS(200)) {
+    const foiaRecords = await scrapeFOIARecords();
+    dataSets.push(foiaRecords);
+  }
 
   await closeBrowser();
 
@@ -667,11 +690,11 @@ export async function probeAndMergeCatalog(dataSetFilter?: number[]): Promise<DO
 
 if (process.argv[1]?.includes(path.basename(__filename))) {
   const mode = process.argv[2];
+  const dsArg = process.argv[3];
+  const filter = dsArg ? dsArg.split(",").map(Number) : undefined;
   if (mode === "probe") {
-    const dsArg = process.argv[3];
-    const filter = dsArg ? dsArg.split(",").map(Number) : undefined;
     probeAndMergeCatalog(filter).catch(console.error);
   } else {
-    scrapeDOJCatalog().catch(console.error);
+    scrapeDOJCatalog(filter).catch(console.error);
   }
 }

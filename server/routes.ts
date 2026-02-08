@@ -335,6 +335,91 @@ export async function registerRoutes(
     }
   });
 
+  // Proxy video content
+  app.get("/api/documents/:id/video", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const doc = await storage.getDocumentWithDetails(id);
+      if (!doc) {
+        return res.status(404).json({ error: "Document not found" });
+      }
+
+      // Try R2 first
+      if (doc.r2Key && isR2Configured()) {
+        try {
+          const r2Resp = await getR2Stream(doc.r2Key);
+          res.setHeader("Content-Type", r2Resp.contentType || "video/mp4");
+          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          r2Resp.body.pipe(res);
+          return;
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          console.warn(`R2 stream failed for video doc ${id}: ${msg}`);
+        }
+      }
+
+      // Try local file
+      if (doc.localPath) {
+        const absPath = pathMod.resolve(doc.localPath);
+        const downloadsDir = pathMod.resolve("data/downloads") + pathMod.sep;
+        if (absPath.startsWith(downloadsDir) && fsSync.existsSync(absPath)) {
+          const ext = pathMod.extname(absPath).toLowerCase();
+          const mimeMap: Record<string, string> = {
+            ".mp4": "video/mp4", ".avi": "video/x-msvideo",
+            ".mov": "video/quicktime", ".wmv": "video/x-ms-wmv",
+            ".webm": "video/webm",
+          };
+          res.setHeader("Content-Type", mimeMap[ext] || "video/mp4");
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          const stream = fsSync.createReadStream(absPath);
+          stream.on("error", () => {
+            if (!res.headersSent) res.status(500).json({ error: "File read error" });
+          });
+          stream.pipe(res);
+          return;
+        }
+      }
+
+      // Fallback: proxy from source URL
+      if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 120_000);
+        try {
+          const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+          clearTimeout(timeout);
+          if (!response.ok) {
+            return res.status(502).json({ error: "Failed to fetch video from source" });
+          }
+          const contentType = response.headers.get("content-type") || "video/mp4";
+          const contentLength = response.headers.get("content-length");
+          res.setHeader("Content-Type", contentType);
+          if (contentLength) res.setHeader("Content-Length", contentLength);
+          res.setHeader("Cache-Control", "public, max-age=86400");
+          if (response.body) {
+            Readable.fromWeb(response.body as any).pipe(res);
+          } else {
+            const arrayBuffer = await response.arrayBuffer();
+            res.send(Buffer.from(arrayBuffer));
+          }
+        } catch (err: any) {
+          clearTimeout(timeout);
+          if (err.name === "AbortError") {
+            return res.status(504).json({ error: "Video fetch timed out" });
+          }
+          throw err;
+        }
+      } else {
+        res.status(404).json({ error: "No video source available" });
+      }
+    } catch (error) {
+      res.status(500).json({ error: "Failed to serve video" });
+    }
+  });
+
   app.get("/api/timeline", async (_req, res) => {
     try {
       const events = await storage.getTimelineEvents();

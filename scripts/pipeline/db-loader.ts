@@ -100,33 +100,7 @@ export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<nu
   let loaded = 0;
 
   for (const dataSet of catalog.dataSets) {
-    const existing = await db
-      .select()
-      .from(documents)
-      .where(sql`LOWER(${documents.title}) = LOWER(${dataSet.name})`)
-      .limit(1);
-
-    if (existing.length > 0) continue;
-
-    const docType = inferDocumentType(dataSet.description);
-
-    try {
-      await db.insert(documents).values({
-        title: dataSet.name,
-        description: dataSet.description,
-        documentType: docType,
-        dataSet: String(dataSet.id),
-        sourceUrl: dataSet.url,
-        datePublished: "2026-01-30",
-        pageCount: dataSet.files.length,
-        isRedacted: true,
-        tags: inferTags(dataSet.description),
-      });
-      loaded++;
-    } catch (error: any) {
-      console.warn(`  Error loading data set ${dataSet.name}: ${error.message}`);
-    }
-
+    // Skip data set overview entries — they're directory pages, not actual documents
     for (const file of dataSet.files) {
       const fileExisting = await db
         .select()
@@ -254,6 +228,15 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
       // --- Events ---
       for (const event of data.events) {
         try {
+          // Check for existing event with same date + title
+          const existingEvent = await db
+            .select({ id: timelineEvents.id })
+            .from(timelineEvents)
+            .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
+            .limit(1);
+
+          if (existingEvent.length > 0) continue;
+
           const personIds: number[] = [];
           for (const name of event.personsInvolved) {
             const [p] = await db
@@ -572,6 +555,13 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
         .limit(1);
 
       if (existing.length > 0) {
+        // Update localPath if not already set
+        const localPath = path.join(dsPath, file);
+        if (!existing[0].localPath) {
+          await db.update(documents)
+            .set({ localPath })
+            .where(eq(documents.id, existing[0].id));
+        }
         skipped++;
         dsSkipped++;
         continue;
@@ -589,6 +579,7 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
           documentType: docType,
           dataSet: String(dsNum),
           sourceUrl,
+          localPath: path.join(dsPath, file),
           datePublished: "2026-01-30",
           isRedacted: true,
           tags: [`data-set-${dsNum}`, "DOJ disclosure", "PDF", docType],

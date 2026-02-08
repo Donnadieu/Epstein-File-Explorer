@@ -160,7 +160,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
   try {
     switch (stage) {
       case "scrape-doj":
-        await scrapeDOJCatalog();
+        await scrapeDOJCatalog(config.dataSetIds);
         break;
 
       case "probe-doj":
