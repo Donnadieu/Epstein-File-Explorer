@@ -689,10 +689,17 @@ export async function probeAndMergeCatalog(dataSetFilter?: number[]): Promise<DO
 }
 
 if (process.argv[1]?.includes(path.basename(__filename))) {
-  const mode = process.argv[2];
-  const dsArg = process.argv[3];
-  const filter = dsArg ? dsArg.split(",").map(Number) : undefined;
-  if (mode === "probe") {
+  const arg1 = process.argv[2];
+  const arg2 = process.argv[3];
+
+  // "probe" or "probe 1,2,3" → probe mode
+  // "1,2,3" → scrape mode with filter
+  // (nothing) → scrape all
+  const isProbe = arg1 === "probe";
+  const dsArg = isProbe ? arg2 : arg1;
+  const filter = dsArg && /^\d/.test(dsArg) ? dsArg.split(",").map(Number) : undefined;
+
+  if (isProbe) {
     probeAndMergeCatalog(filter).catch(console.error);
   } else {
     scrapeDOJCatalog(filter).catch(console.error);
