@@ -164,7 +164,7 @@ export default function AskArchivePage() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="h-6 w-6 opacity-0 group-hover:opacity-100 shrink-0"
+                    className="h-6 w-6 shrink-0 text-muted-foreground hover:text-destructive"
                     onClick={(e) => deleteConversation(conv.id, e)}
                     data-testid={`delete-conversation-${conv.id}`}
                   >
