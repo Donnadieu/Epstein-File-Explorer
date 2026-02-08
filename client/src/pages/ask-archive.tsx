@@ -74,10 +74,7 @@ export default function AskArchivePage() {
     resetStream();
 
     if (initialMessage) {
-      // Small delay to let the state update
-      setTimeout(() => {
-        sendMessage(initialMessage);
-      }, 100);
+      sendMessage(initialMessage, conversation.id);
     }
   }
 

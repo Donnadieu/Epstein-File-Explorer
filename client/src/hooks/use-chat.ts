@@ -3,7 +3,7 @@ import { queryClient } from "@/lib/queryClient";
 import type { ChatCitation } from "@shared/schema";
 
 interface UseChatReturn {
-  sendMessage: (content: string) => Promise<void>;
+  sendMessage: (content: string, overrideConversationId?: number) => Promise<void>;
   isStreaming: boolean;
   streamedContent: string;
   streamedCitations: ChatCitation[];
@@ -22,15 +22,16 @@ export function useChat(conversationId: number | null): UseChatReturn {
   }
 
   const sendMessage = useCallback(
-    async (content: string): Promise<void> => {
-      if (!conversationId || isStreaming) return;
+    async (content: string, overrideConversationId?: number): Promise<void> => {
+      const targetId = overrideConversationId ?? conversationId;
+      if (!targetId || isStreaming) return;
 
       setIsStreaming(true);
       setStreamedContent("");
       setStreamedCitations([]);
 
       const response = await fetch(
-        `/api/chat/conversations/${conversationId}/messages`,
+        `/api/chat/conversations/${targetId}/messages`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -86,7 +87,7 @@ export function useChat(conversationId: number | null): UseChatReturn {
                 queryKey: ["/api/chat/conversations"],
               });
               queryClient.invalidateQueries({
-                queryKey: [`/api/chat/conversations/${conversationId}`],
+                queryKey: [`/api/chat/conversations/${targetId}`],
               });
               return;
             }
