@@ -15,6 +15,7 @@ import { downloadDocuments } from "./document-downloader";
 import { probeAndMergeCatalog, scrapeDOJCatalog } from "./doj-scraper";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
+import { migrateToR2 } from "./r2-migration";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -41,6 +42,7 @@ const STAGES = [
   "probe-doj",
   "scrape-wikipedia",
   "download",
+  "upload-r2",
   "process",
   "classify-media",
   "analyze-ai",
@@ -76,6 +78,7 @@ STAGES:
   probe-doj        Probe sequential EFTA numbers via HEAD requests to discover unlisted files
   scrape-wikipedia Scrape Wikipedia for comprehensive person list
   download         Download documents from DOJ (PDFs, images, etc.)
+  upload-r2        Upload downloaded files to Cloudflare R2 storage
   process          Extract text from downloaded PDFs via OCR/parsing
   classify-media   Classify documents by media type and set AI priority
   analyze-ai       Run AI analysis on processed documents (DeepSeek)
@@ -139,6 +142,7 @@ DATA FLOW:
   1. scrape-doj       → data/doj-catalog.json
   2. scrape-wikipedia  → data/persons-raw.json
   3. download          → data/downloads/data-set-{N}/
+  3b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
   4. process           → data/extracted/ds{N}/*.json
   5. analyze-ai        → data/ai-analyzed/*.json
   6. load-*            → PostgreSQL database
@@ -172,6 +176,13 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           rateLimitMs: config.rateLimitMs,
           fileTypes: config.fileTypes,
           retryFailed: config.retryFailed,
+        });
+        break;
+
+      case "upload-r2":
+        await migrateToR2({
+          dataSetIds: config.dataSetIds,
+          concurrency: config.concurrency,
         });
         break;
 
@@ -280,6 +291,7 @@ async function main() {
         "scrape-doj",
         "scrape-wikipedia",
         "download",
+        "upload-r2",
         "process",
         "classify-media",
         "analyze-ai",

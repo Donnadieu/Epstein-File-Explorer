@@ -8,6 +8,7 @@ import pLimit from "p-limit";
 import { db } from "../../server/db";
 import { documents } from "../../shared/schema";
 import { sql, eq } from "drizzle-orm";
+import { isR2Configured, uploadToR2, buildR2Key } from "../../server/r2";
 import type { DOJFile, DOJCatalog } from "./doj-scraper";
 import { getBrowserContext, extractCookieHeader, closeBrowser } from "./doj-scraper";
 
@@ -38,6 +39,7 @@ interface DownloadResult {
   localPath?: string;
   fileSizeBytes?: number;
   fileHash?: string;
+  r2Key?: string;
   error?: string;
 }
 
@@ -200,16 +202,19 @@ async function downloadFile(
       }
 
       const contentLength = parseInt(response.headers.get("content-length") || "0", 10);
+      const usedStreaming = contentLength > STREAM_THRESHOLD && !!response.body;
+      let downloadBuffer: Buffer | undefined;
 
-      if (contentLength > STREAM_THRESHOLD && response.body) {
+      if (usedStreaming) {
         // Stream-based write for large files (videos, large PDFs)
         const nodeStream = Readable.fromWeb(response.body as any);
         const writeStream = fs.createWriteStream(outputPath);
         await pipeline(nodeStream, writeStream);
       } else {
-        // Buffer-based write for smaller files
-        const buffer = await response.arrayBuffer();
-        fs.writeFileSync(outputPath, Buffer.from(buffer));
+        // Buffer-based write for smaller files — keep buffer for R2 reuse
+        const arrayBuf = await response.arrayBuffer();
+        downloadBuffer = Buffer.from(arrayBuf);
+        fs.writeFileSync(outputPath, downloadBuffer);
       }
 
       const stat = fs.statSync(outputPath);
@@ -226,17 +231,36 @@ async function downloadFile(
         `  Downloaded: ${filename} (${formatBytes(stat.size)}, sha256:${fileHash.substring(0, 12)}...)`,
       );
 
+      // Upload to R2 if configured
+      let r2Key: string | undefined;
+      if (isR2Configured()) {
+        try {
+          const r2KeyPath = buildR2Key(file.dataSetId, filename);
+          const uploadBody = usedStreaming
+            ? fs.createReadStream(outputPath)
+            : downloadBuffer!;
+          await uploadToR2(r2KeyPath, uploadBody, guessMime(outputPath));
+          r2Key = r2KeyPath;
+          console.log(`  Uploaded to R2: ${r2KeyPath}`);
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          console.warn(`  R2 upload failed (non-fatal): ${msg}`);
+        }
+      }
+
       return {
         url: file.url,
         success: true,
         localPath: outputPath,
         fileSizeBytes: stat.size,
         fileHash,
+        r2Key,
       };
-    } catch (error: any) {
-      console.warn(`  Error downloading ${filename}: ${error.message} (attempt ${attempt}/${retries})`);
+    } catch (error: unknown) {
+      const msg = error instanceof Error ? error.message : String(error);
+      console.warn(`  Error downloading ${filename}: ${msg} (attempt ${attempt}/${retries})`);
       if (attempt === retries) {
-        return { url: file.url, success: false, error: error.message };
+        return { url: file.url, success: false, error: msg };
       }
       await new Promise((r) => setTimeout(r, 2000 * attempt));
     }
@@ -264,6 +288,7 @@ async function updateDocumentRecord(result: DownloadResult): Promise<void> {
           fileHash: result.fileHash,
           processingStatus: "downloaded",
           mimeType: guessMime(result.localPath),
+          r2Key: result.r2Key ?? null,
         })
         .where(eq(documents.id, existing[0].id));
     }
