@@ -30,6 +30,14 @@ const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
 function getDisplayTitle(doc: Document): string {
   const trimmed = doc.title.trim();
   if (!EFTA_PATTERN.test(trimmed)) return doc.title;
+
+  // Prefer AI-generated description if available
+  if (doc.description) {
+    return doc.description.length > 80
+      ? doc.description.slice(0, 77) + "..."
+      : doc.description;
+  }
+
   const typeName = doc.documentType
     ? doc.documentType.charAt(0).toUpperCase() + doc.documentType.slice(1)
     : "Document";
@@ -266,17 +274,32 @@ function DocumentViewer({ doc }: { doc: DocumentDetail }) {
 
   if (isPhoto) {
     return (
-      <Card className="bg-muted/30">
-        <CardContent className="flex flex-col items-center gap-4 py-8">
-          <ImageIcon className="w-10 h-10 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground text-center">
-            Photographs are hosted on the DOJ website and cannot be embedded directly.
-          </p>
-          <a href={doc.sourceUrl!} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="gap-2">
-              <ExternalLink className="w-4 h-4" /> View Photos on DOJ
-            </Button>
-          </a>
+      <Card className="bg-muted/30 overflow-hidden">
+        <CardContent className="p-4 flex flex-col items-center gap-4">
+          <img
+            src={`/api/documents/${doc.id}/image`}
+            alt={doc.title}
+            className="max-w-full max-h-[70vh] rounded-lg shadow-md"
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+              const sibling = (e.target as HTMLImageElement).nextElementSibling;
+              if (sibling) {
+                sibling.classList.remove('hidden');
+                sibling.classList.add('flex');
+              }
+            }}
+          />
+          <div className="hidden flex-col items-center gap-2">
+            <ImageIcon className="w-10 h-10 text-muted-foreground/50" />
+            <p className="text-sm text-muted-foreground">Could not load image.</p>
+            {doc.sourceUrl && (
+              <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="gap-2">
+                  <ExternalLink className="w-4 h-4" /> View on DOJ
+                </Button>
+              </a>
+            )}
+          </div>
         </CardContent>
       </Card>
     );

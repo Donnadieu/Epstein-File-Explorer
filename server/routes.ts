@@ -1,6 +1,8 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { Readable } from "stream";
+import * as fsSync from "fs";
+import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getR2Stream } from "./r2";
@@ -178,6 +180,22 @@ export async function registerRoutes(
         }
       }
 
+      // Try local file
+      if (doc.localPath) {
+        const absPath = pathMod.resolve(doc.localPath);
+        const downloadsDir = pathMod.resolve("data/downloads") + pathMod.sep;
+        if (absPath.startsWith(downloadsDir) && fsSync.existsSync(absPath)) {
+          res.setHeader("Content-Type", "application/pdf");
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          const stream = fsSync.createReadStream(absPath);
+          stream.on("error", () => {
+            if (!res.headersSent) res.status(500).json({ error: "File read error" });
+          });
+          stream.pipe(res);
+          return;
+        }
+      }
+
       if (!doc.sourceUrl) {
         return res.status(404).json({ error: "No source URL for this document" });
       }
@@ -229,6 +247,91 @@ export async function registerRoutes(
       }
     } catch (error) {
       res.status(500).json({ error: "Failed to proxy PDF" });
+    }
+  });
+
+  // Serve document images (photos from data sets)
+  app.get("/api/documents/:id/image", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const doc = await storage.getDocumentWithDetails(id);
+      if (!doc) {
+        return res.status(404).json({ error: "Document not found" });
+      }
+
+      // Try R2 first
+      if (doc.r2Key && isR2Configured()) {
+        try {
+          const r2Resp = await getR2Stream(doc.r2Key);
+          res.setHeader("Content-Type", r2Resp.contentType || "image/jpeg");
+          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          r2Resp.body.pipe(res);
+          return;
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          console.warn(`R2 stream failed for image doc ${id}: ${msg}`);
+        }
+      }
+
+      // Try local file
+      if (doc.localPath) {
+        const absPath = pathMod.resolve(doc.localPath);
+        const downloadsDir = pathMod.resolve("data/downloads") + pathMod.sep;
+        if (absPath.startsWith(downloadsDir) && fsSync.existsSync(absPath)) {
+          const ext = pathMod.extname(absPath).toLowerCase();
+          const mimeMap: Record<string, string> = {
+            ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+            ".png": "image/png", ".gif": "image/gif",
+            ".webp": "image/webp", ".bmp": "image/bmp",
+          };
+          res.setHeader("Content-Type", mimeMap[ext] || "image/jpeg");
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          const stream = fsSync.createReadStream(absPath);
+          stream.on("error", () => {
+            if (!res.headersSent) res.status(500).json({ error: "File read error" });
+          });
+          stream.pipe(res);
+          return;
+        }
+      }
+
+      // Fallback: proxy from source URL
+      if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 30_000);
+        try {
+          const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+          clearTimeout(timeout);
+          if (!response.ok) {
+            return res.status(502).json({ error: "Failed to fetch image from source" });
+          }
+          const contentType = response.headers.get("content-type") || "image/jpeg";
+          const contentLength = response.headers.get("content-length");
+          res.setHeader("Content-Type", contentType);
+          if (contentLength) res.setHeader("Content-Length", contentLength);
+          res.setHeader("Cache-Control", "public, max-age=86400");
+          if (response.body) {
+            Readable.fromWeb(response.body as any).pipe(res);
+          } else {
+            const arrayBuffer = await response.arrayBuffer();
+            res.send(Buffer.from(arrayBuffer));
+          }
+        } catch (err: any) {
+          clearTimeout(timeout);
+          if (err.name === "AbortError") {
+            return res.status(504).json({ error: "Image fetch timed out" });
+          }
+          throw err;
+        }
+      } else {
+        res.status(404).json({ error: "No image source available" });
+      }
+    } catch (error) {
+      res.status(500).json({ error: "Failed to serve image" });
     }
   });
 
