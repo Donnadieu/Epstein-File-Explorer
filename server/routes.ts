@@ -4,6 +4,7 @@ import { Readable } from "stream";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getR2Stream } from "./r2";
+import { registerChatRoutes } from "./chat";
 
 const ALLOWED_PDF_DOMAINS = [
   "www.justice.gov",
@@ -488,6 +489,9 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to export search results" });
     }
   });
+
+  // Chat routes (Ask the Archive)
+  registerChatRoutes(app);
 
   return httpServer;
 }
