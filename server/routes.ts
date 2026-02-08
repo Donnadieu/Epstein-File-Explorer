@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { Readable } from "stream";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
+import { isR2Configured, getR2Stream } from "./r2";
 
 const ALLOWED_PDF_DOMAINS = [
   "www.justice.gov",
@@ -15,6 +16,11 @@ const ALLOWED_PDF_DOMAINS = [
   "archive.org",
   "ia800500.us.archive.org",
 ];
+
+function omitInternal<T extends Record<string, unknown>>(doc: T): Omit<T, 'localPath' | 'r2Key' | 'fileHash'> {
+  const { localPath, r2Key, fileHash, ...rest } = doc as any;
+  return rest;
+}
 
 function isAllowedPdfUrl(url: string): boolean {
   try {
@@ -119,11 +125,11 @@ export async function registerRoutes(
         const page = Math.max(1, parseInt(pageParam) || 1);
         const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
         const result = await storage.getDocumentsPaginated(page, limit);
-        return res.json(result);
+        return res.json({ ...result, data: result.data.map(omitInternal) });
       }
 
       const documents = await storage.getDocuments();
-      res.json(documents);
+      res.json(documents.map(omitInternal));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
     }
@@ -139,7 +145,7 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
-      res.json(doc);
+      res.json(omitInternal(doc));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document" });
     }
@@ -156,6 +162,21 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
+      // Serve from R2 if available, otherwise fall through to DOJ proxy
+      if (doc.r2Key && isR2Configured()) {
+        try {
+          const r2Resp = await getR2Stream(doc.r2Key);
+          res.setHeader("Content-Type", r2Resp.contentType || "application/pdf");
+          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          r2Resp.body.pipe(res);
+          return;
+        } catch (err: unknown) {
+          const msg = err instanceof Error ? err.message : String(err);
+          console.warn(`R2 stream failed for doc ${id}, falling through to proxy: ${msg}`);
+        }
+      }
+
       if (!doc.sourceUrl) {
         return res.status(404).json({ error: "No source URL for this document" });
       }

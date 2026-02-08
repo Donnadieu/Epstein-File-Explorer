@@ -38,6 +38,7 @@ export const documents = pgTable("documents", {
   fileSizeBytes: integer("file_size_bytes"),
   fileHash: text("file_hash"),
   localPath: text("local_path"),
+  r2Key: text("r2_key"),
   eftaNumber: text("efta_number"),
   mimeType: text("mime_type"),
   extractedTextLength: integer("extracted_text_length"),
@@ -49,6 +50,7 @@ export const documents = pgTable("documents", {
   index("idx_documents_efta_number").on(table.eftaNumber),
   index("idx_documents_source_url").on(table.sourceUrl),
   index("idx_documents_ai_analysis_status").on(table.aiAnalysisStatus),
+  index("idx_documents_r2_key").on(table.r2Key),
 ]);
 
 export const connections = pgTable("connections", {
