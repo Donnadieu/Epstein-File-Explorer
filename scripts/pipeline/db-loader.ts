@@ -4,7 +4,8 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
 import { persons, documents, connections, personDocuments, timelineEvents } from "../../shared/schema";
-import { sql, eq } from "drizzle-orm";
+import { sql, eq, inArray } from "drizzle-orm";
+import { isSamePerson } from "../../server/storage";
 import type { RawPerson } from "./wikipedia-scraper";
 import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
 import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from "./ai-analyzer";
@@ -359,6 +360,105 @@ export async function updateDocumentCounts(): Promise<void> {
   }
 
   console.log("  Counts updated");
+}
+
+export async function deduplicatePersonsInDB(): Promise<void> {
+  console.log("Deduplicating persons in database...");
+
+  const allPersons = await db.select().from(persons);
+  console.log(`  Found ${allPersons.length} persons total`);
+
+  // Union-Find for grouping
+  const parent = new Map<number, number>();
+  for (const p of allPersons) parent.set(p.id, p.id);
+
+  function find(x: number): number {
+    while (parent.get(x) !== x) {
+      parent.set(x, parent.get(parent.get(x)!)!);
+      x = parent.get(x)!;
+    }
+    return x;
+  }
+  function union(a: number, b: number) {
+    const ra = find(a), rb = find(b);
+    if (ra !== rb) parent.set(ra, rb);
+  }
+
+  // Compare all pairs
+  for (let i = 0; i < allPersons.length; i++) {
+    for (let j = i + 1; j < allPersons.length; j++) {
+      if (isSamePerson(allPersons[i], allPersons[j])) {
+        union(allPersons[i].id, allPersons[j].id);
+      }
+    }
+  }
+
+  // Extract groups
+  const groups = new Map<number, typeof allPersons>();
+  for (const p of allPersons) {
+    const root = find(p.id);
+    if (!groups.has(root)) groups.set(root, []);
+    groups.get(root)!.push(p);
+  }
+
+  let mergedCount = 0;
+  let deletedCount = 0;
+
+  for (const group of groups.values()) {
+    if (group.length <= 1) continue;
+
+    // Pick canonical: most connections + documents
+    group.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
+    const canonical = group[0];
+    const duplicateIds = group.slice(1).map(p => p.id);
+
+    if (duplicateIds.length === 0) continue;
+
+    // Remap person_documents
+    await db.update(personDocuments)
+      .set({ personId: canonical.id })
+      .where(inArray(personDocuments.personId, duplicateIds));
+
+    // Remap connections (personId1)
+    await db.update(connections)
+      .set({ personId1: canonical.id })
+      .where(inArray(connections.personId1, duplicateIds));
+
+    // Remap connections (personId2)
+    await db.update(connections)
+      .set({ personId2: canonical.id })
+      .where(inArray(connections.personId2, duplicateIds));
+
+    // Delete duplicate person records
+    await db.delete(persons).where(inArray(persons.id, duplicateIds));
+
+    // Update canonical counts
+    const [docCount] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(personDocuments)
+      .where(eq(personDocuments.personId, canonical.id));
+
+    const [connCount] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(connections)
+      .where(sql`${connections.personId1} = ${canonical.id} OR ${connections.personId2} = ${canonical.id}`);
+
+    await db.update(persons)
+      .set({
+        documentCount: docCount?.count || 0,
+        connectionCount: connCount?.count || 0,
+      })
+      .where(eq(persons.id, canonical.id));
+
+    mergedCount++;
+    deletedCount += duplicateIds.length;
+    console.log(`  Merged "${group.map(p => p.name).join('", "')}" → "${canonical.name}"`);
+  }
+
+  // Remove self-loop connections created by merging
+  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
+
+  console.log(`  Merged ${mergedCount} groups, deleted ${deletedCount} duplicate persons`);
 }
 
 function inferDocumentType(description: string): string {
@@ -778,6 +878,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       await importDownloadedFiles(process.argv[3]);
     } else if (command === "update-counts") {
       await updateDocumentCounts();
+    } else if (command === "dedup-persons") {
+      await deduplicatePersonsInDB();
     } else if (command === "classify-media") {
       await classifyAllDocuments({
         downloadDir: process.argv[3],
@@ -792,6 +894,7 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
+      console.log("  dedup-persons         - Deduplicate persons in database");
       console.log("  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)");
     }
 

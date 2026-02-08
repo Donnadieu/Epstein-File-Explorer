@@ -4,6 +4,7 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { runAIAnalysis } from "./ai-analyzer";
 import {
+  deduplicatePersonsInDB,
   extractConnectionsFromDescriptions,
   importDownloadedFiles,
   loadAIResults,
@@ -52,6 +53,7 @@ const STAGES = [
   "import-downloads",
   "extract-connections",
   "update-counts",
+  "dedup-persons",
 ];
 
 function printUsage() {
@@ -229,6 +231,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "update-counts":
         await updateDocumentCounts();
+        break;
+
+      case "dedup-persons":
+        await deduplicatePersonsInDB();
         break;
 
       default:
