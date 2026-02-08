@@ -38,7 +38,14 @@ function isNonDescriptiveTitle(title: string): boolean {
 function getDisplayTitle(doc: Document): string {
   if (!isNonDescriptiveTitle(doc.title)) return doc.title;
 
-  // Generate a better display title from available metadata
+  // Prefer AI-generated description if available
+  if (doc.description) {
+    return doc.description.length > 80
+      ? doc.description.slice(0, 77) + "..."
+      : doc.description;
+  }
+
+  // Fallback to type + set + date
   const typeName = doc.documentType
     ? doc.documentType.charAt(0).toUpperCase() + doc.documentType.slice(1)
     : "Document";

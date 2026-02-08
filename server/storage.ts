@@ -126,7 +126,7 @@ function normalizeName(name: string): string {
  * Check if two persons likely refer to the same individual.
  * Compares normalized names, aliases, and checks for substring/prefix matches.
  */
-function isSamePerson(a: Person, b: Person): boolean {
+export function isSamePerson(a: Person, b: Person): boolean {
   const normA = normalizeName(a.name);
   const normB = normalizeName(b.name);
 
@@ -146,6 +146,16 @@ function isSamePerson(a: Person, b: Person): boolean {
       const firstB = partsB[0];
       if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
     }
+  }
+
+  // Single-name matching: "Epstein" matches "Jeffrey Epstein"
+  if (partsA.length === 1 && partsB.length >= 2) {
+    if (partsA[0] === partsB[partsB.length - 1]) return true;
+    if (partsB[0].startsWith(partsA[0]) || partsA[0].startsWith(partsB[0])) return true;
+  }
+  if (partsB.length === 1 && partsA.length >= 2) {
+    if (partsB[0] === partsA[partsA.length - 1]) return true;
+    if (partsA[0].startsWith(partsB[0]) || partsB[0].startsWith(partsA[0])) return true;
   }
 
   // Check against aliases
@@ -351,7 +361,9 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getTimelineEvents(): Promise<TimelineEvent[]> {
-    return db.select().from(timelineEvents).orderBy(asc(timelineEvents.date));
+    return db.select().from(timelineEvents)
+      .where(sql`${timelineEvents.date} >= '1950'`)
+      .orderBy(asc(timelineEvents.date));
   }
 
   async createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent> {

@@ -161,15 +161,14 @@ export default function AskArchivePage() {
                 >
                   <MessageCircle className="w-4 h-4 shrink-0" />
                   <span className="truncate flex-1">{conv.title}</span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-6 w-6 shrink-0 text-muted-foreground hover:text-destructive"
+                  <button
+                    className="h-6 w-6 shrink-0 inline-flex items-center justify-center rounded text-muted-foreground/70 hover:text-destructive transition-colors"
                     onClick={(e) => deleteConversation(conv.id, e)}
+                    aria-label="Delete conversation"
                     data-testid={`delete-conversation-${conv.id}`}
                   >
-                    <Trash2 className="w-3 h-3" />
-                  </Button>
+                    <Trash2 className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               ))}
               {!loadingConversations && conversations.length === 0 && (
