@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useParams, Link } from "wouter";
+import { useParams, Link, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,8 @@ import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeft,
   ArrowLeftRight,
+  ChevronLeft,
+  ChevronRight,
   FileText,
   Clock,
   ExternalLink,
@@ -52,10 +55,32 @@ interface DocumentDetail extends Document {
 
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
+  const [, navigate] = useLocation();
 
   const { data: doc, isLoading } = useQuery<DocumentDetail>({
     queryKey: ["/api/documents", params.id],
   });
+
+  const { data: allDocuments } = useQuery<Document[]>({
+    queryKey: ["/api/documents"],
+  });
+
+  const docIndex = allDocuments?.findIndex((d) => d.id === doc?.id) ?? -1;
+  const prevDoc = docIndex > 0 ? allDocuments![docIndex - 1] : null;
+  const nextDoc =
+    docIndex >= 0 && docIndex < (allDocuments?.length ?? 0) - 1
+      ? allDocuments![docIndex + 1]
+      : null;
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key === "ArrowLeft" && prevDoc) navigate(`/documents/${prevDoc.id}`);
+      if (e.key === "ArrowRight" && nextDoc) navigate(`/documents/${nextDoc.id}`);
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [prevDoc, nextDoc, navigate]);
 
   if (isLoading) {
     return (
@@ -97,6 +122,33 @@ export default function DocumentDetailPage() {
             <ArrowLeft className="w-4 h-4" /> Documents
           </Button>
         </Link>
+        {allDocuments && docIndex >= 0 && (
+          <div className="flex items-center gap-1">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-8 w-8"
+              disabled={!prevDoc}
+              onClick={() => prevDoc && navigate(`/documents/${prevDoc.id}`)}
+              data-testid="button-prev-doc"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Button>
+            <span className="text-xs text-muted-foreground px-2 tabular-nums">
+              {docIndex + 1} of {allDocuments.length.toLocaleString()}
+            </span>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-8 w-8"
+              disabled={!nextDoc}
+              onClick={() => nextDoc && navigate(`/documents/${nextDoc.id}`)}
+              data-testid="button-next-doc"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </Button>
+          </div>
+        )}
         <Link href={`/documents/compare?a=${doc.id}`}>
           <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
             <ArrowLeftRight className="w-4 h-4" /> Compare
@@ -307,17 +359,28 @@ function DocumentViewer({ doc }: { doc: DocumentDetail }) {
 
   if (isVideo) {
     return (
-      <Card className="bg-muted/30">
-        <CardContent className="flex flex-col items-center gap-4 py-8">
-          <Video className="w-10 h-10 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground text-center">
-            Video files are hosted on the DOJ website and cannot be embedded directly.
-          </p>
-          <a href={doc.sourceUrl!} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="gap-2">
-              <ExternalLink className="w-4 h-4" /> View Video on DOJ
-            </Button>
-          </a>
+      <Card className="bg-muted/30 overflow-hidden">
+        <CardContent className="p-4 flex flex-col items-center gap-4">
+          <video
+            src={`/api/documents/${doc.id}/video`}
+            controls
+            className="max-w-full max-h-[70vh] rounded-lg shadow-md"
+            onError={(e) => {
+              (e.target as HTMLVideoElement).style.display = "none";
+              (e.target as HTMLVideoElement).nextElementSibling?.classList.remove("hidden");
+            }}
+          />
+          <div className="hidden flex flex-col items-center gap-2">
+            <Video className="w-10 h-10 text-muted-foreground/50" />
+            <p className="text-sm text-muted-foreground">Could not load video.</p>
+            {doc.sourceUrl && (
+              <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="gap-2">
+                  <ExternalLink className="w-4 h-4" /> View on DOJ
+                </Button>
+              </a>
+            )}
+          </div>
         </CardContent>
       </Card>
     );
