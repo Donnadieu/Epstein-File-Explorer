@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useMemo, useRef, useEffect, useState } from "react";
+import * as pdfjsLib from "pdfjs-dist";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -107,10 +108,10 @@ export default function DocumentsPage() {
     dataSet: "all",
     redacted: "all",
     page: "1",
-    view: "list",
+    view: "grid",
   });
 
-  const viewMode = filters.view === "grid" ? "grid" : "list";
+  const viewMode = filters.view === "list" ? "list" : "grid";
 
   const { data: documents, isLoading } = useQuery<Document[]>({
     queryKey: ["/api/documents"],
@@ -335,26 +336,12 @@ export default function DocumentsPage() {
               })}
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {paginated?.map((doc) => (
                 <Link key={doc.id} href={`/documents/${doc.id}`}>
                   <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
                     <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
                       <DocumentThumbnail doc={doc} />
-                      <Badge
-                        variant="outline"
-                        className="absolute bottom-1.5 right-1.5 text-[9px] bg-background/80 backdrop-blur-sm"
-                      >
-                        {doc.documentType}
-                      </Badge>
-                      {doc.isRedacted && (
-                        <Badge
-                          variant="secondary"
-                          className="absolute top-1.5 right-1.5 text-[9px] bg-destructive/80 text-destructive-foreground backdrop-blur-sm"
-                        >
-                          Redacted
-                        </Badge>
-                      )}
                     </div>
                     <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
                       {getDisplayTitle(doc)}
@@ -435,11 +422,49 @@ export default function DocumentsPage() {
   );
 }
 
+function PdfThumbnail({ docId }: { docId: number }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    (async () => {
+      try {
+        const pdf = await pdfjsLib.getDocument({ url: `/api/documents/${docId}/pdf` }).promise;
+        if (cancelled) return;
+        const page = await pdf.getPage(1);
+        if (cancelled) return;
+
+        const viewport = page.getViewport({ scale: 1 });
+        const scale = canvas.width / viewport.width;
+        const scaledViewport = page.getViewport({ scale });
+        canvas.height = scaledViewport.height;
+
+        await page.render({
+          canvasContext: canvas.getContext("2d")!,
+          viewport: scaledViewport,
+        }).promise;
+      } catch {
+        if (!cancelled) setFailed(true);
+      }
+    })();
+
+    return () => { cancelled = true; };
+  }, [docId]);
+
+  if (failed) return null;
+  return <canvas ref={canvasRef} width={400} className="w-full h-full object-cover" />;
+}
+
 function DocumentThumbnail({ doc }: { doc: Document }) {
   const mediaType = doc.mediaType?.toLowerCase() || "";
   const docType = doc.documentType?.toLowerCase() || "";
   const isPhoto = mediaType === "photo" || mediaType === "image" || docType === "photograph";
   const isVideo = mediaType === "video" || docType === "video";
+  const isPdf = doc.title?.toLowerCase().endsWith(".pdf");
   const Icon = typeIcons[doc.documentType] || FileText;
 
   if (isPhoto) {
@@ -463,6 +488,10 @@ function DocumentThumbnail({ doc }: { doc: Document }) {
         <span className="text-[10px] text-muted-foreground">Video</span>
       </div>
     );
+  }
+
+  if (isPdf) {
+    return <PdfThumbnail docId={doc.id} />;
   }
 
   return (
