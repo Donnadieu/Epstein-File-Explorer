@@ -66,6 +66,7 @@ export function useKeyboardShortcuts(navigate: (path: string) => void) {
           n: "/network",
           h: "/",
           s: "/search",
+          a: "/ai-insights",
         };
 
         const dest = gMap[e.key];
@@ -98,6 +99,7 @@ export const shortcutsList: { keys: string; label: string }[] = [
   { keys: "g n", label: "Go to Network" },
   { keys: "g h", label: "Go to Home" },
   { keys: "g s", label: "Go to Search" },
+  { keys: "g a", label: "Go to AI Insights" },
   { keys: "?", label: "Show keyboard shortcuts" },
   { keys: "Esc", label: "Close modal / dialog" },
 ];

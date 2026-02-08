@@ -27,6 +27,7 @@ import DocumentComparePage from "@/pages/document-compare";
 import TimelinePage from "@/pages/timeline";
 import NetworkPage from "@/pages/network";
 import SearchPage from "@/pages/search";
+import AIInsightsPage from "@/pages/ai-insights";
 
 function Router() {
   return (
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/timeline" component={TimelinePage} />
       <Route path="/network" component={NetworkPage} />
       <Route path="/search" component={SearchPage} />
+      <Route path="/ai-insights" component={AIInsightsPage} />
       <Route component={NotFound} />
     </Switch>
   );

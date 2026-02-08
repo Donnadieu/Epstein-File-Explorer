@@ -192,3 +192,73 @@ export const bookmarks = pgTable("bookmarks", {
 export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ id: true, createdAt: true });
 export type Bookmark = typeof bookmarks.$inferSelect;
 export type InsertBookmark = z.infer<typeof insertBookmarkSchema>;
+
+// AI Analysis types (shared between server + client)
+
+export interface AIAnalysisListItem {
+  fileName: string;
+  dataSet: string;
+  documentType: string;
+  summary: string;
+  personCount: number;
+  connectionCount: number;
+  eventCount: number;
+  locationCount: number;
+  keyFactCount: number;
+  tier: number;
+  costCents: number;
+  analyzedAt: string;
+}
+
+export interface AIAnalysisAggregate {
+  topPersons: { name: string; mentionCount: number; documentCount: number; category: string }[];
+  topLocations: { location: string; documentCount: number }[];
+  connectionTypes: { type: string; count: number }[];
+  documentTypes: { type: string; count: number }[];
+  totalDocuments: number;
+  totalPersons: number;
+  totalConnections: number;
+  totalEvents: number;
+}
+
+export interface AIAnalysisListResponse {
+  analyses: AIAnalysisListItem[];
+  total: number;
+}
+
+export interface AIAnalysisPerson {
+  name: string;
+  role?: string;
+  category?: string;
+  mentionCount?: number;
+}
+
+export interface AIAnalysisConnection {
+  person1: string;
+  person2: string;
+  relationshipType?: string;
+  type?: string;
+  strength?: number;
+}
+
+export interface AIAnalysisEvent {
+  date?: string;
+  title: string;
+  description?: string;
+  significance?: number;
+}
+
+export interface AIAnalysisDocument {
+  fileName?: string;
+  dataSet?: string;
+  documentType?: string;
+  summary?: string;
+  persons?: AIAnalysisPerson[];
+  connections?: AIAnalysisConnection[];
+  events?: AIAnalysisEvent[];
+  locations?: string[];
+  keyFacts?: string[];
+  tier?: number;
+  costCents?: number;
+  analyzedAt?: string;
+}
