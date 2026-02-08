@@ -6,27 +6,14 @@ import { db } from "../../server/db";
 import { persons, documents, connections, personDocuments, timelineEvents } from "../../shared/schema";
 import { sql, eq } from "drizzle-orm";
 import type { RawPerson } from "./wikipedia-scraper";
-import type { DOJCatalog } from "./doj-scraper";
-import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from "./ai-analyzer";
+import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
+import type { EntityExtractionResult, ExtractedEntity, ExtractedRelationship } from "./entity-extractor";
 import { classifyAllDocuments } from "./media-classifier";
-import OpenAI from "openai";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
-
-let _deepseek: OpenAI | null = null;
-function getDeepSeek(): OpenAI | null {
-  if (!process.env.DEEPSEEK_API_KEY) return null;
-  if (!_deepseek) {
-    _deepseek = new OpenAI({
-      baseURL: "https://api.deepseek.com",
-      apiKey: process.env.DEEPSEEK_API_KEY,
-    });
-  }
-  return _deepseek;
-}
 
 export async function loadPersonsFromFile(filePath?: string): Promise<number> {
   const file = filePath || path.join(DATA_DIR, "persons-raw.json");
@@ -157,172 +144,86 @@ export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<nu
   return loaded;
 }
 
-export async function loadAIResults(): Promise<{ persons: number; connections: number; events: number; docLinks: number }> {
-  const aiDir = path.join(DATA_DIR, "ai-analyzed");
-  if (!fs.existsSync(aiDir)) {
-    console.error(`AI results directory not found: ${aiDir}`);
-    return { persons: 0, connections: 0, events: 0, docLinks: 0 };
+export async function loadExtractedEntities(entitiesPath?: string): Promise<{ persons: number; connections: number }> {
+  const file = entitiesPath || path.join(DATA_DIR, "entities.json");
+  if (!fs.existsSync(file)) {
+    console.error(`Entities file not found: ${file}`);
+    return { persons: 0, connections: 0 };
   }
 
-  const files = fs.readdirSync(aiDir).filter(f => f.endsWith(".json"));
-  console.log(`Loading AI results from ${files.length} analyzed files...`);
+  const data: EntityExtractionResult = JSON.parse(fs.readFileSync(file, "utf-8"));
+  console.log(`Loading ${data.persons.length} extracted persons and ${data.relationships.length} relationships...`);
 
   let personsLoaded = 0;
   let connectionsLoaded = 0;
-  let eventsLoaded = 0;
-  let docLinksCreated = 0;
 
-  const existingPairs = new Set<string>();
-  const existingConns = await db.select().from(connections);
-  for (const c of existingConns) {
-    existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
-  }
+  for (const entity of data.persons) {
+    const existing = await db
+      .select()
+      .from(persons)
+      .where(sql`LOWER(${persons.name}) = LOWER(${entity.name})`)
+      .limit(1);
 
-  for (const file of files) {
-    try {
-      const result: AIAnalysisResult = JSON.parse(fs.readFileSync(path.join(aiDir, file), "utf-8"));
-
-      // Load persons from AI mentions
-      for (const mention of result.persons) {
-        const existing = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${mention.name})`)
-          .limit(1);
-
-        if (existing.length === 0) {
-          const status = inferStatusFromAI(mention.category, mention.role);
-          try {
-            await db.insert(persons).values({
-              name: mention.name,
-              category: mention.category,
-              role: mention.role,
-              description: (mention.context || "").substring(0, 500) || `Identified by AI analysis in Epstein files`,
-              status,
-              documentCount: 0,
-              connectionCount: 0,
-            });
-            personsLoaded++;
-          } catch {
-            /* skip duplicates */
-          }
-        }
+    if (existing.length === 0) {
+      try {
+        await db.insert(persons).values({
+          name: entity.name,
+          role: "Named individual",
+          description: entity.contexts[0]?.substring(0, 500) || `Mentioned ${entity.mentions} times in Epstein files`,
+          status: "named",
+          documentCount: entity.sourceFiles.length,
+          connectionCount: 0,
+          category: "associate",
+        });
+        personsLoaded++;
+      } catch {
+        /* skip */
       }
-
-      // Load connections from AI analysis
-      for (const conn of result.connections) {
-        const [person1] = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${conn.person1})`)
-          .limit(1);
-
-        const [person2] = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${conn.person2})`)
-          .limit(1);
-
-        if (person1 && person2) {
-          const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
-          if (!existingPairs.has(pairKey)) {
-            try {
-              await db.insert(connections).values({
-                personId1: person1.id,
-                personId2: person2.id,
-                connectionType: conn.relationshipType,
-                description: conn.description.substring(0, 500),
-                strength: conn.strength,
-              });
-              existingPairs.add(pairKey);
-              connectionsLoaded++;
-            } catch {
-              /* skip */
-            }
-          }
-        }
-      }
-
-      // Load events from AI analysis
-      for (const event of result.events) {
-        const personIds: number[] = [];
-        for (const name of event.personsInvolved) {
-          const [person] = await db
-            .select()
-            .from(persons)
-            .where(sql`LOWER(${persons.name}) = LOWER(${name})`)
-            .limit(1);
-          if (person) personIds.push(person.id);
-        }
-
-        try {
-          await db.insert(timelineEvents).values({
-            date: event.date,
-            title: event.title,
-            description: event.description,
-            category: event.category,
-            significance: event.significance,
-            personIds,
-          });
-          eventsLoaded++;
-        } catch {
-          /* skip duplicates */
-        }
-      }
-
-      // Link persons to documents
-      const doc = await db
-        .select()
-        .from(documents)
-        .where(sql`${documents.title} ILIKE ${'%' + result.fileName.replace(/\.json$/, '').replace(/\.pdf$/i, '') + '%'}`)
-        .limit(1);
-
-      if (doc.length > 0) {
-        for (const mention of result.persons) {
-          const [person] = await db
-            .select()
-            .from(persons)
-            .where(sql`LOWER(${persons.name}) = LOWER(${mention.name})`)
-            .limit(1);
-
-          if (person) {
-            const existingLink = await db
-              .select()
-              .from(personDocuments)
-              .where(sql`${personDocuments.personId} = ${person.id} AND ${personDocuments.documentId} = ${doc[0].id}`)
-              .limit(1);
-
-            if (existingLink.length === 0) {
-              try {
-                await db.insert(personDocuments).values({
-                  personId: person.id,
-                  documentId: doc[0].id,
-                  context: mention.context?.substring(0, 500) || `Mentioned in ${result.fileName}`,
-                });
-                docLinksCreated++;
-              } catch {
-                /* skip */
-              }
-            }
-          }
-        }
-      }
-    } catch (error: any) {
-      console.warn(`  Error processing ${file}: ${error.message}`);
     }
   }
 
-  console.log(`  AI Results loaded: ${personsLoaded} persons, ${connectionsLoaded} connections, ${eventsLoaded} events, ${docLinksCreated} document links`);
-  return { persons: personsLoaded, connections: connectionsLoaded, events: eventsLoaded, docLinks: docLinksCreated };
-}
+  for (const rel of data.relationships) {
+    const [person1] = await db
+      .select()
+      .from(persons)
+      .where(sql`LOWER(${persons.name}) = LOWER(${rel.person1})`)
+      .limit(1);
 
-function inferStatusFromAI(category: string, role: string): string {
-  const lower = `${category} ${role}`.toLowerCase();
-  if (lower.includes("convicted") || lower.includes("sentenced")) return "convicted";
-  if (lower.includes("victim") || lower.includes("survivor")) return "victim";
-  if (lower.includes("witness")) return "witness";
-  if (lower.includes("charged") || lower.includes("indicted")) return "charged";
-  return "named";
+    const [person2] = await db
+      .select()
+      .from(persons)
+      .where(sql`LOWER(${persons.name}) = LOWER(${rel.person2})`)
+      .limit(1);
+
+    if (person1 && person2) {
+      const existingConn = await db
+        .select()
+        .from(connections)
+        .where(sql`
+          (${connections.personId1} = ${person1.id} AND ${connections.personId2} = ${person2.id})
+          OR (${connections.personId1} = ${person2.id} AND ${connections.personId2} = ${person1.id})
+        `)
+        .limit(1);
+
+      if (existingConn.length === 0) {
+        try {
+          await db.insert(connections).values({
+            personId1: person1.id,
+            personId2: person2.id,
+            connectionType: rel.type,
+            description: rel.context.substring(0, 500),
+            strength: 1,
+          });
+          connectionsLoaded++;
+        } catch {
+          /* skip */
+        }
+      }
+    }
+  }
+
+  console.log(`  Loaded ${personsLoaded} new persons, ${connectionsLoaded} new connections`);
+  return { persons: personsLoaded, connections: connectionsLoaded };
 }
 
 export async function updateDocumentCounts(): Promise<void> {
@@ -551,9 +452,6 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
     existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
   }
 
-  // Collect all connection triples for potential AI classification
-  const pendingConnections: { person1Id: number; person2Id: number; person1Name: string; person2Name: string; context: string; pairKey: string }[] = [];
-
   for (const person of allPersons) {
     if (!person.description) continue;
     const desc = person.description;
@@ -583,157 +481,51 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
       }
 
       if (mentioned) {
+        let connectionType = "associated";
+        let strength = 1;
+        const descLower = desc.toLowerCase();
+
+        if (/email|wrote|messag|corresponden/i.test(descLower)) {
+          connectionType = "correspondence";
+          strength = 2;
+        }
+        if (/met with|meeting|dinner|lunch|visit/i.test(descLower)) {
+          connectionType = "social";
+          strength = 2;
+        }
+        if (/business|financial|paid|invest|fund/i.test(descLower)) {
+          connectionType = "financial";
+          strength = 3;
+        }
+        if (/flew|flight|plane|jet|travel/i.test(descLower)) {
+          connectionType = "travel";
+          strength = 3;
+        }
+        if (/island|palm beach|manhattan|residence|house|home/i.test(descLower)) {
+          connectionType = "social";
+          strength = 2;
+        }
+
         const context = extractRelevantContext(desc, other.name);
-        pendingConnections.push({
-          person1Id: person.id,
-          person2Id: other.id,
-          person1Name: person.name,
-          person2Name: other.name,
-          context,
-          pairKey,
-        });
-        existingPairs.add(pairKey);
-      }
-    }
-  }
 
-  console.log(`  Found ${pendingConnections.length} potential connections, classifying...`);
-
-  // Try AI classification, fall back to regex
-  const deepseek = getDeepSeek();
-  if (deepseek && pendingConnections.length > 0) {
-    console.log("  Using DeepSeek AI for connection classification...");
-    const BATCH_SIZE = 25;
-
-    for (let i = 0; i < pendingConnections.length; i += BATCH_SIZE) {
-      const batch = pendingConnections.slice(i, i + BATCH_SIZE);
-      try {
-        const prompt = batch.map((c, idx) => `${idx}. ${c.person1Name} ↔ ${c.person2Name}: "${c.context.substring(0, 200)}"`).join("\n");
-
-        const response = await deepseek.chat.completions.create({
-          model: "deepseek-chat",
-          messages: [
-            {
-              role: "system",
-              content: `You are classifying connections between individuals in the Jeffrey Epstein case.
-
-For each pair, return a JSON array with:
-{
-  "index": number (matching the input index),
-  "connectionType": "social" | "financial" | "travel" | "legal" | "employment" | "correspondence" | "victim-related" | "political" | "associated",
-  "description": "1-sentence description of the connection based on the context",
-  "strength": 1-5 (1=weak mention, 3=clear connection, 5=deeply connected)
-}
-
-Respond with a JSON array only.`,
-            },
-            { role: "user", content: prompt },
-          ],
-          temperature: 0.1,
-        });
-
-        const text = response.choices[0]?.message?.content?.trim() || "[]";
-        const jsonMatch = text.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
-          const classifications: { index: number; connectionType: string; description: string; strength: number }[] = JSON.parse(jsonMatch[0]);
-          const classifiedIndices = new Set<number>();
-
-          for (const cls of classifications) {
-            if (classifiedIndices.has(cls.index)) continue;
-            classifiedIndices.add(cls.index);
-            const conn = batch[cls.index];
-            if (!conn) continue;
-
-            try {
-              await db.insert(connections).values({
-                personId1: conn.person1Id,
-                personId2: conn.person2Id,
-                connectionType: cls.connectionType || "associated",
-                description: (cls.description || conn.context || "").substring(0, 500),
-                strength: Math.max(1, Math.min(5, cls.strength || 1)),
-              });
-              connectionsCreated++;
-            } catch {
-              /* skip */
-            }
-          }
-
-          // Fall back to regex for any batch items the AI didn't classify
-          for (let j = 0; j < batch.length; j++) {
-            if (classifiedIndices.has(j)) continue;
-            const conn = batch[j];
-            const { connectionType, strength } = inferRelationshipType(conn.context);
-            try {
-              await db.insert(connections).values({
-                personId1: conn.person1Id,
-                personId2: conn.person2Id,
-                connectionType,
-                description: conn.context.substring(0, 500),
-                strength,
-              });
-              connectionsCreated++;
-            } catch {
-              /* skip */
-            }
-          }
+        try {
+          await db.insert(connections).values({
+            personId1: person.id,
+            personId2: other.id,
+            connectionType,
+            description: context.substring(0, 500),
+            strength,
+          });
+          existingPairs.add(pairKey);
+          connectionsCreated++;
+        } catch {
         }
-      } catch (error: any) {
-        console.warn(`  AI batch ${Math.floor(i / BATCH_SIZE) + 1} failed, falling back to regex for this batch: ${error.message}`);
-        // Fall back to regex for this batch
-        for (const conn of batch) {
-          const { connectionType, strength } = inferRelationshipType(conn.context);
-          try {
-            await db.insert(connections).values({
-              personId1: conn.person1Id,
-              personId2: conn.person2Id,
-              connectionType,
-              description: conn.context.substring(0, 500),
-              strength,
-            });
-            connectionsCreated++;
-          } catch {
-            /* skip */
-          }
-        }
-      }
-    }
-  } else {
-    // No API key — fall back to regex classification
-    if (pendingConnections.length > 0) {
-      console.log("  No DEEPSEEK_API_KEY set, using regex classification...");
-    }
-    for (const conn of pendingConnections) {
-      const { connectionType, strength } = inferRelationshipType(conn.context);
-      try {
-        await db.insert(connections).values({
-          personId1: conn.person1Id,
-          personId2: conn.person2Id,
-          connectionType,
-          description: conn.context.substring(0, 500),
-          strength,
-        });
-        connectionsCreated++;
-      } catch {
-        /* skip */
       }
     }
   }
 
   console.log(`  Created ${connectionsCreated} new connections from descriptions`);
   return connectionsCreated;
-}
-
-function inferRelationshipType(text: string): { connectionType: string; strength: number } {
-  const lower = text.toLowerCase();
-  if (/email|wrote|messag|corresponden/i.test(lower)) return { connectionType: "correspondence", strength: 2 };
-  if (/met with|meeting|dinner|lunch|visit/i.test(lower)) return { connectionType: "social", strength: 2 };
-  if (/business|financial|paid|invest|fund/i.test(lower)) return { connectionType: "financial", strength: 3 };
-  if (/flew|flight|plane|jet|travel/i.test(lower)) return { connectionType: "travel", strength: 3 };
-  if (/island|palm beach|manhattan|residence|house|home/i.test(lower)) return { connectionType: "social", strength: 2 };
-  if (/attorney|lawyer|counsel|defense|represent/i.test(lower)) return { connectionType: "legal", strength: 2 };
-  if (/employ|assistant|work\s+for|staff|hired/i.test(lower)) return { connectionType: "employment", strength: 3 };
-  if (/victim|accuse|assault|abuse|traffick/i.test(lower)) return { connectionType: "victim-related", strength: 4 };
-  return { connectionType: "associated", strength: 1 };
 }
 
 function extractRelevantContext(description: string, name: string): string {
@@ -753,8 +545,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       await loadPersonsFromFile(process.argv[3]);
     } else if (command === "documents") {
       await loadDocumentsFromCatalog(process.argv[3]);
-    } else if (command === "ai-results") {
-      await loadAIResults();
+    } else if (command === "entities") {
+      await loadExtractedEntities(process.argv[3]);
     } else if (command === "extract-connections") {
       await extractConnectionsFromDescriptions();
     } else if (command === "import-downloads") {
@@ -771,7 +563,7 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("Commands:");
       console.log("  persons [file]       - Load persons from JSON file");
       console.log("  documents [file]     - Load documents from DOJ catalog");
-      console.log("  ai-results           - Load AI-analyzed persons, connections, and events");
+      console.log("  entities [file]      - Load extracted entities");
       console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
