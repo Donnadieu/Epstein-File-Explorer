@@ -49,22 +49,25 @@ scripts/pipeline/
   run-pipeline.ts        - Master pipeline orchestrator with stage system
   doj-scraper.ts         - DOJ catalog scraper (with age cookie bypass)
   wikipedia-scraper.ts   - Wikipedia person data scraper
-  db-loader.ts           - Database loader (persons, documents, connections, import-downloads)
+  db-loader.ts           - Database loader (persons, documents, connections, AI results, import-downloads)
   document-downloader.ts - Document download manager
   pdf-processor.ts       - PDF text extraction
-  entity-extractor.ts    - Entity/relationship extraction from text
+  ai-analyzer.ts         - AI analysis of documents (DeepSeek)
+  media-classifier.ts    - Document media type classification
 tmp/
   download-epstein-all.sh - Bash script for bulk DOJ PDF downloads with probe discovery
 ```
 
 ### Pipeline Commands
 ```bash
-npx tsx scripts/pipeline/run-pipeline.ts quick          # Fast: Wikipedia + persons + connections
-npx tsx scripts/pipeline/run-pipeline.ts import-downloads # Import downloaded PDFs to DB
-npx tsx scripts/pipeline/db-loader.ts import-downloads    # Direct import from filesystem
-bash tmp/download-epstein-all.sh                          # Download all DOJ data sets
-bash tmp/download-epstein-all.sh 6                        # Download specific data set
-bash tmp/download-epstein-all.sh 1 3                      # Download data sets 1-3
+npx tsx scripts/pipeline/run-pipeline.ts quick            # Fast: Wikipedia + persons + connections
+npx tsx scripts/pipeline/run-pipeline.ts analyze-priority  # AI analysis + load results
+npx tsx scripts/pipeline/run-pipeline.ts import-downloads  # Import downloaded PDFs to DB
+npx tsx scripts/pipeline/db-loader.ts ai-results           # Load AI-analyzed data into DB
+npx tsx scripts/pipeline/db-loader.ts import-downloads     # Direct import from filesystem
+bash tmp/download-epstein-all.sh                           # Download all DOJ data sets
+bash tmp/download-epstein-all.sh 6                         # Download specific data set
+bash tmp/download-epstein-all.sh 1 3                       # Download data sets 1-3
 ```
 
 ### Download Script Details
