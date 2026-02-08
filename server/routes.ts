@@ -4,6 +4,7 @@ import { Readable } from "stream";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getR2Stream } from "./r2";
+import { registerChatRoutes } from "./chat";
 
 const ALLOWED_PDF_DOMAINS = [
   "www.justice.gov",
@@ -290,6 +291,61 @@ export async function registerRoutes(
     }
   });
 
+  // AI Analysis routes
+  app.get("/api/ai-analyses/aggregate", async (_req, res) => {
+    try {
+      const aggregate = await storage.getAIAnalysisAggregate();
+      res.json(aggregate);
+    } catch (error) {
+      console.error("GET /api/ai-analyses/aggregate failed:", error);
+      res.status(500).json({ error: "Failed to fetch AI analysis aggregate" });
+    }
+  });
+
+  app.get("/api/ai-analyses", async (req, res) => {
+    try {
+      const list = await storage.getAIAnalysisList();
+
+      const pageParam = req.query.page as string | undefined;
+      const limitParam = req.query.limit as string | undefined;
+
+      if (pageParam) {
+        const page = Math.max(1, parseInt(pageParam) || 1);
+        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
+        const offset = (page - 1) * limit;
+        const paginated = list.slice(offset, offset + limit);
+        return res.json({
+          analyses: paginated,
+          total: list.length,
+          page,
+          totalPages: Math.ceil(list.length / limit),
+        });
+      }
+
+      res.json({ analyses: list, total: list.length });
+    } catch (error) {
+      console.error("GET /api/ai-analyses failed:", error);
+      res.status(500).json({ error: "Failed to fetch AI analyses" });
+    }
+  });
+
+  app.get("/api/ai-analyses/:fileName", async (req, res) => {
+    try {
+      const { fileName } = req.params;
+      if (fileName.includes("..") || fileName.includes("/") || fileName.includes("\\")) {
+        return res.status(400).json({ error: "Invalid file name" });
+      }
+      const analysis = await storage.getAIAnalysis(fileName);
+      if (!analysis) {
+        return res.status(404).json({ error: "Analysis not found" });
+      }
+      res.json(analysis);
+    } catch (error) {
+      console.error(`GET /api/ai-analyses/${req.params.fileName} failed:`, error);
+      res.status(500).json({ error: "Failed to fetch AI analysis" });
+    }
+  });
+
   // Bookmark routes
   app.get("/api/bookmarks", async (_req, res) => {
     try {
@@ -433,6 +489,9 @@ export async function registerRoutes(
       res.status(500).json({ error: "Failed to export search results" });
     }
   });
+
+  // Chat routes (Ask the Archive)
+  registerChatRoutes(app);
 
   return httpServer;
 }

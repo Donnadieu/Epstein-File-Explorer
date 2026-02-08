@@ -1,3 +1,6 @@
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
 import {
   persons, documents, connections, personDocuments, timelineEvents,
   pipelineJobs, budgetTracking, bookmarks,
@@ -8,6 +11,7 @@ import {
   type TimelineEvent, type InsertTimelineEvent,
   type PipelineJob, type BudgetTracking,
   type Bookmark, type InsertBookmark,
+  type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, ilike, or, sql, desc, asc, inArray } from "drizzle-orm";
@@ -45,10 +49,63 @@ export interface IStorage {
   getPipelineJobs(status?: string): Promise<PipelineJob[]>;
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
   getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }>;
+
+  getAIAnalysisList(): Promise<AIAnalysisListItem[]>;
+  getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null>;
+  getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
 }
 
 function escapeLikePattern(input: string): string {
   return input.replace(/[\\%_]/g, (ch) => `\\${ch}`);
+}
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const AI_ANALYZED_DIR = path.resolve(__dirname, "..", "data", "ai-analyzed");
+
+const CACHE_TTL = 60_000;
+let filesCache: { data: AIAnalysisDocument[]; cachedAt: number } | null = null;
+let inflight: Promise<AIAnalysisDocument[]> | null = null;
+
+async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
+  if (filesCache && Date.now() - filesCache.cachedAt < CACHE_TTL) {
+    return filesCache.data;
+  }
+
+  if (inflight) return inflight;
+
+  inflight = (async () => {
+    let entries: string[];
+    try {
+      entries = await fs.readdir(AI_ANALYZED_DIR);
+    } catch {
+      return [];
+    }
+
+    const jsonFiles = entries.filter((f) => f.endsWith(".json"));
+    const settled = await Promise.allSettled(
+      jsonFiles.map(async (file) => {
+        const raw = await fs.readFile(path.join(AI_ANALYZED_DIR, file), "utf-8");
+        const data = JSON.parse(raw) as AIAnalysisDocument;
+        data.fileName = file;
+        return data;
+      })
+    );
+
+    const results: AIAnalysisDocument[] = [];
+    for (const result of settled) {
+      if (result.status === "fulfilled") {
+        results.push(result.value);
+      }
+    }
+
+    filesCache = { data: results, cachedAt: Date.now() };
+    return results;
+  })().finally(() => {
+    inflight = null;
+  });
+
+  return inflight;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -375,6 +432,148 @@ export class DatabaseStorage implements IStorage {
       totalInputTokens: totals.totalInputTokens,
       totalOutputTokens: totals.totalOutputTokens,
       byModel,
+    };
+  }
+
+  async getAIAnalysisList(): Promise<AIAnalysisListItem[]> {
+    const allFiles = await readAllAnalysisFiles();
+
+    const items: AIAnalysisListItem[] = allFiles.map((data) => ({
+      fileName: data.fileName ?? "",
+      dataSet: data.dataSet ?? "",
+      documentType: data.documentType ?? "",
+      summary: (data.summary ?? "").slice(0, 200),
+      personCount: Array.isArray(data.persons) ? data.persons.length : 0,
+      connectionCount: Array.isArray(data.connections) ? data.connections.length : 0,
+      eventCount: Array.isArray(data.events) ? data.events.length : 0,
+      locationCount: Array.isArray(data.locations) ? data.locations.length : 0,
+      keyFactCount: Array.isArray(data.keyFacts) ? data.keyFacts.length : 0,
+      tier: data.tier ?? 0,
+      costCents: data.costCents ?? 0,
+      analyzedAt: data.analyzedAt ?? "",
+    }));
+
+    items.sort((a, b) => (b.analyzedAt > a.analyzedAt ? 1 : b.analyzedAt < a.analyzedAt ? -1 : 0));
+    return items;
+  }
+
+  async getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null> {
+    if (fileName.includes("..") || fileName.includes("/") || fileName.includes("\\")) {
+      return null;
+    }
+
+    const sanitizedName = fileName.endsWith(".json") ? fileName : fileName + ".json";
+    const filePath = path.join(AI_ANALYZED_DIR, sanitizedName);
+
+    if (!path.resolve(filePath).startsWith(AI_ANALYZED_DIR)) {
+      return null;
+    }
+
+    try {
+      const raw = await fs.readFile(filePath, "utf-8");
+      return JSON.parse(raw) as AIAnalysisDocument;
+    } catch {
+      return null;
+    }
+  }
+
+  async getAIAnalysisAggregate(): Promise<AIAnalysisAggregate> {
+    const allData = await readAllAnalysisFiles();
+
+    if (allData.length === 0) {
+      return {
+        topPersons: [],
+        topLocations: [],
+        connectionTypes: [],
+        documentTypes: [],
+        totalDocuments: 0,
+        totalPersons: 0,
+        totalConnections: 0,
+        totalEvents: 0,
+      };
+    }
+
+    const personMap = new Map<string, { mentionCount: number; documentCount: number; category: string }>();
+    const locationMap = new Map<string, number>();
+    const connectionTypeMap = new Map<string, number>();
+    const documentTypeMap = new Map<string, number>();
+    let totalConnections = 0;
+    let totalEvents = 0;
+
+    for (const data of allData) {
+      // Aggregate persons
+      if (Array.isArray(data.persons)) {
+        const seenInDoc = new Set<string>();
+        for (const person of data.persons) {
+          const name = person.name ?? "";
+          if (!name) continue;
+          const existing = personMap.get(name) ?? { mentionCount: 0, documentCount: 0, category: person.category ?? "" };
+          existing.mentionCount += person.mentionCount ?? 1;
+          if (!seenInDoc.has(name)) {
+            existing.documentCount += 1;
+            seenInDoc.add(name);
+          }
+          if (person.category) existing.category = person.category;
+          personMap.set(name, existing);
+        }
+      }
+
+      // Aggregate locations
+      if (Array.isArray(data.locations)) {
+        const seenInDoc = new Set<string>();
+        for (const loc of data.locations) {
+          const location = typeof loc === "string" ? loc : ((loc as any).location ?? (loc as any).name ?? "");
+          if (!location || seenInDoc.has(location)) continue;
+          seenInDoc.add(location);
+          locationMap.set(location, (locationMap.get(location) ?? 0) + 1);
+        }
+      }
+
+      // Aggregate connection types
+      if (Array.isArray(data.connections)) {
+        totalConnections += data.connections.length;
+        for (const conn of data.connections) {
+          const relType = conn.relationshipType ?? conn.type ?? "unknown";
+          connectionTypeMap.set(relType, (connectionTypeMap.get(relType) ?? 0) + 1);
+        }
+      }
+
+      // Aggregate document types
+      const docType = data.documentType ?? "unknown";
+      documentTypeMap.set(docType, (documentTypeMap.get(docType) ?? 0) + 1);
+
+      // Aggregate events
+      if (Array.isArray(data.events)) {
+        totalEvents += data.events.length;
+      }
+    }
+
+    const topPersons = Array.from(personMap.entries())
+      .map(([name, v]) => ({ name, mentionCount: v.mentionCount, documentCount: v.documentCount, category: v.category }))
+      .sort((a, b) => b.mentionCount - a.mentionCount)
+      .slice(0, 20);
+
+    const topLocations = Array.from(locationMap.entries())
+      .map(([location, documentCount]) => ({ location, documentCount }))
+      .sort((a, b) => b.documentCount - a.documentCount)
+      .slice(0, 20);
+
+    const connectionTypes = Array.from(connectionTypeMap.entries())
+      .map(([type, count]) => ({ type, count }))
+      .sort((a, b) => b.count - a.count);
+
+    const documentTypes = Array.from(documentTypeMap.entries())
+      .map(([type, count]) => ({ type, count }));
+
+    return {
+      topPersons,
+      topLocations,
+      connectionTypes,
+      documentTypes,
+      totalDocuments: allData.length,
+      totalPersons: personMap.size,
+      totalConnections,
+      totalEvents,
     };
   }
 }
