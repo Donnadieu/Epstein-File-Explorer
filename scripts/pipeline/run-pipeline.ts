@@ -3,9 +3,8 @@ import { scrapeDOJCatalog, probeAndMergeCatalog } from "./doj-scraper";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 import { downloadDocuments } from "./document-downloader";
 import { processDocuments } from "./pdf-processor";
-import { extractEntities } from "./entity-extractor";
 import { runAIAnalysis } from "./ai-analyzer";
-import { loadPersonsFromFile, loadDocumentsFromCatalog, loadExtractedEntities, extractConnectionsFromDescriptions, updateDocumentCounts, importDownloadedFiles } from "./db-loader";
+import { loadPersonsFromFile, loadDocumentsFromCatalog, loadAIResults, extractConnectionsFromDescriptions, updateDocumentCounts, importDownloadedFiles } from "./db-loader";
 import { classifyAllDocuments } from "./media-classifier";
 import * as fs from "fs";
 import * as path from "path";
@@ -35,14 +34,12 @@ const STAGES = [
   "scrape-wikipedia",
   "download",
   "process",
-  "extract",
   "classify-media",
   "analyze-ai",
+  "load-ai-results",
   "load-persons",
   "load-documents",
   "import-downloads",
-  "classify-media",
-  "load-entities",
   "extract-connections",
   "update-counts",
 ];
@@ -72,14 +69,12 @@ STAGES:
   scrape-wikipedia Scrape Wikipedia for comprehensive person list
   download         Download documents from DOJ (PDFs, images, etc.)
   process          Extract text from downloaded PDFs via OCR/parsing
-  extract          Run NLP entity extraction on processed documents
-  classify-media   Classify downloaded files by media type (pdf, image, video, etc.)
+  classify-media   Classify documents by media type and set AI priority
   analyze-ai       Run AI analysis on processed documents (DeepSeek)
+  load-ai-results  Load AI-analyzed persons, connections, and events into database
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
-  classify-media   Classify documents by media type and set AI priority
-  load-entities    Load extracted entities into PostgreSQL database
   extract-connections  Extract relationships from person descriptions
   update-counts    Recalculate document/connection counts per person
 
@@ -87,11 +82,11 @@ SHORTCUTS:
   quick            Run scrape-wikipedia + load-persons + extract-connections + update-counts
                    (fastest way to populate app with comprehensive data)
   full-discovery   Run all scraping, downloading, processing, and loading stages
-                   (scrape-doj → scrape-wikipedia → download → process → extract →
+                   (scrape-doj → scrape-wikipedia → download → process →
                     classify-media → load-persons → load-documents → import-downloads →
-                    load-entities → extract-connections → update-counts)
+                    load-ai-results → extract-connections → update-counts)
   analyze-priority Run AI analysis on highest-priority unanalyzed documents
-                   (classify-media → analyze-ai → load-entities → update-counts)
+                   (classify-media → analyze-ai → load-ai-results → update-counts)
 
 OPTIONS:
   --data-sets 1,2,3    Only process specific data set IDs
@@ -123,9 +118,6 @@ EXAMPLES:
   # Just scrape and load persons
   npx tsx scripts/pipeline/run-pipeline.ts scrape-wikipedia load-persons update-counts
 
-  # Process already-downloaded documents
-  npx tsx scripts/pipeline/run-pipeline.ts process extract load-entities
-
   # Classify media types for downloaded files
   npx tsx scripts/pipeline/run-pipeline.ts classify-media --data-sets 10
 
@@ -137,8 +129,10 @@ DATA FLOW:
   2. scrape-wikipedia  → data/persons-raw.json
   3. download          → data/downloads/data-set-{N}/
   4. process           → data/extracted/ds{N}/*.json
-  5. extract           → data/entities.json
-  6. load-*            → PostgreSQL database
+  5. classify-media    → DB: documents.mediaType + aiPriority
+  6. analyze-ai        → data/ai-analyzed/*.json
+  7. load-ai-results   → DB: persons, connections, events from AI analysis
+  8. load-*            → PostgreSQL database
 `);
 }
 
@@ -179,12 +173,8 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
         });
         break;
 
-      case "extract":
-        await extractEntities({});
-        break;
-
       case "classify-media":
-        await classifyMedia(config);
+        await classifyAllDocuments();
         break;
 
       case "analyze-ai":
@@ -192,6 +182,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           limit: config.batchSize,
           delayMs: config.concurrency && config.concurrency > 1 ? 500 : 1500,
         });
+        break;
+
+      case "load-ai-results":
+        await loadAIResults();
         break;
 
       case "load-persons":
@@ -204,14 +198,6 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "import-downloads":
         await importDownloadedFiles();
-        break;
-
-      case "classify-media":
-        await classifyAllDocuments();
-        break;
-
-      case "load-entities":
-        await loadExtractedEntities();
         break;
 
       case "extract-connections":
@@ -233,59 +219,6 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
     console.error(error.stack);
     throw error;
   }
-}
-
-const MEDIA_TYPE_MAP: Record<string, string> = {
-  ".pdf": "document",
-  ".doc": "document", ".docx": "document",
-  ".txt": "document", ".rtf": "document",
-  ".xls": "spreadsheet", ".xlsx": "spreadsheet", ".csv": "spreadsheet",
-  ".jpg": "image", ".jpeg": "image", ".png": "image",
-  ".gif": "image", ".bmp": "image", ".tiff": "image", ".tif": "image",
-  ".mp4": "video", ".avi": "video", ".mov": "video", ".wmv": "video", ".mkv": "video",
-  ".mp3": "audio", ".wav": "audio", ".m4a": "audio",
-};
-
-async function classifyMedia(config: PipelineConfig): Promise<void> {
-  const downloadsDir = path.join(DATA_DIR, "downloads");
-  if (!fs.existsSync(downloadsDir)) {
-    console.log("No downloads directory found. Run the download stage first.");
-    return;
-  }
-
-  const dirs = fs.readdirSync(downloadsDir)
-    .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(downloadsDir, d)).isDirectory());
-
-  if (config.dataSetIds?.length) {
-    dirs.splice(0, dirs.length, ...dirs.filter(d => {
-      const m = d.match(/data-set-(\d+)/);
-      return m && config.dataSetIds!.includes(parseInt(m[1], 10));
-    }));
-  }
-
-  const counts: Record<string, number> = {};
-  let classified = 0;
-
-  for (const dir of dirs) {
-    const dsPath = path.join(downloadsDir, dir);
-    const files = fs.readdirSync(dsPath);
-
-    for (const file of files) {
-      const ext = path.extname(file).toLowerCase();
-      const mediaType = MEDIA_TYPE_MAP[ext] || "other";
-      counts[mediaType] = (counts[mediaType] || 0) + 1;
-      classified++;
-    }
-  }
-
-  console.log(`\nClassified ${classified} files across ${dirs.length} data sets:`);
-  for (const [type, count] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${type}: ${count}`);
-  }
-
-  const outputFile = path.join(DATA_DIR, "media-classification.json");
-  fs.writeFileSync(outputFile, JSON.stringify({ classified, counts, classifiedAt: new Date().toISOString() }, null, 2));
-  console.log(`Classification saved to ${outputFile}`);
 }
 
 async function main() {
@@ -325,12 +258,12 @@ async function main() {
       config.stages = ["scrape-wikipedia", "load-persons", "extract-connections", "update-counts"];
     } else if (arg === "full-discovery") {
       config.stages = [
-        "scrape-doj", "scrape-wikipedia", "download", "process", "extract",
+        "scrape-doj", "scrape-wikipedia", "download", "process",
         "classify-media", "load-persons", "load-documents", "import-downloads",
-        "load-entities", "extract-connections", "update-counts",
+        "load-ai-results", "extract-connections", "update-counts",
       ];
     } else if (arg === "analyze-priority") {
-      config.stages = ["classify-media", "analyze-ai", "load-entities", "update-counts"];
+      config.stages = ["classify-media", "analyze-ai", "load-ai-results", "update-counts"];
     } else if (STAGES.includes(arg)) {
       config.stages.push(arg);
     } else {

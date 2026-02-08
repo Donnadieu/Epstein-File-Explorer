@@ -49,10 +49,11 @@ scripts/pipeline/
   run-pipeline.ts        - Master pipeline orchestrator with stage system
   doj-scraper.ts         - DOJ catalog scraper (with age cookie bypass)
   wikipedia-scraper.ts   - Wikipedia person data scraper
-  db-loader.ts           - Database loader (persons, documents, connections, import-downloads)
+  db-loader.ts           - Database loader (persons, documents, connections, AI results, import-downloads)
   document-downloader.ts - Document download manager
   pdf-processor.ts       - PDF text extraction
-  entity-extractor.ts    - Entity/relationship extraction from text
+  ai-analyzer.ts         - AI document analysis (DeepSeek)
+  media-classifier.ts    - Document media type classification
 tmp/
   download-epstein-all.sh - Bash script for bulk DOJ PDF downloads with probe discovery
 ```
@@ -78,7 +79,7 @@ bash tmp/download-epstein-all.sh 1 3                      # Download data sets 1
 ## Current Database Stats
 - **103 persons** (91 from Wikipedia + 12 seed)
 - **630 documents** (540 DOJ catalog + 70 imported PDFs + 20 seed)
-- **171 connections** (145 extracted from descriptions + 26 seed)
+- **171+ connections** (AI-classified from descriptions + seed data)
 - **33 timeline events**
 
 ## Recent Changes
