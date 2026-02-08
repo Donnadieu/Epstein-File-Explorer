@@ -112,7 +112,7 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
       }
 
       if (!cancelled) {
-        setErrorMessage("Could not load PDF. The source may block direct access.");
+        setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");
         setViewerState("error");
       }
     }
@@ -183,12 +183,12 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
   if (viewerState === "error") {
     return (
       <Card className="bg-muted/30">
-        <CardContent className="flex flex-col items-center gap-3 py-8">
+        <CardContent className="flex flex-col items-center gap-4 py-8">
           <AlertCircle className="w-8 h-8 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground text-center">{errorMessage}</p>
+          <p className="text-sm text-muted-foreground text-center max-w-md">{errorMessage}</p>
           <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="gap-2">
-              <ExternalLink className="w-4 h-4" /> View Original on DOJ
+              <ExternalLink className="w-4 h-4" /> Browse Source on DOJ Website
             </Button>
           </a>
         </CardContent>

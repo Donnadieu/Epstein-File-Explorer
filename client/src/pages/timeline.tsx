@@ -16,6 +16,7 @@ import type { TimelineEvent } from "@shared/schema";
 import TimelineViz from "@/components/timeline-viz";
 
 const DECADES = [
+  { label: "All Time", start: 0, end: 2099 },
   { label: "1950s", start: 1950, end: 1959 },
   { label: "1980s", start: 1980, end: 1989 },
   { label: "1990s", start: 1990, end: 1999 },
@@ -27,7 +28,7 @@ const DECADES = [
 export default function TimelinePage() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [zoomLevel, setZoomLevel] = useState<"all" | "key">("all");
-  const [yearFrom, setYearFrom] = useState("");
+  const [yearFrom, setYearFrom] = useState("1980");
   const [yearTo, setYearTo] = useState("");
 
   const { data: events, isLoading } = useQuery<TimelineEvent[]>({
@@ -51,12 +52,12 @@ export default function TimelinePage() {
     });
   }, [events, categoryFilter, zoomLevel, yearFrom, yearTo]);
 
-  const hasActiveFilters = categoryFilter !== "all" || zoomLevel !== "all" || yearFrom || yearTo;
+  const hasActiveFilters = categoryFilter !== "all" || zoomLevel !== "all" || yearFrom !== "1980" || yearTo;
 
   const clearFilters = () => {
     setCategoryFilter("all");
     setZoomLevel("all");
-    setYearFrom("");
+    setYearFrom("1980");
     setYearTo("");
   };
 
@@ -88,8 +89,11 @@ export default function TimelinePage() {
             size="sm"
             className="h-7 text-xs px-2.5"
             onClick={() => {
-              if (yearFrom === String(d.start) && yearTo === String(d.end)) {
+              if (d.start === 0) {
                 setYearFrom("");
+                setYearTo("");
+              } else if (yearFrom === String(d.start) && yearTo === String(d.end)) {
+                setYearFrom("1980");
                 setYearTo("");
               } else {
                 jumpToDecade(d.start, d.end);

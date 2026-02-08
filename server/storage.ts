@@ -108,6 +108,109 @@ async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
   return inflight;
 }
 
+/**
+ * Normalize a person name for matching: lowercase, remove middle initials,
+ * common prefixes/suffixes, and extra whitespace.
+ */
+function normalizeName(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\b(dr|mr|mrs|ms|jr|sr|ii|iii|iv)\b\.?/g, "")
+    .replace(/\b[a-z]\.\s*/g, "") // remove single-letter initials like "E."
+    .replace(/[^a-z\s]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Check if two persons likely refer to the same individual.
+ * Compares normalized names, aliases, and checks for substring/prefix matches.
+ */
+function isSamePerson(a: Person, b: Person): boolean {
+  const normA = normalizeName(a.name);
+  const normB = normalizeName(b.name);
+
+  // Exact match after normalization
+  if (normA === normB) return true;
+
+  // One name is a subset of the other (e.g., "jeff epstein" vs "jeffrey edward epstein")
+  const partsA = normA.split(" ").filter(Boolean);
+  const partsB = normB.split(" ").filter(Boolean);
+
+  // Check if they share the same last name and one's first name is a prefix of the other
+  if (partsA.length >= 2 && partsB.length >= 2) {
+    const lastA = partsA[partsA.length - 1];
+    const lastB = partsB[partsB.length - 1];
+    if (lastA === lastB) {
+      const firstA = partsA[0];
+      const firstB = partsB[0];
+      if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
+    }
+  }
+
+  // Check against aliases
+  const aliasesA = (a.aliases ?? []).map(normalizeName);
+  const aliasesB = (b.aliases ?? []).map(normalizeName);
+
+  if (aliasesA.includes(normB) || aliasesB.includes(normA)) return true;
+
+  return false;
+}
+
+/**
+ * Deduplicate a list of persons, returning canonical records and an ID mapping.
+ * For each group of duplicates, the one with the most connections is kept as canonical.
+ */
+function deduplicatePersons(allPersons: Person[]): { deduped: Person[]; idMap: Map<number, number> } {
+  const groups: Person[][] = [];
+  const assigned = new Set<number>();
+
+  for (const person of allPersons) {
+    if (assigned.has(person.id)) continue;
+
+    const group = [person];
+    assigned.add(person.id);
+
+    for (const other of allPersons) {
+      if (assigned.has(other.id)) continue;
+      if (isSamePerson(person, other)) {
+        group.push(other);
+        assigned.add(other.id);
+      }
+    }
+
+    groups.push(group);
+  }
+
+  const deduped: Person[] = [];
+  const idMap = new Map<number, number>();
+
+  for (const group of groups) {
+    // Pick the person with the most connections as canonical
+    group.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
+    const canonical = group[0];
+
+    // Merge connection and document counts from duplicates
+    let totalConns = 0;
+    let totalDocs = 0;
+    for (const p of group) {
+      totalConns += p.connectionCount;
+      totalDocs += p.documentCount;
+      if (p.id !== canonical.id) {
+        idMap.set(p.id, canonical.id);
+      }
+    }
+
+    deduped.push({
+      ...canonical,
+      connectionCount: totalConns,
+      documentCount: totalDocs,
+    });
+  }
+
+  return { deduped, idMap };
+}
+
 export class DatabaseStorage implements IStorage {
   async getPersons(): Promise<Person[]> {
     return db.select().from(persons).orderBy(desc(persons.documentCount));
@@ -275,18 +378,38 @@ export class DatabaseStorage implements IStorage {
     const allPersons = await this.getPersons();
     const allConnections = await db.select().from(connections);
 
-    const personMap = new Map(allPersons.map(p => [p.id, p]));
-    const enrichedConnections = allConnections.map((conn) => {
-      const p1 = personMap.get(conn.personId1);
-      const p2 = personMap.get(conn.personId2);
-      return {
-        ...conn,
-        person1Name: p1?.name || "Unknown",
-        person2Name: p2?.name || "Unknown",
-      };
-    });
+    // Deduplicate persons with similar names (e.g., "Jeffrey Epstein", "Jeffrey E. Epstein", "Jeff Epstein")
+    const { deduped, idMap } = deduplicatePersons(allPersons);
 
-    return { persons: allPersons, connections: enrichedConnections };
+    const dedupedMap = new Map(deduped.map(p => [p.id, p]));
+
+    // Remap connections to canonical person IDs and remove self-loops / duplicates
+    const seenConnections = new Set<string>();
+    const enrichedConnections: Array<typeof allConnections[number] & { person1Name: string; person2Name: string }> = [];
+
+    for (const conn of allConnections) {
+      const pid1 = idMap.get(conn.personId1) ?? conn.personId1;
+      const pid2 = idMap.get(conn.personId2) ?? conn.personId2;
+      if (pid1 === pid2) continue; // skip self-loops from merged entities
+      const p1 = dedupedMap.get(pid1);
+      const p2 = dedupedMap.get(pid2);
+      if (!p1 || !p2) continue;
+
+      // Deduplicate connections between the same pair
+      const pairKey = pid1 < pid2 ? `${pid1}-${pid2}-${conn.connectionType}` : `${pid2}-${pid1}-${conn.connectionType}`;
+      if (seenConnections.has(pairKey)) continue;
+      seenConnections.add(pairKey);
+
+      enrichedConnections.push({
+        ...conn,
+        personId1: pid1,
+        personId2: pid2,
+        person1Name: p1.name,
+        person2Name: p2.name,
+      });
+    }
+
+    return { persons: deduped, connections: enrichedConnections };
   }
 
   async search(query: string) {

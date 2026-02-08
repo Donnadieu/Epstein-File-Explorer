@@ -26,6 +26,28 @@ import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
 
+/** Detect if a document title is just an EFTA reference number or other non-descriptive ID */
+const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
+const NON_DESCRIPTIVE_PATTERN = /^(data[_\s-]?set[_\s-]?\d|set[_\s-]?\d|doc[_\s-]?\d|file[_\s-]?\d|page[_\s-]?\d)/i;
+
+function isNonDescriptiveTitle(title: string): boolean {
+  const trimmed = title.trim();
+  return EFTA_PATTERN.test(trimmed) || NON_DESCRIPTIVE_PATTERN.test(trimmed);
+}
+
+function getDisplayTitle(doc: Document): string {
+  if (!isNonDescriptiveTitle(doc.title)) return doc.title;
+
+  // Generate a better display title from available metadata
+  const typeName = doc.documentType
+    ? doc.documentType.charAt(0).toUpperCase() + doc.documentType.slice(1)
+    : "Document";
+  const setInfo = doc.dataSet ? ` (Set ${doc.dataSet})` : "";
+  const dateInfo = doc.dateOriginal ? ` - ${doc.dateOriginal}` : "";
+
+  return `${typeName}${setInfo}${dateInfo}`;
+}
+
 const typeIcons: Record<string, any> = {
   "flight log": Clock,
   "court filing": Scale,
@@ -218,7 +240,12 @@ export default function DocumentsPage() {
                         </div>
                         <div className="flex flex-col gap-1 min-w-0 flex-1">
                           <div className="flex items-start justify-between gap-2">
-                            <span className="text-sm font-semibold">{doc.title}</span>
+                            <div className="flex items-center gap-2 min-w-0">
+                              <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
+                              {isNonDescriptiveTitle(doc.title) && (
+                                <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                              )}
+                            </div>
                             {doc.sourceUrl && (
                               <Button
                                 variant="ghost"

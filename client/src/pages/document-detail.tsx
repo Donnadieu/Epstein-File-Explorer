@@ -19,9 +19,24 @@ import {
   Hash,
   Layers,
   Eye,
+  Image as ImageIcon,
+  Video,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
 import type { Document, Person } from "@shared/schema";
+
+const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
+
+function getDisplayTitle(doc: Document): string {
+  const trimmed = doc.title.trim();
+  if (!EFTA_PATTERN.test(trimmed)) return doc.title;
+  const typeName = doc.documentType
+    ? doc.documentType.charAt(0).toUpperCase() + doc.documentType.slice(1)
+    : "Document";
+  const setInfo = doc.dataSet ? ` (Set ${doc.dataSet})` : "";
+  const dateInfo = doc.dateOriginal ? ` - ${doc.dateOriginal}` : "";
+  return `${typeName}${setInfo}${dateInfo}`;
+}
 
 interface DocumentDetail extends Document {
   persons: (Person & { mentionType: string; context: string | null })[];
@@ -87,7 +102,10 @@ export default function DocumentDetailPage() {
             <Icon className="w-6 h-6 text-muted-foreground" />
           </div>
           <div className="flex flex-col gap-2 min-w-0 flex-1">
-            <h1 className="text-xl font-bold tracking-tight" data-testid="text-document-title">{doc.title}</h1>
+            <h1 className="text-xl font-bold tracking-tight" data-testid="text-document-title">{getDisplayTitle(doc)}</h1>
+            {EFTA_PATTERN.test(doc.title.trim()) && (
+              <span className="text-xs font-mono text-muted-foreground">Ref: {doc.title}</span>
+            )}
             {doc.description && (
               <p className="text-sm text-muted-foreground">{doc.description}</p>
             )}
@@ -170,7 +188,7 @@ export default function DocumentDetailPage() {
             <h2 className="text-sm font-semibold flex items-center gap-2">
               <Eye className="w-4 h-4 text-primary" /> Document Viewer
             </h2>
-            <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl} />
+            <DocumentViewer doc={doc} />
           </div>
         </>
       )}
@@ -238,4 +256,50 @@ export default function DocumentDetailPage() {
       </div>
     </div>
   );
+}
+
+function DocumentViewer({ doc }: { doc: DocumentDetail }) {
+  const mediaType = doc.mediaType?.toLowerCase() || "";
+  const docType = doc.documentType?.toLowerCase() || "";
+  const isPhoto = mediaType === "photo" || mediaType === "image" || docType === "photograph";
+  const isVideo = mediaType === "video" || docType === "video";
+
+  if (isPhoto) {
+    return (
+      <Card className="bg-muted/30">
+        <CardContent className="flex flex-col items-center gap-4 py-8">
+          <ImageIcon className="w-10 h-10 text-muted-foreground/50" />
+          <p className="text-sm text-muted-foreground text-center">
+            Photographs are hosted on the DOJ website and cannot be embedded directly.
+          </p>
+          <a href={doc.sourceUrl!} target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="gap-2">
+              <ExternalLink className="w-4 h-4" /> View Photos on DOJ
+            </Button>
+          </a>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (isVideo) {
+    return (
+      <Card className="bg-muted/30">
+        <CardContent className="flex flex-col items-center gap-4 py-8">
+          <Video className="w-10 h-10 text-muted-foreground/50" />
+          <p className="text-sm text-muted-foreground text-center">
+            Video files are hosted on the DOJ website and cannot be embedded directly.
+          </p>
+          <a href={doc.sourceUrl!} target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="gap-2">
+              <ExternalLink className="w-4 h-4" /> View Video on DOJ
+            </Button>
+          </a>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  // Default: try PDF viewer, which will show a graceful fallback if it fails
+  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl!} />;
 }
