@@ -20,6 +20,9 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  Video,
+  LayoutGrid,
+  List,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import type { Document } from "@shared/schema";
@@ -104,7 +107,10 @@ export default function DocumentsPage() {
     dataSet: "all",
     redacted: "all",
     page: "1",
+    view: "list",
   });
+
+  const viewMode = filters.view === "grid" ? "grid" : "list";
 
   const { data: documents, isLoading } = useQuery<Document[]>({
     queryKey: ["/api/documents"],
@@ -138,7 +144,7 @@ export default function DocumentsPage() {
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
-      key !== "page" &&
+      key !== "page" && key !== "view" &&
       value !== "" && value !== "all"
   );
 
@@ -220,6 +226,26 @@ export default function DocumentsPage() {
               Clear
             </Button>
           )}
+          <div className="ml-auto flex items-center border rounded-md">
+            <Button
+              variant={viewMode === "list" ? "secondary" : "ghost"}
+              size="icon"
+              className="h-8 w-8 rounded-r-none"
+              onClick={() => setFilter("view", "list")}
+              data-testid="button-view-list"
+            >
+              <List className="w-4 h-4" />
+            </Button>
+            <Button
+              variant={viewMode === "grid" ? "secondary" : "ghost"}
+              size="icon"
+              className="h-8 w-8 rounded-l-none"
+              onClick={() => setFilter("view", "grid")}
+              data-testid="button-view-grid"
+            >
+              <LayoutGrid className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -234,79 +260,115 @@ export default function DocumentsPage() {
           <p className="text-xs text-muted-foreground">
             Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} documents
           </p>
-          <div className="flex flex-col gap-2">
-            {paginated?.map((doc) => {
-              const Icon = typeIcons[doc.documentType] || FileText;
-              return (
-                <Link key={doc.id} href={`/documents/${doc.id}`}>
-                  <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
-                          <Icon className="w-5 h-5 text-muted-foreground" />
-                        </div>
-                        <div className="flex flex-col gap-1 min-w-0 flex-1">
-                          <div className="flex items-start justify-between gap-2">
-                            <div className="flex items-center gap-2 min-w-0">
-                              <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
-                              {isNonDescriptiveTitle(doc.title) && (
-                                <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+          {viewMode === "list" ? (
+            <div className="flex flex-col gap-2">
+              {paginated?.map((doc) => {
+                const Icon = typeIcons[doc.documentType] || FileText;
+                return (
+                  <Link key={doc.id} href={`/documents/${doc.id}`}>
+                    <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
+                            <Icon className="w-5 h-5 text-muted-foreground" />
+                          </div>
+                          <div className="flex flex-col gap-1 min-w-0 flex-1">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex items-center gap-2 min-w-0">
+                                <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
+                                {isNonDescriptiveTitle(doc.title) && (
+                                  <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                                )}
+                              </div>
+                              {doc.sourceUrl && (
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="shrink-0"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                  }}
+                                  data-testid={`button-source-${doc.id}`}
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                </Button>
                               )}
                             </div>
-                            {doc.sourceUrl && (
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="shrink-0"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
-                                }}
-                                data-testid={`button-source-${doc.id}`}
-                              >
-                                <ExternalLink className="w-3 h-3" />
-                              </Button>
+                            {doc.description && (
+                              <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
                             )}
-                          </div>
-                          {doc.description && (
-                            <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
-                          )}
-                          {doc.keyExcerpt && (
-                            <p className="text-xs text-muted-foreground/80 italic line-clamp-1 mt-0.5">
-                              "{doc.keyExcerpt}"
-                            </p>
-                          )}
-                          <div className="flex items-center gap-2 flex-wrap mt-1.5">
-                            <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
-                            {doc.dataSet && (
-                              <Badge variant="secondary" className="text-[10px]">Set {doc.dataSet}</Badge>
+                            {doc.keyExcerpt && (
+                              <p className="text-xs text-muted-foreground/80 italic line-clamp-1 mt-0.5">
+                                "{doc.keyExcerpt}"
+                              </p>
                             )}
-                            {doc.dateOriginal && (
-                              <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
-                                <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                              </span>
-                            )}
-                            {doc.pageCount && (
-                              <span className="text-[10px] text-muted-foreground">{doc.pageCount} pages</span>
-                            )}
-                            {doc.isRedacted && (
-                              <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
-                                Redacted
-                              </Badge>
-                            )}
-                            {doc.tags?.map((tag) => (
-                              <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
-                            ))}
+                            <div className="flex items-center gap-2 flex-wrap mt-1.5">
+                              <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+                              {doc.dataSet && (
+                                <Badge variant="secondary" className="text-[10px]">Set {doc.dataSet}</Badge>
+                              )}
+                              {doc.dateOriginal && (
+                                <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                                  <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                                </span>
+                              )}
+                              {doc.pageCount && (
+                                <span className="text-[10px] text-muted-foreground">{doc.pageCount} pages</span>
+                              )}
+                              {doc.isRedacted && (
+                                <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
+                                  Redacted
+                                </Badge>
+                              )}
+                              {doc.tags?.map((tag) => (
+                                <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
+                              ))}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {paginated?.map((doc) => (
+                <Link key={doc.id} href={`/documents/${doc.id}`}>
+                  <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
+                    <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
+                      <DocumentThumbnail doc={doc} />
+                      <Badge
+                        variant="outline"
+                        className="absolute bottom-1.5 right-1.5 text-[9px] bg-background/80 backdrop-blur-sm"
+                      >
+                        {doc.documentType}
+                      </Badge>
+                      {doc.isRedacted && (
+                        <Badge
+                          variant="secondary"
+                          className="absolute top-1.5 right-1.5 text-[9px] bg-destructive/80 text-destructive-foreground backdrop-blur-sm"
+                        >
+                          Redacted
+                        </Badge>
+                      )}
+                    </div>
+                    <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
+                      {getDisplayTitle(doc)}
+                    </p>
+                    {doc.dateOriginal && (
+                      <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
+                        <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                      </span>
+                    )}
+                  </div>
                 </Link>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          )}
 
           {totalItems === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-4">
@@ -368,6 +430,46 @@ export default function DocumentsPage() {
             </div>
           )}
         </>
+      )}
+    </div>
+  );
+}
+
+function DocumentThumbnail({ doc }: { doc: Document }) {
+  const mediaType = doc.mediaType?.toLowerCase() || "";
+  const docType = doc.documentType?.toLowerCase() || "";
+  const isPhoto = mediaType === "photo" || mediaType === "image" || docType === "photograph";
+  const isVideo = mediaType === "video" || docType === "video";
+  const Icon = typeIcons[doc.documentType] || FileText;
+
+  if (isPhoto) {
+    return (
+      <img
+        src={`/api/documents/${doc.id}/image`}
+        alt={doc.title}
+        className="w-full h-full object-cover"
+        loading="lazy"
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = "none";
+        }}
+      />
+    );
+  }
+
+  if (isVideo) {
+    return (
+      <div className="flex flex-col items-center gap-1.5">
+        <Video className="w-8 h-8 text-muted-foreground/40" />
+        <span className="text-[10px] text-muted-foreground">Video</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col items-center gap-1.5">
+      <Icon className="w-8 h-8 text-muted-foreground/40" />
+      {doc.pageCount && (
+        <span className="text-[10px] text-muted-foreground">{doc.pageCount} pg</span>
       )}
     </div>
   );
