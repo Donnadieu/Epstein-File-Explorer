@@ -27,6 +27,7 @@ import DocumentComparePage from "@/pages/document-compare";
 import TimelinePage from "@/pages/timeline";
 import NetworkPage from "@/pages/network";
 import SearchPage from "@/pages/search";
+import AIInsightsPage from "@/pages/ai-insights";
 // import AskArchivePage from "@/pages/ask-archive";
 
 function Router() {
@@ -41,6 +42,7 @@ function Router() {
       <Route path="/timeline" component={TimelinePage} />
       <Route path="/network" component={NetworkPage} />
       <Route path="/search" component={SearchPage} />
+      <Route path="/ai-insights" component={AIInsightsPage} />
       {/* <Route path="/ask-the-archive" component={AskArchivePage} /> */}
       <Route component={NotFound} />
     </Switch>

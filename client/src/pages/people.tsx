@@ -81,7 +81,7 @@ export default function PeoplePage() {
       });
   }, [persons, filters.search, filters.category, filters.sort]);
 
-  const categories = ["all", ...new Set(persons?.map((p) => p.category) || [])];
+  const categories = ["all", ...Array.from(new Set(persons?.map((p) => p.category) || []))];
 
   const totalItems = filtered?.length || 0;
   const totalPages = Math.max(1, Math.ceil(totalItems / ITEMS_PER_PAGE));
@@ -223,7 +223,7 @@ export default function PeoplePage() {
                       variant="outline"
                       size="sm"
                       className="h-7 gap-1 text-xs"
-                      onClick={() => setFilter(key, key === "category" ? "all" : "")}
+                      onClick={() => setFilter(key as keyof typeof filters, key === "category" ? "all" : "")}
                     >
                       {filterLabels[key] || key}: {value}
                       <X className="w-3 h-3" />

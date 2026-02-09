@@ -19,6 +19,7 @@ import {
   Search,
   Network,
   // MessageCircle,
+  Brain,
   ExternalLink,
   Shield,
 } from "lucide-react";
@@ -30,6 +31,7 @@ const navItems = [
   { title: "Timeline", url: "/timeline", icon: Clock },
   { title: "Network", url: "/network", icon: Network },
   { title: "Search", url: "/search", icon: Search },
+  { title: "AI Insights", url: "/ai-insights", icon: Brain },
   // { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageCircle },
 ];
 
