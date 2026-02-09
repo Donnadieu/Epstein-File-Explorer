@@ -73,35 +73,54 @@ export async function closeBrowser(): Promise<void> {
 
 /** Solve the Akamai bot challenge ("I am not a robot") if present. */
 async function solveBotChallenge(page: Page): Promise<boolean> {
-  const isChallenge = await page.evaluate(() => {
-    return document.body?.innerHTML?.includes("reauth") ||
-      !!document.querySelector("input[value='I am not a robot']");
+  const challengeInfo = await page.evaluate(() => {
+    const html = document.body?.innerHTML || "";
+    // Detect various Akamai challenge indicators
+    const hasReauth = html.includes("reauth");
+    const hasRobotInput = !!document.querySelector("input[value='I am not a robot']");
+    const hasRobotButton = !!document.querySelector("button#sec-cpt-if-btn");
+    const hasAkamaiScript = html.includes("abuse-deterrent") || html.includes("_sec_cpt");
+    const hasChallengeForm = !!document.querySelector("form#sec-cpt-if-form, form[action*='challenge']");
+    const pageText = document.body?.innerText || "";
+    const hasVerifyText = pageText.includes("Verify you are human") ||
+                          pageText.includes("Press & Hold") ||
+                          pageText.includes("I am not a robot");
+    return { hasReauth, hasRobotInput, hasRobotButton, hasAkamaiScript, hasChallengeForm, hasVerifyText };
   });
+
+  const isChallenge = challengeInfo.hasReauth || challengeInfo.hasRobotInput ||
+                      challengeInfo.hasRobotButton || challengeInfo.hasAkamaiScript ||
+                      challengeInfo.hasChallengeForm || challengeInfo.hasVerifyText;
 
   if (!isChallenge) return false;
 
-  console.log("      Bot challenge detected, solving...");
+  console.log("      Bot challenge detected:", JSON.stringify(challengeInfo));
   // Wait for the abuse-deterrent.js script to define SHA256/setCookie
   await page.waitForTimeout(2000);
 
-  const button = page.locator("input[value='I am not a robot']");
-  if (await button.isVisible({ timeout: 3000 }).catch(() => false)) {
-    await button.click();
-    await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
-    await page.waitForTimeout(3000);
+  // Try various button selectors that Akamai uses across versions
+  const buttonSelectors = [
+    "input[value='I am not a robot']",
+    "button#sec-cpt-if-btn",
+    "button[type='submit']",
+    "#challenge-form button",
+  ];
 
-    // Check if challenge reappears (may need multiple attempts)
-    const stillChallenge = await page.evaluate(() =>
-      !!document.querySelector("input[value='I am not a robot']")
-    );
-    if (stillChallenge) {
-      console.log("      Challenge persisted, retrying...");
-      await page.waitForTimeout(2000);
-      await button.click().catch(() => {});
+  for (const selector of buttonSelectors) {
+    const button = page.locator(selector);
+    if (await button.isVisible({ timeout: 2000 }).catch(() => false)) {
+      console.log(`      Clicking challenge button: ${selector}`);
+      // Use JS click to bypass overlays
+      await page.evaluate((sel) => {
+        const el = document.querySelector(sel) as HTMLElement;
+        if (el) el.click();
+      }, selector);
       await page.waitForLoadState("load", { timeout: 15000 }).catch(() => {});
       await page.waitForTimeout(3000);
+      break;
     }
   }
+
   return true;
 }
 
@@ -227,31 +246,63 @@ async function clickNextPage(page: Page): Promise<boolean> {
 export async function extractCookieHeader(): Promise<string> {
   const context = await getBrowserContext();
 
-  // Navigate to the DOJ Epstein page to trigger bot challenge + age gate
+  // Navigate to DOJ to trigger Akamai bot challenge.
+  // Try multiple URLs — the challenge may only fire on certain paths.
   const page = await context.newPage();
+  const challengeUrls = [
+    "https://www.justice.gov/epstein",
+    "https://www.justice.gov",
+  ];
   try {
-    await page.goto("https://www.justice.gov/epstein/files", {
-      waitUntil: "load",
-      timeout: 30000,
-    });
-    await page.waitForTimeout(2000);
+    for (const url of challengeUrls) {
+      await page.goto(url, { waitUntil: "load", timeout: 30000 });
+      await page.waitForTimeout(2000);
 
-    // Solve bot challenge if present
-    await solveBotChallenge(page);
+      // Solve bot challenge if present
+      const solved = await solveBotChallenge(page);
 
-    // Handle age gate if present
-    await handleAgeGate(page);
+      // Handle age gate if present
+      await handleAgeGate(page);
 
-    // Wait for cookies to settle
-    await page.waitForTimeout(2000);
+      // Wait for cookies to settle
+      await page.waitForTimeout(2000);
+
+      // Check if we got authorization cookies
+      const cookies = await context.cookies();
+      if (cookies.some(c => c.name.startsWith("authorization_"))) {
+        console.log(`  Got Akamai cookies from ${url}`);
+        break;
+      }
+      if (solved) break; // Challenge appeared even if cookies not yet visible
+    }
   } catch (err: any) {
     console.warn(`  Warning during cookie acquisition: ${err.message}`);
-  } finally {
-    await page.close();
   }
 
-  const cookies = await context.cookies();
-  const hasBotCookies = cookies.some(c => c.name.startsWith("authorization_"));
+  // Check if we got the required Akamai cookies
+  let cookies = await context.cookies();
+  let hasBotCookies = cookies.some(c => c.name.startsWith("authorization_"));
+
+  // In headed mode: if automatic solver failed, wait for manual intervention
+  if (!hasBotCookies && USE_HEADED) {
+    console.log("  Akamai cookies not found after auto-solve.");
+    console.log("  >>> Please solve the bot challenge in the browser window <<<");
+    console.log("  Waiting up to 120s for authorization cookies...");
+
+    const deadline = Date.now() + 120_000;
+    while (Date.now() < deadline) {
+      await page.waitForTimeout(3000);
+      cookies = await context.cookies();
+      hasBotCookies = cookies.some(c => c.name.startsWith("authorization_"));
+      if (hasBotCookies) {
+        console.log("  Akamai cookies obtained after manual solve!");
+        break;
+      }
+    }
+  }
+
+  await page.close();
+
   if (!hasBotCookies) {
     console.warn("  Warning: No Akamai authorization cookies found — downloads may fail");
   }
