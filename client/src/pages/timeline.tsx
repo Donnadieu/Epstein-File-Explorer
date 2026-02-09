@@ -36,7 +36,7 @@ export default function TimelinePage() {
   });
 
   const categories = useMemo(
-    () => ["all", ...new Set(events?.map((e) => e.category) || [])],
+    () => ["all", ...Array.from(new Set(events?.map((e) => e.category) || []))],
     [events]
   );
 

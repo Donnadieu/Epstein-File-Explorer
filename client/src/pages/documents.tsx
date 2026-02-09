@@ -375,7 +375,7 @@ export default function DocumentsPage() {
                       variant="outline"
                       size="sm"
                       className="h-7 gap-1 text-xs"
-                      onClick={() => setFilter(key, ["type", "dataSet", "redacted"].includes(key) ? "all" : "")}
+                      onClick={() => setFilter(key as keyof typeof filters, ["type", "dataSet", "redacted"].includes(key) ? "all" : "")}
                     >
                       {filterLabels[key] || key}: {value}
                       <X className="w-3 h-3" />
@@ -446,6 +446,7 @@ function PdfThumbnail({ docId }: { docId: number }) {
         await page.render({
           canvasContext: canvas.getContext("2d")!,
           viewport: scaledViewport,
+          canvas,
         }).promise;
       } catch {
         if (!cancelled) setFailed(true);

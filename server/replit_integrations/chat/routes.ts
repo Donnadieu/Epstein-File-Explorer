@@ -23,7 +23,8 @@ export function registerChatRoutes(app: Express): void {
   // Get single conversation with messages
   app.get("/api/conversations/:id", async (req: Request, res: Response) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(req.params.id as string);
+      if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
       const conversation = await chatStorage.getConversation(id);
       if (!conversation) {
         return res.status(404).json({ error: "Conversation not found" });
@@ -51,7 +52,8 @@ export function registerChatRoutes(app: Express): void {
   // Delete conversation
   app.delete("/api/conversations/:id", async (req: Request, res: Response) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(req.params.id as string);
+      if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
       await chatStorage.deleteConversation(id);
       res.status(204).send();
     } catch (error) {
@@ -65,8 +67,20 @@ export function registerChatRoutes(app: Express): void {
   // Use the OpenRouter API to find available models.
   app.post("/api/conversations/:id/messages", async (req: Request, res: Response) => {
     try {
-      const conversationId = parseInt(req.params.id);
-      const { content, model = "meta-llama/llama-3.3-70b-instruct" } = req.body;
+      const conversationId = parseInt(req.params.id as string);
+      if (isNaN(conversationId)) return res.status(400).json({ error: "Invalid ID" });
+
+      const { content, model: requestedModel } = req.body;
+      if (!content || typeof content !== "string") {
+        return res.status(400).json({ error: "Message content is required" });
+      }
+
+      const allowedModels = [
+        "meta-llama/llama-3.3-70b-instruct",
+        "anthropic/claude-3.5-sonnet",
+        "openai/gpt-4o",
+      ];
+      const model = allowedModels.includes(requestedModel) ? requestedModel : allowedModels[0];
 
       // Save user message
       await chatStorage.createMessage(conversationId, "user", content);
