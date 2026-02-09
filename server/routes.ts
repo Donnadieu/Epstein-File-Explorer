@@ -36,19 +36,6 @@ function isAllowedPdfUrl(url: string): boolean {
   }
 }
 
-const exportRateLimiter = new Map<string, { count: number; resetAt: number }>();
-
-function checkExportRateLimit(ip: string): boolean {
-  const now = Date.now();
-  const entry = exportRateLimiter.get(ip);
-  if (!entry || now > entry.resetAt) {
-    exportRateLimiter.set(ip, { count: 1, resetAt: now + 60_000 });
-    return true;
-  }
-  if (entry.count >= 10) return false;
-  entry.count++;
-  return true;
-}
 
 function escapeCsvField(value: unknown): string {
   const str = String(value ?? "");
@@ -587,9 +574,7 @@ export async function registerRoutes(
 
   // Data export routes
   app.get("/api/export/persons", async (req, res) => {
-    if (!checkExportRateLimit(req.ip || "unknown")) {
-      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
-    }
+
     try {
       const format = (req.query.format as string) || "json";
       const persons = await storage.getPersons();
@@ -614,9 +599,7 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/documents", async (req, res) => {
-    if (!checkExportRateLimit(req.ip || "unknown")) {
-      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
-    }
+
     try {
       const format = (req.query.format as string) || "json";
       const documents = await storage.getDocuments();
@@ -641,9 +624,7 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/search", async (req, res) => {
-    if (!checkExportRateLimit(req.ip || "unknown")) {
-      return res.status(429).json({ error: "Too many export requests. Try again in a minute." });
-    }
+
     try {
       const query = (req.query.q as string) || "";
       const format = (req.query.format as string) || "json";
