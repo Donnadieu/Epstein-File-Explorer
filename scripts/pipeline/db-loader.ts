@@ -4,8 +4,8 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
 import { persons, documents, connections, personDocuments, timelineEvents } from "../../shared/schema";
-import { sql, eq, inArray } from "drizzle-orm";
-import { isSamePerson } from "../../server/storage";
+import { sql, eq, or, inArray } from "drizzle-orm";
+import { isSamePerson, normalizeName } from "../../server/storage";
 import type { RawPerson } from "./wikipedia-scraper";
 import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
 import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from "./ai-analyzer";
@@ -361,13 +361,101 @@ export async function updateDocumentCounts(): Promise<void> {
   console.log("  Counts updated");
 }
 
+/**
+ * Merge a list of duplicate person IDs into a canonical person.
+ * Remaps person_documents, connections, timeline_events, collects aliases,
+ * deduplicates person_documents rows, removes self-loop connections, and recalculates counts.
+ */
+async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicateIds: number[], allNames: string[]): Promise<void> {
+  if (duplicateIds.length === 0) return;
+
+  // Collect variant names as aliases (exclude canonical's own name)
+  const existingAliases = canonical.aliases ?? [];
+  const newAliases = allNames
+    .filter(n => n !== canonical.name && !existingAliases.includes(n))
+    .slice(0, 20); // cap to avoid bloat
+
+  // Remap person_documents
+  await db.update(personDocuments)
+    .set({ personId: canonical.id })
+    .where(inArray(personDocuments.personId, duplicateIds));
+
+  // Dedup person_documents: remove duplicate (personId, documentId) rows keeping the first
+  await db.execute(sql`
+    DELETE FROM person_documents a USING person_documents b
+    WHERE a.id > b.id
+      AND a.person_id = b.person_id
+      AND a.document_id = b.document_id
+      AND a.person_id = ${canonical.id}
+  `);
+
+  // Remap connections
+  await db.update(connections)
+    .set({ personId1: canonical.id })
+    .where(inArray(connections.personId1, duplicateIds));
+  await db.update(connections)
+    .set({ personId2: canonical.id })
+    .where(inArray(connections.personId2, duplicateIds));
+
+  // Remove self-loop connections created by remapping
+  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+
+  // Delete any remaining connections still referencing duplicate IDs (safety net for FK constraints)
+  await db.delete(connections).where(
+    or(
+      inArray(connections.personId1, duplicateIds),
+      inArray(connections.personId2, duplicateIds),
+    )
+  );
+
+  // Remap timeline_events.person_ids (integer array)
+  for (const dupId of duplicateIds) {
+    await db.execute(sql`
+      UPDATE timeline_events
+      SET person_ids = array_replace(person_ids, ${dupId}, ${canonical.id})
+      WHERE ${dupId} = ANY(person_ids)
+    `);
+  }
+  // Deduplicate person_ids arrays (remove duplicate canonical IDs)
+  await db.execute(sql`
+    UPDATE timeline_events
+    SET person_ids = (SELECT array_agg(DISTINCT x) FROM unnest(person_ids) x)
+    WHERE ${canonical.id} = ANY(person_ids)
+  `);
+
+  // Delete any remaining person_documents referencing duplicates (safety net)
+  await db.delete(personDocuments).where(inArray(personDocuments.personId, duplicateIds));
+
+  // Delete duplicate person records
+  await db.delete(persons).where(inArray(persons.id, duplicateIds));
+
+  // Update canonical: counts + aliases
+  const [docCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(personDocuments)
+    .where(eq(personDocuments.personId, canonical.id));
+  const [connCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(connections)
+    .where(sql`${connections.personId1} = ${canonical.id} OR ${connections.personId2} = ${canonical.id}`);
+
+  const mergedAliases = [...new Set([...existingAliases, ...newAliases])];
+  await db.update(persons)
+    .set({
+      documentCount: docCount?.count || 0,
+      connectionCount: connCount?.count || 0,
+      aliases: mergedAliases.length > 0 ? mergedAliases : null,
+    })
+    .where(eq(persons.id, canonical.id));
+}
+
 export async function deduplicatePersonsInDB(): Promise<void> {
   console.log("Deduplicating persons in database...");
 
   const allPersons = await db.select().from(persons);
   console.log(`  Found ${allPersons.length} persons total`);
 
-  // Union-Find for grouping
+  // --- Pass 1: Multi-word name matching via Union-Find ---
   const parent = new Map<number, number>();
   for (const p of allPersons) parent.set(p.id, p.id);
 
@@ -383,7 +471,6 @@ export async function deduplicatePersonsInDB(): Promise<void> {
     if (ra !== rb) parent.set(ra, rb);
   }
 
-  // Compare all pairs
   for (let i = 0; i < allPersons.length; i++) {
     for (let j = i + 1; j < allPersons.length; j++) {
       if (isSamePerson(allPersons[i], allPersons[j])) {
@@ -392,7 +479,6 @@ export async function deduplicatePersonsInDB(): Promise<void> {
     }
   }
 
-  // Extract groups
   const groups = new Map<number, typeof allPersons>();
   for (const p of allPersons) {
     const root = find(p.id);
@@ -406,135 +492,66 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   for (const group of groups.values()) {
     if (group.length <= 1) continue;
 
-    // Pick canonical: most connections + documents
     group.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
     const canonical = group[0];
     const duplicateIds = group.slice(1).map(p => p.id);
 
-    if (duplicateIds.length === 0) continue;
-
-    // Remap person_documents
-    await db.update(personDocuments)
-      .set({ personId: canonical.id })
-      .where(inArray(personDocuments.personId, duplicateIds));
-
-    // Remap connections (personId1)
-    await db.update(connections)
-      .set({ personId1: canonical.id })
-      .where(inArray(connections.personId1, duplicateIds));
-
-    // Remap connections (personId2)
-    await db.update(connections)
-      .set({ personId2: canonical.id })
-      .where(inArray(connections.personId2, duplicateIds));
-
-    // Delete duplicate person records
-    await db.delete(persons).where(inArray(persons.id, duplicateIds));
-
-    // Update canonical counts
-    const [docCount] = await db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(personDocuments)
-      .where(eq(personDocuments.personId, canonical.id));
-
-    const [connCount] = await db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(connections)
-      .where(sql`${connections.personId1} = ${canonical.id} OR ${connections.personId2} = ${canonical.id}`);
-
-    await db.update(persons)
-      .set({
-        documentCount: docCount?.count || 0,
-        connectionCount: connCount?.count || 0,
-      })
-      .where(eq(persons.id, canonical.id));
+    await mergePersonGroup(canonical, duplicateIds, group.map(p => p.name));
 
     mergedCount++;
     deletedCount += duplicateIds.length;
     console.log(`  Merged "${group.map(p => p.name).join('", "')}" → "${canonical.name}"`);
   }
 
-  // Remove self-loop connections created by merging
+  // Remove self-loop connections
   await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
 
   console.log(`  Pass 1 (name matching): merged ${mergedCount} groups, deleted ${deletedCount} duplicate persons`);
 
   // --- Pass 2: Merge single-word names into dominant multi-word person ---
-  // This is done separately (not in union-find) to avoid transitive chains.
-  // e.g., "Epstein" merges into "Jeffrey Epstein" directly, without also chaining to "Mark Epstein".
   const remaining = await db.select().from(persons);
   const multiWord = remaining.filter(p => p.name.trim().split(/\s+/).length >= 2);
   const singleWord = remaining.filter(p => {
-    const n = p.name.toLowerCase()
-      .replace(/\b(dr|mr|mrs|ms|miss|jr|sr)\b\.?/g, "")
-      .replace(/\./g, "")
-      .replace(/[^a-z\s]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
+    const n = normalizeName(p.name);
     const parts = n.split(" ").filter(Boolean);
     if (parts.length === 0) return false;
-    // Single-word names like "Maxwel", "Epstein"
     if (parts.length === 1) return true;
-    // Names where all but one part are single-letter initials, e.g. "Maxwell M" → effectively single-word
-    const meaningfulParts = parts.filter(p => p.length >= 2);
+    const meaningfulParts = parts.filter(pt => pt.length >= 2);
     return meaningfulParts.length <= 1;
   });
 
   let pass2Merged = 0;
   for (const single of singleWord) {
-    const normalized = single.name.toLowerCase()
-      .replace(/\b(dr|mr|mrs|ms|miss|jr|sr)\b\.?/g, "")
-      .replace(/\./g, "")
-      .replace(/[^a-z\s]/g, "")
-      .replace(/\s+/g, " ")
-      .trim();
-    // Extract the meaningful word (longest part with >= 2 chars, or the whole thing if single word)
+    const normalized = normalizeName(single.name);
     const wordParts = normalized.split(" ").filter(Boolean);
     const meaningful = wordParts.filter(p => p.length >= 2);
     const word = meaningful.length > 0 ? meaningful.sort((a, b) => b.length - a.length)[0] : wordParts[0];
     if (!word || word.length < 3) continue;
 
-    // Find multi-word persons whose first OR last name matches
-    // Edit distance only for last names and only for longer words (>= 6 chars) to avoid false matches
     const candidates = multiWord.filter(p => {
       const parts = p.name.toLowerCase().replace(/[^a-z\s]/g, "").trim().split(/\s+/);
       const first = parts[0], last = parts[parts.length - 1];
       if (first === word || last === word) return true;
-      // Fuzzy match only against last name, only for longer words (avoids "lara"→"laura", "jayz"→"jay")
       if (word.length >= 6 && last.length >= 6 && editDistance(last, word) <= 1) return true;
       return false;
     });
 
     if (candidates.length === 0) continue;
 
-    // Pick the dominant candidate (highest connection + document count)
     candidates.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
     const dominant = candidates[0];
     const secondBest = candidates[1];
     const dominantScore = dominant.connectionCount + dominant.documentCount;
 
-    // Only merge if dominant is a major person (>= 50 total) and clearly dominant (>= 5x runner-up)
-    if (dominantScore < 50) continue;
-    if (secondBest && dominantScore < 5 * (secondBest.connectionCount + secondBest.documentCount)) {
+    // Lowered threshold: merge if dominant has >= 10 total and >= 3x runner-up
+    if (dominantScore < 10) continue;
+    if (secondBest && dominantScore < 3 * (secondBest.connectionCount + secondBest.documentCount)) {
       console.log(`  Skipping "${single.name}" → ambiguous between "${dominant.name}" and "${secondBest.name}"`);
       continue;
     }
 
-    // Merge single into dominant
     try {
-      await db.update(personDocuments).set({ personId: dominant.id }).where(eq(personDocuments.personId, single.id));
-      await db.update(connections).set({ personId1: dominant.id }).where(eq(connections.personId1, single.id));
-      await db.update(connections).set({ personId2: dominant.id }).where(eq(connections.personId2, single.id));
-      // Delete any remaining references (orphaned FKs)
-      await db.delete(personDocuments).where(eq(personDocuments.personId, single.id));
-      await db.delete(connections).where(sql`${connections.personId1} = ${single.id} OR ${connections.personId2} = ${single.id}`);
-      await db.delete(persons).where(eq(persons.id, single.id));
-
-      // Update counts
-      const [docCount] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, dominant.id));
-      const [connCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${dominant.id} OR ${connections.personId2} = ${dominant.id}`);
-      await db.update(persons).set({ documentCount: docCount?.count || 0, connectionCount: connCount?.count || 0 }).where(eq(persons.id, dominant.id));
-
+      await mergePersonGroup(dominant, [single.id], [single.name]);
       console.log(`  Merged "${single.name}" → "${dominant.name}"`);
       pass2Merged++;
     } catch (err: any) {
