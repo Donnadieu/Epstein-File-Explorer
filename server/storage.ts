@@ -112,7 +112,7 @@ async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
  * Normalize a person name for matching: lowercase, remove middle initials,
  * common prefixes/suffixes, and extra whitespace.
  */
-function normalizeName(name: string): string {
+export function normalizeName(name: string): string {
   let n = name.toLowerCase();
 
   // Handle "Last, First" format → "First Last"
@@ -129,6 +129,74 @@ function normalizeName(name: string): string {
     .replace(/[^a-z\s]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/**
+ * Collapse OCR space insertions: merge single-char fragments into adjacent words.
+ * "Jeff Pa liuca" → "Jeff Paliuca", "To nyricco" → "Tonyricco"
+ */
+function collapseOCRSpaces(name: string): string {
+  const parts = name.split(" ");
+  const merged: string[] = [];
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i].length === 1 && i + 1 < parts.length) {
+      // Single char followed by another part — merge them
+      merged.push(parts[i] + parts[i + 1]);
+      i++;
+    } else if (parts[i].length <= 2 && i > 0 && merged.length > 0 && merged[merged.length - 1].length > 1) {
+      // Short fragment after a word — append to previous
+      merged[merged.length - 1] += parts[i];
+    } else {
+      merged.push(parts[i]);
+    }
+  }
+  return merged.join(" ");
+}
+
+/** Common English nickname → canonical first name mappings */
+const NICKNAMES: Record<string, string> = {
+  bob: "robert", rob: "robert", bobby: "robert", robby: "robert",
+  bill: "william", billy: "william", will: "william", willy: "william",
+  jim: "james", jimmy: "james", jes: "james", jamie: "james",
+  mike: "michael", mikey: "michael",
+  dick: "richard", rick: "richard", rich: "richard", ricky: "richard",
+  tom: "thomas", tommy: "thomas",
+  joe: "joseph", joey: "joseph",
+  jack: "john", johnny: "john", jon: "john",
+  ted: "theodore", teddy: "theodore",
+  ed: "edward", eddie: "edward", ted2: "edward",
+  al: "albert", bert: "albert",
+  alex: "alexander", sandy: "alexander",
+  dan: "daniel", danny: "daniel",
+  dave: "david", davy: "david",
+  steve: "steven", stevie: "steven",
+  chris: "christopher",
+  nick: "nicholas", nicky: "nicholas",
+  tony: "anthony",
+  larry: "lawrence", laurence: "lawrence",
+  charlie: "charles", chuck: "charles",
+  harry: "henry", hank: "henry",
+  greg: "gregory",
+  matt: "matthew",
+  pat: "patrick",
+  pete: "peter",
+  sam: "samuel",
+  ben: "benjamin",
+  ken: "kenneth", kenny: "kenneth",
+  meg: "megan", meghan: "megan",
+};
+
+/** Resolve a first name to its canonical form using nickname map */
+function canonicalFirstName(first: string): string {
+  return NICKNAMES[first] || first;
+}
+
+/**
+ * Remove all spaces from a name to create a spaceless key.
+ * Catches "Tonyricco" vs "Tony Ricco", "GMJetter" vs "GM Jetter".
+ */
+function spacelessKey(name: string): string {
+  return name.replace(/\s+/g, "");
 }
 
 function editDistance(a: string, b: string): number {
@@ -163,21 +231,100 @@ export function isSamePerson(a: Person, b: Person): boolean {
   // Exact match after normalization
   if (normA === normB) return true;
 
+  // Spaceless match: "Tony Ricco" vs "Tonyricco" (after normalization)
+  if (normA.length >= 6 && spacelessKey(normA) === spacelessKey(normB)) return true;
+
+  // OCR space collapse match: "Jeff Pa liuca" → "Jeff Paliuca" vs "Jeff Pagliuca"
+  const collapsedA = collapseOCRSpaces(normA);
+  const collapsedB = collapseOCRSpaces(normB);
+  if (collapsedA === collapsedB) return true;
+
   // Sorted parts match (handles reversed order: "maxwell ghislaine" vs "ghislaine maxwell")
   const sortedA = [...partsA].sort().join(" ");
   const sortedB = [...partsB].sort().join(" ");
   if (sortedA === sortedB) return true;
 
-  // Same last name + first name is a prefix or within edit distance 2
+  // Extract first/last names, skipping leading single-char initials
+  // "R. Alexander Acosta" → parts ["r", "alexander", "acosta"] → realFirst = "alexander"
   const lastA = partsA[partsA.length - 1];
   const lastB = partsB[partsB.length - 1];
-  if (lastA === lastB) {
-    const firstA = partsA[0];
-    const firstB = partsB[0];
-    // Prefix match
+  const firstA = partsA[0];
+  const firstB = partsB[0];
+  const realFirstA = partsA.find(p => p.length >= 2) ?? firstA;
+  const realFirstB = partsB.find(p => p.length >= 2) ?? firstB;
+
+  if (lastA === lastB && lastA.length >= 3) {
+    // Prefix match (handles "J." vs "James", "Alex" vs "Alexander")
     if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
     // Fuzzy match (handles typos like "ghisaine" vs "ghislaine")
     if (firstA.length >= 4 && firstB.length >= 4 && editDistance(firstA, firstB) <= 2) return true;
+    // Nickname match (handles "Bob" vs "Robert", "Jes" vs "James")
+    if (canonicalFirstName(firstA) === canonicalFirstName(firstB)) return true;
+    // One canonical first resolves to a prefix of the other (handles "Alex"→"alexander" matching "Alexander")
+    const cA = canonicalFirstName(firstA), cB = canonicalFirstName(firstB);
+    if (cA.startsWith(cB) || cB.startsWith(cA)) return true;
+  }
+
+  // Same last name + first non-initial name matches (handles "R. Alexander Acosta" vs "Alex Acosta")
+  if (lastA === lastB && lastA.length >= 3 && (realFirstA !== firstA || realFirstB !== firstB)) {
+    const rfA = realFirstA, rfB = realFirstB;
+    if (rfA.length >= 3 && rfB.length >= 3) {
+      if (rfA === rfB) return true;
+      if (rfA.startsWith(rfB) || rfB.startsWith(rfA)) return true;
+      if (canonicalFirstName(rfA) === canonicalFirstName(rfB)) return true;
+      const rcA = canonicalFirstName(rfA), rcB = canonicalFirstName(rfB);
+      if (rcA.startsWith(rcB) || rcB.startsWith(rcA)) return true;
+    }
+  }
+
+  // Fuzzy last name match (edit distance ≤ 1 for last names ≥ 5 chars)
+  if (lastA.length >= 5 && lastB.length >= 5 && editDistance(lastA, lastB) <= 1) {
+    if (firstA === firstB && firstA.length >= 3) return true;
+    if (firstA.length >= 3 && firstB.length >= 3) {
+      if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
+    }
+    // Nickname-resolved first names match
+    if (canonicalFirstName(firstA) === canonicalFirstName(firstB)) return true;
+  }
+
+  // Same canonical first name + fuzzy last name (edit distance ≤ 2)
+  // Catches "Megan Markel" vs "Meghan Markle" (nickname match + transposition in last name)
+  // Requires last names ≥ 6 chars to avoid "Moyer"/"Myers" and "Furth"/"Furst" false positives
+  if (lastA.length >= 6 && lastB.length >= 6 && editDistance(lastA, lastB) <= 2) {
+    const cA = canonicalFirstName(firstA), cB = canonicalFirstName(firstB);
+    if (cA === cB && cA.length >= 3) return true;
+  }
+
+  // Last name prefix match: one last name starts with the other (handles "Mennin" vs "Menninger")
+  // Requires same first name and the shorter last name to be ≥ 4 chars
+  if (firstA === firstB && firstA.length >= 3) {
+    const shortLast = lastA.length <= lastB.length ? lastA : lastB;
+    const longLast = lastA.length <= lastB.length ? lastB : lastA;
+    if (shortLast.length >= 4 && longLast.startsWith(shortLast)) return true;
+  }
+
+  // One name contains the other's full name (handles "David Perry QC" vs "David Perry")
+  // Requires prefix containment OR matching first names — avoids "Jose Matthew Rogers" ≠ "Matthew Rogers"
+  if (normA.length >= 8 && normB.length >= 8) {
+    if (normA.length !== normB.length) {
+      const shorter = normA.length < normB.length ? normA : normB;
+      const longer = normA.length < normB.length ? normB : normA;
+      const shorterParts = shorter.split(" ").filter(Boolean);
+      const longerParts = longer.split(" ").filter(Boolean);
+      if (shorterParts.length >= 2 && longer.includes(shorter)) {
+        // The shorter name appears at the START of the longer (suffix added: "David Perry" → "David Perry QC")
+        if (longer.startsWith(shorter)) return true;
+        // Same first names (extra words added around the name)
+        if (shorterParts[0] === longerParts[0]) return true;
+      }
+    }
+  }
+
+  // Full-name edit distance for longer names (catches "Bobbi Stemheim" vs "Bobbi Stemhenn")
+  // Requires same first name OR same last name to avoid false positives like "Michael Miller"/"Michael Milken"
+  if (normA.length >= 10 && normB.length >= 10 && editDistance(normA, normB) <= 2) {
+    if (firstA === firstB && lastA.length >= 4 && lastB.length >= 4 && editDistance(lastA, lastB) <= 2) return true;
+    if (lastA === lastB && firstA.length >= 3 && firstB.length >= 3 && editDistance(firstA, firstB) <= 2) return true;
   }
 
   // Check against aliases
