@@ -17,6 +17,22 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
 
+function editDistance(a: string, b: string): number {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+  const dp: number[][] = Array.from({ length: a.length + 1 }, (_, i) =>
+    Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  );
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = a[i - 1] === b[j - 1]
+        ? dp[i - 1][j - 1]
+        : 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+  return dp[a.length][b.length];
+}
+
 let _deepseek: OpenAI | null = null;
 function getDeepSeek(): OpenAI | null {
   if (!process.env.DEEPSEEK_API_KEY) return null;
@@ -455,23 +471,38 @@ export async function deduplicatePersonsInDB(): Promise<void> {
       .replace(/[^a-z\s]/g, "")
       .replace(/\s+/g, " ")
       .trim();
-    return n.split(" ").filter(Boolean).length <= 1 && n.length > 0;
+    const parts = n.split(" ").filter(Boolean);
+    if (parts.length === 0) return false;
+    // Single-word names like "Maxwel", "Epstein"
+    if (parts.length === 1) return true;
+    // Names where all but one part are single-letter initials, e.g. "Maxwell M" → effectively single-word
+    const meaningfulParts = parts.filter(p => p.length >= 2);
+    return meaningfulParts.length <= 1;
   });
 
   let pass2Merged = 0;
   for (const single of singleWord) {
-    const word = single.name.toLowerCase()
+    const normalized = single.name.toLowerCase()
       .replace(/\b(dr|mr|mrs|ms|miss|jr|sr)\b\.?/g, "")
       .replace(/\./g, "")
       .replace(/[^a-z\s]/g, "")
       .replace(/\s+/g, " ")
       .trim();
+    // Extract the meaningful word (longest part with >= 2 chars, or the whole thing if single word)
+    const wordParts = normalized.split(" ").filter(Boolean);
+    const meaningful = wordParts.filter(p => p.length >= 2);
+    const word = meaningful.length > 0 ? meaningful.sort((a, b) => b.length - a.length)[0] : wordParts[0];
     if (!word || word.length < 3) continue;
 
     // Find multi-word persons whose first OR last name matches
+    // Edit distance only for last names and only for longer words (>= 6 chars) to avoid false matches
     const candidates = multiWord.filter(p => {
       const parts = p.name.toLowerCase().replace(/[^a-z\s]/g, "").trim().split(/\s+/);
-      return parts[0] === word || parts[parts.length - 1] === word;
+      const first = parts[0], last = parts[parts.length - 1];
+      if (first === word || last === word) return true;
+      // Fuzzy match only against last name, only for longer words (avoids "lara"→"laura", "jayz"→"jay")
+      if (word.length >= 6 && last.length >= 6 && editDistance(last, word) <= 1) return true;
+      return false;
     });
 
     if (candidates.length === 0) continue;
@@ -596,7 +627,8 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
     const dsNum = parseInt(dsMatch[1], 10);
 
     const dsPath = path.join(baseDir, dsDir);
-    const files = fs.readdirSync(dsPath).filter(f => f.toLowerCase().endsWith(".pdf"));
+    const supportedExtensions = [".pdf", ".mp4", ".avi", ".mov", ".wmv", ".webm", ".jpg", ".jpeg", ".png", ".gif"];
+    const files = fs.readdirSync(dsPath).filter(f => supportedExtensions.some(ext => f.toLowerCase().endsWith(ext)));
 
     const urlsFile = path.join(urlsDir, `data-set-${dsNum}-urls.txt`);
     const urlMap = new Map<string, string>();
@@ -614,7 +646,7 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
     const dsName = dsInfo?.name || `Data Set ${dsNum}`;
     const dsDesc = dsInfo?.description || `DOJ Epstein disclosure files from Data Set ${dsNum}`;
 
-    console.log(`  Processing ${dsName}: ${files.length} PDF files...`);
+    console.log(`  Processing ${dsName}: ${files.length} files...`);
 
     let dsLoaded = 0;
     let dsSkipped = 0;
@@ -641,10 +673,16 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
         continue;
       }
 
-      const efta = file.replace(/\.pdf$/i, "");
+      const efta = file.replace(/\.[^.]+$/, "");
+      const ext = path.extname(file).toLowerCase();
       const fileStat = fs.statSync(path.join(dsPath, file));
       const fileSizeKB = Math.round(fileStat.size / 1024);
-      const docType = inferDocumentType(dsDesc);
+      const docType = [".mp4", ".avi", ".mov", ".wmv", ".webm"].includes(ext)
+        ? "video"
+        : [".jpg", ".jpeg", ".png", ".gif"].includes(ext)
+        ? "photograph"
+        : inferDocumentType(dsDesc);
+      const fileTypeTag = ext === ".pdf" ? "PDF" : ext.replace(".", "").toUpperCase();
 
       try {
         await db.insert(documents).values({
@@ -656,7 +694,7 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
           localPath: path.join(dsPath, file),
           datePublished: "2026-01-30",
           isRedacted: true,
-          tags: [`data-set-${dsNum}`, "DOJ disclosure", "PDF", docType],
+          tags: [`data-set-${dsNum}`, "DOJ disclosure", fileTypeTag, docType],
         });
         loaded++;
         dsLoaded++;

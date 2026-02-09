@@ -148,7 +148,7 @@ export default function AskArchivePage() {
               {conversations.map((conv) => (
                 <div
                   key={conv.id}
-                  className={`group flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer text-sm transition-colors ${
+                  className={`grid grid-cols-[1fr_28px] items-center px-3 py-2 rounded-md cursor-pointer text-sm transition-colors ${
                     selectedId === conv.id
                       ? "bg-primary/10 text-foreground"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -159,15 +159,17 @@ export default function AskArchivePage() {
                   }}
                   data-testid={`conversation-${conv.id}`}
                 >
-                  <MessageCircle className="w-4 h-4 shrink-0" />
-                  <span className="truncate flex-1">{conv.title}</span>
+                  <div className="flex items-center gap-2 overflow-hidden">
+                    <MessageCircle className="w-4 h-4 shrink-0" />
+                    <span className="truncate">{conv.title}</span>
+                  </div>
                   <button
-                    className="h-6 w-6 shrink-0 inline-flex items-center justify-center rounded text-muted-foreground/70 hover:text-destructive transition-colors"
+                    className="h-7 w-7 inline-flex items-center justify-center rounded text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
                     onClick={(e) => deleteConversation(conv.id, e)}
                     aria-label="Delete conversation"
                     data-testid={`delete-conversation-${conv.id}`}
                   >
-                    <Trash2 className="w-3.5 h-3.5" />
+                    <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
               ))}
