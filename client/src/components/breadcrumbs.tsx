@@ -23,7 +23,7 @@ const staticRoutes: Record<string, string> = {
   network: "Network",
   search: "Search",
   compare: "Compare",
-  "ai-insights": "Ask the Archive",
+  // "ask-the-archive": "Ask the Archive",
 };
 
 export function AppBreadcrumbs() {

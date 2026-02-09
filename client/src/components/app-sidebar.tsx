@@ -18,7 +18,7 @@ import {
   Clock,
   Search,
   Network,
-  MessageCircle,
+  // MessageCircle,
   ExternalLink,
   Shield,
 } from "lucide-react";
@@ -30,7 +30,7 @@ const navItems = [
   { title: "Timeline", url: "/timeline", icon: Clock },
   { title: "Network", url: "/network", icon: Network },
   { title: "Search", url: "/search", icon: Search },
-  { title: "Ask the Archive", url: "/ai-insights", icon: MessageCircle },
+  // { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageCircle },
 ];
 
 export function AppSidebar() {

@@ -6,7 +6,7 @@ import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getR2Stream } from "./r2";
-import { registerChatRoutes } from "./chat";
+// import { registerChatRoutes } from "./chat";
 
 const ALLOWED_PDF_DOMAINS = [
   "www.justice.gov",
@@ -678,8 +678,8 @@ export async function registerRoutes(
     }
   });
 
-  // Chat routes (Ask the Archive)
-  registerChatRoutes(app);
+  // Chat routes (Ask the Archive) — disabled for launch
+  // registerChatRoutes(app);
 
   return httpServer;
 }
