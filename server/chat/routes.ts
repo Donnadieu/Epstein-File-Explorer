@@ -20,7 +20,7 @@ export function registerChatRoutes(app: Express): void {
   // Get single conversation with messages
   app.get("/api/chat/conversations/:id", async (req: Request, res: Response) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(req.params.id as string);
       if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
 
       const [conversation] = await db.select().from(conversations).where(eq(conversations.id, id));
@@ -49,10 +49,9 @@ export function registerChatRoutes(app: Express): void {
   // Delete conversation
   app.delete("/api/chat/conversations/:id", async (req: Request, res: Response) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(req.params.id as string);
       if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
 
-      await db.delete(messages).where(eq(messages.conversationId, id));
       await db.delete(conversations).where(eq(conversations.id, id));
       res.status(204).send();
     } catch (error) {
@@ -64,7 +63,7 @@ export function registerChatRoutes(app: Express): void {
   // Send message and stream AI response
   app.post("/api/chat/conversations/:id/messages", async (req: Request, res: Response) => {
     try {
-      const conversationId = parseInt(req.params.id);
+      const conversationId = parseInt(req.params.id as string);
       if (isNaN(conversationId)) return res.status(400).json({ error: "Invalid ID" });
 
       const { content } = req.body;

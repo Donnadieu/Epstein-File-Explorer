@@ -102,22 +102,22 @@ export const personDocumentsRelations = relations(personDocuments, ({ one }) => 
   document: one(documents, { fields: [personDocuments.documentId], references: [documents.id] }),
 }));
 
-export const insertPersonSchema = createInsertSchema(persons).omit({ id: true });
-export const insertDocumentSchema = createInsertSchema(documents).omit({ id: true });
-export const insertConnectionSchema = createInsertSchema(connections).omit({ id: true });
-export const insertPersonDocumentSchema = createInsertSchema(personDocuments).omit({ id: true });
-export const insertTimelineEventSchema = createInsertSchema(timelineEvents).omit({ id: true });
+export const insertPersonSchema = createInsertSchema(persons);
+export const insertDocumentSchema = createInsertSchema(documents);
+export const insertConnectionSchema = createInsertSchema(connections);
+export const insertPersonDocumentSchema = createInsertSchema(personDocuments);
+export const insertTimelineEventSchema = createInsertSchema(timelineEvents);
 
 export type Person = typeof persons.$inferSelect;
-export type InsertPerson = z.infer<typeof insertPersonSchema>;
+export type InsertPerson = typeof persons.$inferInsert;
 export type Document = typeof documents.$inferSelect;
-export type InsertDocument = z.infer<typeof insertDocumentSchema>;
+export type InsertDocument = typeof documents.$inferInsert;
 export type Connection = typeof connections.$inferSelect;
-export type InsertConnection = z.infer<typeof insertConnectionSchema>;
+export type InsertConnection = typeof connections.$inferInsert;
 export type PersonDocument = typeof personDocuments.$inferSelect;
-export type InsertPersonDocument = z.infer<typeof insertPersonDocumentSchema>;
+export type InsertPersonDocument = typeof personDocuments.$inferInsert;
 export type TimelineEvent = typeof timelineEvents.$inferSelect;
-export type InsertTimelineEvent = z.infer<typeof insertTimelineEventSchema>;
+export type InsertTimelineEvent = typeof timelineEvents.$inferInsert;
 
 export const pipelineJobs = pgTable("pipeline_jobs", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -146,13 +146,13 @@ export const budgetTracking = pgTable("budget_tracking", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const insertPipelineJobSchema = createInsertSchema(pipelineJobs).omit({ id: true });
-export const insertBudgetTrackingSchema = createInsertSchema(budgetTracking).omit({ id: true });
+export const insertPipelineJobSchema = createInsertSchema(pipelineJobs).omit({ createdAt: true });
+export const insertBudgetTrackingSchema = createInsertSchema(budgetTracking).omit({ createdAt: true });
 
 export type PipelineJob = typeof pipelineJobs.$inferSelect;
-export type InsertPipelineJob = z.infer<typeof insertPipelineJobSchema>;
+export type InsertPipelineJob = typeof pipelineJobs.$inferInsert;
 export type BudgetTracking = typeof budgetTracking.$inferSelect;
-export type InsertBudgetTracking = z.infer<typeof insertBudgetTrackingSchema>;
+export type InsertBudgetTracking = typeof budgetTracking.$inferInsert;
 
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -189,9 +189,9 @@ export const bookmarks = pgTable("bookmarks", {
     .where(sql`search_query IS NOT NULL`),
 ]);
 
-export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ id: true, createdAt: true });
+export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ createdAt: true });
 export type Bookmark = typeof bookmarks.$inferSelect;
-export type InsertBookmark = z.infer<typeof insertBookmarkSchema>;
+export type InsertBookmark = typeof bookmarks.$inferInsert;
 
 // Chat tables
 export const conversations = pgTable("conversations", {
@@ -213,9 +213,9 @@ export const insertConversationSchema = createInsertSchema(conversations).omit({
 export const insertMessageSchema = createInsertSchema(messages).omit({ id: true, createdAt: true });
 
 export type Conversation = typeof conversations.$inferSelect;
-export type InsertConversation = z.infer<typeof insertConversationSchema>;
+export type InsertConversation = typeof conversations.$inferInsert;
 export type Message = typeof messages.$inferSelect;
-export type InsertMessage = z.infer<typeof insertMessageSchema>;
+export type InsertMessage = typeof messages.$inferInsert;
 
 export interface ChatCitation {
   documentId: number;
