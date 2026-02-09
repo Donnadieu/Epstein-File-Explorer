@@ -441,7 +441,81 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   // Remove self-loop connections created by merging
   await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
 
-  console.log(`  Merged ${mergedCount} groups, deleted ${deletedCount} duplicate persons`);
+  console.log(`  Pass 1 (name matching): merged ${mergedCount} groups, deleted ${deletedCount} duplicate persons`);
+
+  // --- Pass 2: Merge single-word names into dominant multi-word person ---
+  // This is done separately (not in union-find) to avoid transitive chains.
+  // e.g., "Epstein" merges into "Jeffrey Epstein" directly, without also chaining to "Mark Epstein".
+  const remaining = await db.select().from(persons);
+  const multiWord = remaining.filter(p => p.name.trim().split(/\s+/).length >= 2);
+  const singleWord = remaining.filter(p => {
+    const n = p.name.toLowerCase()
+      .replace(/\b(dr|mr|mrs|ms|miss|jr|sr)\b\.?/g, "")
+      .replace(/\./g, "")
+      .replace(/[^a-z\s]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    return n.split(" ").filter(Boolean).length <= 1 && n.length > 0;
+  });
+
+  let pass2Merged = 0;
+  for (const single of singleWord) {
+    const word = single.name.toLowerCase()
+      .replace(/\b(dr|mr|mrs|ms|miss|jr|sr)\b\.?/g, "")
+      .replace(/\./g, "")
+      .replace(/[^a-z\s]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!word || word.length < 3) continue;
+
+    // Find multi-word persons whose first OR last name matches
+    const candidates = multiWord.filter(p => {
+      const parts = p.name.toLowerCase().replace(/[^a-z\s]/g, "").trim().split(/\s+/);
+      return parts[0] === word || parts[parts.length - 1] === word;
+    });
+
+    if (candidates.length === 0) continue;
+
+    // Pick the dominant candidate (highest connection + document count)
+    candidates.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
+    const dominant = candidates[0];
+    const secondBest = candidates[1];
+    const dominantScore = dominant.connectionCount + dominant.documentCount;
+
+    // Only merge if dominant is a major person (>= 50 total) and clearly dominant (>= 5x runner-up)
+    if (dominantScore < 50) continue;
+    if (secondBest && dominantScore < 5 * (secondBest.connectionCount + secondBest.documentCount)) {
+      console.log(`  Skipping "${single.name}" → ambiguous between "${dominant.name}" and "${secondBest.name}"`);
+      continue;
+    }
+
+    // Merge single into dominant
+    try {
+      await db.update(personDocuments).set({ personId: dominant.id }).where(eq(personDocuments.personId, single.id));
+      await db.update(connections).set({ personId1: dominant.id }).where(eq(connections.personId1, single.id));
+      await db.update(connections).set({ personId2: dominant.id }).where(eq(connections.personId2, single.id));
+      // Delete any remaining references (orphaned FKs)
+      await db.delete(personDocuments).where(eq(personDocuments.personId, single.id));
+      await db.delete(connections).where(sql`${connections.personId1} = ${single.id} OR ${connections.personId2} = ${single.id}`);
+      await db.delete(persons).where(eq(persons.id, single.id));
+
+      // Update counts
+      const [docCount] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, dominant.id));
+      const [connCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${dominant.id} OR ${connections.personId2} = ${dominant.id}`);
+      await db.update(persons).set({ documentCount: docCount?.count || 0, connectionCount: connCount?.count || 0 }).where(eq(persons.id, dominant.id));
+
+      console.log(`  Merged "${single.name}" → "${dominant.name}"`);
+      pass2Merged++;
+    } catch (err: any) {
+      console.warn(`  Failed to merge "${single.name}": ${err.message}`);
+    }
+  }
+
+  // Remove self-loops again after pass 2
+  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
+
+  console.log(`  Pass 2 (single-word): merged ${pass2Merged} single-word persons`);
+  console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged} persons removed`);
 }
 
 function inferDocumentType(description: string): string {
@@ -703,14 +777,60 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
 
   console.log(`  Found ${connectionTriples.length} potential connections`);
 
-  // Try AI classification, fall back to regex
+  // --- Cache: load previously classified connections from disk ---
+  const cacheFile = path.join(__dirname, "../../data/connection-classifications.json");
+  type CachedClassification = { connectionType: string; description: string; strength: number };
+  const cache = new Map<string, CachedClassification>();
+
+  if (fs.existsSync(cacheFile)) {
+    try {
+      const cached = JSON.parse(fs.readFileSync(cacheFile, "utf-8")) as Record<string, CachedClassification>;
+      for (const [key, val] of Object.entries(cached)) {
+        cache.set(key, val);
+      }
+      console.log(`  Loaded ${cache.size} cached classifications from disk`);
+    } catch {
+      console.warn("  Could not parse cache file, starting fresh");
+    }
+  }
+
+  function cacheKey(name1: string, name2: string): string {
+    return [name1, name2].sort().join(" <-> ");
+  }
+
+  // Separate into cached and uncached
+  const uncached: typeof connectionTriples = [];
+  for (const triple of connectionTriples) {
+    const key = cacheKey(triple.person1Name, triple.person2Name);
+    const hit = cache.get(key);
+    if (hit) {
+      try {
+        await db.insert(connections).values({
+          personId1: triple.person1Id,
+          personId2: triple.person2Id,
+          connectionType: hit.connectionType,
+          description: hit.description.substring(0, 500),
+          strength: hit.strength,
+        });
+        connectionsCreated++;
+      } catch { /* skip duplicates */ }
+    } else {
+      uncached.push(triple);
+    }
+  }
+
+  if (uncached.length < connectionTriples.length) {
+    console.log(`  Used cache for ${connectionTriples.length - uncached.length} connections, ${uncached.length} need classification`);
+  }
+
+  // --- Classify uncached connections via AI or regex ---
   const deepseek = getDeepSeek();
-  if (deepseek && connectionTriples.length > 0) {
+  if (deepseek && uncached.length > 0) {
     console.log("  Using AI to classify connection types...");
     const BATCH_SIZE = 25;
 
-    for (let i = 0; i < connectionTriples.length; i += BATCH_SIZE) {
-      const batch = connectionTriples.slice(i, i + BATCH_SIZE);
+    for (let i = 0; i < uncached.length; i += BATCH_SIZE) {
+      const batch = uncached.slice(i, i + BATCH_SIZE);
       try {
         const prompt = batch.map((t, idx) => `${idx}. ${t.person1Name} ↔ ${t.person2Name}: "${t.context.substring(0, 200)}"`).join("\n");
 
@@ -737,7 +857,6 @@ Respond with a JSON array only.`,
         });
 
         const text = response.choices[0]?.message?.content?.trim() || "[]";
-        // Extract JSON array from response (handle markdown code blocks)
         const jsonMatch = text.match(/\[[\s\S]*\]/);
         if (jsonMatch) {
           const classifications = JSON.parse(jsonMatch[0]) as {
@@ -751,6 +870,13 @@ Respond with a JSON array only.`,
             const triple = batch[cls.index];
             if (!triple) continue;
 
+            // Save to cache
+            cache.set(cacheKey(triple.person1Name, triple.person2Name), {
+              connectionType: cls.connectionType,
+              description: cls.description.substring(0, 500),
+              strength: cls.strength,
+            });
+
             try {
               await db.insert(connections).values({
                 personId1: triple.person1Id,
@@ -760,56 +886,61 @@ Respond with a JSON array only.`,
                 strength: cls.strength,
               });
               connectionsCreated++;
-            } catch {
-              /* skip */
-            }
+            } catch { /* skip */ }
           }
         }
       } catch (error: any) {
         console.warn(`  AI classification failed for batch at index ${i}, falling back to regex: ${error.message}`);
-        // Fall back to regex for this batch
         for (const triple of batch) {
           const { connectionType, strength } = inferRelationshipType(triple.context);
+          cache.set(cacheKey(triple.person1Name, triple.person2Name), {
+            connectionType, description: triple.context.substring(0, 500), strength,
+          });
           try {
             await db.insert(connections).values({
-              personId1: triple.person1Id,
-              personId2: triple.person2Id,
-              connectionType,
-              description: triple.context.substring(0, 500),
-              strength,
+              personId1: triple.person1Id, personId2: triple.person2Id,
+              connectionType, description: triple.context.substring(0, 500), strength,
             });
             connectionsCreated++;
-          } catch {
-            /* skip */
-          }
+          } catch { /* skip */ }
         }
       }
 
-      if (i + BATCH_SIZE < connectionTriples.length) {
+      // Save cache after each batch (crash-safe)
+      const cacheObj: Record<string, CachedClassification> = {};
+      for (const [k, v] of cache) cacheObj[k] = v;
+      fs.writeFileSync(cacheFile, JSON.stringify(cacheObj, null, 2));
+
+      if ((i / BATCH_SIZE) % 10 === 0) {
+        console.log(`    Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(uncached.length / BATCH_SIZE)} (${connectionsCreated} created, ${cache.size} cached)`);
+      }
+
+      if (i + BATCH_SIZE < uncached.length) {
         await new Promise(r => setTimeout(r, 500));
       }
     }
-  } else {
-    // No API key — use regex fallback for all
-    if (connectionTriples.length > 0) {
-      console.log("  No DEEPSEEK_API_KEY set, using regex classification...");
-    }
-    for (const triple of connectionTriples) {
+  } else if (uncached.length > 0) {
+    if (!deepseek) console.log("  No DEEPSEEK_API_KEY set, using regex classification...");
+    for (const triple of uncached) {
       const { connectionType, strength } = inferRelationshipType(triple.context);
+      cache.set(cacheKey(triple.person1Name, triple.person2Name), {
+        connectionType, description: triple.context.substring(0, 500), strength,
+      });
       try {
         await db.insert(connections).values({
-          personId1: triple.person1Id,
-          personId2: triple.person2Id,
-          connectionType,
-          description: triple.context.substring(0, 500),
-          strength,
+          personId1: triple.person1Id, personId2: triple.person2Id,
+          connectionType, description: triple.context.substring(0, 500), strength,
         });
         connectionsCreated++;
-      } catch {
-        /* skip */
-      }
+      } catch { /* skip */ }
     }
   }
+
+  // Final cache save
+  const cacheObj: Record<string, CachedClassification> = {};
+  for (const [k, v] of cache) cacheObj[k] = v;
+  fs.writeFileSync(cacheFile, JSON.stringify(cacheObj, null, 2));
+  console.log(`  Saved ${cache.size} classifications to cache`);
 
   console.log(`  Created ${connectionsCreated} new connections from descriptions`);
   return connectionsCreated;

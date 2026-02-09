@@ -113,13 +113,38 @@ async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
  * common prefixes/suffixes, and extra whitespace.
  */
 function normalizeName(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/\b(dr|mr|mrs|ms|jr|sr|ii|iii|iv)\b\.?/g, "")
-    .replace(/\b[a-z]\.\s*/g, "") // remove single-letter initials like "E."
+  let n = name.toLowerCase();
+
+  // Handle "Last, First" format → "First Last"
+  if (n.includes(",")) {
+    const parts = n.split(",").map(s => s.trim());
+    if (parts.length === 2 && parts[1].length > 0) {
+      n = `${parts[1]} ${parts[0]}`;
+    }
+  }
+
+  return n
+    .replace(/\b(dr|mr|mrs|ms|miss|jr|sr|ii|iii|iv)\b\.?/g, "")
+    .replace(/\./g, "") // remove periods but keep the letters (J. → j)
     .replace(/[^a-z\s]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function editDistance(a: string, b: string): number {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+  const dp: number[][] = Array.from({ length: a.length + 1 }, (_, i) =>
+    Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+  );
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = a[i - 1] === b[j - 1]
+        ? dp[i - 1][j - 1]
+        : 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+  return dp[a.length][b.length];
 }
 
 /**
@@ -130,22 +155,29 @@ export function isSamePerson(a: Person, b: Person): boolean {
   const normA = normalizeName(a.name);
   const normB = normalizeName(b.name);
 
+  // Skip single-word names to avoid transitive chain merges
+  const partsA = normA.split(" ").filter(Boolean);
+  const partsB = normB.split(" ").filter(Boolean);
+  if (partsA.length < 2 || partsB.length < 2) return false;
+
   // Exact match after normalization
   if (normA === normB) return true;
 
-  // One name is a subset of the other (e.g., "jeff epstein" vs "jeffrey edward epstein")
-  const partsA = normA.split(" ").filter(Boolean);
-  const partsB = normB.split(" ").filter(Boolean);
+  // Sorted parts match (handles reversed order: "maxwell ghislaine" vs "ghislaine maxwell")
+  const sortedA = [...partsA].sort().join(" ");
+  const sortedB = [...partsB].sort().join(" ");
+  if (sortedA === sortedB) return true;
 
-  // Check if they share the same last name and one's first name is a prefix of the other
-  if (partsA.length >= 2 && partsB.length >= 2) {
-    const lastA = partsA[partsA.length - 1];
-    const lastB = partsB[partsB.length - 1];
-    if (lastA === lastB) {
-      const firstA = partsA[0];
-      const firstB = partsB[0];
-      if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
-    }
+  // Same last name + first name is a prefix or within edit distance 2
+  const lastA = partsA[partsA.length - 1];
+  const lastB = partsB[partsB.length - 1];
+  if (lastA === lastB) {
+    const firstA = partsA[0];
+    const firstB = partsB[0];
+    // Prefix match
+    if (firstA.startsWith(firstB) || firstB.startsWith(firstA)) return true;
+    // Fuzzy match (handles typos like "ghisaine" vs "ghislaine")
+    if (firstA.length >= 4 && firstB.length >= 4 && editDistance(firstA, firstB) <= 2) return true;
   }
 
   // Check against aliases

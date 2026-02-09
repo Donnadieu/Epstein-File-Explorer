@@ -47,10 +47,10 @@ const STAGES = [
   "process",
   "classify-media",
   "analyze-ai",
-  "load-ai-results",
   "load-persons",
   "load-documents",
   "import-downloads",
+  "load-ai-results",
   "extract-connections",
   "update-counts",
   "dedup-persons",
@@ -84,10 +84,10 @@ STAGES:
   process          Extract text from downloaded PDFs via OCR/parsing
   classify-media   Classify documents by media type and set AI priority
   analyze-ai       Run AI analysis on processed documents (DeepSeek)
-  load-ai-results  Load AI-analyzed persons, connections, and events into database
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
+  load-ai-results  Load AI-analyzed persons, connections, events, and person↔document links
   extract-connections  Extract relationships from person descriptions
   update-counts    Recalculate document/connection counts per person
 
@@ -96,8 +96,8 @@ SHORTCUTS:
                    (fastest way to populate app with comprehensive data)
   full-discovery   Run all scraping, downloading, processing, and loading stages
                    (scrape-doj → scrape-wikipedia → download → process →
-                    classify-media → analyze-ai → load-ai-results → load-persons →
-                    load-documents → import-downloads → extract-connections → update-counts)
+                    classify-media → analyze-ai → load-persons → load-documents →
+                    import-downloads → load-ai-results → extract-connections → update-counts)
   analyze-priority Run AI analysis on highest-priority unanalyzed documents
                    (classify-media → analyze-ai → load-ai-results → update-counts)
 
@@ -301,10 +301,10 @@ async function main() {
         "process",
         "classify-media",
         "analyze-ai",
-        "load-ai-results",
         "load-persons",
         "load-documents",
         "import-downloads",
+        "load-ai-results",
         "extract-connections",
         "update-counts",
       ];

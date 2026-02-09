@@ -226,7 +226,35 @@ async function clickNextPage(page: Page): Promise<boolean> {
 /** Extract cookies from Playwright context as a header string for use in fetch requests. */
 export async function extractCookieHeader(): Promise<string> {
   const context = await getBrowserContext();
+
+  // Navigate to the DOJ Epstein page to trigger bot challenge + age gate
+  const page = await context.newPage();
+  try {
+    await page.goto("https://www.justice.gov/epstein/files", {
+      waitUntil: "load",
+      timeout: 30000,
+    });
+    await page.waitForTimeout(2000);
+
+    // Solve bot challenge if present
+    await solveBotChallenge(page);
+
+    // Handle age gate if present
+    await handleAgeGate(page);
+
+    // Wait for cookies to settle
+    await page.waitForTimeout(2000);
+  } catch (err: any) {
+    console.warn(`  Warning during cookie acquisition: ${err.message}`);
+  } finally {
+    await page.close();
+  }
+
   const cookies = await context.cookies();
+  const hasBotCookies = cookies.some(c => c.name.startsWith("authorization_"));
+  if (!hasBotCookies) {
+    console.warn("  Warning: No Akamai authorization cookies found — downloads may fail");
+  }
   return cookies.map(c => `${c.name}=${c.value}`).join("; ");
 }
 
