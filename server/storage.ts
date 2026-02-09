@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import path from "path";
-import { fileURLToPath } from "url";
 import {
   persons, documents, connections, personDocuments, timelineEvents,
   pipelineJobs, budgetTracking, bookmarks,
@@ -59,9 +58,7 @@ function escapeLikePattern(input: string): string {
   return input.replace(/[\\%_]/g, (ch) => `\\${ch}`);
 }
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const AI_ANALYZED_DIR = path.resolve(__dirname, "..", "data", "ai-analyzed");
+const AI_ANALYZED_DIR = path.resolve(process.cwd(), "data", "ai-analyzed");
 
 const CACHE_TTL = 60_000;
 let filesCache: { data: AIAnalysisDocument[]; cachedAt: number } | null = null;
