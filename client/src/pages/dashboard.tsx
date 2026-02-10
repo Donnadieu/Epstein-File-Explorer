@@ -145,8 +145,8 @@ export default function Dashboard() {
     queryKey: ["/api/persons"],
   });
 
-  const { data: allDocs, isLoading: docsLoading } = useQuery<Document[]>({
-    queryKey: ["/api/documents"],
+  const { data: docsResult, isLoading: docsLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
+    queryKey: ["/api/documents?page=1&limit=5"],
   });
 
   const { data: allEvents, isLoading: eventsLoading } = useQuery<TimelineEvent[]>({
@@ -154,7 +154,7 @@ export default function Dashboard() {
   });
 
   const featuredPeople = allPeople?.slice(0, 6);
-  const recentDocs = allDocs?.slice(0, 5);
+  const recentDocs = docsResult?.data;
   const events = allEvents?.filter(e => e.significance >= 3).slice(-4);
 
   return (

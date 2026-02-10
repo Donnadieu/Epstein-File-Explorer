@@ -1,6 +1,6 @@
-import { useMemo, useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import * as pdfjsLib from "pdfjs-dist";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -113,35 +113,32 @@ export default function DocumentsPage() {
 
   const viewMode = filters.view === "list" ? "list" : "grid";
 
-  const { data: documents, isLoading } = useQuery<Document[]>({
-    queryKey: ["/api/documents"],
+  const currentPage = Math.max(1, parseInt(filters.page) || 1);
+
+  const queryParams = new URLSearchParams();
+  queryParams.set("page", String(currentPage));
+  queryParams.set("limit", String(ITEMS_PER_PAGE));
+  if (filters.search) queryParams.set("search", filters.search);
+  if (filters.type !== "all") queryParams.set("type", filters.type);
+  if (filters.dataSet !== "all") queryParams.set("dataSet", filters.dataSet);
+  if (filters.redacted !== "all") queryParams.set("redacted", filters.redacted);
+
+  const { data: result, isLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
+    queryKey: [`/api/documents?${queryParams.toString()}`],
+    placeholderData: keepPreviousData,
   });
 
-  const documentTypes = ["all", ...Array.from(new Set(documents?.map((d) => d.documentType) || []))];
-  const dataSets = ["all", ...Array.from(new Set(documents?.filter((d) => d.dataSet).map((d) => d.dataSet!) || []))].sort();
+  const { data: filterOptions } = useQuery<{ types: string[]; dataSets: string[] }>({
+    queryKey: ["/api/documents/filters"],
+  });
 
-  const filtered = useMemo(() => {
-    return documents?.filter((doc) => {
-      const matchesSearch =
-        !filters.search ||
-        doc.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-        (doc.description || "").toLowerCase().includes(filters.search.toLowerCase()) ||
-        (doc.keyExcerpt || "").toLowerCase().includes(filters.search.toLowerCase());
-      const matchesType = filters.type === "all" || doc.documentType === filters.type;
-      const matchesDataSet = filters.dataSet === "all" || doc.dataSet === filters.dataSet;
-      const matchesRedacted =
-        filters.redacted === "all" ||
-        (filters.redacted === "redacted" && doc.isRedacted) ||
-        (filters.redacted === "unredacted" && !doc.isRedacted);
-      return matchesSearch && matchesType && matchesDataSet && matchesRedacted;
-    });
-  }, [documents, filters.search, filters.type, filters.dataSet, filters.redacted]);
+  const documentTypes = ["all", ...(filterOptions?.types || [])];
+  const dataSets = ["all", ...(filterOptions?.dataSets || [])];
 
-  const totalItems = filtered?.length || 0;
-  const totalPages = Math.max(1, Math.ceil(totalItems / ITEMS_PER_PAGE));
-  const currentPage = Math.min(Math.max(1, parseInt(filters.page) || 1), totalPages);
+  const paginated = result?.data;
+  const totalItems = result?.total || 0;
+  const totalPages = result?.totalPages || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginated = filtered?.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
