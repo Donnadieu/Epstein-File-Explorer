@@ -443,6 +443,37 @@ const timelineEventsCache = createCache<TimelineEvent[]>(5 * 60 * 1000);
 const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
 const COUNT_TTL = 60_000;
 
+// Cache for first-page unfiltered documents (dashboard + "All Documents" initial load)
+const firstPageDocsCache = createCache<Document[]>(5 * 60 * 1000);
+
+// Per-ID caches for detail pages
+const DETAIL_CACHE_TTL = 5 * 60 * 1000;
+const MAX_DETAIL_CACHE = 500;
+const documentDetailCache = new Map<number, { data: any; cachedAt: number }>();
+const personDetailCache = new Map<number, { data: any; cachedAt: number }>();
+
+// Adjacent document IDs cache
+const ADJACENT_CACHE_TTL = 10 * 60 * 1000;
+const adjacentCache = new Map<number, { data: { prev: number | null; next: number | null }; cachedAt: number }>();
+
+// Search results cache
+const SEARCH_CACHE_TTL = 60_000;
+const MAX_SEARCH_CACHE = 100;
+const searchCache = new Map<string, { data: { persons: Person[]; documents: Document[]; events: TimelineEvent[] }; cachedAt: number }>();
+
+function getFromMapCache<T>(cache: Map<number, { data: T; cachedAt: number }>, id: number, ttl: number): T | null {
+  const entry = cache.get(id);
+  if (entry && Date.now() - entry.cachedAt < ttl) return entry.data;
+  return null;
+}
+
+function evictExpired<K, V extends { cachedAt: number }>(cache: Map<K, V>, ttl: number, maxSize: number): void {
+  if (cache.size > maxSize) {
+    const now = Date.now();
+    cache.forEach((v, k) => { if (now - v.cachedAt > ttl) cache.delete(k); });
+  }
+}
+
 export class DatabaseStorage implements IStorage {
   async getPersons(): Promise<Person[]> {
     return personsCache.get(() =>
@@ -456,6 +487,9 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getPersonWithDetails(id: number): Promise<any> {
+    const cached = getFromMapCache(personDetailCache, id, DETAIL_CACHE_TTL);
+    if (cached) return cached;
+
     const person = await this.getPerson(id);
     if (!person) return undefined;
 
@@ -513,11 +547,15 @@ export class DatabaseStorage implements IStorage {
       }
     }
 
-    return {
+    const result = {
       ...person,
       documents: pDocs,
       connections: allConns,
     };
+
+    personDetailCache.set(id, { data: result, cachedAt: Date.now() });
+    evictExpired(personDetailCache, DETAIL_CACHE_TTL, MAX_DETAIL_CACHE);
+    return result;
   }
 
   async createPerson(person: InsertPerson): Promise<Person> {
@@ -535,6 +573,9 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getDocumentWithDetails(id: number): Promise<any> {
+    const cached = getFromMapCache(documentDetailCache, id, DETAIL_CACHE_TTL);
+    if (cached) return cached;
+
     const doc = await this.getDocument(id);
     if (!doc) return undefined;
 
@@ -559,10 +600,14 @@ export class DatabaseStorage implements IStorage {
       .innerJoin(persons, eq(personDocuments.personId, persons.id))
       .where(eq(personDocuments.documentId, id));
 
-    return {
+    const result = {
       ...doc,
       persons: pDocs,
     };
+
+    documentDetailCache.set(id, { data: result, cachedAt: Date.now() });
+    evictExpired(documentDetailCache, DETAIL_CACHE_TTL, MAX_DETAIL_CACHE);
+    return result;
   }
 
   async createDocument(document: InsertDocument): Promise<Document> {
@@ -677,59 +722,60 @@ export class DatabaseStorage implements IStorage {
   }
 
   async search(query: string) {
+    const normalizedQuery = query.toLowerCase().trim();
+    const cachedResult = searchCache.get(normalizedQuery);
+    if (cachedResult && Date.now() - cachedResult.cachedAt < SEARCH_CACHE_TTL) {
+      return cachedResult.data;
+    }
+
     const searchPattern = `%${escapeLikePattern(query)}%`;
 
-    const matchedPersons = await db
-      .select()
-      .from(persons)
-      .where(
+    const [matchedPersons, matchedDocuments, matchedEvents] = await Promise.all([
+      db.select().from(persons).where(
         or(
           ilike(persons.name, searchPattern),
           ilike(persons.occupation, searchPattern),
           ilike(persons.description, searchPattern),
           ilike(persons.role, searchPattern)
         )
-      )
-      .limit(20);
+      ).limit(20),
 
-    const matchedDocuments = await db
-      .select()
-      .from(documents)
-      .where(
+      db.select().from(documents).where(
         or(
           ilike(documents.title, searchPattern),
           ilike(documents.description, searchPattern),
           ilike(documents.keyExcerpt, searchPattern),
           ilike(documents.documentType, searchPattern)
         )
-      )
-      .limit(20);
+      ).limit(20),
 
-    const matchedEvents = await db
-      .select()
-      .from(timelineEvents)
-      .where(
+      db.select().from(timelineEvents).where(
         or(
           ilike(timelineEvents.title, searchPattern),
           ilike(timelineEvents.description, searchPattern),
           ilike(timelineEvents.category, searchPattern)
         )
-      )
-      .limit(20);
+      ).limit(20),
+    ]);
 
-    return {
+    const result = {
       persons: matchedPersons,
       documents: matchedDocuments,
       events: matchedEvents,
     };
+
+    searchCache.set(normalizedQuery, { data: result, cachedAt: Date.now() });
+    evictExpired(searchCache, SEARCH_CACHE_TTL, MAX_SEARCH_CACHE);
+    return result;
   }
 
   async getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }> {
-    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
-    const total = countResult.count;
+    // Derive from cached full persons list instead of hitting DB
+    const allPersons = await this.getPersons();
+    const total = allPersons.length;
     const totalPages = Math.ceil(total / limit);
     const offset = (page - 1) * limit;
-    const data = await db.select().from(persons).orderBy(desc(persons.documentCount)).limit(limit).offset(offset);
+    const data = allPersons.slice(offset, offset + limit);
     return { data, total, page, totalPages };
   }
 
@@ -789,6 +835,16 @@ export class DatabaseStorage implements IStorage {
     if (conditions.length === 0) {
       const stats = await this.getStats();
       total = stats.documentCount;
+
+      // For first page with no filters, serve from cache
+      if (opts.page === 1) {
+        const cachedFirstPage = await firstPageDocsCache.get(() =>
+          db.select().from(documents).orderBy(asc(documents.id)).limit(50)
+        );
+        const data = cachedFirstPage.slice(0, opts.limit);
+        const totalPages = Math.ceil(total / opts.limit);
+        return { data, total, page: 1, totalPages };
+      }
     } else {
       const cacheKey = JSON.stringify([opts.search, opts.type, opts.dataSet, opts.redacted, opts.mediaType]);
       const cached = countCacheMap.get(cacheKey);
@@ -847,6 +903,9 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }> {
+    const cached = getFromMapCache(adjacentCache, id, ADJACENT_CACHE_TTL);
+    if (cached) return cached;
+
     const [prevRow] = await db
       .select({ id: documents.id })
       .from(documents)
@@ -861,10 +920,14 @@ export class DatabaseStorage implements IStorage {
       .orderBy(asc(documents.id))
       .limit(1);
 
-    return {
+    const result = {
       prev: prevRow?.id ?? null,
       next: nextRow?.id ?? null,
     };
+
+    adjacentCache.set(id, { data: result, cachedAt: Date.now() });
+    evictExpired(adjacentCache, ADJACENT_CACHE_TTL, MAX_DETAIL_CACHE);
+    return result;
   }
 
   async getSidebarCounts(): Promise<{

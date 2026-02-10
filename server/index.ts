@@ -135,6 +135,23 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
+  // Pre-warm expensive caches BEFORE accepting connections
+  // so the first user gets instant responses
+  log("Pre-warming caches...");
+  try {
+    await Promise.all([
+      storage.getStats(),
+      storage.getSidebarCounts(),
+      storage.getDocumentFilters(),
+      storage.getPersons(),
+      storage.getTimelineEvents(),
+      storage.getDocumentsFiltered({ page: 1, limit: 50 }),
+    ]);
+    log("Cache pre-warming complete");
+  } catch (err: any) {
+    log(`Cache pre-warming failed: ${err.message}`);
+  }
+
   const port = parseInt(process.env.PORT || "5000", 10);
   httpServer.listen(
     {
@@ -156,17 +173,6 @@ app.use((req, res, next) => {
         )
         .then(() => log("Database seeding complete"))
         .catch((err) => log(`Database seeding skipped: ${err.message}`));
-
-      // Pre-warm expensive caches so first user gets fast responses
-      Promise.all([
-        storage.getStats(),
-        storage.getSidebarCounts(),
-        storage.getDocumentFilters(),
-        storage.getPersons(),
-        storage.getTimelineEvents(),
-      ])
-        .then(() => log("Cache pre-warming complete"))
-        .catch((err) => log(`Cache pre-warming failed: ${err.message}`));
     },
   );
 })();

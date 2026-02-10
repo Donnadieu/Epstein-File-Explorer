@@ -34,13 +34,20 @@ interface SearchResults {
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const prevQueryRef = useRef("");
   const { searchBookmarks, isBookmarked, toggleBookmark, deleteBookmark } = useBookmarks();
   const { history, addSearch, clearHistory } = useSearchHistory();
 
+  // Debounce search queries to avoid hammering the API on every keystroke
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedQuery(query), 300);
+    return () => clearTimeout(timer);
+  }, [query]);
+
   const { data, isLoading, isFetching } = useQuery<SearchResults>({
-    queryKey: ["/api/search?q=" + encodeURIComponent(query)],
-    enabled: query.length >= 2,
+    queryKey: ["/api/search?q=" + encodeURIComponent(debouncedQuery)],
+    enabled: debouncedQuery.length >= 2,
   });
 
   // Record search to history when results arrive

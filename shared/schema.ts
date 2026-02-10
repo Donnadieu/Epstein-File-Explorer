@@ -17,7 +17,9 @@ export const persons = pgTable("persons", {
   documentCount: integer("document_count").notNull().default(0),
   connectionCount: integer("connection_count").notNull().default(0),
   category: text("category").notNull().default("associate"),
-});
+}, (table) => [
+  index("idx_persons_document_count").on(table.documentCount),
+]);
 
 export const documents = pgTable("documents", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -51,6 +53,8 @@ export const documents = pgTable("documents", {
   index("idx_documents_source_url").on(table.sourceUrl),
   index("idx_documents_ai_analysis_status").on(table.aiAnalysisStatus),
   index("idx_documents_r2_key").on(table.r2Key),
+  index("idx_documents_document_type").on(table.documentType),
+  index("idx_documents_is_redacted").on(table.isRedacted),
 ]);
 
 export const connections = pgTable("connections", {
@@ -61,7 +65,10 @@ export const connections = pgTable("connections", {
   description: text("description"),
   strength: integer("strength").notNull().default(1),
   documentIds: integer("document_ids").array(),
-});
+}, (table) => [
+  index("idx_connections_person_id1").on(table.personId1),
+  index("idx_connections_person_id2").on(table.personId2),
+]);
 
 export const personDocuments = pgTable("person_documents", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -69,7 +76,10 @@ export const personDocuments = pgTable("person_documents", {
   documentId: integer("document_id").notNull().references(() => documents.id),
   context: text("context"),
   mentionType: text("mention_type").notNull().default("mentioned"),
-});
+}, (table) => [
+  index("idx_person_documents_person_id").on(table.personId),
+  index("idx_person_documents_document_id").on(table.documentId),
+]);
 
 export const timelineEvents = pgTable("timeline_events", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -80,7 +90,9 @@ export const timelineEvents = pgTable("timeline_events", {
   personIds: integer("person_ids").array(),
   documentIds: integer("document_ids").array(),
   significance: integer("significance").notNull().default(1),
-});
+}, (table) => [
+  index("idx_timeline_events_date_sig").on(table.date, table.significance),
+]);
 
 export const personsRelations = relations(persons, ({ many }) => ({
   personDocuments: many(personDocuments),

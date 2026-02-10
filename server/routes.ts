@@ -98,6 +98,7 @@ export async function registerRoutes(
       if (!person) {
         return res.status(404).json({ error: "Person not found" });
       }
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(person);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch person" });
@@ -154,6 +155,7 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Invalid ID" });
       }
       const adjacent = await storage.getAdjacentDocumentIds(id);
+      res.set('Cache-Control', 'public, max-age=600');
       res.json(adjacent);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch adjacent documents" });
@@ -170,6 +172,7 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(omitInternal(doc));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document" });
@@ -507,6 +510,7 @@ export async function registerRoutes(
         return res.json({ persons: [], documents: [], events: [] });
       }
       const results = await storage.search(query);
+      res.set('Cache-Control', 'public, max-age=60');
       res.json(results);
     } catch (error) {
       res.status(500).json({ error: "Failed to search" });
@@ -600,6 +604,7 @@ export async function registerRoutes(
   app.get("/api/bookmarks", async (_req, res) => {
     try {
       const bookmarks = await storage.getBookmarks();
+      res.set('Cache-Control', 'private, max-age=60');
       res.json(bookmarks);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch bookmarks" });
