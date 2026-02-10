@@ -668,31 +668,16 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
     let dsLoaded = 0;
     let dsSkipped = 0;
 
-    for (const file of files) {
+    // --- Batch processing ---
+    const BATCH_SIZE = 500;
+
+    // Build all file info upfront
+    const fileInfos = files.map(file => {
       const sourceUrl = urlMap.get(file) || `https://www.justice.gov/epstein/files/DataSet%20${dsNum}/${encodeURIComponent(file)}`;
-
-      const existing = await db
-        .select()
-        .from(documents)
-        .where(sql`${documents.sourceUrl} = ${sourceUrl}`)
-        .limit(1);
-
-      if (existing.length > 0) {
-        // Update localPath if not already set
-        const localPath = path.join(dsPath, file);
-        if (!existing[0].localPath) {
-          await db.update(documents)
-            .set({ localPath })
-            .where(eq(documents.id, existing[0].id));
-        }
-        skipped++;
-        dsSkipped++;
-        continue;
-      }
-
       const efta = file.replace(/\.[^.]+$/, "");
       const ext = path.extname(file).toLowerCase();
-      const fileStat = fs.statSync(path.join(dsPath, file));
+      const filePath = path.join(dsPath, file);
+      const fileStat = fs.statSync(filePath);
       const fileSizeKB = Math.round(fileStat.size / 1024);
       const docType = [".mp4", ".avi", ".mov", ".wmv", ".webm"].includes(ext)
         ? "video"
@@ -701,24 +686,97 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
         : inferDocumentType(dsDesc);
       const fileTypeTag = ext === ".pdf" ? "PDF" : ext.replace(".", "").toUpperCase();
 
-      try {
-        await db.insert(documents).values({
-          title: `${efta} (${dsName})`,
-          description: `${dsDesc}. File: ${efta}. Size: ${fileSizeKB}KB.`,
-          documentType: docType,
-          dataSet: String(dsNum),
-          sourceUrl,
-          localPath: path.join(dsPath, file),
-          datePublished: "2026-01-30",
-          isRedacted: true,
-          tags: [`data-set-${dsNum}`, "DOJ disclosure", fileTypeTag, docType],
-        });
-        loaded++;
-        dsLoaded++;
-      } catch (error: any) {
-        if (!error.message.includes("duplicate")) {
-          console.warn(`    Error loading ${file}: ${error.message}`);
+      return { file, sourceUrl, efta, ext, filePath, fileSizeKB, docType, fileTypeTag };
+    });
+
+    // Process in batches
+    for (let i = 0; i < fileInfos.length; i += BATCH_SIZE) {
+      const batch = fileInfos.slice(i, i + BATCH_SIZE);
+      const batchUrls = batch.map(f => f.sourceUrl);
+
+      // Batch SELECT — one query for up to 500 files
+      const existingDocs = await db
+        .select({ id: documents.id, sourceUrl: documents.sourceUrl, localPath: documents.localPath })
+        .from(documents)
+        .where(inArray(documents.sourceUrl, batchUrls));
+
+      const existingByUrl = new Map(existingDocs.map(d => [d.sourceUrl, d]));
+
+      // Separate records that need localPath updates vs new inserts
+      const needsLocalPathUpdate: { id: number; localPath: string }[] = [];
+      const newRecords: typeof batch = [];
+
+      for (const info of batch) {
+        const existing = existingByUrl.get(info.sourceUrl);
+        if (existing) {
+          if (!existing.localPath) {
+            needsLocalPathUpdate.push({ id: existing.id, localPath: info.filePath });
+          }
+          skipped++;
+          dsSkipped++;
+        } else {
+          newRecords.push(info);
         }
+      }
+
+      // Batch UPDATE localPaths for records missing it
+      for (const update of needsLocalPathUpdate) {
+        await db.update(documents)
+          .set({ localPath: update.localPath })
+          .where(eq(documents.id, update.id));
+      }
+
+      // Batch INSERT — chunk to stay within Postgres parameter limits
+      if (newRecords.length > 0) {
+        const INSERT_CHUNK = 100;
+        for (let j = 0; j < newRecords.length; j += INSERT_CHUNK) {
+          const chunk = newRecords.slice(j, j + INSERT_CHUNK);
+          try {
+            await db.insert(documents).values(
+              chunk.map(info => ({
+                title: `${info.efta} (${dsName})`,
+                description: `${dsDesc}. File: ${info.efta}. Size: ${info.fileSizeKB}KB.`,
+                documentType: info.docType,
+                dataSet: String(dsNum),
+                sourceUrl: info.sourceUrl,
+                localPath: info.filePath,
+                datePublished: "2026-01-30",
+                isRedacted: true,
+                tags: [`data-set-${dsNum}`, "DOJ disclosure", info.fileTypeTag, info.docType],
+              }))
+            ).onConflictDoNothing();
+            loaded += chunk.length;
+            dsLoaded += chunk.length;
+          } catch (error: any) {
+            // Fallback: insert individually if batch fails
+            for (const info of chunk) {
+              try {
+                await db.insert(documents).values({
+                  title: `${info.efta} (${dsName})`,
+                  description: `${dsDesc}. File: ${info.efta}. Size: ${info.fileSizeKB}KB.`,
+                  documentType: info.docType,
+                  dataSet: String(dsNum),
+                  sourceUrl: info.sourceUrl,
+                  localPath: info.filePath,
+                  datePublished: "2026-01-30",
+                  isRedacted: true,
+                  tags: [`data-set-${dsNum}`, "DOJ disclosure", info.fileTypeTag, info.docType],
+                });
+                loaded++;
+                dsLoaded++;
+              } catch (e: any) {
+                if (!e.message.includes("duplicate")) {
+                  console.warn(`    Error loading ${info.file}: ${e.message}`);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Progress logging every 10 batches
+      if (i % (BATCH_SIZE * 10) === 0 && i > 0) {
+        console.log(`    Progress: ${i}/${fileInfos.length} files processed...`);
       }
     }
 
