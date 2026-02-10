@@ -123,12 +123,56 @@ async function throttle(): Promise<void> {
   lastRequestTime = Date.now();
 }
 
+// ---------------------------------------------------------------------------
+// Shared cookie state with automatic refresh on 401
+// ---------------------------------------------------------------------------
+let currentCookieHeader: string | undefined;
+let cookieRefreshPromise: Promise<void> | null = null;
+let lastCookieRefreshTime = 0;
+const COOKIE_REFRESH_COOLDOWN_MS = 30_000; // Don't refresh more often than every 30s
+
+async function refreshCookiesIfNeeded(): Promise<void> {
+  const now = Date.now();
+
+  // If a refresh is already in progress, wait for it
+  if (cookieRefreshPromise) {
+    await cookieRefreshPromise;
+    return;
+  }
+
+  // Don't refresh too frequently
+  if (now - lastCookieRefreshTime < COOKIE_REFRESH_COOLDOWN_MS) {
+    return;
+  }
+
+  cookieRefreshPromise = (async () => {
+    try {
+      console.log("\n  Cookies expired — re-acquiring Akamai cookies...");
+      await getBrowserContext();
+      const header = await extractCookieHeader();
+      await closeBrowser();
+      lastCookieRefreshTime = Date.now();
+      if (header) {
+        currentCookieHeader = header;
+        console.log(`  New cookie header obtained (${header.length} chars)\n`);
+      }
+    } catch (err: any) {
+      console.warn(`  Cookie refresh failed: ${err.message}`);
+    }
+  })();
+
+  try {
+    await cookieRefreshPromise;
+  } finally {
+    cookieRefreshPromise = null;
+  }
+}
+
 async function downloadFile(
   file: DOJFile,
   outputDir: string,
   progress: DownloadProgress,
   retries: number = 3,
-  cookieHeader?: string,
 ): Promise<DownloadResult> {
   const filename = safeFilename(file.url);
   const dataSetDir = path.join(outputDir, `data-set-${file.dataSetId}`);
@@ -176,8 +220,8 @@ async function downloadFile(
         "sec-fetch-site": "same-origin",
         "sec-fetch-user": "?1",
       };
-      if (cookieHeader) {
-        headers["Cookie"] = cookieHeader;
+      if (currentCookieHeader) {
+        headers["Cookie"] = currentCookieHeader;
       }
 
       const response = await fetch(file.url, {
@@ -190,6 +234,16 @@ async function downloadFile(
         console.warn(`  429 rate-limited on ${filename}, waiting ${retryAfter}s...`);
         await new Promise((r) => setTimeout(r, retryAfter * 1000));
         continue;
+      }
+
+      if (response.status === 401 || response.status === 403) {
+        console.warn(`  HTTP ${response.status} for ${filename} (attempt ${attempt}/${retries}) — refreshing cookies`);
+        await refreshCookiesIfNeeded();
+        if (attempt < retries) {
+          await new Promise((r) => setTimeout(r, 2000));
+          continue;
+        }
+        return { url: file.url, success: false, error: `HTTP ${response.status}` };
       }
 
       if (!response.ok) {
@@ -376,15 +430,15 @@ export async function downloadDocuments(options: {
   }
 
   // Obtain Akamai bot challenge cookies from the persistent Chrome profile.
-  // Without these, DOJ returns 404 for all file downloads.
-  let cookieHeader: string | undefined;
+  // Cookies auto-refresh on 401/403 during downloads.
   try {
     console.log("Obtaining Akamai cookies from browser session...");
     await getBrowserContext();
-    cookieHeader = await extractCookieHeader();
+    currentCookieHeader = await extractCookieHeader();
     await closeBrowser();
-    if (cookieHeader) {
-      console.log(`Cookie header obtained (${cookieHeader.length} chars)\n`);
+    lastCookieRefreshTime = Date.now();
+    if (currentCookieHeader) {
+      console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
     }
   } catch (err: any) {
     console.warn(`Warning: Could not obtain cookies (${err.message}). Downloads may fail.\n`);
@@ -397,7 +451,7 @@ export async function downloadDocuments(options: {
 
   const tasks = pending.map((file) =>
     limit(async () => {
-      const result = await downloadFile(file, DOWNLOADS_DIR, progress, 3, cookieHeader);
+      const result = await downloadFile(file, DOWNLOADS_DIR, progress, 3);
 
       if (result.success) {
         downloadedCount++;
