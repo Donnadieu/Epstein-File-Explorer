@@ -12,8 +12,7 @@ import {
   loadPersonsFromFile,
   updateDocumentCounts,
 } from "./db-loader";
-import { downloadDocuments } from "./document-downloader";
-import { probeAndMergeCatalog, scrapeDOJCatalog } from "./doj-scraper";
+import { downloadTorrents } from "./torrent-downloader";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
 import { migrateToR2 } from "./r2-migration";
@@ -39,10 +38,8 @@ interface PipelineConfig {
 }
 
 const STAGES = [
-  "scrape-doj",
-  "probe-doj",
   "scrape-wikipedia",
-  "download",
+  "download-torrent",
   "upload-r2",
   "process",
   "classify-media",
@@ -76,10 +73,8 @@ USAGE:
 
 STAGES:
   all              Run all stages in order
-  scrape-doj       Scrape DOJ Epstein Library for document catalog
-  probe-doj        Probe sequential EFTA numbers via HEAD requests to discover unlisted files
   scrape-wikipedia Scrape Wikipedia for comprehensive person list
-  download         Download documents from DOJ (PDFs, images, etc.)
+  download-torrent Download data sets via BitTorrent (aria2c), extract archives, normalize files
   upload-r2        Upload downloaded files to Cloudflare R2 storage
   process          Extract text from downloaded PDFs via OCR/parsing
   classify-media   Classify documents by media type and set AI priority
@@ -95,7 +90,7 @@ SHORTCUTS:
   quick            Run scrape-wikipedia + load-persons + extract-connections + update-counts
                    (fastest way to populate app with comprehensive data)
   full-discovery   Run all scraping, downloading, processing, and loading stages
-                   (scrape-doj → scrape-wikipedia → download → process →
+                   (scrape-wikipedia → download-torrent → upload-r2 → process →
                     classify-media → analyze-ai → load-persons → load-documents →
                     import-downloads → load-ai-results → extract-connections → update-counts)
   analyze-priority Run AI analysis on highest-priority unanalyzed documents
@@ -120,13 +115,13 @@ EXAMPLES:
   npx tsx scripts/pipeline/run-pipeline.ts all
 
   # Full discovery pipeline (scrape + download + process + load)
-  npx tsx scripts/pipeline/run-pipeline.ts full-discovery --max-downloads 100
+  npx tsx scripts/pipeline/run-pipeline.ts full-discovery
 
   # AI analysis of priority documents with budget cap
   npx tsx scripts/pipeline/run-pipeline.ts analyze-priority --budget 500 --priority 3
 
-  # Scrape DOJ + download first 10 PDFs from data set 9
-  npx tsx scripts/pipeline/run-pipeline.ts scrape-doj download --data-sets 9 --max-downloads 10
+  # Download data sets 9 and 10 via torrent
+  npx tsx scripts/pipeline/run-pipeline.ts download-torrent --data-sets 9,10
 
   # Just scrape and load persons
   npx tsx scripts/pipeline/run-pipeline.ts scrape-wikipedia load-persons update-counts
@@ -141,13 +136,12 @@ EXAMPLES:
   npx tsx scripts/pipeline/run-pipeline.ts analyze-ai --batch-size 10 --concurrency 2 --budget 1000
 
 DATA FLOW:
-  1. scrape-doj       → data/doj-catalog.json
-  2. scrape-wikipedia  → data/persons-raw.json
-  3. download          → data/downloads/data-set-{N}/
-  3b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
-  4. process           → data/extracted/ds{N}/*.json
-  5. analyze-ai        → data/ai-analyzed/*.json
-  6. load-*            → PostgreSQL database
+  1. scrape-wikipedia  → data/persons-raw.json
+  2. download-torrent  → data/downloads/data-set-{N}/ (via BitTorrent + aria2c)
+  2b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
+  3. process           → data/extracted/ds{N}/*.json
+  4. analyze-ai        → data/ai-analyzed/*.json
+  5. load-*            → PostgreSQL database
 `);
 }
 
@@ -159,25 +153,14 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
   try {
     switch (stage) {
-      case "scrape-doj":
-        await scrapeDOJCatalog(config.dataSetIds);
-        break;
-
-      case "probe-doj":
-        await probeAndMergeCatalog(config.dataSetIds);
-        break;
-
       case "scrape-wikipedia":
         await scrapeWikipediaPersons();
         break;
 
-      case "download":
-        await downloadDocuments({
+      case "download-torrent":
+        await downloadTorrents({
           dataSetIds: config.dataSetIds,
-          maxFiles: config.maxDownloads,
-          rateLimitMs: config.rateLimitMs,
-          fileTypes: config.fileTypes,
-          retryFailed: config.retryFailed,
+          maxConcurrentDownloads: config.concurrency,
         });
         break;
 
@@ -294,9 +277,8 @@ async function main() {
       ];
     } else if (arg === "full-discovery") {
       config.stages = [
-        "scrape-doj",
         "scrape-wikipedia",
-        "download",
+        "download-torrent",
         "upload-r2",
         "process",
         "classify-media",
