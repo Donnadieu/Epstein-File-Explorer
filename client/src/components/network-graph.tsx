@@ -29,7 +29,7 @@ export interface GraphLink extends SimulationLinkDatum<GraphNode> {
   strength: number;
 }
 
-const categoryColors: Record<string, string> = {
+export const categoryColors: Record<string, string> = {
   "key figure": "hsl(0, 84%, 60%)",
   associate: "hsl(221, 83%, 53%)",
   victim: "hsl(43, 74%, 49%)",
@@ -55,6 +55,7 @@ interface NetworkGraphProps {
   searchQuery: string;
   selectedPersonId: number | null;
   onSelectPerson: (id: number | null) => void;
+  onReady?: () => void;
 }
 
 export default function NetworkGraph({
@@ -63,6 +64,7 @@ export default function NetworkGraph({
   searchQuery,
   selectedPersonId,
   onSelectPerson,
+  onReady,
 }: NetworkGraphProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -230,6 +232,8 @@ export default function NetworkGraph({
       });
 
     // Simulation
+    let tickCount = 0;
+    let readyFired = false;
     const simulation = forceSimulation<GraphNode>(nodes)
       .force(
         "link",
@@ -249,6 +253,12 @@ export default function NetworkGraph({
           .attr("y2", (d) => (d.target as GraphNode).y ?? 0);
 
         nodeGroup.attr("transform", (d) => `translate(${d.x ?? 0},${d.y ?? 0})`);
+
+        tickCount++;
+        if (!readyFired && tickCount >= 60) {
+          readyFired = true;
+          onReady?.();
+        }
       });
 
     simulationRef.current = simulation;

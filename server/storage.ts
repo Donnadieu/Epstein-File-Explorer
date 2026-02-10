@@ -35,7 +35,7 @@ export interface IStorage {
   createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent>;
 
   getStats(): Promise<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>;
-  getNetworkData(): Promise<{ persons: Person[]; connections: any[] }>;
+  getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
@@ -590,7 +590,36 @@ export class DatabaseStorage implements IStorage {
       });
     }
 
-    return { persons: allPersons, connections: enrichedConnections };
+    // Compute timeline year ranges for the time slider
+    const [yearRangeRow] = await db.select({
+      minDate: sql<string>`min(${timelineEvents.date})`,
+      maxDate: sql<string>`max(${timelineEvents.date})`,
+    }).from(timelineEvents);
+
+    const minYear = yearRangeRow?.minDate ? parseInt(yearRangeRow.minDate.slice(0, 4)) || 1990 : 1990;
+    const maxYear = yearRangeRow?.maxDate ? parseInt(yearRangeRow.maxDate.slice(0, 4)) || 2025 : 2025;
+
+    // Per-person year ranges from timeline events
+    const personYearRows = await db.select({
+      pid: sql<number>`unnest(${timelineEvents.personIds})`,
+      minDate: sql<string>`min(${timelineEvents.date})`,
+      maxDate: sql<string>`max(${timelineEvents.date})`,
+    }).from(timelineEvents)
+      .groupBy(sql`unnest(${timelineEvents.personIds})`);
+
+    const personYears: Record<number, [number, number]> = {};
+    for (const row of personYearRows) {
+      const earliest = parseInt(row.minDate.slice(0, 4)) || minYear;
+      const latest = parseInt(row.maxDate.slice(0, 4)) || maxYear;
+      personYears[row.pid] = [earliest, latest];
+    }
+
+    return {
+      persons: allPersons,
+      connections: enrichedConnections,
+      timelineYearRange: [minYear, maxYear] as [number, number],
+      personYears,
+    };
   }
 
   async search(query: string) {
