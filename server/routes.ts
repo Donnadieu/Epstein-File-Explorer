@@ -114,8 +114,9 @@ export async function registerRoutes(
       const type = (req.query.type as string) || undefined;
       const dataSet = (req.query.dataSet as string) || undefined;
       const redacted = (req.query.redacted as string) || undefined;
+      const mediaType = (req.query.mediaType as string) || undefined;
 
-      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted });
+      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType });
       res.json({ ...result, data: result.data.map(omitInternal) });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
@@ -128,6 +129,15 @@ export async function registerRoutes(
       res.json(filters);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document filters" });
+    }
+  });
+
+  app.get("/api/sidebar-counts", async (_req, res) => {
+    try {
+      const counts = await storage.getSidebarCounts();
+      res.json(counts);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch sidebar counts" });
     }
   });
 

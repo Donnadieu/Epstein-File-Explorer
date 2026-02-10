@@ -77,6 +77,31 @@ const filterLabels: Record<string, string> = {
   type: "Type",
   dataSet: "Data Set",
   redacted: "Redaction",
+  mediaType: "Media Type",
+};
+
+const pageTitles: Record<string, string> = {
+  "court filing": "Court Filings",
+  correspondence: "Correspondence",
+  "fbi report": "FBI Reports",
+  deposition: "Depositions",
+  "flight log": "Flight Logs",
+  "financial record": "Financial Records",
+  "grand jury transcript": "Grand Jury Transcripts",
+  "search warrant": "Search Warrants",
+  "police report": "Police Reports",
+  "property record": "Property Records",
+  "news article": "News Articles",
+  "travel record": "Travel Records",
+  "government record": "Government Records",
+};
+
+const mediaTypeTitles: Record<string, string> = {
+  image: "Photos",
+  video: "Videos",
+  pdf: "PDFs",
+  email: "Emails",
+  spreadsheet: "Spreadsheets",
 };
 
 function DocumentCardSkeleton({ index }: { index: number }) {
@@ -107,6 +132,7 @@ export default function DocumentsPage() {
     type: "all",
     dataSet: "all",
     redacted: "all",
+    mediaType: "all",
     page: "1",
     view: "grid",
   });
@@ -122,18 +148,26 @@ export default function DocumentsPage() {
   if (filters.type !== "all") queryParams.set("type", filters.type);
   if (filters.dataSet !== "all") queryParams.set("dataSet", filters.dataSet);
   if (filters.redacted !== "all") queryParams.set("redacted", filters.redacted);
+  if (filters.mediaType !== "all") queryParams.set("mediaType", filters.mediaType);
+
+  const pageTitle = filters.type !== "all"
+    ? (pageTitles[filters.type] || filters.type.charAt(0).toUpperCase() + filters.type.slice(1))
+    : filters.mediaType !== "all"
+      ? (mediaTypeTitles[filters.mediaType] || filters.mediaType.charAt(0).toUpperCase() + filters.mediaType.slice(1))
+      : "Document Browser";
 
   const { data: result, isLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
     queryKey: [`/api/documents?${queryParams.toString()}`],
     placeholderData: keepPreviousData,
   });
 
-  const { data: filterOptions } = useQuery<{ types: string[]; dataSets: string[] }>({
+  const { data: filterOptions } = useQuery<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>({
     queryKey: ["/api/documents/filters"],
   });
 
   const documentTypes = ["all", ...(filterOptions?.types || [])];
   const dataSets = ["all", ...(filterOptions?.dataSets || [])];
+  const mediaTypes = ["all", ...(filterOptions?.mediaTypes || [])];
 
   const paginated = result?.data;
   const totalItems = result?.total || 0;
@@ -156,7 +190,7 @@ export default function DocumentsPage() {
       <div className="flex flex-col gap-2">
         <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2" data-testid="text-documents-title">
           <FileText className="w-6 h-6 text-primary" />
-          Document Browser
+          {pageTitle}
         </h1>
         <p className="text-sm text-muted-foreground">
           Browse publicly released documents from DOJ disclosures, court records, and congressional releases.
@@ -212,6 +246,18 @@ export default function DocumentsPage() {
               <SelectItem value="all">All</SelectItem>
               <SelectItem value="redacted">Redacted</SelectItem>
               <SelectItem value="unredacted">Unredacted</SelectItem>
+            </SelectContent>
+          </Select>
+          <Select value={filters.mediaType} onValueChange={(v) => { setFilter("mediaType", v); resetPage(); }}>
+            <SelectTrigger className="w-36" data-testid="select-media-type-filter">
+              <SelectValue placeholder="Media Type" />
+            </SelectTrigger>
+            <SelectContent>
+              {mediaTypes.map((mt) => (
+                <SelectItem key={mt} value={mt}>
+                  {mt === "all" ? "All Media" : mt.charAt(0).toUpperCase() + mt.slice(1)}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
           {hasActiveFilters && (
@@ -363,6 +409,7 @@ export default function DocumentsPage() {
                 {filters.type !== "all" && ` Try removing the "${filters.type}" type filter.`}
                 {filters.redacted !== "all" && ` Try removing the "${filters.redacted}" filter.`}
                 {filters.dataSet !== "all" && ` Try removing the "Data Set ${filters.dataSet}" filter.`}
+                {filters.mediaType !== "all" && ` Try removing the "${filters.mediaType}" media type filter.`}
               </p>
               {activeFilters.length > 0 && (
                 <div className="flex items-center gap-2 flex-wrap justify-center">

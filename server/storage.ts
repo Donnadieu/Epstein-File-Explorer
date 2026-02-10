@@ -40,9 +40,16 @@ export interface IStorage {
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
-  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
-  getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }>;
+  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>;
   getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
+  getSidebarCounts(): Promise<{
+    documents: { total: number; byType: Record<string, number> };
+    media: { images: number; videos: number };
+    persons: number;
+    events: number;
+    connections: number;
+  }>;
 
   getBookmarks(): Promise<Bookmark[]>;
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
@@ -659,6 +666,7 @@ export class DatabaseStorage implements IStorage {
     type?: string;
     dataSet?: string;
     redacted?: string;
+    mediaType?: string;
   }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
     const conditions = [];
 
@@ -687,6 +695,10 @@ export class DatabaseStorage implements IStorage {
       conditions.push(eq(documents.isRedacted, false));
     }
 
+    if (opts.mediaType) {
+      conditions.push(eq(documents.mediaType, opts.mediaType));
+    }
+
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
     const [countResult] = await db
@@ -707,21 +719,25 @@ export class DatabaseStorage implements IStorage {
     return { data, total, page: opts.page, totalPages };
   }
 
-  async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }> {
-    const typeRows = await db
-      .selectDistinct({ documentType: documents.documentType })
-      .from(documents)
-      .orderBy(asc(documents.documentType));
-
-    const dataSetRows = await db
-      .selectDistinct({ dataSet: documents.dataSet })
-      .from(documents)
-      .where(sql`${documents.dataSet} IS NOT NULL`)
-      .orderBy(asc(documents.dataSet));
+  async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }> {
+    const [typeRows, dataSetRows, mediaTypeRows] = await Promise.all([
+      db.selectDistinct({ documentType: documents.documentType })
+        .from(documents)
+        .orderBy(asc(documents.documentType)),
+      db.selectDistinct({ dataSet: documents.dataSet })
+        .from(documents)
+        .where(sql`${documents.dataSet} IS NOT NULL`)
+        .orderBy(asc(documents.dataSet)),
+      db.selectDistinct({ mediaType: documents.mediaType })
+        .from(documents)
+        .where(sql`${documents.mediaType} IS NOT NULL`)
+        .orderBy(asc(documents.mediaType)),
+    ]);
 
     return {
       types: typeRows.map((r) => r.documentType),
       dataSets: dataSetRows.map((r) => r.dataSet!),
+      mediaTypes: mediaTypeRows.map((r) => r.mediaType!),
     };
   }
 
@@ -743,6 +759,50 @@ export class DatabaseStorage implements IStorage {
     return {
       prev: prevRow?.id ?? null,
       next: nextRow?.id ?? null,
+    };
+  }
+
+  async getSidebarCounts(): Promise<{
+    documents: { total: number; byType: Record<string, number> };
+    media: { images: number; videos: number };
+    persons: number;
+    events: number;
+    connections: number;
+  }> {
+    const [docCounts, mediaCounts, entityCounts] = await Promise.all([
+      // Document counts by type in a single query
+      db.select({
+        documentType: documents.documentType,
+        count: sql<number>`count(*)::int`,
+      }).from(documents).groupBy(documents.documentType),
+
+      // Media counts
+      db.select({
+        images: sql<number>`count(*) filter (where ${documents.mediaType} = 'image')::int`,
+        videos: sql<number>`count(*) filter (where ${documents.mediaType} = 'video')::int`,
+      }).from(documents),
+
+      // Entity counts
+      Promise.all([
+        db.select({ count: sql<number>`count(*)::int` }).from(persons),
+        db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
+        db.select({ count: sql<number>`count(*)::int` }).from(connections),
+      ]),
+    ]);
+
+    const byType: Record<string, number> = {};
+    let total = 0;
+    for (const row of docCounts) {
+      byType[row.documentType] = row.count;
+      total += row.count;
+    }
+
+    return {
+      documents: { total, byType },
+      media: { images: mediaCounts[0].images, videos: mediaCounts[0].videos },
+      persons: entityCounts[0][0].count,
+      events: entityCounts[1][0].count,
+      connections: entityCounts[2][0].count,
     };
   }
 

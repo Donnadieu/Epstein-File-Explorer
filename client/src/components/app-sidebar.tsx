@@ -5,12 +5,14 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarHeader,
   SidebarFooter,
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import {
   LayoutDashboard,
   Users,
@@ -18,25 +20,139 @@ import {
   Clock,
   Search,
   Network,
-  // MessageCircle,
   Brain,
   ExternalLink,
   Shield,
+  Gavel,
+  Mail,
+  AlertTriangle,
+  Scale,
+  Plane,
+  DollarSign,
+  BookOpen,
+  Image,
+  Video,
 } from "lucide-react";
 
-const navItems = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "People", url: "/people", icon: Users },
-  { title: "Documents", url: "/documents", icon: FileText },
-  { title: "Timeline", url: "/timeline", icon: Clock },
-  { title: "Network", url: "/network", icon: Network },
-  { title: "Search", url: "/search", icon: Search },
-  { title: "AI Insights", url: "/ai-insights", icon: Brain },
-  // { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageCircle },
-];
+interface SidebarCounts {
+  documents: { total: number; byType: Record<string, number> };
+  media: { images: number; videos: number };
+  persons: number;
+  events: number;
+  connections: number;
+}
+
+function formatCount(n: number | undefined): string {
+  if (!n) return "";
+  if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}K`;
+  return String(n);
+}
+
+interface NavItem {
+  title: string;
+  url: string;
+  icon: React.ComponentType<{ className?: string }>;
+  count?: number;
+}
+
+function NavGroup({ label, items, location }: { label: string; items: NavItem[]; location: string }) {
+  return (
+    <SidebarGroup>
+      <SidebarGroupLabel>{label}</SidebarGroupLabel>
+      <SidebarGroupContent>
+        <SidebarMenu>
+          {items.map((item) => {
+            const isActive = isNavActive(item.url, location);
+            return (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive}
+                  data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, "-")}`}
+                >
+                  <Link href={item.url}>
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.title}</span>
+                  </Link>
+                </SidebarMenuButton>
+                {item.count != null && item.count > 0 && (
+                  <SidebarMenuBadge>{formatCount(item.count)}</SidebarMenuBadge>
+                )}
+              </SidebarMenuItem>
+            );
+          })}
+        </SidebarMenu>
+      </SidebarGroupContent>
+    </SidebarGroup>
+  );
+}
+
+function isNavActive(itemUrl: string, currentLocation: string): boolean {
+  const [itemPath, itemSearch] = itemUrl.split("?");
+  const currentPath = currentLocation.split("?")[0];
+  const currentSearch = currentLocation.includes("?") ? currentLocation.split("?")[1] : "";
+
+  // Exact match for root
+  if (itemPath === "/" && currentPath === "/") return !currentSearch;
+
+  // For items with query params, match both path and search params
+  if (itemSearch) {
+    if (currentPath !== itemPath) return false;
+    const itemParams = new URLSearchParams(itemSearch);
+    const currentParams = new URLSearchParams(currentSearch);
+    let allMatch = true;
+    itemParams.forEach((value, key) => {
+      if (currentParams.get(key) !== value) allMatch = false;
+    });
+    if (!allMatch) return false;
+    return true;
+  }
+
+  // Standard prefix match for non-root items
+  return currentPath === itemPath || currentPath.startsWith(itemPath + "/");
+}
 
 export function AppSidebar() {
   const [location] = useLocation();
+  const fullLocation = location + (typeof window !== "undefined" ? window.location.search : "");
+
+  const { data: counts } = useQuery<SidebarCounts>({
+    queryKey: ["/api/sidebar-counts"],
+    staleTime: 60_000,
+  });
+
+  const byType = counts?.documents.byType ?? {};
+
+  const overviewItems: NavItem[] = [
+    { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  ];
+
+  const documentItems: NavItem[] = [
+    { title: "All Documents", url: "/documents", icon: FileText, count: counts?.documents.total },
+    { title: "Court Filings", url: "/documents?type=court+filing", icon: Gavel, count: byType["court filing"] },
+    { title: "Correspondence", url: "/documents?type=correspondence", icon: Mail, count: byType["correspondence"] },
+    { title: "FBI Reports", url: "/documents?type=fbi+report", icon: AlertTriangle, count: byType["fbi report"] },
+    { title: "Depositions", url: "/documents?type=deposition", icon: Scale, count: byType["deposition"] },
+    { title: "Flight Logs", url: "/documents?type=flight+log", icon: Plane, count: byType["flight log"] },
+    { title: "Financial Records", url: "/documents?type=financial+record", icon: DollarSign, count: byType["financial record"] },
+    { title: "Grand Jury", url: "/documents?type=grand+jury+transcript", icon: BookOpen, count: byType["grand jury transcript"] },
+  ];
+
+  const mediaItems: NavItem[] = [
+    { title: "Photos", url: "/documents?mediaType=image", icon: Image, count: counts?.media.images },
+    { title: "Videos", url: "/documents?mediaType=video", icon: Video, count: counts?.media.videos },
+  ];
+
+  const investigationItems: NavItem[] = [
+    { title: "People", url: "/people", icon: Users, count: counts?.persons },
+    { title: "Timeline", url: "/timeline", icon: Clock, count: counts?.events },
+    { title: "Network", url: "/network", icon: Network },
+    { title: "AI Insights", url: "/ai-insights", icon: Brain },
+  ];
+
+  const toolItems: NavItem[] = [
+    { title: "Search", url: "/search", icon: Search },
+  ];
 
   return (
     <Sidebar>
@@ -52,30 +168,11 @@ export function AppSidebar() {
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {navItems.map((item) => {
-                const isActive = location === item.url || (item.url !== "/" && location.startsWith(item.url));
-                return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton
-                      asChild
-                      isActive={isActive}
-                      data-testid={`nav-${item.title.toLowerCase()}`}
-                    >
-                      <Link href={item.url}>
-                        <item.icon className="w-4 h-4" />
-                        <span>{item.title}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        <NavGroup label="Overview" items={overviewItems} location={fullLocation} />
+        <NavGroup label="Documents" items={documentItems} location={fullLocation} />
+        <NavGroup label="Media" items={mediaItems} location={fullLocation} />
+        <NavGroup label="Investigation" items={investigationItems} location={fullLocation} />
+        <NavGroup label="Tools" items={toolItems} location={fullLocation} />
       </SidebarContent>
       <SidebarFooter className="p-4">
         <div className="flex flex-col gap-2 text-[10px] text-muted-foreground">
