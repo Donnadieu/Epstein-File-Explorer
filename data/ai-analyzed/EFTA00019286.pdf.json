@@ -1,0 +1,139 @@
+{
+  "fileName": "EFTA00019286.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-17 to 2020-12-18",
+  "summary": "This is an email chain between Assistant United States Attorneys discussing trial scheduling for the case 'U.S. v. Doud'. The emails coordinate potential trial dates around other scheduled cases, including those related to Steve Bannon, MCC Epstein guards, and Lev Parnas.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the initial email inquiring about trial schedule availability for the Doud case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steve Bannon",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named as a defendant in the case 'U.S. v. Steve Bannon et al', which is scheduled for trial starting May 24, 2021.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Noel",
+      "role": "Defendant",
+      "category": "associate",
+      "context": "Named as a defendant in 'U.S. v. Noel', identified as an MCC Epstein guard, with a trial scheduled for June 21, 2021.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adams",
+      "role": "Defendant",
+      "category": "associate",
+      "context": "Named as a defendant in 'U.S. v. Adams', identified as an MCC guard involved in a bribery case, with a trial scheduled for August 16, 2021.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lev Parnas",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named as a defendant in 'U.S. v. Lev Parnas et al', with a trial originally scheduled for March but moved to sometime between August and October 2021.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Doud",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the email chain regarding trial scheduling ('Doud trial'). Described as 'old', making timing around COVID a consideration.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Noel",
+      "person2": "Adams",
+      "relationshipType": "associate",
+      "description": "Both are identified as MCC guards with separate criminal cases being prosecuted by the same office.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Doud",
+      "relationshipType": "legal",
+      "description": "The prosecutor is discussing the scheduling of Doud's trial, indicating a prosecutorial role.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Steve Bannon",
+      "relationshipType": "legal",
+      "description": "The prosecutor lists 'U.S. v. Steve Bannon et al' as a case on their trial schedule.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-24",
+      "title": "U.S. v. Steve Bannon et al trial start",
+      "description": "Scheduled start date for the trial of Steve Bannon and others.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve Bannon"
+      ]
+    },
+    {
+      "date": "2021-06-21",
+      "title": "U.S. v. Noel trial start",
+      "description": "Scheduled start date for the trial of Noel, an MCC Epstein guard.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Noel"
+      ]
+    },
+    {
+      "date": "2021-08-16",
+      "title": "U.S. v. Adams trial start",
+      "description": "Scheduled start date for the trial of Adams, an MCC guard in a bribery case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Adams"
+      ]
+    },
+    {
+      "date": "2021-08 to 2021-10",
+      "title": "U.S. v. Lev Parnas et al rescheduled trial",
+      "description": "The trial for Lev Parnas and others, originally scheduled for March 2021, was moved to a period between August and October 2021.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Lev Parnas"
+      ]
+    },
+    {
+      "date": "2020-12-17",
+      "title": "Email discussion on Doud trial scheduling",
+      "description": "Prosecutors correspond to schedule the trial for defendant Doud, considering other case schedules and COVID-19 concerns.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Doud"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Southern District of New York",
+    "One Saint Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "The document reveals the U.S. Attorney's Office for the Southern District of New York was prosecuting multiple high-profile cases concurrently in 2021, including those against Steve Bannon, Lev Parnas, and guards from the Metropolitan Correctional Center (MCC).",
+    "Two of the scheduled trials ('U.S. v. Noel' and 'U.S. v. Adams') involve guards from the MCC, the facility where Jeffrey Epstein was held, indicating ongoing legal proceedings related to the Epstein case aftermath.",
+    "The email chain shows prosecutorial scheduling challenges and prioritization, with the 'Doud trial' being a top 3 priority but not the number one priority for the prosecutor.",
+    "The correspondence mentions COVID-19 as a factor in trial scheduling, specifically noting concern because the defendant Doud is 'old'."
+  ],
+  "analyzedAt": "2026-02-08T05:49:06.920Z"
+}

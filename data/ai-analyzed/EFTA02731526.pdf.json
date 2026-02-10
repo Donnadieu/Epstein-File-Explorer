@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA02731526.pdf",
+  "dataSet": "12",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2021-05-27",
+  "summary": "Email from attorney Jeanne M. Christensen to an unspecified recipient, attaching documents related to financial transactions from Leon Black and associated entities to a female recipient. The attachments include bank statements, texts/emails, and references to an NDA, suggesting a legal dispute or investigation involving financial support and confidentiality agreements.",
+  "persons": [
+    {
+      "name": "Jeanne M. Christensen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Partner at Wigdor LLP who is sending documents including bank statements, texts, and emails related to financial transfers from Leon Black and associated entities to a female recipient.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Leon J. Black",
+      "role": "Financial source",
+      "category": "key figure",
+      "context": "Individual whose accounts (\"Leon J. Black\", \"J. Black Trust\", \"E Trust\") are shown to have made wire payments ranging from $15K to $167K to a female recipient from November 2015 until 2021.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Melanie Spinella",
+      "role": "Administrative assistant",
+      "category": "staff",
+      "context": "Described as Leon Black's longtime trusted admin assistant; sample texts and emails involving her are included in the attachments.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leon J. Black",
+      "person2": "Unnamed female recipient",
+      "relationshipType": "financial",
+      "description": "Bank statements show wire payments from Black's accounts to the recipient from 2015 to 2021.",
+      "strength": 4
+    },
+    {
+      "person1": "Leon J. Black",
+      "person2": "Melanie Spinella",
+      "relationshipType": "employer-employee",
+      "description": "Spinella is described as Black's longtime trusted administrative assistant.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeanne M. Christensen",
+      "person2": "Unnamed female recipient",
+      "relationshipType": "attorney-client",
+      "description": "Christensen is providing legal representation, gathering and sending documents on behalf of the recipient.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-11",
+      "title": "Start of financial transfers",
+      "description": "Beginning of wire payments from Leon Black's associated accounts to a female recipient.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Leon J. Black",
+        "Unnamed female recipient"
+      ]
+    },
+    {
+      "date": "2021",
+      "title": "Cessation of payments",
+      "description": "Wire payments from Black's accounts to the recipient ceased after 2021.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Leon J. Black",
+        "Unnamed female recipient"
+      ]
+    },
+    {
+      "date": "2019-10",
+      "title": "Request for NDA copy",
+      "description": "The recipient asked Leon Black for a copy of a Non-Disclosure Agreement (NDA).",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Leon J. Black",
+        "Unnamed female recipient"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "85 Fifth Avenue, New York, NY 10003 (Wigdor LLP office)"
+  ],
+  "keyFacts": [
+    "Bank statements show wire payments from accounts associated with Leon J. Black (\"Leon J. Black\", \"J. Black Trust\", \"E Trust\") to a female recipient, ranging from $15,000 to $167,000.",
+    "Payments occurred from November 2015 until 2021, when they ceased.",
+    "The correspondence includes references to an NDA (Non-Disclosure Agreement) and a request from the recipient for a copy of it in October 2019.",
+    "Attorney Jeanne M. Christensen is representing the recipient and providing documents including texts/emails with Leon Black's assistant Melanie Spinella and contacts at Goldman Sachs."
+  ],
+  "analyzedAt": "2026-02-09T15:34:20.534Z"
+}

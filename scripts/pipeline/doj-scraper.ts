@@ -246,10 +246,37 @@ async function clickNextPage(page: Page): Promise<boolean> {
 export async function extractCookieHeader(): Promise<string> {
   const context = await getBrowserContext();
 
+  // Clear stale authorization cookies so Akamai re-issues the challenge.
+  // Without this, the persistent profile's expired cookies prevent re-challenge.
+  const existingCookies = await context.cookies();
+  const staleCookies = existingCookies.filter(c => c.name.startsWith("authorization_"));
+  if (staleCookies.length > 0) {
+    console.log(`  Clearing ${staleCookies.length} stale authorization cookie(s)...`);
+    await context.clearCookies({ name: /^authorization_/ } as any);
+    // Fallback: clearCookies with filter may not work in all Playwright versions
+    // Re-add all non-authorization cookies
+    const keepCookies = existingCookies.filter(c => !c.name.startsWith("authorization_"));
+    await context.clearCookies();
+    if (keepCookies.length > 0) {
+      await context.addCookies(keepCookies.map(c => ({
+        name: c.name, value: c.value, domain: c.domain, path: c.path,
+        ...(c.expires > 0 ? { expires: c.expires } : {}),
+        httpOnly: c.httpOnly, secure: c.secure, sameSite: c.sameSite as any,
+      })));
+    }
+    // Re-add age verification cookie in case it was cleared
+    await context.addCookies([{
+      name: "justiceGovAgeVerified", value: "true",
+      domain: ".justice.gov", path: "/",
+    }]);
+  }
+
   // Navigate to DOJ to trigger Akamai bot challenge.
   // Try multiple URLs — the challenge may only fire on certain paths.
   const page = await context.newPage();
+  // File URLs trigger the Akamai challenge; listing pages often don't.
   const challengeUrls = [
+    "https://www.justice.gov/epstein/files/DataSet%201/EFTA00003159.pdf",
     "https://www.justice.gov/epstein",
     "https://www.justice.gov",
   ];

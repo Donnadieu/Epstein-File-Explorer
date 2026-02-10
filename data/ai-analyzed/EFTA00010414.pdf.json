@@ -1,0 +1,177 @@
+{
+  "fileName": "EFTA00010414.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2021-07-02",
+  "summary": "This is a letter from Ghislaine Maxwell's defense attorney to Judge Alison J. Nathan, filed on July 2, 2021. The letter argues that the prosecution of Maxwell violates the Epstein Non-Prosecution Agreement (NPA), drawing a parallel to the Pennsylvania Supreme Court's decision to vacate Bill Cosby's conviction due to a broken prosecutorial promise. The defense requests the dismissal of several counts in the indictment.",
+  "persons": [
+    {
+      "name": "Christian R. Everdell",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney for Ghislaine Maxwell who authored and submitted this letter to the court, arguing for dismissal of charges based on the Epstein Non-Prosecution Agreement.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the United States v. Ghislaine Maxwell case, to whom this letter is addressed.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case (S2 20 Cr. 330). The letter argues her prosecution violates an immunity agreement related to Jeffrey Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "William Henry Cosby Jr.",
+      "role": "Defendant (in referenced case)",
+      "category": "other",
+      "context": "Referenced as the defendant in Commonwealth of Pennsylvania v. William Henry Cosby Jr., whose conviction was vacated by the Pennsylvania Supreme Court due to a broken prosecutorial promise, which the letter uses as a legal analogy.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Andrea Constand",
+      "role": "Accuser / Civil Plaintiff",
+      "category": "witness",
+      "context": "The individual who accused Bill Cosby of sexual assault in 2004 and later filed a civil suit against him, leading to the depositions where Cosby made inculpatory statements.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Bruce Castor",
+      "role": "Former District Attorney",
+      "category": "legal",
+      "context": "The former Montgomery County District Attorney who declined to prosecute Bill Cosby in 2005, issuing a statement the defense argues constituted a promise not to prosecute.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Risa Veil Ferman",
+      "role": "Successor District Attorney",
+      "category": "legal",
+      "context": "The successor District Attorney who, ten years later, used Bill Cosby's civil deposition testimony to prosecute him for the same crimes.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christian R. Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Everdell is submitting this legal letter on behalf of his client, Ghislaine Maxwell, arguing for the dismissal of charges against her.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "William Henry Cosby Jr.",
+      "relationshipType": "legal analogy",
+      "description": "The defense draws a direct legal parallel between Maxwell's situation (alleged violation of the Epstein NPA) and Cosby's situation (alleged violation of a prosecutorial promise).",
+      "strength": 3
+    },
+    {
+      "person1": "Bruce Castor",
+      "person2": "William Henry Cosby Jr.",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Castor, as DA, made a promise not to prosecute Cosby, which Cosby relied upon, leading to his testimony in a civil deposition.",
+      "strength": 4
+    },
+    {
+      "person1": "Risa Veil Ferman",
+      "person2": "William Henry Cosby Jr.",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Ferman, as successor DA, prosecuted Cosby a decade later using the testimony he gave after Castor's promise.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrea Constand",
+      "person2": "William Henry Cosby Jr.",
+      "relationshipType": "accuser-accused",
+      "description": "Constand accused Cosby of sexual assault and filed a civil lawsuit against him.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-01",
+      "title": "Alleged Assault of Andrea Constand",
+      "description": "Andrea Constand alleged that Bill Cosby sexually assaulted her at his residence.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "William Henry Cosby Jr.",
+        "Andrea Constand"
+      ]
+    },
+    {
+      "date": "2005-01",
+      "title": "Constand Reports to Police",
+      "description": "Andrea Constand reported Bill Cosby's alleged conduct to the police approximately one year after the incident.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Andrea Constand",
+        "Bruce Castor"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": "DA Castor Declines Prosecution",
+      "description": "Then-District Attorney Bruce Castor determined there was insufficient evidence to charge Cosby and issued a public statement declining prosecution, which is later argued to be a binding promise.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Bruce Castor",
+        "William Henry Cosby Jr."
+      ]
+    },
+    {
+      "date": null,
+      "title": "Cosby's Civil Deposition",
+      "description": "Believing he was immune from prosecution, Bill Cosby gave depositions in Andrea Constand's civil lawsuit, making inculpatory admissions.",
+      "category": "testimony",
+      "significance": 5,
+      "personsInvolved": [
+        "William Henry Cosby Jr.",
+        "Andrea Constand"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Cosby's Criminal Prosecution and Conviction",
+      "description": "Approximately ten years later, successor DA Risa Veil Ferman used Cosby's civil deposition admissions to prosecute and convict him for the same crimes.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Risa Veil Ferman",
+        "William Henry Cosby Jr."
+      ]
+    },
+    {
+      "date": "2021-06-30",
+      "title": "Pennsylvania Supreme Court Vacates Cosby Conviction",
+      "description": "The Pennsylvania Supreme Court vacated Bill Cosby's conviction, holding that DA Castor's promise was enforceable and the subsequent prosecution violated Cosby's Due Process rights.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "William Henry Cosby Jr.",
+        "Bruce Castor",
+        "Risa Veil Ferman"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Montgomery County, Pennsylvania",
+    "United States Courthouse, 40 Foley Square, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense argues her prosecution violates the 'Epstein Non-Prosecution Agreement' (NPA), which they claim granted her immunity.",
+    "The defense draws a direct legal analogy to the Pennsylvania Supreme Court's June 30, 2021, decision vacating Bill Cosby's conviction due to a broken prosecutorial promise.",
+    "The letter is a formal request to dismiss Counts One, Three, Five, and Six of the S2 Indictment against Maxwell.",
+    "The defense emphasizes that the Epstein NPA was a formal written agreement, which they argue makes their case for dismissal even stronger than the informal promise in the Cosby case.",
+    "The core legal principle invoked is that prosecutors must abide by their promises, and reneging on such agreements violates due process and fundamental fairness."
+  ],
+  "analyzedAt": "2026-02-08T11:41:36.848Z"
+}

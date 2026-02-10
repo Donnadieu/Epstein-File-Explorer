@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA02731757.pdf",
+  "dataSet": "12",
+  "documentType": "correspondence",
+  "dateOriginal": "2023-02-28",
+  "summary": "This document is an email chain between prosecutors from the Manhattan District Attorney's Office and the U.S. Attorney's Office for the Southern District of New York, discussing a new cooperating witness (CW) who has alleged sexual abuse by Leon Black and was trafficked by Ghislaine Maxwell and Jeffrey Epstein. The emails coordinate a call to discuss the investigation and the status of another victim.",
+  "persons": [
+    {
+      "name": "Leon Black",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of a sexual abuse investigation by the Manhattan District Attorney's Office. A new cooperating witness has alleged sexual abuse by him.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator/Trafficker",
+      "category": "associate",
+      "context": "Mentioned as someone who, along with Jeffrey Epstein, trafficked the new cooperating witness who is alleging abuse by Leon Black.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator/Trafficker",
+      "category": "key figure",
+      "context": "Mentioned as someone who, along with Ghislaine Maxwell, trafficked the new cooperating witness who is alleging abuse by Leon Black.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leon Black",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "A new cooperating witness alleges sexual abuse by Leon Black and states she was trafficked by Maxwell and Epstein, indirectly connecting Black to Maxwell's trafficking network.",
+      "strength": 2
+    },
+    {
+      "person1": "Leon Black",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "A new cooperating witness alleges sexual abuse by Leon Black and states she was trafficked by Epstein and Maxwell, indirectly connecting Black to Epstein's trafficking network.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Referenced together as the parties who trafficked the new cooperating witness.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-29",
+      "title": "Ghislaine Maxwell Trial Conclusion",
+      "description": "The trial of Ghislaine Maxwell is referenced as having concluded, after which the Manhattan DA's Office follows up on their investigation into Leon Black.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2023-02-28",
+      "title": "New Cooperating Witness Comes Forward",
+      "description": "A new cooperating witness (CW) comes forward alleging sexual abuse by Leon Black and states she was trafficked by Maxwell and Epstein.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Leon Black",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "One Saint Andrew's Plaza, New York, NY 10007 (Southern District of New York U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "A new cooperating witness (CW) has alleged sexual abuse by billionaire Leon Black.",
+    "This new CW states she was trafficked by Ghislaine Maxwell and Jeffrey Epstein.",
+    "The Manhattan District Attorney's Office is investigating sexual assault allegations against Leon Black and is coordinating with the U.S. Attorney's Office for the Southern District of New York.",
+    "The email chain reveals ongoing inter-agency communication about the investigation into Leon Black following the conclusion of the Ghislaine Maxwell trial.",
+    "The U.S. Attorney's Office indicates they are not likely to open another investigation unless the Manhattan DA's investigation encompasses both victims they discussed."
+  ],
+  "analyzedAt": "2026-02-09T16:02:02.059Z"
+}

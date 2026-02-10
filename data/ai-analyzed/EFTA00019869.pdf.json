@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00019869.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-07-13",
+  "summary": "An email from an Assistant United States Attorney to an individual named Reynolds, scheduling a meeting to prepare for trial testimony. The email attaches a trial subpoena and discusses logistics for a trial scheduled to begin on November 29, 2021.",
+  "persons": [
+    {
+      "name": "Reynolds",
+      "role": "Recipient of email and subpoena",
+      "category": "witness",
+      "context": "Addressed in an email from an AUSA regarding a meeting to prepare for trial testimony and receiving a trial subpoena.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Sender of email",
+      "category": "legal",
+      "context": "Author of the email, scheduling a meeting with Reynolds to prepare for trial testimony and providing a trial subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Reynolds",
+      "relationshipType": "legal-witness",
+      "description": "The AUSA is preparing Reynolds to testify as a witness in an upcoming trial, as indicated by the subpoena and meeting arrangement.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-14",
+      "title": "Preparation meeting scheduled",
+      "description": "A meeting is scheduled between an AUSA and Reynolds at Reynolds's office to prepare for trial testimony.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York",
+        "Reynolds"
+      ]
+    },
+    {
+      "date": "2021-11-29",
+      "title": "Trial scheduled to begin",
+      "description": "A trial is scheduled to begin on this date, with Reynolds expected to testify.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Reynolds"
+      ]
+    },
+    {
+      "date": "2021-12",
+      "title": "Expected testimony period",
+      "description": "Reynolds is expected to testify sometime in early December 2021 during the trial.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Reynolds"
+      ]
+    }
+  ],
+  "locations": [
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "A trial subpoena was issued to compel Reynolds's testimony in a trial scheduled to begin on November 29, 2021.",
+    "The correspondence indicates active trial preparation by the U.S. Attorney's Office for the Southern District of New York in mid-2021.",
+    "The email outlines a timeline for witness preparation, including a meeting in July 2021 and a refresher session planned for early November 2021."
+  ],
+  "analyzedAt": "2026-02-08T03:37:23.968Z"
+}

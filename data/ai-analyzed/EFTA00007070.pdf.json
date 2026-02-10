@@ -1,0 +1,190 @@
+{
+  "fileName": "EFTA00007070.pdf",
+  "dataSet": "4",
+  "documentType": "phone record",
+  "dateOriginal": "2006-01-01 to 2006-07-19",
+  "summary": "This document consists of MetroPCS call detail records and subscriber profiles for phone number 16980, covering January to July 2006. It shows extensive call activity on July 16-18, 2006, and includes subscriber information for multiple accounts, some associated with West Palm Beach, FL. The records indicate account status changes, including disconnections and port-out requests. A MetroPCS compliance analyst's declaration regarding the company's procedures for responding to legal requests for call detail and subscriber records, submitted in relation to a case with number 31E-MM-108062. It details how records are stored, retrieved, and purged, and includes a guide for interpreting call detail records.",
+  "persons": [
+    {
+      "name": "MRS HERB",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Listed as the name on a disconnected account (Acct# 1) for a phone with ESN 2CC29B85, associated with a non-payment disconnect.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SIMON RODRIGUES",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Listed as the name on a disconnected account (Acct# 5) for a phone with ESN 23C8CC71, associated with a non-payment disconnect and a hotline memo.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SBHOTLN",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who placed an account hotline memo on 12/09/05 for one account and on 09/27/05 for another account (SIMON RODRIGUES).",
+      "mentionCount": 2
+    },
+    {
+      "name": "SBDISC",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who processed account disconnections on 01/09/06 and 10/27/05.",
+      "mentionCount": 2
+    },
+    {
+      "name": "XJEFTUR",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who created a profile memo on 7/19/06-12:09 regarding a denied port out request.",
+      "mentionCount": 1
+    },
+    {
+      "name": "XLAIHIL",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who created a profile memo on 7/19/06-17:49 confirming a port out request status.",
+      "mentionCount": 1
+    },
+    {
+      "name": "XGERHIN",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who created a profile memo on 7/19/06-20:57 confirming a port request.",
+      "mentionCount": 1
+    },
+    {
+      "name": "XKATLIN1",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR who created a work order memo on 7/21/06-08:27 noting an account was disconnected due to a number port out.",
+      "mentionCount": 1
+    },
+    {
+      "name": "XSIDWIL",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR associated with work order effective dates on 3/25/05 for an account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "X2JAVPEN",
+      "role": "CSR (Customer Service Representative)",
+      "category": "staff",
+      "context": "CSR associated with work order effective dates on 3/26/05 for an account (SIMON RODRIGUES).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Compliance Analyst",
+      "role": "Custodian of Records / Compliance Analyst",
+      "category": "staff",
+      "context": "The MetroPCS employee who executed the declaration, certifying the company's compliance with a legal request for records and explaining the company's record-keeping and retrieval processes.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2006-07-16",
+      "title": "High Call Volume Day",
+      "description": "The call detail record shows a very high volume of calls made from/to the phone number 16980 throughout the day.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2006-07-19",
+      "title": "Port Out Request Processed",
+      "description": "Multiple memos from CSRs document the process of a 'WNP' (Wireless Number Portability) port out request for the phone, including a denial, confirmation, and final disconnection.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "XJEFTUR",
+        "XLAIHIL",
+        "XGERHIN",
+        "XKATLIN1"
+      ]
+    },
+    {
+      "date": "2006-01-09",
+      "title": "Account Disconnection",
+      "description": "Account associated with phone number 16980 was disconnected by CSR SBDISC due to 'WNP: NU PORT OUT'.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "SBDISC"
+      ]
+    },
+    {
+      "date": "2005-12-09",
+      "title": "Account Hotlined",
+      "description": "An account was hotlined (restricted) by CSR SBHOTLN.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "SBHOTLN"
+      ]
+    },
+    {
+      "date": "2005-10-27",
+      "title": "Account Disconnected for Non-Payment",
+      "description": "Account in the name of SIMON RODRIGUES was disconnected by CSR SBDISC for non-payment.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "SBDISC",
+        "SIMON RODRIGUES"
+      ]
+    },
+    {
+      "date": "2005-09-27",
+      "title": "Account Hotlined for Non-Payment",
+      "description": "Account in the name of SIMON RODRIGUES was hotlined by CSR SBHOTLN for non-payment.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "SBHOTLN",
+        "SIMON RODRIGUES"
+      ]
+    },
+    {
+      "date": "2006-09-24",
+      "title": "Execution of MetroPCS Records Declaration",
+      "description": "A MetroPCS Compliance Analyst executed a declaration in Dallas, Texas, certifying the company's compliance with a legal request (subpoena, search warrant, or court order) for records related to case number 31E-MM-108062.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Compliance Analyst"
+      ]
+    }
+  ],
+  "locations": [
+    "WEST PALM BEACH FL 33417-4212",
+    "WEST PALM BEACH FL 33409-0000",
+    "FL 33142-0000",
+    "WORTH FL 33460-0000",
+    "LAKE WORTH FL 33460-3935",
+    "Dallas, Texas",
+    "Atlanta",
+    "Dallas",
+    "Detroit",
+    "Florida",
+    "Tampa",
+    "Sacramento",
+    "San Francisco"
+  ],
+  "keyFacts": [
+    "The primary document is a detailed call log for phone number 16980 showing intense calling activity, particularly on July 16-18, 2006.",
+    "Subscriber profiles reveal multiple accounts associated with the phone number, including ones in the names of 'MRS HERB' and 'SIMON RODRIGUES', with addresses in West Palm Beach and Lake Worth, Florida.",
+    "A significant event recorded is a 'WNP' (Wireless Number Portability) port out request in July 2006, which was initially denied, then confirmed, leading to the account's disconnection on July 20-21, 2006.",
+    "Several accounts were disconnected or hotlined for non-payment in 2005, indicating potential financial or usage issues associated with the number.",
+    "The document is a forensic phone record, likely obtained by law enforcement, detailing the usage and administrative history of a specific telephone number.",
+    "MetroPCS maintained call detail records primarily to comply with legal processes as mandated by CALEA (Communications Assistance for Law Enforcement Act), not for billing.",
+    "Call detail records were stored by a third-party provider, Verisign, which is described as a secure consultant to federal agencies and the Office of Homeland Security.",
+    "Call detail records were automatically purged after approximately 6 months, depending on size and quantity.",
+    "The document is a response to a legal request for records related to a specific case numbered 31E-MM-108062, though the target number and name are redacted.",
+    "The document includes a detailed guide for law enforcement on how to interpret MetroPCS call detail records, including codes for call direction, special features, and cell site locations."
+  ],
+  "analyzedAt": "2026-02-08T15:19:57.803Z"
+}

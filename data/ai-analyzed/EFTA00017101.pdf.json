@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA00017101.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-10",
+  "summary": "This is an email chain from September 10, 2019, where attorney Gloria Allred forwards a potential victim's statement to an FBI contact and proposes an interview. The email discusses scheduling a meeting with a victim (referred to as Jane Doe) in New York on September 12, 2019.",
+  "persons": [
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing a victim, who is proposing an interview between the victim and the FBI. She attaches the victim's statement and coordinates the meeting.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A victim represented by Gloria Allred, who is willing to speak to the FBI. Her statement was read in court and is attached to the email.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gloria Allred",
+      "person2": "Jane Doe",
+      "relationshipType": "attorney-client",
+      "description": "Gloria Allred is the attorney representing the victim Jane Doe, as evidenced by her forwarding the victim's statement and scheduling an interview on her behalf.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-12",
+      "title": "Proposed FBI interview with victim",
+      "description": "Gloria Allred proposes a meeting between the FBI and a victim (Jane Doe) at the Lotte hotel in New York at 5:00 PM, followed by a separate meeting.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe",
+        "Gloria Allred"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Lotte (hotel, presumably in New York)",
+    "Los Angeles, CA 90048 (Allred, Maroko & Goldberg office address)"
+  ],
+  "keyFacts": [
+    "Attorney Gloria Allred is facilitating an interview between the FBI and a victim (Jane Doe) in September 2019.",
+    "The victim's statement was previously read in court, indicating prior legal proceedings related to the case.",
+    "The proposed interview was scheduled for September 12, 2019, at 5:00 PM at the Lotte hotel in New York.",
+    "The email highlights ongoing FBI investigation activities regarding Epstein-related victims in 2019.",
+    "The correspondence is marked as confidential and contains legally privileged information."
+  ],
+  "analyzedAt": "2026-02-08T05:41:04.485Z"
+}

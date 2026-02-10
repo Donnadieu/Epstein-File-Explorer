@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00014613.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-18",
+  "summary": "This is an email from an Assistant U.S. Attorney in the Southern District of New York requesting that specific financial document folders related to the US v. Epstein investigation be burned to a disc for handoff to law enforcement agents. It demonstrates active evidence sharing in the 2018 SDNY investigation.",
+  "persons": [
+    {
+      "name": "Amanda N. Youn",
+      "role": "FBI Contractor",
+      "category": "law enforcement",
+      "context": "Recipient of the email, appears to be the point of contact for preparing the evidence disc containing financial documents from the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mandy",
+      "role": "Law Enforcement/Conference Attendee",
+      "category": "law enforcement",
+      "context": "One of the individuals (along with Paul) designated to receive the disc containing financial documents, either at a conference or via security pickup.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul",
+      "role": "Law Enforcement/Conference Attendee",
+      "category": "law enforcement",
+      "context": "One of the individuals (along with Mandy) designated to receive the disc containing financial documents, either at a conference or via security pickup.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda N. Youn",
+      "person2": "Mandy",
+      "relationshipType": "professional",
+      "description": "Amanda is instructed to prepare evidence for handoff to Mandy, indicating a professional coordination role in the investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Amanda N. Youn",
+      "person2": "Paul",
+      "relationshipType": "professional",
+      "description": "Amanda is instructed to prepare evidence for handoff to Paul, indicating a professional coordination role in the investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Mandy",
+      "person2": "Paul",
+      "relationshipType": "professional",
+      "description": "Both are named together as the recipients of the evidence disc, suggesting they are colleagues or partners in the investigative effort.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-19",
+      "title": "Evidence Transfer Request",
+      "description": "An Assistant U.S. Attorney requests that financial documents from the Epstein investigation be burned to a disc for handoff to agents Mandy and Paul, either at a conference or via security pickup.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Amanda N. Youn",
+        "Mandy",
+        "Paul"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Usa.doj.gov\\clouANYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationVI 2018 SDNY investigation\\Subpoena Returns\\American Express",
+    "Usa.doj.gov\\clouaNYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationV4 2018 SDNY investigation\\Subpoena Returns\\ Deutsche Bank"
+  ],
+  "keyFacts": [
+    "The email is a request to burn specific financial document folders related to the US v. Epstein case (docket 2018R01618) to a disc for evidence transfer.",
+    "The requested folders contain subpoena returns from American Express and Deutsche Bank, indicating these institutions were subjects of the financial investigation.",
+    "The transfer was to be coordinated with individuals named Mandy and Paul, likely law enforcement agents, for pickup at a conference or via security.",
+    "The communication originates from an Assistant U.S. Attorney in the SDNY, showing active prosecutorial involvement in evidence handling in July 2019.",
+    "The document references a structured investigation directory ('USvEpstein-2018R01618 Investigation'), pointing to an organized, ongoing federal probe."
+  ],
+  "analyzedAt": "2026-02-08T03:35:29.024Z"
+}

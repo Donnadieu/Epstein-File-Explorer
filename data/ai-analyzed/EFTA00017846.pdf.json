@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00017846.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-09-02",
+  "summary": "This is an email from September 2, 2021, with the subject referencing a voicemail from June 28, 2019. The email forwards an audio attachment of a voicemail where a person named Stan recounts a possible mediation involving Jeffrey Epstein and Scott Link.",
+  "persons": [
+    {
+      "name": "Stan",
+      "role": "Voicemail sender/recorder",
+      "category": "other",
+      "context": "Stan is the person who left a voicemail on June 28, 2019, recounting a possible mediation involving Jeffrey Epstein and Scott Link. The voicemail is attached to this email.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of mediation discussion",
+      "category": "key figure",
+      "context": "Epstein is mentioned as a party in a possible mediation recounted in Stan's voicemail from June 28, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Scott Link",
+      "role": "Subject of mediation discussion",
+      "category": "other",
+      "context": "Scott Link is mentioned as the other party, alongside Jeffrey Epstein, in a possible mediation recounted in Stan's voicemail from June 28, 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Scott Link",
+      "relationshipType": "mediation parties",
+      "description": "Described as parties involved in a possible mediation, as recounted in Stan's voicemail.",
+      "strength": 2
+    },
+    {
+      "person1": "Stan",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Stan is recounting information about a possible mediation involving Epstein, suggesting some awareness or connection to Epstein's affairs.",
+      "strength": 1
+    },
+    {
+      "person1": "Stan",
+      "person2": "Scott Link",
+      "relationshipType": "social",
+      "description": "Stan is recounting information about a possible mediation involving Link, suggesting some awareness or connection to Link's affairs.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-06-28",
+      "title": "Stan's Voicemail About Mediation",
+      "description": "Stan leaves a voicemail recounting a possible mediation involving Jeffrey Epstein and Scott Link.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Stan",
+        "Jeffrey Epstein",
+        "Scott Link"
+      ]
+    },
+    {
+      "date": "2021-09-02",
+      "title": "Email Forwarding Voicemail",
+      "description": "An email is sent forwarding an audio attachment of Stan's voicemail from June 28, 2019, regarding a possible mediation.",
+      "category": "correspondence",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A voicemail from June 28, 2019, recounts a possible mediation involving Jeffrey Epstein and Scott Link.",
+    "The voicemail was forwarded via email on September 2, 2021, with the audio file attached.",
+    "The document suggests ongoing discussions or legal matters involving Epstein were being communicated about in mid-2019, shortly before his death."
+  ],
+  "analyzedAt": "2026-02-07T23:06:34.114Z"
+}

@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00019341.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "This document appears to be call notes or an email summarizing a conversation regarding the cellmate policy for Jeffrey Epstein at the Metropolitan Correctional Center (MCC) following his cellmate's release. It discusses the discretionary nature of the policy, the breakdown in briefing procedures, and requests follow-up materials. The document is addressed to an Assistant United States Attorney in the Southern District of New York.",
+  "persons": [
+    {
+      "name": "Lt.",
+      "role": "Lieutenant at the correctional facility",
+      "category": "law enforcement",
+      "context": "Spoke with another lieutenant and transferred a call to the warden regarding Epstein's cellmate policy. Mentioned as part of the briefing chain.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Warden",
+      "role": "Warden of the correctional facility",
+      "category": "law enforcement",
+      "context": "Was called regarding the cellmate policy. Stated that Epstein was supposed to have a cellmate at all times.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate at the center of the cellmate policy discussion. He was supposed to have a cellmate at all times but was in the attorney visiting area when his cellmate was released.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Captain",
+      "role": "Captain at the correctional facility",
+      "category": "law enforcement",
+      "context": "Was supposed to brief a lieutenant regarding Epstein's cellmate policy, as part of the chain of command for disseminating this information to officers.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "The recipient of this correspondence at the U.S. Attorney's Office for the Southern District of New York. The notes are likely for their information or action.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lt.",
+      "person2": "Warden",
+      "relationshipType": "chain of command",
+      "description": "The lieutenant transferred a call to the warden to discuss the cellmate policy for inmate Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Captain",
+      "person2": "Lt.",
+      "relationshipType": "chain of command",
+      "description": "The captain was supposed to brief the lieutenant on Epstein's cellmate policy, who would then brief the officers.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Lt.",
+      "relationshipType": "investigative",
+      "description": "The call notes regarding the cellmate policy and briefing failure are being communicated to the AUSA, indicating an investigative or oversight relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Call Regarding Epstein Cellmate Policy",
+      "description": "A call was held to discuss the cellmate policy for Jeffrey Epstein at the MCC. It was revealed that Epstein was supposed to have a cellmate at all times per the warden, but a breakdown in briefing procedures occurred after his previous cellmate was released.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lt.",
+        "Warden",
+        "Epstein",
+        "Captain"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) (implied as the facility housing Epstein)",
+    "Attorney visiting area (within the MCC)",
+    "New York, New York 10007 (location of the U.S. Attorney's Office)",
+    "One St. Andrew's Plaza, New York, New York (address of the U.S. Attorney's Office for the Southern District of New York)"
+  ],
+  "keyFacts": [
+    "Epstein was supposed to have a cellmate at all times per the warden's directive.",
+    "When Epstein's cellmate was released, Epstein was in the attorney visiting area, leaving him unaccompanied in his cell.",
+    "There was a breakdown in the briefing procedure: a captain was supposed to brief a lieutenant, who was then to brief the officers on the cellmate policy, but it is unknown if this occurred.",
+    "The cellmate policy was described as a discretionary matter for officers, who have the authority to move cellmates.",
+    "Follow-up materials were requested regarding the written documentation of the cellmate policy direction."
+  ],
+  "analyzedAt": "2026-02-08T04:29:29.736Z"
+}

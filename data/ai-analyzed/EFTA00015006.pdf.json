@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00015006.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-11-17",
+  "summary": "This document is a chain of emails from October to November 2020 between an Assistant United States Attorney for the Southern District of New York and attorneys from Crowell & Moring LLP, primarily Maria, regarding scheduling and preparation for a proffer session/interview with an unnamed client (Mr. [REDACTED]). The emails discuss topics for the interview, focusing on the client's knowledge of interactions between Jeffrey Epstein, his associates, and U.S. Customs and Border Protection (CBP) employees in the Virgin Islands, specifically regarding potential facilitation of entry into the country and favors.",
+  "persons": [
+    {
+      "name": "Maria",
+      "role": "Partner, Crowell & Moring LLP",
+      "category": "legal",
+      "context": "Attorney from Crowell & Moring's New York office corresponding with the AUSA, sending the executed proffer agreement and coordinating the interview.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "Central figure in the investigation; the proffer interview aims to gather information about his interactions with CBP employees in the Virgin Islands and any favors exchanged.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Josh Morrissey",
+      "role": "IT Group Member",
+      "category": "staff",
+      "context": "Individual in the Crowell & Moring IT group who was to be invited to a WebEx meeting to ensure technical setup.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maria",
+      "person2": "Mr. [REDACTED]",
+      "relationshipType": "attorney-client",
+      "description": "Maria is a partner at the law firm representing the unnamed client (Mr. [REDACTED]) in communications with federal prosecutors.",
+      "strength": 5
+    },
+    {
+      "person1": "Mr. [REDACTED]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The proffer interview topics indicate Mr. [REDACTED] had knowledge of, and potentially interactions with, Jeffrey Epstein, particularly in the context of CBP and travel in the Virgin Islands.",
+      "strength": 3
+    },
+    {
+      "person1": "Mr. [REDACTED]",
+      "person2": "CBP Employee [REDACTED]",
+      "relationshipType": "social/professional",
+      "description": "The AUSA's email states a CBP employee in Saint Thomas had Mr. [REDACTED] listed as a contact in his phone, indicating a prior connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "CBP Employee [REDACTED]",
+      "relationshipType": "social/financial",
+      "description": "The interview aims to uncover any favors Epstein did for CBP employees, such as trips to his island, suggesting a potential reciprocal relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-12",
+      "title": "Scheduled Proffer Session",
+      "description": "A WebEx meeting scheduled for 1 PM between federal prosecutors, FBI agents, and Mr. [REDACTED] (with his attorneys) for a second interview under a proffer agreement.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Mr. [REDACTED]",
+        "Maria",
+        "Assistant United States Attorney",
+        "FBI Agents"
+      ]
+    },
+    {
+      "date": "2020-10-08",
+      "title": "Execution of Proffer Agreement",
+      "description": "A proffer agreement was signed, related to an earlier meeting/interview with Mr. [REDACTED].",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Mr. [REDACTED]",
+        "Maria"
+      ]
+    }
+  ],
+  "locations": [
+    "Virgin Islands",
+    "Saint Thomas",
+    "Epstein's island",
+    "New York",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The SDNY was investigating potential corruption, specifically whether U.S. Customs and Border Protection (CBP) employees in the Virgin Islands helped Jeffrey Epstein and his travel companions avoid normal entry processing.",
+    "The investigation sought information on any favors Epstein provided to CBP employees, such as trips to his private island.",
+    "A specific CBP employee in Saint Thomas had the interview subject (Mr. [REDACTED]) listed as a contact in his phone, establishing a link for the inquiry.",
+    "The correspondence involves a proffer agreement, indicating the interview subject (Mr. [REDACTED]) was cooperating with prosecutors to provide information potentially in exchange for limited use immunity.",
+    "Multiple key names (the interview subject, the CBP employee, and others copied on emails) are redacted in the document text."
+  ],
+  "analyzedAt": "2026-02-08T12:32:22.601Z"
+}

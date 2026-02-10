@@ -1,0 +1,144 @@
+{
+  "fileName": "EFTA00019689.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-23",
+  "summary": "This document is an email chain between U.S. Attorney's Office prosecutors and outside counsel (WilmerHale) regarding the production of financial records in response to subpoenas issued to JPMorgan entities in the Epstein investigation. The emails discuss logistics, formats, prioritization of accounts for Jeffrey Epstein, Ghislaine Maxwell, and the Butterfly Trust, and a noted typo in a subpoena.",
+  "persons": [
+    {
+      "name": "Allison Stoddart",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "Outside counsel for JPMorgan entities corresponding with the U.S. Attorney's Office about producing financial records in response to subpoenas related to Epstein and Maxwell.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "Outside counsel for JPMorgan entities corresponding with the U.S. Attorney's Office about producing financial records in response to subpoenas related to Epstein and Maxwell.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Alex",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "A prosecutor from the Southern District of New York leading the correspondence regarding the subpoenas for financial records from JPMorgan entities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of financial subpoenas dated August 11, 2019, from JPMorgan entities. His accounts and those of the Butterfly Trust are a focus.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Associate",
+      "category": "key figure",
+      "context": "Subject of financial subpoenas dated August 16 and September 3, 2019, from JPMorgan entities. Her accounts are described as more time-sensitive than Epstein's.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Steve D'Allessandro",
+      "role": "JPMorgan representative",
+      "category": "staff",
+      "context": "A JPMorgan employee who was previously helpful to the U.S. Attorney's Office before outside counsel was brought in.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at WilmerHale representing JPMorgan entities in responding to the subpoenas.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "Allison Stoddart",
+      "relationshipType": "legal counterpart",
+      "description": "Prosecutor corresponding with outside counsel regarding the production of subpoenaed financial records.",
+      "strength": 3
+    },
+    {
+      "person1": "Alex",
+      "person2": "Anjan Sahni",
+      "relationshipType": "legal counterpart",
+      "description": "Prosecutor corresponding with outside counsel regarding the production of subpoenaed financial records.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Both are subjects of separate but related financial subpoenas from the same investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Butterfly Trust",
+      "relationshipType": "financial",
+      "description": "The Butterfly Trust is mentioned as an account for Epstein's benefit, making it a priority for the subpoena response.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Epstein Subpoenas Served",
+      "description": "Subpoenas relating to Jeffrey Epstein were served to JPMorgan entities.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Maxwell Subpoena Served",
+      "description": "A subpoena relating to Ghislaine Maxwell was served to JPMorgan entities.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-09-03",
+      "title": "Maxwell Subpoena Served (with typo)",
+      "description": "A second subpoena relating to Ghislaine Maxwell was served, but it contained a typo in the 'NAME' field.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-09-23",
+      "title": "Email on Production Format",
+      "description": "Final email confirming agreement on the format for producing wire information (Excel and PDF) and organization of data.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Alex"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "250 Greenwich Street, New York, NY 10007 (WilmerHale office)",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office was actively subpoenaing JPMorgan for financial records related to Jeffrey Epstein, Ghislaine Maxwell, and the Butterfly Trust in September 2019.",
+    "Subpoenas for Maxwell's records (dated August 16 and September 3, 2019) were considered more time-sensitive than those for Epstein (dated August 11, 2019).",
+    "A subpoena dated September 3, 2019, for Maxwell contained a typo in the name field, requiring potential correction.",
+    "The Butterfly Trust, connected to Epstein, was a specific priority for expedited production of records.",
+    "The correspondence reveals detailed logistical planning between prosecutors and outside counsel for organizing and producing voluminous financial data, including wire records and account statements."
+  ],
+  "analyzedAt": "2026-02-08T13:31:44.018Z"
+}

@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00011035.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-27",
+  "summary": "This is an internal email forwarding a CNBC news article reporting that Ghislaine Maxwell, a friend of Jeffrey Epstein, is under FBI investigation. It was sent from Nicholas Blase to several recipients including Geoffrey Berman.",
+  "persons": [
+    {
+      "name": "Nicholas Blase",
+      "role": "Sender of internal email",
+      "category": "staff",
+      "context": "Sent an email from his iPhone forwarding a CNBC news article about Ghislaine Maxwell's FBI investigation to colleagues including Geoffrey Berman.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of FBI investigation, friend of Jeffrey Epstein",
+      "category": "key figure",
+      "context": "Named in a forwarded CNBC article as being under FBI investigation and described as a friend of the late financier Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased financier, associate of Ghislaine Maxwell",
+      "category": "key figure",
+      "context": "Referred to as the late financier whose friend, Ghislaine Maxwell, is under FBI investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Geoffrey Berman",
+      "role": "Recipient of internal email (US Attorney for the Southern District of New York)",
+      "category": "legal",
+      "context": "Listed as a recipient of an internal email forwarding a news article about the FBI investigation into Ghislaine Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Described in the forwarded news article as friends.",
+      "strength": 3
+    },
+    {
+      "person1": "Nicholas Blase",
+      "person2": "Geoffrey Berman",
+      "relationshipType": "professional",
+      "description": "Blase sent an email to Berman, indicating a professional correspondence within the U.S. Attorney's office for the Southern District of New York.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-27",
+      "title": "CNBC reports Ghislaine Maxwell under FBI investigation",
+      "description": "CNBC publishes an article reporting that Ghislaine Maxwell, a friend of Jeffrey Epstein, is under investigation by the FBI.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "As of December 27, 2019, Ghislaine Maxwell was publicly reported to be under investigation by the FBI.",
+    "The information was disseminated internally within the U.S. Attorney's Office for the Southern District of New York via email.",
+    "The email was sent from Nicholas Blase's iPhone, forwarding a CNBC news article.",
+    "The document is a record of internal communication about a developing public investigation."
+  ],
+  "analyzedAt": "2026-02-08T00:34:54.302Z"
+}

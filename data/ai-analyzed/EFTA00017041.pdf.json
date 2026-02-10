@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00017041.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-30",
+  "summary": "This document is a forwarded email from January 30, 2020, containing a link to a news article from Fox Wilmington. The article's headline calls for Prince Andrew to cooperate in the Jeffrey Epstein investigation and to give up Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Prince Andrew",
+      "role": "Royal figure, subject of investigation",
+      "category": "key figure",
+      "context": "Mentioned in the forwarded news article headline as someone who must cooperate in the Jeffrey Epstein probe and give up Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused financier",
+      "category": "key figure",
+      "context": "The subject of the investigation referenced in the forwarded news article headline.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Mentioned in the forwarded news article headline as someone Prince Andrew is being called to 'give up' in the Epstein probe.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Prince Andrew",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Implied connection as Prince Andrew is called to cooperate in the Epstein investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Prince Andrew",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Implied connection as Prince Andrew is called to 'give up' Ghislaine Maxwell in the Epstein probe.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Implied association as Maxwell is mentioned in the context of the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-30",
+      "title": "News article call for cooperation",
+      "description": "A news article is published calling for Prince Andrew to cooperate in the Jeffrey Epstein investigation and to give up Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Prince Andrew",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A news article from January 30, 2020, calls for Prince Andrew to cooperate in the Jeffrey Epstein probe.",
+    "The article specifically calls for Prince Andrew to 'give up' Ghislaine Maxwell.",
+    "The document is a forwarded email containing a link to the Fox Wilmington news article."
+  ],
+  "analyzedAt": "2026-02-07T23:36:41.304Z"
+}

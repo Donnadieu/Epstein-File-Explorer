@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00013905.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": null,
+  "summary": "This document is a formal notification from the U.S. Attorney's Office for the Southern District of Florida to 30 identified minor victims (listed as Jane Doe #1-30) of Jeffrey Epstein, informing them of their status as victims under the non-prosecution agreement. It includes an acknowledgment signed by Jeffrey Epstein and witnessed by his attorney, Roy Black.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The individual who committed the offenses against the minor victims and who entered into an agreement with the U.S. Attorney's Office.",
+      "mentionCount": 4
+    },
+    {
+      "name": "R. Alexander Acosta",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney for the Southern District of Florida who signed the notification document.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Roy Black",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "The attorney for Jeffrey Epstein who witnessed Epstein's acknowledgment of the notification.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Roy Black",
+      "relationshipType": "attorney-client",
+      "description": "Roy Black is identified as Epstein's attorney, as Epstein acknowledges receiving the notification from him.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jane Doe #1-30",
+      "relationshipType": "victim-perpetrator",
+      "description": "The document states Epstein committed offenses against the 30 identified individuals while they were minors.",
+      "strength": 5
+    },
+    {
+      "person1": "R. Alexander Acosta",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Acosta, as U.S. Attorney, represents the office that entered into an agreement with Epstein regarding the prosecution of his crimes.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Issuance of Victim Notification",
+      "description": "The U.S. Attorney's Office formally notifies 30 individuals that they are identified as minor victims of Jeffrey Epstein under the non-prosecution agreement.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "R. Alexander Acosta",
+        "Jane Doe #1-30"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein's Acknowledgment of Agreement",
+      "description": "Jeffrey Epstein signs an acknowledgment, witnessed by his attorney Roy Black, confirming his understanding of the notification and agreement with the U.S. Attorney's Office.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Roy Black"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office formally identified 30 minor victims (Jane Doe #1-30) of Jeffrey Epstein under the non-prosecution agreement.",
+    "The document states the Office was prepared to name these individuals as victims in an indictment charging Epstein.",
+    "The notification is intended to place the victims in the same legal position as if Epstein had been convicted of the federal offenses.",
+    "Jeffrey Epstein, through his attorney Roy Black, acknowledged receipt and understanding of the notification, waiving certain evidentiary challenges."
+  ],
+  "analyzedAt": "2026-02-08T08:51:55.192Z"
+}

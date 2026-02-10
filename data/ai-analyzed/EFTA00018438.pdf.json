@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00018438.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-31",
+  "summary": "Email chain between U.S. Department of State Diplomatic Security Service and the U.S. Attorney's Office for the Southern District of New York regarding the revocation of Jeffrey Epstein's U.S. passport following his arrest and detention. The State Department seeks a copy of the detention order to proceed with passport revocation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the email chain; his U.S. passport is being considered for revocation by the State Department's Consular Affairs Bureau following his arrest and detention.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Works at the New York Field Office of the U.S. Department of State Diplomatic Security Service; involved in coordinating information regarding Epstein's passport.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Works at the U.S. Attorney's Office for the Southern District of New York; part of the prosecution team for the Epstein case and coordinates with the State Department on the passport issue.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Special Agent",
+      "relationshipType": "legal",
+      "description": "The Special Agent is part of the prosecution team handling Epstein's case, indicating an adversarial legal relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant Special Agent in Charge",
+      "person2": "Special Agent",
+      "relationshipType": "professional",
+      "description": "They are coordinating between the State Department's Diplomatic Security Service and the U.S. Attorney's Office regarding the revocation of Epstein's passport.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-31",
+      "title": "State Department Seeks to Revoke Epstein's Passport",
+      "description": "The U.S. Department of State's Consular Affairs Bureau requests a copy of Epstein's detention order to revoke his U.S. passport while he is incarcerated.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Assistant Special Agent in Charge",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office, U.S. Department of State Diplomatic Security Service",
+    "U.S. Attorney's Office Southern District of New York"
+  ],
+  "keyFacts": [
+    "The U.S. State Department's Consular Affairs Bureau sought to revoke Jeffrey Epstein's U.S. passport following his arrest and detention.",
+    "A detention order was needed by the State Department to proceed with the passport revocation process.",
+    "The prosecution team for the Epstein case in the Southern District of New York coordinated with the State Department's Diplomatic Security Service on this matter.",
+    "The email chain indicates inter-agency cooperation between the Department of Justice and the State Department regarding Epstein's legal status and travel documents."
+  ],
+  "analyzedAt": "2026-02-08T07:58:39.964Z"
+}

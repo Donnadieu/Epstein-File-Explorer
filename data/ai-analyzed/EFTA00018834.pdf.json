@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00018834.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-02-26",
+  "summary": "This is an email chain between attorneys regarding the deferred prosecution application in the case of US v. Noel. It involves the transmission of legal documents and coordination between counsel.",
+  "persons": [
+    {
+      "name": "Jason Foy",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from FOY & SEPLOWITZ LLC sending the deferred prosecution application for the case US v. Noel via FedEx and digitally.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Eric Sarraga",
+      "role": "Attorney/Recipient",
+      "category": "legal",
+      "context": "Recipient of the email and the deferred prosecution application materials in the case US v. Noel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Subject of Legal Case",
+      "category": "key figure",
+      "context": "The individual who is the subject of the deferred prosecution application in the case US v. Noel.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jason Foy",
+      "person2": "Eric Sarraga",
+      "relationshipType": "legal correspondence",
+      "description": "Attorneys communicating and coordinating the submission of legal documents (deferred prosecution application) for the case US v. Noel.",
+      "strength": 3
+    },
+    {
+      "person1": "Jason Foy",
+      "person2": "Tova Noel",
+      "relationshipType": "attorney-client",
+      "description": "Jason Foy is submitting a deferred prosecution application on behalf of Tova Noel, indicating a legal representation relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-02-26",
+      "title": "Submission of Deferred Prosecution Application",
+      "description": "Attorney Jason Foy sends the deferred prosecution application for Tova Noel via FedEx and electronically to other counsel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jason Foy",
+        "Eric Sarraga",
+        "Tova Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "105 Main Street Hackensack, NJ 07601",
+    "Hackensack, NJ"
+  ],
+  "keyFacts": [
+    "A deferred prosecution application is being submitted for Tova Noel in the case US v. Noel.",
+    "Attorney Jason Foy of FOY & SEPLOWITZ LLC is handling the submission and coordinating with co-counsel.",
+    "The application was sent both physically via FedEx and electronically on February 26, 2021."
+  ],
+  "analyzedAt": "2026-02-08T05:18:01.920Z"
+}

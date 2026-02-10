@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00010218.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-13",
+  "summary": "This is an email chain between legal teams regarding juror questionnaires for an upcoming trial. The prosecution and defense are coordinating their positions on prospective jurors and preparing a joint letter to the court.",
+  "persons": [
+    {
+      "name": "Ann Lundberg",
+      "role": "Legal Professional (likely prosecutor)",
+      "category": "legal",
+      "context": "Sends a draft joint letter regarding juror questionnaires, noting agreement with the defense on specific prospective jurors.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney, Partner at Haddon, Morgan & Foreman, P.C.",
+      "category": "legal",
+      "context": "Corresponds about compiling and exchanging lists of juror questionnaire positions and objections on behalf of the defense.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Legal Professional",
+      "category": "legal",
+      "context": "Copied on emails regarding juror questionnaires and the coordination process between legal teams.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ann Lundberg",
+      "person2": "Laura Menninger",
+      "relationshipType": "legal-adversary",
+      "description": "Correspond as opposing legal counsel (prosecution vs. defense) coordinating on juror selection procedures.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal-colleague",
+      "description": "Both appear to be on the same legal team (defense) based on email coordination.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-12",
+      "title": "Juror Questionnaires Completed",
+      "description": "Prospective juror questionnaires were completed and made available to legal teams via USAfx.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ann Lundberg",
+        "Laura Menninger",
+        "Jeff Pagliuca"
+      ]
+    },
+    {
+      "date": "2021-11-13",
+      "title": "Coordination on Juror Objections",
+      "description": "Legal teams exchange lists of objections to prospective jurors and prepare a joint letter to the Court.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ann Lundberg",
+        "Laura Menninger",
+        "Jeff Pagliuca"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document reveals ongoing trial preparation, specifically the juror selection process, involving coordination between prosecution and defense teams.",
+    "The defense (represented by Laura Menninger) and prosecution (represented by Ann Lundberg) agreed on objections to 12 specific prospective jurors (numbers 626, 629, 632, 640, 643, 646, 649, 657, 681, 682, 647, 655).",
+    "Communication indicates a procedural agreement where the prosecution would compile the joint letter to the Court after receiving defense objections.",
+    "Laura Menninger is identified as a partner at the law firm Haddon, Morgan & Foreman, P.C., acting as defense counsel."
+  ],
+  "analyzedAt": "2026-02-08T07:17:20.375Z"
+}

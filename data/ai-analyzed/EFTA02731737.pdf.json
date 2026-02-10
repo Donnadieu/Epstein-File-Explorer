@@ -1,0 +1,175 @@
+{
+  "fileName": "EFTA02731737.pdf",
+  "dataSet": "12",
+  "documentType": "internal memorandum / email chain",
+  "dateOriginal": "2023-06-28",
+  "summary": "This document is an internal email chain from June 2023, primarily containing a memo summarizing a call with the District Attorney of New York County (DANY) regarding a victim (referred to as 'JC' or 'M') who alleges sexual assault by Leon Black after being trafficked by Jeffrey Epstein and Ghislaine Maxwell. The memo details the victim's allegations, investigative steps, and coordination between prosecutors.",
+  "persons": [
+    {
+      "name": "Leon Black",
+      "role": "Alleged perpetrator",
+      "category": "key figure",
+      "context": "Identified by a victim as a man who violently sexually assaulted her at Epstein's townhouse in 2001. Described as looking 'like Shrek'.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Alleged trafficker/perpetrator",
+      "category": "key figure",
+      "context": "Referred to as 'JE'. Allegedly trafficked the victim, introduced her to Ghislaine Maxwell and Leon Black, and took money Black left for her.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged co-conspirator/trafficker",
+      "category": "key figure",
+      "context": "Referred to as 'GM'. Allegedly recruited and controlled the victim alongside Epstein, was physically abusive.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Christensen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing victim 'JC' in civil claims related to Epstein, Black, and others, and in connection with criminal matters.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Adam Horowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Previously represented victim 'JC' during DANY interviews. Had reached out about a civil suit against Leon Black.",
+      "mentionCount": 3
+    },
+    {
+      "name": "John Luc Brunel",
+      "role": "Deceased Epstein associate",
+      "category": "associate",
+      "context": "Mentioned as someone Epstein introduced the victim to for 'similar massages'. Noted as deceased.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "A pilot named by the victim who flew her, Epstein, and Maxwell to St. Thomas.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Staley",
+      "role": "Alleged perpetrator",
+      "category": "associate",
+      "context": "Mentioned as someone DANY believes also abused the victim, but no independent corroboration was found.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Worked together to traffic and control the victim 'JC', flying her to various locations and subjecting her to abuse.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Leon Black",
+      "relationshipType": "social / facilitator",
+      "description": "Epstein introduced the victim to Black by name at his townhouse and told her to give him a massage, facilitating the alleged assault.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "JC",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell was introduced to JC as a recruiter, was physically abusive (dragging by hair, slapping), and exerted control over her.",
+      "strength": 4
+    },
+    {
+      "person1": "Leon Black",
+      "person2": "JC",
+      "relationshipType": "victim-perpetrator",
+      "description": "Black is alleged to have violently sexually assaulted JC at Epstein's townhouse in 2001, causing injury.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeanne Christensen",
+      "person2": "JC",
+      "relationshipType": "attorney-client",
+      "description": "Christensen represents JC in civil claims related to Epstein, Black, Staley, and in criminal matters.",
+      "strength": 5
+    },
+    {
+      "person1": "Adam Horowitz",
+      "person2": "JC",
+      "relationshipType": "attorney-client",
+      "description": "Horowitz previously represented JC during her interviews with the District Attorney's office.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "John Luc Brunel",
+      "relationshipType": "associate",
+      "description": "Epstein introduced the victim to Brunel, described as a deceased associate, for 'similar massages'.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001",
+      "title": "Alleged sexual assault by Leon Black",
+      "description": "At Epstein's New York townhouse, Epstein introduced victim JC to Leon Black. Black allegedly tore her clothes off, bit her vagina, forced sex toys, and caused bleeding requiring medical attention. He left money which Epstein took.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Leon Black",
+        "JC",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2023-01",
+      "title": "DANY meeting with victim JC",
+      "description": "Victim JC, represented by Adam Horowitz, met with the District Attorney of New York County (DANY). They discussed allegations against Leon Black and considered civil lawsuit or Epstein compensation fund.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "JC",
+        "Adam Horowitz"
+      ]
+    },
+    {
+      "date": "2023-06-28",
+      "title": "Inter-office call regarding victim JC",
+      "description": "A call was held to discuss a memo about victim JC's allegations against Leon Black and her trafficking by Epstein/Maxwell, for investigative due diligence.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2022-02",
+      "title": "Adam Horowitz contacts JC's firm about civil suit",
+      "description": "Attorney Adam Horowitz reached out to JC's (future) firm to have her get involved in a civil suit against Leon Black. Specific allegations about the massage/biting were redacted in the complaint at that time.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Adam Horowitz",
+        "JC",
+        "Leon Black"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (JE's townhouse)",
+    "Palm Beach",
+    "St. Thomas",
+    "New York County District Attorney's Office"
+  ],
+  "keyFacts": [
+    "A victim ('JC') alleges she was trafficked by Jeffrey Epstein and Ghislaine Maxwell starting at age 17 and was violently sexually assaulted by financier Leon Black at Epstein's New York townhouse in 2001.",
+    "The assault by Black was described as extremely violent, involving biting her vagina, forcing sex toys, and causing bleeding that required medical attention. Black left money afterward, which Epstein took.",
+    "The victim was controlled and physically abused by Ghislaine Maxwell, including being dragged by her hair up a flight of stairs and slapped.",
+    "The District Attorney of New York County (DANY) found the victim credible regarding allegations against Epstein and Black, and believed she was also abused by someone named Staley, but lacked independent corroboration.",
+    "The document reveals ongoing coordination and deconfliction between different prosecutorial offices (DANY and SDNY) in 2023 regarding investigations into Leon Black based on victim testimony."
+  ],
+  "analyzedAt": "2026-02-09T16:22:09.804Z"
+}

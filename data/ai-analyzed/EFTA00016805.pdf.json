@@ -1,0 +1,171 @@
+{
+  "fileName": "EFTA00016805.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-28",
+  "summary": "This is an email chain forwarded within the US Attorney's Office for the Southern District of New York (USANYS). It contains unsolicited allegations from Dr. Margareth Puttini connecting Jeffrey Epstein to Austrian financier Peter Goldscheider, the 'Hapsburg Group', and various international business and political figures. The email makes serious claims about criminal activities, including murder, and links Epstein to Eastern European investment networks.",
+  "persons": [
+    {
+      "name": "Peter Goldscheider",
+      "role": "Founding partner of EPIC Invest, financier",
+      "category": "associate",
+      "context": "Austrian investment banker and key figure in the email's allegations. He is described as a 'key Person in the ukraine affair' and a 'Cold blood Killer', and is linked to various companies and to Jeffrey Epstein via the 'hapsburg Group'.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused financier",
+      "category": "key figure",
+      "context": "The subject of the investigation. The email alleges he had an Austrian passport and worked for the 'hapsburg Group' alongside Peter Goldscheider.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Margareth Puttini",
+      "role": "Email author, doctor",
+      "category": "other",
+      "context": "The individual sending the unsolicited email to the US Attorney's Office with allegations and conspiracy theories linking various figures to Epstein, murder, and international financial schemes.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "US Attorney for the Southern District of New York",
+      "category": "legal",
+      "context": "The intended recipient of the initial email from Dr. Puttini, who is the head of the office investigating the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alvaro Alves",
+      "role": "Associate Director at Oppenheimer & Co., victim",
+      "category": "victim",
+      "context": "Described as a victim of Peter Goldscheider, having died on November 28, 2017, under circumstances the email implies are suspicious. He previously introduced Peter Goldscheider in a 2016 business email.",
+      "mentionCount": 4
+    },
+    {
+      "name": "manafort",
+      "role": "Political consultant (implied to be Paul Manafort)",
+      "category": "political",
+      "context": "Mentioned as part of the 'hapsburg Group' alongside Alfred Gusenbauer and Peter Goldscheider in the allegations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alfred Gusenbauer",
+      "role": "Former Austrian Chancellor",
+      "category": "political",
+      "context": "Mentioned as part of the 'hapsburg Group' alongside Manafort and Peter Goldscheider in the allegations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gabriel Lansky",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Mentioned as a lawyer fighting against 'Rachat Alijew' and also described as 'a Killer' in the email's allegations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dmitry Firtash",
+      "role": "Ukrainian businessman",
+      "category": "associate",
+      "context": "Mentioned as having worked with Peter Goldscheider through the Kinto Ukraine company.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jorge Costa e Silva",
+      "role": "Business partner of Carlos Sanchez",
+      "category": "associate",
+      "context": "Introduced to Peter Goldscheider in a 2016 business email by Alvaro Alves for potential investment meetings in Belgrade.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Carlos Sanchez",
+      "role": "Owner of a Brazilian pharmaceutical company",
+      "category": "associate",
+      "context": "Business partner of Jorge Costa e Silva, with investments in the US and Europe, whom Alvaro Alves sought to connect with Peter Goldscheider in 2016.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gustav Wurmbock",
+      "role": "Co-founder of EPIC Invest",
+      "category": "associate",
+      "context": "Mentioned in Peter Goldscheider's professional biography as the person with whom he jointly established EPIC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Peter Goldscheider",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Alleged by the email author to have both worked for the 'hapsburg Group'.",
+      "strength": 2
+    },
+    {
+      "person1": "Peter Goldscheider",
+      "person2": "manafort",
+      "relationshipType": "associate",
+      "description": "Both named as part of the 'hapsburg Group' in the email's allegations.",
+      "strength": 2
+    },
+    {
+      "person1": "Peter Goldscheider",
+      "person2": "Alfred Gusenbauer",
+      "relationshipType": "associate",
+      "description": "Both named as part of the 'hapsburg Group' in the email's allegations.",
+      "strength": 2
+    },
+    {
+      "person1": "Peter Goldscheider",
+      "person2": "Alvaro Alves",
+      "relationshipType": "professional",
+      "description": "Alves introduced Goldscheider to business contacts in a 2016 email. Puttini's 2020 email alleges Goldscheider was responsible for Alves's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Peter Goldscheider",
+      "person2": "Dmitry Firtash",
+      "relationshipType": "business",
+      "description": "Email states Firtash was working with Goldscheider through the Kinto Ukraine company.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-11-28",
+      "title": "Death of Alvaro Alves",
+      "description": "Alvaro Alves died in New York. The email author implies his death was suspicious and possibly connected to Peter Goldscheider.",
+      "category": "death",
+      "significance": 3,
+      "personsInvolved": [
+        "Alvaro Alves",
+        "Peter Goldscheider"
+      ]
+    },
+    {
+      "date": "2016-11",
+      "title": "Planned Belgrade Meeting",
+      "description": "Alvaro Alves's 2016 email attempts to arrange a meeting in Belgrade between Peter Goldscheider and businessmen Jorge Costa e Silva and Carlos Sanchez.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Peter Goldscheider",
+        "Jorge Costa e Silva",
+        "Carlos Sanchez",
+        "Alvaro Alves"
+      ]
+    }
+  ],
+  "locations": [
+    "Vienna, Austria",
+    "New York, NY",
+    "Beograd, Serbia",
+    "Ukraine",
+    "Montenegro"
+  ],
+  "keyFacts": [
+    "An unsolicited email sent to the US Attorney's Office alleges Jeffrey Epstein had an Austrian passport and worked for a group called the 'hapsburg Group' alongside Peter Goldscheider, Paul Manafort, and Alfred Gusenbauer.",
+    "The email makes extreme and unverified criminal allegations, calling Peter Goldscheider a 'Cold blood Killer' and implicating him in the death of Alvaro Alves in New York in November 2017.",
+    "The email connects Peter Goldscheider to a wide network of Eastern European investments and companies, including EPIC Invest, Kinto Ukraine, Rivada Networks, and the privatization of Ukrtelecom.",
+    "A separate, older email from 2016 shows a professional introduction by Alvaro Alves of Oppenheimer & Co., presenting Peter Goldscheider as a legitimate financier for potential investments in Serbia and Montenegro.",
+    "The document shows the type of speculative and conspiratorial information that was being sent to prosecutors investigating the Epstein case."
+  ],
+  "analyzedAt": "2026-02-08T12:54:35.792Z"
+}

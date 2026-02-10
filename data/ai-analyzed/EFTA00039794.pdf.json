@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00039794.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-19",
+  "summary": "This is an email chain between attorneys regarding the case United States v. Ghislaine Maxwell. It discusses providing notice to a statutory victim under the Crime Victim Rights Act and schedules upcoming court appearances, including an arraignment and a bail appeal oral argument.",
+  "persons": [
+    {
+      "name": "Jack Scarola",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney involved in the case, receiving and sending emails regarding scheduling and victim notifications. He is copied on the initial email and sends a follow-up.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael Danchuk",
+      "role": "Recipient",
+      "category": "legal",
+      "context": "Copied on an email from Jack Scarola regarding a client's attendance at a scheduled conference.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the case 'United States v. Ghislaine Maxwell'. The emails discuss her upcoming arraignment and bail appeal.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "The judge who scheduled an in-person arraignment for Ghislaine Maxwell on April 23, 2021.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jack Scarola",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Scarola is communicating about court proceedings and scheduling on behalf of a client, implied to be associated with Maxwell's case or a related victim.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The AUSA's office is prosecuting Maxwell and is providing notice of proceedings to a statutory victim.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-23",
+      "title": "Arraignment for Ghislaine Maxwell",
+      "description": "An in-person arraignment for Ghislaine Maxwell scheduled by Judge Nathan at 2:30 p.m. in courtroom 24B at 500 Pearl Street.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2021-04-26",
+      "title": "Bail Appeal Oral Argument",
+      "description": "The Second Circuit scheduled a remote oral argument in connection with Ghislaine Maxwell's bail appeal for 10 a.m.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "500 Pearl Street (courthouse location)",
+    "Courtroom 24B",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A superseding indictment has added a new statutory victim to the case against Ghislaine Maxwell.",
+    "The prosecution intends to provide notice of court proceedings to this victim pursuant to the Crime Victim Rights Act.",
+    "Two key court dates are scheduled: an in-person arraignment on April 23, 2021, and a remote bail appeal oral argument on April 26, 2021.",
+    "The email correspondence is between legal parties, indicating ongoing pre-trial procedural activity.",
+    "The document shows the involvement of attorney Jack Scarola, whose firm's disclaimer is attached, in matters related to the Maxwell case."
+  ],
+  "analyzedAt": "2026-02-09T15:39:35.030Z"
+}

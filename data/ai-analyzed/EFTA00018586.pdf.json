@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00018586.pdf",
+  "dataSet": "8",
+  "documentType": "search warrant",
+  "dateOriginal": "2020-06-26",
+  "summary": "This is a search and seizure warrant issued by a U.S. Magistrate Judge authorizing the forensic search of 62 electronic devices seized from Jeffrey Epstein's person and properties in 2019. The warrant seeks evidence related to sex trafficking, transportation of minors, enticement to travel, and conspiracy, and specifically names Ghislaine Maxwell as a co-conspirator.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused / Subject of investigation",
+      "category": "key figure",
+      "context": "The primary subject of the investigation; devices were seized from his person and his residences in New York and the Virgin Islands. The warrant seeks evidence of his alleged crimes and his co-conspirators.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Named Co-conspirator",
+      "category": "associate",
+      "context": "Explicitly named in the warrant as a co-conspirator of Jeffrey Epstein. The warrant authorizes a search for evidence of communications with her and her identity/location.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gabriel W. Gorenstein",
+      "role": "U.S. Magistrate Judge",
+      "category": "legal",
+      "context": "The judge who signed and issued the search and seizure warrant on June 26, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kelly Maguire",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI Special Agent who seized two hard drives (Subject Device-3) from a blue suitcase during the search of Epstein's New York residence on July 11, 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Explicitly identified in the warrant as co-conspirators in the alleged sex trafficking, transportation of minors, and enticement offenses.",
+      "strength": 5
+    },
+    {
+      "person1": "Kelly Maguire",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "law enforcement-subject",
+      "description": "Special Agent Maguire executed the search of Epstein's New York residence and seized evidence (hard drives) from the property.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Arrest of Jeffrey Epstein and Device Seizure",
+      "description": "Jeffrey Epstein was arrested by the FBI. Two electronic devices (a silver iPad and a black iPhone) were seized from his person during the arrest.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-11",
+      "title": "Search of 9 East 71st Street, New York",
+      "description": "Law enforcement searched Epstein's private residence at 9 East 71st Street, New York, NY, resulting in the seizure of 33 electronic devices from various rooms and storage areas in the multi-floor mansion.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Kelly Maguire"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Search of Little Saint James, USVI",
+      "description": "Law enforcement searched Epstein's private island, Little Saint James, in the U.S. Virgin Islands, resulting in the seizure of 27 electronic devices from the main residence, pool house, sheds, beach house, cabanas, and maintenance office.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-06-26",
+      "title": "Warrant Issued for Forensic Search of Devices",
+      "description": "U.S. Magistrate Judge Gabriel W. Gorenstein issued a search warrant authorizing the forensic review of the 62 devices seized in 2019 for evidence of specified federal crimes.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Gabriel W. Gorenstein"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, NY (Epstein's New York residence)",
+    "Little Saint James, U.S. Virgin Islands (Epstein's private island approximately four miles off St. Thomas)"
+  ],
+  "keyFacts": [
+    "The warrant authorizes the search of 62 electronic devices: 2 from Epstein's person at arrest, 33 from his New York mansion, and 27 from his private island in the Virgin Islands.",
+    "Ghislaine Maxwell is explicitly named in the warrant as a co-conspirator of Jeffrey Epstein, and the search seeks evidence of communications with her and her identity/location.",
+    "The warrant seeks evidence for crimes including sex trafficking of minors (18 U.S.C. § 1591), transportation of minors (18 U.S.C. § 2422), enticement to travel (18 U.S.C. § 2423), and conspiracy (18 U.S.C. § 371).",
+    "The authorized search includes looking for nude or sexually suggestive photos of teenage girls, child erotica, financial records of payments to victims/conspirators, and travel records for victims.",
+    "The devices were seized over a month in mid-2019 (July 6, July 11, August 12), but the warrant to forensically examine them was not issued until nearly a year later on June 26, 2020."
+  ],
+  "analyzedAt": "2026-02-08T14:37:50.380Z"
+}

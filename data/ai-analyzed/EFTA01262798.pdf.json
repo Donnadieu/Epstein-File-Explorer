@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01262798.pdf",
+  "dataSet": "10",
+  "documentType": "court filing",
+  "dateOriginal": "2020-01-07",
+  "summary": "This is a sealed application and order from the Southern District of New York, filed by Assistant U.S. Attorney Alex Rossmiller, seeking court authorization to install a pen register and trap-and-trace device on a phone line subscribed to 'TERRAMAR PROJECT'. The surveillance is requested for a 60-day period as part of an FBI investigation into potential violations of 18 U.S.C. § 1591 (sex trafficking) by 'FNU LNU and others known and unknown'. The order was granted by Magistrate Judge Debra Freeman on January 8, 2020.",
+  "persons": [
+    {
+      "name": "Alex Rossmiller",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "He is the applicant who affirms the application under penalty of perjury, seeking the court order for the pen register/trap-and-trace device on behalf of the U.S. Government.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney for the Southern District of New York",
+      "category": "legal",
+      "context": "He is the U.S. Attorney whose office Alex Rossmiller works for; mentioned as Rossmiller's supervisor.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Debra Freeman",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "She is the judge who signed the order authorizing the use of the pen register and trap-and-trace device on January 8, 2020.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex Rossmiller",
+      "person2": "Geoffrey S. Berman",
+      "relationshipType": "employer-employee",
+      "description": "Rossmiller is an Assistant U.S. Attorney working in the office of U.S. Attorney Geoffrey S. Berman.",
+      "strength": 3
+    },
+    {
+      "person1": "Alex Rossmiller",
+      "person2": "Debra Freeman",
+      "relationshipType": "legal",
+      "description": "Rossmiller submitted the application to the court, and Judge Freeman reviewed and granted the order.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-07",
+      "title": "Filing of Pen Register Application",
+      "description": "Assistant U.S. Attorney Alex Rossmiller files a sealed application seeking court authorization for a pen register/trap-and-trace device on a phone subscribed to 'TERRAMAR PROJECT'.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alex Rossmiller"
+      ]
+    },
+    {
+      "date": "2020-01-08",
+      "title": "Court Order Authorizing Surveillance",
+      "description": "Magistrate Judge Debra Freeman signs the order authorizing the installation and use of the pen register/trap-and-trace device for 60 days as part of an FBI investigation into potential sex trafficking violations.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Debra Freeman",
+        "Alex Rossmiller"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "The U.S. Government sought and obtained a court order in January 2020 to conduct electronic surveillance (pen register/trap-and-trace) on a phone line subscribed to 'TERRAMAR PROJECT'.",
+    "The surveillance was part of an ongoing FBI criminal investigation into 'FNU LNU and others known and unknown' for possible violations of 18 U.S.C. § 1591, which is the federal sex trafficking statute.",
+    "The application and order were sealed, indicating the sensitive nature of the investigation.",
+    "The target of the investigation is listed as 'FNU LNU' (First Name Unknown, Last Name Unknown), suggesting law enforcement was investigating an unidentified individual or individuals associated with the 'TERRAMAR PROJECT' phone.",
+    "The order authorized the collection of non-content information (phone numbers, IP addresses, ports, date, time, duration) for 60 days, but explicitly excluded the contents of communications."
+  ],
+  "analyzedAt": "2026-02-09T16:19:53.981Z"
+}

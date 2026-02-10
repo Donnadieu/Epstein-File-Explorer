@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00015428.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2020-08-05",
+  "summary": "This is a declaration by BOP Staff Attorney Nicole McFarland filed in a FOIA lawsuit brought by The New York Times against the Federal Bureau of Prisons. The declaration details the searches conducted at the Metropolitan Correctional Center (MCC) for records related to Jeffrey Epstein's incarceration, suicide attempt, and death, in response to the Times' FOIA requests. It reveals that many key records (like SHU logs, video footage) were handed over to investigative agencies and that searches for meeting minutes about Epstein's removal from suicide watch were unsuccessful.",
+  "persons": [
+    {
+      "name": "Nicole McFarland",
+      "role": "Staff Attorney, Federal Bureau of Prisons",
+      "category": "legal",
+      "context": "Declarant and BOP employee who coordinated the search for records at MCC in response to The New York Times' FOIA request regarding Jeffrey Epstein.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Kara Christenson",
+      "role": "Government Information Specialist, BOP Central Office",
+      "category": "legal",
+      "context": "BOP Central Office employee with whom McFarland communicated; her separate declaration details Central Office searches for FOIA-responsive records.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "Deceased federal inmate at MCC whose records are the subject of the FOIA request, pertaining to his incarceration, suicide attempt, and death.",
+      "mentionCount": 25
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicole McFarland",
+      "person2": "Kara Christenson",
+      "relationshipType": "professional colleague",
+      "description": "McFarland communicated with Christenson regarding the FOIA requests and their declaration details complementary searches (MCC vs. Central Office).",
+      "strength": 3
+    },
+    {
+      "person1": "Nicole McFarland",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal-inmate",
+      "description": "McFarland, as a BOP Staff Attorney, coordinated the search for all records related to Epstein's incarceration at MCC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-22",
+      "title": "Epstein's First Suicide Attempt",
+      "description": "Date referenced in FOIA request for SHU logs and overtime sheets, corresponding to Epstein's first reported suicide attempt in custody.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Death",
+      "description": "Date referenced in FOIA request for SHU logs and overtime sheets, corresponding to the date Jeffrey Epstein was found dead in his cell.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "FBI Takes Custody of Video Footage",
+      "description": "Date by which MCC staff determined all video camera footage pertinent to Epstein's suicide had been handed over to the FBI.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-22",
+      "title": "OIG Takes Custody of Log Books",
+      "description": "Date on which MCC's Special Housing Unit (SHU) log books and visitor logs were handed over to the Office of the Inspector General (OIG).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-07-30",
+      "title": "Recorded Visitor for Epstein",
+      "description": "Date a visitor for Jeffrey Epstein was recorded in a log book located during the MCC search.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "MDC Brooklyn",
+    "FCI Fort Dix",
+    "BOP Central Office",
+    "Northeast Regional Office (BOP)"
+  ],
+  "keyFacts": [
+    "Key physical records like SHU log books and video camera footage from MCC were handed over to the OIG and FBI in August 2019, shortly after Epstein's death.",
+    "Searches at MCC found no meeting minutes or records of a formal meeting to decide to remove Jeffrey Epstein from suicide watch, despite specific requests for such documents.",
+    "The declaration confirms MCC staff located memoranda regarding calls Epstein made on legal lines, but BOP determined no recordings of his calls existed.",
+    "The FOIA request sought extensive documentation on Epstein's incarceration, including visitor logs, email lists, call lists, medical reports, and disciplinary records, with many searches yielding no additional records at MCC beyond those held centrally."
+  ],
+  "analyzedAt": "2026-02-08T14:33:53.429Z"
+}

@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00014491.pdf",
+  "dataSet": "8",
+  "documentType": "police report",
+  "dateOriginal": null,
+  "summary": "This is a Palm Beach Police Department incident report detailing surveillance and intimidation of a victim in the Jeffrey Epstein case. It describes a private investigator aggressively following the victim, and analyzes phone records from March 2006 showing calls between the victim, Epstein's assistant, and Epstein's corporate numbers, which corroborate the victim's account of intimidation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central figure in the case; the report mentions his corporations and that he retained new legal counsel, whose private investigators were following a victim.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jack Goldberger",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "An attorney scheduled to meet with a victim on June 1, 2006, regarding the case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Sarah Kellen",
+      "role": "Epstein's assistant",
+      "category": "associate",
+      "context": "Epstein's assistant, whom the victim called immediately after speaking with the victim on March 7, 2006, according to phone records.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Sarah Kellen",
+      "relationshipType": "employer-employee",
+      "description": "Kellen is identified as Epstein's assistant, and phone records show the victim called her immediately after a call with Epstein's corporate number.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jack Goldberger",
+      "relationshipType": "legal",
+      "description": "The report states Epstein had retained new legal counsel; Goldberger is an attorney scheduled to meet with a victim, implying he may be part of Epstein's legal team.",
+      "strength": 3
+    },
+    {
+      "person1": "Sarah Kellen",
+      "person2": "Victim (unnamed)",
+      "relationshipType": "contact",
+      "description": "Phone records show the victim made a call to Kellen lasting 48 seconds on March 7, 2006, immediately after a call with an Epstein corporate number.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-03-07",
+      "title": "Phone call sequence between victim and Epstein network",
+      "description": "A series of phone calls occurred between the victim, an Epstein corporate number, and Epstein's assistant Sarah Kellen, which the report states is consistent with the victim's account of intimidation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (unnamed)",
+        "Sarah Kellen"
+      ]
+    },
+    {
+      "date": "2006-05-23",
+      "title": "Victim reports aggressive surveillance by private investigator",
+      "description": "The victim reported being aggressively followed by a private investigator driving a green Chevy, which was registered to an investigator from Florida.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (unnamed)"
+      ]
+    },
+    {
+      "date": "2006-06-01",
+      "title": "Scheduled meeting with Attorney Jack Goldberger",
+      "description": "A meeting was scheduled between a victim and Attorney Jack Goldberger at 9:00 am.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jack Goldberger",
+        "Victim (unnamed)"
+      ]
+    },
+    {
+      "date": "2006-03-04 to 2006-03-12",
+      "title": "Spring Break 2006",
+      "description": "The report confirms the dates of Spring Break 2006 as March 4 through March 12, which was relevant to the timeline of phone records subpoenaed.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "457 Madison Ave, New York, NY"
+  ],
+  "keyFacts": [
+    "A victim reported being aggressively followed by a private investigator, with the vehicle registered to an investigator from Florida, shortly after Epstein retained new legal counsel.",
+    "Phone records from March 2006 show a sequence of calls between the victim, an Epstein corporate number (registered to 457 Madison Ave, New York), and Epstein's assistant Sarah Kellen on March 7, 2006.",
+    "The call pattern on March 7, 2006, was consistent with the victim's account of intimidation, according to the investigating officer.",
+    "Epstein had multiple corporations (El Zorro Ranch Corporation, New York Strategy Group, Ghislaine Corporation, J Epstein and Company, Financial Strategy Group) registered to the same address at 457 Madison Ave in New York.",
+    "After March 7, 2006, there was no further contact between the victim and either Sarah Kellen or Jeffrey Epstein for the remainder of March or April 2006."
+  ],
+  "analyzedAt": "2026-02-08T10:59:06.861Z"
+}

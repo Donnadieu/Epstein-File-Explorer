@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00014318.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-12",
+  "summary": "Email chain from July 2019 between attorney Joseph E. Nascimento and an Assistant U.S. Attorney regarding scheduling a meeting in West Palm Beach, Florida. Nascimento indicates he is contacting the prosecutor as the former partner and Florida Bar appointed inventory attorney for Alan Ross, who had represented Jeffrey Epstein prior to his death in 2018, and that an agent had been served with a grand jury subpoena.",
+  "persons": [
+    {
+      "name": "Joseph E. Nascimento",
+      "role": "Attorney, former partner of Alan Ross, Florida Bar appointed inventory attorney",
+      "category": "legal",
+      "context": "Attorney emailing an Assistant U.S. Attorney to schedule a meeting. He states he is the former partner of Alan Ross and the Florida Bar appointed inventory attorney for Ross's matters, and that an agent of Epstein was served with a grand jury subpoena.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alan Ross",
+      "role": "Attorney, former partner of Joseph Nascimento, former representative of Jeffrey Epstein",
+      "category": "legal",
+      "context": "Deceased attorney (passed in 2018) who previously represented Jeffrey Epstein. His former partner, Joseph Nascimento, is now handling matters as inventory attorney.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client of Alan Ross",
+      "category": "key figure",
+      "context": "Named in the email subject line and referenced as the individual Alan Ross previously represented.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Joseph E. Nascimento",
+      "person2": "Alan Ross",
+      "relationshipType": "professional partnership",
+      "description": "Former law partners; Nascimento is now the Florida Bar appointed inventory attorney for Ross's matters following Ross's death.",
+      "strength": 5
+    },
+    {
+      "person1": "Alan Ross",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Alan Ross represented Jeffrey Epstein prior to his (Ross's) death in 2018.",
+      "strength": 4
+    },
+    {
+      "person1": "Joseph E. Nascimento",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Indirect connection through Nascimento's role as inventory attorney for Epstein's former attorney, Alan Ross.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018",
+      "title": "Death of Attorney Alan Ross",
+      "description": "Alan Ross, an attorney who previously represented Jeffrey Epstein, passed away.",
+      "category": "death",
+      "significance": 3,
+      "personsInvolved": [
+        "Alan Ross"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Grand Jury Subpoena Served",
+      "description": "An agent (of Jeffrey Epstein) was served with a grand jury subpoena.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-07-12",
+      "title": "Scheduled Meeting in West Palm Beach",
+      "description": "Joseph Nascimento and an Assistant U.S. Attorney schedule a meeting for noon at the Hilton in West Palm Beach.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Joseph E. Nascimento"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida",
+    "Hilton, 600 Okeechobee Blvd, West Palm Beach, FL",
+    "Miami, Florida 33129 (Nascimento's law firm address: 2250 S.W. 3rd Avenue)"
+  ],
+  "keyFacts": [
+    "An agent associated with Jeffrey Epstein was served with a grand jury subpoena on or before July 6, 2019.",
+    "Attorney Joseph Nascimento contacted federal prosecutors in July 2019 in his capacity as the inventory attorney for the late Alan Ross, who had been Epstein's attorney.",
+    "The emails show coordination for a meeting between Nascimento and an Assistant U.S. Attorney in West Palm Beach in July 2019, indicating ongoing federal investigation activity after Epstein's 2019 arrest."
+  ],
+  "analyzedAt": "2026-02-08T11:59:05.116Z"
+}

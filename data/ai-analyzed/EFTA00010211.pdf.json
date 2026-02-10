@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00010211.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-04",
+  "summary": "This document is an email chain between a Department of Justice/Bureau of Prisons staff attorney and a Southern District of New York Assistant U.S. Attorney regarding the replacement of a broken hard drive for Ghislaine Maxwell while she was detained at the Metropolitan Detention Center in Brooklyn. It includes a sensitive/privileged communication header and details the logistical arrangements.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Detainee/Defendant",
+      "category": "key figure",
+      "context": "The subject of the correspondence; a replacement hard drive is being sent to her at the detention center after she broke her previous one.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Hon. Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Recipient of an attached letter from the DOJ/BOP staff attorney, mentioned in the email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Staff Attorney",
+      "role": "Staff Attorney",
+      "category": "legal",
+      "context": "Sender of the email from the Department of Justice Federal Bureau of Prisons, transmitting a letter to Judge Nathan.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sender of the initial email requesting that a replacement hard drive be given to Maxwell and the broken one be returned to the SDNY office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paralegal Specialist",
+      "role": "Paralegal Specialist",
+      "category": "legal",
+      "context": "The individual at the U.S. Attorney's Office, SDNY, to whom the broken drive should be mailed.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "The AUSA is part of the prosecution team handling Maxwell's case and is arranging for her to receive legal materials (a hard drive).",
+      "strength": 3
+    },
+    {
+      "person1": "Staff Attorney",
+      "person2": "Hon. Nathan",
+      "relationshipType": "legal",
+      "description": "The Staff Attorney is sending a letter to Judge Nathan, indicating official court-related communication.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-03",
+      "title": "Replacement Drive Arranged for Maxwell",
+      "description": "The SDNY office sends a replacement hard drive via FedEx to Ghislaine Maxwell at the MDC to replace one she recently dropped and broke.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2020-12-04",
+      "title": "Letter to Judge Nathan",
+      "description": "A DOJ/BOP Staff Attorney transmits a letter to Hon. Nathan, attached to an email.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Staff Attorney",
+        "Hon. Nathan"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center Brooklyn, Brooklyn, New York 11232",
+    "U.S. Attorney's Office, SDNY, New York, NY 10007",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell broke a hard drive while detained at the Metropolitan Detention Center in Brooklyn, necessitating a replacement from the prosecution.",
+    "The U.S. Attorney's Office for the Southern District of New York arranged for a new hard drive to be delivered to Maxwell via FedEx on December 3, 2020.",
+    "The correspondence is marked as a SENSITIVE/PRIVILEGED COMMUNICATION, indicating the legal sensitivity of the materials involved.",
+    "The document shows logistical coordination between the prosecution (SDNY AUSA) and detention authorities (DOJ/BOP Staff Attorney) regarding a defendant's access to legal materials."
+  ],
+  "analyzedAt": "2026-02-08T07:17:50.035Z"
+}

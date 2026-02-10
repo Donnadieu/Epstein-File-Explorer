@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00014608.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-18",
+  "summary": "Email correspondence regarding the preparation and transfer of financial documents related to the US v. Epstein investigation. An Assistant U.S. Attorney requests a contractor to burn specific folders containing subpoena returns from American Express and Deutsche Bank to a disc for delivery to a Special Agent.",
+  "persons": [
+    {
+      "name": "Hamilton",
+      "role": "Contractor",
+      "category": "staff",
+      "context": "Contractor who possesses discs and is asked to burn specific investigation folders for delivery.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Intended recipient of the disc containing financial documents from the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Author of the email requesting the preparation and delivery of financial documents related to the Epstein investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Hamilton",
+      "relationshipType": "employer-employee",
+      "description": "The Assistant U.S. Attorney is directing the contractor Hamilton to prepare and deliver investigation materials.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Special Agent",
+      "relationshipType": "professional collaboration",
+      "description": "The Assistant U.S. Attorney is arranging for financial documents to be delivered to the Special Agent.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-18",
+      "title": "Request for Financial Document Transfer",
+      "description": "Email correspondence regarding the burning of specific folders containing subpoena returns from American Express and Deutsche Bank to a disc for delivery to a Special Agent.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Hamilton",
+        "Assistant U.S. Attorney",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Usa.doj.gov clouaNYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationVI 2018 SDNY investigation\\Subpoena Returns\\American Express",
+    "Usa.doj.gov\\ clouaNYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationVt 2018 SDNY investigation\\Subpoena Returns\\ Deutsche Bank"
+  ],
+  "keyFacts": [
+    "Financial documents from American Express and Deutsche Bank were subpoenaed as part of the US v. Epstein investigation (case 2018R01618).",
+    "The document transfer was coordinated between an Assistant U.S. Attorney, a contractor, and an FBI Special Agent in July 2019.",
+    "The email indicates an active investigation involving financial records was ongoing in the Southern District of New York in 2019."
+  ],
+  "analyzedAt": "2026-02-08T04:25:49.257Z"
+}

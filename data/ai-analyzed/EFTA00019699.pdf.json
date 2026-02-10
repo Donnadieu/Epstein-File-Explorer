@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA00019699.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-28",
+  "summary": "This document is a chain of emails between U.S. Attorney's Office (SDNY) prosecutors discussing information from an aspiring cooperator at the Metropolitan Correctional Center (MCC) regarding Jeffrey Epstein. The emails mention that an inmate named \"_\" (redacted) claimed to have given Epstein the sheets he used, and discuss the potential of extending a cooperation agreement.",
+  "persons": [
+    {
+      "name": "Stefano Braccini",
+      "role": "U.S. Attorney's Office (SDNY) Prosecutor",
+      "category": "legal",
+      "context": "Appears as a recipient (Cc) in an email discussing cooperator information about Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The subject of the cooperator's information; an inmate at MCC who allegedly received sheets from another inmate.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "_ (redacted inmate)",
+      "relationshipType": "inmate-inmate",
+      "description": "The redacted inmate allegedly gave Epstein the sheets he used while both were incarcerated at MCC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-23 to 2019-08-28",
+      "title": "Email discussion about Epstein cooperator info",
+      "description": "Prosecutors in the SDNY exchange emails about information received from an aspiring cooperator at MCC regarding Jeffrey Epstein, including a claim that an inmate gave Epstein sheets.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Stefano Braccini",
+        "_ (redacted inmate)"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "An aspiring cooperator at MCC provided information about Jeffrey Epstein to prosecutors.",
+    "The information included a claim that an inmate (name redacted) gave Epstein the sheets he used while in custody.",
+    "Prosecutors were discussing whether to extend a cooperation agreement to the informant.",
+    "The emails highlight internal discussions about the quality and handling of inmate-provided information."
+  ],
+  "analyzedAt": "2026-02-08T08:23:27.152Z"
+}

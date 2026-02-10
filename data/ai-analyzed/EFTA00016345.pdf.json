@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00016345.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2020-06-25",
+  "summary": "This document is email correspondence between an Assistant United States Attorney and Judge Gorenstein's chambers regarding a search warrant application for Jeffrey Epstein's electronic devices. The AUSA submits a revised affidavit correcting a date error (Epstein's arrest date listed as 2020 instead of 2019) and schedules a call with the judge and an agent.",
+  "persons": [
+    {
+      "name": "Judge Gorenstein",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Federal judge reviewing a search warrant application for Jeffrey Epstein's electronic devices, noting a date error in the affidavit.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Attorney from the Southern District of New York submitting a revised search warrant application for Epstein's devices and coordinating a call with the judge.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Search Warrant",
+      "category": "key figure",
+      "context": "The target of the search warrant application for his electronic devices, with reference to his arrest date.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Judge Gorenstein",
+      "relationshipType": "legal",
+      "description": "Prosecutor submitting a search warrant application to the judge for review and approval.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Prosecutor seeking judicial authorization to search Epstein's electronic devices as part of an investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-26",
+      "title": "Scheduled Call on Search Warrant",
+      "description": "A call scheduled between Judge Gorenstein, the AUSA, and an agent to discuss the search warrant application for Epstein's electronic devices.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Gorenstein",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Jeffrey Epstein's Arrest",
+      "description": "Epstein was arrested on July 6, 2019; the warrant application initially incorrectly listed the year as 2020.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A search warrant application was submitted to Judge Gorenstein for authorization to search Jeffrey Epstein's electronic devices.",
+    "The initial application contained an error listing Epstein's arrest date as July 6, 2020, instead of the correct date in 2019.",
+    "The Assistant U.S. Attorney submitted a revised affidavit correcting the date error.",
+    "A call was scheduled for June 26, 2020, at 9:10 a.m. between the judge, the AUSA, and an agent to discuss the warrant."
+  ],
+  "analyzedAt": "2026-02-08T07:27:06.002Z"
+}

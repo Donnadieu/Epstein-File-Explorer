@@ -1,0 +1,143 @@
+{
+  "fileName": "EFTA00039416.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2020-03-10",
+  "summary": "This is a March 10, 2020 letter from the U.S. Attorney's Office for the Southern District of New York to defense attorneys, responding to discovery requests in the case against Tova Noel and Michael Thomas. The case relates to their conduct as correctional officers at the Metropolitan Correctional Center (MCC) during the period surrounding Jeffrey Epstein's death. The letter provides detailed references to specific surveillance video files from the MCC on August 9-10, 2019, showing Epstein's activities and the defendants' actions.",
+  "persons": [
+    {
+      "name": "Jason E. Foy",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney for one of the defendants (likely Tova Noel or Michael Thomas) to whom this discovery response letter is addressed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Montell Figgins",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney for one of the defendants (likely Tova Noel or Michael Thomas) to whom this discovery response letter is addressed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "One of the two correctional officers charged in case 19 Cr. 830, related to conduct at the MCC during the period of Jeffrey Epstein's incarceration and death.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "One of the two correctional officers charged in case 19 Cr. 830, related to conduct at the MCC during the period of Jeffrey Epstein's incarceration and death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The high-profile inmate who died while in custody at the MCC. The document references surveillance video of his activities on August 9, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney for the Southern District of New York who signed this official discovery response letter.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-defendant",
+      "description": "Both are named defendants in United States v. Tova Noel and Michael Thomas, No. 19 Cr. 830, related to their duties at the MCC.",
+      "strength": 5
+    },
+    {
+      "person1": "Jason E. Foy",
+      "person2": "Tova Noel",
+      "relationshipType": "attorney-client",
+      "description": "Foy is listed as counsel receiving this discovery letter, indicating he represents one of the defendants, Noel or Thomas.",
+      "strength": 4
+    },
+    {
+      "person1": "Montell Figgins",
+      "person2": "Michael Thomas",
+      "relationshipType": "attorney-client",
+      "description": "Figgins is listed as counsel receiving this discovery letter, indicating he represents one of the defendants, Noel or Thomas.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was a correctional officer at the MCC where Epstein was housed; the discovery concerns video surveillance of Epstein and the defendants' activities.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was a correctional officer at the MCC where Epstein was housed; the discovery concerns video surveillance of Epstein and the defendants' activities.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Documented Activities",
+      "description": "Surveillance video captures Jeffrey Epstein leaving his cell to make a phone call and later being escorted back to his cell at the MCC.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09 to 2019-08-10",
+      "title": "Defendants' Computer Use and Desk Activity",
+      "description": "Video surveillance and forensic computer examination show defendants Noel and Thomas at their desk using computers during specific overnight hours.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Video Surveillance of Special Housing Unit",
+      "description": "The Government states it has produced available video surveillance for the MCC's Special Housing Unit for this date.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-11-25",
+      "title": "Pretrial Conference",
+      "description": "A pretrial conference was held in the case United States v. Tova Noel and Michael Thomas.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Special Housing Unit (within MCC)",
+    "The Silvio J. Mollo Building, One Saint Andrew's Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "The document is a discovery response in the criminal case against MCC correctional officers Tova Noel and Michael Thomas (19 Cr. 830).",
+    "It provides specific MCC surveillance video file names and timestamps for August 9-10, 2019, detailing Jeffrey Epstein's movements and the defendants' activities.",
+    "The Government notes an MCC technician's name was provided in a prior letter but is redacted here (referred to as 'XX').",
+    "The forensic examination of computers used by Noel and Thomas on August 9-10, 2019, was previously produced in discovery.",
+    "The Government references public filings from a separate case, United States v. Tartaglione, 16 Cr. 832, regarding related issues."
+  ],
+  "analyzedAt": "2026-02-09T16:08:15.548Z"
+}

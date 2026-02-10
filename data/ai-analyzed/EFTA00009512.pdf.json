@@ -1,0 +1,171 @@
+{
+  "fileName": "EFTA00009512.pdf",
+  "dataSet": "7",
+  "documentType": "grand jury transcript",
+  "dateOriginal": "2007-05-15",
+  "summary": "This is a transcript of FBI Special Agent testimony before a federal grand jury in West Palm Beach on May 15, 2007, as part of 'Operation Leap Year.' The agent details evidence against Jeffrey Epstein related to sexual abuse and sex trafficking of minors, specifically focusing on Jane Doe #3 and Jane Doe #4, including phone records, flight manifests, victim statements, and the roles of Epstein's assistants.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central defendant accused of sexually abusing and trafficking underage girls, using his assistants to arrange appointments and traveling via private aircraft to engage in the activity.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Nancy Siegel",
+      "role": "Court Reporter",
+      "category": "legal",
+      "context": "Registered Merit Reporter and Notary Public who reported the sworn testimony before the grand jury.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Case agent for Operation Leap Year who presents evidence to the grand jury, including phone records, flight manifests, and victim interviews related to Epstein's abuse of Jane Doe #3 and #4.",
+      "mentionCount": 40
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Special Agent",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI Special Agent is investigating Epstein and presenting evidence against him to the grand jury.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jane Doe #3",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused Jane Doe #3 when she was under 18, paid her $200 per session, gave her gifts, and rented her a car.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jane Doe #4",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused Jane Doe #4 starting when she was 16, paid her $200, asked her to bring friends, and became frustrated when she resisted.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Epstein's Assistant 1",
+      "relationshipType": "employer-employee",
+      "description": "Assistant made appointments for Epstein with the girls, contacted them approximately 25 times, and arranged his travel.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Epstein's Assistant 2",
+      "relationshipType": "employer-employee",
+      "description": "Personal assistant who traveled with Epstein on flights and was involved in the operation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jane Doe #3",
+      "person2": "Jane Doe #4",
+      "relationshipType": "social",
+      "description": "They were good friends, discussed each other with Epstein, and were both considered favorites.",
+      "strength": 3
+    },
+    {
+      "person1": "Epstein's Assistant 1",
+      "person2": "Jane Doe #3",
+      "relationshipType": "facilitator-victim",
+      "description": "The assistant called Jane Doe #3 to set up massage appointments for Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Epstein's Assistant 1",
+      "person2": "Jane Doe #4",
+      "relationshipType": "facilitator-victim",
+      "description": "The assistant called Jane Doe #4 to arrange appointments and wrote messages to Epstein about her.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-06",
+      "title": "First phone contact with Jane Doe #3",
+      "description": "Phone contact begins between Epstein's assistant and Jane Doe #3, marking the start of arranging appointments for sexual massages.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jane Doe #3",
+        "Epstein's Assistant 1"
+      ]
+    },
+    {
+      "date": "2004-04-25",
+      "title": "First phone contact with Jane Doe #4",
+      "description": "First phone call from Epstein's assistant to Jane Doe #4, who was 16 years old at the time, to arrange massages.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jane Doe #4",
+        "Epstein's Assistant 1"
+      ]
+    },
+    {
+      "date": "2004-12-13",
+      "title": "Epstein travels to Palm Beach",
+      "description": "Epstein travels to Palm Beach County on a Gulfstream aircraft owned by Hyperion Air, Inc., with phone contact to Jane Doe #3 before travel.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-06",
+      "title": "Flight with assistants to Palm Beach",
+      "description": "Epstein, along with two assistants, travels to Palm Beach on the Gulfstream, with phone contact to Jane Doe #3 before travel.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Epstein's Assistant 1",
+        "Epstein's Assistant 2"
+      ]
+    },
+    {
+      "date": "2005-03-18",
+      "title": "Written message about Jane Doe #4",
+      "description": "Epstein's assistant writes a message to Epstein asking if Jane Doe #4 can come at 5:00 PM, recovered during a search warrant.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jane Doe #4",
+        "Epstein's Assistant 1"
+      ]
+    },
+    {
+      "date": "2005-06-29",
+      "title": "Day before Jane Doe #4's 18th birthday",
+      "description": "The cutoff date for charges involving Jane Doe #4 as a minor; activity continued after she turned 18.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jane Doe #4"
+      ]
+    }
+  ],
+  "locations": [
+    "United States District Court, Southern District of West Palm Beach, Florida",
+    "701 Clematis Street, West Palm Beach, Palm Beach County, Florida",
+    "Palm Beach County, Florida"
+  ],
+  "keyFacts": [
+    "Jane Doe #3 was 16 or 17 when she began giving Epstein massages in spring 2004; Epstein paid her $200, gave her Victoria's Secret underwear, and rented her a car.",
+    "Jane Doe #4 was recruited at age 16; Epstein asked her to remove clothing, grabbed her, and offered more money if she 'would do more' or bring friends.",
+    "Epstein's personal assistants made phone calls to the victims to arrange appointments and managed his travel on private aircraft (Gulfstream owned by Hyperion Air, Inc. and Boeing 727 owned by JEGE, Inc.).",
+    "Phone records show approximately 125 calls between Epstein's assistant and Jane Doe #3 from December 2004 to October 2005, and about 100 calls with Jane Doe #4.",
+    "Victims stated Epstein knew they were in high school (e.g., Jane Doe #4 told him she was a junior) but he did not ask for age verification; one victim was concerned after mentioning 'prom' to him."
+  ],
+  "analyzedAt": "2026-02-08T18:14:07.065Z"
+}

@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00010702.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-04",
+  "summary": "This document is a chain of emails from October 2021 and earlier (2019-2020) between FBI agents and an FAA Special Agent regarding flight plan and aircraft registration data for helicopters and jets associated with Ghislaine Maxwell and Jeffrey Epstein. The FAA agent provides detailed information on tail numbers N331JE, N722JE, and N491GM, including ownership history, registration details, and attached flight plan spreadsheets for analysis.",
+  "persons": [
+    {
+      "name": "Ghislaine Noelle Maxwell",
+      "role": "Subject of investigation, private pilot",
+      "category": "key figure",
+      "context": "The primary subject of the FBI's request for aircraft information; identified as a private pilot who personally piloted a helicopter (N722JE, nicknamed 'Air Ghislaine 2') and was a frequent passenger on jets associated with Jeffrey Epstein.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Associate of Maxwell",
+      "category": "key figure",
+      "context": "Mentioned as someone Ghislaine Maxwell traveled with frequently; aircraft are associated with him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "James D. Clark",
+      "role": "Seller representative",
+      "category": "associate",
+      "context": "Signed the seller's signature for the purchase of helicopter N722JE (Sikorsky S-76C) by ASI Wings LLC from Sikorsky on 13 June 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren K. Indyke",
+      "role": "Attorney/Representative",
+      "category": "legal",
+      "context": "Signed aircraft registration documents for N722JE on 02 August 2010 for Freedom Air International, Inc. and for N331JE on 12 August 2013 as seller signature for Hyperion Air, Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "William P. Merriam Jr",
+      "role": "Seller representative",
+      "category": "associate",
+      "context": "Signed the seller's signature for the purchase of helicopter N331JE (Bell 430) from Bovale Developments, Inc. on 06 March 2012.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Van Heurck",
+      "role": "Potential pilot",
+      "category": "staff",
+      "context": "A surname presented by the FAA agent as a potential pilot of one of the aircraft, asking the FBI if it has relevance to their case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Noelle Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "travel companion",
+      "description": "The FBI email states Maxwell traveled with Epstein frequently on the aircraft in question.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Noelle Maxwell",
+      "person2": "Darren K. Indyke",
+      "relationshipType": "legal",
+      "description": "Indyke signed registration documents for aircraft (N722JE, N331JE) owned by entities (Air Ghislaine Inc., Hyperion Air) associated with Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-06",
+      "title": "FBI Request for Aircraft Info",
+      "description": "An FBI Special Agent from the New York Child Exploitation/Human Trafficking task force sends an initial request to the FAA for information on aircraft used by Ghislaine Maxwell, noting the high-profile nature of the case.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Noelle Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-01-14",
+      "title": "FAA Provides Initial Registration Data",
+      "description": "An FAA Special Agent from the Law Enforcement Assistance Program (LEAP) sends encrypted aircraft registration files, LLC documents for Hyperion Air LLC, and an airman file for the subject (Maxwell) to the FBI.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Noelle Maxwell"
+      ]
+    },
+    {
+      "date": "2020-01-28",
+      "title": "FAA Provides Flight Plan Data",
+      "description": "The same FAA Special Agent follows up by sending Excel spreadsheets containing flight plan information for helicopters N331JE, N491GM, and N722JE from 2007 onward, with detailed notes for analysis.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Wilmington, DE"
+  ],
+  "keyFacts": [
+    "The FBI was actively investigating Ghislaine Maxwell's air travel in late 2019/early 2020, specifically requesting flight plan and registration data for helicopters she piloted (N722JE 'Air Ghislaine 2', N491GM 'Air Ghislaine 1') and jets she was a passenger on.",
+    "Aircraft ownership history shows a complex web of LLCs: Helicopter N722JE was owned by Air Ghislaine Inc. (name changed to Shmitka Air Inc.), then Freedom Air International, Inc., then ASI Wings LLC, and finally Hyperion Air LLC.",
+    "The FAA provided extensive digital flight plan records dating back to 2007 for analysis, which could be used to establish travel timelines and patterns for Maxwell and Epstein.",
+    "The document reveals the involvement of several individuals in aircraft transactions, including attorneys Darren K. Indyke and James D. Clark, and seller representative William P. Merriam Jr.",
+    "The FAA agent took steps to protect medical privacy (PHI) in Maxwell's airman file while providing potentially relevant investigative information to the FBI."
+  ],
+  "analyzedAt": "2026-02-08T13:31:00.292Z"
+}

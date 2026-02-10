@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00014150.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2008-12-05",
+  "summary": "This is an email chain between attorneys discussing the filing of the Non-Prosecution Agreement (NPA) in the Jane Does v USA case by Brad Edwards. It shows legal coordination regarding the sealing and potential unsealing of the agreement.",
+  "persons": [
+    {
+      "name": "Roy Black",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Appears as a recipient and sender in the email chain discussing the filing of the Non-Prosecution Agreement.",
+      "mentionCount": 3
+    },
+    {
+      "name": "JLeflcovi",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Appears as a recipient in the email chain, likely a colleague or co-counsel involved in the case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Filed the Non-Prosecution Agreement with the Court in the Jane Does v USA case under seal and requested its unsealing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jay",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Addressed in the email along with Roy Black regarding the filing of the Non-Prosecution Agreement.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Roy Black",
+      "person2": "JLeflcovi",
+      "relationshipType": "professional",
+      "description": "Communicating via email regarding legal developments in the Jane Does v USA case.",
+      "strength": 3
+    },
+    {
+      "person1": "Roy Black",
+      "person2": "Jay",
+      "relationshipType": "professional",
+      "description": "Addressed together in an email about the filing of the Non-Prosecution Agreement.",
+      "strength": 3
+    },
+    {
+      "person1": "Brad Edwards",
+      "person2": "Roy Black",
+      "relationshipType": "professional",
+      "description": "Brad Edwards filed legal documents that are being communicated to Roy Black and colleagues.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-12-05",
+      "title": "Filing of Non-Prosecution Agreement",
+      "description": "Brad Edwards filed the Non-Prosecution Agreement with the Court in the Jane Does v USA case under seal and requested its unsealing.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Brad Edwards"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Brad Edwards filed the Non-Prosecution Agreement (NPA) in the Jane Does v USA case on December 5, 2008.",
+    "The NPA was initially filed under seal, and a request was made to the Court to unseal it.",
+    "The email chain shows legal coordination among attorneys (Roy Black, JLeflcovi, Jay) regarding this development.",
+    "The document references the case 'Jane Does v USA', indicating civil litigation against the United States government related to the Epstein matter."
+  ],
+  "analyzedAt": "2026-02-08T02:22:37.518Z"
+}

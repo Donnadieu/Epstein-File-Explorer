@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00018920.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-09",
+  "summary": "This is a forwarded email from December 9, 2019, between FBI and Metropolitan Police Service (MPS) personnel regarding UK/US contact details. It contains a letter from DAC (Deputy Assistant Commissioner) addressed to the United States Attorney providing details of a relevant legal representative, indicating coordination between US and UK law enforcement on the Epstein case.",
+  "persons": [
+    {
+      "name": "A. (NY) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Appears as the sender of the forwarding email from the FBI New York field office to US Attorney's Office personnel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "G. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Recipient of an attached letter from DAC (Deputy Assistant Commissioner) of the Metropolitan Police Service regarding UK/US contact details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DAC",
+      "role": "Deputy Assistant Commissioner (Specialist Operations)",
+      "category": "law enforcement",
+      "context": "Senior Metropolitan Police Service official who authored a letter to US Attorney G. Berman providing details of a relevant legal representative.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective Sergeant",
+      "role": "Staff Officer to Deputy Assistant Commissioner",
+      "category": "law enforcement",
+      "context": "Metropolitan Police Service officer who forwarded the letter from DAC to FBI contacts with UK/US contact details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "DAC",
+      "person2": "G. Berman",
+      "relationshipType": "professional correspondence",
+      "description": "DAC sent a letter to US Attorney G. Berman with details of a relevant legal representative, indicating official communication between UK and US law enforcement.",
+      "strength": 3
+    },
+    {
+      "person1": "A. (NY) (FBI)",
+      "person2": "Detective Sergeant",
+      "relationshipType": "law enforcement coordination",
+      "description": "FBI agent forwarded information received from Metropolitan Police Service detective sergeant regarding UK/US contact details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-09",
+      "title": "UK/US Law Enforcement Coordination",
+      "description": "Metropolitan Police Service forwards contact details and a letter from DAC to US Attorney G. Berman regarding legal representative information.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "DAC",
+        "G. Berman",
+        "Detective Sergeant",
+        "A. (NY) (FBI)"
+      ]
+    }
+  ],
+  "locations": [
+    "New Scotland Yard, Richmond Terrace, Victoria Embankment, London SW1A 2JL",
+    "London",
+    "New York"
+  ],
+  "keyFacts": [
+    "The document shows active coordination between UK Metropolitan Police Service and US law enforcement (FBI and US Attorney's Office) in December 2019 regarding the Epstein case.",
+    "A Deputy Assistant Commissioner (DAC) of the Metropolitan Police Service sent a formal letter to US Attorney G. Berman with details of a relevant legal representative.",
+    "The communication originated from the Counter Terrorism Policing unit within the Metropolitan Police Service, suggesting possible terrorism-related angles or specialized operations involvement.",
+    "The email chain demonstrates international law enforcement cooperation between the US and UK on the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-08T07:14:21.286Z"
+}

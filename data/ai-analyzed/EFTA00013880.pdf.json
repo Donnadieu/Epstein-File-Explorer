@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00013880.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2008-06-27",
+  "summary": "This is a notice of non-compliance sent by an Assistant U.S. Attorney to Jack Goldberger and another individual named Black, regarding an unspecified matter. It includes an attached notification letter.",
+  "persons": [
+    {
+      "name": "Jack Goldberger",
+      "role": "Recipient of legal notice",
+      "category": "legal",
+      "context": "He is one of the recipients of a Notice of Non-Compliance sent by an Assistant U.S. Attorney.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Black",
+      "role": "Recipient of legal notice",
+      "category": "legal",
+      "context": "He is the other recipient (along with Jack Goldberger) of a Notice of Non-Compliance sent by an Assistant U.S. Attorney.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Sender of legal notice",
+      "category": "legal",
+      "context": "The official who sent the Notice of Non-compliance to Jack Goldberger and Black from the West Palm Beach office.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jack Goldberger",
+      "person2": "Black",
+      "relationshipType": "legal",
+      "description": "Both are recipients of the same Notice of Non-Compliance from the Assistant U.S. Attorney, suggesting they are jointly addressed in a legal matter.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Jack Goldberger",
+      "relationshipType": "legal",
+      "description": "The Assistant U.S. Attorney is sending an official legal notice (Notice of Non-Compliance) to Jack Goldberger.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Black",
+      "relationshipType": "legal",
+      "description": "The Assistant U.S. Attorney is sending an official legal notice (Notice of Non-Compliance) to Black.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-27",
+      "title": "Notice of Non-Compliance Sent",
+      "description": "An Assistant U.S. Attorney sends a Notice of Non-Compliance to Jack Goldberger and Black.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant U.S. Attorney",
+        "Jack Goldberger",
+        "Black"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "500 S. Australian Ave, Suite 400",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "zip": "33401",
+      "context": "Office of the Assistant U.S. Attorney sending the notice."
+    }
+  ],
+  "keyFacts": [
+    "A Notice of Non-Compliance was sent on June 27, 2008, by an Assistant U.S. Attorney from West Palm Beach, FL.",
+    "The notice was addressed to two individuals: Jack Goldberger and a person with the last name Black.",
+    "The document references an attached notification letter (080627 Goldberger Black notification Itr.pdf), the contents of which are not provided in this text.",
+    "The correspondence indicates ongoing or pending legal proceedings or compliance matters involving Goldberger and Black."
+  ],
+  "analyzedAt": "2026-02-08T00:57:33.426Z"
+}

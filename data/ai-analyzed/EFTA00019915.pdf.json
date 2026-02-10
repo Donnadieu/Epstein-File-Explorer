@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00019915.pdf",
+  "dataSet": "8",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-06-07",
+  "summary": "This document is an FBI interview summary (302) dated June 7, 2021, detailing a meeting between an Assistant U.S. Attorney (AUSA), a Special Agent (SA), and a victim/witness (referred to as 'U'). It covers trial preparation, the witness's receipt of compensation from the Epstein estate Victim Compensation Fund, her use of the funds, her mental health struggles, and a claim that she lied about her age to an unnamed individual ('J.E.') when they were dating.",
+  "persons": [
+    {
+      "name": "AUSA",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "The federal prosecutor conducting the interview and arranging trial preparation logistics, including travel for the witness and her family.",
+      "mentionCount": 3
+    },
+    {
+      "name": "J.E.",
+      "role": "Individual Dated by Witness",
+      "category": "associate",
+      "context": "An individual whom the witness 'U' claims she dated and lied to about her age, stating she was 17 when she was younger. The initials strongly suggest Jeffrey Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "U",
+      "person2": "J.E.",
+      "relationshipType": "victim-perpetrator",
+      "description": "U states she dated J.E. and lied to him about her age, claiming to be 17 when she was younger.",
+      "strength": 4
+    },
+    {
+      "person1": "AUSA",
+      "person2": "U",
+      "relationshipType": "legal",
+      "description": "The AUSA is preparing the witness U for trial, discussing testimony logistics and arranging for her travel and support.",
+      "strength": 4
+    },
+    {
+      "person1": "SA",
+      "person2": "U",
+      "relationshipType": "investigative",
+      "description": "The Special Agent is part of the law enforcement team interviewing and preparing the witness U.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-06-07",
+      "title": "Trial Preparation Interview",
+      "description": "AUSA and SA meet with victim/witness U to discuss trial preparation, testimony mechanics, and her personal circumstances including receipt of victim compensation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "U",
+        "AUSA",
+        "SA"
+      ]
+    },
+    {
+      "date": "2021-01",
+      "title": "Previous Meeting with U",
+      "description": "A prior meeting between the prosecution team and the witness U, referenced as a point of comparison for updates.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "U",
+        "AUSA",
+        "SA"
+      ]
+    },
+    {
+      "date": null,
+      "title": "U Receives Victim Compensation",
+      "description": "U received a $3.5 million award from the Epstein estate's Victim Compensation Fund, netting over $2 million after deductions, which she used to buy a home, car, and support her family.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "U"
+      ]
+    },
+    {
+      "date": null,
+      "title": "U's Past Relationship with J.E.",
+      "description": "U reveals that during a past dating relationship with J.E., she lied to him about her age, claiming to be 17 when she was actually younger.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "U",
+        "J.E."
+      ]
+    }
+  ],
+  "locations": [
+    "NY"
+  ],
+  "keyFacts": [
+    "A victim/witness (U) received a $3.5 million award from the Jeffrey Epstein estate's Victim Compensation Fund, ultimately receiving over $2 million which she used to buy a home, a car, pay fines, and set up accounts for her children.",
+    "The witness is experiencing significant mental distress, including trouble sleeping, dreams about Epstein, and nervousness about testifying, for which she speaks daily with a counselor and takes prescribed medication.",
+    "The witness claims that when she was dating J.E. (strongly implied to be Jeffrey Epstein), she lied to him about her age, telling him she was 17 when she was actually younger.",
+    "The U.S. Attorney's Office is arranging and paying for the witness and her family (husband and children) to travel to New York for the trial as part of witness support."
+  ],
+  "analyzedAt": "2026-02-08T05:03:45.509Z"
+}
