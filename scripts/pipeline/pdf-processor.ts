@@ -4,6 +4,11 @@ import { fileURLToPath } from "url";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { createRequire } from "module";
 
+// Prevent corrupted PDFs from crashing the process with unhandled rejections
+process.on("unhandledRejection", (reason: any) => {
+  console.warn(`    Suppressed pdf.js rejection: ${String(reason).substring(0, 100)}`);
+});
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const require = createRequire(import.meta.url);
@@ -74,13 +79,16 @@ async function extractPdfText(filePath: string): Promise<{ text: string; pageCou
 
   let doc: any = null;
   try {
-    doc = await pdfjsLib.getDocument({
+    const loadingTask = pdfjsLib.getDocument({
       data,
       useSystemFonts: true,
       standardFontDataUrl: STANDARD_FONT_DATA_URL,
       disableAutoFetch: true,
       isEvalSupported: false,
-    }).promise;
+    });
+    // Catch internal pdf.js rejections that bypass the main promise
+    loadingTask.onUnsupportedFeature = () => {};
+    doc = await loadingTask.promise;
 
     let fullText = "";
     const pageCount = doc.numPages;

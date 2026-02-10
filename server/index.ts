@@ -67,8 +67,8 @@ function rateLimit(
   };
 }
 
-// General API: 100 requests per minute per IP
-app.use("/api", rateLimit(60_000, 100, "api"));
+// General API: 300 requests per minute per IP
+app.use("/api", rateLimit(60_000, 300, "api"));
 
 // Stricter limits on expensive/sensitive endpoints
 // AI chat: 10 requests per minute (when re-enabled)
