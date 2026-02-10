@@ -189,6 +189,7 @@ export default function NetworkPage() {
 
   const { data, isLoading } = useQuery<NetworkData>({
     queryKey: ["/api/network"],
+    staleTime: 300_000,
   });
 
   // Initialize connection type filter and time range when data arrives

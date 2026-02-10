@@ -55,6 +55,7 @@ export async function registerRoutes(
   app.get("/api/stats", async (_req, res) => {
     try {
       const stats = await storage.getStats();
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(stats);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch stats" });
@@ -75,10 +76,12 @@ export async function registerRoutes(
         const page = Math.max(1, parseInt(pageParam) || 1);
         const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
         const result = await storage.getPersonsPaginated(page, limit);
+        res.set('Cache-Control', 'public, max-age=300');
         return res.json(result);
       }
 
       const persons = await storage.getPersons();
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(persons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch persons" });
@@ -117,6 +120,7 @@ export async function registerRoutes(
       const mediaType = (req.query.mediaType as string) || undefined;
 
       const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType });
+      res.set('Cache-Control', 'public, max-age=60');
       res.json({ ...result, data: result.data.map(omitInternal) });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
@@ -126,6 +130,7 @@ export async function registerRoutes(
   app.get("/api/documents/filters", async (_req, res) => {
     try {
       const filters = await storage.getDocumentFilters();
+      res.set('Cache-Control', 'public, max-age=600');
       res.json(filters);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document filters" });
@@ -135,6 +140,7 @@ export async function registerRoutes(
   app.get("/api/sidebar-counts", async (_req, res) => {
     try {
       const counts = await storage.getSidebarCounts();
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(counts);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch sidebar counts" });
@@ -439,6 +445,7 @@ export async function registerRoutes(
   app.get("/api/timeline", async (_req, res) => {
     try {
       const events = await storage.getTimelineEvents();
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(events);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch timeline events" });
@@ -448,6 +455,7 @@ export async function registerRoutes(
   app.get("/api/network", async (_req, res) => {
     try {
       const data = await storage.getNetworkData();
+      res.set('Cache-Control', 'public, max-age=300');
       res.json(data);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch network data" });

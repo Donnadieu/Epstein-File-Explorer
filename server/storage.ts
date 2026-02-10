@@ -68,9 +68,29 @@ function escapeLikePattern(input: string): string {
   return input.replace(/[\\%_]/g, (ch) => `\\${ch}`);
 }
 
+function createCache<T>(ttlMs: number) {
+  let data: T | null = null;
+  let cachedAt = 0;
+  let inflight: Promise<T> | null = null;
+
+  return {
+    async get(fetcher: () => Promise<T>): Promise<T> {
+      if (data !== null && Date.now() - cachedAt < ttlMs) return data;
+      if (inflight) return inflight;
+      inflight = fetcher().then(result => {
+        data = result;
+        cachedAt = Date.now();
+        return result;
+      }).finally(() => { inflight = null; });
+      return inflight;
+    },
+    invalidate() { data = null; cachedAt = 0; },
+  };
+}
+
 const AI_ANALYZED_DIR = path.resolve(process.cwd(), "data", "ai-analyzed");
 
-const CACHE_TTL = 60_000;
+const CACHE_TTL = 300_000; // 5 min
 let filesCache: { data: AIAnalysisDocument[]; cachedAt: number } | null = null;
 let inflight: Promise<AIAnalysisDocument[]> | null = null;
 
@@ -397,6 +417,29 @@ function deduplicatePersons(allPersons: Person[]): { deduped: Person[]; idMap: M
   return { deduped, idMap };
 }
 
+// Server-side caches for expensive aggregate queries
+const sidebarCountsCache = createCache<{
+  documents: { total: number; byType: Record<string, number> };
+  media: { images: number; videos: number };
+  persons: number;
+  events: number;
+  connections: number;
+}>(5 * 60 * 1000);
+
+const documentFiltersCache = createCache<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>(10 * 60 * 1000);
+
+const statsCache = createCache<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>(5 * 60 * 1000);
+
+const networkDataCache = createCache<{
+  persons: Person[];
+  connections: any[];
+  timelineYearRange: [number, number];
+  personYears: Record<number, [number, number]>;
+}>(5 * 60 * 1000);
+
+const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
+const COUNT_TTL = 60_000;
+
 export class DatabaseStorage implements IStorage {
   async getPersons(): Promise<Person[]> {
     return db.select().from(persons).orderBy(desc(persons.documentCount));
@@ -548,21 +591,24 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getStats() {
-    const [personResult, documentResult, connectionResult, eventResult] = await Promise.all([
-      db.select({ count: sql<number>`count(*)::int` }).from(persons),
-      db.select({ count: sql<number>`count(*)::int` }).from(documents),
-      db.select({ count: sql<number>`count(*)::int` }).from(connections),
-      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
-    ]);
-    return {
-      personCount: personResult[0].count,
-      documentCount: documentResult[0].count,
-      connectionCount: connectionResult[0].count,
-      eventCount: eventResult[0].count,
-    };
+    return statsCache.get(async () => {
+      const [personResult, documentResult, connectionResult, eventResult] = await Promise.all([
+        db.select({ count: sql<number>`count(*)::int` }).from(persons),
+        db.select({ count: sql<number>`count(*)::int` }).from(documents),
+        db.select({ count: sql<number>`count(*)::int` }).from(connections),
+        db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
+      ]);
+      return {
+        personCount: personResult[0].count,
+        documentCount: documentResult[0].count,
+        connectionCount: connectionResult[0].count,
+        eventCount: eventResult[0].count,
+      };
+    });
   }
 
   async getNetworkData() {
+    return networkDataCache.get(async () => {
     const allPersons = await this.getPersons();
     const allConnections = await db.select().from(connections);
 
@@ -620,6 +666,7 @@ export class DatabaseStorage implements IStorage {
       timelineYearRange: [minYear, maxYear] as [number, number],
       personYears,
     };
+    });
   }
 
   async search(query: string) {
@@ -730,11 +777,25 @@ export class DatabaseStorage implements IStorage {
 
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
-    const [countResult] = await db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(documents)
-      .where(whereClause);
-    const total = countResult.count;
+    const cacheKey = JSON.stringify([opts.search, opts.type, opts.dataSet, opts.redacted, opts.mediaType]);
+    const cached = countCacheMap.get(cacheKey);
+    let total: number;
+    if (cached && Date.now() - cached.cachedAt < COUNT_TTL) {
+      total = cached.count;
+    } else {
+      const [countResult] = await db
+        .select({ count: sql<number>`count(*)::int` })
+        .from(documents)
+        .where(whereClause);
+      total = countResult.count;
+      countCacheMap.set(cacheKey, { count: total, cachedAt: Date.now() });
+      if (countCacheMap.size > 200) {
+        const now = Date.now();
+        countCacheMap.forEach((v, k) => {
+          if (now - v.cachedAt > COUNT_TTL) countCacheMap.delete(k);
+        });
+      }
+    }
     const totalPages = Math.ceil(total / opts.limit);
     const offset = (opts.page - 1) * opts.limit;
     const data = await db
@@ -749,6 +810,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }> {
+    return documentFiltersCache.get(async () => {
     const [typeRows, dataSetRows, mediaTypeRows] = await Promise.all([
       db.selectDistinct({ documentType: documents.documentType })
         .from(documents)
@@ -768,6 +830,7 @@ export class DatabaseStorage implements IStorage {
       dataSets: dataSetRows.map((r) => r.dataSet!),
       mediaTypes: mediaTypeRows.map((r) => r.mediaType!),
     };
+    });
   }
 
   async getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }> {
@@ -798,6 +861,7 @@ export class DatabaseStorage implements IStorage {
     events: number;
     connections: number;
   }> {
+    return sidebarCountsCache.get(async () => {
     const [docCounts, mediaCounts, entityCounts] = await Promise.all([
       // Document counts by type in a single query
       db.select({
@@ -833,6 +897,7 @@ export class DatabaseStorage implements IStorage {
       events: entityCounts[1][0].count,
       connections: entityCounts[2][0].count,
     };
+    });
   }
 
   async getBookmarks(): Promise<Bookmark[]> {
