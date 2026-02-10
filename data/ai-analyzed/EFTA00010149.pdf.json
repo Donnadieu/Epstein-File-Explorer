@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00010149.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-14",
+  "summary": "This is an email from an Assistant United States Attorney to Wendy regarding travel arrangements for a fact witness scheduled to testify in the Ghislaine Maxwell trial on December 9 or 10, 2021. The email includes a travel request attachment and notes the witness's planned travel dates.",
+  "persons": [
+    {
+      "name": "Wendy",
+      "role": "Recipient of travel request email",
+      "category": "staff",
+      "context": "Addressed in an email regarding travel arrangements for a fact witness in the Maxwell trial.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Sender of travel request email",
+      "category": "legal",
+      "context": "Sent an email to Wendy attaching a travel request for a fact witness in the Maxwell trial, indicating the witness's expected testimony dates.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Wendy",
+      "relationshipType": "professional",
+      "description": "The AUSA is communicating with Wendy regarding logistical arrangements for a trial witness.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-09",
+      "title": "Expected witness testimony in Maxwell trial",
+      "description": "A fact witness is expected to testify in the Ghislaine Maxwell trial.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-12-10",
+      "title": "Alternative expected witness testimony in Maxwell trial",
+      "description": "A fact witness is expected to testify in the Ghislaine Maxwell trial, with December 10 noted as an alternative date.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-12-08",
+      "title": "Witness travel to New York",
+      "description": "A fact witness is scheduled to fly into New York for the Maxwell trial.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10007",
+    "One St. Andrew's Plaza",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A fact witness is scheduled to testify in the Ghislaine Maxwell trial on either December 9 or 10, 2021.",
+    "Travel arrangements were being coordinated for the witness to fly in on December 8 and out on December 10, 2021.",
+    "The communication originated from an Assistant United States Attorney in the Southern District of New York.",
+    "The email indicates ongoing trial preparation and witness logistics management in November 2021."
+  ],
+  "analyzedAt": "2026-02-08T02:50:55.728Z"
+}

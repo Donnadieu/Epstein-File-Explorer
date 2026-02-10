@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00010334.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-16",
+  "summary": "Email chain between federal prosecutors and attorneys representing a victim, discussing the sharing of evidence including photographs and emails related to the victim's encounters with Jeffrey Epstein. The correspondence shows coordination between the Southern District of New York and victim's counsel to gather evidence.",
+  "persons": [
+    {
+      "name": "Brittany Henderson",
+      "role": "Attorney at Edwards Pottinger LLC",
+      "category": "legal",
+      "context": "Attorney representing a victim, communicating with prosecutors about sharing evidence including photographs and emails related to the victim's encounters with Jeffrey Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Board Certified Trial Attorney at Edwards Pottinger LLC",
+      "category": "legal",
+      "context": "Attorney representing a victim, mentioned as being copied on emails and involved in coordinating the sharing of evidence with prosecutors.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the investigation, mentioned in relation to the victim's encounters with him.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Brad Edwards",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at Edwards Pottinger LLC working together on representing a victim in the Epstein case.",
+      "strength": 4
+    },
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "legal coordination",
+      "description": "Communicating about sharing evidence (photographs and emails) between victim's counsel and prosecutors.",
+      "strength": 3
+    },
+    {
+      "person1": "Brad Edwards",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "legal coordination",
+      "description": "Copied on emails and involved in coordinating evidence sharing with prosecutors.",
+      "strength": 3
+    },
+    {
+      "person1": "Victim (unnamed)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim had encounters with Epstein, as referenced in the emails being shared as evidence.",
+      "strength": 4
+    },
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Victim (unnamed)",
+      "relationshipType": "attorney-client",
+      "description": "Henderson is representing the victim and is in possession of evidence provided by the victim.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-23",
+      "title": "Meeting with victim in California",
+      "description": "Prosecutors met with a victim in California to discuss her encounters with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (unnamed)",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2019-09-30",
+      "title": "Evidence sharing coordination",
+      "description": "Attorney Brittany Henderson sends photographs of the victim from the relevant time period to prosecutors.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Brittany Henderson",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Fort Lauderdale, FL 33301",
+    "New York, NY 10007",
+    "California"
+  ],
+  "keyFacts": [
+    "Prosecutors from the Southern District of New York met with a victim in California in September 2019 to discuss her encounters with Jeffrey Epstein.",
+    "The victim had previously provided her attorneys (Brittany Henderson and Brad Edwards) with emails related to her encounters with Epstein.",
+    "Attorneys for the victim were coordinating with prosecutors to share evidence including photographs of the victim from the relevant time period and emails.",
+    "The email chain shows ongoing evidence gathering and coordination between victim's counsel and federal prosecutors in late 2019 and early 2020."
+  ],
+  "analyzedAt": "2026-02-08T08:46:48.915Z"
+}

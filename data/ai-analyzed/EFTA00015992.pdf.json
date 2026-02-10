@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00015992.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-22",
+  "summary": "This document is an email chain from November 2019 forwarding a report about a 17-year-old victim of Jeffrey Epstein. The original email, sent by a friend and guardian of the victim, alleges the victim was abused by Epstein at his New York townhome and his Caribbean island home in the Virgin Islands. The email expresses the victim's interest in registering a claim against Epstein's estate.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The individual accused of abusing the 17-year-old victim on numerous occasions at his properties in New York and the Virgin Islands.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ms.",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A 17-year-old from Calderitas, Mexico, who is alleged to have been abused by Jeffrey Epstein at his New York townhome and Caribbean island home.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ms.",
+      "role": "Guardian",
+      "category": "other",
+      "context": "The guardian of the 17-year-old victim, based in Calderitas, Mexico. The email sender is a close friend of both the victim and the guardian.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ms.",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is accused of abusing the 17-year-old victim on numerous occasions at his properties.",
+      "strength": 5
+    },
+    {
+      "person1": "Ms.",
+      "person2": "Ms.",
+      "relationshipType": "guardian-ward",
+      "description": "One Ms. is identified as the guardian of the 17-year-old victim Ms.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Alleged Abuse of Victim",
+      "description": "A 17-year-old victim was allegedly abused by Jeffrey Epstein on numerous occasions at his New York townhome and his Caribbean island home in the Virgin Islands.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ms."
+      ]
+    },
+    {
+      "date": "2019-11-21",
+      "title": "Initial Victim Report Email",
+      "description": "An email was sent by a friend/guardian reporting the alleged abuse and expressing interest in registering a claim against Epstein's estate.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ms.",
+        "Ms."
+      ]
+    },
+    {
+      "date": "2019-11-22",
+      "title": "Forwarding of Victim Report",
+      "description": "The victim report email was forwarded internally, with instructions to send it to the FBI per usual policy.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Calderitas, Mexico",
+    "New York (Epstein's townhome)",
+    "Virgin Islands (Epstein's Caribbean island home)"
+  ],
+  "keyFacts": [
+    "A new, previously unreported 17-year-old victim from Mexico is alleged to have been abused by Jeffrey Epstein.",
+    "The alleged abuse occurred at multiple locations: Epstein's New York townhome and his Caribbean island home in the Virgin Islands.",
+    "The victim and her guardian were seeking to register a claim against Epstein's estate as of November 2019.",
+    "The report was being forwarded to the FBI for investigation.",
+    "The victim did not have legal representation at the time of the report but was in negotiations to retain an attorney."
+  ],
+  "analyzedAt": "2026-02-08T03:51:42.160Z"
+}

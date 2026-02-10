@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00010182.pdf",
+  "dataSet": "8",
+  "documentType": "court filing correspondence",
+  "dateOriginal": "2021-11-11",
+  "summary": "This is an email forwarding a sealed memorandum opinion and order from Judge Alison J. Nathan in the case US v. Maxwell (20cr330). The email discusses the court's understanding of various concessions made by the parties and indicates the document will be docketed the following day.",
+  "persons": [
+    {
+      "name": "Alison J. Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Issued a sealed memorandum opinion and order in the case US v. Maxwell. Her chambers sent the document to counsel.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as a recipient of the email from Judge Nathan's chambers regarding the sealed order in US v. Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as a recipient of the email from Judge Nathan's chambers regarding the sealed order in US v. Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff Pagliuca",
+      "person2": "Laura Menninger",
+      "relationshipType": "legal",
+      "description": "Both are listed as defense counsel receiving the same court order in US v. Maxwell, indicating they are part of the same defense team.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal",
+      "description": "Judge Nathan issued a court order that was sent to defense attorney Pagliuca, establishing a judge-attorney relationship in the case.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Laura Menninger",
+      "relationshipType": "legal",
+      "description": "Judge Nathan issued a court order that was sent to defense attorney Menninger, establishing a judge-attorney relationship in the case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-11",
+      "title": "Sealed Memorandum Opinion and Order Issued",
+      "description": "Judge Alison J. Nathan issued a sealed memorandum opinion and order in the case US v. Maxwell (20cr330), addressing the court's understanding of various concessions made by the parties.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Jeff Pagliuca",
+        "Laura Menninger"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A sealed memorandum opinion and order was issued by Judge Alison J. Nathan on November 11, 2021, in the case US v. Maxwell (docket 20cr330).",
+    "The document discusses the court's understanding of 'various concessions' made by the parties in the case.",
+    "The order was to be docketed on November 12, 2021, after the November 11 holiday.",
+    "The email correspondence shows communication between the judge's chambers and defense counsel regarding sealed court documents."
+  ],
+  "analyzedAt": "2026-02-08T02:37:59.422Z"
+}

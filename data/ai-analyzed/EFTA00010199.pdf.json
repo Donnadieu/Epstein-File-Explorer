@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00010199.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-04",
+  "summary": "Email correspondence regarding the shipment of a replacement hard drive for Ghislaine Maxwell to the Metropolitan Detention Center (MDC), as she had broken her previous one. The email includes instructions for providing her access to the new drive and returning the broken one to the U.S. Attorney's Office for the Southern District of New York.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant/Inmate",
+      "category": "key figure",
+      "context": "The subject of the email; a replacement hard drive is being sent to her at the Metropolitan Detention Center (MDC) after she broke her previous one.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Paralegal Specialist",
+      "role": "Paralegal Specialist",
+      "category": "legal",
+      "context": "The individual to whom the broken hard drive should be mailed back, at the U.S. Attorney's Office, SDNY.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, requesting that Maxwell be given access to the new drive and that the broken one be returned.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "The prosecutor is corresponding about logistical matters (hard drive replacement) for the defendant, Maxwell, who is in custody.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-03",
+      "title": "Replacement Drive Shipment Arranged",
+      "description": "The U.S. Attorney's Office arranges to send a replacement hard drive to Ghislaine Maxwell at the MDC via FedEx, to replace one she recently dropped and broke.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2020-12-04",
+      "title": "Email Correspondence Regarding Drive",
+      "description": "An email is sent confirming the shipment of the replacement drive and providing instructions for its delivery and the return of the broken drive.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Paralegal Specialist"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center (MDC)",
+    "New York, NY 10007",
+    "U.S. Attorneys Office, SDNY, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was in custody at the Metropolitan Detention Center (MDC) as of December 2020.",
+    "Maxwell had broken a hard drive in her possession, necessitating a replacement from the U.S. Attorney's Office.",
+    "The U.S. Attorney's Office for the Southern District of New York was actively managing logistical aspects of Maxwell's case and her access to materials while incarcerated.",
+    "Communication regarding evidence or case materials (like hard drives) was being handled formally via the U.S. Attorney's Office and the detention facility."
+  ],
+  "analyzedAt": "2026-02-08T03:15:32.136Z"
+}

@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00019177.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2010-07-23",
+  "summary": "This is an email chain between U.S. Attorney's Office personnel discussing a persistent journalist's request for comment on the Epstein investigation. It references an ongoing investigation stemming from evidence seized from Epstein's former butler and includes two attached articles.",
+  "persons": [
+    {
+      "name": "C. (USAFLS)",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Sends an email to a colleague regarding a journalist's request for comment on the Epstein case, attaching two articles and providing confidential background that the investigation is continuing.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M, (USAFLS)",
+      "role": "U.S. Attorney's Office Personnel",
+      "category": "legal",
+      "context": "Receives an email from a colleague about a journalist's request and responds that they will not be commenting on the matter.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the ongoing investigation referenced in the email, with evidence seized from his former butler.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "C. (USAFLS)",
+      "person2": "M, (USAFLS)",
+      "relationshipType": "colleague",
+      "description": "Colleagues within the U.S. Attorney's Office (USAFLS) communicating about handling a press inquiry regarding the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "C. (USAFLS)",
+      "relationshipType": "investigator-subject",
+      "description": "C. (USAFLS), as an Assistant U.S. Attorney, is involved in the ongoing investigation of Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2010-07-23",
+      "title": "Press Inquiry Regarding Epstein Investigation",
+      "description": "A journalist contacts the U.S. Attorney's Office seeking comment on the Epstein case, referencing two internet articles. The office decides not to comment.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "C. (USAFLS)",
+        "M, (USAFLS)"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Seizure of Evidence from Epstein's Butler",
+      "description": "An investigation is continuing stemming from the seizure of evidence from Jeffrey Epstein's former butler, as referenced in attached articles and mentioned in the email.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "500 S. Australian Ave, Suite 400",
+      "city": "West Palm Beach",
+      "state": "FL",
+      "zip": "33401",
+      "context": "Office location of the Assistant U.S. Attorney (C. (USAFLS)) as listed in the email signature."
+    }
+  ],
+  "keyFacts": [
+    "As of July 2010, the U.S. Attorney's Office confirmed an ongoing investigation related to evidence seized from Jeffrey Epstein's former butler.",
+    "The office had a policy of not commenting to the press on the Epstein matter, despite persistent journalistic inquiries.",
+    "The communication references two specific internet articles about the case, attached to the email, written by a journalist.",
+    "The document shows internal coordination within the U.S. Attorney's Office (USAFLS) to manage public relations regarding the sensitive Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-08T04:14:58.808Z"
+}

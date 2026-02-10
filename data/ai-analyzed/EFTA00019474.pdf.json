@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00019474.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-03-22",
+  "summary": "Email correspondence between attorneys regarding proposed redactions to court filings in the Ghislaine Maxwell criminal case. The discussion centers on sealing portions of deposition transcripts and other materials that were previously sealed in related civil litigation, following Judge Nathan's order.",
+  "persons": [
+    {
+      "name": "Chris",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney corresponding about proposed redactions to court filings in the Ghislaine Maxwell case, likely representing the government or a party to the litigation.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Christian R Everdell",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from Cohen & Gresser LLP involved in meet-and-confer discussions regarding redactions to court filings in the Ghislaine Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge presiding over the Ghislaine Maxwell criminal case, whose order regarding redactions of sealed deposition transcripts is being discussed and implemented.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Judge Preska",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge presiding over the related civil defamation case, referenced regarding the sealed status of certain documents on that docket.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Chris",
+      "person2": "Christian R Everdell",
+      "relationshipType": "legal counterpart",
+      "description": "Attorneys corresponding about procedural matters regarding redactions in the Ghislaine Maxwell case filings.",
+      "strength": 2
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Chris",
+      "relationshipType": "court-ordered compliance",
+      "description": "Attorney Chris is following Judge Nathan's order to meet and confer about redactions to court filings.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-03-18",
+      "title": "Judge Nathan's Redaction Order",
+      "description": "Judge Nathan issued an order regarding redactions to court filings, requiring parties to meet and confer about sealing portions of deposition transcripts that were sealed in the related civil case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Chris"
+      ]
+    },
+    {
+      "date": "2021-03-22",
+      "title": "Meet and Confer Correspondence",
+      "description": "Attorneys exchange emails to discuss and confirm proposed redactions to Exhibit 11 and other portions of the government's opposition brief in the Ghislaine Maxwell case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Chris",
+        "Christian R Everdell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Washington DC",
+    "London",
+    "Paris"
+  ],
+  "keyFacts": [
+    "The correspondence reveals ongoing legal disputes about what portions of deposition transcripts and other evidence should remain sealed or be redacted in the Ghislaine Maxwell criminal case.",
+    "Judge Nathan ruled that sections of deposition transcripts that appear unredacted in the publicly filed indictment should still be redacted in opposition briefs because they were sealed in the related civil defamation case.",
+    "The attorneys are coordinating to redact references to 'Minor Victim-2' and other sealed testimony to comply with court orders.",
+    "The discussion references a publicly filed indictment and sealed documents from both the criminal case before Judge Nathan and a civil case before Judge Preska."
+  ],
+  "analyzedAt": "2026-02-08T11:21:56.891Z"
+}

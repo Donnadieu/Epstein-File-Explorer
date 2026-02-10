@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00015719.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-02-06",
+  "summary": "This is an email forwarding a news article reporting that the U.S. Department of Justice has opened an investigation into Labor Secretary Alex Acosta's role in negotiating the 2008 plea deal for Jeffrey Epstein. The probe was initiated in response to a request from Senator Ben Sasse following the Miami Herald's investigative series.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Wealthy New York investor accused of molesting more than 100 underage girls in Palm Beach, who received a lenient plea deal in 2008.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alex Acosta",
+      "role": "Secretary of Labor, former U.S. Attorney",
+      "category": "political",
+      "context": "As the former U.S. attorney for the Southern District of Florida, he negotiated the controversial 2008 plea deal with Jeffrey Epstein, which is now under investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ben Sasse",
+      "role": "U.S. Senator",
+      "category": "political",
+      "context": "Nebraska Republican and member of the Senate Judiciary Committee who requested the Department of Justice investigation into the Epstein plea deal.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Julie K. Brown",
+      "role": "Journalist",
+      "category": "other",
+      "context": "Miami Herald reporter who authored the series of stories detailing the Epstein case and plea deal.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stephen E. Boyd",
+      "role": "Assistant Attorney General",
+      "category": "legal",
+      "context": "Wrote the letter to Senator Sasse confirming that the Office of Professional Responsibility has opened an investigation into the Epstein matter.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex Acosta",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Acosta, as U.S. Attorney, negotiated the 2008 plea deal with Epstein and his defense attorneys.",
+      "strength": 4
+    },
+    {
+      "person1": "Ben Sasse",
+      "person2": "Alex Acosta",
+      "relationshipType": "political",
+      "description": "Senator Sasse requested the DOJ investigation into Acosta's role in the Epstein plea deal.",
+      "strength": 3
+    },
+    {
+      "person1": "Julie K. Brown",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigation",
+      "description": "Brown's investigative reporting for the Miami Herald detailed the Epstein case and brought attention to the plea deal.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008",
+      "title": "Epstein Plea Deal Negotiation",
+      "description": "U.S. Attorney Alex Acosta and other DOJ attorneys worked with defense attorneys to negotiate a lenient plea deal for Jeffrey Epstein, who was accused of molesting more than 100 underage girls.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Alex Acosta"
+      ]
+    },
+    {
+      "date": "2019-02-06",
+      "title": "DOJ Opens Probe into Epstein Plea Deal",
+      "description": "The Department of Justice's Office of Professional Responsibility opens an investigation into allegations of professional misconduct by Department attorneys in resolving the Epstein criminal matter.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alex Acosta",
+        "Ben Sasse",
+        "Stephen E. Boyd"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach",
+    "New York",
+    "Nebraska",
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "The Department of Justice opened an investigation into Labor Secretary Alex Acosta's role in negotiating Jeffrey Epstein's 2008 plea deal.",
+    "The investigation was initiated at the request of Senator Ben Sasse following the Miami Herald's 'Perversion of Justice' series.",
+    "Jeffrey Epstein was accused of molesting more than 100 underage girls in Palm Beach.",
+    "The DOJ's Office of Professional Responsibility is leading the probe into potential professional misconduct by Department attorneys.",
+    "The 2008 plea deal was described as lenient and resulted from collaboration between prosecutors and Epstein's defense team."
+  ],
+  "analyzedAt": "2026-02-08T06:10:41.401Z"
+}

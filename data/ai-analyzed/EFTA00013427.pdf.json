@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00013427.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-09",
+  "summary": "This is an email exchange from October 9, 2020, regarding the tracking and verification of evidence items (NY Cart numbers) related to the Epstein case. A Special Agent from the FBI New York Field Office requests a Senior Forensic Examiner to check on specific evidence items at the evidence garage, with coordination involving a NY CART Coordinator and a person named Kelly.",
+  "persons": [
+    {
+      "name": "NY CART Coordinator",
+      "role": "Evidence coordinator",
+      "category": "law enforcement",
+      "context": "Receives a request from a Special Agent to check on evidence items and coordinates with a Senior Forensic Examiner.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Forensic Examiner",
+      "role": "Forensic examiner",
+      "category": "law enforcement",
+      "context": "Addressed in the email to check on evidence items at the evidence garage regarding NY Cart numbers.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kelly",
+      "role": "Office contact",
+      "category": "staff",
+      "context": "Copied on the email to assist with questions while the Special Agent is out of the office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Author of the email requesting verification of evidence item numbers and coordination for the Epstein case investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "NY CART Coordinator",
+      "relationshipType": "professional",
+      "description": "The Special Agent communicates a request to the NY CART Coordinator regarding evidence tracking.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Senior Forensic Examiner",
+      "relationshipType": "professional",
+      "description": "The Special Agent directs the Senior Forensic Examiner to check on evidence items at the evidence garage.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Kelly",
+      "relationshipType": "professional",
+      "description": "The Special Agent copies Kelly on the email to provide backup support while they are out of the office.",
+      "strength": 2
+    },
+    {
+      "person1": "NY CART Coordinator",
+      "person2": "Senior Forensic Examiner",
+      "relationshipType": "professional",
+      "description": "The NY CART Coordinator is involved in coordinating the evidence check with the Senior Forensic Examiner.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-09",
+      "title": "Evidence verification request",
+      "description": "An FBI Special Agent emails a request to check on specific evidence items (NY Cart numbers) related to the Epstein case at the evidence garage.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent",
+        "NY CART Coordinator",
+        "Senior Forensic Examiner",
+        "Kelly"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office",
+    "evidence garage"
+  ],
+  "keyFacts": [
+    "The document is an email from October 9, 2020, showing ongoing evidence management in the Epstein case investigation.",
+    "Specific evidence items are referenced by codes (e.g., 18 53, 1B 57, 1B 29-40) needing verification of their NY Cart numbers.",
+    "An FBI Special Agent is coordinating with a NY CART Coordinator and a Senior Forensic Examiner to track and verify evidence.",
+    "The email indicates careful evidence tracking procedures, including checking for duplicates and confirming processing status."
+  ],
+  "analyzedAt": "2026-02-08T04:43:20.271Z"
+}

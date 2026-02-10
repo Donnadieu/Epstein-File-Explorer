@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00018629.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-29",
+  "summary": "Email correspondence between Assistant U.S. Attorney Maurene Comey and expert witness Dr. Kimberly Mehlman-Orozco regarding her potential testimony in the United States v. Ghislaine Maxwell trial. The emails discuss scheduling a call and exchanging CV and fee information.",
+  "persons": [
+    {
+      "name": "Kimberly Mehlman-Orozco",
+      "role": "Expert Witness",
+      "category": "witness",
+      "context": "Contacted by prosecutors to discuss testifying at the Ghislaine Maxwell trial; provides CV and fee schedule.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor in the United States v. Ghislaine Maxwell case; initiates contact with expert witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the criminal case United States v. Ghislaine Maxwell, scheduled for trial.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maurene Comey",
+      "person2": "Kimberly Mehlman-Orozco",
+      "relationshipType": "legal-professional",
+      "description": "Prosecutor contacting potential expert witness for trial testimony.",
+      "strength": 2
+    },
+    {
+      "person1": "Kimberly Mehlman-Orozco",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "witness-defendant",
+      "description": "Expert witness being considered to testify in the criminal case against Maxwell.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-12",
+      "title": "Scheduled trial date for United States v. Ghislaine Maxwell",
+      "description": "Original scheduled trial date for the criminal case against Ghislaine Maxwell in the Southern District of New York.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-10-29",
+      "title": "Expert witness consultation scheduled",
+      "description": "Prosecutors schedule a call with Dr. Kimberly Mehlman-Orozco to discuss her potential testimony as an expert witness.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Kimberly Mehlman-Orozco",
+        "Maurene Comey"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Prosecutors in the Ghislaine Maxwell case were actively seeking expert witnesses for trial as of October 2020.",
+    "The trial was originally scheduled for July 12, 2020, but this email exchange occurred in October 2020, indicating a delay.",
+    "Dr. Kimberly Mehlman-Orozco was contacted as a potential expert witness and provided her CV and fee schedule.",
+    "The correspondence shows prosecutorial preparation for the Maxwell trial involving multiple AUSAs."
+  ],
+  "analyzedAt": "2026-02-08T07:25:38.351Z"
+}

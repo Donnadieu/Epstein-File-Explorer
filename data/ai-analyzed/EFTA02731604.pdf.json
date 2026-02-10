@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA02731604.pdf",
+  "dataSet": "12",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-08-18",
+  "summary": "This document is a chain of emails from August 2021 discussing the scheduling of an interview with a potential victim and her attorney. The interview is a spinoff from the Ghislaine Maxwell case and concerns a report of a sexual assault by an individual named 'Black' at Jeffrey Epstein's Manhattan townhouse in 2001.",
+  "persons": [
+    {
+      "name": "Maxwell",
+      "role": "Subject of spinoff investigation",
+      "category": "key figure",
+      "context": "The email chain concerns a 'spinoff interview from Maxwell,' indicating the interview is related to or derived from the case against Ghislaine Maxwell.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Black",
+      "role": "Alleged perpetrator",
+      "category": "associate",
+      "context": "Described as the individual who allegedly sexually assaulted a victim at Epstein's Manhattan townhouse in 2001.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Property owner/linked figure",
+      "category": "key figure",
+      "context": "The alleged assault is reported to have occurred at his Manhattan townhouse.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Black",
+      "person2": "Epstein",
+      "relationshipType": "associate",
+      "description": "The alleged assault by Black occurred at Epstein's property, suggesting a connection between them.",
+      "strength": 2
+    },
+    {
+      "person1": "Maxwell",
+      "person2": "Epstein",
+      "relationshipType": "associate",
+      "description": "The interview is a spinoff from the Maxwell case, which is centrally about her association with Epstein.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2001",
+      "title": "Alleged assault at Epstein townhouse",
+      "description": "A victim reported being sexually assaulted by an individual named Black at Jeffrey Epstein's Manhattan townhouse.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Black",
+        "Epstein"
+      ]
+    },
+    {
+      "date": "2021-05-18",
+      "title": "Tentative witness interview scheduled",
+      "description": "An interview with a victim and her attorney, related to the Maxwell case, was tentatively scheduled for this date.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Epstein's Manhattan townhouse",
+    "Southern District of New York (U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "A new potential victim came forward in 2021, alleging a sexual assault in 2001 at Epstein's Manhattan townhouse by an individual named Black.",
+    "The investigation into this allegation was treated as a 'spinoff' from the Ghislaine Maxwell case.",
+    "The victim's attorney was representing a second victim beyond one the email author had met in May.",
+    "The correspondence shows active coordination in 2021 to schedule an interview to determine if a new investigation should be opened.",
+    "The document is an internal email chain between prosecutors/agents, showing ongoing investigative work post-Epstein's death and during Maxwell's prosecution."
+  ],
+  "analyzedAt": "2026-02-09T15:35:08.559Z"
+}

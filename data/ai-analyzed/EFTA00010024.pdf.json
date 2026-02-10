@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00010024.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-11",
+  "summary": "This is an email from an Assistant United States Attorney to defense counsel regarding additional discovery production in the case United States v. Maxwell (20 Cr. 330). It references attached cover letters and indices for witness materials and exhibits, and mentions the transfer of materials via USAfx and a hard drive to the MDC for Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case United States v. Maxwell (20 Cr. 330). Materials are being produced to her defense counsel and a hard drive is being sent to the MDC (Metropolitan Detention Center) for her.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dr. Rocchio",
+      "role": "Witness",
+      "category": "witness",
+      "context": "A witness in the case for whom 3500 materials (likely Jencks Act or Giglio material) were produced to the defense via email on the Tuesday prior to this correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mulligan",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Mentioned in the context of 're-stamped Mulligan materials' being included in the discovery production sent to the defense. The specific role is not defined in this text.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of this email correspondence, who is providing discovery updates and materials to the defense counsel in the Maxwell case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "The prosecutor is providing discovery materials to the defense team representing Ghislaine Maxwell, as part of the legal proceedings against her.",
+      "strength": 4
+    },
+    {
+      "person1": "Dr. Rocchio",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "witness",
+      "description": "Dr. Rocchio is a witness in the criminal case against Ghislaine Maxwell, as indicated by the production of 3500 materials related to him.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-09",
+      "title": "Prior Discovery Production",
+      "description": "A prior discovery production was made by the prosecution to the defense in the Maxwell case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-11-11",
+      "title": "Additional Discovery Production",
+      "description": "The prosecution informs defense counsel that an additional discovery production, including supplemental witness materials and exhibits, is ready to be sent.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center (MDC)",
+    "One St. Andrew's Plaza, New York, New York 10007 (United States Attorney's Office, Southern District of New York)"
+  ],
+  "keyFacts": [
+    "The prosecution is actively producing discovery materials to Ghislaine Maxwell's defense team as part of the pre-trial process in case 20 Cr. 330.",
+    "Materials include indices for testifying witnesses, non-testifying witnesses, and government exhibits, indicating a complex and voluminous discovery process.",
+    "A hard drive containing discovery materials is being sent to the MDC for Ghislaine Maxwell, suggesting she is in custody and has access to review electronic evidence.",
+    "Specific witness materials for 'Dr. Rocchio' were previously produced, indicating he is a witness of significance in the case."
+  ],
+  "analyzedAt": "2026-02-08T05:15:46.753Z"
+}

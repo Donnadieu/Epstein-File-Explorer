@@ -1,0 +1,206 @@
+{
+  "fileName": "EFTA00018224.pdf",
+  "dataSet": "8",
+  "documentType": "chronology/timeline",
+  "dateOriginal": null,
+  "summary": "This document is a chronological timeline detailing events in the Metropolitan Correctional Center (MCC) surrounding Jeffrey Epstein's incarceration, his interactions with cellmate Nicholas Tartaglione, the discovery of a note left by Epstein, and subsequent legal and media activities. It covers the period from Epstein's booking to post-mortem investigations and media reports.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The central figure in the case, incarcerated at MCC. Found unresponsive in his cell on July 23, 2019, and later found dead on August 10, 2019. Allegedly left a note for his cellmate.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate/Cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate at MCC. Found a note allegedly left by Epstein in a book. Claimed Epstein assaulted him, which Epstein denied.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Stemheim",
+      "role": "Appointed Official",
+      "category": "legal",
+      "context": "An official appointed on August 21, 2019, likely to investigate prison conditions or Epstein's death. Produced a report.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Barket",
+      "role": "Respondent",
+      "category": "legal",
+      "context": "Issued a response to the Stemheim report on January 16, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Karas",
+      "role": "Judge",
+      "category": "legal",
+      "context": "A judge to whom BB wrote a letter complaining about prison conditions and threats against Nicholas Tartaglione.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ross",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "Mentioned in relation to a letter dated January 8, 2020.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates at MCC. Epstein claimed Tartaglione assaulted him; Tartaglione found a note allegedly left by Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "BB",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "BB is an attorney who visited Tartaglione in prison, advised him on the note, and communicated with the press on his behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "BB",
+      "person2": "TR",
+      "relationshipType": "professional",
+      "description": "BB consulted TR about the note and press strategy. TR disagreed with some of BB's decisions and raised concerns about the note's authenticity.",
+      "strength": 3
+    },
+    {
+      "person1": "BB",
+      "person2": "JW",
+      "relationshipType": "professional",
+      "description": "BB called JW to inform him he would be receiving a document (the note) from Nicholas Tartaglione during a visit.",
+      "strength": 3
+    },
+    {
+      "person1": "JW",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "JW visited Tartaglione in prison and received the note from him.",
+      "strength": 3
+    },
+    {
+      "person1": "BS",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "professional",
+      "description": "BS visited Tartaglione, who told him about a letter left in a book.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Epstein Booked into MCC",
+      "description": "Jeffrey Epstein was booked into the Metropolitan Correctional Center (MCC).",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found Unresponsive in Cell",
+      "description": "Jeffrey Epstein was found unresponsive in his cell with cellmate Nicholas Tartaglione. Epstein claimed Tartaglione assaulted him. Both were removed from the cell, a search was executed, and Epstein was placed on suicide watch.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Note Discovery Period Begins",
+      "description": "Sometime between July 23 and July 27, Nicholas Tartaglione found a note allegedly left by Jeffrey Epstein in a book.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-07-27",
+      "title": "Note Transferred to Attorney",
+      "description": "BB visited Nicholas Tartaglione, who told him about the note. BB instructed Tartaglione to give it to the next lawyer visiting. JW visited later that day and received the note.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "BB",
+        "Nicholas Tartaglione",
+        "JW"
+      ]
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Epstein Removed from Suicide Watch",
+      "description": "Jeffrey Epstein was removed from suicide watch and placed in a different cell in the Special Housing Unit (SHU), not with Nicholas Tartaglione.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Tartaglione Cleared",
+      "description": "Nicholas Tartaglione was cleared of causing Jeffrey Epstein's injuries.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Dead",
+      "description": "Jeffrey Epstein was found dead in his cell at MCC.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-11-10",
+      "title": "CNN Report on BB Statements",
+      "description": "CNN reported quotes from attorney BB, including that the notion Epstein was murdered is \"ridiculous,\" and that MCC guards threatened Nicholas Tartaglione. BB also wrote to Judge Karas about prison conditions.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "BB",
+        "Judge Karas",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2020-01-05",
+      "title": "BB on 60 Minutes",
+      "description": "Attorney BB appeared on 60 Minutes, stating Nicholas Tartaglione had information on prison conditions and Epstein's suicide. The show featured a note, and BB authenticated it.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "BB",
+        "Nicholas Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC"
+  ],
+  "keyFacts": [
+    "A contraband phone was seized from Nicholas Tartaglione on July 3, 2019, prior to Epstein's incarceration.",
+    "Jeffrey Epstein claimed his cellmate Nicholas Tartaglione assaulted him on July 23, 2019, an allegation Tartaglione denied and was later cleared of.",
+    "A note allegedly written by Jeffrey Epstein was discovered by Nicholas Tartaglione in a book between July 23-27, 2019, and became a subject of legal and media attention, with concerns raised about its authenticity.",
+    "Jeffrey Epstein was found dead in his cell on August 10, 2019, after having been removed from suicide watch on July 29, 2019.",
+    "Attorney BB publicly stated the idea Epstein was murdered was \"ridiculous\" and alleged MCC guards threatened Nicholas Tartaglione to stop him from talking about prison conditions and Epstein's death."
+  ],
+  "analyzedAt": "2026-02-08T09:08:40.867Z"
+}

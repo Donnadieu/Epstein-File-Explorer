@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00010241.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-11-17",
+  "summary": "This is an email chain from November 2021 between an Assistant United States Attorney (AUSA) from the Southern District of New York and an Assistant Special Agent in Charge (ASAC) from Homeland Security Investigations (HSI). The AUSA requests a call to discuss an unspecified matter, and the ASAC responds with availability and attaches several documents, which appear to be case-related files from the SDNY. The email contains standard law enforcement sensitivity warnings.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the initial email requesting a call with a law enforcement counterpart. Works at the U.S. Attorney's Office for the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "Law Enforcement Supervisor",
+      "category": "law enforcement",
+      "context": "The recipient and responder to the AUSA's email. Provides availability for a call and attaches several documents related to the SDNY case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Assistant Special Agent in Charge",
+      "relationshipType": "professional collaboration",
+      "description": "Communicating to schedule a call regarding an ongoing investigation or case, with the ASAC providing case documents to the AUSA.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-16",
+      "title": "Email exchange initiation",
+      "description": "An Assistant United States Attorney emails an Assistant Special Agent in Charge to request a phone call regarding an unspecified matter.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Assistant Special Agent in Charge"
+      ]
+    },
+    {
+      "date": "2021-11-17",
+      "title": "Document transmission",
+      "description": "The Assistant Special Agent in Charge replies to the AUSA, confirms availability for a call, and attaches multiple case documents (PDFs with SDNY GM identifiers).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant Special Agent in Charge",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10007",
+    "One St. Andrew's Plaza (U.S. Attorney's Office, Southern District of New York)"
+  ],
+  "keyFacts": [
+    "Communication in late 2021 shows ongoing collaboration between SDNY prosecutors and Homeland Security Investigations regarding a case.",
+    "Multiple case documents (PDFs with SDNY GM file numbers) were transmitted via email, indicating active evidence sharing.",
+    "The correspondence is marked as UNCLASSIFIED // LAW ENFORCEMENT SENSITIVE, highlighting its confidential nature.",
+    "The external email warning suggests the AUSA's initial email came from outside the DHS network, prompting security protocols."
+  ],
+  "analyzedAt": "2026-02-08T07:56:47.565Z"
+}

@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA01265164.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2020-06-17",
+  "summary": "This document consists of four AT&T wireless subscriber information records for account number 422129973, showing Scott Borgerson as the financial liable party and listing several associated users and devices. It appears to be a subpoenaed financial record related to an investigation.",
+  "persons": [
+    {
+      "name": "Scott Borgerson",
+      "role": "Financial Liable Party / Account Holder",
+      "category": "other",
+      "context": "The primary account holder for AT&T wireless account 422129973, with service since 2004. His email address (sborgerson@mac.com) and a Manchester, MA address are listed.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Noah Borgerson",
+      "role": "Wireless Subscriber / User",
+      "category": "other",
+      "context": "Listed as a user (MSISDN) on the AT&T account held by Scott Borgerson, with service starting on September 20, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Scott G Borgerson",
+      "role": "Wireless Subscriber / User",
+      "category": "other",
+      "context": "Listed as a user (MSISDN) on the AT&T account, associated with the address 301 Summer St, Manchester, MA 01944, with service starting July 22, 2007. Shares an email with Scott Borgerson.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Scott Borgerson",
+      "person2": "Noah Borgerson",
+      "relationshipType": "financial",
+      "description": "Scott Borgerson is the financial liable party for the AT&T wireless account on which Noah Borgerson is an authorized user.",
+      "strength": 3
+    },
+    {
+      "person1": "Scott Borgerson",
+      "person2": "Scott G Borgerson",
+      "relationshipType": "financial",
+      "description": "Scott Borgerson is the financial liable party for the AT&T wireless account used by Scott G Borgerson. They share an email address, suggesting a close personal or familial connection.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03-13",
+      "title": "Scott Borgerson AT&T Account Opened",
+      "description": "Scott Borgerson became a customer of AT&T, establishing the wireless account referenced in these records.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Scott Borgerson"
+      ]
+    },
+    {
+      "date": "2020-06-17",
+      "title": "Records Produced",
+      "description": "The date these AT&T wireless subscriber information records were generated or provided, likely in response to a legal request.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "301 SUMMER ST, MANCHESTER, MA 01944"
+  ],
+  "keyFacts": [
+    "Scott Borgerson is the financial liable party for AT&T wireless account 422129973, with service dating back to March 2004.",
+    "The account has multiple associated users/device lines, including individuals named Noah Borgerson and Scott G Borgerson.",
+    "Scott G Borgerson is associated with the address 301 Summer St, Manchester, MA 01944, and shares the email 'sborgerson@mac.com' with the primary account holder.",
+    "The document is marked 'CONFIDENTIAL' and 'For use by authorized person only', indicating it was produced for an official investigation, likely by the SDNY (Southern District of New York)."
+  ],
+  "analyzedAt": "2026-02-09T15:52:20.345Z"
+}

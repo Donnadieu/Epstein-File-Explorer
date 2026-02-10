@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00039820.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-22",
+  "summary": "This document is an email chain between legal counsel in the case of United States v. Ghislaine Maxwell, dated April 19-22, 2021. The correspondence details conferrals between the defense and prosecution regarding proposed redactions to several undocketed reply briefs and exhibits, as ordered by the court. The parties negotiate which information should be redacted or sealed, primarily to protect the privacy of victims, third parties, and Assistant U.S. Attorneys.",
+  "persons": [
+    {
+      "name": "GMJetter",
+      "role": "Attorney (likely defense counsel based on context)",
+      "category": "legal",
+      "context": "Sends the main email attaching a letter intended for filing with the court per the court's order, and coordinates the filing of reply briefs.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Issued orders (Dkt. 203, 207) directing the parties to docket a joint letter and confer on pretrial disclosure deadlines and redactions.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "GMJetter",
+      "person2": "Judge Nathan",
+      "relationshipType": "attorney-court",
+      "description": "GMJetter, as counsel, is complying with and referencing orders issued by Judge Nathan regarding filing procedures and redactions.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-01",
+      "title": "Filing of Joint Letter",
+      "description": "The parties submitted a joint letter to the court, which Judge Nathan later ordered to be docketed or have redactions proposed by April 19, 2021.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "GMJetter",
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2021-03-18",
+      "title": "Court Order on Redactions",
+      "description": "Judge Nathan issued an order (Dkt. 168) adopting the government's proposed redactions to certain exhibits to protect privacy interests, which is referenced as precedent for current redaction discussions.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2021-04-22",
+      "title": "Filing of Letter on ECF",
+      "description": "GMJetter intends to file an attached letter on the Electronic Case Filing (ECF) system per the court's order of the same day (Dkt. 232).",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "GMJetter"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The correspondence reveals ongoing legal procedures in U.S. v. Maxwell regarding the public filing of sensitive pretrial motion reply briefs and exhibits.",
+    "A primary point of negotiation is redacting information designated as 'Confidential' by the government under a Protective Order, particularly to protect victims, third parties, and AUSAs.",
+    "The defense generally has no objection to making most information public but defers to the government's position on sealing certain exhibits, leaving final decisions to the court.",
+    "Specific reply briefs (1, 3, 5, 6, 10) and their exhibits are discussed in detail, with agreements and disagreements noted on redactions related to victim names, AUSA names, and third-party contact information."
+  ],
+  "analyzedAt": "2026-02-09T16:19:05.105Z"
+}

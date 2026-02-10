@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00039813.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-20",
+  "summary": "This document is email correspondence between prosecutors and defense attorneys regarding upcoming court appearances in the case United States v. Ghislaine Maxwell. It discusses an arraignment scheduled for April 23, 2021, and a bail appeal oral argument scheduled for April 26, 2021.",
+  "persons": [
+    {
+      "name": "Brad Edwards",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Appears as a recipient of emails from prosecutors regarding scheduling and attendance for court appearances in the Ghislaine Maxwell case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Brittany Henderson",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Appears as a recipient of emails from prosecutors regarding scheduling and attendance for court appearances in the Ghislaine Maxwell case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the case United States v. Ghislaine Maxwell, subject of the scheduling discussions regarding her arraignment and bail appeal.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Scheduled an in-person arraignment for Ghislaine Maxwell on April 23, 2021, at 500 Pearl Street.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brad Edwards",
+      "person2": "Brittany Henderson",
+      "relationshipType": "legal",
+      "description": "Both are defense attorneys representing Ghislaine Maxwell, as indicated by their shared receipt of scheduling emails from prosecutors.",
+      "strength": 4
+    },
+    {
+      "person1": "Brad Edwards",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Brad Edwards is a defense attorney for Ghislaine Maxwell, as indicated in the email correspondence about her case.",
+      "strength": 4
+    },
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Brittany Henderson is a defense attorney for Ghislaine Maxwell, as indicated in the email correspondence about her case.",
+      "strength": 4
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is presiding over the arraignment of Ghislaine Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-23",
+      "title": "Arraignment of Ghislaine Maxwell",
+      "description": "An in-person arraignment scheduled by Judge Nathan for Ghislaine Maxwell at 2:30 p.m. in courtroom 24B at 500 Pearl Street.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2021-04-26",
+      "title": "Bail Appeal Oral Argument",
+      "description": "The Second Circuit scheduled a remote oral argument in connection with Ghislaine Maxwell's bail appeal at 10 a.m., to be livestreamed.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "500 Pearl Street, courtroom 24B",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's arraignment was scheduled for April 23, 2021, at 500 Pearl Street.",
+    "A bail appeal oral argument for Ghislaine Maxwell was scheduled for April 26, 2021, by the Second Circuit.",
+    "The correspondence involves Assistant United States Attorneys from the Southern District of New York communicating with defense attorneys Brad Edwards and Brittany Henderson.",
+    "The document indicates ongoing legal proceedings in United States v. Ghislaine Maxwell in April 2021."
+  ],
+  "analyzedAt": "2026-02-09T15:23:49.544Z"
+}

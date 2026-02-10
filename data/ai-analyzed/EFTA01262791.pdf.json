@@ -1,0 +1,64 @@
+{
+  "fileName": "EFTA01262791.pdf",
+  "dataSet": "10",
+  "documentType": "court filing",
+  "dateOriginal": "2019-12-31",
+  "summary": "This is a sealed application and order from the U.S. District Court for the Southern District of New York, authorizing the FBI to install a pen register and trap-and-trace device on a phone line subscribed to 'TERRAMAR PROJECT' (phone number 917-520-3106). The surveillance is part of a criminal investigation into possible violations of 18 U.S.C. § 1591 (sex trafficking) involving 'FNU LNU and others known and unknown'.",
+  "persons": [
+    {
+      "name": "Alex Rossmiller",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The attorney who submitted the sealed application to the court, affirming the facts and requesting the surveillance order on behalf of the U.S. government.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney for the Southern District of New York, whose office Alex Rossmiller works for.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stewart D. Aaron",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "The judge who signed the order authorizing the use of the pen register and trap-and-trace device.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex Rossmiller",
+      "person2": "Geoffrey S. Berman",
+      "relationshipType": "employer-employee",
+      "description": "Rossmiller is an Assistant U.S. Attorney working in the office of U.S. Attorney Geoffrey S. Berman.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-31",
+      "title": "Court Order for Pen Register",
+      "description": "A U.S. Magistrate Judge signed an order authorizing the FBI to install a pen register and trap-and-trace device on a phone line subscribed to 'TERRAMAR PROJECT' for 60 days.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Stewart D. Aaron",
+        "Alex Rossmiller"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "The FBI was conducting a criminal investigation into possible violations of 18 U.S.C. § 1591 (sex trafficking) involving 'FNU LNU and others known and unknown'.",
+    "The target of the surveillance was a T-Mobile phone line (917-520-3106) subscribed to an entity named 'TERRAMAR PROJECT'.",
+    "The court authorized the surveillance for a period of 60 days from December 31, 2019, to collect non-content information like phone numbers, IP addresses, and call times.",
+    "The application and order were sealed, and the provider (T-Mobile) was ordered not to disclose the existence of the investigation.",
+    "The primary subject of the investigation is listed as 'FNU LNU' (First Name Unknown, Last Name Unknown), indicating law enforcement was investigating an unidentified individual at this stage."
+  ],
+  "analyzedAt": "2026-02-09T16:20:17.379Z"
+}

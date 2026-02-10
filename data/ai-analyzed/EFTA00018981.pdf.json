@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00018981.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "Email correspondence between Special Agents regarding new information about a phone call made by Jeffrey Epstein on the night of August 9, 2019, and scheduling a meeting with the warden of the Metropolitan Correctional Center (MCC) for the following day. The email clarifies that Epstein was never in general population and was supervised during a legal visit.",
+  "persons": [
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "Author of the email providing information about Epstein's phone call and supervision, and coordinating a meeting with the warden.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Warden",
+      "role": "Warden of the Metropolitan Correctional Center (MCC)",
+      "category": "law enforcement",
+      "context": "Briefed the OIG SAC on details of Epstein's phone call and is scheduled for a meeting at SDNY.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The incarcerated individual who made a 19-minute phone call on August 9, 2019, and had a supervised legal visit that day.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Modano",
+      "role": "Special Agent in Charge (SAC), Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "Was briefed by the Warden regarding the details of Epstein's phone call.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Warden",
+      "person2": "Modano",
+      "relationshipType": "professional",
+      "description": "The Warden briefed SAC Modano on information regarding Epstein's phone call.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Warden",
+      "relationshipType": "professional",
+      "description": "Coordinating a meeting at SDNY and discussing information about Epstein's incarceration.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The Warden was responsible for Epstein's custody at MCC and had information about his phone call and supervision.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Phone Call and Legal Visit",
+      "description": "Jeffrey Epstein made a 19-minute phone call at 7:17 PM and had a supervised legal visit lasting from approximately 8:00 AM to almost 7:00 PM.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Warden",
+        "BOP staff"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Scheduled Meeting with Warden at SDNY",
+      "description": "A meeting is scheduled for 10:00 AM at the Southern District of New York (SDNY) with the warden of MCC.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Warden",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "1 Battery Park Plaza, 29th floor, New York, NY 10004",
+    "SDNY (Southern District of New York)",
+    "Metropolitan Correctional Center (MCC) (implied)"
+  ],
+  "keyFacts": [
+    "On August 9, 2019, Jeffrey Epstein made a 19-minute phone call at 7:17 PM, details of which were briefed by the Warden to OIG SAC Modano.",
+    "Epstein was never in general population at MCC and therefore did not require an approved call list.",
+    "Epstein had a supervised legal visit on August 9, lasting from approximately 8:00 AM to almost 7:00 PM, with constant supervision by BOP staff.",
+    "A meeting was scheduled for August 12, 2019, at 10:00 AM at SDNY with the MCC warden to discuss the new information."
+  ],
+  "analyzedAt": "2026-02-08T05:28:03.864Z"
+}

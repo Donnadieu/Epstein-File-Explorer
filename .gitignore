@@ -5,5 +5,15 @@ server/public
 vite.config.ts.*
 *.tar.gz
 .env
-data/
+data/.chrome-profile
+data/downloads/**
+data/extracted/**
+data/raw/**
+data/connection-classifications.json
+# data/db-dump.sql.gz
+data/doj-catalog.json
+data/download-progress.json
+data/extraction-log.json
+data/media-classification.json
+data/persons-raw.json
 tmp/**

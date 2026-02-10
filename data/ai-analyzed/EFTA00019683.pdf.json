@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00019683.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-28",
+  "summary": "This is an email chain from August 28, 2019, between staff at the U.S. Attorney's Office for the Southern District of New York (SDNY) arranging travel to West Palm Beach, Florida, for the following week regarding the Epstein case. The travel is for two individuals, including an Assistant U.S. Attorney, to work on the case.",
+  "persons": [
+    {
+      "name": "ME, (USANYS)",
+      "role": "U.S. Attorney's Office staff member",
+      "category": "legal",
+      "context": "The sender of the first email, requesting approval to reserve a conference room for the trip to West Palm Beach for the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "aMIE",
+      "role": "U.S. Attorney's Office staff member",
+      "category": "legal",
+      "context": "The primary recipient of the first email, copied on the second email, involved in the travel coordination.",
+      "mentionCount": 2
+    },
+    {
+      "name": "aNIMIE",
+      "role": "U.S. Attorney's Office staff member",
+      "category": "legal",
+      "context": "Copied on the first email, likely another staff member involved in administrative or travel coordination.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MM.",
+      "role": "Assistant U.S. Attorney (Public Corruption Unit)",
+      "category": "legal",
+      "context": "The sender of the second email, an AUSA from the Public Corruption Unit who is traveling to West Palm Beach for the Epstein case and requesting travel bookings.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ME, (USANYS)",
+      "person2": "aMIE",
+      "relationshipType": "colleague",
+      "description": "Colleagues at the U.S. Attorney's Office coordinating travel logistics for the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "MM.",
+      "person2": "aMIE",
+      "relationshipType": "colleague",
+      "description": "MM. requests travel booking assistance from aMIE for their trip to West Palm Beach for the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "MM.",
+      "person2": "Unnamed Travel Companion",
+      "relationshipType": "travel companion",
+      "description": "MM. mentions traveling with another person (likely a colleague) and indicates they will confirm if that person wants the same travel arrangements.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-03",
+      "title": "Travel to West Palm Beach for Epstein case",
+      "description": "MM. and a colleague are scheduled to travel from Newark (EWR) to West Palm Beach (PBI) to work on the Epstein case, checking into the Hilton Palm Beach.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "MM.",
+        "Unnamed Travel Companion"
+      ]
+    },
+    {
+      "date": "2019-09-03 to 2019-09-04",
+      "title": "Conference room booking for case work",
+      "description": "A conference room at the Hilton Palm Beach is requested for both Tuesday (9/3) and Wednesday (9/4) to support work on the Epstein case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "MM.",
+        "Unnamed Travel Companion"
+      ]
+    },
+    {
+      "date": "2019-09-04",
+      "title": "Return travel from West Palm Beach",
+      "description": "Scheduled return flight from West Palm Beach (PBI) to New York (JFK) in the evening.",
+      "category": "travel",
+      "significance": 1,
+      "personsInvolved": [
+        "MM.",
+        "Unnamed Travel Companion"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, FL",
+    "Hilton Palm Beach, 600 Okeechobee Blvd, West Palm Beach",
+    "Newark Liberty International Airport (EWR)",
+    "Palm Beach International Airport (PBI)",
+    "John F. Kennedy International Airport (JFK)",
+    "U.S. Attorney's Office (SDNY)"
+  ],
+  "keyFacts": [
+    "SDNY prosecutors were actively working on the Epstein case in late August/early September 2019, shortly after Epstein's death in August 2019.",
+    "The travel involved an Assistant U.S. Attorney from the Public Corruption Unit, indicating the scope or a specific angle of the investigation.",
+    "The email demonstrates routine logistical coordination by the U.S. Attorney's Office for case-related travel, showing ongoing investigative activity.",
+    "A specific hotel (Hilton Palm Beach) and a preferred conference room ('the social') were requested for the work.",
+    "The travel dates (September 3-4, 2019) are precisely scheduled, showing planned in-person work in Florida, a key location in the Epstein case."
+  ],
+  "analyzedAt": "2026-02-08T05:01:04.737Z"
+}

@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00003054.pdf",
+  "dataSet": "1",
+  "documentType": "employee information form",
+  "dateOriginal": "2018-03-20",
+  "summary": "This appears to be an employee information form for an individual named Amy, employed by LSJE, LLC, located in St. Thomas, US Virgin Islands. The form contains personal details, emergency contacts, and health information.",
+  "persons": [
+    {
+      "name": "Amy",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Listed as the employee on a form for LSJE, LLC, with the title/position noted as 'Mathtenat.ce' (likely a garbled or miswritten job title).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Navin Valerie",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Listed as the wife and primary emergency contact for the employee Amy on the form.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cierrycia",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Listed as the daughter and secondary emergency contact for the employee Amy on the form.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amy",
+      "person2": "Navin Valerie",
+      "relationshipType": "family",
+      "description": "Navin Valerie is listed as Amy's wife and primary emergency contact on the employee form.",
+      "strength": 5
+    },
+    {
+      "person1": "Amy",
+      "person2": "Cierrycia",
+      "relationshipType": "family",
+      "description": "Cierrycia is listed as Amy's daughter and a secondary emergency contact on the employee form.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-03-20",
+      "title": "Employee Form Completion",
+      "description": "An employee information form was completed for an individual named Amy by LSJE, LLC.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Amy"
+      ]
+    }
+  ],
+  "locations": [
+    "LSJE, LLC 6100 Red I look Quarters Suite B-S St. Thomas, VI 00802",
+    "St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The document is an employee information form dated March 20, 2018, for an entity named LSJE, LLC in St. Thomas, USVI.",
+    "The employee listed is named Amy, with the job title possibly intended to be 'Mathematician' or similar.",
+    "The form lists two emergency contacts: Navin Valerie (wife) and Cierrycia (daughter).",
+    "The document's connection to the Epstein case is not explicitly stated within the provided text, but it originates from the Epstein-related document set."
+  ],
+  "analyzedAt": "2026-02-08T02:16:06.658Z"
+}

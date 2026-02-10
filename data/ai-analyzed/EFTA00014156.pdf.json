@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00014156.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2008-07-04",
+  "summary": "This is an email chain from July 2008 between FBI personnel and a U.S. Attorney regarding the Epstein investigation. It discusses a potential victim who recalls events and is scheduled to meet with the FBI, and includes a forwarded message from attorney Ted Leopold providing client names.",
+  "persons": [
+    {
+      "name": "M. Ma",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "FBI agent sending an email on July 4, 2008, discussing a potential victim's upcoming FBI meeting and forwarding information about the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ted Leopold",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who sent an email on July 3, 2008, providing the names of two clients in relation to the Epstein investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Spencer Kuvin",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney copied on Ted Leopold's July 3, 2008 email regarding the Epstein investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ted Leopold",
+      "person2": "Spencer Kuvin",
+      "relationshipType": "professional",
+      "description": "Both are attorneys involved in the Epstein investigation; Kuvin was copied on Leopold's email.",
+      "strength": 2
+    },
+    {
+      "person1": "M. Ma",
+      "person2": "Ted Leopold",
+      "relationshipType": "professional",
+      "description": "FBI agent Ma is part of an email chain that includes information forwarded from attorney Ted Leopold regarding the investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-07-07",
+      "title": "Victim scheduled to meet FBI",
+      "description": "A potential victim, who recalls events and felt ashamed and uncomfortable, is scheduled to come to the FBI at 9:30 AM on Monday.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "M. Ma"
+      ]
+    },
+    {
+      "date": "2008-07-03",
+      "title": "Attorney provides client names",
+      "description": "Attorney Ted Leopold sends an email providing the names of two clients in relation to the Epstein investigation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ted Leopold",
+        "Spencer Kuvin"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, FL 33401"
+  ],
+  "keyFacts": [
+    "A potential victim in the Epstein case recalls events, felt ashamed and uncomfortable, and was scheduled to meet with the FBI on Monday, July 7, 2008, at 9:30 AM.",
+    "Attorney Ted Leopold provided the names of two clients to the U.S. Attorney's office in connection with the Epstein investigation on July 3, 2008.",
+    "The email chain shows coordination between the FBI and the U.S. Attorney's office in West Palm Beach regarding the investigation in July 2008.",
+    "The document references an individual named 'M.' whose identity was being checked by investigators, indicating active witness/victim identification efforts."
+  ],
+  "analyzedAt": "2026-02-08T04:49:43.367Z"
+}

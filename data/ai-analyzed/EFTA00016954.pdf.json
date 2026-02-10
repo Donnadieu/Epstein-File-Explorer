@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA00016954.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-20",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to a colleague, forwarding an order from Judge Nathan regarding a teleconference on jury selection for the Ghislaine Maxwell trial. The email requests an update to a victim website with the teleconference access information.",
+  "persons": [
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Issued an order regarding a teleconference to discuss jury selection matters for the Ghislaine Maxwell trial.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the email, forwarding Judge Nathan's order and requesting an update to the victim website with teleconference access details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "M",
+      "relationshipType": "colleague",
+      "description": "Professional correspondence between colleagues at the U.S. Attorney's Office regarding case logistics.",
+      "strength": 2
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "court-prosecution",
+      "description": "Judge Nathan issued an order that the prosecutor is acting upon and disseminating.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-21",
+      "title": "Jury Selection Teleconference",
+      "description": "The Court holds a telephone conference to discuss jury selection matters for the Ghislaine Maxwell trial, with a live audio feed accessible to the press and public.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office Southern District of New York"
+  ],
+  "keyFacts": [
+    "Judge Nathan issued an order regarding a teleconference on jury selection for the Ghislaine Maxwell trial scheduled for October 21, 2021.",
+    "The U.S. Attorney's Office maintained a 'victim website' to disseminate information about the case proceedings.",
+    "The teleconference was to be accessible via a live audio feed to members of the press and public, both within and outside the United States."
+  ],
+  "analyzedAt": "2026-02-08T04:12:58.752Z"
+}

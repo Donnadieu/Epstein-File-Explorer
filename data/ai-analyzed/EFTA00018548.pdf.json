@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00018548.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-03-02",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an FBI contact, forwarding a discovery request from Noel's counsel and asking if the FBI currently has any responsive information. It indicates ongoing discovery proceedings in a case involving someone named Noel.",
+  "persons": [
+    {
+      "name": "Noel",
+      "role": "Subject of legal case",
+      "category": "key figure",
+      "context": "The email references discovery requests from Noel's counsel, indicating Noel is involved in a legal proceeding where discovery is being sought.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, who is requesting information from the FBI regarding discovery items related to Noel's case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Noel",
+      "relationshipType": "legal",
+      "description": "The AUSA is handling a case involving Noel, as evidenced by the forwarding of discovery requests from Noel's counsel.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-24",
+      "title": "Discovery Request from Noel's Counsel",
+      "description": "A letter from Noel's counsel was sent requesting additional discovery, referenced as items 1-13.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Noel"
+      ]
+    },
+    {
+      "date": "2020-03-02",
+      "title": "AUSA Inquiry to FBI",
+      "description": "An Assistant United States Attorney emailed an FBI contact to inquire if the FBI currently has any notes, reports, or information responsive to the discovery requests from Noel's counsel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office Southern District of New York"
+  ],
+  "keyFacts": [
+    "On March 2, 2020, an AUSA contacted the FBI regarding discovery in a case involving an individual named Noel.",
+    "The discovery requests (items 1-13) originated from a letter dated January 24, 2020, sent by Noel's counsel.",
+    "The AUSA specifically asked if the FBI CURRENTLY possesses any responsive information, emphasizing they were not requesting new investigation.",
+    "The communication indicates ongoing federal legal proceedings in the Southern District of New York related to Noel."
+  ],
+  "analyzedAt": "2026-02-08T01:57:17.589Z"
+}

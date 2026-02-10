@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01265476.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-08-27",
+  "summary": "This document is a credit profile report from Experian for Ghislaine Maxwell, produced in response to a grand jury subpoena dated August 16, 2019. It details her addresses, phone numbers, and financial account history, serving as evidence in the investigation.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of credit report",
+      "category": "key figure",
+      "context": "The credit profile report is for Ghislaine Maxwell, listing her addresses, phone numbers, Social Security number, date of birth, and financial account history.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Signed the grand jury subpoena dated August 16, 2019, which requested the records contained in this document.",
+      "mentionCount": 1
+    },
+    {
+      "name": "rlizIL V. Haas",
+      "role": "Custodian of Records",
+      "category": "staff",
+      "context": "Declarant who certifies the authenticity of the provided business records in response to the grand jury subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maurene Comey",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Comey, as an AUSA, signed the subpoena compelling the production of Maxwell's financial records as part of an investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "rlizIL V. Haas",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "record custodian-subject",
+      "description": "Haas, as custodian of records for the business (Experian), certified and produced Maxwell's credit profile in response to the subpoena.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "Grand Jury Subpoena Issued",
+      "description": "A grand jury subpoena was signed by AUSA Maurene Comey, requesting specified business records.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maurene Comey"
+      ]
+    },
+    {
+      "date": "2019-08-27",
+      "title": "Credit Report Generated",
+      "description": "Experian credit profile for Ghislaine Maxwell was generated, showing her addresses and financial account statuses as of that date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "139A Charles St Apt 233, Boston, MA 02114",
+    "55 Monterey Ave, Teaneck, NJ 07666",
+    "PO Box 308, Teaneck, NJ 07666",
+    "116A E 65th St, New York, NY"
+  ],
+  "keyFacts": [
+    "A grand jury subpoena was issued on August 16, 2019, signed by AUSA Maurene Comey, as part of the investigation into Ghislaine Maxwell.",
+    "The document is a certified credit profile for Ghislaine Maxwell from Experian, listing her addresses in Boston, New York, and Teaneck, NJ, her Social Security number, and date of birth (12/25/61).",
+    "Maxwell's credit report shows multiple financial accounts, including with Bank of America, UBS Bank USA, JPMCB, Elan Financial, AMEX, and USAA Savings Bank, with various statuses (open, closed, paid).",
+    "The report indicates a previous address association with 'J EPSTEIN AND COMPNY' (Jeffrey Epstein and Company) as of January 1995.",
+    "The document was executed as a declaration under penalty of perjury by a custodian of records to authenticate the business records for use as evidence."
+  ],
+  "analyzedAt": "2026-02-09T16:04:00.602Z"
+}

@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00015183.pdf",
+  "dataSet": "8",
+  "documentType": "financial record",
+  "dateOriginal": "2002-09-30",
+  "summary": "This is a JPMorgan Chase Bank account statement for Jeffrey Epstein's private bank asset account covering September 2002. It shows two significant wire transfers: $1,000,000 to Palm Beach National Bank & Trust Co. for Jeffrey Epstein, and $5,000,000 to the same bank for Ghislaine Maxwell, both authorized by client letter.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "The primary holder of the JPMorgan Private Bank asset account from which the financial transactions originate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient of Wire Transfer",
+      "category": "associate",
+      "context": "Received a $5,000,000 wire transfer from Jeffrey Epstein's JPMorgan account to Palm Beach National Bank & Trust Co., authorized by a client letter.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Epstein authorized a $5,000,000 wire transfer from his JPMorgan account to Maxwell's account at Palm Beach National Bank & Trust Co.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-16",
+      "title": "$1M Wire Transfer to Epstein's Palm Beach Account",
+      "description": "A $1,000,000 wire transfer was sent from Jeffrey Epstein's JPMorgan account to Palm Beach National Bank & Trust Co., for the benefit of Jeffrey Epstein, authorized by a letter from the client.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-09-18",
+      "title": "$5M Wire Transfer to Ghislaine Maxwell",
+      "description": "A $5,000,000 wire transfer was sent from Jeffrey Epstein's JPMorgan account to Palm Beach National Bank & Trust Co., for the benefit of Ghislaine Maxwell, authorized by a letter from the client.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2002-09-18",
+      "title": "Sale of Money Market Fund",
+      "description": "A sale of $5,000,000 from the J P Morgan Tax Free Money Market Fund Institutional Share Class was executed, with J.P. Morgan Securities Inc. acting as agent.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154-1002 (JPMorgan Chase Bank address)",
+    "Palm Beach National Bank & Trust Co. (Financial institution receiving wire transfers)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein maintained a private bank asset account with JPMorgan Chase Bank as of September 2002.",
+    "On September 18, 2002, Epstein transferred $5,000,000 to Ghislaine Maxwell via Palm Beach National Bank & Trust Co., authorized by a client letter.",
+    "On September 16, 2002, Epstein transferred $1,000,000 to his own account at Palm Beach National Bank & Trust Co.",
+    "The document is marked 'Confidential Treatment Requested by JPMorgan' and is part of a legal production (JPM-SDNY-00005512).",
+    "The transactions indicate substantial financial activity and a direct monetary link between Epstein and Maxwell during this period."
+  ],
+  "analyzedAt": "2026-02-08T03:23:06.505Z"
+}

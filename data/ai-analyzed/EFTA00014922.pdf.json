@@ -1,0 +1,102 @@
+{
+  "fileName": "EFTA00014922.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": null,
+  "summary": "This document appears to be a compilation of email or task log entries from 2019-2020, primarily documenting internal FBI/DOJ activities related to the Epstein/Maxwell investigation. The entries show personnel assisting with evidence review, redacting images for discovery, converting DVDs, and preparing for hearings.",
+  "persons": [
+    {
+      "name": "Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation, referenced in multiple entries regarding evidence review and case preparation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Maxwell",
+      "role": "Co-accused / Subject of Investigation",
+      "category": "key figure",
+      "context": "Co-subject of the investigation with Epstein, referenced in entries regarding evidence review and the ongoing Maxwell investigation.",
+      "mentionCount": 9
+    },
+    {
+      "name": "SOS",
+      "role": "Staff / Specialist",
+      "category": "staff",
+      "context": "Assisted SA in a lab to convert DVDs recovered as evidence for review and analysis.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Det",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Mentioned in the context of research, assistance, and preparation for a hearing related to the Epstein investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Frequently linked together in the document as the joint subjects of the investigation (Epstein/Maxwell) for evidence review.",
+      "strength": 5
+    },
+    {
+      "person1": "SA",
+      "person2": "SOS",
+      "relationshipType": "colleague",
+      "description": "SOS assisted SA in a lab to convert evidence DVDs for the investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "SA",
+      "person2": "Det",
+      "relationshipType": "colleague",
+      "description": "Both are law enforcement personnel involved in research and preparation for a hearing related to the Epstein investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-07",
+      "title": "Research/Prep for Hearing",
+      "description": "Research, assistance, and preparation for a hearing related to the Epstein investigation, involving a Special Agent and a Detective.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SA",
+        "Det"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "title": "DVD Evidence Conversion",
+      "description": "SOS assisted SA in a lab to convert DVDs recovered as evidence to the system for review and analysis, noted as an ongoing project.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SA",
+        "SOS"
+      ]
+    },
+    {
+      "date": "2019-12-09",
+      "title": "Photo Scrub for Epstein Case",
+      "description": "A photo scrub was conducted for SA for the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "SA"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document reveals ongoing, detailed evidence review work for the Epstein/Maxwell investigation throughout 2020, including tasks like redacting images for discovery.",
+    "Specific technical work is documented, such as converting evidence DVDs to a system for review and conducting photo scrubs.",
+    "The investigation is given priority status, as indicated by \"(Priority)\" on entries for evidence review in the CAIR system.",
+    "The entries are consistently classified as UNCLASSIFIED//FOUO (For Official Use Only), indicating internal government communications."
+  ],
+  "analyzedAt": "2026-02-08T11:04:54.065Z"
+}

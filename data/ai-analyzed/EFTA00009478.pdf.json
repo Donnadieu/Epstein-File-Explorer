@@ -1,0 +1,192 @@
+{
+  "fileName": "EFTA00009478.pdf",
+  "dataSet": "7",
+  "documentType": "grand jury transcript",
+  "dateOriginal": "2007-03-20",
+  "summary": "This is a transcript of FBI Special Agent E.'s testimony before a federal grand jury in West Palm Beach on March 20, 2007, as part of Operation Leap Year. The agent details the sexual abuse allegations against Jeffrey Epstein involving underage girls, specifically focusing on two victims identified as 'A' and 'B', their recruitment by another girl named 'C', and the evidence collected including photographs, phone records, and witness statements.",
+  "persons": [
+    {
+      "name": "Special Agent E.",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The testifying witness providing evidence to the grand jury about the investigation into Jeffrey Epstein's activities with underage girls.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Helena Josette Jones-Parsons",
+      "role": "Grand Jury Foreperson",
+      "category": "legal",
+      "context": "Presides over the grand jury proceedings, swears in the witness, and facilitates the examination.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central subject of the investigation, accused of sexually abusing underage girls who were brought to his Palm Beach home for massages.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Sarah",
+      "role": "Epstein's Assistant/House Manager",
+      "category": "staff",
+      "context": "Another assistant or house manager for Epstein who also called to set up appointments and arranged for a rental car for victim 'A'.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "C",
+      "person2": "A",
+      "relationshipType": "recruiter-victim",
+      "description": "C recruited A to go to Epstein's house, instructed her to lie about her age, and described what would happen during massages.",
+      "strength": 4
+    },
+    {
+      "person1": "C",
+      "person2": "B",
+      "relationshipType": "recruiter-victim",
+      "description": "C recruited her friend B to go to Epstein's house in spring 2005.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "A",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused A during massages at his home, gave her gifts, and paid her $200 per visit.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "B",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein made progressive sexual advances toward B during massages, pushing her to remove clothing.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Z",
+      "relationshipType": "employer-employee",
+      "description": "Z is Epstein's assistant who arranged massage appointments with the victims.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Sarah",
+      "relationshipType": "employer-employee",
+      "description": "Sarah is another assistant/house manager who helped arrange appointments and rental cars.",
+      "strength": 3
+    },
+    {
+      "person1": "Z",
+      "person2": "A",
+      "relationshipType": "facilitator-victim",
+      "description": "Z made over 150 phone calls to A to arrange massage appointments for Epstein between December 2004 and October 2005.",
+      "strength": 4
+    },
+    {
+      "person1": "A",
+      "person2": "B",
+      "relationshipType": "fellow victims",
+      "description": "Both were recruited by C to give massages to Epstein and experienced similar patterns of abuse.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03",
+      "title": "First contact and abuse of A",
+      "description": "Phone records show communications between C and A in March 2004 when A was 16, leading to A's first visits to Epstein's house for massages.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "A",
+        "C",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2004-12 to 2005-10",
+      "title": "Intensified abuse of A",
+      "description": "Period of over 150 phone calls between Epstein's assistant Z and A, during which massages became 'much more sexual in nature' and A was often nude.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein",
+        "Z"
+      ]
+    },
+    {
+      "date": "2005-10-01",
+      "title": "Last massage given by A",
+      "description": "A gave her last massage to Epstein, confirmed by a message pad entry and phone records recovered during the investigation.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-10-06",
+      "title": "Police interview of A",
+      "description": "A was interviewed by the Palm Beach Police Department about her experiences with Epstein, initially withholding some details about sexual activity.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "A"
+      ]
+    },
+    {
+      "date": "2005-09",
+      "title": "Trash pull evidence recovery",
+      "description": "Palm Beach Police conducted a trash pull at Epstein's residence and found stationery with a phone number and message 'for a good time call'.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-10",
+      "title": "Rental car provided to A",
+      "description": "Epstein arranged for a Nissan Sentra to be rented for A through his house manager, which she had in her possession through at least January 2006.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein",
+        "Sarah"
+      ]
+    },
+    {
+      "date": "2007-03-20",
+      "title": "Grand jury testimony",
+      "description": "FBI Special Agent E. testifies before the federal grand jury about the evidence collected in the Epstein investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Special Agent E.",
+        "Helena Josette Jones-Parsons"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida",
+    "Federal Building, U.S. Courthouse, West Palm Beach, Florida",
+    "Jeffrey Epstein's home (Palm Beach)",
+    "Fort Lauderdale, Florida",
+    "New York",
+    "the Islands",
+    "Orlando, Florida"
+  ],
+  "keyFacts": [
+    "Victim A was 16 years old when first brought to Epstein's house in March 2004 and was instructed by recruiter C to lie and say she was 18.",
+    "Epstein's assistant Z made over 150 phone calls to victim A between December 2004 and October 2005 to arrange massage appointments.",
+    "Victim A described escalating sexual abuse including use of a vibrator on her, which Epstein gave her as an 18th birthday present, along with Victoria's Secret lingerie.",
+    "Phone records and message pads from Epstein's home corroborate the victims' accounts, including an October 1, 2005 appointment for victim A's last massage.",
+    "The investigation involved a 'trash pull' at Epstein's residence in September 2005 that recovered stationery with a suggestive message and phone number."
+  ],
+  "analyzedAt": "2026-02-08T18:08:57.294Z"
+}

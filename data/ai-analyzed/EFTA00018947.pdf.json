@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00018947.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-03-14",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to defense counsel, transmitting the government's response to discovery requests in the case US v. Noel and Thomas. The email includes three attachments related to the case and a tape from the Metropolitan Correctional Center.",
+  "persons": [
+    {
+      "name": "Noel",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named defendant in the case US v. Noel and Thomas, referenced in the subject line of the correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thomas",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named defendant in the case US v. Noel and Thomas, referenced in the subject line of the correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Montell Figgins",
+      "role": "Recipient of Correspondence",
+      "category": "legal",
+      "context": "Appears as a recipient (in the 'To' field) of the email from the Assistant United States Attorney regarding discovery in US v. Noel and Thomas.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the email, transmitting the government's discovery response to defense counsel in the Southern District of New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-conspirator",
+      "description": "Named together as co-defendants in the federal case US v. Noel and Thomas.",
+      "strength": 5
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Montell Figgins",
+      "relationshipType": "legal",
+      "description": "Prosecutor corresponding with defense counsel regarding discovery matters in the case.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Noel",
+      "relationshipType": "legal",
+      "description": "Prosecutor representing the government in the case against the defendant.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Thomas",
+      "relationshipType": "legal",
+      "description": "Prosecutor representing the government in the case against the defendant.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03-14",
+      "title": "Government Files Discovery Response",
+      "description": "The Assistant United States Attorney transmits the government's response to defense discovery requests in US v. Noel and Thomas.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Montell Figgins",
+        "Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2019-12-19",
+      "title": "Letter Regarding MCC Tape",
+      "description": "A prior letter was sent regarding a tape from the Metropolitan Correctional Center, referenced as an attachment.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-01-09",
+      "title": "Follow-up Letter Regarding MCC Tape",
+      "description": "A follow-up letter was sent regarding the Metropolitan Correctional Center tape, referenced as an attachment.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Metropolitan Correctional Center (MCC)"
+  ],
+  "keyFacts": [
+    "The document is official correspondence from a federal prosecutor in the Southern District of New York regarding the case US v. Noel and Thomas.",
+    "The government is responding to defense discovery requests, indicating ongoing pre-trial litigation.",
+    "Multiple prior communications regarding a 'MCC tape' (Metropolitan Correctional Center tape) are referenced as attachments, suggesting evidence from the jail is relevant to the case.",
+    "The email identifies Montell Figgins as a recipient, likely acting as defense counsel for one or both defendants."
+  ],
+  "analyzedAt": "2026-02-08T02:01:59.444Z"
+}

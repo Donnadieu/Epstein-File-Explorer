@@ -1,0 +1,52 @@
+{
+  "fileName": "EFTA00015656.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-08",
+  "summary": "This is an internal email chain among US Attorney's Office for the Southern District of New York (USANYS) prosecutors regarding scheduling a call with the SEC about their Epstein inquiry. The SEC is seeking to coordinate to avoid interfering with the criminal case.",
+  "persons": [
+    {
+      "name": "MI (USANYS)",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Email sender who confirms availability for a call with the SEC at 4:45 PM.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MM (USANYS)",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Email initiator who informs colleagues about the SEC's call regarding their Epstein inquiry and proposes a group call.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MI (USANYS)",
+      "person2": "MM (USANYS)",
+      "relationshipType": "colleague",
+      "description": "Both are prosecutors in the US Attorney's Office for the Southern District of New York coordinating on a call with the SEC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "SEC inquiry coordination call",
+      "description": "The SEC contacted the US Attorney's Office with questions about their Epstein inquiry, seeking to avoid actions problematic for the criminal case. Prosecutors planned a call to discuss.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "MI (USANYS)",
+        "MM (USANYS)"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The SEC was conducting an inquiry into Epstein matters as of August 2019.",
+    "The SEC was proactively coordinating with criminal prosecutors to avoid interfering with the criminal case.",
+    "The email shows internal scheduling among SDNY prosecutors regarding this inter-agency communication."
+  ],
+  "analyzedAt": "2026-02-08T03:23:22.934Z"
+}

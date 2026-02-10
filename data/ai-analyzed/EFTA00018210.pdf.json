@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00018210.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-17",
+  "summary": "Email chain between prosecutors and attorneys regarding the status and service of a Rule 17(c) subpoena in the case United States v. Maxwell. The emails discuss coordination for serving the subpoena to a witness or entity represented by outside counsel.",
+  "persons": [
+    {
+      "name": "Brian Burns",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Smith Villazor LLP who is being contacted about the status of a Rule 17(c) subpoena in the Maxwell case. He is coordinating with prosecutors regarding service of the subpoena.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Patrick Smith",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Smith Villazor LLP, identified as outside counsel for Jordy Feldman. He is coordinating a call with prosecutors regarding the subpoena.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jordy Feldman",
+      "role": "Individual represented by counsel",
+      "category": "other",
+      "context": "Recipient of initial contact from prosecutors about a Rule 17(c) subpoena. They direct prosecutors to their outside counsel, Patrick Smith.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Patrick Smith",
+      "person2": "Jordy Feldman",
+      "relationshipType": "attorney-client",
+      "description": "Patrick Smith is identified as outside counsel for Jordy Feldman in matters related to the subpoena.",
+      "strength": 4
+    },
+    {
+      "person1": "Brian Burns",
+      "person2": "Patrick Smith",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys at Smith Villazor LLP and are copied on emails regarding the subpoena.",
+      "strength": 3
+    },
+    {
+      "person1": "Brian Burns",
+      "person2": "Jordy Feldman",
+      "relationshipType": "legal",
+      "description": "Brian Burns is an attorney corresponding about a subpoena that ultimately concerns Jordy Feldman.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-16",
+      "title": "Court Voir Dire",
+      "description": "Mentioned as a reason for potential delay in the defense serving a subpoena, as both prosecution and defense were in court for voir dire.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-11-15",
+      "title": "Scheduling of Call Regarding Subpoena",
+      "description": "Prosecutors and attorney Patrick Smith schedule a call for 2:30 PM to discuss the Rule 17(c) subpoena.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Patrick Smith"
+      ]
+    },
+    {
+      "date": "2021-11-17",
+      "title": "Anticipated Service of Subpoena",
+      "description": "Prosecutors inform Brian Burns that the defense intends to serve the subpoena later that night.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Brian Burns"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, NY 10007",
+    "New York, New York 10019",
+    "One Saint Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "The document is an email chain concerning a Rule 17(c) subpoena in the criminal case United States v. Maxwell (20 Cr. 330).",
+    "Jordy Feldman is identified as an individual who may be a witness or subject of the subpoena and is represented by outside counsel Patrick Smith.",
+    "Prosecutors are coordinating with attorneys Brian Burns and Patrick Smith regarding the timing and service of the subpoena.",
+    "The defense was expected to serve the subpoena on the evening of November 17, 2021.",
+    "The correspondence highlights the procedural coordination between prosecution, defense, and third-party counsel in the Maxwell case."
+  ],
+  "analyzedAt": "2026-02-08T11:07:08.057Z"
+}

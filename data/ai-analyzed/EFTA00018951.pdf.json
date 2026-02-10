@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00018951.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-17",
+  "summary": "This is an email from a US Attorney's Office prosecutor responding to a request for a list of Jeffrey Epstein's associates. The email provides expansive context on Epstein's network, referencing over 30 attorneys, 60+ Deutsche Bank accounts, and nearly 5,000 flights paid for via AmEx. It attaches spreadsheets with detailed information on witnesses, attorneys, and bank accounts, and suggests specific individuals who might send money on Epstein's behalf.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Potential financial agent for Epstein",
+      "category": "associate",
+      "context": "Identified in the email as one of the likeliest individuals who would or could send money on Jeffrey Epstein's behalf.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Schantz",
+      "role": "Potential financial agent for Epstein",
+      "category": "associate",
+      "context": "Identified in the email as one of the likeliest individuals who would or could send money on Jeffrey Epstein's behalf.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nick",
+      "role": "Email recipient with folder access",
+      "category": "other",
+      "context": "Mentioned as having access to a folder containing Epstein's American Express records, specifically the 'AIRLINE' tab.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Indyke is identified as a likely individual who would send money on Epstein's behalf.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Schantz",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Schantz is identified as a likely individual who would send money on Epstein's behalf.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    {
+      "name": "United States Attorney's Office Southern District of New York",
+      "context": "The office from which the email correspondence originates."
+    },
+    {
+      "name": "New York, New York 10007",
+      "context": "The mailing address for the United States Attorney's Office Southern District of New York."
+    }
+  ],
+  "keyFacts": [
+    "The document reveals the vast scale of Jeffrey Epstein's network, with over 30 attorneys representing him in at least 20 federal court cases related to trafficking.",
+    "Epstein maintained more than 60 separate accounts at Deutsche Bank, with an attached index spreadsheet containing 2,000 rows of account and individual information.",
+    "Epstein's American Express records show he paid for nearly 5,000 flights for individuals over a ten-year period.",
+    "Darren Indyke and Jeffrey Schantz are identified as the likeliest individuals who would, or could, send money on Epstein's behalf.",
+    "The email attaches and references detailed spreadsheets ('Epstein_universe.xlsx', '2019-08-15_-_SDNY_Production_Index.xlsx') containing information on witnesses, co-conspirators, Epstein's attorneys, and bank accounts."
+  ],
+  "analyzedAt": "2026-02-08T07:51:49.623Z"
+}

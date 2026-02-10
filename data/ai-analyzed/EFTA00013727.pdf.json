@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00013727.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2008-04-02",
+  "summary": "An email from Assistant U.S. Attorney (MARS) to defense attorney Jay Lefkowitz regarding the Epstein case, indicating that U.S. Attorney Acosta has designated (MARS) to handle all communications and inquiries, and that Acosta will not return calls unless (MARS) advises otherwise.",
+  "persons": [
+    {
+      "name": "Jay Lefkowitz",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Recipient of the email, appears to be representing or involved with Jeffrey Epstein's legal defense team.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ken",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Addressed in the email along with Jay Lefkowitz, likely part of Epstein's legal team.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Acosta",
+      "role": "U.S. Attorney",
+      "category": "legal",
+      "context": "U.S. Attorney who has delegated communication regarding the Epstein matter to Assistant U.S. Attorney (MARS) and will not return calls unless advised.",
+      "mentionCount": 1
+    },
+    {
+      "name": "(MARS)",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Author of the email, designated by U.S. Attorney Acosta to handle all communications and inquiries related to the Epstein case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Acosta",
+      "person2": "(MARS)",
+      "relationshipType": "employer-employee",
+      "description": "Acosta has delegated authority to (MARS) to handle all communications regarding the Epstein matter.",
+      "strength": 4
+    },
+    {
+      "person1": "Jay Lefkowitz",
+      "person2": "Ken",
+      "relationshipType": "legal",
+      "description": "Both are addressed as recipients of the email, likely working together as part of Epstein's defense team.",
+      "strength": 3
+    },
+    {
+      "person1": "Jay Lefkowitz",
+      "person2": "Acosta",
+      "relationshipType": "legal",
+      "description": "Lefkowitz attempted to contact Acosta regarding the Epstein matter, but communication is being routed through (MARS).",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-04-02",
+      "title": "Communication Delegation",
+      "description": "Assistant U.S. Attorney (MARS) informs defense attorneys that U.S. Attorney Acosta has designated (MARS) to handle all Epstein-related communications.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "(MARS)",
+        "Acosta",
+        "Jay Lefkowitz",
+        "Ken"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "U.S. Attorney Acosta delegated all communications regarding the Epstein case to Assistant U.S. Attorney (MARS), indicating a controlled communication protocol.",
+    "Acosta would not return calls from defense attorneys unless (MARS) advised that neither (MARS) nor the Chief in West Palm Beach could answer the question.",
+    "The email suggests a formalized process for handling inquiries related to the Epstein matter, possibly to manage legal strategy or public relations."
+  ],
+  "analyzedAt": "2026-02-08T02:22:14.273Z"
+}

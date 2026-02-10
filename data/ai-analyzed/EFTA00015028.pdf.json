@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00015028.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-06",
+  "summary": "This is an email chain from October 2021 between law enforcement officials (NYPD/FBI) and a federal prosecutor regarding a list of potential testifying witnesses in a case. The sender requests additional information on the witnesses, such as DOB, age, reason for testifying, and location, and asks for rap sheets to be run on them.",
+  "persons": [
+    {
+      "name": "Detective",
+      "role": "NYPD / FBI Child Exploitation Human Trafficking Task Force Officer",
+      "category": "law enforcement",
+      "context": "The sender of the initial email requesting more information on a list of potential witnesses and asking for rap sheets to be run.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "The recipient of the email, based at the U.S. Attorney's Office for the Southern District of New York, who provided the initial list of potential witnesses.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "professional collaboration",
+      "description": "The detective is requesting follow-up information and background checks (rap sheets) from the prosecutor regarding a list of witnesses for a case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-04",
+      "title": "Initial Witness List Provided",
+      "description": "An Assistant United States Attorney sends a list of potential testifying witnesses to law enforcement.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-10-06",
+      "title": "Follow-up Request for Witness Information",
+      "description": "A detective from the NYPD/FBI task force requests more detailed information and background checks on the list of witnesses.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Detective",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York",
+    "One St. Andrew's Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "The document is an email chain from October 2021 concerning witness preparation for a case, likely related to child exploitation or human trafficking.",
+    "Law enforcement is requesting detailed background information (DOB, age, origin, testimony reason) and rap sheets for a list of 20 potential witnesses.",
+    "The correspondence involves collaboration between a federal prosecutor (AUSA) from the Southern District of New York and a detective from a joint NYPD/FBI Child Exploitation Human Trafficking Task Force.",
+    "The document references an attached list of 20 witnesses, but their identities are not disclosed in the provided text."
+  ],
+  "analyzedAt": "2026-02-08T05:19:24.933Z"
+}

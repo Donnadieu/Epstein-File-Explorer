@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00018615.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2020-10-27",
+  "summary": "This document is an email chain between an Assistant United States Attorney and a judge's chambers regarding the submission of an application for a search warrant. The attorney corrects an error in the original submission (naming the wrong judge) and provides flattened PDFs for review.",
+  "persons": [
+    {
+      "name": "Judge Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Mentioned as the judge whose name was incorrectly included in the initial version of the search warrant application submitted to Judge Wang.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Wang",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge to whom the corrected application for a search warrant is being submitted for consideration.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The author of the email submitting the corrected search warrant application and exhibits to Judge Wang's chambers.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Judge Wang",
+      "relationshipType": "legal",
+      "description": "The prosecutor is submitting a legal application (search warrant) for the judge's review and approval.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-27",
+      "title": "Submission of Search Warrant Application",
+      "description": "An Assistant United States Attorney submits a corrected application for a search warrant, along with four exhibits and a proposed warrant, to Judge Wang for consideration.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Judge Wang"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A search warrant application related to the Epstein case was submitted to Judge Wang on October 27, 2020.",
+    "The initial submission contained an error, incorrectly naming Judge Nathan instead of Judge Wang.",
+    "The application included four exhibits and a proposed search warrant.",
+    "The prosecutor noted an agent was available to swear out the warrant that afternoon or the following morning."
+  ],
+  "analyzedAt": "2026-02-08T05:49:23.079Z"
+}

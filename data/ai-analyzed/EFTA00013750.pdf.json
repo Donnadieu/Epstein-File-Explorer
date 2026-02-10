@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00013750.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2007-10-31",
+  "summary": "Email chain discussing legal strategy in the Epstein case, including an agreement not to contest liability for certain victims, the involvement of Judge Davis as a decider, and coordination regarding discovery and subpoenas. The communication involves attorneys and a US Attorney.",
+  "persons": [
+    {
+      "name": "Jay Lefkowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney involved in legal strategy discussions regarding the Epstein case, coordinating on discovery and subpoena matters.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Acosta, Alex",
+      "role": "US Attorney (USAFLS)",
+      "category": "legal",
+      "context": "US Attorney copied on email discussing legal strategy and discovery in the Epstein case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Davis",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge indicated as willing to serve as the 'decider' in the Epstein case, with discussions about his role and anticipated decision.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jay Lefkowitz",
+      "person2": "Acosta, Alex",
+      "relationshipType": "legal coordination",
+      "description": "Communicating about legal strategy, discovery, and subpoenas in the Epstein case, with Acosta copied on emails.",
+      "strength": 3
+    },
+    {
+      "person1": "Jay Lefkowitz",
+      "person2": "Judge Davis",
+      "relationshipType": "legal proceeding",
+      "description": "Lefkowitz references Judge Davis's willingness to serve as a decider in the case and follows up on his involvement.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-10-30",
+      "title": "Legal Agreement Addendum Execution",
+      "description": "An executed version of an addendum related to the Epstein case is sent, with instructions to FedEx original signature pages.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jay Lefkowitz"
+      ]
+    },
+    {
+      "date": "2007-10-31",
+      "title": "Email Coordination on Epstein Case",
+      "description": "Email chain discusses agreement not to contest liability for certain victims, Judge Davis's role as decider, and discovery/subpoena planning.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jay Lefkowitz",
+        "Acosta, Alex",
+        "Judge Davis"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An agreement states that liability will not be contested for the girls on a specified list, focusing discovery on damages rather than veracity of claims.",
+    "Judge Davis is indicated as willing to serve as the 'decider' in the case, with follow-up planned to confirm his role and decision timeline.",
+    "Attorneys are coordinating on discovery and subpoena strategies, with assumptions that the US Attorney's office does not want to be copied on subpoenas.",
+    "The communication is marked as confidential and attorney-client privileged, originating from Kirkland & Ellis LLP."
+  ],
+  "analyzedAt": "2026-02-08T08:24:07.993Z"
+}

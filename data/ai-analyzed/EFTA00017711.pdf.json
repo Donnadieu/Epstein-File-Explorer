@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00017711.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2020-06-26",
+  "summary": "Email chain regarding the submission and review of an application for a search warrant in the Epstein case. The chain includes a clerk transmitting a signed warrant, and earlier correspondence where a judge identifies a date error in the application (referring to Epstein's arrest in July 2020, which had not yet occurred).",
+  "persons": [
+    {
+      "name": "Vincent Babino",
+      "role": "Arraignment Unit Clerk",
+      "category": "legal",
+      "context": "Clerk at the United States District Court for the Southern District of New York who sends the signed search warrant via email.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gabriel Gorenstein",
+      "role": "Judge",
+      "category": "legal",
+      "context": "United States District Judge who reviews the search warrant application, identifies a date error, and arranges a call with the prosecutor and agent.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Warrant",
+      "category": "key figure",
+      "context": "The individual whose arrest is referenced in the search warrant application; the subject of the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gabriel Gorenstein",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "legal",
+      "description": "Judge Gorenstein reviews and provides feedback on the search warrant application submitted by the AUSA.",
+      "strength": 3
+    },
+    {
+      "person1": "Vincent Babino",
+      "person2": "Gabriel Gorenstein",
+      "relationshipType": "professional",
+      "description": "Babino, as a court clerk, transmits the signed warrant following Judge Gorenstein's review process.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-25",
+      "title": "Search Warrant Application Review",
+      "description": "Judge Gabriel Gorenstein reviews the search warrant application materials, identifies an error regarding the date of Jeffrey Epstein's arrest, and schedules a call with the prosecutor and agent.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Gabriel Gorenstein",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2020-06-26",
+      "title": "Search Warrant Signed",
+      "description": "The signed search warrant is transmitted by court clerk Vincent Babino following the judge's review.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Vincent Babino",
+        "Gabriel Gorenstein"
+      ]
+    },
+    {
+      "date": "2020-07-06",
+      "title": "Referenced Epstein Arrest Date",
+      "description": "The search warrant application incorrectly references Jeffrey Epstein's arrest as occurring on July 6, 2020. Judge Gorenstein notes this error, as the arrest had already occurred in 2019.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "United States District Court Southern District of New York, 500 Pearl Street, New York, NY 10007",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A search warrant application in the Epstein case contained a significant date error, stating Epstein was arrested on July 6, 2020, when his arrest occurred in July 2019.",
+    "Judge Gabriel Gorenstein identified the error but noted it did not affect the probable cause for the warrant.",
+    "The email chain shows the procedural steps for obtaining a search warrant, including judge review, correction submission, and final transmission by a court clerk."
+  ],
+  "analyzedAt": "2026-02-08T08:27:28.934Z"
+}

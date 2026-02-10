@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01265314.pdf",
+  "dataSet": "10",
+  "documentType": "financial records response to subpoena",
+  "dateOriginal": "2019-09-24",
+  "summary": "This document is Citibank's response to a federal subpoena (Ref. No: LSI-08192019-327098-002) issued in the Epstein investigation. It includes an affidavit from a Citibank legal specialist certifying the provided records, a DOJ request form, and a payment/EFT enrollment form showing account details for Jeffrey Epstein and Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Mark Lubin",
+      "role": "FBI recipient of subpoenaed records",
+      "category": "law enforcement",
+      "context": "Addressee of the subpoena response letter from Citibank; the financial records are to be delivered to him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Renae A. Rodriguez",
+      "role": "Legal Support Specialist / Custodian of Records for Citibank",
+      "category": "legal",
+      "context": "Author of the cover letter and affidavit certifying that Citibank is providing the subpoenaed financial records in the matter of Jeffrey Epstein et al.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paula Mancilla",
+      "role": "Notary Public",
+      "category": "legal",
+      "context": "Notarized the affidavit signed by Renae A. Rodriguez.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account holder / Subject of investigation",
+      "category": "key figure",
+      "context": "Named as an account holder (JEFFREY E. EPSTEIN) on the EFT enrollment form, with accounts at Citibank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Account holder / Subject of investigation",
+      "category": "key figure",
+      "context": "Named as an account holder (GHISLAINE MAXWELL) on the EFT enrollment form, with accounts at Citibank.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Both are listed as account holders on the same Citibank EFT enrollment form, indicating a shared financial connection through the bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Renae A. Rodriguez",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "legal",
+      "description": "Rodriguez, as Citibank's legal custodian, is certifying and providing Epstein's financial records in response to a federal subpoena.",
+      "strength": 2
+    },
+    {
+      "person1": "Renae A. Rodriguez",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Rodriguez, as Citibank's legal custodian, is certifying and providing Maxwell's financial records in response to a federal subpoena.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "DOJ Subpoena Issued to Citibank",
+      "description": "The U.S. Attorney's office issued a subpoena (Ref. No: LSI-08192019-327098-002) to Citibank for financial records related to Jeffrey Epstein et al.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mark Lubin"
+      ]
+    },
+    {
+      "date": "2019-09-24",
+      "title": "Citibank Compliance and Record Submission",
+      "description": "Citibank, via Renae A. Rodriguez, submitted certified financial records and an affidavit in response to the federal subpoena.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Renae A. Rodriguez",
+        "Mark Lubin",
+        "Paula Mancilla"
+      ]
+    }
+  ],
+  "locations": [
+    "26 Federal Plaza, New York, NY 10278 (FBI office)",
+    "100 Citibank Dr., Bldg. 1 Floor 2, San Antonio, TX 78245 (Citibank Subpoena Compliance Unit)",
+    "701 E 60th St N, Sioux Falls, SD 57117 (Citibank address associated with Epstein/Maxwell accounts)"
+  ],
+  "keyFacts": [
+    "Citibank provided financial records for Jeffrey Epstein and Ghislaine Maxwell in response to a federal subpoena (LSI-08192019-327098-002) issued by the U.S. Attorney's office.",
+    "The records include an EFT enrollment form explicitly listing 'JEFFREY E. EPSTEIN' and 'GHISLAINE MAXWELL' as account holders with Citibank.",
+    "Citibank stated that statements prior to June 2008 and backup documents prior to September 2012 were no longer available, potentially limiting the historical scope of the investigation.",
+    "The document demonstrates active federal investigation into Epstein's financial affairs as of August/September 2019, following his arrest and death.",
+    "The response was formally certified under penalty of perjury by a Citibank legal custodian and notarized, indicating the records' intended use as legal evidence."
+  ],
+  "analyzedAt": "2026-02-09T16:03:31.485Z"
+}

@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA00018957.pdf",
+  "dataSet": "8",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-21",
+  "summary": "Email chain between federal prosecutors discussing an attorney proffer from Andrew Patel regarding inmate Jhonny Contreras, who was housed near Jeffrey Epstein at the MCC and may have observations about Epstein's death. The emails coordinate setting up the proffer interview.",
+  "persons": [
+    {
+      "name": "Andrew Patel",
+      "role": "Attorney at Law",
+      "category": "legal",
+      "context": "Attorney who sent the initial email offering a proffer for his client Jhonny Contreras regarding observations of Jeffrey Epstein's death at the MCC.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jhonny Contreras",
+      "role": "Inmate/Witness",
+      "category": "witness",
+      "context": "Inmate housed on the same tier and across the hall from Jeffrey Epstein's cell at the MCC at the time of Epstein's death; offered to speak to investigators about his observations.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate/Accused",
+      "category": "key figure",
+      "context": "The subject of the death investigation; died while in custody at the Metropolitan Correctional Center (MCC).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Donald Yannella",
+      "role": "Attorney (cc'd)",
+      "category": "legal",
+      "context": "Copied on the initial email from Andrew Patel regarding Jhonny Contreras.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Shellow",
+      "role": "Attorney (mentioned)",
+      "category": "legal",
+      "context": "Mentioned in the email header, likely an attorney involved in the correspondence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew Patel",
+      "person2": "Jhonny Contreras",
+      "relationshipType": "attorney-client",
+      "description": "Andrew Patel is the attorney offering to arrange a proffer for his client Jhonny Contreras regarding the Epstein death investigation.",
+      "strength": 5
+    },
+    {
+      "person1": "Jhonny Contreras",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "Contreras was an inmate housed on the same tier and across the hall from Epstein's cell at the MCC and may have observations about Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Andrew Patel",
+      "person2": "Donald Yannella",
+      "relationshipType": "professional",
+      "description": "Both are attorneys; Yannella was copied on Patel's initial email regarding the Contreras proffer.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-20",
+      "title": "Attorney Proffer from Andrew Patel",
+      "description": "Attorney Andrew Patel conducted a proffer session regarding his client Jhonny Contreras's potential observations of Jeffrey Epstein's death.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Andrew Patel",
+        "Jhonny Contreras"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "Jhonny Contreras Returned to SHU",
+      "description": "Inmate Jhonny Contreras was recently returned to the Special Housing Unit (SHU) at the Metropolitan Correctional Center (MCC).",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jhonny Contreras"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein died by hanging while in custody at the Metropolitan Correctional Center (MCC), prompting an investigation.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "New York, NY",
+    "80 Broad Street, Suite 1900, New York, NY 10004 (Andrew Patel's law office)"
+  ],
+  "keyFacts": [
+    "Inmate Jhonny Contreras was housed on the same tier and across the hall from Jeffrey Epstein's cell at the MCC at the time of Epstein's death.",
+    "Attorney Andrew Patel offered a proffer for Contreras to speak to investigators about his observations of the circumstances surrounding Epstein's death.",
+    "The email chain shows coordination between federal prosecutors to arrange the proffer interview with Contreras and his attorney.",
+    "Contreras did not see Epstein hang himself but was willing to discuss his observations with investigators in the presence of counsel.",
+    "The correspondence indicates an ongoing investigation into Epstein's death by federal authorities in August 2019."
+  ],
+  "analyzedAt": "2026-02-08T09:22:48.239Z"
+}

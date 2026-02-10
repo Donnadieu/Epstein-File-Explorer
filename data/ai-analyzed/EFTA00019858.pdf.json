@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00019858.pdf",
+  "dataSet": "8",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-06",
+  "summary": "This is an email chain from August 2019 regarding the preparation of a disc containing materials from the Deutsche Bank subpoena returns for the 2018 SDNY investigation into Jeffrey Epstein. The disc, containing the Fourth and Fifth Production folders, was to be burned and left for FBI agents to pick up.",
+  "persons": [
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the initial request, asking a contractor to burn a disc with investigation materials for FBI agents on the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Intended recipient of the burned disc containing subpoenaed materials from Deutsche Bank for the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Intended recipient, alongside an FBI Special Agent, of the burned disc containing investigation materials.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "FBI Special Agent",
+      "relationshipType": "professional collaboration",
+      "description": "The AUSA is coordinating the transfer of investigation materials (a burned disc) to the FBI agent.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Detective",
+      "relationshipType": "professional collaboration",
+      "description": "The AUSA is coordinating the transfer of investigation materials (a burned disc) to the detective.",
+      "strength": 3
+    },
+    {
+      "person1": "FBI Special Agent",
+      "person2": "Detective",
+      "relationshipType": "professional collaboration",
+      "description": "Both are listed together as the intended recipients of the investigation materials from the AUSA.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-06",
+      "title": "Disc Preparation for Epstein Investigation",
+      "description": "An Assistant U.S. Attorney requests a contractor burn a disc containing materials from the Fourth and Fifth Production folders related to Deutsche Bank subpoena returns for the SDNY's Epstein investigation, to be picked up by FBI agents.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant U.S. Attorney",
+        "FBI Special Agent",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email chain from August 6, 2019, concerning the ongoing SDNY investigation into Jeffrey Epstein.",
+    "It references specific investigation materials: the 'Fourth Production and Fifth Production folders' from subpoena returns to Deutsche Bank.",
+    "The materials were to be burned onto a disc and left for pickup by an FBI Special Agent and a Detective.",
+    "The communication shows procedural coordination between a prosecutor (AUSA) and law enforcement agents during the investigation."
+  ],
+  "analyzedAt": "2026-02-08T05:49:43.456Z"
+}

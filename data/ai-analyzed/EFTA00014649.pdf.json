@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA00014649.pdf",
+  "dataSet": "8",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-20",
+  "summary": "This is a court order from November 2021 regarding the authentication of Government Exhibit 52 in the Epstein case. The order directs the Government to reply to the Defendant's argument that 'Employee-1' cannot authenticate the exhibit because a former employee allegedly removed the document before Employee-1 began working for Epstein. It also sets deadlines for proposed redactions to motion papers.",
+  "persons": [
+    {
+      "name": "Employee-1",
+      "role": "Employee of Jeffrey Epstein",
+      "category": "staff",
+      "context": "Referenced as the individual the Government proposes to authenticate Government Exhibit 52, but the Defendant argues Employee-1 cannot do so because they began working for Epstein after a former employee allegedly removed the document.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mr. Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the case, referred to as the employer of Employee-1 and the former employee.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Employee-1",
+      "person2": "Mr. Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Employee-1 worked for Mr. Epstein, as referenced in the context of authenticating a document from Epstein's property.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-21",
+      "title": "Deadline for Government's Reply",
+      "description": "The Government is ordered to file a reply to the Defendant's response regarding the authentication of Government Exhibit 52 by 12:00 p.m.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-11-22",
+      "title": "Deadline for Proposed Redactions",
+      "description": "The parties are ordered to file any proposed redactions to the motion papers on the public docket, justifying them by reference to legal precedent.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The Defendant argues that 'Employee-1' cannot authenticate Government Exhibit 52 because a former employee (whose name is redacted) allegedly removed the document from Epstein's property before Employee-1 began working there.",
+    "The court references a prior supplemental letter from the Government (Dkt. No. 457) and a sealed response from the Defendant regarding Exhibit 52.",
+    "The order instructs the parties to justify any requested redactions using the three-part test from the Second Circuit case Lugosch v. Pyramid Co. of Onondaga."
+  ],
+  "analyzedAt": "2026-02-08T05:36:25.657Z"
+}
