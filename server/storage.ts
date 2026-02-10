@@ -40,6 +40,9 @@ export interface IStorage {
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }>;
+  getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
 
   getBookmarks(): Promise<Bookmark[]>;
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
@@ -556,38 +559,31 @@ export class DatabaseStorage implements IStorage {
     const allPersons = await this.getPersons();
     const allConnections = await db.select().from(connections);
 
-    // Deduplicate persons with similar names (e.g., "Jeffrey Epstein", "Jeffrey E. Epstein", "Jeff Epstein")
-    const { deduped, idMap } = deduplicatePersons(allPersons);
+    const personMap = new Map(allPersons.map(p => [p.id, p]));
 
-    const dedupedMap = new Map(deduped.map(p => [p.id, p]));
-
-    // Remap connections to canonical person IDs and remove self-loops / duplicates
     const seenConnections = new Set<string>();
     const enrichedConnections: Array<typeof allConnections[number] & { person1Name: string; person2Name: string }> = [];
 
     for (const conn of allConnections) {
-      const pid1 = idMap.get(conn.personId1) ?? conn.personId1;
-      const pid2 = idMap.get(conn.personId2) ?? conn.personId2;
-      if (pid1 === pid2) continue; // skip self-loops from merged entities
-      const p1 = dedupedMap.get(pid1);
-      const p2 = dedupedMap.get(pid2);
+      const p1 = personMap.get(conn.personId1);
+      const p2 = personMap.get(conn.personId2);
       if (!p1 || !p2) continue;
+      if (conn.personId1 === conn.personId2) continue;
 
-      // Deduplicate connections between the same pair
-      const pairKey = pid1 < pid2 ? `${pid1}-${pid2}-${conn.connectionType}` : `${pid2}-${pid1}-${conn.connectionType}`;
+      const pairKey = conn.personId1 < conn.personId2
+        ? `${conn.personId1}-${conn.personId2}-${conn.connectionType}`
+        : `${conn.personId2}-${conn.personId1}-${conn.connectionType}`;
       if (seenConnections.has(pairKey)) continue;
       seenConnections.add(pairKey);
 
       enrichedConnections.push({
         ...conn,
-        personId1: pid1,
-        personId2: pid2,
         person1Name: p1.name,
         person2Name: p2.name,
       });
     }
 
-    return { persons: deduped, connections: enrichedConnections };
+    return { persons: allPersons, connections: enrichedConnections };
   }
 
   async search(query: string) {
@@ -654,6 +650,100 @@ export class DatabaseStorage implements IStorage {
     const offset = (page - 1) * limit;
     const data = await db.select().from(documents).orderBy(asc(documents.id)).limit(limit).offset(offset);
     return { data, total, page, totalPages };
+  }
+
+  async getDocumentsFiltered(opts: {
+    page: number;
+    limit: number;
+    search?: string;
+    type?: string;
+    dataSet?: string;
+    redacted?: string;
+  }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
+    const conditions = [];
+
+    if (opts.search) {
+      const searchPattern = `%${escapeLikePattern(opts.search)}%`;
+      conditions.push(
+        or(
+          ilike(documents.title, searchPattern),
+          ilike(documents.description, searchPattern),
+          ilike(documents.keyExcerpt, searchPattern),
+        )
+      );
+    }
+
+    if (opts.type) {
+      conditions.push(eq(documents.documentType, opts.type));
+    }
+
+    if (opts.dataSet) {
+      conditions.push(eq(documents.dataSet, opts.dataSet));
+    }
+
+    if (opts.redacted === "redacted") {
+      conditions.push(eq(documents.isRedacted, true));
+    } else if (opts.redacted === "unredacted") {
+      conditions.push(eq(documents.isRedacted, false));
+    }
+
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    const [countResult] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(documents)
+      .where(whereClause);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / opts.limit);
+    const offset = (opts.page - 1) * opts.limit;
+    const data = await db
+      .select()
+      .from(documents)
+      .where(whereClause)
+      .orderBy(asc(documents.id))
+      .limit(opts.limit)
+      .offset(offset);
+
+    return { data, total, page: opts.page, totalPages };
+  }
+
+  async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }> {
+    const typeRows = await db
+      .selectDistinct({ documentType: documents.documentType })
+      .from(documents)
+      .orderBy(asc(documents.documentType));
+
+    const dataSetRows = await db
+      .selectDistinct({ dataSet: documents.dataSet })
+      .from(documents)
+      .where(sql`${documents.dataSet} IS NOT NULL`)
+      .orderBy(asc(documents.dataSet));
+
+    return {
+      types: typeRows.map((r) => r.documentType),
+      dataSets: dataSetRows.map((r) => r.dataSet!),
+    };
+  }
+
+  async getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }> {
+    const [prevRow] = await db
+      .select({ id: documents.id })
+      .from(documents)
+      .where(sql`${documents.id} < ${id}`)
+      .orderBy(desc(documents.id))
+      .limit(1);
+
+    const [nextRow] = await db
+      .select({ id: documents.id })
+      .from(documents)
+      .where(sql`${documents.id} > ${id}`)
+      .orderBy(asc(documents.id))
+      .limit(1);
+
+    return {
+      prev: prevRow?.id ?? null,
+      next: nextRow?.id ?? null,
+    };
   }
 
   async getBookmarks(): Promise<Bookmark[]> {

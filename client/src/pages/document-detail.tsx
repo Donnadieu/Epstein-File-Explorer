@@ -61,26 +61,20 @@ export default function DocumentDetailPage() {
     queryKey: ["/api/documents", params.id],
   });
 
-  const { data: allDocuments } = useQuery<Document[]>({
-    queryKey: ["/api/documents"],
+  const { data: adjacent } = useQuery<{ prev: number | null; next: number | null }>({
+    queryKey: [`/api/documents/${params.id}/adjacent`],
+    enabled: !!params.id,
   });
-
-  const docIndex = allDocuments?.findIndex((d) => d.id === doc?.id) ?? -1;
-  const prevDoc = docIndex > 0 ? allDocuments![docIndex - 1] : null;
-  const nextDoc =
-    docIndex >= 0 && docIndex < (allDocuments?.length ?? 0) - 1
-      ? allDocuments![docIndex + 1]
-      : null;
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      if (e.key === "ArrowLeft" && prevDoc) navigate(`/documents/${prevDoc.id}`);
-      if (e.key === "ArrowRight" && nextDoc) navigate(`/documents/${nextDoc.id}`);
+      if (e.key === "ArrowLeft" && adjacent?.prev) navigate(`/documents/${adjacent.prev}`);
+      if (e.key === "ArrowRight" && adjacent?.next) navigate(`/documents/${adjacent.next}`);
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [prevDoc, nextDoc, navigate]);
+  }, [adjacent, navigate]);
 
   if (isLoading) {
     return (
@@ -122,27 +116,24 @@ export default function DocumentDetailPage() {
             <ArrowLeft className="w-4 h-4" /> Documents
           </Button>
         </Link>
-        {allDocuments && docIndex >= 0 && (
+        {adjacent && (
           <div className="flex items-center gap-1">
             <Button
               variant="outline"
               size="icon"
               className="h-8 w-8"
-              disabled={!prevDoc}
-              onClick={() => prevDoc && navigate(`/documents/${prevDoc.id}`)}
+              disabled={!adjacent.prev}
+              onClick={() => adjacent.prev && navigate(`/documents/${adjacent.prev}`)}
               data-testid="button-prev-doc"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
-            <span className="text-xs text-muted-foreground px-2 tabular-nums">
-              {docIndex + 1} of {allDocuments.length.toLocaleString()}
-            </span>
             <Button
               variant="outline"
               size="icon"
               className="h-8 w-8"
-              disabled={!nextDoc}
-              onClick={() => nextDoc && navigate(`/documents/${nextDoc.id}`)}
+              disabled={!adjacent.next}
+              onClick={() => adjacent.next && navigate(`/documents/${adjacent.next}`)}
               data-testid="button-next-doc"
             >
               <ChevronRight className="w-4 h-4" />
