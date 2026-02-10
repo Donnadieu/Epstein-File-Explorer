@@ -135,18 +135,15 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
-  // Pre-warm expensive caches BEFORE accepting connections
-  // so the first user gets instant responses
+  // Pre-warm caches sequentially to avoid overwhelming Neon's connection limit
   log("Pre-warming caches...");
   try {
-    await Promise.all([
-      storage.getStats(),
-      storage.getSidebarCounts(),
-      storage.getDocumentFilters(),
-      storage.getPersons(),
-      storage.getTimelineEvents(),
-      storage.getDocumentsFiltered({ page: 1, limit: 50 }),
-    ]);
+    await storage.getStats();
+    await storage.getSidebarCounts();
+    await storage.getDocumentFilters();
+    await storage.getPersons();
+    await storage.getTimelineEvents();
+    await storage.getDocumentsFiltered({ page: 1, limit: 50 });
     log("Cache pre-warming complete");
   } catch (err: any) {
     log(`Cache pre-warming failed: ${err.message}`);
