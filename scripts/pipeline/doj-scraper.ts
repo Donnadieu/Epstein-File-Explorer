@@ -777,7 +777,7 @@ export async function probeAndMergeCatalog(dataSetFilter?: number[]): Promise<DO
     const newFiles = await probeDataSet(ds);
 
     if (newFiles.length > 0) {
-      ds.files.push(...newFiles);
+      for (const f of newFiles) ds.files.push(f);
       totalDiscovered += newFiles.length;
     }
     console.log();

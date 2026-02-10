@@ -2,9 +2,12 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
+import { createRequire } from "module";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
+const STANDARD_FONT_DATA_URL = path.join(path.dirname(require.resolve("pdfjs-dist/package.json")), "standard_fonts") + "/";
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
 const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
@@ -25,23 +28,32 @@ export interface ExtractedDocument {
 }
 
 interface ExtractionLog {
-  processed: string[];
-  failed: string[];
   totalPages: number;
   totalChars: number;
+  totalProcessed: number;
+  totalFailed: number;
   startedAt: string;
   lastUpdated: string;
 }
 
 function loadLog(): ExtractionLog {
   if (fs.existsSync(EXTRACTION_LOG)) {
-    return JSON.parse(fs.readFileSync(EXTRACTION_LOG, "utf-8"));
+    const raw = JSON.parse(fs.readFileSync(EXTRACTION_LOG, "utf-8"));
+    // Migrate from old format that stored full arrays
+    return {
+      totalPages: raw.totalPages || 0,
+      totalChars: raw.totalChars || 0,
+      totalProcessed: raw.totalProcessed ?? (raw.processed?.length || 0),
+      totalFailed: raw.totalFailed ?? (raw.failed?.length || 0),
+      startedAt: raw.startedAt || new Date().toISOString(),
+      lastUpdated: raw.lastUpdated || new Date().toISOString(),
+    };
   }
   return {
-    processed: [],
-    failed: [],
     totalPages: 0,
     totalChars: 0,
+    totalProcessed: 0,
+    totalFailed: 0,
     startedAt: new Date().toISOString(),
     lastUpdated: new Date().toISOString(),
   };
@@ -52,14 +64,20 @@ function saveLog(log: ExtractionLog) {
   fs.writeFileSync(EXTRACTION_LOG, JSON.stringify(log, null, 2));
 }
 
+function getOutputPath(outputDir: string, dataSetId: number, fileName: string): string {
+  return path.join(outputDir, `ds${dataSetId}`, `${path.basename(fileName, ".pdf")}.json`);
+}
+
 async function extractPdfText(filePath: string): Promise<{ text: string; pageCount: number; metadata: Record<string, any> }> {
   const buffer = fs.readFileSync(filePath);
   const data = new Uint8Array(buffer);
 
+  let doc: any = null;
   try {
-    const doc = await pdfjsLib.getDocument({
+    doc = await pdfjsLib.getDocument({
       data,
       useSystemFonts: true,
+      standardFontDataUrl: STANDARD_FONT_DATA_URL,
       disableAutoFetch: true,
       isEvalSupported: false,
     }).promise;
@@ -79,6 +97,7 @@ async function extractPdfText(filePath: string): Promise<{ text: string; pageCou
         if (pageText.length > 0) {
           fullText += pageText + "\n\n";
         }
+        page.cleanup();
       } catch {
       }
     }
@@ -99,53 +118,8 @@ async function extractPdfText(filePath: string): Promise<{ text: string; pageCou
   } catch (error: any) {
     console.warn(`    PDF parse error: ${error.message?.substring(0, 100)}`);
     return { text: "", pageCount: 0, metadata: { error: error.message } };
-  }
-}
-
-async function processFile(filePath: string, dataSetId: number, log: ExtractionLog): Promise<ExtractedDocument | null> {
-  const fileName = path.basename(filePath);
-
-  if (log.processed.includes(filePath)) {
-    return null;
-  }
-
-  try {
-    const stats = fs.statSync(filePath);
-    const ext = path.extname(filePath).toLowerCase();
-
-    if (ext !== ".pdf") {
-      return null;
-    }
-
-    const extracted = await extractPdfText(filePath);
-
-    const result: ExtractedDocument = {
-      filePath,
-      fileName,
-      dataSetId,
-      text: extracted.text,
-      pageCount: extracted.pageCount,
-      metadata: extracted.metadata,
-      extractedAt: new Date().toISOString(),
-      method: "pdfjs",
-      fileType: "pdf",
-      fileSizeBytes: stats.size,
-    };
-
-    log.totalPages += extracted.pageCount;
-    log.totalChars += extracted.text.length;
-    log.processed.push(filePath);
-
-    if (log.processed.length % 20 === 0) {
-      saveLog(log);
-    }
-
-    return result;
-  } catch (error: any) {
-    console.warn(`  Error processing ${fileName}: ${error.message}`);
-    log.failed.push(filePath);
-    saveLog(log);
-    return null;
+  } finally {
+    if (doc) doc.destroy();
   }
 }
 
@@ -167,70 +141,95 @@ export async function processDocuments(options: {
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
-  const allFiles: Array<{ path: string; dataSetId: number }> = [];
-
-  if (fs.existsSync(inputDir)) {
-    const dirs = fs.readdirSync(inputDir)
-      .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(inputDir, d)).isDirectory())
-      .sort();
-
-    for (const dir of dirs) {
-      const dsMatch = dir.match(/data-set-(\d+)/);
-      if (!dsMatch) continue;
-      const dsId = parseInt(dsMatch[1], 10);
-
-      if (options.dataSetIds && !options.dataSetIds.includes(dsId)) continue;
-
-      const dsPath = path.join(inputDir, dir);
-      const files = fs.readdirSync(dsPath)
-        .filter(f => f.toLowerCase().endsWith(".pdf"))
-        .map(f => ({ path: path.join(dsPath, f), dataSetId: dsId }));
-
-      allFiles.push(...files);
-    }
-  }
-
-  const filesToProcess = allFiles.slice(0, maxFiles);
-  console.log(`Found ${allFiles.length} PDFs, processing ${filesToProcess.length}`);
+  // Collect files to process per data set
+  const dirs = fs.existsSync(inputDir)
+    ? fs.readdirSync(inputDir)
+        .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(inputDir, d)).isDirectory())
+        .sort()
+    : [];
 
   const log = loadLog();
-  const results: ExtractedDocument[] = [];
   let processed = 0;
   let skipped = 0;
+  let failed = 0;
+  let totalFiles = 0;
 
-  for (const file of filesToProcess) {
-    const result = await processFile(file.path, file.dataSetId, log);
-    if (result) {
-      results.push(result);
+  for (const dir of dirs) {
+    const dsMatch = dir.match(/data-set-(\d+)/);
+    if (!dsMatch) continue;
+    const dsId = parseInt(dsMatch[1], 10);
 
-      const outputFile = path.join(
-        outputDir,
-        `ds${result.dataSetId}`,
-        `${path.basename(result.fileName, ".pdf")}.json`
-      );
-      const outputSubDir = path.dirname(outputFile);
-      if (!fs.existsSync(outputSubDir)) fs.mkdirSync(outputSubDir, { recursive: true });
-      fs.writeFileSync(outputFile, JSON.stringify(result, null, 2));
-      processed++;
-    } else {
-      skipped++;
-    }
+    if (options.dataSetIds && !options.dataSetIds.includes(dsId)) continue;
 
-    if ((processed + skipped) % 25 === 0) {
-      console.log(`  Progress: ${processed} extracted, ${skipped} skipped, ${log.totalPages} total pages, ${log.totalChars.toLocaleString()} chars`);
+    const dsPath = path.join(inputDir, dir);
+    const dsOutputDir = path.join(outputDir, `ds${dsId}`);
+    const pdfFiles = fs.readdirSync(dsPath).filter(f => f.toLowerCase().endsWith(".pdf"));
+    totalFiles += pdfFiles.length;
+
+    console.log(`  DS ${dsId}: ${pdfFiles.length} PDFs`);
+
+    for (const fileName of pdfFiles) {
+      if (processed + skipped >= maxFiles) break;
+
+      // Skip if already extracted (check output file exists on disk)
+      const outPath = getOutputPath(outputDir, dsId, fileName);
+      if (fs.existsSync(outPath)) {
+        skipped++;
+        continue;
+      }
+
+      const filePath = path.join(dsPath, fileName);
+
+      try {
+        const stats = fs.statSync(filePath);
+        const extracted = await extractPdfText(filePath);
+
+        const result: ExtractedDocument = {
+          filePath,
+          fileName,
+          dataSetId: dsId,
+          text: extracted.text,
+          pageCount: extracted.pageCount,
+          metadata: extracted.metadata,
+          extractedAt: new Date().toISOString(),
+          method: "pdfjs",
+          fileType: "pdf",
+          fileSizeBytes: stats.size,
+        };
+
+        // Write to disk immediately, don't accumulate in memory
+        if (!fs.existsSync(dsOutputDir)) fs.mkdirSync(dsOutputDir, { recursive: true });
+        fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
+
+        log.totalPages += extracted.pageCount;
+        log.totalChars += extracted.text.length;
+        log.totalProcessed++;
+        processed++;
+      } catch (error: any) {
+        console.warn(`  Error processing ${fileName}: ${error.message}`);
+        log.totalFailed++;
+        failed++;
+      }
+
+      if ((processed + failed) % 100 === 0) {
+        saveLog(log);
+        console.log(`  Progress: ${processed} extracted, ${skipped} skipped, ${failed} failed, ${log.totalPages} pages, ${log.totalChars.toLocaleString()} chars`);
+      }
     }
   }
 
   saveLog(log);
 
   console.log("\n=== Extraction Summary ===");
-  console.log(`Files extracted: ${processed}`);
-  console.log(`Files skipped: ${skipped}`);
-  console.log(`Files failed: ${log.failed.length}`);
+  console.log(`Total PDFs found: ${totalFiles}`);
+  console.log(`Extracted: ${processed}`);
+  console.log(`Skipped (already done): ${skipped}`);
+  console.log(`Failed: ${failed}`);
   console.log(`Total pages: ${log.totalPages}`);
   console.log(`Total text chars: ${log.totalChars.toLocaleString()}`);
 
-  return results;
+  // Return empty — results are on disk, not in memory
+  return [];
 }
 
 if (process.argv[1]?.includes(path.basename(__filename))) {
