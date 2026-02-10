@@ -77,18 +77,20 @@ export async function getPresignedUrl(
   );
 }
 
-export async function getR2Stream(key: string): Promise<{
+export async function getR2Stream(key: string, range?: string): Promise<{
   body: Readable;
   contentType?: string;
   contentLength?: number;
+  contentRange?: string;
 }> {
-  const resp = await getClient().send(
-    new GetObjectCommand({ Bucket: getBucket(), Key: key }),
-  );
+  const params: { Bucket: string; Key: string; Range?: string } = { Bucket: getBucket(), Key: key };
+  if (range) params.Range = range;
+  const resp = await getClient().send(new GetObjectCommand(params));
   return {
     body: resp.Body as unknown as Readable,
     contentType: resp.ContentType,
     contentLength: resp.ContentLength,
+    contentRange: resp.ContentRange,
   };
 }
 

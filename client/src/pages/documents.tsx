@@ -504,12 +504,21 @@ function PdfThumbnail({ docId }: { docId: number }) {
   return <canvas ref={canvasRef} width={400} className="w-full h-full object-cover" />;
 }
 
+function isPdfDocument(doc: Document): boolean {
+  if (doc.mediaType?.toLowerCase() === "pdf") return true;
+  if (doc.mimeType?.toLowerCase()?.includes("pdf")) return true;
+  if (doc.title?.toLowerCase().endsWith(".pdf")) return true;
+  const nonPdfTypes = new Set(["photograph", "video"]);
+  const docType = doc.documentType?.toLowerCase() || "";
+  return docType !== "" && !nonPdfTypes.has(docType);
+}
+
 function DocumentThumbnail({ doc }: { doc: Document }) {
   const mediaType = doc.mediaType?.toLowerCase() || "";
   const docType = doc.documentType?.toLowerCase() || "";
   const isPhoto = mediaType === "photo" || mediaType === "image" || docType === "photograph";
   const isVideo = mediaType === "video" || docType === "video";
-  const isPdf = doc.title?.toLowerCase().endsWith(".pdf");
+  const isPdf = isPdfDocument(doc);
   const Icon = typeIcons[doc.documentType] || FileText;
 
   if (isPhoto) {
@@ -528,9 +537,14 @@ function DocumentThumbnail({ doc }: { doc: Document }) {
 
   if (isVideo) {
     return (
-      <div className="flex flex-col items-center gap-1.5">
-        <Video className="w-8 h-8 text-muted-foreground/40" />
-        <span className="text-[10px] text-muted-foreground">Video</span>
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+          <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white/80 ml-1" />
+        </div>
+        <div className="absolute top-2 left-2 flex items-center gap-1 bg-black/40 rounded px-1.5 py-0.5">
+          <Video className="w-3 h-3 text-white/70" />
+          <span className="text-[10px] text-white/70">Video</span>
+        </div>
       </div>
     );
   }
