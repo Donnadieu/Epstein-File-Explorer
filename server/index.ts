@@ -135,20 +135,6 @@ app.use((req, res, next) => {
     await setupVite(httpServer, app);
   }
 
-  // Pre-warm caches sequentially to avoid overwhelming Neon's connection limit
-  log("Pre-warming caches...");
-  try {
-    await storage.getStats();
-    await storage.getSidebarCounts();
-    await storage.getDocumentFilters();
-    await storage.getPersons();
-    await storage.getTimelineEvents();
-    await storage.getDocumentsFiltered({ page: 1, limit: 50 });
-    log("Cache pre-warming complete");
-  } catch (err: any) {
-    log(`Cache pre-warming failed: ${err.message}`);
-  }
-
   const port = parseInt(process.env.PORT || "5000", 10);
   httpServer.listen(
     {
@@ -170,6 +156,21 @@ app.use((req, res, next) => {
         )
         .then(() => log("Database seeding complete"))
         .catch((err) => log(`Database seeding skipped: ${err.message}`));
+
+      (async () => {
+        try {
+          log("Pre-warming caches...");
+          await storage.getStats();
+          await storage.getSidebarCounts();
+          await storage.getDocumentFilters();
+          await storage.getPersons();
+          await storage.getTimelineEvents();
+          await storage.getDocumentsFiltered({ page: 1, limit: 50 });
+          log("Cache pre-warming complete");
+        } catch (err: any) {
+          log(`Cache pre-warming failed: ${err.message}`);
+        }
+      })();
     },
   );
 })();
