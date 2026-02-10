@@ -13,7 +13,8 @@ import {
   type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, ilike, or, sql, desc, asc, inArray } from "drizzle-orm";
+import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull } from "drizzle-orm";
+import { isR2Configured } from "./r2";
 
 export interface IStorage {
   getPersons(): Promise<Person[]>;
@@ -66,6 +67,11 @@ export interface IStorage {
 
 function escapeLikePattern(input: string): string {
   return input.replace(/[\\%_]/g, (ch) => `\\${ch}`);
+}
+
+/** On production (R2 configured), only return documents that have been uploaded to R2. */
+function r2Filter() {
+  return isR2Configured() ? isNotNull(documents.r2Key) : undefined;
 }
 
 function createCache<T>(ttlMs: number) {
@@ -512,7 +518,11 @@ export class DatabaseStorage implements IStorage {
       })
       .from(personDocuments)
       .innerJoin(documents, eq(personDocuments.documentId, documents.id))
-      .where(eq(personDocuments.personId, id));
+      .where(
+        isR2Configured()
+          ? and(eq(personDocuments.personId, id), isNotNull(documents.r2Key))
+          : eq(personDocuments.personId, id)
+      );
 
     const connsFrom = await db
       .select()
@@ -569,7 +579,9 @@ export class DatabaseStorage implements IStorage {
 
   async getDocument(id: number): Promise<Document | undefined> {
     const [doc] = await db.select().from(documents).where(eq(documents.id, id));
-    return doc || undefined;
+    if (!doc) return undefined;
+    if (isR2Configured() && !doc.r2Key) return undefined;
+    return doc;
   }
 
   async getDocumentWithDetails(id: number): Promise<any> {
@@ -644,9 +656,10 @@ export class DatabaseStorage implements IStorage {
 
   async getStats() {
     return statsCache.get(async () => {
+      const r2Cond = r2Filter();
       const [personResult, documentResult, connectionResult, eventResult] = await Promise.all([
         db.select({ count: sql<number>`count(*)::int` }).from(persons),
-        db.select({ count: sql<number>`count(*)::int` }).from(documents),
+        db.select({ count: sql<number>`count(*)::int` }).from(documents).where(r2Cond),
         db.select({ count: sql<number>`count(*)::int` }).from(connections),
         db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
       ]);
@@ -741,12 +754,16 @@ export class DatabaseStorage implements IStorage {
       ).limit(20),
 
       db.select().from(documents).where(
-        or(
-          ilike(documents.title, searchPattern),
-          ilike(documents.description, searchPattern),
-          ilike(documents.keyExcerpt, searchPattern),
-          ilike(documents.documentType, searchPattern)
-        )
+        (() => {
+          const textMatch = or(
+            ilike(documents.title, searchPattern),
+            ilike(documents.description, searchPattern),
+            ilike(documents.keyExcerpt, searchPattern),
+            ilike(documents.documentType, searchPattern)
+          );
+          const r2Cond = r2Filter();
+          return r2Cond ? and(r2Cond, textMatch) : textMatch;
+        })()
       ).limit(20),
 
       db.select().from(timelineEvents).where(
@@ -780,11 +797,12 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
-    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(documents);
+    const r2Cond = r2Filter();
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(documents).where(r2Cond);
     const total = countResult.count;
     const totalPages = Math.ceil(total / limit);
     const offset = (page - 1) * limit;
-    const data = await db.select().from(documents).orderBy(asc(documents.id)).limit(limit).offset(offset);
+    const data = await db.select().from(documents).where(r2Cond).orderBy(asc(documents.id)).limit(limit).offset(offset);
     return { data, total, page, totalPages };
   }
 
@@ -798,6 +816,8 @@ export class DatabaseStorage implements IStorage {
     mediaType?: string;
   }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
     const conditions = [];
+    const r2Cond = r2Filter();
+    if (r2Cond) conditions.push(r2Cond);
 
     if (opts.search) {
       const searchPattern = `%${escapeLikePattern(opts.search)}%`;
@@ -830,16 +850,19 @@ export class DatabaseStorage implements IStorage {
 
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
+    // Check if user applied any filters beyond the automatic r2 filter
+    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType);
+
     // For unfiltered queries, use the cached stats total to avoid COUNT(*) on 1.38M rows
     let total: number;
-    if (conditions.length === 0) {
+    if (!hasUserFilters) {
       const stats = await this.getStats();
       total = stats.documentCount;
 
       // For first page with no filters, serve from cache
       if (opts.page === 1) {
         const cachedFirstPage = await firstPageDocsCache.get(() =>
-          db.select().from(documents).orderBy(asc(documents.id)).limit(50)
+          db.select().from(documents).where(r2Cond).orderBy(asc(documents.id)).limit(50)
         );
         const data = cachedFirstPage.slice(0, opts.limit);
         const totalPages = Math.ceil(total / opts.limit);
@@ -880,17 +903,19 @@ export class DatabaseStorage implements IStorage {
 
   async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }> {
     return documentFiltersCache.get(async () => {
+    const r2Cond = r2Filter();
     const [typeRows, dataSetRows, mediaTypeRows] = await Promise.all([
       db.selectDistinct({ documentType: documents.documentType })
         .from(documents)
+        .where(r2Cond)
         .orderBy(asc(documents.documentType)),
       db.selectDistinct({ dataSet: documents.dataSet })
         .from(documents)
-        .where(sql`${documents.dataSet} IS NOT NULL`)
+        .where(r2Cond ? and(isNotNull(documents.dataSet), r2Cond) : isNotNull(documents.dataSet))
         .orderBy(asc(documents.dataSet)),
       db.selectDistinct({ mediaType: documents.mediaType })
         .from(documents)
-        .where(sql`${documents.mediaType} IS NOT NULL`)
+        .where(r2Cond ? and(isNotNull(documents.mediaType), r2Cond) : isNotNull(documents.mediaType))
         .orderBy(asc(documents.mediaType)),
     ]);
 
@@ -906,17 +931,21 @@ export class DatabaseStorage implements IStorage {
     const cached = getFromMapCache(adjacentCache, id, ADJACENT_CACHE_TTL);
     if (cached) return cached;
 
+    const r2Cond = r2Filter();
+    const prevWhere = r2Cond ? and(sql`${documents.id} < ${id}`, r2Cond) : sql`${documents.id} < ${id}`;
+    const nextWhere = r2Cond ? and(sql`${documents.id} > ${id}`, r2Cond) : sql`${documents.id} > ${id}`;
+
     const [prevRow] = await db
       .select({ id: documents.id })
       .from(documents)
-      .where(sql`${documents.id} < ${id}`)
+      .where(prevWhere)
       .orderBy(desc(documents.id))
       .limit(1);
 
     const [nextRow] = await db
       .select({ id: documents.id })
       .from(documents)
-      .where(sql`${documents.id} > ${id}`)
+      .where(nextWhere)
       .orderBy(asc(documents.id))
       .limit(1);
 
@@ -938,18 +967,19 @@ export class DatabaseStorage implements IStorage {
     connections: number;
   }> {
     return sidebarCountsCache.get(async () => {
+    const r2Cond = r2Filter();
     const [docCounts, mediaCounts, entityCounts] = await Promise.all([
       // Document counts by type in a single query
       db.select({
         documentType: documents.documentType,
         count: sql<number>`count(*)::int`,
-      }).from(documents).groupBy(documents.documentType),
+      }).from(documents).where(r2Cond).groupBy(documents.documentType),
 
       // Media counts
       db.select({
         images: sql<number>`count(*) filter (where ${documents.documentType} = 'photograph')::int`,
         videos: sql<number>`count(*) filter (where ${documents.documentType} = 'video')::int`,
-      }).from(documents),
+      }).from(documents).where(r2Cond),
 
       // Entity counts
       Promise.all([
