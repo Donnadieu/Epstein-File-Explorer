@@ -40,6 +40,9 @@ export interface IStorage {
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }>;
+  getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
 
   getBookmarks(): Promise<Bookmark[]>;
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
@@ -654,6 +657,100 @@ export class DatabaseStorage implements IStorage {
     const offset = (page - 1) * limit;
     const data = await db.select().from(documents).orderBy(asc(documents.id)).limit(limit).offset(offset);
     return { data, total, page, totalPages };
+  }
+
+  async getDocumentsFiltered(opts: {
+    page: number;
+    limit: number;
+    search?: string;
+    type?: string;
+    dataSet?: string;
+    redacted?: string;
+  }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
+    const conditions = [];
+
+    if (opts.search) {
+      const searchPattern = `%${escapeLikePattern(opts.search)}%`;
+      conditions.push(
+        or(
+          ilike(documents.title, searchPattern),
+          ilike(documents.description, searchPattern),
+          ilike(documents.keyExcerpt, searchPattern),
+        )
+      );
+    }
+
+    if (opts.type) {
+      conditions.push(eq(documents.documentType, opts.type));
+    }
+
+    if (opts.dataSet) {
+      conditions.push(eq(documents.dataSet, opts.dataSet));
+    }
+
+    if (opts.redacted === "redacted") {
+      conditions.push(eq(documents.isRedacted, true));
+    } else if (opts.redacted === "unredacted") {
+      conditions.push(eq(documents.isRedacted, false));
+    }
+
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    const [countResult] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(documents)
+      .where(whereClause);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / opts.limit);
+    const offset = (opts.page - 1) * opts.limit;
+    const data = await db
+      .select()
+      .from(documents)
+      .where(whereClause)
+      .orderBy(asc(documents.id))
+      .limit(opts.limit)
+      .offset(offset);
+
+    return { data, total, page: opts.page, totalPages };
+  }
+
+  async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[] }> {
+    const typeRows = await db
+      .selectDistinct({ documentType: documents.documentType })
+      .from(documents)
+      .orderBy(asc(documents.documentType));
+
+    const dataSetRows = await db
+      .selectDistinct({ dataSet: documents.dataSet })
+      .from(documents)
+      .where(sql`${documents.dataSet} IS NOT NULL`)
+      .orderBy(asc(documents.dataSet));
+
+    return {
+      types: typeRows.map((r) => r.documentType),
+      dataSets: dataSetRows.map((r) => r.dataSet!),
+    };
+  }
+
+  async getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }> {
+    const [prevRow] = await db
+      .select({ id: documents.id })
+      .from(documents)
+      .where(sql`${documents.id} < ${id}`)
+      .orderBy(desc(documents.id))
+      .limit(1);
+
+    const [nextRow] = await db
+      .select({ id: documents.id })
+      .from(documents)
+      .where(sql`${documents.id} > ${id}`)
+      .orderBy(asc(documents.id))
+      .limit(1);
+
+    return {
+      prev: prevRow?.id ?? null,
+      next: nextRow?.id ?? null,
+    };
   }
 
   async getBookmarks(): Promise<Bookmark[]> {

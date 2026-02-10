@@ -103,25 +103,44 @@ export async function registerRoutes(
 
   /**
    * GET /api/documents
-   * Without ?page: returns Document[] (full array)
-   * With ?page=N&limit=M: returns { data: Document[], total, page, totalPages }
+   * Always paginates. Supports server-side filtering via query params.
+   * Returns { data: Document[], total, page, totalPages }
    */
   app.get("/api/documents", async (req, res) => {
     try {
-      const pageParam = req.query.page as string | undefined;
-      const limitParam = req.query.limit as string | undefined;
+      const page = Math.max(1, parseInt(req.query.page as string) || 1);
+      const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string || "50") || 50));
+      const search = (req.query.search as string) || undefined;
+      const type = (req.query.type as string) || undefined;
+      const dataSet = (req.query.dataSet as string) || undefined;
+      const redacted = (req.query.redacted as string) || undefined;
 
-      if (pageParam) {
-        const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
-        const result = await storage.getDocumentsPaginated(page, limit);
-        return res.json({ ...result, data: result.data.map(omitInternal) });
-      }
-
-      const documents = await storage.getDocuments();
-      res.json(documents.map(omitInternal));
+      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted });
+      res.json({ ...result, data: result.data.map(omitInternal) });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
+    }
+  });
+
+  app.get("/api/documents/filters", async (_req, res) => {
+    try {
+      const filters = await storage.getDocumentFilters();
+      res.json(filters);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch document filters" });
+    }
+  });
+
+  app.get("/api/documents/:id/adjacent", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const adjacent = await storage.getAdjacentDocumentIds(id);
+      res.json(adjacent);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch adjacent documents" });
     }
   });
 
