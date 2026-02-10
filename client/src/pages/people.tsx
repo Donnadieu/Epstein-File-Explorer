@@ -61,6 +61,7 @@ export default function PeoplePage() {
 
   const { data: persons, isLoading } = useQuery<Person[]>({
     queryKey: ["/api/persons"],
+    staleTime: 600_000,
   });
 
   const filtered = useMemo(() => {

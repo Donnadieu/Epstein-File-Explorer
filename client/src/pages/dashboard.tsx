@@ -139,18 +139,22 @@ export default function Dashboard() {
     eventCount: number;
   }>({
     queryKey: ["/api/stats"],
+    staleTime: 300_000,
   });
 
   const { data: allPeople, isLoading: peopleLoading } = useQuery<Person[]>({
     queryKey: ["/api/persons"],
+    staleTime: 300_000,
   });
 
   const { data: docsResult, isLoading: docsLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
     queryKey: ["/api/documents?page=1&limit=5"],
+    staleTime: 300_000,
   });
 
   const { data: allEvents, isLoading: eventsLoading } = useQuery<TimelineEvent[]>({
     queryKey: ["/api/timeline"],
+    staleTime: 300_000,
   });
 
   const featuredPeople = allPeople?.slice(0, 6);

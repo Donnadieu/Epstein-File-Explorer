@@ -33,6 +33,7 @@ export default function TimelinePage() {
 
   const { data: events, isLoading } = useQuery<TimelineEvent[]>({
     queryKey: ["/api/timeline"],
+    staleTime: 600_000,
   });
 
   const categories = useMemo(

@@ -42,6 +42,7 @@ const connTypeChartConfig: ChartConfig = {
 export default function AIInsightsPage() {
   const { data: aggregate, isLoading, isError } = useQuery<AIAnalysisAggregate>({
     queryKey: ["/api/ai-analyses/aggregate"],
+    staleTime: 1_800_000,
   });
 
   return (
