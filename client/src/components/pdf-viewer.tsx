@@ -22,7 +22,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 
 interface PdfViewerProps {
   documentId: number;
-  sourceUrl: string;
+  sourceUrl?: string;
 }
 
 type ViewerState = "loading" | "ready" | "error";
@@ -90,7 +90,7 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
       setViewerState("loading");
 
       // Try proxy endpoint first (avoids CORS), then direct URL
-      const urls = [`/api/documents/${documentId}/pdf`, sourceUrl];
+      const urls = [`/api/documents/${documentId}/pdf`, sourceUrl].filter(Boolean) as string[];
 
       for (const url of urls) {
         if (cancelled) return;
@@ -186,11 +186,13 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
         <CardContent className="flex flex-col items-center gap-4 py-8">
           <AlertCircle className="w-8 h-8 text-muted-foreground/50" />
           <p className="text-sm text-muted-foreground text-center max-w-md">{errorMessage}</p>
-          <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="gap-2">
-              <ExternalLink className="w-4 h-4" /> Browse Source on DOJ Website
-            </Button>
-          </a>
+          {sourceUrl && (
+            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" className="gap-2">
+                <ExternalLink className="w-4 h-4" /> Browse Source on DOJ Website
+              </Button>
+            </a>
+          )}
         </CardContent>
       </Card>
     );

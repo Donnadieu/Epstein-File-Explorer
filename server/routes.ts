@@ -372,11 +372,20 @@ export async function registerRoutes(
       // Try R2 first
       if (doc.r2Key && isR2Configured()) {
         try {
-          const r2Resp = await getR2Stream(doc.r2Key);
+          const r2Resp = await getR2Stream(doc.r2Key, req.headers.range);
           res.setHeader("Content-Type", r2Resp.contentType || "video/mp4");
-          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-          res.setHeader("Cache-Control", "private, max-age=3600");
-          r2Resp.body.pipe(res);
+          res.setHeader("Accept-Ranges", "bytes");
+          if (r2Resp.contentRange) {
+            res.setHeader("Content-Range", r2Resp.contentRange);
+            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+            res.setHeader("Cache-Control", "private, max-age=3600");
+            res.status(206);
+            r2Resp.body.pipe(res);
+          } else {
+            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+            res.setHeader("Cache-Control", "private, max-age=3600");
+            r2Resp.body.pipe(res);
+          }
           return;
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
@@ -395,13 +404,36 @@ export async function registerRoutes(
             ".mov": "video/quicktime", ".wmv": "video/x-ms-wmv",
             ".webm": "video/webm",
           };
+          const stat = fsSync.statSync(absPath);
+          const fileSize = stat.size;
           res.setHeader("Content-Type", mimeMap[ext] || "video/mp4");
+          res.setHeader("Accept-Ranges", "bytes");
           res.setHeader("Cache-Control", "private, max-age=3600");
-          const stream = fsSync.createReadStream(absPath);
-          stream.on("error", () => {
-            if (!res.headersSent) res.status(500).json({ error: "File read error" });
-          });
-          stream.pipe(res);
+
+          if (req.headers.range) {
+            const parts = req.headers.range.replace(/bytes=/, "").split("-");
+            const start = parseInt(parts[0], 10);
+            const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+            if (start >= fileSize || end >= fileSize || start > end) {
+              res.setHeader("Content-Range", `bytes */${fileSize}`);
+              return res.status(416).end();
+            }
+            res.setHeader("Content-Range", `bytes ${start}-${end}/${fileSize}`);
+            res.setHeader("Content-Length", String(end - start + 1));
+            res.status(206);
+            const stream = fsSync.createReadStream(absPath, { start, end });
+            stream.on("error", () => {
+              if (!res.headersSent) res.status(500).json({ error: "File read error" });
+            });
+            stream.pipe(res);
+          } else {
+            res.setHeader("Content-Length", String(fileSize));
+            const stream = fsSync.createReadStream(absPath);
+            stream.on("error", () => {
+              if (!res.headersSent) res.status(500).json({ error: "File read error" });
+            });
+            stream.pipe(res);
+          }
           return;
         }
       }
@@ -411,16 +443,22 @@ export async function registerRoutes(
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 120_000);
         try {
-          const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+          const fetchHeaders: Record<string, string> = {};
+          if (req.headers.range) fetchHeaders["Range"] = req.headers.range;
+          const response = await fetch(doc.sourceUrl, { signal: controller.signal, headers: fetchHeaders });
           clearTimeout(timeout);
-          if (!response.ok) {
+          if (!response.ok && response.status !== 206) {
             return res.status(502).json({ error: "Failed to fetch video from source" });
           }
           const contentType = response.headers.get("content-type") || "video/mp4";
           const contentLength = response.headers.get("content-length");
+          const contentRange = response.headers.get("content-range");
           res.setHeader("Content-Type", contentType);
+          res.setHeader("Accept-Ranges", "bytes");
           if (contentLength) res.setHeader("Content-Length", contentLength);
+          if (contentRange) res.setHeader("Content-Range", contentRange);
           res.setHeader("Cache-Control", "public, max-age=86400");
+          if (response.status === 206) res.status(206);
           if (response.body) {
             Readable.fromWeb(response.body as any).pipe(res);
           } else {

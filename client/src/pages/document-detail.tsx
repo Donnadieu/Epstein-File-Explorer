@@ -232,7 +232,7 @@ export default function DocumentDetailPage() {
         )}
       </div>
 
-      {doc.sourceUrl && (
+      {(doc.sourceUrl || doc.documentType) && (
         <>
           <Separator />
           <div className="flex flex-col gap-2">
@@ -378,5 +378,5 @@ function DocumentViewer({ doc }: { doc: DocumentDetail }) {
   }
 
   // Default: try PDF viewer, which will show a graceful fallback if it fails
-  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl!} />;
+  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl ?? undefined} />;
 }
