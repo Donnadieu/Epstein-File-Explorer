@@ -182,6 +182,8 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
       // --- Persons ---
       for (const mention of data.persons) {
+        if (isJunkPersonName(mention.name)) continue;
+
         const existing = await db
           .select()
           .from(persons)
@@ -449,11 +451,154 @@ async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicat
     .where(eq(persons.id, canonical.id));
 }
 
+/**
+ * Returns true if a person name is junk (OCR artifact, generic role, placeholder, etc.)
+ * and should be removed from the database entirely.
+ */
+export function isJunkPersonName(name: string): boolean {
+  const trimmed = name.trim();
+
+  // Very short names (1-2 chars)
+  if (trimmed.length <= 2) return true;
+
+  // Long descriptive strings (>60 chars are not person names)
+  if (trimmed.length > 60) return true;
+
+  // Contains special characters that don't appear in real names
+  if (/[!;&$%^]/.test(trimmed)) return true;
+
+  // Contains slashes (role combos, OCR junk)
+  if (trimmed.includes("/")) return true;
+
+  // Multiple consecutive digits (EFTA numbers, codes, OCR garbage)
+  if (/[0-9]{2,}/.test(trimmed)) return true;
+
+  // Digits mixed with letters in garbled patterns (e.g. "Donald Po4lon", "I3aktaj")
+  if (/[0-9].*[a-zA-Z].*[0-9]/.test(trimmed)) return true;
+  if (/^[A-Z][a-z]*[0-9][a-z]/.test(trimmed)) return true;
+
+  // Bracketed text: [REDACTED], [redacted], etc.
+  if (/^\[.*\]$/.test(trimmed)) return true;
+
+  // All-caps abbreviations without spaces (USANYS, ASAC, AUSAMMI, etc.)
+  if (/^[A-Z]{4,}$/.test(trimmed)) return true;
+
+  // Generic role-as-name entries (exact matches)
+  const GENERIC_ROLES = new Set([
+    "assistant united states attorney",
+    "special agent",
+    "case agent name",
+    "correctional officer",
+    "attorney general",
+    "unit manager",
+    "fbi assistant director",
+    "deputy united states attorney",
+    "supervisory staff attorney clc",
+    "unknown recipient",
+    "unknown sender",
+    "institution duty officer",
+    "victim witness coordinator",
+    "day watch shu officer in charge",
+    "evening watch shu officer in charge",
+  ]);
+  if (GENERIC_ROLES.has(trimmed.toLowerCase())) return true;
+
+  // Pattern-based junk
+  const lower = trimmed.toLowerCase();
+
+  // "Epstein's X" placeholders
+  if (/^epstein's\s/i.test(trimmed)) return true;
+
+  // "Epstein victim" placeholder
+  if (lower === "epstein victim") return true;
+
+  // Victim-N, Minor Victim-N patterns
+  if (/^(minor\s+)?victim-\d/i.test(trimmed)) return true;
+
+  // "Unknown X" / "Unnamed X" placeholders
+  if (/^unknown\s/i.test(trimmed) || /^unnamed\s/i.test(trimmed)) return true;
+
+  // "Mr./Mrs./Ms./Dr. [Redacted]" or "Mr./Mrs./Ms./Dr." with single word after
+  if (/^(mr|mrs|ms|dr)\.\s*\[/i.test(trimmed)) return true;
+
+  // Title-only entries like "Mr." or "Dr." with nothing substantial after
+  if (/^(mr|mrs|ms|dr|lt|sgt|det|cap)\.\s*$/i.test(trimmed)) return true;
+
+  // Single word, 3 chars or fewer (Des, Her, Ann, Bob, etc. are not useful without last names)
+  if (!/\s/.test(trimmed) && trimmed.length <= 3) return true;
+
+  // All-caps 3-letter codes without spaces (LSJ, AUS, DAG, DAC, CDR, FCA, etc.)
+  if (/^[A-Z]{3}$/.test(trimmed)) return true;
+
+  // Known generic non-person entries
+  const GENERIC_NONPERSONS = new Set([
+    "bop employee",
+    "the court",
+    "union president",
+    "flight engineer",
+    "customs officer",
+    "co-pilot",
+  ]);
+  if (GENERIC_NONPERSONS.has(lower)) return true;
+
+  // Pronouns and fragments used as names
+  if (["her", "his", "him", "she", "he", "des", "ands"].includes(lower)) return true;
+
+  // Organizations (LLC, Inc, Corp, LLP) — not persons
+  if (/,?\s*(llc|inc|corp|lp|llp)\.?\s*$/i.test(trimmed)) return true;
+
+  return false;
+}
+
 export async function deduplicatePersonsInDB(): Promise<void> {
   console.log("Deduplicating persons in database...");
 
+  // --- Pass 0: Remove junk persons (OCR artifacts, generic roles, placeholders) ---
+  const preCleanPersons = await db.select().from(persons);
+  const junkIds: number[] = [];
+
+  for (const p of preCleanPersons) {
+    if (isJunkPersonName(p.name)) {
+      junkIds.push(p.id);
+    }
+  }
+
+  if (junkIds.length > 0) {
+    console.log(`  Pass 0: Removing ${junkIds.length} junk persons...`);
+
+    // Process in chunks to avoid exceeding Postgres parameter limits
+    const CHUNK = 500;
+    for (let i = 0; i < junkIds.length; i += CHUNK) {
+      const chunk = junkIds.slice(i, i + CHUNK);
+
+      // Delete connections referencing junk persons
+      await db.delete(connections).where(
+        or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
+      );
+
+      // Delete person_documents referencing junk persons
+      await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
+
+      // Remove junk person IDs from timeline_events.person_ids arrays
+      for (const junkId of chunk) {
+        await db.execute(sql`
+          UPDATE timeline_events
+          SET person_ids = array_remove(person_ids, ${junkId})
+          WHERE ${junkId} = ANY(person_ids)
+        `);
+      }
+
+      // Delete the junk persons
+      await db.delete(persons).where(inArray(persons.id, chunk));
+    }
+
+    console.log(`  Pass 0: Removed ${junkIds.length} junk persons`);
+  } else {
+    console.log("  Pass 0: No junk persons found");
+  }
+
   const allPersons = await db.select().from(persons);
-  console.log(`  Found ${allPersons.length} persons total`);
+  console.log(`  Found ${allPersons.length} persons total (after cleanup)`);
 
   // --- Pass 1: Multi-word name matching via Union-Find ---
   const parent = new Map<number, number>();
@@ -563,7 +708,46 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
 
   console.log(`  Pass 2 (single-word): merged ${pass2Merged} single-word persons`);
-  console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged} persons removed`);
+
+  // --- Pass 3: Remove remaining single-word names that couldn't be merged ---
+  // These are ambiguous first names, fragments, or roles that don't match anyone
+  const afterPass2 = await db.select().from(persons);
+  const singleWordRemaining = afterPass2.filter(p => {
+    const trimmed = p.name.trim();
+    return !/\s/.test(trimmed) && trimmed.length <= 15;
+  });
+
+  if (singleWordRemaining.length > 0) {
+    const singleWordIds = singleWordRemaining.map(p => p.id);
+    console.log(`  Pass 3: Removing ${singleWordIds.length} unmatched single-word names...`);
+
+    const CHUNK = 500;
+    for (let i = 0; i < singleWordIds.length; i += CHUNK) {
+      const chunk = singleWordIds.slice(i, i + CHUNK);
+      await db.delete(connections).where(
+        or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
+      );
+      await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
+      for (const id of chunk) {
+        await db.execute(sql`
+          UPDATE timeline_events SET person_ids = array_remove(person_ids, ${id})
+          WHERE ${id} = ANY(person_ids)
+        `);
+      }
+      await db.delete(persons).where(inArray(persons.id, chunk));
+    }
+
+    console.log(`  Pass 3: Removed ${singleWordIds.length} single-word persons`);
+  } else {
+    console.log("  Pass 3: No unmatched single-word names remaining");
+  }
+
+  // Remove any self-loops created during cleanup
+  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
+
+  const finalCount = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged + singleWordRemaining.length} persons removed`);
+  console.log(`  Final person count: ${finalCount[0]?.count}`);
 }
 
 function inferDocumentType(description: string): string {
