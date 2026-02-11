@@ -211,7 +211,7 @@ export async function registerRoutes(
         try {
           const r2Resp = await getR2Stream(doc.r2Key);
           // Avoid streaming very large files through the server — tell client to use /content-url
-          const STREAM_LIMIT = 10 * 1024 * 1024; // 10 MB
+          const STREAM_LIMIT = 100 * 1024 * 1024; // 100 MB
           if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
             r2Resp.body.destroy();
             return res.status(413).json({ error: "File too large to stream", useContentUrl: true });
@@ -313,7 +313,7 @@ export async function registerRoutes(
       if (doc.r2Key && isR2Configured()) {
         try {
           const r2Resp = await getR2Stream(doc.r2Key);
-          const STREAM_LIMIT = 10 * 1024 * 1024;
+          const STREAM_LIMIT = 100 * 1024 * 1024; // 100 MB
           if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
             r2Resp.body.destroy();
             return res.status(413).json({ error: "File too large to stream", useContentUrl: true });
