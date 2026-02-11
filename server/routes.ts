@@ -179,6 +179,22 @@ export async function registerRoutes(
     }
   });
 
+  // Return a presigned R2 URL for direct browser access (iframe, img, video tags)
+  app.get("/api/documents/:id/content-url", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
+      const doc = await storage.getDocument(id);
+      if (!doc) return res.status(404).json({ error: "Document not found" });
+      if (!doc.r2Key || !isR2Configured()) return res.status(404).json({ error: "No R2 content available" });
+      const url = await getPresignedUrl(doc.r2Key);
+      res.set("Cache-Control", "private, max-age=3000");
+      res.json({ url });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to generate content URL" });
+    }
+  });
+
   // Proxy PDF content to avoid CORS issues with DOJ source URLs
   app.get("/api/documents/:id/pdf", async (req, res) => {
     try {
@@ -193,19 +209,7 @@ export async function registerRoutes(
       // Serve from R2 if available, otherwise fall through to DOJ proxy
       if (doc.r2Key && isR2Configured()) {
         try {
-          // For large files, redirect to presigned URL to avoid memory/timeout issues
-          const STREAM_LIMIT = 10 * 1024 * 1024; // 10MB
-          if (doc.fileSizeBytes && doc.fileSizeBytes > STREAM_LIMIT) {
-            const url = await getPresignedUrl(doc.r2Key);
-            return res.redirect(url);
-          }
           const r2Resp = await getR2Stream(doc.r2Key);
-          // Also redirect if the actual content is large (fileSizeBytes may be null)
-          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
-            r2Resp.body.destroy();
-            const url = await getPresignedUrl(doc.r2Key);
-            return res.redirect(url);
-          }
           res.setHeader("Content-Type", r2Resp.contentType || "application/pdf");
           if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
           res.setHeader("Cache-Control", "private, max-age=3600");
@@ -302,17 +306,7 @@ export async function registerRoutes(
       // Try R2 first
       if (doc.r2Key && isR2Configured()) {
         try {
-          const STREAM_LIMIT = 10 * 1024 * 1024;
-          if (doc.fileSizeBytes && doc.fileSizeBytes > STREAM_LIMIT) {
-            const url = await getPresignedUrl(doc.r2Key);
-            return res.redirect(url);
-          }
           const r2Resp = await getR2Stream(doc.r2Key);
-          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
-            r2Resp.body.destroy();
-            const url = await getPresignedUrl(doc.r2Key);
-            return res.redirect(url);
-          }
           res.setHeader("Content-Type", r2Resp.contentType || "image/jpeg");
           if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
           res.setHeader("Cache-Control", "private, max-age=3600");
@@ -394,14 +388,27 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Try R2 first — redirect to presigned URL so the browser handles range requests directly
+      // Try R2 first
       if (doc.r2Key && isR2Configured()) {
         try {
-          const url = await getPresignedUrl(doc.r2Key);
-          return res.redirect(url);
+          const r2Resp = await getR2Stream(doc.r2Key, req.headers.range);
+          res.setHeader("Content-Type", r2Resp.contentType || "video/mp4");
+          res.setHeader("Accept-Ranges", "bytes");
+          if (r2Resp.contentRange) {
+            res.setHeader("Content-Range", r2Resp.contentRange);
+            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+            res.setHeader("Cache-Control", "private, max-age=3600");
+            res.status(206);
+            r2Resp.body.pipe(res);
+          } else {
+            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
+            res.setHeader("Cache-Control", "private, max-age=3600");
+            r2Resp.body.pipe(res);
+          }
+          return;
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 presigned URL failed for video doc ${id}: ${msg}`);
+          console.warn(`R2 stream failed for video doc ${id}: ${msg}`);
         }
       }
 

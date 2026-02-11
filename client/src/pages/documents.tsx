@@ -466,7 +466,7 @@ export default function DocumentsPage() {
   );
 }
 
-function PdfThumbnail({ docId }: { docId: number }) {
+function PdfThumbnail({ doc }: { doc: Document }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [failed, setFailed] = useState(false);
 
@@ -477,7 +477,7 @@ function PdfThumbnail({ docId }: { docId: number }) {
 
     (async () => {
       try {
-        const pdf = await pdfjsLib.getDocument({ url: `/api/documents/${docId}/pdf` }).promise;
+        const pdf = await pdfjsLib.getDocument({ url: `/api/documents/${doc.id}/pdf` }).promise;
         if (cancelled) return;
         const page = await pdf.getPage(1);
         if (cancelled) return;
@@ -498,9 +498,19 @@ function PdfThumbnail({ docId }: { docId: number }) {
     })();
 
     return () => { cancelled = true; };
-  }, [docId]);
+  }, [doc.id]);
 
-  if (failed) return null;
+  if (failed) {
+    const Icon = typeIcons[doc.documentType] || FileText;
+    return (
+      <div className="flex flex-col items-center gap-1.5">
+        <Icon className="w-8 h-8 text-muted-foreground/40" />
+        {doc.pageCount && (
+          <span className="text-[10px] text-muted-foreground">{doc.pageCount} pg</span>
+        )}
+      </div>
+    );
+  }
   return <canvas ref={canvasRef} width={400} className="w-full h-full object-cover" />;
 }
 
@@ -551,7 +561,7 @@ function DocumentThumbnail({ doc }: { doc: Document }) {
   }
 
   if (isPdf) {
-    return <PdfThumbnail docId={doc.id} />;
+    return <PdfThumbnail doc={doc} />;
   }
 
   return (

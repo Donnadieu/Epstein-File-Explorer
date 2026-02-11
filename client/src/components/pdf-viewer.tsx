@@ -25,7 +25,7 @@ interface PdfViewerProps {
   sourceUrl?: string;
 }
 
-type ViewerState = "loading" | "ready" | "error";
+type ViewerState = "loading" | "ready" | "iframe" | "error";
 
 const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.5;
@@ -39,6 +39,7 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
 
   const [viewerState, setViewerState] = useState<ViewerState>("loading");
   const [errorMessage, setErrorMessage] = useState("");
+  const [iframeUrl, setIframeUrl] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [scale, setScale] = useState(1);
@@ -110,6 +111,21 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
           // Try next URL
         }
       }
+
+      if (cancelled) return;
+
+      // pdf.js failed — try presigned URL in an iframe (avoids CORS)
+      try {
+        const resp = await fetch(`/api/documents/${documentId}/content-url`);
+        if (resp.ok) {
+          const { url } = await resp.json();
+          if (!cancelled) {
+            setIframeUrl(url);
+            setViewerState("iframe");
+            return;
+          }
+        }
+      } catch {}
 
       if (!cancelled) {
         setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");
@@ -206,6 +222,19 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
           <p className="text-sm text-muted-foreground">Loading PDF...</p>
         </CardContent>
       </Card>
+    );
+  }
+
+  if (viewerState === "iframe") {
+    return (
+      <div className="flex flex-col border rounded-lg overflow-hidden">
+        <iframe
+          src={iframeUrl}
+          className="w-full border-0"
+          style={{ height: "70vh" }}
+          title="PDF Document"
+        />
+      </div>
     );
   }
 
