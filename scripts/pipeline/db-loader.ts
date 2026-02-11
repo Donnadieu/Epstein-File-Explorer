@@ -562,6 +562,15 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   // Remove self-loops again after pass 2
   await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
 
+  // Remove duplicate connection pairs created by remapping
+  const dedupResult = await db.execute(sql`
+    DELETE FROM connections a USING connections b
+    WHERE a.id > b.id
+      AND LEAST(a.person_id_1, a.person_id_2) = LEAST(b.person_id_1, b.person_id_2)
+      AND GREATEST(a.person_id_1, a.person_id_2) = GREATEST(b.person_id_1, b.person_id_2)
+  `);
+  console.log(`  Removed ${dedupResult.rowCount ?? 0} duplicate connection pairs`);
+
   console.log(`  Pass 2 (single-word): merged ${pass2Merged} single-word persons`);
   console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged} persons removed`);
 }

@@ -87,12 +87,13 @@ STAGES:
   update-counts    Recalculate document/connection counts per person
 
 SHORTCUTS:
-  quick            Run scrape-wikipedia + load-persons + extract-connections + update-counts
+  quick            Run scrape-wikipedia + load-persons + extract-connections + dedup-persons + update-counts
                    (fastest way to populate app with comprehensive data)
   full-discovery   Run all scraping, downloading, processing, and loading stages
                    (scrape-wikipedia → download-torrent → upload-r2 → process →
                     classify-media → analyze-ai → load-persons → load-documents →
-                    import-downloads → load-ai-results → extract-connections → update-counts)
+                    import-downloads → load-ai-results → extract-connections →
+                    dedup-persons → update-counts)
   analyze-priority Run AI analysis on highest-priority unanalyzed documents
                    (classify-media → analyze-ai → load-ai-results → update-counts)
 
@@ -275,6 +276,7 @@ async function main() {
         "scrape-wikipedia",
         "load-persons",
         "extract-connections",
+        "dedup-persons",
         "update-counts",
       ];
     } else if (arg === "full-discovery") {
@@ -290,6 +292,7 @@ async function main() {
         "import-downloads",
         "load-ai-results",
         "extract-connections",
+        "dedup-persons",
         "update-counts",
       ];
     } else if (arg === "analyze-priority") {
