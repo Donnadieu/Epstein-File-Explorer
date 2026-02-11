@@ -5,7 +5,7 @@ import * as fsSync from "fs";
 import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
-import { isR2Configured, getR2Stream } from "./r2";
+import { isR2Configured, getR2Stream, getPresignedUrl } from "./r2";
 // import { registerChatRoutes } from "./chat";
 
 const ALLOWED_PDF_DOMAINS = [
@@ -193,7 +193,19 @@ export async function registerRoutes(
       // Serve from R2 if available, otherwise fall through to DOJ proxy
       if (doc.r2Key && isR2Configured()) {
         try {
+          // For large files, redirect to presigned URL to avoid memory/timeout issues
+          const STREAM_LIMIT = 10 * 1024 * 1024; // 10MB
+          if (doc.fileSizeBytes && doc.fileSizeBytes > STREAM_LIMIT) {
+            const url = await getPresignedUrl(doc.r2Key);
+            return res.redirect(url);
+          }
           const r2Resp = await getR2Stream(doc.r2Key);
+          // Also redirect if the actual content is large (fileSizeBytes may be null)
+          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
+            r2Resp.body.destroy();
+            const url = await getPresignedUrl(doc.r2Key);
+            return res.redirect(url);
+          }
           res.setHeader("Content-Type", r2Resp.contentType || "application/pdf");
           if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
           res.setHeader("Cache-Control", "private, max-age=3600");
@@ -290,7 +302,17 @@ export async function registerRoutes(
       // Try R2 first
       if (doc.r2Key && isR2Configured()) {
         try {
+          const STREAM_LIMIT = 10 * 1024 * 1024;
+          if (doc.fileSizeBytes && doc.fileSizeBytes > STREAM_LIMIT) {
+            const url = await getPresignedUrl(doc.r2Key);
+            return res.redirect(url);
+          }
           const r2Resp = await getR2Stream(doc.r2Key);
+          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
+            r2Resp.body.destroy();
+            const url = await getPresignedUrl(doc.r2Key);
+            return res.redirect(url);
+          }
           res.setHeader("Content-Type", r2Resp.contentType || "image/jpeg");
           if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
           res.setHeader("Cache-Control", "private, max-age=3600");
@@ -372,27 +394,14 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Try R2 first
+      // Try R2 first — redirect to presigned URL so the browser handles range requests directly
       if (doc.r2Key && isR2Configured()) {
         try {
-          const r2Resp = await getR2Stream(doc.r2Key, req.headers.range);
-          res.setHeader("Content-Type", r2Resp.contentType || "video/mp4");
-          res.setHeader("Accept-Ranges", "bytes");
-          if (r2Resp.contentRange) {
-            res.setHeader("Content-Range", r2Resp.contentRange);
-            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-            res.setHeader("Cache-Control", "private, max-age=3600");
-            res.status(206);
-            r2Resp.body.pipe(res);
-          } else {
-            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-            res.setHeader("Cache-Control", "private, max-age=3600");
-            r2Resp.body.pipe(res);
-          }
-          return;
+          const url = await getPresignedUrl(doc.r2Key);
+          return res.redirect(url);
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 stream failed for video doc ${id}: ${msg}`);
+          console.warn(`R2 presigned URL failed for video doc ${id}: ${msg}`);
         }
       }
 
