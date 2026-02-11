@@ -3,42 +3,42 @@
   "dataSet": "9",
   "documentType": "court filing correspondence",
   "dateOriginal": "2021-04-23",
-  "summary": "This is an email from an Assistant United States Attorney to a judge (Nathan) regarding the case US v. Maxwell (20 Cr. 330). It transmits a government letter requesting redactions to filings related to the defendant's application for a Rule 17(c) subpoena and includes attachments with proposed redactions to filings from defense counsel and the law firm Boies Schiller Flexner LLP.",
+  "summary": "This is an email from a prosecutor in the Southern District of New York transmitting a government request for redactions to filings related to Ghislaine Maxwell's Rule 17(c) subpoena application in her criminal case. It includes attachments with proposed redactions to filings from defense counsel and the law firm Boies Schiller Flexner LLP.",
   "persons": [
     {
       "name": "Nathan",
-      "role": "Judge",
+      "role": "Recipient of email",
       "category": "legal",
-      "context": "The email is addressed to Judge Nathan, indicating she is presiding over the case US v. Maxwell.",
+      "context": "Appears as the primary recipient of an email from a prosecutor regarding redaction requests in the Maxwell case.",
       "mentionCount": 1
     },
     {
-      "name": "Maxwell",
-      "role": "Defendant",
-      "category": "key figure",
-      "context": "The case is US v. Maxwell, indicating Ghislaine Maxwell is the defendant in the referenced criminal proceeding.",
+      "name": "NYSD Chambers",
+      "role": "Recipient of email",
+      "category": "legal",
+      "context": "Appears as a recipient (likely the judge's chambers) of an email regarding procedural redaction requests in the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, submitting the government's proposed redactions to filings in the Maxwell case on behalf of the Southern District of New York.",
       "mentionCount": 1
     }
   ],
-  "connections": [
-    {
-      "person1": "Nathan",
-      "person2": "Maxwell",
-      "relationshipType": "judge-defendant",
-      "description": "Judge Nathan is presiding over the criminal case against defendant Ghislaine Maxwell.",
-      "strength": 4
-    }
-  ],
+  "connections": [],
   "events": [
     {
       "date": "2021-04-23",
       "title": "Government Submits Redaction Request",
-      "description": "The government submits a letter to the court requesting redactions to filings regarding the defendant's application for a Rule 17(c) subpoena in the Maxwell case.",
+      "description": "The government files a letter requesting redactions to filings regarding Ghislaine Maxwell's application for a Rule 17(c) subpoena.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
+        "Assistant United States Attorney",
         "Nathan",
-        "Maxwell"
+        "NYSD Chambers"
       ]
     }
   ],
@@ -47,10 +47,10 @@
     "1 St. Andrew's Plaza, New York, NY 10007"
   ],
   "keyFacts": [
-    "The document is an email from a federal prosecutor to Judge Alison Nathan regarding the Ghislaine Maxwell criminal case.",
-    "The government is requesting redactions to filings related to Maxwell's application for a Rule 17(c) subpoena.",
-    "The attachments include proposed redactions to filings from Maxwell's defense counsel and the law firm Boies Schiller Flexner LLP.",
-    "The correspondence indicates ongoing pre-trial litigation concerning the scope of discovery and public disclosure in the Maxwell case."
+    "The document is a procedural email from a prosecutor in the Ghislaine Maxwell criminal case (US v. Maxwell, 20 Cr. 330).",
+    "The government is requesting redactions to filings related to Maxwell's Rule 17(c) subpoena application.",
+    "The proposed redactions apply to filings from defense counsel and the law firm Boies Schiller Flexner LLP.",
+    "The correspondence indicates ongoing litigation over the scope and disclosure of information in the Maxwell case in April 2021."
   ],
-  "analyzedAt": "2026-02-09T15:19:08.867Z"
+  "analyzedAt": "2026-02-11T14:30:29.115Z"
 }

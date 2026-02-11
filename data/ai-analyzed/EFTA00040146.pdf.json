@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00040146.pdf",
+  "dataSet": "9",
+  "documentType": "email chain",
+  "dateOriginal": "2021-05-24 to 2021-05-25",
+  "summary": "An email chain between FBI agents and federal prosecutors regarding a threat assessment requested by an attorney for Tova Noel, a former Epstein jail guard. The threat, sent from a Las Vegas email address, is forwarded for investigation and potential subpoena to Google.",
+  "persons": [
+    {
+      "name": "Jason Foy",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from Foy & Seplowitz LLC who forwards a threatening email received by his partner to federal authorities, requesting a threat assessment for his client Tova Noel.",
+      "mentionCount": 4
+    },
+    {
+      "name": "James Seplowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Partner of Jason Foy who initially received the threatening email, which was then forwarded to authorities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Former Epstein jail guard",
+      "category": "staff",
+      "context": "Referred to as 'the victim' and a 'former Epstein guard'; her attorney is requesting an FBI threat assessment due to a perceived threat against her safety.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Eric Sarraga",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Copied on the internal email between attorneys Jason Foy and James Seplowitz regarding the threatening message.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jason Foy",
+      "person2": "James Seplowitz",
+      "relationshipType": "professional partnership",
+      "description": "Partners at the law firm Foy & Seplowitz LLC, as indicated in the email signature and forwarding chain.",
+      "strength": 4
+    },
+    {
+      "person1": "Jason Foy",
+      "person2": "Tova Noel",
+      "relationshipType": "attorney-client",
+      "description": "Jason Foy is acting as attorney for Tova Noel, requesting an FBI threat assessment on her behalf.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-24",
+      "title": "Threatening email received",
+      "description": "An email perceived as a threat against Tova Noel is sent from 'Vegas Army Vet' to attorney James Seplowitz.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "James Seplowitz",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2021-05-25",
+      "title": "Request for threat assessment",
+      "description": "Attorney Jason Foy formally requests the Government (FBI/US Attorney's Office) to investigate the perceived threat against his client Tova Noel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jason Foy",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2021-05-25",
+      "title": "FBI coordination on threat",
+      "description": "FBI agents and Assistant U.S. Attorneys coordinate to assess the threat, discuss generating a subpoena to Google for subscriber information, and consider a Non-Disclosure Order (NDO).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Las Vegas, Nevada",
+    "Hackensack, NJ 07601",
+    "New York (referenced as NY FBI and USANYS)"
+  ],
+  "keyFacts": [
+    "Tova Noel, a former guard at the jail where Jeffrey Epstein was held, was the subject of a perceived threat in May 2021.",
+    "The threatening email originated from a Las Vegas email address, with the sender having no criminal history according to an initial OIG check.",
+    "Federal authorities (FBI and U.S. Attorney's Office) coordinated to conduct a threat assessment and considered issuing a subpoena to Google for account information.",
+    "The document reveals ongoing security concerns and legal proceedings involving staff associated with the Epstein case years after his death."
+  ],
+  "analyzedAt": "2026-02-11T14:58:54.384Z"
+}

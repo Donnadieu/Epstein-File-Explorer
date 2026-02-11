@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00040778.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-01",
+  "summary": "This document is a chain of emails from late June 2019 arranging a conference call to discuss victim interviews in the Jeffrey Epstein case. It involves FBI personnel from the New York office and the Victim Services Division coordinating schedules and logistics for a briefing.",
+  "persons": [
+    {
+      "name": "Connell",
+      "role": "FBI Supervisor",
+      "category": "law enforcement",
+      "context": "Supervises Child/Adolescent Forensic Interviewers (CAFIs) and is copied on the email chain to coordinate the Epstein victim interview discussion call.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Watson, P.",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent from New York office copied on the email chain regarding the Epstein victim interviews conference call.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Connell",
+      "person2": "J.",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Connell supervises Child/Adolescent Forensic Interviewers (CAFIs), a group that includes J.",
+      "strength": 3
+    },
+    {
+      "person1": "Watson, P.",
+      "person2": "Connell",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel involved in coordinating the Epstein victim interview discussion.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-06-28",
+      "title": "Scheduled Epstein victim interviews conference call",
+      "description": "A conference call was scheduled for 2:00 PM Eastern Time to discuss victim interviews in the Epstein case, involving FBI personnel from NY and the Victim Services Division.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Connell",
+        "Watson, P.",
+        "J."
+      ]
+    },
+    {
+      "date": "2019-07-01",
+      "title": "SDNY meeting and ADIC case brief",
+      "description": "Reference to a 2:00 PM meeting at the Southern District of New York (SDNY) and a 3:30 PM case brief requested by the ADIC (Assistant Director in Charge), indicating high-level coordination on the Epstein case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "SDNY (Southern District of New York)",
+    "FBI NY Criminal Division Violent Crimes Task Force",
+    "FBI, Victim Services Division Child Victim Services Unit"
+  ],
+  "keyFacts": [
+    "In late June 2019, the FBI was actively coordinating a multi-office conference call to discuss victim interviews in the Jeffrey Epstein case.",
+    "The coordination involved the FBI's New York office (Criminal Division, Violent Crimes Task Force) and the Victim Services Division's Child Victim Services Unit, specifically Child/Adolescent Forensic Interviewers (CAFIs).",
+    "A meeting was scheduled at the Southern District of New York (SDNY) on July 1, 2019, with a high-level case brief requested by the ADIC (Assistant Director in Charge) for 3:30 PM that same day.",
+    "The email chain shows logistical planning for an unclassified conference call, indicating operational security considerations for discussing the sensitive case."
+  ],
+  "analyzedAt": "2026-02-11T16:01:49.871Z"
+}

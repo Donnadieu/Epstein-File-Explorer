@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA00040844.pdf",
+  "dataSet": "9",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2021-08-24",
+  "summary": "This is an email from defense attorney Bobbi Sternheim to other legal team members, providing a courtesy copy of a court filing (ECF filing) related to the case. It demonstrates ongoing legal proceedings and communication within the defense team.",
+  "persons": [
+    {
+      "name": "Bobbi Sternheim",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Sender of the email providing a courtesy copy of a court filing to the defense team.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Primary recipient of the email regarding the court filing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christian Everdel",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Copied on the email regarding the court filing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Copied on the email regarding the court filing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bobbi Sternheim",
+      "person2": "Laura Menninger",
+      "relationshipType": "legal colleague",
+      "description": "Sternheim is sending a legal filing to Menninger, indicating they are part of the same defense team.",
+      "strength": 3
+    },
+    {
+      "person1": "Bobbi Sternheim",
+      "person2": "Christian Everdel",
+      "relationshipType": "legal colleague",
+      "description": "Sternheim copies Everdel on the email about a court filing, indicating they work together on the defense.",
+      "strength": 3
+    },
+    {
+      "person1": "Bobbi Sternheim",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal colleague",
+      "description": "Sternheim copies Pagliuca on the email about a court filing, indicating they work together on the defense.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Christian Everdel",
+      "relationshipType": "legal colleague",
+      "description": "Both are recipients/copied on the same legal team communication regarding a court filing.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal colleague",
+      "description": "Both are recipients/copied on the same legal team communication regarding a court filing.",
+      "strength": 3
+    },
+    {
+      "person1": "Christian Everdel",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal colleague",
+      "description": "Both are copied on the same email from Sternheim regarding a court filing.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-08-24",
+      "title": "ECF Filing Submission",
+      "description": "A court filing (referenced as Docket 326) was submitted electronically (ECF) by the defense team.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Bobbi Sternheim",
+        "Laura Menninger",
+        "Christian Everdel",
+        "Jeff Pagliuca"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email dated August 24, 2021, from defense attorney Bobbi Sternheim.",
+    "It transmits a courtesy copy of a court filing (ECF filing) to other defense team members Laura Menninger, Christian Everdel, and Jeff Pagliuca.",
+    "The filing is related to Docket 326 in the case, indicating ongoing legal proceedings.",
+    "The communication shows coordination within the defense legal team."
+  ],
+  "analyzedAt": "2026-02-11T16:07:44.399Z"
+}

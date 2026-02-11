@@ -3,51 +3,51 @@
   "dataSet": "1",
   "documentType": "emergency contact form",
   "dateOriginal": "2018-06-14",
-  "summary": "An emergency contact form for an employee named Joseph (last name unclear) of LSJE, LLC, listing emergency contacts including a girlfriend named Jennifer and a sister named Fay. The document appears to be a standard HR form from a company associated with Epstein's network.",
+  "summary": "An emergency contact form for an employee named Joseph, likely associated with LSJE, LLC in St. Thomas, US Virgin Islands. It lists emergency contacts including Jennifer and Fay, and appears to be a standard HR document.",
   "persons": [
     {
       "name": "Joseph",
       "role": "Employee",
       "category": "staff",
-      "context": "Employee of LSJE, LLC who is the subject of this emergency contact form, with a start date of June 14, 2018.",
+      "context": "Employee of LSJE, LLC who completed an emergency contact form on June 14, 2018.",
       "mentionCount": 2
     },
     {
       "name": "Jennifer",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as the girlfriend and an emergency contact for the employee Joseph.",
+      "context": "Listed as an emergency contact for the employee Joseph, relationship unspecified.",
       "mentionCount": 1
     },
     {
       "name": "Fay",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as a sister and an emergency contact for the employee Joseph.",
+      "context": "Listed as an emergency contact for the employee Joseph, relationship listed as 'sister'.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
       "person1": "Joseph",
-      "person2": "Jennifer",
-      "relationshipType": "social",
-      "description": "Jennifer is listed as Joseph's girlfriend and emergency contact on his employment form.",
+      "person2": "Fay",
+      "relationshipType": "family",
+      "description": "Fay is listed as Joseph's sister and emergency contact.",
       "strength": 3
     },
     {
       "person1": "Joseph",
-      "person2": "Fay",
+      "person2": "Jennifer",
       "relationshipType": "social",
-      "description": "Fay is listed as Joseph's sister and emergency contact on his employment form.",
-      "strength": 3
+      "description": "Jennifer is listed as an emergency contact for Joseph.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2018-06-14",
-      "title": "Employee Start Date",
-      "description": "Joseph's start date as an employee of LSJE, LLC, as recorded on an emergency contact form.",
+      "title": "Emergency Contact Form Completion",
+      "description": "Employee Joseph completed an emergency contact form for LSJE, LLC.",
       "category": "other",
       "significance": 1,
       "personsInvolved": [
@@ -56,15 +56,13 @@
     }
   ],
   "locations": [
-    {
-      "address": "6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802",
-      "description": "Address of LSJE, LLC, a company associated with Epstein's network in the U.S. Virgin Islands."
-    }
+    "LSJE, LLC 6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802",
+    "St. Thomas, VI"
   ],
   "keyFacts": [
-    "The document is an emergency contact form for an employee of LSJE, LLC, a company linked to Jeffrey Epstein's operations.",
-    "The form is dated June 14, 2018, which is after Epstein's 2008 conviction but before his 2019 arrest.",
-    "The company address is in St. Thomas, U.S. Virgin Islands, a location known for Epstein's private island and other properties."
+    "The document is an emergency contact form dated June 14, 2018, for an employee named Joseph.",
+    "The form is associated with LSJE, LLC, a company located in St. Thomas, US Virgin Islands.",
+    "Joseph listed two emergency contacts: Jennifer and his sister Fay."
   ],
-  "analyzedAt": "2026-02-08T01:59:55.907Z"
+  "analyzedAt": "2026-02-11T18:12:48.356Z"
 }

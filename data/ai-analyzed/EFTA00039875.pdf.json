@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2020-11-16",
-  "summary": "Email correspondence between Ghislaine Maxwell's defense attorney Bobbi Sternheim and an Assistant U.S. Attorney regarding Maxwell's conditions of confinement at the Metropolitan Detention Center (MDC). Sternheim requests Maxwell be moved to an interior cell due to scheduled water and heat shut-offs, while the AUSA states the current cell is appropriate and temperatures are being monitored.",
+  "summary": "Email correspondence between Ghislaine Maxwell's defense attorney Bobbi Sternheim and an Assistant U.S. Attorney regarding concerns about Maxwell's conditions of confinement at the Metropolitan Detention Center (MDC) in Brooklyn. The attorney requests Maxwell be moved to an interior cell due to planned water and heat shut-offs, while the prosecutor relays the MDC's assessment that her current isolation cell is appropriate for safety and security.",
   "persons": [
     {
       "name": "Bobbi C. Sternheim",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Attorney for Ghislaine Maxwell, corresponding with the U.S. Attorney's office to request a change in Maxwell's cell conditions at MDC due to scheduled utility disruptions.",
+      "context": "Attorney for Ghislaine Maxwell, corresponding with the U.S. Attorney's office to request her client be moved to a different cell at MDC due to concerns about temperature and water shut-offs.",
       "mentionCount": 5
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant/Inmate",
       "category": "key figure",
-      "context": "The client of Bobbi Sternheim, incarcerated at MDC under register number 02879-509. The correspondence concerns the conditions of her confinement, specifically her cell location and temperature.",
+      "context": "The defendant, housed at MDC under registration number 02879-509. Her attorney is advocating for improved conditions, specifically requesting a move from an isolation cell with exterior walls to an interior cell.",
       "mentionCount": 4
     },
     {
       "name": "Mmi",
       "role": "Assistant United States Attorney",
       "category": "legal",
-      "context": "Assistant U.S. Attorney for the Southern District of New York who responds to Sternheim's email, conveying information from MDC legal counsel about temperature monitoring and the appropriateness of Maxwell's current cell.",
-      "mentionCount": 1
+      "context": "Assistant U.S. Attorney for the Southern District of New York who responds to defense counsel, conveying the MDC's position that Maxwell's current cell placement is appropriate and that temperatures are being monitored.",
+      "mentionCount": 2
     },
     {
       "name": "Judge Nathan",
-      "role": "Judge",
+      "role": "U.S. District Judge",
       "category": "legal",
-      "context": "Presiding judge who issued an order on August 25, 2020, denying Maxwell's request for an order concerning her conditions of confinement at MDC.",
+      "context": "Presiding judge who issued an order on August 25, 2020, denying Maxwell's previous request for an order concerning her conditions of confinement at MDC.",
       "mentionCount": 1
     }
   ],
@@ -39,29 +39,36 @@
       "person1": "Bobbi C. Sternheim",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Sternheim is the legal defense attorney representing Maxwell, advocating for her client's welfare regarding jail conditions.",
+      "description": "Sternheim is identified as the attorney representing Maxwell, advocating on her behalf regarding jail conditions.",
       "strength": 5
-    },
-    {
-      "person1": "Mmi",
-      "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal",
-      "description": "The Assistant U.S. Attorney is part of the prosecution team handling Maxwell's case and is corresponding with her defense about her confinement conditions.",
-      "strength": 3
     },
     {
       "person1": "Bobbi C. Sternheim",
       "person2": "Mmi",
       "relationshipType": "legal",
-      "description": "Professional correspondence between defense counsel and a prosecutor regarding a defendant's jail conditions.",
+      "description": "Professional correspondence between defense counsel and a prosecutor regarding the defendant's conditions of confinement.",
+      "strength": 3
+    },
+    {
+      "person1": "Mmi",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Prosecutor representing the government in the case against the defendant Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Judge presiding over Maxwell's case, having ruled on a previous motion related to her confinement conditions.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2020-08-25",
-      "title": "Judge Nathan Denies Maxwell's Request",
-      "description": "Judge Nathan issued an order denying Ghislaine Maxwell's request for a court order concerning the conditions of her confinement at the Metropolitan Detention Center (MDC).",
+      "title": "Judge Nathan Denies Maxwell's Motion on Confinement Conditions",
+      "description": "Judge Alison J. Nathan issued an order denying Ghislaine Maxwell's request for an order concerning the conditions of her confinement at the Metropolitan Detention Center.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -71,8 +78,8 @@
     },
     {
       "date": "2020-11-16",
-      "title": "Correspondence on MDC Conditions",
-      "description": "Email exchange between defense attorney Bobbi Sternheim and AUSA Mmi regarding scheduled water/heat shut-offs at MDC and a request to move Maxwell to an interior cell.",
+      "title": "Correspondence Regarding MDC Water and Heat Shut-off",
+      "description": "Email exchange regarding planned NYC Dept. of Design & Construction work that would shut off water and heat to the MDC from 9:00 pm to 5:00 am from November 16 to November 21, 2020.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -82,26 +89,28 @@
       ]
     },
     {
-      "date": "2020-11-10",
-      "title": "City Informs of No Utility Shut-off",
-      "description": "The City contacted the defense to inform them that water and heat would not be shut off, contradicting earlier information. This was posted on the inmate bulletin.",
+      "date": "2020-10-08",
+      "title": "Government Letter on Maxwell's Cell Placement",
+      "description": "The Government sent a letter to defense counsel stating the MDC's assessment that Maxwell's current cell is the most appropriate placement for her safety and institutional security.",
       "category": "legal",
-      "significance": 1,
-      "personsInvolved": []
+      "significance": 2,
+      "personsInvolved": [
+        "Mmi",
+        "Bobbi C. Sternheim",
+        "Ghislaine Maxwell"
+      ]
     }
   ],
   "locations": [
-    "Metropolitan Detention Center (MDC) - New York City detention facility where Ghislaine Maxwell is housed.",
-    "33 West 19th Street - 4th Floor, New York, NY 10011 - Address of the Law Offices of Bobbi C. Sternheim.",
-    "1 St. Andrew's Plaza, New York, NY 10007 - Address of the U.S. Attorney's Office for the Southern District of New York.",
-    "New York, NY - City where the legal proceedings and detention are taking place."
+    "Metropolitan Detention Center (MDC), Brooklyn, NY",
+    "1 St. Andrew's Plaza, New York, NY 10007 (Southern District of New York U.S. Attorney's Office)",
+    "33 West 19th Street - 4th Floor, New York, NY 10011 (Law Offices of Bobbi C. Sternheim)"
   ],
   "keyFacts": [
-    "Ghislaine Maxwell was housed in an isolation cell with two exterior walls at the Metropolitan Detention Center (MDC) in November 2020.",
-    "Defense attorney Bobbi Sternheim requested Maxwell be moved to an interior cell due to scheduled water and heat shut-offs by the NYC Dept. of Design & Construction.",
-    "The U.S. Attorney's office stated the MDC assessed Maxwell's current cell as the most appropriate placement for her safety and institutional security.",
-    "A previous court order from Judge Nathan on August 25, 2020, had denied Maxwell's request for an order concerning her conditions of confinement at MDC.",
-    "There was conflicting information about utility shut-offs, with the City later informing the defense on November 10 that water and heat would not be shut off."
+    "Ghislaine Maxwell was housed in an isolation cell with two exterior walls at the Metropolitan Detention Center in November 2020.",
+    "Maxwell's defense attorney expressed concern about planned water and heat shut-offs at the MDC and requested her client be moved to an interior cell.",
+    "The U.S. Attorney's office relayed the MDC's position that Maxwell's current cell was the most appropriate for her safety and the security of the institution.",
+    "Judge Alison J. Nathan had previously denied a motion from Maxwell regarding her conditions of confinement in an August 25, 2020 order."
   ],
-  "analyzedAt": "2026-02-09T16:01:33.641Z"
+  "analyzedAt": "2026-02-11T14:35:00.488Z"
 }

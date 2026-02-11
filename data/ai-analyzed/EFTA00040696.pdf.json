@@ -1,0 +1,125 @@
+{
+  "fileName": "EFTA00040696.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-07-06",
+  "summary": "This document is an email chain from July 2021 between FBI agents, a contractor, an Assistant United States Attorney, and an NYPD detective regarding evidence coordination for the Ghislaine Maxwell case. It discusses tasks such as obtaining .avi files from CART, reviewing images, drafting interview reports (302s), and identifying Palm Beach Police Department witnesses to authenticate evidence seized from Jeffrey Epstein's residence.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the investigation and evidence coordination discussed in the emails; the 'Maxwell To-dos' refer to tasks related to her case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased financier, subject of investigation",
+      "category": "key figure",
+      "context": "Mentioned in relation to evidence seized from his Palm Beach residence, which is relevant to the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Coordinates tasks for the Maxwell case, requests draft 302s, image reviews, .avi files, and contact information for Palm Beach PD witnesses.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Works in the FBI New York Field Office on the Child Exploitation/Human Trafficking desk; involved in evidence handling and coordination.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "NYPD Detective / FBI Task Force",
+      "category": "law enforcement",
+      "context": "Part of the NYPD/FBI Child Exploitation Human Trafficking Task Force; provides updates on evidence processing, including 302s, photos, and .avi files.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Palm Beach PD Captain",
+      "role": "Police Captain",
+      "category": "law enforcement",
+      "context": "Identified as the point of contact for a task related to evidence from Epstein's Palm Beach residence; contact information is provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Special Agent",
+      "relationshipType": "professional collaboration",
+      "description": "The AUSA coordinates case tasks with the FBI Special Agent, requesting evidence and updates for the Maxwell prosecution.",
+      "strength": 4
+    },
+    {
+      "person1": "Detective",
+      "person2": "Special Agent",
+      "relationshipType": "task force collaboration",
+      "description": "Both work on the Child Exploitation/Human Trafficking Task Force, with the Detective providing updates to the FBI on evidence processing.",
+      "strength": 4
+    },
+    {
+      "person1": "M",
+      "person2": "S",
+      "relationshipType": "evidence coordination",
+      "description": "M is asked to coordinate getting files from S and then discuss prepping them for production in the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Evidence from Epstein's Palm Beach residence is being authenticated for use in Maxwell's case, indicating their connection in the underlying investigation.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-20",
+      "title": "Interview of Victim/Witness",
+      "description": "An interview was conducted, likely of a victim or witness, for which draft FBI 302 reports are requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-01-21",
+      "title": "Interview of Victim/Witness",
+      "description": "A second interview was conducted, for which draft FBI 302 reports are also requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-07-06",
+      "title": "Evidence File Transfer Coordination",
+      "description": "Email coordination for dropping off files related to the Maxwell case from S to M and then to the FBI Special Agent.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "M",
+        "S",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Palm Beach, FL",
+    "FBI New York Field Office",
+    "Epstein's Palm Beach residence",
+    "Southern District of New York (St. Andrew's Plaza, New York, NY 10007)"
+  ],
+  "keyFacts": [
+    "The email chain shows active evidence coordination for the Ghislaine Maxwell case as of July 2021, including obtaining .avi files, reviewing images, and drafting FBI 302 reports from January 2021 interviews.",
+    "Investigators are seeking to authenticate evidence seized from Jeffrey Epstein's Palm Beach residence by contacting specific Palm Beach Police Department personnel, including an Evidence Specialist, detectives, and a CSI photographer.",
+    "The CART (Computer Analysis and Response Team) was noted to be delayed due to the Capitol investigation, indicating resource constraints affecting the Maxwell case evidence processing.",
+    "The document lists specific areas searched within Epstein's Palm Beach residence (garage, kitchen pantry, phone message book, bedrooms with sex toys, pool cabana) and the personnel involved in those searches."
+  ],
+  "analyzedAt": "2026-02-11T15:53:45.047Z"
+}

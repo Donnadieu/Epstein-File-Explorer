@@ -3,30 +3,38 @@
   "dataSet": "1",
   "documentType": "employment record",
   "dateOriginal": "2018-03-22",
-  "summary": "This appears to be an emergency contact form for an employee of LSJE, LLC, dated March 22, 2018. The form contains personal and emergency contact information for the employee, including marital status and health details.",
+  "summary": "This is an emergency contact form for an employee named 'fivrilare Lot;da!' (likely a garbled or redacted name) at LSJE, LLC, dated March 22, 2018. The form lists basic employee information, emergency contacts, and health details, indicating it is a standard HR document from a company associated with Epstein's network.",
   "persons": [
     {
       "name": "Fivrilare Lot;da!",
       "role": "Employee",
       "category": "staff",
-      "context": "Listed as the employee on an emergency contact form for LSJE, LLC, with a start date of March 22, 2018.",
-      "mentionCount": 1
+      "context": "Listed as the employee on an emergency contact form for LSJE, LLC, with a start date of March 22, 2018. The name appears garbled or potentially redacted.",
+      "mentionCount": 2
     },
     {
       "name": "Dodglas",
       "role": "Doctor",
       "category": "other",
-      "context": "Listed as the doctor's name on the employee's emergency contact form.",
+      "context": "Listed as the doctor's name in the employee's health information section on the emergency contact form.",
       "mentionCount": 2
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Fivrilare Lot;da!",
+      "person2": "Dodglas",
+      "relationshipType": "medical",
+      "description": "Dodglas is listed as the doctor for the employee Fivrilare Lot;da! on the emergency contact form.",
+      "strength": 2
+    }
+  ],
   "events": [
     {
       "date": "2018-03-22",
       "title": "Employee Start Date",
-      "description": "Fivrilare Lot;da! started employment with LSJE, LLC.",
-      "category": "financial",
+      "description": "The employee Fivrilare Lot;da! started employment at LSJE, LLC.",
+      "category": "other",
       "significance": 1,
       "personsInvolved": [
         "Fivrilare Lot;da!"
@@ -34,13 +42,14 @@
     }
   ],
   "locations": [
-    "6100 Red Hook Quarters Suite B-3 St. I homes, VI 00802"
+    "6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
   ],
   "keyFacts": [
-    "The document is an emergency contact form for an employee of LSJE, LLC, a company potentially connected to Jeffrey Epstein's network.",
-    "The employee's name appears to be 'Fivrilare Lot;da!' with a start date of March 22, 2018.",
-    "The form lists a doctor named 'Dodglas' and indicates the employee is married.",
-    "The company address is in the U.S. Virgin Islands (VI 00802), a location associated with Epstein's properties."
+    "The document is an emergency contact form for an employee of LSJE, LLC, a company associated with Jeffrey Epstein's network.",
+    "The form is dated March 22, 2018, which is after Epstein's 2008 conviction but before his 2019 arrest.",
+    "The employee's name appears garbled or redacted as 'fivrilare Lot;da!', suggesting possible data corruption or intentional obfuscation.",
+    "The company address is in St. Thomas, U.S. Virgin Islands, a location known for Epstein's properties and business activities.",
+    "The document is a standard HR form, indicating ongoing operational activities of an Epstein-linked entity in 2018."
   ],
-  "analyzedAt": "2026-02-08T01:56:28.540Z"
+  "analyzedAt": "2026-02-11T18:11:01.256Z"
 }

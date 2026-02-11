@@ -1,31 +1,39 @@
 {
   "fileName": "EFTA00003062.pdf",
   "dataSet": "1",
-  "documentType": "employee emergency contact form",
+  "documentType": "emergency contact form",
   "dateOriginal": "2018-04-09",
-  "summary": "This is an emergency contact form for an employee named Onel Pierresaint, dated April 9, 2018, associated with the company LSJE, LLC based in St. Thomas, US Virgin Islands. The form collects personal and emergency contact information for the employee.",
+  "summary": "An emergency contact form for an employee named Onel Pierresaint, dated April 9, 2018, associated with LSJE, LLC in St. Thomas, US Virgin Islands. It contains personal and emergency contact information.",
   "persons": [
     {
       "name": "Onel Pierresaint",
       "role": "Employee",
       "category": "staff",
-      "context": "Employee of LSJE, LLC who is the subject of this emergency contact form, providing personal details and emergency contacts.",
-      "mentionCount": 1
+      "context": "Employee of LSJE, LLC who completed an emergency contact form. The form lists his personal details and emergency contacts.",
+      "mentionCount": 2
     },
     {
       "name": "Rosa Josemp",
       "role": "Doctor",
       "category": "other",
-      "context": "Listed as the doctor's name on the emergency contact form for employee Onel Pierresaint.",
+      "context": "Listed as the doctor's name on Onel Pierresaint's emergency contact form.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Onel Pierresaint",
+      "person2": "Rosa Josemp",
+      "relationshipType": "professional",
+      "description": "Rosa Josemp is listed as the doctor for employee Onel Pierresaint on his emergency contact form.",
+      "strength": 2
+    }
+  ],
   "events": [
     {
       "date": "2018-04-09",
       "title": "Emergency Contact Form Completion",
-      "description": "An emergency contact form is completed for employee Onel Pierresaint by LSJE, LLC.",
+      "description": "Onel Pierresaint completed an emergency contact form for his employment with LSJE, LLC.",
       "category": "other",
       "significance": 1,
       "personsInvolved": [
@@ -37,9 +45,9 @@
     "LSJE, LLC 6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
   ],
   "keyFacts": [
-    "The document is an emergency contact form for an employee named Onel Pierresaint, dated April 9, 2018.",
-    "The form is associated with the company LSJE, LLC, located in St. Thomas, US Virgin Islands.",
-    "The employee's doctor is listed as Rosa Josemp."
+    "The document is an emergency contact form dated April 9, 2018, for an employee named Onel Pierresaint.",
+    "The form is associated with LSJE, LLC, a company located in St. Thomas, US Virgin Islands.",
+    "The form contains standard personal and emergency medical information for the employee."
   ],
-  "analyzedAt": "2026-02-08T02:01:14.492Z"
+  "analyzedAt": "2026-02-11T18:14:58.909Z"
 }

@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00040626.pdf",
+  "dataSet": "9",
+  "documentType": "court filing / internal memorandum",
+  "dateOriginal": "2021-06-29",
+  "summary": "This is a U.S. Attorney's Office (SDNY) internal memorandum (UMR) notifying the Office of the Attorney General about the planned release of approximately 2,700 pages of Bureau of Prisons (BOP) documents related to Jeffrey Epstein's incarceration and suicide. The release is part of FOIA litigation with The New York Times and follows deferred prosecution agreements with the guards accused of falsifying records.",
+  "persons": [
+    {
+      "name": "Audrey Strauss",
+      "role": "U.S. Attorney for the Southern District of New York",
+      "category": "legal",
+      "context": "Listed as the District Point of Contact (POC) for the USAO-SDNY in this memorandum regarding the release of BOP documents on Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Deceased",
+      "category": "key figure",
+      "context": "The document concerns the release of BOP records related to his incarceration and suicide at the Metropolitan Correctional Center (MCC) on August 10, 2019.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Tova Noel",
+      "role": "BOP Correctional Officer (accused)",
+      "category": "law enforcement",
+      "context": "One of the two guards on duty the night of Epstein's suicide who was accused of falsifying BOP forms. The USAO-SDNY entered into a deferred prosecution agreement with her in May 2021.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "BOP Correctional Officer (accused)",
+      "category": "law enforcement",
+      "context": "One of the two guards on duty the night of Epstein's suicide who was accused of falsifying BOP forms. The USAO-SDNY entered into a deferred prosecution agreement with him in May 2021.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-conspirator",
+      "description": "Both were BOP guards on duty the night of Epstein's suicide, jointly accused of falsifying records regarding institutional counts and rounds.",
+      "strength": 4
+    },
+    {
+      "person1": "Audrey Strauss",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "As U.S. Attorney, Strauss's office (USAO-SDNY) is handling the defense of the BOP in FOIA litigation concerning Epstein's death and was involved in the prosecution of the guards.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Suicide at MCC",
+      "description": "Jeffrey Epstein committed suicide by hanging while housed in the Special Housing Unit at the Metropolitan Correctional Center (MCC).",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-05",
+      "title": "Deferred Prosecution Agreements with Guards",
+      "description": "The USAO-SDNY entered into deferred prosecution agreements with BOP guards Tova Noel and Michael Thomas, who were accused of falsifying records on the night of Epstein's suicide.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas",
+        "Audrey Strauss"
+      ]
+    },
+    {
+      "date": "2021-07-02",
+      "title": "Planned Release of BOP Documents",
+      "description": "The USAO-SDNY plans to release approximately 2,700 pages of BOP documents related to Epstein's incarceration and suicide to The New York Times as part of FOIA litigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Audrey Strauss"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Southern District of New York (SDNY)",
+    "New York City Office of the Medical Examiner (OCME)"
+  ],
+  "keyFacts": [
+    "Approximately 2,700 pages of BOP documents regarding Jeffrey Epstein's incarceration and suicide were scheduled for release on July 2, 2021, to The New York Times.",
+    "The documents were previously withheld due to the criminal prosecution of guards Tova Noel and Michael Thomas, which concluded with deferred prosecution agreements in May 2021.",
+    "The documents include internal BOP memoranda detailing failures that allowed Epstein to kill himself, his psychological records, the autopsy report, and internal emails showing confusion on the day of his death.",
+    "A notable item among the documents is a photograph of a defaced sign in the Special Housing Unit that stated rounds on Epstein were 'mandatory, signed \"God,\"' which had been altered to include a question mark after 'mandatory.'",
+    "The autopsy report by the New York City OCME concluded Epstein committed suicide by hanging."
+  ],
+  "analyzedAt": "2026-02-11T15:49:25.066Z"
+}

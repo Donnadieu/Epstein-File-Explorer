@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA00040826.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-08-24",
+  "summary": "This document is an email chain from August 2021 between U.S. Department of Justice attorneys discussing the preparation and submission of an MLAT (Mutual Legal Assistance Treaty) request to the United Kingdom regarding the Ghislaine Maxwell case. The emails focus on obtaining travel records for Maxwell and Jeffrey Epstein, with concerns raised about including a request for their border crossing information due to potential scrutiny and delays, particularly if it might be perceived as an attempt to gather information about Prince Andrew.",
+  "persons": [
+    {
+      "name": "Lara",
+      "role": "Assistant U.S. Attorney (USANYS)",
+      "category": "legal",
+      "context": "The primary correspondent from the U.S. Attorney's Office for the Southern District of New York (USANYS), drafting and revising the MLAT request for the Maxwell investigation and coordinating its submission with John McNeil.",
+      "mentionCount": 8
+    },
+    {
+      "name": "John T. McNeil",
+      "role": "U.S. Department of Justice Attaché - London",
+      "category": "legal",
+      "context": "The DOJ Attaché at the U.S. Embassy in London responsible for submitting the MLAT request to the UK Central Authority (UKCA). He provides strategic advice on the request's content to avoid delays.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Taylor Cole",
+      "role": "Attorney (CRM)",
+      "category": "legal",
+      "context": "A DOJ attorney copied on the email chain, involved in the discussion regarding the MLAT request.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the criminal investigation (case 182-73090) for which the MLAT request is being prepared. The request seeks her travel and border crossing records.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Co-conspirator and associate of Ghislaine Maxwell. The MLAT request also seeks his travel and border crossing records.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jennifer L. Schroeder-Fawcett",
+      "role": "Attaché, U.S. Customs and Border Protection",
+      "category": "law enforcement",
+      "context": "The CBP Attaché in London who provided information to John McNeil about the availability and data fields of APIS (Advance Passenger Information System) travel records.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lara",
+      "person2": "John T. McNeil",
+      "relationshipType": "professional collaboration",
+      "description": "Colleagues within the U.S. Department of Justice collaborating on the submission of a sensitive MLAT request to the UK for the Maxwell investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Linked together in the criminal investigation, with the MLAT request seeking travel records for both individuals.",
+      "strength": 4
+    },
+    {
+      "person1": "John T. McNeil",
+      "person2": "Jennifer L. Schroeder-Fawcett",
+      "relationshipType": "professional collaboration",
+      "description": "Colleagues in different U.S. government agencies (DOJ and CBP) stationed in London; McNeil consulted Schroeder-Fawcett for information on travel record retention.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-31",
+      "title": "CBP Provides APIS Data Information",
+      "description": "Jennifer Schroeder-Fawcett emails John McNeil detailing the data fields available in CBP's APIS system for travel records, including for private aircraft arrivals after 2009.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jennifer L. Schroeder-Fawcett",
+        "John T. McNeil"
+      ]
+    },
+    {
+      "date": "2021-08-02 to 2021-08-04",
+      "title": "Drafting and Finalizing MLAT Request",
+      "description": "Email exchanges between Lara, John McNeil, and Taylor Cole discussing edits, strategic concerns, and finalizing the MLAT request to the UK regarding Maxwell and Epstein's travel records.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Lara",
+        "John T. McNeil",
+        "Taylor Cole"
+      ]
+    },
+    {
+      "date": "2021-08-04",
+      "title": "MLAT Request Signed and Ready for Submission",
+      "description": "John McNeil confirms he has received the signed version of the MLAT request and will send it to the UK Central Authority (UKCA).",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "John T. McNeil",
+        "Lara"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Embassy, 33 Nine Elms Lane, London SW11 7US, United Kingdom",
+    "London, United Kingdom"
+  ],
+  "keyFacts": [
+    "Prosecutors were preparing an MLAT request to the UK in August 2021 to obtain travel records for Ghislaine Maxwell and Jeffrey Epstein.",
+    "DOJ Attaché John McNeil advised that requesting Epstein and Maxwell's border crossing information could cause the UK authorities to 'pause and give this greater scrutiny,' potentially because they might think the U.S. was 'trying to get information about P[rince] Andrew.'",
+    "CBP Attaché Jennifer Schroeder-Fawcett indicated that CBP retains flight manifest information 'for a very long period,' while PNR (ticketing) records are destroyed after 5 years.",
+    "The email chain reveals internal DOJ strategy discussions about how to frame sensitive international evidence requests to avoid political complications and delays.",
+    "The document reference 'Maxwell 182-73090' indicates an ongoing criminal case against Ghislaine Maxwell as of August 2021."
+  ],
+  "analyzedAt": "2026-02-11T16:06:49.873Z"
+}

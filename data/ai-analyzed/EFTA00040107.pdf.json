@@ -1,0 +1,127 @@
+{
+  "fileName": "EFTA00040107.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-11",
+  "summary": "This is a court opinion and order by Judge Alison J. Nathan regarding the defense's motion to exclude the government's expert witness, Dr. Lisa Rocchio, in the Ghislaine Maxwell criminal case. The court largely denies the motion, allowing Dr. Rocchio to testify about grooming, trauma, and victim behavior in child sexual abuse cases, but excludes one specific opinion about 'grooming-by-proxy'.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case, accused of conspiring with Jeffrey Epstein in the sexual abuse of minors.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "United States District Judge for the Southern District of New York who authored this opinion and order on the admissibility of expert testimony.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lisa Rocchio",
+      "role": "Expert Witness",
+      "category": "witness",
+      "context": "Clinical psychologist and proposed government expert witness who would testify about grooming, trauma, and victim behavior in child sexual abuse cases.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator",
+      "category": "key figure",
+      "context": "Named as the predator with whom Ghislaine Maxwell allegedly conspired to groom and sexually abuse minors.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Furman",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "Judge who admitted similar expert testimony in United States v. Dupigny.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Engelmayer",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "Judge who admitted similar expert testimony in United States v. Randall and whose reasoning on the limitations of statistical studies in this field is cited.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Cote",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "Judge who admitted similar expert testimony in United States v. Torres.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "The government alleges Maxwell conspired with Epstein, a predator who groomed and sexually abused minors.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Lisa Rocchio",
+      "relationshipType": "legal",
+      "description": "Rocchio is the government's expert witness whose testimony is being offered against Maxwell in her criminal trial.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Lisa Rocchio",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is ruling on the admissibility of Dr. Rocchio's expert testimony in the case before her.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-10",
+      "title": "Daubert Hearing",
+      "description": "Court conducted a hearing to examine the admissibility of Dr. Lisa Rocchio's expert testimony, during which both parties examined her.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Lisa Rocchio"
+      ]
+    },
+    {
+      "date": "2021-11-11",
+      "title": "Court Issues Opinion on Expert Testimony",
+      "description": "Judge Alison J. Nathan issued a written opinion and order denying in part and granting in part the defense's motion to exclude Dr. Lisa Rocchio's testimony.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Ghislaine Maxwell",
+        "Lisa Rocchio"
+      ]
+    },
+    {
+      "date": "2021-04-23",
+      "title": "Government Expert Disclosure Deadline",
+      "description": "Court-ordered deadline by which the government was required to provide summaries of its expert witnesses' intended topics and opinions.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York",
+    "Alpert Medical School of Brown University"
+  ],
+  "keyFacts": [
+    "The court ruled that Dr. Lisa Rocchio, an expert on child sexual abuse trauma and grooming, is qualified and her testimony is largely admissible in the Ghislaine Maxwell trial.",
+    "Dr. Rocchio's admissible opinions include: perpetrators use grooming/manipulation; grooming can prevent victims from understanding/disclosing abuse; abuse causes long-term trauma; nondisclosure and memory issues are common among victims.",
+    "The court excluded one specific opinion: that the presence of a third party can facilitate grooming ('grooming-by-proxy'), finding it was not supported by peer-reviewed literature.",
+    "The defense's motion argued Rocchio's methods were unreliable due to lack of error rates and reliance on patient reports, but the court found these objections misplaced in the field of clinical psychology studying sexual abuse.",
+    "The opinion cites numerous other federal court cases that have admitted similar expert testimony on grooming and trauma in cases involving sexual exploitation of minors."
+  ],
+  "analyzedAt": "2026-02-11T14:54:16.564Z"
+}

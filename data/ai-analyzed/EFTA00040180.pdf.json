@@ -1,0 +1,142 @@
+{
+  "fileName": "EFTA00040180.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": "2002-12-16",
+  "summary": "This is a FedEx invoice dated December 16, 2002, for shipments billed to Jeffrey E. Epstein at his 457 Madison Avenue address. The invoice details numerous shipments sent in November and December 2002, listing recipients including Ghislaine Maxwell, Alan Dershowitz, and other associates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder / Shipper",
+      "category": "key figure",
+      "context": "The primary account holder for this FedEx invoice, with shipments billed to his 457 Madison Avenue address. Multiple packages are sent from him.",
+      "mentionCount": 30
+    },
+    {
+      "name": "G Maxwell",
+      "role": "Recipient of Shipments",
+      "category": "associate",
+      "context": "Listed as a recipient on multiple shipments from Jeffrey Epstein, including packages sent on December 9 and 10, 2002.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alan Dershowitz",
+      "role": "Recipient of Shipment",
+      "category": "legal",
+      "context": "Recipient of a FedEx Standard Overnight envelope shipped from Jeffrey Epstein on December 11, 2002, and delivered on December 12, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Edwina Simmonds",
+      "role": "Recipient of Shipment",
+      "category": "other",
+      "context": "Recipient of a FedEx Priority Overnight Pak shipped from Jeffrey Epstein on December 9, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Murray Gell-Mann",
+      "role": "Recipient of Shipment",
+      "category": "other",
+      "context": "Recipient of a FedEx Standard Overnight envelope shipped from Jeffrey Epstein on December 10, 2002. The reference field notes 'MG-M PERSONAL'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "C. Snyder",
+      "role": "Recipient of Shipment",
+      "category": "other",
+      "context": "Listed as the intended signatory ('Signed for C.SNYDER') for a FedEx 2Day envelope shipped from Jeffrey Epstein on December 11, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Recipient of Shipment",
+      "category": "other",
+      "context": "Listed as the recipient ('Recipient PEG UGLAND') for a FedEx 2Day envelope shipped from Jeffrey Epstein on December 11, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "B. Bonnett",
+      "role": "Recipient of Shipment (Third Party)",
+      "category": "other",
+      "context": "Recipient of a large (250 lb) FedEx Priority Overnight shipment from the London Fog Company, billed to a third-party account associated with 'NICK SIMMONS EPSHEN INTEREST'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nick Simmons",
+      "role": "Third-Party Account Reference",
+      "category": "other",
+      "context": "Associated with the third-party billing account 'EPSHEN INTEREST' used for a shipment from the London Fog Company to B. Bonnett.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "G Maxwell",
+      "relationshipType": "social/financial",
+      "description": "Epstein is shown shipping multiple packages to Maxwell in December 2002, indicating ongoing communication or material exchange.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alan Dershowitz",
+      "relationshipType": "social",
+      "description": "Epstein shipped a FedEx envelope to Dershowitz's address, demonstrating a line of communication.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Murray Gell-Mann",
+      "relationshipType": "social",
+      "description": "Epstein shipped a personal FedEx envelope to Nobel laureate Murray Gell-Mann, as indicated by the 'MG-M PERSONAL' reference.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-14",
+      "title": "Initial FedEx Shipments",
+      "description": "First recorded shipments on this invoice, sent via FedEx Express Saver and FedEx Priority Overnight from Jeffrey Epstein.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-09",
+      "title": "Multiple Shipments to Associates",
+      "description": "A day with several shipments from Epstein, including packages to G Maxwell, Edwina Simmonds, and others.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "G Maxwell",
+        "Edwina Simmonds"
+      ]
+    },
+    {
+      "date": "2002-12-11",
+      "title": "Shipment to Alan Dershowitz",
+      "description": "A FedEx Standard Overnight envelope is shipped from Epstein to Alan Dershowitz.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alan Dershowitz"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843 (Jeffrey Epstein's billing/shipping address)",
+    "London Fog Company, 505 Birchall Ave, Long Lake, MN 55356-9485 (Origin of third-party shipment)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's primary address for business and shipping in late 2002 was 457 Madison Avenue, New York, NY.",
+    "Ghislaine Maxwell (listed as G Maxwell) was a frequent recipient of FedEx shipments from Epstein in December 2002.",
+    "Epstein shipped a package to attorney Alan Dershowitz in December 2002, documented in this invoice.",
+    "The invoice reveals a wide network of contacts, including Nobel laureate Murray Gell-Mann and others like Edwina Simmonds.",
+    "A large third-party shipment was billed to an account associated with 'NICK SIMMONS EPSHEN INTEREST', suggesting a financial or business entity connected to Epstein."
+  ],
+  "analyzedAt": "2026-02-11T15:03:57.238Z"
+}

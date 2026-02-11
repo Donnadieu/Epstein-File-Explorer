@@ -3,36 +3,36 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-02-24",
-  "summary": "This document is an email chain from February 2019 discussing a meeting to review a potential sex trafficking case against Jeffrey Epstein. The initial email, forwarded on February 24, 2019, references a pitch made earlier that week by lawyers, including Pete Skinner, representing a victim who was 16 at the time of the alleged abuse. The email notes Epstein's history, his 2007 non-prosecution agreement, and the complexity of the case.",
+  "summary": "This document is an email chain from February 2019 discussing a meeting to review a potential sex trafficking case against Jeffrey Epstein. It references a pitch from lawyers representing a victim and mentions Epstein's prior non-prosecution agreement from 2007.",
   "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused financier",
+      "category": "key figure",
+      "context": "Described as a financier with multiple homes, accused of sex trafficking with dozens of victims, and subject of a prior non-prosecution agreement in 2007.",
+      "mentionCount": 4
+    },
     {
       "name": "Pete Skinner",
       "role": "Lawyer",
       "category": "legal",
-      "context": "One of the lawyers who came in earlier in the week to pitch a sex trafficking case against Jeffrey Epstein, representing a victim.",
+      "context": "One of the lawyers who pitched a sex trafficking case against Jeffrey Epstein earlier in the week referenced in the email.",
       "mentionCount": 1
-    },
-    {
-      "name": "Jeffrey Epstein",
-      "role": "Accused Financier",
-      "category": "key figure",
-      "context": "The subject of the potential sex trafficking case. Described as a financier with multiple homes, alleged to have had dozens of victims, and who entered into a non-prosecution agreement in 2007.",
-      "mentionCount": 4
     }
   ],
   "connections": [
     {
       "person1": "Pete Skinner",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "legal-adversarial",
-      "description": "Skinner, as a lawyer, is pitching a case against Epstein on behalf of a victim, indicating an attorney-client relationship with the victim and an adversarial legal stance against Epstein.",
+      "relationshipType": "legal-adversary",
+      "description": "Skinner is described as a lawyer who pitched a sex trafficking case against Epstein.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2007",
-      "title": "Epstein's Non-Prosecution Agreement",
+      "title": "Epstein's non-prosecution agreement",
       "description": "Jeffrey Epstein entered into a non-prosecution agreement with the U.S. Attorney's Office for the Southern District of Florida.",
       "category": "legal",
       "significance": 4,
@@ -42,8 +42,8 @@
     },
     {
       "date": "2019-02",
-      "title": "Lawyer Pitch on Epstein Case",
-      "description": "Earlier in the week of February 24, 2019, Pete Skinner and two other lawyers pitched a sex trafficking case against Jeffrey Epstein to the U.S. Attorney's Office in New York.",
+      "title": "Lawyer pitch on Epstein case",
+      "description": "Earlier in the week of the email, Pete Skinner and two other lawyers pitched a sex trafficking case against Jeffrey Epstein to the U.S. Attorney's Office.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -57,11 +57,11 @@
     "Manhattan"
   ],
   "keyFacts": [
-    "In February 2019, lawyers including Pete Skinner pitched a new federal sex trafficking case against Jeffrey Epstein to the U.S. Attorney's Office in New York.",
-    "The case involved a victim who was 16 years old at the time she was allegedly prostituted by Epstein.",
-    "The email notes Epstein 'apparently had dozens of victims' and that his criminal conduct may have been ongoing.",
-    "The 2007 non-prosecution agreement Epstein entered into with the Southern District of Florida is acknowledged as a complicating factor.",
-    "The document indicates internal deliberation within the U.S. Attorney's Office about pursuing the case, describing the facts as 'intriguing and complicated'."
+    "Lawyers, including Pete Skinner, pitched a sex trafficking case against Jeffrey Epstein to the U.S. Attorney's Office in early 2019.",
+    "The case involved a victim who claims to have been prostituted by Epstein when she was 16 years old.",
+    "Epstein was described as having dozens of victims, with unclear timelines on when his criminal conduct stopped.",
+    "Epstein had a prior non-prosecution agreement with the Southern District of Florida U.S. Attorney's Office from 2007.",
+    "The email chain indicates internal discussion and interest within the U.S. Attorney's Office regarding pursuing the case."
   ],
-  "analyzedAt": "2026-02-09T15:24:13.617Z"
+  "analyzedAt": "2026-02-11T14:27:06.594Z"
 }

@@ -3,16 +3,26 @@
   "dataSet": "5",
   "documentType": "FBI evidence inventory",
   "dateOriginal": "2019-08-21",
-  "summary": "This document is an FBI evidence inventory record listing one FBI-owned Western Digital hard drive containing multiple digital images, likely seized as part of the Epstein investigation. It appears to catalog evidence items with reference numbers.",
+  "summary": "This appears to be an FBI evidence inventory document listing a seized hard drive containing images from the Epstein investigation. It references multiple evidence item numbers (NYCO23578 through NYCO23592) that likely correspond to digital evidence files.",
   "persons": [],
   "connections": [],
-  "events": [],
+  "events": [
+    {
+      "date": "2019-08-21",
+      "title": "FBI Evidence Inventory Recorded",
+      "description": "An FBI-owned hard drive containing images is documented in an evidence inventory, referencing multiple evidence item numbers from the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
   "locations": [],
   "keyFacts": [
-    "The FBI seized a Western Digital hard drive (model WD3003FZEX-0024SA0, serial number MiCC13LZR5) containing multiple digital images.",
-    "The evidence inventory was created on August 21, 2019, indicating ongoing evidence processing in the Epstein case.",
-    "The document references multiple evidence item numbers (NYCO23578 through NYCO23592) associated with the images on the hard drive.",
-    "The hard drive is described as 'FBI-owned', suggesting it may be a forensic copy or evidence storage device rather than original seized media."
+    "The document is an FBI evidence inventory dated August 21, 2019.",
+    "It references a seized FBI-owned Western Digital hard drive (model WD3003FZEX-0024SA0, serial number MiCC13LZR5).",
+    "The hard drive contains images associated with multiple evidence item numbers (NYCO23578 through NYCO23592).",
+    "The evidence numbers suggest this is part of the New York Epstein investigation (NYCO prefix).",
+    "The document appears to be a master copy of evidence inventory records."
   ],
-  "analyzedAt": "2026-02-08T00:39:10.297Z"
+  "analyzedAt": "2026-02-11T14:01:16.306Z"
 }

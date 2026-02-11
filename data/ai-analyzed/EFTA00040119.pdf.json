@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00040119.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-08",
+  "summary": "This is a letter from defense counsel Jeffrey S. Pagliuca to the U.S. Attorney's Office objecting to the government's proffered co-conspirator hearsay statements in the case against Ghislaine Maxwell. The letter argues certain categories of statements are not made during or in furtherance of the alleged conspiracy and should be excluded.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case United States v. Ghislaine Maxwell, against whom the government is seeking to admit co-conspirator hearsay statements.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey S. Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Haddon, Morgan and Foreman representing Ghislaine Maxwell, authoring this letter of objection to the prosecution's proffered evidence.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator / Deceased",
+      "category": "key figure",
+      "context": "Referred to as a co-conspirator; his alleged statements to employees, minor victims, and their friends/family are the subject of the government's proffered evidence and the defense's objections.",
+      "mentionCount": 4
+    },
+    {
+      "name": "CC-1",
+      "role": "Alleged Co-conspirator / Employee",
+      "category": "associate",
+      "context": "An alleged co-conspirator and employee of Jeffrey Epstein. The letter references an exemplar statement from Epstein to CC-1 about Maxwell finding girls.",
+      "mentionCount": 2
+    },
+    {
+      "name": "CC-2",
+      "role": "Alleged Co-conspirator",
+      "category": "associate",
+      "context": "An alleged co-conspirator. The letter objects to categories of statements made by CC-2 to friends and family of minor victims.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is the defendant in a conspiracy case where Epstein is the alleged co-conspirator; the government is proffering Epstein's statements as co-conspirator hearsay.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey S. Pagliuca",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Pagliuca is identified as defense counsel for Ghislaine Maxwell, authoring legal objections on her behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "CC-1",
+      "relationshipType": "employer-employee",
+      "description": "CC-1 is described as an employee of Epstein; the document references a statement from Epstein to CC-1.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "CC-2",
+      "relationshipType": "co-conspirator",
+      "description": "Both are alleged co-conspirators; the document references statements made by CC-2 and directions given jointly by Epstein and CC-2.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-01",
+      "title": "Court Order on Hearsay Statements",
+      "description": "The Court issued an order, presumably related to the procedures for objecting to proffered co-conspirator hearsay statements in the Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-10-11",
+      "title": "Government Correspondence Identifying Victims",
+      "description": "The government sent correspondence to defense counsel specifically identifying 'minor victims' relevant to the case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office Southern District of New York, 1 St. Andrew's Plaza, New York, NY 10007",
+    "Haddon, Morgan and Foreman, P.C., 150 East 16th Avenue, Denver, CO"
+  ],
+  "keyFacts": [
+    "Defense counsel for Ghislaine Maxwell is formally objecting to the admission of several categories of alleged co-conspirator hearsay statements proffered by the government.",
+    "A key objection is that a statement from Epstein to an employee (CC-1) claiming Maxwell 'used to find girls for him' is 'idle chatter' that post-dates the alleged conspiracy and was not made in furtherance of it.",
+    "The defense argues the government must limit its proffered statements to minor victims specifically identified in the indictment or its October 11, 2021, correspondence, and not include statements to other alleged victims from prior Florida investigations.",
+    "The defense objects to statements lacking temporal limitations, arguing they should be excluded if made outside the dates of the alleged conspiracy."
+  ],
+  "analyzedAt": "2026-02-11T14:55:18.074Z"
+}

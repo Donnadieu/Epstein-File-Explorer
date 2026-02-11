@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-04-19",
-  "summary": "An email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, requesting assistance in contacting current and former Palm Beach Police Department employees to testify as witnesses in the upcoming trial of Ghislaine Maxwell. The prosecutor seeks to authenticate evidence from the 2005 PBPD investigation of Jeffrey Epstein, particularly from a search of his residence.",
+  "summary": "An email from a federal prosecutor in the Southern District of New York to an unspecified recipient, requesting assistance in contacting current and former Palm Beach Police Department employees to testify at the upcoming Ghislaine Maxwell trial. The prosecutor seeks to authenticate evidence gathered during the PBPD's 2005 investigation of Jeffrey Epstein, particularly from the search of his residence in October 2005.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant, co-conspirator",
       "category": "key figure",
-      "context": "The subject of the prosecution, referred to as Jeffrey Epstein's co-conspirator, in the case United States v. Maxwell.",
-      "mentionCount": 1
+      "context": "The subject of the prosecution in United States v. Maxwell, identified as Jeffrey Epstein's co-conspirator.",
+      "mentionCount": 2
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Referenced as the individual whose co-conspirator, Ghislaine Maxwell, is being prosecuted. Evidence from the 2005 PBPD investigation into him is central to the case.",
-      "mentionCount": 1
+      "context": "Referenced as the subject of the 2005 Palm Beach Police Department investigation, whose residence was searched.",
+      "mentionCount": 2
     },
     {
       "name": "Assistant United States Attorney",
       "role": "Federal Prosecutor",
       "category": "legal",
-      "context": "The author of the email, handling the prosecution of Ghislaine Maxwell and requesting assistance in contacting PBPD witnesses.",
+      "context": "The author of the email, handling the prosecution of Ghislaine Maxwell and seeking assistance in contacting PBPD witnesses for the upcoming trial.",
       "mentionCount": 1
     }
   ],
@@ -32,14 +32,14 @@
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "co-conspirator",
-      "description": "Maxwell is explicitly identified as Epstein's co-conspirator in the criminal case.",
+      "description": "Maxwell is identified as Epstein's co-conspirator in the criminal case United States v. Maxwell.",
       "strength": 5
     },
     {
       "person1": "Assistant United States Attorney",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "prosecutor-defendant",
-      "description": "The AUSA is handling the prosecution of Maxwell in the Southern District of New York.",
+      "description": "The prosecutor is handling the criminal prosecution of Maxwell.",
       "strength": 5
     }
   ],
@@ -57,11 +57,12 @@
     {
       "date": "2021-04-19",
       "title": "Prosecutor's Request for Witness Assistance",
-      "description": "An AUSA emails an unspecified contact to request help in locating PBPD witnesses for the upcoming Ghislaine Maxwell trial.",
+      "description": "A federal prosecutor emailed an unspecified recipient to request assistance in contacting PBPD witnesses for the upcoming Ghislaine Maxwell trial.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Assistant United States Attorney"
+        "Assistant United States Attorney",
+        "Ghislaine Maxwell"
       ]
     }
   ],
@@ -73,9 +74,9 @@
   ],
   "keyFacts": [
     "The document is a 2021 email from a federal prosecutor preparing for the trial of Ghislaine Maxwell.",
-    "The prosecution plans to introduce evidence gathered during the Palm Beach Police Department's 2005 investigation of Jeffrey Epstein, specifically from a search of his residence in October 2005.",
+    "The prosecution plans to introduce evidence from the Palm Beach Police Department's 2005 investigation of Jeffrey Epstein, specifically from the October 2005 search of his residence.",
     "The prosecutor seeks assistance in contacting current and former PBPD employees to authenticate this evidence at trial.",
-    "The case is officially titled United States v. Maxwell, 20 Cr. 330 (AJN)."
+    "The case is United States v. Maxwell, 20 Cr. 330 (AJN), in the Southern District of New York."
   ],
-  "analyzedAt": "2026-02-09T15:18:49.919Z"
+  "analyzedAt": "2026-02-11T14:26:22.185Z"
 }

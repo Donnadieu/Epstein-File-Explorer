@@ -3,7 +3,7 @@
   "dataSet": "1",
   "documentType": "employee emergency contact form",
   "dateOriginal": "2018-06-04",
-  "summary": "An emergency contact form for an employee named Danny Etienne at LSJE, LLC, a company located in St. Thomas, US Virgin Islands. The form provides personal and emergency contact information for the employee.",
+  "summary": "An emergency contact form for Danny Etienne, an employee of LSJE, LLC, providing personal and emergency contact information. The document appears to be a standard HR form from a company associated with Epstein's network.",
   "persons": [
     {
       "name": "Danny Etienne",
@@ -16,14 +16,14 @@
       "name": "Maria",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as the girlfriend and emergency contact for Danny Etienne.",
+      "context": "Listed as Danny Etienne's girlfriend and primary emergency contact on the form.",
       "mentionCount": 1
     },
     {
       "name": "Dodglas",
       "role": "Doctor",
       "category": "other",
-      "context": "Listed as the doctor for Danny Etienne on the emergency contact form.",
+      "context": "Listed as Danny Etienne's doctor on the emergency contact form.",
       "mentionCount": 2
     }
   ],
@@ -31,7 +31,7 @@
     {
       "person1": "Danny Etienne",
       "person2": "Maria",
-      "relationshipType": "social",
+      "relationshipType": "personal",
       "description": "Maria is listed as Danny Etienne's girlfriend and emergency contact.",
       "strength": 3
     },
@@ -43,14 +43,33 @@
       "strength": 2
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "date": "2018-06-04",
+      "title": "Emergency Contact Form Completion",
+      "description": "An emergency contact form for employee Danny Etienne was completed and dated.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Danny Etienne"
+      ]
+    }
+  ],
   "locations": [
-    "LSJE, LLC 6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
+    {
+      "address": "6100 Red Hook Quarters Suite B-3",
+      "city": "St. Thomas",
+      "region": "VI",
+      "postalCode": "00802",
+      "context": "Address of LSJE, LLC, the company for which Danny Etienne works."
+    }
   ],
   "keyFacts": [
-    "The document is an emergency contact form dated June 4, 2018, for an employee named Danny Etienne.",
-    "The employing entity is LSJE, LLC, located in St. Thomas, US Virgin Islands.",
-    "The form links an individual (Danny Etienne) to a company (LSJE, LLC) operating in a location associated with Jeffrey Epstein's activities."
+    "The document is an emergency contact form for Danny Etienne, an employee of LSJE, LLC, dated June 4, 2018.",
+    "LSJE, LLC is located in St. Thomas, U.S. Virgin Islands, an area associated with Jeffrey Epstein's properties and operations.",
+    "The form includes standard personal details: address, title/position, start date, date of birth, marital status, and emergency contacts.",
+    "Danny Etienne's emergency contact is his girlfriend, Maria, and his doctor is listed as Dodglas.",
+    "The document is a routine HR record but is part of the Epstein case files, suggesting LSJE, LLC may be connected to Epstein's network."
   ],
-  "analyzedAt": "2026-02-08T02:15:45.871Z"
+  "analyzedAt": "2026-02-11T18:12:10.409Z"
 }

@@ -3,48 +3,48 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2020-11-18",
-  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, regarding the provision of discovery materials to Ghislaine Maxwell. It details the physical delivery of a laptop, hard drive, and CD containing discovery, and references prior shipments of replacement files.",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, regarding the provision of discovery materials to Ghislaine Maxwell. It details the delivery of a laptop, hard drive, and CD containing discovery productions, including replacements for files she had been unable to review.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The recipient of discovery materials (laptop, hard drive, CD) provided by the prosecution for her review in her criminal case.",
+      "context": "The defendant in the case, to whom discovery materials (laptop, hard drive, CD) are being provided for review.",
       "mentionCount": 2
     },
     {
-      "name": "G. M. Jetter",
-      "role": "Assistant United States Attorney",
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
       "category": "legal",
-      "context": "The sender of the email, who coordinated the delivery of discovery materials to Ghislaine Maxwell.",
+      "context": "The sender of the email, working for the Southern District of New York, coordinating the delivery of discovery materials to Maxwell.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "G. M. Jetter",
+      "person1": "Assistant United States Attorney",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "legal",
-      "description": "Prosecutor (Jetter) providing discovery materials to the defendant (Maxwell) as part of the legal process.",
+      "description": "Prosecutor providing discovery materials to the defendant as part of the legal process.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2020-11-18",
-      "title": "Delivery of Discovery to Maxwell",
-      "description": "An AUSA delivered a laptop, hard drive, and CD containing discovery materials to Ghislaine Maxwell for her review.",
+      "title": "Delivery of Discovery Materials to Maxwell",
+      "description": "An Assistant U.S. Attorney drops off a laptop, hard drive, and CD containing discovery productions for Ghislaine Maxwell to review, including replacements for previously unviewable files.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
         "Ghislaine Maxwell",
-        "G. M. Jetter"
+        "Assistant United States Attorney"
       ]
     },
     {
       "date": "2020-11-09",
-      "title": "Prior Discovery Shipment",
-      "description": "The prosecution sent a hard drive via FedEx containing a separate discovery production, including replacements for files Maxwell had been unable to review.",
+      "title": "Prior Discovery Production Sent",
+      "description": "A hard drive containing a separate discovery production, including replacements for numerous files, was sent via FedEx to Maxwell the prior week.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -56,11 +56,11 @@
     "Southern District of New York"
   ],
   "keyFacts": [
-    "On November 18, 2020, the prosecution physically delivered a laptop, hard drive, and CD containing discovery to Ghislaine Maxwell.",
-    "The delivery included a new discovery production and was intended to aid Maxwell in reviewing her case materials.",
-    "A prior shipment on November 9, 2020, contained replacement files for materials Maxwell had previously been unable to access.",
-    "The correspondence highlights the ongoing legal discovery process in Maxwell's criminal case.",
-    "The email sender is an Assistant U.S. Attorney, indicating direct involvement by the SDNY prosecution team."
+    "Discovery materials, including a laptop, hard drive, and CD, were physically delivered to Ghislaine Maxwell on November 18, 2020, for her review.",
+    "The production included replacements for numerous files from prior productions that Maxwell had been unable to review.",
+    "A separate hard drive production was sent via FedEx the prior week (around November 9, 2020).",
+    "The correspondence is from an Assistant United States Attorney in the Southern District of New York, indicating ongoing pre-trial legal proceedings.",
+    "The email requests confirmation that the delivered drive has been provided to Maxwell."
   ],
-  "analyzedAt": "2026-02-09T15:15:14.848Z"
+  "analyzedAt": "2026-02-11T14:35:29.475Z"
 }

@@ -3,51 +3,36 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-04-23",
-  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan regarding the case against Ghislaine Maxwell. The government requests limited redactions to protect the privacy of third parties mentioned in defense filings related to a proposed Rule 17(c) subpoena, specifically in documents involving the law firm Boies Schiller Flexner LLP.",
+  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan regarding the Ghislaine Maxwell case. The government requests permission to redact names and identifying information of third parties from defense filings to protect their privacy, citing the Lugosch test. The defense and the law firm Boies Schiller Flexner LLP take no position on the request.",
   "persons": [
     {
       "name": "Alison J. Nathan",
       "role": "United States District Judge",
       "category": "legal",
-      "context": "Presiding judge in the case United States v. Ghislaine Maxwell; the letter is addressed to her regarding redaction requests for court filings.",
+      "context": "Presiding judge in the case United States v. Ghislaine Maxwell; recipient of the government's letter requesting redactions.",
       "mentionCount": 2
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the criminal case referenced (20 Cr. 330 (AJN)); the subject of the legal proceedings.",
+      "context": "The defendant in the criminal case referenced (20 Cr. 330 (AJN)).",
       "mentionCount": 1
     },
     {
       "name": "Audrey Strauss",
       "role": "United States Attorney",
       "category": "legal",
-      "context": "The United States Attorney for the Southern District of New York who submits the letter on behalf of the government.",
+      "context": "The United States Attorney for the Southern District of New York who respectfully submits the letter to the court.",
       "mentionCount": 1
     }
   ],
-  "connections": [
-    {
-      "person1": "Audrey Strauss",
-      "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal",
-      "description": "Strauss, as U.S. Attorney, is leading the prosecution against defendant Maxwell.",
-      "strength": 4
-    },
-    {
-      "person1": "Alison J. Nathan",
-      "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal",
-      "description": "Judge Nathan is presiding over the criminal case against Maxwell.",
-      "strength": 5
-    }
-  ],
+  "connections": [],
   "events": [
     {
       "date": "2021-04-21",
       "title": "Court Order on Redaction Requests",
-      "description": "The court issued an order directing the government to submit any requests for redaction of information in filings regarding the defense's proposed Rule 17(c) subpoena.",
+      "description": "The Court issued an order directing the Government to submit any requests for redaction of information contained in filings regarding the defense's proposed Rule 17(c) subpoena.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -66,14 +51,14 @@
   "locations": [
     "Southern District of New York",
     "New York, New York 10007",
-    "One Saint Andrew's Plaza, New York, New York 10007",
+    "One Saint Andrew's Plaza",
     "United States Courthouse, 40 Foley Square, New York, New York 10007"
   ],
   "keyFacts": [
-    "The government is seeking to redact names and identifying information of third parties from defense filings related to a Rule 17(c) subpoena to protect their privacy.",
-    "The redaction request pertains specifically to documents involving the law firm Boies Schiller Flexner LLP (BSF).",
-    "The government asserts the proposed redactions are narrowly tailored and consistent with legal precedent (Lugosch v. Pyramid Co.).",
-    "Defense counsel and counsel from BSF indicated they take no position on the government's redaction requests."
+    "The U.S. Government is seeking to redact names and identifying information of third parties from defense filings in the Ghislaine Maxwell case to protect their privacy.",
+    "The request is based on the legal test from the Second Circuit case Lugosch v. Pyramid Co. of Onondaga, balancing public access against privacy interests.",
+    "The defense counsel and the law firm Boies Schiller Flexner LLP (BSF), which had filed objections to a defense subpoena, take no position on the government's redaction request.",
+    "The document is part of the procedural litigation surrounding evidence and witness disclosure in Maxwell's criminal case."
   ],
-  "analyzedAt": "2026-02-09T15:38:33.887Z"
+  "analyzedAt": "2026-02-11T14:30:47.862Z"
 }

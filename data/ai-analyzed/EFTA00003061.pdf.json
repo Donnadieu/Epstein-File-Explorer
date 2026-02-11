@@ -2,52 +2,53 @@
   "fileName": "EFTA00003061.pdf",
   "dataSet": "1",
   "documentType": "employment record",
-  "dateOriginal": "2018-04-20",
-  "summary": "This is an emergency contact form for Michael J. G,caen (name appears partially garbled), an engineer employed by LSJE, LLC starting on April 20, 2018. The form includes his personal details, emergency contacts, and is associated with a St. Thomas, VI address.",
+  "dateOriginal": "2018-04-18",
+  "summary": "This is an emergency contact form for an employee named Michael J G,caen (likely Michael J G,caen or similar) working for LSJE, LLC in St. Thomas, US Virgin Islands. The form includes personal and emergency contact information, indicating he was hired as an Engineer starting April 20, 2018.",
   "persons": [
     {
-      "name": "Michael J. G,caen",
+      "name": "Michael J G,caen",
       "role": "Employee/Engineer",
       "category": "staff",
-      "context": "Employee of LSJE, LLC, starting work on April 20, 2018, with the title of Engineer. The form records his emergency contact information.",
+      "context": "Employee of LSJE, LLC hired as an Engineer starting April 20, 2018, with emergency contact information on file.",
       "mentionCount": 1
     },
     {
       "name": "Maine",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as an emergency contact for Michael J. G,caen, with the relationship specified as 'Son'.",
+      "context": "Listed as an emergency contact for Michael J G,caen, with relationship unspecified but likely family.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Michael J. G,caen",
+      "person1": "Michael J G,caen",
       "person2": "Maine",
-      "relationshipType": "family",
-      "description": "Maine is listed as the son and an emergency contact for Michael J. G,caen on his employment form.",
-      "strength": 3
+      "relationshipType": "emergency contact",
+      "description": "Maine is listed as an emergency contact for Michael J G,caen on his employment form.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2018-04-20",
-      "title": "Michael J. G,caen employment start",
-      "description": "Michael J. G,caen began employment with LSJE, LLC as an Engineer.",
+      "title": "Michael J G,caen Employment Start",
+      "description": "Michael J G,caen started working as an Engineer for LSJE, LLC.",
       "category": "financial",
       "significance": 1,
       "personsInvolved": [
-        "Michael J. G,caen"
+        "Michael J G,caen"
       ]
     }
   ],
   "locations": [
-    "Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
+    "Red Hook Quarters Suite B-3 St. Thomas, VI 00802",
+    "St. Thomas, VI"
   ],
   "keyFacts": [
-    "LSJE, LLC, a company associated with a St. Thomas, VI address, employed an engineer named Michael J. G,caen starting April 20, 2018.",
-    "The employee's emergency contacts include a son named Maine and a brother (name not specified).",
-    "The document is a standard emergency contact form, indicating formal employment records were maintained by the entity LSJE, LLC."
+    "LSJE, LLC employed Michael J G,caen as an Engineer starting April 20, 2018.",
+    "The company operated from Red Hook Quarters in St. Thomas, US Virgin Islands.",
+    "The document is an emergency contact form, indicating standard employment procedures for a staff member."
   ],
-  "analyzedAt": "2026-02-08T01:57:46.261Z"
+  "analyzedAt": "2026-02-11T18:14:45.812Z"
 }
