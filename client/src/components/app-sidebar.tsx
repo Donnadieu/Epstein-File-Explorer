@@ -180,26 +180,6 @@ export function AppSidebar() {
       <SidebarFooter className="p-4">
         <div className="flex flex-col gap-2 text-[10px] text-muted-foreground">
           <a
-            href="https://www.justice.gov/epstein"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-doj-source"
-          >
-            <ExternalLink className="w-3 h-3" />
-            <span>DOJ Epstein Library</span>
-          </a>
-          <a
-            href="https://github.com/yung-megafone/Epstein-Files"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-community-archive"
-          >
-            <ExternalLink className="w-3 h-3" />
-            <span>Community Archive</span>
-          </a>
-          <a
             href="https://ko-fi.com/vibecodingforgood"
             target="_blank"
             rel="noopener noreferrer"
@@ -218,6 +198,26 @@ export function AppSidebar() {
           >
             <Heart className="w-3 h-3 text-rose-500" />
             <span>Sponsor on GitHub</span>
+          </a>
+          <a
+            href="https://www.justice.gov/epstein"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
+            data-testid="link-doj-source"
+          >
+            <ExternalLink className="w-3 h-3" />
+            <span>DOJ Epstein Library</span>
+          </a>
+          <a
+            href="https://github.com/yung-megafone/Epstein-Files"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
+            data-testid="link-community-archive"
+          >
+            <ExternalLink className="w-3 h-3" />
+            <span>Community Archive</span>
           </a>
           <p className="leading-relaxed px-1.5">
             Data sourced from publicly released DOJ records. Preserved and distributed by the open-source community.
