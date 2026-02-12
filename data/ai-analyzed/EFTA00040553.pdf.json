@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-11-13",
-  "summary": "This document appears to be an email chain from November 2019 discussing allegations against Jeffrey Epstein and Ghislaine Maxwell. It contains descriptions from a New York Times article and a more detailed account of inappropriate touching and sexual advances by Epstein, often with Maxwell's involvement, during movie outings and at a property in New Mexico.",
+  "summary": "This document appears to be an email chain from November 2019 discussing allegations against Jeffrey Epstein and Ghislaine Maxwell. It contains descriptions of inappropriate touching and sexual misconduct by Epstein, often with Maxwell's involvement, as reported by a victim. The text references specific incidents in New York City and New Mexico.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Described as initiating inappropriate physical contact (rubbing hand, leg, foot) with a woman during a movie outing and engaging in other sexual advances at a property in New Mexico, sometimes with Ghislaine Maxwell present.",
-      "mentionCount": 5
-    },
-    {
-      "name": "Ghislaine Maxwell",
-      "role": "Alleged Associate",
-      "category": "associate",
-      "context": "Allegedly participated in or facilitated inappropriate activities, including giving the woman a nude massage, being present during foot massages and sexual advances by Epstein, and providing instructions on how Epstein liked foot massages.",
+      "context": "Described as engaging in inappropriate touching of a victim during a movie, giving foot massages, and other sexual misconduct, often with Ghislaine Maxwell present.",
       "mentionCount": 4
     },
     {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Co-conspirator",
+      "category": "associate",
+      "context": "Allegedly participated in and facilitated abuse, including giving nude massages and being present during inappropriate touching by Epstein.",
+      "mentionCount": 3
+    },
+    {
       "name": "Mike Baker",
-      "role": "Correspondent/Recipient",
+      "role": "Email Correspondent",
       "category": "other",
-      "context": "Appears as a recipient or sender in the email chain discussing the allegations; the context suggests they are sharing or analyzing the victim's account.",
+      "context": "Appears to be forwarding or discussing allegations from a New York Times article or similar source about Epstein's misconduct.",
       "mentionCount": 1
     },
     {
       "name": "Brad Pitt",
       "role": "Actor",
       "category": "other",
-      "context": "Mentioned only as the star of the movie \"12 Monkeys\" that Epstein and the woman went to see; no direct involvement in the allegations.",
+      "context": "Mentioned in the context of a movie ('12 Monkeys') that the victim and Epstein went to see.",
       "mentionCount": 1
     }
   ],
@@ -39,59 +39,43 @@
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "co-conspirator",
-      "description": "Allegedly acted together during incidents of sexual abuse and harassment, with Maxwell facilitating massages and being present during Epstein's advances.",
-      "strength": 4
+      "description": "Allegedly worked together in sexual abuse and misconduct, with Maxwell facilitating and participating in abuse.",
+      "strength": 5
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
-      "relationshipType": "employer-employee",
-      "description": "Maxwell is described as giving instructions on how to perform foot massages \"how Epstein likes it,\" suggesting a subordinate or facilitating role.",
-      "strength": 3
-    },
-    {
-      "person1": "Jeffrey Epstein",
-      "person2": "Unnamed Woman",
       "relationshipType": "victim-perpetrator",
-      "description": "Epstein is alleged to have rubbed her hand, leg, and foot during a movie, climbed into bed spooning and touching her, and created a fear of rape.",
+      "description": "Both are described as perpetrators of abuse against the same victim, with incidents involving both together.",
       "strength": 5
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Unnamed Woman",
-      "relationshipType": "victim-perpetrator",
-      "description": "Maxwell allegedly gave the woman a nude massage, was present during sexual advances, and participated in inappropriate touching.",
-      "strength": 4
     }
   ],
   "events": [
     {
       "date": null,
       "title": "Movie Theater Incident in NYC",
-      "description": "Epstein took a woman to see the movie \"12 Monkeys\" in New York City and during the film rubbed her hand, lower leg, and foot, causing her discomfort and confusion.",
+      "description": "Epstein took a victim to see a movie ('12 Monkeys') in New York City and during the film began rubbing her hand, lower leg, and foot, making her uncomfortable.",
       "category": "abuse",
       "significance": 4,
       "personsInvolved": [
-        "Jeffrey Epstein",
-        "Unnamed Woman"
+        "Jeffrey Epstein"
       ]
     },
     {
       "date": null,
-      "title": "Incidents at New Mexico Property",
-      "description": "At a property in New Mexico, Epstein and Maxwell engaged in multiple inappropriate acts including foot massages, Epstein climbing into bed spooning and touching the woman, Maxwell giving her a nude massage, and a joint incident where both started touching her, leading her to run away afraid of rape.",
+      "title": "Foot Massages and Abuse in New Mexico",
+      "description": "Incidents in New Mexico involving foot massages, inappropriate touching in a movie theater, Epstein climbing into bed and spooning/touching the victim, and Maxwell giving a nude massage.",
       "category": "abuse",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
-        "Ghislaine Maxwell",
-        "Unnamed Woman"
+        "Ghislaine Maxwell"
       ]
     },
     {
       "date": "2019-11-13",
       "title": "Email Discussion of Allegations",
-      "description": "An email chain discusses and summarizes allegations against Epstein and Maxwell, referencing a New York Times article and providing a detailed victim account.",
+      "description": "Email correspondence forwarding and discussing allegations from a New York Times article or similar source about Epstein's misconduct.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
@@ -100,15 +84,15 @@
     }
   ],
   "locations": [
-    "New York City (NYC)",
-    "New Mexico (NM)"
+    "New York City",
+    "New Mexico"
   ],
   "keyFacts": [
-    "A woman alleges Jeffrey Epstein rubbed her hand, leg, and foot during a movie outing to see \"12 Monkeys\" in New York City, causing her confusion and discomfort.",
-    "At a property in New Mexico, Ghislaine Maxwell gave the woman instructions on how to perform foot massages \"how Epstein likes it.\"",
-    "Epstein allegedly climbed into bed with the woman, spooning and touching her, while Maxwell gave her a nude massage with Epstein present.",
-    "During an incident in New Mexico with both Epstein and Maxwell, the woman became afraid of rape and ran away.",
-    "The document references nude photos of the woman going missing and comments being made about her features."
+    "A victim alleges Jeffrey Epstein rubbed her hand, leg, and foot during a movie ('12 Monkeys') in New York City, making her uncomfortable and questioning his intentions.",
+    "In New Mexico, Epstein and Ghislaine Maxwell engaged in multiple abusive acts including foot massages, movie theater touching, bed spooning/touching, and Maxwell giving a nude massage.",
+    "The victim expressed fear of rape and ran away during one incident involving both Epstein and Maxwell.",
+    "The document references missing nude photos of the victim with comments on her features.",
+    "The email chain from November 2019 shows ongoing discussion and forwarding of abuse allegations against Epstein and Maxwell."
   ],
-  "analyzedAt": "2026-02-11T15:38:30.745Z"
+  "analyzedAt": "2026-02-12T03:07:10.184Z"
 }

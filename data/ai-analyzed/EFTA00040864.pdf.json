@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2021-11-08",
-  "summary": "This is an FBI 302 form documenting a proffer interview with a former Bureau of Prisons Corrections Officer from the Metropolitan Correctional Center (MCC) in New York. The officer provides detailed information about his career, duties on the Disturbance Control Team and in the Special Housing Unit, procedures for handling contraband and inmates, and events surrounding a major facility shakedown in February 2020. He also discusses being placed on administrative leave and his limited knowledge of Jeffrey Epstein's death.",
+  "summary": "This is an FBI 302 form documenting a proffer interview with a former Bureau of Prisons Corrections Officer from the Metropolitan Correctional Center (MCC) in New York. The officer discusses his career, duties, and specific events at the MCC, including the aftermath of Jeffrey Epstein's death and a major shakedown operation in February 2020. He also addresses his placement on administrative leave.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Deceased inmate",
       "category": "key figure",
-      "context": "Mentioned as the inmate whose death brought a spotlight on the Special Housing Unit (SHU) at the MCC.",
+      "context": "Mentioned as the inmate whose death brought a spotlight on the MCC's Special Housing Unit (SHU).",
       "mentionCount": 2
     },
     {
@@ -18,69 +18,108 @@
       "category": "staff",
       "context": "Identified as the Lieutenant (LT) at the MCC during the time period discussed, particularly around Epstein's death.",
       "mentionCount": 1
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Corrections Officer at MCC",
+      "category": "staff",
+      "context": "Mentioned as a CO who started around the same time as the interviewee; the interviewee states he did not have much interaction with her.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Corrections Officer at MCC",
+      "category": "staff",
+      "context": "Mentioned as a CO who started around the same time as the interviewee; the interviewee states he did not have much interaction with him.",
+      "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Darden",
+      "person2": "Interviewee",
+      "relationshipType": "employer-employee",
+      "description": "Darden was the Lieutenant (LT) at the MCC while the interviewee was a Corrections Officer and Acting Lieutenant.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both are mentioned as Corrections Officers who started at the MCC around the same time.",
+      "strength": 2
+    },
+    {
+      "person1": "Interviewee",
+      "person2": "Tova Noel",
+      "relationshipType": "co-worker",
+      "description": "The interviewee worked at the MCC at the same time as Tova Noel but states he did not have much interaction with her.",
+      "strength": 1
+    },
+    {
+      "person1": "Interviewee",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "The interviewee worked at the MCC at the same time as Michael Thomas but states he did not have much interaction with him.",
+      "strength": 1
+    }
+  ],
   "events": [
     {
-      "date": "2021-11-08",
-      "title": "Proffer Interview",
-      "description": "A former MCC Corrections Officer is interviewed by the U.S. Attorney's Office and FBI under a proffer agreement, providing information about his career and events at the MCC.",
-      "category": "investigation",
-      "significance": 3,
-      "personsInvolved": [
-        "Unnamed interviewee",
-        "Unnamed AUSA",
-        "Unnamed FBI SA",
-        "Unnamed Defense Attorney"
-      ]
-    },
-    {
-      "date": "2020-02",
-      "title": "MCC Disturbance Control Team Activation and Shakedown",
-      "description": "The MCC's DCT was activated at the end of February 2020 for a major, last-minute operation involving shakedowns of inmate units, reportedly due to a potential gun in the facility. The team worked extended hours searching for contraband.",
-      "category": "investigation",
-      "significance": 4,
-      "personsInvolved": [
-        "Unnamed interviewee",
-        "Unnamed DCT members"
-      ]
-    },
-    {
-      "date": "2020-03-01",
-      "title": "Interviewee Placed on Administrative Leave",
-      "description": "The interviewee was placed on administrative leave, which he believes was retaliatory for an argument with an Associate Warden and his role in the DCT quitting after the February 2020 shakedown.",
-      "category": "legal",
-      "significance": 3,
-      "personsInvolved": [
-        "Unnamed interviewee"
-      ]
-    },
-    {
-      "date": "2019-08",
+      "date": "2019-08-10",
       "title": "Death of Jeffrey Epstein",
-      "description": "The death of inmate Jeffrey Epstein is referenced as an event that brought increased focus and scrutiny to the Special Housing Unit at the MCC.",
+      "description": "Jeffrey Epstein died by suicide while in custody at the MCC. The document references the aftermath, stating the facility's focus shifted to the SHU because of the spotlight after his death.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein"
       ]
+    },
+    {
+      "date": "2020-02",
+      "title": "MCC Disturbance and Shakedown",
+      "description": "At the end of February 2020, the MCC's Disturbance Control Team (DCT) was activated last minute for a major operation involving a potential gun in the facility. A large-scale shakedown of inmate units was conducted.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Interviewee",
+        "Darden"
+      ]
+    },
+    {
+      "date": "2020-03-01",
+      "title": "Interviewee Placed on Administrative Leave",
+      "description": "The interviewee was placed on administrative leave, which he believes was retaliation for an argument with an Associate Warden (AW) and due to a personal vendetta against the MCC DCT.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Interviewee"
+      ]
+    },
+    {
+      "date": "2021-11-08",
+      "title": "Proffer Interview",
+      "description": "The interviewee provided information to the U.S. Attorney's Office and FBI under a proffer agreement at 1 Saint Andrews Plaza, New York, NY.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Interviewee"
+      ]
     }
   ],
   "locations": [
-    "United States Attorney's Office, 1 Saint Andrews Plaza, New York, NY 10007",
+    "United States Attorney's Office (USAO), 1 Saint Andrews Plaza, New York, NY 10007",
     "Metropolitan Correctional Center (MCC), New York",
     "Bedstuy and Bushwick areas of Brooklyn, New York",
     "Metropolitan Detention Center (MDC)",
-    "Fort Danbury (likely a reference to FCI Danbury)",
     "Bronx, New York"
   ],
   "keyFacts": [
-    "The interviewee was a long-term Corrections Officer and Acting Lieutenant at the MCC, working on the Disturbance Control Team and in internal security.",
-    "He was off duty on the day of Jeffrey Epstein's death and states he has no knowledge of any special restrictions put in place in the SHU afterwards, though the facility's focus shifted to the SHU due to the spotlight from Epstein's death.",
-    "He describes a major, chaotic DCT activation and facility-wide shakedown in late February 2020, prompted by reports of a potential gun, which led to his DCT team quitting and him being placed on administrative leave.",
-    "He acknowledges passing an inspected, permitted item between inmates in the SHU on video but states he would not pass contraband.",
-    "The document reveals internal MCC procedures for the SHU, contraband handling, and officer-inmate interactions, including the role of gang-affiliated inmates in unit dynamics."
+    "The interviewee was a long-term Corrections Officer and Acting Lieutenant at the MCC, where Jeffrey Epstein was held.",
+    "He states he was off duty on the day of Jeffrey Epstein's death and has no knowledge of any restrictions put in the SHU afterwards, though the facility's focus shifted to the SHU due to the spotlight.",
+    "He describes a major, last-minute activation of the Disturbance Control Team (DCT) for a shakedown in late February 2020, prompted by a potential gun in the facility.",
+    "He and another officer were placed on administrative leave in March 2020, which he believes was retaliatory for an argument with an Associate Warden and linked to the DCT activation incident.",
+    "The document reveals operational details of the MCC SHU, including procedures for passing items between inmates and the types of contraband found (cigarettes, K2, shanks, razors, scalpels)."
   ],
-  "analyzedAt": "2026-02-11T16:09:56.725Z"
+  "analyzedAt": "2026-02-12T03:37:28.671Z"
 }

@@ -3,28 +3,35 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2021-10-19",
-  "summary": "This is an FBI FD-302 form documenting an interview with Janusz Banasiak, a former household employee for Jeffrey Epstein. Banasiak describes his hiring process, job duties, the household manual, message logs, and his awareness of the investigation and Epstein's legal troubles. He worked for Epstein from 2005 to 2017.",
+  "summary": "This is an FBI 302 interview report of Janusz Banasiak, a former household employee for Jeffrey Epstein, conducted on October 19, 2021. Banasiak details his hiring process, job duties, the household manual, message logs, and his experience during the 2005 search warrant execution at Epstein's Florida property. He worked for Epstein from 2005 to 2017.",
   "persons": [
     {
       "name": "Janusz Banasiak",
-      "role": "Former household employee for Jeffrey Epstein",
+      "role": "Former Household Employee for Jeffrey Epstein",
       "category": "staff",
       "context": "Interviewed by the FBI about his employment with Jeffrey Epstein from 2005 to 2017. He was responsible for household maintenance, driving, and managing petty cash.",
       "mentionCount": 50
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Employer, accused",
+      "role": "Employer, Accused",
       "category": "key figure",
-      "context": "The subject of the investigation. Banasiak's employer who he drove, shopped for, and maintained properties for. Described as not friendly with staff and constantly traveling.",
+      "context": "The subject of the investigation. Banasiak describes his role as Epstein's employee, his travel habits, and the aftermath of his arrest and guilty plea.",
       "mentionCount": 25
     },
     {
       "name": "Ghislaine Maxwell",
-      "role": "Epstein's assistant, interviewer",
+      "role": "Associate of Jeffrey Epstein",
       "category": "associate",
-      "context": "Interviewed Banasiak for the job in her New York townhouse and was a primary source of instructions on Epstein's preferences and household procedures.",
+      "context": "Interviewed Banasiak for the job and was a primary source of instructions on Epstein's preferences and household protocols.",
       "mentionCount": 8
+    },
+    {
+      "name": "Dr. Garecki",
+      "role": "Caller/Contact",
+      "category": "other",
+      "context": "Name appears in a message log entry dated 2/18/05 that Banasiak recognized as his own handwriting.",
+      "mentionCount": 1
     }
   ],
   "connections": [
@@ -39,22 +46,22 @@
       "person1": "Janusz Banasiak",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "employer-employee",
-      "description": "Maxwell interviewed Banasiak for the job and was a direct supervisor, giving him instructions on how to manage the household for Epstein.",
+      "description": "Maxwell interviewed and hired Banasiak and was his primary point of contact for instructions related to Epstein's household.",
       "strength": 4
     },
     {
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "associate",
-      "description": "Maxwell acted as Epstein's assistant, handling hiring and conveying his preferences to staff like Banasiak.",
+      "description": "Maxwell acted on Epstein's behalf in hiring staff and managing household affairs, as described by Banasiak.",
       "strength": 4
     }
   ],
   "events": [
     {
       "date": "2005",
-      "title": "Banasiak hired by Epstein",
-      "description": "Janusz Banasiak is hired through an agency, interviewed by Ghislaine Maxwell and then Jeffrey Epstein, and moves to Florida to work.",
+      "title": "Banasiak Hired by Epstein",
+      "description": "Janusz Banasiak is hired through an agency after interviews with Ghislaine Maxwell and Jeffrey Epstein. He moves to Florida to work on Epstein's property.",
       "category": "employment",
       "significance": 3,
       "personsInvolved": [
@@ -64,44 +71,35 @@
       ]
     },
     {
-      "date": "2005-2017",
-      "title": "Banasiak's employment period",
-      "description": "Banasiak works for Epstein, maintaining his Florida property, driving him and his assistants, and managing household expenses.",
-      "category": "employment",
-      "significance": 3,
+      "date": "2005",
+      "title": "Search Warrant Executed at Florida Property",
+      "description": "Police arrive with a search warrant at Epstein's Florida property while Banasiak is present. He is shown the warrant and witnesses the search.",
+      "category": "investigation",
+      "significance": 4,
       "personsInvolved": [
         "Janusz Banasiak",
         "Jeffrey Epstein"
       ]
     },
     {
-      "date": null,
-      "title": "Police execute search warrant",
-      "description": "Police arrive at Epstein's Florida property with a search warrant while Banasiak is present. He learns of the investigation for the first time.",
-      "category": "investigation",
-      "significance": 4,
+      "date": "2005-2017",
+      "title": "Banasiak's Employment Period",
+      "description": "Banasiak works for Epstein from 2005 until 2017, living in a small house on the property.",
+      "category": "employment",
+      "significance": 2,
       "personsInvolved": [
-        "Janusz Banasiak"
+        "Janusz Banasiak",
+        "Jeffrey Epstein"
       ]
     },
     {
-      "date": null,
-      "title": "Epstein pleads guilty",
-      "description": "Banasiak reads in the news that Epstein pleaded guilty to solicitation of underage prostitution. He later drives Epstein to court for an appearance.",
+      "date": "2008-2009",
+      "title": "Epstein's Guilty Plea and Jail Time",
+      "description": "Banasiak learns from news reports that Epstein pleaded guilty to solicitation of underage prostitution and went to jail. He drove Epstein to court for his appearance.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
-        "Janusz Banasiak"
-      ]
-    },
-    {
-      "date": "2021-10-19",
-      "title": "FBI interview of Banasiak",
-      "description": "Janusz Banasiak is interviewed by the FBI in West Palm Beach, Florida, regarding his employment with Jeffrey Epstein.",
-      "category": "investigation",
-      "significance": 3,
-      "personsInvolved": [
         "Janusz Banasiak"
       ]
     }
@@ -113,16 +111,16 @@
     "Virginia",
     "Madison Avenue (Epstein's office)",
     "Lexington Avenue and Park Avenue (Maxwell's townhouse)",
-    "Palm Beach, Florida (Epstein's property)",
+    "Palm Beach, Florida",
     "New Mexico",
     "Paris"
   ],
   "keyFacts": [
-    "Janusz Banasiak worked as a household employee for Jeffrey Epstein from 2005 to 2017, living in a small house on Epstein's Florida property.",
+    "Janusz Banasiak worked as a household employee for Jeffrey Epstein from 2005 to 2017, living on the Florida property.",
     "Banasiak was interviewed and hired by Ghislaine Maxwell, who gave him detailed instructions on Epstein's preferences via a household manual.",
-    "Banasiak first learned of the investigation into Epstein when police executed a search warrant at the Florida property.",
-    "Banasiak confirmed his handwriting in message logs from 2004-2005, which were used to record phone calls to Epstein's residence.",
-    "After Epstein's arrest and guilty plea, he cut employee salaries by 10% and never restored the pay."
+    "Banasiak was present during the execution of a search warrant at Epstein's Florida property in 2005, which was his first knowledge of an investigation.",
+    "Banasiak identified his own handwriting in message logs from 2004-2005, confirming his role in managing communications for the household.",
+    "After Epstein's arrest and guilty plea, employee salaries were cut by 10% and not restored after Epstein's release."
   ],
-  "analyzedAt": "2026-02-12T00:03:30.261Z"
+  "analyzedAt": "2026-02-12T02:44:57.053Z"
 }

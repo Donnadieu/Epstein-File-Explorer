@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-07-13",
-  "summary": "This is a 2021 email chain between a U.S. Attorney's Office and FedEx's legal department regarding the identification of a records custodian to authenticate FedEx records from 2008 for use in the upcoming trial of Ghislaine Maxwell. The records relate to a subpoena response from February 2008 in the Southern District of Florida's investigation into Jeffrey Epstein.",
+  "summary": "Email chain from July 2021 between a federal prosecutor and FedEx legal staff regarding identifying a records custodian to authenticate FedEx records from 2008 for use in the Ghislaine Maxwell trial. The records relate to a 2008 subpoena from the U.S. Attorney's Office for the Southern District of Florida in the Jeffrey Epstein investigation.",
   "persons": [
     {
       "name": "Tracy Chapell",
       "role": "Senior Paralegal at Federal Express Corporation Legal Department",
       "category": "legal",
-      "context": "FedEx employee corresponding with the U.S. Attorney's Office to assist in identifying a records custodian and authenticating FedEx records for the Ghislaine Maxwell trial.",
+      "context": "FedEx legal staff member corresponding with federal prosecutors about authenticating 2008 FedEx records for the Ghislaine Maxwell trial.",
       "mentionCount": 8
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The subject of the upcoming criminal trial in New York for which the FedEx records are being authenticated.",
+      "context": "Subject of the upcoming trial in New York in November 2021 for which the FedEx records are being authenticated.",
       "mentionCount": 1
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Referenced by Tracy Chapell in an email asking if the records pertain to 'the' Jeffrey Epstein, indicating the underlying investigation is related to him.",
+      "context": "Referenced by Tracy Chapell in an email asking if the records pertain to 'the' Jeffrey Epstein case.",
       "mentionCount": 1
     },
     {
       "name": "Tracy Ferrara",
       "role": "FedEx point of contact in 2008",
       "category": "witness",
-      "context": "Identified as the FedEx employee who was the point of contact for a 2008 subpoena from the U.S. Attorney's Office for the Southern District of Florida.",
+      "context": "Identified as the FedEx point of contact who handled a subpoena from the U.S. Attorney's Office for the Southern District of Florida in February 2008.",
       "mentionCount": 1
     }
   ],
@@ -39,15 +39,22 @@
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "co-conspirator",
-      "description": "The document context implies their legal cases are connected, as records from the Epstein investigation are being authenticated for use in Maxwell's trial.",
+      "description": "Maxwell's trial is related to the Epstein investigation, and the records being sought are from the 2008 Epstein subpoena.",
       "strength": 4
+    },
+    {
+      "person1": "Tracy Chapell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Chapell, as FedEx legal staff, is assisting prosecutors in authenticating records for use in Maxwell's trial.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2008-02",
       "title": "Subpoena to FedEx in Epstein investigation",
-      "description": "The U.S. Attorney's Office for the Southern District of Florida served a subpoena on FedEx as part of its investigation into Jeffrey Epstein.",
+      "description": "The U.S. Attorney's Office for the Southern District of Florida sent a subpoena to FedEx as part of the Jeffrey Epstein investigation.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
@@ -56,8 +63,8 @@
     },
     {
       "date": "2021-11",
-      "title": "Scheduled trial of Ghislaine Maxwell",
-      "description": "The criminal trial of Ghislaine Maxwell was scheduled to begin in New York in November 2021.",
+      "title": "Scheduled Ghislaine Maxwell trial",
+      "description": "Trial for Ghislaine Maxwell scheduled to start in New York in November 2021.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -66,8 +73,8 @@
     },
     {
       "date": "2021-07",
-      "title": "Authentication of FedEx records for trial",
-      "description": "In July 2021, the U.S. Attorney's Office for the Southern District of New York corresponded with FedEx to identify a records custodian to authenticate 2008 FedEx records for use in the Maxwell trial.",
+      "title": "Prosecution seeks records custodian for Maxwell trial",
+      "description": "Federal prosecutors from the Southern District of New York contact FedEx to identify a records custodian to authenticate 2008 FedEx records for use in the Maxwell trial.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -82,10 +89,11 @@
     "1 Saint Andrews Plaza, New York, New York 10007"
   ],
   "keyFacts": [
-    "In 2021, prosecutors were preparing for the Ghislaine Maxwell trial by authenticating FedEx records from a 2008 subpoena related to the Jeffrey Epstein investigation.",
-    "The 2008 subpoena was issued by the U.S. Attorney's Office for the Southern District of Florida, indicating federal investigative activity into Epstein at that time.",
-    "A FedEx paralegal explicitly asked if the records pertained to 'the' Jeffrey Epstein, confirming the notoriety and central role of Epstein in the underlying matter.",
-    "The correspondence shows procedural steps taken by law enforcement to establish a chain of custody and authentication for business records to be used as evidence in a major criminal trial."
+    "In February 2008, the U.S. Attorney's Office for the Southern District of Florida subpoenaed FedEx records as part of the Jeffrey Epstein investigation.",
+    "In July 2021, federal prosecutors from the Southern District of New York were preparing for the Ghislaine Maxwell trial by authenticating those 2008 FedEx records.",
+    "The FedEx point of contact for the 2008 subpoena was Tracy Ferrara.",
+    "The email chain shows coordination between law enforcement and corporate legal departments to secure trial evidence years after the initial investigation.",
+    "A FedEx paralegal explicitly asked if the records pertained to 'the' Jeffrey Epstein, indicating the notoriety of the case."
   ],
-  "analyzedAt": "2026-02-11T23:53:32.270Z"
+  "analyzedAt": "2026-02-12T02:34:08.628Z"
 }

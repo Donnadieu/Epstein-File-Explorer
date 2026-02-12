@@ -3,48 +3,48 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2020-08-10 to 2020-11-20",
-  "summary": "This document is an email chain between attorneys Mariann Wang and Gloria Allred, and an Assistant U.S. Attorney, discussing the scheduling of interviews for multiple clients who are potential victims of Jeffrey Epstein and Ghislaine Maxwell. The emails contain summaries of the clients' allegations, including timeframes, locations, and interactions with Epstein, Maxwell, and others, including Prince Andrew.",
+  "summary": "This document is a chain of emails between attorneys Mariann Wang and Gloria Allred, and an Assistant U.S. Attorney, discussing the scheduling of interviews for multiple clients who are potential victims of Jeffrey Epstein and Ghislaine Maxwell. The emails contain summaries of the clients' allegations, including timeframes, locations, and interactions with Epstein, Maxwell, and others, including Prince Andrew.",
   "persons": [
     {
       "name": "Mariann Wang",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney at Cuti Hecker Wang LLP, corresponding with the U.S. Attorney's office to schedule victim interviews and request information about evidence, such as photographs.",
-      "mentionCount": 10
+      "context": "Attorney from Cuti Hecker Wang LLP representing potential victims, coordinating with Gloria Allred and the U.S. Attorney's office to schedule client interviews.",
+      "mentionCount": 12
     },
     {
       "name": "Gloria Allred",
       "role": "Attorney",
       "category": "legal",
-      "context": "High-profile attorney at Allred, Maroko & Goldberg, co-counsel with Mariann Wang, involved in coordinating victim interviews with the U.S. Attorney's office.",
-      "mentionCount": 10
+      "context": "High-profile attorney from Allred, Maroko & Goldberg, co-counsel with Mariann Wang, involved in scheduling victim interviews with the U.S. Attorney's office.",
+      "mentionCount": 11
     },
     {
       "name": "Maurene",
       "role": "Assistant United States Attorney",
       "category": "legal",
-      "context": "Assistant U.S. Attorney for the Southern District of New York, the primary point of contact for the attorneys regarding victim interviews and evidence requests.",
-      "mentionCount": 5
+      "context": "Assistant U.S. Attorney for the Southern District of New York, the primary point of contact for the attorneys regarding victim interviews and information requests about case evidence like photographs.",
+      "mentionCount": 4
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Deceased financier and accused sex trafficker; the subject of the investigation. Multiple clients allege abuse by him.",
+      "context": "Central figure in the case; the emails reference multiple clients alleging abuse by him in various locations and timeframes from 2000-2017.",
       "mentionCount": 4
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Co-conspirator",
       "category": "key figure",
-      "context": "Epstein's associate, accused of facilitating abuse. Mentioned in the context of leaving voicemails for a victim and interacting with multiple clients.",
+      "context": "Frequently mentioned in client allegations; described as interacting with victims, leaving voicemails, and being involved in the abuse.",
       "mentionCount": 3
     },
     {
       "name": "Prince Andrew",
       "role": "Associate",
       "category": "political",
-      "context": "British royal; mentioned in the context of a final interaction with a victim at Epstein's townhouse in 2010.",
+      "context": "Mentioned in one client's allegation of a final interaction with Epstein in 2010 that included an interaction with him at a townhouse.",
       "mentionCount": 1
     },
     {
@@ -60,50 +60,50 @@
       "person1": "Mariann Wang",
       "person2": "Gloria Allred",
       "relationshipType": "legal colleague",
-      "description": "Co-counsels representing multiple clients who are potential victims of Epstein and Maxwell.",
+      "description": "Co-counsels working together to represent multiple clients who are potential victims in the Epstein/Maxwell case.",
       "strength": 5
     },
     {
       "person1": "Mariann Wang",
       "person2": "Maurene",
-      "relationshipType": "legal professional",
-      "description": "Attorney corresponding with an Assistant U.S. Attorney to schedule victim interviews and discuss case evidence.",
+      "relationshipType": "legal-professional",
+      "description": "Attorney coordinating with Assistant U.S. Attorney to schedule victim interviews and request information about case evidence.",
       "strength": 4
     },
     {
       "person1": "Gloria Allred",
       "person2": "Maurene",
-      "relationshipType": "legal professional",
-      "description": "Attorney corresponding with an Assistant U.S. Attorney to coordinate on victim interviews for the Epstein/Maxwell investigation.",
-      "strength": 4
+      "relationshipType": "legal-professional",
+      "description": "Attorney communicating with prosecutor to arrange a call and facilitate victim interviews for the investigation.",
+      "strength": 3
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "co-conspirator",
-      "description": "Maxwell is described as interacting with and leaving messages for victims, acting in association with Epstein.",
+      "description": "Client allegations describe Maxwell as being involved in the abuse and operations related to Epstein.",
       "strength": 5
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Prince Andrew",
       "relationshipType": "social",
-      "description": "Prince Andrew was present during a victim's final interaction with Epstein at his townhouse in 2010.",
-      "strength": 3
+      "description": "One client allegation references an interaction with Prince Andrew occurring during a final meeting with Epstein.",
+      "strength": 2
     },
     {
       "person1": "Ghislaine Maxwell",
-      "person2": "Prince Andrew",
-      "relationshipType": "social",
-      "description": "Implied connection through mutual association with Jeffrey Epstein, though not directly stated in this document.",
-      "strength": 2
+      "person2": "Multiple Victims",
+      "relationshipType": "victim-perpetrator",
+      "description": "Client summaries allege direct interactions with Maxwell, including her leaving voicemails and being involved in incidents.",
+      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2020-08-12",
-      "title": "Scheduled Zoom Call with AUSA",
-      "description": "A Zoom call was scheduled between attorneys Mariann Wang, Gloria Allred, and Assistant U.S. Attorney Maurene to discuss questions prior to scheduling victim interviews.",
+      "title": "Scheduled Attorney-Prosecutor Call",
+      "description": "A Zoom call was scheduled between attorneys Mariann Wang, Gloria Allred, and AUSA Maurene to discuss questions prior to scheduling victim interviews.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -115,72 +115,53 @@
     {
       "date": "2020-10-09",
       "title": "Scheduled Client Interviews",
-      "description": "A date proposed for interviewing clients whose sessions had been adjourned a few weeks prior.",
+      "description": "A date was proposed for interviewing clients whose sessions had been adjourned a few weeks prior.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Mariann Wang",
+        "Gloria Allred",
         "Maurene"
       ]
     },
     {
-      "date": "2002",
-      "title": "Alleged Incident in New York",
-      "description": "A client (initials AR) alleges one incident of abuse by Epstein in New York in 2002.",
-      "category": "abuse",
-      "significance": 4,
-      "personsInvolved": [
-        "Jeffrey Epstein"
-      ]
-    },
-    {
-      "date": "2003-2004",
-      "title": "Multiple Alleged Incidents in NY and FL",
-      "description": "A client (initials JRC) alleges multiple incidents of abuse by Epstein in New York from fall 2003 to late 2004, with some interactions involving Ghislaine Maxwell.",
-      "category": "abuse",
-      "significance": 4,
-      "personsInvolved": [
-        "Jeffrey Epstein",
-        "Ghislaine Maxwell"
-      ]
-    },
-    {
-      "date": "2010",
-      "title": "Final Interaction with Epstein and Prince Andrew",
-      "description": "A client (initials AR) alleges a final interaction with Epstein that included an interaction with Prince Andrew at Epstein's townhouse.",
+      "date": "2000 to 2017",
+      "title": "Alleged Abuse Incidents",
+      "description": "The document lists multiple alleged incidents involving clients and Epstein/Maxwell spanning from late 2000 to November 2017, occurring in New York, Florida, Paris, California, and Washington, D.C.",
       "category": "abuse",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
+        "Ghislaine Maxwell",
         "Prince Andrew"
       ]
     },
     {
-      "date": "2017",
-      "title": "Alleged Incidents in Paris and Florida",
-      "description": "A client (initials DM) alleges multiple incidents in Paris and Florida from August to November 2017, interacting with others working for Epstein.",
+      "date": "2010",
+      "title": "Alleged Interaction with Prince Andrew",
+      "description": "One client alleged a final interaction with Epstein in 2010 that included an interaction with Prince Andrew at a townhouse.",
       "category": "abuse",
       "significance": 4,
       "personsInvolved": [
-        "Jeffrey Epstein"
+        "Jeffrey Epstein",
+        "Prince Andrew"
       ]
     }
   ],
   "locations": [
     "New York",
     "Florida",
-    "Paris, France",
+    "Paris",
     "California",
     "Washington, D.C.",
-    "Southern District of New York (1 St. Andrew's Plaza, New York, NY 10007)",
-    "Epstein's townhouse (location unspecified)"
+    "Southern District of New York (1 St. Andrew's Plaza)"
   ],
   "keyFacts": [
-    "Attorneys Mariann Wang and Gloria Allred were representing multiple clients alleging abuse by Jeffrey Epstein and Ghislaine Maxwell and were coordinating their interviews with the U.S. Attorney's Office in 2020.",
-    "One victim allegation includes a 2010 interaction with Epstein that also involved Prince Andrew at Epstein's townhouse.",
-    "The emails reference a need for clarification from prosecutors regarding 'photographs' before informing clients, indicating the existence of photographic evidence in the case.",
-    "Victim allegations span from approximately 2000 to 2017 and occur in multiple locations including New York, Florida, Paris, California, and Washington, D.C.",
-    "Ghislaine Maxwell is specifically mentioned in the context of leaving voicemails for a victim and interacting with multiple clients."
+    "Attorneys Mariann Wang and Gloria Allred were representing multiple clients alleging abuse by Jeffrey Epstein and involvement by Ghislaine Maxwell.",
+    "Client allegations span from approximately 2000 to 2017 and involve incidents in New York, Florida, Paris, California, and Washington, D.C.",
+    "One specific allegation mentions an interaction with Prince Andrew during a final meeting with Epstein in 2010.",
+    "The attorneys were in communication with the U.S. Attorney's Office (AUSA Maurene) to schedule victim interviews and seek clarification on evidence, specifically regarding photographs.",
+    "The email chain reveals the procedural coordination between victim attorneys and federal prosecutors in the ongoing Epstein/Maxwell investigation."
   ],
-  "analyzedAt": "2026-02-12T00:10:37.874Z"
+  "analyzedAt": "2026-02-12T02:52:49.610Z"
 }

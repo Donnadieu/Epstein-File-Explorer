@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2020-11-18",
-  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, regarding the provision of discovery materials to Ghislaine Maxwell. It details the delivery of a laptop, hard drive, and CD containing discovery productions, including replacements for files she had been unable to review.",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, regarding the provision of discovery materials to Ghislaine Maxwell. It details the delivery of a laptop, a hard drive, and a CD containing discovery productions, including replacements for files she was previously unable to review.",
   "persons": [
     {
-      "name": "Ghislaine Maxwell",
+      "name": "Maxwell",
       "role": "Defendant",
       "category": "key figure",
       "context": "The defendant in the case, to whom discovery materials (laptop, hard drive, CD) are being provided for review.",
-      "mentionCount": 2
+      "mentionCount": 4
     },
     {
-      "name": "Assistant United States Attorney",
+      "name": "Assistant United States Attorney Southern District of New York",
       "role": "Prosecutor",
       "category": "legal",
-      "context": "The sender of the email, working for the Southern District of New York, coordinating the delivery of discovery materials to Maxwell.",
+      "context": "The sender of the email, coordinating the delivery of discovery materials to the defendant, Ghislaine Maxwell.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Assistant United States Attorney",
-      "person2": "Ghislaine Maxwell",
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Maxwell",
       "relationshipType": "legal",
       "description": "Prosecutor providing discovery materials to the defendant as part of the legal process.",
       "strength": 3
@@ -37,29 +37,27 @@
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Ghislaine Maxwell",
-        "Assistant United States Attorney"
+        "Assistant United States Attorney Southern District of New York",
+        "Maxwell"
       ]
     },
     {
       "date": "2020-11-09",
       "title": "Prior Discovery Production Shipment",
-      "description": "A hard drive containing a separate discovery production, including replacements for files Maxwell had been unable to review, was sent via FedEx.",
+      "description": "A hard drive containing a separate discovery production, including replacements for files Maxwell was unable to review, was sent via FedEx.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
-        "Ghislaine Maxwell"
+        "Maxwell"
       ]
     }
   ],
-  "locations": [
-    "Southern District of New York"
-  ],
+  "locations": [],
   "keyFacts": [
-    "Discovery materials, including a laptop, hard drive, and CD, were provided to Ghislaine Maxwell for her review on November 18, 2020.",
-    "The prosecution had previously sent a hard drive via FedEx containing replacement files for prior productions that Maxwell had been unable to access.",
-    "The correspondence is from an Assistant United States Attorney in the Southern District of New York, indicating ongoing legal proceedings in that jurisdiction.",
-    "The email includes multiple attachments, likely cover memos and letters detailing the contents of the discovery productions."
+    "On November 18, 2020, discovery materials including a laptop, hard drive, and CD were provided to Ghislaine Maxwell for her review.",
+    "The prosecution was providing replacements for numerous files from prior productions that Maxwell had been unable to access.",
+    "A separate hard drive production had been sent via FedEx the prior week (around November 9, 2020).",
+    "The correspondence is from an Assistant U.S. Attorney in the Southern District of New York, indicating active pre-trial evidence sharing in Maxwell's case."
   ],
-  "analyzedAt": "2026-02-11T23:30:10.385Z"
+  "analyzedAt": "2026-02-12T02:09:15.191Z"
 }

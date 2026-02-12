@@ -3,90 +3,76 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2019-08-12",
-  "summary": "This is an FBI 302 form documenting an interview with a BOP Captain from the Metropolitan Correctional Center (MCC) regarding the supervision and death of inmate Jeffrey Epstein. The Captain details Epstein's housing status, manipulative behavior, the July 23 incident, and the circumstances leading up to his death on August 10, 2019, including failures in protocol regarding cellmate assignment and rounds.",
+  "summary": "This is an FBI 302 form documenting an interview with a BOP Captain from the Metropolitan Correctional Center (MCC) regarding the supervision and death of inmate Jeffrey Epstein. The Captain details Epstein's housing status, manipulative behavior, the July 23 incident, and the circumstances leading up to Epstein's death on August 10, 2019, including failures in protocol regarding cellmate assignment and rounds.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
-      "role": "Inmate",
+      "role": "Inmate/Accused",
       "category": "key figure",
-      "context": "High-profile inmate at MCC who was found dead in his cell on August 10, 2019. The interview details his behavior, housing status, and the circumstances surrounding his death.",
+      "context": "High-profile inmate at MCC who was found unresponsive in his cell on August 10, 2019. The interview details his manipulative behavior to avoid cellmates, his placement on suicide watch, and the circumstances surrounding his death.",
       "mentionCount": 25
     },
     {
       "name": "Captain",
-      "role": "Captain, Metropolitan Correctional Center",
+      "role": "Captain, Federal Bureau of Prisons",
       "category": "law enforcement",
-      "context": "BOP Captain at MCC who oversees security and was interviewed about the supervision and death of Jeffrey Epstein. He details protocols, staff directives, and the events leading to Epstein's death.",
+      "context": "The interviewee, a BOP Captain at MCC who oversaw security. He provided details on Epstein's supervision, housing assignments, staff directives, and the events leading to Epstein's death.",
       "mentionCount": 40
     },
     {
       "name": "Warden",
-      "role": "Warden, Metropolitan Correctional Center",
+      "role": "Warden, MCC",
       "category": "law enforcement",
-      "context": "The Warden of MCC who was part of the executive staff and directed that Epstein must have a cellmate at all times. Notified of Epstein's death.",
+      "context": "The Warden of MCC who directed that Epstein must have a cellmate at all times and was involved in reviewing potential cellmates. He was present at the facility on the morning of Epstein's death.",
       "mentionCount": 5
     },
     {
       "name": "Associate Warden",
-      "role": "Associate Warden, Metropolitan Correctional Center",
+      "role": "Associate Warden, MCC",
       "category": "law enforcement",
-      "context": "Associate Warden at MCC who was notified by the Captain about Epstein's death on the morning of August 10, 2019.",
+      "context": "Notified by the Captain on the morning of Epstein's death. Also informed about staff admissions regarding failure to complete rounds and counts.",
       "mentionCount": 2
     },
     {
       "name": "Lieutenant",
-      "role": "SHU Lieutenant",
+      "role": "SHU Lieutenant, MCC",
       "category": "law enforcement",
-      "context": "Special Housing Unit (SHU) Lieutenant who was repeatedly directed by the Captain that Epstein needed a cellmate. Was on leave on August 9, 2019.",
-      "mentionCount": 5
+      "context": "The Special Housing Unit (SHU) Lieutenant who was repeatedly directed by the Captain that Epstein needed a cellmate. He was on leave on August 9, 2019.",
+      "mentionCount": 4
     },
     {
       "name": "Lieutenant",
-      "role": "Operations Lieutenant",
+      "role": "Operations Lieutenant, MCC",
       "category": "law enforcement",
-      "context": "Operations Lieutenant who had oversight of the SHU on August 9, 2019, when the SHU Lieutenant was on leave. Was aware Epstein required a cellmate.",
+      "context": "The Operations Lieutenant who had oversight of the SHU on August 9, 2019, in the absence of the SHU Lieutenant. He was aware Epstein required a cellmate.",
       "mentionCount": 3
     },
     {
       "name": "Lieutenant",
-      "role": "Lieutenant",
+      "role": "Lieutenant, MCC",
       "category": "law enforcement",
-      "context": "Lieutenant who called the Captain around 7:00 AM on August 10, 2019, to report Epstein was found unresponsive.",
+      "context": "Called the Captain around 7:00 AM on August 10, 2019, to inform him Epstein was found unresponsive and that Epstein did not have a cellmate.",
       "mentionCount": 3
     },
     {
       "name": "Lieutenant",
-      "role": "Lieutenant",
+      "role": "Lieutenant, MCC",
       "category": "law enforcement",
-      "context": "Lieutenant who relieved another officer for the 10 PM - 6 AM shift on August 9, 2019. Was not personally told by the Captain that Epstein required a cellmate.",
+      "context": "Relieved another officer on the 10 PM - 6 AM shift on August 9, 2019. The Captain did not personally tell her Epstein required a cellmate.",
       "mentionCount": 2
     },
     {
       "name": "Mr.",
       "role": "Camera Technician",
       "category": "staff",
-      "context": "Camera technician who notified the Captain he was working on the SHU camera system earlier in the week of Epstein's death.",
+      "context": "The camera technician who notified the Captain he was working on the SHU camera system earlier in the week of Epstein's death.",
       "mentionCount": 1
     },
     {
       "name": "Institution Duty Officer",
-      "role": "Institution Duty Officer",
+      "role": "Institution Duty Officer, MCC",
       "category": "law enforcement",
-      "context": "Individual the Captain attempted to call for more information after being notified of Epstein's death on August 10, 2019.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Chaplain",
-      "role": "Chaplain",
-      "category": "staff",
-      "context": "Chaplain at MCC whom the Captain attempted to call after being notified of Epstein's death. Also mentioned as someone who could escort an inmate for a phone call.",
-      "mentionCount": 2
-    },
-    {
-      "name": "Officer",
-      "role": "Correctional Officer",
-      "category": "law enforcement",
-      "context": "Correctional Officer who entered Epstein's cell without supervision to administer lifesaving efforts, as reported to the Captain.",
+      "context": "One of the individuals the Captain attempted to call on the morning of August 10, 2019, for more information about Epstein's death.",
       "mentionCount": 1
     }
   ],
@@ -95,71 +81,63 @@
       "person1": "Captain",
       "person2": "Jeffrey Epstein",
       "relationshipType": "supervisor-inmate",
-      "description": "The Captain was responsible for overseeing security and Epstein's supervision at MCC, interacting with him approximately three times.",
-      "strength": 3
+      "description": "The Captain was responsible for overseeing security and Epstein's supervision at MCC, including housing assignments and special accommodations.",
+      "strength": 4
     },
     {
       "person1": "Captain",
       "person2": "Warden",
       "relationshipType": "supervisor-subordinate",
-      "description": "The Captain reports to the Warden, who directed that Epstein must have a cellmate. The Captain compiled and vetted cellmate candidates for the Warden's review.",
-      "strength": 4
+      "description": "The Captain reported to the Warden, who directed the policy that Epstein must have a cellmate. The Captain compiled and vetted cellmate candidates for the Warden's review.",
+      "strength": 3
     },
     {
       "person1": "Captain",
       "person2": "Lieutenant",
       "relationshipType": "supervisor-subordinate",
-      "description": "The Captain directly supervises Lieutenant, the SHU Lieutenant, and repeatedly directed him that Epstein needed a cellmate at all times.",
-      "strength": 4
+      "description": "The Captain directly supervised the SHU Lieutenant and repeatedly directed him that Epstein needed a cellmate at all times.",
+      "strength": 3
     },
     {
       "person1": "Jeffrey Epstein",
-      "person2": "Cellmate",
-      "relationshipType": "cellmate",
-      "description": "Epstein was housed with a cellmate, selected after vetting, following the Warden's directive. The cellmate flagged staff on July 23, and Epstein later accused him of an attack.",
-      "strength": 3
-    },
-    {
-      "person1": "Captain",
-      "person2": "Associate Warden",
-      "relationshipType": "colleague",
-      "description": "The Captain notified the Associate Warden immediately after learning of Epstein's death on August 10, 2019.",
-      "strength": 3
+      "person2": "Warden",
+      "relationshipType": "inmate-authority",
+      "description": "The Warden set the directive that Epstein must have a cellmate and was involved in the review process for selecting his cellmates.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-07-23",
       "title": "Epstein Found Unresponsive in Cell",
-      "description": "Jeffrey Epstein was found unresponsive on the floor of his cell with a homemade piece of fabric on his chest. His cellmate flagged staff. Epstein was revived and claimed his cellmate tried to take his life.",
+      "description": "Jeffrey Epstein was found unresponsive on the floor of his cell with a homemade piece of fabric on his chest. His cellmate flagged staff. Epstein claimed his cellmate tried to kill him. He was placed on suicide watch.",
       "category": "abuse",
       "significance": 4,
       "personsInvolved": [
-        "Jeffrey Epstein",
-        "Cellmate"
+        "Jeffrey Epstein"
       ]
     },
     {
       "date": "2019-08-09",
-      "title": "Epstein's Last Day Alive",
-      "description": "Epstein had an attorney session. His cellmate was at court and later released. Epstein was left without a cellmate in his SHU cell, contrary to the Warden's directive.",
+      "title": "Epstein's Last Day Before Death",
+      "description": "Epstein had an attorney session. His cellmate was released from court and his property was removed from the cell, leaving Epstein without a cellmate. The SHU camera system was down.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
-        "Jeffrey Epstein",
-        "Cellmate"
+        "Jeffrey Epstein"
       ]
     },
     {
       "date": "2019-08-10",
       "title": "Epstein Found Dead",
-      "description": "Jeffrey Epstein was found unresponsive in his cell without a cellmate in the early morning hours. He was pronounced dead, an apparent suicide.",
+      "description": "Jeffrey Epstein was found unresponsive in his cell without a cellmate in the early morning. Staff admitted to not completing 30-minute rounds, 3:00 AM, and 5:00 AM counts.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
         "Captain",
-        "Lieutenant"
+        "Lieutenant",
+        "Warden"
       ]
     },
     {
@@ -179,11 +157,11 @@
     "Metropolitan Detention Center (MDC), Brooklyn, NY"
   ],
   "keyFacts": [
-    "Jeffrey Epstein was found dead in his cell at MCC on the morning of August 10, 2019.",
-    "Despite a direct order from the Warden that Epstein must have a cellmate at all times, he was alone in his cell on the night of his death because his cellmate had been released from court and not replaced.",
-    "The Captain verbally, but informally, instructed his Lieutenants about the cellmate requirement; no formal meeting or email was sent, leading to a breakdown in communication.",
-    "Surveillance cameras in the SHU were reportedly down, and 30-minute rounds and inmate counts for the night of Epstein's death were not properly completed or documented.",
-    "Epstein had a prior incident on July 23, 2019, where he was found unresponsive and later accused his cellmate of an attack, after which he was placed on Suicide Watch."
+    "Jeffrey Epstein was found dead in his cell at MCC on the morning of August 10, 2019, without a cellmate despite a standing order from the Warden that he must have one at all times.",
+    "Epstein had a history of manipulative behavior to avoid having a cellmate, including requesting psychological assessments and being placed on suicide watch after a July 23 incident where he was found unresponsive.",
+    "On August 9, 2019, Epstein's cellmate was released from court, his property was removed, and Epstein was left alone. Staff failed to notify the Captain of this change.",
+    "Staff admitted to not completing mandatory 30-minute rounds and 3:00 AM/5:00 AM inmate counts on the night of Epstein's death. The camera system in the SHU was also down.",
+    "The Captain had verbally, but informally, instructed his Lieutenants that Epstein required a cellmate. There was no formal meeting or email documenting the Warden's directive."
   ],
-  "analyzedAt": "2026-02-11T23:38:30.877Z"
+  "analyzedAt": "2026-02-12T02:18:29.779Z"
 }

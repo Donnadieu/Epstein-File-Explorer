@@ -2,35 +2,28 @@
   "fileName": "EFTA00040146.pdf",
   "dataSet": "9",
   "documentType": "email chain",
-  "dateOriginal": "2021-05-25",
-  "summary": "This is an email chain from May 2021 discussing a perceived threat against Tova, a victim who is one of the Epstein guards, and her attorney's request for an FBI threat assessment. The chain involves coordination between the US Attorney's Office for the Southern District of New York (USANYS), FBI agents, and the victim's attorneys regarding the threat and potential legal actions like a subpoena to Google.",
+  "dateOriginal": "2021-05-24 to 2021-05-25",
+  "summary": "An email chain between FBI agents and federal prosecutors regarding a threat assessment requested by an attorney for a victim (an Epstein guard). The chain discusses a threatening email sent to the attorney's firm, which is forwarded for investigation and potential subpoena to Google.",
   "persons": [
     {
       "name": "Jason Foy",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney from Foy & Seplowitz LLC who forwarded a threatening email to the US Attorney's Office, requesting an FBI threat assessment for his client Tova.",
-      "mentionCount": 3
+      "context": "Attorney from Foy & Seplowitz LLC who forwards a threatening email received by his partner to the US Attorney's Office, requesting a threat assessment for his client.",
+      "mentionCount": 4
     },
     {
       "name": "James Seplowitz",
       "role": "Attorney",
       "category": "legal",
       "context": "Partner of Jason Foy who initially received the threatening email at their law firm.",
-      "mentionCount": 2
+      "mentionCount": 3
     },
     {
       "name": "Eric Sarraga",
-      "role": "Unknown",
+      "role": "Recipient",
       "category": "other",
-      "context": "Copied on the internal email between attorneys Jason Foy and James Seplowitz regarding the threat.",
-      "mentionCount": 2
-    },
-    {
-      "name": "Tova",
-      "role": "Victim/Epstein guard",
-      "category": "victim",
-      "context": "Identified as a victim and one of the Epstein guards; the subject of a perceived threat, with her plea to the DP scheduled for the next day.",
+      "context": "Copied on the internal email between attorneys Jason Foy and James Seplowitz regarding the threatening message.",
       "mentionCount": 2
     }
   ],
@@ -38,70 +31,63 @@
     {
       "person1": "Jason Foy",
       "person2": "James Seplowitz",
-      "relationshipType": "professional",
-      "description": "Law partners at Foy & Seplowitz LLC, collaborating on the threat assessment request for their client Tova.",
+      "relationshipType": "professional partnership",
+      "description": "Law partners at Foy & Seplowitz LLC; Seplowitz received the threat and forwarded it to Foy.",
       "strength": 4
     },
     {
       "person1": "Jason Foy",
-      "person2": "Tova",
+      "person2": "Unnamed Victim/Client",
       "relationshipType": "attorney-client",
-      "description": "Jason Foy is acting as Tova's attorney, requesting an FBI threat assessment on her behalf.",
+      "description": "Foy is requesting a threat assessment from the government on behalf of his client, identified as one of the Epstein guards.",
       "strength": 5
-    },
-    {
-      "person1": "James Seplowitz",
-      "person2": "Tova",
-      "relationshipType": "attorney-client",
-      "description": "James Seplowitz is a law partner involved in the case, as the threatening email was sent to him.",
-      "strength": 3
     }
   ],
   "events": [
     {
       "date": "2021-05-24",
-      "title": "Threatening email received",
-      "description": "An email perceived as a threat against Tova's safety was sent from 'Vegas Army Vet' to attorney James Seplowitz.",
+      "title": "Threatening Email Sent",
+      "description": "An email with the subject line referencing the victim and containing the text 'THIS ISN'T OVER!!' is sent from 'Vegas Army Vet' to attorney James Seplowitz.",
       "category": "investigation",
-      "significance": 4,
-      "personsInvolved": [
-        "James Seplowitz",
-        "Tova",
-        "Vegas Army Vet"
-      ]
-    },
-    {
-      "date": "2021-05-25",
-      "title": "Plea to the DP scheduled",
-      "description": "Tova's plea to the DP (likely meaning 'Deferred Prosecution' or similar) was scheduled for this day, as mentioned in the email.",
-      "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Tova"
+        "James Seplowitz",
+        "Unnamed Victim"
       ]
     },
     {
       "date": "2021-05-24",
-      "title": "Request for FBI threat assessment",
-      "description": "Attorney Jason Foy formally requested the US Attorney's Office to have the FBI conduct a threat assessment regarding the email threat against Tova.",
-      "category": "investigation",
-      "significance": 4,
+      "title": "Attorney Requests Threat Assessment",
+      "description": "Attorney Jason Foy forwards the threatening email to the US Attorney's Office, formally requesting the government investigate the threat against his client's safety.",
+      "category": "legal",
+      "significance": 3,
       "personsInvolved": [
         "Jason Foy",
-        "Tova"
+        "James Seplowitz"
+      ]
+    },
+    {
+      "date": "2021-05-24 to 2021-05-25",
+      "title": "FBI/Prosecutor Coordination on Threat",
+      "description": "FBI agents and Assistant US Attorneys coordinate via email to assess the threat, discuss generating a subpoena to Google for subscriber information, and consider a Non-Disclosure Order (NDO).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jason Foy"
       ]
     }
   ],
   "locations": [
-    "Las Vegas",
     "Hackensack, NJ 07601",
+    "Las Vegas",
     "New York"
   ],
   "keyFacts": [
-    "Tova is identified as a victim and one of the Epstein guards, with a pending legal plea.",
-    "A threatening email was sent from a 'Vegas Army Vet' to attorney James Seplowitz, prompting a formal request for an FBI threat assessment.",
-    "The US Attorney's Office and FBI coordinated on the threat, discussing potential subpoenas to Google for subscriber information.",
-    "The email chain reveals ongoing security concerns for individuals associated with the Epstein case in 2021."
+    "The threatened individual is identified as a victim who is 'one of the Epstein guards.'",
+    "The threat was sent via email from an account believed to be linked to Las Vegas, with the sender using the alias 'Vegas Army Vet.'",
+    "Law enforcement was actively considering issuing a subpoena to Google for subscriber information related to the threatening email account.",
+    "The email chain reveals coordination between the victim's attorneys (Foy & Seplowitz) and federal prosecutors/FBI regarding post-conviction security concerns.",
+    "Multiple names of law enforcement and prosecution personnel are redacted in the document."
   ],
-  "analyzedAt": "2026-02-11T23:50:29.477Z"
+  "analyzedAt": "2026-02-12T02:31:00.225Z"
 }

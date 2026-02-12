@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "travel record",
   "dateOriginal": "2020-01-23",
-  "summary": "This is a U.S. Customs and Border Protection TECS Person Encounter List detailing Jeffrey Epstein's international travel history from 1992 to 2000. The document shows numerous flights between New York (JFK), London (LHR), Paris (CDG), and other locations, providing a timeline of his movements during this period.",
+  "summary": "A U.S. Customs and Border Protection TECS Person Encounter List detailing 40 international travel entries for Jeffrey Epstein between 1992 and 2000. The document logs flight dates, times, carriers, and airport codes, providing a timeline of his frequent international movements during this period.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
-      "role": "Subject of travel record",
+      "role": "Traveler",
       "category": "key figure",
-      "context": "The sole individual listed in this travel log, showing his passport number and numerous international flight entries recorded by U.S. Customs and Border Protection.",
+      "context": "The sole individual listed in the travel record, showing numerous international flights between 1992 and 2000.",
       "mentionCount": 40
     }
   ],
@@ -17,8 +17,8 @@
   "events": [
     {
       "date": "1992-11-08",
-      "title": "Epstein flight from JFK to LHR",
-      "description": "Jeffrey Epstein traveled from John F. Kennedy International Airport in New York to London Heathrow, recorded in the TECS system.",
+      "title": "Epstein Flight from JFK to LHR",
+      "description": "Jeffrey Epstein traveled from John F. Kennedy International Airport in New York to London Heathrow, as recorded in the TECS system.",
       "category": "travel",
       "significance": 2,
       "personsInvolved": [
@@ -27,8 +27,8 @@
     },
     {
       "date": "1994-04-10",
-      "title": "Epstein flight from HNL to unspecified location",
-      "description": "Jeffrey Epstein traveled from Honolulu International Airport, recorded in the TECS system.",
+      "title": "Epstein Flight from HNL to NRT",
+      "description": "Jeffrey Epstein traveled from Honolulu International Airport to Narita, Tokyo, as recorded in the TECS system.",
       "category": "travel",
       "significance": 2,
       "personsInvolved": [
@@ -37,18 +37,8 @@
     },
     {
       "date": "1995-12-22",
-      "title": "Epstein flight from LAX to SYD",
-      "description": "Jeffrey Epstein traveled from Los Angeles International Airport to Sydney Kingsford Smith Airport, recorded in the TECS system.",
-      "category": "travel",
-      "significance": 2,
-      "personsInvolved": [
-        "Jeffrey Epstein"
-      ]
-    },
-    {
-      "date": "1997-06-19",
-      "title": "Epstein flight from JFK to LHR",
-      "description": "Jeffrey Epstein traveled from John F. Kennedy International Airport in New York to London Heathrow, recorded in the TECS system.",
+      "title": "Epstein Flight from LAX to SYD",
+      "description": "Jeffrey Epstein traveled from Los Angeles International Airport to Kingsford Smith Airport in Sydney, Australia, as recorded in the TECS system.",
       "category": "travel",
       "significance": 2,
       "personsInvolved": [
@@ -57,8 +47,8 @@
     },
     {
       "date": "2000-09-19",
-      "title": "Epstein flight from JFK to LHR",
-      "description": "Jeffrey Epstein traveled from John F. Kennedy International Airport in New York to London Heathrow, recorded in the TECS system.",
+      "title": "Epstein Flight from JFK to LHR",
+      "description": "Jeffrey Epstein's last recorded flight in this document, traveling from John F. Kennedy International Airport to London Heathrow.",
       "category": "travel",
       "significance": 2,
       "personsInvolved": [
@@ -67,22 +57,23 @@
     }
   ],
   "locations": [
-    "John F. Kennedy International Airport (JFK), New York",
-    "London Heathrow Airport (LHR), United Kingdom",
-    "Paris Charles de Gaulle Airport (CDG), France",
-    "Los Angeles International Airport (LAX), California",
-    "Sydney Kingsford Smith Airport (SYD), Australia",
-    "Honolulu International Airport (HNL), Hawaii",
-    "Narita Airport (NRT), Tokyo, Japan",
-    "Cyril E. King International Airport (A511), St. Thomas",
-    "Palm Beach International Airport (A523), Florida"
+    "JFK (John F. Kennedy International Airport, New York)",
+    "LHR (London Heathrow International Airport)",
+    "CDG (Paris Charles de Gaulle Airport)",
+    "LAX (Los Angeles International Airport, CA)",
+    "SYD (Kingsford Smith Airport, Sydney)",
+    "HNL (Honolulu International Airport)",
+    "NRT (Narita Airport, Tokyo)",
+    "A523 (CBP-Palm Beach International Airport)",
+    "A471 (New York, JFK Airport, Terminal 4)",
+    "A472 (New York, JFK Airport, Terminal 7)"
   ],
   "keyFacts": [
-    "Jeffrey Epstein's passport number is recorded as 110708878 with date of birth 01/20/1953.",
-    "The document shows Epstein made at least 40 international trips recorded in the TECS system between 1992 and 2000.",
-    "Frequent travel patterns show regular flights between New York (JFK) and London (LHR) throughout this period.",
-    "Epstein traveled to diverse locations including Paris, Sydney, Tokyo, Honolulu, and Palm Beach.",
-    "The document was generated by U.S. Customs and Border Protection on January 23, 2020, indicating law enforcement review of historical travel data."
+    "The document records 40 separate international travel entries for Jeffrey Epstein between November 1992 and September 2000.",
+    "Frequent destinations include London (LHR), Paris (CDG), and Palm Beach (A523), with trips also recorded to Tokyo, Sydney, and Honolulu.",
+    "The travel pattern shows Epstein was a frequent international traveler during the late 1990s, with multiple trips per year.",
+    "The document is a TECS (Treasury Enforcement Communications System) Person Encounter List generated by U.S. Customs and Border Protection in 2020, indicating law enforcement review of historical travel data.",
+    "Flight records show use of various airlines including British Airways (BA), Air France (AF), and United Airlines (UA), as well as private or charter flights (codes like PV, 00)."
   ],
-  "analyzedAt": "2026-02-12T00:17:22.761Z"
+  "analyzedAt": "2026-02-12T02:59:33.379Z"
 }

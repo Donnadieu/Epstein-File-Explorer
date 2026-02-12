@@ -7,23 +7,23 @@
   "persons": [
     {
       "name": "Leon D. Black",
-      "role": "Account holder",
+      "role": "Account Holder",
       "category": "key figure",
-      "context": "Joint account holder listed on a Bank of America statement showing multi-million dollar transactions in January 2011.",
+      "context": "Joint account holder with Debra Black on a Bank of America account showing multi-million dollar transactions in January 2011.",
       "mentionCount": 2
     },
     {
       "name": "Debra Black",
-      "role": "Account holder",
+      "role": "Account Holder",
       "category": "associate",
-      "context": "Joint account holder listed alongside Leon D. Black on a Bank of America statement.",
+      "context": "Joint account holder with Leon D. Black on a Bank of America account showing multi-million dollar transactions in January 2011.",
       "mentionCount": 2
     },
     {
       "name": "Melanie Spinella",
       "role": "Power of Attorney",
       "category": "staff",
-      "context": "Listed as having Power of Attorney (POA) for the joint bank account held by Leon D. Black and Debra Black.",
+      "context": "Listed as having Power of Attorney (POA) for the Bank of America account held by Leon D. Black and Debra Black.",
       "mentionCount": 1
     }
   ],
@@ -32,29 +32,29 @@
       "person1": "Leon D. Black",
       "person2": "Debra Black",
       "relationshipType": "financial",
-      "description": "Joint holders of a Bank of America account with significant financial activity.",
-      "strength": 5
+      "description": "Joint holders of a Bank of America account with shared financial activity.",
+      "strength": 4
     },
     {
       "person1": "Melanie Spinella",
       "person2": "Leon D. Black",
       "relationshipType": "financial",
-      "description": "Melanie Spinella holds Power of Attorney for the bank account jointly owned by Leon D. Black and Debra Black.",
-      "strength": 4
+      "description": "Melanie Spinella holds Power of Attorney for the financial account jointly held by Leon D. Black.",
+      "strength": 3
     },
     {
       "person1": "Melanie Spinella",
       "person2": "Debra Black",
       "relationshipType": "financial",
-      "description": "Melanie Spinella holds Power of Attorney for the bank account jointly owned by Leon D. Black and Debra Black.",
-      "strength": 4
+      "description": "Melanie Spinella holds Power of Attorney for the financial account jointly held by Debra Black.",
+      "strength": 3
     }
   ],
   "events": [
     {
       "date": "2011-01",
-      "title": "Bank Account Activity",
-      "description": "Significant financial transactions occurred in a joint account held by Leon D. Black and Debra Black, including deposits of $20,724,721.06 and withdrawals totaling $23,171,592.73.",
+      "title": "High-Value Bank Account Activity",
+      "description": "A Bank of America account held by Leon D. Black and Debra Black showed deposits of $20,724,721.06 and withdrawals of $23,171,592.73 during January 2011.",
       "category": "financial",
       "significance": 3,
       "personsInvolved": [
@@ -64,12 +64,15 @@
       ]
     }
   ],
-  "locations": [],
-  "keyFacts": [
-    "Leon D. Black and Debra Black held a joint Bank of America account (number ending 3840) with multi-million dollar transactions in January 2011.",
-    "Melanie Spinella was listed as the Power of Attorney (POA) for this account.",
-    "The account statement period was January 2011, showing a starting balance of $3,295,278.44, deposits over $20 million, withdrawals over $23 million, and an ending balance of $848,411.77.",
-    "The document is a financial record from the Epstein case files, indicating scrutiny of financial transactions related to key figures."
+  "locations": [
+    "Bank of America, N.A., P.O. Box 25118, Tempe, FL 33622-5118"
   ],
-  "analyzedAt": "2026-02-11T22:42:49.538Z"
+  "keyFacts": [
+    "Leon D. Black and Debra Black held a joint Bank of America account (number ending 3840) with multi-million dollar transactions.",
+    "In January 2011, the account had deposits exceeding $20.7 million and withdrawals exceeding $23.1 million.",
+    "Melanie Spinella is listed as having Power of Attorney (POA) for this account.",
+    "The account's ending balance on January 31, 2011, was $848,411.77.",
+    "The document is a standard bank statement, showing no direct mention of Jeffrey Epstein or illegal activity."
+  ],
+  "analyzedAt": "2026-02-12T01:19:48.715Z"
 }

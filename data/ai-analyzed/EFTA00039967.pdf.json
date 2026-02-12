@@ -3,49 +3,49 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-08-24",
-  "summary": "This document is a chain of emails between U.S. Department of Justice officials in London and New York, discussing a news article about Prince Andrew's lack of cooperation with the Epstein investigation causing diplomatic strain. It also includes internal discussion about a Mutual Legal Assistance (MLA) request related to a witness (likely Virginia Giuffre) and the status of the Ghislaine Maxwell case.",
+  "summary": "This document is a chain of email correspondence from August 2021 between U.S. Department of Justice officials in London and New York, discussing a media article about Prince Andrew's lack of cooperation with the Epstein investigation causing diplomatic strain. It also includes internal discussion about a Mutual Legal Assistance (MLA) request related to a witness (likely Ghislaine Maxwell) and her status.",
   "persons": [
     {
       "name": "Prince Andrew",
-      "role": "Duke of York, subject of investigation",
+      "role": "Subject of investigation and civil lawsuit",
       "category": "key figure",
-      "context": "The central figure whose refusal to cooperate with U.S. investigators into Jeffrey Epstein's network is described as causing diplomatic strain between the UK and U.S. He is accused in a civil lawsuit of sexual abuse.",
+      "context": "The Duke of York is discussed for his refusal to cooperate with the U.S. investigation into Jeffrey Epstein's network and is facing a civil lawsuit alleging sexual abuse.",
       "mentionCount": 10
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Convicted sex offender, financier",
+      "role": "Convicted sex offender, deceased financier",
       "category": "key figure",
-      "context": "Deceased financier whose network and abuse of young women and girls is under investigation. His death in 2019 is mentioned.",
+      "context": "Referred to as the central figure in the sex trafficking investigation whose network and financial affairs are being probed.",
       "mentionCount": 5
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Epstein's former girlfriend, defendant",
       "category": "key figure",
-      "context": "Awaiting trial on sex trafficking charges. Her prosecution is mentioned as adding strain to UK-US relations alongside the Prince Andrew issue.",
+      "context": "Mentioned as being in prison awaiting trial on sex-trafficking charges, and her case is linked to the broader investigation and MLA requests.",
       "mentionCount": 3
     },
     {
       "name": "Geoffrey Berman",
-      "role": "Manhattan U.S. Attorney",
+      "role": "Manhattan U.S. Attorney (as of January 2020)",
       "category": "legal",
       "context": "Previously stated that U.S. authorities had received \"zero cooperation\" from Prince Andrew regarding the Epstein investigation.",
       "mentionCount": 1
     },
     {
       "name": "David Boies",
-      "role": "Attorney for Virginia Giuffre",
+      "role": "Attorney representing Virginia Giuffre",
       "category": "legal",
-      "context": "Representing the accuser in the civil suit against Prince Andrew. He accused the prince of \"stonewalling\" appeals for information.",
+      "context": "Quoted as accusing Prince Andrew of \"stonewalling\" appeals for information in the civil lawsuit filed by his client.",
       "mentionCount": 1
     },
     {
-      "name": "The Queen",
-      "role": "Monarch",
-      "category": "political",
-      "context": "Mentioned as the person Prince Andrew was facing after arriving at Balmoral, providing context of his royal status.",
-      "mentionCount": 1
+      "name": "Virginia Giuffre",
+      "role": "Accuser, plaintiff in civil suit",
+      "category": "victim",
+      "context": "Referred to as the plaintiff who filed a civil lawsuit alleging Prince Andrew sexually abused her. She is the 'witness' referenced in the MLA discussion.",
+      "mentionCount": 2
     }
   ],
   "connections": [
@@ -53,28 +53,28 @@
       "person1": "Prince Andrew",
       "person2": "Jeffrey Epstein",
       "relationshipType": "social",
-      "description": "Prince Andrew visited Epstein in multiple locations, and investigators are seeking details of these trips to understand his ties to Epstein's orbit.",
+      "description": "Prince Andrew visited Epstein's properties, and authorities are investigating the extent of his ties to Epstein.",
       "strength": 4
     },
     {
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "associate",
-      "description": "Described as Epstein's former girlfriend. She is facing trial for sex trafficking charges related to his network.",
+      "description": "Described as Epstein's former girlfriend and co-conspirator, facing trial for sex trafficking related to his network.",
       "strength": 5
     },
     {
       "person1": "Prince Andrew",
       "person2": "Virginia Giuffre",
       "relationshipType": "victim-perpetrator (alleged)",
-      "description": "A civil lawsuit alleges Prince Andrew sexually abused Virginia Giuffre, who claims she was \"lent out for sexual purposes\" by Epstein.",
+      "description": "Giuffre has filed a civil lawsuit alleging Prince Andrew sexually abused her, which he denies.",
       "strength": 4
     },
     {
       "person1": "David Boies",
       "person2": "Virginia Giuffre",
       "relationshipType": "attorney-client",
-      "description": "David Boies is the lawyer representing Virginia Giuffre in her civil case against Prince Andrew.",
+      "description": "Boies is the lawyer representing Giuffre in her civil case against Prince Andrew.",
       "strength": 5
     }
   ],
@@ -82,7 +82,7 @@
     {
       "date": "2019",
       "title": "Epstein's Death",
-      "description": "Jeffrey Epstein died in a Manhattan prison; his death was ruled a suicide.",
+      "description": "Jeffrey Epstein died in a Manhattan prison, ruled a suicide.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
@@ -90,9 +90,31 @@
       ]
     },
     {
+      "date": "2019",
+      "title": "Prince Andrew's BBC Interview",
+      "description": "Prince Andrew told the BBC he had not had sex with Virginia Giuffre and had no recollection of meeting her.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Prince Andrew",
+        "Virginia Giuffre"
+      ]
+    },
+    {
+      "date": "2020-01",
+      "title": "Berman's Statement on Lack of Cooperation",
+      "description": "Manhattan U.S. Attorney Geoffrey Berman stated U.S. authorities had received \"zero cooperation\" from Prince Andrew.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey Berman",
+        "Prince Andrew"
+      ]
+    },
+    {
       "date": "2020-06",
       "title": "DOJ MLA Request for Prince Andrew",
-      "description": "The U.S. Department of Justice made an application under the US-UK mutual legal assistance treaty to secure cooperation from Prince Andrew.",
+      "description": "The Department of Justice made an application under the US-UK mutual legal assistance treaty to seek cooperation from Prince Andrew.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -102,33 +124,23 @@
     {
       "date": "2021-08",
       "title": "Civil Lawsuit Filed Against Prince Andrew",
-      "description": "A 15-page civil lawsuit was filed in New York alleging Prince Andrew sexually abused Virginia Giuffre.",
+      "description": "Virginia Giuffre filed a 15-page civil lawsuit in New York alleging Prince Andrew sexually abused her.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
-        "Prince Andrew",
         "Virginia Giuffre",
+        "Prince Andrew",
         "David Boies"
       ]
     },
     {
       "date": "2021",
-      "title": "Ghislaine Maxwell Trial Preparation",
-      "description": "Ghislaine Maxwell is set to go on trial for sex trafficking charges later in the year.",
+      "title": "Ghislaine Maxwell Trial Pending",
+      "description": "Ghislaine Maxwell is in prison awaiting trial on sex-trafficking charges later in the year.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
         "Ghislaine Maxwell"
-      ]
-    },
-    {
-      "date": "2019",
-      "title": "Prince Andrew's BBC Interview",
-      "description": "Prince Andrew told the BBC he had not had sex with Virginia Giuffre and had no recollection of meeting her.",
-      "category": "testimony",
-      "significance": 3,
-      "personsInvolved": [
-        "Prince Andrew"
       ]
     }
   ],
@@ -137,16 +149,16 @@
     "New York",
     "Little St James (Caribbean island)",
     "Florida",
-    "Balmoral",
     "U.S. Virgin Islands",
+    "Balmoral",
     "33 Nine Elms Lane, London SW11 7US (U.S. Embassy)"
   ],
   "keyFacts": [
-    "U.S. authorities express growing frustration over Prince Andrew's failure to cooperate with the Epstein investigation, causing diplomatic strain between the U.S. and UK.",
-    "A Mutual Legal Assistance (MLA) request was made by the DOJ to the UK to secure Prince Andrew's cooperation, but it has not been effective.",
-    "Investigators are interested in Prince Andrew's flights to visit Epstein in locations like Little St James, Florida, and New York to understand travel within Epstein's network.",
-    "A civil lawsuit alleges Prince Andrew sexually abused Virginia Giuffre, who claims she was \"lent out for sexual purposes\" by Epstein.",
-    "Internal DOJ emails discuss a witness's consent for information release and clarify that a recent civil case does not change the witness's status in the criminal investigation."
+    "U.S. authorities expressed growing frustration over Prince Andrew's failure to cooperate with the Epstein investigation, causing diplomatic strain between the U.S. and U.K.",
+    "A Mutual Legal Assistance (MLA) request was made to the U.K. regarding a witness (context indicates Virginia Giuffre), with internal DOJ discussion about her consent and status as a witness versus a suspect.",
+    "The document references a new civil lawsuit filed by Virginia Giuffre against Prince Andrew, alleging he sexually abused her.",
+    "Authorities are investigating Epstein's financial network and how money transfers may be linked to the movement of young women and girls, seen as part of ongoing organized criminal operations.",
+    "Prince Andrew's visits to Epstein's properties, including Little St James island, Florida, and New York, are of particular interest to investigators."
   ],
-  "analyzedAt": "2026-02-11T23:37:35.569Z"
+  "analyzedAt": "2026-02-12T02:17:33.720Z"
 }

@@ -9,14 +9,14 @@
       "name": "Special Agent",
       "role": "FBI Special Agent",
       "category": "law enforcement",
-      "context": "Sends a trial subpoena to an individual from the FBI New York Field Office, Child Exploitation/Human Trafficking Task Force.",
+      "context": "Sends a trial subpoena from the FBI New York Field Office, Child Exploitation/Human Trafficking Task Force.",
       "mentionCount": 1
     },
     {
       "name": "Des",
       "role": "Recipient of subpoena",
       "category": "other",
-      "context": "Recipient of the federal trial subpoena who responds to the FBI agent, indicating they have requested time off from work to comply.",
+      "context": "Recipient of the federal trial subpoena who responds that they have requested time off from work and will provide updates.",
       "mentionCount": 1
     }
   ],
@@ -25,15 +25,15 @@
       "person1": "Special Agent",
       "person2": "Des",
       "relationshipType": "law enforcement-witness/subject",
-      "description": "The Special Agent is serving a federal trial subpoena to Des, who is arranging to take time off work in response.",
+      "description": "The Special Agent serves a federal trial subpoena to Des, indicating Des is likely a witness or subject in a legal proceeding.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2021-11-15",
-      "title": "Trial subpoena issued",
-      "description": "A federal trial subpoena is sent by an FBI Special Agent to an individual named Des.",
+      "title": "Trial Subpoena Issued",
+      "description": "A Special Agent from the FBI's New York Field Office sends a federal trial subpoena to Des.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -43,13 +43,12 @@
     },
     {
       "date": "2021-11-16",
-      "title": "Response to subpoena",
-      "description": "Des responds to the FBI agent, confirming they have requested time off from work to comply with the subpoena and will provide updates.",
+      "title": "Response to Subpoena",
+      "description": "Des responds to the subpoena, indicating they have requested time off from work to comply and will provide updates.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
-        "Des",
-        "Special Agent"
+        "Des"
       ]
     }
   ],
@@ -57,9 +56,9 @@
     "FBI New York Field Office"
   ],
   "keyFacts": [
-    "A federal trial subpoena was issued on November 15, 2021, by an FBI Special Agent from the New York Field Office's Child Exploitation/Human Trafficking Task Force.",
-    "The subpoena recipient, Des, confirmed on November 16, 2021, that they had requested time off from work to comply and would provide updates.",
-    "The communication indicates an ongoing federal trial related to child exploitation or human trafficking, likely connected to the Epstein case."
+    "A federal trial subpoena was issued in November 2021 related to a case handled by the FBI's Child Exploitation/Human Trafficking Task Force in New York.",
+    "The recipient of the subpoena (Des) is coordinating time off from work to comply with the legal demand.",
+    "The communication indicates an ongoing federal trial or legal proceeding related to child exploitation or human trafficking."
   ],
-  "analyzedAt": "2026-02-11T23:52:32.979Z"
+  "analyzedAt": "2026-02-12T02:33:01.833Z"
 }

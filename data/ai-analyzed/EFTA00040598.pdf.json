@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2019-02-05",
-  "summary": "This is a sealed affirmation and application by an Assistant U.S. Attorney in the Southern District of New York, filed on February 5, 2019, seeking a court order to unseal discovery materials from a settled civil defamation lawsuit (Giuffre v. Maxwell) for use in a then-secret federal grand jury investigation into Jeffrey Epstein and others for sex trafficking of minors. The application was granted by Judge Robert W. Sweet.",
+  "summary": "This is a sealed affirmation and application by an Assistant U.S. Attorney in the Southern District of New York, filed under the All Writs Act, seeking a court order to unseal discovery materials from a settled civil defamation lawsuit (Giuffre v. Maxwell) held by the law firm Boies Schiller & Flexner LLP. The materials are sought for a then-non-public federal grand jury investigation into Jeffrey Epstein and others for sex trafficking of minors. The document includes the court's protective order from the civil case and the resulting order granting the government's request.",
   "persons": [
     {
       "name": "Geoffrey S. Berman",
@@ -14,31 +14,31 @@
     },
     {
       "name": "Ghislaine Maxwell",
-      "role": "Defendant in Civil Case / Subject of Criminal Investigation",
+      "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the underlying civil defamation lawsuit (Giuffre v. Maxwell) and a subject of the referenced federal grand jury investigation for sex trafficking.",
+      "context": "The defendant in the underlying civil defamation lawsuit (Giuffre v. Maxwell) and a subject of the referenced grand jury investigation for sex crimes alongside Jeffrey Epstein.",
       "mentionCount": 8
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Subject of Criminal Investigation",
+      "role": "Accused",
       "category": "key figure",
-      "context": "The primary subject of the ongoing federal grand jury investigation for possible violations of sex trafficking laws.",
+      "context": "Named as a perpetrator of sex crimes in the civil lawsuit and the primary subject of the ongoing federal grand jury investigation for trafficking and enticing minors.",
       "mentionCount": 2
     },
     {
       "name": "Sigrid McCawley",
-      "role": "Attorney for Plaintiff",
+      "role": "Attorney",
       "category": "legal",
-      "context": "An attorney at Boies Schiller & Flexner LLP who represented the plaintiff in the civil case against Ghislaine Maxwell; her litigation files are believed to contain information relevant to the criminal investigation.",
+      "context": "An attorney at Boies Schiller & Flexner LLP who represented the plaintiff in the civil case; her litigation files are believed to contain information relevant to the criminal investigation.",
       "mentionCount": 1
     },
     {
       "name": "Robert W. Sweet",
       "role": "United States District Judge",
       "category": "legal",
-      "context": "The judge who issued the original protective order in the civil case and the subsequent order granting the government's application to access the sealed materials.",
-      "mentionCount": 2
+      "context": "The judge who issued the protective order in the civil case and the subsequent order granting the government's application to access the sealed materials.",
+      "mentionCount": 1
     }
   ],
   "connections": [
@@ -46,14 +46,14 @@
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "co-conspirator",
-      "description": "Described together as perpetrators of sex crimes in the underlying civil lawsuit and as subjects of the same federal grand jury investigation.",
+      "description": "Described together as perpetrators of sex crimes in the underlying civil lawsuit and subjects of the same federal grand jury investigation.",
       "strength": 5
     },
     {
       "person1": "Sigrid McCawley",
       "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal adversary",
-      "description": "McCawley was an attorney for the plaintiff suing Maxwell for defamation in the civil case from which the discovery materials originate.",
+      "relationshipType": "attorney-client (opposing)",
+      "description": "McCawley, as an attorney for the plaintiff, was opposing counsel to defendant Ghislaine Maxwell in the settled civil defamation lawsuit.",
       "strength": 4
     },
     {
@@ -68,7 +68,7 @@
     {
       "date": "2015-09-21",
       "title": "Civil Defamation Lawsuit Filed",
-      "description": "Plaintiff (Virginia Giuffre) files a civil action against Ghislaine Maxwell alleging Maxwell made defamatory statements denying Giuffre was a victim of sex crimes by Epstein and Maxwell.",
+      "description": "Plaintiff (Virginia Giuffre) files a civil action against Ghislaine Maxwell in SDNY, alleging Maxwell made defamatory statements denying Giuffre was a victim of sex crimes by Epstein and Maxwell.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -99,8 +99,8 @@
     {
       "date": "2019-02-05",
       "title": "Government Seeks to Unseal Civil Discovery",
-      "description": "The U.S. Attorney's Office files a sealed application to obtain discovery materials from the settled civil case for use in a secret grand jury investigation into Epstein and Maxwell.",
-      "category": "legal",
+      "description": "An Assistant U.S. Attorney files a sealed affirmation and application under the All Writs Act, seeking an order to access sealed discovery from the settled civil case for a grand jury investigation into Epstein and others.",
+      "category": "investigation",
       "significance": 5,
       "personsInvolved": [
         "Geoffrey S. Berman",
@@ -124,11 +124,11 @@
     "New York, New York"
   ],
   "keyFacts": [
-    "As of February 2019, the U.S. Attorney's Office for the SDNY was conducting a secret grand jury investigation into Jeffrey Epstein and others for sex trafficking of minors (Sections 1591, 1594(c), 2422(b) of Title 18).",
-    "The government sought discovery materials from the settled civil case Giuffre v. Maxwell (15 Civ. 7433), believing they contained information relevant to the criminal investigation.",
-    "A protective order from the civil case was blocking the law firm Boies Schiller & Flexner from complying with a grand jury subpoena.",
-    "The application and order were filed under seal to prevent alerting potential criminal targets, indicating the investigation was not publicly known at that time.",
-    "Judge Robert W. Sweet granted the government's request, allowing the sealed civil discovery to be used in the criminal probe."
+    "In February 2019, the U.S. Attorney's Office for the SDNY was conducting a non-public federal grand jury investigation into Jeffrey Epstein and others for sex trafficking of minors (Sections 1591, 1594(c), 2422(b) of Title 18).",
+    "The government sought discovery materials from a settled 2015 civil defamation lawsuit (Giuffre v. Maxwell) that were under a protective order, believing they contained information relevant to the criminal investigation.",
+    "The law firm Boies Schiller & Flexner LLP, which represented the plaintiff in the civil case, believed the protective order precluded them from complying with a grand jury subpoena without court permission.",
+    "The court granted the government's ex parte application, allowing the law firm to provide the confidential civil discovery materials to the grand jury.",
+    "The existence and scope of the criminal investigation in the SDNY was not publicly known as of February 2019, and the application was filed under seal to prevent alerting potential targets."
   ],
-  "analyzedAt": "2026-02-11T15:47:38.151Z"
+  "analyzedAt": "2026-02-12T03:16:00.153Z"
 }

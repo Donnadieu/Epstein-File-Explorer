@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2020-08-13",
-  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan, opposing Ghislaine Maxwell's defense requests. The government argues against disclosing witness names 11 months before trial and against court intervention in her detention conditions at the Metropolitan Detention Center (MDC). It details the discovery production timeline and disputes defense claims of inadequate access.",
+  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan, opposing Ghislaine Maxwell's defense requests. The government argues against disclosing witness names 11 months before trial and against court intervention in her Bureau of Prisons confinement conditions. It details the status of discovery production and addresses Maxwell's complaints about her detention.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The accused in the criminal case (20 Cr. 330). The government is opposing her defense team's requests for early witness disclosure and intervention in her detention conditions.",
-      "mentionCount": 5
+      "context": "The accused in the criminal case (20 Cr. 330). The government is opposing her defense team's requests for early witness disclosure and intervention in her jail conditions.",
+      "mentionCount": 10
     },
     {
       "name": "Alison J. Nathan",
       "role": "United States District Judge",
       "category": "legal",
-      "context": "The presiding judge in the case. The government's letter is addressed to her, requesting she deny the defendant's applications.",
+      "context": "The judge presiding over the case United States v. Ghislaine Maxwell. The government's letter is addressed to her, opposing the defense's motions.",
       "mentionCount": 5
     },
     {
       "name": "Audrey Strauss",
       "role": "Acting United States Attorney",
       "category": "legal",
-      "context": "The signatory of the government's opposition letter, submitting it on behalf of the U.S. Attorney's Office.",
+      "context": "The signatory of the government's opposition letter, submitting it on behalf of the U.S. Attorney's Office for the Southern District of New York.",
       "mentionCount": 1
     }
   ],
@@ -31,33 +31,16 @@
     {
       "person1": "Ghislaine Maxwell",
       "person2": "Alison J. Nathan",
-      "relationshipType": "legal",
-      "description": "Judge Nathan is presiding over the criminal case against defendant Maxwell.",
-      "strength": 4
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Audrey Strauss",
-      "relationshipType": "legal",
-      "description": "Strauss, as Acting U.S. Attorney, is leading the prosecution against Maxwell.",
-      "strength": 4
+      "relationshipType": "defendant-judge",
+      "description": "Maxwell is the defendant in the criminal case over which Judge Nathan is presiding. The government is submitting a letter to Judge Nathan opposing motions filed by Maxwell's defense.",
+      "strength": 3
     }
   ],
   "events": [
     {
-      "date": "2020-08-05",
-      "title": "Initial Discovery Production",
-      "description": "The Government produced an initial discovery batch totaling more than 12,000 pages to the defense.",
-      "category": "legal",
-      "significance": 3,
-      "personsInvolved": [
-        "Ghislaine Maxwell"
-      ]
-    },
-    {
-      "date": "2020-08-13",
-      "title": "Second Discovery Production",
-      "description": "The Government made a second discovery production totaling more than 150,000 pages, principally consisting of financial records.",
+      "date": "2020-08-10",
+      "title": "Defense Letter Filed",
+      "description": "Ghislaine Maxwell's defense team files a letter requesting the court order the government to disclose witness names and intervene in her Bureau of Prisons confinement conditions.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -67,18 +50,7 @@
     {
       "date": "2020-07-31",
       "title": "Protective Order Docketed",
-      "description": "The protective order governing discovery in the case was posted to the court docket, following the defendant's initial refusal to agree to its terms.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": [
-        "Ghislaine Maxwell",
-        "Alison J. Nathan"
-      ]
-    },
-    {
-      "date": "2020-08-11",
-      "title": "Maxwell Receives First Discovery Batch",
-      "description": "The defendant received her personal copy of the Government's first discovery production at the Metropolitan Detention Center.",
+      "description": "The protective order for the case is posted to the docket, following the court's signing on July 30, 2020. The government attributes timing delays to the defense's initial refusal to agree to terms.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -86,11 +58,31 @@
       ]
     },
     {
-      "date": "2021-07",
-      "title": "Scheduled Trial",
-      "description": "The trial is scheduled for July 2021, approximately 11 months from the date of this filing.",
+      "date": "2020-08-05",
+      "title": "Initial Discovery Production",
+      "description": "The government produces an initial discovery batch totaling more than 12,000 pages to the defense.",
       "category": "legal",
-      "significance": 4,
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-08-13",
+      "title": "Second Discovery Production",
+      "description": "The government makes a second discovery production, totaling more than 150,000 pages, principally consisting of financial records.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-08-11",
+      "title": "Maxwell Receives First Discovery",
+      "description": "Ghislaine Maxwell receives her copy of the government's first discovery production at the Metropolitan Detention Center (MDC).",
+      "category": "legal",
+      "significance": 1,
       "personsInvolved": [
         "Ghislaine Maxwell"
       ]
@@ -102,11 +94,11 @@
     "Metropolitan Detention Center (MDC)"
   ],
   "keyFacts": [
-    "The government had produced over 165,000 pages of discovery to Ghislaine Maxwell's defense within two weeks of the protective order being entered.",
-    "The government strongly opposed disclosing the names of victim-witnesses 11 months before trial, citing a desire to protect victim privacy and a lack of legal precedent for such early disclosure.",
-    "The Bureau of Prisons (BOP) planned to provide Maxwell extended access to discovery materials from 7:00 a.m. to 8:00 p.m. daily, contrary to defense claims of limited access.",
-    "The government accused Maxwell's defense counsel of attempting to use sealed criminal discovery materials in parallel civil litigation, referencing a public filing in case 'Ghislaine Maxwell, No. 15 Civ. 7433 (LAP)'.",
-    "The Superseding Indictment describes relevant time periods, events, conversations with victims, interactions with victims, and specific locations, which the government argued provided adequate notice of the charges."
+    "The government had produced over 165,000 pages of discovery to Ghislaine Maxwell's defense in less than two weeks following the entry of a protective order.",
+    "The government opposes disclosing the names of victims/witnesses 11 months before trial, citing legal precedent and a desire to protect victim privacy.",
+    "The Bureau of Prisons (BOP) is housing Maxwell separately from the general population for safety and security reasons but plans to provide extended daily access (7 a.m. to 8 p.m.) for her to review discovery.",
+    "The government notes the defense had not yet asked a single substantive question about the discovery produced.",
+    "The document references a sealed protective order and implies defense counsel in related civil matters may have referenced receiving sealed materials from the criminal case."
   ],
-  "analyzedAt": "2026-02-11T15:37:14.628Z"
+  "analyzedAt": "2026-02-12T03:05:58.661Z"
 }

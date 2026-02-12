@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "medical/psychological observation report",
   "dateOriginal": "2019-07-29",
-  "summary": "This document is a series of email updates regarding the psychological and medical status of inmate Jeffrey Epstein at the Metropolitan Correctional Center in New York. It details his complaints of numbness, sleep issues, and his pending return to the Special Housing Unit (SHU), with staff assessing him as psychologically stable.",
+  "summary": "This document contains internal Bureau of Prisons email correspondence regarding the psychological and medical status of inmate Jeffrey Epstein on July 28-29, 2019, while he was held at the Metropolitan Correctional Center in New York. It details his complaints of numbness, sleep issues, and his pending transfer back to the Special Housing Unit (SHU).",
   "persons": [
     {
       "name": "Jeffrey Epstein",
@@ -16,18 +16,26 @@
       "name": "Lopez",
       "role": "Inmate",
       "category": "other",
-      "context": "Another inmate (ID #20472-038) who is being taken off of psychological observation, mentioned in the same facility log as Epstein.",
+      "context": "Another inmate (ID #20472-038) mentioned in the log as being taken off of Psych Observation, indicating shared housing/observation status with Epstein.",
       "mentionCount": 2
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lopez",
+      "relationshipType": "fellow inmate",
+      "description": "Both were inmates under psychological observation at the Metropolitan Correctional Center around the same date, as noted in the same housing log.",
+      "strength": 1
+    }
+  ],
   "events": [
     {
       "date": "2019-07-28",
       "title": "Epstein's Medical Complaints and Observation",
       "description": "Epstein complains of numbness in his right arm and neck, and a running toilet in his cell. He is seen by a nurse and remains on psychological observation.",
       "category": "investigation",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Jeffrey Epstein"
       ]
@@ -35,8 +43,8 @@
     {
       "date": "2019-07-29",
       "title": "Planned Return to SHU",
-      "description": "Epstein is scheduled to return to the Special Housing Unit (SHU) after receiving his CPAP machine for sleep apnea. Staff explain he cannot remain in the hospital area for comfort and that he will be placed in a safe situation in the SHU.",
-      "category": "legal",
+      "description": "Epstein is informed he will be returned to the Special Housing Unit (SHU) the next day after receiving his CPAP machine for sleep apnea. He requests to stay in the 'safe' hospital area but is denied.",
+      "category": "investigation",
       "significance": 3,
       "personsInvolved": [
         "Jeffrey Epstein"
@@ -46,14 +54,14 @@
   "locations": [
     "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
     "Special Housing Unit (SHU)",
-    "SW/Hospital area (within the correctional center)"
+    "SW/Hospital area (within MCC)"
   ],
   "keyFacts": [
-    "On July 29, 2019, Jeffrey Epstein was assessed as psychologically stable by prison staff but complained of physical symptoms including numbness in his arm and neck.",
-    "Epstein cited sleep apnea as potentially impairing his memory regarding a neck injury and was due to receive a CPAP machine.",
-    "Epstein requested to remain in the hospital area where he felt 'safe,' but staff denied this, stating he would be returned to the Special Housing Unit (SHU) the following day.",
-    "The document shows prison officials were actively monitoring Epstein's psychological state and living conditions just days before his death.",
-    "Another inmate, Lopez, was being processed off psychological observation in the same facility log entry."
+    "On July 28-29, 2019, Jeffrey Epstein was under psychological observation at the Metropolitan Correctional Center in New York.",
+    "Epstein reported physical symptoms including numbness in his right arm and neck, and attributed memory issues to sleep apnea, for which he was to receive a CPAP machine.",
+    "Epstein expressed a desire to remain in the 'safe' hospital/SW area rather than return to the Special Housing Unit (SHU), but this request was denied by prison staff.",
+    "Prison officials determined there were 'no mental health issues' precluding Epstein's return to the SHU, where he was to be placed in a 'safe situation'.",
+    "The document shows internal BOP communication regarding inmate welfare and housing logistics shortly before Epstein's death."
   ],
-  "analyzedAt": "2026-02-11T23:14:14.225Z"
+  "analyzedAt": "2026-02-12T01:52:46.512Z"
 }

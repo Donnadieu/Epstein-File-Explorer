@@ -3,81 +3,53 @@
   "dataSet": "9",
   "documentType": "email correspondence",
   "dateOriginal": "2019-10-29",
-  "summary": "Email exchange between an FBI Victim Services Division Program Manager and an Assistant U.S. Attorney from the Southern District of New York regarding the attendance of attorney Spencer Kuvin at meetings in Florida and New York related to the Epstein case. The FBI confirms Kuvin was not present at either meeting.",
+  "summary": "Email exchange between an FBI Victim Services Program Manager and a Southern District of New York Assistant U.S. Attorney regarding the attendance of attorney Spencer Kuvin at meetings in Florida and New York related to the Epstein case. The FBI confirms Kuvin was not present at either meeting.",
   "persons": [
     {
       "name": "Spencer Kuvin",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney who has been providing quotes to the media about meetings in Florida and New York related to the Epstein case, but who is confirmed not to have attended those meetings.",
+      "context": "Attorney who has been providing quotes to the media about meetings in Florida and New York related to the Epstein case, but confirmed not to have attended either meeting.",
       "mentionCount": 3
     },
     {
       "name": "Amanda",
-      "role": "Program Manager, FBI Victim Services Division",
+      "role": "Program Manager FBI Victim Services Division",
       "category": "law enforcement",
-      "context": "FBI official who responds to confirm that Spencer Kuvin was not at the meetings in Florida or New York, after checking with another individual (VS).",
+      "context": "FBI Victim Services Program Manager who confirms to an AUSA that Spencer Kuvin was not at the Florida or New York meetings.",
       "mentionCount": 2
     }
   ],
   "connections": [
     {
-      "person1": "M",
-      "person2": "Amanda",
-      "relationshipType": "professional",
-      "description": "Colleagues or professional contacts communicating about case details, with M seeking confirmation from Amanda (FBI) about attorney attendance.",
-      "strength": 3
-    },
-    {
       "person1": "Amanda",
-      "person2": "VS",
-      "relationshipType": "professional",
-      "description": "Amanda consulted VS to verify attendance information about the meetings.",
-      "strength": 3
-    },
-    {
-      "person1": "Spencer Kuvin",
-      "person2": "M",
-      "relationshipType": "legal",
-      "description": "M is investigating Kuvin's potential involvement or claims regarding the Epstein case meetings.",
+      "person2": "Spencer Kuvin",
+      "relationshipType": "investigative",
+      "description": "Amanda, as FBI Victim Services Program Manager, is confirming the non-attendance of attorney Spencer Kuvin at case-related meetings.",
       "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-10-29",
-      "title": "Email inquiry about attorney attendance",
-      "description": "Assistant U.S. Attorney M emails FBI's Amanda to confirm whether attorney Spencer Kuvin attended meetings in Florida and New York related to the Epstein case, following up on Kuvin's media quotes.",
+      "title": "Email confirmation about meeting attendance",
+      "description": "FBI Victim Services confirms to a Southern District of New York AUSA that attorney Spencer Kuvin was not present at meetings in Florida and New York related to the Epstein case.",
       "category": "investigation",
       "significance": 2,
       "personsInvolved": [
-        "M",
         "Amanda",
         "Spencer Kuvin"
-      ]
-    },
-    {
-      "date": null,
-      "title": "Meetings in Florida and New York",
-      "description": "Previously held meetings in Florida and New York related to the Epstein case, attendance at which is being verified.",
-      "category": "legal",
-      "significance": 3,
-      "personsInvolved": [
-        "Spencer Kuvin",
-        "M",
-        "Amanda"
       ]
     }
   ],
   "locations": [
     "Florida",
-    "New York",
-    "Southern District of New York"
+    "New York"
   ],
   "keyFacts": [
-    "Attorney Spencer Kuvin was providing quotes to the media about Epstein case meetings he did not attend, according to FBI confirmation.",
-    "The FBI Victim Services Division and the U.S. Attorney's Office for the Southern District of New York were coordinating to verify attendance at case-related meetings.",
-    "The email exchange demonstrates ongoing investigation and media management efforts in the Epstein case as of October 2019."
+    "Attorney Spencer Kuvin was providing media quotes about Epstein case meetings he did not attend.",
+    "The FBI Victim Services Division confirmed Kuvin was not at meetings in Florida or New York.",
+    "The communication shows coordination between the FBI and the Southern District of New York U.S. Attorney's Office regarding case details and media inquiries."
   ],
-  "analyzedAt": "2026-02-11T15:34:04.924Z"
+  "analyzedAt": "2026-02-12T03:02:56.190Z"
 }

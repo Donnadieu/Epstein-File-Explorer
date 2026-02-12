@@ -7,23 +7,23 @@
   "persons": [
     {
       "name": "Kristina Lee Hendrickson",
-      "role": "Manager - Special Investigations Financial Intelligence Unit at American Express",
+      "role": "Manager - Special Investigations, Financial Intelligence Unit at American Express",
       "category": "law enforcement",
-      "context": "American Express employee who previously spoke with Rossmiller about Jeffrey Epstein's American Express accounts and is now offering to send a file related to that activity.",
+      "context": "American Express employee who previously spoke with Rossmiller about Jeffrey Epstein's American Express account activity and is now offering to send a related file.",
       "mentionCount": 3
     },
     {
       "name": "Rossmiller",
       "role": "Recipient of email correspondence",
       "category": "other",
-      "context": "Person who previously spoke with Kristina Hendrickson about Jeffrey Epstein's American Express accounts and is being offered a copy of a related file.",
+      "context": "Individual who previously spoke with Kristina Hendrickson about Jeffrey Epstein's American Express accounts and is being offered a copy of a related file.",
       "mentionCount": 2
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Subject of financial investigation",
       "category": "key figure",
-      "context": "Individual whose American Express account activity is being discussed and investigated by American Express's Special Investigations unit.",
+      "context": "The individual whose American Express account activity is being discussed and investigated by American Express's Special Investigations unit.",
       "mentionCount": 2
     }
   ],
@@ -32,43 +32,24 @@
       "person1": "Kristina Lee Hendrickson",
       "person2": "Rossmiller",
       "relationshipType": "professional",
-      "description": "Correspondence regarding sharing investigative information about Jeffrey Epstein's American Express accounts.",
+      "description": "Correspondence regarding the sharing of investigative information about Jeffrey Epstein's American Express accounts.",
       "strength": 2
     },
     {
       "person1": "Kristina Lee Hendrickson",
       "person2": "Jeffrey Epstein",
       "relationshipType": "investigator-subject",
-      "description": "Hendrickson is investigating Epstein's American Express account activity as part of her role in American Express's Special Investigations unit.",
+      "description": "Hendrickson, as part of American Express's Special Investigations unit, is investigating activity on Epstein's accounts.",
       "strength": 3
-    },
-    {
-      "person1": "Rossmiller",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "investigative interest",
-      "description": "Rossmiller has previously discussed Epstein's American Express accounts with Hendrickson and is being offered related files.",
-      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2020-01-24",
-      "title": "American Express offers Epstein account file",
-      "description": "Kristina Hendrickson of American Express's Special Investigations unit emails Rossmiller offering to send a file related to Jeffrey Epstein's American Express account activity.",
+      "title": "American Express Follow-up on Epstein Accounts",
+      "description": "Kristina Hendrickson of American Express's Special Investigations unit emails Rossmiller to offer a copy of a file related to Jeffrey Epstein's American Express account activity.",
       "category": "investigation",
       "significance": 3,
-      "personsInvolved": [
-        "Kristina Lee Hendrickson",
-        "Rossmiller",
-        "Jeffrey Epstein"
-      ]
-    },
-    {
-      "date": "2019",
-      "title": "Previous discussion about Epstein's American Express accounts",
-      "description": "Kristina Hendrickson and Rossmiller previously spoke about Jeffrey Epstein's American Express account activity.",
-      "category": "investigation",
-      "significance": 2,
       "personsInvolved": [
         "Kristina Lee Hendrickson",
         "Rossmiller",
@@ -77,17 +58,15 @@
     }
   ],
   "locations": [
-    {
-      "name": "American Express Financial Intelligence Unit",
-      "address": "18850 N. 56th Street, Phoenix, AZ 85058",
-      "context": "Location of American Express's Special Investigations Financial Intelligence Unit where Kristina Hendrickson works."
-    }
+    "PHOENIX, AZ 85058",
+    "18850 N. 56th Street"
   ],
   "keyFacts": [
-    "American Express's Special Investigations Financial Intelligence Unit was investigating Jeffrey Epstein's American Express account activity.",
-    "Kristina Lee Hendrickson, a manager at American Express, offered to provide a file related to Epstein's American Express accounts to someone named Rossmiller.",
-    "The correspondence indicates ongoing financial investigation into Epstein's activities by American Express as of January 2020.",
-    "The email suggests American Express had compiled investigative files on Epstein's financial transactions."
+    "American Express's Special Investigations Financial Intelligence Unit was actively investigating activity on Jeffrey Epstein's American Express accounts as of January 2020.",
+    "Kristina Lee Hendrickson, a manager in that unit, had previously spoken with an individual named Rossmiller about Epstein's accounts.",
+    "American Express had compiled a file on Epstein's account activity that they were willing to share with external parties.",
+    "The correspondence suggests ongoing financial investigations into Epstein's activities even after his death in 2019.",
+    "The email contains standard confidentiality disclaimers indicating the sensitive nature of the information being discussed."
   ],
-  "analyzedAt": "2026-02-11T15:36:06.582Z"
+  "analyzedAt": "2026-02-12T03:04:50.751Z"
 }

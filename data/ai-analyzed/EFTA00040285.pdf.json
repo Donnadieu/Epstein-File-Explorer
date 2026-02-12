@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "witness coordination schedule",
   "dateOriginal": null,
-  "summary": "This document appears to be a witness coordination schedule for a legal proceeding, listing witnesses, their locations, travel dates, and logistical notes about hotel arrangements. It includes law enforcement personnel, records custodians, and other witnesses, with notes about keeping certain witnesses separated.",
+  "summary": "This document appears to be a witness coordination schedule for a legal proceeding, likely a deposition or trial preparation. It lists witnesses, their locations, travel dates, and notes about hotel arrangements to prevent witness contact. The schedule spans late November to mid-December and includes various custodians of records and law enforcement personnel.",
   "persons": [
     {
       "name": "Jane Doe",
@@ -27,36 +27,63 @@
       "mentionCount": 1
     },
     {
+      "name": "Sgt. Palm Beach P.D.",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Listed as a witness scheduled on 12/3, identified as from the Palm Beach Police Department in Florida.",
+      "mentionCount": 1
+    },
+    {
       "name": "JP Moran",
       "role": "Witness",
       "category": "witness",
       "context": "Listed as a witness scheduled from 12/6 through 12/7, with location noted as Arizona.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Sgt. Palm Beach P.D.",
-      "role": "Law enforcement witness",
-      "category": "law enforcement",
-      "context": "Listed as a witness scheduled on 12/3, identified as from the Palm Beach Police Department in Florida.",
       "mentionCount": 1
     }
   ],
   "connections": [],
   "events": [
     {
-      "date": "2006-11-29",
-      "title": "Witness scheduling begins",
-      "description": "Start of witness coordination schedule, with first witnesses including a birth certificate custodian and Jane Doe.",
+      "date": "2023-11-29",
+      "title": "Witness Schedule Start",
+      "description": "Beginning of witness coordination schedule involving a birth certificate custodian and other witnesses.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2023-12-01",
+      "title": "Witness Travel Period",
+      "description": "Multiple witnesses scheduled for travel and preparation, including Jane Doe and John Doe I in Los Angeles.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
-        "Jane Doe"
+        "Jane Doe",
+        "John Doe I"
       ]
     },
     {
-      "date": "2006-12-06",
-      "title": "Multiple witness depositions scheduled",
-      "description": "Schedule shows multiple witnesses including JP Moran from Arizona and others from Los Angeles and Florida.",
+      "date": "2023-12-02",
+      "title": "Mar-a-Lago Custodian Scheduled",
+      "description": "A custodian associated with Mar-a-Lago is scheduled as a witness.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2023-12-03",
+      "title": "Palm Beach Police Testimony",
+      "description": "A sergeant from the Palm Beach Police Department is scheduled as a witness.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Sgt. Palm Beach P.D."
+      ]
+    },
+    {
+      "date": "2023-12-06",
+      "title": "Witness JP Moran Scheduled",
+      "description": "Witness JP Moran from Arizona is scheduled for testimony.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -64,18 +91,10 @@
       ]
     },
     {
-      "date": "2006-12-08",
-      "title": "Records custodian depositions",
-      "description": "Schedule includes AT&T records custodian and PB School District records custodian depositions.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": []
-    },
-    {
-      "date": "2006-12-10",
-      "title": "FBI agent depositions",
-      "description": "Schedule includes FBI agents from New York (Cart and C20) with note that no travel is needed.",
-      "category": "legal",
+      "date": "2023-12-10",
+      "title": "FBI Personnel Coordination",
+      "description": "FBI personnel from New York are scheduled with notes indicating no travel needed.",
+      "category": "investigation",
       "significance": 3,
       "personsInvolved": []
     }
@@ -94,11 +113,11 @@
     "New York"
   ],
   "keyFacts": [
-    "Document is a witness coordination schedule showing planned depositions or interviews from late November to mid-December 2006.",
-    "Includes logistical notes about keeping certain witnesses at different hotels, suggesting coordination to prevent witness interaction.",
-    "Lists various records custodians (birth certificate, AT&T, PB School District, FedEx) indicating document requests for the case.",
-    "Includes law enforcement witnesses from Palm Beach Police Department and FBI agents from New York.",
-    "Shows witnesses from multiple states including Florida, California, New York, Arizona, Rhode Island, Michigan, Texas, and Arkansas."
+    "The document is a detailed witness coordination schedule for a legal proceeding, spanning from late November to mid-December.",
+    "Specific instructions are given to prevent witnesses from staying at the same hotels, indicating concerns about witness contact or collusion.",
+    "Witnesses include a Mar-a-Lago custodian and a sergeant from the Palm Beach Police Department, linking the proceeding to locations and personnel associated with the Epstein case.",
+    "FBI personnel from New York are scheduled to participate remotely, suggesting federal involvement in the proceeding.",
+    "The schedule includes various records custodians (birth certificate, AT&T, FedEx, school district), indicating a focus on documentary evidence collection."
   ],
-  "analyzedAt": "2026-02-12T00:03:50.495Z"
+  "analyzedAt": "2026-02-12T02:45:24.112Z"
 }

@@ -3,39 +3,39 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2019-08-16",
-  "summary": "This is an FBI 302 report documenting the interview of a corrections officer (OFFICER 1) from the Metropolitan Correctional Center (MCC) regarding the circumstances surrounding Jeffrey Epstein's death in his cell. The officer describes his shift, the cell counts, and his interactions with Epstein. The interview ends when the officer requests a lawyer after being shown a picture of an unidentified individual.",
+  "summary": "This is an FBI 302 interview report of a corrections officer (OFFICER 1) from the Metropolitan Correctional Center, conducted on August 16, 2019, regarding the circumstances surrounding the death of Jeffrey Epstein. The officer describes his shift, the cell counts, and his interactions with Epstein. The interview ends when the officer requests a lawyer after being shown a picture of an unidentified individual.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
-      "role": "Inmate found unresponsive in his cell",
+      "role": "Inmate",
       "category": "key figure",
-      "context": "The deceased inmate at the center of the investigation. The officer states he once fed him, that Epstein was grateful, did not appear dangerous, and never offered him money.",
+      "context": "The inmate found unresponsive in his cell at the Metropolitan Correctional Center. The officer states he once fed him and that Epstein was grateful.",
       "mentionCount": 5
     },
     {
       "name": "OFFICER 1",
       "role": "Corrections Officer at MCC",
       "category": "law enforcement",
-      "context": "The primary interviewee who was working the overnight shift in the Special Housing Unit (SHU) when Epstein was found dead. He describes the cell count procedures and his limited interactions with Epstein.",
+      "context": "The primary interviewee who was working the overnight shift in the Special Housing Unit when Jeffrey Epstein was found dead. He describes the cell count procedures and his limited interactions with Epstein.",
       "mentionCount": 20
     },
     {
       "name": "OFFICER 2",
-      "role": "Corrections Officer at MCC",
+      "role": "Corrections Officer",
       "category": "law enforcement",
       "context": "Assisted OFFICER 1 with the 12am inmate count and later checked on him during the shift.",
       "mentionCount": 2
     },
     {
       "name": "NOEL",
-      "role": "Corrections Officer at MCC",
+      "role": "Corrections Officer",
       "category": "law enforcement",
-      "context": "Assisted OFFICER 1 with the 3am and 5am inmate counts in the SHU.",
+      "context": "Assisted OFFICER 1 with the 3am and 5am inmate counts in the Special Housing Unit.",
       "mentionCount": 2
     },
     {
       "name": "THOMAS",
-      "role": "Corrections Officer at MCC",
+      "role": "Corrections Officer",
       "category": "law enforcement",
       "context": "Relieved OFFICER 1 at some point during his shift to give him a break.",
       "mentionCount": 1
@@ -46,29 +46,36 @@
       "person1": "OFFICER 1",
       "person2": "Jeffrey Epstein",
       "relationshipType": "guard-inmate",
-      "description": "OFFICER 1 was the corrections officer responsible for Epstein's unit and once fed him when he had not received a meal.",
+      "description": "OFFICER 1 was the corrections officer responsible for the unit where Epstein was housed. He once fed Epstein when he had not received a meal.",
       "strength": 2
     },
     {
       "person1": "OFFICER 1",
       "person2": "OFFICER 2",
       "relationshipType": "co-worker",
-      "description": "Worked together conducting the 12am inmate count. OFFICER 2 later checked on OFFICER 1 during the shift.",
+      "description": "Worked together on the 12am inmate count. OFFICER 2 later checked on OFFICER 1 during the shift.",
       "strength": 3
     },
     {
       "person1": "OFFICER 1",
       "person2": "NOEL",
       "relationshipType": "co-worker",
-      "description": "Assisted OFFICER 1 with the 3am and 5am inmate counts because OFFICER 1 was alone in the unit.",
+      "description": "Assisted OFFICER 1 with the 3am and 5am inmate counts in the Special Housing Unit.",
       "strength": 3
+    },
+    {
+      "person1": "OFFICER 1",
+      "person2": "THOMAS",
+      "relationshipType": "co-worker",
+      "description": "THOMAS relieved OFFICER 1 during his shift to give him a break.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-08-10",
-      "title": "Jeffrey Epstein found dead in cell",
-      "description": "Jeffrey Epstein was found unresponsive in his cell at the MCC's Special Housing Unit (SHU). The exact date is inferred as the 'previous Saturday' from the interview date of 08/16/2019.",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
@@ -78,8 +85,8 @@
     },
     {
       "date": "2019-08-16",
-      "title": "FBI interview of Corrections Officer",
-      "description": "FBI, TFO, and OIG agents interview OFFICER 1 regarding the circumstances of Epstein's death. The officer requests a lawyer after being shown a picture, and his cell phone is seized via search warrant.",
+      "title": "FBI Interview of Corrections Officer",
+      "description": "OFFICER 1 was interviewed by FBI and OIG agents regarding the circumstances of Epstein's death. The interview was terminated when OFFICER 1 requested a lawyer after being shown a picture.",
       "category": "investigation",
       "significance": 4,
       "personsInvolved": [
@@ -94,10 +101,10 @@
   ],
   "keyFacts": [
     "OFFICER 1 was the sole officer in the locked-down Special Housing Unit (10 South) during the overnight shift when Jeffrey Epstein was found dead.",
-    "The officer emphasized that inmate counts require two officers and that officers should 'see breathing flesh,' implying a failure in protocol may have occurred.",
-    "OFFICER 1 stated Epstein 'was supposed to be watched more closely' and that rounds should have been conducted regardless of his prior suicide watch status.",
-    "The interview was terminated when OFFICER 1 requested a lawyer after being shown a picture of an unidentified individual.",
-    "The FBI seized OFFICER 1's cell phone pursuant to a search warrant, but he refused to provide the passcode."
+    "OFFICER 1 insisted on having a partner for inmate counts to ensure a 'double staff count' and to see 'breathing flesh.' He was assisted by OFFICER 2 and Officer NOEL for the 3am and 5am counts.",
+    "The interview was abruptly ended when OFFICER 1 requested a lawyer after being shown a picture of an unidentified individual.",
+    "OFFICER 1 voluntarily stated, 'I want to be clear, I never brought stuff into the jail or allowed stuff in. I never did that,' after requesting a lawyer.",
+    "The FBI seized OFFICER 1's cell phone pursuant to a search warrant, but he refused to provide his passcode to investigators."
   ],
-  "analyzedAt": "2026-02-11T16:03:35.687Z"
+  "analyzedAt": "2026-02-12T03:31:10.295Z"
 }

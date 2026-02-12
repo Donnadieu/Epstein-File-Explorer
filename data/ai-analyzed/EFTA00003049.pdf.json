@@ -3,7 +3,7 @@
   "dataSet": "1",
   "documentType": "employee emergency contact form",
   "dateOriginal": "2018-06-04",
-  "summary": "An emergency contact form for an employee named Danny Etienne, who appears to work for LSJE, LLC, a company based in St. Thomas, US Virgin Islands. The form provides his basic personal and emergency contact information.",
+  "summary": "An emergency contact form for Danny Etienne, an employee of LSJE, LLC, dated June 4, 2018. The form provides his contact information, emergency contacts, and basic personal details.",
   "persons": [
     {
       "name": "Danny Etienne",
@@ -16,7 +16,7 @@
       "name": "Maria",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as the girlfriend and primary emergency contact for Danny Etienne.",
+      "context": "Listed as Danny Etienne's girlfriend and emergency contact on the form.",
       "mentionCount": 1
     },
     {
@@ -45,13 +45,19 @@
   ],
   "events": [],
   "locations": [
-    "LSJE, LLC, 6100 Red Hook Quarters Suite B-3, St. Thomas, VI 00802"
+    {
+      "address": "6100 Red Hook Quarters Suite B-3",
+      "city": "St. Thomas",
+      "territory": "VI",
+      "postalCode": "00802",
+      "context": "Address of LSJE, LLC, the company for which Danny Etienne works."
+    }
   ],
   "keyFacts": [
-    "The document is an emergency contact form dated June 4, 2018, for an employee named Danny Etienne.",
-    "Danny Etienne was an employee of LSJE, LLC, a company with an address in St. Thomas, US Virgin Islands.",
-    "The form lists Maria as his girlfriend and primary emergency contact.",
-    "The document originates from the Epstein case files, suggesting LSJE, LLC or its employees may have had a connection to the investigation."
+    "The document is an emergency contact form for Danny Etienne, an employee of LSJE, LLC, dated June 4, 2018.",
+    "LSJE, LLC is located at 6100 Red Hook Quarters Suite B-3 in St. Thomas, U.S. Virgin Islands.",
+    "Danny Etienne's emergency contact is his girlfriend, Maria.",
+    "The form includes basic personal and medical information for the employee."
   ],
-  "analyzedAt": "2026-02-11T22:51:13.027Z"
+  "analyzedAt": "2026-02-12T01:28:28.116Z"
 }

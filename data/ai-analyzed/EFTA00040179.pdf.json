@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-07-18",
-  "summary": "This is an email from July 18, 2021, discussing the discovery of two additional FedEx records related to the Epstein case. The email notes specific pages within PDF attachments where a package to an individual (likely a victim or witness) is documented and mentions the involvement of the U.S. Attorney's Office for the Southern District of New York.",
+  "summary": "This document is an email from July 18, 2021, forwarding two FedEx records (PDFs) related to the Epstein case. The email notes that one package was sent to a person identified as 'her' and references the recipient's appearance in the documents under a specific name before an Assistant United States Attorney in the Southern District of New York.",
   "persons": [
     {
-      "name": "Maurene Comey",
-      "role": "Assistant United States Attorney",
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
       "category": "legal",
-      "context": "Mentioned as the recipient of the correspondence at the U.S. Attorney's Office for the Southern District of New York. Her contact information is provided.",
+      "context": "Mentioned as the recipient or associated office for the FedEx package records being discussed. The specific name is not provided in the visible text.",
       "mentionCount": 1
     }
   ],
@@ -17,24 +17,29 @@
   "events": [
     {
       "date": "2021-07-18",
-      "title": "Email Regarding FedEx Records Discovery",
-      "description": "An email is sent discussing the discovery of two additional FedEx records relevant to the Epstein case, with specific references to PDF attachments.",
+      "title": "Email Forwarding FedEx Records",
+      "description": "An email was sent forwarding two PDF files containing FedEx records. One record shows a package sent to an unidentified female recipient, with her name appearing on specific pages of the documents.",
       "category": "investigation",
       "significance": 2,
       "personsInvolved": [
-        "Maurene Comey"
+        "Assistant United States Attorney"
       ]
     }
   ],
   "locations": [
-    "One St. Andrew's Plaza, New York, New York 10007",
-    "Southern District of New York"
+    {
+      "address": "One St. Andrew's Plaza",
+      "city": "New York",
+      "state": "New York",
+      "postalCode": "10007",
+      "context": "Location of the United States Attorney's Office for the Southern District of New York, referenced as the associated office for the recipient of the correspondence or records."
+    }
   ],
   "keyFacts": [
-    "Two additional FedEx records were identified in July 2021, indicating ongoing document review in the Epstein investigation.",
-    "The records include a package sent to an individual (name not provided in the excerpt), referenced on specific pages of attached PDFs.",
-    "The correspondence is directed to Assistant U.S. Attorney Maurene Comey at the U.S. Attorney's Office for the Southern District of New York.",
-    "The email suggests the records were flagged as 'hot' or significant within the document set."
+    "Two FedEx records (PDFs) were identified and forwarded via email on July 18, 2021.",
+    "One FedEx package was sent to an unidentified female recipient ('her'), with her name appearing on page 5 of the first PDF and page 8 of the second PDF.",
+    "The records were associated with or sent to the United States Attorney's Office for the Southern District of New York at One St. Andrew's Plaza.",
+    "The email suggests these records were part of an investigative or legal process, possibly flagged as significant ('hot')."
   ],
-  "analyzedAt": "2026-02-11T23:54:35.470Z"
+  "analyzedAt": "2026-02-12T02:35:13.652Z"
 }

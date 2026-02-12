@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": null,
-  "summary": "This document appears to be an exhibit list or index of materials provided for review in a legal case, likely related to discovery or pre-trial proceedings in the Epstein/Maxwell litigation. It catalogs a wide range of evidence including plea documents, police reports, personal diaries, affidavits, property records, emails, indictments, media articles, and deposition transcripts.",
+  "summary": "This document appears to be an exhibit list or index of materials provided for review in a legal case, likely related to discovery or pre-trial proceedings in the Epstein/Maxwell matters. It catalogs a wide range of evidence including plea documents, police reports, personal diaries, affidavits, property records, emails, indictments, media articles, and deposition transcripts.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Central figure in the case; numerous documents relate to him including plea documents, reports, diaries, property records, and communications.",
+      "context": "Central figure in the case; numerous documents relate to him including plea documents, reports, diaries, emails, and property records.",
       "mentionCount": 10
     },
     {
@@ -28,21 +28,21 @@
     },
     {
       "name": "Graydon",
-      "role": "Recipient of communications",
+      "role": "Correspondent",
       "category": "associate",
-      "context": "Received a list of \"Thoughts\" and a typed note from Jeffrey Epstein.",
+      "context": "Recipient of a list of \"Thoughts\" and a typed note from Jeffrey Epstein.",
       "mentionCount": 2
     },
     {
       "name": "Dr. Hall",
-      "role": "Medical professional",
+      "role": "Medical Professional",
       "category": "witness",
       "context": "Provided an affidavit dated August 18, 2009.",
       "mentionCount": 1
     },
     {
       "name": "Lisa Rocchio",
-      "role": "Expert witness",
+      "role": "Expert",
       "category": "legal",
       "context": "Subject of a government filing regarding disclosure of expert materials.",
       "mentionCount": 1
@@ -51,21 +51,21 @@
       "name": "Ghislaine Maxwell",
       "role": "Co-defendant",
       "category": "key figure",
-      "context": "Subject of superseding indictments; mentioned in the context of a deposition.",
+      "context": "Subject of superseding indictments; mentioned in deposition context.",
       "mentionCount": 2
     },
     {
       "name": "Woody Allen",
-      "role": "Social contact",
+      "role": "Associate",
       "category": "associate",
-      "context": "Mentioned in a media article title regarding a close friendship with Jeffrey Epstein.",
+      "context": "Subject of a Daily Beast article about his close friendship with Jeffrey Epstein.",
       "mentionCount": 1
     },
     {
       "name": "Bill Gates",
-      "role": "Social contact",
+      "role": "Associate",
       "category": "associate",
-      "context": "Mentioned in a media article title regarding hopes that Epstein would help him win a Nobel prize.",
+      "context": "Subject of a New York Post article about his hopes that Epstein would help him win a Nobel prize.",
       "mentionCount": 1
     }
   ],
@@ -73,36 +73,36 @@
     {
       "person1": "Jeffrey Epstein",
       "person2": "Graydon",
-      "relationshipType": "social",
-      "description": "Epstein sent a list of \"Thoughts\" and a typed note to Graydon, indicating direct communication.",
+      "relationshipType": "correspondence",
+      "description": "Epstein sent a list of \"Thoughts\" and a typed note to Graydon.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "George Rush",
+      "relationshipType": "interview subject",
+      "description": "Rush interviewed Epstein, as referenced in an email excerpt and subsequent affidavits.",
       "strength": 2
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
-      "relationshipType": "co-conspirator",
-      "description": "Both are named in legal complaints and indictments, indicating they are co-defendants in the case.",
+      "relationshipType": "co-defendant",
+      "description": "Both are subjects of legal complaints and indictments (CMA v. JE/SK).",
       "strength": 4
-    },
-    {
-      "person1": "Jeffrey Epstein",
-      "person2": "George Rush",
-      "relationshipType": "media",
-      "description": "Rush interviewed Epstein, creating a documented interaction between them.",
-      "strength": 2
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Woody Allen",
       "relationshipType": "social",
-      "description": "Media article references a \"close friendship\" between Epstein and Allen.",
+      "description": "Described as having a close friendship in a media article.",
       "strength": 2
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Bill Gates",
-      "relationshipType": "social/financial",
-      "description": "Media article references Epstein's potential role in helping Gates win a Nobel prize.",
+      "relationshipType": "associate",
+      "description": "Epstein reportedly was hoped to help Gates win a Nobel prize.",
       "strength": 2
     }
   ],
@@ -110,7 +110,7 @@
     {
       "date": "2005-2006",
       "title": "PBPD Reports",
-      "description": "Police reports from the Palm Beach Police Department from 2005-2006, likely related to initial investigations.",
+      "description": "Police reports from the Palm Beach Police Department.",
       "category": "investigation",
       "significance": 4,
       "personsInvolved": [
@@ -119,26 +119,59 @@
     },
     {
       "date": "2008-02-25",
-      "title": "CMA v. JE/SK Summons and Complaint",
-      "description": "Civil lawsuit filed against Jeffrey Epstein and another individual (SK).",
+      "title": "Summons and Complaint Filed",
+      "description": "Civil case CMA v. JE/SK (likely referring to Jeffrey Epstein and Sarah Kellen, or similar) initiated.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Jeffrey Epstein"
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
       ]
     },
     {
-      "date": "2009-11-10",
-      "title": "Deposition Volumes I & II",
-      "description": "Depositions taken, likely of key witnesses or parties in the case.",
-      "category": "testimony",
-      "significance": 3,
-      "personsInvolved": []
+      "date": "2009-08-18",
+      "title": "Affidavit of Dr. Hall",
+      "description": "Medical professional provides sworn statement.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Dr. Hall"
+      ]
+    },
+    {
+      "date": "2010-04-06",
+      "title": "Affidavit of George Rush",
+      "description": "First affidavit provided by George Rush.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "George Rush"
+      ]
+    },
+    {
+      "date": "2010-04-26",
+      "title": "Affidavit of Michael Fisten",
+      "description": "Affidavit provided by Michael Fisten.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Michael Fisten"
+      ]
+    },
+    {
+      "date": "2010-04-30",
+      "title": "Supplemental Affidavit of George Rush",
+      "description": "Follow-up affidavit provided by George Rush.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "George Rush"
+      ]
     },
     {
       "date": "2019-07-02",
       "title": "Epstein Indictment",
-      "description": "Jeffrey Epstein was indicted by federal authorities.",
+      "description": "Jeffrey Epstein is indicted.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -148,7 +181,7 @@
     {
       "date": "2020-07-20",
       "title": "Maxwell Superseding Indictment",
-      "description": "Ghislaine Maxwell faced a superseding indictment.",
+      "description": "Ghislaine Maxwell faces a superseding indictment.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -158,25 +191,35 @@
     {
       "date": "2021-03-29",
       "title": "Maxwell Second Superseding Indictment",
-      "description": "Ghislaine Maxwell faced a second superseding indictment.",
+      "description": "Ghislaine Maxwell faces a second superseding indictment.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
         "Ghislaine Maxwell"
       ]
+    },
+    {
+      "date": "2021-04-23",
+      "title": "Government Disclosure Filings",
+      "description": "Government files regarding disclosure of expert Lisa Rocchio and 3502 materials.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Lisa Rocchio"
+      ]
     }
   ],
   "locations": [
-    "New York City (referenced in Property Details report)",
-    "Florida (referenced in Property Details report)",
-    "Palm Beach (implied from PBPD reports)"
+    "New York City",
+    "Florida",
+    "Palm Beach"
   ],
   "keyFacts": [
-    "The document is an extensive exhibit list showing the massive scope of evidence collected in the Epstein/Maxwell cases, spanning from personal diaries to official indictments.",
-    "It references early police reports from 2005-2006, indicating the long investigative timeline preceding the 2019 indictment.",
-    "The list includes highly personal items such as Epstein's diary, scrapbook, report card, and psychological evaluation notes.",
-    "Multiple media articles are listed as exhibits, showing public interest and the narrative surrounding Epstein's connections to powerful figures.",
-    "The document references materials under the \"3500\" series, which typically refers to Jencks Act materials (prior statements of witnesses) in federal criminal procedure."
+    "The document is an extensive index of evidence, indicating a massive discovery process in the Epstein/Maxwell legal proceedings.",
+    "Evidence includes highly personal items like Epstein's day planner, diary scrapbook, diary excerpts, and a 1966 report card.",
+    "Media articles listed show public interest in Epstein's connections to figures like Woody Allen and Bill Gates.",
+    "The list includes multiple indictments against both Jeffrey Epstein and Ghislaine Maxwell, spanning from 2019 to 2021.",
+    "Property detail reports for both New York and Florida locations are cataloged, relevant to the financial and logistical aspects of the case."
   ],
-  "analyzedAt": "2026-02-11T23:44:31.385Z"
+  "analyzedAt": "2026-02-12T02:25:00.705Z"
 }

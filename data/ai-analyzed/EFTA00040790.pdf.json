@@ -3,20 +3,20 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-02-14",
-  "summary": "This is a draft meeting agenda for a Human Trafficking meeting at the SDNY on February 15, 2019. It outlines discussion topics including the SDNY's human trafficking program statistics, the role of coordinators, specific issues like the R. Kelly case, and a planned highlight of the Epstein case.",
+  "summary": "This is a draft meeting agenda for a Human Trafficking meeting at the SDNY on February 15, 2019. It outlines discussion topics including the SDNY's human trafficking program statistics, the role of coordinators, specific issues like the R. Kelly case, and a planned highlight on the Epstein case.",
   "persons": [
     {
       "name": "R. Kelly",
       "role": "Subject of Case Conflict Discussion",
       "category": "key figure",
-      "context": "Mentioned under 'Issues' as a case presenting potential conflicts for the office.",
+      "context": "Mentioned under 'Issues' as a topic for conflict discussion, indicating his case was relevant to the office's workload or ethical considerations.",
       "mentionCount": 1
     },
     {
       "name": "E stein",
       "role": "Subject of Case Highlight",
       "category": "key figure",
-      "context": "Listed under 'Case Highlights' on the agenda, referring to the Jeffrey Epstein case.",
+      "context": "Referenced in the agenda under 'Case Highlights', indicating the Epstein case was a significant topic for discussion in the human trafficking meeting.",
       "mentionCount": 1
     }
   ],
@@ -26,13 +26,20 @@
       "person2": "AK",
       "relationshipType": "professional colleague",
       "description": "Both are participants/presenters in the same SDNY Human Trafficking meeting, collaborating on the agenda.",
-      "strength": 2
+      "strength": 3
     },
     {
       "person1": "AK",
       "person2": "E stein",
-      "relationshipType": "investigator-subject",
-      "description": "AK is a Human Trafficking Coordinator who is scheduled to present the Epstein case as a highlight during the meeting.",
+      "relationshipType": "prosecutor-subject",
+      "description": "AK is listed as presenting 'Case Highlights' which includes the Epstein case, indicating a prosecutorial or case management role.",
+      "strength": 2
+    },
+    {
+      "person1": "JK",
+      "person2": "R. Kelly",
+      "relationshipType": "prosecutor-subject",
+      "description": "JK is listed as discussing 'Issues' including conflicts related to the R. Kelly case, indicating a prosecutorial oversight role.",
       "strength": 2
     }
   ],
@@ -40,13 +47,12 @@
     {
       "date": "2019-02-15",
       "title": "SDNY Human Trafficking Meeting",
-      "description": "A scheduled meeting at the Southern District of New York to discuss the office's human trafficking program, case issues, and highlights including the Epstein case.",
+      "description": "A scheduled meeting at the Southern District of New York to discuss the office's human trafficking program, case highlights including Epstein, and issues like the R. Kelly case.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
         "JK",
-        "AK",
-        "GC"
+        "AK"
       ]
     }
   ],
@@ -55,10 +61,10 @@
     "New York, New York 10007"
   ],
   "keyFacts": [
-    "The SDNY's Human Trafficking Program was actively handling approximately 50 investigations and 10-15 charged cases at the time.",
-    "The agenda specifically lists the 'R. Kelly' case as an 'Issue' under conflicts, indicating it was an active concern for the office.",
-    "The Epstein case ('E stein') was listed as a planned 'Case Highlight' for discussion at this high-level prosecutorial meeting in February 2019.",
-    "The document shows internal SDNY coordination and planning regarding human trafficking cases just months before Epstein's arrest in July 2019."
+    "The SDNY's Human Trafficking Program was actively handling approximately 50 investigations and 10-15 charged cases at any given time as of early 2019.",
+    "The agenda explicitly lists the Epstein case under 'Case Highlights' for discussion, indicating it was a priority case for the SDNY's human trafficking unit.",
+    "The R. Kelly case was listed as a specific 'Issue' for conflict discussion, showing it was contemporaneously active and presented potential ethical or logistical challenges for the office.",
+    "The document is internal prosecutorial correspondence, showing the operational planning within the SDNY regarding major sex trafficking cases."
   ],
-  "analyzedAt": "2026-02-11T16:02:52.472Z"
+  "analyzedAt": "2026-02-12T03:30:28.757Z"
 }

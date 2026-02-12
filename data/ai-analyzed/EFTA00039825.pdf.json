@@ -3,34 +3,42 @@
   "dataSet": "9",
   "documentType": "court filing correspondence",
   "dateOriginal": "2021-04-23",
-  "summary": "This is an email from an Assistant United States Attorney to a judge (Nathan) regarding the case US v. Maxwell. It transmits a government letter requesting redactions to filings related to Ghislaine Maxwell's application for a Rule 17(c) subpoena, along with proposed redactions to filings from defense counsel and the law firm Boies Schiller Flexner LLP.",
+  "summary": "This is an email from an Assistant United States Attorney to Judge Nathan, with copies to Chambers, regarding the case US v. Maxwell (20 Cr. 330). It transmits the Government's request for redactions to filings related to the defendant's application for a Rule 17(c) subpoena and includes attachments with proposed redactions to filings from defense counsel and the law firm Boies Schiller Flexner LLP.",
   "persons": [
     {
       "name": "Nathan",
       "role": "Judge",
       "category": "legal",
-      "context": "Addressee of the email, presumably Judge Alison J. Nathan presiding over US v. Maxwell.",
+      "context": "The email is addressed to Judge Nathan, indicating she is presiding over the case US v. Maxwell.",
       "mentionCount": 1
     },
     {
-      "name": "Ghislaine Maxwell",
+      "name": "Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the referenced criminal case (20 Cr. 330 (AJN)). The email concerns redactions to filings related to her application for a Rule 17(c) subpoena.",
+      "context": "The case is US v. Maxwell, indicating Ghislaine Maxwell is the defendant in the referenced criminal proceeding.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Maxwell",
+      "person2": "Nathan",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Nathan is presiding over the criminal case against defendant Maxwell, as indicated by the case caption US v. Maxwell.",
+      "strength": 4
+    }
+  ],
   "events": [
     {
       "date": "2021-04-23",
-      "title": "Government Submits Redaction Request",
-      "description": "The government files a letter and proposed redactions regarding filings related to Ghislaine Maxwell's Rule 17(c) subpoena application in her criminal case.",
+      "title": "Government Files Redaction Request",
+      "description": "The Government submits a letter requesting redactions to filings regarding the defendant's application for a Rule 17(c) subpoena in the case US v. Maxwell.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Nathan",
-        "Ghislaine Maxwell"
+        "Maxwell"
       ]
     }
   ],
@@ -39,11 +47,10 @@
     "1 St. Andrew's Plaza, New York, NY 10007"
   ],
   "keyFacts": [
-    "The document is an email from an Assistant U.S. Attorney dated April 23, 2021.",
-    "It concerns the criminal case US v. Maxwell (20 Cr. 330 (AJN)).",
-    "The government is requesting redactions to filings related to Ghislaine Maxwell's application for a Rule 17(c) subpoena.",
+    "The document is a 2021 email from a federal prosecutor regarding the ongoing criminal case against Ghislaine Maxwell.",
+    "The Government is requesting redactions to filings related to Maxwell's application for a Rule 17(c) subpoena.",
     "The proposed redactions apply to filings from both defense counsel and the law firm Boies Schiller Flexner LLP.",
-    "The correspondence indicates ongoing pre-trial litigation and discovery disputes in Maxwell's case."
+    "The correspondence indicates active litigation and procedural motions concerning the protection of sensitive information in the case."
   ],
-  "analyzedAt": "2026-02-11T23:25:20.988Z"
+  "analyzedAt": "2026-02-12T02:04:10.195Z"
 }

@@ -3,34 +3,62 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-05-31",
-  "summary": "This is an email chain from May 2019 between a U.S. Attorney's Office (SDNY) prosecutor and FBI personnel, discussing efforts to contact a potential victim/witness in the Epstein investigation. The prosecutor provides background on the individual, noting she was met by Epstein in high school, is believed to be a victim, and was potentially a recruiter. The email coordinates initial contact and a planned in-person interview in California.",
+  "summary": "This document is an email chain from May 2019 between a U.S. Attorney's Office (SDNY) prosecutor and FBI personnel. It discusses obtaining contact information for a potential victim/witness, referred to as 'Vicky,' and planning initial contact and an in-person interview in California. The email provides background on Vicky's alleged connection to Jeffrey Epstein.",
   "persons": [
     {
-      "name": "Assistant U.S. Attorney Southern District of New York",
-      "role": "Prosecutor",
-      "category": "legal",
-      "context": "Author of the email providing background on a potential witness/victim and coordinating contact efforts with the FBI.",
+      "name": "Vicky",
+      "role": "Potential victim/witness",
+      "category": "victim",
+      "context": "Referred to as a potential victim of Jeffrey Epstein who was met while in high school. The email states she has not been interviewed by law enforcement and her name appears in one FBI 302 report.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as having met Vicky while she was in high school and that she was apparently one of his victims.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged co-conspirator",
+      "category": "associate",
+      "context": "Mentioned in the background on Vicky, stating that Epstein bought a house for Maxwell and that Maxwell was also a recruiter.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Assistant U.S. Attorney Southern District of New York",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "investigator-subject",
-      "description": "The prosecutor is investigating Epstein and providing background on his connection to a potential victim.",
+      "person1": "Jeffrey Epstein",
+      "person2": "Vicky",
+      "relationshipType": "victim-perpetrator",
+      "description": "The email states Epstein met Vicky while she was in high school and that she was apparently one of his victims.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "The email references that Epstein bought a house for Maxwell and that Maxwell was also a recruiter, implying a collaborative relationship in the alleged scheme.",
       "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Vicky",
+      "relationshipType": "social",
+      "description": "The connection is implied through the context of Maxwell being a recruiter and Vicky being a victim, suggesting Maxwell may have been involved in recruiting Vicky.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-05",
-      "title": "Coordination to Contact Potential Victim/Witness",
-      "description": "The SDNY prosecutor and FBI personnel coordinate to make initial contact with a potential victim/witness in California, with plans to meet her in person later in the month.",
+      "title": "Planning Contact with Potential Witness",
+      "description": "The U.S. Attorney's Office and FBI coordinate to obtain contact information and plan to call and potentially travel to California to meet with a potential victim/witness named Vicky.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
-        "Assistant U.S. Attorney Southern District of New York"
+        "Vicky"
       ]
     }
   ],
@@ -39,11 +67,10 @@
     "Southern District of New York"
   ],
   "keyFacts": [
-    "The document is a 2019 email from the SDNY prosecutor's office to the FBI coordinating contact with a potential victim/witness.",
-    "The individual in question was met by Jeffrey Epstein while she was in high school and is believed to have been one of his victims.",
-    "Her name appears in only one FBI 302 report, which states Epstein bought her a car and that she was also a recruiter.",
-    "The prosecutor notes she has never been interviewed by law enforcement before.",
-    "The email discusses providing the individual with counsel if needed and planning an in-person meeting in California."
+    "The document reveals an active investigation by the SDNY and FBI into Jeffrey Epstein as of May 2019, focusing on contacting potential victims.",
+    "It identifies a potential victim/witness, 'Vicky,' who was allegedly met by Epstein while she was in high school and had not previously been interviewed by law enforcement.",
+    "The email confirms Ghislaine Maxwell's alleged role as a recruiter for Epstein and mentions Epstein bought a house for her.",
+    "The correspondence shows prosecutorial and law enforcement coordination to carefully make initial contact with a potential witness, including offering assistance with legal counsel."
   ],
-  "analyzedAt": "2026-02-11T23:32:25.151Z"
+  "analyzedAt": "2026-02-12T02:11:44.196Z"
 }

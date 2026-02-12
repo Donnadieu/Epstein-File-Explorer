@@ -9,14 +9,14 @@
       "name": "Javier A. Solano",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Attorney representing a client named Estill; corresponds with the AUSA to schedule a proffer session and inquire about the government's interest in interviewing his client regarding the Epstein matter.",
+      "context": "Attorney representing a client named Estill, communicating with the U.S. Attorney's Office to schedule a proffer session and inquire about the government's interest in interviewing his client regarding the Epstein matter.",
       "mentionCount": 10
     },
     {
       "name": "Estill",
       "role": "Client/Individual of Interest",
       "category": "other",
-      "context": "Client of Javier A. Solano who is the subject of the emails; has an ICE detainer; the government was considering interviewing him regarding the Epstein matter.",
+      "context": "Client of attorney Javier A. Solano who is the subject of an ICE detainer. The government was considering interviewing him regarding the Epstein matter.",
       "mentionCount": 3
     }
   ],
@@ -25,24 +25,24 @@
       "person1": "Javier A. Solano",
       "person2": "Estill",
       "relationshipType": "attorney-client",
-      "description": "Solano is the legal representative for Estill, discussing his immigration hold and potential proffer session with prosecutors.",
+      "description": "Solano is the legal representative for Estill, arranging a proffer session with prosecutors and inquiring about his immigration status.",
       "strength": 5
     },
     {
       "person1": "Javier A. Solano",
       "person2": "Assistant United States Attorney",
       "relationshipType": "legal counterpart",
-      "description": "Correspondence regarding scheduling a proffer session for Solano's client and the government's interest in interviewing him about Epstein.",
-      "strength": 4
+      "description": "Professional correspondence regarding scheduling a proffer session for Solano's client and the government's investigative interest.",
+      "strength": 3
     }
   ],
   "events": [
     {
       "date": "2019-09-03",
-      "title": "ICE Detainer Confirmation",
+      "title": "ICE Detainer Confirmed for Estill",
       "description": "An AUSA confirms to attorney Javier Solano that his client Estill has an ICE (Immigration and Customs Enforcement) detainer.",
       "category": "legal",
-      "significance": 3,
+      "significance": 2,
       "personsInvolved": [
         "Javier A. Solano",
         "Estill"
@@ -51,25 +51,36 @@
     {
       "date": "2019-08-28",
       "title": "Scheduled Proffer Session",
-      "description": "A proffer session for Estill was scheduled for the afternoon of September 3, 2019, at the SDNY office, but was later rescheduled due to Solano's trial schedule.",
+      "description": "A proffer session for Estill was scheduled for the afternoon of September 3, 2019, at the U.S. Attorney's Office.",
       "category": "legal",
-      "significance": 3,
+      "significance": 2,
       "personsInvolved": [
         "Javier A. Solano",
         "Estill"
+      ]
+    },
+    {
+      "date": "2019-09-12",
+      "title": "Government Interest in Epstein Interview Questioned",
+      "description": "Attorney Solano forwards an inquiry asking if the government is still interested in interviewing his client regarding the Epstein matter, prompting an internal AUSA question about whether to proceed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Javier A. Solano"
       ]
     }
   ],
   "locations": [
     "One Saint Andrew's Plaza, New York, New York 10007",
     "Empire State Building, 350 Fifth Avenue, Suite 5900, New York, New York 10118",
-    "The Hub, 507 Willis Avenue, Bronx, New York 10455"
+    "The Hub, 507 Willis Avenue, Bronx, New York 10455",
+    "Southern District of New York"
   ],
   "keyFacts": [
-    "The US Attorney's Office for the Southern District of New York was, as of September 2019, considering interviewing an individual named Estill regarding the Epstein matter.",
-    "Estill was subject to an ICE (Immigration and Customs Enforcement) detainer, which was a factor in potential bail considerations.",
-    "Defense attorney Javier A. Solano was actively communicating with prosecutors to schedule a proffer session for his client Estill in late August/early September 2019.",
-    "The email chain shows the government's ongoing investigative activity related to Jeffrey Epstein shortly after his death in August 2019."
+    "In September 2019, the U.S. Attorney's Office for the Southern District of New York was in contact with a defense attorney regarding a potential interview of his client 'Estill' about the Epstein matter.",
+    "The client Estill was subject to an ICE (Immigration and Customs Enforcement) detainer, which was a factor in considering bail and interview logistics.",
+    "The email chain shows the government's active consideration, as of late 2019, of interviewing individuals potentially connected to the Epstein investigation.",
+    "The correspondence is professional and focused on scheduling a proffer session, indicating a cooperative but formal investigative process."
   ],
-  "analyzedAt": "2026-02-11T23:39:49.242Z"
+  "analyzedAt": "2026-02-12T02:20:03.627Z"
 }

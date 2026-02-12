@@ -3,17 +3,26 @@
   "dataSet": "1",
   "documentType": "other",
   "dateOriginal": "2020-03-05",
-  "summary": "The document appears to be a heavily garbled or corrupted text file, possibly from a scanned or poorly processed PDF. It contains fragmented words, symbols, and some legible phrases including a date reference (03.05.2020) and a mention of 'criminal prosecution.' The text is largely unintelligible, making structured extraction of persons, events, and locations impossible.",
+  "summary": "The document appears to be a heavily corrupted or garbled text file with minimal legible content. The only clear information is a date reference (March 5, 2020) and a partial phrase suggesting a threat related to criminal prosecution. The majority of the text is unreadable due to apparent data corruption or encoding issues.",
   "persons": [],
   "connections": [],
-  "events": [],
+  "events": [
+    {
+      "date": "2020-03-05",
+      "title": "Document Date Reference",
+      "description": "The document contains a legible date of March 5, 2020, though the context of the date is unclear due to the corrupted text.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
   "locations": [],
   "keyFacts": [
-    "The document file EFTA00001886.pdf contains largely corrupted or unreadable text.",
-    "A date '03.05.2020' (March 5, 2020) is legible within the text.",
-    "The phrase 'CRIMINAL PROSECUTION' appears in the text, suggesting some legal context.",
-    "The document is part of the Epstein case data set but provides no clear, structured information.",
-    "The poor quality of the text prevents identification of any named individuals, events, or specific details."
+    "The document text is severely corrupted or garbled, making meaningful analysis impossible.",
+    "A legible date of March 5, 2020, is present in the text.",
+    "A partial phrase reads: 'TO CRIMaNill. PROSICUTION YOUR NeXT REM AAAAA ION', which may suggest a threat or warning related to criminal prosecution, but context is missing.",
+    "The file identifier is EFTA00001886.pdf.",
+    "No clear named individuals, locations, events, or factual claims can be reliably extracted from the legible portions."
   ],
-  "analyzedAt": "2026-02-11T22:40:15.597Z"
+  "analyzedAt": "2026-02-12T01:17:28.312Z"
 }

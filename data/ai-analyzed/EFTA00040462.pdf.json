@@ -9,21 +9,21 @@
       "name": "Ghislaine Maxwell",
       "role": "Accused",
       "category": "key figure",
-      "context": "Identified by the email writer as a perpetrator and co-conspirator with Jeffrey Epstein, though described as 'nothing compared' to Jean Luc Brunel.",
+      "context": "Identified by the email writer as a perpetrator from whom the writer was a victim, though described as less severe than Jean Luc Brunel.",
       "mentionCount": 3
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Mentioned as a co-conspirator with Ghislaine Maxwell; the writer identifies as a victim of 'MAXWELL/Epstein'.",
-      "mentionCount": 2
+      "context": "Mentioned in the context of the writer being a victim of 'MAXWELL/Epstein'.",
+      "mentionCount": 1
     },
     {
       "name": "Jean Luc Brunel",
       "role": "Modeling Agent / Alleged Trafficker",
       "category": "associate",
-      "context": "Identified by the writer as Epstein's partner, the writer's former agent, and described as '100x worse than Maxwell' and the 'MAN who for 40 years traffic women internationally'.",
+      "context": "Identified by the writer as Epstein's partner, the writer's former agent, and described as '100x worse than Maxwell' and a man who trafficked women internationally for 40 years.",
       "mentionCount": 2
     }
   ],
@@ -36,61 +36,48 @@
       "strength": 4
     },
     {
-      "person1": "Jean Luc Brunel",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "partner",
-      "description": "The writer explicitly states 'Epstein's partner Jean Luc Brunel'.",
+      "person1": "Jeffrey Epstein",
+      "person2": "Jean Luc Brunel",
+      "relationshipType": "associate",
+      "description": "The writer describes Brunel as 'Epstein's partner'.",
       "strength": 4
     },
     {
-      "person1": "Jean Luc Brunel",
-      "person2": "Ghislaine Maxwell",
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jean Luc Brunel",
       "relationshipType": "associate",
-      "description": "Both are implicated by the writer as part of the same network of abuse, with Brunel described as far more severe.",
+      "description": "Both are implicated by the writer as part of the same network of abuse and trafficking.",
       "strength": 3
     },
     {
       "person1": "Jean Luc Brunel",
       "person2": "Anonymous Writer",
-      "relationshipType": "employer-employee",
-      "description": "The writer states Brunel was her modeling agent.",
+      "relationshipType": "victim-perpetrator",
+      "description": "The writer states Brunel was their agent and implies victimization by him as part of a trafficking network.",
       "strength": 4
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Anonymous Writer",
-      "relationshipType": "victim-perpetrator",
-      "description": "The writer explicitly identifies as a victim of Maxwell.",
-      "strength": 5
-    },
-    {
-      "person1": "Jeffrey Epstein",
-      "person2": "Anonymous Writer",
-      "relationshipType": "victim-perpetrator",
-      "description": "The writer explicitly identifies as a victim of Epstein.",
-      "strength": 5
     }
   ],
   "events": [
     {
       "date": "2021-11-14",
-      "title": "Victim Outreach to Prosecutors",
-      "description": "An anonymous individual sends an email to the U.S. Attorney's Office identifying themselves as a previously unknown victim of Maxwell and Epstein, and offering information.",
+      "title": "Victim Outreach to US Attorney",
+      "description": "An anonymous individual sends an email to the U.S. Attorney's Office for the Southern District of New York, identifying themselves as a previously unknown victim of Maxwell and Epstein and offering information.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
-        "Anonymous Writer",
         "Ghislaine Maxwell",
-        "Jeffrey Epstein"
+        "Jeffrey Epstein",
+        "Jean Luc Brunel",
+        "Anonymous Writer"
       ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "An anonymous lifelong model and former teen runaway identifies herself as a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein.",
-    "The victim claims to have social and professional connections to the network, having been at parties with 'them all' and having Jean Luc Brunel as her agent.",
-    "Jean Luc Brunel is characterized as Epstein's partner and a far more severe figure than Maxwell, accused of trafficking women internationally for 40 years.",
-    "The correspondence is dated November 14, 2021, after Maxwell's conviction, indicating ongoing victim outreach and potential new information for investigators."
+    "An anonymous lifelong model and former teen runaway contacted prosecutors in November 2021, identifying as a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein.",
+    "The writer claims to have social and professional connections to the network, having been at parties with them and having Jean Luc Brunel as her agent.",
+    "Jean Luc Brunel is characterized by the writer as Epstein's partner and a far more severe figure than Maxwell, responsible for international sex trafficking of women for 40 years.",
+    "The correspondence represents a potential new source of victim testimony and information for investigators years after the main cases became public."
   ],
-  "analyzedAt": "2026-02-12T00:15:54.530Z"
+  "analyzedAt": "2026-02-12T02:58:09.659Z"
 }

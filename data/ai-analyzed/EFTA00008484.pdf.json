@@ -3,17 +3,26 @@
   "dataSet": "5",
   "documentType": "chain of custody form",
   "dateOriginal": null,
-  "summary": "This is a chain of custody form for electronic surveillance (ELSUR) evidence, likely related to an FBI investigation. It indicates the evidence is a duplicate recording from a consensual monitoring intercept, but specific details about the case, individuals, or content are not provided in the visible text.",
+  "summary": "This is a chain of custody form for electronic surveillance (ELSUR) evidence, likely related to a Title III intercept or consensual monitoring. It indicates the evidence was transferred for permanent storage and includes signatures for release and receipt.",
   "persons": [],
   "connections": [],
-  "events": [],
+  "events": [
+    {
+      "date": "2003-01-01",
+      "title": "Evidence Transfer for Permanent Storage",
+      "description": "Electronic surveillance evidence was transferred for permanent storage.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
   "locations": [],
   "keyFacts": [
-    "The document is an FBI chain of custody form (FB-504b) for electronic surveillance evidence.",
-    "The evidence is a duplicate recording from a consensual monitoring intercept (CM).",
-    "The form indicates the evidence was transferred for permanent storage, but specific dates are not clearly legible.",
-    "The case file number and agent details are partially visible but not fully decipherable.",
-    "The document is part of a larger evidence set, as indicated by the EFTA reference number."
+    "The document is a chain of custody form for electronic surveillance (ELSUR) evidence.",
+    "It references a Title III intercept (court-authorized wiretap) or consensual monitoring.",
+    "The evidence was transferred for permanent storage on an unspecified date.",
+    "The form includes multiple signature fields for tracking the release and receipt of evidence.",
+    "The case file number appears to be 33? - - 7, but it is partially obscured."
   ],
-  "analyzedAt": "2026-02-11T23:00:39.556Z"
+  "analyzedAt": "2026-02-12T01:38:01.652Z"
 }

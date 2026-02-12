@@ -3,20 +3,20 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-09-21",
-  "summary": "An email from Susan Shelling responding to a subpoena in the Ghislaine Maxwell case, stating she previously took a deposition in the Epstein case in Palm Beach County years earlier. She indicates any notes were destroyed after 5 years and she has no memory of the matter, suggesting the transcript should be available elsewhere.",
+  "summary": "Email from Susan Shelling responding to a subpoena in the Ghislaine Maxwell case, stating she previously took a deposition in the Epstein case in Palm Beach County but has no memory of it and her notes were destroyed after 5 years.",
   "persons": [
     {
       "name": "Susan Shelling",
       "role": "Deponent/Witness",
       "category": "witness",
-      "context": "Author of the email who states she took a deposition in the Epstein case in Palm Beach County several years ago and is now responding to a subpoena in the Ghislaine Maxwell case.",
+      "context": "Author of the email who states she took a deposition in the Epstein case years ago and received a subpoena regarding the Ghislaine Maxwell case.",
       "mentionCount": 2
     },
     {
       "name": "Ghislaine Maxwell",
-      "role": "Defendant",
+      "role": "Subject of Case",
       "category": "key figure",
-      "context": "Subject of the case for which Susan Shelling received a subpoena, referenced in the email subject line.",
+      "context": "The case referenced in the subpoena that Susan Shelling received.",
       "mentionCount": 1
     }
   ],
@@ -24,8 +24,8 @@
     {
       "person1": "Susan Shelling",
       "person2": "Ghislaine Maxwell",
-      "relationshipType": "witness-case subject",
-      "description": "Shelling received a subpoena related to the Maxwell case, indicating she may have information relevant to the investigation.",
+      "relationshipType": "witness-subject",
+      "description": "Shelling received a subpoena related to the Maxwell case, indicating she may have information relevant to it, stemming from her prior involvement in the Epstein case.",
       "strength": 2
     }
   ],
@@ -33,7 +33,7 @@
     {
       "date": "2021-09-21",
       "title": "Subpoena Received by Susan Shelling",
-      "description": "Susan Shelling received a subpoena related to the Ghislaine Maxwell case, prompting her to send this email response.",
+      "description": "Susan Shelling receives a subpoena related to the Ghislaine Maxwell case.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -41,9 +41,9 @@
       ]
     },
     {
-      "date": "Several years prior to 2021",
-      "title": "Deposition in Epstein Case",
-      "description": "Susan Shelling took a deposition in the Jeffrey Epstein case in Palm Beach County, as referenced in her email.",
+      "date": null,
+      "title": "Prior Deposition in Epstein Case",
+      "description": "Susan Shelling states she took a deposition in the Epstein case in Palm Beach County several years prior.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -55,11 +55,10 @@
     "Palm Beach County"
   ],
   "keyFacts": [
-    "Susan Shelling previously took a deposition in the Jeffrey Epstein case in Palm Beach County.",
-    "Shelling received a subpoena in September 2021 related to the Ghislaine Maxwell case.",
-    "Shelling states that any notes she had from the Epstein deposition were destroyed as it was more than 5 years prior.",
-    "Shelling claims to have no memory of the Epstein deposition, suggesting the transcript should be available elsewhere.",
-    "The email indicates ongoing legal proceedings in the Maxwell case as of September 2021."
+    "Susan Shelling received a subpoena in September 2021 related to the Ghislaine Maxwell case.",
+    "Shelling previously took a deposition in the Jeffrey Epstein case in Palm Beach County.",
+    "Shelling claims any notes from the Epstein deposition were destroyed as it was more than five years prior.",
+    "Shelling states she has no memory of the Epstein deposition."
   ],
-  "analyzedAt": "2026-02-11T16:08:32.983Z"
+  "analyzedAt": "2026-02-12T03:35:50.368Z"
 }

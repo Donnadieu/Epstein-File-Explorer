@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-08-22",
-  "summary": "Email correspondence between Assistant U.S. Attorney and defense attorney Laura Menninger regarding discovery issues in US v. Maxwell. The emails discuss the status of de-designating highly confidential images, arranging review of evidence in Colorado, and resolving technical problems with document production. The government is preparing to produce thousands of images from Epstein's devices and CDs.",
+  "summary": "Email correspondence between Assistant U.S. Attorney and defense attorney Laura Menninger regarding discovery issues in US v. Maxwell, specifically concerning the review and production of images and videos seized from Jeffrey Epstein's devices. The government details plans to de-designate thousands of images from 'Highly Confidential' to 'Confidential' and to make evidence available for review in Colorado.",
   "persons": [
     {
       "name": "Laura Menninger",
-      "role": "Defense Attorney",
+      "role": "Defense Attorney for Ghislaine Maxwell",
       "category": "legal",
-      "context": "Defense attorney for Ghislaine Maxwell corresponding with prosecutors about discovery issues, including review of images and evidence from Epstein's devices.",
+      "context": "Partner at Haddon, Morgan & Foreman, P.C. representing Ghislaine Maxwell; corresponds with AUSA regarding discovery deficiencies, review of images/videos from Epstein's devices, and logistical arrangements for evidence inspection.",
       "mentionCount": 15
     },
     {
       "name": "Jeff Pagliuca",
       "role": "Contractor (USANYS)",
       "category": "legal",
-      "context": "Contractor for the U.S. Attorney's Office for the Southern District of New York, copied on discovery correspondence.",
+      "context": "CC'd on email correspondence regarding discovery issues in US v. Maxwell; appears to be part of the prosecution or support team.",
       "mentionCount": 6
     },
     {
       "name": "Bobbi Sternheim",
-      "role": "Defense Attorney",
+      "role": "Attorney (CIV)",
       "category": "legal",
-      "context": "Defense attorney for Ghislaine Maxwell, copied on discovery correspondence regarding evidence issues.",
+      "context": "CC'd on email correspondence regarding discovery conferral; likely part of the defense or legal team.",
       "mentionCount": 4
     }
   ],
@@ -32,53 +32,52 @@
       "person1": "Laura Menninger",
       "person2": "Jeff Pagliuca",
       "relationshipType": "legal-adversarial",
-      "description": "Correspondence regarding discovery issues in US v. Maxwell case, with Menninger as defense attorney and Pagliuca as government contractor.",
+      "description": "Correspondence regarding discovery issues in US v. Maxwell; Menninger is defense counsel, Pagliuca is part of prosecution/support team.",
       "strength": 2
     },
     {
       "person1": "Laura Menninger",
       "person2": "Bobbi Sternheim",
       "relationshipType": "legal-colleague",
-      "description": "Both are defense attorneys representing Ghislaine Maxwell, copied on the same discovery correspondence.",
-      "strength": 3
+      "description": "Both CC'd on legal correspondence regarding discovery; likely colleagues on the defense team or associated legal matters.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2021-11-29",
-      "title": "Scheduled trial date for US v. Maxwell",
+      "title": "Scheduled Trial Date for US v. Maxwell",
       "description": "Trial date mentioned in correspondence as November 29, 2021.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
-        "Laura Menninger",
-        "Bobbi Sternheim"
+        "Laura Menninger"
       ]
     },
     {
       "date": "2021-01-27",
-      "title": "FBI Report on Epstein evidence",
-      "description": "FBI report indicating approximately 33,747 highly confidential images and 895 highly confidential videos identified from CART-processed evidence.",
+      "title": "FBI Report on Epstein Evidence",
+      "description": "FBI report dated January 27, 2021, indicating approximately 33,747 Highly Confidential images and 895 HC videos identified from CART-processed evidence from Epstein's devices.",
       "category": "investigation",
-      "significance": 5,
+      "significance": 4,
       "personsInvolved": []
     }
   ],
   "locations": [
     "New York, NY",
-    "Denver, CO",
     "Colorado",
+    "Denver, CO 80203",
     "Epstein's New York residence",
     "Epstein's private island",
-    "500 Pearl (likely courthouse or government office)",
+    "500 Pearl (likely a government building in NY)",
     "MDC (Metropolitan Detention Center)"
   ],
   "keyFacts": [
-    "The FBI identified approximately 33,747 highly confidential images and 895 highly confidential videos from CART-processed evidence from Epstein's devices.",
-    "The government was preparing to produce thousands of images from CDs seized from Epstein's New York residence, with approximately 40,000 images previously produced.",
-    "Evidence included a 3D scan of Epstein's private island that had production difficulties.",
-    "The defense requested to review evidence at the FBI office in Colorado rather than traveling to New York.",
-    "The correspondence reveals significant technical problems with document production, including corrupt files, unviewable images, and metadata issues."
+    "The FBI had approximately 33,747 images and 895 videos designated as 'Highly Confidential' from Epstein's devices, contradicting an earlier verbal estimate of 2,100.",
+    "The government agreed to transfer hard drives and boots (evidence items) to the FBI field office in Colorado for defense review, but certain photographs (1A items) must remain in New York.",
+    "Defense attorney Laura Menninger argued that many 'Highly Confidential' images contained adult nudity but not child pornography, and requested copies for proper defense analysis.",
+    "Significant discovery problems were cited, including corrupt files, missing metadata, unreadable photo formats, and thousands of documents the defendant could not view at the detention center.",
+    "The Protective Order defined 'Highly Confidential' material as containing 'nude, partially-nude, or otherwise sexualized images, videos, or other depictions of individuals,' not limited to child pornography."
   ],
-  "analyzedAt": "2026-02-11T16:04:30.832Z"
+  "analyzedAt": "2026-02-12T03:32:09.175Z"
 }

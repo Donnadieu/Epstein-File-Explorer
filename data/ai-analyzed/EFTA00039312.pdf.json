@@ -1,39 +1,108 @@
 {
   "fileName": "EFTA00039312.pdf",
   "dataSet": "9",
-  "documentType": "policy manual",
+  "documentType": "Bureau of Prisons policy manual",
   "dateOriginal": "2005-01-15",
-  "summary": "This is a Bureau of Prisons (BOP) policy manual (P6360.01) establishing comprehensive guidelines for pharmacy services within federal correctional institutions. It details staffing requirements, operational standards, procedures for medication dispensing and control, and specific protocols for handling DEA-controlled substances. This document is a Bureau of Prisons (BOP) Program Statement (P6360.01) detailing comprehensive policies and procedures for the management, dispensing, inventory, and security of controlled substances and other medications within federal correctional institutions. It outlines strict protocols for storage, auditing, administration, error reporting, and disposal to comply with DEA regulations. This is a Bureau of Prisons (BOP) policy document (P6360.01) titled 'Pharmacy Services', dated January 15, 2005. It outlines comprehensive procedures for medication management, error reporting, controlled substance handling (including methadone), and patient counseling within federal correctional institutions. It is a standard operating procedure and does not contain specific case information related to Jeffrey Epstein.",
+  "summary": "This is a Bureau of Prisons (BOP) policy document (P6360.01) titled 'Pharmacy Services,' dated January 15, 2005. It outlines comprehensive procedures for pharmaceutical care in federal prisons, covering staffing, operations, formulary management, controlled substance handling, and patient safety protocols. It is a standard operating procedure and contains no direct references to the Epstein case, individuals, or specific events. This document is a Bureau of Prisons (BOP) Program Statement (P6360.01) detailing comprehensive policies and procedures for the management, storage, inventory, dispensing, and administration of controlled substances and other medications within federal correctional institutions. It outlines strict DEA compliance requirements, roles and responsibilities of pharmacy staff, and protocols for preventing and reporting medication errors. This is a Bureau of Prisons (BOP) policy document (P6360.01) detailing comprehensive procedures for medication management, error reporting, adverse drug reactions, and specific protocols for controlled substances like methadone. It outlines responsibilities for prescribers, pharmacists, and other staff to ensure safe medication use within federal correctional institutions.",
   "persons": [
+    {
+      "name": "Chief Pharmacist",
+      "role": "Head of pharmacy operations at a BOP institution",
+      "category": "staff",
+      "context": "The individual responsible for overseeing all controlled substance inventories, record-keeping, reporting to the DEA, and ensuring compliance with federal regulations and BOP policy.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Warden",
+      "role": "Head of the correctional institution",
+      "category": "staff",
+      "context": "The official who must be notified and who is responsible for reporting theft or loss of controlled substances to the DEA.",
+      "mentionCount": 2
+    },
+    {
+      "name": "HSA",
+      "role": "Health Services Administrator",
+      "category": "staff",
+      "context": "The administrator who receives memos about controlled substance theft/loss and designates the chair of the Controlled Substances Inventory Team.",
+      "mentionCount": 2
+    },
+    {
+      "name": "BOP Chief Pharmacist",
+      "role": "Head pharmacist at the Bureau of Prisons national level",
+      "category": "staff",
+      "context": "The national-level official to whom quarterly controlled substance reports are submitted and who can assist in identifying temporary pharmacist coverage.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Medical Director",
+      "category": "staff",
+      "role": "Senior medical official",
+      "context": "The official who must be contacted for guidance if an institution is without pharmacist services for more than three days.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent-in-Charge",
+      "role": "DEA regional office head",
+      "category": "law enforcement",
+      "context": "The DEA official from whom written permission must be requested for a facility to self-dispose of controlled substances.",
+      "mentionCount": 1
+    },
     {
       "name": "Harley G. Lappin",
       "role": "Director of the Bureau of Prisons",
       "category": "legal",
-      "context": "Appears as the signatory at the end of the BOP policy document, indicating his approval and authorship as Director.",
+      "context": "Appears as the signatory at the end of the official Bureau of Prisons policy document.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Chief Pharmacist",
+      "person2": "Warden",
+      "relationshipType": "reporting",
+      "description": "The Chief Pharmacist sends a memo to the HSA with a copy to the Warden regarding theft or loss of controlled substances. The Warden then notifies the DEA.",
+      "strength": 3
+    },
+    {
+      "person1": "Chief Pharmacist",
+      "person2": "BOP Chief Pharmacist",
+      "relationshipType": "reporting",
+      "description": "The institutional Chief Pharmacist submits quarterly controlled substance inventory reports to the BOP Chief Pharmacist.",
+      "strength": 3
+    },
+    {
+      "person1": "Chief Pharmacist",
+      "person2": "HSA",
+      "relationshipType": "reporting",
+      "description": "The Chief Pharmacist sends documentation of controlled substance theft or loss to the Health Services Administrator (HSA) for review.",
+      "strength": 3
+    },
+    {
+      "person1": "HSA",
+      "person2": "Controlled Substances Inventory Team Chair",
+      "relationshipType": "appointment",
+      "description": "The HSA designates, in writing, a Health Services supervisor as the Chair of the Quarterly Controlled Substances Inventory Team.",
+      "strength": 3
+    }
+  ],
   "events": [],
-  "locations": [
-    "320 First Street NW, Washington, DC 20853 (BOP Central Office address)"
-  ],
+  "locations": [],
   "keyFacts": [
-    "The document is a formal BOP policy (P6360.01) dated January 15, 2005, governing all pharmacy operations in federal prisons.",
-    "It establishes strict security protocols for controlled substances, including limited key access, mandatory inventories, and the use of vaults or safes.",
-    "The policy mandates that each institution's pharmacy be directed by a qualified Chief Pharmacist who is the responsible authority for all DEA-controlled substances.",
-    "It references the use of automated medication administration systems (e.g., Pyxis, SureMed) which can replace manual shift inventories and proof-of-use sheets for controlled substances.",
-    "The policy outlines a structured Pharmacy and Therapeutics (P&T) Committee system that must meet quarterly to manage the institution's drug formulary and review medication errors and adverse reactions.",
-    "The document is a formal BOP policy (P6360.01) establishing strict, detailed procedures for handling controlled substances in federal prisons, dated January 15, 2005.",
-    "It mandates secure storage of controlled substances in vaults, safes, or locked cabinets, and requires a biennial inventory to be conducted on a federally mandated schedule.",
-    "Procedures are defined for reporting theft or loss of controlled substances to the DEA using Form 106, and for quarterly audits by a designated inventory team.",
-    "The policy specifies that medications, especially controlled substances, must be administered under direct observation to prevent inmates from 'cheeking' or diverting them.",
-    "It establishes a formal Medication Error Program, categorizing different types of errors and emphasizing a blame-free, systems-focused approach to quality improvement.",
-    "This document is Bureau of Prisons Program Statement P6360.01 on 'Pharmacy Services', effective January 15, 2005.",
-    "It details strict protocols for medication use, error reporting (with severity levels 0-6), and the control of needles and syringes within BOP facilities.",
-    "It specifies regulations for methadone use, limiting it to three approved uses: treatment of opiate-addicted pregnant inmates, detoxification, and treatment of severe pain.",
-    "The policy mandates procedures for inmate transfer and release, including supplying medications for up to 90 days for transfers to Community Corrections Centers (CCC).",
-    "The document is signed by Harley G. Lappin, who was the Director of the Federal Bureau of Prisons at the time."
+    "This is a standard Bureau of Prisons (BOP) policy manual for pharmacy services, not a case-specific document.",
+    "The document details strict protocols for controlled substance security, inventory, and dispensing within federal prisons.",
+    "It establishes the role and responsibilities of the Chief Pharmacist as the central authority for all pharmacy and DEA-controlled substance operations.",
+    "The policy references automated medication systems (e.g., Pyxis) and outlines procedures for after-hours medication access.",
+    "There is no mention of Jeffrey Epstein, any associates, victims, or events related to his case within this document text.",
+    "This is a detailed BOP policy (P6360.01) from 2005 governing every aspect of controlled substance management in federal prisons, highlighting an institutional focus on strict DEA compliance.",
+    "The policy mandates a biennial inventory of all controlled substances and a quarterly audit by a designated team, with the Chief Pharmacist acting only as a technical advisor, not a team member, suggesting checks and balances.",
+    "Procedures for the 'pill line' are explicitly detailed, requiring direct observation of ingestion, checking for 'cheeking,' and using two forms of inmate ID to prevent diversion.",
+    "The document outlines extensive contingency plans for pharmacist absence, including contracts, interagency agreements, and using PHS officers, indicating the critical role of pharmacist oversight.",
+    "It establishes a formal, blame-free Medication Error Program focused on system improvement, categorizing errors per American Society of Health Systems Pharmacists guidelines.",
+    "This is a standard BOP medication management policy (P6360.01) dated January 15, 2005, signed by Director Harley G. Lappin.",
+    "The document establishes detailed protocols for medication dispensing, error reporting (with a severity rating scale from Level 0 to Level 6), and adverse drug reaction monitoring within federal prisons.",
+    "It specifies strict controls for needles, syringes, and controlled substances, requiring secure storage and detailed inventory tracking.",
+    "The policy outlines specific, regulated uses for methadone within BOP institutions: treatment of opiate-addicted pregnant inmates, detoxification, and treatment of severe pain.",
+    "The document contains no direct references to Jeffrey Epstein, his associates, victims, or any events related to his case; it is purely a procedural guideline for prison healthcare operations."
   ],
-  "analyzedAt": "2026-02-11T23:06:36.718Z"
+  "analyzedAt": "2026-02-12T01:44:23.957Z"
 }

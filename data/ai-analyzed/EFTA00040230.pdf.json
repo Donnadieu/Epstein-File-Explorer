@@ -3,54 +3,56 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-11-15",
-  "summary": "This is a cover email from an Assistant United States Attorney to Judge Nathan's chambers, submitting a joint letter from the parties in United States v. Maxwell (20 Cr. 330) that provides a list of names and places for voir dire. It indicates procedural coordination between prosecution and defense ahead of jury selection.",
+  "summary": "This is a court filing from the United States v. Maxwell case (20 Cr. 330) where the parties submit a joint letter providing a list of names and places for voir dire. It is a procedural document related to jury selection in Ghislaine Maxwell's trial.",
   "persons": [
     {
       "name": "Nathan",
-      "role": "Judge",
+      "role": "Recipient of email/court filing",
       "category": "legal",
-      "context": "The email is addressed to Judge Nathan's chambers, indicating she is the presiding judge in United States v. Maxwell.",
+      "context": "Appears as the recipient of an email submitting a joint letter regarding voir dire in the Maxwell case.",
       "mentionCount": 1
     },
     {
-      "name": "Maxwell",
-      "role": "Defendant",
-      "category": "key figure",
-      "context": "The case is United States v. Maxwell, indicating Ghislaine Maxwell is the defendant.",
+      "name": "Chambers",
+      "role": "Court Chambers",
+      "category": "legal",
+      "context": "Addressed in the email as the recipient of the attached joint letter from the parties in the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email submitting the joint letter on behalf of the parties to the court chambers.",
       "mentionCount": 1
     }
   ],
-  "connections": [
-    {
-      "person1": "Nathan",
-      "person2": "Maxwell",
-      "relationshipType": "judge-defendant",
-      "description": "Judge Nathan is presiding over the criminal case against Maxwell.",
-      "strength": 5
-    }
-  ],
+  "connections": [],
   "events": [
     {
       "date": "2021-11-14",
-      "title": "Submission of joint letter for voir dire",
-      "description": "The parties (prosecution and defense) submitted a joint letter providing a list of names and places to be used during jury selection (voir dire).",
+      "title": "Submission of Joint Voir Dire Letter",
+      "description": "The parties in United States v. Maxwell jointly submit a letter providing a list of names and places for the voir dire (jury selection) process.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
+        "Assistant United States Attorney",
         "Nathan",
-        "Maxwell"
+        "Chambers"
       ]
     }
   ],
   "locations": [
     "Southern District of New York",
-    "One Saint Andrew's Plaza, New York, NY 10007"
+    "One Saint Andrew's Plaza New York, NY 10007",
+    "New York, NY"
   ],
   "keyFacts": [
-    "The document is a procedural filing in the criminal case United States v. Maxwell (20 Cr. 330).",
-    "The parties jointly submitted a list of names and places for voir dire, indicating coordination between prosecution and defense on jury selection issues.",
-    "The filing was submitted to Judge Nathan's chambers by an Assistant United States Attorney.",
-    "The attached letter (2021-11-14joint_letter regarding_names_and_places.pdf) contains the specific list, but its contents are not detailed in this cover email."
+    "This document is related to the criminal case United States v. Maxwell, 20 Cr. 330.",
+    "The parties submitted a joint letter containing a list of names and places for voir dire (jury selection).",
+    "The document indicates ongoing trial preparation procedures in Ghislaine Maxwell's case as of November 2021.",
+    "The communication is from an Assistant United States Attorney to the court chambers.",
+    "The attached PDF likely contains the specific names and places relevant to potential juror screening."
   ],
-  "analyzedAt": "2026-02-11T23:59:01.472Z"
+  "analyzedAt": "2026-02-12T02:40:09.185Z"
 }

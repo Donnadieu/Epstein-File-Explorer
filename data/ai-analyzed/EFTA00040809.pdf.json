@@ -3,99 +3,78 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-08-23",
-  "summary": "This document is an email chain between prosecutors and defense attorneys in the US v. Maxwell case, discussing discovery issues related to photographic and video evidence seized from Jeffrey Epstein's properties. The correspondence focuses on the review, designation, and production of thousands of images, including 'Highly Confidential' materials containing nude or sexualized content, and logistical arrangements for defense access to evidence in Colorado and New York.",
+  "summary": "Email correspondence between Assistant U.S. Attorney Christian Everdell and defense attorney Laura Menninger regarding discovery issues in the Ghislaine Maxwell case. The emails discuss the production of thousands of images from Epstein's devices, the de-designation of 'Highly Confidential' materials, logistical arrangements for reviewing evidence in Colorado, and technical problems with accessing discovery materials.",
   "persons": [
     {
       "name": "Christian Everdell",
       "role": "Assistant United States Attorney",
       "category": "legal",
-      "context": "Prosecutor in the Southern District of New York corresponding with defense counsel about discovery production, including de-designation of FBI materials and arrangements for evidence review.",
-      "mentionCount": 3
+      "context": "Prosecutor in the Southern District of New York handling discovery production and logistics for the government in the Maxwell case.",
+      "mentionCount": 4
     },
     {
       "name": "Laura Menninger",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Defense counsel for Ghislaine Maxwell, raising issues about discovery deficiencies, access to 'Highly Confidential' images, and problems with viewing evidence at the MDC.",
+      "context": "Defense counsel for Ghislaine Maxwell, raising numerous discovery deficiencies and requesting access to evidence including images from Epstein's devices.",
       "mentionCount": 10
     },
     {
       "name": "Jeff Pagliuca",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Defense counsel copied on email correspondence regarding discovery issues in the Maxwell case.",
+      "context": "Defense counsel for Ghislaine Maxwell, copied on discovery correspondence.",
       "mentionCount": 6
     },
     {
       "name": "Bobbi Sternheim",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Defense counsel copied on email correspondence regarding discovery issues in the Maxwell case.",
-      "mentionCount": 4
-    },
-    {
-      "name": "Judge Nathan",
-      "role": "Judge",
-      "category": "legal",
-      "context": "Presiding judge in the US v. Maxwell case whose order (Dkt. No. 322) is referenced as the basis for the meet and confer discussion.",
-      "mentionCount": 1
+      "context": "Defense counsel for Ghislaine Maxwell, copied on discovery correspondence.",
+      "mentionCount": 5
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the criminal case, referenced in relation to discovery materials being produced to her counsel and her ability to review documents at the MDC.",
+      "context": "The defendant in the criminal case, referenced in relation to discovery review at the MDC (Metropolitan Detention Center).",
       "mentionCount": 3
     },
     {
-      "name": "Jeffrey Epstein",
-      "role": "Accused",
-      "category": "key figure",
-      "context": "Deceased financier whose New York residence was searched, leading to the seizure of CDs and devices containing the images and videos being discussed in discovery.",
-      "mentionCount": 3
+      "name": "Judge Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Presiding judge in the Maxwell case, whose order (Dkt. No. 322) is referenced as requiring a meet and confer.",
+      "mentionCount": 1
     }
   ],
   "connections": [
     {
       "person1": "Christian Everdell",
       "person2": "Laura Menninger",
-      "relationshipType": "legal-adversary",
-      "description": "Prosecutor and defense attorney corresponding about discovery issues in the US v. Maxwell case, with Everdell responding to Menninger's requests and concerns.",
+      "relationshipType": "legal-adversarial",
+      "description": "Prosecutor and defense attorney corresponding about discovery issues in the Maxwell case, with Everdell responding to Menninger's requests and complaints.",
       "strength": 4
     },
     {
       "person1": "Laura Menninger",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Defense attorney representing the accused in the criminal case, advocating for her access to discovery materials.",
+      "description": "Defense attorney representing the defendant in the criminal case, advocating for her access to discovery materials.",
       "strength": 5
-    },
-    {
-      "person1": "Christian Everdell",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "investigator-subject",
-      "description": "Prosecutor handling evidence seized from Epstein's New York residence as part of the investigation into Maxwell.",
-      "strength": 3
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "associate",
-      "description": "Maxwell is the defendant in a case involving evidence seized from Epstein's properties, indicating their prior association.",
-      "strength": 4
     },
     {
       "person1": "Laura Menninger",
       "person2": "Jeff Pagliuca",
       "relationshipType": "legal-colleague",
-      "description": "Defense attorneys working together on the Maxwell case, both copied on discovery correspondence.",
+      "description": "Co-counsel for the defense, both copied on discovery correspondence.",
       "strength": 3
     },
     {
       "person1": "Laura Menninger",
       "person2": "Bobbi Sternheim",
       "relationshipType": "legal-colleague",
-      "description": "Defense attorneys working together on the Maxwell case, both copied on discovery correspondence.",
+      "description": "Co-counsel for the defense, both copied on discovery correspondence.",
       "strength": 3
     }
   ],
@@ -103,9 +82,9 @@
     {
       "date": "2021-11-29",
       "title": "Scheduled Trial Date",
-      "description": "Trial date set for US v. Maxwell case, referenced in the context of when the prosecution would need to provide a list of 'Highly Confidential' photographs they may introduce.",
+      "description": "Trial date for the Maxwell case mentioned in the correspondence.",
       "category": "legal",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "Ghislaine Maxwell",
         "Christian Everdell",
@@ -113,55 +92,39 @@
       ]
     },
     {
-      "date": "2021-01-27",
-      "title": "FBI Report on Digital Evidence",
-      "description": "FBI report indicating approximately 33,747 'Highly Confidential' images and 895 'Highly Confidential' videos were identified from CART-processed evidence from Epstein's devices.",
-      "category": "investigation",
-      "significance": 4,
-      "personsInvolved": [
-        "Jeffrey Epstein"
-      ]
-    },
-    {
-      "date": "2020-11-09",
-      "title": "Discovery Production",
-      "description": "Reference to a production of discovery materials to the defense on November 9, 2020, containing spreadsheets and images.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": [
-        "Ghislaine Maxwell",
-        "Laura Menninger",
-        "Christian Everdell"
-      ]
-    },
-    {
       "date": "2021-04-13",
       "title": "Evidence Review in New York",
-      "description": "Defense counsel traveled to New York to review evidence in the government's possession, including 'Highly Confidential' material on hard drives.",
+      "description": "Defense counsel traveled to New York to review evidence, including highly confidential materials on hard drives.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Laura Menninger",
-        "Christian Everdell"
+        "Laura Menninger"
       ]
+    },
+    {
+      "date": "2021-01-27",
+      "title": "FBI Report on Digital Evidence",
+      "description": "FBI report indicating approximately 33,747 'Highly Confidential' images and 895 HC videos identified from CART-processed evidence from Epstein's devices.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
     }
   ],
   "locations": [
     "New York, NY",
     "Denver, CO",
     "Colorado",
-    "Epstein's New York residence",
-    "Epstein's private island",
-    "500 Pearl (likely a government building in NYC)",
+    "500 Pearl (likely 500 Pearl Street, NYC courthouse)",
     "1 St. Plaza New York, NY 10007 (SDNY office)",
-    "150 10th Avenue Denver, CO 80203 (Haddon, Morgan & Foreman law office)"
+    "Epstein's New York residence",
+    "Epstein's private island (referenced in context of 3D scan)"
   ],
   "keyFacts": [
-    "The FBI had approximately 40,000 images extracted from CDs seized from Jeffrey Epstein's New York residence, with about 3,400 initially designated as 'Highly Confidential' due to nudity.",
-    "A separate FBI review of Epstein's devices identified approximately 33,747 'Highly Confidential' images and 895 'Highly Confidential' videos, a number significantly higher than the 2,100 initially conveyed to defense counsel.",
-    "The prosecution was working to de-designate 'Highly Confidential' images that did not depict genitals, breasts, or buttocks, and planned to produce thousands of de-designated images to the defense.",
-    "Defense counsel reported significant technical problems with discovery, including corrupt files, unreadable photo formats, and difficulties matching metadata to images, hindering their ability to review evidence.",
-    "The FBI agreed to transfer hard drives containing highly confidential image/video files and boots (evidence items) to Colorado for defense review, but certain photographs had to remain in New York as they were logged as '1A items' with the case file."
+    "The FBI had approximately 40,000 images extracted from CDs seized from Epstein's New York residence, with thousands designated as 'Highly Confidential' due to nudity.",
+    "A discrepancy existed between the government's initial estimate of 2,100 nude images from Epstein's devices and an FBI report indicating approximately 33,747 HC images and 895 HC videos.",
+    "The defense requested and arranged for review of evidence (hard drives and boots) to be relocated to the FBI field office in Colorado for easier access.",
+    "Significant technical problems plagued the discovery process, with thousands of images unreadable due to corrupt files, missing metadata, and incompatible file formats.",
+    "The protective order defined 'Highly Confidential' material broadly to include any nude, partially-nude, or sexualized images, not limited to child pornography, restricting defense access to government-controlled review only."
   ],
-  "analyzedAt": "2026-02-11T16:05:13.004Z"
+  "analyzedAt": "2026-02-12T03:32:40.145Z"
 }

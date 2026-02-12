@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2021-08-03",
-  "summary": "This is an FBI 302 form documenting a proffer interview with a former Bureau of Prisons Corrections Officer (CO) from the Metropolitan Correctional Center (MCC) in New York. The interviewee provides detailed information about his work history, duties, and observations regarding contraband, security procedures, and a specific incident involving a gun lockdown and subsequent searches. He also discusses allegations against himself and other officers, including rumors of passing contraband.",
+  "summary": "This is an FBI 302 form documenting a proffer interview with a former Bureau of Prisons Corrections Officer (CO) from the Metropolitan Correctional Center (MCC) in New York. The interviewee provides detailed information about his work history, duties, and observations regarding contraband, security procedures, and specific incidents at the MCC, including a gun lockdown and his subsequent placement on administrative leave. The interview was conducted by SDNY prosecutors and FBI agents.",
   "persons": [
     {
       "name": "Tova Noel",
@@ -23,79 +23,107 @@
       "name": "William M. Sweeney Jr.",
       "role": "FBI Special Agent",
       "category": "law enforcement",
-      "context": "Present for the interview at the United States Attorney's Office.",
+      "context": "Present for the interview as an FBI representative.",
       "mentionCount": 1
     },
     {
-      "name": "John M. O'Malley",
+      "name": "Nicholas Tartaglione",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Present for the interview representing the interviewee.",
+      "context": "Present for the interview, representing the interviewee.",
       "mentionCount": 1
     },
     {
       "name": "Michael Thomas",
-      "role": "Corrections Officer / Interviewee",
+      "role": "Corrections Officer / Senior Officer Specialist",
       "category": "staff",
-      "context": "The primary interviewee, a former Corrections Officer and Senior Officer Specialist at the MCC. He provides information about his duties, contraband, the gun lockdown incident, and allegations against staff.",
+      "context": "The interviewee, a former CO at MCC who provided information about procedures, contraband, and specific incidents, including a gun lockdown and his placement on administrative leave.",
       "mentionCount": 50
     },
     {
-      "name": "Tamerlin Zeine",
+      "name": "Tigran",
       "role": "Corrections Officer",
       "category": "staff",
-      "context": "A fellow Corrections Officer and DCT member at MCC. The interviewee states they are very close and worked together frequently.",
+      "context": "A CO at MCC who was on the Disturbance Control Team (DCT) with the interviewee. The interviewee is close with him and discussed rumors and administrative actions involving them.",
       "mentionCount": 10
     },
     {
-      "name": "Noel Rios",
-      "role": "Corrections Officer",
+      "name": "Lt. Lamine N'Diaye",
+      "role": "Lieutenant",
       "category": "staff",
-      "context": "A fellow Corrections Officer and DCT member at MCC. Mentioned in the context of the gun lockdown and DCT activities.",
-      "mentionCount": 5
+      "context": "An MCC lieutenant the interviewee spoke to during the gun lockdown incident about whether DCT members should stay.",
+      "mentionCount": 2
     },
     {
-      "name": "Ronald Moen",
+      "name": "Officer Noel Rios",
+      "role": "Corrections Officer / DCT Squad Leader",
+      "category": "staff",
+      "context": "A CO who was the DCT team leader/assistant team leader. The interviewee served on the DCT with him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Captain",
+      "role": "Captain",
+      "category": "staff",
+      "context": "A captain from another prison who requested personnel during the gun lockdown search, and later called the interviewee about administrative leave posters.",
+      "mentionCount": 3
+    },
+    {
+      "name": "CO Rookie 1",
       "role": "Corrections Officer",
       "category": "staff",
-      "context": "A fellow Corrections Officer and DCT member at MCC. Mentioned in the context of the gun lockdown and DCT activities.",
-      "mentionCount": 4
+      "context": "A rookie CO who, along with another rookie, was alleged to have a Cash App scheme to find and sell cell phones back to inmates.",
+      "mentionCount": 2
+    },
+    {
+      "name": "CO Rookie 2",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "A rookie CO involved in the alleged Cash App scheme with CO Rookie 1.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Chubby CO",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "A CO allegedly caught on camera exposing himself and having sex with a female inmate.",
+      "mentionCount": 1
     }
   ],
   "connections": [
     {
       "person1": "Michael Thomas",
-      "person2": "Tamerlin Zeine",
-      "relationshipType": "co-worker",
-      "description": "Described as very close; they met in 2011, used to work the elevators together, and the interviewee has spent time with Zeine's brother.",
+      "person2": "Tigran",
+      "relationshipType": "co-worker / close associate",
+      "description": "Worked together at MCC, were both on the Disturbance Control Team, and are described as 'very close.' The interviewee spent time with Tigran's brother.",
       "strength": 4
     },
     {
       "person1": "Michael Thomas",
-      "person2": "Noel Rios",
+      "person2": "Officer Noel Rios",
       "relationshipType": "co-worker",
-      "description": "Worked together on the Disturbance Control Team (DCT) at MCC. Thomas coordinated with Rios during the gun lockdown incident.",
+      "description": "Served together on the Disturbance Control Team at MCC, with Rios as the team leader.",
       "strength": 3
     },
     {
       "person1": "Michael Thomas",
-      "person2": "Ronald Moen",
-      "relationshipType": "co-worker",
-      "description": "Worked together on the Disturbance Control Team (DCT) at MCC. Mentioned together in the context of the gun lockdown and subsequent allegations.",
-      "strength": 3
+      "person2": "Lt. Lamine N'Diaye",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The interviewee reported to Lt. N'Diaye during the gun lockdown incident and received instructions from him.",
+      "strength": 2
     },
     {
       "person1": "Michael Thomas",
-      "person2": "John M. O'Malley",
-      "relationshipType": "attorney-client",
-      "description": "O'Malley was present as Thomas's defense attorney during the proffer interview.",
-      "strength": 5
+      "person2": "CO Rookie 1",
+      "relationshipType": "co-worker",
+      "description": "The interviewee knew of the rookie COs and an alleged Cash App scheme they were involved in.",
+      "strength": 2
     },
     {
-      "person1": "Tamerlin Zeine",
-      "person2": "Ronald Moen",
-      "relationshipType": "co-worker",
-      "description": "Both were Corrections Officers and DCT members at MCC, mentioned together in the context of the gun lockdown response.",
+      "person1": "Tigran",
+      "person2": "Captain",
+      "relationshipType": "professional",
+      "description": "The Captain called Tigran regarding rumors and administrative leave posters, indicating a supervisory or investigative connection.",
       "strength": 2
     }
   ],
@@ -103,7 +131,7 @@
     {
       "date": "2021-08-03",
       "title": "Proffer Interview of Michael Thomas",
-      "description": "Former MCC Corrections Officer Michael Thomas is interviewed under a proffer agreement by SDNY AUSAs and FBI agents. He provides information about MCC operations, contraband, and a specific gun lockdown incident.",
+      "description": "Former MCC Corrections Officer Michael Thomas is interviewed under a proffer agreement by SDNY AUSAs and FBI agents regarding his experiences and observations at MCC.",
       "category": "testimony",
       "significance": 4,
       "personsInvolved": [
@@ -111,40 +139,46 @@
         "Tova Noel",
         "Maurene Comey",
         "William M. Sweeney Jr.",
-        "John M. O'Malley"
+        "Nicholas Tartaglione"
       ]
     },
     {
       "date": "2019-2020",
       "title": "Gun Lockdown at MCC",
-      "description": "A gun was reportedly discovered inside the MCC, leading to a lockdown. Officers from other prisons (FCI Fort Dix and Danbury) were called in. The DCT was activated to search inmate units and cells for contraband.",
+      "description": "A significant security incident at MCC where a gun was reportedly in the building, leading to a lockdown, activation of the DCT, and searches of multiple units by officers from MCC and other prisons.",
       "category": "investigation",
       "significance": 5,
       "personsInvolved": [
         "Michael Thomas",
-        "Noel Rios",
-        "Ronald Moen",
-        "Tamerlin Zeine"
+        "Lt. Lamine N'Diaye",
+        "Tigran",
+        "Officer Noel Rios",
+        "Captain"
       ]
     },
     {
       "date": "2020",
       "title": "Michael Thomas Placed on Administrative Leave",
-      "description": "Following the SHU incident during the gun lockdown searches, Thomas received a phone call informing him he was placed on administrative leave. Posters were made stating he was not allowed in the building.",
+      "description": "Following the SHU incident during the gun lockdown searches, Michael Thomas received a phone call informing him he was placed on administrative leave, with posters stating he was not allowed in the building.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
-        "Michael Thomas"
+        "Michael Thomas",
+        "Captain",
+        "Tigran"
       ]
     },
     {
       "date": "2011-2020",
-      "title": "Thomas's Employment at MCC",
-      "description": "Michael Thomas worked at the Metropolitan Correctional Center from July 2011 until 2020, serving as a Corrections Officer, Senior Officer Specialist, and member/instructor of the Disturbance Control Team.",
-      "category": "other",
-      "significance": 3,
+      "title": "Contraband Operations at MCC",
+      "description": "The interviewee describes systemic contraband issues at MCC, including methods of smuggling (e.g., via trash, ropes through windows), common items found (shanks, cell phones, drugs), and alleged corruption schemes among staff.",
+      "category": "investigation",
+      "significance": 4,
       "personsInvolved": [
-        "Michael Thomas"
+        "Michael Thomas",
+        "CO Rookie 1",
+        "CO Rookie 2",
+        "Chubby CO"
       ]
     }
   ],
@@ -157,11 +191,11 @@
     "FCI Danbury"
   ],
   "keyFacts": [
-    "The interviewee, Michael Thomas, a former MCC Corrections Officer, describes systemic contraband issues at the facility, including cell phones, drugs, and weapons being smuggled in via various methods, such as through trash cans and a rope/basket system from a window.",
-    "Thomas details a significant gun lockdown incident at the MCC, which required activation of the Disturbance Control Team and assistance from officers at other federal prisons to conduct extensive cell searches.",
-    "Thomas alleges that a fellow officer, Tamerlin Zeine, was recently involved in a shooting near his house in Brooklyn, but claims it had nothing to do with Zeine.",
-    "Thomas and other officers (Zeine, Rios) were subsequently placed on administrative leave following the gun lockdown incident, with rumors spreading that they had passed a phone to an inmate.",
-    "Thomas admits to occasionally passing minor items like stamps to inmates, even in heightened security situations, claiming it could prevent worse problems, but denies passing serious contraband."
+    "The interviewee, Michael Thomas, a former MCC CO, provided a proffer detailing significant security failures and contraband smuggling methods within the federal prison.",
+    "A major gun lockdown incident occurred at MCC, prompting a large-scale search involving officers from multiple facilities and leading to the interviewee's subsequent placement on administrative leave.",
+    "The interviewee alleges a 'vendetta' against him by an unnamed individual, and that he and his close colleague Tigran were targeted by rumors they passed a phone to an inmate.",
+    "Systemic contraband problems are described, including a cell with a hole and rope for smuggling, and allegations of a Cash App scheme among rookie COs to sell confiscated phones back to inmates.",
+    "The document reveals internal prison dynamics, including the dissolution of the voluntary Disturbance Control Team and other staff misconduct, such as a CO allegedly caught on camera having sex with an inmate."
   ],
-  "analyzedAt": "2026-02-11T16:10:40.313Z"
+  "analyzedAt": "2026-02-12T03:38:17.244Z"
 }

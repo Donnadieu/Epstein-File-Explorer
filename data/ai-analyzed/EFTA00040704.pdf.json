@@ -6,72 +6,72 @@
   "summary": "This is an email chain from September 29, 2019, where journalist Christopher Brennan requests information from the U.S. Attorney's Office for the SDNY about Jeffrey Epstein's use of Le Bourget airport in Paris. James Margolin, the Chief Public Information Officer, acknowledges the request. The document shows media inquiry into Epstein's travel patterns after his death.",
   "persons": [
     {
-      "name": "James Margolin",
-      "role": "Chief Public Information Officer",
-      "category": "legal",
-      "context": "He is the Chief Public Information Officer for the U.S. Attorney's Office for the Southern District of New York (SDNY) and is responding to a journalist's inquiry about Jeffrey Epstein.",
+      "name": "Christopher Brennan",
+      "role": "American Reporter",
+      "category": "other",
+      "context": "An American reporter based in Paris, France, who is seeking information from the U.S. Attorney's Office about Jeffrey Epstein's use of Le Bourget airport for a story.",
       "mentionCount": 2
     },
     {
-      "name": "Christopher Brennan",
-      "role": "Reporter",
-      "category": "other",
-      "context": "He is an American reporter based in Paris, France, who is seeking information from the SDNY to write a story about Jeffrey Epstein's use of Le Bourget airport.",
-      "mentionCount": 2
+      "name": "James Margolin",
+      "role": "Chief Public Information Officer, U.S. Attorney's Office SDNY",
+      "category": "legal",
+      "context": "The Chief Public Information Officer for the U.S. Attorney's Office for the Southern District of New York who receives and acknowledges the journalist's inquiry about Epstein.",
+      "mentionCount": 1
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Subject of Inquiry",
       "category": "key figure",
-      "context": "He is the deceased financier and accused sex trafficker whose travel patterns, specifically involving Le Bourget airport in Paris, are the subject of the journalist's story.",
-      "mentionCount": 3
+      "context": "The deceased financier whose travel patterns, specifically involving Le Bourget airport in Paris, are the subject of the journalist's story inquiry.",
+      "mentionCount": 2
     }
   ],
   "connections": [
     {
       "person1": "Christopher Brennan",
       "person2": "James Margolin",
-      "relationshipType": "professional",
-      "description": "Brennan, a journalist, is making a professional inquiry to Margolin, a public information officer for the SDNY, regarding the Epstein case.",
+      "relationshipType": "professional inquiry",
+      "description": "Brennan, a journalist, is contacting Margolin, a public information officer, to request information for a story.",
       "strength": 2
     },
     {
       "person1": "Christopher Brennan",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "investigative",
-      "description": "Brennan is investigating and writing a story about Epstein's travel patterns and modus operandi.",
+      "relationshipType": "journalist-subject",
+      "description": "Brennan is investigating and writing a story about Epstein's travel patterns.",
       "strength": 2
     },
     {
       "person1": "James Margolin",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "professional",
-      "description": "Margolin, as a representative of the SDNY, is handling media inquiries related to the closed Epstein case.",
+      "relationshipType": "official-investigation",
+      "description": "Margolin works for the office that prosecuted Epstein, making him a point of contact for post-investigation media inquiries.",
       "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-09-29",
-      "title": "Media Inquiry Regarding Epstein's Travel",
+      "title": "Journalist Inquiry Regarding Epstein's Travel",
       "description": "Journalist Christopher Brennan emails the U.S. Attorney's Office for the SDNY seeking information about Jeffrey Epstein's use of Le Bourget airport in Paris for a story.",
       "category": "investigation",
       "significance": 2,
       "personsInvolved": [
         "Christopher Brennan",
-        "James Margolin"
+        "James Margolin",
+        "Jeffrey Epstein"
       ]
     }
   ],
   "locations": [
-    "Le Bourget airport, Paris, France",
     "Paris, France",
-    "New York (implied SDNY office location)"
+    "Le Bourget airport (Paris)"
   ],
   "keyFacts": [
-    "A journalist is investigating Jeffrey Epstein's use of Le Bourget airport in Paris as part of his travel 'modus operandi'.",
-    "The email indicates the Epstein case in the NYSD (Southern District of New York) is closed as of September 2019.",
-    "The correspondence shows ongoing media and public interest in Epstein's activities following his death."
+    "A journalist was actively investigating Jeffrey Epstein's travel patterns, specifically his use of Le Bourget airport in Paris, after Epstein's death and the closure of the NYSD case.",
+    "The inquiry was directed to the U.S. Attorney's Office for the Southern District of New York (SDNY), which had prosecuted Epstein.",
+    "The correspondence indicates ongoing media and public interest in the specifics of Epstein's operations, particularly regarding international travel hubs."
   ],
-  "analyzedAt": "2026-02-11T15:54:46.088Z"
+  "analyzedAt": "2026-02-12T03:22:51.473Z"
 }

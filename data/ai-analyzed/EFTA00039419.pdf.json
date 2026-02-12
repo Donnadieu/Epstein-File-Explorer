@@ -3,58 +3,51 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-04-14",
-  "summary": "An email from an Assistant United States Attorney to an unknown recipient forwarding a potential lead regarding Ghislaine Maxwell and Jeffrey Epstein. The lead originates from a private security contact of the AUSA's brother, a Lieutenant in the NYPD, who claims to have information and documents.",
+  "summary": "Email correspondence from an Assistant United States Attorney to an unknown recipient regarding a potential lead on Ghislaine Maxwell. The email forwards information from the AUSA's brother, an NYPD Lieutenant, about a private security contact who claims to have information and documents regarding Jeffrey Epstein and Ghislaine Maxwell.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Subject of investigation",
       "category": "key figure",
-      "context": "Named as a subject of the potential lead, alongside Jeffrey Epstein, regarding which a private security contact claims to have information and documents.",
+      "context": "Mentioned as the subject of potential information and documents held by a private security contact.",
       "mentionCount": 1
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Subject of investigation",
+      "role": "Deceased financier and sex offender",
       "category": "key figure",
-      "context": "Named as a subject of the potential lead, alongside Ghislaine Maxwell, regarding which a private security contact claims to have information and documents.",
+      "context": "Mentioned as the subject of potential information and documents held by a private security contact.",
       "mentionCount": 1
     },
     {
       "name": "Assistant United States Attorney",
-      "role": "Assistant United States Attorney",
+      "role": "Prosecutor",
       "category": "legal",
-      "context": "Sender of the email forwarding a potential lead about Epstein and Maxwell from their brother, an NYPD Lieutenant, to an unknown recipient (likely a colleague or law enforcement contact).",
+      "context": "Author of the forwarded email, providing contact information for a potential lead regarding Epstein and Maxwell.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are subjects of the potential information and documents held by a private security contact.",
+      "strength": 3
+    },
+    {
       "person1": "Assistant United States Attorney",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "investigator-subject",
-      "description": "The AUSA is forwarding an investigative lead regarding Maxwell.",
+      "description": "The AUSA is forwarding a lead about Maxwell to the FBI.",
       "strength": 2
-    },
-    {
-      "person1": "Assistant United States Attorney",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "investigator-subject",
-      "description": "The AUSA is forwarding an investigative lead regarding Epstein.",
-      "strength": 2
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "associate",
-      "description": "Both are named together as the subjects of the potential information and documents held by a private security contact.",
-      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2021-04-14",
-      "title": "Potential Lead Forwarded to FBI",
-      "description": "An Assistant United States Attorney emails an unknown recipient to forward a potential lead regarding Epstein and Maxwell, originating from a private security contact, and states they will pass it on to the FBI.",
+      "title": "Lead forwarded regarding Epstein/Maxwell",
+      "description": "An Assistant United States Attorney forwards an email tip about a private security contact claiming to have information and documents on Jeffrey Epstein and Ghislaine Maxwell to the FBI.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
@@ -70,10 +63,11 @@
     "Bahamas"
   ],
   "keyFacts": [
-    "A private security contact, working for an unnamed individual with homes in New York, Florida, and the Bahamas, claims to possess information and documents regarding Jeffrey Epstein and Ghislaine Maxwell.",
-    "The lead was relayed to an Assistant United States Attorney via their brother, who is a Lieutenant in the NYPD.",
-    "The AUSA states the lead will be passed on to the FBI for follow-up.",
-    "The document is an email dated April 14, 2021, indicating ongoing investigative activity related to the Epstein case after Epstein's death and Maxwell's arrest."
+    "An Assistant United States Attorney received a tip about a potential lead regarding Jeffrey Epstein and Ghislaine Maxwell.",
+    "The tip originated from the AUSA's brother, who is a Lieutenant in the NYPD, and concerns a former colleague working in private security.",
+    "The private security contact works for an unnamed individual(s) with homes in New York, Florida, and the Bahamas.",
+    "The contact claims to possess information and documents related to Epstein and Maxwell, though the specific content is unknown.",
+    "The AUSA states they will pass the lead on to the FBI for follow-up."
   ],
-  "analyzedAt": "2026-02-11T23:12:08.098Z"
+  "analyzedAt": "2026-02-12T01:50:24.805Z"
 }

@@ -3,27 +3,34 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-11-14",
-  "summary": "This is a joint letter from the prosecution and defense in the Ghislaine Maxwell criminal case (S2 20 Cr. 330) submitted to Judge Nathan, regarding proposed juror strikes and including modifications to the defense's previous strikes. It is a procedural communication between legal parties and the court.",
+  "summary": "This is a joint letter from the prosecution and defense in the Ghislaine Maxwell criminal case (S2 20 Cr. 330) submitted to Judge Nathan regarding proposed juror strikes. It includes modifications to the defense's previous strikes and is transmitted by defense attorney Christian Everdell.",
   "persons": [
     {
       "name": "Christian Everdell",
-      "role": "Attorney",
+      "role": "Defense Attorney",
       "category": "legal",
-      "context": "Sender of the email submitting the joint letter to the court regarding proposed juror strikes in the Ghislaine Maxwell case.",
+      "context": "Attorney at Cohen & Gresser LLP who transmitted the joint letter to Judge Nathan regarding proposed juror strikes in the Ghislaine Maxwell case.",
       "mentionCount": 2
     },
     {
       "name": "Nathan",
       "role": "Judge",
       "category": "legal",
-      "context": "The judge (Judge Nathan) presiding over the case, to whom the joint letter regarding juror strikes is addressed.",
+      "context": "Judge presiding over the United States v. Ghislaine Maxwell case (S2 20 Cr. 330), to whom the joint letter regarding juror strikes is addressed.",
       "mentionCount": 2
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the criminal case referenced in the document title (United States v. Ghislaine Maxwell).",
+      "context": "The defendant in the criminal case United States v. Ghislaine Maxwell (S2 20 Cr. 330), which is the subject of the juror strike proceedings.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sternheim",
+      "role": "Recipient",
+      "category": "legal",
+      "context": "Person copied on the email transmitting the joint letter regarding juror strikes in the Ghislaine Maxwell case.",
       "mentionCount": 1
     }
   ],
@@ -31,25 +38,32 @@
     {
       "person1": "Christian Everdell",
       "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal",
-      "description": "Christian Everdell is an attorney involved in the case, likely part of the defense or prosecution team corresponding about jury selection for Maxwell's trial.",
-      "strength": 3
+      "relationshipType": "attorney-client",
+      "description": "Christian Everdell is transmitting a joint letter on behalf of the defense regarding juror strikes in Maxwell's criminal case.",
+      "strength": 4
     },
     {
       "person1": "Nathan",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "legal",
-      "description": "Judge Nathan is presiding over the criminal case against Ghislaine Maxwell.",
-      "strength": 4
+      "description": "Judge Nathan is presiding over the criminal case United States v. Ghislaine Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Nathan",
+      "relationshipType": "legal",
+      "description": "Everdell is submitting a joint letter to Judge Nathan regarding juror strikes in the Maxwell case.",
+      "strength": 3
     }
   ],
   "events": [
     {
       "date": "2021-11-14",
       "title": "Submission of Joint Letter on Juror Strikes",
-      "description": "The prosecution and defense jointly submit a letter to Judge Nathan regarding proposed juror strikes and modifications to the defense's previous strikes in the Ghislaine Maxwell trial.",
+      "description": "The prosecution and defense jointly submit a letter to Judge Nathan regarding proposed juror strikes in the Ghislaine Maxwell trial, including modifications to the defense's previous strikes.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Christian Everdell",
         "Nathan",
@@ -64,11 +78,10 @@
     "London"
   ],
   "keyFacts": [
-    "The document is a joint submission from the parties in United States v. Ghislaine Maxwell regarding jury selection procedures.",
-    "It indicates ongoing pre-trial or trial proceedings as of November 2021, specifically focused on juror strikes.",
-    "The communication shows coordination between prosecution and defense on procedural matters under the court's supervision.",
-    "Christian Everdell of Cohen & Gresser LLP is the submitting attorney on the correspondence.",
-    "The document is marked as confidential and subject to attorney-client privilege considerations."
+    "The document is a joint letter from both parties in the Ghislaine Maxwell criminal case regarding proposed juror strikes.",
+    "The letter includes modifications to the defense's previous strikes, indicating ongoing pretrial jury selection negotiations.",
+    "The case is United States v. Ghislaine Maxwell, S2 20 Cr. 330, presided over by Judge Nathan.",
+    "The communication is transmitted by defense attorney Christian Everdell of Cohen & Gresser LLP."
   ],
-  "analyzedAt": "2026-02-11T23:58:48.489Z"
+  "analyzedAt": "2026-02-12T02:39:54.647Z"
 }

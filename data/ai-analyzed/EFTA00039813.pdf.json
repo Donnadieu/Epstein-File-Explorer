@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-04-20",
-  "summary": "Email correspondence between Assistant U.S. Attorney and defense attorneys regarding upcoming court appearances in the case United States v. Ghislaine Maxwell. It discusses an arraignment scheduled for April 23, 2021, and a bail appeal oral argument scheduled for April 26, 2021.",
+  "summary": "Email correspondence between Assistant U.S. Attorney Maurene Comey and defense attorneys Brad Edwards and Brittany Henderson regarding upcoming court appearances for Ghislaine Maxwell, including an arraignment and a bail appeal oral argument.",
   "persons": [
     {
       "name": "Brad Edwards",
@@ -20,17 +20,24 @@
       "mentionCount": 3
     },
     {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor from the Southern District of New York corresponding with defense counsel about scheduling in the Ghislaine Maxwell case.",
+      "mentionCount": 1
+    },
+    {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "Defendant in the criminal case United States v. Ghislaine Maxwell, subject of the court appearances discussed.",
+      "context": "The defendant in the criminal case 'United States v. Ghislaine Maxwell', subject of the scheduling discussions.",
       "mentionCount": 2
     },
     {
       "name": "Judge Nathan",
       "role": "Judge",
       "category": "legal",
-      "context": "Presiding judge who scheduled an in-person arraignment for Ghislaine Maxwell on April 23, 2021.",
+      "context": "Presiding judge who scheduled an in-person arraignment for Ghislaine Maxwell.",
       "mentionCount": 1
     }
   ],
@@ -39,28 +46,42 @@
       "person1": "Brad Edwards",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Brad Edwards is listed as a defense attorney for Ghislaine Maxwell in the correspondence.",
-      "strength": 4
+      "description": "Brad Edwards is listed as defense counsel for Ghislaine Maxwell in the correspondence.",
+      "strength": 5
     },
     {
       "person1": "Brittany Henderson",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Brittany Henderson is listed as a defense attorney for Ghislaine Maxwell in the correspondence.",
-      "strength": 4
+      "description": "Brittany Henderson is listed as defense counsel for Ghislaine Maxwell in the correspondence.",
+      "strength": 5
     },
     {
-      "person1": "Brad Edwards",
-      "person2": "Brittany Henderson",
-      "relationshipType": "legal",
-      "description": "Both are defense attorneys representing Ghislaine Maxwell, coordinating on court scheduling.",
+      "person1": "Maurene Comey",
+      "person2": "Brad Edwards",
+      "relationshipType": "legal counterpart",
+      "description": "Prosecutor corresponding with defense attorney regarding case scheduling.",
       "strength": 3
+    },
+    {
+      "person1": "Maurene Comey",
+      "person2": "Brittany Henderson",
+      "relationshipType": "legal counterpart",
+      "description": "Prosecutor corresponding with defense attorney regarding case scheduling.",
+      "strength": 3
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Nathan is presiding over the arraignment in the case against Ghislaine Maxwell.",
+      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2021-04-23",
-      "title": "Arraignment of Ghislaine Maxwell",
+      "title": "Arraignment for Ghislaine Maxwell",
       "description": "In-person arraignment scheduled by Judge Nathan at 2:30 p.m. in courtroom 24B at 500 Pearl Street.",
       "category": "legal",
       "significance": 4,
@@ -72,23 +93,23 @@
     {
       "date": "2021-04-26",
       "title": "Bail Appeal Oral Argument",
-      "description": "Remote oral argument scheduled by the Second Circuit at 10 a.m. regarding Ghislaine Maxwell's bail appeal, to be livestreamed.",
+      "description": "Remote oral argument scheduled by the Second Circuit at 10 a.m. regarding Ghislaine Maxwell's bail appeal.",
       "category": "legal",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "Ghislaine Maxwell"
       ]
     }
   ],
   "locations": [
-    "500 Pearl Street, courtroom 24B",
-    "Southern District of New York"
+    "500 Pearl Street, courtroom 24B (Southern District of New York courthouse)"
   ],
   "keyFacts": [
-    "Ghislaine Maxwell had an in-person arraignment scheduled for April 23, 2021, in the Southern District of New York.",
-    "A bail appeal oral argument was scheduled for April 26, 2021, in the Second Circuit Court of Appeals.",
+    "Ghislaine Maxwell had an in-person arraignment scheduled for April 23, 2021, at 2:30 p.m.",
+    "A remote oral argument for Maxwell's bail appeal was scheduled with the Second Circuit for April 26, 2021, at 10 a.m.",
+    "Prosecutor Maurene Comey corresponded with defense attorneys Brad Edwards and Brittany Henderson regarding these court appearances.",
     "The correspondence indicates ongoing legal proceedings in United States v. Ghislaine Maxwell in April 2021.",
-    "The document shows coordination between the prosecution and defense attorneys (Brad Edwards and Brittany Henderson) regarding court appearances."
+    "The Second Circuit arguments were noted as being livestreamed to the public."
   ],
-  "analyzedAt": "2026-02-11T23:23:50.656Z"
+  "analyzedAt": "2026-02-12T02:02:33.832Z"
 }

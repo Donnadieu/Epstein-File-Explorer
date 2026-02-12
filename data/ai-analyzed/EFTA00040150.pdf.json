@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-05-24",
-  "summary": "This document is an email chain from May 24, 2021, in which attorney Jason Foy forwards a threatening email received by his partner, James Seplowitz, to a government contact (Eric Sarraga). Foy interprets the email as a threat against his safety, likely related to his representation of a client, and requests a government investigation into its credibility.",
+  "summary": "This document is an email chain from May 24, 2021, in which attorney Jason Foy forwards a threatening email received by his partner, James Seplowitz, to a government contact (Eric Sarraga). Foy interprets the email as a threat against his safety, believes it is related to his client, and requests a government investigation into its credibility.",
   "persons": [
     {
       "name": "Jason Foy",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney at Foy & Seplowitz LLC who forwards a threatening email to a government contact, interpreting it as a threat against his safety and requesting an investigation.",
+      "context": "Attorney at Foy & Seplowitz LLC who forwards a threatening email to a government contact, interpreting it as a threat against his safety related to his client.",
       "mentionCount": 4
     },
     {
       "name": "James Seplowitz",
       "role": "Attorney (Partner)",
       "category": "legal",
-      "context": "Partner at Foy & Seplowitz LLC who received the initial threatening email, which was then forwarded to Jason Foy.",
+      "context": "Partner of Jason Foy who received the initial threatening email, which was then forwarded to Jason Foy and a government contact.",
       "mentionCount": 3
     },
     {
       "name": "Eric Sarraga",
       "role": "Government Contact",
       "category": "other",
-      "context": "Government recipient (likely at USAO NYS) copied on the email chain, to whom Jason Foy reports the perceived threat and requests an investigation.",
+      "context": "Government recipient (likely from USAO NYS) copied on the email chain, to whom Jason Foy requests an investigation into the perceived threat.",
       "mentionCount": 2
     },
     {
       "name": "Vegas Army Vet",
       "role": "Email Sender",
       "category": "other",
-      "context": "Anonymous sender of the threatening email directed at James Seplowitz, with the message 'Go ahead let your client know, THIS ISN'T OVER!!'",
+      "context": "Sender of the initial threatening email to James Seplowitz, with the message 'Go ahead let your client know, THIS ISN'T OVER!!'",
       "mentionCount": 1
     }
   ],
@@ -38,7 +38,7 @@
     {
       "person1": "Jason Foy",
       "person2": "James Seplowitz",
-      "relationshipType": "professional",
+      "relationshipType": "professional partnership",
       "description": "Partners at the law firm Foy & Seplowitz LLC, as indicated by the email signature and reference to 'my partner'.",
       "strength": 5
     },
@@ -46,14 +46,21 @@
       "person1": "Jason Foy",
       "person2": "Eric Sarraga",
       "relationshipType": "professional",
-      "description": "Foy is communicating a security concern to Sarraga, a government contact, requesting an investigation.",
+      "description": "Foy is communicating with Sarraga, a government contact, to request an investigation into a perceived threat.",
       "strength": 3
     },
     {
       "person1": "James Seplowitz",
       "person2": "Vegas Army Vet",
-      "relationshipType": "threatener-target",
-      "description": "Seplowitz received a threatening email from the sender 'Vegas Army Vet'.",
+      "relationshipType": "threat recipient-sender",
+      "description": "Seplowitz received a threatening email from 'Vegas Army Vet' with the message 'Go ahead let your client know, THIS ISN'T OVER!!'",
+      "strength": 2
+    },
+    {
+      "person1": "Jason Foy",
+      "person2": "Vegas Army Vet",
+      "relationshipType": "threat target-sender",
+      "description": "Foy interprets the email sent to his partner as a threat against his own safety, likely related to his client.",
       "strength": 2
     }
   ],
@@ -61,19 +68,18 @@
     {
       "date": "2021-05-24",
       "title": "Threatening Email Received",
-      "description": "Attorney James Seplowitz receives an email from 'Vegas Army Vet' containing the message 'Go ahead let your client know, THIS ISN'T OVER!!', which Jason Foy interprets as a threat.",
+      "description": "Attorney James Seplowitz receives an email from 'Vegas Army Vet' with the threatening message 'Go ahead let your client know, THIS ISN'T OVER!!'",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
         "James Seplowitz",
-        "Vegas Army Vet",
-        "Jason Foy"
+        "Vegas Army Vet"
       ]
     },
     {
       "date": "2021-05-24",
       "title": "Request for Government Investigation",
-      "description": "Jason Foy forwards the threatening email to government contact Eric Sarraga, requesting an expedited investigation into its credibility.",
+      "description": "Attorney Jason Foy forwards the threatening email to government contact Eric Sarraga, requesting an expedited investigation into its credibility as a perceived threat against his safety.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -84,14 +90,13 @@
     }
   ],
   "locations": [
-    "Hackensack, NJ 07601",
-    "Foy & Seplowitz LLC (law firm location implied)"
+    "Hackensack, NJ 07601"
   ],
   "keyFacts": [
-    "Attorney Jason Foy received a forwarded email he interpreted as a direct threat to his safety, prompting him to contact government authorities.",
-    "The threatening email was sent to his law partner, James Seplowitz, from an individual using the alias 'Vegas Army Vet'.",
-    "The threat's message, 'Go ahead let your client know, THIS ISN'T OVER!!', suggests it is related to the firm's legal representation of a client.",
-    "Foy formally requested the government to investigate the threat's credibility, indicating serious concern over its potential validity."
+    "Attorney Jason Foy received a forwarded threatening email sent to his partner, James Seplowitz, from 'Vegas Army Vet' on May 24, 2021.",
+    "The threatening email stated: 'Go ahead let your client know, THIS ISN'T OVER!!' which Foy interpreted as a direct threat against his safety.",
+    "Foy requested that the government (contact Eric Sarraga) investigate the threat's credibility, indicating concern over client-related intimidation.",
+    "The email suggests ongoing legal or personal tensions related to Foy's client, prompting a formal request for protective investigation."
   ],
-  "analyzedAt": "2026-02-11T23:50:52.777Z"
+  "analyzedAt": "2026-02-12T02:31:26.716Z"
 }

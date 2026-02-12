@@ -3,54 +3,55 @@
   "dataSet": "9",
   "documentType": "court subpoena",
   "dateOriginal": "2021-07-19",
-  "summary": "This is a court subpoena issued by the U.S. Attorney's Office for the Southern District of New York to the Massachusetts Registry of Vital Records, commanding them to appear and produce a birth certificate for an individual (whose name is redacted) in the case United States v. Ghislaine Maxwell. The subpoena is signed by U.S. Attorney Audrey Strauss.",
+  "summary": "This is a court subpoena issued by the U.S. Attorney's Office for the Southern District of New York to the Massachusetts Registry of Vital Records, commanding them to appear and produce a birth certificate for an individual (name redacted) in the case United States v. Ghislaine Maxwell. The subpoena is signed by U.S. Attorney Audrey Strauss.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The subject of the criminal case (United States v. Ghislaine Maxwell, 20 Cr. 330 (AJN)) for which this subpoena is issued.",
+      "context": "The subject of the criminal case United States v. Ghislaine Maxwell, for which the subpoena is issued to obtain a birth certificate.",
       "mentionCount": 1
     },
     {
       "name": "Audrey Strauss",
       "role": "United States Attorney",
       "category": "legal",
-      "context": "The United States Attorney for the Southern District of New York who signed and issued this subpoena.",
+      "context": "Signed the subpoena as the United States Attorney for the Southern District of New York, issuing the command to the Massachusetts Registry of Vital Records.",
       "mentionCount": 1
     }
   ],
-  "connections": [
-    {
-      "person1": "Audrey Strauss",
-      "person2": "Ghislaine Maxwell",
-      "relationshipType": "legal",
-      "description": "Strauss, as U.S. Attorney, is prosecuting the criminal case against Maxwell.",
-      "strength": 4
-    }
-  ],
+  "connections": [],
   "events": [
     {
       "date": "2021-11-29",
-      "title": "Scheduled Court Appearance for Birth Certificate Production",
-      "description": "The Massachusetts Registry of Vital Records is commanded to appear in court to produce a birth certificate for a redacted individual as part of the Maxwell case.",
+      "title": "Subpoena Appearance Date",
+      "description": "The Massachusetts Registry of Vital Records is commanded to appear before the U.S. District Court in New York to testify and produce a birth certificate.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Audrey Strauss",
-        "Ghislaine Maxwell"
+        "Audrey Strauss"
+      ]
+    },
+    {
+      "date": "2021-07-19",
+      "title": "Subpoena Issued",
+      "description": "The subpoena is dated and signed by U.S. Attorney Audrey Strauss, commanding the production of a birth certificate for the Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Audrey Strauss"
       ]
     }
   ],
   "locations": [
     "Registry of Vital Records and Statistics, 150 Mt. Vernon Street, 1st Floor, Dorchester, MA 02125",
-    "United States District Court for the Southern District of New York, 40 Foley Square, Courtroom 906, Manhattan, New York, NY"
+    "United States District Court for the Southern District of New York, 40 Foley Square, Borough of Manhattan, New York, NY",
+    "One St. Andrew's Plaza, New York, NY 10007"
   ],
   "keyFacts": [
-    "The U.S. Attorney's Office subpoenaed a birth certificate for a redacted individual (referred to as 'N.' and with a DOR number) as part of the Ghislaine Maxwell criminal prosecution.",
-    "The subpoena was issued by U.S. Attorney Audrey Strauss on July 19, 2021, commanding an appearance on November 29, 2021.",
-    "The document indicates ongoing investigative or evidentiary gathering efforts by prosecutors in the Maxwell case well into 2021.",
-    "The target of the subpoena is a state vital records office in Massachusetts, suggesting the individual whose birth certificate is sought may have been born or have records in that state."
+    "The U.S. Attorney's Office subpoenaed the Massachusetts Registry of Vital Records for a birth certificate related to the Ghislaine Maxwell criminal case.",
+    "The subpoena was issued by U.S. Attorney Audrey Strauss on July 19, 2021, with a court appearance scheduled for November 29, 2021.",
+    "The birth certificate is for an individual whose name is redacted in the document, indicated as 'N.' • • -(DOR 1'."
   ],
-  "analyzedAt": "2026-02-11T23:51:29.862Z"
+  "analyzedAt": "2026-02-12T02:32:00.404Z"
 }

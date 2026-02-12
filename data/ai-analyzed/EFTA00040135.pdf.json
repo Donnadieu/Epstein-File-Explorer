@@ -3,31 +3,39 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-11-18",
-  "summary": "This is an email chain from November 18, 2021, regarding a query from Telegraph journalist Josie Ensor to the U.S. Attorney's Office for the Southern District of New York (USANYS) about an unredacted witness name in the Ghislaine Maxwell case. The prosecutor urgently requests the journalist not to publish the name while they verify the information.",
+  "summary": "This is an email chain from November 18, 2021, involving a U.S. Attorney's Office (USANYS) and a Telegraph journalist, Josie Ensor. The journalist inquires about reporting an unredacted witness name that was inadvertently left public in a court filing (Document #453) in the United States vs. Ghislaine Maxwell case. The prosecutor urgently requests the journalist not to publish the name while they verify the information.",
   "persons": [
     {
       "name": "Josie Ensor",
       "role": "Journalist",
       "category": "other",
-      "context": "A correspondent for the British Telegraph newspaper who emails the U.S. Attorney's Office to inquire about reporting on an unredacted witness name in the Ghislaine Maxwell case filing.",
+      "context": "A correspondent for the British Telegraph newspaper who emails the U.S. Attorney's Office to ask if they can report on an unredacted witness name found in a public court filing in the Ghislaine Maxwell case.",
       "mentionCount": 4
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The subject of the criminal case (United States vs. Maxwell) referenced in the email. The query concerns a filing in her trial.",
+      "context": "The subject of the legal case 'United States vs. Maxwell'. The email discusses a filing in her trial where a witness name was left unredacted.",
       "mentionCount": 2
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Josie Ensor",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "journalist-subject",
+      "description": "Ensor is a journalist inquiring about and reporting on the legal case against Maxwell.",
+      "strength": 2
+    }
+  ],
   "events": [
     {
       "date": "2021-11-18",
-      "title": "Journalist inquiry about unredacted witness name",
-      "description": "Journalist Josie Ensor contacts the U.S. Attorney's Office to ask if they can report on a witness name that was left unredacted in a public filing (Document #453) in the Ghislaine Maxwell case.",
+      "title": "Journalist Inquiry About Unredacted Witness Name",
+      "description": "Journalist Josie Ensor contacts the U.S. Attorney's Office to ask if she can report on a witness name that was left unredacted in a public court filing (Document #453) in the United States vs. Ghislaine Maxwell case.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Josie Ensor",
         "Ghislaine Maxwell"
@@ -36,10 +44,10 @@
   ],
   "locations": [],
   "keyFacts": [
-    "A filing in the United States vs. Maxwell case (Document #453) contained an unredacted name of a government-proposed witness.",
-    "The U.S. Attorney's Office was urgently notified by a journalist and requested the name not be published while they verified the information.",
-    "The judge in the Maxwell case had allowed witnesses and victims to remain anonymous through the trial if they chose.",
-    "The communication highlights the sensitivity and procedural handling of witness identities in the high-profile case."
+    "A journalist from The Telegraph identified an unredacted witness name in a public court filing (Document #453) in the Ghislaine Maxwell trial.",
+    "The U.S. Attorney's Office was urgently notified and asked the journalist not to publish the name while they verified the information.",
+    "The document reveals a potential breach of witness anonymity protections ordered by the judge in the Maxwell case.",
+    "The correspondence highlights media scrutiny and procedural concerns regarding the handling of sensitive witness information in high-profile cases."
   ],
-  "analyzedAt": "2026-02-11T23:48:38.246Z"
+  "analyzedAt": "2026-02-12T02:29:07.115Z"
 }

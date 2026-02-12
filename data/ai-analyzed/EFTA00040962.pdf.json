@@ -3,31 +3,39 @@
   "dataSet": "9",
   "documentType": "inmate disciplinary record",
   "dateOriginal": "2025-11-25",
-  "summary": "This is a chronological disciplinary record for inmate Jeffrey Edward Epstein from the Bureau of Prisons, showing an expunged incident report from July 23, 2019, for alleged tattooing or self-mutilation. The report was later dismissed due to insufficient evidence.",
+  "summary": "This is a Bureau of Prisons inmate disciplinary record for Jeffrey Epstein, showing an incident report from July 23, 2019, for tattooing or self-mutilation that was later expunged due to insufficient evidence. The document indicates the disciplinary hearing occurred on August 1, 2019.",
   "persons": [
     {
       "name": "Epstein, Jeffrey Edward",
       "role": "Inmate",
       "category": "key figure",
-      "context": "The inmate who is the subject of this disciplinary record, with an expunged incident report for alleged tattooing or self-mutilation.",
+      "context": "The inmate who is the subject of this disciplinary record, with an incident report for tattooing or self-mutilation that was later expunged.",
       "mentionCount": 2
     },
     {
       "name": "K. Hampton",
       "role": "DHO Chairperson",
-      "category": "staff",
-      "context": "The Disciplinary Hearing Officer (DHO) chairperson who presided over the hearing for the incident report.",
+      "category": "law enforcement",
+      "context": "The Disciplinary Hearing Officer (DHO) chairperson listed for the hearing regarding Epstein's incident report.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Epstein, Jeffrey Edward",
+      "person2": "K. Hampton",
+      "relationshipType": "legal",
+      "description": "Hampton served as the Disciplinary Hearing Officer chairperson for Epstein's hearing regarding the incident report.",
+      "strength": 2
+    }
+  ],
   "events": [
     {
       "date": "2019-07-23",
-      "title": "Alleged Tattooing/Self-Mutilation Incident",
-      "description": "An incident report was filed against Jeffrey Epstein for alleged tattooing or self-mutilation while in custody.",
+      "title": "Tattooing/Self-Mutilation Incident",
+      "description": "An incident report (3282555) was filed against Jeffrey Epstein for tattooing or self-mutilation while in custody.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Epstein, Jeffrey Edward"
       ]
@@ -35,20 +43,31 @@
     {
       "date": "2019-08-01",
       "title": "DHO Hearing",
-      "description": "A Disciplinary Hearing Officer (DHO) hearing was held to review the incident report, resulting in expungement due to insufficient evidence.",
+      "description": "A Disciplinary Hearing Officer hearing was held regarding the incident report against Epstein, chaired by K. Hampton.",
       "category": "legal",
-      "significance": 3,
+      "significance": 2,
       "personsInvolved": [
         "Epstein, Jeffrey Edward",
         "K. Hampton"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Report Expunged",
+      "description": "The incident report (3282555) was expunged due to insufficient evidence to support the prohibited act of tattooing or self-mutilation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Epstein, Jeffrey Edward"
       ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "Jeffrey Epstein had an incident report (3282555) for alleged tattooing or self-mutilation on July 23, 2019, while in custody.",
-    "The incident report was expunged after a DHO hearing on August 1, 2019, due to insufficient evidence to support the prohibited act.",
-    "The document is a Bureau of Prisons inmate disciplinary record, dated November 25, 2025, showing the chronological disciplinary history."
+    "Jeffrey Epstein had an incident report (3282555) filed against him on July 23, 2019, for tattooing or self-mutilation while in custody.",
+    "The incident report was later expunged due to insufficient evidence to support the prohibited act.",
+    "A Disciplinary Hearing Officer hearing was held on August 1, 2019, regarding this incident, chaired by K. Hampton.",
+    "This document shows official Bureau of Prisons disciplinary procedures were followed regarding Epstein while he was incarcerated."
   ],
-  "analyzedAt": "2026-02-11T16:16:48.767Z"
+  "analyzedAt": "2026-02-12T03:44:51.436Z"
 }

@@ -3,19 +3,33 @@
   "dataSet": "1",
   "documentType": "property record",
   "dateOriginal": null,
-  "summary": "This appears to be a property deed or conveyance document related to real estate on Virgin Islands land. It involves parties granting and receiving property rights, with signatures and notarization, but the text is heavily garbled and incomplete.",
-  "persons": [],
+  "summary": "This appears to be a property deed or land record document, likely related to a real estate transaction on Virgin Islands property. The text contains legal property transfer language, references to parties of the first and second part, and mentions the Virgin Islands. It includes a notarization section with signatures.",
+  "persons": [
+    {
+      "name": "Johns Island",
+      "role": "Property owner or party to transaction",
+      "category": "other",
+      "context": "Mentioned in the document text, likely as a party involved in the property transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Caltocip",
+      "role": "Notary public or signing official",
+      "category": "legal",
+      "context": "Appeared personally to notarize the document, identified as a president of an entity (possibly 'Cretan' or similar).",
+      "mentionCount": 1
+    }
+  ],
   "connections": [],
   "events": [],
   "locations": [
     "Virgin Islands"
   ],
   "keyFacts": [
-    "Document is a property record or deed related to land in the Virgin Islands.",
-    "Text is heavily corrupted, garbled, and incomplete, making specific extraction of named individuals impossible.",
-    "The document involves parties of a first part and second part in a property transaction.",
-    "It references fee simple ownership and quiet enjoyment of premises.",
-    "Includes notarization language, indicating it is a formal legal property document."
+    "Document is a property deed or land record involving Virgin Islands real estate.",
+    "Uses standard legal property transfer language ('party of the first part', 'party of the second part', 'quiet enjoyment').",
+    "Includes a notarization section with a signature by an official named Caltocip.",
+    "The property interest is described as being in 'fee simple' (full ownership)."
   ],
-  "analyzedAt": "2026-02-11T22:55:35.993Z"
+  "analyzedAt": "2026-02-12T01:33:04.250Z"
 }

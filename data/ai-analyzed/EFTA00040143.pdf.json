@@ -3,39 +3,39 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-11-19",
-  "summary": "This appears to be a calendar entry or scheduling document for a Zoom meeting in the case United States v. Ghislaine Maxwell, scheduled for November 22-23, 2021. It lists Allison Stoddart as an attendee and is classified as 'X-PERSONAL'.",
+  "summary": "This appears to be a calendar entry or scheduling document for a proceeding in the case United States v. Ghislaine Maxwell, scheduled for November 22-23, 2021, to be held via Zoom. It lists Allison Stoddart as an attendee.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "Named as the defendant in the criminal case United States v. Ghislaine Maxwell.",
+      "context": "The subject of the criminal case United States v. Ghislaine Maxwell, referenced in the document's event title.",
       "mentionCount": 1
     },
     {
       "name": "Allison Stoddart",
       "role": "Attendee",
       "category": "legal",
-      "context": "Listed as an attendee for the scheduled Zoom meeting in the Maxwell case.",
+      "context": "Listed as an attendee for the scheduled Zoom meeting related to the Ghislaine Maxwell case.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Allison Stoddart",
+      "person1": "Allison Stoddart",
+      "person2": "Ghislaine Maxwell",
       "relationshipType": "legal",
-      "description": "Stoddart is listed as an attendee for a court-related meeting in Maxwell's criminal case.",
+      "description": "Stoddart is listed as an attendee for a court proceeding in the case against Maxwell, indicating a professional legal or administrative connection to the case.",
       "strength": 2
     }
   ],
   "events": [
     {
       "date": "2021-11-22",
-      "title": "Scheduled Zoom Meeting in Maxwell Case",
-      "description": "A Zoom meeting was scheduled for the case United States v. Ghislaine Maxwell, classified as 'X-PERSONAL'.",
+      "title": "Scheduled Court Proceeding for Maxwell Case",
+      "description": "A scheduled event for the case United States v. Ghislaine Maxwell, to be conducted via Zoom.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Ghislaine Maxwell",
         "Allison Stoddart"
@@ -46,9 +46,9 @@
     "Zoom Meeting - Meeting ID Below"
   ],
   "keyFacts": [
-    "A court-related Zoom meeting was scheduled for November 22-23, 2021, in the criminal case against Ghislaine Maxwell.",
-    "The meeting was classified with the comment 'X-PERSONAL'.",
-    "Allison Stoddart is listed as an attendee for this meeting."
+    "A court proceeding for United States v. Ghislaine Maxwell was scheduled for November 22-23, 2021.",
+    "The proceeding was to be held remotely via a Zoom meeting.",
+    "Allison Stoddart is identified as an attendee for this event."
   ],
-  "analyzedAt": "2026-02-11T23:49:43.825Z"
+  "analyzedAt": "2026-02-12T02:30:13.552Z"
 }

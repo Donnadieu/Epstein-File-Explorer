@@ -3,57 +3,71 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2020-01-10",
-  "summary": "This is an email from an Assistant U.S. Attorney in the Southern District of New York dated January 10, 2020, summarizing clarifications provided by a witness (likely Ghislaine Maxwell) regarding her previous statements. The clarifications cover details about her marriage, interactions with Jeffrey Epstein, financial matters, legal representation, and specific allegations about activities on Epstein's island.",
+  "summary": "This is an email from an Assistant U.S. Attorney in the Southern District of New York dated January 10, 2020, summarizing clarifications provided by a witness (likely Ghislaine Maxwell) regarding her previous statements. The clarifications cover details about her marriage, interactions with Jeffrey Epstein, knowledge of investigations, and her legal representation.",
   "persons": [
     {
-      "name": "Noah",
-      "role": "Husband of the witness",
-      "category": "associate",
-      "context": "Mentioned as the husband of the witness, with a clarification that he was 23 (not 22) when they married while she was 17.",
-      "mentionCount": 2
+      "name": "Ghislaine Maxwell",
+      "role": "Witness providing clarifications",
+      "category": "key figure",
+      "context": "The subject of the email is clarifications to her previous statements regarding her marriage age, interactions with Jeffrey Epstein, knowledge of media inquiries, and legal representation.",
+      "mentionCount": 1
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Accused",
+      "role": "Subject of investigation",
       "category": "key figure",
-      "context": "Central figure discussed; clarifications involve his instructions to dispose of evidence in Palm Beach, a 2018 meeting in New York about finances, his knowledge of media inquiries, and his control over the witness's legal representation and access to his properties.",
-      "mentionCount": 6
+      "context": "Mentioned in relation to instructing someone to destroy evidence in Palm Beach, a 2018 meeting in New York about finances, and his knowledge of media inquiries.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Noah",
+      "role": "Husband",
+      "category": "associate",
+      "context": "Clarified to be 23 years old when he married the witness, who was 17 at the time.",
+      "mentionCount": 1
     },
     {
       "name": "Johnny Stevenson",
       "role": "Attorney",
       "category": "legal",
-      "context": "Mentioned phonetically; prior to him, the witness had legal counsel chosen by Epstein. He is noted in the context of the witness's legal representation history.",
+      "context": "Mentioned phonetically; prior to him, the witness had legal counsel chosen by Epstein.",
       "mentionCount": 1
     },
     {
       "name": "Assistant U.S. Attorney",
       "role": "Prosecutor",
       "category": "legal",
-      "context": "The sender of the email, working in the Southern District of New York, who is documenting clarifications from a witness.",
+      "context": "The sender of the email from the Southern District of New York, documenting witness clarifications.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Noah",
-      "person2": "Witness (likely Ghislaine Maxwell)",
-      "relationshipType": "spousal",
-      "description": "Clarification that they were married when she was 17 and he was 23.",
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell recalls Epstein telling someone to destroy computers, directories, and photos in Palm Beach; she had a 2018 meeting with him in New York regarding finances and communicated with him about her husband's medical issues.",
       "strength": 4
     },
     {
-      "person1": "Witness (likely Ghislaine Maxwell)",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "associate",
-      "description": "The witness received instructions from Epstein, communicated with him about finances and media inquiries, and had her legal representation initially controlled by him.",
-      "strength": 5
+      "person1": "Ghislaine Maxwell",
+      "person2": "Noah",
+      "relationshipType": "spousal",
+      "description": "Clarification that Noah was 23 and Maxwell was 17 when they were married.",
+      "strength": 3
     },
     {
-      "person1": "Witness (likely Ghislaine Maxwell)",
+      "person1": "Ghislaine Maxwell",
       "person2": "Johnny Stevenson",
       "relationshipType": "attorney-client",
-      "description": "Johnny Stevenson represented the witness in legal cases, marking the first time she had her own legal representation separate from Epstein's choices.",
+      "description": "Stevenson represented Maxwell in the VR case, marking the first time she had her own legal representation separate from Epstein's chosen counsel.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Epstein's payment was reported on Maxwell's taxes, and they discussed financial issues in connection with her husband's medical problems.",
       "strength": 3
     }
   ],
@@ -61,32 +75,41 @@
     {
       "date": "2018",
       "title": "Meeting with Epstein in New York",
-      "description": "A meeting between the witness and Jeffrey Epstein in New York to discuss financial issues.",
+      "description": "Ghislaine Maxwell met with Jeffrey Epstein in New York to discuss financial issues.",
       "category": "financial",
       "significance": 3,
       "personsInvolved": [
-        "Witness (likely Ghislaine Maxwell)",
+        "Ghislaine Maxwell",
         "Jeffrey Epstein"
       ]
     },
     {
       "date": "2018-11",
-      "title": "Planned deposition that did not occur",
-      "description": "The witness was supposed to be deposed in November 2018 in a case, but believes the case settled before that happened.",
+      "title": "Scheduled deposition that didn't occur",
+      "description": "Maxwell was supposed to be deposed in November 2018 in a case, but she believes the case settled before that happened.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
-        "Witness (likely Ghislaine Maxwell)"
+        "Ghislaine Maxwell"
       ]
     },
     {
       "date": "2019",
-      "title": "Tax reporting clarification",
-      "description": "Discussion about reporting Epstein's payments on the witness's taxes, with reference to a conversation with an accountant prior to the 2019 tax returns.",
+      "title": "Tax return preparation",
+      "description": "Prior to the 2019 tax returns, Maxwell's accountant had a conversation informing their understanding of who would pay taxes on money from Epstein.",
       "category": "financial",
-      "significance": 3,
+      "significance": 2,
       "personsInvolved": [
-        "Witness (likely Ghislaine Maxwell)",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Instruction to destroy evidence",
+      "description": "Epstein told someone to get rid of computers, directories, and photos in Palm Beach; Maxwell's recollection is clear about the computers but not the directories and photos.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
         "Jeffrey Epstein"
       ]
     }
@@ -94,14 +117,14 @@
   "locations": [
     "Palm Beach",
     "New York City",
-    "Epstein's island"
+    "The island (likely Little St. James)"
   ],
   "keyFacts": [
-    "The witness clarified that her husband Noah was 23 (not 22) when they married while she was 17.",
-    "The witness recalls Epstein instructing her to get rid of computers in Palm Beach, but is less clear about instructions regarding directories and photos.",
-    "Epstein was aware of media inquiries from the Herald in April and November, as the witness had raised this with him.",
-    "The witness's first independent legal representation was for the VR case, after which the same attorney represented her in another case; prior to that, her counsel was chosen by Epstein.",
-    "A specific allegation is clarified: regarding GM (likely Ghislaine Maxwell), she directed women to be wrapped in saran-wrap, and there was always a massage table outside on the island, not brought out just for a photo shoot."
+    "Ghislaine Maxwell clarified that her husband Noah was 23 (not 22) when they married, while she was 17.",
+    "Maxwell recalls Jeffrey Epstein instructing someone to destroy computers, and possibly directories and photos, in Palm Beach.",
+    "Epstein was aware of media inquiries from the Herald in April and November, as Maxwell had raised the fact that she had been asked for an interview.",
+    "Maxwell's first independent legal representation was for the VR case, with attorney Johnny Stevenson; prior to that, she had counsel chosen by Epstein.",
+    "Maxwell only went to Epstein's New York mansion when directed and did not have direct access prior to his incarceration."
   ],
-  "analyzedAt": "2026-02-11T15:43:36.786Z"
+  "analyzedAt": "2026-02-12T03:12:04.882Z"
 }

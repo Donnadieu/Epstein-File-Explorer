@@ -3,37 +3,40 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-04-22",
-  "summary": "This document is an email chain between legal counsel in the case of United States v. Ghislaine Maxwell, discussing procedural matters related to the public filing of reply briefs and exhibits. The correspondence focuses on conferring about proposed redactions to protect the privacy of victims, third parties, and Assistant U.S. Attorneys, as ordered by Judge Nathan. It reveals the negotiation process between the defense and prosecution regarding what information should remain sealed.",
+  "summary": "This document is an email chain between legal counsel in the case of United States v. Ghislaine Maxwell, discussing procedural matters related to the public filing of reply briefs and exhibits. The correspondence focuses on conferring about proposed redactions to protect the privacy of victims, third parties, and Assistant U.S. Attorneys, as ordered by Judge Nathan. It reveals the negotiation process between the defense and prosecution regarding what information should remain sealed or redacted from the public docket.",
   "persons": [
     {
       "name": "GMJetter",
-      "role": "Attorney (likely for the defense)",
+      "role": "Legal Counsel (sender of email with attachment)",
       "category": "legal",
-      "context": "The sender of the initial email in the chain, attaching a letter intended for filing with the court regarding redactions to reply briefs.",
+      "context": "Appears to be an attorney involved in the case, sending a letter intended for filing with the court regarding redactions to reply briefs.",
       "mentionCount": 1
     },
     {
       "name": "Judge Nathan",
       "role": "Presiding Judge",
       "category": "legal",
-      "context": "The judge who issued orders (Dkt. 203, 207) directing the parties to confer on redactions and pretrial disclosure deadlines.",
+      "context": "The judge overseeing the US v. Maxwell case, who issued orders (Dkt. 203, 207) directing the parties to address filing and redaction of documents.",
       "mentionCount": 2
     }
   ],
-  "connections": [
-    {
-      "person1": "GMJetter",
-      "person2": "Judge Nathan",
-      "relationshipType": "legal",
-      "description": "Attorney (likely for the defense) is following the court's orders issued by Judge Nathan regarding the filing and redaction of legal briefs.",
-      "strength": 2
-    }
-  ],
+  "connections": [],
   "events": [
+    {
+      "date": "2021-04-22",
+      "title": "Filing of Letter Regarding Redactions",
+      "description": "An attorney (GMJetter) intends to file a letter on the ECF docket per the court's order (Dkt. 232) to address redactions and sealing of reply briefs and exhibits.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "GMJetter",
+        "Judge Nathan"
+      ]
+    },
     {
       "date": "2021-04-01",
       "title": "Submission of Joint Letter",
-      "description": "The parties submitted a joint letter to the court, which Judge Nathan later ordered to be docketed or have redactions proposed by April 19, 2021.",
+      "description": "The parties submitted a joint letter, which Judge Nathan later ordered to be docketed or have redactions proposed by April 19, 2021.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -49,24 +52,15 @@
       "personsInvolved": [
         "Judge Nathan"
       ]
-    },
-    {
-      "date": "2021-04-22",
-      "title": "Filing of Letter on Redactions",
-      "description": "GMJetter indicates intent to file a letter on the court's electronic docket (ECF) regarding the parties' positions on redactions for several reply briefs.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": [
-        "GMJetter"
-      ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "The document is a chain of emails between legal teams negotiating redactions to undocketed reply briefs in the Ghislaine Maxwell criminal case.",
-    "The primary dispute centers on whether to redact names of Assistant U.S. Attorneys (AUSAs), accusers (victims), and other third parties to protect their privacy, with the defense often having no objection to public filing.",
-    "The government seeks to keep certain exhibits under seal or redacted, citing a Protective Order and the need to protect victim and third-party privacy, which the defense generally does not oppose but leaves for the government to justify to the court.",
-    "Judge Nathan had previously set deadlines and ruled on specific redactions, providing a framework for the parties' discussions."
+    "The email chain details negotiations between prosecution and defense over redacting names of Assistant U.S. Attorneys (AUSAs), accusers (victims), and third parties from public court filings.",
+    "The defense indicated it had no objection to removing redactions for accusers and a specific individual (name redacted in text), but redacted AUSA names as a courtesy.",
+    "Multiple reply briefs (1, 3, 5, 6, 10) and their exhibits were under discussion, with disagreements on whether they should be filed publicly, under seal, or with specific redactions.",
+    "The government's position was that redactions were necessary to protect the privacy interests of victims and third parties, as designated under a Protective Order.",
+    "The correspondence was prompted by court orders (Dkt. 203, 207) requiring the parties to confer and propose redactions for undocketed reply briefs."
   ],
-  "analyzedAt": "2026-02-11T23:25:07.401Z"
+  "analyzedAt": "2026-02-12T02:03:55.858Z"
 }

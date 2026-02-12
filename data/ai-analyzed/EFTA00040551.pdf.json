@@ -3,40 +3,56 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-03-04",
-  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York, dated March 4, 2021, transmitting a rough first draft of the government's third bail opposition filing in the Ghislaine Maxwell case. The sender seeks feedback on highlighted language and sections, notes the draft is longer than expected, and mentions awaiting feedback regarding France for the citizenship/extradition section.",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York, dated March 4, 2021, transmitting a draft of the government's third bail opposition brief in the Ghislaine Maxwell case. The sender requests feedback on highlighted language and sections, noting the document is longer than expected and includes preliminary information on citizenship and extradition issues related to France.",
   "persons": [
     {
       "name": "Assistant United States Attorney",
       "role": "Prosecutor",
       "category": "legal",
-      "context": "Sender of the email, working on the government's third bail opposition filing against Ghislaine Maxwell, seeking feedback on the draft.",
+      "context": "Sender of the email, working on the government's third bail opposition brief against Ghislaine Maxwell, requesting feedback on the draft.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the bail opposition brief being drafted by the government.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "The prosecutor is drafting a bail opposition brief arguing against Ghislaine Maxwell's release.",
+      "strength": 4
+    }
+  ],
   "events": [
     {
-      "date": "2021-03-04",
-      "title": "Draft Bail Opposition Prepared",
-      "description": "An Assistant United States Attorney sends a rough first draft of the government's third bail opposition filing in the Ghislaine Maxwell case to a colleague for feedback.",
+      "date": "2021-03-09",
+      "title": "Drafting of Government's Third Bail Opposition",
+      "description": "The Assistant United States Attorney is preparing a draft opposition to Ghislaine Maxwell's bail request, noting it is longer than expected and includes sections on citizenship and extradition issues related to France.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Assistant United States Attorney"
+        "Assistant United States Attorney",
+        "Ghislaine Maxwell"
       ]
     }
   ],
   "locations": [
     "New York, New York",
     "One St. Andrew's Plaza, New York, New York 10007",
-    "Southern District of New York"
+    "France"
   ],
   "keyFacts": [
-    "The document is an internal government email regarding the Ghislaine Maxwell prosecution.",
-    "It references a draft of the government's third bail opposition filing, indicating ongoing legal proceedings in March 2021.",
-    "The draft includes a section on citizenship and extradition related to France, suggesting international legal considerations.",
-    "The email notes the draft is longer than expected, showing the complexity of the government's arguments.",
-    "The correspondence originates from the U.S. Attorney's Office for the Southern District of New York."
+    "The document is an email dated March 4, 2021, from an Assistant U.S. Attorney in the SDNY regarding the Ghislaine Maxwell case.",
+    "It transmits a draft of the government's third bail opposition brief, indicating ongoing legal proceedings against Maxwell in early 2021.",
+    "The draft includes a section on citizenship and extradition issues related to France, suggesting international legal considerations in the case.",
+    "The sender notes the draft is longer than expected and requests feedback on highlighted language and potential cuts.",
+    "The correspondence shows coordination within the prosecution team on legal strategy for opposing Maxwell's bail."
   ],
-  "analyzedAt": "2026-02-11T15:37:49.763Z"
+  "analyzedAt": "2026-02-12T03:06:35.286Z"
 }

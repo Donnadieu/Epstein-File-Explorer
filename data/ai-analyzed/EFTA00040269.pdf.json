@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "grand jury transcript",
   "dateOriginal": null,
-  "summary": "This document is a transcript of court proceedings from the Epstein case. The defense attorney moves for a mistrial, citing issues with witness testimony and the use of first names to protect alleged victims' identities. The judge denies the motion, provides a jury instruction explaining the name protection protocol, and directs the government to provide witnesses with a list of individuals whose identities are protected.",
+  "summary": "This document is a transcript of court proceedings from an Epstein-related case. It shows the defense attorney moving for a mistrial due to issues with witness testimony regarding the use of first names to protect alleged victims' identities. The judge denies the motion and implements a procedure to provide witnesses with a list of individuals whose identities should be protected.",
   "persons": [
     {
       "name": "Mr. Agnifilo",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Defense attorney who moves for a mistrial, objects to the judge's proposed jury instruction, and is directed not to make speaking objections.",
+      "context": "Defense attorney who moves for a mistrial and objects to the judge's proposed jury instruction regarding the protection of alleged victims' names.",
       "mentionCount": 3
     },
     {
@@ -20,33 +20,44 @@
       "mentionCount": 2
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Mr. Agnifilo",
+      "person2": "The Court",
+      "relationshipType": "legal",
+      "description": "Attorney representing the defendant interacting with the judge regarding procedural matters and objections.",
+      "strength": 4
+    }
+  ],
   "events": [
     {
       "date": null,
-      "title": "Defense Motion for Mistrial Denied",
-      "description": "The defense attorney moves for a mistrial, citing issues with witness testimony and the protection of alleged victims' names. The judge denies the motion.",
+      "title": "Motion for Mistrial Denied",
+      "description": "The defense attorney moves for a mistrial due to issues with witness testimony about using first names to protect alleged victims' identities. The judge denies the motion.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
-        "Mr. Agnifilo"
+        "Mr. Agnifilo",
+        "The Court"
       ]
     },
     {
       "date": null,
-      "title": "Jury Instruction on Name Protection",
-      "description": "The judge provides a jury instruction explaining that alleged victims' full names are being withheld from the public/press for privacy, and that witnesses will use first names only or refer to a protected list.",
+      "title": "Jury Instruction on Protected Identities",
+      "description": "The judge provides a jury instruction explaining that alleged victims' full names are being withheld from the public and press, and that witnesses will use first names only or refer to a protected list.",
       "category": "legal",
       "significance": 3,
-      "personsInvolved": []
+      "personsInvolved": [
+        "The Court"
+      ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "The defense moved for a mistrial over procedural issues related to witness testimony and name protection, but the motion was denied.",
-    "The court is protecting the identities of alleged victims by having witnesses refer to them by first name only in open court.",
-    "The judge directed the government to provide witnesses with a list of individuals whose identities should be protected to avoid on-the-spot questions during testimony.",
-    "The judge instructed parties not to make speaking objections, requiring a sidebar if the basis for an objection isn't apparent."
+    "The defense moved for a mistrial over procedural issues regarding the protection of alleged victims' identities during testimony.",
+    "The judge denied the mistrial motion, stating the issue could be cured with a jury instruction.",
+    "A procedure was established to provide witnesses with a list of individuals whose identities should be protected from public disclosure.",
+    "The transcript reveals ongoing efforts to balance trial transparency with the privacy protection of alleged victims."
   ],
-  "analyzedAt": "2026-02-12T00:02:02.884Z"
+  "analyzedAt": "2026-02-12T02:43:15.388Z"
 }

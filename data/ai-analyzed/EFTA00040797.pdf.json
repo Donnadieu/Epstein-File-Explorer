@@ -3,8 +3,15 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-08-20",
-  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan regarding the case United States v. Ghislaine Maxwell. The Government is responding to defense counsel's letter and requests a limited unsealing of the Court's August 13, 2021 opinion and underlying motion papers to review and propose redactions, as the Government does not have copies and believes the papers may contain names of victims and potential witnesses.",
+  "summary": "This is a letter from the U.S. Attorney's Office for the Southern District of New York to Judge Alison J. Nathan regarding the case United States v. Ghislaine Maxwell. The Government is responding to a defense letter and requests a limited unsealing of a prior court opinion and motion papers to review them for potential redactions, particularly of victim and witness names.",
   "persons": [
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Presiding judge in the case United States v. Ghislaine Maxwell; the letter is addressed to her.",
+      "mentionCount": 2
+    },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
@@ -13,17 +20,10 @@
       "mentionCount": 1
     },
     {
-      "name": "Alison J. Nathan",
-      "role": "United States District Judge",
-      "category": "legal",
-      "context": "The judge presiding over the case, to whom this letter is addressed.",
-      "mentionCount": 2
-    },
-    {
       "name": "Audrey Strauss",
       "role": "United States Attorney",
       "category": "legal",
-      "context": "The United States Attorney who submitted this letter on behalf of the Government.",
+      "context": "The United States Attorney who submitted the letter to the court.",
       "mentionCount": 1
     }
   ],
@@ -39,7 +39,7 @@
       "person1": "Audrey Strauss",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "legal",
-      "description": "Strauss, as U.S. Attorney, is representing the Government prosecuting Maxwell.",
+      "description": "Strauss, as U.S. Attorney, is part of the prosecution team against Maxwell.",
       "strength": 4
     }
   ],
@@ -57,8 +57,8 @@
     },
     {
       "date": "2021-08-19",
-      "title": "Defense Counsel's Letter",
-      "description": "Defense counsel submitted a letter to the Court regarding sealing/redactions of the August 13 opinion and motion papers.",
+      "title": "Defense Counsel Submits Letter",
+      "description": "Defense counsel submitted a letter to the Court regarding sealing/redaction of the August 13 opinion and motion papers.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -67,10 +67,10 @@
     },
     {
       "date": "2021-08-20",
-      "title": "Government's Response Letter",
-      "description": "The Government filed this letter in response to defense counsel's August 19 letter, requesting limited unsealing of documents.",
+      "title": "Government Requests Limited Unsealing",
+      "description": "The Government files this letter requesting a limited unsealing of the August 13 opinion and motion papers to review for potential redactions.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Audrey Strauss",
         "Alison J. Nathan",
@@ -85,10 +85,11 @@
     "The Silvio J. Motto Building, One Saint Andrew's Plaza, New York, New York 10007"
   ],
   "keyFacts": [
-    "The Government does not have a copy of the sealed motion papers or the Court's August 13, 2021 Opinion and Order denying defense subpoenas.",
-    "The Government believes the sealed motion papers include names of victims and potential witnesses, which they would likely move to redact.",
-    "Defense counsel informed the Government they cannot provide a copy of the sealed documents without a further court order.",
-    "The Government is requesting a limited unsealing of the Court's opinion and underlying motion papers solely to review them and propose redactions."
+    "The Government is seeking to unseal a prior court opinion and motion papers to review them for potential redactions, specifically noting the papers likely contain names of victims and potential witnesses.",
+    "The defense had filed a sealed, ex parte motion for subpoenas, which the court denied in a sealed opinion on August 13, 2021.",
+    "The defense stated they seek no redactions and believe the burden to justify redactions is on the Government.",
+    "The Government states it does not have copies of the sealed motion papers or the court's opinion, preventing it from proposing redactions.",
+    "This document highlights procedural tensions between prosecution and defense regarding the sealing of sensitive case materials."
   ],
-  "analyzedAt": "2026-02-11T16:04:09.388Z"
+  "analyzedAt": "2026-02-12T03:31:45.398Z"
 }

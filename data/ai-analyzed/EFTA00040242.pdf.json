@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "court filing",
   "dateOriginal": "2021-11-29",
-  "summary": "This document is a subpoena issued by Ghislaine Maxwell's defense attorney to Jordana Feldman, the Administrator of the Epstein Victims' Compensation Program (EVCP), commanding the production of documents related to the program and its claimants. It includes the subpoena form, proof of service instructions, and the full text of the EVCP Protocol detailing the program's administration and claims process.",
+  "summary": "This document is a subpoena issued by Ghislaine Maxwell's defense attorney to Jordana Feldman, the Administrator of the Epstein Victims' Compensation Program (EVCP), commanding the production of documents related to the program and its claimants. It includes the subpoena form, proof of service instructions, and the full protocol of the EVCP, detailing its purpose, administration, and claims process.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
@@ -23,7 +23,7 @@
       "name": "Jeffrey S. Pagliuca",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Attorney representing Ghislaine Maxwell who requests and serves this subpoena.",
+      "context": "The attorney representing Ghislaine Maxwell who is requesting the subpoena, from the firm Haddon, Morgan & Foreman P.C.",
       "mentionCount": 1
     },
     {
@@ -43,24 +43,31 @@
     {
       "name": "Marci A. Hamilton",
       "role": "Sexual Abuse Expert Consultant",
-      "category": "legal",
-      "context": "A professor and sexual abuse expert who may be consulted by the Program Administrator to inform about dynamics of sexual abuse and victims' rights.",
+      "category": "other",
+      "context": "A professor and sexual abuse expert who may be consulted by the Program Administrator to inform about the dynamics and impact of sexual abuse.",
       "mentionCount": 3
     },
     {
       "name": "Jeffrey Epstein",
       "role": "Deceased Accused",
       "category": "key figure",
-      "context": "The individual whose estate established the compensation program for victims of his alleged sexual abuse.",
+      "context": "The individual whose alleged sexual abuse is the subject of the compensation program established by his estate.",
       "mentionCount": 10
     }
   ],
   "connections": [
     {
       "person1": "Ghislaine Maxwell",
-      "person2": "Jeffrey S. Pagliuca",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is accused of assisting Epstein in the procurement of victims for sexual abuse, as referenced in the EVCP protocol regarding eligibility.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey S. Pagliuca",
+      "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Pagliuca is the defense attorney representing Maxwell in criminal case 20CR330, as indicated by his request for this subpoena.",
+      "description": "Pagliuca is the attorney representing defendant Ghislaine Maxwell in the criminal case, as indicated on the subpoena.",
       "strength": 5
     },
     {
@@ -81,41 +88,34 @@
       "person1": "Jordana Feldman",
       "person2": "Marci A. Hamilton",
       "relationshipType": "consultant-client",
-      "description": "Feldman, as Administrator, may consult with Hamilton, a sexual abuse expert, to inform the Program's policies and review claimant files.",
+      "description": "The Administrator (Feldman) may, at her discretion and with a claimant's consent, consult with Professor Hamilton for expert advice on sexual abuse dynamics.",
       "strength": 3
-    },
-    {
-      "person1": "Ghislaine Maxwell",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "co-accused",
-      "description": "The document references individuals who have accused both Epstein and Maxwell of misconduct, linking them as co-accused in the context of the compensation program.",
-      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2021-11-29",
       "title": "Subpoena Issued to EVCP Administrator",
-      "description": "Ghislaine Maxwell's defense attorney issues a subpoena to Jordana Feldman, Administrator of the Epstein Victims' Compensation Program, commanding production of documents related to the program and its claimants.",
+      "description": "Ghislaine Maxwell's defense attorney issues a subpoena to Jordana Feldman, Administrator of the Epstein Victims' Compensation Program, commanding the production of documents related to the program and its claimants.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
         "Ghislaine Maxwell",
-        "Jordana Feldman",
-        "Jeffrey S. Pagliuca"
+        "Jeffrey S. Pagliuca",
+        "Jordana Feldman"
       ]
     },
     {
       "date": "2020-05-29",
-      "title": "Epstein Victims' Compensation Program Protocol Established",
-      "description": "The Protocol for the independent Epstein Victims' Compensation Program is finalized, outlining the process for victims to file claims against the Estate of Jeffrey Epstein.",
+      "title": "EVCP Protocol Established",
+      "description": "The Epstein Victims' Compensation Program Protocol is finalized, outlining the voluntary, independent program to compensate victims of sexual abuse by Jeffrey Epstein.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
         "Jordana Feldman",
         "Kenneth R. Feinberg",
         "Camille S. Biros",
-        "Marci A. Hamilton"
+        "Jeffrey Epstein"
       ]
     }
   ],
@@ -126,11 +126,11 @@
     "United States Virgin Islands"
   ],
   "keyFacts": [
-    "Ghislaine Maxwell's defense team subpoenaed the Epstein Victims' Compensation Program for all claimant materials, communications, payments, and releases.",
-    "The subpoena seeks to obtain evidence from the compensation program that may be used in Maxwell's criminal defense (Case No. 20CR330).",
-    "The Epstein Victims' Compensation Program was designed to be independent, voluntary, and confidential, with no cap on available funds for victims.",
-    "The program allowed victims to participate regardless of whether their claims were time-barred by statutes of limitations or if they had previously settled with Epstein.",
-    "The program protocol explicitly states that claimants are not bound by confidentiality rules and may discuss their allegations publicly, even after accepting compensation."
+    "Ghislaine Maxwell's defense team subpoenaed the administrator of the Epstein Victims' Compensation Program for all materials related to accusers, including claim forms, communications, payments, and releases.",
+    "The subpoena is part of criminal case 20CR330 against Ghislaine Maxwell, with a production date set for November 29, 2021.",
+    "The Epstein Victims' Compensation Program was established by the Estate of Jeffrey Epstein and administered independently by Jordana Feldman, with design input from Kenneth Feinberg and Camille Biros.",
+    "The program protocol explicitly states it is available to victims regardless of when or where they were harmed, and even if their claims are time-barred or they previously settled with Epstein.",
+    "The protocol notes that individuals who allegedly assisted Epstein in procuring victims may be eligible for the program if there is a credible basis they acted under duress due to their own sexual abuse by Epstein."
   ],
-  "analyzedAt": "2026-02-12T00:01:21.756Z"
+  "analyzedAt": "2026-02-12T02:42:35.936Z"
 }

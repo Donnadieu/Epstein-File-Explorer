@@ -3,13 +3,13 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-10-28",
-  "summary": "This is an internal email from the U.S. Attorney's Office for the Southern District of New York regarding a FOIA request from Bloomberg News. The request seeks the identity of a financial institution referred to as 'Institution-1' in a court filing related to Jeffrey Epstein's criminal case. The email suggests the information is likely exempt from disclosure.",
+  "summary": "This is an internal email from the U.S. Attorney's Office for the Southern District of New York regarding a FOIA request from Bloomberg News. The request seeks the identity of a financial institution (referred to as \"Institution-1\") mentioned in a court filing related to the Jeffrey Epstein criminal case. The email suggests the information is likely exempt from disclosure.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "The subject of the criminal case brought by the U.S. Attorney for the Southern District of New York in July 2019; his assets are controlled by an unnamed financial institution.",
+      "context": "The subject of the criminal case (19-cr-00490) brought by the SDNY in July 2019. The FOIA request concerns assets controlled by him.",
       "mentionCount": 2
     }
   ],
@@ -17,8 +17,8 @@
   "events": [
     {
       "date": "2019-07",
-      "title": "Criminal Case Filed Against Jeffrey Epstein",
-      "description": "The U.S. Attorney for the Southern District of New York brought a criminal case against Jeffrey Epstein.",
+      "title": "SDNY brings criminal case against Jeffrey Epstein",
+      "description": "The U.S. Attorney for the Southern District of New York brings a criminal case against Jeffrey Epstein.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -26,23 +26,22 @@
       ]
     },
     {
-      "date": "2019-07-12",
-      "title": "Court Filing References Unnamed Financial Institution",
-      "description": "A court filing (Document 11) in case 19-cr-00490 references an unnamed financial institution ('Institution-1') controlling Epstein's assets.",
-      "category": "financial",
-      "significance": 4,
-      "personsInvolved": [
-        "Jeffrey Epstein"
-      ]
+      "date": "2019-10-28",
+      "title": "FOIA request from Bloomberg News",
+      "description": "Bloomberg News submits a FOIA request seeking the name of a financial institution (\"Institution-1\") referenced in a July 12 court filing concerning Epstein's assets.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
     }
   ],
   "locations": [
     "Southern District of New York"
   ],
   "keyFacts": [
-    "A FOIA request from Bloomberg News seeks the name of a financial institution referred to as 'Institution-1' in a July 12, 2019 court filing related to Jeffrey Epstein's criminal case.",
-    "The U.S. Attorney's Office for the Southern District of New York internally notes that the requested information is 'very likely covered by exemption' and thus may not be disclosed.",
-    "The court filing (Document 11 in case 19-cr-00490) indicates this unnamed institution controls assets belonging to Jeffrey Epstein."
+    "A Bloomberg News FOIA request seeks the identity of a financial institution (codenamed \"Institution-1\") involved in the Jeffrey Epstein criminal case.",
+    "The financial institution is referenced in Document 11 (filed July 12, 2019) of case 19-cr-00490, specifically on pages 4 and 5, concerning Epstein's assets.",
+    "An internal email from the U.S. Attorney's Office suggests the requested information is 'very likely covered by exemption' and thus may not be disclosed.",
+    "The document indicates ongoing media and public interest in the financial aspects of the Epstein case following his death."
   ],
-  "analyzedAt": "2026-02-11T15:33:40.388Z"
+  "analyzedAt": "2026-02-12T03:02:40.326Z"
 }
