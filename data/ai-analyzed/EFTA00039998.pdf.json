@@ -1,88 +1,88 @@
 {
   "fileName": "EFTA00039998.pdf",
   "dataSet": "9",
-  "documentType": "US Marshals Service Report of Investigation",
-  "dateOriginal": null,
-  "summary": "This document is a compilation of US Marshals Service investigation reports concerning Jeffrey Epstein's compliance with sex offender travel reporting requirements (International Megan's Law). It details witness interviews, investigative steps, and the closure of the case following Epstein's death. The reports include allegations of Epstein traveling with young girls and failing to report international destinations.",
+  "documentType": "law enforcement report",
+  "dateOriginal": "multiple dates from 01/08/2019 to 08/19/2019",
+  "summary": "A series of U.S. Marshals Service investigation reports concerning Jeffrey Epstein's compliance with sex offender travel reporting requirements under International Megan's Law. The reports detail witness interviews, investigative steps, and the eventual closure of the case following Epstein's death by suicide in August 2019.",
   "persons": [
     {
       "name": "Jeffrey Edward Epstein",
       "role": "Convicted sex offender, subject of investigation",
       "category": "key figure",
-      "context": "The primary subject of the US Marshals investigation for potential violations of International Megan's Law due to unreported international travel. He is described as a convicted sex offender who traveled frequently on a private jet.",
-      "mentionCount": 20
-    },
-    {
-      "name": "Senior Inspector (SI)",
-      "role": "US Marshals Senior Inspector conducting the investigation",
-      "category": "law enforcement",
-      "context": "The lead investigator who conducted witness interviews, coordinated with the AUSA's office, and filed reports. The name is redacted.",
+      "context": "The primary subject of the U.S. Marshals investigation for potential failure to report international travel as required by International Megan's Law. He was observed with young girls at an airport.",
       "mentionCount": 15
     },
     {
-      "name": "Supervisory Inspector (SI)",
-      "role": "US Marshals Supervisory Inspector",
+      "name": "Senior Inspector (SI)",
+      "role": "U.S. Marshals Senior Inspector conducting the investigation",
       "category": "law enforcement",
-      "context": "Met with the Miami Herald reporter during an interview. The name is redacted.",
+      "context": "Conducted witness interviews, coordinated with the AUSA's office, and submitted investigative requests related to Epstein's travel.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Supervisory Inspector (SI)",
+      "role": "U.S. Marshals Supervisory Inspector",
+      "category": "law enforcement",
+      "context": "Met with a Miami Herald reporter to gather information on potential witnesses regarding Epstein.",
       "mentionCount": 2
     },
     {
       "name": "Miami Herald Reporter",
       "role": "Investigative reporter",
       "category": "witness",
-      "context": "Provided information to US Marshals about potential witnesses, including an airport informant, a former employee of Epstein, a disgruntled attorney, and a former police chief.",
-      "mentionCount": 5
+      "context": "Met with Marshals investigators and provided information about potential informants who had witnessed Epstein with young girls and other individuals with knowledge of his activities.",
+      "mentionCount": 3
     },
     {
-      "name": "Air Traffic Controller Informant",
+      "name": "Air Traffic Controller",
       "role": "Witness, Air Traffic Controller",
       "category": "witness",
-      "context": "An informant who worked at an airport and reported observing Epstein disembark from his plane with young girls on multiple occasions between June/July and November 2018.",
-      "mentionCount": 10
+      "context": "Interviewed by the Senior Inspector. Reported observing Epstein disembark from his plane at an airport with young girls on multiple occasions between June/July and November 2018.",
+      "mentionCount": 5
     },
     {
       "name": "AUSA",
       "role": "Assistant United States Attorney",
       "category": "legal",
-      "context": "The prosecutor in the US Virgin Islands with whom the Senior Inspector coordinated regarding MLAT requests and the eventual closure of the case after Epstein's death. The name is redacted.",
+      "context": "The prosecutor's office in the U.S. Virgin Islands that the Marshals coordinated with on the investigation and MLAT requests. Agreed to drop the case after Epstein's death.",
       "mentionCount": 4
     }
   ],
   "connections": [
     {
-      "person1": "Jeffrey Edward Epstein",
-      "person2": "Air Traffic Controller Informant",
-      "relationshipType": "witness-subject",
-      "description": "The informant witnessed Epstein getting off his plane with young girls at the airport where she worked.",
-      "strength": 2
-    },
-    {
-      "person1": "Miami Herald Reporter",
-      "person2": "Air Traffic Controller Informant",
-      "relationshipType": "source-journalist",
-      "description": "The reporter received information from the air traffic controller informant about Epstein's activities.",
+      "person1": "Senior Inspector (SI)",
+      "person2": "Air Traffic Controller",
+      "relationshipType": "investigator-witness",
+      "description": "The Senior Inspector conducted a phone interview with the air traffic controller to gather information about observing Epstein with young girls.",
       "strength": 3
     },
     {
-      "person1": "Miami Herald Reporter",
-      "person2": "Senior Inspector (SI)",
-      "relationshipType": "source-law enforcement",
-      "description": "The reporter provided tips and contact information for potential witnesses to the US Marshals investigator.",
+      "person1": "Supervisory Inspector (SI)",
+      "person2": "Miami Herald Reporter",
+      "relationshipType": "investigator-source",
+      "description": "The Supervisory Inspector met with the reporter at a diner to obtain leads on informants and witnesses related to Epstein.",
       "strength": 3
     },
     {
       "person1": "Senior Inspector (SI)",
       "person2": "AUSA",
-      "relationshipType": "investigator-prosecutor",
-      "description": "The Senior Inspector coordinated the investigation with the AUSA's office regarding legal requests and case strategy.",
+      "relationshipType": "law enforcement-legal",
+      "description": "The Senior Inspector spoke with the AUSA's office regarding the case, submitting MLAT requests, and ultimately closing the investigation.",
       "strength": 4
+    },
+    {
+      "person1": "Miami Herald Reporter",
+      "person2": "Air Traffic Controller",
+      "relationshipType": "source-informant",
+      "description": "The reporter provided the air traffic controller's phone number to the Marshals, stating the controller was her informant.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2008-06-30",
       "title": "Epstein's Florida Conviction",
-      "description": "Jeffrey Epstein was convicted in Florida of procuring a person under the age of 18 for prostitution and sentenced to 13 months incarceration.",
+      "description": "Jeffrey Epstein was convicted in Florida of procuring a person under the age of 18 for prostitution and sentenced to 13 months incarceration, requiring lifetime sex offender registration.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -92,7 +92,7 @@
     {
       "date": "2019-03-15",
       "title": "Epstein Reports Travel in USVI",
-      "description": "Epstein visited the US Virgin Islands Department of Justice on St. Thomas and signed a Notification of Duty to Report travel.",
+      "description": "Epstein visited the US Virgin Islands Department of Justice on St. Thomas and signed a Notification of Duty to Report travel with the Sex Offender Registry Coordinator.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -102,29 +102,9 @@
     {
       "date": "2019-03-19 to 2019-03-29",
       "title": "Reported Travel to France",
-      "description": "Epstein notified authorities of travel to France via his private jet (N212JE).",
+      "description": "Epstein notified authorities of travel to France via his private jet (N212JE), but flight tracking showed additional trips to Vienna, Austria and Monaco that were not reported.",
       "category": "travel",
-      "significance": 2,
-      "personsInvolved": [
-        "Jeffrey Edward Epstein"
-      ]
-    },
-    {
-      "date": "2019-03-22",
-      "title": "Unreported Travel to Vienna",
-      "description": "Flight tracking data indicated Epstein's jet traveled to Vienna, Austria, a destination not listed on his travel notification form.",
-      "category": "travel",
-      "significance": 3,
-      "personsInvolved": [
-        "Jeffrey Edward Epstein"
-      ]
-    },
-    {
-      "date": "2019-03-27",
-      "title": "Unreported Travel to Monaco",
-      "description": "Flight tracking data indicated Epstein's jet traveled to Monaco, a destination not listed on his travel notification form.",
-      "category": "travel",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "Jeffrey Edward Epstein"
       ]
@@ -132,9 +112,9 @@
     {
       "date": "2019-06-24",
       "title": "Interview with Miami Herald Reporter",
-      "description": "US Marshals inspectors met with a Miami Herald reporter who provided leads on witnesses related to Epstein.",
+      "description": "U.S. Marshals met with a Miami Herald reporter who provided leads on informants, including an air traffic controller who saw Epstein with girls and a former employee of Epstein.",
       "category": "investigation",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "Supervisory Inspector (SI)",
         "Senior Inspector (SI)",
@@ -144,17 +124,18 @@
     {
       "date": "2019-07-10",
       "title": "Interview with Air Traffic Controller",
-      "description": "A Senior Inspector interviewed an air traffic controller informant by phone regarding observations of Epstein with young girls.",
+      "description": "A Senior Inspector interviewed an air traffic controller who reported seeing Epstein get off his plane with young girls on multiple occasions in 2018.",
       "category": "investigation",
       "significance": 4,
       "personsInvolved": [
         "Senior Inspector (SI)",
-        "Air Traffic Controller Informant"
+        "Air Traffic Controller",
+        "Jeffrey Edward Epstein"
       ]
     },
     {
       "date": "2019-08-10",
-      "title": "Epstein's Death",
+      "title": "Epstein's Death by Suicide",
       "description": "Jeffrey Epstein committed suicide while in custody in New York.",
       "category": "death",
       "significance": 5,
@@ -165,7 +146,7 @@
     {
       "date": "2019-08-12",
       "title": "Case Closure Decision",
-      "description": "Following Epstein's death, the Senior Inspector spoke with the USVI AUSA's office and all parties agreed to drop the case, canceling all warrants and investigative activities.",
+      "description": "Following Epstein's death, the U.S. Marshals Senior Inspector spoke with the USVI AUSA's office and all parties agreed to drop the case, canceling all warrants and investigative activities.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -175,25 +156,23 @@
     }
   ],
   "locations": [
-    "Hollywood, Florida",
-    "Don ite Diner (Hollywood, Florida)",
-    "US Virgin Islands (STT)",
-    "St. Thomas, US Virgin Islands",
-    "Little St. James Island",
+    "U.S. Virgin Islands (specifically St. Thomas)",
+    "Little St. James (Epstein's island)",
+    "Hollywood, Florida (location of interview at Don ite Diner)",
     "France",
     "Vienna, Austria",
     "Monaco",
-    "Paris, France",
     "New York",
     "Florida",
-    "New Mexico"
+    "New Mexico",
+    "Paris, France"
   ],
   "keyFacts": [
-    "The US Marshals were investigating Jeffrey Epstein for potential violations of International Megan's Law for failing to report all his international travel as a registered sex offender.",
-    "An air traffic controller informant reported witnessing Epstein get off his plane with young girls, some appearing to be as young as 11-12 years old, at an airport between June/July and November 2018.",
-    "Flight tracking data revealed Epstein's private jet traveled to Vienna, Austria and Monaco in March 2019, destinations he did not report to authorities as required.",
-    "A Miami Herald reporter provided investigators with leads, including information about an informant who saw girls board a helicopter from Epstein's island to his airplane.",
-    "The entire investigation was closed and all pending warrants and requests were canceled following Epstein's suicide on August 10, 2019."
+    "The U.S. Marshals were investigating Jeffrey Epstein for potential violations of International Megan's Law related to his failure to report all international travel as a registered sex offender.",
+    "A key witness, an air traffic controller, reported observing Epstein disembark from his private plane at an airport with young girls, including some who appeared to be 11-12 years old, on multiple occasions in 2018.",
+    "Flight tracking data revealed Epstein traveled to Vienna, Austria and Monaco in March 2019, countries he did not list on his official travel notification form which only listed France.",
+    "The investigation was actively pursuing MLAT requests, a search warrant for Epstein's phone, and flight logs to determine the full extent of his unreported travel.",
+    "The entire investigation was closed and all pending warrants/requests were canceled on August 12, 2019, following Epstein's death by suicide on August 10, 2019."
   ],
-  "analyzedAt": "2026-02-11T14:48:04.616Z"
+  "analyzedAt": "2026-02-11T23:40:57.209Z"
 }

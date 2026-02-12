@@ -3,55 +3,141 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2021-11-05",
-  "summary": "This is an FBI 302 form documenting a proffer interview of an unnamed female witness conducted via video conference on November 5, 2021. The witness, represented by an attorney, provides Giglio-related background information, including her personal history, prior testimony, and lack of criminal record, in connection with the Epstein case. The interview was attended by Assistant United States Attorneys and a detective.",
+  "summary": "This is an FBI 302 interview summary of an unnamed female witness (referred to as 'Subject') conducted via video conference on November 5, 2021, pursuant to a proffer agreement. The interview, attended by her attorney and Assistant United States Attorneys, focuses on gathering Giglio-related background information, including her prior testimony, personal history, and potential impeachment material. The subject discusses her limited deposition in the Epstein case, personal history including a past marriage and divorce, minimal drug use, and an immigration incident.",
   "persons": [
     {
-      "name": "Epstein",
-      "role": "Subject of investigation",
+      "name": "Subject",
+      "role": "Interview Subject / Witness",
+      "category": "witness",
+      "context": "An unnamed female individual interviewed by the FBI regarding her background and potential testimony. She states she was deposed as a witness in the Epstein case and provides personal history details.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Attorney",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Present during the FBI's video conference interview of the Subject, representing her interests.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorneys",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present during the FBI's video conference interview of the Subject, representing the government.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Present during the FBI's video conference interview of the Subject.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
       "category": "key figure",
-      "context": "The witness's prior testimony and deposition are related to the Epstein case. The witness mentions Epstein was aware of her relationship with the man who introduced her to him.",
+      "context": "Referenced as the central figure in the case for which the Subject was previously deposed as a witness.",
       "mentionCount": 3
     },
     {
-      "name": "Maxwell",
-      "role": "Associate of Epstein",
-      "category": "associate",
-      "context": "Mentioned briefly as someone the witness's ex-husband was possibly connecting with on an ocean project, in the context of the witness's discussion of her life prior to knowing Epstein.",
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Associate",
+      "category": "key figure",
+      "context": "Mentioned in passing as someone the Subject's ex-husband was possibly connecting with on an ocean project, in the context of the Subject's relationship with Epstein.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Epstein",
-      "person2": "Maxwell",
-      "relationshipType": "associate",
-      "description": "Implied association through the witness's statement about her ex-husband possibly connecting with Maxwell on an ocean project while involved with Epstein.",
+      "person1": "Subject",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-accused",
+      "description": "The Subject was deposed as a witness in the Epstein case and had some prior connection, as her ex-husband was involved with Epstein.",
       "strength": 2
+    },
+    {
+      "person1": "Subject",
+      "person2": "Attorney",
+      "relationshipType": "attorney-client",
+      "description": "The Attorney was present representing the Subject during her FBI interview.",
+      "strength": 4
+    },
+    {
+      "person1": "Subject",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "The Subject's ex-husband was possibly connecting with Maxwell on an ocean project, implying an indirect connection.",
+      "strength": 1
     }
   ],
   "events": [
     {
       "date": "2021-11-05",
-      "title": "Proffer Interview of Witness",
-      "description": "An unnamed female witness is interviewed via video conference pursuant to a proffer agreement. She provides Giglio-related background information for the Epstein case.",
+      "title": "FBI Proffer Interview of Witness",
+      "description": "The FBI conducts a video conference interview with an unnamed female witness under a proffer agreement to gather background and Giglio-related information.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
-        "Epstein"
+        "Subject",
+        "Attorney",
+        "Assistant United States Attorneys",
+        "Detective"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Subject's Civil Deposition in Epstein Case",
+      "description": "The Subject states she previously gave a civil deposition related to the Epstein case, with 2-3 lawyers present.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Subject",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Subject's Divorce Proceeding",
+      "description": "The Subject states she was previously married and divorced; she filed paperwork and her husband did not appear in court, leading to a granted divorce.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Subject"
+      ]
+    },
+    {
+      "date": "2016-2017",
+      "title": "Subject's Last Marijuana Use",
+      "description": "The Subject states the last time she used marijuana was around 2016-2017 when offered at a party.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Subject"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Subject's Immigration Arrest Incident",
+      "description": "The Subject describes an incident where she was flagged upon re-entry to the US due to a visa issue, held for about two hours, and then put on a plane home. It was not considered a deportation.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Subject"
       ]
     }
   ],
   "locations": [
     "New York, New York, United States",
     "Italy",
-    "Washington"
+    "Washington (state implied from context of immigration check)"
   ],
   "keyFacts": [
-    "The witness had previously given a civil deposition related to the Epstein case, where she told the truth.",
-    "The witness has never been arrested, charged with a crime, or testified in court, and denies involvement in prostitution, drug dealing, or fraud.",
-    "The witness's ex-husband introduced her to Epstein, and Epstein was aware of this prior relationship.",
-    "The witness's ex-husband was involved with Epstein and possibly connecting with Maxwell on an ocean project.",
-    "The witness had an immigration-related incident in Washington where she was sent home due to a visa issue, but it was not considered a deportation."
+    "The document is an FBI 302 form recording a proffer interview with a female witness, conducted to assess her credibility and background (Giglio material).",
+    "The witness confirms she was deposed in the civil Epstein case but has never testified in court or before a grand jury.",
+    "The witness denies a wide range of potential impeachment issues: no criminal history, minimal past drug use (marijuana twice, suspected cocaine once), no mental health treatment, and no involvement in fraud, prostitution, or possession of child pornography.",
+    "The witness reveals a past connection: her ex-husband was involved with Jeffrey Epstein and possibly connected with Ghislaine Maxwell on an 'ocean project.'",
+    "The witness describes an immigration incident where she was denied entry and sent home due to a visa misunderstanding, which showed up on a criminal history check."
   ],
-  "analyzedAt": "2026-02-11T15:00:38.382Z"
+  "analyzedAt": "2026-02-11T23:52:17.622Z"
 }

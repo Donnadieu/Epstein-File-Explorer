@@ -3,82 +3,81 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-05-21",
-  "summary": "Email correspondence between Assistant U.S. Attorney Alex Conlon and an unnamed individual regarding scheduling a meeting with a female witness (likely Ghislaine Maxwell) for the SDNY investigation into Jeffrey Epstein. The email discusses logistical arrangements, note-taking during witness conversations, and previews that upcoming discussions will cover difficult topics including Epstein's conduct with a specific individual.",
+  "summary": "Email exchange between Alex Conlon (attorney) and an Assistant U.S. Attorney regarding scheduling a meeting with a female client for the SDNY investigation into Jeffrey Epstein. The email discusses logistical details, note-taking, and the expectation that the upcoming meeting will cover difficult topics including Epstein's conduct with a specific individual.",
   "persons": [
     {
       "name": "Alex Conlon",
-      "role": "Assistant U.S. Attorney",
+      "role": "Attorney",
       "category": "legal",
-      "context": "Assistant U.S. Attorney for the Southern District of New York who is coordinating the investigation interview schedule and discussing procedural matters regarding witness interactions.",
+      "context": "Attorney at Kaplan Hecker & Fink LLP corresponding with a federal prosecutor about scheduling a meeting with a client for the SDNY investigation into Jeffrey Epstein.",
       "mentionCount": 4
     },
     {
       "name": "Alexandra Elenowitz-Hess",
-      "role": "Attorney",
-      "category": "legal",
-      "context": "Copied on the email correspondence, appears to be part of the legal team involved in the investigation coordination.",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Copied on the email correspondence between Alex Conlon and the Assistant U.S. Attorney regarding the Epstein investigation meeting.",
       "mentionCount": 2
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Subject of Investigation",
+      "role": "Subject of investigation",
       "category": "key figure",
-      "context": "Referenced as the subject whose conduct will be discussed in upcoming meetings with a witness, specifically regarding his actions with another individual.",
+      "context": "Referenced as the subject of the SDNY investigation, with the upcoming meeting expected to cover his conduct with a particular individual.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
       "person1": "Alex Conlon",
-      "person2": "Alexandra Elenowitz-Hess",
-      "relationshipType": "colleague",
-      "description": "Both are legal professionals copied on the same email discussing investigation logistics, indicating they are part of the same legal team or coordinating on the case.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Alex Conlon is an attorney involved in correspondence regarding the SDNY investigation into Jeffrey Epstein, representing a client being interviewed.",
       "strength": 2
     },
     {
       "person1": "Alex Conlon",
-      "person2": "Jeffrey Epstein",
-      "relationshipType": "investigator-subject",
-      "description": "Conlon is an Assistant U.S. Attorney investigating Epstein's conduct, as indicated by the reference to discussing 'Epstein's conduct' in upcoming meetings.",
-      "strength": 3
+      "person2": "Alexandra Elenowitz-Hess",
+      "relationshipType": "professional",
+      "description": "Both are copied on the email correspondence regarding the Epstein investigation scheduling.",
+      "strength": 1
     }
   ],
   "events": [
     {
-      "date": "2019-05",
-      "title": "SDNY Investigation Interview Scheduling",
-      "description": "Planning for a meeting with a female witness to discuss the SDNY investigation into Jeffrey Epstein, with topics to include 'Giglio subjects' and Epstein's conduct with a specific individual.",
+      "date": "2019-05-21",
+      "title": "Email scheduling investigation meeting",
+      "description": "Email exchange to schedule a meeting between a female client and SDNY prosecutors to discuss the Jeffrey Epstein investigation, with plans for the client to make phone calls to two individuals.",
       "category": "investigation",
-      "significance": 4,
+      "significance": 3,
       "personsInvolved": [
         "Alex Conlon",
-        "Unnamed female witness",
-        "Jeffrey Epstein"
+        "Assistant U.S. Attorney"
       ]
     },
     {
-      "date": "2019-05-14",
-      "title": "Previous Coordination Call",
-      "description": "Reference to a conversation the previous week about having someone from the law firm take notes during witness conversations and informing individuals that the SDNY office wants to speak with them.",
+      "date": "2019-06",
+      "title": "Planned difficult interview topics",
+      "description": "Prosecutors indicate the next meeting with the client will address difficult topics, including Giglio subjects and a review of Epstein's conduct with a particular individual.",
       "category": "legal",
-      "significance": 2,
+      "significance": 4,
       "personsInvolved": [
-        "Alex Conlon",
-        "Unnamed female witness"
+        "Female client",
+        "Assistant U.S. Attorney",
+        "Alex Conlon"
       ]
     }
   ],
   "locations": [
-    "Southern District of New York",
     "New York, New York",
-    "350 Fifth Avenue, Suite 7110, New York, New York (Kaplan Hecker & Fink LLP office)"
+    "Kaplan Hecker & Fink LLP, 350 Fifth Avenue, Suite 7110, New York, New York",
+    "Southern District of New York"
   ],
   "keyFacts": [
-    "The SDNY investigation into Jeffrey Epstein was actively scheduling witness interviews as of May 2019, with plans to cover difficult topics including 'Giglio subjects' and Epstein's conduct with a specific individual.",
-    "Prosecutors anticipated requesting copies of notes taken during witness conversations and acknowledged that note-takers could become potential witnesses.",
-    "The email references an unnamed female witness (likely Ghislaine Maxwell) who was making phone calls to contact two individuals on behalf of the investigation.",
-    "The investigation aimed to complete an initial set of discussions before June 2019 due to scheduling concerns.",
-    "The correspondence shows coordination between Assistant U.S. Attorney Alex Conlon and private law firm Kaplan Hecker & Fink LLP in the investigation process."
+    "The SDNY investigation into Jeffrey Epstein was active in May 2019, with prosecutors scheduling interviews with individuals.",
+    "Prosecutors planned to discuss 'difficult topics, including Giglio subjects and some review of Epstein's conduct with [a particular individual]' in an upcoming meeting.",
+    "A female client, represented by attorney Alex Conlon, was expected to make phone calls to two individuals on behalf of the investigation.",
+    "The email correspondence shows coordination between defense counsel and federal prosecutors regarding witness interviews and evidence gathering."
   ],
-  "analyzedAt": "2026-02-11T14:37:43.626Z"
+  "analyzedAt": "2026-02-11T23:32:11.618Z"
 }

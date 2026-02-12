@@ -1,130 +1,140 @@
 {
   "fileName": "EFTA00039357.pdf",
   "dataSet": "9",
-  "documentType": "internal affairs referral / BOP incident report",
+  "documentType": "internal affairs referral / incident report",
   "dateOriginal": "2019-08-12",
-  "summary": "This is a Bureau of Prisons Office of Internal Affairs referral to the DOJ OIG regarding the death of inmate Jeffrey Epstein at MCC New York on August 10, 2019. It details the incident, alleges staff misconduct (failure to conduct required rounds), and identifies involved staff and the victim.",
+  "summary": "This is a Bureau of Prisons Office of Internal Affairs referral to the DOJ OIG concerning the death of inmate Jeffrey Epstein at MCC New York on August 10, 2019. It details allegations that two correctional staff members failed to conduct required inmate counts/rounds prior to Epstein being found unresponsive, and includes initial statements from the involved officers.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Inmate / Victim",
       "category": "key figure",
-      "context": "The inmate found unresponsive in his cell at MCC New York's Special Housing Unit on August 10, 2019, and pronounced dead at a local hospital. His death is the subject of the internal affairs investigation.",
+      "context": "The inmate who was found unresponsive in his cell at MCC New York on August 10, 2019, and was later pronounced dead. He is the central figure of the incident report.",
       "mentionCount": 8
     },
     {
-      "name": "Operations Lieutenant",
-      "role": "BOP Operations Lieutenant",
-      "category": "law enforcement",
-      "context": "The officer who responded to the medical emergency, witnessed the scene, administered CPR, and reported conversations with the correctional officers involved.",
-      "mentionCount": 4
-    },
-    {
-      "name": "Correctional Officer",
-      "role": "Correctional Officer, GL-05",
+      "name": "Officer",
+      "role": "Correctional Officer",
       "category": "staff",
-      "context": "One of the subjects of the internal investigation. Admitted to not conducting the 3 a.m. and 5 a.m. rounds and stated 'we messed up' to the Operations Lieutenant.",
-      "mentionCount": 5
+      "context": "A correctional officer (GL-05) who, along with a Materials Handler Supervisor, allegedly failed to conduct the 3 a.m. and 5 a.m. inmate counts/rounds. Stated 'we messed up' and appeared distraught.",
+      "mentionCount": 6
     },
     {
       "name": "Materials Handler Supervisor",
-      "role": "Materials Handler Supervisor, WS-04",
+      "role": "Materials Handler Supervisor",
       "category": "staff",
-      "context": "One of the subjects of the internal investigation. Also admitted to not conducting the required rounds.",
+      "context": "A staff member (WS-04) who, along with a Correctional Officer, allegedly failed to conduct required inmate counts/rounds. Admitted to not completing rounds.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "The lieutenant who responded to the medical emergency, administered CPR, and took initial statements from the involved officers regarding their failure to conduct rounds.",
       "mentionCount": 3
     },
     {
       "name": "Union President",
-      "role": "Local Union President",
+      "role": "Union President",
       "category": "other",
-      "context": "The person the involved staff members wanted to contact to review any memorandums they would have to write about the incident.",
+      "context": "Local union official whom the involved staff members wanted to contact to review any memorandums they would have to write about the incident.",
       "mentionCount": 2
     }
   ],
   "connections": [
     {
-      "person1": "Correctional Officer",
+      "person1": "Officer",
       "person2": "Materials Handler Supervisor",
-      "relationshipType": "co-worker / alleged co-negligent",
-      "description": "Both were on duty and allegedly failed together to conduct the 3 a.m. and 5 a.m. inmate counts/rounds on the night of Epstein's death.",
+      "relationshipType": "co-worker",
+      "description": "Worked together on the same shift in the Special Housing Unit and both allegedly failed to conduct required inmate counts/rounds.",
       "strength": 4
     },
     {
-      "person1": "Correctional Officer",
+      "person1": "Officer",
       "person2": "Jeffrey Epstein",
       "relationshipType": "guard-inmate",
-      "description": "The Correctional Officer had custodial and supervisory responsibility for inmate Epstein, including conducting security rounds.",
+      "description": "Officer was responsible for the supervision and count of inmates, including Epstein, in the Special Housing Unit.",
       "strength": 3
     },
     {
       "person1": "Materials Handler Supervisor",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "guard-inmate",
-      "description": "The Materials Handler Supervisor had custodial and supervisory responsibility for inmate Epstein, including conducting security rounds.",
+      "relationshipType": "staff-inmate",
+      "description": "Supervisor was responsible for duties related to inmate supervision in the housing unit where Epstein was held.",
       "strength": 3
-    },
-    {
-      "person1": "Correctional Officer",
-      "person2": "Union President",
-      "relationshipType": "employee-union representative",
-      "description": "The officer, along with their colleague, stated they wanted to contact the Union President for representation regarding writing incident memorandums.",
-      "strength": 2
     },
     {
       "person1": "Operations Lieutenant",
-      "person2": "Correctional Officer",
+      "person2": "Officer",
       "relationshipType": "supervisor-subordinate",
-      "context": "The Operations Lieutenant interviewed the Correctional Officer about the incident and received their admission of failure to conduct rounds.",
+      "description": "The lieutenant took statements from the officer regarding the failure to conduct rounds during the incident investigation.",
       "strength": 3
+    },
+    {
+      "person1": "Officer",
+      "person2": "Union President",
+      "relationshipType": "member-representative",
+      "description": "The officer sought to have the Union President review any memorandums written about the incident.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2019-08-10",
-      "title": "Death of Jeffrey Epstein at MCC New York",
-      "description": "Inmate Jeffrey Epstein was found unresponsive in his cell in the Special Housing Unit at approximately 6:33 a.m. CPR was administered, and he was transported to a local hospital where he was pronounced dead at 7:36 a.m.",
+      "title": "Jeffrey Epstein Found Unresponsive",
+      "description": "At approximately 6:33 a.m., inmate Jeffrey Epstein was found unresponsive in his assigned cell (Z06-220) in the Special Housing Unit at MCC New York. CPR was administered, and he was transported to a hospital.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
         "Operations Lieutenant",
-        "Correctional Officer",
+        "Officer",
         "Materials Handler Supervisor"
       ]
     },
     {
       "date": "2019-08-10",
-      "title": "Failure to Conduct Security Rounds",
-      "description": "The Correctional Officer and Materials Handler Supervisor admitted to the Operations Lieutenant that they did not conduct the mandated 3 a.m. and 5 a.m. inmate counts/rounds.",
+      "title": "Epstein Pronounced Dead",
+      "description": "Jeffrey Epstein was pronounced dead at 7:36 a.m. by an emergency room physician at a local hospital (identified elsewhere as Beekman Hospital).",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Failure to Conduct Inmate Counts",
+      "description": "The involved Correctional Officer and Materials Handler Supervisor admitted to not conducting the required 3:00 a.m. and 5:00 a.m. inmate counts/rounds in the Special Housing Unit.",
       "category": "investigation",
       "significance": 4,
       "personsInvolved": [
-        "Correctional Officer",
+        "Officer",
         "Materials Handler Supervisor",
         "Operations Lieutenant"
       ]
     },
     {
       "date": "2019-08-12",
-      "title": "BOP Internal Affairs Referral to DOJ OIG",
-      "description": "The Bureau of Prisons Office of Internal Affairs formally referred the incident (Case OIA-2019-05324) to the Department of Justice Office of the Inspector General for investigation.",
-      "category": "legal",
+      "title": "Internal Affairs Referral to OIG",
+      "description": "The Bureau of Prisons Office of Internal Affairs formally referred the incident to the Department of Justice Office of the Inspector General (OIG) for investigation, citing allegations of endangering an inmate, inattention to duty, and failure to follow policy.",
+      "category": "investigation",
       "significance": 4,
       "personsInvolved": []
     }
   ],
   "locations": [
     "MCC New York (Metropolitan Correctional Center, New York)",
-    "Special Housing Unit (SHU), MCC New York",
-    "Cell Z06-220 on L-tier, MCC New York",
-    "Downtown Beekman Hospital (local hospital)"
+    "Special Housing Unit (SHU)",
+    "Cell Z06-220, L-tier",
+    "Beekman Hospital (referenced as 'downtown Beekman Hospital')"
   ],
   "keyFacts": [
-    "Jeffrey Epstein was found unresponsive in his cell at MCC New York at 6:33 a.m. on August 10, 2019, and pronounced dead at a hospital at 7:36 a.m.",
-    "Two BOP staff members—a Correctional Officer and a Materials Handler Supervisor—admitted to failing to conduct the required 3 a.m. and 5 a.m. inmate security rounds on the night of Epstein's death.",
-    "The staff involved stated they were 'traumatized' by the event and requested to contact their Union President before writing any official memorandums about the incident.",
-    "The BOP Office of Internal Affairs referred the case to the DOJ Office of the Inspector General on August 12, 2019, citing allegations including 'Endangering the Safety of an Inmate', 'Inattention to Duty', and 'Failure to Follow Policy'.",
-    "The document is an internal administrative referral, not a final investigative report, and notes that additional staff memorandums had not yet been collected at the time of referral."
+    "Jeffrey Epstein was found unresponsive in his cell at MCC New York at approximately 6:33 a.m. on August 10, 2019, and was pronounced dead at a hospital at 7:36 a.m.",
+    "Two BOP staff members—a Correctional Officer and a Materials Handler Supervisor—admitted to failing to conduct the mandatory 3 a.m. and 5 a.m. inmate counts/rounds prior to Epstein being found.",
+    "One of the officers stated 'we messed up' and 'I messed up, she's not to blame we didn't do any rounds' to the Operations Lieutenant.",
+    "The involved staff claimed they were traumatized by the event, requested to go home, and wanted their union president to review any statements they wrote.",
+    "The BOP Office of Internal Affairs referred the case to the DOJ Office of the Inspector General on August 12, 2019, citing allegations of endangering inmate safety, inattention to duty, and failure to follow policy."
   ],
-  "analyzedAt": "2026-02-11T14:11:07.480Z"
+  "analyzedAt": "2026-02-11T23:07:57.561Z"
 }

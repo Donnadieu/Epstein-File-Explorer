@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2018-12-06",
-  "summary": "This document is a chain of emails from December 2018, with an embedded earlier email from March 2016. The 2018 emails involve a request for notes and records from a meeting with Peter Skinner regarding Jeffrey Epstein. The 2016 email from Peter Skinner forwards a Page Six article about Epstein's continued relationships with young women and introduces attorney Sigrid McCawley.",
+  "summary": "This document is a chain of emails from December 2018, with an embedded earlier email from March 2016. The 2018 emails show a request for notes and records from a meeting with Peter Skinner regarding Jeffrey Epstein. The 2016 email from Skinner shares a news article about Epstein and introduces attorney Sigrid McCawley, indicating coordination on legal matters related to Epstein and Ghislaine Maxwell.",
   "persons": [
     {
       "name": "Peter Skinner",
-      "role": "Email correspondent, likely a legal or investigative contact",
+      "role": "Correspondent, likely legal professional",
       "category": "legal",
-      "context": "He sends emails in 2016 forwarding a news article about Jeffrey Epstein and introduces attorney Sigrid McCawley. In 2018, someone is asking for notes from a meeting with him.",
+      "context": "Sends emails in 2016 sharing a news article about Jeffrey Epstein and introducing attorney Sigrid McCawley; is the subject of a 2018 request for meeting notes and records.",
       "mentionCount": 4
     },
     {
       "name": "Sigrid McCawley",
-      "role": "Lead attorney",
+      "role": "Lead Attorney",
       "category": "legal",
-      "context": "Introduced by Peter Skinner in a 2016 email as one of the lead attorneys on the case who knows the facts very well.",
-      "mentionCount": 2
+      "context": "Introduced by Peter Skinner in a 2016 email as one of the lead attorneys on the case, with knowledge of the facts, and is copied on the correspondence.",
+      "mentionCount": 3
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Subject of investigation/news",
+      "role": "Subject of Legal Case/News",
       "category": "key figure",
-      "context": "Mentioned in a forwarded 2016 Page Six article about his continued relationships with young women and as the subject of the case Sigrid McCawley is working on.",
+      "context": "Mentioned in a 2016 email regarding a news article about his continued relationships with young women, and is the central subject of the legal case discussed.",
       "mentionCount": 2
     },
     {
       "name": "Ghislaine Maxwell",
-      "role": "Defendant in a defamation case",
+      "role": "Defendant in Defamation Case",
       "category": "key figure",
-      "context": "Mentioned in an attachment list referencing a complaint in a defamation case against her, where a motion to dismiss was denied.",
+      "context": "Referenced in an attached complaint for a defamation case against her; her motion to dismiss was denied.",
       "mentionCount": 1
     }
   ],
@@ -39,53 +39,52 @@
       "person1": "Peter Skinner",
       "person2": "Sigrid McCawley",
       "relationshipType": "professional colleague",
-      "description": "Skinner introduces McCawley in an email chain, indicating they are working together on a case related to Epstein.",
+      "description": "Skinner introduces McCawley as a lead attorney on the case and includes her in the email chain for follow-up.",
       "strength": 3
     },
     {
       "person1": "Sigrid McCawley",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "attorney-client or legal adversary",
-      "description": "McCawley is described as a lead attorney on 'the case,' which context suggests is related to Epstein.",
+      "relationshipType": "attorney-client (implied)",
+      "description": "McCawley is described as a lead attorney on the case involving Epstein, indicating a legal representation relationship.",
       "strength": 4
     },
     {
-      "person1": "Ghislaine Maxwell",
+      "person1": "Peter Skinner",
       "person2": "Jeffrey Epstein",
-      "relationshipType": "associate",
-      "description": "Maxwell is the subject of a defamation case mentioned in documents related to the Epstein investigation.",
+      "relationshipType": "professional/legal",
+      "description": "Skinner is discussing legal case materials and news related to Epstein, suggesting involvement in the legal matters surrounding him.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2016-03-08",
-      "title": "Page Six reports on Epstein's relationships",
-      "description": "Page Six publishes an article reporting on Jeffrey Epstein's continued relationships with young women, which Peter Skinner forwards via email.",
+      "title": "PageSix Article on Epstein",
+      "description": "A PageSix article reports on Jeffrey Epstein's continued relationships with young women, shared via email by Peter Skinner.",
       "category": "investigation",
       "significance": 2,
       "personsInvolved": [
-        "Jeffrey Epstein",
-        "Peter Skinner"
+        "Jeffrey Epstein"
       ]
     },
     {
       "date": "2016-02-29",
-      "title": "Meeting and document sharing",
-      "description": "Peter Skinner thanks someone for a meeting and attaches legal documents including a complaint against Ghislaine Maxwell and a redacted FBI 302 form.",
+      "title": "Meeting with Peter Skinner",
+      "description": "A meeting occurred involving Peter Skinner and other recipients, discussing the Epstein case and sharing legal documents.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
         "Peter Skinner",
-        "Ghislaine Maxwell"
+        "Sigrid McCawley"
       ]
     },
     {
       "date": "2018-12-05",
-      "title": "Request for meeting notes",
-      "description": "An email is sent requesting any notes and/or records from a meeting with Peter Skinner and asking if there were any other meetings relating to Epstein.",
+      "title": "Request for Meeting Notes",
+      "description": "An email request is made for notes and records from a prior meeting with Peter Skinner regarding Epstein.",
       "category": "investigation",
-      "significance": 3,
+      "significance": 2,
       "personsInvolved": [
         "Peter Skinner"
       ]
@@ -93,9 +92,11 @@
   ],
   "locations": [],
   "keyFacts": [
-    "In March 2016, Peter Skinner forwarded a Page Six article reporting on Jeffrey Epstein's continued relationships with young women.",
-    "In February 2016, Peter Skinner shared legal documents including a complaint against Ghislaine Maxwell and a redacted FBI 302 form related to the Epstein case.",
-    "In December 2018, there was an active request for notes and records from a meeting with Peter Skinner regarding Epstein, indicating ongoing investigative interest."
+    "In March 2016, Peter Skinner shared a PageSix article reporting on Jeffrey Epstein's continued relationships with young women.",
+    "Sigrid McCawley was introduced as a lead attorney on the Epstein case in February 2016, indicating active legal proceedings at that time.",
+    "A defamation case against Ghislaine Maxwell was ongoing, with a motion to dismiss being denied.",
+    "Legal documents related to the case, including a complaint, declarations, a Rule 56.1 statement, and a redacted 302, were being circulated among attorneys in early 2016.",
+    "In December 2018, there was a follow-up effort to obtain notes and records from a 2016 meeting with Peter Skinner, suggesting continued investigation or legal activity."
   ],
-  "analyzedAt": "2026-02-11T14:27:32.425Z"
+  "analyzedAt": "2026-02-11T23:22:39.131Z"
 }

@@ -3,28 +3,28 @@
   "dataSet": "9",
   "documentType": "OIG investigation report",
   "dateOriginal": "2023-06",
-  "summary": "This is the Office of the Inspector General's report investigating the Federal Bureau of Prisons' custody, care, and supervision of Jeffrey Epstein at the Metropolitan Correctional Center in New York from his arrest on July 6, 2019, until his death by suicide on August 10, 2019. The report details numerous and serious failures by BOP staff, including falsification of records, failure to assign a cellmate, failure to conduct required rounds and counts, and allowing an unmonitored phone call, which created an environment where Epstein could take his own life. The OIG found no evidence contradicting the FBI's determination that his death was a suicide. This is the Office of the Inspector General's (OIG) official draft report on the Federal Bureau of Prisons' (BOP) care, custody, and supervision of Jeffrey Epstein at the Metropolitan Correctional Center (MCC) in New York. It contains eight recommendations for BOP policy changes following Epstein's death, along with the BOP's responses and the OIG's analysis of those responses.",
+  "summary": "This is the Office of the Inspector General's report investigating the Federal Bureau of Prisons' custody, care, and supervision of Jeffrey Epstein at the Metropolitan Correctional Center in New York leading up to his death by suicide on August 10, 2019. The report details numerous policy violations, falsification of records, and failures by BOP staff that created an environment where Epstein was left unmonitored and alone in his cell, enabling his suicide. This is the Office of the Inspector General's (OIG) official draft report on the Bureau of Prisons' (BOP) care, custody, and supervision of Jeffrey Epstein at the Metropolitan Correctional Center (MCC) in New York. It contains eight recommendations for BOP policy changes following Epstein's death, along with the BOP's responses and the OIG's analysis of those responses.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Inmate / Accused",
       "category": "key figure",
-      "context": "The subject of the OIG report investigating the circumstances of his death while in BOP custody at MCC New York. The report's recommendations stem from failures in his supervision.",
+      "context": "The report is about the BOP's care, custody, and supervision of him at MCC New York, and his death is the central incident prompting the investigation and recommendations.",
       "mentionCount": 203
     },
     {
       "name": "Tova Noel",
       "role": "Correctional Officer",
       "category": "law enforcement",
-      "context": "MCC New York SHU staff member on duty the night of August 9-10, 2019; admitted to falsifying count and round records; entered a deferred prosecution agreement.",
+      "context": "SHU officer on duty the night of Epstein's death; admitted to falsifying count and round records; charged criminally and entered deferred prosecution agreement.",
       "mentionCount": 50
     },
     {
       "name": "Michael Thomas",
       "role": "Material Handler",
       "category": "staff",
-      "context": "MCC New York SHU staff member on duty the morning of August 10, 2019; admitted to falsifying count and round records; entered a deferred prosecution agreement.",
-      "mentionCount": 40
+      "context": "Worked overtime in SHU on August 10, 2019; discovered Epstein hanged; admitted to falsifying records with Noel; charged and entered deferred prosecution agreement.",
+      "mentionCount": 30
     },
     {
       "name": "Ghislaine Maxwell",
@@ -35,92 +35,99 @@
     },
     {
       "name": "Inmate 1",
-      "role": "Cellmate",
-      "category": "other",
-      "context": "Epstein's initial cellmate in the SHU from July 7-23, 2019; reported Epstein's attempted hanging on July 23.",
+      "role": "Epstein's cellmate (July 7-23)",
+      "category": "inmate",
+      "context": "Epstein's initial cellmate; reported Epstein's attempted hanging on July 23, 2019; later told investigators Epstein tried to hang himself.",
       "mentionCount": 15
     },
     {
       "name": "Inmate 3",
-      "role": "Cellmate",
-      "category": "other",
-      "context": "Epstein's cellmate from July 30 to August 9, 2019, selected by the Warden and BOP leadership; transferred out of MCC New York on August 9.",
+      "role": "Epstein's cellmate (July 30-August 9)",
+      "category": "inmate",
+      "context": "Cellmate selected by the Warden after Epstein's release from psychological observation; transferred out of MCC New York on August 9, 2019, leaving Epstein without a cellmate.",
       "mentionCount": 20
+    },
+    {
+      "name": "Individual 1",
+      "role": "Personal contact of Epstein",
+      "category": "associate",
+      "context": "Person with whom Epstein allegedly had a personal relationship; Epstein spoke with her on an unmonitored call on August 9, 2019, purporting to call his mother.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Warden",
+      "role": "MCC New York Warden",
+      "category": "legal",
+      "context": "MCC New York's warden at the time; selected Inmate 3 as Epstein's cellmate; was unaware of the need to assign a new cellmate on August 9.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Captain",
+      "role": "MCC New York Captain",
+      "category": "law enforcement",
+      "context": "Supervised Lieutenants and COs; compiled list of potential cellmates for Epstein; failed to ensure Epstein had a cellmate on August 9.",
+      "mentionCount": 20
+    },
+    {
+      "name": "SHU Lieutenant",
+      "role": "SHU Lieutenant",
+      "category": "law enforcement",
+      "context": "Responsible for SHU operations; informed staff of Epstein's cellmate requirement; was off duty on August 9.",
+      "mentionCount": 15
     },
     {
       "name": "Day Watch SHU Officer in Charge",
       "role": "Correctional Officer",
       "category": "law enforcement",
-      "context": "Senior officer in the SHU on August 9, 2019; aware of Epstein's cellmate requirement and Inmate 3's transfer; claimed he notified relief staff.",
-      "mentionCount": 25
+      "context": "SHU officer in charge on day shift August 9; aware of Inmate 3's transfer and Epstein's cellmate requirement but failed to ensure a new cellmate was assigned.",
+      "mentionCount": 20
     },
     {
       "name": "Evening Watch SHU Officer in Charge",
       "role": "Correctional Officer",
       "category": "law enforcement",
-      "context": "Officer in charge of the SHU from approximately 2 p.m. to 10 p.m. on August 9, 2019; became aware Epstein was without a cellmate but failed to ensure a new assignment.",
-      "mentionCount": 20
-    },
-    {
-      "name": "Unit Manager",
-      "role": "Supervisor",
-      "category": "staff",
-      "context": "MCC New York supervisor who allowed Epstein to make an unmonitored, unrecorded telephone call on August 9, 2019, in violation of BOP policy.",
-      "mentionCount": 15
-    },
-    {
-      "name": "Warden",
-      "role": "Warden of MCC New York",
-      "category": "legal",
-      "context": "The Warden of MCC New York during Epstein's detention; selected Inmate 3 as Epstein's cellmate; was off duty on August 9, 2019.",
-      "mentionCount": 25
-    },
-    {
-      "name": "Captain",
-      "role": "Captain",
-      "category": "law enforcement",
-      "context": "Supervised all Lieutenants and COs at MCC New York; compiled list of potential cellmates for Epstein; failed to adequately supervise SHU staff.",
-      "mentionCount": 20
-    },
-    {
-      "name": "SHU Lieutenant",
-      "role": "Lieutenant",
-      "category": "law enforcement",
-      "context": "Lieutenant responsible for the SHU; verbally informed SHU staff of Epstein's cellmate requirement; was off duty on August 9, 2019.",
+      "context": "SHU officer in charge on evening shift August 9; became aware Epstein was without a cellmate but took no effective action; falsified count records.",
       "mentionCount": 15
     },
     {
       "name": "Morning Watch Operations Lieutenant",
-      "role": "Lieutenant",
+      "role": "Operations Lieutenant",
       "category": "law enforcement",
-      "context": "Operations Lieutenant from 10 p.m. August 9 to 6 a.m. August 10; conducted an inadequate round in the SHU at ~4 a.m.; failed to adequately supervise SHU staff.",
-      "mentionCount": 20
+      "context": "Operations Lieutenant on duty from 10 p.m. August 9 to 6 a.m. August 10; conducted inadequate round in SHU; failed to ensure counts were accurate.",
+      "mentionCount": 15
     },
     {
       "name": "Evening Watch Operations Lieutenant",
-      "role": "Lieutenant",
+      "role": "Operations Lieutenant",
       "category": "law enforcement",
-      "context": "Operations Lieutenant from 2 p.m. to 10 p.m. on August 9; failed to supervise the 4 p.m. count or conduct rounds in the SHU.",
+      "context": "Operations Lieutenant on duty 2 p.m. to 10 p.m. August 9; failed to adequately supervise SHU staff and conduct proper rounds.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Unit Manager",
+      "role": "Unit Manager / Institutional Duty Officer",
+      "category": "staff",
+      "context": "Allowed Epstein to make an unmonitored, unrecorded telephone call on August 9, 2019, in violation of BOP policy.",
       "mentionCount": 10
     },
     {
       "name": "Chief Psychologist",
-      "role": "Chief Psychologist",
+      "role": "MCC New York Chief Psychologist",
       "category": "staff",
-      "context": "MCC New York Psychology Department head; conducted suicide risk assessments of Epstein; recommended he be housed with a cellmate.",
-      "mentionCount": 20
-    },
-    {
-      "name": "Staff Psychologist",
-      "role": "Psychologist",
-      "category": "staff",
-      "context": "MCC New York psychologist; sent the July 30 email directing that Epstein be housed with an appropriate cellmate.",
+      "context": "Oversaw psychological evaluations of Epstein; recommended he be housed with a cellmate after July 23 incident.",
       "mentionCount": 15
     },
     {
+      "name": "Staff Psychologist",
+      "role": "MCC New York Staff Psychologist",
+      "category": "staff",
+      "context": "Conducted suicide risk assessments of Epstein; sent July 30 email directing that Epstein be housed with an appropriate cellmate.",
+      "mentionCount": 10
+    },
+    {
       "name": "Medical Examiner",
-      "role": "Medical Examiner",
-      "category": "other",
+      "role": "Medical Examiner, NYC OCME",
+      "category": "witness",
       "context": "Performed Epstein's autopsy; determined cause of death was hanging and manner was suicide; explained injuries were consistent with suicide, not homicide.",
       "mentionCount": 10
     },
@@ -128,22 +135,22 @@
       "name": "Senior Officer Specialist 6",
       "role": "Correctional Officer",
       "category": "law enforcement",
-      "context": "Control Center officer on August 9-10; admitted to 'ghost counting' and clearing the inaccurate 10 p.m. institutional count.",
-      "mentionCount": 10
+      "context": "Control Center officer who cleared inaccurate 10 p.m. count on August 9 using 'ghost counting'; violated policy.",
+      "mentionCount": 8
     },
     {
       "name": "Electronics Technician",
-      "role": "Technician",
+      "role": "Electronics Technician",
       "category": "staff",
-      "context": "MCC New York technician responsible for the security camera system; discovered DVR recording failure on August 8 but did not repair it before Epstein's death.",
+      "context": "Only technician responsible for MCC New York's security camera system; discovered DVR failure on August 8 but did not repair it before Epstein's death.",
       "mentionCount": 15
     },
     {
-      "name": "Individual 1",
-      "role": "Personal Contact",
-      "category": "associate",
-      "context": "Person with whom Epstein allegedly had a personal relationship; he spoke with her during the unmonitored call on August 9, not his mother as claimed.",
-      "mentionCount": 5
+      "name": "Material Handler",
+      "role": "Material Handler",
+      "category": "staff",
+      "context": "Worked 24-hour shift ending August 10; worked in SHU overtime; admitted he and Noel did not conduct counts because they were tired; falsified records.",
+      "mentionCount": 10
     }
   ],
   "connections": [
@@ -151,49 +158,56 @@
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "co-conspirator",
-      "description": "Maxwell was convicted of conspiring with Epstein to sexually abuse minors over a decade.",
+      "description": "Maxwell was convicted of conspiring with Epstein to sexually abuse minors over a decade; court documents in her case were unsealed on August 9, 2019.",
       "strength": 5
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker / co-accused",
+      "description": "Both were on duty in the SHU on August 10, 2019; both admitted to falsifying count and round records; both were criminally charged and entered deferred prosecution agreements.",
+      "strength": 4
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Inmate 3",
       "relationshipType": "cellmate",
-      "description": "Epstein was housed with Inmate 3 from July 30 to August 9, 2019, per the Psychology Department's directive.",
-      "strength": 3
-    },
-    {
-      "person1": "Tova Noel",
-      "person2": "Michael Thomas",
-      "relationshipType": "co-worker",
-      "description": "Both were on duty in the SHU on August 10, 2019, and jointly falsified count and round records.",
-      "strength": 4
-    },
-    {
-      "person1": "Warden",
-      "person2": "Captain",
-      "relationshipType": "supervisor-subordinate",
-      "description": "The Captain reported to the Warden and was involved in selecting Epstein's cellmate.",
-      "strength": 3
-    },
-    {
-      "person1": "Chief Psychologist",
-      "person2": "Staff Psychologist",
-      "relationshipType": "colleague",
-      "description": "Both were part of the MCC New York Psychology Department that evaluated Epstein and issued the cellmate directive.",
+      "description": "Epstein was housed with Inmate 3 from July 30 to August 9, 2019, per Psychology Department directive; Inmate 3 was transferred out on August 9, leaving Epstein alone.",
       "strength": 3
     },
     {
       "person1": "Jeffrey Epstein",
       "person2": "Individual 1",
       "relationshipType": "personal",
-      "description": "Epstein spoke with Individual 1 during an unmonitored call on August 9, allegedly having a personal relationship with her.",
-      "strength": 2
+      "description": "Epstein spoke with Individual 1 on an unmonitored call on August 9, 2019; he allegedly had a personal relationship with her.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The Warden was responsible for Epstein's overall custody at MCC New York; he selected Inmate 3 as Epstein's cellmate.",
+      "strength": 3
+    },
+    {
+      "person1": "Chief Psychologist",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "clinical",
+      "description": "The Chief Psychologist oversaw Epstein's psychological evaluations and recommended he be housed with a cellmate after the July 23 incident.",
+      "strength": 3
     },
     {
       "person1": "Day Watch SHU Officer in Charge",
       "person2": "Evening Watch SHU Officer in Charge",
-      "relationshipType": "relief",
-      "description": "The Day Watch officer claimed he informed the Evening Watch officer of the need to assign Epstein a new cellmate.",
+      "relationshipType": "co-worker / handoff",
+      "description": "The Day Watch officer claimed he informed the Evening Watch officer that Epstein needed a new cellmate; the Evening Watch officer denied this.",
+      "strength": 2
+    },
+    {
+      "person1": "Unit Manager",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The Unit Manager authorized and facilitated Epstein's unmonitored telephone call on August 9, 2019, in violation of BOP policy.",
       "strength": 2
     }
   ],
@@ -201,7 +215,7 @@
     {
       "date": "2019-07-06",
       "title": "Epstein's Arrest",
-      "description": "Jeffrey Epstein was arrested at Teterboro Airport in New Jersey and transported to MCC New York on federal sex trafficking charges.",
+      "description": "Jeffrey Epstein arrested at Teterboro Airport in New Jersey on federal sex trafficking charges and transported to MCC New York.",
       "category": "arrest",
       "significance": 5,
       "personsInvolved": [
@@ -211,7 +225,7 @@
     {
       "date": "2019-07-23",
       "title": "First Hanging Incident",
-      "description": "Epstein found in his SHU cell with an orange cloth around his neck. Cellmate reported Epstein tried to hang himself. Epstein placed on suicide watch.",
+      "description": "Epstein found with orange cloth around his neck in his SHU cell; cellmate reported Epstein tried to hang himself. Epstein placed on suicide watch.",
       "category": "abuse",
       "significance": 5,
       "personsInvolved": [
@@ -221,19 +235,27 @@
     },
     {
       "date": "2019-07-30",
-      "title": "Cellmate Directive Issued",
-      "description": "MCC New York Psychology Department emailed over 70 staff stating Epstein 'needs to be housed with an appropriate cellmate' following his removal from psychological observation.",
+      "title": "Cellmate Requirement Issued",
+      "description": "Psychology Department emails over 70 staff stating Epstein 'needs to be housed with an appropriate cellmate' upon release from psychological observation.",
       "category": "legal",
-      "significance": 4,
+      "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
         "Staff Psychologist"
       ]
     },
     {
+      "date": "2019-07-29",
+      "title": "Security Camera DVR Failure",
+      "description": "Disk failures in MCC New York's DVR 2 system occur, causing approximately half the institution's cameras (including SHU cameras) to stop recording. Not discovered until August 8.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
       "date": "2019-08-08",
       "title": "Epstein Signs New Will",
-      "description": "Epstein met with his attorneys at MCC New York and signed a new Last Will and Testament, unbeknownst to prison officials.",
+      "description": "Epstein meets with attorneys at MCC New York and signs a new Last Will and Testament. MCC New York officials unaware until after his death.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -243,7 +265,7 @@
     {
       "date": "2019-08-09",
       "title": "Cellmate Transferred, Documents Unsealed",
-      "description": "Epstein's cellmate (Inmate 3) transferred out of MCC New York; no new cellmate assigned. Second Circuit unsealed ~2000 pages of documents in Ghislaine Maxwell civil litigation, generating extensive media coverage.",
+      "description": "Epstein's cellmate Inmate 3 transferred out of MCC New York. No new cellmate assigned. Second Circuit unseals ~2000 pages of documents in Ghislaine Maxwell civil litigation, generating extensive media coverage.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -254,8 +276,8 @@
     },
     {
       "date": "2019-08-09",
-      "title": "Unmonitored Phone Call",
-      "description": "A Unit Manager allowed Epstein to make an unrecorded, unmonitored telephone call on a legal line, purportedly to his mother but actually to Individual 1.",
+      "title": "Unmonitored Telephone Call",
+      "description": "Unit Manager allows Epstein to make an unrecorded, unmonitored telephone call on a legal line, purportedly to his mother, but actually to Individual 1.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -267,7 +289,7 @@
     {
       "date": "2019-08-09",
       "title": "Failure to Conduct Counts and Rounds",
-      "description": "SHU staff failed to conduct the 4 p.m. and 10 p.m. inmate counts and rounds after ~10:40 p.m. Falsified records to indicate they were performed.",
+      "description": "SHU staff fail to conduct required 4 p.m. and 10 p.m. inmate counts and 30-minute rounds after approximately 10:40 p.m. Count slips and round sheets are falsified.",
       "category": "investigation",
       "significance": 5,
       "personsInvolved": [
@@ -280,65 +302,66 @@
     {
       "date": "2019-08-10",
       "title": "Epstein's Death",
-      "description": "At approximately 6:30 a.m., SHU staff found Epstein hanged in his cell. He was pronounced dead at a hospital at 7:36 a.m. Autopsy later ruled death a suicide by hanging.",
+      "description": "At approximately 6:30 a.m., Michael Thomas discovers Epstein hanged in his cell with an orange cloth ligature tied to the bunkbed. Epstein pronounced dead at hospital at 7:36 a.m.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein",
-        "Tova Noel",
         "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Autopsy Results",
+      "description": "Office of the Chief Medical Examiner, NYC, performs autopsy and determines cause of death is hanging and manner of death is suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
         "Medical Examiner"
       ]
     },
     {
-      "date": "2019-07-29",
-      "title": "Security Camera System Failure",
-      "description": "Disk failures occurred in the DVR 2 system of MCC New York's security cameras, causing approximately half the institution's cameras (including most in the SHU) to stop recording, though live feed continued. Not discovered until August 8.",
-      "category": "investigation",
+      "date": "2021-12-13",
+      "title": "Charges Dismissed Against Noel and Thomas",
+      "description": "After successfully fulfilling deferred prosecution agreements, charges against Tova Noel and Michael Thomas for falsifying BOP records are dismissed.",
+      "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Electronics Technician"
+        "Tova Noel",
+        "Michael Thomas"
       ]
     },
     {
       "date": null,
-      "title": "Jeffrey Epstein's Death in BOP Custody",
-      "description": "The event that prompted the OIG investigation and this report. The investigation found BOP employees failed to ensure Epstein continuously had a cellmate as recommended by Psychology Department personnel.",
+      "title": "Jeffrey Epstein's death in BOP custody",
+      "description": "The death of Jeffrey Epstein while in the custody of the Bureau of Prisons is the incident that prompted the OIG investigation and the subsequent recommendations for policy changes.",
       "category": "death",
       "significance": 5,
       "personsInvolved": [
         "Jeffrey Epstein"
       ]
-    },
-    {
-      "date": "2023-06-22",
-      "title": "Issuance of OIG Draft Report",
-      "description": "The Office of the Inspector General issues its draft report containing findings and eight recommendations to the Federal Bureau of Prisons regarding its care of Jeffrey Epstein.",
-      "category": "investigation",
-      "significance": 4,
-      "personsInvolved": []
     }
   ],
   "locations": [
     "Metropolitan Correctional Center (MCC New York), 150 Park Row, New York, NY",
-    "Special Housing Unit (SHU) at MCC New York (9 South)",
-    "L Tier of the SHU (where Epstein's cell Z06-220 was located)",
+    "Special Housing Unit (SHU) / 9 South, MCC New York",
+    "L Tier, SHU, MCC New York (Epstein's cell Z06-220)",
     "New York Presbyterian Lower Manhattan Hospital",
     "Teterboro Airport, New Jersey",
-    "MCC New York, New York",
-    "Metropolitan Correctional Center (MCC) New York"
+    "MCC New York (Metropolitan Correctional Center, New York)"
   ],
   "keyFacts": [
-    "The OIG found no evidence contradicting the FBI's determination that Epstein's death was a suicide and no evidence of criminality in how he died.",
-    "MCC New York staff failed to assign Epstein a new cellmate on August 9, 2019, after his cellmate was transferred, contrary to a Psychology Department directive issued on July 30.",
-    "SHU staff, including Tova Noel and Michael Thomas, falsified BOP records to show they conducted required inmate counts and 30-minute rounds on August 9-10 when they had not, leaving Epstein unmonitored for hours.",
-    "An MCC New York supervisor allowed Epstein to make an unrecorded, unmonitored telephone call on August 9, in violation of BOP policy.",
-    "A malfunction in the prison's security camera recording system from July 29 resulted in limited recorded video evidence from the SHU area for August 9-10, though live feeds were available.",
-    "The OIG report makes eight specific recommendations to the BOP to address systemic failures revealed by the investigation into Jeffrey Epstein's death.",
-    "The BOP concurred with all eight recommendations in its response, but the OIG found its response to Recommendation 2 (ensuring high-risk inmates have a cellmate) was 'not fully responsive.'",
-    "A key finding was that BOP employees failed to take steps to ensure Jeffrey Epstein continuously had a cellmate, despite Psychology Department personnel determining he needed one.",
-    "The report states the issues leading to Epstein's death were 'the result of employees failing to adhere to their duties, as opposed to a staffing shortage.'",
-    "The OIG requires the BOP to provide updates and documentation on implementing the recommendations within 90 days for the recommendations to be considered closed."
+    "Epstein died by suicide via hanging in his SHU cell on August 10, 2019, as determined by the NYC Medical Examiner and FBI investigation.",
+    "MCC New York staff failed to assign Epstein a new cellmate on August 9 after his cellmate was transferred, violating a Psychology Department directive issued July 30.",
+    "SHU staff, including Tova Noel and Michael Thomas, falsified BOP records to show required inmate counts and 30-minute rounds were conducted when they were not, leaving Epstein unmonitored for hours.",
+    "A Unit Manager allowed Epstein to make an unmonitored, unrecorded telephone call on August 9, 2019, in violation of BOP policy.",
+    "MCC New York's security camera DVR system had failed on July 29, 2019, and was not repaired until after Epstein's death, limiting recorded video evidence.",
+    "The OIG report makes eight specific recommendations to the BOP to improve procedures related to suicide watch, inmate monitoring, staffing, and security, stemming from failures in Epstein's case.",
+    "The BOP concurred with all eight recommendations but, according to the OIG's analysis, its response was not fully responsive to Recommendation 2 regarding ensuring high-risk inmates continuously have a cellmate.",
+    "The report states that BOP employees failed to ensure Jeffrey Epstein continuously had a cellmate despite Psychology Department personnel determining he needed one, and absent security reasons to the contrary.",
+    "The document is an official OIG draft report dated June 22, 2023, and includes the BOP's formal response and the OIG's analysis of that response."
   ],
-  "analyzedAt": "2026-02-11T14:06:36.438Z"
+  "analyzedAt": "2026-02-11T23:04:18.901Z"
 }

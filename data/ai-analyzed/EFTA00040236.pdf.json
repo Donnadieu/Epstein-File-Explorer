@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-11-15",
-  "summary": "This document is a chain of email correspondence from October to November 2021 between prosecutors and defense attorneys regarding scheduling meetings and witness preparation for the trial of Ghislaine Maxwell (United States v. Ghislaine Maxwell, 20 Cr. 330). The emails discuss coordinating a call with a JPMorgan witness, providing a trial subpoena, and scheduling around jury selection.",
+  "summary": "This document is a chain of email correspondence from October to November 2021 between attorneys involved in United States v. Ghislaine Maxwell. The emails primarily concern scheduling meetings and calls to discuss identifying a trial witness from JPMorgan Chase and obtaining a trial subpoena for that witness.",
   "persons": [
     {
       "name": "Allison Stoddart",
-      "role": "Defense Attorney",
+      "role": "Attorney",
       "category": "legal",
-      "context": "Attorney from WilmerHale representing or involved in the Ghislaine Maxwell case, coordinating scheduling and witness matters with the prosecution.",
+      "context": "Attorney from WilmerHale corresponding with the U.S. Attorney's Office regarding scheduling and witness matters for the Ghislaine Maxwell trial.",
       "mentionCount": 15
     },
     {
       "name": "Anjan Sahni",
       "role": "Assistant United States Attorney",
       "category": "legal",
-      "context": "Prosecutor from the U.S. Attorney's Office for the Southern District of New York involved in the Ghislaine Maxwell case, corresponding about trial witness preparation.",
+      "context": "Assistant United States Attorney for the Southern District of New York, copied on emails regarding witness identification and scheduling in the Maxwell case.",
       "mentionCount": 10
     },
     {
       "name": "Pat McHugh",
-      "role": "Unspecified Team Member",
-      "category": "other",
-      "context": "Individual mentioned as part of a team for whom a call is being scheduled; likely a colleague of the email sender.",
+      "role": "Attorney or Team Member",
+      "category": "legal",
+      "context": "Individual whom Allison Stoddart's team wishes to set up a call with; mentioned as traveling on specific dates.",
       "mentionCount": 2
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the criminal case referenced throughout the emails (United States v. Ghislaine Maxwell, 20 Cr. 330).",
+      "context": "The defendant in the criminal case referenced throughout the email chain (United States v. Ghislaine Maxwell, 20 Cr. 330).",
       "mentionCount": 6
     }
   ],
@@ -38,29 +38,22 @@
     {
       "person1": "Allison Stoddart",
       "person2": "Anjan Sahni",
-      "relationshipType": "legal-adversary",
-      "description": "Defense attorney and prosecutor corresponding about scheduling and trial preparation matters in the Ghislaine Maxwell case.",
+      "relationshipType": "legal counterpart",
+      "description": "Corresponding as legal professionals on opposite sides (defense and prosecution) regarding trial logistics and witness matters.",
       "strength": 3
     },
     {
       "person1": "Allison Stoddart",
       "person2": "Pat McHugh",
       "relationshipType": "colleague",
-      "description": "Stoddart is arranging a call involving McHugh, indicating they are part of the same legal team or associated group.",
+      "description": "Stoddart is arranging a call involving her team and Pat McHugh, indicating a professional association.",
       "strength": 2
     },
     {
       "person1": "Anjan Sahni",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "prosecutor-defendant",
-      "description": "Sahni is a prosecutor for the U.S. government in the criminal case against Maxwell.",
-      "strength": 3
-    },
-    {
-      "person1": "Allison Stoddart",
-      "person2": "Ghislaine Maxwell",
-      "relationshipType": "attorney-client",
-      "description": "Stoddart is an attorney from WilmerHale involved in the Maxwell case, likely part of the defense team.",
+      "description": "Sahni is an AUSA prosecuting the case against defendant Ghislaine Maxwell.",
       "strength": 3
     }
   ],
@@ -68,7 +61,7 @@
     {
       "date": "2021-11",
       "title": "Jury Selection for Maxwell Trial",
-      "description": "Jury selection is scheduled and impacting the availability of legal teams for meetings.",
+      "description": "Jury selection is noted as being scheduled and underway, creating scheduling difficulties for the attorneys.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -79,8 +72,8 @@
     },
     {
       "date": "2021-10 to 2021-11",
-      "title": "Trial Witness Preparation",
-      "description": "Ongoing coordination between prosecution and defense to identify and prepare a witness from JPMorgan for trial, including drafting a subpoena.",
+      "title": "Witness Identification Discussions",
+      "description": "Ongoing discussions between defense and prosecution attorneys about identifying an appropriate trial witness from JPMorgan Chase and obtaining a subpoena.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -92,14 +85,13 @@
   "locations": [
     "New York, NY 10007",
     "7 World Trade Center, 250 Greenwich Street, New York, NY 10007",
-    "One Saint Andrew's Plaza, New York, NY 10007",
-    "Southern District of New York"
+    "One Saint Andrew's Plaza, New York, NY 10007"
   ],
   "keyFacts": [
-    "The emails show active coordination between the prosecution (AUSA Anjan Sahni) and defense (attorney Allison Stoddart) in the lead-up to Ghislaine Maxwell's trial in late 2021.",
-    "Jury selection for the Maxwell trial was underway in November 2021, creating scheduling challenges for the legal teams.",
-    "The prosecution was working with JPMorgan to identify a trial witness and provided a draft subpoena to the defense.",
-    "The correspondence indicates the use of external email senders, highlighting communication between the U.S. Attorney's Office and private defense counsel."
+    "The correspondence shows active pre-trial coordination between defense and prosecution attorneys in the Ghislaine Maxwell case in late 2021.",
+    "A key logistical topic is identifying a witness from JPMorgan Chase to testify at trial, requiring a trial appearance subpoena.",
+    "Jury selection for the Maxwell trial was actively underway in November 2021, impacting attorney availability.",
+    "The emails reveal professional communication channels between WilmerHale (defense) and the U.S. Attorney's Office for the Southern District of New York (prosecution)."
   ],
-  "analyzedAt": "2026-02-11T15:10:58.873Z"
+  "analyzedAt": "2026-02-12T00:00:46.581Z"
 }

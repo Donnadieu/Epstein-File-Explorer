@@ -3,162 +3,179 @@
   "dataSet": "1",
   "documentType": "financial record",
   "dateOriginal": null,
-  "summary": "This document appears to be a financial record listing payments from an account, likely related to Jeffrey Epstein or an associated entity. It shows numerous expenditures for services, political contributions, and personal expenses in late 2011 and early 2012, including payments to contractors, political campaigns, and individuals.",
+  "summary": "This document appears to be a financial record listing check payments or expenses from an account, likely belonging to Jeffrey Epstein or an associated entity. It shows numerous payments for construction/renovation (Field House), political contributions, personal expenses, and services, providing insight into financial activities and connections.",
   "persons": [
     {
       "name": "James Gainfort",
-      "role": "Service provider/recipient",
-      "category": "other",
-      "context": "Received payments for 'Field House' services on 11/22/2011 ($20,372.55) and 12/19/2011 ($1,481.50).",
+      "role": "Service provider/contractor",
+      "category": "staff",
+      "context": "Received two payments (check numbers 4605 and 4634) for work on the 'Field House' project.",
       "mentionCount": 2
     },
     {
-      "name": "Peter Perez",
-      "role": "Art conservator",
-      "category": "other",
-      "context": "Received payment of $3,400.00 for art conservation services on 12/8/2011.",
+      "name": "Ben Krupinski",
+      "role": "Service provider/contractor",
+      "category": "staff",
+      "context": "Received a payment (check number 4629) for work, possibly construction-related, as indicated by 'SI I ---'.",
       "mentionCount": 1
     },
     {
       "name": "Dr. Elliott Howard",
-      "role": "Concierge service provider",
+      "role": "Medical/Concierge service provider",
       "category": "other",
-      "context": "Received payment of $3,000.00 for '2012 Concierge Svc.' on 12/14/2011.",
+      "context": "Received a payment (check number 4622) for '2012 Concierge Svc.'.",
       "mentionCount": 1
     },
     {
       "name": "Melanie Spinella Gill",
-      "role": "Payment recipient",
+      "role": "Recipient of funds",
       "category": "other",
-      "context": "Received payment of $25,000.00 on 12/19/2011.",
+      "context": "Received a payment of $25,000 (check number 4625).",
       "mentionCount": 1
     },
     {
       "name": "Matthew Hanlon",
-      "role": "Art restoration provider",
-      "category": "other",
-      "context": "Received payment of $108.88 for art restoration on 12/20/2011.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Ben Krupinski",
-      "role": "Payment recipient",
-      "category": "other",
-      "context": "Received payment of $19,038.19 on 12/22/2011.",
+      "role": "Art restorer",
+      "category": "staff",
+      "context": "Received a payment (check number 4627) for 'Restor. Art'.",
       "mentionCount": 1
     },
     {
       "name": "Robert J. Hennessey",
       "role": "Photographer",
-      "category": "other",
-      "context": "Received payment of $834.80 for 'Photo Art photos' on 12/22/2011.",
+      "category": "staff",
+      "context": "Received a payment (check number 4630) for 'Photo Art photos'.",
       "mentionCount": 1
     },
     {
-      "name": "Goldner",
-      "role": "Recipient of charitable donation",
-      "category": "other",
-      "context": "Associated with 'Tibetan Mastiff Rescue' receiving $15,000.00 on 1/5/2012.",
+      "name": "Peter Perez",
+      "role": "Art conservator",
+      "category": "staff",
+      "context": "Received a payment (check number 4617) for 'Art conservation'.",
       "mentionCount": 1
     },
     {
-      "name": "Ben",
-      "role": "Payment recipient",
-      "category": "other",
-      "context": "Received payment of $20,236.12 to 'Pawling Mountain Club' on 1/6/2012.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Alex",
-      "role": "Tennis-related service recipient",
-      "category": "other",
-      "context": "Associated with 'MBM Enterprises' payment of $2,305.00 for 'Tennis' on 12/5/2011.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Daniel",
-      "role": "Dinner recipient",
-      "category": "other",
-      "context": "Associated with 'The dinex Group' payment of $1,434.15 for dinners on 12/8/2011.",
+      "name": "Madison Cox",
+      "role": "Service provider/contractor",
+      "category": "staff",
+      "context": "Listed as 'Madison Cox Associates' receiving a payment (check number 4620) for the 'Field House' project.",
       "mentionCount": 1
     },
     {
       "name": "Diana",
-      "role": "Payment recipient",
+      "role": "Recipient of funds or service provider",
       "category": "other",
-      "context": "Associated with 'Ushabati LLC' payment of $1,043.37 on 12/13/2011.",
+      "context": "Associated with 'Ushabati LLC' which received a payment (check number 4621).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alex",
+      "role": "Service recipient",
+      "category": "other",
+      "context": "Referenced in a payment to 'MBM Enterprises' for 'Tennis' (check number 4612).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Daniel",
+      "role": "Service recipient",
+      "category": "other",
+      "context": "Referenced in a payment to 'The dinex Group' for 'dinners' (check number 4616).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ben",
+      "role": "Service recipient or club member",
+      "category": "other",
+      "context": "Referenced in a payment to 'Pawling Mountain Club' (check number 4638).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Goldner",
+      "role": "Recipient of charitable funds",
+      "category": "other",
+      "context": "Associated with 'Tibetan Mastiff Rescue' which received a payment (check number 4636).",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "James Gainfort",
+      "person2": "Madison Cox",
+      "relationshipType": "financial",
+      "description": "Both were paid for work on the 'Field House' project, indicating they were contractors/service providers for the same entity.",
+      "strength": 2
+    },
+    {
+      "person1": "Peter Perez",
+      "person2": "Matthew Hanlon",
+      "relationshipType": "financial",
+      "description": "Both were paid for art-related services (conservation and restoration) by the same financial entity.",
+      "strength": 2
+    },
+    {
+      "person1": "Robert J. Hennessey",
+      "person2": "Peter Perez",
+      "relationshipType": "financial",
+      "description": "Both were paid for art/photography services by the same financial entity.",
+      "strength": 2
+    }
+  ],
   "events": [
     {
       "date": "2011-11-17",
-      "title": "Political contribution to Stabenow for US Senate",
-      "description": "Payment of $1,500.00 made to 'Stabenow for US Senate' political campaign.",
+      "title": "Political Contribution to Stabenow",
+      "description": "A $1,500.00 political contribution was made to 'Stabenow for US Senate'.",
       "category": "political",
       "significance": 2,
       "personsInvolved": []
     },
     {
       "date": "2011-12-05",
-      "title": "Political contribution to Hatch Victory committee",
-      "description": "Payment of $35,000.00 made to 'Hatch Victory committee' political campaign.",
+      "title": "Political Contribution to Hatch",
+      "description": "A $35,000.00 political contribution was made to the 'Hatch Victory committee'.",
       "category": "political",
       "significance": 3,
       "personsInvolved": []
     },
     {
       "date": "2011-12-22",
-      "title": "Political contribution to Carper for Senate",
-      "description": "Payment of $2,500.00 made to 'Carper for Senate' political campaign.",
+      "title": "Political Contribution to Carper",
+      "description": "A $2,500.00 political contribution was made to 'Carper for Senate'.",
       "category": "political",
       "significance": 2,
       "personsInvolved": []
     },
     {
-      "date": "2011-11-22",
-      "title": "Large payment to James Gainfort for Field House",
-      "description": "Payment of $20,372.55 made to James Gainfort for 'Field House' services.",
-      "category": "financial",
-      "significance": 2,
-      "personsInvolved": [
-        "James Gainfort"
-      ]
+      "date": "2011-11-15",
+      "title": "Pawling Mountain Club Thanksgiving Shoot",
+      "description": "A payment of $3,427.28 was made to the Pawling Mountain Club for a 'Thanksgiving shoot'.",
+      "category": "travel",
+      "significance": 1,
+      "personsInvolved": []
     },
     {
       "date": "2011-12-19",
-      "title": "Payment to Melanie Spinella Gill",
-      "description": "Payment of $25,000.00 made to Melanie Spinella Gill.",
+      "title": "Large Payment to Melanie Spinella Gill",
+      "description": "A payment of $25,000.00 was made to Melanie Spinella Gill.",
       "category": "financial",
       "significance": 2,
       "personsInvolved": [
         "Melanie Spinella Gill"
       ]
-    },
-    {
-      "date": "2011-12-22",
-      "title": "Large payment to Ben Krupinski",
-      "description": "Payment of $19,038.19 made to Ben Krupinski.",
-      "category": "financial",
-      "significance": 2,
-      "personsInvolved": [
-        "Ben Krupinski"
-      ]
     }
   ],
   "locations": [
     "Bedford",
-    "Pawling Mountain Club",
     "Glen Arbor Golf Club",
+    "Pawling Mountain Club",
     "760 Park"
   ],
   "keyFacts": [
-    "The document shows substantial political contributions totaling $38,500.00 to campaigns including Stabenow for US Senate, Hatch Victory committee, and Carper for Senate.",
-    "Multiple large payments were made for 'Field House' services, including $20,372.55 to James Gainfort and $33,342.84 to Dom's Landscaping.",
-    "Significant cash withdrawals of $25,000.00 each occurred on 12/1/2011 and 12/22/2011.",
-    "Payments to individuals include $25,000.00 to Melanie Spinella Gill and $19,038.19 to Ben Krupinski.",
-    "The document reveals expenditures for luxury services including art conservation, golf club fees, and concierge services."
+    "The document records substantial spending on a 'Field House' construction/renovation project, with multiple large payments to contractors like James Gainfort, Dom's Landscaping, and Fisher Marantz.",
+    "It shows multiple political contributions totaling at least $38,500 to committees for Senators Stabenow, Hatch, and Carper in late 2011.",
+    "Large cash withdrawals of $25,000 are noted on two occasions (check numbers 4609 and 4632).",
+    "Payments for luxury and personal expenses are documented, including art conservation, golf club dues, high-end lunches, and a Tibetan Mastiff rescue donation.",
+    "The financial activity suggests the account holder had significant wealth and engaged with a network of contractors, service providers, and political entities."
   ],
-  "analyzedAt": "2026-02-11T18:01:00.472Z"
+  "analyzedAt": "2026-02-11T22:41:01.598Z"
 }

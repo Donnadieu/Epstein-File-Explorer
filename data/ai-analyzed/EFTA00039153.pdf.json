@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "exhibit list",
   "dateOriginal": null,
-  "summary": "This document is a list of exhibits for Chapter 2 of a report, likely from the U.S. Department of Justice Office of the Inspector General (OIG). It enumerates 41 exhibits, primarily consisting of legal filings, Bureau of Prisons (BOP) policies, and correctional facility records related to the incarceration and death of Jeffrey Epstein, and the subsequent prosecution of two correctional officers.",
+  "summary": "This document is a list of exhibits for Chapter 2 of a report, likely from the U.S. Department of Justice Office of the Inspector General (OIG). It enumerates 41 exhibits related to the investigation into Jeffrey Epstein's death in custody, including legal filings, prison records, policies, and regulations. The list highlights the criminal cases against Epstein and the correctional officers, as well as the Bureau of Prisons' procedures.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Inmate/Defendant",
       "category": "key figure",
-      "context": "The central figure of the case; listed as the subject of a BOP psychological reconstruction and a federal indictment. He was an inmate at the Metropolitan Correctional Center (MCC) New York.",
+      "context": "The primary subject of the investigation; listed as an inmate in a BOP Psychological Reconstruction and as the defendant in a federal indictment.",
       "mentionCount": 3
     },
     {
       "name": "Tova Noel",
       "role": "Correctional Officer/Defendant",
-      "category": "legal",
-      "context": "A correctional officer at MCC New York who was indicted and later entered into a Deferred Prosecution Agreement related to the circumstances surrounding Jeffrey Epstein's death.",
+      "category": "law enforcement",
+      "context": "A correctional officer at MCC New York who was indicted and later entered into a Deferred Prosecution Agreement related to the events surrounding Epstein's death.",
       "mentionCount": 3
     },
     {
       "name": "Michael Thomas",
       "role": "Correctional Officer/Defendant",
-      "category": "legal",
-      "context": "A correctional officer at MCC New York who was indicted and later entered into a Deferred Prosecution Agreement related to the circumstances surrounding Jeffrey Epstein's death.",
+      "category": "law enforcement",
+      "context": "A correctional officer at MCC New York who was indicted and later entered into a Deferred Prosecution Agreement related to the events surrounding Epstein's death.",
       "mentionCount": 3
     }
   ],
@@ -32,28 +32,28 @@
       "person1": "Tova Noel",
       "person2": "Michael Thomas",
       "relationshipType": "co-conspirator",
-      "description": "Both were correctional officers indicted together on the same charges (November 19, 2019) and were subjects of joint legal proceedings, including a nolle prosequi filing.",
+      "description": "Both were correctional officers indicted together for their alleged roles in the events surrounding Jeffrey Epstein's death, as indicated by their joint indictment and nolle prosequi.",
       "strength": 4
     },
     {
       "person1": "Tova Noel",
       "person2": "Jeffrey Epstein",
       "relationshipType": "guard-inmate",
-      "description": "Noel was a correctional officer at the MCC New York where Epstein was held. Her indictment suggests alleged failure in duty related to his supervision.",
+      "description": "Noel was a correctional officer at the MCC New York where Epstein was held; her duties included monitoring him, as referenced in the check sheets and post orders.",
       "strength": 3
     },
     {
       "person1": "Michael Thomas",
       "person2": "Jeffrey Epstein",
       "relationshipType": "guard-inmate",
-      "description": "Thomas was a correctional officer at the MCC New York where Epstein was held. His indictment suggests alleged failure in duty related to his supervision.",
+      "description": "Thomas was a correctional officer at the MCC New York where Epstein was held; his duties included monitoring him, as referenced in the check sheets and post orders.",
       "strength": 3
     }
   ],
   "events": [
     {
       "date": "2019-07-02",
-      "title": "Epstein Indictment in SDNY",
+      "title": "Federal Indictment of Jeffrey Epstein",
       "description": "An indictment was filed against Jeffrey Epstein in the U.S. District Court for the Southern District of New York.",
       "category": "legal",
       "significance": 5,
@@ -63,8 +63,8 @@
     },
     {
       "date": "2019-07-18",
-      "title": "Epstein Remanded to Custody",
-      "description": "A Decision and Order was filed remanding defendant Jeffrey Epstein to custody.",
+      "title": "Decision to Remand Jeffrey Epstein",
+      "description": "A decision and order was filed to remand defendant Jeffrey Epstein.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -73,18 +73,18 @@
     },
     {
       "date": "2019-08-09",
-      "title": "SHU Check Sheet (Night Before Death)",
-      "description": "A 30-minute check sheet was completed for the Special Housing Unit (SHU) at MCC New York, the night before Jeffrey Epstein's death.",
+      "title": "SHU Check Sheet (L-Tier)",
+      "description": "A 30-minute check sheet was completed for the Special Housing Unit (SHU) at MCC New York, likely documenting inmate monitoring.",
       "category": "investigation",
-      "significance": 5,
+      "significance": 3,
       "personsInvolved": []
     },
     {
       "date": "2019-08-10",
-      "title": "SHU Check Sheet (Day of Death)",
-      "description": "A 30-minute check sheet was completed for the Special Housing Unit (SHU) at MCC New York on the day Jeffrey Epstein was found dead.",
+      "title": "SHU Check Sheet (ZA, Tier-G)",
+      "description": "A 30-minute check sheet was completed for the Special Housing Unit (SHU) at MCC New York, likely documenting inmate monitoring.",
       "category": "investigation",
-      "significance": 5,
+      "significance": 3,
       "personsInvolved": []
     },
     {
@@ -92,7 +92,7 @@
       "title": "Indictment of Correctional Officers",
       "description": "An indictment was filed against correctional officers Tova Noel and Michael Thomas in the U.S. District Court for the Southern District of New York.",
       "category": "legal",
-      "significance": 4,
+      "significance": 5,
       "personsInvolved": [
         "Tova Noel",
         "Michael Thomas"
@@ -101,9 +101,9 @@
     {
       "date": "2021-05-25",
       "title": "Deferred Prosecution Agreements",
-      "description": "Deferred Prosecution Agreements were filed for both Tova Noel and Michael Thomas.",
+      "description": "Deferred Prosecution Agreements were filed for Tova Noel and Michael Thomas.",
       "category": "legal",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "Tova Noel",
         "Michael Thomas"
@@ -111,8 +111,8 @@
     },
     {
       "date": "2022-01-03",
-      "title": "Charges Dropped Against Officers",
-      "description": "A Nolle Prosequi (declination to prosecute) was filed, dropping the charges against Tova Noel and Michael Thomas.",
+      "title": "Nolle Prosequi for Officers",
+      "description": "A nolle prosequi (declination to prosecute) was filed for Tova Noel and Michael Thomas.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
@@ -126,11 +126,11 @@
     "Metropolitan Correctional Center, New York, New York (MCC New York)"
   ],
   "keyFacts": [
-    "The document lists exhibits for an OIG report focused on Jeffrey Epstein's death in custody and the conduct of prison staff.",
-    "Two correctional officers, Tova Noel and Michael Thomas, were indicted in November 2019 but the charges were ultimately dropped via a nolle prosequi in January 2022 after they entered Deferred Prosecution Agreements.",
-    "Key evidence includes 30-minute check sheets from the Special Housing Unit for August 9 and 10, 2019, the period immediately surrounding Epstein's death.",
-    "The exhibits include a wide range of BOP policies and regulations governing inmate supervision, special housing, suicide prevention, and employee conduct.",
-    "The list indicates a systematic review of the procedures and actions at MCC New York related to inmate Epstein's confinement and the subsequent legal actions against staff."
+    "The document lists exhibits for an OIG investigation into Jeffrey Epstein's death, focusing on prison procedures and the legal aftermath.",
+    "Correctional officers Tova Noel and Michael Thomas were indicted (Nov 2019), entered deferred prosecution agreements (May 2021), and the charges were later dropped (Jan 2022).",
+    "The exhibits include specific prison records from MCC New York dated around the time of Epstein's death in August 2019, such as daily rosters and 30-minute check sheets for the Special Housing Unit.",
+    "Numerous Bureau of Prisons (BOP) program statements and federal regulations are cited, indicating a review of compliance with inmate monitoring and suicide prevention protocols.",
+    "The list references a BOP Psychological Reconstruction of Jeffrey Epstein dated September 17, 2019, which was conducted after his death."
   ],
-  "analyzedAt": "2026-02-11T14:07:27.920Z"
+  "analyzedAt": "2026-02-11T23:05:02.138Z"
 }

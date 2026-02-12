@@ -2,35 +2,35 @@
   "fileName": "EFTA00040146.pdf",
   "dataSet": "9",
   "documentType": "email chain",
-  "dateOriginal": "2021-05-24 to 2021-05-25",
-  "summary": "An email chain between FBI agents and federal prosecutors regarding a threat assessment requested by an attorney for Tova Noel, a former Epstein jail guard. The threat, sent from a Las Vegas email address, is forwarded for investigation and potential subpoena to Google.",
+  "dateOriginal": "2021-05-25",
+  "summary": "This is an email chain from May 2021 discussing a perceived threat against Tova, a victim who is one of the Epstein guards, and her attorney's request for an FBI threat assessment. The chain involves coordination between the US Attorney's Office for the Southern District of New York (USANYS), FBI agents, and the victim's attorneys regarding the threat and potential legal actions like a subpoena to Google.",
   "persons": [
     {
       "name": "Jason Foy",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney from Foy & Seplowitz LLC who forwards a threatening email received by his partner to federal authorities, requesting a threat assessment for his client Tova Noel.",
-      "mentionCount": 4
+      "context": "Attorney from Foy & Seplowitz LLC who forwarded a threatening email to the US Attorney's Office, requesting an FBI threat assessment for his client Tova.",
+      "mentionCount": 3
     },
     {
       "name": "James Seplowitz",
       "role": "Attorney",
       "category": "legal",
-      "context": "Partner of Jason Foy who initially received the threatening email, which was then forwarded to authorities.",
-      "mentionCount": 3
-    },
-    {
-      "name": "Tova Noel",
-      "role": "Former Epstein jail guard",
-      "category": "staff",
-      "context": "Referred to as 'the victim' and a 'former Epstein guard'; her attorney is requesting an FBI threat assessment due to a perceived threat against her safety.",
+      "context": "Partner of Jason Foy who initially received the threatening email at their law firm.",
       "mentionCount": 2
     },
     {
       "name": "Eric Sarraga",
-      "role": "Email recipient",
+      "role": "Unknown",
       "category": "other",
-      "context": "Copied on the internal email between attorneys Jason Foy and James Seplowitz regarding the threatening message.",
+      "context": "Copied on the internal email between attorneys Jason Foy and James Seplowitz regarding the threat.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova",
+      "role": "Victim/Epstein guard",
+      "category": "victim",
+      "context": "Identified as a victim and one of the Epstein guards; the subject of a perceived threat, with her plea to the DP scheduled for the next day.",
       "mentionCount": 2
     }
   ],
@@ -38,60 +38,70 @@
     {
       "person1": "Jason Foy",
       "person2": "James Seplowitz",
-      "relationshipType": "professional partnership",
-      "description": "Partners at the law firm Foy & Seplowitz LLC, as indicated in the email signature and forwarding chain.",
+      "relationshipType": "professional",
+      "description": "Law partners at Foy & Seplowitz LLC, collaborating on the threat assessment request for their client Tova.",
       "strength": 4
     },
     {
       "person1": "Jason Foy",
-      "person2": "Tova Noel",
+      "person2": "Tova",
       "relationshipType": "attorney-client",
-      "description": "Jason Foy is acting as attorney for Tova Noel, requesting an FBI threat assessment on her behalf.",
-      "strength": 4
+      "description": "Jason Foy is acting as Tova's attorney, requesting an FBI threat assessment on her behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "James Seplowitz",
+      "person2": "Tova",
+      "relationshipType": "attorney-client",
+      "description": "James Seplowitz is a law partner involved in the case, as the threatening email was sent to him.",
+      "strength": 3
     }
   ],
   "events": [
     {
       "date": "2021-05-24",
       "title": "Threatening email received",
-      "description": "An email perceived as a threat against Tova Noel is sent from 'Vegas Army Vet' to attorney James Seplowitz.",
+      "description": "An email perceived as a threat against Tova's safety was sent from 'Vegas Army Vet' to attorney James Seplowitz.",
       "category": "investigation",
-      "significance": 3,
+      "significance": 4,
       "personsInvolved": [
         "James Seplowitz",
-        "Tova Noel"
+        "Tova",
+        "Vegas Army Vet"
       ]
     },
     {
       "date": "2021-05-25",
-      "title": "Request for threat assessment",
-      "description": "Attorney Jason Foy formally requests the Government (FBI/US Attorney's Office) to investigate the perceived threat against his client Tova Noel.",
+      "title": "Plea to the DP scheduled",
+      "description": "Tova's plea to the DP (likely meaning 'Deferred Prosecution' or similar) was scheduled for this day, as mentioned in the email.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Jason Foy",
-        "Tova Noel"
+        "Tova"
       ]
     },
     {
-      "date": "2021-05-25",
-      "title": "FBI coordination on threat",
-      "description": "FBI agents and Assistant U.S. Attorneys coordinate to assess the threat, discuss generating a subpoena to Google for subscriber information, and consider a Non-Disclosure Order (NDO).",
+      "date": "2021-05-24",
+      "title": "Request for FBI threat assessment",
+      "description": "Attorney Jason Foy formally requested the US Attorney's Office to have the FBI conduct a threat assessment regarding the email threat against Tova.",
       "category": "investigation",
-      "significance": 3,
-      "personsInvolved": []
+      "significance": 4,
+      "personsInvolved": [
+        "Jason Foy",
+        "Tova"
+      ]
     }
   ],
   "locations": [
-    "Las Vegas, Nevada",
+    "Las Vegas",
     "Hackensack, NJ 07601",
-    "New York (referenced as NY FBI and USANYS)"
+    "New York"
   ],
   "keyFacts": [
-    "Tova Noel, a former guard at the jail where Jeffrey Epstein was held, was the subject of a perceived threat in May 2021.",
-    "The threatening email originated from a Las Vegas email address, with the sender having no criminal history according to an initial OIG check.",
-    "Federal authorities (FBI and U.S. Attorney's Office) coordinated to conduct a threat assessment and considered issuing a subpoena to Google for account information.",
-    "The document reveals ongoing security concerns and legal proceedings involving staff associated with the Epstein case years after his death."
+    "Tova is identified as a victim and one of the Epstein guards, with a pending legal plea.",
+    "A threatening email was sent from a 'Vegas Army Vet' to attorney James Seplowitz, prompting a formal request for an FBI threat assessment.",
+    "The US Attorney's Office and FBI coordinated on the threat, discussing potential subpoenas to Google for subscriber information.",
+    "The email chain reveals ongoing security concerns for individuals associated with the Epstein case in 2021."
   ],
-  "analyzedAt": "2026-02-11T14:58:54.384Z"
+  "analyzedAt": "2026-02-11T23:50:29.477Z"
 }

@@ -3,190 +3,183 @@
   "dataSet": "9",
   "documentType": "financial record",
   "dateOriginal": "2002-12-23",
-  "summary": "A FedEx invoice dated December 23, 2002, detailing shipping charges for account holder Jeffrey E. Epstein. The document lists numerous shipments sent from and to Epstein's New York address, with recipients including known associates, staff, and businesses, providing a snapshot of his communications and logistics during this period.",
+  "summary": "A FedEx invoice dated December 23, 2002, detailing shipping charges for account holder Jeffrey E. Epstein. The document lists numerous shipments sent from and to Epstein's New York address, with recipients including known associates, staff, and entities. It provides a snapshot of Epstein's logistical activity and network during this period.",
   "persons": [
     {
       "name": "Jeffrey E. Epstein",
       "role": "Account Holder / Shipper / Recipient",
       "category": "key figure",
-      "context": "The primary account holder for the FedEx invoice; shipments are sent from his New York address and to him at his Palm Beach address.",
+      "context": "The primary account holder for this FedEx invoice. Multiple shipments are sent from his New York address, and he is also listed as the recipient for several packages sent to his Palm Beach address.",
       "mentionCount": 50
     },
     {
-      "name": "G. Maxwell",
+      "name": "G Maxwell",
       "role": "Recipient / Sender",
       "category": "associate",
-      "context": "Listed as a recipient and sender on multiple FedEx shipments from Epstein's account; packages were signed for by 'MAXWELL'.",
-      "mentionCount": 5
+      "context": "Listed as a recipient and sender on multiple FedEx shipments paid for by Epstein's account. Packages were delivered and signed for by 'MAXWELL'.",
+      "mentionCount": 4
+    },
+    {
+      "name": "S Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Listed as a recipient on a FedEx shipment paid for by Epstein's account, with the package signed for by 'S MAXWELL'.",
+      "mentionCount": 1
     },
     {
       "name": "Edwina Simmonds",
       "role": "Recipient",
       "category": "staff",
-      "context": "Listed as a recipient of a FedEx shipment paid for by Epstein's account.",
+      "context": "Listed as a recipient on multiple FedEx shipments paid for by Epstein's account.",
       "mentionCount": 3
     },
     {
       "name": "Bran Ferren",
       "role": "Sender",
       "category": "associate",
-      "context": "Listed as the sender of a FedEx shipment to Jeffrey Epstein.",
+      "context": "Listed as the sender on a FedEx shipment to Jeffrey Epstein.",
       "mentionCount": 1
     },
     {
       "name": "Danny Sirjis",
       "role": "Recipient",
       "category": "associate",
-      "context": "Listed as the intended recipient of a FedEx shipment that required an address correction.",
+      "context": "Listed as a recipient on a FedEx shipment from G Maxwell to Epstein's address, requiring an address correction.",
       "mentionCount": 1
     },
     {
-      "name": "Kirstie Fergunen",
+      "name": "Kirstie Fergusen",
       "role": "Recipient",
-      "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account; signed for the package.",
-      "mentionCount": 2
-    },
-    {
-      "name": "Caroline Andiani",
-      "role": "Recipient",
-      "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account.",
+      "context": "Listed as a recipient on a FedEx shipment paid for by Epstein's account, signed for by 'K.FERGUNSEN'.",
+      "category": "associate",
       "mentionCount": 1
     },
     {
-      "name": "Hugh Bake",
-      "role": "Recipient",
+      "name": "M. Christiaan",
+      "role": "Recipient (Signatory)",
       "category": "other",
-      "context": "Listed as the recipient (at 'Charities of Palm Beach') of a FedEx shipment paid for by Epstein's account; signed for the package.",
+      "context": "Signed for a FedEx package addressed to Danny Sirjis at Epstein's New York address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marc Lundberg",
+      "role": "Recipient (Company)",
+      "category": "other",
+      "context": "Listed as the recipient 'MARC LUNDBERG NA PROPERTY INC' on a FedEx shipment from Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Hugh Bate",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Listed as the recipient 'HUGH BATE CHANOTS OF PALM BEACH' on a FedEx shipment from Epstein, signed for by 'H.BAK'.",
       "mentionCount": 1
     },
     {
       "name": "Sabel Maxwell",
       "role": "Sender",
       "category": "associate",
-      "context": "Listed as the sender of a FedEx shipment to Jeffrey Epstein.",
+      "context": "Listed as the sender 'SABEL MAXWELL' on a FedEx shipment to Epstein.",
       "mentionCount": 1
     },
     {
-      "name": "Ella Dershowitz",
+      "name": "Caroline Andiani",
       "role": "Recipient",
-      "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Frank Nodarse",
-      "role": "Sender",
-      "category": "other",
-      "context": "Listed as the sender (from 'Crystal Communications, Inc.') of a FedEx shipment where Epstein was the payor as recipient.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Marc Lundberg",
-      "role": "Recipient",
-      "category": "other",
-      "context": "Listed as the recipient (at 'NA Property Inc') of a FedEx shipment paid for by Epstein's account.",
-      "mentionCount": 1
-    },
-    {
-      "name": "M. Christiaan",
-      "role": "Recipient Signatory",
-      "category": "other",
-      "context": "Signed for a FedEx shipment addressed to Danny Sirjis.",
-      "mentionCount": 1
-    },
-    {
-      "name": "S. Maxwell",
-      "role": "Recipient Signatory",
       "category": "associate",
-      "context": "Signed for a FedEx shipment.",
+      "context": "Listed as a recipient 'CARDINE ANDIANI' on a FedEx shipment from Epstein.",
       "mentionCount": 1
     },
     {
       "name": "K. Daniels",
-      "role": "Recipient Signatory",
+      "role": "Recipient (Signatory)",
       "category": "other",
-      "context": "Signed for a FedEx shipment.",
-      "mentionCount": 1
-    },
-    {
-      "name": "S. Griffs",
-      "role": "Recipient Signatory",
-      "category": "other",
-      "context": "Signed for a FedEx shipment.",
+      "context": "Signed for a FedEx Express Saver package sent from Epstein's account.",
       "mentionCount": 1
     },
     {
       "name": "Peg Ugiano",
       "role": "Recipient",
       "category": "other",
-      "context": "Listed as the recipient (at 'N.A. Property') of a FedEx shipment paid for by Epstein's account.",
+      "context": "Listed as the recipient 'PEG UGIANO N.A. PROPERTY' on a FedEx shipment from Epstein.",
       "mentionCount": 1
     },
     {
       "name": "Greg Vincent",
       "role": "Recipient",
-      "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account.",
+      "category": "associate",
+      "context": "Listed as the recipient 'GREG VINCENT IMO' on a FedEx shipment from Epstein.",
       "mentionCount": 1
+    },
+    {
+      "name": "Ella Dershowitz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Listed as the recipient 'ELLA DERSHOWITZ' on a FedEx shipment from Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Frank Nodarse",
+      "role": "Sender",
+      "category": "other",
+      "context": "Listed as the sender 'FRANK NODARSE CRYSTAL COMMUNICATIONS, INC.' on a shipment where Epstein was the payor as the recipient.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Griffs",
+      "role": "Recipient (Signatory)",
+      "category": "other",
+      "context": "Signed for a FedEx Express Saver package sent to an illegible recipient from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Recipient (Signatory)",
+      "category": "other",
+      "context": "Signed for FedEx packages on two separate shipments from Epstein's account.",
+      "mentionCount": 2
     },
     {
       "name": "K. Davis",
-      "role": "Recipient Signatory",
+      "role": "Recipient (Signatory)",
       "category": "other",
-      "context": "Signed for a FedEx shipment addressed to Greg Vincent.",
+      "context": "Signed for a FedEx 2Day package addressed to Greg Vincent.",
       "mentionCount": 1
     },
     {
-      "name": "Mercedes Benz USA",
-      "role": "Recipient (Organization)",
+      "name": "L. Nna",
+      "role": "Recipient (Signatory)",
       "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account. Note: This is an organization, but included as a named entity in the shipments.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Colonial Bank",
-      "role": "Recipient (Organization)",
-      "category": "other",
-      "context": "Listed as the recipient of a FedEx shipment paid for by Epstein's account. Note: This is an organization, but included as a named entity in the shipments.",
+      "context": "Signed for a FedEx Express Saver package (signature shows 'L.NNA266287').",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
       "person1": "Jeffrey E. Epstein",
-      "person2": "G. Maxwell",
-      "relationshipType": "associate",
-      "description": "Multiple FedEx shipments were sent between Epstein and Maxwell, indicating frequent communication or logistical support.",
-      "strength": 4
-    },
-    {
-      "person1": "Jeffrey E. Epstein",
-      "person2": "Edwina Simmonds",
-      "relationshipType": "employer-employee",
-      "description": "Epstein paid for shipments sent to Edwina Simmonds, suggesting a professional or employment relationship.",
+      "person2": "G Maxwell",
+      "relationshipType": "financial",
+      "description": "Epstein's FedEx account paid for multiple shipments to and from G Maxwell, indicating a logistical/financial connection.",
       "strength": 3
     },
     {
       "person1": "Jeffrey E. Epstein",
-      "person2": "Bran Ferren",
-      "relationshipType": "associate",
-      "description": "A shipment was sent from Bran Ferren to Epstein, indicating a connection.",
-      "strength": 2
-    },
-    {
-      "person1": "Jeffrey E. Epstein",
-      "person2": "Sabel Maxwell",
-      "relationshipType": "associate",
-      "description": "A shipment was sent from Sabel Maxwell to Epstein, indicating a connection.",
-      "strength": 2
-    },
-    {
-      "person1": "Jeffrey E. Epstein",
-      "person2": "Hugh Bake",
+      "person2": "Edwina Simmonds",
       "relationshipType": "financial",
-      "description": "A shipment was sent to Hugh Bake at 'Charities of Palm Beach', suggesting a potential charitable or financial connection.",
+      "description": "Epstein's FedEx account paid for shipments to Edwina Simmonds, suggesting an employer-employee or associate relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "S Maxwell",
+      "relationshipType": "financial",
+      "description": "Epstein's FedEx account paid for a shipment to S Maxwell.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ella Dershowitz",
+      "relationshipType": "financial",
+      "description": "Epstein's FedEx account paid for a shipment to Ella Dershowitz.",
       "strength": 2
     }
   ],
@@ -194,38 +187,29 @@
     {
       "date": "2002-12",
       "title": "FedEx Shipping Activity",
-      "description": "Numerous FedEx shipments were sent and received under Jeffrey Epstein's account throughout December 2002, involving various individuals and organizations.",
+      "description": "Numerous FedEx shipments were sent and received under Jeffrey Epstein's account throughout December 2002, involving various associates and locations.",
       "category": "financial",
       "significance": 2,
       "personsInvolved": [
         "Jeffrey E. Epstein",
-        "G. Maxwell",
+        "G Maxwell",
         "Edwina Simmonds",
         "Bran Ferren",
-        "Danny Sirjis",
-        "Kirstie Fergunen",
-        "Caroline Andiani",
-        "Hugh Bake",
         "Sabel Maxwell",
-        "Ella Dershowitz",
-        "Frank Nodarse",
-        "Marc Lundberg",
-        "Mercedes Benz USA",
-        "Colonial Bank"
+        "Ella Dershowitz"
       ]
     }
   ],
   "locations": [
     "457 Madison Ave, New York, NY 10022-6843",
-    "358 El Brillo Way, Palm Beach, FL 33480",
-    "Charities of Palm Beach (recipient address for Hugh Bake)"
+    "358 El Brillo Way, Palm Beach, FL 33480"
   ],
   "keyFacts": [
-    "Jeffrey Epstein's primary mailing address in December 2002 was 457 Madison Ave, New York, NY.",
-    "Epstein also received packages at his Palm Beach, Florida residence at 358 El Brillo Way.",
-    "The FedEx invoice shows a high volume of shipping activity (34 express shipments) in a short period, indicating active communication and logistics.",
-    "Recipients and senders include several individuals later identified as Epstein associates or staff, such as Ghislaine Maxwell (listed as G. Maxwell and S. Maxwell) and Edwina Simmonds.",
-    "The document provides a detailed financial record of Epstein's business or personal expenses related to shipping and courier services."
+    "Jeffrey Epstein's FedEx account (1144-2081-6) was active in December 2002, with an invoice totaling $772.39 for 34 express shipments and ground services.",
+    "The primary shipping address is Epstein's New York residence at 457 Madison Ave. Packages were also sent to his Palm Beach, Florida residence at 358 El Brillo Way.",
+    "Recipients of packages paid for by Epstein's account include multiple individuals with the surname Maxwell (G, S, Sabel), Edwina Simmonds, Ella Dershowitz, and other associates.",
+    "The document shows Epstein shipping items to himself between his New York and Palm Beach properties.",
+    "Several shipments required address corrections or encountered delivery issues (recipient not in business, incorrect address), indicating possible logistical complexities or use of his address by others."
   ],
-  "analyzedAt": "2026-02-11T15:04:49.669Z"
+  "analyzedAt": "2026-02-11T23:55:54.580Z"
 }

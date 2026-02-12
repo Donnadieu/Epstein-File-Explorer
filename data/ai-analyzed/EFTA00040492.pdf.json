@@ -3,14 +3,14 @@
   "dataSet": "9",
   "documentType": "law enforcement travel record",
   "dateOriginal": "2021-04-06",
-  "summary": "A U.S. Customs and Border Protection TECS Person Encounter List detailing 30 international flight records for an individual, showing travel between Los Angeles, London, Miami, Nassau, and other locations from 2004 to 2019. The document is marked as confidential and appears to be part of a law enforcement investigation, likely tracking the movements of a person of interest.",
+  "summary": "A U.S. Customs and Border Protection TECS Person Encounter List detailing 30 international flight records for an individual, showing travel between Los Angeles, London, Miami, Nassau, and other locations from 2004 to 2019. The document is marked as confidential and appears to be part of a law enforcement investigation.",
   "persons": [],
   "connections": [],
   "events": [
     {
       "date": "2004-02-29",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 7 from Los Angeles to London Heathrow, recorded as an airline record (not APIS).",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -18,7 +18,7 @@
     {
       "date": "2005-11-27",
       "title": "Flight from JFK to LHR",
-      "description": "Recorded flight from New York JFK to London Heathrow on United Airlines.",
+      "description": "Flight UA 905 from New York JFK to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -26,7 +26,7 @@
     {
       "date": "2005-12-06",
       "title": "Flight from LHR to JFK",
-      "description": "Recorded flight from London Heathrow to New York JFK on United Airlines.",
+      "description": "Flight UA 956 from London Heathrow to New York JFK, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -34,7 +34,7 @@
     {
       "date": "2006-04-03",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 7 from Los Angeles to London Heathrow, recorded as an airline record (not APIS).",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -42,7 +42,7 @@
     {
       "date": "2006-07-02",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 23 from Los Angeles to London Heathrow, recorded as an airline record (not APIS).",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -50,7 +50,7 @@
     {
       "date": "2007-09-19",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 7 from Los Angeles to London Heathrow, recorded as an airline record (not APIS).",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -58,7 +58,7 @@
     {
       "date": "2007-10-19",
       "title": "Flight from STN to LAX",
-      "description": "Recorded flight from London Stansted to Los Angeles.",
+      "description": "Flight MY 310 from London Stansted to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -66,15 +66,15 @@
     {
       "date": "2009-05-17",
       "title": "Flight from MIA to NAS",
-      "description": "Recorded flight from Miami to Nassau, Bahamas.",
+      "description": "Flight OW 4954 from Miami to Nassau, recorded as an airline record (not APIS).",
       "category": "travel",
-      "significance": 2,
+      "significance": 1,
       "personsInvolved": []
     },
     {
       "date": "2009-09-27",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 7 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -82,7 +82,7 @@
     {
       "date": "2010-09-21",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles on British Airways.",
+      "description": "Flight BA 282 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -90,7 +90,7 @@
     {
       "date": "2010-10-04",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on British Airways.",
+      "description": "Flight BA 269 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -98,7 +98,7 @@
     {
       "date": "2011-09-06",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 23 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -106,7 +106,7 @@
     {
       "date": "2014-09-19",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 23 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -114,23 +114,23 @@
     {
       "date": "2014-11-21",
       "title": "Flight from MNL to LAX",
-      "description": "Recorded flight from Manila, Philippines to Los Angeles.",
+      "description": "Flight PR 103 from Manila to Los Angeles, recorded via APIS.",
       "category": "travel",
-      "significance": 2,
+      "significance": 1,
       "personsInvolved": []
     },
     {
       "date": "2014-11-30",
       "title": "Flight from LAX to MNL",
-      "description": "Recorded flight from Los Angeles to Manila, Philippines.",
+      "description": "Flight PR 102 from Los Angeles to Manila, recorded via APIS.",
       "category": "travel",
-      "significance": 2,
+      "significance": 1,
       "personsInvolved": []
     },
     {
       "date": "2015-08-27",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles.",
+      "description": "Flight HZ 2 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -138,7 +138,7 @@
     {
       "date": "2015-09-17",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow.",
+      "description": "Flight HZ 1 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -146,7 +146,7 @@
     {
       "date": "2016-06-05",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles.",
+      "description": "Flight HZ 2 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -154,15 +154,15 @@
     {
       "date": "2016-06-26",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow.",
+      "description": "Flight HZ 1 from Los Angeles to London Heathrow, recorded as not on board via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
     },
     {
       "date": "2016-07-06",
-      "title": "Flights between LAX and LHR",
-      "description": "Two recorded flights on the same date: one from LAX to LHR, and another noted as 'NOT ON BOARD' from LAX to LHR.",
+      "title": "Flights involving LAX and LHR",
+      "description": "Two HZ 1 flights recorded: one from LAX to LHR with APIS 'ON BOARD', and another with APIS 'NOT ON BOARD'.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -170,7 +170,7 @@
     {
       "date": "2017-08-11",
       "title": "Flight from YVR to LAX",
-      "description": "Recorded flight from Vancouver to Los Angeles on Air Canada.",
+      "description": "Flight AC 557 from Vancouver to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -178,7 +178,7 @@
     {
       "date": "2017-08-13",
       "title": "Flight from LAX to YVR",
-      "description": "Recorded flight from Los Angeles to Vancouver on Air Canada.",
+      "description": "Flight AC 556 from Los Angeles to Vancouver, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -186,7 +186,7 @@
     {
       "date": "2017-09-04",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles on Virgin Atlantic.",
+      "description": "Flight VS 8 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -194,7 +194,7 @@
     {
       "date": "2017-09-21",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 23 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -202,7 +202,7 @@
     {
       "date": "2019-05-23",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles on Delta.",
+      "description": "Flight DL 573 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -210,7 +210,7 @@
     {
       "date": "2019-05-26",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Delta.",
+      "description": "Flight DL 574 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -218,7 +218,7 @@
     {
       "date": "2019-08-01",
       "title": "Flight from LHR to LAX",
-      "description": "Recorded flight from London Heathrow to Los Angeles on Virgin Atlantic.",
+      "description": "Flight VS 24 from London Heathrow to Los Angeles, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -226,7 +226,7 @@
     {
       "date": "2019-08-16",
       "title": "Flight from LAX to LHR",
-      "description": "Recorded flight from Los Angeles to London Heathrow on Virgin Atlantic.",
+      "description": "Flight VS 23 from Los Angeles to London Heathrow, recorded via APIS.",
       "category": "travel",
       "significance": 1,
       "personsInvolved": []
@@ -238,17 +238,17 @@
     "Miami, FL (MIA)",
     "Nassau, Bahamas (NAS)",
     "Vancouver, Canada (YVR)",
+    "Manila, Philippines (MNL)",
     "London, UK (STN - Stansted)",
     "New York, NY (JFK)",
-    "Manila, Philippines (MNL)",
     "Mexico City, Mexico (MEX)"
   ],
   "keyFacts": [
-    "The document is a confidential law enforcement travel record listing 30 international flights for an individual from 2004 to 2019.",
-    "Travel patterns show frequent transatlantic flights between Los Angeles (LAX) and London (LHR), with additional trips to/from Miami, Nassau, Vancouver, Manila, and New York.",
-    "The record includes a flight from Miami to Nassau, Bahamas in May 2009, a location associated with Jeffrey Epstein's private island.",
-    "The document is marked 'For Official Use Only / Law Enforcement Sensitive' and 'CONFIDENTIAL', indicating its use in an investigation.",
-    "The subject's name and personal details are redacted in this excerpt, showing only travel data."
+    "The document is a confidential TECS Person Encounter List generated by U.S. Customs and Border Protection on April 6, 2021.",
+    "It contains 30 travel records for an individual (whose name is redacted) spanning from 2004 to 2019.",
+    "The travel pattern shows frequent flights between Los Angeles (LAX) and London (LHR), with additional trips to/from Miami, Nassau, Vancouver, Manila, and New York.",
+    "The records utilize both APIS (Advanced Passenger Information System) and non-APIS airline data for tracking.",
+    "The document is marked as part of the SDNY (Southern District of New York) case materials, indicating its relevance to the Epstein investigation."
   ],
-  "analyzedAt": "2026-02-11T15:31:30.427Z"
+  "analyzedAt": "2026-02-12T00:18:52.985Z"
 }
