@@ -274,6 +274,21 @@ export function isSamePerson(a: Person, b: Person): boolean {
   const collapsedB = collapseOCRSpaces(normB);
   if (collapsedA === collapsedB) return true;
 
+  // OCR collapse produces single token → fuzzy match against other name's parts
+  // Catches "E stein" (→ "estein") matching "epstein" in "Jeffrey Epstein"
+  const collapsedPartsA = collapsedA.split(" ").filter(Boolean);
+  const collapsedPartsB = collapsedB.split(" ").filter(Boolean);
+  if (collapsedPartsA.length === 1 && collapsedPartsA[0].length >= 5) {
+    for (const part of partsB) {
+      if (part.length >= 5 && editDistance(collapsedPartsA[0], part) <= 1) return true;
+    }
+  }
+  if (collapsedPartsB.length === 1 && collapsedPartsB[0].length >= 5) {
+    for (const part of partsA) {
+      if (part.length >= 5 && editDistance(collapsedPartsB[0], part) <= 1) return true;
+    }
+  }
+
   // Sorted parts match (handles reversed order: "maxwell ghislaine" vs "ghislaine maxwell")
   const sortedA = [...partsA].sort().join(" ");
   const sortedB = [...partsB].sort().join(" ");
