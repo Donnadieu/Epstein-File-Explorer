@@ -2,7 +2,7 @@
 
 A public record explorer for the Jeffrey Epstein case files released by the U.S. Department of Justice. Browse, search, and analyze documents across 12 data sets including court filings, depositions, FBI reports, flight logs, financial records, and more.
 
-Live at [epstein-file-explorer.replit.app](https://epstein-file-explorer.replit.app)
+Live at [epstein-file-explorer.com](https://epstein-file-explorer.com)
 
 ## Features
 

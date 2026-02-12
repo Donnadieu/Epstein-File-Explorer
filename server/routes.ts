@@ -55,6 +55,14 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
 
+  // Redirect legacy fly.dev hostname to custom domain
+  app.use((req, res, next) => {
+    if (req.hostname === 'epstein-file-explorer.fly.dev') {
+      return res.redirect(301, `https://epstein-file-explorer.com${req.originalUrl}`);
+    }
+    next();
+  });
+
   app.get("/api/stats", async (_req, res) => {
     try {
       const stats = await storage.getStats();
