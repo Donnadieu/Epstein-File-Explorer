@@ -3,95 +3,41 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2018-11-30",
-  "summary": "This is an email chain from November 30, 2018, discussing various lawsuits related to Jeffrey Epstein. It clarifies that a December 4 trial involves a malicious prosecution lawsuit filed by an attorney (who represented Epstein's victims) against Epstein in Palm Beach County Circuit Court. The email also mentions a federal suit by victims against the government regarding victim notification, which involved a motion for summary judgment.",
+  "summary": "This is an email chain from November 30, 2018, discussing legal proceedings related to Jeffrey Epstein. It references a federal lawsuit by victims, a state malicious prosecution lawsuit filed by an attorney who represented victims against Epstein, and inquiries about deposition transcripts and motion practice.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
-      "role": "Defendant, Accused",
+      "role": "Defendant/Accused",
       "category": "key figure",
-      "context": "The central subject of the lawsuits discussed; being sued for malicious prosecution by an attorney who represented his victims, and was the defendant in the victims' federal suit.",
+      "context": "The central subject of the legal discussions; referenced as the defendant in a federal victim lawsuit and a state malicious prosecution lawsuit filed by an attorney representing his victims.",
       "mentionCount": 4
     },
     {
-      "name": "Unnamed Attorney",
-      "role": "Plaintiff, Attorney for Victims",
+      "name": "Attorney",
+      "role": "Plaintiff/Lawyer for victims",
       "category": "legal",
-      "context": "An attorney who represented multiple victims of Epstein and is now suing him for malicious prosecution in Palm Beach County Circuit Court, claiming Epstein's prior lawsuit against him was retaliatory.",
+      "context": "An attorney who represented multiple Epstein victims and is now suing Epstein for malicious prosecution in state court, claiming Epstein previously sued him wrongfully in retaliation.",
       "mentionCount": 3
-    },
-    {
-      "name": "Unnamed Law Partner",
-      "role": "Convicted Individual",
-      "category": "other",
-      "context": "The law partner of the attorney suing Epstein, who was convicted of fraud related to an Epstein business, which was the basis for Epstein's prior lawsuit against the attorney.",
-      "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Unnamed Attorney",
+      "person1": "Attorney",
       "person2": "Jeffrey Epstein",
       "relationshipType": "legal adversary",
-      "description": "The attorney is suing Epstein for malicious prosecution, claiming Epstein's prior lawsuit was retaliation for the attorney representing Epstein's victims.",
+      "description": "The attorney is suing Epstein for malicious prosecution, claiming Epstein previously filed a wrongful lawsuit against him in retaliation for representing Epstein's victims.",
       "strength": 4
-    },
-    {
-      "person1": "Unnamed Attorney",
-      "person2": "Unnamed Law Partner",
-      "relationshipType": "professional",
-      "description": "They were law partners; the partner's fraud conviction related to an Epstein business was used by Epstein in a prior lawsuit against the attorney.",
-      "strength": 3
-    },
-    {
-      "person1": "Jeffrey Epstein",
-      "person2": "Unnamed Law Partner",
-      "relationshipType": "financial",
-      "description": "The law partner's fraud was related to an Epstein business, indicating a prior business or financial connection.",
-      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2018-12-04",
-      "title": "Scheduled Trial for Malicious Prosecution Lawsuit",
-      "description": "A trial was scheduled for December 4, 2018, in the malicious prosecution lawsuit filed by an attorney (who represented Epstein's victims) against Jeffrey Epstein in Palm Beach County Circuit Court.",
+      "title": "Scheduled Trial",
+      "description": "A trial is mentioned as scheduled for December 4, 2018, though the specific case (against DOJ or Epstein) is questioned in the email.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Jeffrey Epstein",
-        "Unnamed Attorney"
-      ]
-    },
-    {
-      "date": null,
-      "title": "Motion for Summary Judgment in Federal Victim Suit",
-      "description": "There was a motion for summary judgment in a federal lawsuit filed by victims against the government, focusing on victim notification issues, involving communications between prosecutors and Epstein's attorneys.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": [
         "Jeffrey Epstein"
-      ]
-    },
-    {
-      "date": null,
-      "title": "Epstein's Prior Lawsuit Against Attorney",
-      "description": "Epstein previously sued the attorney (who represented victims), claiming the attorney was involved in a fraud committed by the attorney's law partner related to an Epstein business.",
-      "category": "legal",
-      "significance": 2,
-      "personsInvolved": [
-        "Jeffrey Epstein",
-        "Unnamed Attorney",
-        "Unnamed Law Partner"
-      ]
-    },
-    {
-      "date": null,
-      "title": "Conviction of Attorney's Law Partner",
-      "description": "The law partner of the attorney suing Epstein was convicted of fraud related to an Epstein business.",
-      "category": "legal",
-      "significance": 1,
-      "personsInvolved": [
-        "Unnamed Law Partner"
       ]
     }
   ],
@@ -99,10 +45,11 @@
     "Palm Beach County Circuit Court"
   ],
   "keyFacts": [
-    "An attorney who represented multiple Epstein victims filed a malicious prosecution lawsuit against Epstein, with a trial scheduled for December 4, 2018.",
-    "The malicious prosecution claim stems from Epstein previously suing the attorney, alleging involvement in a fraud committed by the attorney's law partner related to an Epstein business.",
-    "A separate federal suit by victims against the government involved a motion for summary judgment centered on victim notification procedures.",
-    "The email clarifies that the December 4 trial is not the victims' lawsuit against the DOJ or directly against Epstein, but a retaliatory litigation case filed by a victims' attorney."
+    "A federal lawsuit was filed by victims against Epstein, with a motion for summary judgment focusing on victim notification procedures.",
+    "A separate state lawsuit in Palm Beach County involves an attorney for Epstein's victims suing Epstein for malicious prosecution.",
+    "The malicious prosecution claim stems from Epstein allegedly suing the attorney wrongfully in retaliation for representing victims, linked to an unrelated fraud involving the attorney's law partner and an Epstein business.",
+    "The email discusses whether deposition transcripts were filed in any motion practice, such as for summary judgment, indicating interest in evidentiary records.",
+    "References indicate prior legal settlements between Epstein and victims without full summary judgment proceedings."
   ],
-  "analyzedAt": "2026-02-11T15:05:17.554Z"
+  "analyzedAt": "2026-02-11T23:56:07.944Z"
 }

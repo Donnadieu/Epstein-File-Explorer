@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-11-14",
-  "summary": "This document is an email forwarded to the U.S. Attorney's Office for the Southern District of New York (USANYS) from an anonymous individual claiming to be a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein. The writer, a lifelong model, offers information about Maxwell and identifies Jean Luc Brunel as a central figure in international sex trafficking, claiming he is far worse than Maxwell.",
+  "summary": "This document is an email forwarded to the U.S. Attorney's Office for the Southern District of New York (USANYS) from an anonymous individual claiming to be a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein. The writer, a lifelong model, offers information about Maxwell and identifies Jean Luc Brunel as a central, more severe figure in international sex trafficking.",
   "persons": [
     {
       "name": "Ghislaine Maxwell",
@@ -16,14 +16,14 @@
       "name": "Jeffrey Epstein",
       "role": "Accused",
       "category": "key figure",
-      "context": "Mentioned by the email writer as a perpetrator alongside Ghislaine Maxwell.",
+      "context": "Mentioned as a co-conspirator with Ghislaine Maxwell; the writer identifies as a victim of 'MAXWELL/Epstein'.",
       "mentionCount": 2
     },
     {
       "name": "Jean Luc Brunel",
       "role": "Modeling Agent / Alleged Trafficker",
       "category": "associate",
-      "context": "Identified by the email writer as Epstein's partner, the writer's former agent, and the primary alleged trafficker described as '100x worse than Maxwell' and responsible for international sex trafficking for 40 years.",
+      "context": "Identified by the writer as Epstein's partner, the writer's former agent, and described as '100x worse than Maxwell' and the 'MAN who for 40 years traffic women internationally'.",
       "mentionCount": 2
     }
   ],
@@ -32,52 +32,65 @@
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "co-conspirator",
-      "description": "The email writer identifies both as perpetrators they were a victim of, implying their association in criminal activity.",
+      "description": "The writer identifies as a victim of both, linking them together as perpetrators.",
       "strength": 4
     },
     {
       "person1": "Jean Luc Brunel",
       "person2": "Jeffrey Epstein",
       "relationshipType": "partner",
-      "description": "The email writer explicitly states 'Epstein's partner Jean Luc Brunel', indicating a business or criminal partnership.",
+      "description": "The writer explicitly states 'Epstein's partner Jean Luc Brunel'.",
       "strength": 4
     },
     {
       "person1": "Jean Luc Brunel",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "associate",
-      "description": "Both are mentioned by the writer as part of the same network of perpetrators, with Brunel described as far more significant.",
+      "description": "Both are implicated by the writer as part of the same network of abuse, with Brunel described as far more severe.",
       "strength": 3
     },
     {
       "person1": "Jean Luc Brunel",
       "person2": "Anonymous Writer",
       "relationshipType": "employer-employee",
-      "description": "The writer states Brunel was their modeling agent, indicating a professional relationship.",
+      "description": "The writer states Brunel was her modeling agent.",
       "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Anonymous Writer",
+      "relationshipType": "victim-perpetrator",
+      "description": "The writer explicitly identifies as a victim of Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Anonymous Writer",
+      "relationshipType": "victim-perpetrator",
+      "description": "The writer explicitly identifies as a victim of Epstein.",
+      "strength": 5
     }
   ],
   "events": [
     {
       "date": "2021-11-14",
       "title": "Victim Outreach to Prosecutors",
-      "description": "An anonymous individual sends an email to the U.S. Attorney's Office claiming to be a previously unknown victim of Maxwell and Epstein, offering new information.",
+      "description": "An anonymous individual sends an email to the U.S. Attorney's Office identifying themselves as a previously unknown victim of Maxwell and Epstein, and offering information.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
         "Anonymous Writer",
         "Ghislaine Maxwell",
-        "Jeffrey Epstein",
-        "Jean Luc Brunel"
+        "Jeffrey Epstein"
       ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "An anonymous lifelong model and former teen runaway contacted prosecutors in November 2021, identifying as a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein.",
-    "The writer claims Jean Luc Brunel, a modeling agent and Epstein's partner, is '100x worse than Maxwell' and has been trafficking women internationally for 40 years.",
-    "The writer offers to provide additional information and stories about Maxwell and the network, indicating potential new evidence for investigators.",
-    "The correspondence highlights the ongoing impact of the cases on victims and suggests the criminal network involved 'MANY others they all knew.'"
+    "An anonymous lifelong model and former teen runaway identifies herself as a previously unknown victim of Ghislaine Maxwell and Jeffrey Epstein.",
+    "The victim claims to have social and professional connections to the network, having been at parties with 'them all' and having Jean Luc Brunel as her agent.",
+    "Jean Luc Brunel is characterized as Epstein's partner and a far more severe figure than Maxwell, accused of trafficking women internationally for 40 years.",
+    "The correspondence is dated November 14, 2021, after Maxwell's conviction, indicating ongoing victim outreach and potential new information for investigators."
   ],
-  "analyzedAt": "2026-02-11T15:28:16.302Z"
+  "analyzedAt": "2026-02-12T00:15:54.530Z"
 }

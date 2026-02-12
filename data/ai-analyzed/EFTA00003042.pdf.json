@@ -1,28 +1,59 @@
 {
   "fileName": "EFTA00003042.pdf",
   "dataSet": "1",
-  "documentType": "employee emergency contact form",
+  "documentType": "employment form",
   "dateOriginal": null,
-  "summary": "An employee emergency contact form for LSJE, LLC, a company based in St. Thomas, US Virgin Islands. The form captures personal and emergency contact information for an employee, including a start date and date of birth.",
+  "summary": "An emergency contact form for an employee of LSJE, LLC, a company associated with Jeffrey Epstein's operations in the U.S. Virgin Islands. The form contains personal details of an employee, including name, date of birth, contact information, and emergency contacts.",
   "persons": [
     {
-      "name": "E. Tarrerrebn",
+      "name": "Tarrerrebn E. Ast",
       "role": "Employee",
       "category": "staff",
-      "context": "Appears as the employee filling out the emergency contact form for LSJE, LLC, with a listed start date and date of birth.",
+      "context": "Appears as the employee filling out an emergency contact form for LSJE, LLC, with personal details including date of birth and contact information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ado",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Listed as an emergency contact for the employee Tarrerrebn E. Ast, with relationship unspecified.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Oro",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Listed as an emergency contact for the employee Tarrerrebn E. Ast, with relationship unspecified.",
       "mentionCount": 1
     }
   ],
-  "connections": [],
+  "connections": [
+    {
+      "person1": "Tarrerrebn E. Ast",
+      "person2": "Ado",
+      "relationshipType": "emergency contact",
+      "description": "Ado is listed as an emergency contact for Tarrerrebn E. Ast on the employee form.",
+      "strength": 2
+    },
+    {
+      "person1": "Tarrerrebn E. Ast",
+      "person2": "Oro",
+      "relationshipType": "emergency contact",
+      "description": "Oro is listed as an emergency contact for Tarrerrebn E. Ast on the employee form.",
+      "strength": 2
+    }
+  ],
   "events": [],
   "locations": [
-    "LSJE, LLC 6100 Red Hook Quarters, Suite B-3, St. Thomas, V100802-1348",
-    "St. Thomas"
+    {
+      "address": "6100 Red Hook Quarters, Suite B-3, St. Thomas, V100802-1348",
+      "description": "Business address for LSJE, LLC, a company associated with Jeffrey Epstein's operations in the U.S. Virgin Islands."
+    }
   ],
   "keyFacts": [
-    "The document is an employee emergency contact form for LSJE, LLC, a company located in St. Thomas, US Virgin Islands.",
-    "The employee listed has a date of birth of z/o/79 (likely 1979) and a start date of 1 OA (likely October 1st, though the format is unclear).",
-    "The form includes standard fields for personal details, emergency contacts, and health information, indicating it is a routine HR document."
+    "LSJE, LLC is a company with an address in St. Thomas, U.S. Virgin Islands, associated with Jeffrey Epstein's network.",
+    "The document is an emergency contact form for an employee named Tarrerrebn E. Ast, with a date of birth in 1979.",
+    "The form includes detailed personal and medical information, typical of employment records for staff in Epstein's operations."
   ],
-  "analyzedAt": "2026-02-11T18:10:45.771Z"
+  "analyzedAt": "2026-02-11T22:49:58.727Z"
 }

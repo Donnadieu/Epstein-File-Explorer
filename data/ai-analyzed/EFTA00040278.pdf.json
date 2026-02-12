@@ -3,35 +3,28 @@
   "dataSet": "9",
   "documentType": "FBI 302",
   "dateOriginal": "2021-10-19",
-  "summary": "This is an FBI FD-302 interview report of Janusz Banasiak, a former household employee for Jeffrey Epstein, conducted on October 19, 2021. Banasiak details his hiring process, job duties, the household manual, message logs, and his awareness of the investigation into Epstein. He describes the execution of a search warrant at Epstein's Florida property and his subsequent limited interactions with Epstein.",
+  "summary": "This is an FBI FD-302 form documenting an interview with Janusz Banasiak, a former household employee for Jeffrey Epstein. Banasiak describes his hiring process, job duties, the household manual, message logs, and his awareness of the investigation and Epstein's legal troubles. He worked for Epstein from 2005 to 2017.",
   "persons": [
     {
       "name": "Janusz Banasiak",
       "role": "Former household employee for Jeffrey Epstein",
       "category": "staff",
-      "context": "Interviewed by the FBI about his employment with Jeffrey Epstein from 2005 to 2017. He describes his duties, the household manual, and the execution of a search warrant on Epstein's property.",
+      "context": "Interviewed by the FBI about his employment with Jeffrey Epstein from 2005 to 2017. He was responsible for household maintenance, driving, and managing petty cash.",
       "mentionCount": 50
     },
     {
       "name": "Jeffrey Epstein",
-      "role": "Employer, accused individual",
+      "role": "Employer, accused",
       "category": "key figure",
-      "context": "The subject of the investigation. Banasiak describes working for him, his travel habits, his arrest, guilty plea, and the pay cuts he imposed on staff.",
+      "context": "The subject of the investigation. Banasiak's employer who he drove, shopped for, and maintained properties for. Described as not friendly with staff and constantly traveling.",
       "mentionCount": 25
     },
     {
       "name": "Ghislaine Maxwell",
-      "role": "Associate of Jeffrey Epstein, interviewer",
+      "role": "Epstein's assistant, interviewer",
       "category": "associate",
       "context": "Interviewed Banasiak for the job in her New York townhouse and was a primary source of instructions on Epstein's preferences and household procedures.",
       "mentionCount": 8
-    },
-    {
-      "name": "Dr. Garecki",
-      "role": "Person who left a phone message",
-      "category": "other",
-      "context": "Name appears in a message log entry from February 18, 2005, that Banasiak recognized as his own handwriting.",
-      "mentionCount": 1
     }
   ],
   "connections": [
@@ -39,29 +32,29 @@
       "person1": "Janusz Banasiak",
       "person2": "Jeffrey Epstein",
       "relationshipType": "employer-employee",
-      "description": "Banasiak was employed by Epstein from 2005 to 2017 as a household manager, driver, and groundskeeper at his Florida property.",
+      "description": "Banasiak was employed by Epstein as a household manager and driver from 2005 to 2017.",
       "strength": 5
     },
     {
       "person1": "Janusz Banasiak",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "employer-employee",
-      "description": "Maxwell interviewed Banasiak for the job and was a primary conduit for instructions and information about Epstein's preferences.",
+      "description": "Maxwell interviewed Banasiak for the job and was a direct supervisor, giving him instructions on how to manage the household for Epstein.",
       "strength": 4
     },
     {
       "person1": "Ghislaine Maxwell",
       "person2": "Jeffrey Epstein",
       "relationshipType": "associate",
-      "description": "Maxwell acted on Epstein's behalf in hiring staff and managing household affairs, as described by Banasiak.",
+      "description": "Maxwell acted as Epstein's assistant, handling hiring and conveying his preferences to staff like Banasiak.",
       "strength": 4
     }
   ],
   "events": [
     {
       "date": "2005",
-      "title": "Banasiak begins employment with Epstein",
-      "description": "Janusz Banasiak is hired through an agency, interviewed by Ghislaine Maxwell and Jeffrey Epstein, and moves to Florida to work on Epstein's property.",
+      "title": "Banasiak hired by Epstein",
+      "description": "Janusz Banasiak is hired through an agency, interviewed by Ghislaine Maxwell and then Jeffrey Epstein, and moves to Florida to work.",
       "category": "employment",
       "significance": 3,
       "personsInvolved": [
@@ -71,22 +64,11 @@
       ]
     },
     {
-      "date": "2005-02 to 2005-09",
-      "title": "Documented phone message activity",
-      "description": "Banasiak identifies numerous phone messages he logged in message books during this period, showing his role in managing communications for the household.",
-      "category": "documentation",
-      "significance": 2,
-      "personsInvolved": [
-        "Janusz Banasiak",
-        "Dr. Garecki"
-      ]
-    },
-    {
-      "date": null,
-      "title": "Execution of search warrant at Epstein's Florida property",
-      "description": "Police arrived with a search warrant at Epstein's Florida home while Banasiak was present. He was shown the warrant, and the property was searched. Epstein was not present.",
-      "category": "investigation",
-      "significance": 4,
+      "date": "2005-2017",
+      "title": "Banasiak's employment period",
+      "description": "Banasiak works for Epstein, maintaining his Florida property, driving him and his assistants, and managing household expenses.",
+      "category": "employment",
+      "significance": 3,
       "personsInvolved": [
         "Janusz Banasiak",
         "Jeffrey Epstein"
@@ -94,8 +76,18 @@
     },
     {
       "date": null,
-      "title": "Epstein's guilty plea and incarceration",
-      "description": "Banasiak learned from news reports that Epstein pleaded guilty to solicitation of underage prostitution and went to jail. He drove Epstein to court prior to this.",
+      "title": "Police execute search warrant",
+      "description": "Police arrive at Epstein's Florida property with a search warrant while Banasiak is present. He learns of the investigation for the first time.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Janusz Banasiak"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein pleads guilty",
+      "description": "Banasiak reads in the news that Epstein pleaded guilty to solicitation of underage prostitution. He later drives Epstein to court for an appearance.",
       "category": "legal",
       "significance": 5,
       "personsInvolved": [
@@ -104,20 +96,9 @@
       ]
     },
     {
-      "date": "2017",
-      "title": "Banasiak ends employment with Epstein",
-      "description": "Banasiak stopped working for Epstein, having lived on the property until this time.",
-      "category": "employment",
-      "significance": 2,
-      "personsInvolved": [
-        "Janusz Banasiak",
-        "Jeffrey Epstein"
-      ]
-    },
-    {
       "date": "2021-10-19",
-      "title": "FBI interview of Janusz Banasiak",
-      "description": "Banasiak is interviewed by the FBI (with a U.S. Attorney and a detective present) in West Palm Beach, Florida, providing details about his employment and the investigation.",
+      "title": "FBI interview of Banasiak",
+      "description": "Janusz Banasiak is interviewed by the FBI in West Palm Beach, Florida, regarding his employment with Jeffrey Epstein.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
@@ -126,23 +107,22 @@
     }
   ],
   "locations": [
-    "West Palm Beach, Florida (interview location)",
-    "New York, New York (where Banasiak lived and was interviewed by Maxwell)",
-    "Brooklyn, New York (where Banasiak lived)",
-    "Virginia (where Banasiak worked for Seagrams)",
-    "Lexington Avenue and Park Avenue, New York (location of Maxwell's townhouse)",
-    "Madison Avenue, New York (location of Epstein's office)",
-    "Florida (location of Epstein's property where Banasiak worked and lived)",
-    "Palm Beach, Florida (location of court appearance)",
-    "New Mexico (mentioned as one of Epstein's travel destinations)",
-    "Paris (mentioned as one of Epstein's travel destinations)"
+    "West Palm Beach, Florida",
+    "New York, New York",
+    "Brooklyn, New York",
+    "Virginia",
+    "Madison Avenue (Epstein's office)",
+    "Lexington Avenue and Park Avenue (Maxwell's townhouse)",
+    "Palm Beach, Florida (Epstein's property)",
+    "New Mexico",
+    "Paris"
   ],
   "keyFacts": [
-    "Janusz Banasiak worked for Jeffrey Epstein from 2005 to 2017, living in a small house on Epstein's Florida property and performing duties as a driver, groundskeeper, and household manager.",
-    "Banasiak was interviewed and hired by Ghislaine Maxwell, who provided him with detailed instructions on Epstein's preferences and a household manual outlining procedures.",
-    "Banasiak identified his own handwriting in detailed phone message logs from 2004-2005, which were shown to him as government exhibits during the FBI interview.",
-    "Banasiak was present when law enforcement executed a search warrant on Epstein's Florida property, which is how he first learned of the investigation.",
-    "After Epstein's arrest and guilty plea, he cut employee pay by 10% and never restored it, which led Banasiak to consider leaving his job."
+    "Janusz Banasiak worked as a household employee for Jeffrey Epstein from 2005 to 2017, living in a small house on Epstein's Florida property.",
+    "Banasiak was interviewed and hired by Ghislaine Maxwell, who gave him detailed instructions on Epstein's preferences via a household manual.",
+    "Banasiak first learned of the investigation into Epstein when police executed a search warrant at the Florida property.",
+    "Banasiak confirmed his handwriting in message logs from 2004-2005, which were used to record phone calls to Epstein's residence.",
+    "After Epstein's arrest and guilty plea, he cut employee salaries by 10% and never restored the pay."
   ],
-  "analyzedAt": "2026-02-11T15:14:07.687Z"
+  "analyzedAt": "2026-02-12T00:03:30.261Z"
 }

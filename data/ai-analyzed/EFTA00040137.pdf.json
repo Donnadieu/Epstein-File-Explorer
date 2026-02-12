@@ -3,65 +3,65 @@
   "dataSet": "9",
   "documentType": "court correspondence",
   "dateOriginal": "2021-11-18",
-  "summary": "This is an email from Judge Alison J. Nathan's chambers to defense attorneys Jeff Pagliuca and Laura Mennin regarding the upcoming jury selection in the case United States v. Maxwell. It attaches a list of prospective jurors who will return for peremptory strikes on November 29, 2021, and notes that the jury department will not excuse remaining jurors until the jury is sworn in.",
+  "summary": "This is an email from Judge Alison J. Nathan's chambers to defense attorneys Jeff Pagliuca and Laura Mennin regarding the upcoming jury selection in the case United States v. Maxwell. It attaches a list of prospective jurors who will return for peremptory strikes on November 29, 2021, and notes that jurors will not be excused until the jury is sworn in.",
   "persons": [
     {
       "name": "Nathan NYSD Chambers",
-      "role": "Sender of email / Judge's Chambers",
+      "role": "Sender of email (Judge's Chambers)",
       "category": "legal",
-      "context": "The sender of the email, representing the chambers of the Hon. Alison J. Nathan, providing procedural information about jury selection.",
+      "context": "The email is sent from this entity, representing the court, to provide procedural information about jury selection.",
       "mentionCount": 1
     },
     {
       "name": "Jeff Pagliuca",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "A recipient of the email, identified as counsel in the case, receiving the list of prospective jurors for the peremptory strike phase.",
+      "context": "Recipient of the email regarding jury selection in the US v. Maxwell case.",
       "mentionCount": 1
     },
     {
       "name": "Laura Mennin",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "A recipient of the email, identified as counsel in the case, receiving the list of prospective jurors for the peremptory strike phase.",
+      "context": "Recipient of the email regarding jury selection in the US v. Maxwell case.",
       "mentionCount": 1
     },
     {
       "name": "Alison J. Nathan",
       "role": "Presiding Judge",
       "category": "legal",
-      "context": "The judge presiding over the case (United States v. Maxwell), whose chambers sent the email regarding jury selection procedures.",
+      "context": "The Honorable Judge whose chambers sent the email, overseeing the US v. Maxwell case.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Jeff Pagliuca",
-      "person2": "Laura Mennin",
-      "relationshipType": "legal",
-      "description": "Both are listed as counsel/recipients of the procedural email from the judge's chambers, indicating they are part of the defense legal team.",
+      "person1": "Alison J. Nathan",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "judge-attorney",
+      "description": "Judge Nathan is presiding over the case in which Pagliuca is defense counsel; her chambers communicates procedural information to him.",
       "strength": 3
     },
     {
       "person1": "Alison J. Nathan",
-      "person2": "Jeff Pagliuca",
-      "relationshipType": "legal",
-      "description": "Judge Nathan's chambers is communicating procedural jury information to defense attorney Pagliuca.",
-      "strength": 2
+      "person2": "Laura Mennin",
+      "relationshipType": "judge-attorney",
+      "description": "Judge Nathan is presiding over the case in which Mennin is defense counsel; her chambers communicates procedural information to her.",
+      "strength": 3
     },
     {
-      "person1": "Alison J. Nathan",
+      "person1": "Jeff Pagliuca",
       "person2": "Laura Mennin",
-      "relationshipType": "legal",
-      "description": "Judge Nathan's chambers is communicating procedural jury information to defense attorney Mennin.",
-      "strength": 2
+      "relationshipType": "legal team",
+      "description": "Both are listed as recipients of the email from the court, indicating they are part of the defense counsel team for Ghislaine Maxwell.",
+      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2021-11-29",
-      "title": "Peremptory Strike Exercise for Jury Selection",
-      "description": "The date scheduled for the exercise of peremptory strikes in the jury selection process for United States v. Maxwell.",
+      "title": "Peremptory Strikes in Jury Selection",
+      "description": "Prospective jurors will return for the exercise of peremptory strikes in the US v. Maxwell case.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -73,10 +73,10 @@
   ],
   "locations": [],
   "keyFacts": [
-    "The document is an email from Judge Alison J. Nathan's chambers to defense counsel regarding jury selection in the Ghislaine Maxwell trial (US v. Maxwell, docket 20cr330).",
+    "The document is an email from Judge Alison J. Nathan's chambers to defense attorneys Jeff Pagliuca and Laura Mennin regarding the Ghislaine Maxwell trial (case 20cr330).",
     "It provides a list of prospective jurors who will return for peremptory strikes on November 29, 2021.",
-    "The jury department is taking the precaution of not excusing any remaining jurors from service until the jury is formally sworn in.",
-    "The document highlights the active jury selection phase of the Maxwell trial in late November 2021."
+    "The court's jury department will not excuse remaining jurors from service until the jury is sworn in, indicating a cautious procedural approach.",
+    "The document confirms ongoing jury selection proceedings in the high-profile US v. Maxwell case in late 2021."
   ],
-  "analyzedAt": "2026-02-11T14:57:16.616Z"
+  "analyzedAt": "2026-02-11T23:48:58.895Z"
 }

@@ -3,7 +3,7 @@
   "dataSet": "9",
   "documentType": "court filing correspondence",
   "dateOriginal": "2021-11-11",
-  "summary": "This is an email from Judge Nathan's chambers to attorneys Jeff Pa liuca and Laura Mennin er, transmitting a Daubert opinion and order in the case United States v. Maxwell (20cr330). The opinion was issued by Judge Nathan and will be docketed the following day.",
+  "summary": "This is an email from Judge Alison J. Nathan's chambers to attorneys Jeff Pa liuca and Laura Mennin er, transmitting a Daubert opinion and order in the case United States v. Maxwell (20cr330). The document indicates the opinion will be docketed the following day.",
   "persons": [
     {
       "name": "Nathan NYSD Chambers",
@@ -16,81 +16,65 @@
       "name": "Jeff Pa liuca",
       "role": "Attorney",
       "category": "legal",
-      "context": "Recipient of the email, presumably counsel involved in the case United States v. Maxwell.",
+      "context": "Recipient of the email, presumably counsel involved in the US v. Maxwell case.",
       "mentionCount": 1
     },
     {
       "name": "Laura Mennin er",
       "role": "Attorney",
       "category": "legal",
-      "context": "Recipient of the email, presumably counsel involved in the case United States v. Maxwell.",
+      "context": "Recipient of the email, presumably counsel involved in the US v. Maxwell case.",
       "mentionCount": 1
     },
     {
-      "name": "Judge Nathan",
+      "name": "Alison J. Nathan",
       "role": "Judge",
       "category": "legal",
-      "context": "Issued the Daubert opinion and order in the case United States v. Maxwell.",
-      "mentionCount": 1
-    },
-    {
-      "name": "Maxwell",
-      "role": "Defendant",
-      "category": "key figure",
-      "context": "Subject of the criminal case United States v. Maxwell (20cr330).",
+      "context": "The judge who issued the attached Daubert opinion and order in the US v. Maxwell case.",
       "mentionCount": 1
     }
   ],
   "connections": [
     {
-      "person1": "Judge Nathan",
-      "person2": "Maxwell",
-      "relationshipType": "judge-defendant",
-      "description": "Judge Nathan presided over and issued an opinion in the criminal case against Maxwell.",
-      "strength": 4
+      "person1": "Alison J. Nathan",
+      "person2": "Jeff Pa liuca",
+      "relationshipType": "judge-attorney",
+      "description": "Judge Nathan issued a legal opinion in a case where Jeff Pa liuca is acting as counsel.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Laura Mennin er",
+      "relationshipType": "judge-attorney",
+      "description": "Judge Nathan issued a legal opinion in a case where Laura Mennin er is acting as counsel.",
+      "strength": 3
     },
     {
       "person1": "Jeff Pa liuca",
-      "person2": "Maxwell",
-      "relationshipType": "attorney-client",
-      "description": "Jeff Pa liuca is an attorney, likely representing a party (possibly Maxwell or the government) in the case United States v. Maxwell.",
+      "person2": "Laura Mennin er",
+      "relationshipType": "legal",
+      "description": "Both are recipients of the same legal correspondence regarding the US v. Maxwell case, suggesting they are on the same legal team or are co-counsel.",
       "strength": 3
-    },
-    {
-      "person1": "Laura Mennin er",
-      "person2": "Maxwell",
-      "relationshipType": "attorney-client",
-      "description": "Laura Mennin er is an attorney, likely representing a party (possibly Maxwell or the government) in the case United States v. Maxwell.",
-      "strength": 3
-    },
-    {
-      "person1": "Nathan NYSD Chambers",
-      "person2": "Judge Nathan",
-      "relationshipType": "staff",
-      "description": "The chambers staff work for and represent Judge Nathan in official communications.",
-      "strength": 5
     }
   ],
   "events": [
     {
       "date": "2021-11-11",
       "title": "Daubert Opinion Issued",
-      "description": "Judge Nathan issued a Daubert opinion and order in the criminal case United States v. Maxwell (20cr330).",
+      "description": "Judge Alison J. Nathan issues an opinion and order on Daubert motions in the criminal case United States v. Maxwell.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
-        "Judge Nathan",
-        "Maxwell"
+        "Alison J. Nathan"
       ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "The document is an email transmitting a Daubert opinion and order from Judge Nathan in the case United States v. Maxwell (20cr330).",
+    "The document is an email transmitting a Daubert opinion from Judge Alison J. Nathan in the criminal case US v. Maxwell (docket 20cr330).",
     "The opinion was issued on November 11, 2021, and was scheduled to be docketed on November 12, 2021.",
-    "The recipients are attorneys Jeff Pa liuca and Laura Mennin er, indicating ongoing legal proceedings in the Maxwell case.",
-    "The case reference is 20cr330, which is the docket number for the federal criminal case against Ghislaine Maxwell.",
-    "The document shows judicial activity and communication between the court and counsel regarding evidentiary matters (Daubert motion)."
+    "The recipients are attorneys Jeff Pa liuca and Laura Mennin er, indicating they are counsel of record in the case.",
+    "The attached document (20cr330_Daubert_Opinion_11.11.212s.pdf) is a key legal ruling on the admissibility of expert testimony in Ghislaine Maxwell's trial."
   ],
-  "analyzedAt": "2026-02-11T14:53:44.256Z"
+  "analyzedAt": "2026-02-11T23:45:53.413Z"
 }

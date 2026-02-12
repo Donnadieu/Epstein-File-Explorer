@@ -9,42 +9,42 @@
       "name": "Laura Menninger",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Partner at Haddon, Morgan & Foreman, P.C. who is writing to Judge Nathan on behalf of Ghislaine Maxwell to request an adjournment of the trial and redaction of other clients' names.",
+      "context": "Attorney for Ghislaine Maxwell who sends the email requesting trial adjournment and redaction of other clients' names from court filings.",
       "mentionCount": 3
     },
     {
       "name": "Nathan",
       "role": "Judge",
       "category": "legal",
-      "context": "Judge presiding over the US v. Maxwell case, addressed in the email regarding the request for trial adjournment.",
+      "context": "US District Court judge presiding over the Ghislaine Maxwell case who receives the adjournment request.",
       "mentionCount": 2
     },
     {
       "name": "Jeff Pagliuca",
-      "role": "Legal Professional",
+      "role": "Attorney",
       "category": "legal",
-      "context": "Copied on the email regarding the Maxwell case adjournment request.",
+      "context": "Copied on the email regarding the trial adjournment request for Ghislaine Maxwell.",
       "mentionCount": 1
     },
     {
       "name": "Bobbi Stemhenn",
-      "role": "Legal Professional",
+      "role": "Attorney",
       "category": "legal",
-      "context": "Copied on the email regarding the Maxwell case adjournment request.",
+      "context": "Copied on the email regarding the trial adjournment request for Ghislaine Maxwell.",
       "mentionCount": 1
     },
     {
       "name": "Nicole Simmons",
-      "role": "Legal Professional",
+      "role": "Attorney",
       "category": "legal",
-      "context": "Copied on the email regarding the Maxwell case adjournment request.",
+      "context": "Copied on the email regarding the trial adjournment request for Ghislaine Maxwell.",
       "mentionCount": 1
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Defendant",
       "category": "key figure",
-      "context": "The defendant in the case US v. Maxwell, whose counsel is requesting a trial adjournment.",
+      "context": "The defendant in the criminal case referenced in the email subject line and body.",
       "mentionCount": 1
     }
   ],
@@ -53,14 +53,35 @@
       "person1": "Laura Menninger",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "attorney-client",
-      "description": "Menninger is acting as defense counsel for Maxwell, filing motions on her behalf.",
+      "description": "Menninger is representing Maxwell in the criminal case and is filing motions on her behalf.",
       "strength": 5
     },
     {
       "person1": "Laura Menninger",
       "person2": "Nathan",
       "relationshipType": "legal",
-      "description": "Menninger is communicating with Judge Nathan regarding court procedures and motions in the Maxwell case.",
+      "description": "Attorney submitting a formal request to the presiding judge in the case.",
+      "strength": 4
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "professional",
+      "description": "Colleagues copied on the same legal correspondence regarding the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Bobbi Stemhenn",
+      "relationshipType": "professional",
+      "description": "Colleagues copied on the same legal correspondence regarding the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Nicole Simmons",
+      "relationshipType": "professional",
+      "description": "Colleagues copied on the same legal correspondence regarding the Maxwell case.",
       "strength": 3
     }
   ],
@@ -68,32 +89,35 @@
     {
       "date": "2021-04-20",
       "title": "Court Order Issued",
-      "description": "Judge Nathan issued an order (Dkt. 221) related to the Maxwell case procedures.",
+      "description": "Judge Nathan issued an order (Dkt. 221) that prompted the defense's response regarding trial adjournment.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
-        "Nathan"
+        "Nathan",
+        "Laura Menninger",
+        "Ghislaine Maxwell"
       ]
     },
     {
       "date": "2021-04-22",
-      "title": "Request for Trial Adjournment",
-      "description": "Defense counsel Laura Menninger files a letter motion requesting a 120 or 180-day adjournment of Ghislaine Maxwell's trial.",
+      "title": "Defense Requests Trial Adjournment",
+      "description": "Defense counsel Laura Menninger formally requests a 120 or 180-day adjournment of Ghislaine Maxwell's trial.",
       "category": "legal",
       "significance": 4,
       "personsInvolved": [
         "Laura Menninger",
-        "Ghislaine Maxwell",
-        "Nathan"
+        "Nathan",
+        "Ghislaine Maxwell"
       ]
     }
   ],
   "locations": [],
   "keyFacts": [
-    "Defense counsel for Ghislaine Maxwell requested a significant adjournment (120-180 days) of her trial in April 2021.",
+    "Defense attorneys for Ghislaine Maxwell requested a significant adjournment (120-180 days) of her trial in April 2021.",
     "The defense cited attorney-client confidentiality rules (Rule of Professional Conduct 1.6) to request redaction of other clients' names from court filings.",
     "The email references legal precedents from Indiana, Kansas, and Oklahoma supporting the confidentiality argument.",
-    "The document shows ongoing legal maneuvering in the Maxwell case nearly a year after her arrest."
+    "The correspondence shows the defense strategy of protecting client information even when it might be publicly available.",
+    "The document indicates ongoing pretrial motions and procedural matters in the Maxwell case as of April 2021."
   ],
-  "analyzedAt": "2026-02-11T14:29:38.039Z"
+  "analyzedAt": "2026-02-11T23:24:33.535Z"
 }

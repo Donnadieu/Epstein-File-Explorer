@@ -3,34 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-05-24",
-  "summary": "This document is an email chain from May 24, 2021, in which attorney Jason Foy forwards a threatening email received by his partner, James Seplowitz, to a government contact (Eric Sarraga). Foy interprets the email as a threat against his safety, believes it is related to a client, and requests a government investigation into its credibility.",
+  "summary": "This document is an email chain from May 24, 2021, in which attorney Jason Foy forwards a threatening email received by his partner, James Seplowitz, to a government contact (Eric Sarraga). Foy interprets the email as a threat against his safety, likely related to his representation of a client, and requests a government investigation into its credibility.",
   "persons": [
     {
       "name": "Jason Foy",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney at Foy & Seplowitz LLC who forwards a threatening email received by his partner to a government contact, requesting an investigation as he perceives it as a threat to his safety.",
+      "context": "Attorney at Foy & Seplowitz LLC who forwards a threatening email to a government contact, interpreting it as a threat against his safety and requesting an investigation.",
       "mentionCount": 4
     },
     {
       "name": "James Seplowitz",
       "role": "Attorney (Partner)",
       "category": "legal",
-      "context": "Partner at Foy & Seplowitz LLC who received a threatening email, which he then forwarded to Jason Foy and Eric Sarraga.",
+      "context": "Partner at Foy & Seplowitz LLC who received the initial threatening email, which was then forwarded to Jason Foy.",
       "mentionCount": 3
     },
     {
       "name": "Eric Sarraga",
       "role": "Government Contact",
       "category": "other",
-      "context": "Government recipient (likely at US Attorney's Office for the Southern District of New York - USANYS) copied on the email chain regarding the threat investigation request.",
+      "context": "Government recipient (likely at USAO NYS) copied on the email chain, to whom Jason Foy reports the perceived threat and requests an investigation.",
       "mentionCount": 2
     },
     {
       "name": "Vegas Army Vet",
       "role": "Email Sender",
       "category": "other",
-      "context": "The alias of the individual who sent the threatening email to James Seplowitz, with the message 'Go ahead let your client know, THIS ISN'T OVER!!'",
+      "context": "Anonymous sender of the threatening email directed at James Seplowitz, with the message 'Go ahead let your client know, THIS ISN'T OVER!!'",
       "mentionCount": 1
     }
   ],
@@ -38,30 +38,23 @@
     {
       "person1": "Jason Foy",
       "person2": "James Seplowitz",
-      "relationshipType": "professional partnership",
+      "relationshipType": "professional",
       "description": "Partners at the law firm Foy & Seplowitz LLC, as indicated by the email signature and reference to 'my partner'.",
       "strength": 5
     },
     {
       "person1": "Jason Foy",
       "person2": "Eric Sarraga",
-      "relationshipType": "professional correspondence",
-      "description": "Foy is communicating with Sarraga, a government contact, to request an investigation into a perceived threat.",
+      "relationshipType": "professional",
+      "description": "Foy is communicating a security concern to Sarraga, a government contact, requesting an investigation.",
       "strength": 3
     },
     {
       "person1": "James Seplowitz",
       "person2": "Vegas Army Vet",
-      "relationshipType": "threat recipient-sender",
-      "description": "Seplowitz received a threatening email from the alias 'Vegas Army Vet'.",
+      "relationshipType": "threatener-target",
+      "description": "Seplowitz received a threatening email from the sender 'Vegas Army Vet'.",
       "strength": 2
-    },
-    {
-      "person1": "Jason Foy",
-      "person2": "Vegas Army Vet",
-      "relationshipType": "threat target-sender",
-      "description": "Foy interprets the email sent to his partner as a threat against his own safety, implying he or his client is the intended target.",
-      "strength": 3
     }
   ],
   "events": [
@@ -80,7 +73,7 @@
     {
       "date": "2021-05-24",
       "title": "Request for Government Investigation",
-      "description": "Jason Foy forwards the threatening email to government contact Eric Sarraga, formally requesting an expedited investigation into the credibility of the threat.",
+      "description": "Jason Foy forwards the threatening email to government contact Eric Sarraga, requesting an expedited investigation into its credibility.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -92,13 +85,13 @@
   ],
   "locations": [
     "Hackensack, NJ 07601",
-    "Foy & Seplowitz LLC (law firm location)"
+    "Foy & Seplowitz LLC (law firm location implied)"
   ],
   "keyFacts": [
-    "Attorney Jason Foy received a forwarded threatening email sent to his partner, James Seplowitz, on May 24, 2021.",
-    "The threatening email, from 'Vegas Army Vet', stated: 'Go ahead let your client know, THIS ISN'T OVER!!'",
-    "Foy interpreted the email as a direct threat against his personal safety and believed it was related to a client.",
-    "Foy formally requested the government (via Eric Sarraga) to investigate the threat's credibility using its resources."
+    "Attorney Jason Foy received a forwarded email he interpreted as a direct threat to his safety, prompting him to contact government authorities.",
+    "The threatening email was sent to his law partner, James Seplowitz, from an individual using the alias 'Vegas Army Vet'.",
+    "The threat's message, 'Go ahead let your client know, THIS ISN'T OVER!!', suggests it is related to the firm's legal representation of a client.",
+    "Foy formally requested the government to investigate the threat's credibility, indicating serious concern over its potential validity."
   ],
-  "analyzedAt": "2026-02-11T14:59:22.064Z"
+  "analyzedAt": "2026-02-11T23:50:52.777Z"
 }

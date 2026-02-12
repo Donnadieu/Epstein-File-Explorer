@@ -3,27 +3,27 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-04-21",
-  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an attorney named Jack, forwarding a court order from Judge Alison J. Nathan. The order reminds counsel in the United States v. Maxwell case to comply with local court rules regarding the handling of sensitive materials, as the indictment has been expanded.",
+  "summary": "An email from an Assistant United States Attorney to an attorney named Jack, forwarding a court order from Judge Alison Nathan regarding compliance with SDNY Local Rule 23.1 in the expanded United States v. Maxwell case. The order applies to all attorneys representing parties and witnesses.",
   "persons": [
     {
       "name": "Jack",
       "role": "Attorney (recipient of email)",
       "category": "legal",
-      "context": "The email is addressed to Jack, an attorney, reminding him and his colleagues to comply with a court order and local rules in the Maxwell case.",
+      "context": "The recipient of an email from an Assistant U.S. Attorney regarding a court order in the United States v. Maxwell case.",
       "mentionCount": 1
     },
     {
       "name": "Judge Nathan",
-      "role": "United States District Judge",
+      "role": "U.S. District Judge",
       "category": "legal",
-      "context": "Issued the attached order in the United States v. Maxwell case, which is being forwarded to counsel.",
+      "context": "Issued the court order regarding compliance with SDNY Local Rule 23.1 that is being forwarded in the email.",
       "mentionCount": 1
     },
     {
       "name": "Assistant United States Attorney",
       "role": "Prosecutor",
       "category": "legal",
-      "context": "Sender of the email, working in the Southern District of New York, forwarding Judge Nathan's order to attorney Jack.",
+      "context": "The sender of the email, forwarding Judge Nathan's order and reminding the recipient of compliance with local court rules.",
       "mentionCount": 1
     }
   ],
@@ -32,22 +32,22 @@
       "person1": "Assistant United States Attorney",
       "person2": "Jack",
       "relationshipType": "professional correspondence",
-      "description": "The prosecutor is communicating a court order and legal reminder to the attorney, indicating a professional legal context.",
+      "description": "The prosecutor is communicating a court order and legal reminder to the attorney, Jack.",
       "strength": 2
     },
     {
       "person1": "Judge Nathan",
       "person2": "Jack",
       "relationshipType": "court authority",
-      "description": "Judge Nathan's order applies to Jack as counsel in the case, establishing a judge-attorney relationship.",
+      "description": "Judge Nathan's order applies to Jack and other attorneys in the case.",
       "strength": 2
     }
   ],
   "events": [
     {
       "date": "2020-07-23",
-      "title": "Judge Nathan Issues Order on Local Rule Compliance",
-      "description": "Judge Alison J. Nathan issued an order regarding compliance with SDNY Local Rule 23.1 for attorneys in the United States v. Maxwell case.",
+      "title": "Judge Nathan Issues Order on Local Rule 23.1",
+      "description": "Judge Alison Nathan issued an order reminding counsel for parties and witnesses to comply with SDNY Local Rule 23.1.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
@@ -56,8 +56,8 @@
     },
     {
       "date": "2021-04-21",
-      "title": "Prosecution Forwards Court Order to Counsel",
-      "description": "An Assistant U.S. Attorney emails attorney Jack to forward Judge Nathan's order, noting it now applies to all attorneys due to an expanded indictment.",
+      "title": "Prosecutor Forwards Court Order",
+      "description": "An Assistant U.S. Attorney emails attorney Jack to forward Judge Nathan's order, noting it now applies due to an expanded indictment.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -68,12 +68,13 @@
   ],
   "locations": [
     "Southern District of New York",
-    "St. Andrew's Plaza"
+    "1 St. Andrew's Plaza"
   ],
   "keyFacts": [
-    "The indictment in United States v. Maxwell (20 Cr. 330) has been expanded, triggering the application of a prior court order to all attorneys in the case.",
-    "Judge Alison J. Nathan issued an order on July 23, 2020, reminding counsel to comply with SDNY Local Rule 23.1 regarding the handling of case materials.",
-    "The communication is a procedural reminder from the prosecution to defense counsel about adhering to local court rules."
+    "The indictment in United States v. Maxwell, 20 Cr. 330 (AJN) has been expanded.",
+    "A previous order from Judge Alison Nathan regarding compliance with SDNY Local Rule 23.1 now applies to all attorneys representing parties and witnesses in the case.",
+    "The communication is a procedural reminder from a prosecutor to a defense attorney about court rules.",
+    "The email originates from 1 St. Andrew's Plaza, the address for the U.S. Attorney's Office for the Southern District of New York."
   ],
-  "analyzedAt": "2026-02-11T14:29:14.815Z"
+  "analyzedAt": "2026-02-11T23:24:08.677Z"
 }

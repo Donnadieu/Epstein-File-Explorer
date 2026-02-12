@@ -3,20 +3,34 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2019-05-14",
-  "summary": "Email correspondence between an Assistant United States Attorney and FBI Special Agents regarding a request for historical service provider information for phone numbers associated with Jeffrey Epstein and Ghislaine Maxwell during an investigation period.",
+  "summary": "Email correspondence between an Assistant United States Attorney and FBI Special Agents regarding requests for historical service provider information for phone numbers associated with Jeffrey Epstein and Ghislaine Maxwell during an investigation. The document shows coordination between prosecutors and law enforcement on evidence gathering.",
   "persons": [
     {
       "name": "Jeffrey Epstein",
       "role": "Subject of investigation",
       "category": "key figure",
-      "context": "Phone numbers associated with his New York office and cell phone are requested for service provider information during the relevant time period.",
+      "context": "Phone numbers associated with his NY office and cell phone are being investigated for service provider information during the relevant time period.",
       "mentionCount": 1
     },
     {
       "name": "Ghislaine Maxwell",
       "role": "Subject of investigation",
       "category": "key figure",
-      "context": "Phone numbers associated with her home and cell are requested for service provider information during the relevant time period.",
+      "context": "Phone numbers associated with her are being investigated for service provider information during the relevant time period.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent FBI New York VCAC/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Correspondent in email chain providing information about phone service providers to the prosecutor.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Initiated request for phone service provider information for Epstein and Maxwell's phone numbers as part of investigation.",
       "mentionCount": 1
     }
   ],
@@ -25,18 +39,27 @@
       "person1": "Jeffrey Epstein",
       "person2": "Ghislaine Maxwell",
       "relationshipType": "co-conspirator",
-      "description": "Both are subjects of the same investigation, with their phone records being sought concurrently by prosecutors.",
+      "description": "Both subjects of the same investigation with their phone records being examined together by prosecutors and FBI.",
       "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Special Agent FBI New York VCAC/Human Trafficking",
+      "relationshipType": "investigative collaboration",
+      "description": "Prosecutor requesting and FBI agent providing investigative information about phone service providers.",
+      "strength": 4
     }
   ],
   "events": [
     {
       "date": "2019-05-14",
-      "title": "Phone records provider inquiry",
-      "description": "An Assistant United States Attorney requests service provider information for phone numbers linked to Jeffrey Epstein and Ghislaine Maxwell from FBI agents.",
+      "title": "Phone records investigation coordination",
+      "description": "Email correspondence between SDNY prosecutor and FBI agents regarding obtaining service provider information for phone numbers associated with Epstein and Maxwell.",
       "category": "investigation",
       "significance": 3,
       "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York",
+        "Special Agent FBI New York VCAC/Human Trafficking",
         "Jeffrey Epstein",
         "Ghislaine Maxwell"
       ]
@@ -47,10 +70,10 @@
     "One Saint Andrew's Plaza, New York, NY 10007"
   ],
   "keyFacts": [
-    "Prosecutors from the Southern District of New York were actively investigating Jeffrey Epstein and Ghislaine Maxwell as of May 2019.",
-    "The investigation involved seeking historical service provider data for phone numbers associated with Epstein's NY office, Epstein's cell, Maxwell's home, and Maxwell's cell.",
-    "The FBI's New York VCAC/Human Trafficking unit was involved in the investigative correspondence.",
-    "The listed telecommunications providers of interest were T-Mobile, AT&T, and Verizon."
+    "Prosecutors from SDNY were actively investigating phone records of Jeffrey Epstein and Ghislaine Maxwell as of May 2019.",
+    "The FBI's VCAC/Human Trafficking unit in New York was involved in providing investigative support for the case.",
+    "Investigators were seeking historical service provider information from T-Mobile, AT&T, and Verizon for specific phone numbers.",
+    "The document shows coordination between federal prosecutors and FBI agents in gathering evidence for the Epstein investigation."
   ],
-  "analyzedAt": "2026-02-11T14:37:20.052Z"
+  "analyzedAt": "2026-02-11T23:31:52.274Z"
 }

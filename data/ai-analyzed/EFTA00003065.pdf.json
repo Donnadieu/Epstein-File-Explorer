@@ -1,22 +1,22 @@
 {
   "fileName": "EFTA00003065.pdf",
   "dataSet": "1",
-  "documentType": "employee information form",
+  "documentType": "employee emergency contact form",
   "dateOriginal": "2018-10-21",
-  "summary": "This appears to be an employee information or emergency contact form for an individual named Peter St Omer, associated with LSJE, LLC and The Saint James Group, based in St. Thomas, US Virgin Islands. The form includes personal details, emergency contacts, and company information.",
+  "summary": "An emergency contact form for an employee named Peter St Omer, who is an operator for LSJE, LLC, a company associated with Jeffrey Epstein's operations in the U.S. Virgin Islands. The form provides personal and emergency contact information.",
   "persons": [
     {
       "name": "Peter St Omer",
-      "role": "Employee/Operator",
+      "role": "Operator",
       "category": "staff",
-      "context": "Listed as the employee/operator on the form, with personal details and emergency contacts provided.",
-      "mentionCount": 1
+      "context": "Employee of LSJE, LLC, listed on an emergency contact form with personal details and emergency contacts.",
+      "mentionCount": 2
     },
     {
       "name": "Kishma Demers",
       "role": "Emergency Contact",
       "category": "other",
-      "context": "Listed as an emergency contact for Peter St Omer, with relationships noted as 'Friend' and 'Son' (though 'Son' may be a formatting error).",
+      "context": "Listed as an emergency contact for Peter St Omer, with relationships noted as 'Friend' and 'Son'.",
       "mentionCount": 1
     }
   ],
@@ -24,21 +24,31 @@
     {
       "person1": "Peter St Omer",
       "person2": "Kishma Demers",
-      "relationshipType": "social",
-      "description": "Kishma Demers is listed as an emergency contact for Peter St Omer, with relationships indicated as 'Friend' and potentially 'Son' (though ambiguous).",
+      "relationshipType": "emergency contact",
+      "description": "Kishma Demers is listed as the emergency contact for Peter St Omer on his employee form.",
       "strength": 2
     }
   ],
-  "events": [],
+  "events": [
+    {
+      "date": "2018-10-21",
+      "title": "Emergency Contact Form Completion",
+      "description": "An emergency contact form was filled out for employee Peter St Omer, providing his personal details and emergency contact information.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Peter St Omer",
+        "Kishma Demers"
+      ]
+    }
+  ],
   "locations": [
-    "LSJE, LLC 6100 Red Quarters, Suite 13-3, St. Thomas, VI 00802-1348",
-    "St. Thomas, VI"
+    "LSJE, LLC 6100 Red Quarters, Suite 13-3, St. Thomas, VI 00802-1348"
   ],
   "keyFacts": [
-    "The document is an employee/emergency contact form dated October 21, 2018.",
-    "The employee, Peter St Omer, is associated with LSJE, LLC and The Saint James Group (email: thesaintjames.group@gmail.com).",
-    "The company LSJE, LLC is located in St. Thomas, US Virgin Islands, a location relevant to Epstein's properties.",
-    "The form includes standard personal and emergency contact information for an employee."
+    "LSJE, LLC is a company associated with Jeffrey Epstein's operations, located in St. Thomas, U.S. Virgin Islands.",
+    "Peter St Omer is identified as an operator for LSJE, LLC, indicating he was part of Epstein's staff network.",
+    "The document is dated October 21, 2018, which is after Epstein's 2008 conviction but before his 2019 arrest."
   ],
-  "analyzedAt": "2026-02-11T18:15:34.339Z"
+  "analyzedAt": "2026-02-11T22:54:17.362Z"
 }

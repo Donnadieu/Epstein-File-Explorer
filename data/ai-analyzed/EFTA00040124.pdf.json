@@ -3,48 +3,48 @@
   "dataSet": "9",
   "documentType": "correspondence",
   "dateOriginal": "2021-11-18",
-  "summary": "This document is an email chain from November 2021 between attorneys regarding the sharing of a defense motion and a subpoena in the Ghislaine Maxwell case. It shows legal coordination and confidentiality concerns between defense counsel, the government, and a third-party law firm.",
+  "summary": "This document is an email chain from November 2021 among legal counsel regarding a defense motion and subpoena in the Epstein/Ghislaine Maxwell case. It involves coordination between defense attorneys and prosecutors about sharing a motion containing confidential information subject to a protective order.",
   "persons": [
     {
       "name": "Jeff Pagliuca",
       "role": "Defense Attorney",
       "category": "legal",
-      "context": "Defense counsel for Ghislaine Maxwell, coordinating with the government and other attorneys about sharing a confidential defense motion and subpoena.",
-      "mentionCount": 4
+      "context": "Defense attorney communicating about providing a copy of a defense motion to the government, deferring to government's protective order.",
+      "mentionCount": 3
     },
     {
       "name": "Brian Burns",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney at Smith Villazor LLP requesting a copy of the defense motion from defense counsel.",
+      "context": "Attorney at Smith Villazor LLP requesting a copy of the defense motion seeking issuance of a subpoena.",
       "mentionCount": 3
     },
     {
       "name": "Christian Everdell",
       "role": "Attorney",
       "category": "legal",
-      "context": "Attorney at Cohen & Gresser LLP who sent a signed subpoena to other counsel.",
+      "context": "Attorney at Cohen & Gresser LLP sending a signed subpoena to counsel.",
       "mentionCount": 2
     },
     {
       "name": "Laura Menninger",
-      "role": "Defense Attorney",
+      "role": "Defense Counsel",
       "category": "legal",
-      "context": "Defense counsel for Ghislaine Maxwell, copied on the email about the subpoena.",
+      "context": "Defense counsel copied on email regarding subpoena.",
       "mentionCount": 2
     },
     {
       "name": "Bobbi Sternheim",
-      "role": "Defense Attorney",
+      "role": "Counsel",
       "category": "legal",
-      "context": "Defense counsel for Ghislaine Maxwell, copied on the email about the subpoena.",
+      "context": "Counsel listed as recipient of subpoena email.",
       "mentionCount": 1
     },
     {
       "name": "Patrick Smit",
       "role": "Attorney",
       "category": "legal",
-      "context": "Recipient of the email from Christian Everdell regarding the subpoena.",
+      "context": "Attorney copied on email regarding subpoena.",
       "mentionCount": 1
     }
   ],
@@ -53,62 +53,52 @@
       "person1": "Jeff Pagliuca",
       "person2": "Brian Burns",
       "relationshipType": "legal correspondence",
-      "description": "Pagliuca responds to Burns' request for a defense motion, explaining the need to defer to government confidentiality designations.",
+      "description": "Pagliuca responds to Burns' request for a defense motion, coordinating under government protective order.",
       "strength": 2
     },
     {
       "person1": "Christian Everdell",
-      "person2": "Patrick Smit",
+      "person2": "Bobbi Sternheim",
       "relationshipType": "legal correspondence",
-      "description": "Everdell sends a signed subpoena to Smit, copying other defense counsel.",
+      "description": "Everdell sends a signed subpoena to Sternheim as counsel.",
       "strength": 2
     },
     {
       "person1": "Jeff Pagliuca",
-      "person2": "Laura Menninger",
-      "relationshipType": "co-counsel",
-      "description": "Both are defense attorneys for Ghislaine Maxwell, copied on the same legal correspondence.",
-      "strength": 3
-    },
-    {
-      "person1": "Laura Menninger",
-      "person2": "Bobbi Sternheim",
-      "relationshipType": "co-counsel",
-      "description": "Both are defense attorneys for Ghislaine Maxwell, listed together as counsel in the email.",
-      "strength": 3
+      "person2": "Christian Everdell",
+      "relationshipType": "legal colleague",
+      "description": "Both are attorneys copied on email chain regarding legal motions and subpoenas.",
+      "strength": 2
     }
   ],
   "events": [
     {
       "date": "2021-11-14",
-      "title": "Filing of Defense Motion",
-      "description": "The defense files a motion seeking the issuance of a subpoena, referenced in the attached documents.",
+      "title": "Defense Motion Filed",
+      "description": "Defense files motion seeking issuance of a subpoena, referenced in attached documents.",
       "category": "legal",
       "significance": 3,
       "personsInvolved": [
         "Jeff Pagliuca",
-        "Laura Menninger",
-        "Bobbi Sternheim"
+        "Laura Menninger"
       ]
     },
     {
       "date": "2021-11-16",
       "title": "Subpoena Sent",
-      "description": "Christian Everdell sends a signed subpoena to Patrick Smit and other defense counsel.",
+      "description": "Christian Everdell sends signed subpoena to counsel including Bobbi Sternheim.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
         "Christian Everdell",
-        "Patrick Smit",
-        "Jeff Pagliuca",
-        "Laura Menninger",
-        "Bobbi Sternheim"
+        "Bobbi Sternheim",
+        "Patrick Smit"
       ]
     },
     {
       "date": "2021-11-17",
       "title": "Request for Defense Motion",
-      "description": "Brian Burns requests a copy of the defense motion from defense counsel, citing that they haven't seen it.",
+      "description": "Brian Burns requests copy of defense motion from defense counsel.",
       "category": "legal",
       "significance": 2,
       "personsInvolved": [
@@ -118,10 +108,10 @@
     },
     {
       "date": "2021-11-18",
-      "title": "Coordination on Motion Sharing",
-      "description": "Email chain shows coordination between defense and government regarding sharing an unredacted defense motion, with concerns about confidential designations.",
+      "title": "Unredacted Motion Provided",
+      "description": "Unredacted defense motion is provided to Brian Burns in light of email coordination.",
       "category": "legal",
-      "significance": 2,
+      "significance": 3,
       "personsInvolved": [
         "Jeff Pagliuca",
         "Brian Burns"
@@ -134,11 +124,10 @@
     "800 Third Avenue, New York, NY 10022"
   ],
   "keyFacts": [
-    "The defense filed a motion on November 14, 2021, seeking the issuance of a subpoena in the Ghislaine Maxwell case.",
-    "All government productions in the case were designated confidential under a protective order, restricting the sharing of the defense motion.",
-    "Attorney Brian Burns, not part of the immediate defense team, requested a copy of the motion but had not seen it.",
-    "The email chain demonstrates the strict confidentiality protocols and coordination between defense counsel and the government in late 2021.",
-    "A signed subpoena was transmitted between attorneys on November 16, 2021, as part of the legal proceedings."
+    "The document shows ongoing legal proceedings in late 2021 related to the Epstein/Maxwell case, specifically regarding a defense motion and subpoena.",
+    "A protective order from the government designates all productions as confidential, controlling the sharing of the defense motion.",
+    "The defense motion contains information designated as confidential and is subject to government approval for distribution.",
+    "Multiple law firms are involved: Cohen & Gresser LLP, Smith Villazor LLP, and others, indicating a coordinated legal effort."
   ],
-  "analyzedAt": "2026-02-11T14:56:02.601Z"
+  "analyzedAt": "2026-02-11T23:47:50.233Z"
 }
