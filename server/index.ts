@@ -25,63 +25,63 @@ app.use(
 app.use(express.urlencoded({ extended: false }));
 
 // ---------------------------------------------------------------------------
-// Rate limiting — in-memory, per-IP, tiered by endpoint sensitivity
+// Rate limiting — COMMENTED OUT
 // ---------------------------------------------------------------------------
-interface RateBucket { count: number; resetAt: number }
-const rateBuckets = new Map<string, RateBucket>();
-
-// Cleanup stale entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
-  rateBuckets.forEach((bucket, key) => {
-    if (now > bucket.resetAt) rateBuckets.delete(key);
-  });
-}, 5 * 60_000);
-
-function rateLimit(
-  windowMs: number,
-  maxRequests: number,
-  keyPrefix: string,
-) {
-  return (req: Request, res: Response, next: NextFunction) => {
-    const ip = req.ip || req.socket.remoteAddress || "unknown";
-    const key = `${keyPrefix}:${ip}`;
-    const now = Date.now();
-    const bucket = rateBuckets.get(key);
-
-    if (!bucket || now > bucket.resetAt) {
-      rateBuckets.set(key, { count: 1, resetAt: now + windowMs });
-      return next();
-    }
-
-    if (bucket.count >= maxRequests) {
-      const retryAfter = Math.ceil((bucket.resetAt - now) / 1000);
-      res.set("Retry-After", String(retryAfter));
-      return res.status(429).json({
-        error: "Too many requests. Please try again later.",
-        retryAfter,
-      });
-    }
-
-    bucket.count++;
-    next();
-  };
-}
-
-// Rate limits — per-IP, tiered by endpoint cost
-// AI chat: 20 requests per minute
-app.use("/api/chat", rateLimit(60_000, 20, "chat"));
-// Exports: 10 per minute
-app.use("/api/export", rateLimit(60_000, 10, "export"));
-// Global API blanket: 200 requests per minute per IP
-app.use("/api", rateLimit(60_000, 200, "api"));
-// Media streaming: 60 per minute (shared bucket for pdf/image/video/content-url)
-app.use("/api/documents/:id/pdf", rateLimit(60_000, 60, "media"));
-app.use("/api/documents/:id/image", rateLimit(60_000, 60, "media"));
-app.use("/api/documents/:id/video", rateLimit(60_000, 60, "media"));
-app.use("/api/documents/:id/content-url", rateLimit(60_000, 60, "media"));
-// Search: 60 per minute
-app.use("/api/search", rateLimit(60_000, 60, "search"));
+// interface RateBucket { count: number; resetAt: number }
+// const rateBuckets = new Map<string, RateBucket>();
+//
+// // Cleanup stale entries every 5 minutes
+// setInterval(() => {
+//   const now = Date.now();
+//   rateBuckets.forEach((bucket, key) => {
+//     if (now > bucket.resetAt) rateBuckets.delete(key);
+//   });
+// }, 5 * 60_000);
+//
+// function rateLimit(
+//   windowMs: number,
+//   maxRequests: number,
+//   keyPrefix: string,
+// ) {
+//   return (req: Request, res: Response, next: NextFunction) => {
+//     const ip = req.ip || req.socket.remoteAddress || "unknown";
+//     const key = `${keyPrefix}:${ip}`;
+//     const now = Date.now();
+//     const bucket = rateBuckets.get(key);
+//
+//     if (!bucket || now > bucket.resetAt) {
+//       rateBuckets.set(key, { count: 1, resetAt: now + windowMs });
+//       return next();
+//     }
+//
+//     if (bucket.count >= maxRequests) {
+//       const retryAfter = Math.ceil((bucket.resetAt - now) / 1000);
+//       res.set("Retry-After", String(retryAfter));
+//       return res.status(429).json({
+//         error: "Too many requests. Please try again later.",
+//         retryAfter,
+//       });
+//     }
+//
+//     bucket.count++;
+//     next();
+//   };
+// }
+//
+// // Rate limits — per-IP, tiered by endpoint cost
+// // AI chat: 20 requests per minute
+// app.use("/api/chat", rateLimit(60_000, 20, "chat"));
+// // Exports: 10 per minute
+// app.use("/api/export", rateLimit(60_000, 10, "export"));
+// // Global API blanket: 200 requests per minute per IP
+// app.use("/api", rateLimit(60_000, 200, "api"));
+// // Media streaming: 60 per minute (shared bucket for pdf/image/video/content-url)
+// app.use("/api/documents/:id/pdf", rateLimit(60_000, 60, "media"));
+// app.use("/api/documents/:id/image", rateLimit(60_000, 60, "media"));
+// app.use("/api/documents/:id/video", rateLimit(60_000, 60, "media"));
+// app.use("/api/documents/:id/content-url", rateLimit(60_000, 60, "media"));
+// // Search: 60 per minute
+// app.use("/api/search", rateLimit(60_000, 60, "search"));
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
