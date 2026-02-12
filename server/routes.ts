@@ -5,7 +5,7 @@ import * as fsSync from "fs";
 import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
-import { isR2Configured, getPresignedUrl } from "./r2";
+import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
 // import { registerChatRoutes } from "./chat";
 
 let activeProxyStreams = 0;
@@ -217,14 +217,18 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
-      // Redirect to R2 presigned URL instead of streaming through the server
+      // Stream from R2 through the server (avoids CORS issues with presigned URL redirects)
       if (doc.r2Key && isR2Configured()) {
         try {
-          const url = await getPresignedUrl(doc.r2Key);
-          return res.redirect(url);
+          const r2 = await getR2Stream(doc.r2Key);
+          res.setHeader("Content-Type", r2.contentType || "application/pdf");
+          if (r2.contentLength) res.setHeader("Content-Length", r2.contentLength);
+          res.setHeader("Cache-Control", "public, max-age=3600");
+          r2.body.pipe(res);
+          return;
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 presigned URL failed for doc ${id}, falling through: ${msg}`);
+          console.warn(`R2 stream failed for doc ${id}, falling through: ${msg}`);
         }
       }
 
