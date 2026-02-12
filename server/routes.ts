@@ -5,8 +5,11 @@ import * as fsSync from "fs";
 import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
-import { isR2Configured, getR2Stream, getPresignedUrl } from "./r2";
+import { isR2Configured, getPresignedUrl } from "./r2";
 // import { registerChatRoutes } from "./chat";
+
+let activeProxyStreams = 0;
+const MAX_PROXY_STREAMS = 10;
 
 const ALLOWED_PDF_DOMAINS = [
   "www.justice.gov",
@@ -206,24 +209,14 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
-      // Serve from R2 if available, otherwise fall through to DOJ proxy
+      // Redirect to R2 presigned URL instead of streaming through the server
       if (doc.r2Key && isR2Configured()) {
         try {
-          const r2Resp = await getR2Stream(doc.r2Key);
-          // Avoid streaming very large files through the server — tell client to use /content-url
-          const STREAM_LIMIT = 100 * 1024 * 1024; // 100 MB
-          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
-            r2Resp.body.destroy();
-            return res.status(413).json({ error: "File too large to stream", useContentUrl: true });
-          }
-          res.setHeader("Content-Type", r2Resp.contentType || "application/pdf");
-          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-          res.setHeader("Cache-Control", "private, max-age=3600");
-          r2Resp.body.pipe(res);
-          return;
+          const url = await getPresignedUrl(doc.r2Key);
+          return res.redirect(url);
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 stream failed for doc ${id}, falling through to proxy: ${msg}`);
+          console.warn(`R2 presigned URL failed for doc ${id}, falling through: ${msg}`);
         }
       }
 
@@ -251,8 +244,19 @@ export async function registerRoutes(
         return res.status(403).json({ error: "Source URL domain not allowed" });
       }
 
+      if (activeProxyStreams >= MAX_PROXY_STREAMS) {
+        res.setHeader("Retry-After", "5");
+        return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+      }
+      activeProxyStreams++;
+      res.on("close", () => { activeProxyStreams--; });
+
+      req.setTimeout(60_000, () => {
+        if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+      });
+
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 30_000);
+      const timeout = setTimeout(() => controller.abort(), 60_000);
 
       try {
         const response = await fetch(doc.sourceUrl, { signal: controller.signal });
@@ -309,23 +313,14 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Try R2 first
+      // Redirect to R2 presigned URL
       if (doc.r2Key && isR2Configured()) {
         try {
-          const r2Resp = await getR2Stream(doc.r2Key);
-          const STREAM_LIMIT = 100 * 1024 * 1024; // 100 MB
-          if (r2Resp.contentLength && r2Resp.contentLength > STREAM_LIMIT) {
-            r2Resp.body.destroy();
-            return res.status(413).json({ error: "File too large to stream", useContentUrl: true });
-          }
-          res.setHeader("Content-Type", r2Resp.contentType || "image/jpeg");
-          if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-          res.setHeader("Cache-Control", "private, max-age=3600");
-          r2Resp.body.pipe(res);
-          return;
+          const url = await getPresignedUrl(doc.r2Key);
+          return res.redirect(url);
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 stream failed for image doc ${id}: ${msg}`);
+          console.warn(`R2 presigned URL failed for image doc ${id}: ${msg}`);
         }
       }
 
@@ -353,8 +348,19 @@ export async function registerRoutes(
 
       // Fallback: proxy from source URL
       if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
+        if (activeProxyStreams >= MAX_PROXY_STREAMS) {
+          res.setHeader("Retry-After", "5");
+          return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+        }
+        activeProxyStreams++;
+        res.on("close", () => { activeProxyStreams--; });
+
+        req.setTimeout(60_000, () => {
+          if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+        });
+
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 30_000);
+        const timeout = setTimeout(() => controller.abort(), 60_000);
         try {
           const response = await fetch(doc.sourceUrl, { signal: controller.signal });
           clearTimeout(timeout);
@@ -399,27 +405,14 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Try R2 first
+      // Redirect to R2 presigned URL (browser handles Range requests directly against R2)
       if (doc.r2Key && isR2Configured()) {
         try {
-          const r2Resp = await getR2Stream(doc.r2Key, req.headers.range);
-          res.setHeader("Content-Type", r2Resp.contentType || "video/mp4");
-          res.setHeader("Accept-Ranges", "bytes");
-          if (r2Resp.contentRange) {
-            res.setHeader("Content-Range", r2Resp.contentRange);
-            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-            res.setHeader("Cache-Control", "private, max-age=3600");
-            res.status(206);
-            r2Resp.body.pipe(res);
-          } else {
-            if (r2Resp.contentLength) res.setHeader("Content-Length", String(r2Resp.contentLength));
-            res.setHeader("Cache-Control", "private, max-age=3600");
-            r2Resp.body.pipe(res);
-          }
-          return;
+          const url = await getPresignedUrl(doc.r2Key);
+          return res.redirect(url);
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 stream failed for video doc ${id}: ${msg}`);
+          console.warn(`R2 presigned URL failed for video doc ${id}: ${msg}`);
         }
       }
 
@@ -470,8 +463,19 @@ export async function registerRoutes(
 
       // Fallback: proxy from source URL
       if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
+        if (activeProxyStreams >= MAX_PROXY_STREAMS) {
+          res.setHeader("Retry-After", "5");
+          return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+        }
+        activeProxyStreams++;
+        res.on("close", () => { activeProxyStreams--; });
+
+        req.setTimeout(60_000, () => {
+          if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+        });
+
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 120_000);
+        const timeout = setTimeout(() => controller.abort(), 60_000);
         try {
           const fetchHeaders: Record<string, string> = {};
           if (req.headers.range) fetchHeaders["Range"] = req.headers.range;
