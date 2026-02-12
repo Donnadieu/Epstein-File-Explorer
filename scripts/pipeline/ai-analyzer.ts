@@ -573,11 +573,21 @@ export async function runAIAnalysis(options: {
   console.log(`\nFound ${filePaths.length} extracted files on disk`);
 
   // Phase 2: Filter out already-analyzed files
+  // Pre-scan output directory into a Set for O(1) lookups (avoids N existsSync calls)
+  const existingOutputs = new Set<string>();
+  if (fs.existsSync(outputDir)) {
+    for (const f of fs.readdirSync(outputDir)) {
+      if (f.endsWith(".json")) {
+        existingOutputs.add(f.replace(/\.json$/, ""));
+      }
+    }
+  }
+
   let skipped = 0;
   const candidates = filePaths.filter(f => {
     if (skipExisting) {
-      const outFile = path.join(outputDir, `${f.file}.json`);
-      if (fs.existsSync(outFile)) {
+      // Check both old naming (fileName.pdf → "X.pdf") and new naming (entry.file → "X")
+      if (existingOutputs.has(f.file) || existingOutputs.has(f.file + ".pdf")) {
         skipped++;
         return false;
       }
@@ -626,7 +636,7 @@ export async function runAIAnalysis(options: {
       const costCents = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M + (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
       totalCostCents += costCents;
 
-      const outFile = path.join(outputDir, `${fileName}.json`);
+      const outFile = path.join(outputDir, `${entry.file}.json`);
       fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
 
       results.push(result);
