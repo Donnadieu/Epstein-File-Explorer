@@ -22,6 +22,7 @@ import {
   Network,
   Brain,
   ExternalLink,
+  Heart,
   Shield,
   Gavel,
   Mail,
@@ -197,6 +198,26 @@ export function AppSidebar() {
           >
             <ExternalLink className="w-3 h-3" />
             <span>Community Archive</span>
+          </a>
+          <a
+            href="https://ko-fi.com/vibecodingforgood"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
+            data-testid="link-kofi"
+          >
+            <Heart className="w-3 h-3 text-rose-500" />
+            <span>Support on Ko-fi</span>
+          </a>
+          <a
+            href="https://github.com/sponsors/Donnadieu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
+            data-testid="link-github-sponsors"
+          >
+            <Heart className="w-3 h-3 text-rose-500" />
+            <span>Sponsor on GitHub</span>
           </a>
           <p className="leading-relaxed px-1.5">
             Data sourced from publicly released DOJ records. Preserved and distributed by the open-source community.
