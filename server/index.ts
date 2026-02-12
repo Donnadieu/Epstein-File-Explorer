@@ -68,11 +68,20 @@ function rateLimit(
   };
 }
 
-// Rate limits only on expensive/sensitive endpoints (not general reads)
+// Rate limits — per-IP, tiered by endpoint cost
 // AI chat: 20 requests per minute
 app.use("/api/chat", rateLimit(60_000, 20, "chat"));
 // Exports: 10 per minute
 app.use("/api/export", rateLimit(60_000, 10, "export"));
+// Global API blanket: 200 requests per minute per IP
+app.use("/api", rateLimit(60_000, 200, "api"));
+// Media streaming: 60 per minute (shared bucket for pdf/image/video/content-url)
+app.use("/api/documents/:id/pdf", rateLimit(60_000, 60, "media"));
+app.use("/api/documents/:id/image", rateLimit(60_000, 60, "media"));
+app.use("/api/documents/:id/video", rateLimit(60_000, 60, "media"));
+app.use("/api/documents/:id/content-url", rateLimit(60_000, 60, "media"));
+// Search: 60 per minute
+app.use("/api/search", rateLimit(60_000, 60, "search"));
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
