@@ -7,6 +7,7 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { NavActions } from "@/components/nav-actions";
 import { AppBreadcrumbs } from "@/components/breadcrumbs";
 import { useKeyboardShortcuts, shortcutsList } from "@/hooks/use-keyboard-shortcuts";
 import {
@@ -68,7 +69,10 @@ function AppShell() {
               <SidebarTrigger data-testid="button-sidebar-toggle" />
               <AppBreadcrumbs />
             </div>
-            <ThemeToggle />
+            <div className="flex items-center">
+              <NavActions />
+              <ThemeToggle />
+            </div>
           </header>
           <main className="flex-1 overflow-auto">
             <Router />

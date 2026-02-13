@@ -22,10 +22,6 @@ import {
   Network,
   Brain,
   ExternalLink,
-  Heart,
-  Github,
-  Twitter,
-  Youtube,
   Shield,
   Gavel,
   Mail,
@@ -182,56 +178,6 @@ export function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="p-4">
         <div className="flex flex-col gap-2 text-[10px] text-muted-foreground">
-          <a
-            href="https://ko-fi.com/vibecodingforgood"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-kofi"
-          >
-            <Heart className="w-3 h-3 text-rose-500" />
-            <span>Support on Ko-fi</span>
-          </a>
-          <a
-            href="https://github.com/sponsors/Donnadieu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-github-sponsors"
-          >
-            <Heart className="w-3 h-3 text-rose-500" />
-            <span>Sponsor on GitHub</span>
-          </a>
-          <a
-            href="https://x.com/OverviewEffect6"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-twitter"
-          >
-            <Twitter className="w-3 h-3" />
-            <span>Follow on X</span>
-          </a>
-          <a
-            href="https://www.youtube.com/@vibecodingforgood"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-youtube"
-          >
-            <Youtube className="w-3 h-3" />
-            <span>YouTube</span>
-          </a>
-          <a
-            href="https://github.com/Donnadieu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 hover-elevate rounded-md p-1.5"
-            data-testid="link-github"
-          >
-            <Github className="w-3 h-3" />
-            <span>GitHub</span>
-          </a>
           <a
             href="https://www.justice.gov/epstein"
             target="_blank"
