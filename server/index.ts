@@ -4,6 +4,8 @@ import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
 import { storage } from "./storage";
+import { pool } from "./db";
+import { runMigrations } from "./migrate";
 
 const app = express();
 const httpServer = createServer(app);
@@ -142,6 +144,14 @@ app.use((req, res, next) => {
   } else {
     const { setupVite } = await import("./vite");
     await setupVite(httpServer, app);
+  }
+
+  try {
+    log("Running database migrations...");
+    await runMigrations(pool);
+    log("Database migrations complete");
+  } catch (err: any) {
+    log(`Database migration warning: ${err.message}`);
   }
 
   const port = parseInt(process.env.PORT || "5000", 10);

@@ -768,9 +768,7 @@ export class DatabaseStorage implements IStorage {
       db.select().from(persons).where(
         or(
           ilike(persons.name, searchPattern),
-          ilike(persons.occupation, searchPattern),
-          ilike(persons.description, searchPattern),
-          ilike(persons.role, searchPattern)
+          ilike(persons.occupation, searchPattern)
         )
       ).limit(20),
 
@@ -952,27 +950,20 @@ export class DatabaseStorage implements IStorage {
     const cached = getFromMapCache(adjacentCache, id, ADJACENT_CACHE_TTL);
     if (cached) return cached;
 
-    const r2Cond = r2Filter();
-    const prevWhere = r2Cond ? and(sql`${documents.id} < ${id}`, r2Cond) : sql`${documents.id} < ${id}`;
-    const nextWhere = r2Cond ? and(sql`${documents.id} > ${id}`, r2Cond) : sql`${documents.id} > ${id}`;
+    // Mirror r2Filter() logic as raw SQL for single-query optimization
+    const r2Cond = isR2Configured()
+      ? sql`r2_key IS NOT NULL AND (file_size_bytes IS NULL OR file_size_bytes != 0)`
+      : sql`(file_size_bytes IS NULL OR file_size_bytes != 0)`;
 
-    const [prevRow] = await db
-      .select({ id: documents.id })
-      .from(documents)
-      .where(prevWhere)
-      .orderBy(desc(documents.id))
-      .limit(1);
-
-    const [nextRow] = await db
-      .select({ id: documents.id })
-      .from(documents)
-      .where(nextWhere)
-      .orderBy(asc(documents.id))
-      .limit(1);
+    const [row] = await db.execute(sql`
+      SELECT
+        (SELECT id FROM documents WHERE id < ${id} AND ${r2Cond} ORDER BY id DESC LIMIT 1) AS prev,
+        (SELECT id FROM documents WHERE id > ${id} AND ${r2Cond} ORDER BY id ASC  LIMIT 1) AS next
+    `);
 
     const result = {
-      prev: prevRow?.id ?? null,
-      next: nextRow?.id ?? null,
+      prev: row?.prev != null ? Number(row.prev) : null,
+      next: row?.next != null ? Number(row.next) : null,
     };
 
     adjacentCache.set(id, { data: result, cachedAt: Date.now() });
