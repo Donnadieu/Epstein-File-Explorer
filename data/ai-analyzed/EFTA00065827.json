@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00065827.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-08-09",
+  "summary": "This is an email forwarding FBI 302 interview reports (likely from the NYPD/FBI Child Exploitation Human Trafficking Task Force) for inclusion in the 3500 material for the Ghislaine Maxwell case. It indicates coordination between law enforcement and the prosecution team.",
+  "persons": [
+    {
+      "name": "aMIE",
+      "role": "Email sender/coordinator",
+      "category": "legal",
+      "context": "Appears to be a member of the prosecution or legal team forwarding FBI 302 reports for the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Contractor",
+      "role": "US Attorney's Office contractor",
+      "category": "legal",
+      "context": "Recipient of the email, tasked with adding the attached 302 reports to the 3500 material for the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "NYPD / FBI Child Exploitation Human Trafficking Task Force member",
+      "category": "law enforcement",
+      "context": "Sent the attached FBI 302 interview reports to the prosecution team.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "aMIE",
+      "person2": "Contractor",
+      "relationshipType": "professional",
+      "description": "aMIE is instructing the contractor to add FBI 302 reports to the 3500 material for the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective",
+      "person2": "aMIE",
+      "relationshipType": "professional",
+      "description": "The detective sent FBI 302 reports to aMIE, who then forwarded them to the contractor for case preparation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-08-09",
+      "title": "Forwarding of FBI 302 reports for Maxwell case",
+      "description": "Email correspondence forwarding FBI 302 interview reports from the NYPD/FBI Child Exploitation Human Trafficking Task Force to be added to the 3500 material for the Ghislaine Maxwell prosecution.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "aMIE",
+        "Contractor",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "NYPD / FBI Child Exploitation Human Trafficking Task Force Office"
+  ],
+  "keyFacts": [
+    "FBI 302 interview reports were being forwarded for inclusion in the 3500 material for the Ghislaine Maxwell case.",
+    "The reports originated from the NYPD/FBI Child Exploitation Human Trafficking Task Force.",
+    "The email indicates ongoing case preparation and evidence sharing between law enforcement and the prosecution team in August 2021."
+  ],
+  "analyzedAt": "2026-02-13T14:01:51.819Z"
+}

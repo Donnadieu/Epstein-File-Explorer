@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00060283.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-08-10",
+  "summary": "This is a Bureau of Prisons Health Services Clinical Encounter form documenting the emergency resuscitation efforts for inmate Jeffrey Epstein on August 10, 2019, after he was found unresponsive in his cell at the Metropolitan Correctional Center. It details the timeline of medical interventions, including CPR, medications, and transport to a local ER, and notes physical observations like bruising around the neck.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive in his cell, triggering the documented resuscitation event. The medical record details the emergency response to his cardiac arrest.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Robert Beaudouin",
+      "role": "Physician (MD)",
+      "category": "staff",
+      "context": "A doctor requested to cosign the medical documentation related to Epstein's emergency treatment and transport.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Robert Beaudouin",
+      "relationshipType": "patient-provider",
+      "description": "Dr. Beaudouin was requested to cosign the medical documentation for Epstein's emergency treatment, indicating a provider relationship within the Bureau of Prisons health system.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Unresponsive in Cell",
+      "description": "Jeffrey Epstein was found unresponsive on the floor of his cell at the Metropolitan Correctional Center. A body alarm was triggered at 06:35, and correctional officers initiated CPR. He exhibited circumferential bruising around the neck, fixed and dilated pupils, and no palpable pulses.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Emergency Resuscitation Attempt",
+      "description": "A full medical resuscitation was performed, including ongoing CPR, placement of an endotracheal tube by paramedics, administration of epinephrine and sodium bicarbonate, and transport to a local emergency room with CPR in progress. The cardiac monitor showed asystole (no heart rhythm).",
+      "category": "medical",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Special Housing Unit (SHU), Metropolitan Correctional Center, New York (NYM)",
+    "HSU treatment room (Health Services Unit)",
+    "Local ER (unspecified hospital)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center on the morning of August 10, 2019, at approximately 06:35.",
+    "The clinical notes describe 'circumferential Bruising around the neck' observed upon the initial response.",
+    "Despite extensive resuscitation efforts, including CPR, intubation, and multiple rounds of medication, Epstein remained in asystole (cardiac standstill) and was transported to a local ER with CPR ongoing.",
+    "The document is a formal Bureau of Prisons medical record cosigned by Dr. Robert Beaudouin, detailing the timeline of the emergency response."
+  ],
+  "analyzedAt": "2026-02-13T00:08:22.466Z"
+}

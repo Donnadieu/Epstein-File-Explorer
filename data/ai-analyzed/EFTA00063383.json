@@ -1,0 +1,49 @@
+{
+  "fileName": "EFTA00063383.pdf",
+  "dataSet": "9",
+  "documentType": "service request ticket",
+  "dateOriginal": "2019-08-08",
+  "summary": "This is a service request ticket from the Federal Bureau of Prisons (FBOP) at the Metropolitan Correctional Center (MCC) New York regarding a RAID array failure on a NICE Vision Pro Unit NVR (video recording system). The ticket details troubleshooting attempts and indicates the failure occurred around the time of Jeffrey Epstein's incarceration and death, suggesting this may relate to potential video evidence.",
+  "persons": [
+    {
+      "name": "Justin Houston",
+      "role": "Service technician assigned",
+      "category": "staff",
+      "context": "Assigned to work on the RAID failure issue at the MCC New York facility.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "RAID failure reported at MCC New York",
+      "description": "A service request is created reporting a RAID array showing 2 bad drives on the NICE Vision Pro Unit NVR at the Metropolitan Correctional Center in New York.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Failed RAID rebuild attempt",
+      "description": "A technician attempts to replace the failed drives and rebuild the RAID array, but the process corrupts the video database because the recorder was not properly shut down before drive removal.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "MCC New York (Metropolitan Correctional Center)",
+    "12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "A critical RAID storage failure occurred at the MCC New York facility on or around August 8, 2019, which is the same facility where Jeffrey Epstein was held and died.",
+    "The failed system was a NICE Vision Pro Unit NVR, a video recording system, suggesting potential loss of surveillance footage.",
+    "Attempts to rebuild the RAID array on August 10, 2019, corrupted the video database, resulting in permanent data loss.",
+    "The timing of this hardware failure (August 2019) coincides closely with Epstein's death on August 10, 2019, raising questions about evidence preservation."
+  ],
+  "analyzedAt": "2026-02-13T01:16:19.288Z"
+}

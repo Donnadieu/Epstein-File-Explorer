@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA00064572.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-27",
+  "summary": "This document is an email chain from October 2021 between a DOJ OIG Special Agent and the Facilities Manager of the Metropolitan Correctional Center (MCC) New York. The correspondence focuses on an investigation into the timeline of a new camera system installation at MCC New York, specifically questioning why the new system was installed the week after Jeffrey Epstein's death on August 10, 2019, rather than earlier. The emails discuss project start dates, equipment arrival, and installation schedules.",
+  "persons": [
+    {
+      "name": "Facilities Manager MCC New York",
+      "role": "Facilities Manager",
+      "category": "staff",
+      "context": "The Facilities Manager of MCC New York is the primary correspondent providing documentation and explanations about the camera system installation timeline and project details in response to an OIG inquiry.",
+      "mentionCount": 8
+    },
+    {
+      "name": "SSA U.S. Department of Justice OIG Boston Area Office",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "A Special Agent from the DOJ Office of the Inspector General's Boston Area Office is conducting an inquiry into the camera system installation at MCC New York, specifically focusing on the timing around Epstein's death.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Federal Sales Representative",
+      "role": "Sales Representative",
+      "category": "other",
+      "context": "A Federal Sales Representative from SigNet Technologies/Convergint Federal provided tracking and shipment information for the camera system delivered to MCC New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Facilities Administrator Northeast Regional Office",
+      "role": "Facilities Administrator",
+      "category": "staff",
+      "context": "The Facilities Administrator from the Northeast Regional Office sent an email in March 2019 requesting staff for TDY assignments to MCC New York to complete various tasks including the new camera system installation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Facilities Management Specialist",
+      "role": "Management Specialist",
+      "category": "staff",
+      "context": "Mentioned as a contact person in the March 2019 email about TDY assignments for repairs and installations at MCC New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA U.S. Department of Justice OIG Boston Area Office",
+      "person2": "Facilities Manager MCC New York",
+      "relationshipType": "investigator-subject",
+      "description": "The OIG Special Agent is investigating the Facilities Manager regarding the camera system installation timeline at MCC New York.",
+      "strength": 4
+    },
+    {
+      "person1": "Facilities Manager MCC New York",
+      "person2": "Federal Sales Representative",
+      "relationshipType": "business",
+      "description": "The Facilities Manager communicated with the sales representative to obtain documentation about the camera system shipment and delivery.",
+      "strength": 3
+    },
+    {
+      "person1": "Facilities Administrator Northeast Regional Office",
+      "person2": "Facilities Manager MCC New York",
+      "relationshipType": "colleague",
+      "description": "Both are BOP facilities staff, with the Regional Administrator coordinating TDY support for the MCC New York camera project.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's death at MCC New York",
+      "description": "The incident referenced as occurring when the old camera system was still in use, prompting investigation into why new system wasn't installed earlier.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-11",
+      "title": "New camera system installation begins",
+      "description": "The new camera system installation started the week beginning August 11/12, 2019, immediately after Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Facilities Manager MCC New York"
+      ]
+    },
+    {
+      "date": "2019-03-17",
+      "title": "Camera project scheduled start",
+      "description": "The camera system project was scheduled to start on March 17, 2019, for camera system and infrastructure work throughout MCC New York.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Facilities Manager MCC New York"
+      ]
+    },
+    {
+      "date": "2018-10-14",
+      "title": "Camera system estimated delivery",
+      "description": "The new camera system was estimated to have arrived at MCC New York around October 14, 2018, but wasn't installed until August 2019.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Federal Sales Representative",
+        "Facilities Manager MCC New York"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York Metropolitan Correctional Center, 150 Park Row, New York, NY 10007",
+    "U.S. Department of Justice OIG Boston Area Office",
+    "U.S. Customs House, 2nd & Chestnut Street, 7th Floor, Philadelphia, PA 19106",
+    "Convergint Federal/SigNet Technologies, 12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "The OIG was investigating why a new camera system at MCC New York, which arrived on site in October 2018, wasn't installed until the week after Jeffrey Epstein's death on August 10, 2019.",
+    "The camera project was scheduled to start March 17, 2019, with infrastructure work occurring from March through August 2019, but the actual camera system installation happened the week beginning August 11/12, 2019.",
+    "The Facilities Manager stated that when they arrived TDY in February 2019, MCC New York only had one Communication Technician, requiring regional support for the camera installation project.",
+    "The email chain reveals the OIG's specific focus on the timing discrepancy between when the camera system was available (October 2018) and when it was actually installed (August 2019).",
+    "The correspondence is marked as 'SENSITIVE/PRIVILEGED COMMUNICATION' and contains property of the U.S. Department of Justice, indicating its official investigative nature."
+  ],
+  "analyzedAt": "2026-02-13T01:45:15.807Z"
+}

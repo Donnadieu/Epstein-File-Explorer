@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00060970.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-18",
+  "summary": "This is an email from a Correctional Systems Officer documenting attempts to contact two officers (Thomas and Noel) for a wellness check on August 17-18, 2019. The document appears to be related to official prison or detention facility communications, possibly in the context of inmate monitoring.",
+  "persons": [
+    {
+      "name": "Thomas",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Officer Thomas was called twice (August 17 and 18, 2019) for a wellness check, but did not answer; messages were left.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Noel",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Officer Noel was called twice (August 17 and 18, 2019) for a wellness check, but did not answer; messages were left.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Butrler",
+      "role": "Correctional Systems Officer",
+      "category": "staff",
+      "context": "The sender of the email, identified as a Correctional Systems Officer, documenting the wellness check attempts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Butrler",
+      "person2": "Thomas",
+      "relationshipType": "colleague",
+      "description": "Butrler attempted to contact Officer Thomas for a wellness check, indicating they are colleagues within the correctional system.",
+      "strength": 2
+    },
+    {
+      "person1": "Butrler",
+      "person2": "Noel",
+      "relationshipType": "colleague",
+      "description": "Butrler attempted to contact Officer Noel for a wellness check, indicating they are colleagues within the correctional system.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-17",
+      "title": "Wellness Check Attempts",
+      "description": "Attempted calls to Officer Thomas and Officer Noel for a wellness check; no answers, messages left.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Thomas",
+        "Noel",
+        "Butrler"
+      ]
+    },
+    {
+      "date": "2019-08-18",
+      "title": "Follow-up Wellness Check Attempts",
+      "description": "Follow-up attempted calls to Officer Thomas and Officer Noel for a wellness check; no answers, messages left.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Thomas",
+        "Noel",
+        "Butrler"
+      ]
+    }
+  ],
+  "locations": [
+    "NC 27919"
+  ],
+  "keyFacts": [
+    "Multiple wellness check attempts were made to contact Officers Thomas and Noel on August 17-18, 2019.",
+    "The communication is from a Correctional Systems Officer, indicating this relates to prison or detention facility operations.",
+    "The document includes a sensitivity warning, suggesting it contains official and potentially sensitive information."
+  ],
+  "analyzedAt": "2026-02-13T00:27:36.089Z"
+}

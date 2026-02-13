@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00061686.pdf",
+  "dataSet": "9",
+  "documentType": "investigative memorandum",
+  "dateOriginal": "2021-07-15",
+  "summary": "This is a Department of Justice Office of the Inspector General memorandum documenting a voluntary interview of Correctional Officer Michael Thomas, who was on duty at the Metropolitan Correctional Center when Jeffrey Epstein died. The document includes attachments such as interview transcripts, assignment rosters, and count documentation from August 9-10, 2019.",
+  "persons": [
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer/Senior Officer Specialist",
+      "category": "staff",
+      "context": "BOP Correctional Officer at MCC New York who was interviewed by OIG regarding the death of Jeffrey Epstein while he was on duty.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "BOP inmate who died while housed at MCC New York, subject of the OIG investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Legal representative from Richman Hill & Associates present during Michael Thomas's OIG interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richman",
+      "role": "Legal Intern",
+      "category": "legal",
+      "context": "Legal intern from Richman Hill & Associates present during Michael Thomas's OIG interview.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was a correctional officer at MCC New York when Epstein was housed there, and was interviewed about Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "attorney-client",
+      "description": "Noel served as legal representation for Thomas during his OIG interview.",
+      "strength": 4
+    },
+    {
+      "person1": "Richman",
+      "person2": "Michael Thomas",
+      "relationshipType": "legal representation",
+      "description": "Legal intern present as part of Thomas's legal team during the OIG interview.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-15",
+      "title": "OIG Interview of Correctional Officer Michael Thomas",
+      "description": "Voluntary interview conducted by DOJ OIG agents with MCC correctional officer Michael Thomas regarding Jeffrey Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel",
+        "Richman"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Final Night at MCC",
+      "description": "Date referenced in attached documents (assignment rosters, count documentation) when Epstein was still alive at MCC New York.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's Death",
+      "description": "Date of Jeffrey Epstein's death at MCC New York, referenced through investigation documents.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York",
+    "OIG New York Field Office, New York, New York",
+    "Richman Hill & Associates, PLLC, Bronx, New York"
+  ],
+  "keyFacts": [
+    "Correctional Officer Michael Thomas was interviewed by DOJ OIG on July 15, 2021 regarding Jeffrey Epstein's death at MCC New York.",
+    "Thomas was represented by attorney Tova Noel and a legal intern from Richman Hill & Associates during the voluntary interview.",
+    "The investigation focuses on Epstein's death while in BOP custody at MCC New York in August 2019.",
+    "Attached documents include MCC assignment rosters and count documentation from August 9-10, 2019, critical dates surrounding Epstein's death.",
+    "The document is an official OIG investigative memorandum that contains neither recommendations nor conclusions."
+  ],
+  "analyzedAt": "2026-02-13T00:49:13.802Z"
+}

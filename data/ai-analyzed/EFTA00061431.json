@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA00061431.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-09-01",
+  "summary": "This is a transcript of a DOJ Office of the Inspector General interview with a Federal Bureau of Prisons Lieutenant conducted on September 1, 2021, as part of the investigation into the death of inmate Jeffrey Epstein at the Metropolitan Correctional Center on August 10, 2019. The interview focuses on the lieutenant's actions and knowledge regarding inmate counts, logs, cellmate assignments, and procedures during the shift when Epstein died.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The interview discusses his suicide attempt on July 23, 2019, his removal from suicide watch, and the requirement for him to have a cellmate.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Leonardo",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "An inmate who was Epstein's cellmate and was transferred out of MCC on August 9, 2019, leaving Epstein without a cellmate. His transfer is a key point of inquiry regarding why Epstein was left alone.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who was on duty in the SHU. The lieutenant mentions her in the context of feeding inmates after Epstein's medical emergency and discusses her work ethic.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who was on duty in the SHU. The lieutenant mentions him in the context of feeding inmates and discusses his work ethic.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Captain",
+      "role": "BOP Captain",
+      "category": "law enforcement",
+      "context": "A BOP captain who emailed the lieutenant after Epstein's death requesting a supervisor memorandum regarding the incident, which the lieutenant refused to write.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Leonardo",
+      "relationshipType": "cellmate",
+      "description": "Leonardo was Epstein's cellmate prior to being transferred out of MCC on August 9, 2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were correctional officers working in the SHU and assisted with feeding inmates together after Epstein's medical emergency.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The captain was the lieutenant's supervisor and requested a report from her regarding the Epstein incident.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was discovered deceased in his cell at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Previous Suicide Attempt",
+      "description": "Jeffrey Epstein attempted to harm himself in his cell. His cellmate at the time alerted staff.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Transfer of Cellmate Leonardo",
+      "description": "Inmate Leonardo, Epstein's cellmate, was transferred out of MCC (listed as WAB/pre-remove), leaving Epstein without a cellmate.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Leonardo",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discrepancy in Inmate Counts",
+      "description": "During the midnight count, a discrepancy was discovered regarding an inmate who was physically in R&D but still counted in the SHU, leading to corrections in the system.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-09-01",
+      "title": "OIG Interview with BOP Lieutenant",
+      "description": "The DOJ OIG conducted a voluntary, sworn interview with a BOP lieutenant to clarify previous statements and investigate circumstances surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York",
+    "SHU (Special Housing Unit) at MCC",
+    "R&D (Receiving and Discharge) at MCC",
+    "Ten South (a housing unit with cameras mentioned as an alternative for high-profile inmates)"
+  ],
+  "keyFacts": [
+    "The BOP lieutenant being interviewed was the operations lieutenant on the morning watch shift (starting 10:00 p.m. on August 9, 2019) when Jeffrey Epstein died.",
+    "The lieutenant states she was unaware that Jeffrey Epstein was required to have a cellmate after his prior suicide attempt and was unaware his cellmate had been transferred.",
+    "The interview reveals significant discrepancies and potential falsification of inmate count slips and lieutenant logs for the SHU on August 9-10, 2019, which the lieutenant denies creating or authorizing.",
+    "The lieutenant claims she did not conduct physical rounds of inmate cells in the SHU, only 'visiting' the unit and speaking with staff, which contradicts other accounts of required procedures.",
+    "The lieutenant expresses the opinion that Epstein, as a high-profile inmate, should have been housed on 'Ten South' with constant camera surveillance rather than in the SHU."
+  ],
+  "analyzedAt": "2026-02-13T00:40:55.205Z"
+}

@@ -1,0 +1,117 @@
+{
+  "fileName": "EFTA00062970.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-08-05",
+  "summary": "This is a transcript of a voluntary interview conducted by DOJ OIG Senior Special Agents with a Federal Bureau of Prisons Senior Officer Specialist at the Metropolitan Correctional Center (MCC) in New York. The interview is part of the OIG investigation into the death of inmate Jeffrey Epstein and the surrounding circumstances. The witness discusses his duties, his role in counts on August 9-10, 2019, discrepancies in count slips for the Special Housing Unit (SHU), and his response to the body alarm on August 10. He provides insights into staffing issues and procedures at the MCC.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at the center of the OIG investigation into his death by suicide at the MCC in August 2019.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Fernandez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "SHU inmate who was moved to a dry cell in R&D on August 9, 2019, after a contraband incident during visitation, leading to count discrepancies.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Epstein's former cell mate who was reportedly released or transferred from the MCC on August 9, 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer in the Special Housing Unit (SHU) who signed count slips on August 9-10, 2019.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer in the Special Housing Unit (SHU) who signed count slips on August 10, 2019.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cell mate",
+      "description": "Reyes was Epstein's cell mate prior to being released/transferred on August 9, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were correctional officers working in the SHU, signing off on count slips together.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Contraband incident and inmate movement",
+      "description": "Inmate Fernandez was caught attempting to receive contraband during a SHU visitation at 1:40 p.m. He was subsequently placed in a dry cell in R&D by 3:15 p.m., but was not properly keyed out of the SHU in the system, leading to count discrepancies.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Fernandez"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Incorrect SHU counts",
+      "description": "The SHU reported a count of 73 inmates at the 4:00 p.m., 10:00 p.m., and 12:00 a.m. counts, when there should have been 72 due to Fernandez's move to R&D. This indicates counts may have been reported based on expected numbers rather than physical verification.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Fernandez",
+        "Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein found deceased",
+      "description": "A body alarm went off at approximately 6:33 a.m. in the SHU. Responding staff found Epstein, performed CPR, and transported him to the hospital where he was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's first alleged suicide attempt",
+      "description": "Epstein was allegedly involved in a prior suicide attempt, after which he was placed on suicide watch.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York",
+    "Nine South (SHU - Special Housing Unit)",
+    "R&D (Receiving & Discharge)"
+  ],
+  "keyFacts": [
+    "The witness, a BOP Senior Officer Specialist, was working as Control One on August 9 (4pm-midnight) and Internal Two on August 10 (midnight-8am) during the period of Epstein's death.",
+    "Significant discrepancies existed in inmate counts for the SHU on August 9-10, 2019. Inmate Fernandez was moved to R&D dry cell at 3:15 p.m. on August 9 but was not keyed out of the SHU until 12:35 a.m. on August 10, causing the SHU to report 73 inmates instead of 72 for multiple counts.",
+    "The witness acknowledged writing \"9S+1\" on an R&D count slip and potentially a \"+1\" on a SHU count slip, indicating a 'ghost count' likely authorized by an Operations Lieutenant, but could not recall specific conversations or timing.",
+    "The witness responded to the body alarm for Epstein at ~6:33 a.m. on August 10, assisted in getting a stretcher, and followed the ambulance to the hospital. He stated Epstein was already receiving CPR when he arrived.",
+    "The witness cited systemic issues at the MCC, primarily a critical lack of staff, high turnover, and mandatory overtime, as contributing factors to operational failures."
+  ],
+  "analyzedAt": "2026-02-13T01:13:26.705Z"
+}

@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00064043.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-07-15",
+  "summary": "This is a DOJ OIG interview transcript from July 15, 2021, with a Federal Bureau of Prisons electronics technician at the Metropolitan Correctional Center (MCC) New York. The interview focuses on the technician's knowledge of the camera and recording systems in the Special Housing Unit (SHU) on August 9-10, 2019, surrounding the death of inmate Jeffrey Epstein, and the technician's actions and observations on those dates.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at the center of the investigation; found unresponsive in his SHU cell on August 10, 2019.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer assigned to the SHU on the morning Epstein was found; described as appearing disheveled and stressed.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer assigned to the SHU on the morning Epstein was found; was inside the tier when the body alarm was activated.",
+      "mentionCount": 6
+    },
+    {
+      "name": "III",
+      "role": "SIS Technician (retired)",
+      "category": "staff",
+      "context": "SIS technician who had access to the video room where camera recorders were housed; was present on August 9-10, 2019.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were correctional officers assigned to the SHU on the morning Jeffrey Epstein was found unresponsive.",
+      "strength": 4
+    },
+    {
+      "person1": "III",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "As an SIS technician, III had responsibility for monitoring systems in the facility where Epstein was held.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "SHU Camera System Failure",
+      "description": "The electronics technician discovered that approximately 50-60 cameras, including most in the SHU, were not recording due to failed hard drives in an outdated system. He notified a supervisor but was told to go home and fix it the next day.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein Found Unresponsive",
+      "description": "Jeffrey Epstein was found unresponsive in his SHU cell at MCC New York. A body alarm was activated around 6:33 a.m. Staff performed CPR and used an AED before transporting him to medical.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "FBI Investigation of Camera Failure",
+      "description": "The FBI questioned the electronics technician about the camera system failure and attempted to recover video. They took all hard drives and the recording system.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-07-15",
+      "title": "DOJ OIG Interview",
+      "description": "The electronics technician was interviewed under oath by DOJ OIG agents regarding the circumstances surrounding Jeffrey Epstein's death and the camera system failures.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY",
+    "Special Housing Unit (SHU) - 9 South, MCC New York",
+    "10 South, MCC New York",
+    "Terre Haute, Indiana Federal Complex"
+  ],
+  "keyFacts": [
+    "On August 9, 2019, the day before Epstein's death, the MCC's camera recording system failed, with approximately 50-60 cameras not recording, including nearly all cameras in the SHU except one (the '46 door' camera outside 10 South).",
+    "The electronics technician stated the system was outdated, had failed multiple times before, and needed upgrades that had been ordered but not yet installed. He notified a supervisor of the failure on August 9 but was told to go home and fix it the next day.",
+    "During the response to Epstein's body alarm on August 10, inmates in the SHU shouted at officers Tova Noel and Michael Thomas, saying 'You killed him' and 'You didn't do any rounds all night.'",
+    "The technician believed Epstein's death was a suicide and that the camera failure was coincidental, stating no one could have tampered with the system due to physical security measures.",
+    "The FBI took all hard drives and the recording system the day after Epstein's death, but according to the technician, there was likely no recoverable video from the failed drives."
+  ],
+  "analyzedAt": "2026-02-13T01:34:33.223Z"
+}

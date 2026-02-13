@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00059394.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / BOP Memorandum",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Federal Bureau of Prisons memorandum detailing the events of July 23, 2019, at the Metropolitan Correctional Center, where inmate Jeffrey Epstein was found in his cell after an apparent suicide attempt. The document records the initial observations, statements from Epstein and his cellmate Nicholas Tartaglione, and the subsequent medical assessment, revealing conflicting accounts of the incident.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate found in his cell after an apparent suicide attempt; he later alleges his cellmate tried to kill him.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate (cellmate)",
+      "category": "associate",
+      "context": "Epstein's cellmate who reported finding Epstein with a string around his neck; his account is detailed and later questioned.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Clarke",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Officer who reported that Epstein was alert and had made allegations against his cellmate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr. Beaudouin",
+      "role": "Duty Medical",
+      "category": "staff",
+      "context": "Medical staff notified and briefed about the incident; determined no further medical attention was needed initially.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Y. Joaquin",
+      "role": "MLP (Mid-Level Practitioner)",
+      "category": "staff",
+      "context": "Medical staff who examined and treated Epstein upon arrival, noting injuries to his neck and knee.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Silva",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Officer referenced by Tartaglione in a derogatory manner during his account of events.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Shared a cell in the Special Housing Unit; Epstein later alleged Tartaglione attempted to kill him.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Clarke",
+      "relationshipType": "inmate-officer",
+      "description": "Officer Clarke relayed Epstein's allegations about his cellmate to the memorandum author.",
+      "strength": 2
+    },
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Silva",
+      "relationshipType": "inmate-officer",
+      "description": "Tartaglione made derogatory comments about Officer Silva during his account of the evening's events.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Apparent Suicide Attempt",
+      "description": "Jeffrey Epstein was found in his cell in a fetal position, breathing heavily with a red neck, after a call for assistance. Conflicting accounts emerge from Epstein and his cellmate about what transpired.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Medical Examination",
+      "description": "Upon the arrival of medical staff, MLP Y. Joaquin examined Epstein and noted a circular line of erythema on his neck and a small erythema on his left knee.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Y. Joaquin"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, NY 10007",
+    "Special Housing Unit, cell Z05-124LAD",
+    "HA-Unit (suicide watch unit)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found in his cell on July 23, 2019, at approximately 1:27 a.m., in what was initially reported as a suicide attempt.",
+    "Epstein later alleged to Officer Clarke that his cellmate, Nicholas Tartaglione, had attempted to kill him and had been harassing him.",
+    "Tartaglione's account claimed he found Epstein with a string around his neck after feeling something hit his legs while he was asleep.",
+    "Medical examination revealed physical injuries on Epstein, including a circular line of erythema at the base of his neck and marks of friction.",
+    "The document highlights conflicting narratives between Epstein and Tartaglione about the events leading up to the incident."
+  ],
+  "analyzedAt": "2026-02-12T23:47:08.789Z"
+}

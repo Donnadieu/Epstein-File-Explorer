@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA00061060.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-12-23",
+  "summary": "This is an FBI 302 interview report summarizing an interview conducted on August 21, 2019, with a Federal Bureau of Prisons (BOP) officer regarding his knowledge and interactions with Jeffrey Epstein at the Metropolitan Correctional Center (MCC) prior to Epstein's death. The officer was not present when Epstein arrived or was found deceased.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Deceased",
+      "category": "key figure",
+      "context": "The central subject of the investigation; an inmate at the Metropolitan Correctional Center (MCC) who was found hanging in his cell in the SHU on August 10, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Officer",
+      "role": "Recreation Officer, Federal Bureau of Prisons",
+      "category": "law enforcement",
+      "context": "A BOP officer assigned to the MCC since 2001, interviewed regarding his interactions with and knowledge of Jeffrey Epstein's incarceration. He was not working when Epstein arrived or was found deceased.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Officer",
+      "role": "Correctional Officer (colleague)",
+      "category": "law enforcement",
+      "context": "A colleague of the interviewed officer with whom he conducted an escort involving Jeffrey Epstein on August 9, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Inmate",
+      "role": "Epstein's Former Cellmate",
+      "category": "other",
+      "context": "An inmate who was Jeffrey Epstein's cellmate and was released prior to August 9, 2019, necessitating that Epstein be assigned a new cellmate.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Officer",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The officer was a recreation officer at the MCC and had professional interactions with Epstein, including informing him he would need a new cellmate on August 9, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Officer",
+      "person2": "Officer",
+      "relationshipType": "colleague",
+      "description": "The two officers worked together, as they conducted an escort involving Jeffrey Epstein on August 9, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Inmate",
+      "relationshipType": "cellmate",
+      "description": "The inmate was Jeffrey Epstein's cellmate prior to being released, which is noted in the officer's last interaction with Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Deceased in Cell",
+      "description": "Jeffrey Epstein was found hanging in his cell in the Special Housing Unit (SHU) at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Officer's Last Interaction with Epstein",
+      "description": "The interviewed BOP officer, along with a colleague, interacted with Jeffrey Epstein during an escort and informed him he would need a new cellmate as his previous one had been released.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Officer",
+        "Jeffrey Epstein",
+        "Officer"
+      ]
+    },
+    {
+      "date": "2019-08-21",
+      "title": "FBI Interview of BOP Officer",
+      "description": "FBI and OIG agents, along with Assistant U.S. Attorneys, interviewed a BOP officer regarding his knowledge of Jeffrey Epstein's incarceration and death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Officer"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York, United States",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The interviewed Federal Bureau of Prisons officer was not working when Jeffrey Epstein initially arrived at the MCC or when Epstein was found deceased in his cell on August 10, 2019.",
+    "The officer's last interaction with Jeffrey Epstein was on August 9, 2019, during which he informed Epstein he would need a new cellmate because his previous one had been released.",
+    "The document is an FBI 302 report of an interview conducted as part of the investigation into Jeffrey Epstein's death, drafted on December 23, 2019.",
+    "The interview involved personnel from the FBI, the Office of the Inspector General, and Assistant United States Attorneys for the Southern District of New York."
+  ],
+  "analyzedAt": "2026-02-13T00:31:17.885Z"
+}

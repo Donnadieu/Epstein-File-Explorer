@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA00059381.pdf",
+  "dataSet": "9",
+  "documentType": "OIG investigation memorandum",
+  "dateOriginal": "2022-01-13",
+  "summary": "This is a Department of Justice Office of the Inspector General memorandum documenting a voluntary interview conducted on September 1, 2021, with a Federal Bureau of Prisons Lieutenant from the Metropolitan Correctional Center New York. The interview is part of the OIG's investigation into the death of inmate Jeffrey Epstein on August 10, 2019. The memorandum lists attachments including the interview transcript and related prison records.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "BOP inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at Metropolitan Correctional Center New York, Register Number 76318-054, whose death is the subject of the OIG investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Federal Bureau of Prisons Lieutenant",
+      "category": "law enforcement",
+      "context": "MCC New York staff member assigned to the Special Housing Unit on August 9, 2019, interviewed voluntarily by the OIG regarding the circumstances surrounding Epstein's death.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Senior Special Agent",
+      "role": "Department of Justice OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Lieutenant on September 1, 2021, as part of the OIG investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leonardo Fernandez",
+      "role": "BOP inmate",
+      "category": "other",
+      "context": "Inmate whose quarters history is included as an attachment to the investigation memorandum.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent S",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Listed as an attachment preparer or reviewer on the OIG memorandum.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "OIG Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Reviewed and signed the OIG investigation memorandum.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent in Charge",
+      "role": "OIG Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Reviewed and signed the OIG investigation memorandum.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lieutenant",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The Lieutenant was a staff member assigned to the Special Housing Unit where Epstein was housed at MCC New York on August 9, 2019, the day before Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Senior Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The Senior Special Agent conducted a voluntary interview of the Lieutenant on September 1, 2021, as part of the OIG investigation into Epstein's death.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Lieutenant's shift before Epstein's death",
+      "description": "The BOP Lieutenant was assigned to the MCC New York Special Housing Unit, where Jeffrey Epstein was housed, the day before Epstein was found unresponsive.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lieutenant",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein found unresponsive",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center New York, leading to his death.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-09-01",
+      "title": "OIG interview of BOP Lieutenant",
+      "description": "The DOJ Office of the Inspector General conducted a voluntary, recorded interview of the BOP Lieutenant regarding the circumstances surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Senior Special Agent",
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Lieutenant's memorandum",
+      "description": "The BOP Lieutenant wrote a memorandum, which is included as an attachment to the OIG investigation report.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York",
+    "MCC New York Special Housing Unit"
+  ],
+  "keyFacts": [
+    "The DOJ OIG conducted a voluntary interview of a BOP Lieutenant from MCC New York on September 1, 2021, as part of its investigation into Jeffrey Epstein's death.",
+    "The Lieutenant was assigned to the MCC New York Special Housing Unit on August 9, 2019, the day before Epstein was found unresponsive in his cell.",
+    "The interview was recorded and transcribed, and the memorandum includes several attachments such as prison rosters, logs, emails, and the Lieutenant's own memorandum from August 12, 2019.",
+    "The document is an internal OIG memorandum containing neither recommendations nor conclusions, and is restricted from distribution outside the receiving agency."
+  ],
+  "analyzedAt": "2026-02-12T23:44:51.134Z"
+}

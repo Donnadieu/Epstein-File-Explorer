@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA00065645.pdf",
+  "dataSet": "9",
+  "documentType": "affidavit",
+  "dateOriginal": "2020-11-25",
+  "summary": "This is an affidavit from Matthew Hellyer, a security consultant, submitted in support of Ghislaine Maxwell's bail application. Hellyer details his security work for Maxwell, describes the circumstances of her arrest, and states his company will post a $1 million bond for her, citing her compliance with strict security protocols.",
+  "persons": [
+    {
+      "name": "Matthew Hellyer",
+      "role": "Security Consultant",
+      "category": "staff",
+      "context": "Author of the affidavit. He details his extensive security background, his company's work protecting Ghislaine Maxwell, the events of her arrest, and his decision to post a $1 million bond for her bail.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Client / Defendant",
+      "category": "key figure",
+      "context": "The subject of the security services and the individual for whom the bail bond is being posted. The affidavit describes the security threats she faced, the protocols in place, and the details of her arrest by the FBI.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Martin Jackson",
+      "role": "Security Operative/Consultant",
+      "category": "staff",
+      "context": "Matthew Hellyer's operative who was providing security for Ghislaine Maxwell at her New Hampshire residence on the morning of her arrest. He reported the initial helicopter sighting and the arrival of FBI agents.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffery Epstein",
+      "role": "Associate of Ghislaine Maxwell",
+      "category": "key figure",
+      "context": "Mentioned as the source of death threats against Ghislaine Maxwell due to her past relationship with him.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Matthew Hellyer",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Hellyer's security company provided protection services for Maxwell from July 2019 until her arrest in July 2020. He is posting a $1 million bond for her bail.",
+      "strength": 5
+    },
+    {
+      "person1": "Matthew Hellyer",
+      "person2": "Martin Jackson",
+      "relationshipType": "employer-employee",
+      "description": "Jackson is an operative/consultant working for Hellyer's security company, Sparta Security Services.",
+      "strength": 4
+    },
+    {
+      "person1": "Martin Jackson",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Jackson was assigned to provide direct security and administrative support for Maxwell at her New Hampshire residence from approximately May 2020.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffery Epstein",
+      "relationshipType": "associate",
+      "description": "The affidavit states Maxwell received death threats connected to her relationship with Epstein from approximately 20 years prior.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein Announced",
+      "description": "The announcement of Jeffrey Epstein's death. Matthew Hellyer's risk assessment indicated this event substantially increased the security risk to Ghislaine Maxwell.",
+      "category": "death",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffery Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Arrest of Ghislaine Maxwell",
+      "description": "FBI agents arrived at Ghislaine Maxwell's residence in Bradford, New Hampshire, and arrested her. Security operative Martin Jackson was present and detained.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Martin Jackson"
+      ]
+    },
+    {
+      "date": "2020-11-25",
+      "title": "Affidavit Submission",
+      "description": "Matthew Hellyer signs this affidavit in support of Ghislaine Maxwell's renewed bail application, offering a $1 million bond.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Matthew Hellyer",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Bradford, New Hampshire",
+    "United Kingdom",
+    "United States"
+  ],
+  "keyFacts": [
+    "Matthew Hellyer's security company, Sparta Security Services, provided protection for Ghislaine Maxwell from July 2019 until her arrest on July 2, 2020.",
+    "On the morning of her arrest, security operative Martin Jackson initially mistook an FBI helicopter and vehicles for press intrusion before realizing it was a law enforcement operation.",
+    "Hellyer states Maxwell faced death threats connected to her past relationship with Jeffrey Epstein and aggressive harassment from the press.",
+    "Hellyer's company is prepared to post a $1 million bond for Maxwell's bail, a step he claims to have never taken for any other client.",
+    "The affidavit outlines a security protocol for Maxwell that included moving to a locked safe room with supplies in the event of a security threat."
+  ],
+  "analyzedAt": "2026-02-13T13:43:10.241Z"
+}

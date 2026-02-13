@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00064587.pdf",
+  "dataSet": "9",
+  "documentType": "service request / technical support ticket",
+  "dateOriginal": "2019-02-28",
+  "summary": "This is a service request ticket from SigNet Technologies/Convergint Federal Solutions for the Federal Bureau of Prisons at MCC New York. The request is to rebuild a RAID array on a VISION system, with technical support interactions between Jeff McKenzie and Derek Barr. The ticket was created on February 28, 2019, and marked complete on March 20, 2019.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Listed as assigned to the service request along with Jeff McKenzie and Justin Houston to work on the RAID rebuild for the Federal Bureau of Prisons.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Senior Customer Support Technician",
+      "category": "staff",
+      "context": "Primary contact and creator of the service request for the Federal Bureau of Prisons; corresponds with support to obtain RAID rebuild documentation and coordinates the service call.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request to work on the RAID rebuild; marked the assignment as completed on March 20, 2019.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Derek Barr",
+      "role": "Senior Support Engineer",
+      "category": "staff",
+      "context": "Provides technical support and instructions to Jeff McKenzie on how to rebuild the RAID array, including steps and the password.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Derek Barr",
+      "relationshipType": "professional colleague",
+      "description": "Jeff McKenzie requests and Derek Barr provides technical support documentation for rebuilding a RAID array.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "co-worker",
+      "description": "Both are assigned to work on the same service request for the Federal Bureau of Prisons.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cranor",
+      "relationshipType": "co-worker",
+      "description": "Both are assigned to work on the same service request for the Federal Bureau of Prisons.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-02-26",
+      "title": "RAID Rebuild Documentation Request",
+      "description": "Jeff McKenzie emails support requesting documentation for rebuilding a RAID array on a Pro Unit system.",
+      "category": "technical",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff McKenzie",
+        "Derek Barr"
+      ]
+    },
+    {
+      "date": "2019-02-28",
+      "title": "Service Request Created",
+      "description": "Service request #22855 is created for a RAID crash at the Federal Bureau of Prisons MCC New York, assigned to Jeff Cranor, Jeff McKenzie, and Justin Houston.",
+      "category": "technical",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff McKenzie",
+        "Jeff Cranor",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-03-20",
+      "title": "Service Assignment Completed",
+      "description": "Justin Houston marks the service assignment for the RAID rebuild as completed.",
+      "category": "technical",
+      "significance": 1,
+      "personsInvolved": [
+        "Justin Houston"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "MCC New York",
+    "12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "The document is a service request for technical support to rebuild a RAID array for the Federal Bureau of Prisons at the Metropolitan Correctional Center (MCC) New York.",
+    "The request indicates the system is a VISION product with serial number 43144901, and the customer contact is Jeff McKenzie.",
+    "Technical instructions for the RAID rebuild were provided by Derek Barr, including steps to set RAID level to none, then to RAID 5, using password '1111'.",
+    "The service request was created on February 28, 2019, and was marked complete on March 20, 2019, by Justin Houston.",
+    "The document shows routine IT support correspondence between SigNet Technologies/Convergint Federal Solutions and the Federal Bureau of Prisons, with no direct mention of Jeffrey Epstein or related case matters."
+  ],
+  "analyzedAt": "2026-02-13T01:47:17.278Z"
+}

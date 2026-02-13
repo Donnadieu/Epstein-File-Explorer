@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA00063405.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-05",
+  "summary": "This document is an email chain from October 2021 between a DOJ OIG investigator and a Bureau of Prisons Communication Technician regarding an interview about camera system issues at the Metropolitan Correctional Center (MCC) in New York in August 2019. The technician provides details about hardware failures, repair work, and identifies other BOP/Signet personnel involved.",
+  "persons": [
+    {
+      "name": "Mr. M",
+      "role": "Communication Technician",
+      "category": "staff",
+      "context": "A Bureau of Prisons Communication Technician at MCC New York who was interviewed by the DOJ OIG about camera system failures and repairs in August 2019. He provides technical details and agrees to supply documentation.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Hughes",
+      "role": "BOP Electrician",
+      "category": "staff",
+      "context": "A BOP Electrician from Butner who was on temporary duty (TDY) and worked with Mr. M on installing equipment and conduit for the camera system.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Colton",
+      "role": "BOP/Signet Employee",
+      "category": "staff",
+      "context": "An individual whose involvement with the MCC camera issues is requested by the DOJ OIG investigator.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Special Agent",
+      "role": "DOJ OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "A DOJ Office of the Inspector General agent who is to escort Mr. M to an interview at the New York Field Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "DOJ OIG Special Agent",
+      "category": "law enforcement",
+      "context": "A DOJ Office of the Inspector General agent from the New York Field Office who coordinates the interview logistics with Mr. M.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mr. M",
+      "person2": "Hughes",
+      "relationshipType": "co-worker",
+      "description": "Worked together on installing conduit and equipment for the MCC camera system.",
+      "strength": 3
+    },
+    {
+      "person1": "Mr. M",
+      "person2": "Jeffrey Colton",
+      "relationshipType": "professional",
+      "description": "Both are associated with the MCC camera system issues, with the investigator requesting information on Colton's involvement.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Mr. M",
+      "relationshipType": "investigator-interviewee",
+      "description": "The Special Agent is conducting a voluntary interview with Mr. M regarding the MCC camera system failures.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-29",
+      "title": "DVR 2 System Failure at MCC",
+      "description": "A system failure of DVR 2 at the Metropolitan Correctional Center, which Mr. M worked on.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mr. M"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "MCC Camera System Issues",
+      "description": "Widespread camera system issues at the MCC due to bad hard drives and end-of-life equipment. Mr. M replaced hard drives and performed programming.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mr. M",
+        "Hughes"
+      ]
+    },
+    {
+      "date": "2021-09-29",
+      "title": "DOJ OIG Interview with Mr. M",
+      "description": "A voluntary interview conducted by the DOJ Office of the Inspector General with Communication Technician Mr. M regarding the 2019 MCC camera system issues.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mr. M",
+        "Special Agent",
+        "Senior Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC-New York, 150 Park Row, New York, NY 10007-1704",
+    "One Battery Park Plaza, 29th Floor, New York, NY 10004",
+    "Butner (likely referring to FCI Butner, North Carolina)"
+  ],
+  "keyFacts": [
+    "The DOJ OIG was investigating camera system failures at the Metropolitan Correctional Center (MCC) New York in August 2019, around the time of Jeffrey Epstein's death.",
+    "The camera system had critical failures due to bad hard drives and end-of-life equipment, with parts being unavailable.",
+    "A BOP electrician named Hughes was brought in from Butner on temporary duty to assist with the camera system installation.",
+    "The investigator specifically requested information on Jeffrey Colton's involvement with the camera issues.",
+    "The interview with the technician was voluntary and focused on obtaining documentation like work orders, purchase orders, and all related email communications."
+  ],
+  "analyzedAt": "2026-02-13T01:18:59.051Z"
+}

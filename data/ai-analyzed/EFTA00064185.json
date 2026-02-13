@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00064185.pdf",
+  "dataSet": "9",
+  "documentType": "FBI Digital Evidence Laboratory Report",
+  "dateOriginal": "June 16, 2021",
+  "summary": "This is an FBI Digital Evidence Laboratory report detailing the forensic examination of a Digital Video Recorder (DVR) system related to the Jeffrey Epstein death investigation. The report covers the receipt of evidence on August 16, 2019, the extensive efforts to recover video data from the DVR system, and the ultimate failure to fully restore one of the disk arrays due to catastrophic hardware failures. The examination period spanned from August 20, 2019, to May 24, 2021.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Death Investigation",
+      "category": "key figure",
+      "context": "Named as the subject (UNSUB) of the death investigation for which the DVR evidence was being examined.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "Evidence Received for Examination",
+      "description": "The FBI's Digital Evidence Laboratory received DVR system components for forensic examination related to the Jeffrey Epstein death investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-19",
+      "title": "CART Lab Supervisor Discussion",
+      "description": "A discussion with the CART Laboratory Supervisor determined the plan to assemble the DVR system to export videos.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-09-18",
+      "title": "Meeting with DVR Vendor",
+      "description": "A meeting was held with a technical support representative from SigNet Technologies to discuss the operation of the DVR system.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-19",
+      "title": "DVR 1 Hardware Failure",
+      "description": "The DVR 1 disk array failed with memory errors, halting video exports. Attempts to repair it with replacement parts were unsuccessful.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Catastrophic Disk Failures in DVR 2",
+      "description": "Logs indicated catastrophic disk failures in the DVR 2 array, meaning no recordings would have been available after this date.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-05-24",
+      "title": "End of Examination Period",
+      "description": "The forensic examination of the DVR evidence concluded.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "ERF Building 27958A Quantico, VA 22135",
+    "New York field office"
+  ],
+  "keyFacts": [
+    "The DVR system was examined as part of the FBI's investigation into the death of Jeffrey Epstein.",
+    "The DVR system consisted of a main controller and two disk arrays (DVR 1 and DVR 2). DVR 1 was initially assembled successfully, allowing for some video exports, but later failed due to hardware issues on December 19, 2019.",
+    "DVR 2 contained hard drives that had suffered catastrophic failures prior to the FBI's receipt of the evidence on July 29, 2019, and could never be successfully assembled, preventing access to its recordings.",
+    "The forensic examination was extensive, involving creating forensic images and clones of dozens of hard drives, and lasted from August 20, 2019, to May 24, 2021.",
+    "Master copies of the recovered data (images and video exports) were placed on three hard drives (HQQ026637-HQQ026639) for storage before all evidence was returned to the New York Field Office."
+  ],
+  "analyzedAt": "2026-02-13T01:34:58.360Z"
+}

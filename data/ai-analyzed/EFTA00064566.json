@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00064566.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-05",
+  "summary": "Email correspondence regarding the purchase and installation timeline of a camera system at the Metropolitan Correctional Center (MCC) in New York, specifically referencing the Epstein incident of August 10, 2019. The exchange involves a Facilities Manager, a Federal Sales Representative, and an SSA from the DOJ OIG seeking documentation on when the system arrived and was installed.",
+  "persons": [
+    {
+      "name": "Facilities Manager MCC New York Metropolitan Correctional Center",
+      "role": "Facilities Manager at MCC New York",
+      "category": "staff",
+      "context": "The recipient of the email who submitted documentation about the camera system purchase and installation timeline, and is communicating with a Federal Sales Representative and an SSA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Federal Sales Representative",
+      "role": "Sales Representative for SigNet Technologies/Convergint Federal",
+      "category": "other",
+      "context": "Provides information about the camera system order timeline, including placement in September 2018 and estimated delivery to MCC New York around October 2018, with installation in August 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA U.S. Department of Justice OIG Boston Area Office",
+      "role": "Special Agent with the DOJ Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "Requests confirmation that the provided documentation pertains to the camera system installed after the Epstein incident on August 10, 2019, and asks for specific arrival and installation dates.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Facilities Manager MCC New York Metropolitan Correctional Center",
+      "person2": "Federal Sales Representative",
+      "relationshipType": "business",
+      "description": "Correspondence regarding the purchase, delivery, and installation of a camera system for the MCC, with the sales rep providing documentation and timeline details.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA U.S. Department of Justice OIG Boston Area Office",
+      "person2": "Facilities Manager MCC New York Metropolitan Correctional Center",
+      "relationshipType": "investigative",
+      "description": "The SSA is requesting documentation and confirmation from the Facilities Manager about the camera system related to the Epstein incident investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Incident at MCC",
+      "description": "Referenced as the incident that prompted the installation of a new camera system at the Metropolitan Correctional Center in New York.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2018-09-27",
+      "title": "Camera System Order Placed",
+      "description": "Order for the camera system was placed from SigNet to Qognify/Nice, with shipment scheduled for September 30, 2018, to MCC New York.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Federal Sales Representative"
+      ]
+    },
+    {
+      "date": "2018-10-14",
+      "title": "Estimated Camera System Delivery",
+      "description": "Best guess estimate that the camera system arrived at the MCC dock around this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Federal Sales Representative"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Camera System Installation Week",
+      "description": "The camera system was installed the week of August 16, 2019, which was after the Epstein incident on August 10, 2019.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Facilities Manager MCC New York Metropolitan Correctional Center",
+        "Federal Sales Representative"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY 10007",
+    "Beltsville, MD 20705 (Convergint Federal/SigNet Technologies office)"
+  ],
+  "keyFacts": [
+    "A new camera system was installed at the MCC New York the week of August 16, 2019, immediately following the Epstein incident on August 10, 2019.",
+    "The camera system was ordered on September 27, 2018, and estimated to have been delivered to the MCC around October 14, 2018, but not installed until nearly a year later in August 2019.",
+    "The DOJ OIG is actively investigating the timeline of the camera system's arrival and installation in relation to the Epstein incident."
+  ],
+  "analyzedAt": "2026-02-13T01:44:06.194Z"
+}
