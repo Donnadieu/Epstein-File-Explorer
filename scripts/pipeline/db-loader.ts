@@ -172,10 +172,13 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
   let docLinksCreated = 0;
   let docLinksUpdated = 0;
 
-  const existingPairs = new Map<string, number>(); // pairKey -> connection id
+  const existingPairs = new Map<string, { id: number; descLen: number }>();
   const existingConns = await db.select().from(connections);
   for (const c of existingConns) {
-    existingPairs.set(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`, c.id);
+    existingPairs.set(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`, {
+      id: c.id,
+      descLen: c.description?.length || 0,
+    });
   }
 
   for (const file of files) {
@@ -245,9 +248,9 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
         if (person1 && person2) {
           const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
           const newDesc = (conn.description || "").substring(0, 500);
-          const existingId = existingPairs.get(pairKey);
+          const existing = existingPairs.get(pairKey);
 
-          if (existingId === undefined) {
+          if (existing === undefined) {
             try {
               const [inserted] = await db.insert(connections).values({
                 personId1: person1.id,
@@ -256,7 +259,7 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
                 description: newDesc,
                 strength: conn.strength,
               }).returning({ id: connections.id });
-              existingPairs.set(pairKey, inserted.id);
+              existingPairs.set(pairKey, { id: inserted.id, descLen: newDesc.length });
               connectionsCreated++;
             } catch {
               /* skip */
@@ -265,11 +268,12 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
             // Update if new data provides more detail
             const updates: Record<string, any> = {};
             if (conn.relationshipType) updates.connectionType = conn.relationshipType;
-            if (newDesc) updates.description = newDesc;
+            if (newDesc && newDesc.length > existing.descLen) updates.description = newDesc;
             if (conn.strength) updates.strength = conn.strength;
 
             if (Object.keys(updates).length > 0) {
-              await db.update(connections).set(updates).where(eq(connections.id, existingId));
+              await db.update(connections).set(updates).where(eq(connections.id, existing.id));
+              if (updates.description) existing.descLen = newDesc.length;
               connectionsUpdated++;
             }
           }
@@ -291,7 +295,7 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
           // Check for existing event with same date + title
           const existingEvent = await db
-            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance })
+            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance, personIds: timelineEvents.personIds })
             .from(timelineEvents)
             .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
             .limit(1);
@@ -312,7 +316,7 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
             if (event.description && event.description.length > (ex.description?.length || 0)) updates.description = event.description;
             if (event.category) updates.category = event.category;
             if (event.significance && event.significance > (ex.significance ?? 0)) updates.significance = event.significance;
-            if (personIds.length > 0) updates.personIds = personIds;
+            if (personIds.length > (ex.personIds?.length || 0)) updates.personIds = personIds;
 
             if (Object.keys(updates).length > 0) {
               await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));
