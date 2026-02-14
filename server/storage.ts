@@ -35,7 +35,7 @@ export interface IStorage {
   getTimelineEvents(): Promise<TimelineEvent[]>;
   createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent>;
 
-  getStats(): Promise<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>;
+  getStats(): Promise<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
   searchPages(query: string, page: number, limit: number): Promise<{
@@ -455,7 +455,7 @@ const sidebarCountsCache = createCache<{
 
 const documentFiltersCache = createCache<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>(10 * 60 * 1000);
 
-const statsCache = createCache<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>(5 * 60 * 1000);
+const statsCache = createCache<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>(5 * 60 * 1000);
 
 const networkDataCache = createCache<{
   persons: Person[];
@@ -840,15 +840,17 @@ export class DatabaseStorage implements IStorage {
   async getStats() {
     return statsCache.get(async () => {
       const r2Cond = r2Filter();
-      const [personResult, documentResult, connectionResult, eventResult] = await Promise.all([
+      const [personResult, documentResult, pageResult, connectionResult, eventResult] = await Promise.all([
         db.select({ count: sql<number>`count(*)::int` }).from(persons),
         db.select({ count: sql<number>`count(*)::int` }).from(documents).where(r2Cond),
+        db.select({ count: sql<number>`coalesce(sum(${documents.pageCount}), 0)::int` }).from(documents).where(r2Cond),
         db.select({ count: sql<number>`count(*)::int` }).from(connections),
         db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
       ]);
       return {
         personCount: personResult[0].count,
         documentCount: documentResult[0].count,
+        pageCount: pageResult[0].count,
         connectionCount: connectionResult[0].count,
         eventCount: eventResult[0].count,
       };
