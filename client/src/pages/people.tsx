@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
@@ -177,6 +177,7 @@ export default function PeoplePage() {
                     <CardContent className="p-4">
                       <div className="flex items-start gap-3">
                         <Avatar className="w-12 h-12 border border-border shrink-0">
+                          {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
                           <AvatarFallback className="text-sm font-medium bg-muted">
                             {initials}
                           </AvatarFallback>

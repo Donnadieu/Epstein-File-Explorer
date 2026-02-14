@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowLeft,
@@ -17,14 +17,28 @@ import {
   Scale,
   AlertTriangle,
   ExternalLink,
+  Mail,
+  Sparkles,
+  BookOpen,
+  ChevronRight,
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
-import type { Person, Document, Connection } from "@shared/schema";
+import type { Person, Document, Connection, TimelineEvent, ProfileSection } from "@shared/schema";
+
+interface PersonAIMentions {
+  keyFacts: string[];
+  locations: string[];
+  mentionCount: number;
+  documentMentions: { fileName: string; context: string; role: string }[];
+}
 
 interface PersonDetail extends Person {
   documents: Document[];
   connections: (Connection & { person: Person })[];
+  timelineEvents?: TimelineEvent[];
+  aiMentions?: PersonAIMentions;
+  emailDocCount?: number;
 }
 
 const categoryColors: Record<string, string> = {
@@ -80,6 +94,10 @@ export default function PersonDetail() {
     .join("")
     .slice(0, 2);
 
+  const profileSections = (person.profileSections as ProfileSection[] | null) ?? [];
+  const hasOverview = profileSections.length > 0 || (person.aiMentions && (person.aiMentions.keyFacts.length > 0 || person.aiMentions.locations.length > 0));
+  const hasTimeline = person.timelineEvents && person.timelineEvents.length > 0;
+
   return (
     <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto w-full">
       <Link href="/people">
@@ -90,6 +108,7 @@ export default function PersonDetail() {
 
       <div className="flex flex-col sm:flex-row items-start gap-4">
         <Avatar className="w-20 h-20 border-2 border-border shrink-0">
+          {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
           <AvatarFallback className="text-2xl font-bold bg-muted">{initials}</AvatarFallback>
         </Avatar>
         <div className="flex flex-col gap-2 flex-1 min-w-0">
@@ -124,22 +143,119 @@ export default function PersonDetail() {
             <span className="flex items-center gap-1">
               <Network className="w-3 h-3" /> {person.connectionCount} connections
             </span>
+            {(person.emailDocCount ?? 0) > 0 && (
+              <span className="flex items-center gap-1">
+                <Mail className="w-3 h-3" /> {person.emailDocCount} emails
+              </span>
+            )}
+            {person.aiMentions && person.aiMentions.mentionCount > 0 && (
+              <span className="flex items-center gap-1">
+                <Sparkles className="w-3 h-3" /> {person.aiMentions.mentionCount} AI mentions
+              </span>
+            )}
           </div>
 
           <p className="text-sm text-muted-foreground mt-1">{person.description}</p>
+
+          {person.wikipediaUrl && (
+            <a href={person.wikipediaUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline flex items-center gap-1 w-fit">
+              <ExternalLink className="w-3 h-3" /> View on Wikipedia
+            </a>
+          )}
         </div>
       </div>
 
-      <Tabs defaultValue="documents" className="w-full">
-        <TabsList data-testid="tabs-person-detail">
+      <Tabs defaultValue={hasOverview ? "overview" : "documents"} className="w-full">
+        <TabsList data-testid="tabs-person-detail" className="flex-wrap h-auto gap-1">
+          {hasOverview && (
+            <TabsTrigger value="overview" className="gap-1">
+              <BookOpen className="w-3 h-3" /> Overview
+            </TabsTrigger>
+          )}
           <TabsTrigger value="documents" className="gap-1">
             <FileText className="w-3 h-3" /> Documents ({person.documents?.length || 0})
           </TabsTrigger>
           <TabsTrigger value="connections" className="gap-1">
             <Network className="w-3 h-3" /> Connections ({person.connections?.length || 0})
           </TabsTrigger>
+          {hasTimeline && (
+            <TabsTrigger value="timeline" className="gap-1">
+              <Clock className="w-3 h-3" /> Timeline ({person.timelineEvents!.length})
+            </TabsTrigger>
+          )}
         </TabsList>
 
+        {/* Overview Tab */}
+        {hasOverview && (
+          <TabsContent value="overview" className="mt-4 flex flex-col gap-6">
+            {/* Profile Sections */}
+            {profileSections.length > 0 && (
+              <div className="flex flex-col gap-4">
+                {profileSections
+                  .sort((a, b) => a.order - b.order)
+                  .map((section) => (
+                    <div key={section.id} className="flex flex-col gap-2">
+                      <h2 className="text-base font-semibold">{section.title}</h2>
+                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{section.content}</p>
+                    </div>
+                  ))}
+              </div>
+            )}
+
+            {/* Key Facts from AI Analysis */}
+            {person.aiMentions && person.aiMentions.keyFacts.length > 0 && (
+              <div className="flex flex-col gap-2">
+                <h2 className="text-base font-semibold flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-primary" /> Key Facts
+                </h2>
+                <ul className="flex flex-col gap-1.5">
+                  {person.aiMentions.keyFacts.slice(0, 20).map((fact, i) => (
+                    <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                      <ChevronRight className="w-3 h-3 mt-1 shrink-0 text-muted-foreground/50" />
+                      <span>{fact}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Locations */}
+            {person.aiMentions && person.aiMentions.locations.length > 0 && (
+              <div className="flex flex-col gap-2">
+                <h2 className="text-base font-semibold flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-primary" /> Locations Mentioned
+                </h2>
+                <div className="flex flex-wrap gap-1.5">
+                  {person.aiMentions.locations.map((loc, i) => (
+                    <Badge key={i} variant="outline" className="text-xs">
+                      {loc}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* AI Document Mentions */}
+            {person.aiMentions && person.aiMentions.documentMentions.length > 0 && (
+              <div className="flex flex-col gap-2">
+                <h2 className="text-base font-semibold flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-primary" /> Mentioned In ({person.aiMentions.documentMentions.length} analyzed documents)
+                </h2>
+                <div className="flex flex-col gap-1.5">
+                  {person.aiMentions.documentMentions.slice(0, 15).map((mention, i) => (
+                    <div key={i} className="text-sm flex flex-col gap-0.5 p-2 rounded-md bg-muted/50">
+                      <span className="font-mono text-xs text-muted-foreground">{mention.fileName.replace('.pdf.json', '')}</span>
+                      {mention.role && <span className="text-xs text-primary">{mention.role}</span>}
+                      {mention.context && <span className="text-xs text-muted-foreground line-clamp-2">{mention.context}</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </TabsContent>
+        )}
+
+        {/* Documents Tab */}
         <TabsContent value="documents" className="mt-4">
           {person.documents && person.documents.length > 0 ? (
             <div className="flex flex-col gap-2">
@@ -153,6 +269,8 @@ export default function PersonDetail() {
                             <Scale className="w-4 h-4 text-muted-foreground" />
                           ) : doc.documentType === "fbi report" ? (
                             <AlertTriangle className="w-4 h-4 text-muted-foreground" />
+                          ) : doc.documentType === "email" ? (
+                            <Mail className="w-4 h-4 text-muted-foreground" />
                           ) : (
                             <FileText className="w-4 h-4 text-muted-foreground" />
                           )}
@@ -188,6 +306,7 @@ export default function PersonDetail() {
           )}
         </TabsContent>
 
+        {/* Connections Tab */}
         <TabsContent value="connections" className="mt-4">
           {person.connections && person.connections.length > 0 ? (
             <div className="flex flex-col gap-3">
@@ -213,6 +332,7 @@ export default function PersonDetail() {
                       <CardContent className="p-4">
                         <div className="flex items-start gap-3">
                           <Avatar className="w-10 h-10 border border-border shrink-0">
+                            {connPerson.imageUrl && <AvatarImage src={connPerson.imageUrl} alt={connPerson.name} />}
                             <AvatarFallback className="text-xs font-medium bg-muted">{connInitials}</AvatarFallback>
                           </Avatar>
                           <div className="flex flex-col gap-1 min-w-0 flex-1">
@@ -239,6 +359,38 @@ export default function PersonDetail() {
             </div>
           )}
         </TabsContent>
+
+        {/* Timeline Tab */}
+        {hasTimeline && (
+          <TabsContent value="timeline" className="mt-4">
+            <div className="flex flex-col gap-3">
+              {person.timelineEvents!.map((event) => (
+                <Card key={event.id} data-testid={`card-event-${event.id}`}>
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
+                      <div className="flex flex-col items-center gap-1 shrink-0 w-20">
+                        <span className="text-xs font-mono text-muted-foreground">{event.date}</span>
+                        <div className="flex items-center gap-0.5">
+                          {Array.from({ length: Math.min(event.significance, 5) }).map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          ))}
+                          {Array.from({ length: Math.max(0, 5 - event.significance) }).map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-muted" />
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex flex-col gap-1 min-w-0 flex-1">
+                        <span className="text-sm font-medium">{event.title}</span>
+                        <p className="text-xs text-muted-foreground">{event.description}</p>
+                        <Badge variant="outline" className="text-[10px] w-fit mt-1">{event.category}</Badge>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        )}
       </Tabs>
     </div>
   );
