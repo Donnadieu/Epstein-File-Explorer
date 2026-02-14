@@ -110,6 +110,12 @@ export default function AskArchivePage() {
 
   const messages = activeConversation?.messages ?? [];
 
+  // Keep showing streamed content until refetched messages include the assistant's response.
+  // Without this, there's a flash of no content between isStreaming=false and the refetch completing.
+  const showStreamedMessage = Boolean(
+    streamedContent && (isStreaming || messages[messages.length - 1]?.role === "user"),
+  );
+
   return (
     <div className="flex h-[calc(100vh-3.5rem)]" data-testid="page-ask-archive">
       {/* Sidebar */}
@@ -224,12 +230,12 @@ export default function AskArchivePage() {
                   citations={msg.citations as ChatCitation[] | null}
                 />
               ))}
-              {isStreaming && streamedContent && (
+              {showStreamedMessage && (
                 <ChatMessage
                   role="assistant"
                   content={streamedContent}
                   citations={streamedCitations.length > 0 ? streamedCitations : null}
-                  isStreaming
+                  isStreaming={isStreaming}
                 />
               )}
               {isStreaming && !streamedContent && (
