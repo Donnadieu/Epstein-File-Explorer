@@ -40,7 +40,7 @@ function StatCard({
           <div className="flex items-start justify-between gap-2">
             <div className="flex flex-col gap-1">
               <span className="text-xs text-muted-foreground uppercase tracking-wider">{label}</span>
-              <span className="text-2xl font-bold tracking-tight" data-testid={`text-stat-${label.toLowerCase()}`}>{value}</span>
+              <span className="text-2xl font-bold tracking-tight" data-testid={`text-stat-${label.toLowerCase()}`}>{typeof value === "number" ? value.toLocaleString() : value}</span>
               <span className="text-xs text-muted-foreground">{sublabel}</span>
             </div>
             <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary/10">
