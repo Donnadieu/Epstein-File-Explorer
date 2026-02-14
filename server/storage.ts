@@ -1350,47 +1350,38 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getAIAnalysisAggregate(): Promise<AIAnalysisAggregate> {
+    // Totals from database (consistent with dashboard)
+    const [personCount, connectionCount, eventCount] = await Promise.all([
+      db.select({ count: sql<number>`count(*)::int` }).from(persons),
+      db.select({ count: sql<number>`count(*)::int` }).from(connections),
+      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
+    ]);
+
+    // Top persons from database (by document count)
+    const dbTopPersons = await db.select({
+      name: persons.name,
+      category: persons.category,
+      documentCount: persons.documentCount,
+      connectionCount: persons.connectionCount,
+    }).from(persons)
+      .orderBy(desc(persons.documentCount))
+      .limit(20);
+
+    // Connection types from database
+    const dbConnectionTypes = await db.select({
+      type: connections.connectionType,
+      count: sql<number>`count(*)::int`,
+    }).from(connections)
+      .groupBy(connections.connectionType)
+      .orderBy(sql`count(*) DESC`);
+
+    // Documents Analyzed + document types + locations from JSON files
     const allData = await readAllAnalysisFiles();
 
-    if (allData.length === 0) {
-      return {
-        topPersons: [],
-        topLocations: [],
-        connectionTypes: [],
-        documentTypes: [],
-        totalDocuments: 0,
-        totalPersons: 0,
-        totalConnections: 0,
-        totalEvents: 0,
-      };
-    }
-
-    const personMap = new Map<string, { mentionCount: number; documentCount: number; category: string }>();
     const locationMap = new Map<string, number>();
-    const connectionTypeMap = new Map<string, number>();
     const documentTypeMap = new Map<string, number>();
-    let totalConnections = 0;
-    let totalEvents = 0;
 
     for (const data of allData) {
-      // Aggregate persons
-      if (Array.isArray(data.persons)) {
-        const seenInDoc = new Set<string>();
-        for (const person of data.persons) {
-          const name = person.name ?? "";
-          if (!name) continue;
-          const existing = personMap.get(name) ?? { mentionCount: 0, documentCount: 0, category: person.category ?? "" };
-          existing.mentionCount += person.mentionCount ?? 1;
-          if (!seenInDoc.has(name)) {
-            existing.documentCount += 1;
-            seenInDoc.add(name);
-          }
-          if (person.category) existing.category = person.category;
-          personMap.set(name, existing);
-        }
-      }
-
-      // Aggregate locations
       if (Array.isArray(data.locations)) {
         const seenInDoc = new Set<string>();
         for (const loc of data.locations) {
@@ -1401,51 +1392,28 @@ export class DatabaseStorage implements IStorage {
         }
       }
 
-      // Aggregate connection types
-      if (Array.isArray(data.connections)) {
-        totalConnections += data.connections.length;
-        for (const conn of data.connections) {
-          const relType = conn.relationshipType ?? conn.type ?? "unknown";
-          connectionTypeMap.set(relType, (connectionTypeMap.get(relType) ?? 0) + 1);
-        }
-      }
-
-      // Aggregate document types
       const docType = data.documentType ?? "unknown";
       documentTypeMap.set(docType, (documentTypeMap.get(docType) ?? 0) + 1);
-
-      // Aggregate events
-      if (Array.isArray(data.events)) {
-        totalEvents += data.events.length;
-      }
     }
 
-    const topPersons = Array.from(personMap.entries())
-      .map(([name, v]) => ({ name, mentionCount: v.mentionCount, documentCount: v.documentCount, category: v.category }))
-      .sort((a, b) => b.mentionCount - a.mentionCount)
-      .slice(0, 20);
-
-    const topLocations = Array.from(locationMap.entries())
-      .map(([location, documentCount]) => ({ location, documentCount }))
-      .sort((a, b) => b.documentCount - a.documentCount)
-      .slice(0, 20);
-
-    const connectionTypes = Array.from(connectionTypeMap.entries())
-      .map(([type, count]) => ({ type, count }))
-      .sort((a, b) => b.count - a.count);
-
-    const documentTypes = Array.from(documentTypeMap.entries())
-      .map(([type, count]) => ({ type, count }));
-
     return {
-      topPersons,
-      topLocations,
-      connectionTypes,
-      documentTypes,
+      topPersons: dbTopPersons.map((p) => ({
+        name: p.name,
+        category: p.category,
+        mentionCount: p.documentCount ?? 0,
+        documentCount: p.documentCount ?? 0,
+      })),
+      topLocations: Array.from(locationMap.entries())
+        .map(([location, documentCount]) => ({ location, documentCount }))
+        .sort((a, b) => b.documentCount - a.documentCount)
+        .slice(0, 20),
+      connectionTypes: dbConnectionTypes.map((c) => ({ type: c.type, count: c.count })),
+      documentTypes: Array.from(documentTypeMap.entries())
+        .map(([type, count]) => ({ type, count })),
       totalDocuments: allData.length,
-      totalPersons: personMap.size,
-      totalConnections,
-      totalEvents,
+      totalPersons: personCount[0].count,
+      totalConnections: connectionCount[0].count,
+      totalEvents: eventCount[0].count,
     };
   }
 }
