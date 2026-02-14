@@ -926,7 +926,9 @@ export class DatabaseStorage implements IStorage {
 
     const searchPattern = `%${escapeLikePattern(query)}%`;
 
-    const [matchedPersons, matchedDocuments, matchedEvents] = await Promise.all([
+    // Use full-text search on pages to find matching documents (fast, uses GIN index)
+    // Persons and events are small tables so ILIKE is fine for them
+    const [matchedPersons, pageResults, matchedEvents] = await Promise.all([
       db.select().from(persons).where(
         or(
           ilike(persons.name, searchPattern),
@@ -934,18 +936,7 @@ export class DatabaseStorage implements IStorage {
         )
       ).limit(20),
 
-      db.select().from(documents).where(
-        (() => {
-          const textMatch = or(
-            ilike(documents.title, searchPattern),
-            ilike(documents.description, searchPattern),
-            ilike(documents.keyExcerpt, searchPattern),
-            ilike(documents.documentType, searchPattern)
-          );
-          const r2Cond = r2Filter();
-          return r2Cond ? and(r2Cond, textMatch) : textMatch;
-        })()
-      ).limit(20),
+      this.searchPages(query, 1, 20),
 
       db.select().from(timelineEvents).where(
         or(
@@ -955,6 +946,12 @@ export class DatabaseStorage implements IStorage {
         )
       ).limit(20),
     ]);
+
+    // Deduplicate documents from page results and fetch full document records
+    const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId))).slice(0, 20);
+    const matchedDocuments = docIds.length > 0
+      ? await db.select().from(documents).where(inArray(documents.id, docIds))
+      : [];
 
     const result = {
       persons: matchedPersons,
@@ -1048,14 +1045,13 @@ export class DatabaseStorage implements IStorage {
     if (r2Cond) conditions.push(r2Cond);
 
     if (opts.search) {
-      const searchPattern = `%${escapeLikePattern(opts.search)}%`;
-      conditions.push(
-        or(
-          ilike(documents.title, searchPattern),
-          ilike(documents.description, searchPattern),
-          ilike(documents.keyExcerpt, searchPattern),
-        )
-      );
+      // Use full-text search on pages to find matching document IDs (fast, uses GIN index)
+      const pageResults = await this.searchPages(opts.search, 1, 100);
+      const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
+      if (docIds.length === 0) {
+        return { data: [], total: 0, page: opts.page, totalPages: 0 };
+      }
+      conditions.push(inArray(documents.id, docIds));
     }
 
     if (opts.type) {
@@ -1164,11 +1160,12 @@ export class DatabaseStorage implements IStorage {
       ? sql`r2_key IS NOT NULL AND (file_size_bytes IS NULL OR file_size_bytes != 0)`
       : sql`(file_size_bytes IS NULL OR file_size_bytes != 0)`;
 
-    const [row] = await db.execute(sql`
+    const result_ = await db.execute(sql`
       SELECT
         (SELECT id FROM documents WHERE id < ${id} AND ${r2Cond} ORDER BY id DESC LIMIT 1) AS prev,
         (SELECT id FROM documents WHERE id > ${id} AND ${r2Cond} ORDER BY id ASC  LIMIT 1) AS next
     `);
+    const row = result_.rows[0];
 
     const result = {
       prev: row?.prev != null ? Number(row.prev) : null,

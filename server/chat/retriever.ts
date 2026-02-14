@@ -77,22 +77,18 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
   }
 
   const allPersons = await loadPersons();
-  const [searchResults, pageResults, analysisList] = await Promise.all([
-    storage.search(query),
-    storage.searchPages(query, 1, 10),
+  const [pageResults, analysisList] = await Promise.all([
+    storage.searchPages(query, 1, 20),
     storage.getAIAnalysisList(),
   ]);
 
-  // Step 1: Find matched persons from keyword matching and search results
+  // Step 1: Find matched persons from keyword matching
   const matchedPersonIds = new Set<number>();
 
   for (const person of allPersons) {
     if (matchesPersonName(keywords, person)) {
       matchedPersonIds.add(person.id);
     }
-  }
-  for (const person of searchResults.persons) {
-    matchedPersonIds.add(person.id);
   }
 
   // Step 2: Load full details for matched persons (up to 5)
@@ -199,35 +195,6 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
     }
 
     sections.push(`[Person: ${detail.name}]\n${parts.join("\n")}`);
-  }
-
-  // Priority 4: Search result documents
-  for (const doc of searchResults.documents) {
-    if (seenDocIds.has(doc.id)) continue;
-    seenDocIds.add(doc.id);
-
-    const parts: string[] = [];
-    parts.push(`Title: ${doc.title}`);
-    if (doc.description) parts.push(`Description: ${doc.description}`);
-    if (doc.documentType) parts.push(`Type: ${doc.documentType}`);
-    if (doc.keyExcerpt) parts.push(`Excerpt: ${doc.keyExcerpt}`);
-    if (doc.dateOriginal) parts.push(`Date: ${doc.dateOriginal}`);
-
-    sections.push(`[Doc #${doc.id}]\n${parts.join("\n")}`);
-    citations.push({
-      documentId: doc.id,
-      documentTitle: doc.title,
-      relevance: "search match",
-    });
-  }
-
-  // Priority 5: Search result events
-  for (const event of searchResults.events.slice(0, 10)) {
-    const parts: string[] = [];
-    parts.push(`${event.date}: ${event.title}`);
-    if (event.description) parts.push(event.description);
-    if (event.category) parts.push(`Category: ${event.category}`);
-    sections.push(`[Event]\n${parts.join("\n")}`);
   }
 
   const contextText = truncateToLimit(sections.join("\n\n---\n\n"), MAX_CONTEXT_CHARS);
