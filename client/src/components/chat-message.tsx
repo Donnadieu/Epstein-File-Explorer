@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
-import { FileText } from "lucide-react";
+import { FileText, Copy, Check } from "lucide-react";
 import type { ChatCitation } from "@shared/schema";
 
 interface ChatMessageProps {
@@ -11,11 +12,9 @@ interface ChatMessageProps {
 }
 
 function renderContent(text: string) {
-  // Split into paragraphs
   const paragraphs = text.split(/\n\n+/);
 
   return paragraphs.map((paragraph, i) => {
-    // Check if paragraph is a bullet list
     const lines = paragraph.split("\n");
     const isList = lines.every((l) => l.trimStart().startsWith("- ") || l.trim() === "");
 
@@ -39,7 +38,6 @@ function renderContent(text: string) {
 }
 
 function renderInline(text: string) {
-  // Parse bold (**text**) and doc references ([Doc #ID])
   const parts: (string | JSX.Element)[] = [];
   const regex = /(\*\*(.+?)\*\*|\[Doc #(\d+)\])/g;
   let lastIndex = 0;
@@ -51,10 +49,8 @@ function renderInline(text: string) {
     }
 
     if (match[2]) {
-      // Bold text
       parts.push(<strong key={match.index}>{match[2]}</strong>);
     } else if (match[3]) {
-      // Doc reference
       const docId = match[3];
       parts.push(
         <Link
@@ -79,11 +75,18 @@ function renderInline(text: string) {
 }
 
 export function ChatMessage({ role, content, citations, isStreaming }: ChatMessageProps) {
+  const [copied, setCopied] = useState(false);
   const isUser = role === "user";
+
+  function handleCopy() {
+    navigator.clipboard.writeText(content);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <div
-      className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}
+      className={`group flex ${isUser ? "justify-end" : "justify-start"} mb-4`}
       data-testid={`chat-message-${role}`}
     >
       <div
@@ -118,6 +121,18 @@ export function ChatMessage({ role, content, citations, isStreaming }: ChatMessa
                 </Link>
               ))}
             </div>
+          </div>
+        )}
+
+        {!isUser && !isStreaming && (
+          <div className="flex justify-end mt-1">
+            <button
+              onClick={handleCopy}
+              className="text-muted-foreground/50 hover:text-muted-foreground transition-colors p-1 rounded opacity-0 group-hover:opacity-100"
+              aria-label="Copy message"
+            >
+              {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+            </button>
           </div>
         )}
       </div>

@@ -99,61 +99,31 @@ export function registerChatRoutes(app: Express): void {
     }
   });
 
-  // Send message and stream AI response
-  app.post("/api/chat/conversations/:id/messages", async (req: Request, res: Response) => {
+  // Stateless chat — no DB persistence, history sent from client
+  app.post("/api/chat/message", async (req: Request, res: Response) => {
     try {
-      const conversationId = parseInt(req.params.id as string);
-      if (isNaN(conversationId)) return res.status(400).json({ error: "Invalid ID" });
-
-      const { content } = req.body;
+      const { content, history = [] } = req.body;
       if (!content || typeof content !== "string") {
         return res.status(400).json({ error: "Message content is required" });
       }
 
-      // Verify conversation exists
-      const [conversation] = await db.select().from(conversations).where(eq(conversations.id, conversationId));
-      if (!conversation) return res.status(404).json({ error: "Conversation not found" });
-
-      // Save user message
-      await db.insert(messages).values({ conversationId, role: "user", content });
-
-      // Get conversation history
-      const history = await db.select().from(messages).where(eq(messages.conversationId, conversationId)).orderBy(messages.createdAt);
-      const chatHistory = history.map((m) => ({ role: m.role, content: m.content }));
-
-      // Retrieve relevant context via RAG
       const context = await retrieveContext(content);
 
-      // Set up SSE
       res.setHeader("Content-Type", "text/event-stream");
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
 
-      let fullResponse = "";
-
-      // Stream response
-      for await (const chunk of streamChatResponse(content, chatHistory, context)) {
+      for await (const chunk of streamChatResponse(content, history, context)) {
         if (chunk.content) {
-          fullResponse += chunk.content;
           res.write(`data: ${JSON.stringify({ content: chunk.content })}\n\n`);
         }
-
         if (chunk.done) {
-          // Save assistant message with citations
-          await db.insert(messages).values({
-            conversationId,
-            role: "assistant",
-            content: fullResponse,
-            citations: chunk.citations ?? null,
-          });
-
           res.write(`data: ${JSON.stringify({ done: true, citations: chunk.citations ?? [] })}\n\n`);
         }
       }
 
       res.end();
 
-      // Fire-and-forget: queue unanalyzed documents for background analysis
       queueUnanalyzedDocuments(context.retrievedDocumentIds).catch(() => {});
     } catch (error) {
       console.error("Error in chat message:", error);

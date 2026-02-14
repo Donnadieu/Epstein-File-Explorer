@@ -156,7 +156,7 @@ export function AppSidebar() {
 
   const toolItems: NavItem[] = [
     { title: "Search", url: "/search", icon: Search },
-    { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
+    // { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
   ];
 
   return (

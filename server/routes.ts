@@ -800,8 +800,8 @@ export async function registerRoutes(
     }
   });
 
-  // Chat routes (Ask the Archive)
-  registerChatRoutes(app);
+  // Chat routes (Ask the Archive) — disabled, needs QA
+  // registerChatRoutes(app);
 
   return httpServer;
 }
