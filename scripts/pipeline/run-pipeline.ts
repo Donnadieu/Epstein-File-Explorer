@@ -4,6 +4,7 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { runAIAnalysis } from "./ai-analyzer";
 import {
+  deduplicateConnections,
   deduplicatePersonsInDB,
   extractConnectionsFromDescriptions,
   importDownloadedFiles,
@@ -12,10 +13,10 @@ import {
   loadPersonsFromFile,
   updateDocumentCounts,
 } from "./db-loader";
-import { downloadTorrents } from "./torrent-downloader";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
 import { migrateToR2 } from "./r2-migration";
+import { downloadTorrents } from "./torrent-downloader";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,9 +49,10 @@ const STAGES = [
   "load-documents",
   "import-downloads",
   "load-ai-results",
-  "extract-connections",
-  "update-counts",
   "dedup-persons",
+  "extract-connections",
+  "dedup-connections",
+  "update-counts",
 ];
 
 function printUsage() {
@@ -83,7 +85,9 @@ STAGES:
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
   load-ai-results  Load AI-analyzed persons, connections, events, and person↔document links
+  dedup-persons    Deduplicate persons in database
   extract-connections  Extract relationships from person descriptions
+  dedup-connections  Deduplicate connections in database
   update-counts    Recalculate document/connection counts per person
 
 SHORTCUTS:
@@ -220,6 +224,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "dedup-persons":
         await deduplicatePersonsInDB();
+        break;
+
+      case "dedup-connections":
+        await deduplicateConnections();
         break;
 
       default:

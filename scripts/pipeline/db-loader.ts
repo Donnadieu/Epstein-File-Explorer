@@ -166,19 +166,15 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
   let personsCreated = 0;
   let personsUpdated = 0;
   let connectionsCreated = 0;
-  let connectionsUpdated = 0;
   let eventsCreated = 0;
   let eventsUpdated = 0;
   let docLinksCreated = 0;
   let docLinksUpdated = 0;
 
-  const existingPairs = new Map<string, { id: number; descLen: number }>();
-  const existingConns = await db.select().from(connections);
+  const existingPairs = new Set<string>();
+  const existingConns = await db.select({ personId1: connections.personId1, personId2: connections.personId2 }).from(connections);
   for (const c of existingConns) {
-    existingPairs.set(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`, {
-      id: c.id,
-      descLen: c.description?.length || 0,
-    });
+    existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
   }
 
   for (let fi = 0; fi < files.length; fi++) {
@@ -251,35 +247,22 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
         if (person1 && person2) {
           const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
-          const newDesc = (conn.description || "").substring(0, 500);
-          const existing = existingPairs.get(pairKey);
 
-          if (existing === undefined) {
-            try {
-              const [inserted] = await db.insert(connections).values({
-                personId1: person1.id,
-                personId2: person2.id,
-                connectionType: conn.relationshipType,
-                description: newDesc,
-                strength: conn.strength,
-              }).returning({ id: connections.id });
-              existingPairs.set(pairKey, { id: inserted.id, descLen: newDesc.length });
-              connectionsCreated++;
-            } catch {
-              /* skip */
-            }
-          } else {
-            // Update if new data provides more detail
-            const updates: Record<string, any> = {};
-            if (conn.relationshipType) updates.connectionType = conn.relationshipType;
-            if (newDesc && newDesc.length > existing.descLen) updates.description = newDesc;
-            if (conn.strength) updates.strength = conn.strength;
+          if (existingPairs.has(pairKey)) continue;
 
-            if (Object.keys(updates).length > 0) {
-              await db.update(connections).set(updates).where(eq(connections.id, existing.id));
-              if (updates.description) existing.descLen = newDesc.length;
-              connectionsUpdated++;
-            }
+          try {
+            const newDesc = (conn.description || "").substring(0, 500);
+            await db.insert(connections).values({
+              personId1: person1.id,
+              personId2: person2.id,
+              connectionType: conn.relationshipType,
+              description: newDesc,
+              strength: conn.strength,
+            });
+            existingPairs.add(pairKey);
+            connectionsCreated++;
+          } catch {
+            /* skip */
           }
         }
       }
@@ -406,8 +389,8 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
     }
   }
 
-  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created, ${connectionsUpdated} updated | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created, ${docLinksUpdated} updated`);
-  return { persons: personsCreated + personsUpdated, connections: connectionsCreated + connectionsUpdated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated + docLinksUpdated };
+  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created, ${docLinksUpdated} updated`);
+  return { persons: personsCreated + personsUpdated, connections: connectionsCreated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated + docLinksUpdated };
 }
 
 function inferStatusFromCategory(category: string, role: string): string {
@@ -547,8 +530,8 @@ export function isJunkPersonName(name: string): boolean {
   // Long descriptive strings (>60 chars are not person names)
   if (trimmed.length > 60) return true;
 
-  // Contains special characters that don't appear in real names
-  if (/[!;&$%^]/.test(trimmed)) return true;
+  // Contains special characters that don't appear in real names (including OCR artifacts)
+  if (/[!;&$%^°•\\*<>]/.test(trimmed)) return true;
 
   // Contains slashes (role combos, OCR junk)
   if (trimmed.includes("/")) return true;
@@ -574,6 +557,8 @@ export function isJunkPersonName(name: string): boolean {
     "correctional officer",
     "attorney general",
     "unit manager",
+    "senior inspector",
+    "supervisory inspector",
     "fbi assistant director",
     "deputy united states attorney",
     "supervisory staff attorney clc",
@@ -583,6 +568,8 @@ export function isJunkPersonName(name: string): boolean {
     "victim witness coordinator",
     "day watch shu officer in charge",
     "evening watch shu officer in charge",
+    "u.s. attorney",
+    "assistant u.s. attorney",
   ]);
   if (GENERIC_ROLES.has(trimmed.toLowerCase())) return true;
 
@@ -644,6 +631,27 @@ export function isJunkPersonName(name: string): boolean {
 
   // "Deputy/Assistant [title]" roles
   if (/^(deputy|assistant|associate|acting|interim)\s+(assistant\s+)?(attorney general|director|chief|commissioner|warden|prosecutor|counsel)/i.test(trimmed)) return true;
+
+  // Parenthetical org tags: (FBI), (ODAG), (AUSA), (USMS), (NY), (SI), etc.
+  if (/\([A-Z]{2,5}\)/.test(trimmed)) return true;
+
+  // "AUSA ..." prefix (Assistant US Attorney + name fragment)
+  if (/^ausa\s/i.test(trimmed)) return true;
+
+  // Placeholder patterns: OFFICER N, Inmate N, CO Rookie N
+  if (/^(officer|inmate|co\s+rookie)\s+\d/i.test(trimmed)) return true;
+
+  // John/Jane Doe (with optional number/suffix)
+  if (/^(john|jane)\s+doe/i.test(trimmed)) return true;
+
+  // Title + single initial: "Mr. M", "Dr. S.", "Ms. M", "Dr. B."
+  if (/^(mr|mrs|ms|dr)\.\s+[A-Z]\.?\s*$/i.test(trimmed)) return true;
+
+  // "Declarant" prefix
+  if (/^declarant/i.test(trimmed)) return true;
+
+  // Comma-digit patterns: "InEir, 3 Unit Manager", "M, 1"
+  if (/,\s*\d/.test(trimmed)) return true;
 
   return false;
 }
@@ -878,6 +886,35 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   const finalCount = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
   console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged + singleWordRemaining.length} persons removed`);
   console.log(`  Final person count: ${finalCount[0]?.count}`);
+}
+
+/**
+ * Deduplicate connections: keep ONE connection per undirected person pair.
+ * Keeps the record with the longest description, highest strength, lowest id as tiebreaker.
+ */
+export async function deduplicateConnections(): Promise<void> {
+  console.log("Deduplicating connections...");
+
+  const [beforeCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections);
+  console.log(`  Connections before: ${beforeCount?.count}`);
+
+  // Delete all connections that are NOT the best representative per undirected pair
+  await db.execute(sql`
+    DELETE FROM connections WHERE id NOT IN (
+      SELECT DISTINCT ON (LEAST(person_id_1, person_id_2), GREATEST(person_id_1, person_id_2))
+        id
+      FROM connections
+      ORDER BY LEAST(person_id_1, person_id_2), GREATEST(person_id_1, person_id_2),
+        COALESCE(LENGTH(description), 0) DESC, strength DESC, id ASC
+    )
+  `);
+
+  // Also remove any self-loop connections
+  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+
+  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections);
+  console.log(`  Connections after: ${afterCount?.count}`);
+  console.log(`  Removed ${(beforeCount?.count || 0) - (afterCount?.count || 0)} duplicate connections`);
 }
 
 function inferDocumentType(description: string): string {
@@ -1431,6 +1468,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       await updateDocumentCounts();
     } else if (command === "dedup-persons") {
       await deduplicatePersonsInDB();
+    } else if (command === "dedup-connections") {
+      await deduplicateConnections();
     } else if (command === "classify-media") {
       await classifyAllDocuments({
         downloadDir: process.argv[3],
@@ -1446,6 +1485,7 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
       console.log("  dedup-persons         - Deduplicate persons in database");
+      console.log("  dedup-connections     - Deduplicate connections (keep best per pair)");
       console.log("  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)");
     }
 
