@@ -364,17 +364,17 @@ export default function PersonDetail() {
         {hasTimeline && (
           <TabsContent value="timeline" className="mt-4">
             <div className="flex flex-col gap-3">
-              {person.timelineEvents!.map((event) => (
+              {person.timelineEvents!.map((event: any) => (
                 <Card key={event.id} data-testid={`card-event-${event.id}`}>
                   <CardContent className="p-4">
                     <div className="flex items-start gap-3">
                       <div className="flex flex-col items-center gap-1 shrink-0 w-20">
                         <span className="text-xs font-mono text-muted-foreground">{event.date}</span>
                         <div className="flex items-center gap-0.5">
-                          {Array.from({ length: Math.min(event.significance, 5) }).map((_, i) => (
+                          {Array.from({ length: Math.min(event.significance, 5) }).map((_: unknown, i: number) => (
                             <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary" />
                           ))}
-                          {Array.from({ length: Math.max(0, 5 - event.significance) }).map((_, i) => (
+                          {Array.from({ length: Math.max(0, 5 - event.significance) }).map((_: unknown, i: number) => (
                             <div key={i} className="w-1.5 h-1.5 rounded-full bg-muted" />
                           ))}
                         </div>
@@ -383,6 +383,34 @@ export default function PersonDetail() {
                         <span className="text-sm font-medium">{event.title}</span>
                         <p className="text-xs text-muted-foreground">{event.description}</p>
                         <Badge variant="outline" className="text-[10px] w-fit mt-1">{event.category}</Badge>
+
+                        {/* Linked people */}
+                        {event.persons?.length > 0 && (
+                          <div className="flex items-center gap-1 flex-wrap mt-1">
+                            <Users className="w-3 h-3 text-muted-foreground shrink-0" />
+                            {event.persons.map((p: { id: number; name: string }, i: number) => (
+                              <Link key={p.id} href={`/people/${p.id}`}>
+                                <span className="text-[11px] text-primary hover:underline cursor-pointer">
+                                  {p.name}{i < event.persons.length - 1 ? "," : ""}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Linked documents */}
+                        {event.documents?.length > 0 && (
+                          <div className="flex items-center gap-1 flex-wrap mt-0.5">
+                            <FileText className="w-3 h-3 text-muted-foreground shrink-0" />
+                            {event.documents.map((d: { id: number; title: string }, i: number) => (
+                              <Link key={d.id} href={`/documents/${d.id}`}>
+                                <span className="text-[11px] text-primary hover:underline cursor-pointer">
+                                  {d.title.length > 40 ? d.title.slice(0, 40) + "…" : d.title}{i < event.documents.length - 1 ? "," : ""}
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   </CardContent>

@@ -15,6 +15,11 @@ import {
 import type { TimelineEvent } from "@shared/schema";
 import TimelineViz from "@/components/timeline-viz";
 
+interface EnrichedTimelineEvent extends TimelineEvent {
+  persons?: { id: number; name: string }[];
+  documents?: { id: number; title: string }[];
+}
+
 const DECADES = [
   { label: "All Time", start: 0, end: 2099 },
   { label: "1950s", start: 1950, end: 1959 },
@@ -31,7 +36,7 @@ export default function TimelinePage() {
   const [yearFrom, setYearFrom] = useState("1980");
   const [yearTo, setYearTo] = useState("");
 
-  const { data: events, isLoading } = useQuery<TimelineEvent[]>({
+  const { data: events, isLoading } = useQuery<EnrichedTimelineEvent[]>({
     queryKey: ["/api/timeline"],
     staleTime: 600_000,
   });

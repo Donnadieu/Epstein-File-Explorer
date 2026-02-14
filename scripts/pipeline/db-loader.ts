@@ -280,6 +280,15 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
         }
       }
 
+      // --- Resolve source document ID for this analysis file ---
+      const eventEfta = data.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
+      const [sourceDoc] = await db
+        .select({ id: documents.id })
+        .from(documents)
+        .where(sql`${documents.title} ILIKE ${'%' + eventEfta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + eventEfta + '%'}`)
+        .limit(1);
+      const sourceDocId = sourceDoc?.id;
+
       // --- Events ---
       for (const event of data.events) {
         try {
@@ -295,10 +304,12 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
           // Check for existing event with same date + title
           const existingEvent = await db
-            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance, personIds: timelineEvents.personIds })
+            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance, personIds: timelineEvents.personIds, documentIds: timelineEvents.documentIds })
             .from(timelineEvents)
             .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
             .limit(1);
+
+          const documentIds = sourceDocId ? [sourceDocId] : [];
 
           if (existingEvent.length === 0) {
             await db.insert(timelineEvents).values({
@@ -308,6 +319,7 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
               category: event.category,
               significance: event.significance,
               personIds,
+              documentIds,
             });
             eventsCreated++;
           } else {
@@ -317,6 +329,14 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
             if (event.category) updates.category = event.category;
             if (event.significance && event.significance > (ex.significance ?? 0)) updates.significance = event.significance;
             if (personIds.length > (ex.personIds?.length || 0)) updates.personIds = personIds;
+
+            // Merge documentIds: add new doc ID if not already present
+            if (sourceDocId) {
+              const existingDocIds = ex.documentIds ?? [];
+              if (!existingDocIds.includes(sourceDocId)) {
+                updates.documentIds = [...existingDocIds, sourceDocId];
+              }
+            }
 
             if (Object.keys(updates).length > 0) {
               await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));

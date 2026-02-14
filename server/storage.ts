@@ -642,6 +642,32 @@ export class DatabaseStorage implements IStorage {
       .where(sql`${id} = ANY(${timelineEvents.personIds})`)
       .orderBy(asc(timelineEvents.date));
 
+    // Enrich person events with document info
+    const eventDocIds = new Set<number>();
+    const eventPersonIds = new Set<number>();
+    for (const e of personEvents) {
+      for (const did of e.documentIds ?? []) eventDocIds.add(did);
+      for (const pid of e.personIds ?? []) if (pid !== id) eventPersonIds.add(pid);
+    }
+    const eventDocMap = new Map<number, { id: number; title: string }>();
+    if (eventDocIds.size > 0) {
+      const docRows = await db.select({ id: documents.id, title: documents.title })
+        .from(documents).where(inArray(documents.id, Array.from(eventDocIds)));
+      for (const d of docRows) eventDocMap.set(d.id, d);
+    }
+    const eventPersonMap = new Map<number, { id: number; name: string }>();
+    eventPersonMap.set(id, { id, name: person.name });
+    if (eventPersonIds.size > 0) {
+      const pRows = await db.select({ id: persons.id, name: persons.name })
+        .from(persons).where(inArray(persons.id, Array.from(eventPersonIds)));
+      for (const p of pRows) eventPersonMap.set(p.id, p);
+    }
+    const enrichedEvents = personEvents.map(e => ({
+      ...e,
+      persons: (e.personIds ?? []).map(pid => eventPersonMap.get(pid)).filter(Boolean),
+      documents: (e.documentIds ?? []).map(did => eventDocMap.get(did)).filter(Boolean),
+    }));
+
     const aiMentions = await getPersonAIMentions(person.name, person.aliases ?? []);
 
     const emailDocCount = pDocs.filter(d => d.documentType === 'email').length;
@@ -650,7 +676,7 @@ export class DatabaseStorage implements IStorage {
       ...person,
       documents: pDocs,
       connections: allConns,
-      timelineEvents: personEvents,
+      timelineEvents: enrichedEvents,
       aiMentions,
       emailDocCount,
     };
@@ -705,9 +731,32 @@ export class DatabaseStorage implements IStorage {
       .innerJoin(persons, eq(personDocuments.personId, persons.id))
       .where(eq(personDocuments.documentId, id));
 
+    // Fetch timeline events that reference this document
+    const docEvents = await db.select()
+      .from(timelineEvents)
+      .where(sql`${id} = ANY(${timelineEvents.documentIds})`)
+      .orderBy(asc(timelineEvents.date));
+
+    // Enrich events with person names
+    const evtPersonIds = new Set<number>();
+    for (const e of docEvents) {
+      for (const pid of e.personIds ?? []) evtPersonIds.add(pid);
+    }
+    const evtPersonMap = new Map<number, { id: number; name: string }>();
+    if (evtPersonIds.size > 0) {
+      const pRows = await db.select({ id: persons.id, name: persons.name })
+        .from(persons).where(inArray(persons.id, Array.from(evtPersonIds)));
+      for (const p of pRows) evtPersonMap.set(p.id, p);
+    }
+    const enrichedDocEvents = docEvents.map(e => ({
+      ...e,
+      persons: (e.personIds ?? []).map(pid => evtPersonMap.get(pid)).filter(Boolean),
+    }));
+
     const result = {
       ...doc,
       persons: pDocs,
+      timelineEvents: enrichedDocEvents,
     };
 
     documentDetailCache.set(id, { data: result, cachedAt: Date.now() });
@@ -734,12 +783,49 @@ export class DatabaseStorage implements IStorage {
     return created;
   }
 
-  async getTimelineEvents(): Promise<TimelineEvent[]> {
-    return timelineEventsCache.get(() =>
-      db.select().from(timelineEvents)
+  async getTimelineEvents(): Promise<any[]> {
+    return timelineEventsCache.get(async () => {
+      const events = await db.select().from(timelineEvents)
         .where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`)
-        .orderBy(asc(timelineEvents.date))
-    );
+        .orderBy(asc(timelineEvents.date));
+
+      // Collect all unique person IDs and document IDs across events
+      const allPersonIds = new Set<number>();
+      const allDocumentIds = new Set<number>();
+      for (const e of events) {
+        for (const pid of e.personIds ?? []) allPersonIds.add(pid);
+        for (const did of e.documentIds ?? []) allDocumentIds.add(did);
+      }
+
+      // Batch-fetch person names
+      const personMap = new Map<number, { id: number; name: string }>();
+      if (allPersonIds.size > 0) {
+        const personRows = await db.select({ id: persons.id, name: persons.name })
+          .from(persons)
+          .where(inArray(persons.id, Array.from(allPersonIds)));
+        for (const p of personRows) personMap.set(p.id, p);
+      }
+
+      // Batch-fetch document titles
+      const documentMap = new Map<number, { id: number; title: string }>();
+      if (allDocumentIds.size > 0) {
+        const docRows = await db.select({ id: documents.id, title: documents.title })
+          .from(documents)
+          .where(inArray(documents.id, Array.from(allDocumentIds)));
+        for (const d of docRows) documentMap.set(d.id, d);
+      }
+
+      // Enrich events with resolved person/document info
+      return events.map(e => ({
+        ...e,
+        persons: (e.personIds ?? [])
+          .map(pid => personMap.get(pid))
+          .filter(Boolean),
+        documents: (e.documentIds ?? [])
+          .map(did => documentMap.get(did))
+          .filter(Boolean),
+      }));
+    });
   }
 
   async createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent> {
