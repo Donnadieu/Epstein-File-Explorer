@@ -38,7 +38,7 @@ export interface IStorage {
   getStats(): Promise<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
-  searchPages(query: string, page: number, limit: number): Promise<{
+  searchPages(query: string, page: number, limit: number, useOrMode?: boolean): Promise<{
     results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string }[];
     total: number; page: number; totalPages: number;
   }>;
@@ -966,7 +966,7 @@ export class DatabaseStorage implements IStorage {
     return result;
   }
 
-  async searchPages(query: string, page: number, limit: number) {
+  async searchPages(query: string, page: number, limit: number, useOrMode = false) {
     const offset = (page - 1) * limit;
 
     // Mirror r2Filter() logic as raw SQL for the JOIN
@@ -974,11 +974,16 @@ export class DatabaseStorage implements IStorage {
       ? `d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
       : `(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
 
+    // useOrMode: use to_tsquery with pre-formatted query (supports OR); default: websearch_to_tsquery
+    const tsquery = useOrMode
+      ? sql`to_tsquery('english', ${query})`
+      : sql`websearch_to_tsquery('english', ${query})`;
+
     const countResult: any = await db.execute(sql`
       SELECT count(*)::int AS total
       FROM document_pages dp
       JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ websearch_to_tsquery('english', ${query})
+      WHERE dp.search_vector @@ ${tsquery}
         AND ${sql.raw(r2Raw)}
     `);
     const total: number = (countResult.rows ?? countResult)[0]?.total ?? 0;
@@ -986,13 +991,13 @@ export class DatabaseStorage implements IStorage {
     const rawResult: any = await db.execute(sql`
       SELECT dp.document_id, d.title, d.document_type, d.data_set,
              dp.page_number,
-             ts_headline('english', dp.content, websearch_to_tsquery('english', ${query}),
+             ts_headline('english', dp.content, ${tsquery},
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
-             ts_rank(dp.search_vector, websearch_to_tsquery('english', ${query})) AS rank
+             ts_rank(dp.search_vector, ${tsquery}) AS rank
       FROM document_pages dp
       JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ websearch_to_tsquery('english', ${query}) AND ${sql.raw(r2Raw)}
+      WHERE dp.search_vector @@ ${tsquery} AND ${sql.raw(r2Raw)}
       ORDER BY rank DESC, dp.document_id, dp.page_number
       LIMIT ${limit} OFFSET ${offset}
     `);

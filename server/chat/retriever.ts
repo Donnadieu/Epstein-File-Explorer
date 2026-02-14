@@ -1,5 +1,6 @@
 import type { Person, ChatCitation, AIAnalysisListItem, AIAnalysisDocument } from "@shared/schema";
 import { storage } from "../storage";
+import { extractSearchQuery, buildTsQuery, type ExtractedQuery } from "./extractor";
 
 export interface RetrievalResult {
   contextText: string;
@@ -70,24 +71,64 @@ function stripHtmlTags(html: string): string {
   return html.replace(/<[^>]+>/g, "");
 }
 
+function matchesPersonByName(name: string, person: Person): boolean {
+  const needle = name.toLowerCase();
+  if (person.name.toLowerCase().includes(needle)) return true;
+  if (person.aliases) {
+    for (const alias of person.aliases) {
+      if (alias.toLowerCase().includes(needle)) return true;
+    }
+  }
+  return false;
+}
+
 export async function retrieveContext(query: string): Promise<RetrievalResult> {
   const keywords = extractKeywords(query);
   if (keywords.length === 0) {
     return { contextText: "", citations: [], retrievedDocumentIds: [] };
   }
 
-  const allPersons = await loadPersons();
-  const [pageResults, analysisList] = await Promise.all([
-    storage.searchPages(query, 1, 20),
+  // Run LLM extraction in parallel with loading persons and analysis list
+  let extracted: ExtractedQuery | null = null;
+  const [extractionResult, allPersons, analysisList] = await Promise.all([
+    extractSearchQuery(query).catch(() => null),
+    loadPersons(),
     storage.getAIAnalysisList(),
   ]);
+  extracted = extractionResult;
 
-  // Step 1: Find matched persons from keyword matching
+  // Build search terms: prefer LLM-extracted terms, fall back to keyword extraction
+  const searchTerms =
+    extracted && extracted.searchTerms.length > 0
+      ? extracted.searchTerms
+      : keywords;
+
+  // Use buildTsQuery + OR mode for extracted terms; fall back to raw query for websearch_to_tsquery
+  let pageResults;
+  const tsQuery = buildTsQuery(searchTerms);
+  if (tsQuery) {
+    pageResults = await storage.searchPages(tsQuery, 1, 20, true);
+  } else {
+    pageResults = await storage.searchPages(query, 1, 20);
+  }
+
+  // Step 1: Find matched persons — prefer LLM-extracted names, fall back to keywords
   const matchedPersonIds = new Set<number>();
 
-  for (const person of allPersons) {
-    if (matchesPersonName(keywords, person)) {
-      matchedPersonIds.add(person.id);
+  if (extracted && extracted.personNames.length > 0) {
+    for (const person of allPersons) {
+      for (const name of extracted.personNames) {
+        if (matchesPersonByName(name, person)) {
+          matchedPersonIds.add(person.id);
+          break;
+        }
+      }
+    }
+  } else {
+    for (const person of allPersons) {
+      if (matchesPersonName(keywords, person)) {
+        matchedPersonIds.add(person.id);
+      }
     }
   }
 
