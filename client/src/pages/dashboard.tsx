@@ -136,6 +136,7 @@ export default function Dashboard() {
   const { data: stats, isLoading: statsLoading } = useQuery<{
     personCount: number;
     documentCount: number;
+    pageCount: number;
     connectionCount: number;
     eventCount: number;
   }>({
@@ -185,7 +186,7 @@ export default function Dashboard() {
         ) : (
           <>
             <StatCard icon={Users} label="People" value={stats?.personCount || 0} sublabel="Named individuals" href="/people" />
-            <StatCard icon={FileText} label="Documents" value={stats?.documentCount || 0} sublabel="Public records" href="/documents" />
+            <StatCard icon={FileText} label="Pages" value={stats?.pageCount || 0} sublabel="Across all documents" href="/documents" />
             <StatCard icon={Network} label="Connections" value={stats?.connectionCount || 0} sublabel="Mapped relationships" href="/network" />
             <StatCard icon={Clock} label="Events" value={stats?.eventCount || 0} sublabel="Timeline entries" href="/timeline" />
           </>
