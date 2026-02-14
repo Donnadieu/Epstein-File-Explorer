@@ -163,15 +163,19 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
   console.log(`Loading AI results from ${files.length} files...`);
 
-  let personsLoaded = 0;
-  let connectionsLoaded = 0;
-  let eventsLoaded = 0;
+  let personsCreated = 0;
+  let personsUpdated = 0;
+  let connectionsCreated = 0;
+  let connectionsUpdated = 0;
+  let eventsCreated = 0;
+  let eventsUpdated = 0;
   let docLinksCreated = 0;
+  let docLinksUpdated = 0;
 
-  const existingPairs = new Set<string>();
+  const existingPairs = new Map<string, number>(); // pairKey -> connection id
   const existingConns = await db.select().from(connections);
   for (const c of existingConns) {
-    existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
+    existingPairs.set(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`, c.id);
   }
 
   for (const file of files) {
@@ -190,21 +194,36 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           .where(sql`LOWER(${persons.name}) = LOWER(${mention.name})`)
           .limit(1);
 
+        const newDesc = (mention.context || "").substring(0, 500);
+        const status = inferStatusFromCategory(mention.category, mention.role);
+
         if (existing.length === 0) {
-          const status = inferStatusFromCategory(mention.category, mention.role);
           try {
             await db.insert(persons).values({
               name: mention.name,
               category: mention.category,
               role: mention.role,
-              description: (mention.context || "").substring(0, 500),
+              description: newDesc,
               status,
               documentCount: 0,
               connectionCount: 0,
             });
-            personsLoaded++;
+            personsCreated++;
           } catch {
             /* skip duplicates */
+          }
+        } else {
+          // Update if new data is richer
+          const ex = existing[0];
+          const updates: Record<string, any> = {};
+          if (mention.category && (!ex.category || ex.category === "unknown")) updates.category = mention.category;
+          if (mention.role && (!ex.role || ex.role === "unknown")) updates.role = mention.role;
+          if (newDesc && newDesc.length > (ex.description?.length || 0)) updates.description = newDesc;
+          if (status !== "named" && ex.status === "named") updates.status = status;
+
+          if (Object.keys(updates).length > 0) {
+            await db.update(persons).set(updates).where(eq(persons.id, ex.id));
+            personsUpdated++;
           }
         }
       }
@@ -225,19 +244,33 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
         if (person1 && person2) {
           const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
-          if (!existingPairs.has(pairKey)) {
+          const newDesc = (conn.description || "").substring(0, 500);
+          const existingId = existingPairs.get(pairKey);
+
+          if (existingId === undefined) {
             try {
-              await db.insert(connections).values({
+              const [inserted] = await db.insert(connections).values({
                 personId1: person1.id,
                 personId2: person2.id,
                 connectionType: conn.relationshipType,
-                description: (conn.description || "").substring(0, 500),
+                description: newDesc,
                 strength: conn.strength,
-              });
-              existingPairs.add(pairKey);
-              connectionsLoaded++;
+              }).returning({ id: connections.id });
+              existingPairs.set(pairKey, inserted.id);
+              connectionsCreated++;
             } catch {
               /* skip */
+            }
+          } else {
+            // Update if new data provides more detail
+            const updates: Record<string, any> = {};
+            if (conn.relationshipType) updates.connectionType = conn.relationshipType;
+            if (newDesc) updates.description = newDesc;
+            if (conn.strength) updates.strength = conn.strength;
+
+            if (Object.keys(updates).length > 0) {
+              await db.update(connections).set(updates).where(eq(connections.id, existingId));
+              connectionsUpdated++;
             }
           }
         }
@@ -246,15 +279,6 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
       // --- Events ---
       for (const event of data.events) {
         try {
-          // Check for existing event with same date + title
-          const existingEvent = await db
-            .select({ id: timelineEvents.id })
-            .from(timelineEvents)
-            .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
-            .limit(1);
-
-          if (existingEvent.length > 0) continue;
-
           const personIds: number[] = [];
           for (const name of event.personsInvolved) {
             const [p] = await db
@@ -265,15 +289,36 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
             if (p) personIds.push(p.id);
           }
 
-          await db.insert(timelineEvents).values({
-            date: event.date,
-            title: event.title,
-            description: event.description,
-            category: event.category,
-            significance: event.significance,
-            personIds,
-          });
-          eventsLoaded++;
+          // Check for existing event with same date + title
+          const existingEvent = await db
+            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance })
+            .from(timelineEvents)
+            .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
+            .limit(1);
+
+          if (existingEvent.length === 0) {
+            await db.insert(timelineEvents).values({
+              date: event.date,
+              title: event.title,
+              description: event.description,
+              category: event.category,
+              significance: event.significance,
+              personIds,
+            });
+            eventsCreated++;
+          } else {
+            const ex = existingEvent[0];
+            const updates: Record<string, any> = {};
+            if (event.description && event.description.length > (ex.description?.length || 0)) updates.description = event.description;
+            if (event.category) updates.category = event.category;
+            if (event.significance && event.significance > (ex.significance ?? 0)) updates.significance = event.significance;
+            if (personIds.length > 0) updates.personIds = personIds;
+
+            if (Object.keys(updates).length > 0) {
+              await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));
+              eventsUpdated++;
+            }
+          }
         } catch {
           /* skip duplicates */
         }
@@ -298,6 +343,7 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           .limit(1);
 
         if (doc) {
+          const newContext = (mention.context || "").substring(0, 500);
           const existingLink = await db
             .select()
             .from(personDocuments)
@@ -309,12 +355,15 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
               await db.insert(personDocuments).values({
                 personId: person.id,
                 documentId: doc.id,
-                context: (mention.context || "").substring(0, 500),
+                context: newContext,
               });
               docLinksCreated++;
             } catch {
               /* skip */
             }
+          } else if (newContext && newContext.length > (existingLink[0].context?.length || 0)) {
+            await db.update(personDocuments).set({ context: newContext }).where(eq(personDocuments.id, existingLink[0].id));
+            docLinksUpdated++;
           }
         }
       }
@@ -329,8 +378,8 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
     }
   }
 
-  console.log(`  AI Results loaded: ${personsLoaded} persons, ${connectionsLoaded} connections, ${eventsLoaded} events, ${docLinksCreated} document links`);
-  return { persons: personsLoaded, connections: connectionsLoaded, events: eventsLoaded, docLinks: docLinksCreated };
+  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created, ${connectionsUpdated} updated | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created, ${docLinksUpdated} updated`);
+  return { persons: personsCreated + personsUpdated, connections: connectionsCreated + connectionsUpdated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated + docLinksUpdated };
 }
 
 function inferStatusFromCategory(category: string, role: string): string {
