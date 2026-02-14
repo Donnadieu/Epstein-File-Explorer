@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00067091.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Incident Report",
+  "dateOriginal": "2020-08-20",
+  "summary": "An FBI incident report documenting a call from a victim of Jeffrey Epstein on August 20, 2020. The victim offered to provide information on Ghislaine Maxwell and requested assistance obtaining a 1998 flight record from St. Thomas to Newark. The FBI attempted to contact the victim but was unsuccessful, and the case was closed as 'Information Only' in October 2021.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Identified as the perpetrator from whom the caller was a victim in 1998.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "The caller wanted to provide information about her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "The victim's offer to provide information on Maxwell in relation to being Epstein's victim suggests an investigative link between them.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "The document frames the caller as a victim of Epstein and a potential witness against Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1998",
+      "title": "Alleged Victimization",
+      "description": "The caller states she was a victim of Jeffrey Epstein.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "1998",
+      "title": "Flight from St. Thomas to Newark",
+      "description": "The victim seeks a flight record for a trip from St. Thomas to Newark, which she believes would be helpful for her case.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-08-20",
+      "title": "Victim Contacts FBI",
+      "description": "A victim of Jeffrey Epstein calls the FBI Los Angeles field office to offer information on Ghislaine Maxwell and request assistance.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-10-07",
+      "title": "Case Closed",
+      "description": "The FBI incident is closed as 'Information Only' after unsuccessful attempts to re-contact the victim.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "St. Thomas",
+    "Newark",
+    "Los Angeles, CA",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "A victim of Jeffrey Epstein contacted the FBI in August 2020, offering to testify and provide information on Ghislaine Maxwell.",
+    "The victim sought FBI assistance in obtaining a 1998 flight record from St. Thomas to Newark, indicating the flight may be relevant to her victimization.",
+    "The FBI attempted but failed to re-establish contact with the victim, leading to the case being closed over a year later as 'Information Only'.",
+    "The document references an existing FBI case number (SOD-NY-3027571), indicating this information was logged in relation to a broader investigation.",
+    "The report is classified as LAW ENFORCEMENT SENSITIVE (LES), restricting its use and distribution."
+  ],
+  "analyzedAt": "2026-02-14T00:06:15.033Z"
+}

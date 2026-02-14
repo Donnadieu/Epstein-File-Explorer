@@ -1,0 +1,158 @@
+{
+  "fileName": "EFTA00066941.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-01-08",
+  "summary": "Email correspondence between attorneys regarding the case US v. Tartaglione, discussing requests for MCC legal visit logs and inmate count logs related to Nicholas Tartaglione, and coordination with the U.S. Attorney's Office. The emails involve defense counsel and prosecutors, referencing a Protective Order and a FOIA request from the NY Times.",
+  "persons": [
+    {
+      "name": "Aida Leisenring",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Barket, Epstein, Kearon, Aldea & LoTurco LLP, sending an email requesting MCC legal visit logs and inmate count logs for the Tartaglione case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael Bachrach",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney sending and receiving emails regarding the request for MCC attorney/legal visitation logs for Nicholas Tartaglione and coordination with the U.S. Attorney's Office.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Bruce Barket",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Barket, Epstein, Kearon, Aldea & LoTurco LLP, copied on emails regarding the Tartaglione case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Inmate (#78514-054) whose MCC attorney/legal visitation logs are being requested by defense counsel in the case US v. Tartaglione.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jason",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Deputy Chief, White Plains Division, United States Attorney's Office, Southern District of New York, coordinating a call and involved in the document request.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Maurene",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Recipient of emails from defense counsel regarding the request for MCC logs in the Tartaglione case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Margery Feinzig",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Firewall counsel assigned to the Tartaglione case, mentioned as a contact at the Civil Division of the U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ilan Graff",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Firewall counsel assigned to the Tartaglione case, mentioned as a contact at the Civil Division of the U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Diaz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Copied on emails regarding the Tartaglione case, appears to be part of the legal team.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Aida Leisenring",
+      "person2": "Bruce Barket",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at Barket, Epstein, Kearon, Aldea & LoTurco LLP, working on the Tartaglione case.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Bachrach",
+      "person2": "Aida Leisenring",
+      "relationshipType": "colleague",
+      "description": "Both are defense attorneys communicating about requests for documents in the Tartaglione case.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Bachrach",
+      "person2": "Jason",
+      "relationshipType": "legal-adversary",
+      "description": "Defense attorney communicating with prosecutor regarding document requests and case coordination.",
+      "strength": 3
+    },
+    {
+      "person1": "Aida Leisenring",
+      "person2": "Jason",
+      "relationshipType": "legal-adversary",
+      "description": "Defense attorney making requests to prosecutor for MCC logs in the Tartaglione case.",
+      "strength": 3
+    },
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Michael Bachrach",
+      "relationshipType": "attorney-client",
+      "description": "Michael Bachrach is defense counsel requesting visitation logs for inmate Nicholas Tartaglione.",
+      "strength": 4
+    },
+    {
+      "person1": "Margery Feinzig",
+      "person2": "Ilan Graff",
+      "relationshipType": "colleague",
+      "description": "Both are firewall counsel assigned to the Tartaglione case at the Civil Division of the U.S. Attorney's Office.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-07",
+      "title": "Conference Call on Tartaglione Case",
+      "description": "A conference call was held involving attorneys to discuss issues related to the Protective Order and BOP documents in US v. Tartaglione.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Bachrach",
+        "Jason",
+        "Maurene",
+        "Aida Leisenring",
+        "Bruce Barket",
+        "John Diaz"
+      ]
+    },
+    {
+      "date": "2021-01-08",
+      "title": "Request for MCC Logs",
+      "description": "Defense counsel formally requested MCC legal visit logs and inmate count logs for Nicholas Tartaglione from the U.S. Attorney's Office.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Aida Leisenring",
+        "Michael Bachrach",
+        "Jason",
+        "Maurene"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC (Metropolitan Correctional Center)",
+    "White Plains Division, United States Attorney's Office, Southern District of New York"
+  ],
+  "keyFacts": [
+    "Defense attorneys are requesting MCC legal visit logs and inmate count logs for Nicholas Tartaglione (#78514-054) from the U.S. Attorney's Office.",
+    "The requests are related to a 'death-authorized case' and are part of preparing for the penalty phase.",
+    "The U.S. Attorney's Office is responding to a NY Times FOIA request and may have additional BOP records not previously reviewed by defense counsel.",
+    "A Protective Order (Dkt No. 119) regarding BOP documents was previously entered in the case US v. Tartaglione.",
+    "Firewall counsel (Margery Feinzig and Ilan Graff) are assigned to handle sensitive documents to avoid conflicts of interest."
+  ],
+  "analyzedAt": "2026-02-13T23:50:31.005Z"
+}

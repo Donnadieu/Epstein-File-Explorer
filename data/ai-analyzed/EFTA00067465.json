@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00067465.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2008-05-30",
+  "summary": "This is a chain of emails from May 2008 between prosecutors/investigators discussing a witness (Mindy) who will invoke her Fifth Amendment right unless granted immunity, and a separate victim who reported that Jeffrey Epstein told her he had sex with a girl named Mindy and didn't care about her age. The emails also discuss scheduling a grand jury appearance and coordination with Epstein's attorneys.",
+  "persons": [
+    {
+      "name": "Mindy",
+      "role": "Potential witness/victim",
+      "category": "victim",
+      "context": "A person who was initially classified as a victim until Epstein's attorneys complained. She is represented by an attorney and will invoke her Fifth Amendment right unless granted immunity. She is also reported to have been a minor with whom Epstein had sex.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation. His attorneys are involved in discussions with prosecutors. A witness reports he had sex with Mindy when she was a minor and stated he didn't care about age.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Tommy",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing Mindy. He informed prosecutors she would invoke her Fifth Amendment right without immunity.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jason",
+      "role": "Prosecutor/Investigator",
+      "category": "law enforcement",
+      "context": "Mentioned as someone who would attempt to interview a witness prior to putting her in front of the grand jury.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tommy",
+      "person2": "Mindy",
+      "relationshipType": "attorney-client",
+      "description": "Tommy is representing Mindy in the Epstein investigation, as he informed prosecutors about her intent to invoke the Fifth Amendment.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mindy",
+      "relationshipType": "victim-perpetrator",
+      "description": "A witness reports that Epstein told her he had sex with Mindy, who was likely 15 or 16 at the time, and that Epstein stated he didn't care about age.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-03",
+      "title": "Scheduled Grand Jury Date",
+      "description": "A grand jury date was scheduled, but Mindy's attorney informed prosecutors she would not be able to make it and would invoke her Fifth Amendment right without immunity.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mindy",
+        "Tommy"
+      ]
+    },
+    {
+      "date": "2008-05",
+      "title": "Witness Interview Reveals Abuse",
+      "description": "A girl was interviewed who reported that Epstein told her he had sex with Mindy when Mindy was likely 15 or 16, and that Epstein said he didn't care about age.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Mindy"
+      ]
+    },
+    {
+      "date": "2008-05-30",
+      "title": "Email Coordination on Witness",
+      "description": "Prosecutors exchange emails discussing Mindy's stance, scheduling a grand jury, and a meeting to go over case details.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A witness named Mindy, represented by attorney Tommy, will invoke her Fifth Amendment right unless granted immunity, complicating her testimony.",
+    "A separate witness reported that Jeffrey Epstein told her he had sex with Mindy when Mindy was likely 15 or 16 years old.",
+    "Epstein reportedly told this witness he 'doesn't care about age,' directly contradicting potential defenses about his knowledge of victims' ages.",
+    "Mindy was initially classified as a victim until Epstein's attorneys complained, indicating early defense interference in victim classification.",
+    "Prosecutors were coordinating grand jury scheduling and considering a video interview with Mindy as an alternative to grand jury testimony."
+  ],
+  "analyzedAt": "2026-02-14T00:54:40.745Z"
+}

@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00066557.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-11-03",
+  "summary": "This document is an email chain from November 2020 among U.S. Attorney's Office (SDNY) staff and contractors regarding the privilege review and release of data extracted from Jeffrey Epstein's electronic devices (phones and iPads). It details the process of removing potentially privileged materials before releasing data to the prosecution team to meet a discovery deadline.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Attorney (mentioned in chat)",
+      "category": "legal",
+      "context": "Mentioned as the recipient of a potentially privileged chat that was removed from device 1884 during the privilege review process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation/data owner",
+      "category": "key figure",
+      "context": "The data being reviewed is extracted from his phones and iPads as part of the legal case against him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Santos",
+      "role": "Investigative Analyst",
+      "category": "law enforcement",
+      "context": "An Investigative Analyst at the U.S. Attorney's Office, SDNY, who volunteers to help with the Epstein privilege review task.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sarah Drescher",
+      "role": "Contractor (USANYS)",
+      "category": "staff",
+      "context": "A contractor with the U.S. Attorney's Office who is tasked with copying and mailing a drive containing Epstein's device data.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Reggie",
+      "role": "Staff/Technician",
+      "category": "staff",
+      "context": "Mentioned as having generated reports the previous week that were subject to responsiveness review.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maurene",
+      "role": "Legal Staff/Reviewer",
+      "category": "legal",
+      "context": "A person involved in the responsiveness review of the extracted data, seeking guidance on generating reports.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sunny",
+      "role": "Staff/Technician",
+      "category": "staff",
+      "context": "Asked if they still have a copy of the drive containing Epstein's device data in the office to help coordinate file preparation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "attorney-client",
+      "description": "A chat between Epstein and Indyke was identified as potentially privileged and removed from the data review, indicating a legal communication.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-09",
+      "title": "Discovery Deadline",
+      "description": "The prosecution team had a deadline to produce responsive materials, driving the urgency of the privilege and responsiveness reviews.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-11-03",
+      "title": "Device Data Release",
+      "description": "Multiple devices (1872, 1883, 1869, 1884) had their data processed and released to the prosecution team after removal of potentially privileged materials.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-08-2020-11",
+      "title": "Epstein Device Data Privilege Review",
+      "description": "An ongoing process where the U.S. Attorney's Office staff and contractors review data from Epstein's phones and iPads to identify and remove attorney-client privileged communications before releasing data to the prosecution team.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Sarah Drescher",
+        "Santos",
+        "Reggie",
+        "Maurene",
+        "Sunny"
+      ]
+    }
+  ],
+  "locations": [
+    "U.S. Attorney's Office, SDNY",
+    "StAndrews Shared (network directory)",
+    "D drive (local computer drive)"
+  ],
+  "keyFacts": [
+    "Data from Jeffrey Epstein's electronic devices (phones/iPads labeled 1871, 1872, 1869, 1884, 1883) was being reviewed for attorney-client privilege before release to the prosecution team.",
+    "A chat between Jeffrey Epstein and his attorney Darren Indyke was specifically removed as potentially privileged from the dataset of device 1884.",
+    "The review was on a tight schedule to meet a November 9, 2020, discovery deadline, requiring completion of responsiveness review by November 5.",
+    "The process involved removing specific numbers of emails and chats flagged as potentially privileged (PP) from various device reports.",
+    "The correspondence reveals internal logistical coordination, including copying drives and setting up shared directories, within the U.S. Attorney's Office for the Epstein case."
+  ],
+  "analyzedAt": "2026-02-13T23:46:18.488Z"
+}

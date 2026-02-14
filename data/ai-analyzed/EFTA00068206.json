@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00068206.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2018-12-19",
+  "summary": "This is an email from an Assistant U.S. Attorney in the Southern District of New York (SDNY) providing an update on the Epstein investigation. It discusses coordination with the Southern District of Florida (SDFL) U.S. Attorney's Office, which is walled off due to conflicts from the prior non-prosecution agreement and an ongoing civil lawsuit. The email also mentions plans to contact victim attorneys.",
+  "persons": [
+    {
+      "name": "Marlier",
+      "role": "Colleague/Contact",
+      "category": "other",
+      "context": "Mentioned as someone the recipient spoke with about the ODAG authorization and investigation to-do list, including contacting Florida agents.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney Southern District of New York",
+      "role": "Author of the email",
+      "category": "legal",
+      "context": "The sender of the email, updating on the status of the Epstein investigation, coordination with SDFL, and plans to contact victim attorneys.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Criminal Division chief",
+      "role": "Criminal Division Chief (SDNY)",
+      "category": "legal",
+      "context": "Reached out to the Southern District of Florida (SDFL) on behalf of the SDNY investigation to discuss access to Florida investigative materials.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SDFL criminal chief",
+      "role": "Criminal Chief, U.S. Attorney's Office for the Southern District of Florida",
+      "category": "legal",
+      "context": "Acknowledged the SDNY investigation and stated the SDFL office is fully conflicted and walled off from any Epstein-related investigation due to the prior non-prosecution agreement and ongoing lawsuit.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant U.S. Attorney Southern District of New York",
+      "person2": "Criminal Division chief",
+      "relationshipType": "colleague",
+      "description": "The AUSA mentions that 'we asked our Criminal Division chief to reach out to SDFL', indicating a supervisory or collaborative working relationship within the SDNY U.S. Attorney's Office.",
+      "strength": 3
+    },
+    {
+      "person1": "Criminal Division chief",
+      "person2": "SDFL criminal chief",
+      "relationshipType": "professional contact",
+      "description": "The SDNY Criminal Division chief called the SDFL criminal chief to advise them of the SDNY's active investigation and discuss access to Florida FBI materials.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant U.S. Attorney Southern District of New York",
+      "person2": "Marlier",
+      "relationshipType": "colleague",
+      "description": "The email indicates the recipient had spoken with Marlier earlier the same day about investigation authorizations and priorities.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-12-19",
+      "title": "SDNY-SDFL Coordination on Epstein Investigation",
+      "description": "The SDNY U.S. Attorney's Office coordinates with the SDFL U.S. Attorney's Office, which declares itself fully conflicted and walled off from the Epstein investigation due to the prior non-prosecution agreement and an ongoing civil lawsuit.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Criminal Division chief",
+        "SDFL criminal chief",
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2018-12",
+      "title": "SDNY Investigation Authorization and Outreach",
+      "description": "The SDNY has received ODAG authorization to move forward with its Epstein investigation and is beginning to carefully reach out to victim attorneys.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY)",
+    "Southern District of Florida (SDFL)",
+    "Florida"
+  ],
+  "keyFacts": [
+    "The SDNY had an active criminal investigation into Jeffrey Epstein as of December 2018, authorized by the Office of the Deputy Attorney General (ODAG).",
+    "The U.S. Attorney's Office for the Southern District of Florida (SDFL) considered itself 'fully conflicted and walled off' from any Epstein investigation due to its prior role in the non-prosecution agreement and an ongoing civil lawsuit seeking to overturn that agreement.",
+    "SDNY investigators were instructed to avoid contact with SDFL line assistants and any Florida agents who had been involved in the civil lawsuit (e.g., deposed or subpoenaed) to prevent conflicts.",
+    "The SDNY planned to obtain investigative materials from Florida FBI agents and to begin contacting attorneys for victims."
+  ],
+  "analyzedAt": "2026-02-14T02:08:26.477Z"
+}

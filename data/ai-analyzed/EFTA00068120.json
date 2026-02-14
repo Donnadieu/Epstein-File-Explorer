@@ -1,0 +1,184 @@
+{
+  "fileName": "EFTA00068120.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-13",
+  "summary": "This document is a chain of emails from February 2020 among staff at the U.S. Attorney's Office for the Southern District of New York (SDNY) discussing travel arrangements for prosecutors to conduct witness interviews related to the Epstein investigation (case 2018R01618). The emails reference multiple past and planned trips to locations including Pensacola (FL), Los Angeles, West Palm Beach (FL), and Stockholm (Sweden) for the purpose of interviewing victims and witnesses.",
+  "persons": [
+    {
+      "name": "Darlene Alleyne",
+      "role": "Legal Assistant, Public Corruption, U.S. Attorney's Office (SDNY)",
+      "category": "staff",
+      "context": "Coordinates travel bookings and logistics for prosecutors working on the Epstein investigation, ensuring flights are refundable per office policy.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Michele Duncan",
+      "role": "Travel/Administrative Staff, U.S. Attorney's Office (SDNY)",
+      "category": "staff",
+      "context": "Provides guidance on travel procedures, advising to avoid penalty fares and use unrestricted coach fares for domestic travel.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Alex",
+      "role": "Assistant U.S. Attorney, Southern District of New York",
+      "category": "legal",
+      "context": "Lead prosecutor requesting travel approvals for witness interviews in the Epstein investigation; coordinates with colleagues Alison and Maurene.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Cynthia Perez",
+      "role": "Staff, U.S. Attorney's Office (SDNY)",
+      "category": "staff",
+      "context": "Copied on travel approval request emails, likely involved in administrative or oversight functions.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Edward Tyrrell",
+      "role": "Supervisory Official, U.S. Attorney's Office (SDNY)",
+      "category": "legal",
+      "context": "Approves travel requests for the Epstein investigation team, as indicated by his 'Approved' responses to multiple requests.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Alison",
+      "role": "Prosecutor/Investigator, U.S. Attorney's Office (SDNY)",
+      "category": "legal",
+      "context": "Frequently travels with Alex and Maurene to conduct victim and witness interviews for the Epstein investigation in various locations.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Maurene",
+      "role": "Prosecutor/Investigator, U.S. Attorney's Office (SDNY)",
+      "category": "legal",
+      "context": "Travels with the prosecution team for Epstein investigation interviews, mentioned in trips to West Palm Beach, Los Angeles, and Pensacola.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Nick Siu",
+      "role": "Staff, U.S. Attorney's Office (SDNY)",
+      "category": "staff",
+      "context": "Mentioned as the recipient for conference room payment requests related to the travel.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex",
+      "person2": "Alison",
+      "relationshipType": "colleague",
+      "description": "Frequent travel companions for witness interviews in the Epstein investigation, as indicated in multiple travel requests.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "Maurene",
+      "relationshipType": "colleague",
+      "description": "Travel together for Epstein investigation interviews, with Alex specifying trips where they will be paired.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "Edward Tyrrell",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Alex submits travel approval requests to Edward Tyrrell, who grants approval for trips related to the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Darlene Alleyne",
+      "person2": "Alex",
+      "relationshipType": "support-staff",
+      "description": "Darlene handles flight and hotel bookings for Alex's travel, communicating directly about refundable options and itineraries.",
+      "strength": 3
+    },
+    {
+      "person1": "Michele Duncan",
+      "person2": "Darlene Alleyne",
+      "relationshipType": "colleague",
+      "description": "Michele provides procedural travel guidance to Darlene regarding avoiding penalty fares and booking preferences.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison",
+      "person2": "Maurene",
+      "relationshipType": "colleague",
+      "description": "Both are part of the prosecution team traveling for the Epstein investigation, sometimes paired together for trips.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-19",
+      "title": "Witness Interview in Pensacola",
+      "description": "Planned travel by prosecutors Alex and Alison to Pensacola, Florida to interview a witness in the Epstein investigation, including booking a conference room at the Hilton Garden Inn.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Alison",
+        "Darlene Alleyne"
+      ]
+    },
+    {
+      "date": "2020-01-29",
+      "title": "Witness Interview near Stockholm",
+      "description": "Planned international travel by the prosecution team for an interview near Stockholm, Sweden, with an added international element requiring mindful booking of domestic-flagged carrier flights.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Edward Tyrrell"
+      ]
+    },
+    {
+      "date": "2019-12-16",
+      "title": "Interview(s) in Los Angeles",
+      "description": "Travel by the prosecution team to Los Angeles for an interview or possible interviews in the Epstein investigation, with approval for a conference room.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Alex"
+      ]
+    },
+    {
+      "date": "2019-11-04",
+      "title": "Interview in West Palm Beach",
+      "description": "Travel by Alex and Maurene to West Palm Beach, Florida for an interview in the Epstein investigation, with approval for a conference room.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Alex",
+        "Maurene"
+      ]
+    },
+    {
+      "date": "2019-06-12",
+      "title": "Victim Interview in Los Angeles",
+      "description": "Travel by the prosecution team (Alex, Alison, and/or Maurene) to Los Angeles for a victim interview in the Epstein investigation, with approval for a conference room.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Alison",
+        "Maurene"
+      ]
+    }
+  ],
+  "locations": [
+    "Pensacola, Florida",
+    "Los Angeles, California",
+    "West Palm Beach, Florida",
+    "Stockholm, Sweden",
+    "Fort Lauderdale, Florida",
+    "New York, NY (LGA)",
+    "Charlotte, NC (CLT)"
+  ],
+  "keyFacts": [
+    "The document reveals ongoing active investigation into the Epstein case (2018R01618) by the SDNY as of February 2020, involving extensive travel for witness and victim interviews.",
+    "Prosecutors traveled internationally (Sweden) and domestically (Florida, California) as part of the investigation, indicating a broad witness network.",
+    "The emails show meticulous bureaucratic procedures within the U.S. Attorney's Office for travel approvals, refundable flight policies, and conference room bookings for interviews.",
+    "Multiple prosecutors (Alex, Alison, Maurene) were actively involved in the investigation, conducting interviews in various locations over several months from 2019-2020.",
+    "The case is formally referenced as 'United States v. Epstein, 2018R01618, an investigation relating to enticement of minors for sexual activity'."
+  ],
+  "analyzedAt": "2026-02-14T02:02:31.047Z"
+}

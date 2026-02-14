@@ -1,0 +1,169 @@
+{
+  "fileName": "EFTA00067074.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-10-08",
+  "summary": "This is an FBI Guardian Complaint Form summarizing a 2020 anonymous tip to the FBI National Threat Operations Center (NTOC). The anonymous caller alleges that Greg Horvath and Jana Jaffe, owners of Villa Arabesque in Acapulco, Mexico, were involved in potential sex and drug trafficking in the early 2000s, and that their property hosted high-profile individuals with ties to Jeffrey Epstein. The document details disturbing events witnessed by the caller during a spring break visit, including the presence of an underage girl, a sexually explicit show at the Palladium club, and possible drugging.",
+  "persons": [
+    {
+      "name": "Greg Horvath",
+      "role": "Property owner, alleged trafficker",
+      "category": "associate",
+      "context": "Co-owner of Villa Arabesque in Acapulco with Jana Jaffe. The anonymous caller alleges he was involved in drug and/or sex trafficking in the early 2000s and used private jets to fly people to the villa.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jana Jaffe",
+      "role": "Property owner, alleged trafficker",
+      "category": "associate",
+      "context": "Co-owner of Villa Arabesque in Acapulco with Greg Horvath. The anonymous caller alleges she was involved in drug and/or sex trafficking in the early 2000s.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Doug Jaffe III",
+      "role": "Nephew of Jana Jaffe, witness/associate",
+      "category": "associate",
+      "context": "Nephew of Jana Jaffe who invited the anonymous caller to Villa Arabesque for spring break. He allegedly lied about the identity of a young girl at the villa and removed the incapacitated caller from a car.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Henry Kissinger",
+      "role": "High-profile individual",
+      "category": "political",
+      "context": "Mentioned as one of the high-profile individuals with ties to Jeffrey Epstein who was housed at Villa Arabesque.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused sex trafficker",
+      "category": "key figure",
+      "context": "Referenced in the document synopsis and as having ties to high-profile individuals who stayed at Villa Arabesque.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jordan Jaffe",
+      "role": "Brother of Doug Jaffe III",
+      "category": "associate",
+      "context": "Mentioned as the brother of Doug Jaffe III. His girlfriend, Tori LNU, warned the anonymous caller.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tori LNU",
+      "role": "Girlfriend of Jordan Jaffe",
+      "category": "witness",
+      "context": "Girlfriend of Jordan Jaffe who warned the anonymous caller to be very careful at Villa Arabesque, stating 'everyone who comes to stay... likes to take things too far.'",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Greg Horvath",
+      "person2": "Jana Jaffe",
+      "relationshipType": "business partners",
+      "description": "Co-owners of Villa Arabesque in Acapulco and alleged partners in potential trafficking activities.",
+      "strength": 5
+    },
+    {
+      "person1": "Jana Jaffe",
+      "person2": "Doug Jaffe III",
+      "relationshipType": "family",
+      "description": "Doug Jaffe III is identified as the nephew of Jana Jaffe.",
+      "strength": 4
+    },
+    {
+      "person1": "Doug Jaffe III",
+      "person2": "Jordan Jaffe",
+      "relationshipType": "family",
+      "description": "Identified as brothers.",
+      "strength": 3
+    },
+    {
+      "person1": "Jordan Jaffe",
+      "person2": "Tori LNU",
+      "relationshipType": "romantic",
+      "description": "Tori LNU is identified as the girlfriend of Jordan Jaffe.",
+      "strength": 3
+    },
+    {
+      "person1": "Greg Horvath",
+      "person2": "Henry Kissinger",
+      "relationshipType": "social/host",
+      "description": "Horvath and Jaffe used Villa Arabesque to house Henry Kissinger.",
+      "strength": 2
+    },
+    {
+      "person1": "Henry Kissinger",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Kissinger is described as having ties to Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2000s",
+      "title": "Alleged Trafficking at Villa Arabesque",
+      "description": "Anonymous caller alleges Greg Horvath and Jana Jaffe were involved in drug and/or sex trafficking from their property, Villa Arabesque, in Acapulco, Mexico.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Greg Horvath",
+        "Jana Jaffe"
+      ]
+    },
+    {
+      "date": "2000s",
+      "title": "Spring Break Visit to Villa Arabesque",
+      "description": "The anonymous caller, invited by Doug Jaffe III, visits Villa Arabesque during spring break. She observes armed guards, a young girl dressed inappropriately, large amounts of cocaine, and attends a sexually explicit show at the Palladium club.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Anonymous Caller",
+        "Doug Jaffe III",
+        "Greg Horvath",
+        "Jana Jaffe"
+      ]
+    },
+    {
+      "date": "2000s",
+      "title": "\"666 Dance with the Devil\" Show",
+      "description": "At the Palladium club in Acapulco, a show called '666 Dance with the Devil' featured young girls (possibly underage) being groped, having their bras removed, breasts fondled, and being bent over to show their buttocks to the audience.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2000s",
+      "title": "Possible Drugging at Palladium",
+      "description": "During a subsequent visit to Palladium, the anonymous caller was given bottle service, felt unusually impaired, was put in a car by the club owner, and driven back to Villa Arabesque where she lost consciousness.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Anonymous Caller"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "title": "FBI NTOC Tip",
+      "description": "An anonymous caller contacted the FBI National Threat Operations Center to report potential sex trafficking by Greg Horvath and Jana Jaffe.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Anonymous Caller"
+      ]
+    }
+  ],
+  "locations": [
+    "Villa Arabesque, Acapulco, Mexico",
+    "Olympic Tower, New York, NY",
+    "Palladium (club), Acapulco, Mexico"
+  ],
+  "keyFacts": [
+    "An anonymous tipster alleged that Greg Horvath and Jana Jaffe, owners of Villa Arabesque in Acapulco, were involved in drug and/or sex trafficking in the early 2000s.",
+    "The tipster claimed Villa Arabesque housed high-profile individuals with ties to Jeffrey Epstein, specifically naming Henry Kissinger.",
+    "During a visit, the tipster witnessed a girl approximately 11-12 years old dressed scandalously on the property, who was later used in the villa's advertisements.",
+    "The tipster attended a show at the Palladium club called '666 Dance with the Devil,' which allegedly involved the sexualized groping and humiliation of young, possibly underage, girls on stage.",
+    "The tipster suspects she was drugged at the Palladium club, was driven back to Villa Arabesque while incapacitated, and was warned by another guest that people at the villa 'like to take things too far.'"
+  ],
+  "analyzedAt": "2026-02-14T00:03:58.945Z"
+}

@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00068041.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-12",
+  "summary": "This is an email from July 12, 2019, forwarding police reports related to an obstruction incident. The email references reports about a vehicle driving off the road and phone toll records that allegedly corroborate an account where Beale called Hall threatening her not to talk, and that Beale spoke to Epstein's camp before making the call.",
+  "persons": [
+    {
+      "name": "Beale",
+      "role": "Individual making threatening call",
+      "category": "associate",
+      "context": "Allegedly called Hall threatening her not to talk, and reportedly spoke to Epstein's camp before making the call.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Hall",
+      "role": "Recipient of threatening call",
+      "category": "witness",
+      "context": "Her account is referenced, stating that Beale called her threatening her not to talk.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Epstein",
+      "role": "Central figure in the case",
+      "category": "key figure",
+      "context": "His 'camp' is referenced as having been spoken to by Beale prior to Beale's threatening call to Hall.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Beale",
+      "person2": "Hall",
+      "relationshipType": "victim-perpetrator",
+      "description": "Beale allegedly called Hall threatening her not to talk, as referenced in phone toll reports.",
+      "strength": 4
+    },
+    {
+      "person1": "Beale",
+      "person2": "Epstein",
+      "relationshipType": "associate",
+      "description": "Beale reportedly spoke to Epstein's camp before making the threatening call to Hall.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-12",
+      "title": "Email forwarding obstruction reports",
+      "description": "An email is sent forwarding police reports related to an obstruction incident, including a report about phone tolls corroborating Hall's account of a threatening call from Beale.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Beale",
+        "Hall",
+        "Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Threatening call from Beale to Hall",
+      "description": "Beale allegedly called Hall threatening her not to talk, an account corroborated by phone toll records.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Beale",
+        "Hall"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Beale contacts Epstein's camp",
+      "description": "Beale reportedly spoke to Epstein's camp before making the threatening call to Hall.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Beale",
+        "Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The email forwards police reports related to an 'obstruction' incident, including a report about a vehicle 'driving off the road'.",
+    "Phone toll records are referenced as corroborating Hall's account that Beale called her threatening her not to talk.",
+    "The email states that Beale spoke to 'Epstein's camp' before making the threatening call to Hall.",
+    "The attached report filename suggests redactions related to an obstruction investigation (PBPD_Reports--obstruction_[NEEDJO_REDACT].pdf)."
+  ],
+  "analyzedAt": "2026-02-14T01:48:00.135Z"
+}

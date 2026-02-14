@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA00067531.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2008-07-07",
+  "summary": "This is a legal petition filed on July 7, 2008, by an anonymous victim ('Jane Doe') through her attorneys, seeking enforcement of her rights under the Crime Victims' Rights Act (CVRA). The petition alleges the victim was a minor when she was sexually exploited by Jeffrey Epstein and argues the U.S. Attorney's Office is negotiating a plea deal with Epstein without notifying or conferring with the victim, thereby violating her statutory rights.",
+  "persons": [
+    {
+      "name": "Jane Doe",
+      "role": "Petitioner/Victim",
+      "category": "victim",
+      "context": "An anonymous adult petitioner who, as a minor, was a victim of federal sex crimes allegedly committed by Jeffrey Epstein. She is seeking enforcement of her rights under the Crime Victims' Rights Act.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant/Accused",
+      "category": "key figure",
+      "context": "The individual accused of committing federal sex crimes against the petitioner and other minors. The document states he pleaded guilty to state charges on June 30, 2008, and is engaged in federal plea negotiations.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney for Petitioner",
+      "category": "legal",
+      "context": "The attorney who filed this petition on behalf of Jane Doe from The Law Office of Brad Edwards & Associates, LLC. He signed and certified service of the document.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ann Marie C. Villafana",
+      "role": "Assistant United States Attorney (AUSA)",
+      "category": "legal",
+      "context": "The federal prosecutor with the U.S. Attorney's Office in West Palm Beach to whom a copy of this petition was served. She is presumably involved in the plea negotiations with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steven M. Larimore",
+      "role": "Clerk of Court",
+      "category": "legal",
+      "context": "The Clerk of the U.S. District Court for the Southern District of Florida, whose name appears on the docket stamp and civil cover sheet.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jane Doe",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The petition alleges Epstein used interstate communication to entice the minor petitioner to his mansion for a massage, which was a fraudulent scheme to obtain sexual acts for payment.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Brad Edwards",
+      "relationshipType": "attorney-client",
+      "description": "Brad Edwards is the undersigned attorney representing the petitioner, Jane Doe, in this legal action to enforce her victim's rights.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ann Marie C. Villafana",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The petition states the U.S. Attorney's Office, where Villafana works, is engaged in plea negotiations with Epstein regarding federal charges.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-30",
+      "title": "Epstein's State Court Guilty Plea",
+      "description": "Jeffrey Epstein pleaded guilty in the Circuit Court for Palm Beach County to various state offenses including solicitation of minors for prostitution.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008-07-07",
+      "title": "Filing of Victim's CVRA Petition",
+      "description": "Jane Doe, through her attorneys, filed this petition in the U.S. District Court for the Southern District of Florida to enforce her rights under the Crime Victims' Rights Act, alleging she was being excluded from federal plea negotiations.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe",
+        "Brad Edwards",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2004-10",
+      "title": "Enactment of the Crime Victims' Rights Act",
+      "description": "Congress passed and the President signed the Crime Victims' Rights Act (CVRA) into law, granting crime victims enforceable rights to participate in federal criminal proceedings.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of Florida",
+    "Palm Beach County, Florida",
+    "West Palm Beach, Florida",
+    "Hollywood, Florida (Location of petitioner's attorney's office)"
+  ],
+  "keyFacts": [
+    "The petition reveals active federal plea negotiations between Jeffrey Epstein and the U.S. Attorney's Office in July 2008, concurrent with his state court guilty plea.",
+    "It alleges specific federal crimes against the petitioner: sex trafficking of children by fraud (18 U.S.C. § 1591), enticement of a minor for prostitution using interstate commerce (18 U.S.C. § 2422), and wire fraud (18 U.S.C. § 1343).",
+    "The document argues victims have CVRA rights, including the right to confer with prosecutors, even during the investigative phase before formal charges are filed.",
+    "It cites a recent Fifth Circuit case (In re Dean) holding that the government violated the CVRA by negotiating a plea deal without conferring with victims.",
+    "The filing indicates the petitioner and 'several other young females' were victims of 'roughly the same crimes,' suggesting multiple victims in the federal investigation."
+  ],
+  "analyzedAt": "2026-02-14T01:09:37.256Z"
+}

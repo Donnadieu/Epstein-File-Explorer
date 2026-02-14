@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00066156.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-09-28",
+  "summary": "This is an email chain from September 2021 between a U.S. Attorney's Office prosecutor and Amazon's legal counsel regarding a subpoena (reference CRIM1071168) issued to Amazon. The correspondence involves scheduling a call to discuss questions about the subpoena, indicating an ongoing investigation or legal proceeding requiring information from Amazon.",
+  "persons": [
+    {
+      "name": "Ben Langner",
+      "role": "Senior Corporate Counsel, Government & Regulatory Litigation at Amazon.com Inc.",
+      "category": "legal",
+      "context": "Amazon's legal counsel corresponding with the U.S. Attorney's Office regarding a subpoena. He is scheduling a call to discuss questions about the subpoena.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Goldberg",
+      "role": "Legal counsel (likely at Amazon)",
+      "category": "legal",
+      "context": "Recipient of the initial email from the U.S. Attorney's Office regarding questions about an Amazon subpoena. Copied on the scheduling correspondence.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Andrew",
+      "role": "Assistant United States Attorney, Southern District of New York",
+      "category": "legal",
+      "context": "The prosecutor from the U.S. Attorney's Office who initiated contact with Amazon's counsel to ask follow-up questions about a subpoena and who sent the finalized subpoena document.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew",
+      "person2": "Ben Langner",
+      "relationshipType": "legal-adversarial/procedural",
+      "description": "Prosecutor (Andrew) is corresponding with corporate counsel (Langner) regarding a subpoena issued to Amazon as part of an investigation or legal proceeding.",
+      "strength": 3
+    },
+    {
+      "person1": "Andrew",
+      "person2": "Jeffrey Goldberg",
+      "relationshipType": "legal-adversarial/procedural",
+      "description": "Prosecutor (Andrew) initially contacted legal counsel (Goldberg) with questions about an Amazon subpoena.",
+      "strength": 2
+    },
+    {
+      "person1": "Ben Langner",
+      "person2": "Jeffrey Goldberg",
+      "relationshipType": "colleague",
+      "description": "Both are legal counsel for Amazon, copied on the same correspondence regarding the government subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-24",
+      "title": "Call between SDNY and Amazon counsel",
+      "description": "A call took place on Friday, September 24, 2021, between the U.S. Attorney's Office (Andrew) and Amazon's counsel (Ben Langner) to discuss a subpoena.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Andrew",
+        "Ben Langner"
+      ]
+    },
+    {
+      "date": "2021-09-27",
+      "title": "Subpoena finalized and sent",
+      "description": "The subpoena discussed in the prior call was finalized and attached to an email sent by the U.S. Attorney's Office to Amazon's counsel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Andrew",
+        "Ben Langner"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY)",
+    "Amazon.com Inc."
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office for the Southern District of New York was actively issuing and following up on a subpoena (CRIM1071168) to Amazon.com Inc. in September 2021.",
+    "The subpoena appears related to a criminal investigation or proceeding, as indicated by the 'CRIM' reference number and the involvement of an Assistant U.S. Attorney.",
+    "The correspondence shows ongoing cooperation and communication between federal prosecutors and Amazon's legal team regarding the information request.",
+    "The document is a routine procedural email chain focused on scheduling and document transmission, not containing substantive details about the underlying case."
+  ],
+  "analyzedAt": "2026-02-13T23:22:43.438Z"
+}

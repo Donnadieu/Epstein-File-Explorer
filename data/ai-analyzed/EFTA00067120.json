@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00067120.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-18",
+  "summary": "An internal email from an Assistant U.S. Attorney in New York providing a situational awareness heads-up about the upcoming Netflix documentary series on Jeffrey Epstein, scheduled for release on May 27, 2020. The email notes the series may focus on Virginia Giuffre and include other Florida victims, and warns of potential media attention and reactions.",
+  "persons": [
+    {
+      "name": "Virginia Giuffre",
+      "role": "Interview subject / Victim",
+      "category": "victim",
+      "context": "Mentioned as a likely focus of the upcoming Netflix documentary series on Epstein, based on the trailer.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Defendant",
+      "category": "key figure",
+      "context": "Referenced in relation to Florida victims who would have been witnesses in an Epstein trial but are not relevant for her case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the upcoming Netflix documentary series.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is referenced in the context of the Epstein case, with victims from Florida not being relevant for her separate legal proceedings.",
+      "strength": 4
+    },
+    {
+      "person1": "Virginia Giuffre",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Giuffre is mentioned as a focus of the documentary about Epstein's crimes.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-27",
+      "title": "Release of Netflix Epstein Documentary",
+      "description": "Netflix fast-tracked a four-part documentary series on Jeffrey Epstein for release on this date, anticipated to generate significant media attention.",
+      "category": "media",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Virginia Giuffre"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Florida"
+  ],
+  "keyFacts": [
+    "Netflix fast-tracked a four-part documentary series on Jeffrey Epstein for release on May 27, 2020.",
+    "The documentary trailer suggested a focus on victim Virginia Giuffre and included other Florida victims.",
+    "The email was sent by an Assistant U.S. Attorney in New York as a situational awareness warning about potential media flurries and reactions 'up the chain'.",
+    "The Florida victims mentioned would have been witnesses in an Epstein trial but were noted as not relevant for the Ghislaine Maxwell case.",
+    "The correspondence indicates proactive internal communication within the U.S. Attorney's office regarding public media coverage of the case."
+  ],
+  "analyzedAt": "2026-02-14T00:10:29.294Z"
+}

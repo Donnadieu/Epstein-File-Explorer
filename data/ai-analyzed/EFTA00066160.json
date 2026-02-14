@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00066160.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2004-02-07",
+  "summary": "This is an email chain from 2004, forwarded by 'G. Max' to an unspecified recipient. The core email is from a person signing off as 'C' to Ghislaine Maxwell, discussing the sender's professional activities as a dancer/pilates instructor, their interest in continuing to train Jeffrey Epstein, and proposing a financial arrangement to actively recruit other 'beautiful, talented young women' to work with Epstein.",
+  "persons": [
+    {
+      "name": "G. Max",
+      "role": "Email forwarder",
+      "category": "associate",
+      "context": "Forwards an email chain, likely to another associate, with the subject line indicating they had contacted someone ('her') on behalf of the recipient.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Email recipient, Epstein associate",
+      "category": "key figure",
+      "context": "The email is addressed to her. The sender discusses working with Jeffrey Epstein and proposes a financial arrangement for recruiting other women for him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of discussion, accused",
+      "category": "key figure",
+      "context": "Referred to as 'Jeffery' [sic]. The sender expresses interest in continuing to train him and discusses recruiting other women to work with him.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "C",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "professional",
+      "description": "C is communicating directly with Maxwell, discussing work arrangements and recruitment of women for Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "C",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional",
+      "description": "C states they have worked training Epstein, enjoy it, and want to continue. They also discuss finding other women to work with him.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Implicitly, as C is writing to Maxwell about recruiting for Epstein, indicating Maxwell's role in managing such arrangements for him.",
+      "strength": 4
+    },
+    {
+      "person1": "G. Max",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "G. Max is forwarding an email chain that includes a message to Maxwell, suggesting they are in communication regarding the subject matter.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-02-07",
+      "title": "Email proposing recruitment arrangement",
+      "description": "An individual ('C') emails Ghislaine Maxwell to discuss their ongoing work training Jeffrey Epstein and proposes a paid arrangement to actively recruit other 'beautiful, talented young women' to work with Epstein.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "C",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York City",
+    "England"
+  ],
+  "keyFacts": [
+    "An email from 2004 shows a person ('C') offering to find 'beautiful, talented young women' to train/work with Jeffrey Epstein for a financial fee.",
+    "The sender explicitly states understanding that Epstein 'likes to work with a variety of beautiful, talented young women' and frames the recruitment as a 'job' requiring payment.",
+    "The email is addressed to Ghislaine Maxwell, indicating her central role in coordinating such arrangements for Epstein.",
+    "The correspondence demonstrates a systematic approach to recruiting women for Epstein, treated as a business transaction."
+  ],
+  "analyzedAt": "2026-02-13T23:23:45.599Z"
+}

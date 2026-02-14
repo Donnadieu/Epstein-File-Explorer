@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00067069.pdf",
+  "dataSet": "9",
+  "documentType": "FBI Guardian Complaint Form (FD-71A)",
+  "dateOriginal": "2021-10-08",
+  "summary": "An FBI Guardian Complaint Form documenting a phone call from a complainant (name redacted) to the FBI National Threat Operations Center on July 12, 2021. The complainant reports childhood abuse involving Jeffrey Epstein and Ghislaine Maxwell, including being taken by boat to Epstein's Island. She also describes a traumatic meeting at her former school where the principal mentioned pictures of her with Epstein, and alleges the FBI and President Trump were on the phone during this meeting. The complaint is forwarded to the New York Field Office for awareness.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named by the complainant as involved in her childhood abuse; she was allegedly taken by boat to 'Epstein's Island'.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named by the complainant as involved in the complicated situation of her childhood abuse.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Andrew Cuomo",
+      "role": "Political Figure",
+      "category": "political",
+      "context": "Mentioned by the complainant; she suggests the school wanted her to testify and say things against him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "President Trump",
+      "role": "Political Figure",
+      "category": "political",
+      "context": "Allegedly on the phone during a traumatic school meeting described by the complainant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named by the complainant as involved in the complex situation of her alleged childhood abuse.",
+      "strength": 4
+    },
+    {
+      "person1": "Complainant (redacted)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The complainant reports being a victim of abuse since childhood involving Epstein, including being taken to his island.",
+      "strength": 5
+    },
+    {
+      "person1": "Complainant (redacted)",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "The complainant names Maxwell as involved in the complicated abuse situation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-12",
+      "title": "Complainant's Call to FBI NTOC",
+      "description": "The complainant called the FBI National Threat Operations Center to report her allegations of childhood abuse involving Jeffrey Epstein and Ghislaine Maxwell, and a traumatic school meeting.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Complainant (redacted)"
+      ]
+    },
+    {
+      "date": "Approx. 2019",
+      "title": "Traumatic School Meeting",
+      "description": "A meeting at the complainant's former school approximately two years prior where the now-deceased principal mentioned pictures of the complainant with Jeffrey Epstein. The complainant alleges the FBI and President Trump were on the phone, and the school was upset she was not a 'Trump person'.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Complainant (redacted)",
+        "President Trump"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Childhood Abuse and Trip to Epstein's Island",
+      "description": "The complainant reports being a victim of extraordinary abuse since childhood, including being taken by boat to 'Epstein's Island'.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Complainant (redacted)",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's Island",
+    "New York (NY Field Office jurisdiction implied)",
+    "Address associated with the complainant's grandfather (redacted)"
+  ],
+  "keyFacts": [
+    "A complainant called the FBI in July 2021 alleging she was a victim of childhood abuse involving Jeffrey Epstein and Ghislaine Maxwell, including being taken to Epstein's Island.",
+    "The complainant described a traumatic school meeting from approximately 2019 where the now-deceased principal mentioned pictures of her with Epstein, and she alleged the FBI and President Trump were on the phone during this meeting.",
+    "The complainant suggested the school wanted her to testify against Andrew Cuomo and was upset she was not a 'Trump person'.",
+    "The complainant's identity and her grandfather's identity are fully redacted in the document.",
+    "FBI database queries noted in the document show hundreds of prior entries for 'Jeffrey Epstein' and 'Ghislaine Maxwell' across various systems."
+  ],
+  "analyzedAt": "2026-02-14T00:02:43.578Z"
+}

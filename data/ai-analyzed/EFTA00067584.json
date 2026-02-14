@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00067584.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2008-12-08",
+  "summary": "This is an email chain from December 8, 2008, discussing an upcoming sentencing hearing for an individual (likely 'MI'), a deposition of Jeffrey Epstein scheduled for January, and a reference to a 15-year-old victim allegedly recruited by Ghislaine Maxwell. It shows coordination between legal parties regarding case developments.",
+  "persons": [
+    {
+      "name": "Spencer Kuvin",
+      "role": "Attorney representing a victim",
+      "category": "legal",
+      "context": "Represents a 15-year-old victim who was allegedly recruited by Ghislaine Maxwell; has Epstein set for a deposition in January which will be videotaped.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Hurley",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Presiding over a sentencing hearing scheduled for Friday at 3:00.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of a deposition scheduled for January in a civil case, which will be videotaped.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged recruiter/associate",
+      "category": "associate",
+      "context": "Mentioned as allegedly recruiting a 15-year-old victim.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Spencer Kuvin",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client (opposing)",
+      "description": "Kuvin represents a victim in a civil case against Epstein and has scheduled his deposition.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is alleged to have recruited a 15-year-old victim for Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Spencer Kuvin",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Kuvin's client is a victim allegedly recruited by Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-12-12",
+      "title": "MI Sentencing Hearing",
+      "description": "A sentencing hearing before Judge Hurley scheduled for Friday at 3:00 PM.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Hurley"
+      ]
+    },
+    {
+      "date": "2009-01",
+      "title": "Epstein Deposition",
+      "description": "A deposition of Jeffrey Epstein scheduled for January in a civil case, to be videotaped.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Spencer Kuvin"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A 15-year-old victim was allegedly recruited by Ghislaine Maxwell for Jeffrey Epstein.",
+    "Attorney Spencer Kuvin represents that victim and has scheduled a videotaped deposition of Epstein for January 2009.",
+    "A sentencing hearing for an individual referred to as 'MI' was scheduled for December 12, 2008, before Judge Hurley.",
+    "The email chain shows legal professionals discussing and coordinating on case developments involving Epstein and Maxwell in late 2008."
+  ],
+  "analyzedAt": "2026-02-14T01:15:03.947Z"
+}

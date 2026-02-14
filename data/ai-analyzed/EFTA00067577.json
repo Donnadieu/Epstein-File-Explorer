@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00067577.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2008-06-25",
+  "summary": "This is an email chain regarding the transmission of an immunity authorization letter. It involves a U.S. Attorney's Office employee and a recipient named Sheila, with copies to other DOJ personnel. The document highlights procedural communication around granting immunity in an unspecified matter.",
+  "persons": [
+    {
+      "name": "Sheila",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "The sender of an email who is transmitting a signed immunity authorization letter as an attachment to a U.S. Attorney's Office employee.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Healy, Mary",
+      "role": "DOJ Employee (CRM)",
+      "category": "legal",
+      "context": "Copied on the initial email regarding the immunity letter, indicating involvement in the Criminal Division (CRM) of the Department of Justice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barber, Tina",
+      "role": "DOJ Employee (CRM)",
+      "category": "legal",
+      "context": "Copied on the initial email regarding the immunity letter, indicating involvement in the Criminal Division (CRM) of the Department of Justice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sheila",
+      "person2": "Healy, Mary",
+      "relationshipType": "professional",
+      "description": "Sheila's email regarding an immunity letter was copied to Mary Healy, indicating a professional or case-related connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Sheila",
+      "person2": "Barber, Tina",
+      "relationshipType": "professional",
+      "description": "Sheila's email regarding an immunity letter was copied to Tina Barber, indicating a professional or case-related connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Healy, Mary",
+      "person2": "Barber, Tina",
+      "relationshipType": "colleague",
+      "description": "Both are listed with the same departmental suffix (CRM) and were copied on the same official email, indicating they are colleagues within the DOJ's Criminal Division.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-25",
+      "title": "Transmission of Immunity Authorization Letter",
+      "description": "An email chain documents the sending and re-sending of an attached immunity authorization letter from a correspondent named Sheila to a U.S. Attorney's Office employee.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Sheila"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, FL 33401"
+  ],
+  "keyFacts": [
+    "An immunity authorization letter was being transmitted via email on June 25, 2008.",
+    "The communication involves personnel from the U.S. Attorney's Office and the DOJ's Criminal Division (CRM).",
+    "The document is a procedural record showing the logistical exchange of a significant legal document (an immunity letter)."
+  ],
+  "analyzedAt": "2026-02-14T01:12:34.478Z"
+}
