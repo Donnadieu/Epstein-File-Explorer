@@ -843,7 +843,7 @@ export class DatabaseStorage implements IStorage {
       const [personResult, documentResult, pageResult, connectionResult, eventResult] = await Promise.all([
         db.select({ count: sql<number>`count(*)::int` }).from(persons),
         db.select({ count: sql<number>`count(*)::int` }).from(documents).where(r2Cond),
-        db.select({ count: sql<number>`coalesce(sum(${documents.pageCount}), 0)::int` }).from(documents).where(r2Cond),
+        db.select({ count: sql<number>`count(*)::int` }).from(documentPages),
         db.select({ count: sql<number>`count(*)::int` }).from(connections),
         db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
       ]);
