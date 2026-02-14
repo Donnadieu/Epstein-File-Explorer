@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
@@ -453,6 +453,7 @@ export default function NetworkPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
                     <Avatar className="w-10 h-10 border border-border">
+                      {selectedPersonData.imageUrl && <AvatarImage src={selectedPersonData.imageUrl} alt={selectedPersonData.name} />}
                       <AvatarFallback className="text-sm font-medium bg-muted">
                         {selectedPersonData.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                       </AvatarFallback>
@@ -536,6 +537,7 @@ export default function NetworkPage() {
                     data-testid={`node-person-${person.id}`}
                   >
                     <Avatar className="w-8 h-8 border border-border shrink-0">
+                      {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
                       <AvatarFallback className="text-[10px] font-medium bg-muted">{initials}</AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col min-w-0 flex-1">
