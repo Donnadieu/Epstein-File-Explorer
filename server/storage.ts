@@ -497,6 +497,65 @@ function evictExpired<K, V extends { cachedAt: number }>(cache: Map<K, V>, ttl: 
   }
 }
 
+export interface PersonAIMentions {
+  keyFacts: string[];
+  locations: string[];
+  mentionCount: number;
+  documentMentions: { fileName: string; context: string; role: string }[];
+}
+
+async function getPersonAIMentions(personName: string, aliases: string[]): Promise<PersonAIMentions> {
+  const allFiles = await readAllAnalysisFiles();
+  const normalizedTarget = normalizeName(personName);
+  const normalizedAliases = (aliases ?? []).map(normalizeName);
+  const allNormalized = [normalizedTarget, ...normalizedAliases];
+
+  const keyFacts: string[] = [];
+  const locationsSet = new Set<string>();
+  const documentMentions: { fileName: string; context: string; role: string }[] = [];
+  let mentionCount = 0;
+
+  for (const data of allFiles) {
+    if (!Array.isArray(data.persons)) continue;
+
+    const match = data.persons.find(p => {
+      const norm = normalizeName(p.name ?? "");
+      return allNormalized.some(target => target === norm);
+    });
+
+    if (!match) continue;
+
+    mentionCount += match.mentionCount ?? 1;
+    documentMentions.push({
+      fileName: data.fileName ?? "",
+      context: (match as any).context ?? "",
+      role: match.role ?? "",
+    });
+
+    if (Array.isArray(data.keyFacts)) {
+      for (const fact of data.keyFacts) {
+        if (typeof fact === "string" && fact.toLowerCase().includes(personName.toLowerCase())) {
+          keyFacts.push(fact);
+        }
+      }
+    }
+
+    if (Array.isArray(data.locations)) {
+      for (const loc of data.locations) {
+        const location = typeof loc === "string" ? loc : ((loc as any).location ?? (loc as any).name ?? "");
+        if (location) locationsSet.add(location);
+      }
+    }
+  }
+
+  return {
+    keyFacts: Array.from(new Set(keyFacts)),
+    locations: Array.from(locationsSet),
+    mentionCount,
+    documentMentions,
+  };
+}
+
 export class DatabaseStorage implements IStorage {
   async getPersons(): Promise<Person[]> {
     return personsCache.get(() =>
@@ -577,10 +636,23 @@ export class DatabaseStorage implements IStorage {
       }
     }
 
+    const personEvents = await db
+      .select()
+      .from(timelineEvents)
+      .where(sql`${id} = ANY(${timelineEvents.personIds})`)
+      .orderBy(asc(timelineEvents.date));
+
+    const aiMentions = await getPersonAIMentions(person.name, person.aliases ?? []);
+
+    const emailDocCount = pDocs.filter(d => d.documentType === 'email').length;
+
     const result = {
       ...person,
       documents: pDocs,
       connections: allConns,
+      timelineEvents: personEvents,
+      aiMentions,
+      emailDocCount,
     };
 
     personDetailCache.set(id, { data: result, cachedAt: Date.now() });

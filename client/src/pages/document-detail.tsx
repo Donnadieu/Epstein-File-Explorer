@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeft,
@@ -280,6 +280,7 @@ export default function DocumentDetailPage() {
                     <CardContent className="p-3">
                       <div className="flex items-center gap-3">
                         <Avatar className="w-8 h-8 border border-border">
+                          {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
                           <AvatarFallback className="text-xs bg-muted">{initials}</AvatarFallback>
                         </Avatar>
                         <div className="flex flex-col gap-0.5 min-w-0 flex-1">

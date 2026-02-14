@@ -17,9 +17,26 @@ export const persons = pgTable("persons", {
   documentCount: integer("document_count").notNull().default(0),
   connectionCount: integer("connection_count").notNull().default(0),
   category: text("category").notNull().default("associate"),
+  profileSections: jsonb("profile_sections"),
+  wikipediaUrl: text("wikipedia_url"),
+  emailCount: integer("email_count").notNull().default(0),
+  topContacts: jsonb("top_contacts"),
 }, (table) => [
   index("idx_persons_document_count").on(table.documentCount),
 ]);
+
+export interface ProfileSection {
+  id: string;
+  title: string;
+  content: string;
+  order: number;
+  sourceDocumentIds?: number[];
+}
+
+export interface TopContact {
+  name: string;
+  connectionType: string;
+}
 
 export const documents = pgTable("documents", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),

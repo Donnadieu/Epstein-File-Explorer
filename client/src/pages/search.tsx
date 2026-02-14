@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Search as SearchIcon,
@@ -285,6 +285,7 @@ function PersonResult({ person, isBookmarked, toggleBookmark }: {
         <div className="flex items-center gap-3">
           <Link href={`/people/${person.id}`} className="flex items-center gap-3 min-w-0 flex-1">
             <Avatar className="w-9 h-9 border border-border shrink-0">
+              {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
               <AvatarFallback className="text-xs bg-muted">{initials}</AvatarFallback>
             </Avatar>
             <div className="flex flex-col gap-0.5 min-w-0 flex-1">

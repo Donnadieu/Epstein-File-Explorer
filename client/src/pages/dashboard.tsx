@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   Users,
   FileText,
@@ -75,6 +75,7 @@ function PersonCard({ person }: { person: Person }) {
         <CardContent className="p-4">
           <div className="flex items-start gap-3">
             <Avatar className="w-10 h-10 border border-border">
+              {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
               <AvatarFallback className="text-xs font-medium bg-muted">
                 {initials}
               </AvatarFallback>

@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   HoverCard,
@@ -19,7 +19,7 @@ const categoryColors: Record<string, string> = {
 };
 
 interface PersonHoverCardProps {
-  person: Pick<Person, "id" | "name" | "category" | "occupation" | "documentCount" | "connectionCount">;
+  person: Pick<Person, "id" | "name" | "category" | "occupation" | "documentCount" | "connectionCount"> & { imageUrl?: string | null };
   children: React.ReactNode;
 }
 
@@ -36,6 +36,7 @@ export function PersonHoverCard({ person, children }: PersonHoverCardProps) {
       <HoverCardContent className="w-72" side="top" align="start">
         <div className="flex gap-3">
           <Avatar className="w-10 h-10 border border-border shrink-0">
+            {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
             <AvatarFallback className="text-xs font-medium bg-muted">
               {initials}
             </AvatarFallback>
