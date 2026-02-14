@@ -56,7 +56,7 @@ export interface IStorage {
     connections: number;
   }>;
 
-  getBookmarks(): Promise<Bookmark[]>;
+  getBookmarks(userId?: string): Promise<Bookmark[]>;
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
   deleteBookmark(id: number): Promise<boolean>;
 
@@ -1227,7 +1227,10 @@ export class DatabaseStorage implements IStorage {
     });
   }
 
-  async getBookmarks(): Promise<Bookmark[]> {
+  async getBookmarks(userId?: string): Promise<Bookmark[]> {
+    if (userId) {
+      return db.select().from(bookmarks).where(eq(bookmarks.userId, userId)).orderBy(desc(bookmarks.createdAt));
+    }
     return db.select().from(bookmarks).orderBy(desc(bookmarks.createdAt));
   }
 

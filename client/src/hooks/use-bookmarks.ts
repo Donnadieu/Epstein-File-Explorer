@@ -3,13 +3,29 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { Bookmark } from "@shared/schema";
 
+function getClientId(): string {
+  let id = localStorage.getItem("epstein_client_id");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("epstein_client_id", id);
+  }
+  return id;
+}
+
 const BOOKMARKS_KEY = ["/api/bookmarks"];
 
 export function useBookmarks() {
   const queryClient = useQueryClient();
 
+  const clientId = getClientId();
+
   const { data: bookmarks = [], ...queryRest } = useQuery<Bookmark[]>({
-    queryKey: BOOKMARKS_KEY,
+    queryKey: [...BOOKMARKS_KEY, clientId],
+    queryFn: async () => {
+      const res = await fetch(`/api/bookmarks?userId=${encodeURIComponent(clientId)}`);
+      if (!res.ok) throw new Error("Failed to fetch bookmarks");
+      return res.json();
+    },
   });
 
   const createMutation = useMutation({
@@ -19,7 +35,7 @@ export function useBookmarks() {
       searchQuery?: string;
       label?: string;
     }) => {
-      const res = await apiRequest("POST", "/api/bookmarks", params);
+      const res = await apiRequest("POST", "/api/bookmarks", { ...params, userId: clientId });
       return res.json() as Promise<Bookmark>;
     },
     onSuccess: () => {

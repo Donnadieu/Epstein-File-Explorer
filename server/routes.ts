@@ -661,11 +661,12 @@ export async function registerRoutes(
   });
 
   // Bookmark routes
-  app.get("/api/bookmarks", async (_req, res) => {
+  app.get("/api/bookmarks", async (req, res) => {
     try {
-      const bookmarks = await storage.getBookmarks();
+      const userId = (req.query.userId as string) || "anonymous";
+      const result = await storage.getBookmarks(userId);
       res.set('Cache-Control', 'private, max-age=60');
-      res.json(bookmarks);
+      res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch bookmarks" });
     }
@@ -673,7 +674,7 @@ export async function registerRoutes(
 
   app.post("/api/bookmarks", async (req, res) => {
     try {
-      const { entityType, entityId, searchQuery, label } = req.body;
+      const { entityType, entityId, searchQuery, label, userId } = req.body;
       if (!entityType || !["person", "document", "search"].includes(entityType)) {
         return res.status(400).json({ error: "entityType must be 'person', 'document', or 'search'" });
       }
@@ -683,7 +684,7 @@ export async function registerRoutes(
         entityId: entityId ?? null,
         searchQuery: searchQuery ?? null,
         label: label ?? null,
-        userId: "anonymous", // Never accept userId from client
+        userId: userId || "anonymous",
       });
 
       const bookmark = await storage.createBookmark(parsed);
