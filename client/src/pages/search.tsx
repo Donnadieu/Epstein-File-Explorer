@@ -20,6 +20,9 @@ import {
   History,
   X,
   Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  BookOpen,
 } from "lucide-react";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 import { useBookmarks } from "@/hooks/use-bookmarks";
@@ -32,6 +35,22 @@ interface SearchResults {
   events: TimelineEvent[];
 }
 
+interface PageSearchResult {
+  documentId: number;
+  title: string;
+  documentType: string;
+  dataSet: string | null;
+  pageNumber: number;
+  headline: string;
+}
+
+interface PageSearchResponse {
+  results: PageSearchResult[];
+  total: number;
+  page: number;
+  totalPages: number;
+}
+
 export default function SearchPage() {
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
@@ -41,12 +60,22 @@ export default function SearchPage() {
 
   // Debounce search queries to avoid hammering the API on every keystroke
   useEffect(() => {
-    const timer = setTimeout(() => setDebouncedQuery(query), 300);
+    const timer = setTimeout(() => {
+      setDebouncedQuery(query);
+      setFtPage(1);
+    }, 300);
     return () => clearTimeout(timer);
   }, [query]);
 
+  const [ftPage, setFtPage] = useState(1);
+
   const { data, isLoading, isFetching } = useQuery<SearchResults>({
     queryKey: ["/api/search?q=" + encodeURIComponent(debouncedQuery)],
+    enabled: debouncedQuery.length >= 2,
+  });
+
+  const { data: pageData } = useQuery<PageSearchResponse>({
+    queryKey: [`/api/search/pages?q=${encodeURIComponent(debouncedQuery)}&page=${ftPage}&limit=20`],
     enabled: debouncedQuery.length >= 2,
   });
 
@@ -204,6 +233,9 @@ export default function SearchPage() {
               <TabsTrigger value="events" className="gap-1">
                 <Clock className="w-3 h-3" /> Events ({data?.events?.length || 0})
               </TabsTrigger>
+              <TabsTrigger value="fulltext" className="gap-1">
+                <BookOpen className="w-3 h-3" /> Full Text ({pageData?.total ?? 0})
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="all" className="mt-4 flex flex-col gap-4">
@@ -258,6 +290,40 @@ export default function SearchPage() {
               {data?.events?.map((event) => <EventResult key={event.id} event={event} />)}
               {(!data?.events || data.events.length === 0) && (
                 <EmptyState type="events" query={query} />
+              )}
+            </TabsContent>
+
+            <TabsContent value="fulltext" className="mt-4 flex flex-col gap-2">
+              {pageData?.results?.map((result, i) => (
+                <PageResult key={`${result.documentId}-${result.pageNumber}-${i}`} result={result} />
+              ))}
+              {(!pageData?.results || pageData.results.length === 0) && (
+                <EmptyState type="full text" query={query} />
+              )}
+              {pageData && pageData.totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 pt-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setFtPage((p) => Math.max(1, p - 1))}
+                    disabled={ftPage <= 1}
+                    className="gap-1"
+                  >
+                    <ChevronLeft className="w-4 h-4" /> Previous
+                  </Button>
+                  <span className="text-xs text-muted-foreground">
+                    Page {pageData.page} of {pageData.totalPages}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => setFtPage((p) => Math.min(pageData.totalPages, p + 1))}
+                    disabled={ftPage >= pageData.totalPages}
+                    className="gap-1"
+                  >
+                    Next <ChevronRight className="w-4 h-4" />
+                  </Button>
+                </div>
               )}
             </TabsContent>
           </Tabs>
@@ -385,6 +451,36 @@ function EventResult({ event }: { event: TimelineEvent }) {
               <span className="text-xs font-mono text-muted-foreground">{event.date}</span>
               <span className="text-sm font-medium">{event.title}</span>
               <p className="text-xs text-muted-foreground line-clamp-1">{event.description}</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}
+
+function PageResult({ result }: { result: PageSearchResult }) {
+  return (
+    <Link href={`/documents/${result.documentId}?page=${result.pageNumber}`}>
+      <Card className="hover-elevate cursor-pointer" data-testid={`result-page-${result.documentId}-${result.pageNumber}`}>
+        <CardContent className="p-3">
+          <div className="flex items-start gap-3">
+            <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted shrink-0">
+              <BookOpen className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="flex flex-col gap-1 min-w-0 flex-1">
+              <span className="text-sm font-medium">{result.title}</span>
+              <div className="flex items-center gap-1.5">
+                <Badge variant="outline" className="text-[10px]">{result.documentType}</Badge>
+                <Badge variant="secondary" className="text-[10px]">Page {result.pageNumber}</Badge>
+                {result.dataSet && (
+                  <span className="text-[10px] text-muted-foreground">Set {result.dataSet}</span>
+                )}
+              </div>
+              <p
+                className="text-xs text-muted-foreground leading-relaxed [&_mark]:bg-yellow-200 dark:[&_mark]:bg-yellow-900/50 [&_mark]:px-0.5 [&_mark]:rounded-sm"
+                dangerouslySetInnerHTML={{ __html: result.headline }}
+              />
             </div>
           </div>
         </CardContent>

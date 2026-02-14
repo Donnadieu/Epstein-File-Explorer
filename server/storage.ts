@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import {
-  persons, documents, connections, personDocuments, timelineEvents,
+  persons, documents, documentPages, connections, personDocuments, timelineEvents,
   pipelineJobs, budgetTracking, bookmarks,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
@@ -38,6 +38,10 @@ export interface IStorage {
   getStats(): Promise<{ personCount: number; documentCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
+  searchPages(query: string, page: number, limit: number): Promise<{
+    results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string }[];
+    total: number; page: number; totalPages: number;
+  }>;
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
@@ -875,6 +879,53 @@ export class DatabaseStorage implements IStorage {
     searchCache.set(normalizedQuery, { data: result, cachedAt: Date.now() });
     evictExpired(searchCache, SEARCH_CACHE_TTL, MAX_SEARCH_CACHE);
     return result;
+  }
+
+  async searchPages(query: string, page: number, limit: number) {
+    const offset = (page - 1) * limit;
+    const tsquery = sql`websearch_to_tsquery('english', ${query})`;
+
+    // Mirror r2Filter() logic as raw SQL for the JOIN
+    const r2Cond = isR2Configured()
+      ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
+      : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+
+    const countResult = await db.execute(sql`
+      SELECT count(*)::int AS total
+      FROM document_pages dp
+      JOIN documents d ON d.id = dp.document_id
+      WHERE dp.search_vector @@ ${tsquery}
+        AND ${r2Cond}
+    `) as any;
+    const total: number = countResult[0]?.total ?? 0;
+
+    const rows = await db.execute(sql`
+      SELECT dp.document_id, d.title, d.document_type, d.data_set,
+             dp.page_number,
+             ts_headline('english', dp.content, ${tsquery},
+               'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
+             ) AS headline,
+             ts_rank(dp.search_vector, ${tsquery}) AS rank
+      FROM document_pages dp
+      JOIN documents d ON d.id = dp.document_id
+      WHERE dp.search_vector @@ ${tsquery} AND ${r2Cond}
+      ORDER BY rank DESC, dp.document_id, dp.page_number
+      LIMIT ${limit} OFFSET ${offset}
+    `) as unknown as any[];
+
+    return {
+      results: rows.map((r: any) => ({
+        documentId: Number(r.document_id),
+        title: r.title,
+        documentType: r.document_type,
+        dataSet: r.data_set,
+        pageNumber: Number(r.page_number),
+        headline: r.headline,
+      })),
+      total,
+      page,
+      totalPages: Math.ceil(total / limit),
+    };
   }
 
   async getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }> {
