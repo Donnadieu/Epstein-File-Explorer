@@ -181,7 +181,11 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
     });
   }
 
-  for (const file of files) {
+  for (let fi = 0; fi < files.length; fi++) {
+    const file = files[fi];
+    if (fi % 100 === 0) {
+      console.log(`  [${fi}/${files.length}] ${personsCreated}p ${connectionsCreated}c ${eventsCreated}e ${docLinksCreated}d`);
+    }
     try {
       const data: AIAnalysisResult = JSON.parse(
         fs.readFileSync(path.join(aiDir, file), "utf-8"),
@@ -626,11 +630,37 @@ export function isJunkPersonName(name: string): boolean {
   // Organizations (LLC, Inc, Corp, LLP) — not persons
   if (/,?\s*(llc|inc|corp|lp|llp)\.?\s*$/i.test(trimmed)) return true;
 
+  // Possessive patterns ("Employee's Name", "Epstein's Butler")
+  if (/'s\s/.test(trimmed)) return true;
+
+  // "The X" titles ("The Ambassador", "The Government")
+  if (/^the\s/i.test(trimmed)) return true;
+
+  // "Former X" descriptions ("Former SigNet Employee")
+  if (/^former\s/i.test(trimmed)) return true;
+
+  // "Chief/Director/Head of..." titles
+  if (/^(chief|director|head|commissioner|superintendent|warden|commander)\s/i.test(trimmed) && /\bof\b/i.test(trimmed)) return true;
+
+  // "Deputy/Assistant [title]" roles
+  if (/^(deputy|assistant|associate|acting|interim)\s+(assistant\s+)?(attorney general|director|chief|commissioner|warden|prosecutor|counsel)/i.test(trimmed)) return true;
+
   return false;
 }
 
 export async function deduplicatePersonsInDB(): Promise<void> {
   console.log("Deduplicating persons in database...");
+
+  // Load protected persons (Wikipedia key figures) — never delete these
+  const protectedFile = path.join(DATA_DIR, "persons-raw.json");
+  const protectedNames = new Set<string>();
+  if (fs.existsSync(protectedFile)) {
+    const raw = JSON.parse(fs.readFileSync(protectedFile, "utf-8"));
+    for (const p of raw) protectedNames.add(normalizeName(p.name));
+    console.log(`  Loaded ${protectedNames.size} protected person names from Wikipedia`);
+  } else {
+    console.log("  Warning: persons-raw.json not found, no protected names loaded");
+  }
 
   // --- Pass 0: Remove junk persons (OCR artifacts, generic roles, placeholders) ---
   const preCleanPersons = await db.select().from(persons);
@@ -638,6 +668,10 @@ export async function deduplicatePersonsInDB(): Promise<void> {
 
   for (const p of preCleanPersons) {
     if (isJunkPersonName(p.name)) {
+      if (protectedNames.has(normalizeName(p.name))) {
+        console.log(`  PROTECTED: Skipping junk-deletion of "${p.name}"`);
+        continue;
+      }
       junkIds.push(p.id);
     }
   }
@@ -716,9 +750,24 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   for (const group of groups.values()) {
     if (group.length <= 1) continue;
 
-    group.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
+    // Sort by name quality: protected > meaningful parts > longest normalized name > counts
+    group.sort((a, b) => {
+      const protA = protectedNames.has(normalizeName(a.name)) ? 1 : 0;
+      const protB = protectedNames.has(normalizeName(b.name)) ? 1 : 0;
+      if (protB !== protA) return protB - protA;
+      const partsA = normalizeName(a.name).split(" ").filter(p => p.length >= 2);
+      const partsB = normalizeName(b.name).split(" ").filter(p => p.length >= 2);
+      if (partsB.length !== partsA.length) return partsB.length - partsA.length;
+      const normLenDiff = normalizeName(b.name).length - normalizeName(a.name).length;
+      if (normLenDiff !== 0) return normLenDiff;
+      return (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount);
+    });
     const canonical = group[0];
     const duplicateIds = group.slice(1).map(p => p.id);
+
+    if (group.length > 5) {
+      console.log(`  WARNING: Large merge group (${group.length}): ${group.map(p => p.name).slice(0, 8).join(", ")}...`);
+    }
 
     await mergePersonGroup(canonical, duplicateIds, group.map(p => p.name));
 
@@ -792,8 +841,10 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   // These are ambiguous first names, fragments, or roles that don't match anyone
   const afterPass2 = await db.select().from(persons);
   const singleWordRemaining = afterPass2.filter(p => {
-    const trimmed = p.name.trim();
-    return !/\s/.test(trimmed) && trimmed.length <= 15;
+    if (protectedNames.has(normalizeName(p.name))) return false;
+    const norm = normalizeName(p.name);
+    const meaningfulParts = norm.split(" ").filter(pt => pt.length >= 2);
+    return meaningfulParts.length <= 1 && norm.length <= 15 && norm.length > 0;
   });
 
   if (singleWordRemaining.length > 0) {
