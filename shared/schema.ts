@@ -1,8 +1,14 @@
-import { sql } from "drizzle-orm";
-import { pgTable, serial, text, varchar, integer, timestamp, boolean, jsonb, index, uniqueIndex } from "drizzle-orm/pg-core";
+import { sql, type SQL } from "drizzle-orm";
+import { pgTable, serial, text, varchar, integer, timestamp, boolean, jsonb, index, uniqueIndex, customType } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+
+const tsvector = customType<{ data: string }>({
+  dataType() {
+    return "tsvector";
+  },
+});
 
 export const persons = pgTable("persons", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
@@ -23,6 +29,7 @@ export const persons = pgTable("persons", {
   topContacts: jsonb("top_contacts"),
 }, (table) => [
   index("idx_persons_document_count").on(table.documentCount),
+  index("idx_persons_name_trgm").using("gin", sql`${table.name} gin_trgm_ops`),
 ]);
 
 export interface ProfileSection {
@@ -72,6 +79,10 @@ export const documents = pgTable("documents", {
   index("idx_documents_r2_key").on(table.r2Key),
   index("idx_documents_document_type").on(table.documentType),
   index("idx_documents_is_redacted").on(table.isRedacted),
+  index("idx_documents_r2_id").on(table.id).where(sql`r2_key IS NOT NULL AND (file_size_bytes IS NULL OR file_size_bytes != 0)`),
+  index("idx_documents_title_trgm").using("gin", sql`${table.title} gin_trgm_ops`),
+  index("idx_documents_description_trgm").using("gin", sql`${table.description} gin_trgm_ops`),
+  index("idx_documents_key_excerpt_trgm").using("gin", sql`${table.keyExcerpt} gin_trgm_ops`),
 ]);
 
 export const documentPages = pgTable("document_pages", {
@@ -79,9 +90,13 @@ export const documentPages = pgTable("document_pages", {
   documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
   pageNumber: integer("page_number").notNull(),
   content: text("content").notNull(),
+  searchVector: tsvector("search_vector").generatedAlwaysAs(
+    (): SQL => sql`to_tsvector('english', ${documentPages.content})`
+  ),
 }, (table) => [
   index("idx_dp_document_id").on(table.documentId),
   uniqueIndex("idx_dp_doc_page").on(table.documentId, table.pageNumber),
+  index("idx_dp_search_vector").using("gin", table.searchVector),
 ]);
 
 export const connections = pgTable("connections", {
@@ -119,6 +134,7 @@ export const timelineEvents = pgTable("timeline_events", {
   significance: integer("significance").notNull().default(1),
 }, (table) => [
   index("idx_timeline_events_date_sig").on(table.date, table.significance),
+  index("idx_timeline_events_title_trgm").using("gin", sql`${table.title} gin_trgm_ops`),
 ]);
 
 export const personsRelations = relations(persons, ({ many }) => ({
