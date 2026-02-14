@@ -23,6 +23,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
 interface PdfViewerProps {
   documentId: number;
   sourceUrl?: string;
+  initialPage?: number;
 }
 
 type ViewerState = "loading" | "ready" | "iframe" | "error";
@@ -31,7 +32,7 @@ const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 
-export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
+export default function PdfViewer({ documentId, sourceUrl, initialPage }: PdfViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
@@ -103,8 +104,9 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
           }
           pdfDocRef.current = doc;
           setTotalPages(doc.numPages);
-          setCurrentPage(1);
-          setPageInputValue("1");
+          const startPage = Math.max(1, Math.min(initialPage ?? 1, doc.numPages));
+          setCurrentPage(startPage);
+          setPageInputValue(String(startPage));
           setViewerState("ready");
           return;
         } catch {
@@ -152,6 +154,9 @@ export default function PdfViewer({ documentId, sourceUrl }: PdfViewerProps) {
     const clamped = Math.max(1, Math.min(page, totalPages));
     setCurrentPage(clamped);
     setPageInputValue(String(clamped));
+    const url = new URL(window.location.href);
+    url.searchParams.set("page", String(clamped));
+    window.history.replaceState(null, "", url.toString());
   };
 
   const handlePageInput = (e: React.KeyboardEvent<HTMLInputElement>) => {

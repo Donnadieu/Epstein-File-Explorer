@@ -57,6 +57,16 @@ export const documents = pgTable("documents", {
   index("idx_documents_is_redacted").on(table.isRedacted),
 ]);
 
+export const documentPages = pgTable("document_pages", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
+  pageNumber: integer("page_number").notNull(),
+  content: text("content").notNull(),
+}, (table) => [
+  index("idx_dp_document_id").on(table.documentId),
+  uniqueIndex("idx_dp_doc_page").on(table.documentId, table.pageNumber),
+]);
+
 export const connections = pgTable("connections", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
   personId1: integer("person_id_1").notNull().references(() => persons.id),
@@ -102,6 +112,11 @@ export const personsRelations = relations(persons, ({ many }) => ({
 
 export const documentsRelations = relations(documents, ({ many }) => ({
   personDocuments: many(personDocuments),
+  pages: many(documentPages),
+}));
+
+export const documentPagesRelations = relations(documentPages, ({ one }) => ({
+  document: one(documents, { fields: [documentPages.documentId], references: [documents.id] }),
 }));
 
 export const connectionsRelations = relations(connections, ({ one }) => ({
@@ -116,6 +131,7 @@ export const personDocumentsRelations = relations(personDocuments, ({ one }) => 
 
 export const insertPersonSchema = createInsertSchema(persons);
 export const insertDocumentSchema = createInsertSchema(documents);
+export const insertDocumentPageSchema = createInsertSchema(documentPages);
 export const insertConnectionSchema = createInsertSchema(connections);
 export const insertPersonDocumentSchema = createInsertSchema(personDocuments);
 export const insertTimelineEventSchema = createInsertSchema(timelineEvents);
@@ -124,6 +140,8 @@ export type Person = typeof persons.$inferSelect;
 export type InsertPerson = typeof persons.$inferInsert;
 export type Document = typeof documents.$inferSelect;
 export type InsertDocument = typeof documents.$inferInsert;
+export type DocumentPage = typeof documentPages.$inferSelect;
+export type InsertDocumentPage = typeof documentPages.$inferInsert;
 export type Connection = typeof connections.$inferSelect;
 export type InsertConnection = typeof connections.$inferInsert;
 export type PersonDocument = typeof personDocuments.$inferSelect;

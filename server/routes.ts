@@ -560,6 +560,22 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/search/pages", async (req, res) => {
+    try {
+      const query = (req.query.q as string) || "";
+      if (query.length < 2) {
+        return res.json({ results: [], total: 0, page: 1, totalPages: 0 });
+      }
+      const page = Math.max(1, parseInt(req.query.page as string) || 1);
+      const limit = Math.min(50, Math.max(1, parseInt(req.query.limit as string) || 20));
+      const results = await storage.searchPages(query, page, limit);
+      res.set('Cache-Control', 'public, max-age=60');
+      res.json(results);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to search pages" });
+    }
+  });
+
   app.get("/api/pipeline/jobs", async (req, res) => {
     try {
       const status = req.query.status as string | undefined;

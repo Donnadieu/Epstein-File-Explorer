@@ -56,6 +56,8 @@ interface DocumentDetail extends Document {
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
   const [, navigate] = useLocation();
+  const searchParams = new URLSearchParams(window.location.search);
+  const initialPage = parseInt(searchParams.get("page") || "1", 10) || 1;
 
   const { data: doc, isLoading } = useQuery<DocumentDetail>({
     queryKey: ["/api/documents", params.id],
@@ -239,7 +241,7 @@ export default function DocumentDetailPage() {
             <h2 className="text-sm font-semibold flex items-center gap-2">
               <Eye className="w-4 h-4 text-primary" /> Document Viewer
             </h2>
-            <DocumentViewer doc={doc} />
+            <DocumentViewer doc={doc} initialPage={initialPage} />
           </div>
         </>
       )}
@@ -309,7 +311,7 @@ export default function DocumentDetailPage() {
   );
 }
 
-function DocumentViewer({ doc }: { doc: DocumentDetail }) {
+function DocumentViewer({ doc, initialPage }: { doc: DocumentDetail; initialPage?: number }) {
   const mediaType = doc.mediaType?.toLowerCase() || "";
   const docType = doc.documentType?.toLowerCase() || "";
   const isPdf = doc.sourceUrl?.toLowerCase().endsWith(".pdf");
@@ -379,5 +381,5 @@ function DocumentViewer({ doc }: { doc: DocumentDetail }) {
   }
 
   // Default: try PDF viewer, which will show a graceful fallback if it fails
-  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl ?? undefined} />;
+  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl ?? undefined} initialPage={initialPage} />;
 }
