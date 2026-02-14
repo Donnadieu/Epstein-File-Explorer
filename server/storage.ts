@@ -280,14 +280,18 @@ export function isSamePerson(a: Person, b: Person): boolean {
 
   // OCR collapse produces single token → fuzzy match against other name's parts
   // Catches "E stein" (→ "estein") matching "epstein" in "Jeffrey Epstein"
+  // Guard: skip when collapsed name came from initial+lastname (e.g. "G. Maxwell" → "gmaxwell")
+  // because editDistance("gmaxwell", "maxwell") = 1, which would chain-merge ALL Maxwells
   const collapsedPartsA = collapsedA.split(" ").filter(Boolean);
   const collapsedPartsB = collapsedB.split(" ").filter(Boolean);
-  if (collapsedPartsA.length === 1 && collapsedPartsA[0].length >= 5) {
+  const isInitialA = partsA.length === 2 && partsA[0].length === 1 && partsA[1].length >= 4;
+  const isInitialB = partsB.length === 2 && partsB[0].length === 1 && partsB[1].length >= 4;
+  if (collapsedPartsA.length === 1 && collapsedPartsA[0].length >= 5 && !isInitialA) {
     for (const part of partsB) {
       if (part.length >= 5 && editDistance(collapsedPartsA[0], part) <= 1) return true;
     }
   }
-  if (collapsedPartsB.length === 1 && collapsedPartsB[0].length >= 5) {
+  if (collapsedPartsB.length === 1 && collapsedPartsB[0].length >= 5 && !isInitialB) {
     for (const part of partsA) {
       if (part.length >= 5 && editDistance(collapsedPartsB[0], part) <= 1) return true;
     }
