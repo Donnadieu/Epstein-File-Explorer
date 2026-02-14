@@ -4,6 +4,7 @@ import { storage } from "../storage";
 export interface RetrievalResult {
   contextText: string;
   citations: ChatCitation[];
+  retrievedDocumentIds: number[];
 }
 
 const STOPWORDS = new Set([
@@ -65,15 +66,22 @@ async function loadPersons(): Promise<Person[]> {
   return personsCache;
 }
 
+function stripHtmlTags(html: string): string {
+  return html.replace(/<[^>]+>/g, "");
+}
+
 export async function retrieveContext(query: string): Promise<RetrievalResult> {
   const keywords = extractKeywords(query);
   if (keywords.length === 0) {
-    return { contextText: "", citations: [] };
+    return { contextText: "", citations: [], retrievedDocumentIds: [] };
   }
 
   const allPersons = await loadPersons();
-  const searchResults = await storage.search(query);
-  const analysisList = await storage.getAIAnalysisList();
+  const [searchResults, pageResults, analysisList] = await Promise.all([
+    storage.search(query),
+    storage.searchPages(query, 1, 10),
+    storage.getAIAnalysisList(),
+  ]);
 
   // Step 1: Find matched persons from keyword matching and search results
   const matchedPersonIds = new Set<number>();
@@ -137,7 +145,25 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
     }
   }
 
-  // Priority 2: Person details and connections
+  // Priority 2: Full-text search page content
+  for (const page of pageResults.results) {
+    const plainText = stripHtmlTags(page.headline);
+    if (!plainText.trim()) continue;
+
+    const docLabel = `[Doc #${page.documentId}] ${page.title}`;
+    sections.push(`${docLabel} (page ${page.pageNumber})\n${plainText}`);
+
+    if (!seenDocIds.has(page.documentId)) {
+      seenDocIds.add(page.documentId);
+      citations.push({
+        documentId: page.documentId,
+        documentTitle: page.title,
+        relevance: "full-text match",
+      });
+    }
+  }
+
+  // Priority 3: Person details and connections
   for (const detail of personDetails) {
     if (!detail) continue;
 
@@ -175,7 +201,7 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
     sections.push(`[Person: ${detail.name}]\n${parts.join("\n")}`);
   }
 
-  // Priority 3: Search result documents
+  // Priority 4: Search result documents
   for (const doc of searchResults.documents) {
     if (seenDocIds.has(doc.id)) continue;
     seenDocIds.add(doc.id);
@@ -195,7 +221,7 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
     });
   }
 
-  // Priority 4: Search result events
+  // Priority 5: Search result events
   for (const event of searchResults.events.slice(0, 10)) {
     const parts: string[] = [];
     parts.push(`${event.date}: ${event.title}`);
@@ -205,5 +231,5 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
   }
 
   const contextText = truncateToLimit(sections.join("\n\n---\n\n"), MAX_CONTEXT_CHARS);
-  return { contextText, citations };
+  return { contextText, citations, retrievedDocumentIds: Array.from(seenDocIds) };
 }

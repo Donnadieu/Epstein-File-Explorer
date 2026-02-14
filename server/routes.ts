@@ -6,7 +6,7 @@ import * as pathMod from "path";
 import { insertBookmarkSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
-// import { registerChatRoutes } from "./chat";
+import { registerChatRoutes } from "./chat";
 
 let activeProxyStreams = 0;
 const MAX_PROXY_STREAMS = 10;
@@ -799,8 +799,8 @@ export async function registerRoutes(
     }
   });
 
-  // Chat routes (Ask the Archive) — disabled for launch
-  // registerChatRoutes(app);
+  // Chat routes (Ask the Archive)
+  registerChatRoutes(app);
 
   return httpServer;
 }

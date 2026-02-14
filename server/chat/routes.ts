@@ -1,9 +1,48 @@
 import type { Express, Request, Response } from "express";
 import { db } from "../db";
-import { conversations, messages } from "@shared/schema";
-import { eq, desc } from "drizzle-orm";
+import { conversations, messages, documents, pipelineJobs } from "@shared/schema";
+import { eq, desc, sql, and, inArray } from "drizzle-orm";
 import { retrieveContext } from "./retriever";
 import { streamChatResponse } from "./service";
+
+async function queueUnanalyzedDocuments(documentIds: number[]): Promise<void> {
+  if (documentIds.length === 0) return;
+
+  // Find which of these documents haven't been analyzed yet
+  const unanalyzed = await db
+    .select({ id: documents.id })
+    .from(documents)
+    .where(
+      and(
+        inArray(documents.id, documentIds),
+        eq(documents.aiAnalysisStatus, "pending"),
+      ),
+    );
+
+  for (const doc of unanalyzed) {
+    // Check if a job already exists for this document
+    const [existing] = await db
+      .select({ id: pipelineJobs.id })
+      .from(pipelineJobs)
+      .where(
+        and(
+          eq(pipelineJobs.documentId, doc.id),
+          eq(pipelineJobs.jobType, "chat-triggered-analysis"),
+          sql`${pipelineJobs.status} IN ('pending', 'running')`,
+        ),
+      )
+      .limit(1);
+
+    if (!existing) {
+      await db.insert(pipelineJobs).values({
+        documentId: doc.id,
+        jobType: "chat-triggered-analysis",
+        status: "pending",
+        priority: 1,
+      });
+    }
+  }
+}
 
 export function registerChatRoutes(app: Express): void {
   // List all conversations
@@ -113,6 +152,9 @@ export function registerChatRoutes(app: Express): void {
       }
 
       res.end();
+
+      // Fire-and-forget: queue unanalyzed documents for background analysis
+      queueUnanalyzedDocuments(context.retrievedDocumentIds).catch(() => {});
     } catch (error) {
       console.error("Error in chat message:", error);
       if (res.headersSent) {

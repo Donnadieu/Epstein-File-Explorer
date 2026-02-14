@@ -21,6 +21,7 @@ import {
   Search,
   Network,
   Brain,
+  MessageSquare,
   ExternalLink,
   Shield,
   Gavel,
@@ -155,6 +156,7 @@ export function AppSidebar() {
 
   const toolItems: NavItem[] = [
     { title: "Search", url: "/search", icon: Search },
+    { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
   ];
 
   return (
