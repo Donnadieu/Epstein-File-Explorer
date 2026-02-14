@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
@@ -12,8 +13,14 @@ import {
   Gavel,
   Building2,
   ChevronRight,
+  User,
 } from "lucide-react";
 import type { TimelineEvent } from "@shared/schema";
+
+interface EnrichedTimelineEvent extends TimelineEvent {
+  persons?: { id: number; name: string }[];
+  documents?: { id: number; title: string }[];
+}
 
 const categoryIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   legal: Scale,
@@ -59,11 +66,11 @@ const significanceSize: Record<number, { dot: string; ring: string }> = {
 
 interface YearGroup {
   year: number;
-  events: TimelineEvent[];
+  events: EnrichedTimelineEvent[];
 }
 
-function groupByYear(events: TimelineEvent[]): YearGroup[] {
-  const map = new Map<number, TimelineEvent[]>();
+function groupByYear(events: EnrichedTimelineEvent[]): YearGroup[] {
+  const map = new Map<number, EnrichedTimelineEvent[]>();
   for (const event of events) {
     const year = parseInt(event.date.slice(0, 4), 10);
     if (!map.has(year)) map.set(year, []);
@@ -81,7 +88,7 @@ function formatDate(date: string): string {
 }
 
 interface TimelineVizProps {
-  events: TimelineEvent[];
+  events: EnrichedTimelineEvent[];
 }
 
 export default function TimelineViz({ events }: TimelineVizProps) {
@@ -211,12 +218,15 @@ function EventCard({
   isHigh,
   align = "left",
 }: {
-  event: TimelineEvent;
+  event: EnrichedTimelineEvent;
   Icon: React.ComponentType<{ className?: string }>;
   nodeColor: string;
   isHigh: boolean;
   align?: "left" | "right";
 }) {
+  const hasPersons = event.persons && event.persons.length > 0;
+  const hasDocs = event.documents && event.documents.length > 0;
+
   return (
     <Card className={`flex-1 max-w-md ${isHigh ? "border-primary/30" : ""} ${align === "right" ? "text-right" : ""}`}>
       <CardContent className="p-3">
@@ -235,6 +245,34 @@ function EventCard({
             {event.title}
           </h3>
           <p className="text-xs text-muted-foreground leading-relaxed">{event.description}</p>
+
+          {/* Linked people */}
+          {hasPersons && (
+            <div className={`flex items-center gap-1 flex-wrap ${align === "right" ? "flex-row-reverse" : ""}`}>
+              <User className="w-3 h-3 text-muted-foreground shrink-0" />
+              {event.persons!.map((p, i) => (
+                <Link key={p.id} href={`/people/${p.id}`}>
+                  <span className="text-[11px] text-primary hover:underline cursor-pointer">
+                    {p.name}{i < event.persons!.length - 1 ? "," : ""}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          {/* Linked documents */}
+          {hasDocs && (
+            <div className={`flex items-center gap-1 flex-wrap ${align === "right" ? "flex-row-reverse" : ""}`}>
+              <FileText className="w-3 h-3 text-muted-foreground shrink-0" />
+              {event.documents!.map((d, i) => (
+                <Link key={d.id} href={`/documents/${d.id}`}>
+                  <span className="text-[11px] text-primary hover:underline cursor-pointer">
+                    {d.title.length > 40 ? d.title.slice(0, 40) + "…" : d.title}{i < event.documents!.length - 1 ? "," : ""}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>

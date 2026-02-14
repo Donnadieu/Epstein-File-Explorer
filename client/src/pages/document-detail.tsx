@@ -49,8 +49,19 @@ function getDisplayTitle(doc: Document): string {
   return `${typeName}${setInfo}${dateInfo}`;
 }
 
+interface DocumentEvent {
+  id: number;
+  date: string;
+  title: string;
+  description: string;
+  category: string;
+  significance: number;
+  persons?: { id: number; name: string }[];
+}
+
 interface DocumentDetail extends Document {
   persons: (Person & { mentionType: string; context: string | null })[];
+  timelineEvents?: DocumentEvent[];
 }
 
 export default function DocumentDetailPage() {
@@ -308,6 +319,43 @@ export default function DocumentDetailPage() {
           </div>
         )}
       </div>
+
+      {/* Related Timeline Events */}
+      {doc.timelineEvents && doc.timelineEvents.length > 0 && (
+        <>
+          <Separator />
+          <div className="flex flex-col gap-3">
+            <h2 className="text-sm font-semibold flex items-center gap-2">
+              <Clock className="w-4 h-4 text-primary" /> Related Events ({doc.timelineEvents.length})
+            </h2>
+            <div className="flex flex-col gap-2">
+              {doc.timelineEvents.map((event) => (
+                <Card key={event.id} data-testid={`card-event-${event.id}`}>
+                  <CardContent className="p-3">
+                    <div className="flex items-start gap-3">
+                      <span className="text-[11px] font-mono text-muted-foreground shrink-0 pt-0.5">{event.date}</span>
+                      <div className="flex flex-col gap-1 min-w-0 flex-1">
+                        <span className="text-sm font-medium">{event.title}</span>
+                        <p className="text-xs text-muted-foreground">{event.description}</p>
+                        <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
+                          <Badge variant="outline" className="text-[10px]">{event.category}</Badge>
+                          {event.persons?.map((p) => (
+                            <Link key={p.id} href={`/people/${p.id}`}>
+                              <Badge variant="secondary" className="text-[10px] cursor-pointer hover:bg-primary/10">
+                                {p.name}
+                              </Badge>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
