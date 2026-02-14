@@ -94,8 +94,10 @@ export default function PersonDetail() {
     .join("")
     .slice(0, 2);
 
-  const profileSections = (person.profileSections as ProfileSection[] | null) ?? [];
-  const hasOverview = profileSections.length > 0 || (person.aiMentions && (person.aiMentions.keyFacts.length > 0 || person.aiMentions.locations.length > 0));
+  const allowedSections = new Set(["Summary", "Background"]);
+  const profileSections = ((person.profileSections as ProfileSection[] | null) ?? [])
+    .filter((s) => allowedSections.has(s.title));
+  const hasOverview = profileSections.length > 0 || (person.aiMentions && person.aiMentions.keyFacts.length > 0);
   const hasTimeline = person.timelineEvents && person.timelineEvents.length > 0;
 
   return (
@@ -187,70 +189,66 @@ export default function PersonDetail() {
 
         {/* Overview Tab */}
         {hasOverview && (
-          <TabsContent value="overview" className="mt-4 flex flex-col gap-6">
-            {/* Profile Sections */}
-            {profileSections.length > 0 && (
-              <div className="flex flex-col gap-4">
-                {profileSections
-                  .sort((a, b) => a.order - b.order)
-                  .map((section) => (
-                    <div key={section.id} className="flex flex-col gap-2">
-                      <h2 className="text-base font-semibold">{section.title}</h2>
-                      <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">{section.content}</p>
-                    </div>
-                  ))}
-              </div>
+          <TabsContent value="overview" className="mt-4 flex flex-col gap-5">
+            {/* Summary */}
+            {profileSections.find((s) => s.title === "Summary") && (
+              <Card>
+                <CardContent className="p-5">
+                  <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+                    <BookOpen className="w-3.5 h-3.5 text-primary" /> Summary
+                  </h2>
+                  <div className="flex flex-col gap-2">
+                    {profileSections.find((s) => s.title === "Summary")!.content
+                      .split("\n")
+                      .filter((line) => line.trim())
+                      .map((paragraph, i) => (
+                        <p key={i} className="text-sm leading-relaxed pl-3 border-l-2 border-primary/20">
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
             )}
 
-            {/* Key Facts from AI Analysis */}
+            {/* Background */}
+            {profileSections.find((s) => s.title === "Background") && (
+              <Card>
+                <CardContent className="p-5">
+                  <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+                    <Briefcase className="w-3.5 h-3.5 text-primary" /> Background
+                  </h2>
+                  <div className="flex flex-col gap-2">
+                    {profileSections.find((s) => s.title === "Background")!.content
+                      .split("\n")
+                      .filter((line) => line.trim())
+                      .map((paragraph, i) => (
+                        <p key={i} className="text-sm leading-relaxed pl-3 border-l-2 border-primary/20">
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
+            {/* Key Facts */}
             {person.aiMentions && person.aiMentions.keyFacts.length > 0 && (
-              <div className="flex flex-col gap-2">
-                <h2 className="text-base font-semibold flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-primary" /> Key Facts
-                </h2>
-                <ul className="flex flex-col gap-1.5">
-                  {person.aiMentions.keyFacts.slice(0, 20).map((fact, i) => (
-                    <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <ChevronRight className="w-3 h-3 mt-1 shrink-0 text-muted-foreground/50" />
-                      <span>{fact}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Locations */}
-            {person.aiMentions && person.aiMentions.locations.length > 0 && (
-              <div className="flex flex-col gap-2">
-                <h2 className="text-base font-semibold flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" /> Locations Mentioned
-                </h2>
-                <div className="flex flex-wrap gap-1.5">
-                  {person.aiMentions.locations.map((loc, i) => (
-                    <Badge key={i} variant="outline" className="text-xs">
-                      {loc}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* AI Document Mentions */}
-            {person.aiMentions && person.aiMentions.documentMentions.length > 0 && (
-              <div className="flex flex-col gap-2">
-                <h2 className="text-base font-semibold flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-primary" /> Mentioned In ({person.aiMentions.documentMentions.length} analyzed documents)
-                </h2>
-                <div className="flex flex-col gap-1.5">
-                  {person.aiMentions.documentMentions.slice(0, 15).map((mention, i) => (
-                    <div key={i} className="text-sm flex flex-col gap-0.5 p-2 rounded-md bg-muted/50">
-                      <span className="font-mono text-xs text-muted-foreground">{mention.fileName.replace('.pdf.json', '')}</span>
-                      {mention.role && <span className="text-xs text-primary">{mention.role}</span>}
-                      {mention.context && <span className="text-xs text-muted-foreground line-clamp-2">{mention.context}</span>}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Card>
+                <CardContent className="p-5">
+                  <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+                    <Sparkles className="w-3.5 h-3.5 text-primary" /> Key Facts
+                  </h2>
+                  <ul className="flex flex-col gap-2">
+                    {person.aiMentions.keyFacts.slice(0, 20).map((fact, i) => (
+                      <li key={i} className="text-sm flex items-start gap-2.5">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <span>{fact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             )}
           </TabsContent>
         )}
