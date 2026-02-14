@@ -969,35 +969,35 @@ export class DatabaseStorage implements IStorage {
 
   async searchPages(query: string, page: number, limit: number) {
     const offset = (page - 1) * limit;
-    const tsquery = sql`websearch_to_tsquery('english', ${query})`;
 
     // Mirror r2Filter() logic as raw SQL for the JOIN
-    const r2Cond = isR2Configured()
-      ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
-      : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+    const r2Raw = isR2Configured()
+      ? `d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
+      : `(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
 
-    const countResult = await db.execute(sql`
+    const countResult: any = await db.execute(sql`
       SELECT count(*)::int AS total
       FROM document_pages dp
       JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ ${tsquery}
-        AND ${r2Cond}
-    `) as any;
-    const total: number = countResult[0]?.total ?? 0;
+      WHERE dp.search_vector @@ websearch_to_tsquery('english', ${query})
+        AND ${sql.raw(r2Raw)}
+    `);
+    const total: number = (countResult.rows ?? countResult)[0]?.total ?? 0;
 
-    const rows = await db.execute(sql`
+    const rawResult: any = await db.execute(sql`
       SELECT dp.document_id, d.title, d.document_type, d.data_set,
              dp.page_number,
-             ts_headline('english', dp.content, ${tsquery},
+             ts_headline('english', dp.content, websearch_to_tsquery('english', ${query}),
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
-             ts_rank(dp.search_vector, ${tsquery}) AS rank
+             ts_rank(dp.search_vector, websearch_to_tsquery('english', ${query})) AS rank
       FROM document_pages dp
       JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ ${tsquery} AND ${r2Cond}
+      WHERE dp.search_vector @@ websearch_to_tsquery('english', ${query}) AND ${sql.raw(r2Raw)}
       ORDER BY rank DESC, dp.document_id, dp.page_number
       LIMIT ${limit} OFFSET ${offset}
-    `) as unknown as any[];
+    `);
+    const rows: any[] = rawResult.rows ?? rawResult;
 
     return {
       results: rows.map((r: any) => ({

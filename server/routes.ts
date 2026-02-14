@@ -571,7 +571,8 @@ export async function registerRoutes(
       const results = await storage.searchPages(query, page, limit);
       res.set('Cache-Control', 'public, max-age=60');
       res.json(results);
-    } catch (error) {
+    } catch (error: any) {
+      console.error("search/pages error:", error);
       res.status(500).json({ error: "Failed to search pages" });
     }
   });
