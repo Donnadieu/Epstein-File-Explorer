@@ -16,6 +16,12 @@ Live at [epstein-file-explorer.com](https://epstein-file-explorer.com)
 - **Timeline** — 5,400+ chronological events with significance scoring, linked to people and documents
 - **Cross-Entity Search** — Search across documents, people, and events with saved searches, search history, and bookmarks
 - **AI Insights** — DeepSeek-powered analysis extracting persons, connections, events, locations, key facts, and document classifications from extracted text
+- **PDF Forensic Tools** — Integrated analysis suite for examining redactions and metadata:
+  - **Redaction Audit** — Detects redaction methods and identifies recoverable text
+  - **X-Ray Analysis** — Finds vulnerabilities in PDF redactions
+  - **Text Extraction** — Recovers hidden text from poorly-redacted documents
+  - **Unredaction** — Generates visual comparison showing hidden vs visible content
+  - **Metadata Forensics** — Extracts and analyzes XMP metadata, document properties, creator info, timestamps, embedded files, and security settings (see [docs/METADATA_ANALYSIS.md](docs/METADATA_ANALYSIS.md))
 - **Export** — JSON and CSV export for documents, persons, and search results
 - **Dark/Light Theme** — Full theme support with system preference detection
 
@@ -40,30 +46,94 @@ Live at [epstein-file-explorer.com](https://epstein-file-explorer.com)
 
 All data in this project comes from publicly released government records.
 
-## Getting Started
+## Quick Start
+
+The simplest way to get the entire system running (Node.js backend, React frontend, and Python tools for PDF analysis):
+
+```bash
+# Single command to set up everything and start development
+./RUN.sh dev
+```
+
+This unified entrypoint handles:
+- ✓ Node.js dependency installation
+- ✓ Python tool setup (unredact, x-ray)
+- ✓ Type checking
+- ✓ Starting the Express server and Vite dev server
+
+The backend will be at `http://localhost:5000` and the frontend proxied via Vite.
+
+## Full Installation (Manual Steps)
 
 ### Prerequisites
 
-- Node.js 20+
-- PostgreSQL
-- aria2 (for torrent downloads): `brew install aria2`
+- **Node.js** 20+
+- **Python** 3.12+ (for PDF analysis tools)
+- **PostgreSQL** (database)
+- **aria2** (for torrent downloads): `brew install aria2`
 
-### Setup
+### Step-by-Step Setup
 
 ```bash
-# Install dependencies
+# 1. Install Node dependencies
 npm install
 
-# Configure environment
-cp .env.example .env
-# Edit .env with your PostgreSQL connection string, R2 credentials, DeepSeek API key
+# 2. Set up Python tools (redaction audit, x-ray detection, text extraction)
+npm run setup-python
 
-# Push database schema
+# 3. Configure environment
+cp .env.example .env
+# Edit .env with credentials:
+#   - DATABASE_URL: PostgreSQL connection
+#   - R2_*: Cloudflare credentials (optional for local testing)
+#   - DEEPSEEK_API_KEY: AI analysis (optional)
+
+# 4. Push database schema
 npm run db:push
 
-# Start development server
+# 5. Start developing
 npm run dev
 ```
+
+The app runs on **port 5000** (backend) and port **5173** (Vite frontend dev) in development.
+
+## Running Integrated PDF Analysis
+
+Once the server is running, test the Python tool integration:
+
+```bash
+# Check if tools are ready
+curl http://localhost:5000/api/tools/health
+
+# Run redaction audit on a PDF
+curl -X POST "http://localhost:5000/api/tools/audit-redaction?path=/path/to/file.pdf"
+
+# Detect bad redactions
+curl -X POST "http://localhost:5000/api/tools/xray?path=/path/to/file.pdf"
+
+# Extract hidden text from poorly-redacted PDFs
+curl -X POST "http://localhost:5000/api/tools/extract-text?path=/path/to/file.pdf"
+
+# Run comprehensive analysis (all 3 tools)
+curl -X POST "http://localhost:5000/api/tools/analyze?path=/path/to/file.pdf&extract=true"
+```
+
+See [docs/INTEGRATION.md](docs/INTEGRATION.md) for detailed architecture and API docs.
+
+## Validation
+
+Run the integration smoke test to verify everything is wired correctly:
+
+```bash
+bash scripts/smoke_test.sh
+```
+
+This checks:
+- TypeScript compilation
+- Python dependencies
+- Bridge module initialization
+- All required files present
+- npm scripts configured
 
 The app runs on port 3000 in development (port 5000 in production).
 

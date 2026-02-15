@@ -30,6 +30,7 @@ import NetworkPage from "@/pages/network";
 import SearchPage from "@/pages/search";
 import AIInsightsPage from "@/pages/ai-insights";
 import AskArchivePage from "@/pages/ask-archive";
+import { PDFTools } from "@/components/pdf-tools";
 
 function Router() {
   return (
@@ -45,6 +46,7 @@ function Router() {
       <Route path="/search" component={SearchPage} />
       <Route path="/ai-insights" component={AIInsightsPage} />
       <Route path="/ask-the-archive" component={AskArchivePage} />
+      <Route path="/pdf-tools" component={PDFTools} />
       <Route component={NotFound} />
     </Switch>
   );
