@@ -7,12 +7,12 @@
  *   removed several data sets from their site (DS 9, 10, 11 unavailable since Feb 6, 2026).
  */
 
+import { execFile, spawn } from "child_process";
 import * as fs from "fs";
+import pLimit from "p-limit";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import { execFile, spawn } from "child_process";
 import { promisify } from "util";
-import pLimit from "p-limit";
 
 const execFileAsync = promisify(execFile);
 
@@ -109,7 +109,7 @@ const TORRENT_CONFIG: Record<number, TorrentConfig> = {
     magnetUri:
       "magnet:?xt=urn:btih:27704fe736090510aa9f314f5854691d905d1ff3&dn=DataSet%203&xl=628519331&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.moeking.me%3A6969%2Fannounce",
     format: "zip",
-    expectedSizeGB: 0.60,
+    expectedSizeGB: 0.6,
     description: "DS 3 — Court documents, legal filings",
   },
   4: {
@@ -137,7 +137,7 @@ const TORRENT_CONFIG: Record<number, TorrentConfig> = {
     magnetUri:
       "magnet:?xt=urn:btih:bcd8ec2e697b446661921a729b8c92b689df0360&dn=DataSet%207&xl=103060624&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.moeking.me%3A6969%2Fannounce",
     format: "zip",
-    expectedSizeGB: 0.10,
+    expectedSizeGB: 0.1,
     description: "DS 7 — Court documents, legal filings",
   },
   8: {
@@ -149,9 +149,9 @@ const TORRENT_CONFIG: Record<number, TorrentConfig> = {
   },
   9: {
     magnetUri:
-      "magnet:?xt=urn:btih:7ac8f771678d19c75a26ea6c14e7d4c003fbf9b6&dn=dataset9-more-complete.tar.zst",
+      "magnet:?xt=urn:btih:9c1f0a021459938e2446310beea5e43a17509a19&dn=dataset9_reconstructed_20260110.tar.zst",
     format: "tar.zst",
-    expectedSizeGB: 143,
+    expectedSizeGB: 180,
     description: "DS 9 — High-value communications, emails, correspondence",
   },
   10: {
@@ -283,7 +283,9 @@ async function downloadViaMagnets(
         state.error?.startsWith("Extraction:") ||
         state.error?.startsWith("Normalization:");
       if (isPostDownload) {
-        console.log(`  Skipping download for ${c.key}: already downloaded (failed during later stage)`);
+        console.log(
+          `  Skipping download for ${c.key}: already downloaded (failed during later stage)`,
+        );
         state.status = "downloaded";
         saveProgress(progress);
         return false;
@@ -374,8 +376,7 @@ async function downloadViaMagnets(
     // Estimate downloaded bytes from staging dir
     const dsDir = path.join(
       stagingDir,
-      toDownload.find((t) => extractInfoHash(t.config.magnetUri) === hash)!
-        .key,
+      toDownload.find((t) => extractInfoHash(t.config.magnetUri) === hash)!.key,
     );
     const files = walkDir(dsDir);
     let totalBytes = 0;
@@ -620,10 +621,7 @@ async function normalizeFiles(
             const ext = path.extname(destPath);
             const base = path.basename(destPath, ext);
             let counter = 1;
-            while (
-              fs.existsSync(destPath) ||
-              reservedPaths.has(destPath)
-            ) {
+            while (fs.existsSync(destPath) || reservedPaths.has(destPath)) {
               destPath = path.join(targetDir, `${base}_${counter}${ext}`);
               counter++;
             }
@@ -680,12 +678,17 @@ export async function downloadTorrents(options?: {
   console.log(`  aria2c: ${aria2cPath}`);
 
   // Determine which torrents to download
-  const torrentsToProcess: { key: string; config: TorrentConfig; dsId: number | null }[] = [];
+  const torrentsToProcess: {
+    key: string;
+    config: TorrentConfig;
+    dsId: number | null;
+  }[] = [];
   let needsZstd = false;
 
-  const idsToDownload = dataSetIds && dataSetIds.length > 0
-    ? dataSetIds
-    : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const idsToDownload =
+    dataSetIds && dataSetIds.length > 0
+      ? dataSetIds
+      : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   for (const dsId of idsToDownload) {
     const cfg = TORRENT_CONFIG[dsId];
@@ -742,7 +745,9 @@ export async function downloadTorrents(options?: {
     if (state?.status === "failed") {
       const dsDir = path.join(stagingDir, key);
       if (fs.existsSync(dsDir) && fs.readdirSync(dsDir).length > 0) {
-        console.log(`  ${key}: staging files found — resetting to "downloaded" for re-extraction`);
+        console.log(
+          `  ${key}: staging files found — resetting to "downloaded" for re-extraction`,
+        );
         state.status = "downloaded";
         state.error = undefined;
         saveProgress(progress);
@@ -785,7 +790,11 @@ export async function downloadTorrents(options?: {
           console.log(`  Skipping extraction for ${key}: no progress entry`);
           return null;
         }
-        if (state.status === "failed" && !state.error?.startsWith("Extraction:") && !state.error?.startsWith("Normalization:")) {
+        if (
+          state.status === "failed" &&
+          !state.error?.startsWith("Extraction:") &&
+          !state.error?.startsWith("Normalization:")
+        ) {
           console.log(`  Skipping extraction for ${key}: download failed`);
           return null;
         }
@@ -873,7 +882,9 @@ export async function downloadTorrents(options?: {
   console.log(`  New files normalized:   ${result.newFiles}`);
   console.log(`  Skipped (existing):     ${result.skippedFiles}`);
   console.log(`  Failed extractions:     ${result.failedExtractions}`);
-  console.log(`  Bytes downloaded:       ${formatBytes(result.bytesDownloaded)}`);
+  console.log(
+    `  Bytes downloaded:       ${formatBytes(result.bytesDownloaded)}`,
+  );
   console.log(`  Progress file:          ${PROGRESS_FILE}\n`);
 
   return result;
