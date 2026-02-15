@@ -2,6 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import OpenAI from "openai";
+import { z } from "zod";
 import { getAIPriority } from "./media-classifier";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -10,6 +11,7 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(__dirname, "../../data");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const AI_OUTPUT_DIR = path.join(DATA_DIR, "ai-analyzed");
+const INVALID_AI_OUTPUT_SUBDIR = "invalid";
 
 const DEEPSEEK_MODEL = "deepseek-chat";
 const MAX_CHUNK_CHARS = 24000;
@@ -77,6 +79,68 @@ export interface TieredAnalysisResult extends AIAnalysisResult {
   inputTokens: number;
   outputTokens: number;
 }
+
+const PersonCategorySchema = z.enum([
+  "key figure",
+  "associate",
+  "victim",
+  "witness",
+  "legal",
+  "political",
+  "law enforcement",
+  "staff",
+  "other",
+]);
+
+const AIResponsePersonSchema = z
+  .object({
+    name: z.string().trim().min(3),
+    role: z.string().trim().min(1),
+    category: PersonCategorySchema,
+    context: z.string().trim().min(1),
+    mentionCount: z.coerce.number().int().min(1),
+  })
+  .strict();
+
+const AIResponseConnectionSchema = z
+  .object({
+    person1: z.string().trim().min(3),
+    person2: z.string().trim().min(3),
+    relationshipType: z.string().trim().min(1),
+    description: z.string().trim().min(1),
+    strength: z.coerce.number().int().min(1).max(5),
+  })
+  .strict();
+
+const AIResponseEventSchema = z
+  .object({
+    date: z.string().trim().min(1),
+    title: z.string().trim().min(1),
+    description: z.string().trim().min(1),
+    category: z.string().trim().min(1),
+    significance: z.coerce.number().int().min(1).max(5),
+    personsInvolved: z.array(z.string().trim().min(3)),
+  })
+  .strict();
+
+const AIResponseSchema = z
+  .object({
+    documentType: z.string().trim().min(1),
+    dateOriginal: z.preprocess((value) => {
+      if (typeof value !== "string") return value;
+      const trimmed = value.trim();
+      return trimmed.length > 0 ? trimmed : null;
+    }, z.union([z.string().trim().min(1), z.null()])),
+    summary: z.string().trim().min(1),
+    persons: z.array(AIResponsePersonSchema),
+    connections: z.array(AIResponseConnectionSchema),
+    events: z.array(AIResponseEventSchema),
+    locations: z.array(z.string().trim().min(1)),
+    keyFacts: z.array(z.string().trim().min(1)),
+  })
+  .strict();
+
+type ValidatedAIResponse = z.infer<typeof AIResponseSchema>;
 
 // --- Tier 0: Rule-based classification (FREE) ---
 
@@ -369,6 +433,115 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
   return merged;
 }
 
+function extractJSONFromText(content: string): string | null {
+  const firstBrace = content.indexOf("{");
+  const lastBrace = content.lastIndexOf("}");
+  if (firstBrace === -1 || lastBrace === -1 || lastBrace <= firstBrace) {
+    return null;
+  }
+  return content.slice(firstBrace, lastBrace + 1);
+}
+
+type ParseAndValidateResult =
+  | { ok: true; data: ValidatedAIResponse }
+  | { ok: false; reason: string };
+
+function sanitizeForFilename(value: string): string {
+  return value
+    .replace(/[^a-zA-Z0-9._-]+/g, "_")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 80) || "unknown";
+}
+
+function persistInvalidAIResponse(
+  invalidOutputDir: string | undefined,
+  params: {
+    fileName: string;
+    dataSet: string;
+    chunkIndex: number;
+    chunksTotal: number;
+    reason: string;
+    rawContent: string;
+  },
+): void {
+  if (!invalidOutputDir) return;
+
+  try {
+    fs.mkdirSync(invalidOutputDir, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const base = sanitizeForFilename(params.fileName);
+    const outPath = path.join(
+      invalidOutputDir,
+      `${stamp}_${base}_chunk-${params.chunkIndex + 1}-of-${params.chunksTotal}.json`,
+    );
+
+    fs.writeFileSync(
+      outPath,
+      JSON.stringify(
+        {
+          fileName: params.fileName,
+          dataSet: params.dataSet,
+          chunkIndex: params.chunkIndex,
+          chunksTotal: params.chunksTotal,
+          reason: params.reason,
+          capturedAt: new Date().toISOString(),
+          rawContent: params.rawContent,
+        },
+        null,
+        2,
+      ),
+    );
+  } catch (error: any) {
+    console.warn(`    Failed to persist invalid AI response: ${error.message}`);
+  }
+}
+
+function parseAndValidateAIResponse(
+  content: string,
+  fileName: string,
+  chunkLabel: string,
+): ParseAndValidateResult {
+  const cleaned = content
+    .replace(/^```(?:json)?\s*\n?/i, "")
+    .replace(/\n?```\s*$/i, "")
+    .trim();
+
+  const parseCandidates = [cleaned];
+  const extracted = extractJSONFromText(cleaned);
+  if (extracted && extracted !== cleaned) {
+    parseCandidates.push(extracted);
+  }
+
+  let lastSchemaError: z.ZodError | null = null;
+  for (const candidate of parseCandidates) {
+    try {
+      const parsed = JSON.parse(candidate);
+      const validated = AIResponseSchema.safeParse(parsed);
+      if (validated.success) {
+        return { ok: true, data: validated.data };
+      }
+      lastSchemaError = validated.error;
+    } catch {
+      // Try next parse candidate
+    }
+  }
+
+  if (lastSchemaError) {
+    const details = lastSchemaError.issues
+      .slice(0, 3)
+      .map((issue) => `${issue.path.join(".") || "(root)"}: ${issue.message}`)
+      .join("; ");
+    console.warn(
+      `    Invalid AI JSON schema for ${fileName}${chunkLabel}: ${details}`,
+    );
+    return { ok: false, reason: `Schema validation failed: ${details}` };
+  }
+
+  console.warn(`    Could not parse JSON from ${fileName}${chunkLabel}`);
+  return { ok: false, reason: "JSON parsing failed (no valid object found)" };
+}
+
 function calculateCostCents(inputTokens: number, outputTokens: number): number {
   const inputCost = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M;
   const outputCost = (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
@@ -381,11 +554,18 @@ interface AnalyzeChunkResult {
   outputTokens: number;
 }
 
-async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet: string): Promise<{ result: AIAnalysisResult; inputTokens: number; outputTokens: number }> {
+async function analyzeDocumentWithTokens(
+  text: string,
+  fileName: string,
+  dataSet: string,
+  options?: { invalidOutputDir?: string },
+): Promise<{ result: AIAnalysisResult; inputTokens: number; outputTokens: number; invalidChunks: number }> {
   const chunks = chunkText(text, MAX_CHUNK_CHARS);
   console.log(`  Analyzing ${fileName} (${text.length} chars, ${chunks.length} chunk(s))...`);
+  const invalidOutputDir = options?.invalidOutputDir;
 
   const chunkResults: AnalyzeChunkResult[] = [];
+  let invalidChunks = 0;
 
   for (let i = 0; i < chunks.length; i++) {
     const chunk = chunks[i];
@@ -415,33 +595,32 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
       const inTok = usage?.prompt_tokens ?? 0;
       const outTok = usage?.completion_tokens ?? 0;
 
-      content = content.replace(/^```(?:json)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
-
-      let parsed: any;
-      try {
-        parsed = JSON.parse(content);
-      } catch {
-        const jsonMatch = content.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          parsed = JSON.parse(jsonMatch[0]);
-        } else {
-          console.warn(`    Could not parse JSON from ${fileName}${chunkLabel}`);
-          continue;
-        }
+      const parsed = parseAndValidateAIResponse(content, fileName, chunkLabel);
+      if (!parsed.ok) {
+        invalidChunks++;
+        persistInvalidAIResponse(invalidOutputDir, {
+          fileName,
+          dataSet,
+          chunkIndex: i,
+          chunksTotal: chunks.length,
+          reason: parsed.reason,
+          rawContent: content,
+        });
+        continue;
       }
 
       chunkResults.push({
         analysis: {
           fileName,
           dataSet,
-          documentType: parsed.documentType || "other",
-          dateOriginal: parsed.dateOriginal || null,
-          summary: parsed.summary || "",
-          persons: (parsed.persons || []).filter((p: any) => p.name && p.name.length > 2),
-          connections: parsed.connections || [],
-          events: parsed.events || [],
-          locations: parsed.locations || [],
-          keyFacts: parsed.keyFacts || [],
+          documentType: parsed.data.documentType,
+          dateOriginal: parsed.data.dateOriginal,
+          summary: parsed.data.summary,
+          persons: parsed.data.persons,
+          connections: parsed.data.connections,
+          events: parsed.data.events,
+          locations: parsed.data.locations,
+          keyFacts: parsed.data.keyFacts,
           analyzedAt: new Date().toISOString(),
         },
         inputTokens: inTok,
@@ -478,6 +657,7 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
       },
       inputTokens: 0,
       outputTokens: 0,
+      invalidChunks,
     };
   }
 
@@ -485,7 +665,12 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
   const totalOutput = chunkResults.reduce((sum, c) => sum + c.outputTokens, 0);
   const merged = mergeAnalyses(chunkResults.map(c => c.analysis));
 
-  return { result: merged, inputTokens: totalInput, outputTokens: totalOutput };
+  return {
+    result: merged,
+    inputTokens: totalInput,
+    outputTokens: totalOutput,
+    invalidChunks,
+  };
 }
 
 export async function analyzeDocumentTiered(
@@ -541,11 +726,13 @@ export async function runAIAnalysis(options: {
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
+  const invalidOutputDir = path.join(outputDir, INVALID_AI_OUTPUT_SUBDIR);
 
   console.log("\n=== AI Document Analyzer (DeepSeek) ===\n");
   console.log(`Model: ${DEEPSEEK_MODEL}`);
   console.log(`Input: ${inputDir}`);
   console.log(`Output: ${outputDir}`);
+  console.log(`Invalid AI responses: ${invalidOutputDir}`);
   console.log(`Min priority: ${minPriority}${budget ? `, Budget: ${budget} cents ($${(budget / 100).toFixed(2)})` : ""}`);
 
   // Phase 1: Scan for file paths only (no text loaded) to avoid OOM
@@ -607,6 +794,7 @@ export async function runAIAnalysis(options: {
   let skippedShort = 0;
   let skippedPriority = 0;
   let totalCostCents = 0;
+  let invalidChunks = 0;
 
   for (const entry of toProcess) {
     // Budget check
@@ -632,7 +820,18 @@ export async function runAIAnalysis(options: {
         continue;
       }
 
-      const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(data.text, fileName, entry.dataSet);
+      const {
+        result,
+        inputTokens,
+        outputTokens,
+        invalidChunks: documentInvalidChunks,
+      } = await analyzeDocumentWithTokens(
+        data.text,
+        fileName,
+        entry.dataSet,
+        { invalidOutputDir },
+      );
+      invalidChunks += documentInvalidChunks;
       const costCents = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M + (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
       totalCostCents += costCents;
 
@@ -663,6 +862,7 @@ export async function runAIAnalysis(options: {
 
   if (skippedShort > 0) console.log(`Skipped ${skippedShort} files with < ${minTextLength} chars of text`);
   if (skippedPriority > 0) console.log(`Skipped ${skippedPriority} files below priority ${minPriority}`);
+  if (invalidChunks > 0) console.log(`Captured ${invalidChunks} invalid AI chunk responses in ${invalidOutputDir}`);
 
   console.log("\n=== AI Analysis Summary ===");
   console.log(`Documents analyzed: ${processed}`);

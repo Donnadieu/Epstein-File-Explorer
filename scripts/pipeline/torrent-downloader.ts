@@ -236,6 +236,24 @@ function inferDataSetId(relativePath: string): number | null {
   return null;
 }
 
+function safeResolve(baseDir: string, candidate: string): string {
+  const resolved = path.resolve(baseDir, candidate);
+  const normalizedBase = path.resolve(baseDir) + path.sep;
+  const resolvedBase = path.resolve(baseDir);
+  // Allow exact match (base dir itself) or any child of it.
+  if (resolved !== resolvedBase && !resolved.startsWith(normalizedBase)) {
+    throw new Error(
+      `Path traversal blocked: "${candidate}" resolves to "${resolved}" which is outside "${baseDir}"`,
+    );
+  }
+  return resolved;
+}
+
+function safeRmSync(baseDir: string, target: string, opts?: fs.RmOptions): void {
+  const safe = safeResolve(baseDir, target);
+  fs.rmSync(safe, opts ?? { recursive: true, force: true });
+}
+
 // ---------------------------------------------------------------------------
 // Prerequisite checks
 // ---------------------------------------------------------------------------
@@ -481,7 +499,7 @@ async function extractArchive(
   if (state.status === "extracting" || state.status === "failed") {
     if (fs.existsSync(extractDir)) {
       console.log(`  Cleaning up partial extraction for ${key}...`);
-      fs.rmSync(extractDir, { recursive: true, force: true });
+      safeRmSync(stagingDir, extractDir);
     }
   }
 
@@ -525,7 +543,7 @@ async function extractArchive(
       // Copy files instead of symlinking for consistency
       for (const f of allFiles) {
         const rel = path.relative(dsDir, f);
-        const dest = path.join(extractDir, rel);
+        const dest = safeResolve(extractDir, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.copyFileSync(f, dest);
       }
@@ -600,7 +618,7 @@ async function normalizeFiles(
           const targetDir = path.join(outputDir, `data-set-${dsNum}`);
           fs.mkdirSync(targetDir, { recursive: true });
 
-          let destPath = path.join(targetDir, path.basename(srcPath));
+          let destPath = safeResolve(targetDir, path.basename(srcPath));
 
           // Handle filename collisions: check both on-disk files and
           // paths reserved by concurrent tasks (prevents TOCTOU races)
@@ -622,7 +640,7 @@ async function normalizeFiles(
             const base = path.basename(destPath, ext);
             let counter = 1;
             while (fs.existsSync(destPath) || reservedPaths.has(destPath)) {
-              destPath = path.join(targetDir, `${base}_${counter}${ext}`);
+              destPath = safeResolve(targetDir, `${base}_${counter}${ext}`);
               counter++;
             }
           }
@@ -866,14 +884,14 @@ export async function downloadTorrents(options?: {
       const extractDir = path.join(stagingDir, `${key}-extracted`);
       for (const dir of [dsDir, extractDir]) {
         if (fs.existsSync(dir)) {
-          fs.rmSync(dir, { recursive: true, force: true });
+          safeRmSync(stagingDir, dir);
           console.log(`  Removed ${path.relative(DATA_DIR, dir)}`);
         }
       }
     }
   }
   // Remove the magnets input file
-  const inputFile = path.join(stagingDir, "magnets.txt");
+  const inputFile = safeResolve(stagingDir, "magnets.txt");
   if (fs.existsSync(inputFile)) fs.unlinkSync(inputFile);
 
   // Summary
