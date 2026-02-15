@@ -26,7 +26,7 @@ function getDeepSeek(): OpenAI {
 // --- Canonical type normalization (from backfill-document-types.ts) ---
 
 const CANONICAL_TYPE_MAP: [string, RegExp][] = [
-  ["correspondence", /correspondence|email|letter|memo|fax|internal memorandum/i],
+  ["correspondence", /correspondence|email|letter|memo|fax|internal memorandum|calendar|appointment|schedule/i],
   ["court filing", /court filing|court order|indictment|plea|subpoena|motion|docket/i],
   ["fbi report", /fbi|302|bureau/i],
   ["deposition", /deposition|interview transcript/i],
@@ -34,10 +34,11 @@ const CANONICAL_TYPE_MAP: [string, RegExp][] = [
   ["flight log", /flight|manifest|aircraft/i],
   ["financial record", /financial|bank|account|employment record/i],
   ["search warrant", /search warrant|seizure|elsur/i],
-  ["police report", /police|incident report|booking/i],
+  ["police report", /police|incident report|booking|prison|correctional|jail|inmate/i],
   ["property record", /property|real estate/i],
   ["news article", /news|press|article|magazine/i],
   ["travel record", /travel|passport|immigration/i],
+  ["government record", /administrative|government|official|form|log|record|registry|certificate/i],
 ];
 
 const VALID_TYPES = new Set([
@@ -54,7 +55,7 @@ function normalizeType(aiType: string): string {
   for (const [canonical, pattern] of CANONICAL_TYPE_MAP) {
     if (pattern.test(lower)) return canonical;
   }
-  return "government record";
+  return "other";
 }
 
 // --- DeepSeek classification prompt ---
@@ -285,10 +286,12 @@ OPTIONS:
       const result = await classifyPages(doc.title, pages);
 
       // Update page types from AI response
+      // If normalizeType returned "other", fall back to the document's own type
       for (const pt of result.pageTypes) {
+        const resolvedType = pt.type === "other" ? (doc.documentType || "government record") : pt.type;
         await db
           .update(documentPages)
-          .set({ pageType: pt.type })
+          .set({ pageType: resolvedType })
           .where(
             and(
               eq(documentPages.documentId, doc.id),
@@ -303,7 +306,7 @@ OPTIONS:
         if (!classifiedPageNums.has(page.pageNumber)) {
           await db
             .update(documentPages)
-            .set({ pageType: doc.documentType })
+            .set({ pageType: doc.documentType || "government record" })
             .where(
               and(
                 eq(documentPages.documentId, doc.id),
