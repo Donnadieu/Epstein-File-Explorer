@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import { db } from "../../server/db";
 import { persons, documents, connections, personDocuments, timelineEvents } from "../../shared/schema";
 import { sql, eq, or, inArray } from "drizzle-orm";
-import { isSamePerson, normalizeName } from "../../server/storage";
+import { normalizeName } from "../../server/storage";
 import type { RawPerson } from "./wikipedia-scraper";
 import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
 import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from "./ai-analyzer";
@@ -656,10 +656,11 @@ export function isJunkPersonName(name: string): boolean {
   return false;
 }
 
-export async function deduplicatePersonsInDB(): Promise<void> {
-  console.log("Deduplicating persons in database...");
-
-  // Load protected persons (Wikipedia key figures) — never delete these
+/**
+ * Load Wikipedia key figures from persons-raw.json into a Set of normalized names.
+ * These persons are "protected" and should never be deleted.
+ */
+function loadProtectedNames(): Set<string> {
   const protectedFile = path.join(DATA_DIR, "persons-raw.json");
   const protectedNames = new Set<string>();
   if (fs.existsSync(protectedFile)) {
@@ -669,12 +670,63 @@ export async function deduplicatePersonsInDB(): Promise<void> {
   } else {
     console.log("  Warning: persons-raw.json not found, no protected names loaded");
   }
+  return protectedNames;
+}
 
-  // --- Pass 0: Remove junk persons (OCR artifacts, generic roles, placeholders) ---
-  const preCleanPersons = await db.select().from(persons);
+/**
+ * Cascade-delete a list of person IDs: removes connections, person_documents,
+ * cleans timeline_events arrays, and deletes the persons. Chunked at 500.
+ */
+async function deletePersonsCascade(ids: number[]): Promise<void> {
+  const CHUNK = 500;
+  for (let i = 0; i < ids.length; i += CHUNK) {
+    const chunk = ids.slice(i, i + CHUNK);
+    await db.delete(connections).where(
+      or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
+    );
+    await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
+    for (const id of chunk) {
+      await db.execute(sql`
+        UPDATE timeline_events
+        SET person_ids = array_remove(person_ids, ${id})
+        WHERE ${id} = ANY(person_ids)
+      `);
+    }
+    await db.delete(persons).where(inArray(persons.id, chunk));
+  }
+}
+
+/**
+ * Select the best canonical person from a group.
+ * Priority: protected > no-comma > non-ALL-CAPS > more word parts > longer name > lowest ID.
+ */
+function pickCanonical(
+  group: (typeof persons.$inferSelect)[],
+  protectedNames: Set<string>,
+): typeof persons.$inferSelect {
+  return [...group].sort((a, b) => {
+    const protA = protectedNames.has(normalizeName(a.name)) ? 1 : 0;
+    const protB = protectedNames.has(normalizeName(b.name)) ? 1 : 0;
+    if (protB !== protA) return protB - protA;
+    const commaA = a.name.includes(",") ? 1 : 0;
+    const commaB = b.name.includes(",") ? 1 : 0;
+    if (commaA !== commaB) return commaA - commaB;
+    const capsA = a.name === a.name.toUpperCase() ? 1 : 0;
+    const capsB = b.name === b.name.toUpperCase() ? 1 : 0;
+    if (capsA !== capsB) return capsA - capsB;
+    const partsA = normalizeName(a.name).split(" ").filter(p => p.length >= 2);
+    const partsB = normalizeName(b.name).split(" ").filter(p => p.length >= 2);
+    if (partsB.length !== partsA.length) return partsB.length - partsA.length;
+    if (b.name.length !== a.name.length) return b.name.length - a.name.length;
+    return a.id - b.id;
+  })[0];
+}
+
+// --- Pass 0: Junk Removal ---
+async function pass0JunkRemoval(protectedNames: Set<string>): Promise<number> {
+  const allPersons = await db.select().from(persons);
   const junkIds: number[] = [];
-
-  for (const p of preCleanPersons) {
+  for (const p of allPersons) {
     if (isJunkPersonName(p.name)) {
       if (protectedNames.has(normalizeName(p.name))) {
         console.log(`  PROTECTED: Skipping junk-deletion of "${p.name}"`);
@@ -683,209 +735,403 @@ export async function deduplicatePersonsInDB(): Promise<void> {
       junkIds.push(p.id);
     }
   }
-
   if (junkIds.length > 0) {
-    console.log(`  Pass 0: Removing ${junkIds.length} junk persons...`);
-
-    // Process in chunks to avoid exceeding Postgres parameter limits
-    const CHUNK = 500;
-    for (let i = 0; i < junkIds.length; i += CHUNK) {
-      const chunk = junkIds.slice(i, i + CHUNK);
-
-      // Delete connections referencing junk persons
-      await db.delete(connections).where(
-        or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
-      );
-
-      // Delete person_documents referencing junk persons
-      await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
-
-      // Remove junk person IDs from timeline_events.person_ids arrays
-      for (const junkId of chunk) {
-        await db.execute(sql`
-          UPDATE timeline_events
-          SET person_ids = array_remove(person_ids, ${junkId})
-          WHERE ${junkId} = ANY(person_ids)
-        `);
-      }
-
-      // Delete the junk persons
-      await db.delete(persons).where(inArray(persons.id, chunk));
-    }
-
-    console.log(`  Pass 0: Removed ${junkIds.length} junk persons`);
-  } else {
-    console.log("  Pass 0: No junk persons found");
+    await deletePersonsCascade(junkIds);
   }
+  console.log(`  Pass 0: Removed ${junkIds.length} junk persons`);
+  return junkIds.length;
+}
 
+// --- Pass 1: Exact Normalized Matches ---
+async function pass1ExactNormalized(protectedNames: Set<string>): Promise<number> {
   const allPersons = await db.select().from(persons);
-  console.log(`  Found ${allPersons.length} persons total (after cleanup)`);
-
-  // --- Pass 1: Multi-word name matching via Union-Find ---
-  const parent = new Map<number, number>();
-  for (const p of allPersons) parent.set(p.id, p.id);
-
-  function find(x: number): number {
-    while (parent.get(x) !== x) {
-      parent.set(x, parent.get(parent.get(x)!)!);
-      x = parent.get(x)!;
-    }
-    return x;
-  }
-  function union(a: number, b: number) {
-    const ra = find(a), rb = find(b);
-    if (ra !== rb) parent.set(ra, rb);
-  }
-
-  for (let i = 0; i < allPersons.length; i++) {
-    for (let j = i + 1; j < allPersons.length; j++) {
-      if (isSamePerson(allPersons[i], allPersons[j])) {
-        union(allPersons[i].id, allPersons[j].id);
-      }
-    }
-  }
-
-  const groups = new Map<number, typeof allPersons>();
+  const groups = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of allPersons) {
-    const root = find(p.id);
-    if (!groups.has(root)) groups.set(root, []);
-    groups.get(root)!.push(p);
+    const norm = normalizeName(p.name);
+    if (!norm) continue;
+    if (!groups.has(norm)) groups.set(norm, []);
+    groups.get(norm)!.push(p);
   }
 
-  let mergedCount = 0;
-  let deletedCount = 0;
-
-  for (const group of groups.values()) {
+  let merged = 0;
+  for (const [norm, group] of groups) {
     if (group.length <= 1) continue;
-
-    // Sort by name quality: protected > meaningful parts > longest normalized name > counts
-    group.sort((a, b) => {
-      const protA = protectedNames.has(normalizeName(a.name)) ? 1 : 0;
-      const protB = protectedNames.has(normalizeName(b.name)) ? 1 : 0;
-      if (protB !== protA) return protB - protA;
-      const partsA = normalizeName(a.name).split(" ").filter(p => p.length >= 2);
-      const partsB = normalizeName(b.name).split(" ").filter(p => p.length >= 2);
-      if (partsB.length !== partsA.length) return partsB.length - partsA.length;
-      const normLenDiff = normalizeName(b.name).length - normalizeName(a.name).length;
-      if (normLenDiff !== 0) return normLenDiff;
-      return (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount);
-    });
-    const canonical = group[0];
-    const duplicateIds = group.slice(1).map(p => p.id);
-
-    if (group.length > 5) {
-      console.log(`  WARNING: Large merge group (${group.length}): ${group.map(p => p.name).slice(0, 8).join(", ")}...`);
-    }
-
+    const canonical = pickCanonical(group, protectedNames);
+    const duplicateIds = group.filter(p => p.id !== canonical.id).map(p => p.id);
     await mergePersonGroup(canonical, duplicateIds, group.map(p => p.name));
+    merged += duplicateIds.length;
+    console.log(`  [P1] Merged ${group.map(p => `"${p.name}"`).join(", ")} → "${canonical.name}"`);
+  }
+  console.log(`  Pass 1: Merged ${merged} persons via exact normalized match`);
+  return merged;
+}
 
-    mergedCount++;
-    deletedCount += duplicateIds.length;
-    console.log(`  Merged "${group.map(p => p.name).join('", "')}" → "${canonical.name}"`);
+// --- Pass 2: Single-Word → Dominant Multi-Word (Evidence-Based) ---
+async function pass2SingleWordEvidence(protectedNames: Set<string>): Promise<number> {
+  const allPersons = await db.select().from(persons);
+
+  // Pre-load document sets per person for evidence scoring
+  const allPD = await db.select({ personId: personDocuments.personId, documentId: personDocuments.documentId }).from(personDocuments);
+  const docsByPerson = new Map<number, Set<number>>();
+  for (const pd of allPD) {
+    if (!docsByPerson.has(pd.personId)) docsByPerson.set(pd.personId, new Set());
+    docsByPerson.get(pd.personId)!.add(pd.documentId);
   }
 
-  // Remove self-loop connections
-  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
+  // Pre-load connection sets per person
+  const allConns = await db.select({ p1: connections.personId1, p2: connections.personId2 }).from(connections);
+  const connsByPerson = new Map<number, Set<number>>();
+  for (const c of allConns) {
+    if (!connsByPerson.has(c.p1)) connsByPerson.set(c.p1, new Set());
+    connsByPerson.get(c.p1)!.add(c.p2);
+    if (!connsByPerson.has(c.p2)) connsByPerson.set(c.p2, new Set());
+    connsByPerson.get(c.p2)!.add(c.p1);
+  }
 
-  console.log(`  Pass 1 (name matching): merged ${mergedCount} groups, deleted ${deletedCount} duplicate persons`);
-
-  // --- Pass 2: Merge single-word names into dominant multi-word person ---
-  const remaining = await db.select().from(persons);
-  const multiWord = remaining.filter(p => p.name.trim().split(/\s+/).length >= 2);
-  const singleWord = remaining.filter(p => {
-    const n = normalizeName(p.name);
-    const parts = n.split(" ").filter(Boolean);
-    if (parts.length === 0) return false;
-    if (parts.length === 1) return true;
-    const meaningfulParts = parts.filter(pt => pt.length >= 2);
-    return meaningfulParts.length <= 1;
+  const multiWord = allPersons.filter(p => {
+    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    return parts.length >= 2;
+  });
+  const singleWord = allPersons.filter(p => {
+    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    return parts.length === 1;
   });
 
-  let pass2Merged = 0;
+  // Index multi-word persons by each word part for fast lookup
+  const wordIndex = new Map<string, (typeof persons.$inferSelect)[]>();
+  for (const p of multiWord) {
+    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    for (const part of parts) {
+      if (!wordIndex.has(part)) wordIndex.set(part, []);
+      wordIndex.get(part)!.push(p);
+    }
+  }
+
+  let merged = 0;
+  const mergedSingleIds = new Set<number>();
+
   for (const single of singleWord) {
-    const normalized = normalizeName(single.name);
-    const wordParts = normalized.split(" ").filter(Boolean);
-    const meaningful = wordParts.filter(p => p.length >= 2);
-    const word = meaningful.length > 0 ? meaningful.sort((a, b) => b.length - a.length)[0] : wordParts[0];
+    const norm = normalizeName(single.name);
+    const word = norm.split(" ").filter(pt => pt.length >= 2)[0];
     if (!word || word.length < 3) continue;
 
-    const candidates = multiWord.filter(p => {
-      const parts = p.name.toLowerCase().replace(/[^a-z\s]/g, "").trim().split(/\s+/);
-      const first = parts[0], last = parts[parts.length - 1];
-      if (first === word || last === word) return true;
-      if (word.length >= 6 && last.length >= 6 && editDistance(last, word) <= 1) return true;
-      return false;
-    });
-
+    // Find multi-word candidates containing this word
+    const candidates = wordIndex.get(word) || [];
     if (candidates.length === 0) continue;
 
-    candidates.sort((a, b) => (b.connectionCount + b.documentCount) - (a.connectionCount + a.documentCount));
-    const dominant = candidates[0];
-    const secondBest = candidates[1];
-    const dominantScore = dominant.connectionCount + dominant.documentCount;
+    // Score by shared evidence
+    const singleDocs = docsByPerson.get(single.id) || new Set();
+    const singleConns = connsByPerson.get(single.id) || new Set();
 
-    // Lowered threshold: merge if dominant has >= 10 total and >= 3x runner-up
-    if (dominantScore < 10) continue;
-    if (secondBest && dominantScore < 3 * (secondBest.connectionCount + secondBest.documentCount)) {
-      console.log(`  Skipping "${single.name}" → ambiguous between "${dominant.name}" and "${secondBest.name}"`);
+    const scored = candidates.map(c => {
+      const cDocs = docsByPerson.get(c.id) || new Set();
+      const cConns = connsByPerson.get(c.id) || new Set();
+      let sharedDocs = 0;
+      for (const d of singleDocs) if (cDocs.has(d)) sharedDocs++;
+      let sharedConns = 0;
+      for (const cn of singleConns) if (cConns.has(cn)) sharedConns++;
+      return { person: c, score: sharedDocs * 2 + sharedConns };
+    }).filter(s => s.score > 0).sort((a, b) => b.score - a.score);
+
+    if (scored.length === 0) continue;
+
+    let winner: typeof persons.$inferSelect | null = null;
+    if (scored.length === 1) {
+      // ONLY_MATCH: exactly one scored candidate
+      winner = scored[0].person;
+    } else if (scored[0].score >= 2 * scored[1].score) {
+      // CLEAR_WINNER: top >= 2x second
+      winner = scored[0].person;
+    } else {
+      console.log(`  [P2] Skipping "${single.name}" → ambiguous: "${scored[0].person.name}" (${scored[0].score}) vs "${scored[1].person.name}" (${scored[1].score})`);
       continue;
     }
 
     try {
-      await mergePersonGroup(dominant, [single.id], [single.name]);
-      console.log(`  Merged "${single.name}" → "${dominant.name}"`);
-      pass2Merged++;
+      await mergePersonGroup(winner, [single.id], [single.name]);
+      mergedSingleIds.add(single.id);
+      merged++;
+      console.log(`  [P2] Merged "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
     } catch (err: any) {
-      console.warn(`  Failed to merge "${single.name}": ${err.message}`);
+      console.warn(`  [P2] Failed to merge "${single.name}": ${err.message}`);
     }
   }
+  console.log(`  Pass 2: Merged ${merged} single-word persons via shared evidence`);
+  return merged;
+}
 
-  // Remove self-loops again after pass 2
-  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
-
-  console.log(`  Pass 2 (single-word): merged ${pass2Merged} single-word persons`);
-
-  // --- Pass 3: Remove remaining single-word names that couldn't be merged ---
-  // These are ambiguous first names, fragments, or roles that don't match anyone
-  const afterPass2 = await db.select().from(persons);
-  const singleWordRemaining = afterPass2.filter(p => {
+// --- Pass 3: Delete Remaining Single-Word Names ---
+async function pass3DeleteSingleWord(protectedNames: Set<string>): Promise<number> {
+  const allPersons = await db.select().from(persons);
+  const toDelete = allPersons.filter(p => {
     if (protectedNames.has(normalizeName(p.name))) return false;
     const norm = normalizeName(p.name);
     const meaningfulParts = norm.split(" ").filter(pt => pt.length >= 2);
-    return meaningfulParts.length <= 1 && norm.length <= 15 && norm.length > 0;
+    return meaningfulParts.length <= 1 && norm.length > 0;
   });
 
-  if (singleWordRemaining.length > 0) {
-    const singleWordIds = singleWordRemaining.map(p => p.id);
-    console.log(`  Pass 3: Removing ${singleWordIds.length} unmatched single-word names...`);
+  if (toDelete.length > 0) {
+    await deletePersonsCascade(toDelete.map(p => p.id));
+  }
+  console.log(`  Pass 3: Deleted ${toDelete.length} remaining single-word names`);
+  return toDelete.length;
+}
 
-    const CHUNK = 500;
-    for (let i = 0; i < singleWordIds.length; i += CHUNK) {
-      const chunk = singleWordIds.slice(i, i + CHUNK);
-      await db.delete(connections).where(
-        or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
-      );
-      await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
-      for (const id of chunk) {
-        await db.execute(sql`
-          UPDATE timeline_events SET person_ids = array_remove(person_ids, ${id})
-          WHERE ${id} = ANY(person_ids)
-        `);
+// --- Pass 4: Key Figure Variants (Hardcoded) ---
+const KEY_FIGURE_MERGES: { canonical: string; variants: string[]; deleteNames?: string[] }[] = [
+  {
+    canonical: "Jeffrey Epstein",
+    variants: ["Jeffrey E. Epstein", "Jeffrey Edward Epstein", "Jeffery Epstein", "Jeff Epstein", "JEFFREY EPSTEIN", "JEFFREY E. EPSTEIN", "Epstein, Jeffrey"],
+  },
+  {
+    canonical: "Ghislaine Maxwell",
+    variants: ["Ghislaine Noelle Maxwell", "GHISLAINE MAXWELL", "Ghislaine N. Maxwell", "Maxwell, Ghislaine", "G. Maxwell"],
+    deleteNames: ["Ghisiaine Maxwell", "Ghislane Maxwell", "Ghislaine Maxwel"],
+  },
+  {
+    canonical: "Alexander Acosta",
+    variants: ["R. Alexander Acosta", "R Alexander Acosta", "ALEXANDER ACOSTA"],
+  },
+  {
+    canonical: "Alan Dershowitz",
+    variants: ["Alan M. Dershowitz", "Alan Morton Dershowitz", "ALAN DERSHOWITZ", "Dershowitz, Alan"],
+  },
+  {
+    canonical: "Les Wexner",
+    variants: ["Leslie Wexner", "Leslie H. Wexner", "Leslie Herbert Wexner", "LES WEXNER"],
+  },
+  {
+    canonical: "Bill Clinton",
+    variants: ["William Jefferson Clinton", "William J. Clinton", "President Clinton", "BILL CLINTON", "Clinton, Bill"],
+  },
+  {
+    canonical: "Donald Trump",
+    variants: ["Donald J. Trump", "Donald John Trump", "DONALD TRUMP", "Trump, Donald"],
+  },
+  {
+    canonical: "Virginia Giuffre",
+    variants: ["Virginia Roberts", "Virginia Roberts Giuffre", "Virginia L. Giuffre", "VIRGINIA GIUFFRE", "Virginia Louise Giuffre"],
+  },
+  {
+    canonical: "Jean-Luc Brunel",
+    variants: ["Jean Luc Brunel", "JEAN-LUC BRUNEL", "Jean-Luc Bruno", "Brunel, Jean-Luc"],
+  },
+  {
+    canonical: "Nadia Marcinkova",
+    variants: ["Nadia Marcinko", "NADIA MARCINKOVA", "Nadia Marcinková"],
+  },
+  {
+    canonical: "Mark Epstein",
+    variants: ["MARK EPSTEIN", "Epstein, Mark"],
+  },
+  {
+    canonical: "Anne Maxwell",
+    variants: ["ANNE MAXWELL"],
+  },
+  {
+    canonical: "Christine Maxwell",
+    variants: ["CHRISTINE MAXWELL"],
+  },
+  {
+    canonical: "Isabel Maxwell",
+    variants: ["ISABEL MAXWELL"],
+  },
+];
+
+async function pass4KeyFigures(): Promise<number> {
+  let total = 0;
+  for (const entry of KEY_FIGURE_MERGES) {
+    // Find canonical in DB
+    const [canonicalRow] = await db.select().from(persons)
+      .where(sql`LOWER(${persons.name}) = LOWER(${entry.canonical})`)
+      .limit(1);
+    if (!canonicalRow) continue;
+
+    // Merge variants
+    for (const variant of entry.variants) {
+      const [variantRow] = await db.select().from(persons)
+        .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
+        .limit(1);
+      if (variantRow && variantRow.id !== canonicalRow.id) {
+        await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        total++;
+        console.log(`  [P4] Merged "${variantRow.name}" → "${canonicalRow.name}"`);
       }
-      await db.delete(persons).where(inArray(persons.id, chunk));
     }
 
-    console.log(`  Pass 3: Removed ${singleWordIds.length} single-word persons`);
-  } else {
-    console.log("  Pass 3: No unmatched single-word names remaining");
+    // Delete junk variants
+    if (entry.deleteNames) {
+      const deleteIds: number[] = [];
+      for (const name of entry.deleteNames) {
+        const [row] = await db.select().from(persons)
+          .where(sql`LOWER(${persons.name}) = LOWER(${name})`)
+          .limit(1);
+        if (row && row.id !== canonicalRow.id) deleteIds.push(row.id);
+      }
+      if (deleteIds.length > 0) {
+        await deletePersonsCascade(deleteIds);
+        total += deleteIds.length;
+        console.log(`  [P4] Deleted ${deleteIds.length} junk variants of "${entry.canonical}"`);
+      }
+    }
+  }
+  console.log(`  Pass 4: Processed ${total} key figure variants`);
+  return total;
+}
+
+// --- Pass 5: Middle-Initial Variants ---
+async function pass5MiddleInitial(protectedNames: Set<string>): Promise<number> {
+  const allPersons = await db.select().from(persons);
+
+  // Group by (first, last) words of normalized name
+  const twoWordPersons: (typeof persons.$inferSelect)[] = [];
+  const threeWordPersons: (typeof persons.$inferSelect)[] = [];
+
+  for (const p of allPersons) {
+    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    if (parts.length === 2) twoWordPersons.push(p);
+    else if (parts.length >= 3) threeWordPersons.push(p);
   }
 
-  // Remove any self-loops created during cleanup
-  await db.execute(sql`DELETE FROM ${connections} WHERE ${connections.personId1} = ${connections.personId2}`);
+  // Index 3+-word persons by (first, last) key
+  const threeWordIndex = new Map<string, (typeof persons.$inferSelect)[]>();
+  for (const p of threeWordPersons) {
+    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    const key = `${parts[0]}|${parts[parts.length - 1]}`;
+    if (!threeWordIndex.has(key)) threeWordIndex.set(key, []);
+    threeWordIndex.get(key)!.push(p);
+  }
 
-  const finalCount = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
-  console.log(`  Total: ${mergedCount + pass2Merged} merges, ${deletedCount + pass2Merged + singleWordRemaining.length} persons removed`);
-  console.log(`  Final person count: ${finalCount[0]?.count}`);
+  let merged = 0;
+  for (const twoWord of twoWordPersons) {
+    const parts = normalizeName(twoWord.name).split(" ").filter(pt => pt.length >= 2);
+    if (parts.length !== 2) continue;
+    const key = `${parts[0]}|${parts[1]}`;
+    const matches = threeWordIndex.get(key);
+    if (!matches || matches.length !== 1) {
+      if (matches && matches.length > 1) {
+        console.log(`  [P5] Skipping "${twoWord.name}" → ambiguous: ${matches.map(m => `"${m.name}"`).join(", ")}`);
+      }
+      continue;
+    }
+
+    const match = matches[0];
+
+    // Pre-load counts for both to pick canonical with more data
+    const [twoDocs] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, twoWord.id));
+    const [twoConns] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${twoWord.id} OR ${connections.personId2} = ${twoWord.id}`);
+    const [matchDocs] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, match.id));
+    const [matchConns] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${match.id} OR ${connections.personId2} = ${match.id}`);
+
+    const twoTotal = (twoDocs?.count || 0) + (twoConns?.count || 0);
+    const matchTotal = (matchDocs?.count || 0) + (matchConns?.count || 0);
+
+    let canonical: typeof persons.$inferSelect;
+    let duplicate: typeof persons.$inferSelect;
+    if (twoTotal >= matchTotal) {
+      canonical = twoWord;
+      duplicate = match;
+    } else {
+      canonical = match;
+      duplicate = twoWord;
+    }
+    // Tiebreak: lowest ID
+    if (twoTotal === matchTotal) {
+      canonical = twoWord.id < match.id ? twoWord : match;
+      duplicate = canonical.id === twoWord.id ? match : twoWord;
+    }
+
+    try {
+      await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
+      merged++;
+      console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
+    } catch (err: any) {
+      console.warn(`  [P5] Failed to merge "${duplicate.name}": ${err.message}`);
+    }
+  }
+  console.log(`  Pass 5: Merged ${merged} middle-initial variants`);
+  return merged;
+}
+
+// --- Pass 6: Targeted OCR/Nickname Merges (Hardcoded) ---
+const OCR_NICKNAME_MERGES: { canonical: string; variants: string[] }[] = [
+  { canonical: "Glenn Dubin", variants: ["Glen Dubin"] },
+  { canonical: "Jussie Smollett", variants: ["Jessie Smollett"] },
+  { canonical: "Steven Mnuchin", variants: ["Steve Mnuchin"] },
+  { canonical: "Bobbi Sternheim", variants: ["Bobbi Stemheim", "Bobbi C. Sternheim"] },
+  { canonical: "Christian Everdell", variants: ["Christian R. Everdell", "Chrstian Everdell"] },
+  { canonical: "Bradley Edwards", variants: ["Bradley James Edwards", "Brad Edwards"] },
+  { canonical: "Eva Andersson-Dubin", variants: ["Eva Dubin", "Eva Andersson Dubin"] },
+  { canonical: "Peter Skinner", variants: ["Pete Skinner"] },
+  { canonical: "Saimir Alimehmeti", variants: ["Sajmir Alimehmeti"] },
+  { canonical: "Sigrid McCawley", variants: ["Sigrid S. McCawley"] },
+  { canonical: "Paul Cassell", variants: ["Paul G. Cassell"] },
+  { canonical: "David Boies", variants: ["David Boles", "David Boie"] },
+  { canonical: "Lesley Groff", variants: ["Leslie Groff"] },
+  { canonical: "Sarah Kellen", variants: ["Sarah Kellen Vickers", "Sarah K. Vickers"] },
+  { canonical: "Alfredo Rodriguez", variants: ["Alfred Rodriguez"] },
+  { canonical: "Adriana Ross", variants: ["Adriana Mucinska", "Adriana Mucinska Ross"] },
+  { canonical: "Haley Robson", variants: ["Hailey Robson"] },
+  { canonical: "Courtney Wild", variants: ["Courtney Wilde"] },
+  { canonical: "Michael Reiter", variants: ["Michael Retter", "Chief Reiter"] },
+  { canonical: "Joseph Recarey", variants: ["Joe Recarey", "Det. Recarey"] },
+];
+
+async function pass6OCRNickname(): Promise<number> {
+  let total = 0;
+  for (const entry of OCR_NICKNAME_MERGES) {
+    const [canonicalRow] = await db.select().from(persons)
+      .where(sql`LOWER(${persons.name}) = LOWER(${entry.canonical})`)
+      .limit(1);
+    if (!canonicalRow) continue;
+
+    for (const variant of entry.variants) {
+      const [variantRow] = await db.select().from(persons)
+        .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
+        .limit(1);
+      if (variantRow && variantRow.id !== canonicalRow.id) {
+        await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        total++;
+        console.log(`  [P6] Merged "${variantRow.name}" → "${canonicalRow.name}"`);
+      }
+    }
+  }
+  console.log(`  Pass 6: Merged ${total} OCR/nickname variants`);
+  return total;
+}
+
+// --- Coordinator ---
+export async function deduplicatePersonsInDB(): Promise<void> {
+  console.log("Deduplicating persons in database (6-pass conservative approach)...");
+  const protectedNames = loadProtectedNames();
+
+  const [beforeCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  console.log(`  Starting person count: ${beforeCount?.count}`);
+
+  const stats = {
+    pass0: await pass0JunkRemoval(protectedNames),
+    pass1: await pass1ExactNormalized(protectedNames),
+    pass2: await pass2SingleWordEvidence(protectedNames),
+    pass3: await pass3DeleteSingleWord(protectedNames),
+    pass4: await pass4KeyFigures(),
+    pass5: await pass5MiddleInitial(protectedNames),
+    pass6: await pass6OCRNickname(),
+  };
+
+  // Final cleanup: delete self-loop connections
+  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+
+  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+
+  console.log("\n  === Deduplication Summary ===");
+  console.log(`  Pass 0 (junk removal):      ${stats.pass0} removed`);
+  console.log(`  Pass 1 (exact normalized):   ${stats.pass1} merged`);
+  console.log(`  Pass 2 (single→multi evidence): ${stats.pass2} merged`);
+  console.log(`  Pass 3 (delete single-word): ${stats.pass3} deleted`);
+  console.log(`  Pass 4 (key figure variants):${stats.pass4} processed`);
+  console.log(`  Pass 5 (middle-initial):     ${stats.pass5} merged`);
+  console.log(`  Pass 6 (OCR/nickname):       ${stats.pass6} merged`);
+  console.log(`  Person count: ${beforeCount?.count} → ${afterCount?.count}`);
 }
 
 /**
