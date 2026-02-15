@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,9 +24,11 @@ import {
   Eye,
   Image as ImageIcon,
   Video,
+  Sparkles,
+  ChevronDown,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
-import type { Document, Person } from "@shared/schema";
+import type { Document, Person, AIAnalysisDocument } from "@shared/schema";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
 
@@ -83,6 +85,21 @@ export default function DocumentDetailPage() {
   const { data: adjacent } = useQuery<{ prev: number | null; next: number | null }>({
     queryKey: [`/api/documents/${params.id}/adjacent`],
     enabled: !!params.id,
+  });
+
+  const aiFileName = doc?.title?.trim().match(EFTA_PATTERN)
+    ? doc.title.trim().endsWith(".pdf") ? doc.title.trim() : `${doc.title.trim()}.pdf`
+    : null;
+
+  const { data: aiAnalysis } = useQuery<AIAnalysisDocument>({
+    queryKey: ["/api/ai-analyses", aiFileName],
+    queryFn: async () => {
+      const res = await fetch(`/api/ai-analyses/${encodeURIComponent(aiFileName!)}`);
+      if (!res.ok) throw new Error("Not found");
+      return res.json();
+    },
+    enabled: !!aiFileName,
+    retry: false,
   });
 
   useEffect(() => {
@@ -254,6 +271,11 @@ export default function DocumentDetailPage() {
       {(doc.sourceUrl || doc.documentType) && (
         <>
           <Separator />
+
+          {aiAnalysis?.summary && (
+            <AISummarySection summary={aiAnalysis.summary} keyFacts={aiAnalysis.keyFacts} />
+          )}
+
           <div className="flex flex-col gap-2">
             <h2 className="text-sm font-semibold flex items-center gap-2">
               <Eye className="w-4 h-4 text-primary" /> Document Viewer
@@ -362,6 +384,42 @@ export default function DocumentDetailPage() {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+function AISummarySection({ summary, keyFacts }: { summary: string; keyFacts?: string[] }) {
+  const [factsOpen, setFactsOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <h2 className="text-sm font-semibold flex items-center gap-2">
+        <Sparkles className="w-4 h-4 text-primary" /> AI Summary
+      </h2>
+      <Card className="bg-muted/30">
+        <CardContent className="p-4 flex flex-col gap-3">
+          <p className="text-sm text-muted-foreground leading-relaxed">{summary}</p>
+          {keyFacts && keyFacts.length > 0 && (
+            <div>
+              <button
+                type="button"
+                onClick={() => setFactsOpen(!factsOpen)}
+                className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${factsOpen ? "rotate-180" : ""}`} />
+                Key Facts ({keyFacts.length})
+              </button>
+              {factsOpen && (
+                <ul className="mt-2 space-y-1.5 pl-5">
+                  {keyFacts.map((fact, i) => (
+                    <li key={i} className="text-xs text-muted-foreground list-disc leading-relaxed">{fact}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }
