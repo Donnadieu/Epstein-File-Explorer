@@ -1,0 +1,84 @@
+{
+  "worktrees": [
+    {
+      "name": "main",
+      "path": "C:\\Users\\Amber\\OneDrive\\DOASpeaks\\Desktop\\eps\\Epstein-File-Explorer",
+      "branch": "main",
+      "isDefault": true
+    }
+  ],
+  "settings": {
+    "setup": {
+      "commands": [
+        "npm install"
+      ],
+      "envFile": ".env",
+      "requiredEnv": [
+        "DATABASE_URL"
+      ],
+      "optionalEnv": [
+        "DEEPSEEK_API_KEY",
+        "R2_ACCOUNT_ID",
+        "R2_ACCESS_KEY_ID",
+        "R2_SECRET_ACCESS_KEY",
+        "R2_BUCKET_NAME",
+        "AI_INTEGRATIONS_OPENROUTER_API_KEY"
+      ]
+    },
+    "tasks": {
+      "dev": {
+        "command": "npm run dev",
+        "description": "Start development server (port 3000)",
+        "group": "serve"
+      },
+      "typecheck": {
+        "command": "npx tsc --noEmit",
+        "description": "Run TypeScript type checker",
+        "group": "build"
+      },
+      "db:push": {
+        "command": "npm run db:push",
+        "description": "Push Drizzle schema to PostgreSQL",
+        "group": "build"
+      },
+      "pipeline:help": {
+        "command": "npx tsx scripts/pipeline/run-pipeline.ts --help",
+        "description": "Show pipeline usage",
+        "group": "pipeline"
+      },
+      "pipeline:dry-run": {
+        "command": "npx tsx scripts/pipeline/run-pipeline.ts analyze-ai --dry-run --limit 10",
+        "description": "Dry-run AI analysis (no API calls)",
+        "group": "pipeline"
+      },
+      "pipeline:process-ds1": {
+        "command": "npx tsx scripts/pipeline/run-pipeline.ts process --data-sets 1 --max-process 50",
+        "description": "Extract text from DS1 PDFs (first 50)",
+        "group": "pipeline"
+      },
+      "pipeline:ds9-gaps": {
+        "command": "npx tsx scripts/pipeline/run-pipeline.ts ds9-gap-analysis",
+        "description": "Analyze DS9 for missing EFTA IDs",
+        "group": "pipeline"
+      },
+      "pipeline:load-all": {
+        "command": "npx tsx scripts/pipeline/run-pipeline.ts load-persons load-documents load-ai-results extract-connections update-counts dedup-persons",
+        "description": "Run all DB loading stages",
+        "group": "pipeline"
+      }
+    },
+    "directories": {
+      "data": {
+        "downloads": "Torrent-downloaded PDFs (gitignored, 300GB+)",
+        "extracted": "pdfjs text extraction output (gitignored)",
+        "ai-analyzed": "DeepSeek analysis JSON (5577 files tracked)",
+        "ai-analyzed/invalid": "Quarantined invalid LLM responses (gitignored)",
+        "staging": "Torrent staging area (gitignored)"
+      },
+      "scripts/pipeline": "14-stage ETL pipeline (TypeScript)",
+      "server": "Express API + Drizzle ORM + WebSocket",
+      "client/src": "React frontend (Vite + Tailwind + shadcn)",
+      "shared": "Shared schema (schema.ts = single source of truth)"
+    }
+  }
+}

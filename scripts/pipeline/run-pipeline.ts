@@ -82,6 +82,7 @@ STAGES:
   download-torrent Download data sets via BitTorrent (aria2c), extract archives, normalize files
   upload-r2        Upload downloaded files to Cloudflare R2 storage
   process          Extract text from downloaded PDFs via OCR/parsing
+  ds9-gap-analysis Scan local Data Set 9 files, infer IDs, write recovery manifest (data/ds9-recovery-manifest.json)
   classify-media   Classify documents by media type and set AI priority
   analyze-ai       Run AI analysis on processed documents (DeepSeek)
   load-persons     Load scraped persons into PostgreSQL database

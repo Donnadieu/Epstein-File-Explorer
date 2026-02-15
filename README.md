@@ -132,6 +132,8 @@ npx tsx scripts/pipeline/run-pipeline.ts all
 | 11  | Financial ledgers, flight manifests     | ~28 GB  | DOJ offline — torrent only  |
 | 12  | Court documents                         | 114 MB  | Available via DOJ + torrent |
 
+For documented problems with the DOJ release (bulk downloads removed, DS9 incomplete, redaction failures, duplication, etc.) and the pipeline’s planned solutions, see [docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md](docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md). Implementation order is tracked in [docs/PIPELINE-ROADMAP.md](docs/PIPELINE-ROADMAP.md).
+
 ## API
 
 ### Documents
