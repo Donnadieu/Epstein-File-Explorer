@@ -188,12 +188,33 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
   let eventsCreated = 0;
   let eventsUpdated = 0;
   let docLinksCreated = 0;
-  let docLinksUpdated = 0;
 
   const existingPairs = new Set<string>();
   const existingConns = await db.select({ personId1: connections.personId1, personId2: connections.personId2 }).from(connections);
   for (const c of existingConns) {
     existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
+  }
+
+  // Pre-load all persons by lowercase name for O(1) lookups
+  const allPersonsList = await db.select().from(persons);
+  const personsByName = new Map<string, typeof persons.$inferSelect>();
+  for (const p of allPersonsList) {
+    personsByName.set(p.name.toLowerCase(), p);
+  }
+
+  // Pre-load personDocuments links into a Set
+  const allLinks = await db.select({ personId: personDocuments.personId, documentId: personDocuments.documentId }).from(personDocuments);
+  const existingLinks = new Set<string>();
+  for (const l of allLinks) {
+    existingLinks.add(`${l.personId}-${l.documentId}`);
+  }
+
+  // Pre-load document EFTA→ID map for O(1) source doc resolution
+  const allDocs = await db.select({ id: documents.id, title: documents.title, sourceUrl: documents.sourceUrl }).from(documents);
+  const docByEfta = new Map<string, number>();
+  for (const d of allDocs) {
+    const match = (d.title || d.sourceUrl || '').match(/EFTA\d+/i);
+    if (match) docByEfta.set(match[0].toLowerCase(), d.id);
   }
 
   for (let fi = 0; fi < files.length; fi++) {
@@ -210,18 +231,14 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
       for (const mention of data.persons) {
         if (isJunkPersonName(mention.name)) continue;
 
-        const existing = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${mention.name})`)
-          .limit(1);
+        const existing = personsByName.get(mention.name.toLowerCase());
 
         const newDesc = (mention.context || "").substring(0, 500);
         const status = inferStatusFromCategory(mention.category, mention.role);
 
-        if (existing.length === 0) {
+        if (!existing) {
           try {
-            await db.insert(persons).values({
+            const [inserted] = await db.insert(persons).values({
               name: mention.name,
               category: mention.category,
               role: mention.role,
@@ -229,22 +246,22 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
               status,
               documentCount: 0,
               connectionCount: 0,
-            });
+            }).returning();
+            personsByName.set(inserted.name.toLowerCase(), inserted);
             personsCreated++;
           } catch {
             /* skip duplicates */
           }
         } else {
           // Update if new data is richer
-          const ex = existing[0];
           const updates: Record<string, any> = {};
-          if (mention.category && (!ex.category || ex.category === "unknown")) updates.category = mention.category;
-          if (mention.role && (!ex.role || ex.role === "unknown")) updates.role = mention.role;
-          if (newDesc && newDesc.length > (ex.description?.length || 0)) updates.description = newDesc;
-          if (status !== "named" && ex.status === "named") updates.status = status;
+          if (mention.category && (!existing.category || existing.category === "unknown")) updates.category = mention.category;
+          if (mention.role && (!existing.role || existing.role === "unknown")) updates.role = mention.role;
+          if (newDesc && newDesc.length > (existing.description?.length || 0)) updates.description = newDesc;
+          if (status !== "named" && existing.status === "named") updates.status = status;
 
           if (Object.keys(updates).length > 0) {
-            await db.update(persons).set(updates).where(eq(persons.id, ex.id));
+            await db.update(persons).set(updates).where(eq(persons.id, existing.id));
             personsUpdated++;
           }
         }
@@ -252,17 +269,8 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
       // --- Connections ---
       for (const conn of data.connections) {
-        const [person1] = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${conn.person1})`)
-          .limit(1);
-
-        const [person2] = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${conn.person2})`)
-          .limit(1);
+        const person1 = personsByName.get(conn.person1.toLowerCase());
+        const person2 = personsByName.get(conn.person2.toLowerCase());
 
         if (person1 && person2) {
           const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
@@ -288,23 +296,23 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
       // --- Resolve source document ID for this analysis file ---
       const eventEfta = data.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
-      const [sourceDoc] = await db
-        .select({ id: documents.id })
-        .from(documents)
-        .where(sql`${documents.title} ILIKE ${'%' + eventEfta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + eventEfta + '%'}`)
-        .limit(1);
-      const sourceDocId = sourceDoc?.id;
+      let sourceDocId = docByEfta.get(eventEfta.toLowerCase());
+      if (sourceDocId === undefined) {
+        // Fallback to DB query if not in pre-loaded map
+        const [sourceDoc] = await db
+          .select({ id: documents.id })
+          .from(documents)
+          .where(sql`${documents.title} ILIKE ${'%' + eventEfta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + eventEfta + '%'}`)
+          .limit(1);
+        sourceDocId = sourceDoc?.id;
+      }
 
       // --- Events ---
       for (const event of data.events) {
         try {
           const personIds: number[] = [];
           for (const name of event.personsInvolved) {
-            const [p] = await db
-              .select()
-              .from(persons)
-              .where(sql`LOWER(${persons.name}) = LOWER(${name})`)
-              .limit(1);
+            const p = personsByName.get(name.toLowerCase());
             if (p) personIds.push(p.id);
           }
 
@@ -355,61 +363,42 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
       }
 
       // --- Person↔Document links ---
-      for (const mention of data.persons) {
-        const [person] = await db
-          .select()
-          .from(persons)
-          .where(sql`LOWER(${persons.name}) = LOWER(${mention.name})`)
-          .limit(1);
+      if (sourceDocId) {
+        for (const mention of data.persons) {
+          const person = personsByName.get(mention.name.toLowerCase());
+          if (!person) continue;
 
-        if (!person) continue;
+          const linkKey = `${person.id}-${sourceDocId}`;
+          if (existingLinks.has(linkKey)) continue;
 
-        // Try to find document by fileName match
-        const efta = data.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
-        const [doc] = await db
-          .select()
-          .from(documents)
-          .where(sql`${documents.title} ILIKE ${'%' + efta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + efta + '%'}`)
-          .limit(1);
-
-        if (doc) {
           const newContext = (mention.context || "").substring(0, 500);
-          const existingLink = await db
-            .select()
-            .from(personDocuments)
-            .where(sql`${personDocuments.personId} = ${person.id} AND ${personDocuments.documentId} = ${doc.id}`)
-            .limit(1);
-
-          if (existingLink.length === 0) {
-            try {
-              await db.insert(personDocuments).values({
-                personId: person.id,
-                documentId: doc.id,
-                context: newContext,
-              });
-              docLinksCreated++;
-            } catch {
-              /* skip */
-            }
-          } else if (newContext && newContext.length > (existingLink[0].context?.length || 0)) {
-            await db.update(personDocuments).set({ context: newContext }).where(eq(personDocuments.id, existingLink[0].id));
-            docLinksUpdated++;
+          try {
+            await db.insert(personDocuments).values({
+              personId: person.id,
+              documentId: sourceDocId,
+              context: newContext,
+            });
+            existingLinks.add(linkKey);
+            docLinksCreated++;
+          } catch {
+            /* skip */
           }
         }
       }
       // --- Mark document as AI-analyzed ---
-      const efta = data.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
-      await db.update(documents)
-        .set({ aiAnalysisStatus: "completed" })
-        .where(sql`${documents.title} ILIKE ${'%' + efta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + efta + '%'}`);
+      if (sourceDocId) {
+        await db.update(documents)
+          .set({ aiAnalysisStatus: "completed" })
+          .where(eq(documents.id, sourceDocId));
+      }
 
     } catch (error: any) {
       console.warn(`  Error processing ${file}: ${error.message}`);
     }
   }
 
-  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created, ${docLinksUpdated} updated`);
-  return { persons: personsCreated + personsUpdated, connections: connectionsCreated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated + docLinksUpdated };
+  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`);
+  return { persons: personsCreated + personsUpdated, connections: connectionsCreated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated };
 }
 
 function inferStatusFromCategory(category: string, role: string): string {
