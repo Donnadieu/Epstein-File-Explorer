@@ -8,6 +8,7 @@
  */
 
 import { execFile, spawn } from "child_process";
+import * as crypto from "crypto";
 import * as fs from "fs";
 import pLimit from "p-limit";
 import * as path from "path";
@@ -23,6 +24,8 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const STAGING_DIR = path.join(DATA_DIR, "torrent-staging");
 const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
 const PROGRESS_FILE = path.join(DATA_DIR, "torrent-progress.json");
+/** Optional manifest of archive SHA256 hashes: { "data-set-1": "hex...", "infoHash": "hex..." } */
+const ARCHIVE_CHECKSUMS_FILE = path.join(DATA_DIR, "archive-checksums.json");
 
 // DS 9 placeholder file sizes (known junk files)
 const PLACEHOLDER_SIZES = new Set([4670, 2433]);
@@ -54,6 +57,8 @@ interface TorrentConfig {
   format: "zip" | "tar.zst";
   expectedSizeGB: number;
   description: string;
+  /** Optional SHA256 (hex) of the main archive file. When set, verified before extraction. */
+  expectedSha256?: string;
 }
 
 interface TorrentProgressState {
@@ -252,6 +257,17 @@ function safeResolve(baseDir: string, candidate: string): string {
 function safeRmSync(baseDir: string, target: string, opts?: fs.RmOptions): void {
   const safe = safeResolve(baseDir, target);
   fs.rmSync(safe, opts ?? { recursive: true, force: true });
+}
+
+/** Compute SHA256 of a file via streaming (safe for large archives). Returns hex digest. */
+function sha256File(filePath: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const hash = crypto.createHash("sha256");
+    const stream = fs.createReadStream(filePath);
+    stream.on("data", (chunk: Buffer) => hash.update(chunk));
+    stream.on("end", () => resolve(hash.digest("hex")));
+    stream.on("error", reject);
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -509,6 +525,30 @@ async function extractArchive(
   // Find archive files in the staging directory
   const dsDir = path.join(stagingDir, key);
   const allFiles = walkDir(dsDir);
+
+  // Optional integrity check: verify SHA256 of main archive before extraction
+  if (config.expectedSha256) {
+    const expectedHex = config.expectedSha256.trim().toLowerCase().replace(/^0x/, "");
+    const archiveFile = allFiles.find((f) => {
+      const ext = path.extname(f).toLowerCase();
+      if (config.format === "zip") return ext === ".zip";
+      if (config.format === "tar.zst") return f.endsWith(".tar.zst") || path.basename(f).endsWith(".tar");
+      return false;
+    });
+    if (archiveFile) {
+      console.log(`  Verifying SHA256 for ${path.basename(archiveFile)}...`);
+      const actualHex = (await sha256File(archiveFile)).toLowerCase();
+      if (actualHex !== expectedHex) {
+        state.status = "failed";
+        state.error = `Integrity: SHA256 mismatch for ${path.basename(archiveFile)}. Expected ${expectedHex}, got ${actualHex}.`;
+        saveProgress(progress);
+        throw new Error(state.error);
+      }
+      console.log(`  SHA256 OK`);
+    } else {
+      console.warn(`  expectedSha256 set but no matching archive found in ${key}; skipping verification`);
+    }
+  }
 
   console.log(`  Extracting ${key} (${config.format})...`);
 

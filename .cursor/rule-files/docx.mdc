@@ -1,0 +1,81 @@
+---
+description: "Use when the user wants to create, read, edit, or manipulate Word documents (.docx). Triggers: 'Word doc', '.docx', reports/memos/letters/templates as Word, extracting/reorganizing .docx content, images/tracked changes/comments in Word, or converting to polished .docx. Do NOT use for PDFs, spreadsheets, Google Docs, or unrelated coding."
+alwaysApply: false
+globs: "**/*.docx,scripts/office/**/*.py,**/office/**"
+---
+
+# DOCX creation, editing, and analysis
+
+**License:** Proprietary. LICENSE.txt has complete terms.
+
+A .docx file is a ZIP archive containing XML files.
+
+## Quick Reference
+
+| Task | Approach |
+|------|----------|
+| Read/analyze content | `pandoc` or unpack for raw XML |
+| Create new document | Use `docx` (docx-js) — see Creating New Documents |
+| Edit existing document | Unpack → edit XML → repack — see Editing Existing Documents |
+
+### Converting .doc to .docx
+
+```bash
+python scripts/office/soffice.py --headless --convert-to docx document.doc
+```
+
+### Reading Content
+
+```bash
+pandoc --track-changes=all document.docx -o output.md
+python scripts/office/unpack.py document.docx unpacked/
+```
+
+### Converting to Images
+
+```bash
+python scripts/office/soffice.py --headless --convert-to pdf document.docx
+pdftoppm -jpeg -r 150 document.pdf page
+```
+
+### Accepting Tracked Changes
+
+```bash
+python scripts/accept_changes.py input.docx output.docx
+```
+
+---
+
+## Creating New Documents (docx-js)
+
+Install: `npm install -g docx`. After creating, validate: `python scripts/office/validate.py doc.docx`.
+
+- **Page size:** Set explicitly (docx-js defaults to A4). US Letter: width 12240, height 15840 DXA. 1440 DXA = 1 inch.
+- **Landscape:** Pass portrait dimensions; set `orientation: PageOrientation.LANDSCAPE`.
+- **Lists:** Use numbering config with `LevelFormat.BULLET` or `LevelFormat.DECIMAL` — never unicode bullets.
+- **Tables:** Set `width` (DXA) and `columnWidths`; set `width` on each cell. Use `WidthType.DXA` (not PERCENTAGE). Use `ShadingType.CLEAR`. Cell margins: `{ top: 80, bottom: 80, left: 120, right: 120 }`.
+- **Images:** `ImageRun` requires `type` (png/jpg/etc). Use `altText: { title, description, name }`.
+- **Page breaks:** `PageBreak` must be inside a `Paragraph`.
+- **TOC:** Use `TableOfContents`; headings must use `HeadingLevel` only. Override built-in styles with ids `Heading1`, `Heading2`; include `outlineLevel` (0 for H1, 1 for H2).
+- **Headers/footers:** Use `Header`/`Footer`; for page numbers use `PageNumber.CURRENT`. Do not use tables as dividers; use paragraph borders or tab stops.
+
+---
+
+## Editing Existing Documents
+
+1. **Unpack:** `python scripts/office/unpack.py document.docx unpacked/`
+2. **Edit XML** in `unpacked/word/`. Use "Claude" as author for tracked changes/comments unless requested otherwise. Use the Edit tool for string replacement; use smart-quote entities (`&#x2019;`, `&#x201C;`, `&#x201D;`). For comments: `python scripts/comment.py unpacked/ 0 "Comment text"` then add markers in document.xml.
+3. **Pack:** `python scripts/office/pack.py unpacked/ output.docx --original document.docx`
+
+**Tracked changes:** Use full `<w:ins>`/`<w:del>` blocks; use `<w:delText>` inside `<w:del>`. When deleting an entire paragraph, add `<w:del/>` in `<w:pPr><w:rPr>`. Comment markers `<w:commentRangeStart>`/`<w:commentRangeEnd>` are siblings of `<w:r>`, never inside `<w:r>`.
+
+**Images:** Add file to `word/media/`, relationship in `word/_rels/document.xml.rels`, content type in `[Content_Types].xml`, then `<w:drawing>` with `r:embed` in document.xml.
+
+---
+
+## Dependencies
+
+- **pandoc** — text extraction
+- **docx** (npm) — new documents
+- **LibreOffice** — PDF conversion (`scripts/office/soffice.py`)
+- **Poppler** — `pdftoppm` for images

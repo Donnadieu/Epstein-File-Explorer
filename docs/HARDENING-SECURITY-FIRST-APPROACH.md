@@ -60,7 +60,7 @@ The Epstein File Explorer (Donnadieu/Epstein-File-Explorer) is a full-stack Type
 
 **Pipeline:** A 14-stage ETL pipeline orchestrated by `run-pipeline.ts`:
 
-```text
+```
 scrape-wikipedia → download-torrent → upload-r2 → process →
 ds9-gap-analysis → classify-media → analyze-ai → load-persons →
 load-documents → import-downloads → load-ai-results →
@@ -91,7 +91,7 @@ We applied vulnerability research methodology to the pipeline codebase:
 
 ### 3.2 Sprint 1: Security Patches
 
-### Patch 1: Path Traversal Safety (torrent-downloader.ts)
+**Patch 1: Path Traversal Safety (torrent-downloader.ts)**
 
 The torrent downloader takes filenames from torrent metadata — which is attacker-controlled data in the BitTorrent model. A malicious torrent could contain entries like `../../etc/passwd` or `../../../home/user/.ssh/authorized_keys`. The original code used these filenames directly in `fs.rmSync` (recursive deletion) and path construction without validation.
 
@@ -103,7 +103,7 @@ We added:
 
 This is the same class of vulnerability (CWE-22) that appears repeatedly in supply chain attacks. In a pipeline processing 300GB of torrent-sourced data, it's a real attack surface.
 
-### Patch 2: Zod Validation for LLM Output (ai-analyzer.ts)
+**Patch 2: Zod Validation for LLM Output (ai-analyzer.ts)**
 
 The AI analyzer calls DeepSeek's API and receives JSON responses that are immediately trusted and loaded into the database. LLM outputs are not reliable structured data — they hallucinate fields, return partial structures, mix types, and occasionally produce completely malformed JSON.
 
@@ -118,7 +118,7 @@ This is defense-in-depth: the LLM is a data source, not an authority. Every fiel
 
 ### 3.3 Sprint 2: Operational Hardening
 
-### Patch 3: PDF Resource Guardrails (pdf-processor.ts)
+**Patch 3: PDF Resource Guardrails (pdf-processor.ts)**
 
 The pipeline processes 180,000+ files. Some PDFs in the Epstein files are enormous (hundreds of megabytes of scanned images). Processing them all concurrently on a single machine causes OOM kills.
 
@@ -129,7 +129,7 @@ We added:
 - `--no-skip-oversize` flag to force processing of large files when explicitly desired.
 - Extended `ExtractionLog` interface with `totalSkippedOversize` tracking.
 
-### Patch 4: AI Analysis Dry-Run Mode (ai-analyzer.ts)
+**Patch 4: AI Analysis Dry-Run Mode (ai-analyzer.ts)**
 
 Running AI analysis on 180,000 documents without knowing the cost is reckless. DeepSeek charges $0.27/M input tokens and $1.10/M output tokens. A full run could cost hundreds of dollars.
 
@@ -142,7 +142,7 @@ We added `--dry-run`:
 - Compares against `--budget` if set.
 - Returns with zero API calls made.
 
-### Patch 5: Database Transaction Safety (db-loader.ts)
+**Patch 5: Database Transaction Safety (db-loader.ts)**
 
 The original DB loading code inserted rows one at a time with no transaction boundaries. A failure mid-load left the database in an inconsistent state — some data loaded, some not — with no way to know where it stopped.
 
@@ -153,7 +153,7 @@ We added:
 - Uses Drizzle's `db.transaction(async (tx) => { ... })` API.
 - Failed batches log and continue — safe to re-run without duplicating successful portions.
 
-### Patch 6: Pipeline Orchestrator Wiring (run-pipeline.ts)
+**Patch 6: Pipeline Orchestrator Wiring (run-pipeline.ts)**
 
 Extended `PipelineConfig` with `dryRun`, `maxFileSizeMB`, `maxConcurrentPdfs`, `expectedMaxId`. Wired all new options through the stage dispatch. Updated CLI parser and help text.
 
@@ -177,7 +177,7 @@ This stage is the prerequisite for a targeted DOJ scraper that can attempt to re
 ### 4.1 Security Posture
 
 | Attack Surface | Before | After |
-| --- | --- | --- |
+|---|---|---|
 | Path traversal via torrent metadata | No protection. `fs.rmSync` called with unvalidated paths from torrent entries. | `safeResolve` + `safeRmSync` at all 7 call sites. Any path escaping the base directory is rejected. |
 | Malformed LLM output | Raw `JSON.parse` → direct DB insertion. Any hallucinated structure accepted silently. | Zod schema validation with 6 typed schemas. Invalid payloads quarantined with full diagnostics. |
 | Resource exhaustion (PDF bombs) | No file size limits. No concurrency control. All PDFs processed in serial or unbounded parallel. | 256MB size limit, 4-concurrent-PDF default, `pLimit` enforcement. Oversize files logged and skipped. |
@@ -185,7 +185,7 @@ This stage is the prerequisite for a targeted DOJ scraper that can attempt to re
 ### 4.2 Operational Safety
 
 | Operation | Before | After |
-| --- | --- | --- |
+|---|---|---|
 | AI cost control | No way to preview costs. Must run analysis and watch the bill. | `--dry-run` scans inputs, estimates tokens and cost against DeepSeek pricing. Budget comparison before spend. |
 | Database loading | No transactions. Failure mid-load = inconsistent state. No safe re-run. | Batched transactions (100 rows/tx for persons, per-dataset for documents). Atomic rollback on failure. Safe re-run. |
 | DS9 completeness | No visibility into what's missing. | Gap analysis stage outputs a recovery manifest with present IDs and gap ranges. |

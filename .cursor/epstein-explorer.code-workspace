@@ -1,0 +1,90 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.exclude": {
+      "node_modules": true,
+      "dist": true,
+      "data/downloads": true,
+      "data/extracted": true,
+      "**/*.tsbuildinfo": true
+    },
+    "search.exclude": {
+      "node_modules": true,
+      "dist": true,
+      "data/downloads": true,
+      "data/extracted": true,
+      "data/ai-analyzed": true,
+      "package-lock.json": true
+    },
+    "files.watcherExclude": {
+      "data/downloads/**": true,
+      "data/extracted/**": true,
+      "data/ai-analyzed/**": true
+    },
+    "typescript.preferences.importModuleSpecifier": "relative"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "bradlc.vscode-tailwindcss"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Pipeline: dry-run analyze-ai",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsx"],
+        "args": ["scripts/pipeline/run-pipeline.ts", "analyze-ai", "--dry-run", "--limit", "10"],
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Pipeline: process DS1",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsx"],
+        "args": ["scripts/pipeline/run-pipeline.ts", "process", "--data-sets", "1", "--max-process", "50"],
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Pipeline: DS9 gap analysis",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsx"],
+        "args": ["scripts/pipeline/run-pipeline.ts", "ds9-gap-analysis"],
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env",
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "Dev server",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsx"],
+        "args": ["server/index.ts"],
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env",
+        "env": { "NODE_ENV": "development" },
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+}
