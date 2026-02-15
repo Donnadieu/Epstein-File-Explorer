@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD013 -->
 # Hardening the Epstein File Explorer: A Security-First Approach to Public Record Analysis at Scale
 
 **Authors:** David (WebDUH LLC) with Claude (Anthropic)  

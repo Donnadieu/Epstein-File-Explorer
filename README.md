@@ -21,16 +21,16 @@ Live at [epstein-file-explorer.com](https://epstein-file-explorer.com)
 
 ## Tech Stack
 
-| Layer    | Technology                                                                               |
-| -------- | ---------------------------------------------------------------------------------------- |
-| Frontend | React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, D3.js, Recharts, Framer Motion |
-| Routing  | Wouter                                                                                   |
-| Data     | TanStack React Query                                                                     |
-| Backend  | Express 5, TypeScript, Drizzle ORM, Zod                                                  |
-| Database | PostgreSQL (with full-text search indexes)                                               |
-| Storage  | Cloudflare R2 (documents), local filesystem (staging)                                    |
-| AI       | DeepSeek API (document analysis, person classification)                                  |
-| Deployment | Fly.io (US East), Docker multi-stage build                                             |
+| Layer      | Technology                                                              |
+| ---------- | ----------------------------------------------------------------------- |
+| Frontend   | React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, D3.js, Recharts, Framer Motion |
+| Routing    | Wouter                                                                  |
+| Data       | TanStack React Query                                                    |
+| Backend    | Express 5, TypeScript, Drizzle ORM, Zod                                 |
+| Database   | PostgreSQL (with full-text search indexes)                              |
+| Storage    | Cloudflare R2 (documents), local filesystem (staging)                   |
+| AI         | DeepSeek API (document analysis, person classification)                 |
+| Deployment | Fly.io (US East), Docker multi-stage build                              |
 
 ## Data Sources
 
@@ -106,31 +106,31 @@ npx tsx scripts/pipeline/run-pipeline.ts all
 
 ### Pipeline Stages
 
-| Stage                 | Description                                                              |
-| --------------------- | ------------------------------------------------------------------------ |
-| `scrape-wikipedia`    | Scrapes Wikipedia for person list, enriches with DeepSeek AI classification |
-| `download-torrent`    | Downloads data sets via BitTorrent (aria2c), extracts archives           |
-| `import-downloads`    | Imports downloaded files into the database                               |
-| `upload-r2`           | Uploads documents to Cloudflare R2 storage                               |
-| `process`             | Extracts text from PDFs using pdf.js                                     |
-| `classify-media`      | Classifies documents by media type, assigns AI analysis priority (1-5)   |
-| `analyze-ai`          | Two-tier AI analysis: rule-based (free) + DeepSeek API with budget tracking |
-| `load-persons`        | Loads persons from Wikipedia scrape into database                        |
-| `load-documents`      | Loads document metadata from DOJ catalog                                 |
-| `load-ai-results`     | Upserts AI analysis results into database (persons, connections, events) |
-| `extract-connections`  | Extracts relationships between persons from descriptions                 |
-| `update-counts`       | Recalculates document and connection counts                              |
-| `dedup-persons`       | Merges duplicate person records with fuzzy matching                      |
+| Stage                 | Description                                                               |
+| --------------------- | ------------------------------------------------------------------------- |
+| `scrape-wikipedia`    | Scrapes Wikipedia for person list, enriches with DeepSeek AI classification  |
+| `download-torrent`    | Downloads data sets via BitTorrent (aria2c), extracts archives               |
+| `import-downloads`    | Imports downloaded files into the database                                  |
+| `upload-r2`           | Uploads documents to Cloudflare R2 storage                                 |
+| `process`             | Extracts text from PDFs using pdf.js                                       |
+| `classify-media`      | Classifies documents by media type, assigns AI analysis priority (1-5)       |
+| `analyze-ai`          | Two-tier AI analysis: rule-based (free) + DeepSeek API with budget tracking  |
+| `load-persons`        | Loads persons from Wikipedia scrape into database                           |
+| `load-documents`      | Loads document metadata from DOJ catalog                                     |
+| `load-ai-results`     | Upserts AI analysis results into database (persons, connections, events)    |
+| `extract-connections` | Extracts relationships between persons from descriptions                     |
+| `update-counts`       | Recalculates document and connection counts                                 |
+| `dedup-persons`       | Merges duplicate person records with fuzzy matching                         |
 
 ### Data Sets
 
-| DS  | Description                             | Size    | Status                      |
-| --- | --------------------------------------- | ------- | --------------------------- |
-| 1-8 | Court documents, legal filings          | 1-10 GB | Available via DOJ + torrent |
-| 9   | Communications, emails, media           | ~143 GB | DOJ offline — torrent only  |
-| 10  | Visual media (180K+ images, 2K+ videos) | ~79 GB  | DOJ offline — torrent only  |
-| 11  | Financial ledgers, flight manifests     | ~28 GB  | DOJ offline — torrent only  |
-| 12  | Court documents                         | 114 MB  | Available via DOJ + torrent |
+| DS   | Description                             | Size    | Status                       |
+| ---- | --------------------------------------- | ------- | ---------------------------- |
+| 1-8  | Court documents, legal filings          | 1-10 GB | Available via DOJ + torrent   |
+| 9    | Communications, emails, media            | ~143 GB | DOJ offline — torrent only    |
+| 10   | Visual media (180K+ images, 2K+ videos)  | ~79 GB  | DOJ offline — torrent only    |
+| 11   | Financial ledgers, flight manifests     | ~28 GB  | DOJ offline — torrent only    |
+| 12   | Court documents                         | 114 MB  | Available via DOJ + torrent   |
 
 For documented problems with the DOJ release (bulk downloads removed, DS9 incomplete, redaction failures, duplication, etc.) and the pipeline’s planned solutions, see [docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md](docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md). Implementation order is tracked in [docs/PIPELINE-ROADMAP.md](docs/PIPELINE-ROADMAP.md). For the security-first hardening work (path safety, Zod validation, PDF guardrails, transactions, dry-run, DS9 gap analysis), see [docs/HARDENING-SECURITY-FIRST-APPROACH.md](docs/HARDENING-SECURITY-FIRST-APPROACH.md).
 
@@ -192,17 +192,17 @@ For documented problems with the DOJ release (bulk downloads removed, DS9 incomp
 
 9 primary tables managed with Drizzle ORM:
 
-| Table              | Description                                                          |
-| ------------------ | -------------------------------------------------------------------- |
-| `persons`          | Named individuals with categories, aliases, Wikipedia data, profile sections (JSONB), top contacts |
-| `documents`        | Documents with metadata, processing status, R2 storage keys, AI analysis status |
-| `document_pages`   | Extracted page content with full-text search indexes                  |
-| `connections`      | Relationships between persons with type, strength (1-5), and source documents |
-| `person_documents` | Join table linking persons to documents with context and mention type |
-| `timeline_events`  | Chronological events with significance scoring, linked to person and document IDs |
-| `pipeline_jobs`    | Pipeline task tracking with retry logic                              |
-| `budget_tracking`  | AI analysis cost tracking per document/job                           |
-| `bookmarks`        | User bookmarks for persons, documents, and searches                  |
+| Table              | Description                                                            |
+| ------------------ | ---------------------------------------------------------------------- |
+| `persons`          | Named individuals with categories, aliases, Wikipedia data, profile sections (JSONB), top contacts   |
+| `documents`        | Documents with metadata, processing status, R2 storage keys, AI analysis status   |
+| `document_pages`   | Extracted page content with full-text search indexes                    |
+| `connections`      | Relationships between persons with type, strength (1-5), and source documents   |
+| `person_documents` | Join table linking persons to documents with context and mention type   |
+| `timeline_events`  | Chronological events with significance scoring, linked to person and document IDs   |
+| `pipeline_jobs`    | Pipeline task tracking with retry logic                                |
+| `budget_tracking`  | AI analysis cost tracking per document/job                              |
+| `bookmarks`        | User bookmarks for persons, documents, and searches                     |
 
 ## Project Structure
 
