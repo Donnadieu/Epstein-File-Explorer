@@ -90,6 +90,7 @@ export const documentPages = pgTable("document_pages", {
   documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
   pageNumber: integer("page_number").notNull(),
   content: text("content").notNull(),
+  pageType: text("page_type"),
   searchVector: tsvector("search_vector").generatedAlwaysAs(
     (): SQL => sql`to_tsvector('english', ${documentPages.content})`
   ),
@@ -97,6 +98,7 @@ export const documentPages = pgTable("document_pages", {
   index("idx_dp_document_id").on(table.documentId),
   uniqueIndex("idx_dp_doc_page").on(table.documentId, table.pageNumber),
   index("idx_dp_search_vector").using("gin", table.searchVector),
+  index("idx_dp_page_type").on(table.pageType),
 ]);
 
 export const connections = pgTable("connections", {

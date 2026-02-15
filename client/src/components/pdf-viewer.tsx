@@ -20,10 +20,16 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   import.meta.url,
 ).toString();
 
+interface PageTypeInfo {
+  pageNumber: number;
+  pageType: string;
+}
+
 interface PdfViewerProps {
   documentId: number;
   sourceUrl?: string;
   initialPage?: number;
+  pageTypes?: PageTypeInfo[];
 }
 
 type ViewerState = "loading" | "ready" | "iframe" | "error";
@@ -32,7 +38,7 @@ const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 
-export default function PdfViewer({ documentId, sourceUrl, initialPage }: PdfViewerProps) {
+export default function PdfViewer({ documentId, sourceUrl, initialPage, pageTypes }: PdfViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
@@ -286,6 +292,16 @@ export default function PdfViewer({ documentId, sourceUrl, initialPage }: PdfVie
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>
+
+        {/* Page type badge */}
+        {(() => {
+          const pt = pageTypes?.find(p => p.pageNumber === currentPage);
+          return pt ? (
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground capitalize whitespace-nowrap">
+              {pt.pageType}
+            </span>
+          ) : null;
+        })()}
 
         {/* Zoom controls */}
         <div className="flex items-center gap-1">

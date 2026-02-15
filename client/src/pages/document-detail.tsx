@@ -59,9 +59,15 @@ interface DocumentEvent {
   persons?: { id: number; name: string }[];
 }
 
+interface PageTypeInfo {
+  pageNumber: number;
+  pageType: string;
+}
+
 interface DocumentDetail extends Document {
   persons: (Person & { mentionType: string; context: string | null })[];
   timelineEvents?: DocumentEvent[];
+  pageTypes?: PageTypeInfo[];
 }
 
 export default function DocumentDetailPage() {
@@ -430,5 +436,5 @@ function DocumentViewer({ doc, initialPage }: { doc: DocumentDetail; initialPage
   }
 
   // Default: try PDF viewer, which will show a graceful fallback if it fails
-  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl ?? undefined} initialPage={initialPage} />;
+  return <PdfViewer documentId={doc.id} sourceUrl={doc.sourceUrl ?? undefined} initialPage={initialPage} pageTypes={doc.pageTypes} />;
 }

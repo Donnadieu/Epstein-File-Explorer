@@ -761,10 +761,21 @@ export class DatabaseStorage implements IStorage {
       persons: (e.personIds ?? []).map(pid => evtPersonMap.get(pid)).filter(Boolean),
     }));
 
+    // Fetch page-level classifications
+    const pageTypes = await db
+      .select({
+        pageNumber: documentPages.pageNumber,
+        pageType: documentPages.pageType,
+      })
+      .from(documentPages)
+      .where(eq(documentPages.documentId, id))
+      .orderBy(asc(documentPages.pageNumber));
+
     const result = {
       ...doc,
       persons: pDocs,
       timelineEvents: enrichedDocEvents,
+      pageTypes: pageTypes.filter(p => p.pageType != null),
     };
 
     documentDetailCache.set(id, { data: result, cachedAt: Date.now() });

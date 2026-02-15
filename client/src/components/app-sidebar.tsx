@@ -130,22 +130,20 @@ export function AppSidebar() {
 
   const documentItems: NavItem[] = [
     { title: "All Documents", url: "/documents", icon: FileText, count: counts?.documents.total },
-    // { title: "Flight Logs", url: "/documents?type=flight+log", icon: Plane, count: byType["flight log"] },
-    // { title: "Emails", url: "/documents?type=email", icon: Mail, count: byType["email"] },
-    // TODO: Uncomment as AI backfill populates these categories
-    // { title: "Court Filings", url: "/documents?type=court+filing", icon: Gavel, count: byType["court filing"] },
-    // { title: "FBI Reports", url: "/documents?type=fbi+report", icon: AlertTriangle, count: byType["fbi report"] },
-    // { title: "Depositions", url: "/documents?type=deposition", icon: Scale, count: byType["deposition"] },
-    // { title: "Financial Records", url: "/documents?type=financial+record", icon: DollarSign, count: byType["financial record"] },
-    // { title: "Grand Jury", url: "/documents?type=grand+jury+transcript", icon: BookOpen, count: byType["grand jury transcript"] },
-    // { title: "Correspondence", url: "/documents?type=correspondence", icon: Mail, count: byType["correspondence"] },
-  ];
+    { title: "Flight Logs", url: "/documents?type=flight+log", icon: Plane, count: byType["flight log"] },
+    { title: "Emails", url: "/documents?type=email", icon: Mail, count: byType["email"] },
+    { title: "Court Filings", url: "/documents?type=court+filing", icon: Gavel, count: byType["court filing"] },
+    { title: "FBI Reports", url: "/documents?type=fbi+report", icon: AlertTriangle, count: byType["fbi report"] },
+    { title: "Depositions", url: "/documents?type=deposition", icon: Scale, count: byType["deposition"] },
+    { title: "Financial Records", url: "/documents?type=financial+record", icon: DollarSign, count: byType["financial record"] },
+    { title: "Grand Jury", url: "/documents?type=grand+jury+transcript", icon: BookOpen, count: byType["grand jury transcript"] },
+    { title: "Correspondence", url: "/documents?type=correspondence", icon: Mail, count: byType["correspondence"] },
+  ].filter(item => item.title === "All Documents" || (item.count != null && item.count > 0));
 
-  // TODO: Uncomment when media classification is refined
-  // const mediaItems: NavItem[] = [
-  //   { title: "Photos", url: "/documents?type=photograph", icon: Image, count: counts?.media.images },
-  //   { title: "Videos", url: "/documents?type=video", icon: Video, count: counts?.media.videos },
-  // ];
+  const mediaItems: NavItem[] = [
+    { title: "Photos", url: "/documents?mediaType=image", icon: Image, count: counts?.media.images },
+    { title: "Videos", url: "/documents?mediaType=video", icon: Video, count: counts?.media.videos },
+  ].filter(item => item.count != null && item.count > 0);
 
   const investigationItems: NavItem[] = [
     { title: "People", url: "/people", icon: Users, count: counts?.persons },
@@ -175,6 +173,7 @@ export function AppSidebar() {
       <SidebarContent>
         <NavGroup label="Overview" items={overviewItems} location={fullLocation} />
         <NavGroup label="Documents" items={documentItems} location={fullLocation} />
+        {mediaItems.length > 0 && <NavGroup label="Media" items={mediaItems} location={fullLocation} />}
         <NavGroup label="Investigation" items={investigationItems} location={fullLocation} />
         <NavGroup label="Tools" items={toolItems} location={fullLocation} />
       </SidebarContent>
