@@ -21,16 +21,16 @@ Live at [epstein-file-explorer.com](https://epstein-file-explorer.com)
 
 ## Tech Stack
 
-| Layer      | Technology                                                              |
-| ---------- | ----------------------------------------------------------------------- |
-| Frontend   | React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, D3.js, Recharts, Framer Motion |
-| Routing    | Wouter                                                                  |
-| Data       | TanStack React Query                                                    |
-| Backend    | Express 5, TypeScript, Drizzle ORM, Zod                                 |
-| Database   | PostgreSQL (with full-text search indexes)                              |
-| Storage    | Cloudflare R2 (documents), local filesystem (staging)                   |
-| AI         | DeepSeek API (document analysis, person classification)                 |
-| Deployment | Fly.io (US East), Docker multi-stage build                             |
+| Layer    | Technology                                                                               |
+| -------- | ---------------------------------------------------------------------------------------- |
+| Frontend | React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI, D3.js, Recharts, Framer Motion |
+| Routing  | Wouter                                                                                   |
+| Data     | TanStack React Query                                                                     |
+| Backend  | Express 5, TypeScript, Drizzle ORM, Zod                                                  |
+| Database | PostgreSQL (with full-text search indexes)                                               |
+| Storage  | Cloudflare R2 (documents), local filesystem (staging)                                    |
+| AI       | DeepSeek API (document analysis, person classification)                                  |
+| Deployment | Fly.io (US East), Docker multi-stage build                                             |
 
 ## Data Sources
 
@@ -83,7 +83,7 @@ The app runs on port 3000 in development (port 5000 in production).
 
 The data pipeline handles downloading, processing, and analyzing documents:
 
-```
+```flow
 scrape-wikipedia → download-torrent → import-downloads → upload-r2 → process →
 classify-media → analyze-ai → load-persons → load-documents →
 load-ai-results → extract-connections → update-counts → dedup-persons
@@ -132,11 +132,12 @@ npx tsx scripts/pipeline/run-pipeline.ts all
 | 11  | Financial ledgers, flight manifests     | ~28 GB  | DOJ offline — torrent only  |
 | 12  | Court documents                         | 114 MB  | Available via DOJ + torrent |
 
-For documented problems with the DOJ release (bulk downloads removed, DS9 incomplete, redaction failures, duplication, etc.) and the pipeline’s planned solutions, see [docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md](docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md). Implementation order is tracked in [docs/PIPELINE-ROADMAP.md](docs/PIPELINE-ROADMAP.md).
+For documented problems with the DOJ release (bulk downloads removed, DS9 incomplete, redaction failures, duplication, etc.) and the pipeline’s planned solutions, see [docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md](docs/EPSTEIN-FILES-ISSUES-AND-PIPELINE-SOLUTIONS.md). Implementation order is tracked in [docs/PIPELINE-ROADMAP.md](docs/PIPELINE-ROADMAP.md). For the security-first hardening work (path safety, Zod validation, PDF guardrails, transactions, dry-run, DS9 gap analysis), see [docs/HARDENING-SECURITY-FIRST-APPROACH.md](docs/HARDENING-SECURITY-FIRST-APPROACH.md).
 
 ## API
 
 ### Documents
+
 - `GET /api/documents` — Paginated list with server-side filtering (search, type, dataSet, redacted, mediaType)
 - `GET /api/documents/:id` — Document detail with associated persons and timeline events
 - `GET /api/documents/:id/adjacent` — Previous/next document IDs for navigation
@@ -147,33 +148,40 @@ For documented problems with the DOJ release (bulk downloads removed, DS9 incomp
 - `GET /api/documents/filters` — Available filter options
 
 ### Persons
+
 - `GET /api/persons` — List all persons (with optional pagination)
 - `GET /api/persons/:id` — Person detail with documents, connections, timeline events, and AI mentions
 
 ### Search
+
 - `GET /api/search` — Cross-entity search (persons, documents, events)
 - `GET /api/search/pages` — Full-text page search with headline snippets
 
 ### Network & Timeline
+
 - `GET /api/network` — Network graph data (persons + connections with year ranges)
 - `GET /api/timeline` — Timeline events with significance scoring
 
 ### AI Analysis
+
 - `GET /api/ai-analyses` — List all AI analyses (with optional pagination)
 - `GET /api/ai-analyses/aggregate` — Aggregate AI analysis statistics (database-driven)
 - `GET /api/ai-analyses/:fileName` — Individual AI analysis detail
 
 ### Bookmarks
+
 - `GET /api/bookmarks` — User bookmarks
 - `POST /api/bookmarks` — Create bookmark (person/document/search)
 - `DELETE /api/bookmarks/:id` — Delete bookmark
 
 ### Export
+
 - `GET /api/export/persons` — Export persons (JSON/CSV)
 - `GET /api/export/documents` — Export documents (JSON/CSV)
 - `GET /api/export/search` — Export search results (JSON/CSV)
 
 ### Stats & Pipeline
+
 - `GET /api/stats` — Dashboard statistics
 - `GET /api/sidebar-counts` — Sidebar navigation counts
 - `GET /api/pipeline/jobs` — Pipeline job status
@@ -198,7 +206,7 @@ For documented problems with the DOJ release (bulk downloads removed, DS9 incomp
 
 ## Project Structure
 
-```
+```list
 client/src/
   pages/              # 12 route pages
     dashboard.tsx      # Home with overview stats

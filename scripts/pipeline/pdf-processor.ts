@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { createRequire } from "module";
 import pLimit from "p-limit";
@@ -80,22 +80,44 @@ function getOutputPath(outputDir: string, dataSetId: number, fileName: string): 
   return path.join(outputDir, `ds${dataSetId}`, `${path.basename(fileName, ".pdf")}.json`);
 }
 
+/** Read file in chunks via stream to avoid blocking; returns full buffer (PDF.js needs it). */
+function readFileStreamed(filePath: string): Promise<Buffer> {
+  return new Promise((resolve, reject) => {
+    const chunks: Buffer[] = [];
+    const stream = fs.createReadStream(filePath);
+    stream.on("data", (chunk: Buffer) => chunks.push(chunk));
+    stream.on("end", () => resolve(Buffer.concat(chunks)));
+    stream.on("error", reject);
+  });
+}
+
 async function extractPdfText(filePath: string): Promise<{ text: string; pageCount: number; metadata: Record<string, any> }> {
-  const buffer = fs.readFileSync(filePath);
-  const data = new Uint8Array(buffer);
+  // Prefer file URL so PDF.js handles I/O (avoids loading entire file into our process memory).
+  // Fallback: stream file into buffer then pass as data (non-blocking read, still full buffer in memory).
+  const fileUrl = pathToFileURL(path.resolve(filePath)).href;
+  const docOptions = {
+    useSystemFonts: true,
+    standardFontDataUrl: STANDARD_FONT_DATA_URL,
+    disableAutoFetch: true,
+    isEvalSupported: false,
+  } as const;
 
   let doc: any = null;
   try {
-    const loadingTask = pdfjsLib.getDocument({
-      data,
-      useSystemFonts: true,
-      standardFontDataUrl: STANDARD_FONT_DATA_URL,
-      disableAutoFetch: true,
-      isEvalSupported: false,
-    });
-    // Catch internal pdf.js rejections that bypass the main promise
+    let loadingTask = pdfjsLib.getDocument({ url: fileUrl, ...docOptions });
     loadingTask.onUnsupportedFeature = () => {};
-    doc = await loadingTask.promise;
+    try {
+      doc = await loadingTask.promise;
+    } catch (urlErr: any) {
+      if (urlErr?.message?.includes("fetch") || urlErr?.message?.includes("url") || urlErr?.code === "ERR_UNSUPPORTED_ESM_URL") {
+        const buffer = await readFileStreamed(filePath);
+        loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(buffer), ...docOptions });
+        loadingTask.onUnsupportedFeature = () => {};
+        doc = await loadingTask.promise;
+      } else {
+        throw urlErr;
+      }
+    }
 
     let fullText = "";
     const pageCount = doc.numPages;
