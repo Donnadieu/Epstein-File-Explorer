@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import {
   Search as SearchIcon,
   FileText,
@@ -89,6 +90,32 @@ export default function SearchPage() {
 
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
+
+  const groupedFullTextResults = useMemo(() => {
+    if (!pageData?.results) return [];
+    const groups = new Map<number, {
+      documentId: number;
+      title: string;
+      documentType: string;
+      dataSet: string | null;
+      pages: { pageNumber: number; headline: string }[];
+    }>();
+    for (const result of pageData.results) {
+      let group = groups.get(result.documentId);
+      if (!group) {
+        group = {
+          documentId: result.documentId,
+          title: result.title,
+          documentType: result.documentType,
+          dataSet: result.dataSet,
+          pages: [],
+        };
+        groups.set(result.documentId, group);
+      }
+      group.pages.push({ pageNumber: result.pageNumber, headline: result.headline });
+    }
+    return Array.from(groups.values());
+  }, [pageData?.results]);
 
   const handleSavedSearchSelect = useCallback((searchQuery: string) => {
     setQuery(searchQuery);
@@ -224,6 +251,9 @@ export default function SearchPage() {
           <Tabs defaultValue="all" className="w-full">
             <TabsList data-testid="tabs-search-results">
               <TabsTrigger value="all">All ({totalResults})</TabsTrigger>
+              <TabsTrigger value="fulltext" className="gap-1">
+                <BookOpen className="w-3 h-3" /> Full Text ({pageData?.total ?? 0})
+              </TabsTrigger>
               <TabsTrigger value="people" className="gap-1">
                 <Users className="w-3 h-3" /> People ({data?.persons?.length || 0})
               </TabsTrigger>
@@ -232,9 +262,6 @@ export default function SearchPage() {
               </TabsTrigger>
               <TabsTrigger value="events" className="gap-1">
                 <Clock className="w-3 h-3" /> Events ({data?.events?.length || 0})
-              </TabsTrigger>
-              <TabsTrigger value="fulltext" className="gap-1">
-                <BookOpen className="w-3 h-3" /> Full Text ({pageData?.total ?? 0})
               </TabsTrigger>
             </TabsList>
 
@@ -294,10 +321,48 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="fulltext" className="mt-4 flex flex-col gap-2">
-              {pageData?.results?.map((result, i) => (
-                <PageResult key={`${result.documentId}-${result.pageNumber}-${i}`} result={result} />
-              ))}
-              {(!pageData?.results || pageData.results.length === 0) && (
+              {groupedFullTextResults.length > 0 ? (
+                <Accordion type="multiple" defaultValue={groupedFullTextResults.map((g) => String(g.documentId))} className="w-full">
+                  {groupedFullTextResults.map((group) => (
+                    <AccordionItem key={group.documentId} value={String(group.documentId)}>
+                      <AccordionTrigger className="py-3 hover:no-underline">
+                        <div className="flex items-center gap-2 text-left">
+                          <FileText className="w-4 h-4 text-muted-foreground shrink-0" />
+                          <span className="text-sm font-medium">{group.title}</span>
+                          <Badge variant="outline" className="text-[10px]">{group.documentType}</Badge>
+                          <span className="text-[10px] text-muted-foreground">
+                            {group.pages.length} {group.pages.length === 1 ? "match" : "matches"}
+                          </span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-2">
+                        <div className="flex flex-col gap-1.5 pl-6">
+                          {group.pages.map((page) => (
+                            <Link
+                              key={`${group.documentId}-${page.pageNumber}`}
+                              href={`/documents/${group.documentId}?page=${page.pageNumber}`}
+                            >
+                              <Card className="hover-elevate cursor-pointer">
+                                <CardContent className="p-2.5">
+                                  <div className="flex items-start gap-2">
+                                    <Badge variant="secondary" className="text-[10px] shrink-0 mt-0.5">
+                                      Page {page.pageNumber}
+                                    </Badge>
+                                    <p
+                                      className="text-xs text-muted-foreground leading-relaxed [&_mark]:bg-yellow-200 dark:[&_mark]:bg-yellow-900/50 [&_mark]:px-0.5 [&_mark]:rounded-sm"
+                                      dangerouslySetInnerHTML={{ __html: page.headline }}
+                                    />
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            </Link>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              ) : (
                 <EmptyState type="full text" query={query} />
               )}
               {pageData && pageData.totalPages > 1 && (
