@@ -196,26 +196,32 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
   }
 
   // Pre-load all persons by lowercase name for O(1) lookups
+  console.log("  Pre-loading persons...");
   const allPersonsList = await db.select().from(persons);
   const personsByName = new Map<string, typeof persons.$inferSelect>();
   for (const p of allPersonsList) {
     personsByName.set(p.name.toLowerCase(), p);
   }
+  console.log(`  Pre-loaded ${personsByName.size} persons`);
 
   // Pre-load personDocuments links into a Set
+  console.log("  Pre-loading person↔document links...");
   const allLinks = await db.select({ personId: personDocuments.personId, documentId: personDocuments.documentId }).from(personDocuments);
   const existingLinks = new Set<string>();
   for (const l of allLinks) {
     existingLinks.add(`${l.personId}-${l.documentId}`);
   }
+  console.log(`  Pre-loaded ${existingLinks.size} person↔doc links`);
 
   // Pre-load document EFTA→ID map for O(1) source doc resolution
+  console.log("  Pre-loading documents...");
   const allDocs = await db.select({ id: documents.id, title: documents.title, sourceUrl: documents.sourceUrl }).from(documents);
   const docByEfta = new Map<string, number>();
   for (const d of allDocs) {
     const match = (d.title || d.sourceUrl || '').match(/EFTA\d+/i);
     if (match) docByEfta.set(match[0].toLowerCase(), d.id);
   }
+  console.log(`  Pre-loaded ${docByEfta.size} EFTA→doc mappings`);
 
   for (let fi = 0; fi < files.length; fi++) {
     const file = files[fi];
