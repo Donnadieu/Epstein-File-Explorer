@@ -67,7 +67,11 @@ async function buildAll() {
     bundle: true,
     format: "cjs",
     outfile: "dist/pipeline.cjs",
+    banner: {
+      js: 'var __pipeline_import_meta_url=require("url").pathToFileURL(require("path").join(process.cwd(),"scripts","pipeline","__bundled.cjs")).href;',
+    },
     define: {
+      "import.meta.url": "__pipeline_import_meta_url",
       "process.env.NODE_ENV": '"production"',
     },
     minify: true,
