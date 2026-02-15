@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 import { db } from "../../server/db";
 import { documents, documentPages, budgetTracking } from "../../shared/schema";
-import { eq, and, sql, inArray, asc } from "drizzle-orm";
+import { eq, and, sql, asc } from "drizzle-orm";
 
 // --- DeepSeek client ---
 
@@ -58,27 +58,26 @@ function normalizeType(aiType: string): string {
 
 // --- DeepSeek classification prompt ---
 
-const SYSTEM_PROMPT = `You classify Epstein case documents from publicly released DOJ records. Given document text split by page markers, return the overall document type and a type for each page.
+const SYSTEM_PROMPT = `You classify individual pages of Epstein case documents from publicly released DOJ records. Given document text split by page markers, return a type for each page.
 
-Valid document types:
+Valid page types:
 court filing, correspondence, fbi report, deposition, grand jury transcript, flight log, financial record, search warrant, police report, property record, news article, travel record, email, contact list, photograph, video, government record
 
 Rules:
-- Choose the most specific type that fits the content
-- If a page is a cover sheet or filler, classify it as the dominant document type
-- If page text is too short or garbled to classify, use the overall document type
+- Classify EACH page independently based on its own content
+- Choose the most specific type that fits the page content
+- If a page is a cover sheet, classify it as "government record"
+- If page text is too short or garbled to classify, use "government record"
 - Respond ONLY with valid JSON, no markdown fences
 
 JSON format:
 {
-  "documentType": "string",
   "pageTypes": [{"page": 1, "type": "string"}, ...]
 }`;
 
 // --- Classification logic ---
 
 interface ClassificationResult {
-  documentType: string;
   pageTypes: { page: number; type: string }[];
   inputTokens: number;
   outputTokens: number;
@@ -95,7 +94,7 @@ function buildPageText(pages: { pageNumber: number; content: string }[]): string
   return text.slice(0, MAX_CHARS_PER_REQUEST);
 }
 
-async function classifyDocument(
+async function classifyPages(
   docTitle: string,
   pages: { pageNumber: number; content: string }[],
 ): Promise<ClassificationResult> {
@@ -105,7 +104,7 @@ async function classifyDocument(
     model: DEEPSEEK_MODEL,
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
-      { role: "user", content: `Classify this document: "${docTitle}"\n\n${pageText}` },
+      { role: "user", content: `Classify each page of: "${docTitle}"\n\n${pageText}` },
     ],
     max_tokens: 2048,
     temperature: 0.1,
@@ -133,13 +132,12 @@ async function classifyDocument(
     }
   }
 
-  const documentType = normalizeType(parsed.documentType || "government record");
   const pageTypes = (parsed.pageTypes || []).map((pt: any) => ({
     page: pt.page,
-    type: normalizeType(pt.type || documentType),
+    type: normalizeType(pt.type || "government record"),
   }));
 
-  return { documentType, pageTypes, inputTokens, outputTokens, costCents };
+  return { pageTypes, inputTokens, outputTokens, costCents };
 }
 
 // --- Budget tracking ---
@@ -185,16 +183,17 @@ async function main(): Promise<void> {
 
   if (args.includes("--help") || args.includes("-h")) {
     console.log(`
-Classify Documents from Page Content (DeepSeek AI)
+Classify Document Pages (DeepSeek AI)
 
 Reads document_pages content from the database, sends to DeepSeek for
-classification, and updates documents.documentType + document_pages.pageType.
+per-page classification, and updates document_pages.pageType.
+Does NOT modify documents.documentType (use ai-analyzer for that).
 
 USAGE:
   npx tsx scripts/pipeline/classify-from-pages.ts [options]
 
 OPTIONS:
-  --limit N          Max documents to classify (default: 100)
+  --limit N          Max documents to process (default: 100)
   --monthly-cap N    Budget cap in cents (default: 500 = $5.00)
   --dry-run          Preview without making API calls or DB updates
   --batch-size N     Documents per DB fetch batch (default: 20)
@@ -216,7 +215,7 @@ OPTIONS:
     else if (args[i] === "--batch-size" && args[i + 1]) config.batchSize = parseInt(args[++i], 10);
   }
 
-  console.log("\n=== Document Page Classifier (DeepSeek) ===\n");
+  console.log("\n=== Page-Level Classifier (DeepSeek) ===\n");
   console.log(`Limit: ${config.limit}`);
   console.log(`Monthly cap: $${(config.monthlyCapCents / 100).toFixed(2)}`);
   console.log(`Batch size: ${config.batchSize}`);
@@ -232,7 +231,7 @@ OPTIONS:
     process.exit(0);
   }
 
-  // Find unclassified documents that have pages
+  // Find documents that have pages with NULL pageType
   const unclassifiedDocs = await db
     .select({
       id: documents.id,
@@ -242,14 +241,11 @@ OPTIONS:
     })
     .from(documents)
     .where(
-      and(
-        inArray(documents.documentType, ["government record", "photograph"]),
-        sql`EXISTS (SELECT 1 FROM document_pages WHERE document_id = ${documents.id})`,
-      ),
+      sql`EXISTS (SELECT 1 FROM document_pages WHERE document_id = ${documents.id} AND page_type IS NULL)`,
     )
     .limit(config.limit);
 
-  console.log(`\nFound ${unclassifiedDocs.length} unclassified documents with pages\n`);
+  console.log(`\nFound ${unclassifiedDocs.length} documents with unclassified pages\n`);
 
   if (unclassifiedDocs.length === 0) {
     console.log("Nothing to classify.");
@@ -267,11 +263,11 @@ OPTIONS:
       break;
     }
 
-    // Fetch pages for this document
+    // Fetch unclassified pages for this document
     const pages = await db
       .select({ pageNumber: documentPages.pageNumber, content: documentPages.content })
       .from(documentPages)
-      .where(eq(documentPages.documentId, doc.id))
+      .where(and(eq(documentPages.documentId, doc.id), sql`page_type IS NULL`))
       .orderBy(asc(documentPages.pageNumber));
 
     if (pages.length === 0) continue;
@@ -285,15 +281,9 @@ OPTIONS:
     }
 
     try {
-      const result = await classifyDocument(doc.title, pages);
+      const result = await classifyPages(doc.title, pages);
 
-      // Update document type
-      await db
-        .update(documents)
-        .set({ documentType: result.documentType })
-        .where(eq(documents.id, doc.id));
-
-      // Update page types
+      // Update page types from AI response
       for (const pt of result.pageTypes) {
         await db
           .update(documentPages)
@@ -306,13 +296,13 @@ OPTIONS:
           );
       }
 
-      // For pages not returned by AI, set to document type
+      // For pages not returned by AI, fall back to document's existing type
       const classifiedPageNums = new Set(result.pageTypes.map(pt => pt.page));
       for (const page of pages) {
         if (!classifiedPageNums.has(page.pageNumber)) {
           await db
             .update(documentPages)
-            .set({ pageType: result.documentType })
+            .set({ pageType: doc.documentType })
             .where(
               and(
                 eq(documentPages.documentId, doc.id),
@@ -329,17 +319,16 @@ OPTIONS:
         totalCost += result.costCents;
       }
 
-      // Update per-document AI cost
-      await db
-        .update(documents)
-        .set({ aiCostCents: sql`COALESCE(${documents.aiCostCents}, 0) + ${Math.ceil(result.costCents)}` })
-        .where(eq(documents.id, doc.id));
-
       classified++;
-      typeDistribution.set(result.documentType, (typeDistribution.get(result.documentType) || 0) + 1);
+      const pageTypeCounts = new Map<string, number>();
+      for (const pt of result.pageTypes) {
+        pageTypeCounts.set(pt.type, (pageTypeCounts.get(pt.type) || 0) + 1);
+        typeDistribution.set(pt.type, (typeDistribution.get(pt.type) || 0) + 1);
+      }
+      const typeSummary = [...pageTypeCounts.entries()].map(([t, c]) => `${t}(${c})`).join(", ");
 
       console.log(
-        `  [${classified}/${unclassifiedDocs.length}] ${doc.title} → ${result.documentType} (${pages.length} pages, ${result.costCents.toFixed(3)}c)`
+        `  [${classified}/${unclassifiedDocs.length}] ${doc.title} → ${typeSummary} (${pages.length} pages, ${result.costCents.toFixed(3)}c)`
       );
 
       // Rate limiting
@@ -356,13 +345,13 @@ OPTIONS:
   }
 
   // Summary
-  console.log("\n=== Classification Summary ===");
-  console.log(`Classified: ${classified}`);
+  console.log("\n=== Page Classification Summary ===");
+  console.log(`Documents processed: ${classified}`);
   console.log(`Failed: ${failed}`);
   console.log(`Total cost: $${(totalCost / 100).toFixed(4)}`);
 
   if (typeDistribution.size > 0) {
-    console.log("\nType distribution:");
+    console.log("\nPage type distribution:");
     for (const [type, count] of [...typeDistribution.entries()].sort((a, b) => b[1] - a[1])) {
       console.log(`  ${type}: ${count}`);
     }
