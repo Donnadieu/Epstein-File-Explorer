@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00077888.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-03-26",
+  "summary": "This is an email chain between US Attorney's Office (SDNY) prosecutors discussing sending a 'friendly subpoena' to an attorney (IM) to obtain a copy of a settlement agreement between a victim and Jeffrey Epstein. The agreement resolved a 2009 civil suit and is sought for the ongoing investigation into Ghislaine Maxwell's participation in abuse.",
+  "persons": [
+    {
+      "name": "Audrey",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "A prosecutor at the US Attorney's Office (SDNY) who needs to approve the subpoena request.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the ongoing investigation into her participation in the abuse of victims, for which the settlement agreement is sought as relevant evidence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The defendant in the 2009 civil suit which was resolved by the settlement agreement being subpoenaed.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "IM",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "IM possesses the settlement agreement that resolved a civil suit against Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is under investigation for participation in abuse connected to Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "IM",
+      "person2": "US Attorney's Office (SDNY)",
+      "relationshipType": "legal",
+      "description": "IM is cooperating by providing documents and has indicated he will provide the settlement agreement upon receipt of a subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009",
+      "title": "Civil suit against Jeffrey Epstein",
+      "description": "A civil lawsuit was filed against Jeffrey Epstein by a victim, which was later resolved by a settlement agreement.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "IM"
+      ]
+    },
+    {
+      "date": "2021-03-26",
+      "title": "Discussion of friendly subpoena",
+      "description": "Prosecutors discuss sending a 'friendly subpoena' to attorney IM to obtain the Epstein settlement agreement for the Maxwell investigation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "IM",
+        "Audrey"
+      ]
+    }
+  ],
+  "locations": [
+    "Florida"
+  ],
+  "keyFacts": [
+    "A settlement agreement exists that resolved a 2009 civil suit against Jeffrey Epstein.",
+    "Attorney IM possesses this settlement agreement and is willing to provide it to prosecutors but believes he needs a subpoena.",
+    "The US Attorney's Office (SDNY) is seeking the agreement as relevant evidence in the ongoing investigation into Ghislaine Maxwell's participation in abuse.",
+    "The email discusses procedural details about issuing the subpoena, including checking for protective orders and specifying the request.",
+    "The document indicates prior cooperation, as IM's firm had already voluntarily provided other court filings and deposition transcripts from the civil case."
+  ],
+  "analyzedAt": "2026-02-15T15:40:18.443Z"
+}

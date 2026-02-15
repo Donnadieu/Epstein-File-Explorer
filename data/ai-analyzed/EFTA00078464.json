@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00078464.pdf",
+  "dataSet": "9",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2021-11-22",
+  "summary": "This is a letter from the U.S. Attorney's Office to Judge Nathan regarding proposed limiting instructions in the Ghislaine Maxwell criminal case (US v. Maxwell, 20 Cr. 330). The letter is submitted temporarily under seal and references a sealed opinion from November 19, 2021.",
+  "persons": [
+    {
+      "name": "Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Addressed as 'Chambers', indicating this is correspondence directed to Judge Nathan's chambers regarding the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Signatory of the letter submitting the Government's proposed limiting instructions in the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the criminal case referenced (US v. Maxwell, 20 Cr. 330).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christian Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Everdell, as an Assistant U.S. Attorney, is prosecuting Maxwell in the referenced criminal case.",
+      "strength": 4
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Nathan",
+      "relationshipType": "legal",
+      "description": "Everdell is submitting legal correspondence to Judge Nathan regarding the Maxwell case proceedings.",
+      "strength": 3
+    },
+    {
+      "person1": "Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is presiding over the criminal case against Maxwell.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-19",
+      "title": "Court's Sealed Opinion Issued",
+      "description": "Judge Nathan issued a sealed opinion in the Maxwell case, referenced as the basis for the proposed limiting instructions.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Nathan",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-11-22",
+      "title": "Government Submits Letter on Limiting Instructions",
+      "description": "The U.S. Attorney's Office submits a letter to the court regarding proposed limiting instructions, temporarily under seal.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Christian Everdell",
+        "Nathan"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "1 Saint Andrews Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "The document is a legal letter from AUSA Christian Everdell to Judge Nathan regarding the Ghislaine Maxwell criminal case (20 Cr. 330).",
+    "It references a sealed opinion issued by the court on November 19, 2021.",
+    "The letter submits the Government's proposed limiting instructions and is filed temporarily under seal.",
+    "The correspondence originates from the U.S. Attorney's Office at 1 Saint Andrews Plaza in New York."
+  ],
+  "analyzedAt": "2026-02-15T16:23:37.022Z"
+}

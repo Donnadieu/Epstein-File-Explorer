@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00077239.pdf",
+  "dataSet": "9",
+  "documentType": "email chain",
+  "dateOriginal": "2021-05-05 to 2021-07-19",
+  "summary": "This is an email chain between federal prosecutors and FBI agents regarding the collection, transfer, and inspection of a pair of boots as evidence in the Ghislaine Maxwell case. The boots were purchased for a witness by Jeffrey Epstein and Maxwell in New Mexico and were to be collected from the witness's house by an FBI agent.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referred to as the subject of the criminal case ('Maxwell case'). The boots were purchased for a witness by her and Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased co-conspirator",
+      "category": "key figure",
+      "context": "Mentioned as having purchased the boots, along with Ghislaine Maxwell, for a witness in New Mexico.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "The defense asked Judge Nathan to have the boots produced directly to them, leading prosecutors to pause collection pending a ruling.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Jointly purchased boots for a witness, as mentioned in the evidence collection request.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Judge Nathan",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is presiding over the legal case against Maxwell, as the defense sought a ruling from her regarding evidence procedure.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-05",
+      "title": "Agreement to Provide Boots as Evidence",
+      "description": "A witness, through counsel, agreed to provide boots purchased by Epstein and Maxwell in New Mexico to the FBI for the Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-05-12",
+      "title": "Defense Motion on Evidence Production",
+      "description": "The defense asked Judge Nathan to have the boots produced directly to them, causing prosecutors to pause FBI collection pending a judicial ruling.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2021-06-04",
+      "title": "Court Resolution on Boots",
+      "description": "The Court resolved issues around the boots, clearing prosecutors to have them collected and transferred to New York.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-06-30",
+      "title": "Boots Picked Up in New Mexico",
+      "description": "An FBI agent in New Mexico picked up the boots from the witness's house.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-07-19",
+      "title": "Boots Arrive in New York for Inspection",
+      "description": "The boots arrived at the FBI New York Field Office and were to be made available for inspection by the defense counsel.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New Mexico",
+    "New York, NY",
+    "FBI New York Field Office",
+    "Southern District of New York",
+    "1 St. Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A pair of boots purchased by Jeffrey Epstein and Ghislaine Maxwell for a witness in New Mexico was collected as evidence in the Maxwell case.",
+    "The defense sought to have the boots produced directly to them rather than through prosecutors, requiring a ruling from Judge Nathan.",
+    "The FBI coordinated the pickup of the boots from the witness's house in New Mexico and their transfer to the New York Field Office.",
+    "The email chain shows procedural coordination between the U.S. Attorney's Office and the FBI regarding evidence handling.",
+    "The boots were to be inspected by both prosecutors and defense counsel once they arrived in New York."
+  ],
+  "analyzedAt": "2026-02-15T15:12:48.548Z"
+}

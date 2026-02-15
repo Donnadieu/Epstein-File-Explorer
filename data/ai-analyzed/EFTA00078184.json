@@ -1,0 +1,126 @@
+{
+  "fileName": "EFTA00078184.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-02-07",
+  "summary": "This is an internal email forwarding a news article about the Department of Justice opening an investigation into Alex Acosta's role in negotiating Jeffrey Epstein's 2008 plea deal. The email suggests the Office of Professional Responsibility should be made aware of an internal investigation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Wealthy New York investor accused of molesting more than 100 underage girls in Palm Beach, who received a lenient plea deal in 2008.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alex Acosta",
+      "role": "Secretary of Labor, former U.S. Attorney",
+      "category": "political",
+      "context": "Former U.S. attorney for the Southern District of Florida who negotiated the controversial plea deal with Jeffrey Epstein in 2008, now subject to a DOJ investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ben Sasse",
+      "role": "U.S. Senator",
+      "category": "political",
+      "context": "Nebraska Republican and member of the Senate Judiciary Committee who requested the DOJ investigation into the Epstein plea deal.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Julie K. Brown",
+      "role": "Journalist",
+      "category": "other",
+      "context": "Miami Herald reporter who wrote the series 'Perversion of Justice' detailing the Epstein case and plea deal.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stephen E. Boyd",
+      "role": "Assistant Attorney General",
+      "category": "legal",
+      "context": "DOJ official who wrote a letter to Senator Sasse confirming the Office of Professional Responsibility investigation into the Epstein plea deal.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex Acosta",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Acosta, as U.S. Attorney, negotiated the controversial 2008 plea deal with Epstein who was accused of child molestation.",
+      "strength": 4
+    },
+    {
+      "person1": "Ben Sasse",
+      "person2": "Alex Acosta",
+      "relationshipType": "political",
+      "description": "Senator Sasse requested the DOJ investigation into Acosta's role in the Epstein plea deal.",
+      "strength": 3
+    },
+    {
+      "person1": "Julie K. Brown",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigation",
+      "description": "Brown's investigative reporting for the Miami Herald exposed details of the Epstein case and plea deal.",
+      "strength": 3
+    },
+    {
+      "person1": "Stephen E. Boyd",
+      "person2": "Ben Sasse",
+      "relationshipType": "correspondence",
+      "description": "Boyd wrote a letter to Senator Sasse confirming the DOJ investigation into the Epstein matter.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2008",
+      "title": "Epstein Plea Deal Negotiation",
+      "description": "Alex Acosta and other DOJ attorneys negotiated a lenient plea deal with Jeffrey Epstein for molesting underage girls.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Alex Acosta"
+      ]
+    },
+    {
+      "date": "2019-02-06",
+      "title": "DOJ Opens Investigation into Epstein Plea Deal",
+      "description": "The Department of Justice opened an investigation into Alex Acosta's role in the Epstein plea deal following a request from Senator Ben Sasse.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alex Acosta",
+        "Ben Sasse",
+        "Stephen E. Boyd"
+      ]
+    },
+    {
+      "date": "2019-02-06",
+      "title": "Miami Herald Article Publication",
+      "description": "Julie K. Brown's article reported on the DOJ investigation into the Epstein plea deal, citing her 'Perversion of Justice' series.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Julie K. Brown",
+        "Jeffrey Epstein",
+        "Alex Acosta"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach",
+    "New York",
+    "Miami",
+    "Nebraska",
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "The Department of Justice opened an investigation into Alex Acosta's role in negotiating Jeffrey Epstein's 2008 plea deal.",
+    "The investigation was requested by Senator Ben Sasse following the Miami Herald's 'Perversion of Justice' series.",
+    "Jeffrey Epstein was accused of molesting more than 100 underage girls in Palm Beach.",
+    "The DOJ's Office of Professional Responsibility is leading the investigation into potential professional misconduct by Department attorneys.",
+    "The internal email suggests someone within an organization wanted to ensure OPR was aware of their own Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-15T16:01:31.844Z"
+}

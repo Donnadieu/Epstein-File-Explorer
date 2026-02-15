@@ -1,0 +1,54 @@
+{
+  "fileName": "EFTA00077892.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-10-08",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York, dated October 8, 2021, instructing someone to move a folder to a 'non testifying' (NTW) location and to create a 3500 folder for a FedEx records custodian named 'aho' for review. It appears to be internal case management communication regarding evidence organization.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the email, instructing someone to move a folder to a 'non testifying' location and create a 3500 folder for a FedEx records custodian.",
+      "mentionCount": 1
+    },
+    {
+      "name": "aho",
+      "role": "FedEx Records Custodian",
+      "category": "witness",
+      "context": "Identified as the FedEx records custodian; the AUSA requests a 3500 folder be created for her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "aho",
+      "relationshipType": "legal-investigative",
+      "description": "The AUSA is requesting the creation of a 3500 folder for the FedEx records custodian 'aho', indicating she is a potential witness or source of records for the prosecution.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-08",
+      "title": "Internal Case Management Instruction",
+      "description": "An AUSA sends an email instructing a colleague to move a folder to a 'non testifying' location and to create a 3500 folder for a FedEx records custodian.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York 10007"
+  ],
+  "keyFacts": [
+    "An Assistant U.S. Attorney in the SDNY is managing case evidence, specifically requesting a folder be moved to a 'non testifying' (NTW) location.",
+    "The AUSA identifies a FedEx records custodian named 'aho' and requests a 3500 folder be created for her, suggesting her records are relevant to the case.",
+    "The communication is dated October 2021, indicating ongoing case preparation or management activity well after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-15T15:40:50.576Z"
+}

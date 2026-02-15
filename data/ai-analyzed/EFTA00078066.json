@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA00078066.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-11",
+  "summary": "This is an email from a US Attorney's Office regarding a draft indictment against Ghislaine Maxwell. The email discusses a legal issue concerning the perjury charge related to Maxwell's testimony about a minor victim's age, and the need to protect the victim's identity while complying with legal requirements.",
+  "persons": [
+    {
+      "name": "Graff, Ilan",
+      "role": "US Attorney's Office recipient",
+      "category": "legal",
+      "context": "Appears as a recipient (Cc) of an email discussing the draft Maxwell indictment and legal strategy regarding victim anonymity.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the draft indictment, specifically concerning a perjury charge related to her testimony about a minor victim's age.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Minor Victim-1",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A minor victim referenced in Maxwell's deposition transcript; the email discusses protecting this individual's identity in the indictment.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maxwell",
+      "person2": "Minor Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell's testimony about the minor victim's age is the subject of a perjury charge in the draft indictment.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-11",
+      "title": "Draft Maxwell Indictment Prepared",
+      "description": "A draft indictment against Ghislaine Maxwell is circulated among prosecutors, including discussion of a perjury charge related to her testimony about a minor victim.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell",
+        "Minor Victim-1"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A draft indictment against Ghislaine Maxwell was being prepared as of June 11, 2020.",
+    "The indictment included a perjury charge (Count Five) related to Maxwell's testimony about a minor victim's age.",
+    "Prosecutors were concerned that including the full transcript excerpt would allow anyone with access to the deposition to identify 'Minor Victim-1', undermining promises to protect her identity.",
+    "The legal team sought to either further anonymize the reference or remove that specification from the indictment to protect the victim."
+  ],
+  "analyzedAt": "2026-02-15T15:50:52.589Z"
+}

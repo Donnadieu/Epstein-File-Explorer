@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00077214.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-30",
+  "summary": "A December 30, 2020 letter from the U.S. Department of Justice's Office of International Affairs to an Assistant U.S. Attorney in New York, transmitting a French request for mutual legal assistance. The letter outlines that French authorities are investigating Jeffrey Epstein, his accomplices, and Jean-Luc Brunel, and that a search was executed at Epstein's Paris residence in September 2019. It instructs the AUSA on procedures for executing the request while maintaining confidentiality.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of French Investigation",
+      "category": "key figure",
+      "context": "The central subject of the French criminal investigation. The document states French authorities are investigating his actions and those of his accomplices, and that they executed a search warrant at his Paris residence in September 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accomplice/Subject of Investigation",
+      "category": "associate",
+      "context": "Named as an accomplice of Jeffrey Epstein and a subject of the French investigation. French authorities requested information related to her.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jean-Luc Brunel",
+      "role": "Subject of Investigation",
+      "category": "associate",
+      "context": "Named in the closing of the letter as a subject of the international criminal matter, indicating the French investigation relates to him.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "The document refers to Maxwell as an accomplice of Epstein, indicating they are subjects of the same French criminal investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jean-Luc Brunel",
+      "relationshipType": "associate",
+      "description": "The letter concludes by stating the international criminal matter relates to Jean-Luc Brunel, connecting him to the investigation of Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09",
+      "title": "Search of Epstein's Paris Residence",
+      "description": "French authorities executed a search warrant at Jeffrey Epstein's residence in Paris, where they obtained evidence and information.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-12-30",
+      "title": "DOJ Transmits French MLA Request",
+      "description": "The U.S. Department of Justice's Office of International Affairs formally transmits a French mutual legal assistance request to a U.S. Attorney's Office in New York to aid the French investigation into Epstein and associates.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Paris, France",
+    "New York, New York, USA"
+  ],
+  "keyFacts": [
+    "French authorities opened a criminal investigation into the actions of Jeffrey Epstein and his accomplices, including Ghislaine Maxwell.",
+    "In September 2019, French authorities executed a search warrant at Jeffrey Epstein's Paris residence, seizing evidence.",
+    "The French investigation has identified multiple victims, though some potential charges are barred by France's statute of limitations.",
+    "The U.S. is obligated to assist France under the 1998 U.S.-France Mutual Legal Assistance Treaty, as supplemented by a 2004 instrument.",
+    "The document reveals the international scope of the Epstein investigation, specifically naming Jean-Luc Brunel as a related subject."
+  ],
+  "analyzedAt": "2026-02-15T15:10:19.553Z"
+}

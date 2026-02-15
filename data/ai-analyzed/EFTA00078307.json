@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00078307.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-04-15",
+  "summary": "This document is an email exchange between two individuals, forwarding a quote from a New York Times article. The quote describes an alleged incident where Ghislaine Maxwell performed a massage on a woman named Mike Baker, during which Maxwell exposed and massaged the woman's breasts, while Jeffrey Epstein was reportedly present in the area.",
+  "persons": [
+    {
+      "name": "Mike Baker",
+      "role": "Alleged victim/witness",
+      "category": "victim",
+      "context": "The individual recounting an alleged incident where Ghislaine Maxwell performed an inappropriate massage on her, exposing and massaging her breasts, with Jeffrey Epstein present nearby.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged perpetrator",
+      "category": "key figure",
+      "context": "Described as performing a massage on Mike Baker, during which she exposed and massaged Baker's breasts.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Alleged co-conspirator",
+      "category": "key figure",
+      "context": "Described as being present in the area during the alleged inappropriate massage performed by Ghislaine Maxwell on Mike Baker.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Geoffrey Berman",
+      "role": "U.S. Attorney",
+      "category": "legal",
+      "context": "The recipient of the initial email, requesting a resend of a quote from the New York Times about Ghislaine Maxwell.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Mike Baker",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell is alleged to have performed an inappropriate, sexualized massage on Baker.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Epstein was present in the area during the alleged incident involving Maxwell and Baker.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mike Baker",
+      "relationshipType": "victim-perpetrator",
+      "description": "Baker felt Epstein's presence and believed he could see her during the alleged inappropriate massage.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Alleged Inappropriate Massage by Ghislaine Maxwell",
+      "description": "Ghislaine Maxwell performed a massage on Mike Baker, during which she exposed Baker's breasts and massaged her chest, while Jeffrey Epstein was present in the vicinity.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Mike Baker",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Mike Baker alleges Ghislaine Maxwell performed a massage on her that involved exposing and massaging her breasts.",
+    "Jeffrey Epstein was reportedly present in the area during this alleged incident, leading Baker to believe he could see her.",
+    "The account is being referenced in an email between individuals, one of whom is U.S. Attorney Geoffrey Berman, who requested the quote.",
+    "The source of the quote is indicated to be the New York Times."
+  ],
+  "analyzedAt": "2026-02-15T16:12:28.771Z"
+}

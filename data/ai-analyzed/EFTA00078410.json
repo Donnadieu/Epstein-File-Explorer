@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00078410.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-13",
+  "summary": "This document is an email chain from August 13, 2019, providing updates on interviews conducted by the OIG, FBI, and USAO-SDNY regarding the circumstances surrounding Jeffrey Epstein's death at the Metropolitan Correctional Center (MCC). It details interviews with MCC staff, reveals failures in protocol (lack of cellmate, missed counts, non-functional cameras), and notes that officers Tova Noel and Michael Thomas refused to be interviewed.",
+  "persons": [
+    {
+      "name": "Geoffrey Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Recipient and participant in the email chain discussing the MCC interview updates. He asks specific questions to confirm details about the officers involved.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "MCC Officer",
+      "category": "law enforcement",
+      "context": "The officer who discovered Epstein's body and admitted to not conducting the 3 a.m. and 5 a.m. counts. She stated Epstein did not have a cellmate overnight and later stuttered when questioned about it.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "MCC Officer",
+      "category": "law enforcement",
+      "context": "Officer who was performing CPR on Epstein when discovered. He stated 'we messed up' and 'we didn't do the counts' regarding the protocol failures. He refused to speak with agents.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The inmate who was found dead in his cell at the MCC on August 10, 2019. The document details the circumstances leading to his death, including the lack of a cellmate and missed checks.",
+      "mentionCount": 7
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were MCC officers on duty who discovered Epstein's body and were implicated in failing to conduct required counts and ensure Epstein had a cellmate.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was the officer who reported finding Epstein had hung himself and was responsible for his cell block.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was performing CPR on Epstein when he was discovered and was responsible for his cell block.",
+      "strength": 3
+    },
+    {
+      "person1": "Geoffrey Berman",
+      "person2": "Tova Noel",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is overseeing the investigation into Epstein's death and is seeking confirmation about Noel's actions and refusal to interview.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Death",
+      "description": "Jeffrey Epstein was found dead in his cell in the Special Housing Unit (SHU) at the Metropolitan Correctional Center. Officer Noel reported he had hung himself. Officers Thomas and a lieutenant performed CPR.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Cellmate Removed, Protocol Failures",
+      "description": "Epstein's cellmate was moved out for court, and he was not reassigned a new cellmate. Officers failed to conduct the mandatory 3 a.m. and 5 a.m. inmate counts.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-12 to 2019-08-13",
+      "title": "MCC Staff Interviews",
+      "description": "OIG, FBI, and USAO-SDNY conducted voluntary interviews with multiple MCC employees regarding the events surrounding Epstein's death, revealing systemic failures.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Special Housing Unit (SHU) at MCC",
+    "One St. Andrew's Plaza, New York, New York 10007 (U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "Epstein did not have a cellmate on the night of his death, contrary to protocol, after his previous cellmate was moved for court.",
+    "Officers Tova Noel and Michael Thomas admitted to not conducting the mandatory 3 a.m. and 5 a.m. inmate counts, with Thomas stating 'we messed up'.",
+    "The camera system in the Special Housing Unit (SHU) where Epstein was held was not working at the time of his death.",
+    "Multiple officers and supervisors who should have been aware Epstein was without a cellmate refused to be interviewed by investigators without their union representatives.",
+    "Epstein had attempted to make an unrecorded legal phone call days before his death, telling a staff member he was calling his mother."
+  ],
+  "analyzedAt": "2026-02-15T16:20:00.128Z"
+}
