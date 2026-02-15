@@ -16,6 +16,7 @@ import {
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
 import { migrateToR2 } from "./r2-migration";
+import { runDs9GapAnalysis } from "./ds9-gap-analysis";
 import { downloadTorrents } from "./torrent-downloader";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 
@@ -39,6 +40,7 @@ interface PipelineConfig {
   dryRun?: boolean;
   maxFileSizeMB?: number;
   maxConcurrentPdfs?: number;
+  expectedMaxId?: number;
 }
 
 const STAGES = [
@@ -46,6 +48,7 @@ const STAGES = [
   "download-torrent",
   "upload-r2",
   "process",
+  "ds9-gap-analysis",
   "classify-media",
   "analyze-ai",
   "load-persons",
@@ -117,6 +120,7 @@ OPTIONS:
   --dry-run            Preview what would be processed without executing (analyze-ai)
   --max-file-size-mb N Skip PDFs larger than N MB (default: 256, process stage)
   --max-concurrent-pdfs N  Max parallel PDF extractions (default: 4)
+  --expected-max-id N      Upper bound for DS9 ID range when computing gaps (ds9-gap-analysis)
 
 EXAMPLES:
   # Quick start: populate database with Wikipedia data
@@ -146,11 +150,15 @@ EXAMPLES:
   # Run AI analysis with concurrency and batch size
   npx tsx scripts/pipeline/run-pipeline.ts analyze-ai --batch-size 10 --concurrency 2 --budget 1000
 
+  # DS9 gap analysis with optional upper bound for gap ranges
+  npx tsx scripts/pipeline/run-pipeline.ts ds9-gap-analysis --expected-max-id 200000
+
 DATA FLOW:
   1. scrape-wikipedia  → data/persons-raw.json
   2. download-torrent  → data/downloads/data-set-{N}/ (via BitTorrent + aria2c)
   2b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
   3. process           → data/extracted/ds{N}/*.json
+  3b. ds9-gap-analysis → data/ds9-recovery-manifest.json (present IDs + gaps)
   4. analyze-ai        → data/ai-analyzed/*.json
   5. load-*            → PostgreSQL database
 `);
@@ -192,6 +200,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           maxFileSizeMB: config.maxFileSizeMB,
           maxConcurrentPdfs: config.maxConcurrentPdfs,
         });
+        break;
+
+      case "ds9-gap-analysis":
+        await runDs9GapAnalysis({ expectedMaxId: config.expectedMaxId });
         break;
 
       case "classify-media":
@@ -292,6 +304,8 @@ async function main() {
       config.maxFileSizeMB = parseInt(args[++i], 10);
     } else if (arg === "--max-concurrent-pdfs" && args[i + 1]) {
       config.maxConcurrentPdfs = parseInt(args[++i], 10);
+    } else if (arg === "--expected-max-id" && args[i + 1]) {
+      config.expectedMaxId = parseInt(args[++i], 10);
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {
