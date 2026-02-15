@@ -39,7 +39,7 @@ export interface IStorage {
   getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
   searchPages(query: string, page: number, limit: number, useOrMode?: boolean): Promise<{
-    results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string }[];
+    results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string; pageType: string | null }[];
     total: number; page: number; totalPages: number;
   }>;
 
@@ -1005,7 +1005,7 @@ export class DatabaseStorage implements IStorage {
 
     const rawResult: any = await db.execute(sql`
       SELECT dp.document_id, d.title, d.document_type, d.data_set,
-             dp.page_number,
+             dp.page_number, dp.page_type,
              ts_headline('english', dp.content, ${tsquery},
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
@@ -1026,6 +1026,7 @@ export class DatabaseStorage implements IStorage {
         dataSet: r.data_set,
         pageNumber: Number(r.page_number),
         headline: r.headline,
+        pageType: r.page_type ?? null,
       })),
       total,
       page,

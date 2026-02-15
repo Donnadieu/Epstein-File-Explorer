@@ -43,6 +43,7 @@ interface PageSearchResult {
   dataSet: string | null;
   pageNumber: number;
   headline: string;
+  pageType: string | null;
 }
 
 interface PageSearchResponse {
@@ -98,7 +99,7 @@ export default function SearchPage() {
       title: string;
       documentType: string;
       dataSet: string | null;
-      pages: { pageNumber: number; headline: string }[];
+      pages: { pageNumber: number; headline: string; pageType: string | null }[];
     }>();
     for (const result of pageData.results) {
       let group = groups.get(result.documentId);
@@ -112,7 +113,7 @@ export default function SearchPage() {
         };
         groups.set(result.documentId, group);
       }
-      group.pages.push({ pageNumber: result.pageNumber, headline: result.headline });
+      group.pages.push({ pageNumber: result.pageNumber, headline: result.headline, pageType: result.pageType });
     }
     return Array.from(groups.values());
   }, [pageData?.results]);
@@ -348,6 +349,11 @@ export default function SearchPage() {
                                     <Badge variant="secondary" className="text-[10px] shrink-0 mt-0.5">
                                       Page {page.pageNumber}
                                     </Badge>
+                                    {page.pageType && page.pageType !== group.documentType && (
+                                      <Badge variant="outline" className="text-[10px] shrink-0 mt-0.5">
+                                        {page.pageType}
+                                      </Badge>
+                                    )}
                                     <p
                                       className="text-xs text-muted-foreground leading-relaxed [&_mark]:bg-yellow-200 dark:[&_mark]:bg-yellow-900/50 [&_mark]:px-0.5 [&_mark]:rounded-sm"
                                       dangerouslySetInnerHTML={{ __html: page.headline }}

@@ -13,6 +13,41 @@ import { classifyAllDocuments } from "./media-classifier";
 import OpenAI from "openai";
 
 const __filename = fileURLToPath(import.meta.url);
+
+// --- Canonical type normalization (shared with classify-from-pages.ts) ---
+
+const CANONICAL_TYPE_MAP: [string, RegExp][] = [
+  ["correspondence", /correspondence|email|letter|memo|fax|internal memorandum|calendar|appointment|schedule/i],
+  ["court filing", /court filing|court order|indictment|plea|subpoena|motion|docket/i],
+  ["fbi report", /fbi|302|bureau/i],
+  ["deposition", /deposition|interview transcript/i],
+  ["grand jury transcript", /grand jury/i],
+  ["flight log", /flight|manifest|aircraft/i],
+  ["financial record", /financial|bank|account|employment record/i],
+  ["search warrant", /search warrant|seizure|elsur/i],
+  ["police report", /police|incident report|booking|prison|correctional|jail|inmate/i],
+  ["property record", /property|real estate/i],
+  ["news article", /news|press|article|magazine/i],
+  ["travel record", /travel|passport|immigration/i],
+  ["government record", /administrative|government|official|form|log|record|registry|certificate/i],
+];
+
+const VALID_TYPES = new Set([
+  "correspondence", "court filing", "fbi report", "deposition",
+  "grand jury transcript", "flight log", "financial record",
+  "search warrant", "police report", "property record",
+  "news article", "travel record", "email", "contact list",
+  "photograph", "video", "government record",
+]);
+
+function normalizeType(aiType: string): string {
+  const lower = aiType.toLowerCase().trim();
+  if (VALID_TYPES.has(lower)) return lower;
+  for (const [canonical, pattern] of CANONICAL_TYPE_MAP) {
+    if (pattern.test(lower)) return canonical;
+  }
+  return "government record";
+}
 const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
@@ -391,10 +426,14 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           }
         }
       }
-      // --- Mark document as AI-analyzed ---
+      // --- Mark document as AI-analyzed + update documentType from AI ---
       if (sourceDocId) {
+        const docUpdates: Record<string, any> = { aiAnalysisStatus: "completed" };
+        if (data.documentType) {
+          docUpdates.documentType = normalizeType(data.documentType);
+        }
         await db.update(documents)
-          .set({ aiAnalysisStatus: "completed" })
+          .set(docUpdates)
           .where(eq(documents.id, sourceDocId));
       }
 

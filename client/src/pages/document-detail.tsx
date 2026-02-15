@@ -259,6 +259,25 @@ export default function DocumentDetailPage() {
           )}
         </div>
 
+        {doc.pageTypes && doc.pageTypes.length > 0 && (() => {
+          const typeCounts = new Map<string, number>();
+          for (const pt of doc.pageTypes) {
+            if (pt.pageType) typeCounts.set(pt.pageType, (typeCounts.get(pt.pageType) || 0) + 1);
+          }
+          if (typeCounts.size <= 1) return null;
+          const sorted = [...typeCounts.entries()].sort((a, b) => b[1] - a[1]);
+          return (
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs text-muted-foreground font-medium">Contains:</span>
+              {sorted.map(([type, count]) => (
+                <Badge key={type} variant="secondary" className="text-[10px]">
+                  {count} {type}{count > 1 ? "s" : ""}
+                </Badge>
+              ))}
+            </div>
+          );
+        })()}
+
         {doc.sourceUrl && (
           <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
             <Button variant="outline" className="gap-2 w-fit" data-testid="button-view-source">
