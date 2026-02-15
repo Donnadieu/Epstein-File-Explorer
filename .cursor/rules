@@ -1,0 +1,39 @@
+# Epstein-File-Explorer — Cursor AI Rules
+
+## Project overview
+Public record explorer for the DOJ Epstein Files (3.5M pages, 12 data sets).
+Stack: TypeScript, React, Express, PostgreSQL (Drizzle ORM), Cloudflare R2, DeepSeek API.
+
+## Architecture
+- `client/` — React frontend (Vite, Tailwind, shadcn/ui, D3 force graph, Recharts)
+- `server/` — Express API, PostgreSQL via Drizzle, R2 integration, WebSocket
+- `shared/schema.ts` — Single source of truth for DB schema (Drizzle + Zod)
+- `scripts/pipeline/` — 14-stage ETL pipeline (TypeScript, runs via `npx tsx`)
+
+## Pipeline stages (in order)
+scrape-wikipedia → download-torrent → import-downloads → upload-r2 → process →
+classify-media → analyze-ai → load-persons → load-documents → load-ai-results →
+extract-connections → update-counts → dedup-persons → dedup-connections
+
+## Key files
+- `scripts/pipeline/run-pipeline.ts` — Orchestrator + CLI
+- `scripts/pipeline/torrent-downloader.ts` — BitTorrent via aria2c, has safeResolve path safety
+- `scripts/pipeline/ai-analyzer.ts` — Two-tier analysis (regex + DeepSeek), Zod validation
+- `scripts/pipeline/pdf-processor.ts` — pdfjs-dist extraction with size/concurrency guardrails
+- `scripts/pipeline/db-loader.ts` — All DB loading with batched transactions
+- `server/storage.ts` — Data access layer
+- `server/routes.ts` — API routes
+
+## Coding conventions
+- ESM modules (`"type": "module"` in package.json)
+- `import.meta.url` for __dirname equivalent
+- Drizzle ORM for all DB access (never raw SQL strings)
+- Zod for validation at trust boundaries (API input, LLM output)
+- `p-limit` for concurrency control
+- All pipeline stages are idempotent (safe to re-run)
+
+## Data safety
+- NEVER commit .env, API keys, or database credentials
+- Pipeline processes publicly released DOJ documents only
+- Victim privacy: flag redaction failures for reporting, never expose victim names
+- data/downloads/ and data/extracted/ are gitignored (100s of GB)

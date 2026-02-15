@@ -89,6 +89,8 @@ classify-media → analyze-ai → load-persons → load-documents →
 load-ai-results → extract-connections → update-counts → dedup-persons
 ```
 
+For documented issues with the DOJ release (bulk downloads removed, DS9 incomplete, redaction failures, duplication, etc.) and planned pipeline solutions, see [docs/EPSTEIN_FILES_ISSUES_AND_PIPELINE.md](docs/EPSTEIN_FILES_ISSUES_AND_PIPELINE.md).
+
 ### Running Pipeline Stages
 
 ```bash
