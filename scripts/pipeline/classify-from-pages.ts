@@ -1,3 +1,4 @@
+import "dotenv/config";
 import OpenAI from "openai";
 import { db } from "../../server/db";
 import { documents, documentPages, budgetTracking } from "../../shared/schema";
