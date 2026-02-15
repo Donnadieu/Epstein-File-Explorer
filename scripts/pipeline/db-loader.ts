@@ -214,11 +214,13 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
   console.log(`  Pre-loaded ${existingLinks.size} person↔doc links`);
 
   // Pre-load document EFTA→ID map for O(1) source doc resolution
-  console.log("  Pre-loading documents...");
-  const allDocs = await db.select({ id: documents.id, title: documents.title, sourceUrl: documents.sourceUrl }).from(documents);
+  console.log("  Pre-loading EFTA→doc mappings...");
+  const eftaDocs = await db.select({ id: documents.id, title: documents.title })
+    .from(documents)
+    .where(sql`${documents.title} LIKE '%EFTA%'`);
   const docByEfta = new Map<string, number>();
-  for (const d of allDocs) {
-    const match = (d.title || d.sourceUrl || '').match(/EFTA\d+/i);
+  for (const d of eftaDocs) {
+    const match = d.title?.match(/EFTA\d+/i);
     if (match) docByEfta.set(match[0].toLowerCase(), d.id);
   }
   console.log(`  Pre-loaded ${docByEfta.size} EFTA→doc mappings`);
