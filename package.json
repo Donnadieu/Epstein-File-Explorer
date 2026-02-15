@@ -8,7 +8,8 @@
     "build": "tsx script/build.ts",
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "pipeline": "node dist/pipeline.cjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.985.0",

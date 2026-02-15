@@ -59,6 +59,21 @@ async function buildAll() {
     external: externals,
     logLevel: "info",
   });
+
+  console.log("building pipeline...");
+  await esbuild({
+    entryPoints: ["scripts/pipeline/run-pipeline.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/pipeline.cjs",
+    define: {
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: true,
+    external: externals,
+    logLevel: "info",
+  });
 }
 
 buildAll().catch((err) => {
