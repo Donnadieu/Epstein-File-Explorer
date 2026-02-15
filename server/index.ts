@@ -187,7 +187,7 @@ app.use((req, res, next) => {
         }
       })();
 
-      startBackgroundWorker();
+      // startBackgroundWorker();
     },
   );
 })();
