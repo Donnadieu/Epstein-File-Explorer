@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00075341.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-14",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to Mr. Foy, confirming that he represents Tova Noel and is authorized to accept service of a subpoena on her behalf. The email includes an attachment of the subpoena.",
+  "persons": [
+    {
+      "name": "Tova Noel",
+      "role": "Subject of subpoena",
+      "category": "other",
+      "context": "The individual for whom a subpoena is being served, as indicated in the email subject and attachment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mr. Foy",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Representative authorized to accept service of a subpoena on behalf of Tova Noel, as addressed in the email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sender of the email from the Southern District of New York, serving a subpoena related to Tova Noel.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mr. Foy",
+      "person2": "Tova Noel",
+      "relationshipType": "attorney-client",
+      "description": "Mr. Foy represents Tova Noel and is authorized to accept legal service on her behalf.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Tova Noel",
+      "relationshipType": "legal",
+      "description": "The prosecutor is serving a subpoena to Tova Noel as part of a legal proceeding.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-14",
+      "title": "Subpoena served to Tova Noel",
+      "description": "An Assistant United States Attorney serves a subpoena to Tova Noel via her attorney, Mr. Foy.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Tova Noel",
+        "Mr. Foy",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A subpoena was issued to Tova Noel on August 14, 2019.",
+    "Mr. Foy is identified as the attorney representing Tova Noel and authorized to accept service on her behalf.",
+    "The communication originates from an Assistant United States Attorney in the Southern District of New York, indicating federal legal proceedings involving Tova Noel."
+  ],
+  "analyzedAt": "2026-02-15T11:26:21.247Z"
+}

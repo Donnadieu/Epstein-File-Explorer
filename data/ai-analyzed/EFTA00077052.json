@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00077052.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-09-06",
+  "summary": "This is an internal email from the U.S. Attorney's Office for the Southern District of New York (USAO SDNY) discussing the Office of Chief Medical Examiner's (OCME) autopsy report on Jeffrey Epstein's death. It details the office's coordination with OCME to redact sensitive investigative materials from the report before its release to Epstein's brother, Mark Epstein, and mentions the discovery of a handwritten note in Epstein's cell.",
+  "persons": [
+    {
+      "name": "Mark Epstein",
+      "role": "Jeffrey Epstein's brother and next of kin",
+      "category": "key figure",
+      "context": "He is the individual requesting and slated to receive the redacted autopsy report from the OCME.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lt. `",
+      "role": "MCC guard on duty when Epstein's body was found",
+      "category": "witness",
+      "context": "Described as a key MCC witness; a draft FBI 302 of an interview with this lieutenant was provided to OCME and is among the materials requested to be redacted.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark Epstein",
+      "person2": "Lt. `",
+      "relationshipType": "investigative subject",
+      "description": "Mark Epstein is the recipient of a report that contains, among redacted items, information about Lt. `, a witness in the investigation into his brother's death.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein at MCC",
+      "description": "Jeffrey Epstein was found dead in his cell at the Metropolitan Correctional Center (MCC). The OCME concluded the cause of death was suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lt. `"
+      ]
+    },
+    {
+      "date": "2019-09-09",
+      "title": "Planned Submission of Redactions to OCME",
+      "description": "The USAO SDNY plans to provide its proposed redactions for the Epstein autopsy report to the OCME.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Office of Chief Medical Examiner (OCME), New York"
+  ],
+  "keyFacts": [
+    "The OCME's full autopsy report on Jeffrey Epstein, which concluded suicide, was complete and included materials provided by the USAO SDNY investigation.",
+    "The USAO SDNY requested significant redactions to the report before its release to Mark Epstein, specifically to protect the ongoing criminal investigation into Epstein's death.",
+    "Sensitive materials to be redacted included the names of prison guards under investigation, a draft FBI 302 of an interview with a key witness (Lt. `), and details from the scene.",
+    "A handwritten note found in Epstein's cell was referenced in the report; it was described as a list of grievances about MCC conditions and not a suicide note.",
+    "The email indicates the investigation was active and focused on potential charges related to the circumstances of Epstein's death."
+  ],
+  "analyzedAt": "2026-02-15T12:56:48.158Z"
+}

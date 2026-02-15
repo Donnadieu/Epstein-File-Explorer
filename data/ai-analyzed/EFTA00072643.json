@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA00072643.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-13",
+  "summary": "This is an email exchange between FBI personnel regarding the analysis of financial records from UBS related to the Montpelier Trust. It details the trust's funding sources, trustees, and account information, revealing Ghislaine Maxwell's direct financial involvement.",
+  "persons": [
+    {
+      "name": "Mark M. Lubin",
+      "role": "FBI Forensic Accountant",
+      "category": "law enforcement",
+      "context": "FBI forensic accountant in New York who prepared and sent the analysis of the Montpelier Trust Account records from UBS.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alison",
+      "role": "FBI Personnel",
+      "category": "law enforcement",
+      "context": "FBI recipient of the financial analysis who requests follow-up information about the source accounts funding the Montpelier Trust.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Amanda N. Young",
+      "role": "FBI Personnel",
+      "category": "law enforcement",
+      "context": "FBI personnel copied on the email correspondence regarding the trust account analysis.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffery Roberts",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "One of the trustees of the Montpelier Trust, with a signature date of 12/12/18, associated with the law firm Nutter McClennen & Fish.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Scott Borgerson",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "One of the trustees of the Montpelier Trust, with a signature date of 12/2/18, listed as a contact for shareholder communications.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christine Yvonne Malina-Maxwell",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "One of the trustees of the Montpelier Trust, with a signature date of 12/12/18.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Grantor",
+      "category": "key figure",
+      "context": "The grantor who funded the Montpelier Trust Account with $785,339 from her personal account.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark M. Lubin",
+      "person2": "Alison",
+      "relationshipType": "professional",
+      "description": "Colleagues within the FBI communicating about financial analysis of the Montpelier Trust.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffery Roberts",
+      "relationshipType": "legal",
+      "description": "Maxwell is the grantor of a trust for which Roberts serves as a trustee.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Scott Borgerson",
+      "relationshipType": "legal",
+      "description": "Maxwell is the grantor of a trust for which Borgerson serves as a trustee.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Christine Yvonne Malina-Maxwell",
+      "relationshipType": "legal",
+      "description": "Maxwell is the grantor of a trust for which Malina-Maxwell serves as a trustee.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffery Roberts",
+      "person2": "Scott Borgerson",
+      "relationshipType": "professional",
+      "description": "Co-trustees of the Montpelier Trust.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-07-31",
+      "title": "Montpelier Trust Established",
+      "description": "The Montpelier Trust, an irrevocable trust, was established.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffery Roberts",
+        "Scott Borgerson",
+        "Christine Yvonne Malina-Maxwell"
+      ]
+    },
+    {
+      "date": "2018-12",
+      "title": "Trustees Sign for Trust Account",
+      "description": "Trustees Jeffery Roberts and Christine Yvonne Malina-Maxwell signed the UBS trust signature page on 12/12/18; Scott Borgerson signed on 12/2/18.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffery Roberts",
+        "Scott Borgerson",
+        "Christine Yvonne Malina-Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-13",
+      "title": "FBI Analysis of Trust Funds",
+      "description": "FBI forensic accountant Mark Lubin provides an analysis of the Montpelier Trust Account funding and requests further information on source accounts.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark M. Lubin",
+        "Alison",
+        "Amanda N. Young"
+      ]
+    }
+  ],
+  "locations": [
+    "155 Seaport Boulevard, ATTN: Nutter McClennen & Fish LLP, Boston, MA 02210-2698",
+    "26 Federal Plaza NYC, NY 10278"
+  ],
+  "keyFacts": [
+    "The Montpelier Trust Account was funded from three sources: the Montpelier Trust Account itself ($2,750,000), a Ghislaine Maxwell account ($785,339), and an unknown account ($917,419).",
+    "Ghislaine Maxwell is explicitly identified as the grantor of the Montpelier Trust.",
+    "The trustees of the trust are Jeffery Roberts, Scott Borgerson, and Christine Yvonne Malina-Maxwell, with the trust's address of record at a Boston law firm.",
+    "The FBI was actively analyzing this financial structure in July 2020 as part of its investigation.",
+    "The document indicates the trust was established as irrevocable on July 31, 2018."
+  ],
+  "analyzedAt": "2026-02-15T09:10:23.399Z"
+}

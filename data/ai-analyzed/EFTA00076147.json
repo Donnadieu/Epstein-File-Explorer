@@ -1,0 +1,157 @@
+{
+  "fileName": "EFTA00076147.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-11-02",
+  "summary": "An email from a defense team member analyzing CBP (Customs and Border Protection) and flight log records, comparing travel patterns of Ghislaine Maxwell and Jeffrey Epstein in the 1990s, with specific focus on dates when an unnamed minor (redacted as 'is•') was of certain ages. The document cross-references flight logs from a person named Rodgers.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of travel record analysis",
+      "category": "key figure",
+      "context": "Her international flights from 1990-2019 are detailed, with specific trips in 1993, 1994, 1995, 1996, and 1997 noted in relation to the age of an unnamed minor.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of travel record analysis",
+      "category": "key figure",
+      "context": "His international flights, primarily from JFK to London Heathrow in 1994-1997, are listed. Flight logs show him traveling with Maxwell and others in late 1994.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Rodgers",
+      "role": "Flight log keeper/owner",
+      "category": "other",
+      "context": "Cited as the source for detailed flight log entries specifying passengers (Epstein, Maxwell, and others) and routes on specific dates in 1993 and 1994.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Rupert",
+      "role": "Travel companion",
+      "category": "associate",
+      "context": "Listed as a passenger with Jeffrey Epstein on a flight from TEB to PIN on December 21, 1994, according to Rodgers's flight log.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "travel companion",
+      "description": "Flight logs repeatedly show them on the same flights together in 1993, 1994, and late 1994, indicating coordinated travel.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Rupert",
+      "relationshipType": "travel companion",
+      "description": "Rodgers's flight log lists them together on a flight on December 21, 1994.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Rodgers",
+      "relationshipType": "document source",
+      "description": "Rodgers's personal flight logs are the source document detailing Maxwell's specific flight movements and companions.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1993-07-20",
+      "title": "Maxwell flight to London",
+      "description": "Ghislaine Maxwell flies from Dallas Fort Worth to London Gatwick. Rodgers's log notes her on a flight from SAF to CMH on July 24, 1993.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1993-11-06",
+      "title": "Maxwell flight to London",
+      "description": "Ghislaine Maxwell flies from Dulles to London Heathrow. Rodgers's log notes her on a flight from TEB to PBI on November 10, 1993.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1994-09-09",
+      "title": "Maxwell flight to Paris",
+      "description": "Ghislaine Maxwell flies from Cincinnati to Paris. Rodgers's log shows JE and GM flew from CMH to PBI on 9/10/1994.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "1994-09-22",
+      "title": "Flight with Epstein, Maxwell, and others",
+      "description": "Rodgers's flight log indicates Jeffrey Epstein, Ghislaine Maxwell, and 2 others flew from TEB to DCA.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1994-12-08",
+      "title": "Epstein flight to London",
+      "description": "Jeffrey Epstein flies from JFK to London Heathrow. The document notes it is unclear when he returned.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "1994-12-21",
+      "title": "Epstein flight with companions",
+      "description": "Rodgers's flight log shows Jeffrey Epstein, Ghislaine Maxwell, Rupert, and one other person flew from TEB to PIN.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Rupert"
+      ]
+    },
+    {
+      "date": "1997-11-01",
+      "title": "Earliest CBP record for unnamed minor",
+      "description": "The earliest CBP flight record for an unnamed minor (redacted) is noted, where she is believed to fly to JFK.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "London Heathrow (LHR)",
+    "London Gatwick (LGW)",
+    "Paris",
+    "New York, New York",
+    "JFK Airport",
+    "Columbus, OH (CMH)",
+    "Palm Beach (PBI)",
+    "Teterboro Airport (TEB)",
+    "Dallas Fort Worth (DFW)",
+    "Dulles Airport (IAD)",
+    "Cincinnati",
+    "Miami",
+    "Washington D.C. (DCA)"
+  ],
+  "keyFacts": [
+    "The analysis is focused on cross-referencing CBP records with personal flight logs from 'Rodgers' to establish detailed travel timelines for Ghislaine Maxwell and Jeffrey Epstein.",
+    "Multiple trips by Maxwell to London in 1993 and 1994 are highlighted, with the analysis noting the age of an unnamed minor (redacted) at the time of each trip.",
+    "Flight logs show Epstein and Maxwell traveling together frequently in late 1994, including a flight with two other unnamed individuals on September 22, 1994.",
+    "The earliest CBP record for an unnamed minor traveling to the US is identified as November 1, 1997.",
+    "The document is an internal defense team email, indicating active review of travel evidence in preparation for legal proceedings."
+  ],
+  "analyzedAt": "2026-02-15T12:20:00.711Z"
+}

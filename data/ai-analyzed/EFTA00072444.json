@@ -1,0 +1,142 @@
+{
+  "fileName": "EFTA00072444.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-10",
+  "summary": "This document is an email chain from August 2020 between attorneys Colleen Mullen and Teri Gibbs, representing a client who worked for Ghislaine Maxwell and is offering to cooperate with the criminal investigation. The chain discusses scheduling interviews, sharing documents, and the client's concerns about safety and anonymity. It also references an earlier communication from December 2019 regarding a client who witnessed Prince Andrew's interactions with Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Colleen Mullen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing a client who worked for Ghislaine Maxwell and is offering to cooperate with the investigation. She communicates with prosecutors to arrange interviews and share information.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Teri Gibbs",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney working with Colleen Mullen, likely at The Bloom Firm, to facilitate communication between their client and prosecutors regarding the Ghislaine Maxwell investigation and a witness to Prince Andrew's interactions.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the criminal investigation. The attorneys' client worked for her from 2003-2007 and possesses documents and email correspondence with her.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Mentioned as the person for whom the client worked 'by extension' through Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Royal Figure",
+      "category": "political",
+      "context": "Referenced in a December 2019 email where attorneys offer a client who witnessed his interactions with Jeffrey Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lisa Bloom",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Mentioned as being available with Teri Gibbs for a conference call regarding a witness related to Prince Andrew.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Colleen Mullen",
+      "person2": "Teri Gibbs",
+      "relationshipType": "professional colleague",
+      "description": "Attorneys working together at The Bloom Firm to represent clients in the Epstein/Maxwell investigations.",
+      "strength": 4
+    },
+    {
+      "person1": "Colleen Mullen",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client (indirect)",
+      "description": "Mullen represents a client who was an employee of Ghislaine Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Lisa Bloom",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys at The Bloom Firm, coordinating availability for a client call.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The client worked for Maxwell and, by extension, for Epstein, indicating their professional connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Prince Andrew",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "A client of the attorneys is offered as a witness to interactions between Prince Andrew and Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-10",
+      "title": "Client Safety Concern Raised",
+      "description": "Colleen Mullen emails prosecutors stating her client is deeply concerned about personal safety and wishes to maintain anonymity.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Colleen Mullen"
+      ]
+    },
+    {
+      "date": "2020-07-06",
+      "title": "Offer of Client Cooperation",
+      "description": "Colleen Mullen formally offers her client, a former employee of Ghislaine Maxwell, as a cooperating witness in the criminal investigation against Maxwell.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Colleen Mullen",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-01-28",
+      "title": "Documents Shared",
+      "description": "Teri Gibbs provides prosecutors with a list of office numbers used by their client during her employment with Ghislaine Maxwell from 2003-2007.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Teri Gibbs",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-12-19",
+      "title": "Witness Offer Regarding Prince Andrew",
+      "description": "Teri Gibbs emails prosecutors offering a client who witnessed Prince Andrew's interactions with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Teri Gibbs",
+        "Prince Andrew",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A client of attorneys Colleen Mullen and Teri Gibbs worked for Ghislaine Maxwell (and by extension, Jeffrey Epstein) from 2003 to 2007 and possesses documents and email correspondence with Maxwell.",
+    "The client is willing to fully cooperate with the criminal investigation against Ghislaine Maxwell and is offered as a valuable witness, but has expressed deep concern for personal safety and wishes to remain anonymous.",
+    "In a separate matter from December 2019, the same law firm offered a different client who witnessed interactions between Prince Andrew and Jeffrey Epstein.",
+    "The email chain shows ongoing coordination between defense attorneys and prosecutors in 2020 to schedule interviews and share documentary evidence related to the Maxwell investigation."
+  ],
+  "analyzedAt": "2026-02-15T08:55:19.838Z"
+}

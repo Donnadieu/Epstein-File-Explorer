@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA00068453.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-05-12",
+  "summary": "Email correspondence between defense attorney Laura Menninger and Assistant U.S. Attorney Maurene Comey regarding discovery issues in the US v. Maxwell case. The emails discuss technical problems with accessing and matching photo evidence recovered from CDs at Epstein's residence, including corrupt files, missing metadata, and disputes over the classification of images as 'highly confidential.'",
+  "persons": [
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney for Ghislaine Maxwell raising multiple discovery deficiencies regarding photo evidence, including corrupt files, mismatched metadata, and inability to view files.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor responding to defense's discovery issues, consulting with FBI and vendors about technical problems with photo evidence overlay and metadata.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Legal Staff",
+      "category": "legal",
+      "context": "Copied on email correspondence regarding discovery issues in US v. Maxwell case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Bobbi Sternheim",
+      "role": "Legal Staff",
+      "category": "legal",
+      "context": "Copied on email correspondence regarding discovery issues in US v. Maxwell case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referred to as the client who cannot review discovery files at MDC due to technical issues with the provided laptop and file formats.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Laura Menninger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Menninger is defense attorney representing Maxwell in the criminal case, advocating for her ability to review discovery materials.",
+      "strength": 5
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Maurene Comey",
+      "relationshipType": "legal adversary",
+      "description": "Prosecutor and defense attorney corresponding about discovery disputes in the criminal case against Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Maurene Comey",
+      "person2": "FBI",
+      "relationshipType": "collaboration",
+      "description": "Comey consults with the FBI regarding technical issues with evidence recovered from Epstein's residence.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-21",
+      "title": "Defense raises discovery deficiencies",
+      "description": "Laura Menninger sends detailed email outlining multiple problems with photo evidence discovery, including corrupt files, mismatched metadata, and inability to view files.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Laura Menninger",
+        "Maurene Comey",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-04-27",
+      "title": "Prosecution provides metadata overlay",
+      "description": "Maurene Comey sends metadata overlay file for images recovered from CDs at Epstein's residence to help defense match files with metadata.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Maurene Comey",
+        "Laura Menninger"
+      ]
+    },
+    {
+      "date": "2021-05-12",
+      "title": "Prosecution responds to discovery issues",
+      "description": "Maurene Comey provides detailed response after consulting with FBI and vendor about technical issues with photo evidence overlay and metadata matching.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Maurene Comey",
+        "Laura Menninger"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's residence",
+    "Southern District of New York",
+    "New York, NY 10007",
+    "MDC (Metropolitan Detention Center)",
+    "Denver, CO 80203"
+  ],
+  "keyFacts": [
+    "Photo evidence was recovered from CDs at Epstein's residence and produced to the defense with significant technical problems.",
+    "17 files had no hash values because they were incomplete or corrupt when recovered from the CDs.",
+    "The defense claims many photo files are unopenable and that metadata doesn't properly match the produced images.",
+    "The prosecution designated some images as 'highly confidential' containing 'nude, partially-nude, or otherwise sexualized images' but defense states they didn't see child pornography.",
+    "Ghislaine Maxwell cannot properly review discovery at MDC due to technical issues with the provided laptop and file formats."
+  ],
+  "analyzedAt": "2026-02-15T05:58:10.274Z"
+}

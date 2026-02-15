@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00073545.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-12-04",
+  "summary": "An email from an Assistant United States Attorney in the Southern District of New York requesting a Relativity access token for an FBI analyst working on the Epstein case, indicating ongoing investigative work and data management.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email requesting access to the Epstein SW Database for an FBI analyst, indicating they are part of the prosecution team in the Southern District of New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "FBI analyst",
+      "role": "Law Enforcement Analyst",
+      "category": "law enforcement",
+      "context": "An FBI analyst working on the Epstein case who requires access to the Relativity database containing evidence from the search warrant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "FBI analyst",
+      "relationshipType": "professional collaboration",
+      "description": "The prosecutor is requesting database access for the FBI analyst, indicating they are working together on the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-04",
+      "title": "Database Access Request",
+      "description": "An Assistant United States Attorney requests a Relativity access token for an FBI analyst working on the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "FBI analyst"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "One Saint Andrew's Plaza"
+  ],
+  "keyFacts": [
+    "The email shows ongoing investigative activity in the Epstein case as of December 2020.",
+    "Prosecutors and FBI analysts were using a specialized database (Relativity) to manage evidence from search warrants.",
+    "The Southern District of New York was actively involved in the investigation at this time."
+  ],
+  "analyzedAt": "2026-02-15T09:58:42.269Z"
+}

@@ -1,0 +1,260 @@
+{
+  "fileName": "EFTA00076468.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2018-05-17",
+  "summary": "This is a federal court opinion and order by Judge Kimba M. Wood in the criminal case against Dean Skelos and Adam Skelos. The order rules on motions to quash subpoenas served on non-parties, including the PRI Parties (Anthony Bonomo, Carl Bonomo, and related entities) and the Glenwood Parties (Charles Dorego, Glenwood Management Corp., and Steven Swarzman). The court grants the motions to quash the subpoenas served on the PRI Parties and partially grants/denies the motions regarding the Glenwood Parties, setting specific production deadlines. This is a court order (Document 323) from the criminal case United States v. Dean Skelos and Adam Skelos (1:15-cr-00317-KMW), filed by Judge Kimba M. Wood. The order rules on motions to quash subpoenas served on various third parties, including Charles Dorego, Glenwood Management, and Steven Swarzman, in relation to the upcoming trial. It details which subpoena requests are granted or denied, focusing on the relevance and admissibility of documents concerning potential kickbacks, business transactions, and communications to show witness bias or motive.",
+  "persons": [
+    {
+      "name": "Dean Skelos",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "One of the defendants in the criminal case (1:15-cr-00317). The document concerns subpoenas sought by the defense to obtain evidence for his upcoming trial.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Adam Skelos",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "One of the defendants in the criminal case. The defense seeks documents to show alternative reasons why he obtained work (e.g., title insurance work, job at AbTech) unrelated to alleged pressure from the defendants.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Kimba M. Wood",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge authoring the opinion and order, ruling on the motions to quash subpoenas.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Anthony Bonomo",
+      "role": "Non-party witness (PRI executive)",
+      "category": "witness",
+      "context": "Referred to as a 'star witness' for the government and subject of a New York State Department of Financial Services (DFS) investigation for allegedly cooking PRI's books. Defendants sought documents related to him.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Carl Bonomo",
+      "role": "Non-party (PRI executive)",
+      "category": "associate",
+      "context": "A non-party, along with Anthony Bonomo, from whom defendants sought documents via subpoena as part of the PRI Parties.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Charles Dorego",
+      "role": "Non-party witness (Glenwood General Counsel)",
+      "category": "witness",
+      "context": "Key witness from the first trial who testified for three days; subpoenaed for documents related to payments from Steven Swarzman and ownership interests in AbTech. The defense seeks to show his potential bias or motive to cooperate with the government.",
+      "mentionCount": 35
+    },
+    {
+      "name": "Steven Swarzman",
+      "role": "Non-party (Glenwood executive)",
+      "category": "associate",
+      "context": "Individual from whom Dorego allegedly received hundreds of thousands of dollars in potential kickbacks and from whom Dorego purchased Clean Water Solutions. His transactions with Dorego are central to the defense's bias argument.",
+      "mentionCount": 18
+    },
+    {
+      "name": "Glenn Rink",
+      "role": "Founder of AbTech",
+      "category": "associate",
+      "context": "Founder of AbTech, the company that gave Adam Skelos a job. Communications with him are sought to show the state of mind behind hiring Adam Skelos.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Thomas Dwyer",
+      "role": "Business partner",
+      "category": "associate",
+      "context": "Business partner of Christopher McKenna and had a joint venture with Swarzman. Communications with him regarding Dean or Adam Skelos are sought by the defense.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Christopher McKenna",
+      "role": "Business owner",
+      "category": "associate",
+      "context": "Owner of American Land Services and business partner of Thomas Dwyer. Communications with him regarding the Skeloses are sought by the defense.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Leonard Litwin",
+      "role": "Associated with Glenwood Management",
+      "category": "associate",
+      "context": "Individual potentially linked to Glenwood Management; subpoena seeks documents concerning any ownership interest he had in AbTech.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dean Skelos",
+      "person2": "Adam Skelos",
+      "relationshipType": "co-defendant",
+      "description": "Father and son charged together in the same criminal case for extortion, fraud, and bribery.",
+      "strength": 5
+    },
+    {
+      "person1": "Anthony Bonomo",
+      "person2": "Carl Bonomo",
+      "relationshipType": "associate",
+      "description": "Both are non-parties associated with PRI (Physicians Reciprocal Insurers) and were subjects of the same subpoenas.",
+      "strength": 4
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Steven Swarzman",
+      "relationshipType": "associate",
+      "description": "Both are non-parties associated with Glenwood Management Corp. and were subjects of subpoenas from the defendants.",
+      "strength": 3
+    },
+    {
+      "person1": "Anthony Bonomo",
+      "person2": "Government",
+      "relationshipType": "witness-prosecution",
+      "description": "Described as the 'government's star witness' in the case against the Skeloses.",
+      "strength": 4
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Government",
+      "relationshipType": "witness-prosecution",
+      "description": "Described as 'one of the Government's key witnesses' in the case.",
+      "strength": 4
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Steven Swarzman",
+      "relationshipType": "financial",
+      "description": "Dorego allegedly received hundreds of thousands of dollars from Swarzman from title business deals, characterized by the defense as potential kickbacks. Dorego also purchased Clean Water Solutions from Swarzman.",
+      "strength": 4
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Adam Skelos",
+      "relationshipType": "professional",
+      "description": "Dorego helped Adam Skelos obtain employment at AbTech and title insurance work from various individuals. The defense claims Dorego had alternative motives (ownership in AbTech) for this help.",
+      "strength": 3
+    },
+    {
+      "person1": "Dean Skelos",
+      "person2": "Adam Skelos",
+      "relationshipType": "familial",
+      "description": "Father and son co-defendants in the criminal case. The defense seeks documents to challenge the government's theory that Dean illegally pressured others to benefit Adam.",
+      "strength": 5
+    },
+    {
+      "person1": "Thomas Dwyer",
+      "person2": "Christopher McKenna",
+      "relationshipType": "business",
+      "description": "Described as business partners in the document.",
+      "strength": 3
+    },
+    {
+      "person1": "Steven Swarzman",
+      "person2": "Thomas Dwyer",
+      "relationshipType": "business",
+      "description": "Had a joint venture together, according to trial testimony.",
+      "strength": 3
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Glenn Rink",
+      "relationshipType": "professional",
+      "description": "Communications between them regarding Adam Skelos are sought to understand the reasons for hiring Adam at AbTech.",
+      "strength": 2
+    },
+    {
+      "person1": "Charles Dorego",
+      "person2": "Glenwood Management",
+      "relationshipType": "employer-employee",
+      "description": "Dorego is the general counsel for Glenwood Management.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-06-13",
+      "title": "Document Production Deadline",
+      "description": "Court-ordered deadline for Charles Dorego and Glenwood Management Corp. to produce certain responsive documents to the Court and/or the parties.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Charles Dorego",
+        "Dean Skelos",
+        "Adam Skelos"
+      ]
+    },
+    {
+      "date": null,
+      "title": "DFS Investigation of PRI",
+      "description": "A New York State Department of Financial Services investigation into Physicians Reciprocal Insurers (PRI) that allegedly found Anthony Bonomo 'cooked PRI's books and then tried to cover it up.'",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Anthony Bonomo",
+        "Carl Bonomo"
+      ]
+    },
+    {
+      "date": "2018-06-13",
+      "title": "Document production deadline",
+      "description": "Deadline for Charles Dorego and Glenwood Management to produce subpoenaed documents to the Court, Defendants, and the Government as ordered.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Charles Dorego",
+        "Glenwood Management"
+      ]
+    },
+    {
+      "date": null,
+      "title": "First trial testimony of Charles Dorego",
+      "description": "Dorego testified for three days at the first trial of Dean and Adam Skelos, regarding his role in helping Adam Skelos obtain work and his business dealings with Steven Swarzman.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Charles Dorego",
+        "Dean Skelos",
+        "Adam Skelos"
+      ]
+    },
+    {
+      "date": "2009",
+      "title": "Sale of Clean Water Solutions",
+      "description": "Charles Dorego purchased Clean Water Solutions from Steven Swarzman. The defense speculated it might have been a sham transaction for tax benefits, but the court found insufficient basis.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Charles Dorego",
+        "Steven Swarzman"
+      ]
+    },
+    {
+      "date": "2010-2015",
+      "title": "Relevant time period for ownership interest",
+      "description": "The court modified subpoena requests to limit document production concerning ownership interests in AbTech to this period.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Charles Dorego",
+        "Leonard Litwin",
+        "Glenwood Management"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York State",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "The court granted motions to quash all subpoena requests served on the PRI Parties (Anthony Bonomo, Carl Bonomo, and related entities), finding the requests were overbroad, sought inadmissible hearsay, or sought documents obtainable through other means like Brady/Giglio disclosures.",
+    "The court partially granted and partially denied motions to quash subpoenas served on the Glenwood Parties (Charles Dorego, Glenwood Management, Steven Swarzman), ordering production of some documents related to payments to Dorego by a specific deadline.",
+    "Defendants sought documents from the PRI Parties to potentially impeach government witness Anthony Bonomo by showing he 'engaged in rampant fraud and other misconduct' in managing PRI.",
+    "Defendants sought documents from Charles Dorego, Glenwood's general counsel, regarding payments he may have received from other non-parties, which they argued could show he received illegal kickbacks.",
+    "The court applied the legal standard from United States v. Nixon to evaluate the subpoenas, emphasizing that Rule 17(c) is not a discovery tool but a mechanism for obtaining specific admissible evidence.",
+    "The court found a basis for the defense's claim that Charles Dorego may have received kickbacks from Steven Swarzman, citing government notes stating 'Hundreds of thousands of dollars paid to Charlie Dorego out of these projects from Steven Swarzman.'",
+    "Documents showing Dorego or Glenwood's ownership interest in AbTech could undermine Dorego's prior testimony that he helped Adam Skelos get a job there to distance Glenwood from favors, as it would mean Adam was hired at a company they owned.",
+    "The court quashed subpoena requests deemed 'fishing expeditions,' including one for all documents on transactions between Swarzman, Dorego, McKenna, Dwyer, and their companies, finding it overly broad and not sufficiently focused.",
+    "The court ordered a modified procedure for future Rule 17(c) subpoenas, requiring parties to submit requests to Chambers for signature and to provide notice to all parties unless a compelling reason exists for ex parte proceedings."
+  ],
+  "analyzedAt": "2026-02-15T12:37:21.175Z"
+}

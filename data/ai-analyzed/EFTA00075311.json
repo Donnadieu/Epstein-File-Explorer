@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00075311.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-02",
+  "summary": "This document is an email chain forwarded to the FBI by an Assistant United States Attorney from the Southern District of New York. The chain includes a message from a victim (and their mother) identifying themselves as victims of Jeffrey Epstein, Ghislaine Maxwell, and their associates, and requesting information about the cases, prosecution, and victim resources.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Forwards a victim's email to the FBI for follow-up. Works at the Southern District of New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Wendy Olsen",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Listed as a recipient (Wendy Olsen (USANYS)) in the email chain.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Identified by the victim as a perpetrator.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Identified by the victim as a perpetrator.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named together by a victim as perpetrators.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "A victim identifies both as perpetrators against them and their mother.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-02",
+      "title": "Victim Email to US Attorney's Office",
+      "description": "A victim (and their mother) sends an email to the US Attorney's Office identifying themselves as victims of Jeffrey Epstein, Ghislaine Maxwell, and their associates, and requests information about the cases, prosecution, and resources.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Unnamed Victim",
+        "Unnamed Victim's Mother"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Email Forwarded to FBI",
+      "description": "An Assistant United States Attorney forwards the victim's email to the FBI for follow-up.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York"
+      ]
+    }
+  ],
+  "locations": [
+    "St. Andrew's Plaza New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A victim and their mother identify themselves as victims of Jeffrey Epstein, Ghislaine Maxwell, and their associates.",
+    "The victim's email is forwarded by an Assistant United States Attorney to the FBI for follow-up, indicating ongoing investigative interest.",
+    "The communication demonstrates victims were actively reaching out to authorities in July 2020 regarding the Epstein/Maxwell cases.",
+    "The email is sent via ProtonMail Secure Email, suggesting a concern for privacy or security by the victim."
+  ],
+  "analyzedAt": "2026-02-15T11:22:19.891Z"
+}

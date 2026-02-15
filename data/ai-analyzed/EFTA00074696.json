@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00074696.pdf",
+  "dataSet": "9",
+  "documentType": "court filing correspondence",
+  "dateOriginal": "2020-08-21",
+  "summary": "This is an email forwarding a sealed letter from the U.S. Attorney's Office to Judge Nathan regarding proposed redactions and sealing in the case United States v. Maxwell. It concerns a motion to modify a protective order and includes attachments with sealed and public versions of the government's response.",
+  "persons": [
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Presiding judge in the case United States v. Maxwell, to whom the government's sealed letter regarding redactions and sealing is addressed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the responsive letter to the court regarding proposed redactions and sealing of documents related to a protective order modification motion in the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Defense counsel",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Copied on the email and the government's letter regarding the sealing and redaction proposals in the Maxwell case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Judge Nathan",
+      "relationshipType": "legal",
+      "description": "Prosecutor submitting a sealed letter and proposed redactions to the presiding judge regarding a court order.",
+      "strength": 3
+    },
+    {
+      "person1": "Defense counsel",
+      "person2": "Judge Nathan",
+      "relationshipType": "legal",
+      "description": "Defense attorney is a party in the case before Judge Nathan and is copied on correspondence regarding procedural matters.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Defense counsel",
+      "relationshipType": "legal",
+      "description": "Opposing parties in the criminal case, with the prosecution copying defense on procedural correspondence to the court.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-18",
+      "title": "Court Order on Redactions",
+      "description": "Judge Nathan issued an order directing the parties to propose redactions to letter briefing regarding the defendant's motion to modify the protective order.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Assistant U.S. Attorney",
+        "Defense counsel"
+      ]
+    },
+    {
+      "date": "2020-08-21",
+      "title": "Government Submits Sealed Response",
+      "description": "The U.S. Attorney's Office submits a sealed letter with Exhibit A to Judge Nathan, proposing redactions and requesting sealing, and files a redacted public version.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant U.S. Attorney",
+        "Judge Nathan",
+        "Defense counsel"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document is part of the case United States v. Maxwell, 20 Cr. 330 (AJN), indicating ongoing legal proceedings against Ghislaine Maxwell in August 2020.",
+    "The government is responding to a court order regarding a defense motion to modify a protective order, highlighting disputes over document secrecy.",
+    "The government submitted both a sealed version (with Exhibit A) and a redacted public version of its letter, indicating sensitive information is being withheld from public view.",
+    "The correspondence shows procedural activity, with the prosecution coordinating with the court and copying defense counsel on sealing and redaction proposals."
+  ],
+  "analyzedAt": "2026-02-15T10:58:09.490Z"
+}

@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00068566.pdf",
+  "dataSet": "9",
+  "documentType": "internal government report",
+  "dateOriginal": "2021-06-29",
+  "summary": "This is an internal U.S. Attorney's Office report detailing the planned release of approximately 2,700 pages of Bureau of Prisons documents related to Jeffrey Epstein's incarceration and suicide at the Metropolitan Correctional Center. The release is part of FOIA litigation with The New York Times and follows deferred prosecution agreements with the two guards on duty the night Epstein died.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate who died by suicide",
+      "category": "key figure",
+      "context": "The central subject of the document; the report details the planned release of BOP documents concerning his incarceration and suicide at the Metropolitan Correctional Center.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Tova Noel",
+      "role": "BOP guard accused of falsifying records",
+      "category": "legal",
+      "context": "One of two guards on duty the night of Epstein's suicide who entered into a deferred prosecution agreement with the USAO-SDNY in May 2021, leading to the release of withheld documents.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "BOP guard accused of falsifying records",
+      "category": "legal",
+      "context": "One of two guards on duty the night of Epstein's suicide who entered into a deferred prosecution agreement with the USAO-SDNY in May 2021, leading to the release of withheld documents.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-conspirator",
+      "description": "Both were BOP guards on duty the night of Epstein's suicide, accused together of falsifying records regarding institutional counts and rounds.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was one of the guards responsible for monitoring Epstein on the night he died.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was one of the guards responsible for monitoring Epstein on the night he died.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Suicide",
+      "description": "Jeffrey Epstein committed suicide by hanging while housed in the Special Housing Unit at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2021-05",
+      "title": "Deferred Prosecution Agreements with Guards",
+      "description": "The USAO-SDNY entered into deferred prosecution agreements with BOP guards Tova Noel and Michael Thomas, who were accused of falsifying records on the night of Epstein's suicide.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2021-07-02",
+      "title": "Planned Document Release to NY Times",
+      "description": "The USAO-SDNY plans to release approximately 2,700 pages of previously withheld BOP documents to The New York Times as part of FOIA litigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (at MCC)",
+    "New York City Office of the Medical Examiner (OCME)",
+    "SOUTHERN DISTRICT OF NEW YORK"
+  ],
+  "keyFacts": [
+    "Approximately 2,700 pages of Bureau of Prisons documents related to Jeffrey Epstein's incarceration and suicide were scheduled for release on July 2, 2021.",
+    "The documents were previously withheld due to the criminal prosecution of guards Tova Noel and Michael Thomas, which was resolved via deferred prosecution agreements in May 2021.",
+    "The documents include internal BOP memoranda, Epstein's psychological records, the autopsy report, and emails showing institutional failures and confusion on the day of Epstein's death.",
+    "A notable item among the documents is a photograph of a defaced sign in the Special Housing Unit that stated rounds on Epstein were 'mandatory, signed \"God,\"' which had been altered to include a question mark.",
+    "The report states the documents reveal numerous failures that allowed Epstein the opportunity to kill himself, including failure to reassign a cellmate, perform counts or rounds, and ensure adequate staffing."
+  ],
+  "analyzedAt": "2026-02-15T06:06:49.211Z"
+}

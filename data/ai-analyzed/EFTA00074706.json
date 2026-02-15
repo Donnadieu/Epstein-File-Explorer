@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA00074706.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-13",
+  "summary": "This is an email chain between defense attorney Bruce Barket and federal prosecutors regarding discovery requests in the case of Nicholas Tartaglione, who was Jeffrey Epstein's cellmate. The discussion centers on obtaining forensic reports from Tartaglione's contraband cellphone, inspecting evidence from a July 2019 incident in their shared cell, and requesting a hearing about missing surveillance video.",
+  "persons": [
+    {
+      "name": "Bruce Barket",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing Nicholas Tartaglione, corresponding with prosecutors about discovery requests including cellphone reports and evidence from the July 2019 cell incident.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Aida Leisenring",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Federal prosecutor involved in the Tartaglione case, part of the email chain discussing discovery requests and evidence procedures.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Tony Ricco",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Federal prosecutor (likely AUSA) copied on emails regarding discovery in the Tartaglione case.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Bruce Koffsky",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Federal prosecutor (likely AUSA) copied on emails regarding discovery procedures for the Tartaglione case.",
+      "mentionCount": 6
+    },
+    {
+      "name": "John Diaz",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Federal prosecutor (likely AUSA) copied on emails regarding discovery requests in the Tartaglione case.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Defendant in a criminal case who was Jeffrey Epstein's cellmate at MCC; the discovery requests concern evidence from his contraband cellphone and a July 2019 incident in their shared cell.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased financier who was Nicholas Tartaglione's cellmate at MCC; the discovery requests relate to evidence from their shared cell.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bruce Barket",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Bruce Barket is the defense attorney representing Nicholas Tartaglione in his criminal case.",
+      "strength": 5
+    },
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "cellmate",
+      "description": "Tartaglione and Epstein were cellmates at the Metropolitan Correctional Center (MCC) in July 2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Bruce Barket",
+      "person2": "Aida Leisenring",
+      "relationshipType": "legal adversary",
+      "description": "Defense attorney and prosecutor corresponding about discovery requests and evidence procedures in the Tartaglione case.",
+      "strength": 3
+    },
+    {
+      "person1": "Aida Leisenring",
+      "person2": "Tony Ricco",
+      "relationshipType": "colleague",
+      "description": "Both appear to be federal prosecutors working on the same case, copied on the same discovery-related emails.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Incident in Tartaglione/Epstein Cell",
+      "description": "An incident occurred in the shared cell of Nicholas Tartaglione and Jeffrey Epstein at MCC, involving a makeshift rope. Photographs were taken and included in a report.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Nicholas Tartaglione",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Garden City, NY 11530"
+  ],
+  "keyFacts": [
+    "Nicholas Tartaglione and Jeffrey Epstein were cellmates at MCC in July 2019.",
+    "There was an incident in their shared cell on July 23, 2019, involving a makeshift rope; photographs exist but cannot be taken by defense.",
+    "Tartaglione had a contraband cellphone; BOP created forensic reports of the phone and SIM card that defense wants to review.",
+    "Prosecutors state no handheld videos were used to film inside the cell on July 23, despite defense inquiries.",
+    "There are issues with surveillance video from outside the cell; defense is requesting a hearing on what happened to it."
+  ],
+  "analyzedAt": "2026-02-15T10:59:19.428Z"
+}

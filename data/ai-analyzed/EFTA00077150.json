@@ -1,0 +1,62 @@
+{
+  "fileName": "EFTA00077150.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-26",
+  "summary": "This document is an email chain between federal prosecutors discussing edits to a draft response letter to a Rule 16/Brady discovery request from the defense, likely in the Ghislaine Maxwell case. The correspondence shows coordination on legal strategy and scheduling among Assistant U.S. Attorneys.",
+  "persons": [
+    {
+      "name": "Lara",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The sender of the initial draft letter in response to a Rule 16/Brady request from the defense, coordinating with the team for edits.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Chris",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "The defense attorney who sent the original October 13, 2020 discovery request letter to which the prosecutors are drafting a response.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lara",
+      "person2": "Chris",
+      "relationshipType": "legal-adversary",
+      "description": "Lara, as a prosecutor, is drafting a formal legal response to a discovery request letter sent by defense attorney Chris.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-13",
+      "title": "Defense Discovery Request",
+      "description": "Defense attorney Chris sends a Rule 16/Brady discovery request letter to the prosecution.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Chris"
+      ]
+    },
+    {
+      "date": "2020-10-26",
+      "title": "Prosecution Drafts Response",
+      "description": "Federal prosecutors, led by AUSA Lara, coordinate edits and schedule a call to finalize a draft response letter to the defense's discovery request.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Lara"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The email chain reveals active case preparation and legal strategy coordination among federal prosecutors in October 2020, likely related to the Ghislaine Maxwell prosecution.",
+    "The correspondence centers on a draft response to a Rule 16/Brady discovery request from the defense, indicating ongoing pre-trial evidence disclosure obligations.",
+    "The prosecutors reference a planned call with 'the chiefs,' suggesting high-level oversight and coordination within the U.S. Attorney's Office.",
+    "The document shows a collaborative editing process for an official legal filing, with multiple rounds of comments and scheduling of discussion calls."
+  ],
+  "analyzedAt": "2026-02-15T13:04:12.864Z"
+}

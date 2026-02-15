@@ -1,0 +1,148 @@
+{
+  "fileName": "EFTA00068529.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-22",
+  "summary": "Email correspondence between prosecutors and defense attorneys regarding the Ghislaine Maxwell criminal case, focusing on scheduling meetings, requesting financial account documents for account Q78859008, and discussing trial witness identification from JPMorgan.",
+  "persons": [
+    {
+      "name": "Allison Stoddart",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from WilmerHale representing or advising a party in the Ghislaine Maxwell case, coordinating meetings and document requests with prosecutors.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Alison",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor from the Southern District of New York handling the Ghislaine Maxwell case, communicating with defense about document requests, scheduling, and witness issues.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from WilmerHale copied on emails regarding the Ghislaine Maxwell case, part of the defense legal team.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Pat McHugh",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Individual with whom the legal teams are scheduling a call; likely a witness, investigator, or expert involved in the case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the criminal case United States v. Ghislaine Maxwell, 20 Cr. 330 (AJN/MN).",
+      "mentionCount": 10
+    },
+    {
+      "name": "Maurene",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Recipient of an email from Allison Stoddart regarding providing a trial appearance subpoena to JPMorgan.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lara",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Recipient of an email from Allison Stoddart regarding providing a trial appearance subpoena to JPMorgan.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Alison",
+      "relationshipType": "legal-adversary",
+      "description": "Prosecutor and defense attorney communicating about case logistics, document requests, and witness issues in the Ghislaine Maxwell trial.",
+      "strength": 4
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at WilmerHale working on the Ghislaine Maxwell defense team, copied on the same emails.",
+      "strength": 4
+    },
+    {
+      "person1": "Alison",
+      "person2": "Pat McHugh",
+      "relationshipType": "professional",
+      "description": "Prosecutor is arranging a call between her team and Pat McHugh, indicating he is a person of interest to the prosecution.",
+      "strength": 3
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Pat McHugh",
+      "relationshipType": "professional",
+      "description": "Defense attorney is involved in scheduling a call with Pat McHugh, indicating he is also of interest to the defense.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11",
+      "title": "Jury Selection for Maxwell Trial",
+      "description": "Jury selection is scheduled and underway, impacting the availability of the prosecutor for meetings.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "title": "Request for Trial Subpoena to JPMorgan",
+      "description": "Defense requests a trial appearance subpoena for a witness from JPMorgan, indicating the bank's involvement in the case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Alison",
+        "Maurene",
+        "Lara"
+      ]
+    },
+    {
+      "date": "1999",
+      "title": "Relevant Time Frame for Account Q78859008",
+      "description": "Prosecutor specifies 'Approximately 1999' as the relevant time frame for requested account documents related to account Q78859008.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison"
+      ]
+    },
+    {
+      "date": "2021-11-22",
+      "title": "Request for Account Ownership Documents",
+      "description": "Prosecutor requests account ownership documents for financial account Q78859008 from the defense.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison",
+        "Allison Stoddart"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Southern District of New York",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "7 World Trade Center, 250 Greenwich Street, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Prosecutors are seeking account ownership documents for financial account Q78859008, with a relevant time frame of 'Approximately 1999'.",
+    "JPMorgan is involved in the case, with the defense working to identify a trial witness from the bank and requesting a trial appearance subpoena.",
+    "Jury selection for the Ghislaine Maxwell trial was underway in November 2021, affecting scheduling for the legal teams.",
+    "The correspondence shows ongoing coordination and document exchange between prosecution and defense attorneys in the lead-up to trial."
+  ],
+  "analyzedAt": "2026-02-15T06:03:38.315Z"
+}

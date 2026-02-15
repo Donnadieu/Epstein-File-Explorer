@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00074402.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-27",
+  "summary": "Email from TD Bank representative Nicolas Boutin to Gillian Seaman confirming that TD Bank has no accounts in Jeffrey Epstein's name or with Epstein as a signatory, in response to a grand jury subpoena. The email is marked confidential and requests confidential treatment.",
+  "persons": [
+    {
+      "name": "Nicolas Boutin",
+      "role": "TD Bank Representative / Law Firm Sender",
+      "category": "other",
+      "context": "Sends the email confirming TD Bank has no accounts for Jeffrey Epstein, likely a legal or compliance officer at the bank or its law firm.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gillian P. Seaman",
+      "role": "Recipient of Email / Likely Government Attorney",
+      "category": "legal",
+      "context": "Addressed in the email regarding the grand jury subpoena to TD Bank, presumably a prosecutor or investigator handling the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "The individual for whom TD Bank confirms it holds no accounts, central to the grand jury subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicolas Boutin",
+      "person2": "Gillian P. Seaman",
+      "relationshipType": "professional correspondence",
+      "description": "Boutin (TD Bank/law firm) is communicating with Seaman (likely government attorney) in response to a legal subpoena regarding Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Epstein",
+      "person2": "TD Bank (implied institution)",
+      "relationshipType": "financial",
+      "description": "The grand jury subpoena sought information on Epstein's accounts at TD Bank, but the bank confirms no such relationship existed.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-03",
+      "title": "Grand Jury Subpoena to TD Bank",
+      "description": "A grand jury issued a subpoena to TD Bank N.A. seeking information related to Jeffrey Epstein's accounts.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Epstein",
+        "Gillian P. Seaman"
+      ]
+    },
+    {
+      "date": "2019-11-27",
+      "title": "TD Bank's Response to Subpoena",
+      "description": "TD Bank, via Nicolas Boutin, responds confirming it has no accounts in Epstein's name or with Epstein as a signatory.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Nicolas Boutin",
+        "Gillian P. Seaman",
+        "Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "TD Bank confirmed it had no accounts in Jeffrey Epstein's name or with Epstein as a signatory as of November 2019.",
+    "The confirmation was in response to a grand jury subpoena dated October 3, 2019, indicating an active financial investigation into Epstein.",
+    "The communication is marked as confidential and requests confidential treatment, highlighting the sensitive nature of the investigation."
+  ],
+  "analyzedAt": "2026-02-15T10:46:48.552Z"
+}

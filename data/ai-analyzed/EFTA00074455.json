@@ -1,0 +1,216 @@
+{
+  "fileName": "EFTA00074455.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-12",
+  "summary": "This document is a chain of email correspondence from the U.S. Attorney's Office for the Southern District of New York (USANYS) regarding travel approval requests for prosecutors and agents to conduct witness interviews in connection with the Epstein investigation (case 2018R01618). The emails span from March 2019 to February 2020 and detail planned trips to locations including West Palm Beach, Los Angeles, Stockholm, and Pensacola.",
+  "persons": [
+    {
+      "name": "Darlene Alleyne",
+      "role": "Administrative/Logistics Staff (USANYS)",
+      "category": "staff",
+      "context": "Recipient of travel booking requests; appears to handle flight and logistics arrangements for the team.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Michele Duncan",
+      "role": "Staff/Administrator (USANYS)",
+      "category": "staff",
+      "context": "Copied on multiple travel approval request emails, likely involved in administrative or oversight capacity.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Edward Tyrrell",
+      "role": "Supervisor/Approving Official (USANYS)",
+      "category": "legal",
+      "context": "The primary approver for travel requests related to the Epstein investigation; sends approval responses.",
+      "mentionCount": 9
+    },
+    {
+      "name": "Cynthia Perez",
+      "role": "Staff (USANYS)",
+      "category": "staff",
+      "context": "Copied on some travel approval emails, likely in an administrative role.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maurene",
+      "role": "Prosecutor/Investigator (USANYS)",
+      "category": "legal",
+      "context": "Frequent traveler for witness interviews; sends specific flight booking requests and is part of the interview team.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Alison",
+      "role": "Prosecutor/Investigator (USANYS)",
+      "category": "legal",
+      "context": "Frequent traveler for witness interviews; part of the interview team along with Maurene and Alex.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Alex",
+      "role": "Prosecutor/Investigator (USANYS)",
+      "category": "legal",
+      "context": "Primary sender of travel approval requests; coordinates team travel for witness interviews in the Epstein investigation.",
+      "mentionCount": 8
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex",
+      "person2": "Edward Tyrrell",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Alex submits travel approval requests to Edward Tyrrell, who approves them, indicating a hierarchical work relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Maurene",
+      "person2": "Alison",
+      "relationshipType": "colleague",
+      "description": "Frequently mentioned together as part of the travel team conducting witness interviews for the Epstein investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "Maurene",
+      "relationshipType": "colleague",
+      "description": "Both are part of the investigation team; Alex coordinates travel that includes Maurene.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "Alison",
+      "relationshipType": "colleague",
+      "description": "Both are part of the investigation team; Alex coordinates travel that includes Alison.",
+      "strength": 4
+    },
+    {
+      "person1": "Darlene Alleyne",
+      "person2": "Maurene",
+      "relationshipType": "logistics support",
+      "description": "Maurene sends specific flight booking requests to Darlene Alleyne for arrangement.",
+      "strength": 3
+    },
+    {
+      "person1": "Edward Tyrrell",
+      "person2": "Darlene Alleyne",
+      "relationshipType": "supervisor-staff",
+      "description": "Edward Tyrrell copies Darlene Alleyne on approval emails, indicating she handles subsequent logistics.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-03-20 to 2019-03-23",
+      "title": "Travel for meetings/interviews in West Palm Beach/Fort Lauderdale",
+      "description": "Alex and an unnamed colleague request travel for meetings and interviews in Florida for the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex"
+      ]
+    },
+    {
+      "date": "2019-04-09 to 2019-04-12",
+      "title": "Travel for meetings/interviews in West Palm Beach",
+      "description": "Alison and Alex request travel for approximately three days for meetings and interviews in West Palm Beach.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Alison"
+      ]
+    },
+    {
+      "date": "2019-05-28 to 2019-05-30",
+      "title": "Travel for victim interviews in West Palm Beach",
+      "description": "Team (Alex, Alison, or Alison and Maurene) request travel for victim interviews in West Palm Beach, with a conference room needed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Alison",
+        "Maurene"
+      ]
+    },
+    {
+      "date": "2019-06-12 to 2019-06-14",
+      "title": "Travel for victim interview in Los Angeles",
+      "description": "Team (Alex, Alison, and/or Maurene) request travel for a victim interview in Los Angeles, with a conference room needed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Alison",
+        "Maurene"
+      ]
+    },
+    {
+      "date": "2019-11-04",
+      "title": "Interview in West Palm Beach",
+      "description": "Alex and Maurene request travel for an interview in West Palm Beach, with a conference room needed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Maurene"
+      ]
+    },
+    {
+      "date": "2019-11-14",
+      "title": "Interview in Los Angeles",
+      "description": "Team request travel for an interview in Los Angeles.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex"
+      ]
+    },
+    {
+      "date": "2019-12-16 to 2019-12-17",
+      "title": "Interview(s) in Los Angeles",
+      "description": "Team request travel for an interview or interviews in Los Angeles, with a conference room needed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex"
+      ]
+    },
+    {
+      "date": "2020-01-27 to 2020-01-31",
+      "title": "Interview near Stockholm, Sweden",
+      "description": "Team request travel for an interview near Stockholm, Sweden, with an international element and a conference room needed.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alex"
+      ]
+    },
+    {
+      "date": "2020-02-19",
+      "title": "Witness interview in Pensacola, Florida",
+      "description": "Alison and Maurene request travel to interview a witness in Pensacola, with a conference room needed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alison",
+        "Maurene"
+      ]
+    }
+  ],
+  "locations": [
+    "Pensacola, FL",
+    "West Palm Beach, Florida",
+    "Los Angeles, California",
+    "Stockholm, Sweden",
+    "Fort Lauderdale, Florida"
+  ],
+  "keyFacts": [
+    "The document reveals ongoing, active investigation into the Epstein case (2018R01618) by the U.S. Attorney's Office for the Southern District of New York from at least March 2019 through February 2020.",
+    "Prosecutors and investigators traveled extensively to conduct witness interviews, including international travel to Sweden in January 2020.",
+    "Travel often required booking conference rooms at hotels for the interviews, indicating formal, recorded proceedings.",
+    "The investigation involved multiple team members (Alex, Maurene, Alison) coordinating travel and logistics with administrative staff (Darlene Alleyne, Michele Duncan) and supervisor approval (Edward Tyrrell).",
+    "The case is formally referenced as 'United States v. Epstein, 2018R01618, an investigation relating to enticement of minors for sexual activity.'"
+  ],
+  "analyzedAt": "2026-02-15T10:50:27.857Z"
+}

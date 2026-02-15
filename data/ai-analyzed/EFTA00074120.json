@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00074120.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-29",
+  "summary": "Email correspondence between legal counsel regarding the case US v. Noel and Thomas, specifically concerning a letter about surveillance video that has been designated as Protected Materials under a Protective Order. The email includes an attachment of the government's response.",
+  "persons": [
+    {
+      "name": "Noel",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named defendant in the case US v. Noel and Thomas, referenced in the subject line of the correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thomas",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named defendant in the case US v. Noel and Thomas, referenced in the subject line of the correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sent the original email on January 24, 2020, attaching correspondence about surveillance video designated as Protected Materials.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named defendants in the same criminal case (US v. Noel and Thomas), indicating they are being prosecuted together.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Noel",
+      "relationshipType": "legal",
+      "description": "The prosecutor is handling the case against defendant Noel, as indicated in the correspondence subject.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Thomas",
+      "relationshipType": "legal",
+      "description": "The prosecutor is handling the case against defendant Thomas, as indicated in the correspondence subject.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-24",
+      "title": "Government Letter Regarding Surveillance Video",
+      "description": "The Assistant United States Attorney sent correspondence about surveillance video in the case US v. Noel and Thomas, designating it as Protected Materials under a Protective Order.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2020-01-29",
+      "title": "Forwarding of Government Response",
+      "description": "Legal counsel forwarded the government's response letter regarding surveillance video to other counsel.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Hackensack NJ 07601",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document is email correspondence regarding the criminal case US v. Noel and Thomas.",
+    "The subject involves a letter about surveillance video that has been designated as Protected Materials under a Protective Order.",
+    "The correspondence includes an attachment titled 'Response_to_I-24-20Jetter_from_the_Government.pdf'.",
+    "The email was sent from an Assistant United States Attorney in the Southern District of New York.",
+    "The communication demonstrates legal procedures regarding protected materials in an ongoing prosecution."
+  ],
+  "analyzedAt": "2026-02-15T10:27:40.305Z"
+}

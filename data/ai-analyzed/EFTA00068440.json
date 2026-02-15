@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00068440.pdf",
+  "dataSet": "9",
+  "documentType": "calendar entry",
+  "dateOriginal": "2021-11-20",
+  "summary": "This is a calendar entry for a Webex meeting related to the United States v. Ghislaine Maxwell case, scheduled for November 21, 2021. The meeting was organized by Allison Stoddart and included attendee Anjan Sahni.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the criminal case referenced in the calendar event title, United States v. Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Allison Stoddart",
+      "role": "Meeting Organizer",
+      "category": "legal",
+      "context": "Organized the Webex meeting related to the Ghislaine Maxwell case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Meeting Attendee",
+      "category": "legal",
+      "context": "Listed as an attendee for the Webex meeting related to the Ghislaine Maxwell case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "professional",
+      "description": "Connected through a scheduled legal meeting regarding the Ghislaine Maxwell case.",
+      "strength": 2
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Stoddart organized a meeting related to the criminal case against Maxwell.",
+      "strength": 2
+    },
+    {
+      "person1": "Anjan Sahni",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Sahni was an attendee at a meeting related to the criminal case against Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-21",
+      "title": "Webex Meeting for Maxwell Case",
+      "description": "A scheduled Webex meeting related to the United States v. Ghislaine Maxwell criminal case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Anjan Sahni",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A Webex meeting was scheduled for November 21, 2021, regarding the United States v. Ghislaine Maxwell case.",
+    "The meeting was organized by Allison Stoddart.",
+    "Anjan Sahni was listed as an attendee for the meeting.",
+    "The document is a calendar entry, indicating coordination among legal professionals involved in the case."
+  ],
+  "analyzedAt": "2026-02-15T05:56:45.613Z"
+}

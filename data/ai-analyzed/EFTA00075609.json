@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA00075609.pdf",
+  "dataSet": "9",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2020-01-29",
+  "summary": "This is a January 29, 2020 letter from the law firm Foy & Sepowitz LLC to the US Attorney's Office for the Southern District of New York, regarding the case US v. Tova Noel, et al. The letter is a formal discovery request seeking extensive information and materials related to the video surveillance system at the Metropolitan Correctional Center (MCC) before, during, and after the period of Jeffrey Epstein's death, including specific footage and records concerning the defendants' conduct and the events surrounding Epstein.",
+  "persons": [
+    {
+      "name": "Tova Noel",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Named defendant in the criminal case US v. Tova Noel, et al. The letter is addressed to her counsel and seeks video evidence related to her alleged conduct as a corrections officer at the MCC on the night of Jeffrey Epstein's death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The letter requests all video surveillance of him from the MCC system, including footage related to his alleged suicide attempt on July 23, 2019, and the period surrounding his death on August 10, 2019.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Thomas",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Referred to as a defendant alongside Tova Noel. The letter requests video evidence of this defendant's conduct and conversations on August 10, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Officer -1",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "An unnamed corrections officer mentioned in the indictment. The letter seeks video evidence to show this officer and defendant Tova Noel did not perform a specific inmate count.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-defendant",
+      "description": "Both are named defendants in the same criminal case (US v. Tova Noel, et al) related to conduct at the MCC.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was a corrections officer at the MCC where Epstein was housed. The document seeks video of her conduct related to his tier and the counts on the night of his death.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Officer -1",
+      "relationshipType": "colleague",
+      "description": "Both were corrections officers at the MCC. The indictment alleges they failed to perform a specific inmate count together.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein at MCC",
+      "description": "The date Jeffrey Epstein's body was discovered at the Metropolitan Correctional Center. The document requests all related video surveillance from before and after this event.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Alleged Suicide Attempt by Epstein",
+      "description": "Jeffrey Epstein's alleged prior suicide attempt at the MCC. The defense requests all video surveillance seized by the government related to this incident.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Video System Failure at MCC",
+      "description": "A failure of the DVR-2 video surveillance system at the MCC, which a technician attempted to fix. This occurred two days before Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Prior Video System Failure",
+      "description": "An earlier \"system failure\" of the MCC video surveillance system, noted in the discovery request.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Replacement of MCC Surveillance System",
+      "description": "The video surveillance system at the MCC was replaced shortly after Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC"
+  ],
+  "keyFacts": [
+    "The defense is seeking extensive discovery on the MCC's video surveillance system, including its installation, maintenance, failures, and replacement around the time of Jeffrey Epstein's death.",
+    "Specific video footage is requested to verify or challenge the indictment's claims against defendants Tova Noel and Thomas, including alleged failures to perform inmate counts and periods of inactivity.",
+    "The request seeks all video footage of Jeffrey Epstein from the MCC system, including from his alleged July 23, 2019 suicide attempt and the period leading to his death on August 10, 2019.",
+    "The document references two specific system failures (July 29, 2019 and August 8, 2019) that impacted the recording of surveillance video prior to Epstein's death.",
+    "The defense implies the video system was changed shortly after Epstein's death, requesting the contract and work order for the system replaced \"on or about August 12, 2019.\""
+  ],
+  "analyzedAt": "2026-02-15T11:39:29.299Z"
+}

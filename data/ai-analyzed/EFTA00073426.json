@@ -1,0 +1,53 @@
+{
+  "fileName": "EFTA00073426.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document appears to be a summary or inventory of financial records (credit card and bank statements) subpoenaed in relation to Ghislaine Maxwell. It lists accounts held by Maxwell and Scott Borgerson, noting time periods covered and gaps in production.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Account holder",
+      "category": "key figure",
+      "context": "The primary subject of the financial records search, with multiple credit card and bank accounts listed from UBS, JPMC, and AMEX spanning 2013-2019.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Scott Borgerson",
+      "role": "Account holder",
+      "category": "associate",
+      "context": "Listed as the primary holder of a USAA account for which Ghislaine Maxwell (listed as Ghislaine Borgerson) is a sub-account holder in 2019.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Scott Borgerson",
+      "relationshipType": "financial",
+      "description": "Maxwell is listed as a sub-account holder (under the name Ghislaine Borgerson) on Scott Borgerson's USAA account in 2019.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-18",
+      "title": "Last AMEX statement for Maxwell",
+      "description": "The closing date of the last American Express statement produced for Ghislaine Maxwell.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Ghislaine Maxwell held multiple financial accounts (UBS, JPMC, AMEX) from at least 2013 through late 2019.",
+    "Maxwell was a sub-account holder on a USAA account belonging to Scott Borgerson under the name 'Ghislaine Borgerson' in 2019.",
+    "The document indicates gaps in the financial record production, noting that 'refresh subpoenas' are needed for subsequent statements after November 2019 (USAA) and December 2019 (AMEX).",
+    "A March 2014 JPMC statement had an ending balance, suggesting the account may have been closed at that time.",
+    "The document is an inventory of financial records obtained via subpoena, part of an investigation into Maxwell's finances."
+  ],
+  "analyzedAt": "2026-02-15T09:50:50.815Z"
+}

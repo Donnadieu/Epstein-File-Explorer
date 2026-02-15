@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA00074147.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-03-05",
+  "summary": "This is an email chain from March 2020 between FBI agents and an Assistant U.S. Attorney regarding the investigation into Ghislaine Maxwell (GM). It details significant financial transfers from Jeffrey Epstein to Maxwell between 2007-2011 and outlines investigative tasks, including reviewing seized message pads and checking Maxwell's assets and citizenship.",
+  "persons": [
+    {
+      "name": "Young, Amanda N.",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "FBI agent in New York who reviewed financial productions for Maxwell and Epstein and summarized key financial transfers in an email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Referred to by a detective for assistance with investigative tasks related to Maxwell's assets and properties.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "The primary subject of the investigation (referred to as 'GM'), with financial transfers from Epstein detailed and her assets, citizenship, and seized message pads being sought.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Financial Source / Deceased Co-conspirator",
+      "category": "key figure",
+      "context": "His financial accounts are the source of multiple multi-million dollar wire transfers to Ghislaine Maxwell between 2007 and 2011, as detailed in the financial review.",
+      "mentionCount": 5
+    },
+    {
+      "name": "George V. Delson",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "A $65,000 wire transfer was made from Maxwell's account to an account at Signature Bank held by George V. Delson Associates.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Multiple multi-million dollar wire transfers from Epstein's accounts to Maxwell's accounts, including a $7.4M transfer in 2007 and complex transfers totaling over $10M in 2011.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "George V. Delson",
+      "relationshipType": "financial",
+      "description": "A $65,000 wire transfer was made from Maxwell's JP Morgan Chase account to an account held by George V. Delson Associates.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-06-15",
+      "title": "$7.4M Wire Transfer from Epstein to Maxwell",
+      "description": "A wire transfer of $7,400,000 was made from Jeffrey Epstein's Bear Stearns account to Ghislaine Maxwell's JP Morgan Chase account.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2011-01-04",
+      "title": "$3M Transfer and Return between Epstein and Maxwell",
+      "description": "A $3,000,000 transfer was made from Epstein's JP Morgan Chase account to Maxwell's account, and on the same day, those proceeds were transferred back to Epstein's account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2011-07-28",
+      "title": "Complex $10.9M Financial Transfers",
+      "description": "$10,900,773.48 was wired from FSL LLC's account at Firstbank Puerto Rico to Maxwell's JP Morgan Chase account. On the same day, transfers totaling $10,895,644.29 were made from her account, including over $10.4M back to Epstein and $65,000 to George V. Delson Associates.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "George V. Delson"
+      ]
+    },
+    {
+      "date": "2020-02-24",
+      "title": "Investigation Tasking Email",
+      "description": "An Assistant U.S. Attorney sends an email requesting investigative assistance on the Maxwell case, including reviewing seized message pads from Epstein's residence, checking Maxwell's finances and assets, and confirming her citizenship.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-03-05",
+      "title": "Financial Review Summary Provided",
+      "description": "FBI Agent Amanda N. Young provides a summary of financial transfers between Epstein and Maxwell based on a review of financial productions and FinCEN filings.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Young, Amanda N.",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Puerto Rico"
+  ],
+  "keyFacts": [
+    "On June 15, 2007, Jeffrey Epstein wired $7.4 million from his Bear Stearns account to Ghislaine Maxwell's JP Morgan Chase account.",
+    "On July 28, 2011, over $10.9 million was transferred from an FSL LLC account in Puerto Rico to Maxwell, with the vast majority ($10,491,594.29) being transferred back to Epstein's accounts on the same day.",
+    "Investigators were actively seeking to review message pads seized from Epstein's residence for messages relating to individuals in the Maxwell case.",
+    "The investigation was checking Maxwell's UK and French citizenship status and attempting to locate any properties she owned.",
+    "A detective from the NYPD/FBI Child Exploitation Human Trafficking Task Force was involved in the asset search for Maxwell."
+  ],
+  "analyzedAt": "2026-02-15T10:30:29.721Z"
+}

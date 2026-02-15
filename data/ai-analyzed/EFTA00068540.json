@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00068540.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-23",
+  "summary": "This is a government exhibit index from the criminal case United States v. Ghislaine Maxwell, listing evidence to be produced to the defense. It catalogs a wide range of exhibits including message pads, birth certificates of minor victims, physical evidence like massage tables and costumes, photographs, financial records, flight logs, and electronic communications. The document demonstrates the extensive scope of evidence collected by prosecutors.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case; numerous exhibits relate to her, including photographs, emails, financial records, and property.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator / Deceased",
+      "category": "key figure",
+      "context": "Frequently mentioned in connection with exhibits; appears in photographs, emails, and financial records with Maxwell.",
+      "mentionCount": 15
+    },
+    {
+      "name": "David Rodgers",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "Named as the keeper of flight logbooks from 1991 to 2013, which are listed as exhibits.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Frequently photographed together; listed in email chains and a relationship essay submitted as evidence.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "David Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Rodgers' flight logs are listed as evidence, indicating he was a pilot for Epstein/Maxwell's operations.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Rodgers' flight logs are listed as evidence, indicating he was a pilot for Epstein's operations.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-11",
+      "title": "Evidence Production to Defense",
+      "description": "The primary date listed for the production of the vast majority of exhibits to the defense in the Maxwell case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1996-01-07",
+      "title": "Journal Entry",
+      "description": "A journal entry from January 7, 1996, is listed as an exhibit (GX-603).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "1996-01-25",
+      "title": "Journal Entry",
+      "description": "A journal entry from January 25, 1996, is listed as an exhibit (GX-604).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "358 El Brillo Way (Palm Beach property, subject of extensive search photographs)",
+    "Little Saint James (Epstein's island)",
+    "Zorro Ranch / New Mexico Ranch (Epstein's property)",
+    "Ghislaine Maxwell New York Townhouse",
+    "Ghislaine Maxwell London Townhouse",
+    "Jeffrey Epstein New York Townhouse",
+    "Paris Apartment Building",
+    "Palm Beach"
+  ],
+  "keyFacts": [
+    "The index lists birth certificates for six minor victims (identified as Minor Victim-1 through Minor Victim-6), confirming their status as minors at relevant times.",
+    "Physical evidence includes two massage tables (from Florida and New York), a black contact book, a box of five costumes, and a pair of boots.",
+    "Electronic evidence includes hard drives, email chains between Epstein and a minor victim, and a \"Relationship Essay\" about Maxwell and Epstein.",
+    "Financial records include J.P. Morgan account statements for \"Air Ghislaine\" and Ghislaine Maxwell, indicating financial ties and transactions.",
+    "Flight records include David Rodgers' pilot logbooks covering flights from 1991 to 2013, which would document travel patterns."
+  ],
+  "analyzedAt": "2026-02-15T06:04:16.661Z"
+}

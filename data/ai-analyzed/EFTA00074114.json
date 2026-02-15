@@ -1,0 +1,126 @@
+{
+  "fileName": "EFTA00074114.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-11",
+  "summary": "Email correspondence from the U.S. Attorney's Office for the Southern District of New York to defense attorneys regarding discovery requests in the Nicholas Tartaglione case. The government responds to six requests for information related to the investigation into the July 22/23, 2019 incident involving Jeffrey Epstein and Tartaglione at the Metropolitan Correctional Center (MCC), and confirms no After Action Report exists for Epstein's August 10, 2019 reported suicide.",
+  "persons": [
+    {
+      "name": "Tony Ricco",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney making discovery requests regarding the July 22/23 incident and Epstein's suicide, and inquiring about an After Action Report.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Bruce Barket",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney copied on the email correspondence regarding discovery requests for the Tartaglione case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Aida Leisenring",
+      "role": "Prosecutor / Government Attorney",
+      "category": "legal",
+      "context": "Government attorney from the U.S. Attorney's Office responding to defense discovery requests related to the Epstein investigation and Tartaglione.",
+      "mentionCount": 2
+    },
+    {
+      "name": "John Diaz",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney copied on the email correspondence regarding discovery requests.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "Deceased inmate at the MCC. The document concerns discovery related to an incident involving him and Nicholas Tartaglione on July 22/23, 2019, and his reported suicide on August 10, 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate / Defendant",
+      "category": "key figure",
+      "context": "Inmate housed with Jeffrey Epstein in the SHU at the MCC. The discovery requests focus on the July 22/23 incident involving him and Epstein, and any related BOP investigations.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "cellmate",
+      "description": "Were housed together in the same cell in the Special Housing Unit (SHU) at the MCC, leading to an incident on July 22/23, 2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Tony Ricco",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Ricco is a defense attorney making discovery requests on behalf of his client, Nicholas Tartaglione.",
+      "strength": 5
+    },
+    {
+      "person1": "Aida Leisenring",
+      "person2": "Tony Ricco",
+      "relationshipType": "legal adversary",
+      "description": "Prosecutor (Leisenring) corresponding with defense attorney (Ricco) regarding discovery in the Tartaglione case.",
+      "strength": 3
+    },
+    {
+      "person1": "Bruce Barket",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Barket is a defense attorney copied on correspondence regarding discovery for Tartaglione.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-22",
+      "title": "Epstein-Tartaglione SHU Incident",
+      "description": "An incident occurred involving Jeffrey Epstein and his cellmate Nicholas Tartaglione in the Special Housing Unit (SHU) at the Metropolitan Correctional Center (MCC).",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Reported Suicide of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found dead in his cell at the MCC, reported as a suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-12-18",
+      "title": "Scheduled Conference",
+      "description": "A conference is scheduled, mentioned in the context of making a 53-page BOP investigative report available for review in advance.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC",
+    "U.S. Attorney's Office, Southern District of New York, One Saint Andrew's Plaza, New York, New York",
+    "White Plains office (of the U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "The government confirmed no After Action Report was prepared for Jeffrey Epstein's reported suicide on August 10, 2019.",
+    "The government confirmed no documentation exists regarding the decision to house Nicholas Tartaglione and Jeffrey Epstein together in the same SHU cell.",
+    "A 53-page Bureau of Prisons (BOP) investigative report related to the July 22/23, 2019 incident was compiled and made available for Attorney's Eyes Only review.",
+    "The government confirmed no audio or video recordings were made of BOP interviews of Nicholas Tartaglione.",
+    "The government was awaiting a response from BOP on whether an investigation took place into Tartaglione as a result of allegations made by Epstein."
+  ],
+  "analyzedAt": "2026-02-15T10:26:11.327Z"
+}

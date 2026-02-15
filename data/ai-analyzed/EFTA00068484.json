@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00068484.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": "1999-10-31",
+  "summary": "This is a JPMorgan Chase asset account portfolio statement for the 'FINANCIAL TRUST COMPANY, INC.' for October 1999. It details significant cash movements, including a wire transfer of $18.3 million to Ghislaine Maxwell via Bear Stearns, and shows the account held over $6.7 million in a money market fund. It was entered as a government exhibit in a criminal case.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient of a wire transfer",
+      "category": "key figure",
+      "context": "Named as the beneficiary of an $18,300,000.00 wire transfer from the Financial Trust Company, Inc. account to Bear Stearns.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Scott",
+      "role": "Account Officer/Service Specialist",
+      "category": "staff",
+      "context": "Listed as an account officer or service specialist for the Financial Trust Company, Inc. account at JPMorgan.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dencker",
+      "role": "Account Officer/Service Specialist",
+      "category": "staff",
+      "context": "Listed as an account officer or service specialist for the Financial Trust Company, Inc. account at JPMorgan.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Financial Trust Company, Inc.",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "A substantial wire transfer of $18.3 million was sent from the Financial Trust Company account to Bear Stearns, f/o (for the order of) Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Scott",
+      "person2": "Dencker",
+      "relationshipType": "professional",
+      "description": "Both are listed as account officers or service specialists for the same Financial Trust Company, Inc. account at JPMorgan.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1999-10-19",
+      "title": "Major Wire Transfer to Ghislaine Maxwell",
+      "description": "An $18,300,000 wire transfer was initiated from the Financial Trust Company, Inc. account to Bear Stearns, for the order of Ghislaine Maxwell.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1999-10-01",
+      "title": "Large Deposit and Purchase",
+      "description": "A $20,000,000 deposit was received and used to purchase shares in the J.P. Morgan Institutional Prime Money Market Fund.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "1999-10-04",
+      "title": "Additional Deposit and Purchase",
+      "description": "A $5,000,000 deposit was received and used to purchase additional shares in the J.P. Morgan Institutional Prime Money Market Fund.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York, NY 10154-1002 (Morgan Guaranty Trust Company of New York)",
+    "ST THOMAS US VIRGIN ISLDS 00802 (American Yacht Harbor, address for Financial Trust Company, Inc.)"
+  ],
+  "keyFacts": [
+    "A wire transfer of $18,300,000 was sent from the Financial Trust Company, Inc. account to Bear Stearns 'FAO GHISLAINE MAXWELL' on October 19, 1999.",
+    "The Financial Trust Company, Inc. account held a portfolio value of over $6.7 million in a J.P. Morgan money market fund as of October 31, 1999.",
+    "The document is marked as 'GOVERNMENT EXHIBIT 505' and 'Confidential Treatment Requested by JPMorgan Chase', indicating its use in legal proceedings.",
+    "The account received $25 million in deposits in early October 1999 before the $18.3 million transfer to Maxwell later that month.",
+    "The trust was registered at an address in St. Thomas, U.S. Virgin Islands, a known offshore financial center."
+  ],
+  "analyzedAt": "2026-02-15T06:00:44.999Z"
+}

@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00070878.pdf",
+  "dataSet": "9",
+  "documentType": "victim notification letter",
+  "dateOriginal": "2019-07-12",
+  "summary": "This is a form letter from the U.S. Attorney's Office for the Southern District of New York, sent via the Victim Notification System (VNS) to individuals identified as victims or potential victims in the criminal case against Jeffrey Epstein. It informs recipients of their rights under the Crime Victims' Rights Act and notifies them of an upcoming detention hearing before Judge Richard Berman.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the federal criminal case, arrested and charged under Project Safe Childhood following an investigation by the SDNY U.S. Attorney's Office.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The U.S. Attorney for the Southern District of New York who signed the victim notification letters.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Richard Berman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The federal judge scheduled to preside over Jeffrey Epstein's detention hearing on July 15, 2019.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Berman, as U.S. Attorney, is the lead prosecutor for the office bringing federal charges against Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Berman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Berman is presiding over the detention hearing and the criminal case against Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-15",
+      "title": "Epstein Detention Hearing",
+      "description": "A hearing scheduled before Judge Richard Berman at 10:00 AM in Courtroom 176, 500 Pearl Street, New York, NY, to determine whether Jeffrey Epstein should be detained or released pending trial.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "One St. Andrews Plaza, New York, NY 10007 (U.S. Attorney's Office, SDNY)",
+    "Courtroom 176, 500 Pearl Street, New York, NY 10007 (Daniel Patrick Moynihan U.S. Courthouse)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was arrested and federally charged under 'Project Safe Childhood' by the U.S. Attorney's Office for the Southern District of New York.",
+    "The document is a mass notification sent on July 12, 2019, to individuals identified by law enforcement as victims or potential victims in the Epstein case.",
+    "It outlines the ten specific rights granted to crime victims under the federal Crime Victims' Rights Act (18 U.S.C. § 3771).",
+    "A critical detention hearing for Epstein was scheduled for July 15, 2019, before Judge Richard Berman.",
+    "The letter reveals the case numbers: 2018R01618 (investigation) and 19-CR-00490 (court docket)."
+  ],
+  "analyzedAt": "2026-02-15T07:42:19.663Z"
+}

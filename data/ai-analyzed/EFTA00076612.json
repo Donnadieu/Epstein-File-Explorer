@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00076612.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-24",
+  "summary": "This is an email from a US Attorney's Office (likely SDNY) staff member updating colleagues on an incident involving Jeffrey Epstein at the Metropolitan Correctional Center (MCC). The email reports that Epstein was found unresponsive in his cell with marks on his neck, claims he was threatened by his cellmate, and that the MCC is investigating.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The email reports he was found unresponsive on the floor of his cell at MCC with red stretch marks on his neck and claims he was threatened by his cellmate.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate/Cellmate",
+      "category": "other",
+      "context": "Identified as Epstein's bunkmate at MCC. Epstein claims Tartaglione threatened him, while Tartaglione claims he had headphones on and does not know what happened.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "They were bunkmates in the same cell at the Metropolitan Correctional Center. Epstein claims Tartaglione threatened him prior to the incident where Epstein was found unresponsive.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found Unresponsive in MCC Cell",
+      "description": "Jeffrey Epstein was found on the floor of his cell at the Metropolitan Correctional Center, unresponsive but breathing, with red stretch marks along his neck. He claims not to recall what happened and alleges threats from his cellmate in prior days.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive on the floor of his cell at MCC, an incident occurring before his eventual death.",
+    "Epstein had red stretch marks along his neck when found, but was breathing.",
+    "Epstein claimed his cellmate, Tartaglione, had threatened him in the days leading up to the incident.",
+    "The MCC was investigating the incident, and the email discusses whether the FBI should be more active in that investigation."
+  ],
+  "analyzedAt": "2026-02-15T12:43:02.825Z"
+}

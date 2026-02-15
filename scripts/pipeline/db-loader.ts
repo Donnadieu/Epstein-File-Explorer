@@ -155,13 +155,32 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
     return { persons: 0, connections: 0, events: 0, docLinks: 0 };
   }
 
-  const files = fs.readdirSync(aiDir).filter(f => f.endsWith(".json"));
-  if (files.length === 0) {
+  const allFiles = fs.readdirSync(aiDir).filter(f => f.endsWith(".json"));
+  if (allFiles.length === 0) {
     console.log("No AI analysis results found.");
     return { persons: 0, connections: 0, events: 0, docLinks: 0 };
   }
 
-  console.log(`Loading AI results from ${files.length} files...`);
+  // Skip files whose documents are already marked as loaded
+  const loadedDocs = await db.select({ title: documents.title, sourceUrl: documents.sourceUrl })
+    .from(documents)
+    .where(eq(documents.aiAnalysisStatus, "completed"));
+  const loadedEftas = new Set<string>();
+  for (const doc of loadedDocs) {
+    if (doc.title) loadedEftas.add(doc.title.toLowerCase());
+    if (doc.sourceUrl) loadedEftas.add(doc.sourceUrl.toLowerCase());
+  }
+
+  const files = allFiles.filter(f => {
+    const efta = f.replace(/\.json$/i, "").replace(/\.pdf$/i, "").toLowerCase();
+    // Check if any loaded doc title/sourceUrl contains this EFTA
+    for (const key of loadedEftas) {
+      if (key.includes(efta)) return false;
+    }
+    return true;
+  });
+
+  console.log(`Loading AI results: ${files.length} new files (${allFiles.length - files.length} already loaded, ${allFiles.length} total)`);
 
   let personsCreated = 0;
   let personsUpdated = 0;

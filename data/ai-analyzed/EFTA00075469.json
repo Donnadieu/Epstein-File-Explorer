@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA00075469.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-22",
+  "summary": "This document is an email chain from October 2020 discussing legal representation and potential conflicts of interest for an unnamed individual ('ack) in relation to the Epstein matter. It references the individual's sentencing in his own case and coordination between attorneys Christine Delince, Jason Foy, and Montell Figgins.",
+  "persons": [
+    {
+      "name": "Christine Delince",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney assigned to represent an unnamed individual ('ack) for any potential conflicts related to the Epstein matter, as the individual's current attorney (Jason Foy) may have a conflict.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jason Foy",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Current attorney for an unnamed individual ('ack) who may have a conflict in the Epstein matter; Christine Delince was assigned to handle potential conflicts.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Montell Figgins",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "One of the defense attorneys to whom notes were produced, alongside Jason Foy, pursuant to a Protective Order.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christian Perez",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Mentioned in the subject line of an email; role in the case is not specified in this document.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christine Delince",
+      "person2": "Jason Foy",
+      "relationshipType": "legal coordination",
+      "description": "Delince was assigned to represent an unnamed client for potential conflicts because Foy, the client's current attorney, may be conflicted in the Epstein matter.",
+      "strength": 3
+    },
+    {
+      "person1": "Jason Foy",
+      "person2": "Montell Figgins",
+      "relationshipType": "legal coordination",
+      "description": "Both are defense attorneys who received produced notes pursuant to a Protective Order in the same case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-22",
+      "title": "Email update on client sentencing and conflicts",
+      "description": "An email states that an unnamed individual ('ack) was sentenced in his own case and no further meetings involving him in the Epstein matter are expected, regarding the conflict issue with attorney Jason Foy.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Christine Delince",
+        "Jason Foy"
+      ]
+    },
+    {
+      "date": "2020-01-15",
+      "title": "Production of notes to defense attorneys",
+      "description": "Notes were produced to defense attorneys Montell Figgins and Jason Foy pursuant to a Protective Order, with a name produced on an Attorney's Eyes Only basis.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Montell Figgins",
+        "Jason Foy"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An unnamed individual (referred to as 'ack) was sentenced in his own case by October 2020, and no further involvement in the Epstein matter was expected regarding a conflict issue with his attorney, Jason Foy.",
+    "Christine Delince was assigned in January 2020 to represent this individual specifically for any potential conflicts arising from the Epstein matter, as his current attorney (Jason Foy) may have been conflicted.",
+    "Notes were produced to defense attorneys Montell Figgins and Jason Foy under a Protective Order, with sensitive information shared on an Attorney's Eyes Only basis."
+  ],
+  "analyzedAt": "2026-02-15T11:34:52.172Z"
+}

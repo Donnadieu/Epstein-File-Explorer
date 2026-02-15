@@ -1,0 +1,144 @@
+{
+  "fileName": "EFTA00072822.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-02",
+  "summary": "This is an email chain between attorneys at WilmerHale and the US Attorney's Office regarding the Ghislaine Maxwell criminal case. The emails discuss providing Bates number ranges for JPMorgan account opening documents, coordinating calls about trial witnesses, and the need for a trial appearance subpoena for a JPMorgan witness.",
+  "persons": [
+    {
+      "name": "Allison Stoddart",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "Attorney from WilmerHale law firm corresponding with the US Attorney's Office about providing JPMorgan account document Bates ranges and coordinating trial witness matters for the Ghislaine Maxwell case.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Arian Sahni",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "Attorney at WilmerHale law firm copied on emails regarding the Ghislaine Maxwell case and JPMorgan witness coordination.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "Attorney at WilmerHale law firm (appears to be the same person as Arian Sahni with a typo in the email address) involved in correspondence about the Maxwell case.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in criminal case 20 Cr. 330, referenced in the email subject lines and as the subject of the legal proceedings.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Maurene",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant United States Attorney from the Southern District of New York corresponding with defense counsel about trial witness matters and subpoenas.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lara",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant United States Attorney from the Southern District of New York copied on emails regarding trial witness coordination.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at WilmerHale law firm working together on the Ghislaine Maxwell case.",
+      "strength": 4
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Maurene",
+      "relationshipType": "legal counterpart",
+      "description": "Defense attorney (Stoddart) corresponding with prosecutor (Maurene) about trial preparation and witness matters.",
+      "strength": 3
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Lara",
+      "relationshipType": "legal counterpart",
+      "description": "Defense attorney corresponding with prosecutor about trial witness coordination.",
+      "strength": 2
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Attorney from WilmerHale representing defendant Ghislaine Maxwell in criminal case 20 Cr. 330.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-08",
+      "title": "Initial witness discussion",
+      "description": "Prosecutors send draft exhibits to facilitate conversation about identifying an appropriate witness from JPMorgan for the Maxwell trial.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Anjan Sahni",
+        "Maurene"
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "title": "Subpoena request for JPMorgan witness",
+      "description": "Defense attorney Allison Stoddart requests a trial appearance subpoena for a JPMorgan witness, and prosecutors provide a broadly worded subpoena.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Maurene",
+        "Lara",
+        "Anjan Sahni"
+      ]
+    },
+    {
+      "date": "2021-10-27",
+      "title": "Call coordination for witness discussion",
+      "description": "Attorneys coordinate a call to discuss trial witness topics for the Maxwell case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Anjan Sahni"
+      ]
+    },
+    {
+      "date": "2021-11-02",
+      "title": "Account document Bates ranges provided",
+      "description": "Defense attorneys provide Bates number ranges for JPMorgan account opening documents for three accounts, plus onboarding documents for Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Arian Sahni"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10007",
+    "7 World Trade Center, 250 Greenwich Street, New York, NY 10007",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document reveals JPMorgan account documents with specific Bates number ranges were being exchanged between defense and prosecution in the Ghislaine Maxwell case.",
+    "Three specific JPMorgan account numbers are referenced: W23560001, 739474324, and Q79961001, with corresponding Bates ranges provided.",
+    "The prosecution was seeking to identify and subpoena a JPMorgan witness for trial testimony in the Maxwell case.",
+    "The correspondence shows active coordination between WilmerHale defense attorneys and the US Attorney's Office regarding trial preparation in late 2021.",
+    "Ghislaine Maxwell's JPMorgan onboarding documents are referenced with Bates range JPM-SDNY-00002539 to JPM-SDNY-00002570."
+  ],
+  "analyzedAt": "2026-02-15T09:22:43.268Z"
+}

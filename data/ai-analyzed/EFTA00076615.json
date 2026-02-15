@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00076615.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-25",
+  "summary": "This is an email chain from July 25, 2019, discussing the discovery of Jeffrey Epstein in his cell at the Metropolitan Correctional Center (MCC) New York with a noose around his neck on the morning of July 24, 2019. The emails reveal internal confusion and information gaps regarding the incident, including discrepancies in initial reports and the fact that Epstein was subsequently downgraded from suicide watch to suicide observation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "Found in his cell at MCC New York with a noose around his neck; was placed on suicide watch and then downgraded to suicide observation.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Associate Warden",
+      "role": "Associate Warden at MCC New York",
+      "category": "staff",
+      "context": "Reported the incident of finding Jeffrey Epstein in his cell to the email recipients.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SHU Lieutenant",
+      "role": "Lieutenant in the Special Housing Unit",
+      "category": "staff",
+      "context": "Wrote the first report about the incident, mentioning only redness on Epstein's neck without noting any object.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Associate Warden",
+      "relationshipType": "staff-inmate",
+      "description": "The Associate Warden at MCC New York reported the incident involving Epstein to authorities.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "SHU Lieutenant",
+      "relationshipType": "staff-inmate",
+      "description": "The SHU Lieutenant wrote the initial report on the incident involving Epstein in his cell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Found with Noose in Cell",
+      "description": "Jeffrey Epstein was found in his cell at MCC New York at 0127 hours in a fetal position with a noose around his neck. He was escorted to medical, assessed, initially placed on suicide watch, and subsequently downgraded to suicide observation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Associate Warden"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York (Metropolitan Correctional Center, New York)",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found in his cell on the morning of July 24, 2019, with a noose around his neck.",
+    "There were conflicting initial reports: a SHU Lieutenant's report mentioned only redness on Epstein's neck, while two other officers' supplemental reports stated he had something around his neck.",
+    "Epstein was initially placed on suicide watch but was subsequently downgraded to suicide observation.",
+    "Epstein's cell mate reportedly felt threatened by him.",
+    "The incident was under investigation by the Bureau of Prisons (BOP) at the time of the emails."
+  ],
+  "analyzedAt": "2026-02-15T12:43:28.001Z"
+}

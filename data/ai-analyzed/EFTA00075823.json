@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00075823.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-20 to 2019-09-04",
+  "summary": "This document is a chain of emails from August-September 2019 between FBI personnel and a CART examiner regarding technical efforts to access and recover video data from DVR systems and servers at the Metropolitan Correctional Center (MCC) following Jeffrey Epstein's death. The emails detail password issues, disk array problems, and coordination with jail maintenance contractors.",
+  "persons": [
+    {
+      "name": "FBI New York I Squad C-19",
+      "role": "FBI Agent/Team",
+      "category": "law enforcement",
+      "context": "Correspondent in the email chain, providing updates on efforts to obtain administrative passwords and contact information for the MCC's DVR system maintenance contractor.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mt SIGNET TECHNOLOGIES",
+      "role": "Maintenance Contractor",
+      "category": "staff",
+      "context": "Identified as the person who has been maintaining the DVR and server system for the MCC from an installation and maintenance standpoint; contact information is suggested.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "FBI New York I Squad C-19",
+      "person2": "Mt SIGNET TECHNOLOGIES",
+      "relationshipType": "investigative contact",
+      "description": "FBI personnel seek to contact the maintenance contractor to obtain technical access (passwords/configuration) for the MCC's DVR systems as part of their investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-27",
+      "title": "Password Request for MCC DVR System",
+      "description": "FBI requests the administrator password for the Dell PowerEdge R420 main server controller at MCC to access DVR systems.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI New York I Squad C-19"
+      ]
+    },
+    {
+      "date": "2019-08-28",
+      "title": "Technical Assessment of MCC DVR Systems",
+      "description": "FBI technical assessment reveals DVR 1 is running but needs main controller access; DVR 2 is problematic with a disk array that failed to assemble, likely due to being pulled live. Three disks required repair.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI New York I Squad C-19"
+      ]
+    },
+    {
+      "date": "2019-08-30",
+      "title": "Briefing to FBI Leadership",
+      "description": "FBI personnel provide a briefing on the status of the DVR recovery efforts to their Assistant Director (AD) and Assistant Deputy Assistant Director (A/DAD).",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "FBI New York I Squad C-19"
+      ]
+    },
+    {
+      "date": "2019-09-04",
+      "title": "Identification of System Maintainer",
+      "description": "FBI identifies the maintenance contractor for the MCC's DVR and server systems, noting jail operators lack technical knowledge of passwords.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI New York I Squad C-19",
+        "Mt SIGNET TECHNOLOGIES"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Quantico (FBI CART Examiner location)"
+  ],
+  "keyFacts": [
+    "The FBI was actively attempting to recover video data from DVR systems at the Metropolitan Correctional Center (MCC) in late August/early September 2019, following Jeffrey Epstein's death.",
+    "Technical hurdles included missing administrator passwords for the main server controller and a failed disk array on 'DVR 2' that may have been compromised when disks were 'pulled out of the system live'.",
+    "The individuals operating the jail's DVRs and servers were described as 'not the most technical operators' and did not know the system passwords.",
+    "An external maintenance contractor, Mt SIGNET TECHNOLOGIES, was identified as the person who had been maintaining the MCC's system.",
+    "The case reference is 90A-NY-3151227 (Epstein), and the work was being done by an FBI CART (Computer Analysis and Response Team) examiner."
+  ],
+  "analyzedAt": "2026-02-15T11:51:10.079Z"
+}

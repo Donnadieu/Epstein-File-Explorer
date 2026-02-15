@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00071802.pdf",
+  "dataSet": "9",
+  "documentType": "search warrant application",
+  "dateOriginal": "2019-07-06",
+  "summary": "This is an FBI Special Agent's affidavit in support of a second search warrant for Jeffrey Epstein's New York residence at 9 East 71st Street. The affidavit details observations from an initial search on July 6, 2019, that corroborate a victim's descriptions of the interior, including specific artwork and a taxidermied dog, and argues there is probable cause to search for evidence of sex trafficking of minors and conspiracy.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Target Subject of Investigation",
+      "category": "key figure",
+      "context": "The primary target of the sex trafficking investigation; owner and controller of the Subject Premises at 9 East 71st Street, New York, NY. The affidavit details allegations of his sexual abuse of multiple minor girls at that location between approximately 2002 and 2005.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Barbara Moses",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "The judge who signed the initial search warrant for the Subject Premises on or about July 6, 2019, and before whom the affiant Special Agent swore this affidavit for a second warrant.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Victim-1",
+      "role": "Victim and Witness",
+      "category": "victim",
+      "context": "A victim identified in the indictment who was sexually abused by Epstein at the Subject Premises between approximately 2002 and 2005 while underage. Provided detailed descriptions of the interior layout and specific items (e.g., a torso bust, taxidermied dog, massage room) which were later corroborated by the FBI's initial search.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is alleged to have sexually abused Victim-1 on multiple occasions at his New York residence when she was under the age of 18.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Barbara Moses",
+      "relationshipType": "legal",
+      "description": "Judge Barbara Moses authorized the search warrant for Epstein's property, placing her in a judicial oversight role regarding the investigation into him.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-02",
+      "title": "Grand Jury Indictment of Jeffrey Epstein",
+      "description": "A grand jury in the Southern District of New York returned an indictment charging Jeffrey Epstein with sex trafficking of minors and sex trafficking conspiracy.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Initial Search of 9 East 71st Street",
+      "description": "Law enforcement officers executed a search warrant at Epstein's New York residence. The search was paused after officers observed items corroborating Victim-1's descriptions, leading to the application for this second, more specific warrant.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-2005",
+      "title": "Period of Alleged Abuse at New York Residence",
+      "description": "The timeframe during which Jeffrey Epstein is alleged to have sexually abused multiple minor girls, including Victim-1, at his residence at 9 East 71st Street, New York.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Victim-1"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York (The 'Subject Premises', Jeffrey Epstein's multi-story, single-family residence)",
+    "Southern District of New York (Jurisdiction for the legal proceedings)",
+    "Palm Beach, Florida (Mentioned in context of potential victims referred to as 'PB Girls')"
+  ],
+  "keyFacts": [
+    "The FBI observed items during an initial search on July 6, 2019, that corroborated Victim-1's decade-old descriptions of Epstein's New York home, including busts of female torsos in a bathroom, a taxidermied dog, and a 'massage room' with nude artwork.",
+    "A black binder labeled 'PB Girls' was observed, which the affiant believes may refer to minor victims in Palm Beach, Florida, linking the New York and Florida aspects of the alleged conspiracy.",
+    "The affidavit states that Epstein typically paid victims in cash after sexual encounters and also paid victims to recruit other minor girls for him.",
+    "The application is for a second, more specific search warrant after the initial search was halted to 'freeze the scene' upon finding corroborating evidence.",
+    "Victim-1's reliability is asserted based on corroboration from independent evidence and accounts of other victims she has never met, despite her disclosed personal issues (past marriage fraud, substance abuse)."
+  ],
+  "analyzedAt": "2026-02-15T08:25:18.637Z"
+}

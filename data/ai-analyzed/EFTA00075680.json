@@ -1,0 +1,61 @@
+{
+  "fileName": "EFTA00075680.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-09-08",
+  "summary": "This is an email chain between FBI personnel discussing notes from an interview with housekeeper Sonam Dema conducted during the July 2019 search of Jeffrey Epstein's property. The notes are being uploaded to the Sentinel system without a formal FBI 302 report.",
+  "persons": [
+    {
+      "name": "Sonam Dema",
+      "role": "Housekeeper",
+      "category": "staff",
+      "context": "Interviewed by an FBI agent during the July 2019 search of Jeffrey Epstein's property. The agent's notes from this interview are the subject of the email.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M, L. (NY) (FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "Recipient of emails regarding the upload of interview notes from the Epstein search. Corresponds with colleagues about handling the notes.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sonam Dema",
+      "person2": "M, L. (NY) (FBI)",
+      "relationshipType": "witness-investigator",
+      "description": "Sonam Dema was interviewed by FBI personnel (implied to include or be connected to M, L.) during the 2019 Epstein property search.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "Original Epstein search",
+      "description": "Law enforcement search of Jeffrey Epstein's property, during which FBI agents interviewed housekeeper Sonam Dema.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Sonam Dema"
+      ]
+    },
+    {
+      "date": "2021-09-07",
+      "title": "Notes rediscovered and shared",
+      "description": "An FBI agent finds and shares one page of notes from the July 2019 interview with Sonam Dema, proposing to upload them to Sentinel.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "M, L. (NY) (FBI)"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An FBI agent took notes during an interview with housekeeper Sonam Dema in July 2019 as part of the Epstein property search.",
+    "The notes were rediscovered in September 2021 and were uploaded to the FBI's Sentinel system without a formal 302 report.",
+    "The email correspondence indicates standard procedural handling of investigative notes from the Epstein case."
+  ],
+  "analyzedAt": "2026-02-15T11:42:46.475Z"
+}

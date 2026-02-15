@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00072865.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-04-07",
+  "summary": "This document is an email chain from April 2020 between a U.S. Attorney's office and the FBI regarding a new potential victim who contacted them. The victim reported meeting Jeffrey Epstein through Leon Black and being abused by Epstein starting when she was a minor. The emails request the FBI to reach out to the victim to obtain a statement.",
+  "persons": [
+    {
+      "name": "Ini",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "The sender of the initial email, who received a call from a potential victim and forwarded the information to the FBI, requesting follow-up.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leon Black",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Identified by the victim as the person through whom she met Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The individual the victim reported being abused by, after being introduced through Leon Black.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leon Black",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "The victim reported meeting Epstein through Leon Black, indicating a social or acquaintance connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unnamed Victim",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim reported being abused by Epstein for some time, starting when she was a minor.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03-13",
+      "title": "Initial Victim Contact",
+      "description": "An individual called the U.S. Attorney's office to report being abused by Jeffrey Epstein after meeting him through Leon Black, starting when she was a minor.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ini",
+        "Unnamed Victim",
+        "Jeffrey Epstein",
+        "Leon Black"
+      ]
+    },
+    {
+      "date": "2020-04-07",
+      "title": "Follow-up Request to FBI",
+      "description": "A follow-up email was sent to the FBI urging them to contact the victim who had previously reported abuse by Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ini"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A new potential victim contacted the U.S. Attorney's office in March 2020, reporting abuse by Jeffrey Epstein.",
+    "The victim stated she met Epstein through financier Leon Black.",
+    "The abuse reportedly started when the victim was a minor, approximately years ago (specific number redacted).",
+    "The Assistant U.S. Attorney forwarded the victim's contact information to the FBI with a request for follow-up.",
+    "The email chain indicates ongoing investigative activity related to Epstein victims as late as April 2020."
+  ],
+  "analyzedAt": "2026-02-15T09:25:22.898Z"
+}

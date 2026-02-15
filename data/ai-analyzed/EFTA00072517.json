@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00072517.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-11",
+  "summary": "This is an email chain among U.S. Attorney's Office personnel discussing scheduling and substantive updates regarding a FOIA case related to Jeffrey Epstein. The emails reference a recent oral argument before Judge Engelmayer, who expressed skepticism about the breadth of certain FOIA withholdings and ordered an in camera review. The correspondence also mentions coordinating with 'Audrey' and considering consultation with Main Justice.",
+  "persons": [
+    {
+      "name": "Audrey",
+      "role": "U.S. Attorney's Office personnel (likely supervisor or senior attorney)",
+      "category": "legal",
+      "context": "Mentioned as someone to potentially join a call and as the recipient of a judicial directive to reconsider the FOIA response and possibly consult with Main Justice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Judge Engelmayer",
+      "role": "Federal Judge",
+      "category": "legal",
+      "context": "Presided over the oral argument in the Epstein FOIA case, expressed skepticism about FOIA withholdings, and issued orders for in camera review and specific disclosures.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor / Correspondent",
+      "category": "legal",
+      "context": "Author of the main substantive email summarizing the oral argument before Judge Engelmayer and outlining next steps, including circulating a transcript and scheduling calls.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Audrey",
+      "relationshipType": "colleague",
+      "description": "The AUSA is directed by the court to communicate with Audrey about reconsidering the FOIA response and potentially consulting with Main Justice.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Judge Engelmayer",
+      "relationshipType": "legal proceeding",
+      "description": "The AUSA appeared before Judge Engelmayer in oral argument regarding the Epstein FOIA case and is relaying the judge's orders and skepticism.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-09",
+      "title": "Oral Argument in Epstein FOIA Case",
+      "description": "A roughly two-hour oral argument was held before Judge Engelmayer regarding FOIA withholdings in the Epstein case. The court was skeptical of the breadth of withholdings under exemption 7(A).",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Engelmayer",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-04-12",
+      "title": "Expected Court Order for In Camera Review",
+      "description": "Judge Engelmayer is expected to issue an order directing the production of withheld documents for in camera review and requiring specific marking of materials related to the Tartaglione case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Engelmayer"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Judge Engelmayer expressed significant skepticism about the breadth of FOIA exemption 7(A) withholdings in the Epstein case, indicating potential overuse.",
+    "The court ordered an in camera review of the withheld documents and required specific identification of materials withheld due to the Tartaglione case versus the broader 'Noel' investigation.",
+    "The court directed the U.S. Attorney's Office, specifically 'Audrey', to reconsider the FOIA response and evaluate whether consultation with Main Justice was warranted, noting a potential impact from the recent change in administration."
+  ],
+  "analyzedAt": "2026-02-15T08:59:36.661Z"
+}

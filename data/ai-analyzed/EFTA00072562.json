@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA00072562.pdf",
+  "dataSet": "9",
+  "documentType": "internal government update memo",
+  "dateOriginal": "2019-09-06",
+  "summary": "This is a September 6, 2019, internal update from the Public Corruption Unit detailing significant developments in the Jeffrey Epstein case and the investigation into his suicide at the Metropolitan Correctional Center (MCC). It outlines ongoing investigations into co-conspirators, including an assistant and Ghislaine Maxwell, and details severe procedural failures by MCC guards on the night of Epstein's death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused / Deceased Inmate",
+      "category": "key figure",
+      "context": "The central figure of the case; died by suicide at the MCC on August 10, 2019, while detained on sex trafficking charges.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Epstein's former girlfriend / Alleged Co-conspirator",
+      "category": "associate",
+      "context": "Publicly accused of recruiting and grooming victims; the investigation is actively pursuing her involvement, with interviews scheduled with victims from the 1990s.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "One of two guards assigned to the Special Housing Unit (SHU) on the night of Epstein's suicide; failed to perform scheduled inmate counts and rounds.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "One of two guards assigned to the SHU on the night of Epstein's suicide; also worked the prior shift and failed to perform multiple inmate counts and mandated rounds.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Described as Epstein's former girlfriend who is accused of recruiting and grooming victims for him.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Tova Noel",
+      "relationshipType": "co-workers",
+      "description": "Both were correctional officers assigned to the same Special Housing Unit shift on the night of Epstein's death and are jointly implicated in failing to perform their duties.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Michael Thomas",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was one of the guards responsible for monitoring Epstein in the SHU on the night of his suicide.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tova Noel",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was one of the guards responsible for monitoring Epstein in the SHU on the night of his suicide and the prior shift.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Suicide at MCC",
+      "description": "Jeffrey Epstein died by suicide while detained at the Metropolitan Correctional Center (MCC) pending trial on sex trafficking charges.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "MCC Guard Shift Failures",
+      "description": "Guards Michael Thomas and Tova Noel failed to perform scheduled inmate counts at 12pm, 3am, and 5am, and did not conduct mandated 30-minute rounds throughout the night in the Special Housing Unit where Epstein was held.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-10-08",
+      "title": "Scheduled Defense Presentations for MCC Guards",
+      "description": "Counsel for officers Michael Thomas and Tova Noel are scheduled to present to prosecutors on their clients' behalf as final charging decisions are considered.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Epstein's USVI residence (U.S. Virgin Islands)",
+    "Manhattan"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein committed suicide at the MCC on August 10, 2019.",
+    "The investigation into Epstein's co-conspirators is ongoing, with significant evidence developed against one of his assistants and active investigation into Ghislaine Maxwell for recruiting and grooming victims.",
+    "MCC guards Michael Thomas and Tova Noel failed to perform any scheduled inmate counts or 30-minute rounds on the night of Epstein's death, while falsely certifying they had completed these duties.",
+    "Prosecutors are seeking a search warrant to examine electronics seized from Epstein's U.S. Virgin Islands residence, as the original warrant only authorized seizure, not search.",
+    "The FBI is needed to commit considerable resources to review the 'extremely large amount of data' seized in Manhattan and the USVI."
+  ],
+  "analyzedAt": "2026-02-15T09:03:20.508Z"
+}

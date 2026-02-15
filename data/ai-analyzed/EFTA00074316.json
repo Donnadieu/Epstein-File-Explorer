@@ -1,0 +1,126 @@
+{
+  "fileName": "EFTA00074316.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-04",
+  "summary": "Email chain between attorneys regarding the scheduling of an interview with David Rodgers, a witness in the Epstein investigation, and a specific inquiry about a flight log entry from August 1, 1997, that may be connected to a missing Florida teenager.",
+  "persons": [
+    {
+      "name": "Brendan Quigley",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Partner at Baker Botts L.L.P. representing David Rodgers; corresponds with prosecutors to schedule an interview and provide flight logs.",
+      "mentionCount": 15
+    },
+    {
+      "name": "David Rodgers",
+      "role": "Witness",
+      "category": "witness",
+      "context": "Client of Brendan Quigley; subject of a subpoena and interview request by the SDNY regarding flight records as part of the Epstein investigation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Andrew Lankler",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney at Baker Botts L.L.P. copied on correspondence regarding the David Rodgers subpoena and interview scheduling.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor with the Southern District of New York handling the Epstein investigation; coordinates the interview with David Rodgers and raises the issue of the flight log entry.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brendan Quigley",
+      "person2": "David Rodgers",
+      "relationshipType": "attorney-client",
+      "description": "Quigley is the legal representative for David Rodgers, handling subpoena compliance and interview arrangements with prosecutors.",
+      "strength": 5
+    },
+    {
+      "person1": "Brendan Quigley",
+      "person2": "Andrew Lankler",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys at Baker Botts L.L.P. working on the David Rodgers case, as indicated by being copied on emails.",
+      "strength": 4
+    },
+    {
+      "person1": "Brendan Quigley",
+      "person2": "Maurene Comey",
+      "relationshipType": "legal counterpart",
+      "description": "Quigley (defense attorney) corresponds with Comey (prosecutor) to schedule witness interviews and discuss investigative matters.",
+      "strength": 4
+    },
+    {
+      "person1": "David Rodgers",
+      "person2": "Maurene Comey",
+      "relationshipType": "witness-investigator",
+      "description": "Comey, as a prosecutor, seeks to interview Rodgers as a witness regarding flight records in the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-07",
+      "title": "Scheduled Interview with David Rodgers",
+      "description": "Planned meeting between SDNY prosecutors and David Rodgers to discuss flight records related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "David Rodgers",
+        "Maurene Comey",
+        "Brendan Quigley"
+      ]
+    },
+    {
+      "date": "1997-08-01",
+      "title": "Flight Log Entry Investigation",
+      "description": "Prosecutors note a flight log entry from August 1, 1997, showing an individual with a name similar to a missing Florida teenager, prompting questions for David Rodgers.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "David Rodgers"
+      ]
+    },
+    {
+      "date": "2019-12-20",
+      "title": "Initial Flight Log Production",
+      "description": "Brendan Quigley provides initial flight logs for David Rodgers covering January 23, 2006, to September 19, 2013, to the SDNY under confidentiality.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Brendan Quigley",
+        "David Rodgers"
+      ]
+    },
+    {
+      "date": "2020-01-06",
+      "title": "Additional Flight Log Production",
+      "description": "Brendan Quigley provides additional flight logs for David Rodgers covering 1991 to January 2006 to the SDNY.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Brendan Quigley",
+        "David Rodgers"
+      ]
+    }
+  ],
+  "locations": [
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "Lake Worth, FL 33467-7729",
+    "30 Rockefeller Plaza, New York, NY 10112"
+  ],
+  "keyFacts": [
+    "Prosecutors planned to question David Rodgers about a flight log entry from August 1, 1997, that listed an individual with a name similar to a missing Florida teenager last seen around that time.",
+    "David Rodgers was treated as a witness, not a target, with the interview focused on flight records he maintained or was associated with.",
+    "The email chain reveals ongoing cooperation between defense attorneys and prosecutors, with flight logs being produced on a rolling basis from December 2019 to January 2020.",
+    "The document indicates the investigation into Epstein included scrutiny of flight logs for potential connections to missing persons cases.",
+    "Significant redactions are present in the email text, particularly around the name of the missing teenager and some prosecutor identifiers."
+  ],
+  "analyzedAt": "2026-02-15T10:41:40.781Z"
+}

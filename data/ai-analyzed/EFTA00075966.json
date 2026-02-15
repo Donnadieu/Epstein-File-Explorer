@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00075966.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-07-19 to 2021-08-01",
+  "summary": "Email chain between a U.S. Customs and Border Protection (CBP) Task Force Officer and an Assistant U.S. Attorney regarding travel records for Jeffrey Epstein and Ghislaine Maxwell. The CBP officer explains that outbound travel records for the period 1990-2000 were not systematically recorded, limiting the data available for that timeframe.",
+  "persons": [
+    {
+      "name": "Ray",
+      "role": "U.S. Customs and Border Protection Task Force Officer - SDNY",
+      "category": "law enforcement",
+      "context": "CBP officer responding to requests from the U.S. Attorney's Office regarding travel records for Epstein and Maxwell, explaining data limitations for pre-2000 outbound travel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of travel record inquiry",
+      "category": "key figure",
+      "context": "Her travel records (under two name variations) were searched and provided by CBP; an attached spreadsheet chronologically lists her travel crossings.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of travel record inquiry",
+      "category": "key figure",
+      "context": "His travel records were searched by CBP as part of the same case inquiry.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Both are subjects of a joint travel records inquiry by the U.S. Attorney's Office, indicating their connection in the same investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Ray",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The CBP officer Ray searched and provided Maxwell's travel records to the prosecutors.",
+      "strength": 2
+    },
+    {
+      "person1": "Ray",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The CBP officer Ray searched and provided Epstein's travel records to the prosecutors.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "1990-2000",
+      "title": "CBP Outbound Travel Data Gap",
+      "description": "U.S. Customs and Border Protection did not systematically track or record outbound departures from the United States during this period.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ray",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-07-19",
+      "title": "Initial Contact Regarding CBP Records",
+      "description": "An Assistant U.S. Attorney initiates contact with CBP Officer Ray to discuss a question in one of their cases, specifically regarding travel records.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ray"
+      ]
+    },
+    {
+      "date": "2021-07-30",
+      "title": "CBP Provides Travel Records Analysis",
+      "description": "CBP Officer Ray confirms he reviewed all provided travel records, explains the pre-2000 data gap, and provides a consolidated spreadsheet of Maxwell's travel crossings.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ray",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York 10007"
+  ],
+  "keyFacts": [
+    "U.S. Customs and Border Protection did not track outbound departures from the United States during the period 1990-2000, creating a significant data gap for investigations into travel during that era.",
+    "Ghislaine Maxwell's travel records were found under two name variations (with and without a space in her surname), and a consolidated chronological list was provided to prosecutors.",
+    "The travel records search was conducted for both Jeffrey Epstein and Ghislaine Maxwell as part of a case being pursued by the U.S. Attorney's Office for the Southern District of New York.",
+    "The correspondence is marked as Law Enforcement Sensitive/For Official Use Only, indicating the sensitive nature of the ongoing investigation.",
+    "The email chain shows active investigative work into Epstein/Maxwell travel patterns as of July-August 2021."
+  ],
+  "analyzedAt": "2026-02-15T12:00:32.740Z"
+}

@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00074171.pdf",
+  "dataSet": "9",
+  "documentType": "travel authorization questionnaire",
+  "dateOriginal": "2020-02-03",
+  "summary": "This is a U.S. Department of Justice foreign travel questionnaire for a U.S. Attorney's Office employee traveling to Stockholm, Sweden from February 3-7, 2020. The purpose of the travel is to interview a witness in the ongoing, sensitive investigation into Jeffrey Epstein, with Ghislaine Maxwell identified as a subject.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The case being investigated is named 'In re Jeffrey Epstein' with USAO number 2018R01618. The document states the investigation is ongoing and very sensitive.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Identified as a subject of the investigation, believed to be a citizen of the United States, the United Kingdom, and France.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Youn",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Listed as an individual traveling abroad with the AUSA for the purpose of conducting the investigation, interviews, or depositions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as subjects in the same ongoing, sensitive investigation (In re Jeffrey Epstein).",
+      "strength": 4
+    },
+    {
+      "person1": "Amanda Youn",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "FBI SA Amanda Youn is traveling as part of the team to conduct an investigation where Ghislaine Maxwell is a subject.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Youn",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "FBI SA Amanda Youn is traveling as part of the team to conduct an investigation into Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-03",
+      "title": "Official Travel to Sweden for Epstein Investigation",
+      "description": "A U.S. Attorney's Office employee and team (including an FBI SA and NYPD Detective) depart for Stockholm, Sweden to interview a witness in the Jeffrey Epstein investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Amanda Youn"
+      ]
+    },
+    {
+      "date": "2020-02-07",
+      "title": "Return from Sweden for Epstein Investigation",
+      "description": "The U.S. Attorney's Office employee and investigative team are scheduled to return from Stockholm, Sweden.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Amanda Youn"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York, USA",
+    "Stockholm, Sweden"
+  ],
+  "keyFacts": [
+    "In February 2020, the U.S. Attorney's Office for the Southern District of New York (USAO-SDNY) sent personnel to Stockholm, Sweden to interview a witness in the ongoing Jeffrey Epstein investigation (USAO # 2018R01618).",
+    "The travel authorization explicitly names Ghislaine Maxwell as a subject of the investigation and notes she is believed to be a citizen of the U.S., U.K., and France.",
+    "The investigative team traveling included an Assistant U.S. Attorney (AUSA), FBI Special Agent Amanda Youn, and an NYPD Detective.",
+    "The document describes the Epstein investigation as 'ongoing and very sensitive' as of early 2020.",
+    "The witness to be interviewed in Sweden is referred to as 'Jane Doe, Swedish', indicating a protected or unidentified victim or witness."
+  ],
+  "analyzedAt": "2026-02-15T10:31:58.798Z"
+}

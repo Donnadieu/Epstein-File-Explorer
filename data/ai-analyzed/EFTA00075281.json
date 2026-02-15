@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00075281.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-19",
+  "summary": "This is an FBI 302 interview report of a Corrections Officer at the Metropolitan Correctional Center (MCC) regarding the circumstances surrounding the death of Jeffrey Epstein. The officer was interviewed about his shift in the Special Housing Unit when Epstein was found unresponsive and later invoked his right to an attorney when shown a photograph of an individual. His cell phone was seized pursuant to a search warrant.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive in his cell at the Metropolitan Correctional Center. The officer stated he once fed him and that Epstein was grateful.",
+      "mentionCount": 5
+    },
+    {
+      "name": "TFO",
+      "role": "FBI Task Force Officer",
+      "category": "law enforcement",
+      "context": "One of the investigators who interviewed the corrections officer and advised him of his obligations. Also involved in the seizure of the officer's cell phone.",
+      "mentionCount": 3
+    },
+    {
+      "name": "ADAMS",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "The corrections officer being interviewed. He worked the shift when Epstein was found unresponsive, described procedures, and invoked his right to a lawyer when shown a photograph.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Lieutenant",
+      "role": "BOP Lieutenant",
+      "category": "staff",
+      "context": "A lieutenant who came by to check on the corrections officer during his shift in the Special Housing Unit.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ADAMS",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "ADAMS was a corrections officer in the unit where Epstein was held. He once fed Epstein when Epstein had not received his meal.",
+      "strength": 2
+    },
+    {
+      "person1": "SA",
+      "person2": "ADAMS",
+      "relationshipType": "investigator-interviewee",
+      "description": "SA, along with TFO, interviewed ADAMS regarding the investigation into Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "TFO",
+      "person2": "ADAMS",
+      "relationshipType": "investigator-interviewee",
+      "description": "TFO was one of the primary investigators interviewing ADAMS and advised him of his legal obligations.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein found unresponsive",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center on a Saturday. The exact date is not specified but is referred to as the previous Saturday from the interview date of 08/16/2019.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "ADAMS"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Interview of Corrections Officer ADAMS",
+      "description": "FBI Special Agent and Task Force Officer interviewed Corrections Officer ADAMS at the U.S. Attorney's Office regarding the investigation into Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "ADAMS",
+        "SA",
+        "TFO"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Seizure of cell phone",
+      "description": "The FBI seized ADAMS's cell phone (a Motorola) pursuant to a search warrant issued by the Southern District of New York. ADAMS refused to provide his passcode.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "ADAMS",
+        "TFO"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, New York",
+    "United States Attorneys Office (USAO), Southern District of New York (SDNY), 1 St. Andrews Plaza, New York, New York",
+    "Special Housing Unit (SHU), 10 South, Metropolitan Correctional Center"
+  ],
+  "keyFacts": [
+    "Corrections Officer ADAMS was working a 12am-8am overtime shift in the locked-down Special Housing Unit (10 South) when Jeffrey Epstein was found unresponsive in his cell.",
+    "ADAMS stated that counts in the unit should always be conducted with a double staff and that an officer should 'see breathing flesh' during counts.",
+    "When shown a photograph of an individual (not named in the text), ADAMS invoked his right to a lawyer, leading investigators to discontinue questioning.",
+    "ADAMS's personal cell phone was seized by the FBI pursuant to a search warrant, and he refused to provide his passcode to investigators.",
+    "ADAMS expressed that Epstein was supposed to be watched more closely and that rounds should have been conducted regardless of his prior suicide watch status."
+  ],
+  "analyzedAt": "2026-02-15T11:20:18.906Z"
+}
