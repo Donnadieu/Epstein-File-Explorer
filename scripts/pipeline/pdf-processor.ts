@@ -3,6 +3,7 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { createRequire } from "module";
+import pLimit from "p-limit";
 
 // Prevent corrupted PDFs from crashing the process with unhandled rejections
 process.on("unhandledRejection", (reason: any) => {
@@ -18,6 +19,9 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const EXTRACTION_LOG = path.join(DATA_DIR, "extraction-log.json");
+
+const DEFAULT_MAX_FILE_SIZE_MB = 256;
+const DEFAULT_MAX_CONCURRENT_PDFS = 4;
 
 export interface ExtractedDocument {
   filePath: string;
@@ -37,6 +41,7 @@ interface ExtractionLog {
   totalChars: number;
   totalProcessed: number;
   totalFailed: number;
+  totalSkippedOversize: number;
   startedAt: string;
   lastUpdated: string;
 }
@@ -50,6 +55,7 @@ function loadLog(): ExtractionLog {
       totalChars: raw.totalChars || 0,
       totalProcessed: raw.totalProcessed ?? (raw.processed?.length || 0),
       totalFailed: raw.totalFailed ?? (raw.failed?.length || 0),
+      totalSkippedOversize: raw.totalSkippedOversize || 0,
       startedAt: raw.startedAt || new Date().toISOString(),
       lastUpdated: raw.lastUpdated || new Date().toISOString(),
     };
@@ -59,6 +65,7 @@ function loadLog(): ExtractionLog {
     totalChars: 0,
     totalProcessed: 0,
     totalFailed: 0,
+    totalSkippedOversize: 0,
     startedAt: new Date().toISOString(),
     lastUpdated: new Date().toISOString(),
   };
@@ -137,6 +144,9 @@ export async function processDocuments(options: {
   fileTypes?: string[];
   maxFiles?: number;
   outputDir?: string;
+  maxFileSizeMB?: number;
+  maxConcurrentPdfs?: number;
+  skipOversize?: boolean;
 }): Promise<ExtractedDocument[]> {
   console.log("\n=== PDF Text Extractor ===\n");
 
@@ -144,7 +154,16 @@ export async function processDocuments(options: {
     inputDir = DOWNLOADS_DIR,
     maxFiles = Infinity,
     outputDir = EXTRACTED_DIR,
+    maxFileSizeMB = DEFAULT_MAX_FILE_SIZE_MB,
+    maxConcurrentPdfs = DEFAULT_MAX_CONCURRENT_PDFS,
+    skipOversize = true,
   } = options;
+
+  const maxFileSizeBytes = maxFileSizeMB * 1024 * 1024;
+
+  console.log(`  Max file size: ${maxFileSizeMB} MB`);
+  console.log(`  Max concurrent PDFs: ${maxConcurrentPdfs}`);
+  console.log(`  Skip oversize: ${skipOversize}`);
 
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -160,7 +179,10 @@ export async function processDocuments(options: {
   let processed = 0;
   let skipped = 0;
   let failed = 0;
+  let skippedOversize = 0;
   let totalFiles = 0;
+
+  const limit = pLimit(maxConcurrentPdfs);
 
   for (const dir of dirs) {
     const dsMatch = dir.match(/data-set-(\d+)/);
@@ -176,8 +198,13 @@ export async function processDocuments(options: {
 
     console.log(`  DS ${dsId}: ${pdfFiles.length} PDFs`);
 
+    // Build batch of work items then execute with concurrency limit
+    const batch: (() => Promise<void>)[] = [];
+
     for (const fileName of pdfFiles) {
-      if (processed + skipped >= maxFiles) break;
+      if (processed + skipped + skippedOversize >= maxFiles) break;
+      // Cap batch so we don't queue more than maxFiles total
+      if (processed + skipped + skippedOversize + batch.length >= maxFiles) break;
 
       // Skip if already extracted (check output file exists on disk)
       const outPath = getOutputPath(outputDir, dsId, fileName);
@@ -188,42 +215,60 @@ export async function processDocuments(options: {
 
       const filePath = path.join(dsPath, fileName);
 
-      try {
-        const stats = fs.statSync(filePath);
-        const extracted = await extractPdfText(filePath);
+      batch.push(async () => {
+        try {
+          const stats = fs.statSync(filePath);
 
-        const result: ExtractedDocument = {
-          filePath,
-          fileName,
-          dataSetId: dsId,
-          text: extracted.text,
-          pageCount: extracted.pageCount,
-          metadata: extracted.metadata,
-          extractedAt: new Date().toISOString(),
-          method: "pdfjs",
-          fileType: "pdf",
-          fileSizeBytes: stats.size,
-        };
+          // --- Resource guardrail: skip oversize files ---
+          if (stats.size > maxFileSizeBytes) {
+            if (skipOversize) {
+              skippedOversize++;
+              log.totalSkippedOversize++;
+              console.warn(`    Skipped oversize: ${fileName} (${(stats.size / (1024 * 1024)).toFixed(1)} MB > ${maxFileSizeMB} MB)`);
+              return;
+            } else {
+              console.warn(`    Warning: large file ${fileName} (${(stats.size / (1024 * 1024)).toFixed(1)} MB) — processing anyway`);
+            }
+          }
 
-        // Write to disk immediately, don't accumulate in memory
-        if (!fs.existsSync(dsOutputDir)) fs.mkdirSync(dsOutputDir, { recursive: true });
-        fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
+          const extracted = await extractPdfText(filePath);
 
-        log.totalPages += extracted.pageCount;
-        log.totalChars += extracted.text.length;
-        log.totalProcessed++;
-        processed++;
-      } catch (error: any) {
-        console.warn(`  Error processing ${fileName}: ${error.message}`);
-        log.totalFailed++;
-        failed++;
-      }
+          const result: ExtractedDocument = {
+            filePath,
+            fileName,
+            dataSetId: dsId,
+            text: extracted.text,
+            pageCount: extracted.pageCount,
+            metadata: extracted.metadata,
+            extractedAt: new Date().toISOString(),
+            method: "pdfjs",
+            fileType: "pdf",
+            fileSizeBytes: stats.size,
+          };
 
-      if ((processed + failed) % 100 === 0) {
-        saveLog(log);
-        console.log(`  Progress: ${processed} extracted, ${skipped} skipped, ${failed} failed, ${log.totalPages} pages, ${log.totalChars.toLocaleString()} chars`);
-      }
+          // Write to disk immediately, don't accumulate in memory
+          if (!fs.existsSync(dsOutputDir)) fs.mkdirSync(dsOutputDir, { recursive: true });
+          fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
+
+          log.totalPages += extracted.pageCount;
+          log.totalChars += extracted.text.length;
+          log.totalProcessed++;
+          processed++;
+        } catch (error: any) {
+          console.warn(`  Error processing ${fileName}: ${error.message}`);
+          log.totalFailed++;
+          failed++;
+        }
+
+        if ((processed + failed) % 100 === 0 && (processed + failed) > 0) {
+          saveLog(log);
+          console.log(`  Progress: ${processed} extracted, ${skipped} skipped, ${skippedOversize} oversize, ${failed} failed, ${log.totalPages} pages, ${log.totalChars.toLocaleString()} chars`);
+        }
+      });
     }
+
+    // Execute batch with concurrency limit
+    await Promise.all(batch.map(fn => limit(fn)));
   }
 
   saveLog(log);
@@ -232,6 +277,7 @@ export async function processDocuments(options: {
   console.log(`Total PDFs found: ${totalFiles}`);
   console.log(`Extracted: ${processed}`);
   console.log(`Skipped (already done): ${skipped}`);
+  console.log(`Skipped (oversize > ${maxFileSizeMB} MB): ${skippedOversize}`);
   console.log(`Failed: ${failed}`);
   console.log(`Total pages: ${log.totalPages}`);
   console.log(`Total text chars: ${log.totalChars.toLocaleString()}`);
@@ -253,6 +299,12 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.maxFiles = parseInt(args[++i], 10);
     } else if (args[i] === "--output" && args[i + 1]) {
       options.outputDir = args[++i];
+    } else if (args[i] === "--max-file-size-mb" && args[i + 1]) {
+      options.maxFileSizeMB = parseInt(args[++i], 10);
+    } else if (args[i] === "--max-concurrent-pdfs" && args[i + 1]) {
+      options.maxConcurrentPdfs = parseInt(args[++i], 10);
+    } else if (args[i] === "--no-skip-oversize") {
+      options.skipOversize = false;
     }
   }
 

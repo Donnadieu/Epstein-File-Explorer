@@ -93,44 +93,56 @@ export async function loadPersonsFromFile(filePath?: string): Promise<number> {
   let loaded = 0;
   let skipped = 0;
 
-  for (const person of rawPersons) {
+  // Process in batched transactions for atomicity + performance
+  const BATCH_SIZE = 100;
+  for (let batchStart = 0; batchStart < rawPersons.length; batchStart += BATCH_SIZE) {
+    const batch = rawPersons.slice(batchStart, batchStart + BATCH_SIZE);
     try {
-      const existing = await db
-        .select()
-        .from(persons)
-        .where(sql`LOWER(${persons.name}) = LOWER(${person.name})`)
-        .limit(1);
+      await db.transaction(async (tx) => {
+        for (const person of batch) {
+          try {
+            const existing = await tx
+              .select()
+              .from(persons)
+              .where(sql`LOWER(${persons.name}) = LOWER(${person.name})`)
+              .limit(1);
 
-      if (existing.length > 0) {
-        await db
-          .update(persons)
-          .set({
-            description: person.description || existing[0].description,
-            category: person.category || existing[0].category,
-            occupation: person.occupation || existing[0].occupation,
-            nationality: person.nationality || existing[0].nationality,
-            status: person.status || existing[0].status,
-            role: person.role || existing[0].role,
-          })
-          .where(eq(persons.id, existing[0].id));
-        skipped++;
-      } else {
-        await db.insert(persons).values({
-          name: person.name,
-          aliases: person.aliases.length > 0 ? person.aliases : null,
-          role: person.role || "Named individual",
-          description: person.description || `Named in Epstein files. ${person.occupation || ""}`.trim(),
-          status: person.status || "named",
-          nationality: person.nationality || "Unknown",
-          occupation: person.occupation || "Unknown",
-          documentCount: 0,
-          connectionCount: 0,
-          category: person.category || "associate",
-        });
-        loaded++;
-      }
+            if (existing.length > 0) {
+              await tx
+                .update(persons)
+                .set({
+                  description: person.description || existing[0].description,
+                  category: person.category || existing[0].category,
+                  occupation: person.occupation || existing[0].occupation,
+                  nationality: person.nationality || existing[0].nationality,
+                  status: person.status || existing[0].status,
+                  role: person.role || existing[0].role,
+                })
+                .where(eq(persons.id, existing[0].id));
+              skipped++;
+            } else {
+              await tx.insert(persons).values({
+                name: person.name,
+                aliases: person.aliases.length > 0 ? person.aliases : null,
+                role: person.role || "Named individual",
+                description: person.description || `Named in Epstein files. ${person.occupation || ""}`.trim(),
+                status: person.status || "named",
+                nationality: person.nationality || "Unknown",
+                occupation: person.occupation || "Unknown",
+                documentCount: 0,
+                connectionCount: 0,
+                category: person.category || "associate",
+              });
+              loaded++;
+            }
+          } catch (error: any) {
+            console.warn(`  Error loading ${person.name}: ${error.message}`);
+          }
+        }
+      });
     } catch (error: any) {
-      console.warn(`  Error loading ${person.name}: ${error.message}`);
+      console.warn(`  Transaction failed for persons batch ${batchStart}-${batchStart + batch.length}: ${error.message}`);
+      // Batch failed atomically — no partial data from this batch
     }
   }
 
@@ -151,31 +163,36 @@ export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<nu
   let loaded = 0;
 
   for (const dataSet of catalog.dataSets) {
-    // Skip data set overview entries — they're directory pages, not actual documents
-    for (const file of dataSet.files) {
-      const fileExisting = await db
-        .select()
-        .from(documents)
-        .where(sql`${documents.sourceUrl} = ${file.url}`)
-        .limit(1);
+    try {
+      await db.transaction(async (tx) => {
+        for (const file of dataSet.files) {
+          const fileExisting = await tx
+            .select()
+            .from(documents)
+            .where(sql`${documents.sourceUrl} = ${file.url}`)
+            .limit(1);
 
-      if (fileExisting.length > 0) continue;
+          if (fileExisting.length > 0) continue;
 
-      try {
-        await db.insert(documents).values({
-          title: file.title || path.basename(file.url),
-          description: `File from ${dataSet.name}: ${file.title || file.url}`,
-          documentType: mapFileTypeToDocType(file.fileType),
-          dataSet: String(dataSet.id),
-          sourceUrl: file.url,
-          datePublished: "2026-01-30",
-          isRedacted: true,
-          tags: [file.fileType, `data-set-${dataSet.id}`],
-        });
-        loaded++;
-      } catch {
-        /* skip duplicates */
-      }
+          try {
+            await tx.insert(documents).values({
+              title: file.title || path.basename(file.url),
+              description: `File from ${dataSet.name}: ${file.title || file.url}`,
+              documentType: mapFileTypeToDocType(file.fileType),
+              dataSet: String(dataSet.id),
+              sourceUrl: file.url,
+              datePublished: "2026-01-30",
+              isRedacted: true,
+              tags: [file.fileType, `data-set-${dataSet.id}`],
+            });
+            loaded++;
+          } catch {
+            /* skip duplicates */
+          }
+        }
+      });
+    } catch (error: any) {
+      console.warn(`  Transaction failed for data set ${dataSet.id}: ${error.message}`);
     }
   }
 

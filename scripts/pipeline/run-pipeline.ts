@@ -36,6 +36,9 @@ interface PipelineConfig {
   batchSize?: number;
   concurrency?: number;
   retryFailed?: boolean;
+  dryRun?: boolean;
+  maxFileSizeMB?: number;
+  maxConcurrentPdfs?: number;
 }
 
 const STAGES = [
@@ -110,6 +113,9 @@ OPTIONS:
   --priority 3         Minimum priority level for analyze-priority (1-5, default: 1)
   --batch-size 20      Number of documents per batch (default: 50)
   --concurrency 4      Max parallel operations (default: 1)
+  --dry-run            Preview what would be processed without executing (analyze-ai)
+  --max-file-size-mb N Skip PDFs larger than N MB (default: 256, process stage)
+  --max-concurrent-pdfs N  Max parallel PDF extractions (default: 4)
 
 EXAMPLES:
   # Quick start: populate database with Wikipedia data
@@ -182,6 +188,8 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           fileTypes: config.fileTypes?.map((t) =>
             t.startsWith(".") ? t : `.${t}`,
           ),
+          maxFileSizeMB: config.maxFileSizeMB,
+          maxConcurrentPdfs: config.maxConcurrentPdfs,
         });
         break;
 
@@ -195,6 +203,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           delayMs: config.concurrency && config.concurrency > 1 ? 500 : 1500,
           minPriority: config.priority ?? 1,
           budget: config.budget,
+          dryRun: config.dryRun,
         });
         break;
 
@@ -276,6 +285,12 @@ async function main() {
       config.concurrency = parseInt(args[++i], 10);
     } else if (arg === "--retry-failed") {
       config.retryFailed = true;
+    } else if (arg === "--dry-run") {
+      config.dryRun = true;
+    } else if (arg === "--max-file-size-mb" && args[i + 1]) {
+      config.maxFileSizeMB = parseInt(args[++i], 10);
+    } else if (arg === "--max-concurrent-pdfs" && args[i + 1]) {
+      config.maxConcurrentPdfs = parseInt(args[++i], 10);
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {

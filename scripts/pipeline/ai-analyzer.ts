@@ -711,6 +711,7 @@ export async function runAIAnalysis(options: {
   delayMs?: number;
   minPriority?: number;
   budget?: number;
+  dryRun?: boolean;
 } = {}): Promise<AIAnalysisResult[]> {
   const {
     inputDir = EXTRACTED_DIR,
@@ -721,6 +722,7 @@ export async function runAIAnalysis(options: {
     delayMs = 1500,
     minPriority = 1,
     budget,
+    dryRun = false,
   } = options;
 
   if (!fs.existsSync(outputDir)) {
@@ -734,6 +736,7 @@ export async function runAIAnalysis(options: {
   console.log(`Output: ${outputDir}`);
   console.log(`Invalid AI responses: ${invalidOutputDir}`);
   console.log(`Min priority: ${minPriority}${budget ? `, Budget: ${budget} cents ($${(budget / 100).toFixed(2)})` : ""}`);
+  if (dryRun) console.log(`*** DRY RUN — no API calls will be made ***`);
 
   // Phase 1: Scan for file paths only (no text loaded) to avoid OOM
   const filePaths: { fullPath: string; file: string; dataSet: string }[] = [];
@@ -784,6 +787,57 @@ export async function runAIAnalysis(options: {
 
   const toProcess = limit ? candidates.slice(0, limit) : candidates;
   console.log(`To analyze: ${toProcess.length} (skipping ${skipped} already analyzed, limit: ${limit ?? "none"})`);
+
+  // --- Dry run: estimate cost and exit without API calls ---
+  if (dryRun) {
+    let totalChars = 0;
+    let totalDocs = 0;
+    let skippedShortDry = 0;
+    let skippedPriorityDry = 0;
+
+    for (const entry of toProcess) {
+      try {
+        const data = JSON.parse(fs.readFileSync(entry.fullPath, "utf-8"));
+        if (!data.text || data.text.length < minTextLength) {
+          skippedShortDry++;
+          continue;
+        }
+        const fileSizeBytes = data.fileSizeBytes ?? null;
+        const mediaType = data.fileType?.toLowerCase().includes("pdf") ? "pdf" as const : "pdf" as const;
+        const priority = getAIPriority(entry.dataSet, fileSizeBytes, mediaType);
+        if (priority < minPriority) {
+          skippedPriorityDry++;
+          continue;
+        }
+        totalChars += data.text.length;
+        totalDocs++;
+      } catch {
+        /* skip unreadable */
+      }
+    }
+
+    // Rough token estimate: ~4 chars per token for English text
+    const estimatedInputTokens = totalChars / 4;
+    // Assume ~500 output tokens per document (structured JSON response)
+    const estimatedOutputTokens = totalDocs * 500;
+    const estimatedCostCents =
+      (estimatedInputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M +
+      (estimatedOutputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
+
+    console.log("\n=== DRY RUN Summary ===");
+    console.log(`Documents that would be analyzed: ${totalDocs}`);
+    console.log(`Skipped (short text): ${skippedShortDry}`);
+    console.log(`Skipped (low priority): ${skippedPriorityDry}`);
+    console.log(`Total text chars: ${totalChars.toLocaleString()}`);
+    console.log(`Estimated input tokens: ~${Math.round(estimatedInputTokens).toLocaleString()}`);
+    console.log(`Estimated output tokens: ~${Math.round(estimatedOutputTokens).toLocaleString()}`);
+    console.log(`Estimated cost: ~${estimatedCostCents.toFixed(2)} cents ($${(estimatedCostCents / 100).toFixed(4)})`);
+    if (budget) {
+      console.log(`Budget: ${budget} cents — ${estimatedCostCents <= budget ? "within budget" : "EXCEEDS budget by " + (estimatedCostCents - budget).toFixed(2) + " cents"}`);
+    }
+    console.log(`\nRe-run without --dry-run to execute.`);
+    return [];
+  }
 
   // Phase 3: Process one at a time, loading text lazily
   const results: AIAnalysisResult[] = [];
@@ -892,6 +946,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.budget = parseInt(args[++i], 10);
     } else if (args[i] === "--no-skip") {
       options.skipExisting = false;
+    } else if (args[i] === "--dry-run") {
+      options.dryRun = true;
     }
   }
 
