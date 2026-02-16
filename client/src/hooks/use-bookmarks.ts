@@ -20,6 +20,8 @@ export function useBookmarks() {
     },
   });
 
+  const cacheKey = [...BOOKMARKS_KEY, clientId];
+
   const createMutation = useMutation({
     mutationFn: async (params: {
       entityType: "person" | "document" | "search";
@@ -30,7 +32,25 @@ export function useBookmarks() {
       const res = await apiRequest("POST", "/api/bookmarks", { ...params, userId: clientId });
       return res.json() as Promise<Bookmark>;
     },
-    onSuccess: () => {
+    onMutate: async (params) => {
+      await queryClient.cancelQueries({ queryKey: cacheKey });
+      const previous = queryClient.getQueryData<Bookmark[]>(cacheKey);
+      const optimistic: Bookmark = {
+        id: -Date.now(),
+        userId: clientId,
+        entityType: params.entityType,
+        entityId: params.entityId ?? null,
+        searchQuery: params.searchQuery ?? null,
+        label: params.label ?? null,
+        createdAt: new Date(),
+      };
+      queryClient.setQueryData<Bookmark[]>(cacheKey, (old = []) => [...old, optimistic]);
+      return { previous };
+    },
+    onError: (_err, _vars, context) => {
+      if (context?.previous) queryClient.setQueryData(cacheKey, context.previous);
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: BOOKMARKS_KEY });
     },
   });
@@ -39,7 +59,16 @@ export function useBookmarks() {
     mutationFn: async (id: number) => {
       await apiRequest("DELETE", `/api/bookmarks/${id}`);
     },
-    onSuccess: () => {
+    onMutate: async (id) => {
+      await queryClient.cancelQueries({ queryKey: cacheKey });
+      const previous = queryClient.getQueryData<Bookmark[]>(cacheKey);
+      queryClient.setQueryData<Bookmark[]>(cacheKey, (old = []) => old.filter((b) => b.id !== id));
+      return { previous };
+    },
+    onError: (_err, _vars, context) => {
+      if (context?.previous) queryClient.setQueryData(cacheKey, context.previous);
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: BOOKMARKS_KEY });
     },
   });
