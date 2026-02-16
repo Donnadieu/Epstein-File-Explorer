@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
@@ -27,9 +27,10 @@ import {
   FileText,
   Users,
   Link2,
+  Focus,
 } from "lucide-react";
 import type { Person, Connection } from "@shared/schema";
-import NetworkGraph, { categoryColors } from "@/components/network-graph";
+import NetworkGraph, { getCategoryColor } from "@/components/network-graph";
 
 interface NetworkData {
   persons: Person[];
@@ -49,11 +50,10 @@ const connectionTypeColors: Record<string, string> = {
   "victim testimony": "bg-chart-4/10 text-chart-4",
 };
 
-const ALL_CATEGORIES = ["key figure", "associate", "victim", "witness", "legal", "political"];
-
 function FilterControls({
   searchQuery,
   setSearchQuery,
+  allCategories,
   activeCategories,
   toggleCategory,
   activeConnectionTypes,
@@ -61,12 +61,16 @@ function FilterControls({
   connectionTypes,
   keyword,
   setKeyword,
+  minConnections,
+  setMinConnections,
+  maxConnections,
   timeRange,
   setTimeRange,
   yearRange,
 }: {
   searchQuery: string;
   setSearchQuery: (v: string) => void;
+  allCategories: string[];
   activeCategories: Set<string>;
   toggleCategory: (cat: string) => void;
   activeConnectionTypes: Set<string>;
@@ -74,6 +78,9 @@ function FilterControls({
   connectionTypes: string[];
   keyword: string;
   setKeyword: (v: string) => void;
+  minConnections: number;
+  setMinConnections: (v: number) => void;
+  maxConnections: number;
   timeRange: [number, number] | null;
   setTimeRange: (v: [number, number]) => void;
   yearRange: [number, number] | null;
@@ -104,7 +111,7 @@ function FilterControls({
           Categories
         </Label>
         <div className="flex flex-col gap-1.5">
-          {ALL_CATEGORIES.map((cat) => (
+          {allCategories.map((cat) => (
             <label key={cat} className="flex items-center gap-2 cursor-pointer py-0.5">
               <Checkbox
                 checked={activeCategories.has(cat)}
@@ -112,13 +119,35 @@ function FilterControls({
               />
               <span
                 className="w-2 h-2 rounded-full shrink-0"
-                style={{ backgroundColor: categoryColors[cat] || categoryColors.associate }}
+                style={{ backgroundColor: getCategoryColor(cat) }}
               />
               <span className="text-sm capitalize">{cat}</span>
             </label>
           ))}
         </div>
       </div>
+
+      {/* Min connections slider */}
+      {maxConnections > 1 && (
+        <div>
+          <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+            Min. Connections: {minConnections}
+          </Label>
+          <div className="px-1">
+            <Slider
+              min={1}
+              max={maxConnections}
+              step={1}
+              value={[minConnections]}
+              onValueChange={(v) => setMinConnections(v[0])}
+            />
+          </div>
+          <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+            <span>1</span>
+            <span>{maxConnections}</span>
+          </div>
+        </div>
+      )}
 
       {/* Connection type checkboxes */}
       <div>
@@ -180,9 +209,11 @@ function FilterControls({
 export default function NetworkPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPerson, setSelectedPerson] = useState<number | null>(null);
-  const [activeCategories, setActiveCategories] = useState<Set<string>>(new Set(ALL_CATEGORIES));
+  const [focusedNode, setFocusedNode] = useState<number | null>(null);
+  const [activeCategories, setActiveCategories] = useState<Set<string>>(new Set());
   const [activeConnectionTypes, setActiveConnectionTypes] = useState<Set<string> | null>(null);
   const [keyword, setKeyword] = useState("");
+  const [minConnections, setMinConnections] = useState(1);
   const [timeRange, setTimeRange] = useState<[number, number] | null>(null);
   const [graphReady, setGraphReady] = useState(false);
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
@@ -191,6 +222,19 @@ export default function NetworkPage() {
     queryKey: ["/api/network"],
     staleTime: 300_000,
   });
+
+  // Derive all categories from data
+  const allCategories = useMemo(() => {
+    if (!data) return [];
+    return Array.from(new Set(data.persons.map((p) => p.category))).sort();
+  }, [data]);
+
+  // Initialize activeCategories when allCategories arrives
+  useEffect(() => {
+    if (allCategories.length > 0 && activeCategories.size === 0) {
+      setActiveCategories(new Set(allCategories));
+    }
+  }, [allCategories, activeCategories.size]);
 
   // Initialize connection type filter and time range when data arrives
   const connectionTypes = useMemo(() => {
@@ -212,17 +256,23 @@ export default function NetworkPage() {
   const effectiveConnectionTypes = activeConnectionTypes ?? new Set(connectionTypes);
 
   // Filter chain
-  // 1. Time range → filter persons
+  // 0. Only persons mentioned in documents
+  const docPersons = useMemo(() => {
+    if (!data) return [];
+    return data.persons.filter((p) => (p.documentCount ?? 0) > 0);
+  }, [data]);
+
+  // 1. Time range -> filter persons
   const timeFilteredPersons = useMemo(() => {
-    if (!data || !timeRange) return data?.persons ?? [];
-    return data.persons.filter((p) => {
-      const years = data.personYears[p.id];
-      if (!years) return true; // no timeline data = keep
+    if (!timeRange) return docPersons;
+    return docPersons.filter((p) => {
+      const years = data?.personYears[p.id];
+      if (!years) return true;
       return years[1] >= timeRange[0] && years[0] <= timeRange[1];
     });
-  }, [data, timeRange]);
+  }, [docPersons, data, timeRange]);
 
-  // 2. Category → filter persons
+  // 2. Category -> filter persons
   const categoryFilteredPersons = useMemo(() => {
     return timeFilteredPersons.filter((p) => activeCategories.has(p.category));
   }, [timeFilteredPersons, activeCategories]);
@@ -232,7 +282,7 @@ export default function NetworkPage() {
     [categoryFilteredPersons],
   );
 
-  // 3. Connection type → filter connections
+  // 3. Connection type -> filter connections
   const typeFilteredConnections = useMemo(() => {
     if (!data) return [];
     return data.connections.filter(
@@ -243,7 +293,7 @@ export default function NetworkPage() {
     );
   }, [data, effectiveConnectionTypes, categoryPersonIds]);
 
-  // 4. Keyword → filter connections by description
+  // 4. Keyword -> filter connections by description
   const keywordFilteredConnections = useMemo(() => {
     if (!keyword) return typeFilteredConnections;
     const kw = keyword.toLowerCase();
@@ -254,25 +304,45 @@ export default function NetworkPage() {
 
   // 5. Derive persons from remaining connections
   const filteredConnections = keywordFilteredConnections;
+  const connCountPerPerson = useMemo(() => {
+    const counts: Record<number, number> = {};
+    filteredConnections.forEach((c) => {
+      counts[c.personId1] = (counts[c.personId1] || 0) + 1;
+      counts[c.personId2] = (counts[c.personId2] || 0) + 1;
+    });
+    return counts;
+  }, [filteredConnections]);
+
+  // 6. Apply min connections filter
   const graphPersons = useMemo(() => {
     const ids = new Set<number>();
     filteredConnections.forEach((c) => {
       ids.add(c.personId1);
       ids.add(c.personId2);
     });
-    return categoryFilteredPersons.filter((p) => ids.has(p.id));
-  }, [categoryFilteredPersons, filteredConnections]);
+    return categoryFilteredPersons.filter(
+      (p) => ids.has(p.id) && (connCountPerPerson[p.id] || 0) >= minConnections,
+    );
+  }, [categoryFilteredPersons, filteredConnections, connCountPerPerson, minConnections]);
 
-  // Document count from connections
+  // Re-filter connections to only include edges where both endpoints survived minConnections
+  const graphPersonIds = useMemo(() => new Set(graphPersons.map((p) => p.id)), [graphPersons]);
+  const graphConnections = useMemo(() => {
+    return filteredConnections.filter(
+      (c) => graphPersonIds.has(c.personId1) && graphPersonIds.has(c.personId2),
+    );
+  }, [filteredConnections, graphPersonIds]);
+
+  // Max connections for slider range
+  const maxConnections = useMemo(() => {
+    const vals = Object.values(connCountPerPerson);
+    return vals.length > 0 ? Math.max(...vals) : 1;
+  }, [connCountPerPerson]);
+
+  // Document count: sum of documentCount across visible persons
   const totalDocs = useMemo(() => {
-    const docIds = new Set<number>();
-    filteredConnections.forEach((c) => {
-      if (c.documentIds) {
-        for (const id of c.documentIds) docIds.add(id);
-      }
-    });
-    return docIds.size;
-  }, [filteredConnections]);
+    return graphPersons.reduce((sum, p) => sum + (p.documentCount ?? 0), 0);
+  }, [graphPersons]);
 
   // Selected person details
   const selectedPersonData = useMemo(() => {
@@ -282,13 +352,23 @@ export default function NetworkPage() {
 
   const selectedPersonConnections = useMemo(() => {
     if (!data || selectedPerson === null) return [];
-    return filteredConnections.filter(
+    return graphConnections.filter(
       (c) => c.personId1 === selectedPerson || c.personId2 === selectedPerson,
     );
-  }, [data, filteredConnections, selectedPerson]);
+  }, [data, graphConnections, selectedPerson]);
+
+  // Focused person name
+  const focusedPersonName = useMemo(() => {
+    if (!data || focusedNode === null) return null;
+    return data.persons.find((p) => p.id === focusedNode)?.name ?? null;
+  }, [data, focusedNode]);
 
   const handleSelectPerson = useCallback((id: number | null) => {
     setSelectedPerson(id);
+  }, []);
+
+  const handleFocusNode = useCallback((id: number | null) => {
+    setFocusedNode(id);
   }, []);
 
   const handleGraphReady = useCallback(() => {
@@ -325,21 +405,22 @@ export default function NetworkPage() {
     setGraphReady(false);
   }, []);
 
+  const handleMinConnectionsChange = useCallback((v: number) => {
+    setMinConnections(v);
+    setGraphReady(false);
+  }, []);
+
   // Mobile list data: persons sorted by connection count
   const mobileListPersons = useMemo(() => {
-    const counts: Record<number, number> = {};
-    filteredConnections.forEach((c) => {
-      counts[c.personId1] = (counts[c.personId1] || 0) + 1;
-      counts[c.personId2] = (counts[c.personId2] || 0) + 1;
-    });
     return graphPersons
-      .map((p) => ({ ...p, connCount: counts[p.id] || 0 }))
+      .map((p) => ({ ...p, connCount: connCountPerPerson[p.id] || 0 }))
       .sort((a, b) => b.connCount - a.connCount);
-  }, [graphPersons, filteredConnections]);
+  }, [graphPersons, connCountPerPerson]);
 
   const filterProps = {
     searchQuery,
     setSearchQuery,
+    allCategories,
     activeCategories,
     toggleCategory,
     activeConnectionTypes: effectiveConnectionTypes,
@@ -347,6 +428,9 @@ export default function NetworkPage() {
     connectionTypes,
     keyword,
     setKeyword: handleKeywordChange,
+    minConnections,
+    setMinConnections: handleMinConnectionsChange,
+    maxConnections,
     timeRange,
     setTimeRange: handleTimeRangeChange,
     yearRange,
@@ -395,12 +479,24 @@ export default function NetworkPage() {
           </Badge>
           <Badge variant="secondary" className="gap-1.5 text-xs font-normal">
             <Link2 className="w-3 h-3" />
-            {filteredConnections.length} Connections
+            {graphConnections.length} Connections
           </Badge>
           <Badge variant="secondary" className="gap-1.5 text-xs font-normal">
             <FileText className="w-3 h-3" />
             {totalDocs} Documents
           </Badge>
+          {focusedPersonName && (
+            <Badge variant="default" className="gap-1.5 text-xs font-normal">
+              <Focus className="w-3 h-3" />
+              Focused: {focusedPersonName}
+              <button
+                onClick={() => setFocusedNode(null)}
+                className="ml-1 hover:text-primary-foreground/80"
+              >
+                <X className="w-3 h-3" />
+              </button>
+            </Badge>
+          )}
           {selectedPerson && (
             <Button variant="ghost" size="sm" onClick={() => setSelectedPerson(null)} className="ml-auto h-7 text-xs" data-testid="button-clear-person">
               <X className="w-3 h-3 mr-1" />
@@ -439,10 +535,12 @@ export default function NetworkPage() {
               )}
               <NetworkGraph
                 persons={graphPersons}
-                connections={filteredConnections}
+                connections={graphConnections}
                 searchQuery={searchQuery}
                 selectedPersonId={selectedPerson}
+                focusedNodeId={focusedNode}
                 onSelectPerson={handleSelectPerson}
+                onFocusNode={handleFocusNode}
                 onReady={handleGraphReady}
               />
             </div>
@@ -463,7 +561,7 @@ export default function NetworkPage() {
                       <div className="flex items-center gap-1.5 mt-0.5">
                         <span
                           className="w-2 h-2 rounded-full"
-                          style={{ backgroundColor: categoryColors[selectedPersonData.category] || categoryColors.associate }}
+                          style={{ backgroundColor: getCategoryColor(selectedPersonData.category) }}
                         />
                         <span className="text-[10px] text-muted-foreground capitalize">
                           {selectedPersonData.category}
@@ -524,7 +622,7 @@ export default function NetworkPage() {
               const isExpanded = selectedPerson === person.id;
               const initials = person.name.split(" ").map((n) => n[0]).join("").slice(0, 2);
               const personConns = isExpanded
-                ? filteredConnections.filter(
+                ? graphConnections.filter(
                     (c) => c.personId1 === person.id || c.personId2 === person.id,
                   )
                 : [];
@@ -548,7 +646,7 @@ export default function NetworkPage() {
                     </div>
                     <span
                       className="w-2.5 h-2.5 rounded-full shrink-0"
-                      style={{ backgroundColor: categoryColors[person.category] || categoryColors.associate }}
+                      style={{ backgroundColor: getCategoryColor(person.category) }}
                     />
                     <ChevronRight
                       className={`w-4 h-4 text-muted-foreground transition-transform ${isExpanded ? "rotate-90" : ""}`}
