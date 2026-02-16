@@ -53,8 +53,8 @@ describe("normalizeName", () => {
     expect(normalizeName("Mrs. Jane Doe")).toBe("jane doe");
   });
 
-  it("strips suffixes (Jr, Sr, II, III, IV)", () => {
-    expect(normalizeName("John Smith Jr.")).toBe("john smith");
+  it("strips suffixes (II, III, IV) but keeps Jr/Sr to prevent false deduplication", () => {
+    expect(normalizeName("John Smith Jr.")).toBe("john smith jr");
     expect(normalizeName("William Gates III")).toBe("william gates");
   });
 
