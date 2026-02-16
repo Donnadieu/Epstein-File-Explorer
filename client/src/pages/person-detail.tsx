@@ -21,10 +21,13 @@ import {
   Sparkles,
   BookOpen,
   ChevronRight,
+  Bookmark,
+  BookmarkCheck,
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
 import { useTrackView } from "@/hooks/use-track-view";
+import { useBookmarks } from "@/hooks/use-bookmarks";
 import type { Person, Document, Connection, TimelineEvent, ProfileSection } from "@shared/schema";
 
 interface PersonAIMentions {
@@ -54,6 +57,7 @@ const categoryColors: Record<string, string> = {
 export default function PersonDetail() {
   const params = useParams<{ id: string }>();
   useTrackView("person", params.id);
+  const { isBookmarked, toggleBookmark } = useBookmarks();
 
   const { data: person, isLoading } = useQuery<PersonDetail>({
     queryKey: ["/api/persons", params.id],
@@ -125,9 +129,24 @@ export default function PersonDetail() {
                 </p>
               )}
             </div>
-            <Badge variant="secondary" className={`${categoryColors[person.category] || ""}`}>
-              {person.category}
-            </Badge>
+            <div className="flex items-center gap-1.5">
+              <Badge variant="secondary" className={`${categoryColors[person.category] || ""}`}>
+                {person.category}
+              </Badge>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={() => toggleBookmark("person", person.id, undefined, person.name)}
+                aria-label={isBookmarked("person", person.id) ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
+              >
+                {isBookmarked("person", person.id) ? (
+                  <BookmarkCheck className="w-4 h-4 text-primary" />
+                ) : (
+                  <Bookmark className="w-4 h-4 text-muted-foreground" />
+                )}
+              </Button>
+            </div>
           </div>
 
           <div className="flex items-center gap-4 flex-wrap text-sm text-muted-foreground">
