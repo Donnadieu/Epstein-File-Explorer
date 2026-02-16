@@ -1,16 +1,8 @@
 import { useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { getClientId } from "@/lib/client-id";
 import type { Bookmark } from "@shared/schema";
-
-function getClientId(): string {
-  let id = localStorage.getItem("epstein_client_id");
-  if (!id) {
-    id = crypto.randomUUID();
-    localStorage.setItem("epstein_client_id", id);
-  }
-  return id;
-}
 
 const BOOKMARKS_KEY = ["/api/bookmarks"];
 

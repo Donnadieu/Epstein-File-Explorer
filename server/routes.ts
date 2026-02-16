@@ -73,6 +73,48 @@ export async function registerRoutes(
     }
   });
 
+  app.post("/api/views", async (req, res) => {
+    try {
+      const { entityType, entityId, sessionId } = req.body;
+      if (!entityType || !["person", "document"].includes(entityType)) {
+        return res.status(400).json({ error: "entityType must be 'person' or 'document'" });
+      }
+      if (!entityId || typeof entityId !== "number" || entityId < 1) {
+        return res.status(400).json({ error: "entityId must be a positive integer" });
+      }
+      if (!sessionId || typeof sessionId !== "string" || sessionId.length > 100) {
+        return res.status(400).json({ error: "sessionId is required" });
+      }
+      await storage.recordPageView(entityType, entityId, sessionId);
+      res.status(204).end();
+    } catch (error) {
+      console.warn("Failed to record page view:", error);
+      res.status(204).end();
+    }
+  });
+
+  app.get("/api/trending/persons", async (req, res) => {
+    try {
+      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 6));
+      const persons = await storage.getTrendingPersons(limit);
+      res.set("Cache-Control", "public, max-age=300");
+      res.json(persons);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch trending persons" });
+    }
+  });
+
+  app.get("/api/trending/documents", async (req, res) => {
+    try {
+      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const documents = await storage.getTrendingDocuments(limit);
+      res.set("Cache-Control", "public, max-age=300");
+      res.json(documents.map(omitInternal));
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch trending documents" });
+    }
+  });
+
   /**
    * GET /api/persons
    * Without ?page: returns Person[] (full array)

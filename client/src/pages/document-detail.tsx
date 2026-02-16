@@ -30,6 +30,7 @@ import {
   BookmarkCheck,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
+import { useTrackView } from "@/hooks/use-track-view";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { ImportanceVoteButton } from "@/components/importance-vote-button";
@@ -79,6 +80,7 @@ interface DocumentDetail extends Document {
 
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
+  useTrackView("document", params.id);
   const [, navigate] = useLocation();
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const searchParams = new URLSearchParams(window.location.search);
