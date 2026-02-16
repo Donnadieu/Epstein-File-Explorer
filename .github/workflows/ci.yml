@@ -73,6 +73,11 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Push database schema
+        run: npm run db:push
+        env:
+          DATABASE_URL: postgresql://postgres:test_password@localhost:5432/epstein_test
+
       - name: Build application
         run: npm run build
 
@@ -83,6 +88,7 @@ jobs:
           NODE_ENV: production
           PORT: "5000"
           BASE_URL: http://localhost:5000
+          CI: "true"
 
       - name: Upload test results
         if: failure()
