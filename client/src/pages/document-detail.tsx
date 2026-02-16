@@ -295,7 +295,7 @@ export default function DocumentDetailPage() {
             if (pt.pageType) typeCounts.set(pt.pageType, (typeCounts.get(pt.pageType) || 0) + 1);
           }
           if (typeCounts.size <= 1) return null;
-          const sorted = [...typeCounts.entries()].sort((a, b) => b[1] - a[1]);
+          const sorted = Array.from(typeCounts.entries()).sort((a, b) => b[1] - a[1]);
           return (
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-xs text-muted-foreground font-medium">Contains:</span>

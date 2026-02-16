@@ -58,7 +58,7 @@ export function NavActions() {
                 rel="noopener noreferrer"
                 data-testid={link.testId}
               >
-                <link.icon className={`h-4 w-4 ${link.iconClass ?? ""}`} />
+                <link.icon className={`h-4 w-4 ${"iconClass" in link ? link.iconClass : ""}`} />
               </a>
             </Button>
           </TooltipTrigger>
