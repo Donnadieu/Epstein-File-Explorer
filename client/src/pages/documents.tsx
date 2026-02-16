@@ -24,8 +24,11 @@ import {
   Video,
   LayoutGrid,
   List,
+  Bookmark,
+  BookmarkCheck,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
+import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useVideoPlayer } from "@/hooks/use-video-player";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
@@ -131,6 +134,7 @@ function DocumentCardSkeleton({ index }: { index: number }) {
 
 export default function DocumentsPage() {
   const videoPlayer = useVideoPlayer();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
 
   const [filters, setFilter, resetFilters] = useUrlFilters({
     search: "",
@@ -319,72 +323,92 @@ export default function DocumentsPage() {
                   ? { onClick: () => videoPlayer.open(doc) }
                   : { href: `/documents/${doc.id}` };
                 return (
-                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
-                    <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
-                      <CardContent className="p-4">
-                        <div className="flex items-start gap-3">
-                          <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
-                            <Icon className="w-5 h-5 text-muted-foreground" />
-                          </div>
-                          <div className="flex flex-col gap-1 min-w-0 flex-1">
-                            <div className="flex items-start justify-between gap-2">
-                              <div className="flex items-center gap-2 min-w-0">
-                                <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
-                                {isNonDescriptiveTitle(doc.title) && (
-                                  <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                  <div key={doc.id} className="relative group">
+                    <Wrapper {...(wrapperProps as any)}>
+                      <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-3">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
+                              <Icon className="w-5 h-5 text-muted-foreground" />
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0 flex-1">
+                              <div className="flex items-start justify-between gap-2">
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
+                                  {isNonDescriptiveTitle(doc.title) && (
+                                    <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                                  )}
+                                </div>
+                                {doc.sourceUrl && (
+                                  <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="shrink-0"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                    }}
+                                    data-testid={`button-source-${doc.id}`}
+                                  >
+                                    <ExternalLink className="w-3 h-3" />
+                                  </Button>
                                 )}
                               </div>
-                              {doc.sourceUrl && (
-                                <Button
-                                  variant="ghost"
-                                  size="icon"
-                                  className="shrink-0"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
-                                  }}
-                                  data-testid={`button-source-${doc.id}`}
-                                >
-                                  <ExternalLink className="w-3 h-3" />
-                                </Button>
+                              {doc.description && (
+                                <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
                               )}
-                            </div>
-                            {doc.description && (
-                              <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
-                            )}
-                            {doc.keyExcerpt && (
-                              <p className="text-xs text-muted-foreground/80 italic line-clamp-1 mt-0.5">
-                                "{doc.keyExcerpt}"
-                              </p>
-                            )}
-                            <div className="flex items-center gap-2 flex-wrap mt-1.5">
-                              <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
-                              {doc.dataSet && (
-                                <Badge variant="secondary" className="text-[10px]">Set {doc.dataSet}</Badge>
+                              {doc.keyExcerpt && (
+                                <p className="text-xs text-muted-foreground/80 italic line-clamp-1 mt-0.5">
+                                  "{doc.keyExcerpt}"
+                                </p>
                               )}
-                              {doc.dateOriginal && (
-                                <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
-                                  <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                                </span>
-                              )}
-                              {doc.pageCount && (
-                                <span className="text-[10px] text-muted-foreground">{doc.pageCount} pages</span>
-                              )}
-                              {doc.isRedacted && (
-                                <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
-                                  Redacted
-                                </Badge>
-                              )}
-                              {doc.tags?.map((tag) => (
-                                <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
-                              ))}
+                              <div className="flex items-center gap-2 flex-wrap mt-1.5">
+                                <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+                                {doc.dataSet && (
+                                  <Badge variant="secondary" className="text-[10px]">Set {doc.dataSet}</Badge>
+                                )}
+                                {doc.dateOriginal && (
+                                  <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                                    <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                                  </span>
+                                )}
+                                {doc.pageCount && (
+                                  <span className="text-[10px] text-muted-foreground">{doc.pageCount} pages</span>
+                                )}
+                                {doc.isRedacted && (
+                                  <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
+                                    Redacted
+                                  </Badge>
+                                )}
+                                {doc.tags?.map((tag) => (
+                                  <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
+                                ))}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Wrapper>
+                        </CardContent>
+                      </Card>
+                    </Wrapper>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`absolute top-2 right-2 p-1.5 rounded-md transition-opacity ${
+                        isBookmarked("document", doc.id)
+                          ? "opacity-100 text-primary"
+                          : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
                 );
               })}
             </div>
@@ -397,21 +421,41 @@ export default function DocumentsPage() {
                   ? { onClick: () => videoPlayer.open(doc) }
                   : { href: `/documents/${doc.id}` };
                 return (
-                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
-                    <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
-                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
-                        <DocumentThumbnail doc={doc} />
+                  <div key={doc.id} className="relative group">
+                    <Wrapper {...(wrapperProps as any)}>
+                      <div className="cursor-pointer" data-testid={`grid-card-${doc.id}`}>
+                        <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
+                          <DocumentThumbnail doc={doc} />
+                        </div>
+                        <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
+                          {getDisplayTitle(doc)}
+                        </p>
+                        {doc.dateOriginal && (
+                          <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
+                            <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                          </span>
+                        )}
                       </div>
-                      <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
-                        {getDisplayTitle(doc)}
-                      </p>
-                      {doc.dateOriginal && (
-                        <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
-                          <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                        </span>
+                    </Wrapper>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`absolute top-1 right-1 p-1.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
+                        isBookmarked("document", doc.id)
+                          ? "opacity-100 text-primary"
+                          : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
                       )}
-                    </div>
-                  </Wrapper>
+                    </button>
+                  </div>
                 );
               })}
             </div>

@@ -187,19 +187,20 @@ export default function DocumentDetailPage() {
             </Button>
           </div>
         )}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8"
+            variant="outline"
+            size="sm"
+            className="gap-1"
             onClick={() => toggleBookmark("document", doc.id, undefined, doc.title)}
             aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
           >
             {isBookmarked("document", doc.id) ? (
               <BookmarkCheck className="w-4 h-4 text-primary" />
             ) : (
-              <Bookmark className="w-4 h-4 text-muted-foreground" />
+              <Bookmark className="w-4 h-4" />
             )}
+            {isBookmarked("document", doc.id) ? "Saved" : "Save"}
           </Button>
           <Link href={`/documents/compare?a=${doc.id}`}>
             <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
