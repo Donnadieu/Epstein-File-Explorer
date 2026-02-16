@@ -26,8 +26,11 @@ import {
   Video,
   Sparkles,
   ChevronDown,
+  Bookmark,
+  BookmarkCheck,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
+import { useBookmarks } from "@/hooks/use-bookmarks";
 import type { Document, Person, AIAnalysisDocument } from "@shared/schema";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
@@ -75,6 +78,7 @@ interface DocumentDetail extends Document {
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
   const [, navigate] = useLocation();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const searchParams = new URLSearchParams(window.location.search);
   const initialPage = parseInt(searchParams.get("page") || "1", 10) || 1;
 
@@ -176,11 +180,26 @@ export default function DocumentDetailPage() {
             </Button>
           </div>
         )}
-        <Link href={`/documents/compare?a=${doc.id}`}>
-          <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
-            <ArrowLeftRight className="w-4 h-4" /> Compare
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={() => toggleBookmark("document", doc.id, undefined, doc.title)}
+            aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+          >
+            {isBookmarked("document", doc.id) ? (
+              <BookmarkCheck className="w-4 h-4 text-primary" />
+            ) : (
+              <Bookmark className="w-4 h-4 text-muted-foreground" />
+            )}
           </Button>
-        </Link>
+          <Link href={`/documents/compare?a=${doc.id}`}>
+            <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
+              <ArrowLeftRight className="w-4 h-4" /> Compare
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="flex flex-col gap-4">
