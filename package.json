@@ -9,7 +9,12 @@
     "start": "NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
     "db:push": "drizzle-kit push",
-    "pipeline": "node dist/pipeline.cjs"
+    "pipeline": "node dist/pipeline.cjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.985.0",
@@ -92,9 +97,11 @@
     "zod-validation-error": "^3.5.4"
   },
   "devDependencies": {
-    "playwright": "^1.58.1",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/typography": "^0.5.15",
     "@tailwindcss/vite": "^4.1.18",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/connect-pg-simple": "^7.0.3",
     "@types/d3-drag": "^3.0.7",
     "@types/d3-force": "^3.0.10",
@@ -104,21 +111,28 @@
     "@types/d3-zoom": "^3.0.8",
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.0",
+    "@types/jsdom": "^27.0.0",
     "@types/node": "20.19.27",
     "@types/passport": "^1.0.16",
     "@types/passport-local": "^1.0.38",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "@types/supertest": "^6.0.3",
     "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/coverage-v8": "^4.0.18",
     "autoprefixer": "^10.4.20",
     "drizzle-kit": "^0.31.8",
     "esbuild": "^0.25.0",
+    "jsdom": "^27.0.1",
+    "playwright": "^1.58.1",
     "postcss": "^8.4.47",
+    "supertest": "^7.2.2",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.5",
     "typescript": "5.6.3",
-    "vite": "^7.3.0"
+    "vite": "^7.3.0",
+    "vitest": "^4.0.18"
   },
   "overrides": {
     "drizzle-kit": {
