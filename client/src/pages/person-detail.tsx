@@ -33,6 +33,9 @@ import {
   Sparkles,
   Users
 } from "lucide-react";
+import { useVideoPlayer } from "@/hooks/use-video-player";
+import { isVideoDocument } from "@/lib/document-utils";
+import { VideoPlayerModal } from "@/components/video-player-modal";
 import { Link, useParams } from "wouter";
 
 interface PersonAIMentions {
@@ -108,6 +111,8 @@ export default function PersonDetail() {
     .map((n) => n[0])
     .join("")
     .slice(0, 2);
+
+  const videoPlayer = useVideoPlayer();
 
   const allowedSections = new Set(["Summary", "Background"]);
   const profileSections = (
@@ -340,58 +345,51 @@ export default function PersonDetail() {
         <TabsContent value="documents" className="mt-4">
           {person.documents && person.documents.length > 0 ? (
             <div className="flex flex-col gap-2">
-              {person.documents.map((doc) => (
-                <Link key={doc.id} href={`/documents/${doc.id}`}>
-                  <Card
-                    className="hover-elevate cursor-pointer"
-                    data-testid={`card-doc-${doc.id}`}
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex items-center justify-center w-9 h-9 rounded-md bg-muted shrink-0">
-                          {doc.documentType === "court filing" ? (
-                            <Scale className="w-4 h-4 text-muted-foreground" />
-                          ) : doc.documentType === "fbi report" ? (
-                            <AlertTriangle className="w-4 h-4 text-muted-foreground" />
-                          ) : doc.documentType === "email" ? (
-                            <Mail className="w-4 h-4 text-muted-foreground" />
-                          ) : (
-                            <FileText className="w-4 h-4 text-muted-foreground" />
-                          )}
-                        </div>
-                        <div className="flex flex-col gap-1 min-w-0 flex-1">
-                          <span className="text-sm font-medium">
-                            {doc.title}
-                          </span>
-                          {doc.description && (
-                            <p className="text-xs text-muted-foreground line-clamp-2">
-                              {doc.description}
-                            </p>
-                          )}
-                          <div className="flex items-center gap-2 flex-wrap mt-1">
-                            <Badge variant="outline" className="text-[10px]">
-                              {doc.documentType}
-                            </Badge>
-                            {doc.dataSet && (
-                              <span className="text-[10px] text-muted-foreground">
-                                Data Set {doc.dataSet}
-                              </span>
-                            )}
-                            {doc.isRedacted && (
-                              <Badge
-                                variant="secondary"
-                                className="text-[10px] bg-destructive/10 text-destructive"
-                              >
-                                Redacted
-                              </Badge>
+              {person.documents.map((doc) => {
+                const isVideo = isVideoDocument(doc);
+                const Wrapper = isVideo ? "div" : Link;
+                const wrapperProps = isVideo
+                  ? { onClick: () => videoPlayer.open(doc) }
+                  : { href: `/documents/${doc.id}` };
+                return (
+                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
+                    <Card className="hover-elevate cursor-pointer" data-testid={`card-doc-${doc.id}`}>
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <div className="flex items-center justify-center w-9 h-9 rounded-md bg-muted shrink-0">
+                            {doc.documentType === "court filing" ? (
+                              <Scale className="w-4 h-4 text-muted-foreground" />
+                            ) : doc.documentType === "fbi report" ? (
+                              <AlertTriangle className="w-4 h-4 text-muted-foreground" />
+                            ) : doc.documentType === "email" ? (
+                              <Mail className="w-4 h-4 text-muted-foreground" />
+                            ) : (
+                              <FileText className="w-4 h-4 text-muted-foreground" />
                             )}
                           </div>
+                          <div className="flex flex-col gap-1 min-w-0 flex-1">
+                            <span className="text-sm font-medium">{doc.title}</span>
+                            {doc.description && (
+                              <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
+                            )}
+                            <div className="flex items-center gap-2 flex-wrap mt-1">
+                              <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+                              {doc.dataSet && (
+                                <span className="text-[10px] text-muted-foreground">Data Set {doc.dataSet}</span>
+                              )}
+                              {doc.isRedacted && (
+                                <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
+                                  Redacted
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
+                      </CardContent>
+                    </Card>
+                  </Wrapper>
+                );
+              })}
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-12 gap-2">
@@ -567,6 +565,8 @@ export default function PersonDetail() {
           </TabsContent>
         )}
       </Tabs>
+
+      <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
     </div>
   );
 }

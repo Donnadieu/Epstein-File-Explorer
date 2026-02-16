@@ -31,6 +31,9 @@ import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { SavedSearches } from "@/components/saved-searches";
+import { useVideoPlayer } from "@/hooks/use-video-player";
+import { isVideoDocument } from "@/lib/document-utils";
+import { VideoPlayerModal } from "@/components/video-player-modal";
 
 interface SearchResults {
   persons: Person[];
@@ -130,6 +133,8 @@ export default function SearchPage() {
   const handleHistorySelect = useCallback((term: string) => {
     setQuery(term);
   }, []);
+
+  const videoPlayer = useVideoPlayer();
 
   const searchIsBookmarked = isBookmarked("search", undefined, query);
 
@@ -288,7 +293,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} />
                   ))}
                 </div>
               )}
@@ -313,7 +318,7 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
-              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} />)}
+              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} />)}
               {(!data?.documents || data.documents.length === 0) && (
                 <EmptyState type="documents" query={query} />
               )}
@@ -405,6 +410,8 @@ export default function SearchPage() {
           </Tabs>
         </>
       )}
+
+      <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
     </div>
   );
 }
@@ -459,13 +466,14 @@ function PersonResult({ person, isBookmarked, toggleBookmark }: {
   );
 }
 
-function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount, onToggleVote }: {
+function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount, onToggleVote, onVideoClick }: {
   doc: Document;
   isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
   toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
   isVoted: boolean;
   voteCount: number;
   onToggleVote: (documentId: number) => void;
+  onVideoClick?: (doc: Document) => void;
 }) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
@@ -473,30 +481,43 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount,
     "fbi report": AlertTriangle,
   };
   const Icon = typeIcons[doc.documentType] || FileText;
+  const isVideo = isVideoDocument(doc);
+
+  const innerContent = (
+    <>
+      <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted shrink-0">
+        <Icon className="w-4 h-4 text-muted-foreground" />
+      </div>
+      <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+        <span className="text-sm font-medium">{doc.title}</span>
+        {doc.description && (
+          <p className="text-xs text-muted-foreground line-clamp-1">{doc.description}</p>
+        )}
+        <div className="flex items-center gap-1.5 mt-0.5">
+          <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+          {doc.isRedacted && (
+            <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
+              Redacted
+            </Badge>
+          )}
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <Card className="hover-elevate cursor-pointer group" data-testid={`result-document-${doc.id}`}>
       <CardContent className="p-3">
         <div className="flex items-start gap-3">
-          <Link href={`/documents/${doc.id}`} className="flex items-start gap-3 min-w-0 flex-1">
-            <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted shrink-0">
-              <Icon className="w-4 h-4 text-muted-foreground" />
+          {isVideo && onVideoClick ? (
+            <div onClick={() => onVideoClick(doc)} className="flex items-start gap-3 min-w-0 flex-1 cursor-pointer">
+              {innerContent}
             </div>
-            <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-              <span className="text-sm font-medium">{doc.title}</span>
-              {doc.description && (
-                <p className="text-xs text-muted-foreground line-clamp-1">{doc.description}</p>
-              )}
-              <div className="flex items-center gap-1.5 mt-0.5">
-                <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
-                {doc.isRedacted && (
-                  <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
-                    Redacted
-                  </Badge>
-                )}
-              </div>
-            </div>
-          </Link>
+          ) : (
+            <Link href={`/documents/${doc.id}`} className="flex items-start gap-3 min-w-0 flex-1">
+              {innerContent}
+            </Link>
+          )}
           <div className="flex items-center shrink-0">
             <ImportanceVoteButton
               documentId={doc.id}
