@@ -33,6 +33,7 @@ import {
   BookOpen,
   Image,
   Video,
+  Bookmark,
 } from "lucide-react";
 
 interface SidebarCounts {
@@ -154,6 +155,7 @@ export function AppSidebar() {
 
   const toolItems: NavItem[] = [
     { title: "Search", url: "/search", icon: Search },
+    { title: "Bookmarks", url: "/bookmarks", icon: Bookmark },
     { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
   ];
 
