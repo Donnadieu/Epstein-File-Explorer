@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -24,11 +24,13 @@ import {
   Video,
   LayoutGrid,
   List,
+  Star,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useVideoPlayer } from "@/hooks/use-video-player";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -178,6 +180,9 @@ export default function DocumentsPage() {
   const totalItems = result?.total || 0;
   const totalPages = result?.totalPages || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const documentIds = useMemo(() => (paginated || []).map((d) => d.id), [paginated]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(documentIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -334,21 +339,40 @@ export default function DocumentsPage() {
                                   <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
                                 )}
                               </div>
-                              {doc.sourceUrl && (
+                              <div className="flex items-center gap-0.5 shrink-0">
                                 <Button
                                   variant="ghost"
                                   size="icon"
-                                  className="shrink-0"
+                                  className={`h-7 w-7 ${isVoted(doc.id) ? "text-amber-500 hover:text-amber-600" : "text-muted-foreground hover:text-foreground"}`}
                                   onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
-                                    window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                    toggleVote(doc.id);
                                   }}
-                                  data-testid={`button-source-${doc.id}`}
+                                  aria-label={isVoted(doc.id) ? "Remove importance vote" : "Mark as important"}
+                                  data-testid={`vote-button-${doc.id}`}
                                 >
-                                  <ExternalLink className="w-3 h-3" />
+                                  <Star className={`w-3.5 h-3.5 ${isVoted(doc.id) ? "fill-current" : ""}`} />
                                 </Button>
-                              )}
+                                {getCount(doc.id) > 0 && (
+                                  <span className="text-[10px] font-medium text-amber-500">{getCount(doc.id)}</span>
+                                )}
+                                {doc.sourceUrl && (
+                                  <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="h-7 w-7 shrink-0"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                    }}
+                                    data-testid={`button-source-${doc.id}`}
+                                  >
+                                    <ExternalLink className="w-3 h-3" />
+                                  </Button>
+                                )}
+                              </div>
                             </div>
                             {doc.description && (
                               <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
@@ -398,9 +422,26 @@ export default function DocumentsPage() {
                   : { href: `/documents/${doc.id}` };
                 return (
                   <Wrapper key={doc.id} {...(wrapperProps as any)}>
-                    <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
+                    <div className="group cursor-pointer relative" data-testid={`grid-card-${doc.id}`}>
                       <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
                         <DocumentThumbnail doc={doc} />
+                      </div>
+                      <div className={`absolute top-1.5 right-1.5 flex items-center gap-0.5 transition-opacity ${isVoted(doc.id) ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleVote(doc.id);
+                          }}
+                          className={`p-1 rounded-md bg-background/80 backdrop-blur-sm shadow-sm ${isVoted(doc.id) ? "text-amber-500" : "text-muted-foreground hover:text-foreground"}`}
+                          aria-label={isVoted(doc.id) ? "Remove importance vote" : "Mark as important"}
+                          data-testid={`grid-vote-button-${doc.id}`}
+                        >
+                          <Star className={`w-3.5 h-3.5 ${isVoted(doc.id) ? "fill-current" : ""}`} />
+                        </button>
+                        {getCount(doc.id) > 0 && (
+                          <span className="text-[10px] font-medium text-amber-500 bg-background/80 backdrop-blur-sm rounded px-1">{getCount(doc.id)}</span>
+                        )}
                       </div>
                       <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
                         {getDisplayTitle(doc)}

@@ -24,9 +24,11 @@ import {
   ChevronLeft,
   ChevronRight,
   BookOpen,
+  Star,
 } from "lucide-react";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { SavedSearches } from "@/components/saved-searches";
 import { useVideoPlayer } from "@/hooks/use-video-player";
@@ -91,6 +93,9 @@ export default function SearchPage() {
       prevQueryRef.current = query;
     }
   }, [data, query, addSearch]);
+
+  const voteDocIds = useMemo(() => (data?.documents || []).map((d) => d.id), [data?.documents]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(voteDocIds);
 
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
@@ -288,7 +293,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} onVideoClick={videoPlayer.open} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} onVideoClick={videoPlayer.open} voted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} />
                   ))}
                 </div>
               )}
@@ -461,11 +466,14 @@ function PersonResult({ person, isBookmarked, toggleBookmark }: {
   );
 }
 
-function DocumentResult({ doc, isBookmarked, toggleBookmark, onVideoClick }: {
+function DocumentResult({ doc, isBookmarked, toggleBookmark, onVideoClick, voted, voteCount, onToggleVote }: {
   doc: Document;
   isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
   toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
   onVideoClick?: (doc: Document) => void;
+  voted?: boolean;
+  voteCount?: number;
+  onToggleVote?: (documentId: number) => void;
 }) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
@@ -510,20 +518,41 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark, onVideoClick }: {
               {innerContent}
             </Link>
           )}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleBookmark("document", doc.id, undefined, doc.title);
-            }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
-              bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
-            }`}
-            aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
-            data-testid={`bookmark-document-${doc.id}`}
-          >
-            {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
-          </button>
+          <div className="flex items-center gap-0.5 shrink-0">
+            {onToggleVote && (
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onToggleVote(doc.id);
+                }}
+                className={`p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
+                  voted ? "opacity-100 text-amber-500" : "text-muted-foreground hover:text-foreground"
+                }`}
+                aria-label={voted ? "Remove importance vote" : "Mark as important"}
+                data-testid={`vote-button-${doc.id}`}
+              >
+                <Star className={`w-4 h-4 ${voted ? "fill-current" : ""}`} />
+              </button>
+            )}
+            {(voteCount ?? 0) > 0 && (
+              <span className="text-[10px] font-medium text-amber-500">{voteCount}</span>
+            )}
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleBookmark("document", doc.id, undefined, doc.title);
+              }}
+              className={`p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
+                bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+              aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+              data-testid={`bookmark-document-${doc.id}`}
+            >
+              {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
       </CardContent>
     </Card>
