@@ -68,9 +68,6 @@ export default function PeoplePage() {
     staleTime: 600_000,
   });
 
-  const personIds = useMemo(() => persons?.map((p) => p.id) || [], [persons]);
-  const { isVoted, getCount, toggleVote } = usePersonVotes(personIds);
-
   const filtered = useMemo(() => {
     return persons
       ?.filter((p) => {
@@ -96,6 +93,9 @@ export default function PeoplePage() {
   const currentPage = Math.min(Math.max(1, parseInt(filters.page) || 1), totalPages);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginated = filtered?.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const pagePersonIds = useMemo(() => paginated?.map((p) => p.id) || [], [paginated]);
+  const { isVoted, getCount, toggleVote } = usePersonVotes(pagePersonIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
