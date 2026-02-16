@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
-import type { Person, Document, TimelineEvent } from "@shared/schema";
+import type { Person, Document } from "@shared/schema";
 
 function StatCard({
   icon: Icon,
@@ -154,12 +154,6 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const { data: allEvents, isLoading: eventsLoading } = useQuery<TimelineEvent[]>({
-    queryKey: ["/api/timeline"],
-    staleTime: 300_000,
-  });
-
-  const events = allEvents?.filter(e => e.significance >= 3).slice(-4);
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
@@ -269,40 +263,6 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
-          <div className="flex items-center justify-between gap-2">
-            <h2 className="text-lg font-semibold flex items-center gap-2">
-              <Clock className="w-4 h-4 text-primary" />
-              Key Events
-            </h2>
-            <Link href="/timeline">
-              <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-timeline">
-                Full timeline <ArrowRight className="w-3 h-3" />
-              </Button>
-            </Link>
-          </div>
-          <Card>
-            <CardContent className="p-4">
-              {eventsLoading ? (
-                <div className="flex flex-col gap-3">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <Skeleton key={i} className="h-12 w-full" />
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3">
-                  {events?.map((event) => (
-                    <div key={event.id} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                      <div className="flex flex-col gap-0.5 min-w-0">
-                        <span className="text-xs text-muted-foreground font-mono">{event.date}</span>
-                        <span className="text-sm font-medium">{event.title}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-          </Card>
         </div>
       </div>
 
