@@ -48,6 +48,9 @@ export function useImportanceVotes(documentIds: number[] = []) {
     enabled: sortedIds.length > 0,
   });
 
+  const votesQueryKey = [...VOTES_KEY, clientId];
+  const countsQueryKey = [...VOTE_COUNTS_KEY, idsKey];
+
   const createMutation = useMutation({
     mutationFn: async (documentId: number) => {
       const res = await apiRequest("POST", "/api/votes", {
@@ -56,17 +59,63 @@ export function useImportanceVotes(documentIds: number[] = []) {
       });
       return res.json() as Promise<DocumentVote>;
     },
-    onSuccess: () => {
+    onMutate: async (documentId: number) => {
+      await queryClient.cancelQueries({ queryKey: votesQueryKey });
+      await queryClient.cancelQueries({ queryKey: countsQueryKey });
+
+      const prevVotes = queryClient.getQueryData<DocumentVote[]>(votesQueryKey);
+      const prevCounts = queryClient.getQueryData<Record<number, number>>(countsQueryKey);
+
+      const optimisticVote: DocumentVote = {
+        id: -Date.now(),
+        userId: clientId,
+        documentId,
+        createdAt: new Date().toISOString(),
+      };
+      queryClient.setQueryData<DocumentVote[]>(votesQueryKey, (old = []) => [...old, optimisticVote]);
+      queryClient.setQueryData<Record<number, number>>(countsQueryKey, (old = {}) => ({
+        ...old,
+        [documentId]: (old[documentId] ?? 0) + 1,
+      }));
+
+      return { prevVotes, prevCounts };
+    },
+    onError: (_err, _documentId, context) => {
+      if (context?.prevVotes) queryClient.setQueryData(votesQueryKey, context.prevVotes);
+      if (context?.prevCounts) queryClient.setQueryData(countsQueryKey, context.prevCounts);
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
     },
   });
 
   const deleteMutation = useMutation({
-    mutationFn: async (id: number) => {
-      await apiRequest("DELETE", `/api/votes/${id}`);
+    mutationFn: async ({ voteId }: { voteId: number; documentId: number }) => {
+      await apiRequest("DELETE", `/api/votes/${voteId}`);
     },
-    onSuccess: () => {
+    onMutate: async ({ voteId, documentId }) => {
+      await queryClient.cancelQueries({ queryKey: votesQueryKey });
+      await queryClient.cancelQueries({ queryKey: countsQueryKey });
+
+      const prevVotes = queryClient.getQueryData<DocumentVote[]>(votesQueryKey);
+      const prevCounts = queryClient.getQueryData<Record<number, number>>(countsQueryKey);
+
+      queryClient.setQueryData<DocumentVote[]>(votesQueryKey, (old = []) =>
+        old.filter((v) => v.id !== voteId),
+      );
+      queryClient.setQueryData<Record<number, number>>(countsQueryKey, (old = {}) => ({
+        ...old,
+        [documentId]: Math.max(0, (old[documentId] ?? 0) - 1),
+      }));
+
+      return { prevVotes, prevCounts };
+    },
+    onError: (_err, _vars, context) => {
+      if (context?.prevVotes) queryClient.setQueryData(votesQueryKey, context.prevVotes);
+      if (context?.prevCounts) queryClient.setQueryData(countsQueryKey, context.prevCounts);
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
     },
@@ -83,7 +132,7 @@ export function useImportanceVotes(documentIds: number[] = []) {
   function toggleVote(documentId: number) {
     const existing = isVoted(documentId);
     if (existing) {
-      deleteMutation.mutate(existing.id);
+      deleteMutation.mutate({ voteId: existing.id, documentId });
     } else {
       createMutation.mutate(documentId);
     }
