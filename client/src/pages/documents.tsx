@@ -619,6 +619,124 @@ function isPdfDocument(doc: Document): boolean {
   return docType !== "" && !nonPdfTypes.has(docType);
 }
 
+// Concurrency limiter for video thumbnail generation
+const thumbQueue: Array<() => void> = [];
+let thumbActive = 0;
+const THUMB_MAX_CONCURRENT = 3;
+
+function acquireThumbSlot(): Promise<void> {
+  if (thumbActive < THUMB_MAX_CONCURRENT) {
+    thumbActive++;
+    return Promise.resolve();
+  }
+  return new Promise((resolve) => thumbQueue.push(resolve));
+}
+
+function releaseThumbSlot() {
+  if (thumbQueue.length > 0) {
+    const next = thumbQueue.shift()!;
+    next();
+  } else {
+    thumbActive--;
+  }
+}
+
+// Cache thumbnail data URLs across re-renders
+const thumbCache = new Map<number, string>();
+
+function VideoThumbnail({ doc }: { doc: Document }) {
+  const [thumbUrl, setThumbUrl] = useState<string | null>(() => thumbCache.get(doc.id) ?? null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // IntersectionObserver — only start loading when scrolled into view
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || thumbCache.has(doc.id)) return;
+
+    let cancelled = false;
+
+    (async () => {
+      await acquireThumbSlot();
+      if (cancelled) { releaseThumbSlot(); return; }
+
+      const video = document.createElement("video");
+      video.preload = "auto";
+      video.muted = true;
+      video.playsInline = true;
+      video.src = `/api/documents/${doc.id}/video`;
+
+      let released = false;
+      const cleanup = () => {
+        if (released) return;
+        released = true;
+        video.removeAttribute("src");
+        video.load();
+        releaseThumbSlot();
+      };
+
+      const captureFrame = () => {
+        if (cancelled || video.videoWidth === 0) { cleanup(); return; }
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.min(video.videoWidth, 320);
+        canvas.height = Math.round(canvas.width * (video.videoHeight / video.videoWidth));
+        const ctx = canvas.getContext("2d");
+        if (!ctx) { cleanup(); return; }
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        try {
+          const url = canvas.toDataURL("image/jpeg", 0.6);
+          thumbCache.set(doc.id, url);
+          if (!cancelled) setThumbUrl(url);
+        } catch {
+          // tainted canvas — ignore
+        }
+        cleanup();
+      };
+
+      video.addEventListener("seeked", captureFrame, { once: true });
+
+      video.addEventListener("loadedmetadata", () => {
+        if (cancelled) { cleanup(); return; }
+        video.currentTime = Math.min(2, video.duration * 0.1);
+      }, { once: true });
+
+      video.addEventListener("error", () => { cleanup(); }, { once: true });
+
+      // Timeout safety: release slot after 15s regardless
+      setTimeout(() => { if (!released) { cancelled = true; cleanup(); } }, 15000);
+    })();
+
+    return () => { cancelled = true; };
+  }, [doc.id, isVisible]);
+
+  return (
+    <div ref={containerRef} className="absolute inset-0 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
+      {thumbUrl && (
+        <img src={thumbUrl} alt={doc.title} className="absolute inset-0 w-full h-full object-cover" />
+      )}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm">
+          <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white/90 ml-1" />
+        </div>
+      </div>
+      <div className="absolute top-2 left-2 flex items-center gap-1 bg-black/40 rounded px-1.5 py-0.5">
+        <Video className="w-3 h-3 text-white/70" />
+        <span className="text-[10px] text-white/70">Video</span>
+      </div>
+    </div>
+  );
+}
+
 function DocumentThumbnail({ doc }: { doc: Document }) {
   const mediaType = doc.mediaType?.toLowerCase() || "";
   const docType = doc.documentType?.toLowerCase() || "";
@@ -642,17 +760,7 @@ function DocumentThumbnail({ doc }: { doc: Document }) {
   }
 
   if (isVideo) {
-    return (
-      <div className="absolute inset-0 bg-gradient-to-b from-zinc-800 to-zinc-900 flex items-center justify-center">
-        <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
-          <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white/80 ml-1" />
-        </div>
-        <div className="absolute top-2 left-2 flex items-center gap-1 bg-black/40 rounded px-1.5 py-0.5">
-          <Video className="w-3 h-3 text-white/70" />
-          <span className="text-[10px] text-white/70">Video</span>
-        </div>
-      </div>
-    );
+    return <VideoThumbnail doc={doc} />;
   }
 
   if (isPdf) {
