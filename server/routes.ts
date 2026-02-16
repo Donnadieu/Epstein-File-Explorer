@@ -767,7 +767,7 @@ export async function registerRoutes(
         .filter(n => !isNaN(n))
         .slice(0, 200);
       const counts = await storage.getVoteCounts(documentIds);
-      res.set('Cache-Control', 'public, max-age=30');
+      res.set('Cache-Control', 'no-store');
       res.json(counts);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch vote counts" });
@@ -781,7 +781,7 @@ export async function registerRoutes(
         return res.status(400).json({ error: "userId is required" });
       }
       const result = await storage.getVotes(userId);
-      res.set('Cache-Control', 'private, max-age=60');
+      res.set('Cache-Control', 'no-store');
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch votes" });

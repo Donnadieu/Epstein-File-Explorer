@@ -210,6 +210,12 @@ export default function DocumentDetailPage() {
           </div>
         )}
         <div className="flex items-center gap-1">
+          <ImportanceVoteButton
+            documentId={doc.id}
+            isVoted={!!isVoted(doc.id)}
+            count={getCount(doc.id)}
+            onToggle={toggleVote}
+          />
           <Button
             variant="ghost"
             size="icon"
@@ -283,12 +289,6 @@ export default function DocumentDetailPage() {
               {tag}
             </Badge>
           ))}
-          <ImportanceVoteButton
-            documentId={doc.id}
-            isVoted={!!isVoted(doc.id)}
-            count={getCount(doc.id)}
-            onToggle={toggleVote}
-          />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
