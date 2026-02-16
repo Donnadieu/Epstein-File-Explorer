@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { Readable } from "stream";
 import * as fsSync from "fs";
 import * as pathMod from "path";
-import { insertBookmarkSchema, insertDocumentVoteSchema } from "@shared/schema";
+import { insertBookmarkSchema, insertDocumentVoteSchema, insertPersonVoteSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
 import { registerChatRoutes } from "./chat";
@@ -115,6 +115,28 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/most-voted/documents", async (req, res) => {
+    try {
+      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const docs = await storage.getMostVotedDocuments(limit);
+      res.set("Cache-Control", "public, max-age=120");
+      res.json(docs.map((d) => ({ ...omitInternal(d), voteCount: d.voteCount })));
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch most voted documents" });
+    }
+  });
+
+  app.get("/api/most-voted/persons", async (req, res) => {
+    try {
+      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const persons = await storage.getMostVotedPersons(limit);
+      res.set("Cache-Control", "public, max-age=120");
+      res.json(persons);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch most voted persons" });
+    }
+  });
+
   /**
    * GET /api/persons
    * Without ?page: returns Person[] (full array)
@@ -172,8 +194,9 @@ export async function registerRoutes(
       const dataSet = (req.query.dataSet as string) || undefined;
       const redacted = (req.query.redacted as string) || undefined;
       const mediaType = (req.query.mediaType as string) || undefined;
+      const sort = (req.query.sort as string) || undefined;
 
-      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType });
+      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType, sort });
       res.set('Cache-Control', 'public, max-age=60');
       res.json({ ...result, data: result.data.map(omitInternal) });
     } catch (error) {
@@ -818,6 +841,72 @@ export async function registerRoutes(
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete vote" });
+    }
+  });
+
+  // Person vote routes
+  app.get("/api/person-votes/counts", async (req, res) => {
+    try {
+      const idsParam = req.query.personIds as string;
+      if (!idsParam) {
+        return res.json({});
+      }
+      const personIds = idsParam.split(",")
+        .map(s => parseInt(s.trim()))
+        .filter(n => !isNaN(n))
+        .slice(0, 200);
+      const counts = await storage.getPersonVoteCounts(personIds);
+      res.set('Cache-Control', 'no-store');
+      res.json(counts);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch person vote counts" });
+    }
+  });
+
+  app.get("/api/person-votes", async (req, res) => {
+    try {
+      const userId = req.query.userId as string;
+      if (!userId) {
+        return res.status(400).json({ error: "userId is required" });
+      }
+      const result = await storage.getPersonVotes(userId);
+      res.set('Cache-Control', 'no-store');
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch person votes" });
+    }
+  });
+
+  app.post("/api/person-votes", async (req, res) => {
+    try {
+      const { personId, userId } = req.body;
+      if (!personId || !userId) {
+        return res.status(400).json({ error: "personId and userId are required" });
+      }
+      const parsed = insertPersonVoteSchema.parse({ personId, userId });
+      const vote = await storage.createPersonVote(parsed);
+      res.status(201).json(vote);
+    } catch (error: any) {
+      if (error?.name === "ZodError") {
+        return res.status(400).json({ error: "Invalid vote data", details: error.errors });
+      }
+      res.status(500).json({ error: "Failed to create person vote" });
+    }
+  });
+
+  app.delete("/api/person-votes/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const deleted = await storage.deletePersonVote(id);
+      if (!deleted) {
+        return res.status(404).json({ error: "Vote not found" });
+      }
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to delete person vote" });
     }
   });
 

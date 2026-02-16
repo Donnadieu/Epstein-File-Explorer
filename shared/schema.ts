@@ -289,6 +289,20 @@ export const insertDocumentVoteSchema = createInsertSchema(documentVotes).omit({
 export type DocumentVote = typeof documentVotes.$inferSelect;
 export type InsertDocumentVote = typeof documentVotes.$inferInsert;
 
+export const personVotes = pgTable("person_votes", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  userId: text("user_id").notNull(),
+  personId: integer("person_id").notNull().references(() => persons.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("idx_person_votes_user_person").on(table.userId, table.personId),
+  index("idx_person_votes_person_id").on(table.personId),
+]);
+
+export const insertPersonVoteSchema = createInsertSchema(personVotes).omit({ createdAt: true });
+export type PersonVote = typeof personVotes.$inferSelect;
+export type InsertPersonVote = typeof personVotes.$inferInsert;
+
 // Chat tables
 export const conversations = pgTable("conversations", {
   id: serial("id").primaryKey(),

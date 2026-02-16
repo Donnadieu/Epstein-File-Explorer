@@ -11,6 +11,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X, Bookmark, BookmarkCheck } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { usePersonVotes } from "@/hooks/use-person-votes";
+import { PersonVoteButton } from "@/components/person-vote-button";
 import type { Person } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -65,6 +67,9 @@ export default function PeoplePage() {
     queryKey: ["/api/persons"],
     staleTime: 600_000,
   });
+
+  const personIds = useMemo(() => persons?.map((p) => p.id) || [], [persons]);
+  const { isVoted, getCount, toggleVote } = usePersonVotes(personIds);
 
   const filtered = useMemo(() => {
     return persons
@@ -208,24 +213,38 @@ export default function PeoplePage() {
                       </CardContent>
                     </Card>
                   </Link>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleBookmark("person", person.id, undefined, person.name);
-                    }}
-                    className={`absolute top-2 right-2 p-1.5 rounded-md transition-opacity ${
-                      isBookmarked("person", person.id)
-                        ? "opacity-100 text-primary"
-                        : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
-                    }`}
-                    aria-label={isBookmarked("person", person.id) ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
-                  >
-                    {isBookmarked("person", person.id) ? (
-                      <BookmarkCheck className="w-4 h-4" />
-                    ) : (
-                      <Bookmark className="w-4 h-4" />
-                    )}
-                  </button>
+                  <div className={`absolute top-2 right-2 flex items-center gap-0.5 transition-opacity ${
+                    isBookmarked("person", person.id) || !!isVoted(person.id)
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100 focus-within:opacity-100"
+                  }`}>
+                    <PersonVoteButton
+                      personId={person.id}
+                      isVoted={!!isVoted(person.id)}
+                      count={getCount(person.id)}
+                      onToggle={toggleVote}
+                      size="sm"
+                      className="h-7 w-7 p-0"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("person", person.id, undefined, person.name);
+                      }}
+                      className={`p-1.5 rounded-md ${
+                        isBookmarked("person", person.id)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("person", person.id) ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
+                    >
+                      {isBookmarked("person", person.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               );
             })}

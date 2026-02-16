@@ -155,6 +155,7 @@ export default function DocumentsPage() {
   if (filters.dataSet !== "all") queryParams.set("dataSet", filters.dataSet);
   if (filters.redacted !== "all") queryParams.set("redacted", filters.redacted);
   if (filters.mediaType !== "all") queryParams.set("mediaType", filters.mediaType);
+  queryParams.set("sort", "popular");
 
   const pageTitle = filters.type !== "all"
     ? (pageTitles[filters.type] || filters.type.charAt(0).toUpperCase() + filters.type.slice(1))
