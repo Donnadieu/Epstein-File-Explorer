@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,8 +26,14 @@ import {
   Video,
   Sparkles,
   ChevronDown,
+  Bookmark,
+  BookmarkCheck,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
+import { useTrackView } from "@/hooks/use-track-view";
+import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import type { Document, Person, AIAnalysisDocument } from "@shared/schema";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
@@ -74,7 +80,9 @@ interface DocumentDetail extends Document {
 
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
+  useTrackView("document", params.id);
   const [, navigate] = useLocation();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const searchParams = new URLSearchParams(window.location.search);
   const initialPage = parseInt(searchParams.get("page") || "1", 10) || 1;
 
@@ -101,6 +109,9 @@ export default function DocumentDetailPage() {
     enabled: !!aiFileName,
     retry: false,
   });
+
+  const voteDocIds = useMemo(() => doc ? [doc.id] : [], [doc?.id]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(voteDocIds);
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -176,11 +187,26 @@ export default function DocumentDetailPage() {
             </Button>
           </div>
         )}
-        <Link href={`/documents/compare?a=${doc.id}`}>
-          <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
-            <ArrowLeftRight className="w-4 h-4" /> Compare
+        <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={() => toggleBookmark("document", doc.id, undefined, doc.title)}
+            aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+          >
+            {isBookmarked("document", doc.id) ? (
+              <BookmarkCheck className="w-4 h-4 text-primary" />
+            ) : (
+              <Bookmark className="w-4 h-4 text-muted-foreground" />
+            )}
           </Button>
-        </Link>
+          <Link href={`/documents/compare?a=${doc.id}`}>
+            <Button variant="outline" size="sm" className="gap-1" data-testid="button-compare">
+              <ArrowLeftRight className="w-4 h-4" /> Compare
+            </Button>
+          </Link>
+        </div>
       </div>
 
       <div className="flex flex-col gap-4">
@@ -210,6 +236,12 @@ export default function DocumentDetailPage() {
           {doc.tags?.map((tag) => (
             <Badge key={tag} variant="secondary">{tag}</Badge>
           ))}
+          <ImportanceVoteButton
+            documentId={doc.id}
+            isVoted={!!isVoted(doc.id)}
+            count={getCount(doc.id)}
+            onToggle={toggleVote}
+          />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

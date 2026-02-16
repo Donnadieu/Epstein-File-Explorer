@@ -258,6 +258,37 @@ export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ created
 export type Bookmark = typeof bookmarks.$inferSelect;
 export type InsertBookmark = typeof bookmarks.$inferInsert;
 
+export const documentVotes = pgTable("document_votes", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  userId: text("user_id").notNull(),
+  documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("idx_document_votes_user_doc").on(table.userId, table.documentId),
+  index("idx_document_votes_document_id").on(table.documentId),
+]);
+
+export const insertDocumentVoteSchema = createInsertSchema(documentVotes).omit({ createdAt: true });
+export type DocumentVote = typeof documentVotes.$inferSelect;
+export type InsertDocumentVote = typeof documentVotes.$inferInsert;
+
+// View tracking for trending
+export const pageViews = pgTable("page_views", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  entityType: text("entity_type").notNull(), // 'person' | 'document'
+  entityId: integer("entity_id").notNull(),
+  sessionId: text("session_id").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  index("idx_page_views_entity").on(table.entityType, table.entityId),
+  index("idx_page_views_created_at").on(table.createdAt),
+  index("idx_page_views_trending").on(table.entityType, table.createdAt, table.entityId),
+]);
+
+export const insertPageViewSchema = createInsertSchema(pageViews).omit({ id: true, createdAt: true });
+export type PageView = typeof pageViews.$inferSelect;
+export type InsertPageView = typeof pageViews.$inferInsert;
+
 // Chat tables
 export const conversations = pgTable("conversations", {
   id: serial("id").primaryKey(),
