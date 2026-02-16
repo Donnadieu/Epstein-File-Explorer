@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA00085054.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-08-18",
+  "summary": "This is an email exchange between a U.S. Department of Justice Attaché in London and an Assistant United States Attorney from the Southern District of New York regarding the status of conversations with the counsel for a witness identified as 'PA'. The email includes attachments of notes from calls and correspondence with the law firm Blackfords.",
+  "persons": [
+    {
+      "name": "John",
+      "role": "U.S. Department of Justice Attaché",
+      "category": "legal",
+      "context": "Sends an email from London checking on the status of discussions with Blackfords regarding witness PA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Responds to John's email, providing notes from calls with Blackfords and scheduling a next call regarding witness PA.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "John",
+      "person2": "Assistant United States Attorney Southern District of New York",
+      "relationshipType": "professional",
+      "description": "Colleagues within the U.S. Department of Justice coordinating on a case involving witness PA.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-19",
+      "title": "Scheduled call with Blackfords",
+      "description": "A call is scheduled between U.S. prosecutors and the law firm Blackfords regarding witness PA.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York",
+        "John"
+      ]
+    }
+  ],
+  "locations": [
+    "London",
+    "New York, NY 10007",
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "United States Embassy - London"
+  ],
+  "keyFacts": [
+    "The email discusses ongoing conversations with the law firm Blackfords regarding a witness identified as 'PA'.",
+    "The correspondence involves U.S. prosecutors from the Southern District of New York and a DOJ Attaché in London.",
+    "Notes from calls and email correspondence with Blackfords are attached to the email.",
+    "A next call with Blackfords is scheduled for August 19, 2020."
+  ],
+  "analyzedAt": "2026-02-16T02:15:27.830Z"
+}

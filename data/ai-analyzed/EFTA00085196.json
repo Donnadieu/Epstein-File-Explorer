@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00085196.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-08-03",
+  "summary": "Email chain between US Department of Justice officials discussing an MLAT request to the UK for travel records related to the Maxwell case (182-73090). The correspondence focuses on obtaining British Airways passenger data and manifests, with details on CBP record retention policies and data fields available.",
+  "persons": [
+    {
+      "name": "John McNeil",
+      "role": "U.S. Department of Justice Attaché - London",
+      "category": "law enforcement",
+      "context": "DOJ official in London coordinating the MLAT request to the UK for travel records in the Maxwell case. He provides information on CBP record retention and forwards communications.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Lara",
+      "role": "Prosecutor/Attorney (USANYS)",
+      "category": "legal",
+      "context": "Attorney from the U.S. Attorney's Office for the Southern District of New York (USANYS) leading the request for British Airways travel records for the Maxwell investigation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Taylor Cole",
+      "role": "DOJ Attorney (CRM)",
+      "category": "legal",
+      "context": "DOJ attorney copied on the email chain regarding the MLAT request for travel records in the Maxwell case.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jennifer Schroeder-Fawcett",
+      "role": "CBP Attaché - London",
+      "category": "law enforcement",
+      "context": "U.S. Customs and Border Protection attaché in London who provides technical details about APIS data fields and record availability for travel manifests.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "John McNeil",
+      "person2": "Lara",
+      "relationshipType": "professional collaboration",
+      "description": "McNeil is assisting Lara with obtaining UK travel records through an MLAT request for the Maxwell investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "John McNeil",
+      "person2": "Jennifer Schroeder-Fawcett",
+      "relationshipType": "interagency coordination",
+      "description": "McNeil consults with Schroeder-Fawcett, the CBP attaché, about availability of British Airways travel records.",
+      "strength": 3
+    },
+    {
+      "person1": "Lara",
+      "person2": "Taylor Cole",
+      "relationshipType": "colleague",
+      "description": "Both are DOJ attorneys working on the Maxwell case, with Cole copied on the correspondence about travel records.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-31",
+      "title": "CBP Technical Information Provided",
+      "description": "Jennifer Schroeder-Fawcett provides detailed APIS data field information to John McNeil regarding what travel record information CBP might have available.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jennifer Schroeder-Fawcett",
+        "John McNeil"
+      ]
+    },
+    {
+      "date": "2021-08-02",
+      "title": "MLAT Request Drafting",
+      "description": "Lara sends a draft MLAT request to John McNeil for obtaining British Airways travel records from the UK for the Maxwell investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Lara",
+        "John McNeil",
+        "Taylor Cole"
+      ]
+    },
+    {
+      "date": "2021-08-03",
+      "title": "Final Review of MLAT Request",
+      "description": "John McNeil returns a draft MLAT request with comments and questions, noting he will be out for a week and requesting turnaround by COB.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "John McNeil",
+        "Lara"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Embassy, 33 Nine Elms Lane, London SW11 7US, United Kingdom",
+    "London, United Kingdom"
+  ],
+  "keyFacts": [
+    "The document references case number 182-73090, which is the Maxwell case (Ghislaine Maxwell).",
+    "CBP destroys PNR (Passenger Name Record/ticketing) data after 5 years but retains flight manifest information for much longer periods.",
+    "The investigation is seeking British Airways travel records, potentially including private aircraft arrivals data from before 2009.",
+    "APIS data fields include comprehensive passenger information: full name, date of birth, passport details, address in the US, and travel itinerary details.",
+    "The correspondence shows active coordination between US prosecutors and law enforcement attachés in London to obtain foreign travel records via MLAT."
+  ],
+  "analyzedAt": "2026-02-16T02:24:24.675Z"
+}

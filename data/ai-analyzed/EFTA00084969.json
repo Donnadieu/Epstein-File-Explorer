@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA00084969.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / OIG Interview Memorandum",
+  "dateOriginal": "2019-10-01",
+  "summary": "This is an Office of the Inspector General (OIG) memorandum documenting the voluntary interview of a Federal Bureau of Prisons Senior Officer Specialist (SOS) regarding the events surrounding the death of Jeffrey Epstein at the Metropolitan Correctional Center (MCC) New York. The SOS details his assignment, procedures in the Special Housing Unit (SHU), and his specific activities and knowledge on August 9, 2019, the day before Epstein's death, stating he was never informed that Epstein required a new cellmate after his previous one was released.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The interview focuses on the procedures and events leading up to his death in custody.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Epstein's cellmate in the SHU who was released from custody on August 9, 2019, leaving Epstein without a cellmate.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who was supposed to be working the shift after the interviewee on August 9, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Roberto",
+      "role": "Senior Officer Specialist (SOS)",
+      "category": "staff",
+      "context": "An SOS who may have informed the interviewee that inmate Efrain Reyes had left the SHU.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Captain",
+      "role": "BOP Captain",
+      "category": "staff",
+      "context": "MCC New York leadership with whom staff shared concerns about staffing shortages and operational difficulties. The interviewee states no one, including this Captain, told him Epstein needed a new cellmate.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lieutenant",
+      "role": "BOP Lieutenant",
+      "category": "staff",
+      "context": "Mentioned as one of the individuals who did not inform the interviewee that Epstein required a new cellmate.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was Epstein's cellmate in the Special Housing Unit prior to being released on August 9, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Senior Officer Specialist (SOS)",
+      "person2": "Roberto",
+      "relationshipType": "colleague",
+      "description": "Both are Senior Officer Specialists at MCC New York. Roberto may have provided information to the interviewee about inmate movement.",
+      "strength": 2
+    },
+    {
+      "person1": "Senior Officer Specialist (SOS)",
+      "person2": "Captain",
+      "relationshipType": "subordinate-supervisor",
+      "description": "The interviewee is a staff member under the command of the Captain, to whom operational concerns were reportedly raised.",
+      "strength": 3
+    },
+    {
+      "person1": "Senior Officer Specialist (SOS)",
+      "person2": "Tova Noel",
+      "relationshipType": "colleague",
+      "description": "Both were correctional officers at MCC New York, with Noel scheduled for the shift following the interviewee's on August 9.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Full Day in Custody",
+      "description": "The day before Jeffrey Epstein's death. The interviewee worked a shift on the SHU, noting Epstein was in an attorney conference room all day and his cellmate, Efrain Reyes, was released, leaving Epstein without a cellmate.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Efrain Reyes",
+        "Senior Officer Specialist (SOS)"
+      ]
+    },
+    {
+      "date": "2019-07",
+      "title": "Epstein's Initial Suicide Attempt",
+      "description": "The interviewee learned about Jeffrey Epstein's initial suicide attempt in July 2019 upon returning from military orders.",
+      "category": "death",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-12",
+      "title": "OIG Interview of BOP SOS",
+      "description": "The Office of the Inspector General and FBI special agents interviewed a BOP Senior Officer Specialist regarding the events surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Senior Officer Specialist (SOS)"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "United States Attorney's Office, Southern District of New York, 1 Saint Andrews Plaza, New York, New York 10007",
+    "Special Housing Unit (SHU) at MCC New York"
+  ],
+  "keyFacts": [
+    "The interviewed BOP Senior Officer Specialist stated he was never informed that Jeffrey Epstein required a new cellmate after Efrain Reyes was released on August 9, 2019, contradicting other potential accounts.",
+    "The officer described staffing levels at MCC New York as 'abysmal' and stated standard 30-minute inmate checks were often not performed as required, especially on shower days.",
+    "On August 9, 2019, the officer's shift began at ~8:45 AM; Epstein was already in an attorney conference room and never returned to the SHU during that shift, and Reyes was already gone.",
+    "The officer asserted that if he had been told Epstein needed a cellmate, he would have ensured it happened, but no one—including Captain, Lieutenant, Psychology Department, or SOS Roberto—told him.",
+    "The document reveals operational challenges and potential failures in protocol at MCC New York's SHU in the period leading up to Epstein's death."
+  ],
+  "analyzedAt": "2026-02-16T02:11:49.496Z"
+}

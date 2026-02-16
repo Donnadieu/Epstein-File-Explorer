@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00079240.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-10-15",
+  "summary": "This is an email correspondence from an Assistant United States Attorney in the Southern District of New York regarding the preparation and service of a subpoena to Bank of America for records related to the Epstein investigation. It includes instructions for routing the results to an FBI Special Agent and a Forensic Accountant.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, instructing the preparation and service of a subpoena to Bank of America for the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Forensic Accountant",
+      "role": "Forensic Accountant",
+      "category": "law enforcement",
+      "context": "A professional to be contacted with questions regarding the subpoena and to whom results should be forwarded, based at the FBI New York Field Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent to whom the subpoena results should be forwarded electronically, based in New York.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Special Agent",
+      "relationshipType": "professional",
+      "description": "The AUSA is coordinating the subpoena process and instructing that results be sent to the FBI Special Agent.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Forensic Accountant",
+      "relationshipType": "professional",
+      "description": "The AUSA lists the Forensic Accountant as a point of contact for questions regarding the subpoena.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Forensic Accountant",
+      "relationshipType": "colleague",
+      "description": "Both are listed as points of contact for the subpoena and are part of the investigative team receiving the financial records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-15",
+      "title": "Subpoena Issuance to Bank of America",
+      "description": "An Assistant United States Attorney sends instructions to prepare and serve a subpoena on Bank of America for records related to the Epstein investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Forensic Accountant",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, NY 10278",
+    "FBI New York Field Office, NYC, NY 10278"
+  ],
+  "keyFacts": [
+    "A subpoena was issued to Bank of America on October 15, 2019, as part of the Epstein investigation.",
+    "The subpoena results were to be forwarded electronically to an FBI Special Agent and a Forensic Accountant in New York.",
+    "The document demonstrates active financial investigation by the Southern District of New York into Epstein's affairs after his death."
+  ],
+  "analyzedAt": "2026-02-15T20:16:20.590Z"
+}

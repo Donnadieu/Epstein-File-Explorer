@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00085767.pdf",
+  "dataSet": "9",
+  "documentType": "internal email correspondence",
+  "dateOriginal": "2019-08-13",
+  "summary": "This document is an email chain from August 13, 2019, summarizing interviews conducted by the OIG, FBI, and USAO-SDNY with MCC employees regarding the circumstances surrounding Jeffrey Epstein's death. It details failures in protocol, including Epstein being left without a cellmate and non-functioning cameras, and notes that several officers refused to be interviewed without union representation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The document details the discovery of his body and the procedural failures surrounding his detention.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Lt. Jean",
+      "role": "Operations Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "Arrived at MCC on the morning of August 10, 2019, responded to the medical call at the SHU, and performed CPR on Epstein. He questioned officers about the missing cellmate.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Officer",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "A generic placeholder for multiple unnamed officers mentioned in the document. One officer discovered Epstein, another performed CPR, and others admitted to not conducting required counts.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lt. Jean",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Lt. Jean was the operations lieutenant overseeing the prison shift when Epstein's body was discovered and administered CPR.",
+      "strength": 3
+    },
+    {
+      "person1": "Officer",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Multiple unnamed officers were responsible for Epstein's custody, including one who discovered his body and others who failed to assign him a cellmate or conduct proper counts.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein left without cellmate",
+      "description": "Epstein's cellmate was moved out, and he was not reassigned a new one, contrary to protocol. Several officers and supervisors were aware of this.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's body",
+      "description": "At approximately 6:33 a.m., a radio call for medical staff was made in the SHU. Epstein was found on the ground, having apparently hung himself. Officers performed CPR.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lt. Jean",
+        "Officer"
+      ]
+    },
+    {
+      "date": "2019-08-13",
+      "title": "Voluntary interviews with MCC staff",
+      "description": "OIG, FBI, and USAO-SDNY conducted voluntary interviews with several MCC employees regarding the events leading to Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lt. Jean",
+        "Officer"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC"
+  ],
+  "keyFacts": [
+    "At least 7 officers and 2 supervisors were aware Jeffrey Epstein did not have a cellmate on August 9, 2019, but did not reassign him one, violating protocol.",
+    "Epstein was found in his cell on the morning of August 10, 2019; officers admitted to not conducting the mandatory 3 a.m. and 5 a.m. inmate counts.",
+    "The camera system in the Special Housing Unit (SHU) where Epstein was held was not working at the time of his death.",
+    "Multiple correctional officers refused to be interviewed by the FBI and OIG without their union representatives present.",
+    "Epstein had been assisted in making an unrecorded legal phone call days before his death, where he claimed to be calling his mother."
+  ],
+  "analyzedAt": "2026-02-16T02:41:32.573Z"
+}

@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00084701.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-19",
+  "summary": "This document is an email chain from August 2020 discussing the status of American Express financial records production for the Epstein investigation. It references a prior July 2019 production of card transaction data and account files, and includes internal discussion about accessing and sharing specific files with defense counsel.",
+  "persons": [
+    {
+      "name": "Kristina Hendrickson",
+      "role": "American Express employee",
+      "category": "staff",
+      "context": "American Express employee who shared financial records folder with investigators in July 2019 and communicated about file access issues.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alex",
+      "role": "Investigator/Prosecutor",
+      "category": "law enforcement",
+      "context": "Recipient of American Express financial records from Kristina Hendrickson in July 2019, mentioned in email correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Yui Chow",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Mentioned by Kristina Hendrickson as someone who may have sent documents to investigators.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maurene",
+      "role": "Investigator/Prosecutor",
+      "category": "law enforcement",
+      "context": "Internal email sender in August 2020 seeking Amex credentials to access original production files.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Will",
+      "role": "Investigator/Prosecutor",
+      "category": "law enforcement",
+      "context": "Mentioned as working with Maurene and Eric to access Amex files.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric",
+      "role": "Investigator/Prosecutor",
+      "category": "law enforcement",
+      "context": "Mentioned as working with Maurene and Will to access Amex files.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Kristina Hendrickson",
+      "person2": "Alex",
+      "relationshipType": "business",
+      "description": "American Express employee providing financial records to investigator/prosecutor in response to subpoena.",
+      "strength": 3
+    },
+    {
+      "person1": "Maurene",
+      "person2": "Will",
+      "relationshipType": "professional",
+      "description": "Colleagues working together to access American Express production files.",
+      "strength": 2
+    },
+    {
+      "person1": "Maurene",
+      "person2": "Eric",
+      "relationshipType": "professional",
+      "description": "Colleagues working together to access American Express production files.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-13",
+      "title": "American Express Financial Records Production",
+      "description": "Kristina Hendrickson of American Express sends financial records including transaction data and account information for Epstein's cards to investigator Alex via email and shared folder.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Kristina Hendrickson",
+        "Alex"
+      ]
+    },
+    {
+      "date": "2020-08-19",
+      "title": "Internal Discussion About Amex File Access",
+      "description": "Internal email chain among investigators discussing access issues with American Express production files and whether to request missing files or produce existing files to defense counsel.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Maurene",
+        "Will",
+        "Eric"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "American Express provided extensive financial records for Jeffrey Epstein's accounts including multiple card types (Platinum, Centurion, Gold, Business Plum, Blue Cash) in July 2019.",
+    "The production included Excel files with transaction data, PDF mainframe reports, and a 'Key Transactions' analysis file that may have identified particular people.",
+    "Investigators in August 2020 were having technical difficulties accessing some original .vsf files and were considering whether to produce them directly to defense counsel.",
+    "The American Express employee explicitly stated the documents were 'for investigative use and not for court proceedings'.",
+    "The email chain shows ongoing logistical challenges in managing and sharing large volumes of financial evidence in the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-16T01:55:27.039Z"
+}

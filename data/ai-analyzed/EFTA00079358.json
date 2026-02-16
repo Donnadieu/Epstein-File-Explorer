@@ -1,0 +1,183 @@
+{
+  "fileName": "EFTA00079358.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-11-25",
+  "summary": "This is an FBI 302 interview report of a female victim, referred to as [REDACTED], conducted on October 15, 2019, in Miramar, Florida. The document details her account of meeting Jeffrey Epstein at age 16 through a friend, her subsequent visits to his home for sexual activities under the guise of massages, and the roles of Epstein's associates in scheduling and payments. It reveals her initial defense of Epstein to the FBI and her later understanding of her victimization.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central figure accused of sexually abusing the interviewee when she was a minor. He paid her for massages that escalated into sexual activities and arranged travel for her.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Angela Jackson",
+      "role": "FBI Victim Specialist",
+      "category": "law enforcement",
+      "context": "Present during the FBI interview of the victim to provide victim support services.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brian",
+      "role": "Friend of Victim",
+      "category": "associate",
+      "context": "The interviewee's best friend and coworker who introduced her to Jeffrey Epstein, telling her she could get $200 for giving him a back massage.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sarah",
+      "role": "Epstein's Assistant",
+      "category": "staff",
+      "context": "Epstein's assistant who frequently called the victim to schedule appointments, discussed travel and money, and was involved in payments.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nadia",
+      "role": "Associate at Epstein's Home",
+      "category": "associate",
+      "context": "A woman present at Epstein's home whom the victim saw often. Epstein introduced them and brought Nadia into the massage room on at least one occasion.",
+      "mentionCount": 5
+    },
+    {
+      "name": "David Copperfield",
+      "role": "Magician",
+      "category": "other",
+      "context": "Epstein sent the victim to see David Copperfield for her 18th birthday as a gift.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Byrne Paul Wilson",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI agent who drafted this 302 report on November 25, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Nicole Young",
+      "role": "FBI Personnel",
+      "category": "law enforcement",
+      "context": "Listed alongside Byrne Paul Wilson as involved in the drafting of the 302 report.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brian",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Brian had been to Epstein's house and introduced the victim to him, facilitating the initial contact.",
+      "strength": 3
+    },
+    {
+      "person1": "Brian",
+      "person2": "[REDACTED]",
+      "relationshipType": "social",
+      "description": "Best friends and coworkers who worked together at a concession stand. Brian introduced the victim to Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[REDACTED]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused the victim from ages 16 to 18 during weekly visits to his home, paying her for massages that involved sexual activities.",
+      "strength": 5
+    },
+    {
+      "person1": "Sarah",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Sarah worked as Epstein's assistant, scheduling appointments and handling payments for him.",
+      "strength": 5
+    },
+    {
+      "person1": "Sarah",
+      "person2": "[REDACTED]",
+      "relationshipType": "social",
+      "description": "Sarah was the primary contact for scheduling the victim's visits to Epstein's home and discussed travel and money with her.",
+      "strength": 4
+    },
+    {
+      "person1": "Nadia",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Nadia was present at Epstein's home and was introduced to the victim by Epstein, who brought her into the massage room.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003",
+      "title": "Victim's First Meeting with Epstein",
+      "description": "The victim, approximately 16 years old, was introduced to Jeffrey Epstein by her friend Brian. She began visiting his home for massages that involved sexual activity.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "[REDACTED]",
+        "Jeffrey Epstein",
+        "Brian"
+      ]
+    },
+    {
+      "date": "2003-2005",
+      "title": "Period of Regular Visits to Epstein",
+      "description": "Between ages 16 and 18, the victim visited Epstein's home about once a week, totaling less than 50 times. Sexual activities occurred during these visits.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "[REDACTED]",
+        "Jeffrey Epstein",
+        "Sarah"
+      ]
+    },
+    {
+      "date": "2005-06",
+      "title": "End of Contact with Epstein",
+      "description": "The victim stopped seeing Epstein around summer 2005. Contact from him and his assistant ceased after she turned 18.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "[REDACTED]",
+        "Jeffrey Epstein",
+        "Sarah"
+      ]
+    },
+    {
+      "date": "2006",
+      "title": "Palm Beach Police Investigation",
+      "description": "The victim and her parents were talking to the Palm Beach Police Department about the case against Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "2019-10-15",
+      "title": "FBI Interview of Victim",
+      "description": "The victim was interviewed by the FBI in Miramar, Florida, providing a detailed account of her abuse by Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[REDACTED]",
+        "Angela Jackson"
+      ]
+    }
+  ],
+  "locations": [
+    "2030 SW 145th Avenue, Miramar, Florida",
+    "Palm Beach County, Florida",
+    "Lake Worth High School, West Palm Beach, Florida",
+    "Epstein's house (location unspecified)",
+    "Cancun, Mexico"
+  ],
+  "keyFacts": [
+    "The victim was approximately 16 years old in 2003 when first introduced to Jeffrey Epstein by her friend Brian, with the understanding she would give Epstein a massage for $200.",
+    "From ages 16 to 18, she visited Epstein's home about once a week (less than 50 times total), where sexual activities occurred during every visit under Epstein's direction.",
+    "Epstein's assistant, Sarah, was the primary scheduler for these appointments and handled payments, sometimes paying the victim in the kitchen.",
+    "The victim initially defended Epstein to the FBI because she did not understand what was happening at the time, but later came to understand she was a victim.",
+    "Epstein sent the victim to see David Copperfield for her 18th birthday, and contact with Epstein's circle stopped after she turned 18."
+  ],
+  "analyzedAt": "2026-02-15T20:24:06.003Z"
+}

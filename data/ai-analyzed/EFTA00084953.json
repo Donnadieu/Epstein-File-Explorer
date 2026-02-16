@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00084953.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-30",
+  "summary": "This is an email chain between Assistant United States Attorneys in the Southern District of New York regarding the preservation and acquisition of surveillance video from July 22-23, 2019, related to the case of Jeffrey Epstein and inmate Nicholas Tartaglione. The video was requested by the defense and is being obtained from the Special Investigative Services (SIS).",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender and recipient of the email chain, working on the Epstein/Tartaglione case, coordinating the acquisition of surveillance video.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused / Inmate",
+      "category": "key figure",
+      "context": "The subject of the case; the surveillance video from July 22-23, 2019, is related to him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate / Co-defendant?",
+      "category": "associate",
+      "context": "Named alongside Epstein in the context of the surveillance video from July 22-23, 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "co-defendant / fellow inmate",
+      "description": "Both are mentioned together in the context of a surveillance video from their time in custody on July 22-23, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The AUSA is working on the case involving Jeffrey Epstein and is seeking evidence (surveillance video) related to him.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-22 to 2019-07-23",
+      "title": "Epstein/Tartaglione Surveillance Video",
+      "description": "Surveillance video was recorded of Jeffrey Epstein and Nicholas Tartaglione in custody. The defense requested its preservation, and the prosecution is working to obtain a viewable copy from Special Investigative Services (SIS).",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-12-20",
+      "title": "Initial Video Copy Provided",
+      "description": "SIS provided a copy of the surveillance video to the prosecution, but it lacked the necessary player and could not be converted.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-30",
+      "title": "Email Coordination on Video",
+      "description": "Prosecutors correspond about the status of obtaining a working copy of the July 22-23 surveillance video from SIS.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The defense in the Epstein case requested preservation of surveillance video from July 22-23, 2019, featuring Epstein and inmate Nicholas Tartaglione.",
+    "Special Investigative Services (SIS) saved a copy of the video and confirmed it works on their systems, but the prosecution has not yet viewed it.",
+    "An initial copy provided to prosecutors on December 20, 2019, was not usable due to a missing player, requiring a new copy.",
+    "The email chain demonstrates active evidence gathering by the U.S. Attorney's Office in the Southern District of New York regarding Epstein's time in custody."
+  ],
+  "analyzedAt": "2026-02-16T02:09:16.339Z"
+}

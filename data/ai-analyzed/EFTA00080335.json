@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA00080335.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-12",
+  "summary": "This document is a chain of emails from August 2019 between attorneys representing alleged victims of Jeffrey Epstein and a federal prosecutor. The emails discuss scheduling interviews for two clients who report being assaulted by Epstein in 2004, and inquire about the status of the criminal investigation following Epstein's death. The attorneys also seek confirmation if their clients appear in photographs seized from Epstein's home.",
+  "persons": [
+    {
+      "name": "Colleen Mullen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney corresponding with a federal prosecutor regarding scheduling interviews for clients who are alleged victims of Jeffrey Epstein. She inquires about the status of the investigation after Epstein's death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Teri Gibbs",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from a firm representing alleged victims of Jeffrey Epstein. She coordinates scheduling for client interviews with the U.S. Attorney's office and provides details about client availability.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Arick Fudali",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "New York attorney who will accompany a client during an in-person interview with federal prosecutors.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The deceased financier who is the subject of the criminal investigation (19 Cr. 490 (RMB)). The emails reference victim reports against him and his potential co-conspirators.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lisa Bloom",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney copied on the initial email from Teri Gibbs regarding victim reports against Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Arick Fudali",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys working together on representing clients who are alleged victims of Jeffrey Epstein. Fudali is identified as the New York attorney who will accompany a client.",
+      "strength": 3
+    },
+    {
+      "person1": "Colleen Mullen",
+      "person2": "Teri Gibbs",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys corresponding about scheduling client interviews with the U.S. Attorney's office regarding the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal adversary",
+      "description": "Gibbs represents clients who are alleged victims of Jeffrey Epstein and is communicating with prosecutors about the case against him.",
+      "strength": 3
+    },
+    {
+      "person1": "Arick Fudali",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal adversary",
+      "description": "Fudali, as an attorney for alleged victims, is involved in the legal proceedings related to the case against Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06",
+      "title": "Alleged Assaults by Epstein",
+      "description": "Two clients of the attorneys believe they were assaulted by Jeffrey Epstein in or around June 2004.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's Death",
+      "description": "Jeffrey Epstein passed away over the weekend prior to August 12, 2019. This event prompts an inquiry about the status of the criminal investigation.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-26",
+      "title": "Scheduled In-Person Interview",
+      "description": "A scheduled meeting at 12 p.m. between federal prosecutors and an alleged victim, accompanied by attorney Arick Fudali.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Arick Fudali"
+      ]
+    },
+    {
+      "date": "2019-08-27",
+      "title": "Scheduled Video Conference Interview",
+      "description": "A scheduled video conference at 5 p.m. EST with an alleged victim located in Japan.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York, NY 10007",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Japan",
+    "Okinawa"
+  ],
+  "keyFacts": [
+    "The correspondence confirms an ongoing federal criminal investigation into Jeffrey Epstein and his potential co-conspirators (Case 19 Cr. 490 (RMB)) as of August 2019, even after his death.",
+    "Attorneys represent at least two clients who report being assaulted by Epstein in or around June 2004.",
+    "The attorneys provided photographs of their clients from 2004 to prosecutors and asked if the clients appeared in photographs seized from Epstein's home.",
+    "One alleged victim was located in Japan, requiring a video conference for her interview.",
+    "The emails were sent shortly after Epstein's death, indicating the investigation was expected to continue focusing on potential co-conspirators."
+  ],
+  "analyzedAt": "2026-02-15T21:09:40.356Z"
+}

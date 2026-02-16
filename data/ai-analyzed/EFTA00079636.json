@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00079636.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-13",
+  "summary": "Email chain between attorney Robert Glassman and SDNY prosecutors regarding scheduling a meeting with a client (likely a victim or witness) in December 2019. The prosecutors seek to discuss travel details, corroboration steps, and specific conduct by Jeffrey Epstein and Ghislaine Maxwell. The client's mother is noted as being overseas.",
+  "persons": [
+    {
+      "name": "Robert Glassman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from Panish Shea & Boyle LLP arranging a meeting between his client and SDNY prosecutors regarding the Epstein investigation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nathan Werksman",
+      "role": "SDNY Prosecutor",
+      "category": "legal",
+      "context": "SDNY prosecutor copied on emails discussing scheduling and topics for an upcoming meeting with a witness/victim represented by Robert Glassman.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named as a subject of the SDNY investigation; prosecutors intend to discuss his specific conduct with the witness/victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named alongside Epstein as a subject of the SDNY investigation; prosecutors intend to discuss her specific conduct with the witness/victim.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert Glassman",
+      "person2": "Nathan Werksman",
+      "relationshipType": "legal",
+      "description": "Attorney and prosecutor communicating to schedule a witness/victim interview for the SDNY investigation into Epstein and Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Robert Glassman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Glassman's client is a witness/victim in the SDNY investigation into Epstein's conduct.",
+      "strength": 2
+    },
+    {
+      "person1": "Robert Glassman",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Glassman's client is a witness/victim in the SDNY investigation into Maxwell's conduct.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named together as subjects of the SDNY investigation regarding specific conduct to be discussed with a witness/victim.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-16",
+      "title": "Scheduled Meeting with Witness/Victim",
+      "description": "Scheduled meeting at Robert Glassman's office between SDNY prosecutors and his client to discuss the Epstein/Maxwell investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Glassman",
+        "Nathan Werksman"
+      ]
+    }
+  ],
+  "locations": [
+    "Los Angeles, CA 90025",
+    "California"
+  ],
+  "keyFacts": [
+    "SDNY prosecutors were actively investigating Jeffrey Epstein and Ghislaine Maxwell as of December 2019, seeking to interview witnesses/victims.",
+    "Attorney Robert Glassman represented a witness/victim who required scheduling around childcare, indicating the witness/victim was a parent.",
+    "The witness/victim's mother was reported to be living overseas, not in the United States.",
+    "Prosecutors intended to discuss specific conduct by Epstein and Maxwell, travel details, and steps for corroborating evidence.",
+    "The communication shows the logistical planning and coordination between defense counsel and prosecutors in a high-profile investigation."
+  ],
+  "analyzedAt": "2026-02-15T20:41:24.408Z"
+}

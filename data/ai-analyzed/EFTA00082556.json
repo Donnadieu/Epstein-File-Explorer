@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00082556.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-12-31",
+  "summary": "This document is a chain of emails from December 2019 between law enforcement officials discussing legal processes to investigate Ghislaine Maxwell. It details the execution of a subpoena to Google for account information linked to Maxwell, a pen register order for her cell phone, and subscriber information from T-Mobile. The emails reveal efforts to locate Maxwell following Jeffrey Epstein's arrest and confirm her phone number was active and linked to her.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The primary subject of the investigative efforts. Her cell phone number, email accounts, and whereabouts are being sought. Her number was found in Epstein's phone and is linked to her company, Terramar Project, Inc.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased financier, associate of Maxwell",
+      "category": "key figure",
+      "context": "Mentioned as having been arrested. His seized cell phone contained contact information for Ghislaine Maxwell.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Epstein's seized cell phone contained Maxwell's contact information listed under the name 'Ghislaine' with labels 'Mobile', 'Home', and 'Work'.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-24",
+      "title": "Subpoena and NDO served on Google",
+      "description": "A signed subpoena and Non-Disclosure Order (NDO) were served to Google to obtain account information associated with Ghislaine Maxwell's identifiers.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-10-02",
+      "title": "Cell number status check",
+      "description": "A return indicated Ghislaine Maxwell's cell phone number was still active.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-10-22",
+      "title": "Legal processes drafted for court",
+      "description": "A pen register order and a Google subpoena related to Maxwell's investigation were drafted to be brought to a judge for signature.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-07 (approximate)",
+      "title": "Epstein's arrest and contact attempt with Maxwell",
+      "description": "The day after Jeffrey Epstein's arrest, his cell phone number was called in an attempt to contact Ghislaine Maxwell. Shortly after, agents were contacted by Maxwell's attorney.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Boston, Massachusetts",
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "A UPS store in Massachusetts (associated with Maxwell's phone number)"
+  ],
+  "keyFacts": [
+    "Law enforcement was actively investigating Ghislaine Maxwell's whereabouts and communications in late 2019, following Jeffrey Epstein's arrest.",
+    "Maxwell's cell phone number was subscribed to 'Terramar Project, Inc.', a company she owned, and was associated with a UPS store address in Massachusetts.",
+    "Jeffrey Epstein's seized cell phone contained Maxwell's contact information saved under the name 'Ghislaine' with multiple labels ('Mobile', 'Home', 'Work').",
+    "A subpoena was served to Google to obtain any accounts associated with Maxwell's name, phone number, or email addresses.",
+    "A pen register order (not GPS) was requested for Maxwell's T-Mobile cell phone number as part of the investigation."
+  ],
+  "analyzedAt": "2026-02-16T00:02:13.159Z"
+}

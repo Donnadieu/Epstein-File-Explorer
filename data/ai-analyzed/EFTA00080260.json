@@ -1,0 +1,217 @@
+{
+  "fileName": "EFTA00080260.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a set of exhibits detailing financial transactions from Deutsche Bank records related to Jeffrey Epstein and his associates. It shows wire transfers involving Leon Black, the Rothschild Group, Epstein's personal accounts, the Haze Trust, Gratitude America, and various hedge funds between 2013 and 2019. The document appears to be part of a financial investigation or legal filing, revealing the flow of millions of dollars through entities connected to Epstein.",
+  "persons": [
+    {
+      "name": "Leon Black",
+      "role": "Investor/Financial Associate",
+      "category": "associate",
+      "context": "Named as a sender/recipient in multiple multi-million dollar transactions with Southern Trust Company, Inc., often alongside Debra Black or through Black Family Partners, LP.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Debra Black",
+      "role": "Co-investor",
+      "category": "associate",
+      "context": "Named alongside Leon Black as a sender/recipient in transactions with Southern Trust Company, Inc.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Benjamin Edmond de Rothschild",
+      "role": "Investor/Financial Associate",
+      "category": "associate",
+      "context": "Named as a sender of $14,999,980 to Southern Trust Company, Inc. on 12/21/2015.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joichi Ito",
+      "role": "Recipient/Investor",
+      "category": "associate",
+      "context": "Named as a recipient of funds from Southern Financial LLC and also as a sender in one transaction, with wire details linking to Kyara Investments and Blockstream/O112 Laboratories.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder/Financial Subject",
+      "category": "key figure",
+      "context": "The subject of the investigation; his personal 'Now/SuperNow' accounts and the Haze Trust are detailed, showing capitalization from his entities and payments to various individuals and firms.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Barry Jay Josephson",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received $200,000 on 11/13/2013, as per a transaction into Epstein's accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michelle Saipher",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Named alongside Darren Indyke as a recipient of funds ($698,000 and $525,000) from Epstein's accounts on 5/21/2014.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Named alongside Michelle Saipher as a recipient of funds from Epstein's accounts on 5/21/2014.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Adam Bly",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received multiple payments (ranging from $3,000 to $100,000) from Epstein's accounts between 2014 and 2015.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Gol Muchnik",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received $500,000 on 4/19/2016 from Epstein's accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sultan Bin Sulayem",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received $6,200 on 7/18/2017 from Epstein's accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jamie Mitchell",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received $100,000 on 10/26/2017 from Epstein's accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David J Mitchell",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Received numerous payments (totaling hundreds of thousands of dollars) from Epstein's accounts between 2018 and 2019.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Bruce Moskowitz",
+      "role": "Foundation Beneficiary",
+      "category": "other",
+      "context": "The 'Bruce and Marsha Moskowitz Foundation' is listed as a recipient of funds from the Gratitude America MMDA account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Marsha Moskowitz",
+      "role": "Foundation Beneficiary",
+      "category": "other",
+      "context": "The 'Bruce and Marsha Moskowitz Foundation' is listed as a recipient of funds from the Gratitude America MMDA account.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leon Black",
+      "person2": "Debra Black",
+      "relationshipType": "financial",
+      "description": "Co-senders/recipients on multiple multi-million dollar wire transfers to/from Southern Trust Company, Inc.",
+      "strength": 5
+    },
+    {
+      "person1": "Leon Black",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Indirect connection through BV70 LLC, which is reported to be controlled by Leon Black and which transferred $10 million to Gratitude America, Ltd., an entity in Epstein's financial orbit.",
+      "strength": 3
+    },
+    {
+      "person1": "Benjamin Edmond de Rothschild",
+      "person2": "Leon Black",
+      "relationshipType": "financial",
+      "description": "Both engaged in high-value transactions with Southern Trust Company, Inc. around the same time period (December 2015).",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David J Mitchell",
+      "relationshipType": "financial",
+      "description": "Epstein's accounts show repeated, substantial payments to David J Mitchell over 2018-2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Adam Bly",
+      "relationshipType": "financial",
+      "description": "Epstein's accounts show repeated payments to Adam Bly between 2014 and 2015.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-15",
+      "title": "Leon Black Initial Transaction",
+      "description": "Leon and Debra Black transfer $8,500,000 to Southern Trust Company, Inc.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Leon Black",
+        "Debra Black"
+      ]
+    },
+    {
+      "date": "2015-10-14",
+      "title": "BV70 LLC to Gratitude America Transfer",
+      "description": "BV70 LLC transfers $10,000,000 to Gratitude America, Ltd. Bloomberg reported Leon Black controls BV70 LLC.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Leon Black"
+      ]
+    },
+    {
+      "date": "2015-12-21",
+      "title": "Benjamin Edmond de Rothschild Transfer",
+      "description": "Benjamin Edmond de Rothschild transfers $14,999,980 to Southern Trust Company, Inc.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Benjamin Edmond de Rothschild"
+      ]
+    },
+    {
+      "date": "2017-03-10",
+      "title": "Haze Trust Internal Capitalization",
+      "description": "$36,000,000 transferred from The Haze Trust Brokerage to The Haze Trust Checking account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-02-22",
+      "title": "Major Haze Trust Rebalancing",
+      "description": "Complex series of transfers between The Haze Trust, Jeffrey Epstein's personal checking, and Southern Financial LLC, moving tens of millions of dollars.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Geneva, Switzerland",
+    "Puerto Rico",
+    "New York"
+  ],
+  "keyFacts": [
+    "Leon Black and related entities (Black Family Partners, LP) engaged in numerous multi-million dollar transactions with Southern Trust Company, Inc. between 2013 and 2015.",
+    "BV70 LLC, reportedly controlled by Leon Black, transferred $10 million to Gratitude America, Ltd. in October 2015, which was then used for charitable donations and other expenses.",
+    "Jeffrey Epstein's personal 'Now/SuperNow' accounts were capitalized with millions from his entity Jeepers Inc. and show payments to individuals like Barry Jay Josephson, Adam Bly, and David J Mitchell.",
+    "The Haze Trust, associated with Epstein, moved tens of millions of dollars between its accounts and Southern Financial LLC, with a major rebalancing event in February 2019 involving a $7 million swap with Epstein's personal account.",
+    "Financial transactions link Epstein's network to prominent figures in finance (Leon Black, Rothschild family) and technology (Joichi Ito, with funds linked to blockchain investments)."
+  ],
+  "analyzedAt": "2026-02-15T21:06:22.496Z"
+}

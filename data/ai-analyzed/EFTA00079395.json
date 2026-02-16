@@ -1,0 +1,148 @@
+{
+  "fileName": "EFTA00079395.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-08",
+  "summary": "Email correspondence between attorneys and a U.S. Attorney's office regarding scheduling interviews for two clients who report being assaulted by Jeffrey Epstein in or around June 2004. The emails discuss travel arrangements and video conference logistics for the interviews.",
+  "persons": [
+    {
+      "name": "Teri Gibbs",
+      "role": "Attorney representing victims",
+      "category": "legal",
+      "context": "Attorney communicating with the U.S. Attorney's office to schedule interviews for two clients who are victims of Jeffrey Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Arick Fudali",
+      "role": "New York Attorney",
+      "category": "legal",
+      "context": "New York attorney who will accompany one of the victims during her interview with the U.S. Attorney's office.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lisa Bloom",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney copied on the email correspondence regarding victim reports against Jeffrey Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Colleen Mullen",
+      "role": "Recipient/Prosecutor",
+      "category": "legal",
+      "context": "Recipient of the email from Teri Gibbs regarding victim reports, likely a prosecutor or official in the U.S. Attorney's office.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alison",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant United States Attorney from the Southern District of New York who proposed meeting times for victim interviews.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the criminal case (19 Cr. 490 (RMB)); individuals report being assaulted by him.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Arick Fudali",
+      "relationshipType": "legal colleague",
+      "description": "Both are attorneys working together on representing victims in the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Lisa Bloom",
+      "relationshipType": "legal colleague",
+      "description": "Both are attorneys copied on the correspondence regarding victim reports.",
+      "strength": 2
+    },
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Colleen Mullen",
+      "relationshipType": "attorney-prosecutor",
+      "description": "Attorney communicating with a prosecutor/official to schedule victim interviews.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison",
+      "person2": "Colleen Mullen",
+      "relationshipType": "colleague",
+      "description": "Both are part of the U.S. Attorney's office for the Southern District of New York.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim 1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is accused of assaulting the victim in or around June 2004.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim 2",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is accused of assaulting the victim in or around June 2004.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06",
+      "title": "Alleged Assaults by Epstein",
+      "description": "Two individuals report being assaulted by Jeffrey Epstein in or around June 2004.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Victim 1",
+        "Victim 2"
+      ]
+    },
+    {
+      "date": "2019-08-26",
+      "title": "Scheduled Victim Interview",
+      "description": "Scheduled in-person interview at 12 p.m. with one victim at the U.S. Attorney's office, accompanied by attorney Arick Fudali.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim 1",
+        "Arick Fudali",
+        "Colleen Mullen",
+        "Alison"
+      ]
+    },
+    {
+      "date": "2019-08-27",
+      "title": "Scheduled Video Conference Interview",
+      "description": "Scheduled video conference interview at 5 p.m. EST with another victim, with attorneys present.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim 2",
+        "Teri Gibbs",
+        "Colleen Mullen",
+        "Alison"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Okinawa (mentioned for time zone reference)"
+  ],
+  "keyFacts": [
+    "Two individuals report being assaulted by Jeffrey Epstein in or around June 2004.",
+    "Attorneys are scheduling interviews for these victims with the U.S. Attorney's Office for the Southern District of New York in August 2019.",
+    "The correspondence references photographs of the victims from 2004 that were attached for review to see if they appear in photos seized from Epstein's home.",
+    "The case referenced is U.S. v. Jeffrey Epstein, 19 Cr. 490 (RMB).",
+    "Travel arrangements and video conference logistics are being coordinated for the victim interviews."
+  ],
+  "analyzedAt": "2026-02-15T20:27:18.060Z"
+}

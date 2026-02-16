@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00079554.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-20",
+  "summary": "This is an email from an individual named Alex, sent on December 20, 2019, scheduling a call for December 23, 2019. The sender argues that a person (whose name is redacted) was and is a victim of Jeffrey Epstein and aims to convince the recipient's team of this during the call. The sender's office address is provided.",
+  "persons": [
+    {
+      "name": "Alex",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "The sender of the email who is scheduling a call to discuss how a redacted individual was a victim of Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named as the perpetrator from whom a redacted individual is claimed to be a victim.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[Redacted Individual]",
+      "relationshipType": "victim-perpetrator",
+      "description": "The email claims the redacted individual was and is a victim of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex",
+      "person2": "[Redacted Individual]",
+      "relationshipType": "advocate",
+      "description": "Alex is advocating on behalf of the redacted individual, claiming they are a victim of Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-23",
+      "title": "Scheduled Call Regarding Epstein Victim",
+      "description": "A call is scheduled for 3 PM EST between Alex and the recipient's team to discuss the claim that a redacted individual is a victim of Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "[Redacted Individual]"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "9150 Wilshire Blvd., Suite 241",
+      "city": "Beverly Hills",
+      "state": "California",
+      "postalCode": "90212-3429",
+      "context": "The office address of the email sender, Alex."
+    }
+  ],
+  "keyFacts": [
+    "An email from December 2019 argues that a specific, redacted individual was a victim of Jeffrey Epstein.",
+    "The sender, Alex, is attempting to schedule a call to convince a team of this victim status.",
+    "The correspondence indicates ongoing efforts in late 2019 to establish or argue victim narratives related to Epstein."
+  ],
+  "analyzedAt": "2026-02-15T20:32:38.884Z"
+}

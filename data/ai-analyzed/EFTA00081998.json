@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00081998.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-01-14",
+  "summary": "This is a letter from Ghislaine Maxwell's defense attorneys to Judge Alison J. Nathan requesting the court order the Bureau of Prisons to grant Maxwell weekend and holiday access to a government-provided laptop for reviewing discovery. The letter argues the restriction impedes her trial preparation and notes the government has no objection.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The client of the law firm, currently incarcerated and seeking expanded access to a laptop to review discovery for her defense.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the case to whom the request for an order is addressed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Cohen & Gresser LLP who signed the letter on behalf of Ghislaine Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christian Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Everdell is writing and making a legal request to the court on behalf of his client, Ghislaine Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Alison J. Nathan",
+      "relationshipType": "legal",
+      "description": "Maxwell is the defendant in a criminal case over which Judge Nathan is presiding.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11",
+      "title": "Maxwell's COVID-19 Quarantine",
+      "description": "Ghislaine Maxwell was quarantined in an isolation cell for 14 days after close contact with an MDC staff member who tested positive for COVID-19.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-07-12",
+      "title": "Scheduled Trial Date",
+      "description": "The trial for United States v. Ghislaine Maxwell is scheduled to begin on this date.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Courthouse, 40 Foley Square, New York, NY 10007",
+    "Metropolitan Detention Center (MDC) - Brooklyn (implied location of Maxwell's incarceration)",
+    "800 Third Avenue, New York, New York 10022 (Cohen & Gresser LLP address)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense team is requesting court-ordered weekend and holiday access to a government-provided laptop for discovery review, citing the voluminous nature of the evidence.",
+    "The government has no objection to Maxwell having seven-day-a-week access to the laptop, but MDC officials have not lifted the restriction despite requests.",
+    "Maxwell previously had daily laptop access, including weekends, during a 14-day COVID-19 quarantine in November-December 2020.",
+    "The defense argues the prison computer is inadequate for reviewing large portions of the recently produced discovery, causing her to lose review time.",
+    "The trial is scheduled for July 12, 2021, and Maxwell must review millions of documents to prepare her defense."
+  ],
+  "analyzedAt": "2026-02-15T23:27:23.611Z"
+}

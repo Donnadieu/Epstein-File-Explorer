@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00081458.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-11-09",
+  "summary": "This is an email summarizing a call between prosecutors and attorneys from the law firm Kaplan Hecker regarding the potential retention of Dr. Dawn Hughes as an expert witness in the Ghislaine Maxwell case. The discussion centers on potential conflicts and confidentiality issues because Dr. Hughes previously examined a victim of Jeffrey Epstein who is represented by Kaplan Hecker.",
+  "persons": [
+    {
+      "name": "Mike Ferrara",
+      "role": "Attorney at Kaplan Hecker",
+      "category": "legal",
+      "context": "Participated in a call with prosecutors regarding the potential retention of Dr. Dawn Hughes as an expert, expressing concerns about confidentiality for a client.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alex Conlon",
+      "role": "Attorney at Kaplan Hecker",
+      "category": "legal",
+      "context": "Participated in the call, noting that a client disclosed more to Dr. Hughes than to the government, potentially creating inconsistencies.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Dawn Hughes",
+      "role": "Expert witness / Forensic psychologist",
+      "category": "witness",
+      "context": "A psychologist considered for retention by prosecutors to testify in the Ghislaine Maxwell case; previously examined a victim of Jeffrey Epstein represented by Kaplan Hecker.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the criminal case for which Dr. Hughes is being considered as an expert witness; her defense counsel is referenced.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused / Deceased",
+      "category": "key figure",
+      "context": "Referenced as the perpetrator whose victim was examined by Dr. Dawn Hughes; his estate is mentioned in connection with resolution discussions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mike Ferrara",
+      "person2": "Alex Conlon",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at the law firm Kaplan Hecker participating in the same call with prosecutors.",
+      "strength": 4
+    },
+    {
+      "person1": "Dawn Hughes",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional evaluation",
+      "description": "Dr. Hughes examined a victim of Jeffrey Epstein and generated a report related to the case.",
+      "strength": 3
+    },
+    {
+      "person1": "Dawn Hughes",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "potential expert witness",
+      "description": "Prosecutors are considering retaining Dr. Hughes to testify as an expert in the criminal case against Ghislaine Maxwell.",
+      "strength": 2
+    },
+    {
+      "person1": "Mike Ferrara",
+      "person2": "Dawn Hughes",
+      "relationshipType": "attorney-client (indirect)",
+      "description": "Mike Ferrara's firm (Kaplan Hecker) represents a client who was examined by Dr. Hughes, creating a prior professional relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-09",
+      "title": "Call regarding expert witness Dawn Hughes",
+      "description": "Prosecutors held a call with attorneys Mike Ferrara and Alex Conlon of Kaplan Hecker to discuss potential conflicts in retaining Dr. Dawn Hughes as an expert witness in the Ghislaine Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mike Ferrara",
+        "Alex Conlon",
+        "Dawn Hughes"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "One Saint Andrew's Plaza"
+  ],
+  "keyFacts": [
+    "Prosecutors in the Ghislaine Maxwell case were considering retaining Dr. Dawn Hughes as an expert witness.",
+    "A conflict issue arose because Dr. Hughes had previously examined a victim of Jeffrey Epstein who is represented by the law firm Kaplan Hecker.",
+    "The victim examined by Dr. Hughes had disclosed more information to her than to the government, potentially creating inconsistencies.",
+    "Dr. Hughes had communicated directly with Jeffrey Epstein's estate regarding discussions about a resolution.",
+    "Prosecutors planned to disclose Dr. Hughes's prior examination to Maxwell's defense counsel if they retained her."
+  ],
+  "analyzedAt": "2026-02-15T23:12:50.710Z"
+}

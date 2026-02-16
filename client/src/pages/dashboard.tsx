@@ -193,10 +193,14 @@ export default function Dashboard() {
         )}
       </div>
 
-      <div className="flex items-center gap-2">
-        <Link href="/search">
-          <Button variant="outline" className="gap-2" data-testid="button-global-search">
-            <Search className="w-4 h-4" />
+      <div className="w-full rounded-lg border bg-card p-4">
+        <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
+          <Search className="w-5 h-5 text-primary" />
+          Search Everything
+        </h2>
+        <Link href="/search" className="block">
+          <Button variant="outline" className="w-full h-12 gap-2 justify-start text-muted-foreground text-base" data-testid="button-global-search">
+            <Search className="w-5 h-5" />
             Search all files...
           </Button>
         </Link>

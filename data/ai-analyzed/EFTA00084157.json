@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA00084157.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-31",
+  "summary": "This document is a chain of emails from December 2019 between federal prosecutors and a defense attorney, Robert Glassman, coordinating interviews for the SDNY investigation into Jeffrey Epstein. The emails discuss scheduling meetings with a key witness (referred to as 'she' or 'your client'), and planning to contact her siblings and mother, who is overseas, as potential witnesses.",
+  "persons": [
+    {
+      "name": "Robert Glassman",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing a key witness in the SDNY investigation, coordinating meeting times and witness contact permissions with prosecutors.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Nathan Werksman",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Federal prosecutor with the SDNY, copied on emails discussing investigation logistics and witness interviews.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the SDNY investigation; prosecutors intend to discuss specific conduct by him and Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator",
+      "category": "key figure",
+      "context": "Mentioned alongside Epstein as someone whose specific conduct prosecutors intend to discuss with the witness.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert Glassman",
+      "person2": "Unnamed Female Witness",
+      "relationshipType": "attorney-client",
+      "description": "Glassman is the attorney for an unnamed female witness, coordinating her meetings with prosecutors and managing contact with her family.",
+      "strength": 5
+    },
+    {
+      "person1": "Nathan Werksman",
+      "person2": "Robert Glassman",
+      "relationshipType": "legal",
+      "description": "Prosecutor and defense attorney communicating to schedule witness interviews and coordinate investigation steps.",
+      "strength": 4
+    },
+    {
+      "person1": "Unnamed Female Witness",
+      "person2": "Unnamed Mother",
+      "relationshipType": "family",
+      "description": "The witness's mother is identified as a potentially key witness who lives overseas.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed Female Witness",
+      "person2": "Unnamed Brother(s)",
+      "relationshipType": "family",
+      "description": "The witness has at least one brother; prosecutors plan to contact siblings as part of their investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-16",
+      "title": "Scheduled Meeting with Key Witness",
+      "description": "Prosecutors and defense attorney Robert Glassman schedule a meeting for Monday, December 16, 2019, at 11:00 a.m. at Glassman's office to interview his client, a key witness.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Robert Glassman",
+        "Nathan Werksman",
+        "Unnamed Female Witness"
+      ]
+    },
+    {
+      "date": "2019-12-30",
+      "title": "Approval to Contact Witness's Family",
+      "description": "Robert Glassman gives prosecutors the 'go ahead' to contact the witness's siblings and mother to schedule interviews.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Glassman",
+        "Nathan Werksman"
+      ]
+    }
+  ],
+  "locations": [
+    "Los Angeles, CA (Robert Glassman's law office)",
+    "Overseas location (where the witness's mother resides)"
+  ],
+  "keyFacts": [
+    "Prosecutors from the SDNY were actively investigating Jeffrey Epstein and Ghislaine Maxwell as of late 2019, planning witness interviews for corroboration.",
+    "A key female witness, represented by attorney Robert Glassman, was scheduled to provide detailed information on travel and specific conduct by Epstein and Maxwell.",
+    "The witness's mother, living overseas, was identified as a 'potentially key witness' in the investigation.",
+    "Prosecutorial strategy involved starting interviews with the witness's siblings and mother before a follow-up meeting with the primary witness.",
+    "The correspondence shows careful coordination between prosecutors and defense counsel regarding witness contact and interview logistics."
+  ],
+  "analyzedAt": "2026-02-16T01:31:26.930Z"
+}

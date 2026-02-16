@@ -1,0 +1,164 @@
+{
+  "fileName": "EFTA00081000.pdf",
+  "dataSet": "9",
+  "documentType": "sealed indictment",
+  "dateOriginal": null,
+  "summary": "This is a sealed federal indictment from the Southern District of New York charging Jeffrey Epstein with one count of sex trafficking conspiracy and one count of sex trafficking. It details a scheme from approximately 2002 to 2005 where Epstein sexually exploited dozens of minor girls at his residences in Manhattan and Palm Beach, using a network of employees and victim-recruiters to facilitate the abuse.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant, Financier",
+      "category": "key figure",
+      "context": "The defendant charged with sex trafficking conspiracy and sex trafficking of minors. The indictment alleges he sexually exploited dozens of minor girls at his homes in New York and Florida, paying them cash and creating a network of victims.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney who signed and filed the indictment on behalf of the United States government.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-1",
+      "relationshipType": "employer-employee",
+      "description": "Epstein directed Employee-1, a New York-based employee, to communicate with victims via phone to arrange sexual encounters at the New York Residence.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-2",
+      "relationshipType": "employer-employee",
+      "description": "Epstein arranged for Employee-2 to contact victims to schedule sexual encounters at the Palm Beach Residence, including calls made from New York to Florida.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-3",
+      "relationshipType": "employer-employee",
+      "description": "Employee-3 placed phone calls to schedule sexual encounters for Epstein at the Palm Beach Residence.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein repeatedly sexually abused Minor Victim-1 at the New York Residence over years, paid her, and encouraged her to recruit other girls.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-2",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein repeatedly sexually abused Minor Victim-2 at the Palm Beach Residence over years, paid her, and encouraged her to recruit other girls.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-3",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein repeatedly sexually abused Minor Victim-3 at the Palm Beach Residence over years, paid her, and encouraged her to recruit other girls.",
+      "strength": 5
+    },
+    {
+      "person1": "Employee-1",
+      "person2": "Minor Victim-1",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-1 placed a phone call to Minor Victim-1 in 2004 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-2",
+      "person2": "Minor Victim-2",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-2 placed a phone call to Minor Victim-2 in 2005 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-2",
+      "person2": "Minor Victim-3",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-2 placed a phone call to Minor Victim-3 in Florida in 2005 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-3",
+      "person2": "Minor Victim-3",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-3 placed a phone call to Minor Victim-3 in 2004 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-2005",
+      "title": "Sex Trafficking Conspiracy Period",
+      "description": "The period during which Jeffrey Epstein is alleged to have conspired to commit sex trafficking of minors, exploiting dozens of girls at his New York and Florida residences.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Employee-1",
+        "Employee-2",
+        "Employee-3",
+        "Minor Victim-1",
+        "Minor Victim-2",
+        "Minor Victim-3"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": "Employee-1 calls Minor Victim-1",
+      "description": "Employee-1, on behalf of Epstein, placed a telephone call to Minor Victim-1 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Employee-1",
+        "Minor Victim-1",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": "Employee-2 calls Minor Victim-2 and Minor Victim-3",
+      "description": "Employee-2, on behalf of Epstein, placed telephone calls to Minor Victim-2 and Minor Victim-3 to schedule appointments for them to engage in paid sex acts with Epstein.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Employee-2",
+        "Minor Victim-2",
+        "Minor Victim-3",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": "Employee-3 calls Minor Victim-3",
+      "description": "Employee-3 placed a telephone call to Minor Victim-3 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Employee-3",
+        "Minor Victim-3",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Manhattan, New York (specifically the Upper East Side, referred to as the 'New York Residence')",
+    "Palm Beach, Florida (referred to as the 'Palm Beach Residence')",
+    "9 East 71st Street, New York, New York (specifically identified as a forfeitable property owned by Maple, Inc.)",
+    "Southern District of New York (jurisdiction for the legal proceedings)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is charged with sex trafficking conspiracy and sex trafficking of minors for acts occurring from at least 2002 to 2005.",
+    "The indictment alleges Epstein sexually exploited dozens of minor girls, some as young as 14, at his homes in Manhattan and Palm Beach, paying them hundreds of dollars in cash per encounter.",
+    "Epstein is accused of creating a network where he paid certain victims to recruit additional underage girls for him to abuse, maintaining a steady supply of new victims.",
+    "Epstein's employees, referred to as Employee-1, Employee-2, and Employee-3, are described as facilitating the scheme by contacting victims and scheduling sexual encounters.",
+    "The indictment includes a forfeiture allegation seeking Epstein's property at 9 East 71st Street in New York, owned by Maple, Inc., as property used to facilitate the crimes."
+  ],
+  "analyzedAt": "2026-02-15T22:41:20.014Z"
+}

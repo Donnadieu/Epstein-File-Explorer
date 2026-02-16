@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00081426.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-12",
+  "summary": "An email from an Assistant U.S. Attorney in the Southern District of New York containing notes on financial information related to an individual (DB00001) with high estimated income and net worth, and payments made to another individual (DB000117). The email references saved documents in a subpoena returns folder.",
+  "persons": [
+    {
+      "name": "Harry Beller",
+      "role": "Accountant",
+      "category": "associate",
+      "context": "Identified as the accountant for DB00001, working at HBRK Associates.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DB00001",
+      "role": "Subject of financial notes",
+      "category": "key figure",
+      "context": "An individual with an estimated annual income of $10,000,000 and net worth over $500 million, whose accountant is Harry Beller.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DB000117",
+      "role": "Recipient of payments",
+      "category": "associate",
+      "context": "An individual who received multiple payments from DB00001 on specified dates in 2015 and 2018.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "DB00001",
+      "person2": "Harry Beller",
+      "relationshipType": "financial",
+      "description": "Harry Beller is identified as the accountant for DB00001, indicating a professional financial advisory relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "DB00001",
+      "person2": "DB000117",
+      "relationshipType": "financial",
+      "description": "DB00001 made multiple payments to DB000117 on specific dates in 2015 and 2018, as noted in the financial records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-12-03",
+      "title": "Payment to DB000117",
+      "description": "A payment of $250,000 was made from DB00001 to DB000117.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "DB00001",
+        "DB000117"
+      ]
+    },
+    {
+      "date": "2015-04-22",
+      "title": "Payment to DB000117",
+      "description": "A payment of $50,000 was made from DB00001 to DB000117.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "DB00001",
+        "DB000117"
+      ]
+    },
+    {
+      "date": "2015-01-28",
+      "title": "Payment to DB000117",
+      "description": "A payment of $50,000 was made from DB00001 to DB000117.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "DB00001",
+        "DB000117"
+      ]
+    },
+    {
+      "date": "2015-09-24",
+      "title": "Payment to DB000117",
+      "description": "A payment of $23,625 was made from DB00001 to DB000117.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "DB00001",
+        "DB000117"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document is an email from an Assistant U.S. Attorney in the Southern District of New York dated July 12, 2019, containing financial notes on individuals related to the Epstein case.",
+    "It references an individual (DB00001) with an estimated annual income of $10 million and a net worth exceeding $500 million, whose accountant is Harry Beller of HBRK Associates.",
+    "It details multiple payments from DB00001 to another individual (DB000117) totaling $373,625 across four transactions in 2015 and 2018.",
+    "The email indicates these notes were part of a review of documents saved in a 'subpoena returns folder,' suggesting they were obtained via legal process.",
+    "The use of placeholder identifiers (DB00001, DB000117) suggests these are likely code names or redacted references to individuals under investigation."
+  ],
+  "analyzedAt": "2026-02-15T23:10:11.785Z"
+}

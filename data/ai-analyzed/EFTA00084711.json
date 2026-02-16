@@ -1,0 +1,182 @@
+{
+  "fileName": "EFTA00084711.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-03",
+  "summary": "This is a letter from Ghislaine Maxwell's defense attorney, Bobbi C. Sternheim, to Judge Alison J. Nathan. The letter renews a request for the early release of potential juror names to counsel (for attorneys' eyes only) to allow for proper background research before voir dire. It argues that withholding names until jury selection would deprive Maxwell of her right to a fair and impartial jury, citing legal precedents and bar association opinions on the importance of juror vetting.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case United States v. Ghislaine Maxwell, for whom her attorney is requesting juror name disclosure.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Bobbi C. Sternheim",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney for Ghislaine Maxwell who authored and signed the letter to Judge Nathan, arguing for the release of juror names.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the case United States v. Ghislaine Maxwell, to whom the letter is addressed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Catherine M. Conrad",
+      "role": "Juror",
+      "category": "witness",
+      "context": "Referred to as Juror No. 1 in the case United States v. Daugerdas; cited as an example of a juror who lied during voir dire, leading to a vacated conviction.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Parse",
+      "role": "Defendant",
+      "category": "other",
+      "context": "A defendant in the financial fraud case United States v. Daugerdas; his conviction was vacated due to juror bias.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Judge Pauley",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge in the United States v. Daugerdas case who presided over the post-conviction evidentiary hearing regarding juror misconduct.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Richard Spencer",
+      "role": "Pro Se Defendant",
+      "category": "other",
+      "context": "A pro se defendant described as a prominent white supremacist in the Sines v. Kessler civil case, used as a comparative example where juror names were released to counsel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christopher Cantwell",
+      "role": "Pro Se Defendant",
+      "category": "other",
+      "context": "A pro se defendant described as a neo-Nazi in the Sines v. Kessler civil case, used as a comparative example where juror names were released to counsel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Norman K. Moon",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge in the Sines v. Kessler case in the Western District of Virginia who issued the order (Exhibit A) regarding juror questionnaire access.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jason Kessler",
+      "role": "Defendant",
+      "category": "other",
+      "context": "A defendant in the Sines v. Kessler civil case referenced in the attached exhibit order.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Elizabeth Sines",
+      "role": "Plaintiff",
+      "category": "other",
+      "context": "A plaintiff in the Sines v. Kessler civil case referenced in the attached exhibit order.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bobbi C. Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Sternheim is the defense attorney representing Maxwell in her criminal case, as evidenced by the letter arguing for her client's right to a fair jury.",
+      "strength": 5
+    },
+    {
+      "person1": "Bobbi C. Sternheim",
+      "person2": "Catherine M. Conrad",
+      "relationshipType": "legal representation",
+      "description": "The document states Judge Pauley appointed Bobbi C. Sternheim to represent juror Catherine Conrad during a post-conviction evidentiary hearing in the Daugerdas case.",
+      "strength": 3
+    },
+    {
+      "person1": "Parse",
+      "person2": "Catherine M. Conrad",
+      "relationshipType": "juror-defendant",
+      "description": "Juror Conrad's falsehoods during voir dire in the Daugerdas case directly impacted Parse's trial, leading to the vacating of his conviction.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Spencer",
+      "person2": "Christopher Cantwell",
+      "relationshipType": "co-defendant",
+      "description": "Both are named as pro se defendants in the Sines v. Kessler case, described as prominent white supremacists and neo-Nazis.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-10-21",
+      "title": "Pre-trial Teleconference",
+      "description": "A teleconference was held where the court discussed juror questionnaire procedures, leading to defense counsel's understanding about juror name release.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C. Sternheim",
+        "Alison J. Nathan"
+      ]
+    },
+    {
+      "date": "2021-10-19",
+      "title": "Court Order in Sines v. Kessler",
+      "description": "Judge Norman K. Moon issued an order amending pretrial procedures to allow designated persons access to juror questionnaires in the Sines v. Kessler civil case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Norman K. Moon",
+        "Elizabeth Sines",
+        "Jason Kessler",
+        "Richard Spencer",
+        "Christopher Cantwell"
+      ]
+    },
+    {
+      "date": "2012",
+      "title": "Post-Conviction Hearing in Daugerdas Case",
+      "description": "Judge Pauley conducted an evidentiary hearing after trial regarding juror Catherine Conrad's falsehoods during voir dire, leading to a new trial for some defendants.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Pauley",
+        "Catherine M. Conrad",
+        "Parse",
+        "Bobbi C. Sternheim"
+      ]
+    },
+    {
+      "date": "2015",
+      "title": "Second Circuit Ruling in Parse Case",
+      "description": "The Second Circuit Court of Appeals reversed Judge Pauley's waiver ruling and vacated Parse's conviction, finding the jury was not impartial.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Parse",
+        "Catherine M. Conrad",
+        "Judge Pauley"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Courthouse, 40 Foley Square, New York, NY 10007",
+    "Charlottesville, Virginia",
+    "Western District of Virginia"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense team is formally requesting the court to release the names of 600 potential jurors to counsel upon completion of questionnaires, not at voir dire, to allow for proper background research.",
+    "The defense argues that withholding juror names until jury selection would violate Maxwell's right to a fair and impartial jury and due process, citing the risk of undisclosed juror bias.",
+    "The letter cites the precedent of United States v. Parse (Daugerdas), where a juror's lies during voir dire led to a vacated conviction after a three-month trial, to underscore the importance of pre-voir dire research.",
+    "The defense compares the case to Sines v. Kessler, a high-profile civil case involving alleged white supremacists, where the court released juror names to counsel, arguing juror privacy concerns are greater in that case.",
+    "The document references formal opinions from the New York City Bar Association and American Bar Association stating that internet research on potential jurors is an expected standard of competent legal practice."
+  ],
+  "analyzedAt": "2026-02-16T01:56:35.928Z"
+}

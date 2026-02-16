@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00084858.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-14",
+  "summary": "This document is an email chain from October 2020 among U.S. Attorney's Office (SDNY) personnel and a contractor regarding the final review and production of discovery materials, likely related to the case against Jeffrey Epstein or an associate. The discussion focuses on redactions, stamping, cover letters to defense counsel, and the identification of documents pertaining to inmate Nicholas Tartaglione and a person referred to as 'Touhy'.",
+  "persons": [
+    {
+      "name": "Noel",
+      "role": "Defense Counsel",
+      "category": "legal",
+      "context": "Recipient of a discovery production cover letter from the U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thomas",
+      "role": "Defense Counsel",
+      "category": "legal",
+      "context": "Recipient of a discovery production cover letter from the U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate/Defendant",
+      "category": "key figure",
+      "context": "A subject of the document review; emails concern his conditions of confinement and an incident where he was questioned about an attack on Jeffrey Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "Mentioned in relation to an incident where Tartaglione was questioned about an attack on him, and where Epstein informed a psychologist about Tartaglione.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-inmate",
+      "description": "Both were inmates at the Metropolitan Correctional Center (MCC); documents reference Tartaglione being questioned about an attack on Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "U.S. Attorney's Office Personnel",
+      "person2": "Noel",
+      "relationshipType": "legal-adversary",
+      "description": "The USAO is preparing and sending discovery materials to defense counsel Noel.",
+      "strength": 2
+    },
+    {
+      "person1": "U.S. Attorney's Office Personnel",
+      "person2": "Thomas",
+      "relationshipType": "legal-adversary",
+      "description": "The USAO is preparing and sending discovery materials to defense counsel Thomas.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-09",
+      "title": "Discovery Review Completion",
+      "description": "A contractor completes review of email files for redaction, flagging uncertain portions related to Tartaglione and Epstein.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "U.S. Attorney's Office Personnel",
+        "Nicholas Tartaglione",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-10-13",
+      "title": "Finalization of Discovery Production",
+      "description": "Final cover letters are approved, and discovery materials are prepared for production to defense counsel via USAfx.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "U.S. Attorney's Office Personnel",
+        "Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2020-10-14",
+      "title": "Anonymizing Index Review",
+      "description": "Final review and approval of an anonymizing index before sending out discovery productions.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "U.S. Attorney's Office Personnel"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office was finalizing a large discovery production for defense counsel in a case involving Nicholas Tartaglione and references to Jeffrey Epstein.",
+    "Email chains reviewed included discussions about an incident where Tartaglione was questioned regarding an attack on Jeffrey Epstein while both were at the MCC.",
+    "The review process specifically sought to identify documents related solely to Tartaglione's conditions of confinement and emails with a person referred to as 'Touhy'.",
+    "Multiple USAO personnel and a contractor were involved in a meticulous process of redaction, stamping, and creating an anonymizing index for the discovery materials."
+  ],
+  "analyzedAt": "2026-02-16T02:04:05.965Z"
+}

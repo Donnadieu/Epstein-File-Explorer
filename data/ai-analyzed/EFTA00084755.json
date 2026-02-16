@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00084755.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2020-10-14",
+  "summary": "A letter from the U.S. Attorney's Office for the Southern District of New York to defense counsel providing additional discovery materials under a protective order in the case United States v. Michael Thomas. The document outlines Bates number ranges for confidential and attorney's eyes only materials being produced.",
+  "persons": [
+    {
+      "name": "Montell Figgins",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing the defendant Michael Thomas, receiving discovery materials from the U.S. Attorney's Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Defendant in criminal case No. 19 Cr. 830, referenced in the case title United States v. Michael Thomas.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Audrey Strauss",
+      "role": "Acting United States Attorney",
+      "category": "legal",
+      "context": "Acting United States Attorney for the Southern District of New York, signing off on the discovery letter.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Montell Figgins",
+      "person2": "Michael Thomas",
+      "relationshipType": "attorney-client",
+      "description": "Figgins is the defense attorney representing Thomas in the criminal case.",
+      "strength": 5
+    },
+    {
+      "person1": "Audrey Strauss",
+      "person2": "Michael Thomas",
+      "relationshipType": "legal",
+      "description": "Strauss, as Acting U.S. Attorney, is prosecuting the case against Thomas.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-16",
+      "title": "Protective Order Entered",
+      "description": "A protective order was entered in the case United States v. Michael Thomas, governing the disclosure of discovery materials.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Montell Figgins"
+      ]
+    },
+    {
+      "date": "2020-10-14",
+      "title": "Discovery Production Letter",
+      "description": "The U.S. Attorney's Office sent a letter to defense counsel providing additional discovery materials under Rule 16(a).",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Audrey Strauss",
+        "Montell Figgins",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "The Silvio J. Mollo Building, One Saint Andrew's Plaza, New York, New York 10007",
+    "Law Offices of Montell Figgins, 17 Academy Street, Suite 305, Newark, NJ 07102"
+  ],
+  "keyFacts": [
+    "The document is a discovery letter in the criminal case United States v. Michael Thomas (No. 19 Cr. 830).",
+    "Discovery materials are being produced under a protective order entered on December 16, 2019, with specific Bates number ranges designated as confidential or attorney's eyes only.",
+    "Some materials (SDNY_MT_00000177 through SDNY_MT_00000210) are being produced only to the defendant, Michael Thomas, not just his attorney.",
+    "The letter is signed by Audrey Strauss, the Acting United States Attorney for the Southern District of New York, on October 14, 2020."
+  ],
+  "analyzedAt": "2026-02-16T01:59:37.171Z"
+}

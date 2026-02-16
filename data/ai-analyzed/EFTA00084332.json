@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00084332.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-06",
+  "summary": "This document is a chain of emails from July 2020 discussing how to obtain information from a New Hampshire real estate attorney who handled the purchase of the property where Ghislaine Maxwell was arrested. The emails involve FBI agents and prosecutors coordinating legal strategy for bail arguments.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation; was arrested at the property in question on July 2, 2020.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jen Marshal",
+      "role": "Property Buyer",
+      "category": "associate",
+      "context": "Named as a client (along with Steve Marshal) who retained the attorney to handle the purchase of the property via Granite Reality, LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steve Marshal",
+      "role": "Property Buyer",
+      "category": "associate",
+      "context": "Named as a client (along with Jen Marshal) who retained the attorney to handle the purchase of the property via Granite Reality, LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jen Marshal",
+      "person2": "Steve Marshal",
+      "relationshipType": "co-owner/business associate",
+      "description": "Co-clients who retained the attorney to purchase the property for Granite Reality, LLC.",
+      "strength": 4
+    },
+    {
+      "person1": "Jen Marshal",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "property connection",
+      "description": "The entity they purchased (Granite Reality, LLC) owned the property where Maxwell was arrested.",
+      "strength": 2
+    },
+    {
+      "person1": "Steve Marshal",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "property connection",
+      "description": "The entity they purchased (Granite Reality, LLC) owned the property where Maxwell was arrested.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-02",
+      "title": "Arrest of Ghislaine Maxwell",
+      "description": "Ghislaine Maxwell was arrested at the property located at 338 E. Washington Road, Bradford, NH.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-02",
+      "title": "Mortgage Banker's Conference",
+      "description": "A conference in Portsmouth, NH where the attorney and an FBI agent first met.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "338 E. Washington Road, Bradford, NH",
+    "Portsmouth, NH",
+    "Boston"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was arrested on July 2, 2020, at 338 E. Washington Road in Bradford, New Hampshire.",
+    "The property was purchased by an entity called Granite Reality, LLC, which was represented by a New Hampshire real estate attorney.",
+    "The attorney was retained by clients named Jen and Steve Marshal to handle the purchase closing.",
+    "FBI agents and prosecutors were coordinating in July 2020 to obtain the attorney's file, potentially for use in Maxwell's bail arguments.",
+    "The attorney indicated she would cooperate but requested a proper subpoena to avoid breaching her ethical obligations."
+  ],
+  "analyzedAt": "2026-02-16T01:44:25.593Z"
+}

@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00079138.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-23",
+  "summary": "This is an email chain from September 23, 2019, forwarding a tip to an unspecified recipient (likely a journalist or investigator) regarding a person described as a former pilot for Bill Clinton. The tip suggests this individual may be connected to the Jeffrey Epstein scandal and provides personal background, including that he is the father of a National Security Adviser.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Central figure in sex trafficking scandal",
+      "category": "key figure",
+      "context": "Mentioned as the subject of the scandal to which the tip about a potential associate (a pilot) might be connected.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bill Clinton",
+      "role": "Former U.S. President",
+      "category": "political",
+      "context": "Mentioned as the employer of the alleged pilot who is the subject of the tip.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Berman",
+      "role": "Intended recipient of the tip (likely a reference to then-U.S. Attorney Geoffrey Berman)",
+      "category": "legal",
+      "context": "The tipster requests the email be forwarded to Mr. Berman, suggesting he is a law enforcement official who should investigate the alleged pilot.",
+      "mentionCount": 2
+    },
+    {
+      "name": "W P",
+      "role": "Tipster/Email sender",
+      "category": "witness",
+      "context": "The individual sending the initial tip, claiming to be an abandoned child of the alleged pilot and offering information about his potential connection to Epstein and Clinton.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "Bill Clinton",
+      "relationshipType": "employer-employee",
+      "description": "The tip alleges the unnamed individual was a pilot for Bill Clinton.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The tip suggests the pilot may be involved in the Jeffrey Epstein scandal, warranting investigation of his flight manifests and lifestyle.",
+      "strength": 2
+    },
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "W P",
+      "relationshipType": "familial",
+      "description": "W P claims to be one of the pilot's abandoned children.",
+      "strength": 4
+    },
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "Unnamed National Security Adviser",
+      "relationshipType": "familial",
+      "description": "The tip states the pilot's son is a National Security Adviser.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-23",
+      "title": "Tip email regarding Clinton pilot",
+      "description": "An email tip is sent and forwarded, alleging a former pilot for Bill Clinton may be a sexual predator with potential connections to the Jeffrey Epstein scandal.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "W P",
+        "Berman",
+        "Jeffrey Epstein",
+        "Bill Clinton",
+        "Unnamed Pilot"
+      ]
+    }
+  ],
+  "locations": [
+    "London"
+  ],
+  "keyFacts": [
+    "A tipster (W P) claims to have information about a sexual predator who was a pilot for Bill Clinton.",
+    "The tipster suggests this pilot may be involved in the Jeffrey Epstein scandal and that his flight manifests and lifestyle deserve investigation.",
+    "The tipster identifies as one of the pilot's abandoned children and states the pilot's son is a National Security Adviser.",
+    "The tipster notes the pilot changed both his first and last names when obtaining a work permit and residency.",
+    "The email is intended to be forwarded to Mr. Berman (likely then-U.S. Attorney Geoffrey Berman) for investigation."
+  ],
+  "analyzedAt": "2026-02-15T20:09:09.218Z"
+}

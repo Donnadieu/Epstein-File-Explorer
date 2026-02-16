@@ -1,0 +1,241 @@
+{
+  "fileName": "EFTA00081321.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2008-07-09",
+  "summary": "This is a declaration by Assistant U.S. Attorney A. (name redacted) filed in support of the United States' response to a victim's emergency petition. It details the federal investigation into Jeffrey Epstein, victim notification procedures, the 2007 non-prosecution agreement, and interactions with victims and their attorneys.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Target of Investigation / Accused",
+      "category": "key figure",
+      "context": "The subject of the federal and state investigations for using facilities of interstate commerce to induce minors into prostitution. The declaration discusses the 2007 agreement to defer federal prosecution in favor of state prosecution.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Bradley Edwards",
+      "role": "Attorney for Victims",
+      "category": "legal",
+      "context": "Attorney representing victims T.M., C.W., and S.R. He filed the emergency petition on behalf of 'Jane Doe' which prompted this declaration. The AUSA details communications with him regarding victim notifications.",
+      "mentionCount": 8
+    },
+    {
+      "name": "T.M.",
+      "role": "Alleged Victim / Client",
+      "category": "victim",
+      "context": "One of Bradley Edwards' clients, identified as a victim of Epstein while a minor. She was represented by James Eisenberg (paid by Epstein) and was described as 'openly hostile to the prosecution of Epstein' in 2007.",
+      "mentionCount": 7
+    },
+    {
+      "name": "C.W.",
+      "role": "Alleged Victim / Client",
+      "category": "victim",
+      "context": "One of Bradley Edwards' clients, identified as a victim of Epstein while a minor. She was notified of the 2007 agreement, secured pro bono counsel to avoid a deposition by Epstein's team, and was later represented by Edwards.",
+      "mentionCount": 7
+    },
+    {
+      "name": "S.R.",
+      "role": "Alleged Victim / Client",
+      "category": "victim",
+      "context": "One of Bradley Edwards' clients, identified as a victim of Epstein while a minor. She initially refused to speak with investigators in 2007 but was interviewed and confirmed as a victim in May 2008.",
+      "mentionCount": 6
+    },
+    {
+      "name": "James Eisenberg",
+      "role": "Attorney for T.M.",
+      "category": "legal",
+      "context": "Attorney who represented victim T.M. His fees were paid by Jeffrey Epstein. The AUSA notes that all contact with T.M. was through Eisenberg due to this representation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "David F. Levi",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Mentioned as the judge for whom the declarant (AUSA A.) clerked after law school. This is part of the declarant's professional background.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "T.M.",
+      "relationshipType": "victim-perpetrator",
+      "description": "T.M. is identified as a victim of Jeffrey Epstein's sexual exploitation while she was a minor.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "C.W.",
+      "relationshipType": "victim-perpetrator",
+      "description": "C.W. is identified as a victim of Jeffrey Epstein's sexual exploitation while she was a minor.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "S.R.",
+      "relationshipType": "victim-perpetrator",
+      "description": "S.R. is identified as a victim of Jeffrey Epstein's sexual exploitation while she was a minor.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley Edwards",
+      "person2": "T.M.",
+      "relationshipType": "attorney-client",
+      "description": "Bradley Edwards is identified as the attorney representing victim T.M., as well as C.W. and S.R.",
+      "strength": 5
+    },
+    {
+      "person1": "Bradley Edwards",
+      "person2": "C.W.",
+      "relationshipType": "attorney-client",
+      "description": "Bradley Edwards is identified as the attorney representing victim C.W., as well as T.M. and S.R.",
+      "strength": 5
+    },
+    {
+      "person1": "Bradley Edwards",
+      "person2": "S.R.",
+      "relationshipType": "attorney-client",
+      "description": "Bradley Edwards is identified as the attorney representing victim S.R., as well as T.M. and C.W.",
+      "strength": 5
+    },
+    {
+      "person1": "James Eisenberg",
+      "person2": "T.M.",
+      "relationshipType": "attorney-client",
+      "description": "James Eisenberg was the attorney representing victim T.M., with his fees paid by Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "James Eisenberg",
+      "relationshipType": "financial",
+      "description": "Jeffrey Epstein paid the legal fees for James Eisenberg, who was representing victim T.M.",
+      "strength": 4
+    },
+    {
+      "person1": "A.",
+      "person2": "Bradley Edwards",
+      "relationshipType": "legal-professional",
+      "description": "The AUSA (A.) had professional communications with Attorney Bradley Edwards regarding his clients (the victims) and the Epstein case proceedings.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "Federal Investigation Initiated",
+      "description": "The FBI initiated an investigation into Jeffrey Epstein at the request of the Palm Beach Police Department for using interstate facilities to induce minors into prostitution.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "A."
+      ]
+    },
+    {
+      "date": "2007",
+      "title": "State Charges Filed",
+      "description": "Jeffrey Epstein was charged by the State of Florida with solicitation of prostitution under Florida law.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2007-09",
+      "title": "Non-Prosecution Agreement Signed",
+      "description": "The U.S. Attorney's Office and Jeffrey Epstein entered into a confidential agreement to defer federal prosecution in favor of state prosecution, with conditions including preserving victims' rights to sue under federal law.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "A."
+      ]
+    },
+    {
+      "date": "2007-10",
+      "title": "Victims Notified of Agreement",
+      "description": "Four victims, including C.W., were contacted and notified of the terms of the non-prosecution agreement after it was signed.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "C.W.",
+        "A."
+      ]
+    },
+    {
+      "date": "2008-01-10",
+      "title": "FBI Victim Notification Letters Sent",
+      "description": "The FBI's Victim-Witness Specialist sent notification letters to victims C.W. and T.M.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "C.W.",
+        "T.M."
+      ]
+    },
+    {
+      "date": "2008-05-28",
+      "title": "S.R. Interviewed by Federal Agents",
+      "description": "Victim S.R., who had previously refused to speak, was interviewed by federal agents, confirming her status as a victim.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "S.R."
+      ]
+    },
+    {
+      "date": "2008-05-30",
+      "title": "FBI Letter to S.R.",
+      "description": "The FBI's Victim-Witness Specialist sent a victim notification letter to S.R.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "S.R."
+      ]
+    },
+    {
+      "date": "2008-06-30",
+      "title": "Scheduled State Plea Hearing",
+      "description": "A plea hearing in the state case against Epstein was scheduled for 8:30 a.m. The AUSA attempted last-minute victim notification.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "A.",
+        "Bradley Edwards"
+      ]
+    },
+    {
+      "date": "2008-07-09",
+      "title": "Victim Notifications Provided",
+      "description": "On the date of this declaration, the AUSA provided victim notifications to C.W. and S.R. via their attorney, Bradley Edwards. T.M. was not included.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "A.",
+        "Bradley Edwards",
+        "C.W.",
+        "S.R.",
+        "T.M."
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of Florida",
+    "Palm Beach, Florida",
+    "Sacramento, California",
+    "University of California at Berkeley",
+    "District of Minnesota",
+    "Northern District of California"
+  ],
+  "keyFacts": [
+    "The federal investigation into Jeffrey Epstein began in 2006 based on a request from the Palm Beach Police Department, focusing on the use of interstate facilities to induce minors into prostitution.",
+    "A non-prosecution agreement was reached between Epstein and the U.S. Attorney's Office in September 2007, deferring federal prosecution to the State of Florida while preserving victims' rights to sue under federal law (18 U.S.C. § 2255).",
+    "Victim T.M. was represented by attorney James Eisenberg, whose fees were paid by Jeffrey Epstein, the target of the investigation, creating a potential conflict of interest.",
+    "The AUSA states that victim T.M. was 'openly hostile to the prosecution of Epstein' in 2007 and, due to her prior statements, could not in good faith be included as a victim in a potential federal indictment.",
+    "The declaration reveals that victims were not consulted prior to the 2007 non-prosecution agreement, and Epstein's attorneys complained when victims were notified, fearing it would incentivize them to overstate claims for damages."
+  ],
+  "analyzedAt": "2026-02-15T23:00:46.940Z"
+}

@@ -151,6 +151,7 @@ function parseWikipediaTable(html: string): RawPerson[] {
   const persons: RawPerson[] = [];
   const seen = new Set<string>();
 
+  // Strategy 1: Classic wikitable format (pre-2026 page structure)
   $("table.wikitable tbody tr").each((_i, row) => {
     const cells = $(row).find("td");
     if (cells.length < 2) return;
@@ -207,6 +208,69 @@ function parseWikipediaTable(html: string): RawPerson[] {
       wikiUrl,
     });
   });
+
+  // Strategy 2: H3-per-person format (2026+ page structure)
+  // Page is organized as H2 = letter (A, B, C...), H3 = person name, followed by paragraphs
+  if (persons.length === 0) {
+    $("h3").each((_i, heading) => {
+      const headingText = $(heading).text().replace(/\[edit\]/g, "").trim();
+      if (!headingText || headingText.length < 2) return;
+      // Skip non-person headings (navigation, references, etc.)
+      if (/^(references|see also|external links|notes|further reading|contents)$/i.test(headingText)) return;
+
+      const name = headingText.replace(/\[.*?\]/g, "").trim();
+      if (seen.has(name.toLowerCase())) return;
+      seen.add(name.toLowerCase());
+
+      // Collect text from siblings until next heading
+      let description = "";
+      let wikiHref = "";
+      let el = $(heading).next();
+      while (el.length && !el.is("h2") && !el.is("h3")) {
+        if (el.is("p")) {
+          description += el.text().trim() + " ";
+        }
+        // Check for wiki link in first paragraph
+        if (!wikiHref) {
+          el.find("a").each((_k, link) => {
+            const href = $(link).attr("href") || "";
+            if (href.startsWith("/wiki/") && !href.includes("File:") && !href.includes("Help:") && !wikiHref) {
+              const linkText = $(link).text().trim().toLowerCase();
+              if (linkText === name.toLowerCase() || name.toLowerCase().includes(linkText)) {
+                wikiHref = href;
+              }
+            }
+          });
+        }
+        el = el.next();
+      }
+
+      description = description.replace(/\[.*?\]/g, "").replace(/\s+/g, " ").trim();
+      if (!description) return;
+
+      const wikiUrl = wikiHref && !wikiHref.includes("redlink")
+        ? `https://en.wikipedia.org${wikiHref}`
+        : undefined;
+
+      const { category, occupation } = categorizeByOccupation(description, name);
+      const status = determineStatus(description);
+      const role = determineRole(description);
+      const nationality = extractNationality(description);
+
+      persons.push({
+        name,
+        description: description.substring(0, 800),
+        category,
+        occupation,
+        nationality,
+        status,
+        role,
+        aliases: [],
+        source: "wikipedia",
+        wikiUrl,
+      });
+    });
+  }
 
   return persons;
 }

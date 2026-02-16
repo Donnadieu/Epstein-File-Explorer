@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00084346.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-07",
+  "summary": "An email from Michael Lyon, owner of Lyon Aviation, to an unspecified recipient, providing a tip regarding private jet flights he believes were arranged for Jeffrey Epstein. He details a specific flight in February 2015 transporting a woman from Boston to St. Thomas and implicates charter broker Dan Ryan as the consistent broker for these flights to the island.",
+  "persons": [
+    {
+      "name": "Michael Lyon",
+      "role": "Owner of Lyon Aviation Inc., tipster",
+      "category": "witness",
+      "context": "The sender of the email who provides a tip about suspicious private jet flights to St. Thomas, linking them to Jeffrey Epstein via charter broker Dan Ryan. He describes a specific flight in February 2015.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dan Ryan",
+      "role": "Owner of BIG FLY INC., charter broker",
+      "category": "associate",
+      "context": "Identified by Michael Lyon as the charter broker who he believes was consistently working for Jeffrey Epstein or his representatives, arranging numerous private flights to St. Thomas from various US locations.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of the tip, alleged beneficiary of flights",
+      "category": "key figure",
+      "context": "The individual Michael Lyon suspects was the ultimate client for the private jet flights arranged by Dan Ryan to St. Thomas, based on news reports.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dan Ryan",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Michael Lyon asserts that Dan Ryan, as a charter broker, was 'working for the same person (many years)' and fulfilling flight requests 'on behalf of Jeffrey Epstein or his representatives.'",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Lyon",
+      "person2": "Dan Ryan",
+      "relationshipType": "business",
+      "description": "Michael Lyon's company, Lyon Aviation, performed a charter flight on behalf of Dan Ryan, who acted as the broker for the client.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-02-07",
+      "title": "Suspicious private flight from Boston to St. Thomas",
+      "description": "Lyon Aviation transported a lone woman from Boston to St. Thomas on a private jet. The woman was later questioned by St. Thomas Customs on her return on February 10, 2015, and claimed to be an escort.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Lyon",
+        "Dan Ryan"
+      ]
+    }
+  ],
+  "locations": [
+    "Pittsfield, Massachusetts",
+    "St. Thomas",
+    "Boston, Massachusetts",
+    "Albany, New York",
+    "Los Angeles, California"
+  ],
+  "keyFacts": [
+    "Michael Lyon, an aviation company owner, provided a tip linking charter broker Dan Ryan to frequent private jet flights to St. Thomas he believes were for Jeffrey Epstein.",
+    "A specific flight on February 7-10, 2015, transported a lone woman from Boston to St. Thomas; she was questioned by customs and identified as an escort.",
+    "Lyon states Dan Ryan was the consistent broker for these flights, originating from various US cities including Los Angeles, and likely has passenger names and payment details.",
+    "The tip was provided in July 2020, after the Epstein story broke in the news, prompting Lyon's recollection."
+  ],
+  "analyzedAt": "2026-02-16T01:45:22.425Z"
+}

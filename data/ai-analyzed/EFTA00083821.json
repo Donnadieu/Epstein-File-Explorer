@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00083821.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-02-01",
+  "summary": "This FBI 302 document records an introductory video conference meeting held on February 23, 2021, between the case team and Eva Dubin, a potential witness. Dubin, accompanied by her attorney, was introduced to the investigators, expressed willingness to cooperate, and acknowledged her memory of past events was not the best. The meeting was to set up a future formal interview.",
+  "persons": [
+    {
+      "name": "Eva Dubin",
+      "role": "Potential Witness/Cooperating Individual",
+      "category": "witness",
+      "context": "Met with the case team via video conference, expressed willingness to cooperate with the investigation but noted her memory of past events was not the best.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tatiana Martins",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Present via video as Eva Dubin's attorney during the introductory meeting with the case team.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Young",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Present via video as part of the case team investigating the captioned case during the meeting with Eva Dubin.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Eva Dubin",
+      "person2": "Tatiana Martins",
+      "relationshipType": "attorney-client",
+      "description": "Tatiana Martins was present as Eva Dubin's attorney during the video conference meeting with investigators.",
+      "strength": 5
+    },
+    {
+      "person1": "Eva Dubin",
+      "person2": "Amanda Young",
+      "relationshipType": "witness-investigator",
+      "description": "Special Agent Amanda Young was part of the case team meeting with potential witness Eva Dubin.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-02-23",
+      "title": "Introductory Video Conference with Eva Dubin",
+      "description": "The case team held an introductory video conference meeting with potential witness Eva Dubin and her attorney to introduce the team and discuss future cooperation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Eva Dubin",
+        "Tatiana Martins",
+        "Amanda Young"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York, United States"
+  ],
+  "keyFacts": [
+    "Eva Dubin, a potential witness, was introduced to the case team investigating the Epstein matter via video conference.",
+    "Dubin expressed her willingness to cooperate with the investigation but stated her memory of experiences from a long time ago was 'not the best'.",
+    "The meeting was introductory, with the intent to schedule a future interview date for a formal statement."
+  ],
+  "analyzedAt": "2026-02-16T01:08:09.803Z"
+}

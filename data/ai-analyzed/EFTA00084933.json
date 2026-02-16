@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00084933.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-28",
+  "summary": "Email correspondence between defense attorney Laura Menninger and the U.S. Attorney's Office for the Southern District of New York regarding discovery deficiencies in the case against Ghislaine Maxwell. The emails discuss technical problems with accessing and reviewing photographic evidence recovered from Jeffrey Epstein's residence, including corrupt files, missing metadata, and disputes over the handling of 'highly confidential' images.",
+  "persons": [
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney for Ghislaine Maxwell",
+      "category": "legal",
+      "context": "Partner at Haddon, Morgan & Foreman, P.C. representing Ghislaine Maxwell. She is raising critical issues with the government's production of photographic discovery, including corrupt files, inaccessible images, and insufficient metadata.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The client of Laura Menninger. She is incarcerated at the Metropolitan Detention Center (MDC) and is unable to review many of the discovery files provided to her on a laptop due to technical issues.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Co-conspirator",
+      "category": "key figure",
+      "context": "Mentioned as the individual whose residence was searched, leading to the recovery of CDs containing the photographic evidence at issue in the discovery dispute.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Laura Menninger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Laura Menninger is the defense attorney representing Ghislaine Maxwell in the criminal case, as evidenced by her advocacy on Maxwell's behalf regarding discovery access.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "The document references evidence recovered from Epstein's residence being used in the case against Maxwell, implying their alleged association.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-09",
+      "title": "Discovery Production to Defense",
+      "description": "The U.S. Attorney's Office produced discovery to the defense, including a production labeled SDNY_PROD011 containing photographic evidence from Epstein's residence.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Laura Menninger",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-04-21",
+      "title": "Defense Raises Discovery Deficiencies",
+      "description": "Laura Menninger sends a detailed email to the prosecution outlining numerous critical problems with the photo evidence discovery, including corrupt files, inaccessible images, and insufficient metadata.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Laura Menninger"
+      ]
+    },
+    {
+      "date": "2021-04-28",
+      "title": "Prosecution Provides Metadata Overlay",
+      "description": "The U.S. Attorney's Office provides a metadata overlay file to help the defense match file names and hash values to Bates numbers in the photographic evidence production.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Epstein's residence (location of searched CDs)",
+    "Southern District of New York, 1 St. Andrews Plaza, New York, NY 10007",
+    "Metropolitan Detention Center (MDC)"
+  ],
+  "keyFacts": [
+    "Thousands of photographic files recovered from Jeffrey Epstein's residence were provided in discovery but are corrupt or unreadable by the defense, hindering case preparation.",
+    "The defense argues the government's designation of 'highly confidential' images (containing nudity) is overly broad and impedes their ability to review metadata and prepare for trial, noting they saw no apparent child pornography.",
+    "Ghislaine Maxwell, incarcerated at the MDC, has been provided discovery on a laptop but cannot open many files due to missing software and a confusing load file format.",
+    "The prosecution and defense are engaged in a technical dispute over matching photo files to their metadata and Bates numbers, requiring the creation of an overlay spreadsheet.",
+    "The defense threatened to raise the discovery access issues with the Court if a swift solution was not proposed by the prosecution."
+  ],
+  "analyzedAt": "2026-02-16T02:07:35.989Z"
+}

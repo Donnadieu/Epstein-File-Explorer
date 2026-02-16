@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00080393.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-08",
+  "summary": "This is an email chain from July 2020 between a federal prosecutor and attorneys representing alleged Epstein victims. The prosecutor expresses interest in speaking with a client who has changed their mind about cooperating, requests basic information and lawsuit filings, and proposes an attorney proffer. The chain is initiated by a news article about an accuser's reaction to Ghislaine Maxwell's arrest.",
+  "persons": [
+    {
+      "name": "Jordan Merson",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing nine clients who are alleged Epstein accusers; he initiates contact with the prosecutor indicating a client is now ready to help.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jesse Mautner",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney at Merson Law, copied on the email correspondence regarding Epstein accuser clients.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rossmiller",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "The government prosecutor corresponding with defense attorneys Jordan Merson and Jesse Mautner about speaking to their clients who are Epstein accusers.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jordan Merson",
+      "person2": "Jesse Mautner",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys at Merson Law firm, copied together on correspondence regarding their clients.",
+      "strength": 3
+    },
+    {
+      "person1": "Jordan Merson",
+      "person2": "Rossmiller",
+      "relationshipType": "legal counterpart",
+      "description": "Attorney-client relationship proxy; Merson represents accusers and is communicating with prosecutor Rossmiller about potential cooperation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-02",
+      "title": "News article on accuser reaction to Maxwell arrest",
+      "description": "New York Post publishes article titled \"This Epstein accuser is 'ecstatic' over Ghislaine Maxwell's arrest,\" which prompts attorney Jordan Merson to reach out to prosecutors.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-07-04",
+      "title": "Prosecutor acknowledges attorney contact",
+      "description": "Prosecutor responds to initial contact from attorneys Jordan Merson and Jesse Mautner, indicating they will likely reach out the following week.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jordan Merson",
+        "Jesse Mautner",
+        "Rossmiller"
+      ]
+    },
+    {
+      "date": "2020-07-08",
+      "title": "Prosecutor requests client information and proposes proffer",
+      "description": "Prosecutor follows up on email chain, notes a change in position from one of Merson's clients, requests lawsuit filings and client names, and proposes an attorney proffer as the next step.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jordan Merson",
+        "Rossmiller"
+      ]
+    },
+    {
+      "date": "2020-01",
+      "title": "Previous communication indicating non-cooperation",
+      "description": "In January 2020, attorney Jordan Merson advised the government that none of his nine clients were interested in speaking with them.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jordan Merson",
+        "Rossmiller"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Attorney Jordan Merson represents nine clients who are alleged Epstein accusers.",
+    "As of January 2020, none of Merson's nine clients were willing to speak with the government, but by July 2020 at least one had changed their mind.",
+    "The government prosecutor is seeking the names of the clients and copies of any lawsuits filed on their behalf to avoid conflict and prepare for a potential attorney proffer.",
+    "The correspondence was triggered by a July 2, 2020, New York Post article about an Epstein accuser's reaction to Ghislaine Maxwell's arrest."
+  ],
+  "analyzedAt": "2026-02-15T21:12:55.465Z"
+}

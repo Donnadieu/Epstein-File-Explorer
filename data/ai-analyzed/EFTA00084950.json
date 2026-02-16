@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00084950.pdf",
+  "dataSet": "9",
+  "documentType": "victim notification letter",
+  "dateOriginal": "2019-07-26",
+  "summary": "This is a victim notification letter from the U.S. Attorney's Office for the Southern District of New York to individuals identified as victims or potential victims in the criminal case against Jeffrey Epstein. It informs recipients of their rights under the Crime Victims' Rights Act, provides details about Epstein's arrest and detention, and schedules a status hearing before Judge Richard Berman.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The individual arrested and charged as a result of a criminal investigation conducted by the U.S. Attorney's Office for the Southern District of New York. The main charge is categorized under Project Safe Childhood.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Richard Berman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge who ordered Jeffrey Epstein detained pending trial and before whom a status hearing is scheduled for July 31, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney for the Southern District of New York who signed the victim notification letter.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Berman",
+      "relationshipType": "legal",
+      "description": "Judge Berman ordered Epstein detained pending trial and is presiding over his case, with a status hearing scheduled.",
+      "strength": 3
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "As United States Attorney, Geoffrey Berman's office is prosecuting the criminal case against Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-18",
+      "title": "Jeffrey Epstein ordered detained",
+      "description": "Judge Richard Berman ordered defendant Jeffrey Epstein detained pending trial.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Berman"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Status hearing scheduled",
+      "description": "A status hearing is scheduled before Judge Richard Berman for defendant Jeffrey Epstein to determine if there are issues the Court needs to address and to schedule future court dates.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "One St. Andrews Plaza, New York, NY 10007",
+    "Courtroom 17B, 500 Pearl Street, New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was arrested and charged as a result of a criminal investigation by the U.S. Attorney's Office for the Southern District of New York, with the main charge categorized under Project Safe Childhood.",
+    "The letter is addressed to individuals identified by law enforcement as victims or potential victims during the investigation, informing them of their rights under the Crime Victims' Rights Act.",
+    "Judge Richard Berman ordered Epstein detained pending trial on July 18, 2019, and scheduled a status hearing for July 31, 2019.",
+    "The lead prosecutors' names are redacted in the document, indicated by blank spaces in the text.",
+    "The document provides detailed information about the Victim Notification System (VNS) and how victims can access case updates and assert their rights."
+  ],
+  "analyzedAt": "2026-02-16T02:08:58.420Z"
+}

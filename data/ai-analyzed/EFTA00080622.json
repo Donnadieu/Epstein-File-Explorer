@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00080622.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": "2002-09-30",
+  "summary": "This is a JPMorgan Chase Bank Asset Account Portfolio statement for Jeffrey Epstein covering September 1-30, 2002. It details account holdings, transactions, and significant wire transfers, including a $5 million transfer to Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Primary holder of the JPMorgan Private Bank account detailed in this financial statement.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Riley I. Hornbecker",
+      "role": "Account Officer Service Specialist",
+      "category": "staff",
+      "context": "Listed as the account officer/service specialist for Jeffrey Epstein's JPMorgan account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Financial Trust Company Contact",
+      "category": "staff",
+      "context": "Listed as the contact at Financial Trust Company for the account, under the attention line.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Wire Transfer Recipient",
+      "category": "associate",
+      "context": "Recipient of a $5,000,000 wire transfer from Jeffrey Epstein's account on September 18, 2002.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Epstein initiated a $5 million wire transfer to Maxwell's account at Palm Beach National Bank & Trust Co.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Riley I. Hornbecker",
+      "relationshipType": "financial",
+      "description": "Hornbecker is listed as the JPMorgan account officer/service specialist for Epstein's account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-10",
+      "title": "$2M Wire Transfer to Epstein's Palm Beach Account",
+      "description": "A $2,000,000 sale from a money market fund and subsequent wire transfer to Jeffrey Epstein's account at Palm Beach National Bank & Trust Co.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-09-16",
+      "title": "$1M Wire Transfer to Epstein's Palm Beach Account",
+      "description": "A $1,000,000 sale from a money market fund and subsequent wire transfer to Jeffrey Epstein's account at Palm Beach National Bank & Trust Co.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-09-18",
+      "title": "$5M Wire Transfer to Ghislaine Maxwell",
+      "description": "A $5,000,000 sale from a money market fund and subsequent wire transfer to Ghislaine Maxwell's account at Palm Beach National Bank & Trust Co.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154-1002 (JPMorgan Chase Bank address)",
+    "Palm Beach National Bank & Trust Co. (Financial institution receiving wire transfers)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's JPMorgan account held over $14.8 million in cash and short-term assets as of September 30, 2002.",
+    "On September 18, 2002, a $5 million wire transfer was sent from Epstein's account to an account for Ghislaine Maxwell at Palm Beach National Bank & Trust Co.",
+    "The document shows significant liquidity management, with multiple multi-million dollar transactions (sales and wire transfers) occurring within the month.",
+    "The account was managed through JPMorgan's Private Bank, indicating high-net-worth status and personalized service."
+  ],
+  "analyzedAt": "2026-02-15T21:30:50.389Z"
+}
