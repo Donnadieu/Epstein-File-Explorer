@@ -18,6 +18,9 @@ import {
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
+import { useVideoPlayer } from "@/hooks/use-video-player";
+import { isVideoDocument } from "@/lib/document-utils";
+import { VideoPlayerModal } from "@/components/video-player-modal";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 
 function StatCard({
@@ -99,7 +102,7 @@ function PersonCard({ person }: { person: Person }) {
   );
 }
 
-function RecentDocCard({ doc }: { doc: Document }) {
+function RecentDocCard({ doc, onVideoClick }: { doc: Document; onVideoClick?: (doc: Document) => void }) {
   const typeIcons: Record<string, any> = {
     "flight log": Clock,
     "court filing": Scale,
@@ -109,27 +112,33 @@ function RecentDocCard({ doc }: { doc: Document }) {
   };
   const Icon = typeIcons[doc.documentType] || FileText;
 
-  return (
-    <Link href={`/documents/${doc.id}`}>
-      <div className="flex items-start gap-3 p-3 rounded-md hover-elevate cursor-pointer">
-        <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted shrink-0">
-          <Icon className="w-4 h-4 text-muted-foreground" />
-        </div>
-        <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-          <span className="text-sm font-medium truncate" data-testid={`text-doc-title-${doc.id}`}>{doc.title}</span>
-          <span className="text-xs text-muted-foreground truncate">{doc.description}</span>
-          <div className="flex items-center gap-2 mt-1">
-            <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
-            {doc.isRedacted && (
-              <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
-                Redacted
-              </Badge>
-            )}
-          </div>
+  const isVideo = isVideoDocument(doc);
+
+  const content = (
+    <div className="flex items-start gap-3 p-3 rounded-md hover-elevate cursor-pointer">
+      <div className="flex items-center justify-center w-8 h-8 rounded-md bg-muted shrink-0">
+        <Icon className="w-4 h-4 text-muted-foreground" />
+      </div>
+      <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+        <span className="text-sm font-medium truncate" data-testid={`text-doc-title-${doc.id}`}>{doc.title}</span>
+        <span className="text-xs text-muted-foreground truncate">{doc.description}</span>
+        <div className="flex items-center gap-2 mt-1">
+          <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+          {doc.isRedacted && (
+            <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
+              Redacted
+            </Badge>
+          )}
         </div>
       </div>
-    </Link>
+    </div>
   );
+
+  if (isVideo && onVideoClick) {
+    return <div onClick={() => onVideoClick(doc)}>{content}</div>;
+  }
+
+  return <Link href={`/documents/${doc.id}`}>{content}</Link>;
 }
 
 export default function Dashboard() {
@@ -144,13 +153,13 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const { data: featuredPeople, isLoading: peopleLoading } = useQuery<Person[]>({
-    queryKey: ["/api/trending/persons?limit=6"],
+  const { data: peopleResult, isLoading: peopleLoading } = useQuery<{ data: Person[]; total: number; page: number; totalPages: number }>({
+    queryKey: ["/api/persons?page=1&limit=6"],
     staleTime: 300_000,
   });
 
-  const { data: recentDocs, isLoading: docsLoading } = useQuery<Document[]>({
-    queryKey: ["/api/trending/documents?limit=5"],
+  const { data: docsResult, isLoading: docsLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
+    queryKey: ["/api/documents?page=1&limit=5"],
     staleTime: 300_000,
   });
 
@@ -159,6 +168,10 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
+  const videoPlayer = useVideoPlayer();
+
+  const featuredPeople = peopleResult?.data;
+  const recentDocs = docsResult?.data;
   const events = allEvents?.filter(e => e.significance >= 3).slice(-4);
 
   return (
@@ -209,7 +222,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
-              Trending Persons
+              Key Individuals
             </h2>
             <div className="flex items-center gap-2">
               <ExportButton endpoint="/api/export/persons" filename="persons" label="Export" />
@@ -242,8 +255,8 @@ export default function Dashboard() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              Trending Documents
+              <FileText className="w-4 h-4 text-primary" />
+              Recent Documents
             </h2>
             <Link href="/documents">
               <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-all-docs">
@@ -262,7 +275,7 @@ export default function Dashboard() {
               ) : (
                 <div className="flex flex-col">
                   {recentDocs?.map((doc) => (
-                    <RecentDocCard key={doc.id} doc={doc} />
+                    <RecentDocCard key={doc.id} doc={doc} onVideoClick={videoPlayer.open} />
                   ))}
                 </div>
               )}
@@ -319,6 +332,8 @@ export default function Dashboard() {
           </div>
         </CardContent>
       </Card>
+
+      <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
     </div>
   );
 }
