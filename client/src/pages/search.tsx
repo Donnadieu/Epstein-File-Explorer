@@ -27,6 +27,8 @@ import {
 } from "lucide-react";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { SavedSearches } from "@/components/saved-searches";
 
@@ -80,6 +82,9 @@ export default function SearchPage() {
     queryKey: [`/api/search/pages?q=${encodeURIComponent(debouncedQuery)}&page=${ftPage}&limit=20`],
     enabled: debouncedQuery.length >= 2,
   });
+
+  const searchDocumentIds = useMemo(() => (data?.documents ?? []).map((d) => d.id), [data?.documents]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(searchDocumentIds);
 
   // Record search to history when results arrive
   useEffect(() => {
@@ -283,7 +288,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} />
                   ))}
                 </div>
               )}
@@ -308,7 +313,7 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
-              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
+              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} />)}
               {(!data?.documents || data.documents.length === 0) && (
                 <EmptyState type="documents" query={query} />
               )}
@@ -454,10 +459,13 @@ function PersonResult({ person, isBookmarked, toggleBookmark }: {
   );
 }
 
-function DocumentResult({ doc, isBookmarked, toggleBookmark }: {
+function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount, onToggleVote }: {
   doc: Document;
   isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
   toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
+  isVoted: boolean;
+  voteCount: number;
+  onToggleVote: (documentId: number) => void;
 }) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
@@ -489,20 +497,28 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark }: {
               </div>
             </div>
           </Link>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleBookmark("document", doc.id, undefined, doc.title);
-            }}
-            className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
-              bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
-            }`}
-            aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
-            data-testid={`bookmark-document-${doc.id}`}
-          >
-            {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
-          </button>
+          <div className="flex items-center shrink-0">
+            <ImportanceVoteButton
+              documentId={doc.id}
+              isVoted={isVoted}
+              count={voteCount}
+              onToggle={onToggleVote}
+            />
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleBookmark("document", doc.id, undefined, doc.title);
+              }}
+              className={`shrink-0 p-1.5 rounded-md opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity ${
+                bookmarked ? "opacity-100 text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+              aria-label={bookmarked ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+              data-testid={`bookmark-document-${doc.id}`}
+            >
+              {bookmarked ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
       </CardContent>
     </Card>

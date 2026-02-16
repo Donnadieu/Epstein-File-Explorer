@@ -31,8 +31,10 @@ import {
   Users,
   Video,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link, useLocation, useParams } from "wouter";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
 
@@ -114,6 +116,9 @@ export default function DocumentDetailPage() {
     enabled: !!aiFileName,
     retry: false,
   });
+
+  const voteDocIds = useMemo(() => doc ? [doc.id] : [], [doc?.id]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(voteDocIds);
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -278,6 +283,12 @@ export default function DocumentDetailPage() {
               {tag}
             </Badge>
           ))}
+          <ImportanceVoteButton
+            documentId={doc.id}
+            isVoted={!!isVoted(doc.id)}
+            count={getCount(doc.id)}
+            onToggle={toggleVote}
+          />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

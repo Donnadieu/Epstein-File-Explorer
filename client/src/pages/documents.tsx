@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -29,6 +29,8 @@ import {
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -177,6 +179,9 @@ export default function DocumentsPage() {
   const totalItems = result?.total || 0;
   const totalPages = result?.totalPages || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const documentIds = useMemo(() => (paginated ?? []).map((d) => d.id), [paginated]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(documentIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -344,6 +349,12 @@ export default function DocumentsPage() {
                                     <ExternalLink className="w-3 h-3" />
                                   </Button>
                                 )}
+                                <ImportanceVoteButton
+                                  documentId={doc.id}
+                                  isVoted={!!isVoted(doc.id)}
+                                  count={getCount(doc.id)}
+                                  onToggle={toggleVote}
+                                />
                               </div>
                             {doc.description && (
                               <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
@@ -410,6 +421,15 @@ export default function DocumentsPage() {
                     <div className="cursor-pointer" data-testid={`grid-card-${doc.id}`}>
                       <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
                         <DocumentThumbnail doc={doc} />
+                        <div className="absolute top-1 left-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ImportanceVoteButton
+                            documentId={doc.id}
+                            isVoted={!!isVoted(doc.id)}
+                            count={getCount(doc.id)}
+                            onToggle={toggleVote}
+                            className="bg-background/80 backdrop-blur-sm shadow-sm"
+                          />
+                        </div>
                       </div>
                       <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
                         {getDisplayTitle(doc)}
