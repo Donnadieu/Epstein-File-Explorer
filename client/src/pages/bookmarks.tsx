@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -201,39 +201,40 @@ function DocumentBookmarkCard({
   bookmark: { id: number; entityId: number | null; label: string | null; createdAt: string | Date | null };
   onRemove: (id: number) => void;
 }) {
+  const [, navigate] = useLocation();
   return (
-    <Link href={`/documents/${bookmark.entityId}`}>
-      <Card className="hover-elevate cursor-pointer">
-        <CardContent className="p-4 flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
-            <FileText className="w-5 h-5 text-muted-foreground" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <span className="text-sm font-semibold truncate block">
-              {bookmark.label || `Document #${bookmark.entityId}`}
+    <Card
+      className="hover-elevate cursor-pointer"
+      onClick={() => navigate(`/documents/${bookmark.entityId}`)}
+    >
+      <CardContent className="p-4 flex items-center gap-3">
+        <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
+          <FileText className="w-5 h-5 text-muted-foreground" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <span className="text-sm font-semibold truncate block">
+            {bookmark.label || `Document #${bookmark.entityId}`}
+          </span>
+          {bookmark.createdAt && (
+            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
+              <Clock className="w-2.5 h-2.5" /> Saved {new Date(bookmark.createdAt).toLocaleDateString()}
             </span>
-            {bookmark.createdAt && (
-              <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
-                <Clock className="w-2.5 h-2.5" /> Saved {new Date(bookmark.createdAt).toLocaleDateString()}
-              </span>
-            )}
-          </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="shrink-0 h-8 w-8 text-muted-foreground hover:text-destructive"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onRemove(bookmark.id);
-            }}
-            aria-label="Remove bookmark"
-          >
-            <X className="w-4 h-4" />
-          </Button>
-        </CardContent>
-      </Card>
-    </Link>
+          )}
+        </div>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="shrink-0 h-8 w-8 text-muted-foreground hover:text-destructive"
+          onClick={(e) => {
+            e.stopPropagation();
+            onRemove(bookmark.id);
+          }}
+          aria-label="Remove bookmark"
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -253,42 +254,43 @@ function PersonBookmarkCard({
     .join("")
     .slice(0, 2);
 
+  const [, navigate] = useLocation();
   return (
-    <Link href={`/people/${bookmark.entityId}`}>
-      <Card className="hover-elevate cursor-pointer">
-        <CardContent className="p-4 flex items-center gap-3">
-          <Avatar className="w-10 h-10 border border-border shrink-0">
-            <AvatarFallback className="text-sm font-medium bg-muted">{initials}</AvatarFallback>
-          </Avatar>
-          <div className="flex-1 min-w-0">
-            <span className="text-sm font-semibold truncate block">{name}</span>
-            <div className="flex items-center gap-2 mt-0.5">
-              {person?.category && (
-                <Badge variant="secondary" className={`text-[10px] ${categoryColors[person.category] || ""}`}>
-                  {person.category}
-                </Badge>
-              )}
-              {person?.occupation && (
-                <span className="text-[10px] text-muted-foreground truncate">{person.occupation}</span>
-              )}
-            </div>
+    <Card
+      className="hover-elevate cursor-pointer"
+      onClick={() => navigate(`/people/${bookmark.entityId}`)}
+    >
+      <CardContent className="p-4 flex items-center gap-3">
+        <Avatar className="w-10 h-10 border border-border shrink-0">
+          <AvatarFallback className="text-sm font-medium bg-muted">{initials}</AvatarFallback>
+        </Avatar>
+        <div className="flex-1 min-w-0">
+          <span className="text-sm font-semibold truncate block">{name}</span>
+          <div className="flex items-center gap-2 mt-0.5">
+            {person?.category && (
+              <Badge variant="secondary" className={`text-[10px] ${categoryColors[person.category] || ""}`}>
+                {person.category}
+              </Badge>
+            )}
+            {person?.occupation && (
+              <span className="text-[10px] text-muted-foreground truncate">{person.occupation}</span>
+            )}
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="shrink-0 h-8 w-8 text-muted-foreground hover:text-destructive"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onRemove(bookmark.id);
-            }}
-            aria-label="Remove bookmark"
-          >
-            <X className="w-4 h-4" />
-          </Button>
-        </CardContent>
-      </Card>
-    </Link>
+        </div>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="shrink-0 h-8 w-8 text-muted-foreground hover:text-destructive"
+          onClick={(e) => {
+            e.stopPropagation();
+            onRemove(bookmark.id);
+          }}
+          aria-label="Remove bookmark"
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -299,24 +301,26 @@ function SearchBookmarkBadge({
   bookmark: { id: number; searchQuery: string | null; label: string | null };
   onRemove: (id: number) => void;
 }) {
+  const [, navigate] = useLocation();
   return (
-    <Link href={`/search?q=${encodeURIComponent(bookmark.searchQuery || bookmark.label || "")}`}>
-      <Badge variant="secondary" className="cursor-pointer group gap-1 pr-1 text-sm py-1">
-        <Search className="w-3 h-3 mr-0.5" />
-        <span>{bookmark.label || bookmark.searchQuery}</span>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            onRemove(bookmark.id);
-          }}
-          className="ml-0.5 rounded-full p-0.5 hover:bg-muted-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity"
-          aria-label={`Remove saved search: ${bookmark.label || bookmark.searchQuery}`}
-        >
+    <Badge
+      variant="secondary"
+      className="cursor-pointer group gap-1 pr-1 text-sm py-1"
+      onClick={() => navigate(`/search?q=${encodeURIComponent(bookmark.searchQuery || bookmark.label || "")}`)}
+    >
+      <Search className="w-3 h-3 mr-0.5" />
+      <span>{bookmark.label || bookmark.searchQuery}</span>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove(bookmark.id);
+        }}
+        className="ml-0.5 rounded-full p-0.5 hover:bg-muted-foreground/20 opacity-0 group-hover:opacity-100 transition-opacity"
+        aria-label={`Remove saved search: ${bookmark.label || bookmark.searchQuery}`}
+      >
           <X className="w-3 h-3" />
         </button>
       </Badge>
-    </Link>
   );
 }
 
