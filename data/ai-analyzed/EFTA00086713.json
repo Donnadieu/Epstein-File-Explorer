@@ -1,0 +1,174 @@
+{
+  "fileName": "EFTA00086713.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2011-03-17",
+  "summary": "This is an FBI 302 form documenting an interview with a female witness (name redacted) conducted in Sydney, Australia on March 17, 2011. The witness details her background, her recruitment by Jeffrey Epstein at age 16, her subsequent work providing massages and sexual services for Epstein and his associates, extensive international travel, and her eventual exit from the arrangement. The document includes significant redactions but provides key information about Epstein's operations, recruitment methods, and the involvement of other individuals.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused, financier",
+      "category": "key figure",
+      "context": "Recruited the witness at age 16, employed her to provide massages and sexual services, arranged her travel and introduced her to clients. He is the central figure in her narrative.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged associate/assistant",
+      "category": "associate",
+      "context": "Introduced to the witness early in her relationship with Epstein, described as Epstein's assistant. Involved in travel and operations.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Business owner",
+      "category": "other",
+      "context": "The witness worked at his Mar-A-Lago Club in Palm Beach, Florida, prior to meeting Epstein. Her father helped her gain employment there.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Virginia L. Giuffre",
+      "role": "Witness/Associate",
+      "category": "witness",
+      "context": "Mentioned by name in the document header and context. The witness (interview subject) met her and believed they were the same age. Described dressing alike.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Alleged associate/client",
+      "category": "political",
+      "context": "The witness was instructed to shop for a dress to dance with him at Club Tramp. She was introduced to him and a photograph was taken.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Maxwell is described as Epstein's assistant, involved in his operations and travel with the witness.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Virginia L. Giuffre",
+      "relationshipType": "associate",
+      "description": "The witness met Giuffre through Epstein. They were approximately the same age and dressed alike, suggesting they were part of the same circle.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Prince Andrew",
+      "relationshipType": "social",
+      "description": "Epstein instructed the witness to prepare to dance with Prince Andrew at a club, indicating a social connection and possible facilitation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "The Witness (redacted)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein recruited the minor witness, employed her for massages and sexual activity, controlled her travel and payments, and introduced her to drugs.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "The Witness (redacted)",
+      "relationshipType": "associate",
+      "description": "Maxwell was introduced to the witness early on and was involved in travel. The witness traveled and went shopping with her.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1998-06",
+      "title": "Witness begins work at Mar-A-Lago",
+      "description": "The witness began working at Donald Trump's Mar-A-Lago Club in Palm Beach, Florida, prior to meeting Epstein.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "The Witness (redacted)",
+        "Donald Trump"
+      ]
+    },
+    {
+      "date": "1999-08",
+      "title": "Recruitment by Jeffrey Epstein",
+      "description": "At age 16, the witness was approached by Epstein while reading a massage book at Mar-A-Lago. He offered to help with her masseuse accreditation. Her father drove her to Epstein's residence where the first massage and sexual encounter occurred.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "The Witness (redacted)"
+      ]
+    },
+    {
+      "date": "2000-2001",
+      "title": "International travel for Epstein",
+      "description": "The witness traveled extensively for Epstein, including to Paris, London, Africa, Spain, the US Virgin Islands, and New York. She traveled on a private plane and was introduced to clients on his island.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "The Witness (redacted)",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2001",
+      "title": "Dancing with Prince Andrew",
+      "description": "The witness was instructed by Epstein to shop for a dress and prepare to dance with Prince Andrew at Club Tramp in London. A photograph was taken of her with Prince Andrew afterward.",
+      "category": "social",
+      "significance": 4,
+      "personsInvolved": [
+        "Prince Andrew",
+        "Jeffrey Epstein",
+        "The Witness (redacted)"
+      ]
+    },
+    {
+      "date": "2002-08",
+      "title": "Departure for Thailand",
+      "description": "The witness traveled to Bangkok, Thailand for massage training, effectively leaving Epstein's employ. She informed Epstein she had fallen in love with someone she met there.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "The Witness (redacted)",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2011-03-17",
+      "title": "FBI Interview in Sydney",
+      "description": "The witness was interviewed by FBI Special Agents and an Assistant U.S. Attorney at the U.S. Consulate in Sydney, Australia. She provided detailed information about her experiences with Epstein.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "The Witness (redacted)"
+      ]
+    }
+  ],
+  "locations": [
+    "Sydney, Australia",
+    "Palm Beach County, Florida",
+    "West Palm Beach, Florida",
+    "Miami, Florida",
+    "Ocala, Florida (ranch near)",
+    "Mar-A-Lago Club, Palm Beach, Florida",
+    "New York City, New York",
+    "Little St. James Island (Epstein's island)",
+    "Paris, France",
+    "London, England",
+    "Spain",
+    "Africa",
+    "Bangkok, Thailand",
+    "66th Street apartment, New York"
+  ],
+  "keyFacts": [
+    "The witness was recruited by Jeffrey Epstein at age 16 in August 1999 while working at Mar-A-Lago, under the guise of helping her become a masseuse.",
+    "The witness described a pattern of massages escalating to sexual activity with Epstein, for which she was paid $200 per day for travel and $200 per hour for massages.",
+    "Epstein introduced the witness to the prescription drug Xanax, which she used heavily to cope, developing a habit of up to eight pills per day.",
+    "The witness was instructed to shop for a dress and then danced with Prince Andrew at Club Tramp in London; a photograph was taken of the event.",
+    "The witness identified several individuals from photo arrays, including Ghislaine Maxwell and Virginia Giuffre, and described meeting numerous famous people, academics, politicians, and celebrities through Epstein."
+  ],
+  "analyzedAt": "2026-02-16T15:24:57.983Z"
+}
