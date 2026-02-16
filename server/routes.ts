@@ -707,7 +707,7 @@ export async function registerRoutes(
     try {
       const userId = (req.query.userId as string) || "anonymous";
       const result = await storage.getBookmarks(userId);
-      res.set('Cache-Control', 'private, max-age=60');
+      res.set('Cache-Control', 'no-store');
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch bookmarks" });
