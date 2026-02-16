@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import {
   persons, documents, documentPages, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking, bookmarks,
+  pipelineJobs, budgetTracking, bookmarks, pageViews,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
@@ -67,6 +67,10 @@ export interface IStorage {
   getAIAnalysisList(): Promise<AIAnalysisListItem[]>;
   getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null>;
   getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
+
+  recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void>;
+  getTrendingPersons(limit: number): Promise<Person[]>;
+  getTrendingDocuments(limit: number): Promise<Document[]>;
 }
 
 function escapeLikePattern(input: string): string {
@@ -470,6 +474,8 @@ const networkDataCache = createCache<{
 
 const personsCache = createCache<Person[]>(5 * 60 * 1000);
 const timelineEventsCache = createCache<TimelineEvent[]>(5 * 60 * 1000);
+const trendingPersonsCache = createCache<Person[]>(5 * 60 * 1000);
+const trendingDocumentsCache = createCache<Document[]>(5 * 60 * 1000);
 
 const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
 const COUNT_TTL = 60_000;
@@ -1438,6 +1444,81 @@ export class DatabaseStorage implements IStorage {
       totalConnections: connectionCount[0].count,
       totalEvents: eventCount[0].count,
     };
+  }
+
+  async recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void> {
+    // Dedup: skip if same session viewed same entity in last 30 minutes
+    const [existing] = await db.select({ id: pageViews.id })
+      .from(pageViews)
+      .where(and(
+        eq(pageViews.sessionId, sessionId),
+        eq(pageViews.entityType, entityType),
+        eq(pageViews.entityId, entityId),
+        sql`${pageViews.createdAt} > NOW() - INTERVAL '30 minutes'`
+      ))
+      .limit(1);
+
+    if (existing) return;
+
+    await db.insert(pageViews).values({ entityType, entityId, sessionId });
+  }
+
+  async getTrendingPersons(limit: number): Promise<Person[]> {
+    return trendingPersonsCache.get(async () => {
+      const result: any = await db.execute(sql`
+        WITH view_scores AS (
+          SELECT entity_id,
+                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+          FROM page_views
+          WHERE entity_type = 'person'
+            AND created_at > NOW() - INTERVAL '7 days'
+          GROUP BY entity_id
+          HAVING COUNT(*) >= 2
+        )
+        SELECT p.*,
+               COALESCE(vs.score, 0) AS trending_score
+        FROM persons p
+        LEFT JOIN view_scores vs ON p.id = vs.entity_id
+        ORDER BY
+          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
+          p.document_count DESC
+        LIMIT ${limit}
+      `);
+      const rows: any[] = result.rows ?? result;
+      return rows.map(({ trending_score, ...rest }: any) => rest as Person);
+    });
+  }
+
+  async getTrendingDocuments(limit: number): Promise<Document[]> {
+    return trendingDocumentsCache.get(async () => {
+      const r2Cond = isR2Configured()
+        ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
+        : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+
+      const result: any = await db.execute(sql`
+        WITH view_scores AS (
+          SELECT entity_id,
+                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+          FROM page_views
+          WHERE entity_type = 'document'
+            AND created_at > NOW() - INTERVAL '7 days'
+          GROUP BY entity_id
+          HAVING COUNT(*) >= 2
+        )
+        SELECT d.*,
+               COALESCE(vs.score, 0) AS trending_score
+        FROM documents d
+        LEFT JOIN view_scores vs ON d.id = vs.entity_id
+        WHERE ${r2Cond}
+        ORDER BY
+          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
+          d.page_count DESC NULLS LAST,
+          d.id DESC
+        LIMIT ${limit}
+      `);
+      const rows: any[] = result.rows ?? result;
+      return rows.map(({ trending_score, ...rest }: any) => rest as Document);
+    });
   }
 }
 

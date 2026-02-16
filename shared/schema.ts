@@ -258,6 +258,23 @@ export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ created
 export type Bookmark = typeof bookmarks.$inferSelect;
 export type InsertBookmark = typeof bookmarks.$inferInsert;
 
+// View tracking for trending
+export const pageViews = pgTable("page_views", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  entityType: text("entity_type").notNull(), // 'person' | 'document'
+  entityId: integer("entity_id").notNull(),
+  sessionId: text("session_id").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  index("idx_page_views_entity").on(table.entityType, table.entityId),
+  index("idx_page_views_created_at").on(table.createdAt),
+  index("idx_page_views_trending").on(table.entityType, table.createdAt, table.entityId),
+]);
+
+export const insertPageViewSchema = createInsertSchema(pageViews).omit({ id: true, createdAt: true });
+export type PageView = typeof pageViews.$inferSelect;
+export type InsertPageView = typeof pageViews.$inferInsert;
+
 // Chat tables
 export const conversations = pgTable("conversations", {
   id: serial("id").primaryKey(),

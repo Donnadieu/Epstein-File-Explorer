@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
+import { useTrackView } from "@/hooks/use-track-view";
 import type { Person, Document, Connection, TimelineEvent, ProfileSection } from "@shared/schema";
 
 interface PersonAIMentions {
@@ -52,6 +53,7 @@ const categoryColors: Record<string, string> = {
 
 export default function PersonDetail() {
   const params = useParams<{ id: string }>();
+  useTrackView("person", params.id);
 
   const { data: person, isLoading } = useQuery<PersonDetail>({
     queryKey: ["/api/persons", params.id],
