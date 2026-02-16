@@ -33,6 +33,7 @@ import {
   BookOpen,
   Image,
   Video,
+  Zap,
 } from "lucide-react";
 
 interface SidebarCounts {
@@ -154,6 +155,7 @@ export function AppSidebar() {
 
   const toolItems: NavItem[] = [
     { title: "Search", url: "/search", icon: Search },
+    { title: "PDF Tools", url: "/pdf-tools", icon: Zap },
     { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
   ];
 

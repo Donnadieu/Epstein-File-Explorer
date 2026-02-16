@@ -1,5 +1,6 @@
-import "dotenv/config";
+import { config as loadEnv } from "dotenv";
 import express, { type Request, Response, NextFunction } from "express";
+import fileUpload from "express-fileupload";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
@@ -7,6 +8,10 @@ import { storage } from "./storage";
 import { pool } from "./db";
 import { runMigrations } from "./migrate";
 import { startBackgroundWorker } from "./background-worker";
+import pytoolsBridge from "./python-tools.js";
+
+loadEnv({ path: ".env" });
+loadEnv({ path: ".env.local", override: true });
 
 const app = express();
 const httpServer = createServer(app);
@@ -26,6 +31,11 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use(fileUpload({
+  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB max
+  tempDir: '/tmp/epstein-uploads',
+}));
 
 // ---------------------------------------------------------------------------
 // Rate limiting
@@ -120,6 +130,24 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Check Python tools availability
+  const pythonToolsStatus = pytoolsBridge.verifyPythonToolsSetup();
+  if (!pythonToolsStatus.ready) {
+    log("⚠ Python tools not fully ready:", "python-tools");
+    pythonToolsStatus.errors.forEach((err) =>
+      log(`  - ${err}`, "python-tools")
+    );
+    if (process.env.NODE_ENV === "production") {
+      log(
+        "ERROR: Python tools required in production. Exiting.",
+        "python-tools"
+      );
+      process.exit(1);
+    }
+  } else {
+    log("✓ Python tools initialized", "python-tools");
+  }
+
   await registerRoutes(httpServer, app);
 
   app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
@@ -151,14 +179,16 @@ app.use((req, res, next) => {
   }
 
   const port = parseInt(process.env.PORT || "5000", 10);
+  const host = process.env.HOST || "::";
   httpServer.listen(
     {
       port,
-      host: "0.0.0.0",
+      host,
+      ipv6Only: false,
       reusePort: true,
     },
     () => {
-      log(`serving on port ${port}`);
+      log(`serving on ${host}:${port}`);
 
       import("./seed")
         .then(({ seedDatabase }) =>

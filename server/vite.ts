@@ -31,8 +31,18 @@ export async function setupVite(server: Server, app: Express) {
 
   app.use(vite.middlewares);
 
+  // Skip Vite HTML serving for API routes and other non-SPA paths
   app.use("/{*path}", async (req, res, next) => {
     const url = req.originalUrl;
+    
+    // Don't serve index.html for API routes, static files, or specific paths
+    if (
+      url.startsWith("/api/") ||
+      url.startsWith("/vite-hmr") ||
+      url.match(/\.[a-zA-Z0-9]+$/) // Has file extension (static files)
+    ) {
+      return next();
+    }
 
     try {
       const clientTemplate = path.resolve(
