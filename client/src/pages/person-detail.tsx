@@ -71,6 +71,8 @@ export default function PersonDetail() {
     queryKey: ["/api/persons", params.id],
   });
 
+  const videoPlayer = useVideoPlayer();
+
   if (isLoading) {
     return (
       <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto w-full">
@@ -111,8 +113,6 @@ export default function PersonDetail() {
     .map((n) => n[0])
     .join("")
     .slice(0, 2);
-
-  const videoPlayer = useVideoPlayer();
 
   const allowedSections = new Set(["Summary", "Background"]);
   const profileSections = (
