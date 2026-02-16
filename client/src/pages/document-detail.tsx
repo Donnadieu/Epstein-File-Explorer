@@ -28,6 +28,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import PdfViewer from "@/components/pdf-viewer";
+import { useTrackView } from "@/hooks/use-track-view";
 import type { Document, Person, AIAnalysisDocument } from "@shared/schema";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
@@ -74,6 +75,7 @@ interface DocumentDetail extends Document {
 
 export default function DocumentDetailPage() {
   const params = useParams<{ id: string }>();
+  useTrackView("document", params.id);
   const [, navigate] = useLocation();
   const searchParams = new URLSearchParams(window.location.search);
   const initialPage = parseInt(searchParams.get("page") || "1", 10) || 1;

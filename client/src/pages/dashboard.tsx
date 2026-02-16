@@ -144,13 +144,13 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const { data: peopleResult, isLoading: peopleLoading } = useQuery<{ data: Person[]; total: number; page: number; totalPages: number }>({
-    queryKey: ["/api/persons?page=1&limit=6"],
+  const { data: featuredPeople, isLoading: peopleLoading } = useQuery<Person[]>({
+    queryKey: ["/api/trending/persons?limit=6"],
     staleTime: 300_000,
   });
 
-  const { data: docsResult, isLoading: docsLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
-    queryKey: ["/api/documents?page=1&limit=5"],
+  const { data: recentDocs, isLoading: docsLoading } = useQuery<Document[]>({
+    queryKey: ["/api/trending/documents?limit=5"],
     staleTime: 300_000,
   });
 
@@ -159,8 +159,6 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const featuredPeople = peopleResult?.data;
-  const recentDocs = docsResult?.data;
   const events = allEvents?.filter(e => e.significance >= 3).slice(-4);
 
   return (
@@ -211,7 +209,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
-              Key Individuals
+              Trending Persons
             </h2>
             <div className="flex items-center gap-2">
               <ExportButton endpoint="/api/export/persons" filename="persons" label="Export" />
@@ -244,8 +242,8 @@ export default function Dashboard() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
-              <FileText className="w-4 h-4 text-primary" />
-              Recent Documents
+              <TrendingUp className="w-4 h-4 text-primary" />
+              Trending Documents
             </h2>
             <Link href="/documents">
               <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-all-docs">
