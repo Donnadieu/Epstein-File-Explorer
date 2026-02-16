@@ -51,7 +51,8 @@ export default function TimelinePage() {
     return events.filter((e) => {
       if (categoryFilter !== "all" && e.category !== categoryFilter) return false;
       if (zoomLevel === "key" && e.significance < 2) return false;
-      const year = parseInt(e.date.slice(0, 4), 10);
+      const yearMatch = e.date.match(/\b(19|20)\d{2}\b/);
+      const year = yearMatch ? parseInt(yearMatch[0], 10) : 0;
       if (yearFrom && year < parseInt(yearFrom, 10)) return false;
       if (yearTo && year > parseInt(yearTo, 10)) return false;
       return true;

@@ -69,10 +69,15 @@ interface YearGroup {
   events: EnrichedTimelineEvent[];
 }
 
+function extractYear(date: string): number {
+  const match = date.match(/\b(19|20)\d{2}\b/);
+  return match ? parseInt(match[0], 10) : 0;
+}
+
 function groupByYear(events: EnrichedTimelineEvent[]): YearGroup[] {
   const map = new Map<number, EnrichedTimelineEvent[]>();
   for (const event of events) {
-    const year = parseInt(event.date.slice(0, 4), 10);
+    const year = extractYear(event.date);
     if (!map.has(year)) map.set(year, []);
     map.get(year)!.push(event);
   }
@@ -82,9 +87,22 @@ function groupByYear(events: EnrichedTimelineEvent[]): YearGroup[] {
 }
 
 function formatDate(date: string): string {
-  const [y, m, d] = date.split("-");
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  return `${months[parseInt(m, 10) - 1]} ${parseInt(d, 10)}, ${y}`;
+  // Standard ISO dates: "2019-07-06"
+  const isoMatch = date.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (isoMatch) {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const m = parseInt(isoMatch[2], 10);
+    return `${months[m - 1]} ${parseInt(isoMatch[3], 10)}, ${isoMatch[1]}`;
+  }
+  // Year-month: "1988-04"
+  const ymMatch = date.match(/^(\d{4})-(\d{1,2})$/);
+  if (ymMatch) {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const m = parseInt(ymMatch[2], 10);
+    if (m >= 1 && m <= 12) return `${months[m - 1]} ${ymMatch[1]}`;
+  }
+  // Everything else: return as-is ("1980", "1980s", "April 2003", "Early 2000s", etc.)
+  return date;
 }
 
 interface TimelineVizProps {
@@ -141,7 +159,7 @@ export default function TimelineViz({ events }: TimelineVizProps) {
                       isOpen ? "rotate-90" : ""
                     }`}
                   />
-                  <span className="text-lg font-bold tracking-tight">{group.year}</span>
+                  <span className="text-lg font-bold tracking-tight">{group.year || "Unknown"}</span>
                   <Badge variant="secondary" className="text-[10px] px-1.5 py-0">
                     {group.events.length}
                   </Badge>
