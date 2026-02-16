@@ -181,7 +181,7 @@ export function normalizeName(name: string): string {
   }
 
   return n
-    .replace(/\b(dr|mr|mrs|ms|miss|jr|sr|ii|iii|iv)\b\.?/g, "")
+    .replace(/\b(dr|mr|mrs|ms|miss|ii|iii|iv)\b\.?/g, "")
     .replace(/\./g, "") // remove periods but keep the letters (J. → j)
     .replace(/[^a-z\s]/g, "")
     .replace(/\s+/g, " ")
