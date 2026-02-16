@@ -13,12 +13,13 @@ import {
   ArrowRight,
   Search,
   TrendingUp,
+  ThumbsUp,
   AlertTriangle,
   Scale,
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
-import type { Person, Document, TimelineEvent } from "@shared/schema";
+import type { Person, Document } from "@shared/schema";
 
 function StatCard({
   icon: Icon,
@@ -144,24 +145,25 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const { data: peopleResult, isLoading: peopleLoading } = useQuery<{ data: Person[]; total: number; page: number; totalPages: number }>({
-    queryKey: ["/api/persons?page=1&limit=6"],
+  const { data: featuredPeople, isLoading: peopleLoading } = useQuery<Person[]>({
+    queryKey: ["/api/trending/persons?limit=6"],
     staleTime: 300_000,
   });
 
-  const { data: docsResult, isLoading: docsLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
-    queryKey: ["/api/documents?page=1&limit=5"],
+  const { data: recentDocs, isLoading: docsLoading } = useQuery<Document[]>({
+    queryKey: ["/api/trending/documents?limit=5"],
     staleTime: 300_000,
   });
 
-  const { data: allEvents, isLoading: eventsLoading } = useQuery<TimelineEvent[]>({
-    queryKey: ["/api/timeline"],
+  const { data: mostVotedDocs, isLoading: votedDocsLoading } = useQuery<(Document & { voteCount: number })[]>({
+    queryKey: ["/api/most-voted/documents?limit=5"],
     staleTime: 300_000,
   });
 
-  const featuredPeople = peopleResult?.data;
-  const recentDocs = docsResult?.data;
-  const events = allEvents?.filter(e => e.significance >= 3).slice(-4);
+  const { data: mostVotedPersons } = useQuery<(Person & { voteCount: number })[]>({
+    queryKey: ["/api/most-voted/persons?limit=6"],
+    staleTime: 300_000,
+  });
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
@@ -211,7 +213,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
               <TrendingUp className="w-4 h-4 text-primary" />
-              Key Individuals
+              Trending Persons
             </h2>
             <div className="flex items-center gap-2">
               <ExportButton endpoint="/api/export/persons" filename="persons" label="Export" />
@@ -244,8 +246,8 @@ export default function Dashboard() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
-              <FileText className="w-4 h-4 text-primary" />
-              Recent Documents
+              <TrendingUp className="w-4 h-4 text-primary" />
+              Trending Documents
             </h2>
             <Link href="/documents">
               <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-all-docs">
@@ -271,42 +273,100 @@ export default function Dashboard() {
             </CardContent>
           </Card>
 
+        </div>
+      </div>
+
+      {(mostVotedPersons && mostVotedPersons.length > 0) && (
+        <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-lg font-semibold flex items-center gap-2">
-              <Clock className="w-4 h-4 text-primary" />
-              Key Events
+              <ThumbsUp className="w-4 h-4 text-primary" />
+              Most Voted People
             </h2>
-            <Link href="/timeline">
-              <Button variant="ghost" size="sm" className="gap-1 text-xs" data-testid="button-view-timeline">
-                Full timeline <ArrowRight className="w-3 h-3" />
+            <Link href="/people">
+              <Button variant="ghost" size="sm" className="gap-1 text-xs">
+                View all <ArrowRight className="w-3 h-3" />
+              </Button>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {mostVotedPersons.map((person) => {
+              const initials = person.name
+                .split(" ")
+                .map((n) => n[0])
+                .join("")
+                .slice(0, 2);
+              return (
+                <Link key={person.id} href={`/people/${person.id}`}>
+                  <Card className="hover-elevate cursor-pointer h-full">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-3">
+                        <Avatar className="w-10 h-10 border border-border">
+                          {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
+                          <AvatarFallback className="text-xs font-medium bg-muted">
+                            {initials}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex flex-col gap-1 min-w-0 flex-1">
+                          <span className="text-sm font-semibold truncate">{person.name}</span>
+                          <span className="text-xs text-muted-foreground truncate">{person.occupation || person.role}</span>
+                          <div className="flex items-center gap-2 flex-wrap mt-1">
+                            <Badge variant="secondary" className="text-[10px]">
+                              {person.category}
+                            </Badge>
+                            <span className="text-[10px] text-primary font-medium">
+                              {person.voteCount} {person.voteCount === 1 ? "vote" : "votes"}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {(mostVotedDocs && mostVotedDocs.length > 0) && (
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="text-lg font-semibold flex items-center gap-2">
+              <ThumbsUp className="w-4 h-4 text-primary" />
+              Most Voted Documents
+            </h2>
+            <Link href="/documents">
+              <Button variant="ghost" size="sm" className="gap-1 text-xs">
+                View all <ArrowRight className="w-3 h-3" />
               </Button>
             </Link>
           </div>
           <Card>
-            <CardContent className="p-4">
-              {eventsLoading ? (
-                <div className="flex flex-col gap-3">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <Skeleton key={i} className="h-12 w-full" />
-                  ))}
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3">
-                  {events?.map((event) => (
-                    <div key={event.id} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                      <div className="flex flex-col gap-0.5 min-w-0">
-                        <span className="text-xs text-muted-foreground font-mono">{event.date}</span>
-                        <span className="text-sm font-medium">{event.title}</span>
+            <CardContent className="p-2">
+              <div className="flex flex-col">
+                {mostVotedDocs.map((doc) => (
+                  <Link key={doc.id} href={`/documents/${doc.id}`}>
+                    <div className="flex items-start gap-3 p-3 rounded-md hover-elevate cursor-pointer">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-md bg-primary/10 shrink-0">
+                        <ThumbsUp className="w-4 h-4 text-primary" />
+                      </div>
+                      <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                        <span className="text-sm font-medium truncate">{doc.title}</span>
+                        <span className="text-xs text-muted-foreground truncate">{doc.description}</span>
+                        <div className="flex items-center gap-2 mt-1">
+                          <Badge variant="outline" className="text-[10px]">{doc.documentType}</Badge>
+                          <span className="text-[10px] text-primary font-medium">{doc.voteCount} {doc.voteCount === 1 ? "vote" : "votes"}</span>
+                        </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              )}
+                  </Link>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </div>
-      </div>
+      )}
 
       <Card className="bg-muted/30">
         <CardContent className="p-4">

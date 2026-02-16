@@ -8,8 +8,11 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X, Bookmark, BookmarkCheck } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
+import { useBookmarks } from "@/hooks/use-bookmarks";
+import { usePersonVotes } from "@/hooks/use-person-votes";
+import { PersonVoteButton } from "@/components/person-vote-button";
 import type { Person } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -52,6 +55,7 @@ function PersonCardSkeleton({ index }: { index: number }) {
 }
 
 export default function PeoplePage() {
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const [filters, setFilter, resetFilters] = useUrlFilters({
     search: "",
     category: "all",
@@ -63,6 +67,9 @@ export default function PeoplePage() {
     queryKey: ["/api/persons"],
     staleTime: 600_000,
   });
+
+  const personIds = useMemo(() => persons?.map((p) => p.id) || [], [persons]);
+  const { isVoted, getCount, toggleVote } = usePersonVotes(personIds);
 
   const filtered = useMemo(() => {
     return persons
@@ -172,39 +179,73 @@ export default function PeoplePage() {
                 .slice(0, 2);
 
               return (
-                <Link key={person.id} href={`/people/${person.id}`}>
-                  <Card className="hover-elevate cursor-pointer h-full" data-testid={`card-person-${person.id}`}>
-                    <CardContent className="p-4">
-                      <div className="flex items-start gap-3">
-                        <Avatar className="w-12 h-12 border border-border shrink-0">
-                          {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
-                          <AvatarFallback className="text-sm font-medium bg-muted">
-                            {initials}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col gap-1 min-w-0 flex-1">
-                          <span className="text-sm font-semibold">{person.name}</span>
-                          <span className="text-xs text-muted-foreground truncate">{person.occupation || person.role}</span>
-                          <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">{person.description}</p>
-                          <div className="flex items-center gap-2 flex-wrap mt-2">
-                            <Badge
-                              variant="secondary"
-                              className={`text-[10px] ${categoryColors[person.category] || ""}`}
-                            >
-                              {person.category}
-                            </Badge>
-                            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
-                              <FileText className="w-2.5 h-2.5" /> {person.documentCount}
-                            </span>
-                            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
-                              <Network className="w-2.5 h-2.5" /> {person.connectionCount}
-                            </span>
+                <div key={person.id} className="relative group">
+                  <Link href={`/people/${person.id}`}>
+                    <Card className="hover-elevate cursor-pointer h-full" data-testid={`card-person-${person.id}`}>
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-3">
+                          <Avatar className="w-12 h-12 border border-border shrink-0">
+                            {person.imageUrl && <AvatarImage src={person.imageUrl} alt={person.name} />}
+                            <AvatarFallback className="text-sm font-medium bg-muted">
+                              {initials}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div className="flex flex-col gap-1 min-w-0 flex-1">
+                            <span className="text-sm font-semibold">{person.name}</span>
+                            <span className="text-xs text-muted-foreground truncate">{person.occupation || person.role}</span>
+                            <p className="text-xs text-muted-foreground line-clamp-2 mt-0.5">{person.description}</p>
+                            <div className="flex items-center gap-2 flex-wrap mt-2">
+                              <Badge
+                                variant="secondary"
+                                className={`text-[10px] ${categoryColors[person.category] || ""}`}
+                              >
+                                {person.category}
+                              </Badge>
+                              <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                                <FileText className="w-2.5 h-2.5" /> {person.documentCount}
+                              </span>
+                              <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                                <Network className="w-2.5 h-2.5" /> {person.connectionCount}
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <div className={`absolute top-2 right-2 flex items-center gap-0.5 transition-opacity ${
+                    isBookmarked("person", person.id) || !!isVoted(person.id)
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100 focus-within:opacity-100"
+                  }`}>
+                    <PersonVoteButton
+                      personId={person.id}
+                      isVoted={!!isVoted(person.id)}
+                      count={getCount(person.id)}
+                      onToggle={toggleVote}
+                      size="sm"
+                      className="h-7 w-7 p-0"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("person", person.id, undefined, person.name);
+                      }}
+                      className={`p-1.5 rounded-md ${
+                        isBookmarked("person", person.id)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("person", person.id) ? `Remove bookmark: ${person.name}` : `Bookmark ${person.name}`}
+                    >
+                      {isBookmarked("person", person.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </div>

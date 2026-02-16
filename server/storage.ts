@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import {
   persons, documents, documentPages, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking, bookmarks,
+  pipelineJobs, budgetTracking, bookmarks, pageViews, documentVotes, personVotes,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
@@ -10,6 +10,8 @@ import {
   type TimelineEvent, type InsertTimelineEvent,
   type PipelineJob, type BudgetTracking,
   type Bookmark, type InsertBookmark,
+  type DocumentVote, type InsertDocumentVote,
+  type PersonVote, type InsertPersonVote,
   type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
 } from "@shared/schema";
 import { db } from "./db";
@@ -45,7 +47,7 @@ export interface IStorage {
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
-  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string; sort?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
   getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>;
   getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
   getSidebarCounts(): Promise<{
@@ -60,6 +62,18 @@ export interface IStorage {
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
   deleteBookmark(id: number): Promise<boolean>;
 
+  getVotes(userId: string): Promise<DocumentVote[]>;
+  createVote(vote: InsertDocumentVote): Promise<DocumentVote>;
+  deleteVote(id: number): Promise<boolean>;
+  getVoteCounts(documentIds: number[]): Promise<Record<number, number>>;
+  getMostVotedDocuments(limit: number): Promise<(Document & { voteCount: number })[]>;
+
+  getPersonVotes(userId: string): Promise<PersonVote[]>;
+  createPersonVote(vote: InsertPersonVote): Promise<PersonVote>;
+  deletePersonVote(id: number): Promise<boolean>;
+  getPersonVoteCounts(personIds: number[]): Promise<Record<number, number>>;
+  getMostVotedPersons(limit: number): Promise<(Person & { voteCount: number })[]>;
+
   getPipelineJobs(status?: string): Promise<PipelineJob[]>;
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
   getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }>;
@@ -67,6 +81,10 @@ export interface IStorage {
   getAIAnalysisList(): Promise<AIAnalysisListItem[]>;
   getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null>;
   getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
+
+  recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void>;
+  getTrendingPersons(limit: number): Promise<Person[]>;
+  getTrendingDocuments(limit: number): Promise<Document[]>;
 }
 
 function escapeLikePattern(input: string): string {
@@ -470,6 +488,8 @@ const networkDataCache = createCache<{
 
 const personsCache = createCache<Person[]>(5 * 60 * 1000);
 const timelineEventsCache = createCache<TimelineEvent[]>(5 * 60 * 1000);
+const trendingPersonsCache = createCache<Person[]>(5 * 60 * 1000);
+const trendingDocumentsCache = createCache<Document[]>(5 * 60 * 1000);
 
 const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
 const COUNT_TTL = 60_000;
@@ -1062,6 +1082,7 @@ export class DatabaseStorage implements IStorage {
     dataSet?: string;
     redacted?: string;
     mediaType?: string;
+    sort?: string;
   }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
     const conditions = [];
     const r2Cond = r2Filter();
@@ -1098,7 +1119,7 @@ export class DatabaseStorage implements IStorage {
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
     // Check if user applied any filters beyond the automatic r2 filter
-    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType);
+    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType || opts.sort);
 
     // For unfiltered queries, use the cached stats total to avoid COUNT(*) on 1.38M rows
     let total: number;
@@ -1137,6 +1158,34 @@ export class DatabaseStorage implements IStorage {
     }
     const totalPages = Math.ceil(total / opts.limit);
     const offset = (opts.page - 1) * opts.limit;
+
+    if (opts.sort === "popular") {
+      // Sort by page view count (last 30 days), then by id
+      // Get IDs of most-viewed documents in the right order, then fetch full rows
+      const viewedResult: any = await db.execute(sql`
+        SELECT d.id
+        FROM documents d
+        LEFT JOIN (
+          SELECT entity_id, COUNT(*) AS view_count
+          FROM page_views
+          WHERE entity_type = 'document'
+            AND created_at > NOW() - INTERVAL '30 days'
+          GROUP BY entity_id
+        ) pv ON d.id = pv.entity_id
+        ORDER BY COALESCE(pv.view_count, 0) DESC, d.id ASC
+        LIMIT ${opts.limit} OFFSET ${offset}
+      `);
+      const orderedIds: number[] = (viewedResult.rows ?? viewedResult).map((r: any) => r.id);
+      if (orderedIds.length === 0) {
+        return { data: [], total, page: opts.page, totalPages };
+      }
+      const rows = await db.select().from(documents).where(inArray(documents.id, orderedIds));
+      // Restore the popularity order
+      const byId = new Map(rows.map(r => [r.id, r]));
+      const data = orderedIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+      return { data, total, page: opts.page, totalPages };
+    }
+
     const data = await db
       .select()
       .from(documents)
@@ -1283,6 +1332,151 @@ export class DatabaseStorage implements IStorage {
   async deleteBookmark(id: number): Promise<boolean> {
     const result = await db.delete(bookmarks).where(eq(bookmarks.id, id)).returning();
     return result.length > 0;
+  }
+
+  async getVotes(userId: string): Promise<DocumentVote[]> {
+    return db.select().from(documentVotes)
+      .where(eq(documentVotes.userId, userId))
+      .orderBy(desc(documentVotes.createdAt));
+  }
+
+  async createVote(vote: InsertDocumentVote): Promise<DocumentVote> {
+    const v = vote as { userId: string; documentId: number };
+    const [created] = await db.insert(documentVotes).values(vote)
+      .onConflictDoNothing()
+      .returning();
+    if (!created) {
+      const existing = await db.select().from(documentVotes).where(
+        and(
+          eq(documentVotes.userId, v.userId),
+          eq(documentVotes.documentId, v.documentId),
+        )
+      );
+      return existing[0];
+    }
+    return created;
+  }
+
+  async deleteVote(id: number): Promise<boolean> {
+    const result = await db.delete(documentVotes).where(eq(documentVotes.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async getVoteCounts(documentIds: number[]): Promise<Record<number, number>> {
+    if (documentIds.length === 0) return {};
+    const rows = await db.select({
+      documentId: documentVotes.documentId,
+      count: sql<number>`count(*)::int`,
+    }).from(documentVotes)
+      .where(inArray(documentVotes.documentId, documentIds))
+      .groupBy(documentVotes.documentId);
+
+    const counts: Record<number, number> = {};
+    for (const row of rows) {
+      counts[row.documentId] = row.count;
+    }
+    return counts;
+  }
+
+  async getMostVotedDocuments(limit: number): Promise<(Document & { voteCount: number })[]> {
+    const r2Cond = isR2Configured()
+      ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
+      : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+
+    const result: any = await db.execute(sql`
+      SELECT d.id, dv.vote_count
+      FROM documents d
+      INNER JOIN (
+        SELECT document_id, COUNT(*) AS vote_count
+        FROM document_votes
+        GROUP BY document_id
+        HAVING COUNT(*) >= 1
+      ) dv ON d.id = dv.document_id
+      WHERE ${r2Cond}
+      ORDER BY dv.vote_count DESC, d.id DESC
+      LIMIT ${limit}
+    `);
+    const idRows: any[] = result.rows ?? result;
+    if (idRows.length === 0) return [];
+    const ids = idRows.map((r: any) => r.id as number);
+    const countMap = new Map(idRows.map((r: any) => [r.id as number, Number(r.vote_count)]));
+    const docs = await db.select().from(documents).where(inArray(documents.id, ids));
+    return ids
+      .map((id) => {
+        const doc = docs.find((d) => d.id === id);
+        return doc ? { ...doc, voteCount: countMap.get(id) ?? 0 } : null;
+      })
+      .filter((d): d is Document & { voteCount: number } => d !== null);
+  }
+
+  async getPersonVotes(userId: string): Promise<PersonVote[]> {
+    return db.select().from(personVotes)
+      .where(eq(personVotes.userId, userId))
+      .orderBy(desc(personVotes.createdAt));
+  }
+
+  async createPersonVote(vote: InsertPersonVote): Promise<PersonVote> {
+    const v = vote as { userId: string; personId: number };
+    const [created] = await db.insert(personVotes).values(vote)
+      .onConflictDoNothing()
+      .returning();
+    if (!created) {
+      const existing = await db.select().from(personVotes).where(
+        and(
+          eq(personVotes.userId, v.userId),
+          eq(personVotes.personId, v.personId),
+        )
+      );
+      return existing[0];
+    }
+    return created;
+  }
+
+  async deletePersonVote(id: number): Promise<boolean> {
+    const result = await db.delete(personVotes).where(eq(personVotes.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async getPersonVoteCounts(personIds: number[]): Promise<Record<number, number>> {
+    if (personIds.length === 0) return {};
+    const rows = await db.select({
+      personId: personVotes.personId,
+      count: sql<number>`count(*)::int`,
+    }).from(personVotes)
+      .where(inArray(personVotes.personId, personIds))
+      .groupBy(personVotes.personId);
+
+    const counts: Record<number, number> = {};
+    for (const row of rows) {
+      counts[row.personId] = row.count;
+    }
+    return counts;
+  }
+
+  async getMostVotedPersons(limit: number): Promise<(Person & { voteCount: number })[]> {
+    const result: any = await db.execute(sql`
+      SELECT p.id, pv.vote_count
+      FROM persons p
+      INNER JOIN (
+        SELECT person_id, COUNT(*) AS vote_count
+        FROM person_votes
+        GROUP BY person_id
+        HAVING COUNT(*) >= 1
+      ) pv ON p.id = pv.person_id
+      ORDER BY pv.vote_count DESC, p.id DESC
+      LIMIT ${limit}
+    `);
+    const idRows: any[] = result.rows ?? result;
+    if (idRows.length === 0) return [];
+    const ids = idRows.map((r: any) => r.id as number);
+    const countMap = new Map(idRows.map((r: any) => [r.id as number, Number(r.vote_count)]));
+    const people = await db.select().from(persons).where(inArray(persons.id, ids));
+    return ids
+      .map((id) => {
+        const person = people.find((p) => p.id === id);
+        return person ? { ...person, voteCount: countMap.get(id) ?? 0 } : null;
+      })
+      .filter((p): p is Person & { voteCount: number } => p !== null);
   }
 
   async getPipelineJobs(status?: string): Promise<PipelineJob[]> {
@@ -1438,6 +1632,81 @@ export class DatabaseStorage implements IStorage {
       totalConnections: connectionCount[0].count,
       totalEvents: eventCount[0].count,
     };
+  }
+
+  async recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void> {
+    // Dedup: skip if same session viewed same entity in last 30 minutes
+    const [existing] = await db.select({ id: pageViews.id })
+      .from(pageViews)
+      .where(and(
+        eq(pageViews.sessionId, sessionId),
+        eq(pageViews.entityType, entityType),
+        eq(pageViews.entityId, entityId),
+        sql`${pageViews.createdAt} > NOW() - INTERVAL '30 minutes'`
+      ))
+      .limit(1);
+
+    if (existing) return;
+
+    await db.insert(pageViews).values({ entityType, entityId, sessionId });
+  }
+
+  async getTrendingPersons(limit: number): Promise<Person[]> {
+    return trendingPersonsCache.get(async () => {
+      const result: any = await db.execute(sql`
+        WITH view_scores AS (
+          SELECT entity_id,
+                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+          FROM page_views
+          WHERE entity_type = 'person'
+            AND created_at > NOW() - INTERVAL '7 days'
+          GROUP BY entity_id
+          HAVING COUNT(*) >= 2
+        )
+        SELECT p.*,
+               COALESCE(vs.score, 0) AS trending_score
+        FROM persons p
+        LEFT JOIN view_scores vs ON p.id = vs.entity_id
+        ORDER BY
+          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
+          p.document_count DESC
+        LIMIT ${limit}
+      `);
+      const rows: any[] = result.rows ?? result;
+      return rows.map(({ trending_score, ...rest }: any) => rest as Person);
+    });
+  }
+
+  async getTrendingDocuments(limit: number): Promise<Document[]> {
+    return trendingDocumentsCache.get(async () => {
+      const r2Cond = isR2Configured()
+        ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
+        : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+
+      const result: any = await db.execute(sql`
+        WITH view_scores AS (
+          SELECT entity_id,
+                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+          FROM page_views
+          WHERE entity_type = 'document'
+            AND created_at > NOW() - INTERVAL '7 days'
+          GROUP BY entity_id
+          HAVING COUNT(*) >= 2
+        )
+        SELECT d.*,
+               COALESCE(vs.score, 0) AS trending_score
+        FROM documents d
+        LEFT JOIN view_scores vs ON d.id = vs.entity_id
+        WHERE ${r2Cond}
+        ORDER BY
+          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
+          d.page_count DESC NULLS LAST,
+          d.id DESC
+        LIMIT ${limit}
+      `);
+      const rows: any[] = result.rows ?? result;
+      return rows.map(({ trending_score, ...rest }: any) => rest as Document);
+    });
   }
 }
 

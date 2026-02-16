@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -24,8 +24,13 @@ import {
   Video,
   LayoutGrid,
   List,
+  Bookmark,
+  BookmarkCheck,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
+import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -127,6 +132,7 @@ function DocumentCardSkeleton({ index }: { index: number }) {
 }
 
 export default function DocumentsPage() {
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const [filters, setFilter, resetFilters] = useUrlFilters({
     search: "",
     type: "all",
@@ -149,6 +155,7 @@ export default function DocumentsPage() {
   if (filters.dataSet !== "all") queryParams.set("dataSet", filters.dataSet);
   if (filters.redacted !== "all") queryParams.set("redacted", filters.redacted);
   if (filters.mediaType !== "all") queryParams.set("mediaType", filters.mediaType);
+  queryParams.set("sort", "popular");
 
   const pageTitle = filters.type !== "all"
     ? (pageTitles[filters.type] || filters.type.charAt(0).toUpperCase() + filters.type.slice(1))
@@ -173,6 +180,9 @@ export default function DocumentsPage() {
   const totalItems = result?.total || 0;
   const totalPages = result?.totalPages || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const documentIds = useMemo(() => (paginated ?? []).map((d) => d.id), [paginated]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(documentIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -309,37 +319,38 @@ export default function DocumentsPage() {
               {paginated?.map((doc) => {
                 const Icon = typeIcons[doc.documentType] || FileText;
                 return (
-                  <Link key={doc.id} href={`/documents/${doc.id}`}>
-                    <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
-                      <CardContent className="p-4">
-                        <div className="flex items-start gap-3">
-                          <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
-                            <Icon className="w-5 h-5 text-muted-foreground" />
-                          </div>
-                          <div className="flex flex-col gap-1 min-w-0 flex-1">
-                            <div className="flex items-start justify-between gap-2">
-                              <div className="flex items-center gap-2 min-w-0">
-                                <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
-                                {isNonDescriptiveTitle(doc.title) && (
-                                  <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                  <div key={doc.id} className="relative group">
+                    <Link href={`/documents/${doc.id}`}>
+                      <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-3">
+                            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-muted shrink-0">
+                              <Icon className="w-5 h-5 text-muted-foreground" />
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0 flex-1">
+                              <div className="flex items-start justify-between gap-2">
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-sm font-semibold truncate">{getDisplayTitle(doc)}</span>
+                                  {isNonDescriptiveTitle(doc.title) && (
+                                    <Badge variant="outline" className="text-[9px] font-mono shrink-0">{doc.title}</Badge>
+                                  )}
+                                </div>
+                                {doc.sourceUrl && (
+                                  <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="shrink-0"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
+                                    }}
+                                    data-testid={`button-source-${doc.id}`}
+                                  >
+                                    <ExternalLink className="w-3 h-3" />
+                                  </Button>
                                 )}
                               </div>
-                              {doc.sourceUrl && (
-                                <Button
-                                  variant="ghost"
-                                  size="icon"
-                                  className="shrink-0"
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    window.open(doc.sourceUrl!, "_blank", "noopener,noreferrer");
-                                  }}
-                                  data-testid={`button-source-${doc.id}`}
-                                >
-                                  <ExternalLink className="w-3 h-3" />
-                                </Button>
-                              )}
-                            </div>
                             {doc.description && (
                               <p className="text-xs text-muted-foreground line-clamp-2">{doc.description}</p>
                             )}
@@ -375,27 +386,93 @@ export default function DocumentsPage() {
                       </CardContent>
                     </Card>
                   </Link>
+                  <div className={`absolute top-2 right-2 flex items-center gap-0.5 transition-opacity ${
+                      isBookmarked("document", doc.id) || isVoted(doc.id)
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100 focus-within:opacity-100"
+                    }`}>
+                    <ImportanceVoteButton
+                      documentId={doc.id}
+                      isVoted={!!isVoted(doc.id)}
+                      count={getCount(doc.id)}
+                      onToggle={toggleVote}
+                      size="sm"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`p-1.5 rounded-md transition-colors ${
+                        isBookmarked("document", doc.id)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
+                </div>
                 );
               })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {paginated?.map((doc) => (
-                <Link key={doc.id} href={`/documents/${doc.id}`}>
-                  <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
-                    <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
-                      <DocumentThumbnail doc={doc} />
+                <div key={doc.id} className="relative group">
+                  <Link href={`/documents/${doc.id}`}>
+                    <div className="cursor-pointer" data-testid={`grid-card-${doc.id}`}>
+                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
+                        <DocumentThumbnail doc={doc} />
+                      </div>
+                      <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
+                        {getDisplayTitle(doc)}
+                      </p>
+                      {doc.dateOriginal && (
+                        <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
+                          <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
-                      {getDisplayTitle(doc)}
-                    </p>
-                    {doc.dateOriginal && (
-                      <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
-                        <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                      </span>
-                    )}
+                  </Link>
+                  <div className={`absolute top-1 right-1 flex items-center gap-0.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
+                      isBookmarked("document", doc.id) || isVoted(doc.id)
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100 focus-within:opacity-100"
+                    }`}>
+                    <ImportanceVoteButton
+                      documentId={doc.id}
+                      isVoted={!!isVoted(doc.id)}
+                      count={getCount(doc.id)}
+                      onToggle={toggleVote}
+                      size="sm"
+                      className="h-7"
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`p-1.5 rounded-md transition-colors ${
+                        isBookmarked("document", doc.id)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           )}
