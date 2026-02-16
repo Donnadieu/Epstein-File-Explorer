@@ -1161,7 +1161,25 @@ export class DatabaseStorage implements IStorage {
 
     if (opts.sort === "popular") {
       // Sort by page view count (last 30 days), then by id
-      // Get IDs of most-viewed documents in the right order, then fetch full rows
+      // Build WHERE conditions as raw SQL fragments to pass into the raw query
+      const whereParts: string[] = [];
+      if (r2Cond) whereParts.push(`d.r2_key IS NOT NULL`);
+      if (opts.type) whereParts.push(`d.document_type = '${opts.type.replace(/'/g, "''")}'`);
+      if (opts.dataSet) whereParts.push(`d.data_set = '${opts.dataSet.replace(/'/g, "''")}'`);
+      if (opts.redacted === "redacted") whereParts.push(`d.is_redacted = true`);
+      else if (opts.redacted === "unredacted") whereParts.push(`d.is_redacted = false`);
+      if (opts.mediaType) whereParts.push(`d.media_type = '${opts.mediaType.replace(/'/g, "''")}'`);
+      if (opts.search) {
+        // search condition already narrowed by inArray above, re-apply here
+        const pageResults = await this.searchPages(opts.search, 1, 100);
+        const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
+        if (docIds.length === 0) {
+          return { data: [], total: 0, page: opts.page, totalPages: 0 };
+        }
+        whereParts.push(`d.id IN (${docIds.join(",")})`);
+      }
+      const whereSQL = whereParts.length > 0 ? sql.raw(`WHERE ${whereParts.join(" AND ")}`) : sql.raw("");
+
       const viewedResult: any = await db.execute(sql`
         SELECT d.id
         FROM documents d
@@ -1172,6 +1190,7 @@ export class DatabaseStorage implements IStorage {
             AND created_at > NOW() - INTERVAL '30 days'
           GROUP BY entity_id
         ) pv ON d.id = pv.entity_id
+        ${whereSQL}
         ORDER BY COALESCE(pv.view_count, 0) DESC, d.id ASC
         LIMIT ${opts.limit} OFFSET ${offset}
       `);
