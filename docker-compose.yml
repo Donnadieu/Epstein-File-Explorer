@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: epstein
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: epstein_db
+      POSTGRES_USER: ${POSTGRES_USER:-epstein}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-epstein_db}
     ports:
       - "5432:5432"
     volumes:

@@ -221,7 +221,12 @@ main() {
             echo ""
             # Load environment from .env.local if not already set
             if [ -f ".env.local" ] && [ -z "$DATABASE_URL" ]; then
-                export $(cat .env.local | grep -v '#' | xargs)
+                # Safely load environment variables
+                if [ -f .env.local ]; then
+                  set -a
+                  source <(grep -v '^#' .env.local | grep -v '^$')
+                  set +a
+                fi
             fi
             npm run dev
             ;;

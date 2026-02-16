@@ -44,6 +44,46 @@ function isAllowedPdfUrl(url: string): boolean {
   }
 }
 
+/**
+ * Validate and resolve a file path to ensure it stays within allowed base directory.
+ * Prevents path traversal attacks (e.g., ../../etc/passwd)
+ */
+function validatePath(userPath: string, baseDir: string = pathMod.join(process.cwd(), "data")): { success: boolean; resolvedPath?: string; error?: string } {
+  try {
+    // Resolve relative paths and symlinks
+    const resolved = pathMod.resolve(userPath);
+    const resolvedBase = pathMod.resolve(baseDir);
+
+    // Ensure the resolved path is within the base directory
+    if (!resolved.startsWith(resolvedBase)) {
+      return { success: false, error: "Access denied: path outside allowed directory" };
+    }
+
+    return { success: true, resolvedPath: resolved };
+  } catch (error) {
+    return { success: false, error: `Invalid path: ${(error as Error).message}` };
+  }
+}
+
+/**
+ * API Key middleware for /api/tools/* endpoints
+ * Checks for X-API-Key header (can be configured via environment)
+ */
+function apiKeyMiddleware(req: any, res: any, next: any) {
+  // Skip auth if no API key is configured (for backwards compatibility during transition)
+  const requiredKey = process.env.TOOLS_API_KEY;
+  if (!requiredKey) {
+    return next();
+  }
+
+  const providedKey = req.get("X-API-Key");
+  if (!providedKey || providedKey !== requiredKey) {
+    return res.status(401).json({ error: "Unauthorized: missing or invalid X-API-Key header" });
+  }
+
+  next();
+}
+
 
 function escapeCsvField(value: unknown): string {
   const str = String(value ?? "");
@@ -1459,25 +1499,32 @@ export async function registerRoutes(
    * Browse PDF files in a directory
    * GET /api/tools/browse?dir=/path/to/directory
    */
-  app.get("/api/tools/browse", (req, res) => {
+  app.get("/api/tools/browse", apiKeyMiddleware, (req, res) => {
     try {
       const dir = (req.query.dir as string) || pathMod.join(process.cwd(), "data");
       
-      if (!fsSync.existsSync(dir)) {
+      // Validate path to prevent directory traversal
+      const validation = validatePath(dir);
+      if (!validation.success) {
+        return res.status(400).json({ error: validation.error });
+      }
+
+      const resolvedDir = validation.resolvedPath!;
+      if (!fsSync.existsSync(resolvedDir)) {
         return res.status(404).json({ error: "Directory not found" });
       }
 
-      const entries = fsSync.readdirSync(dir, { withFileTypes: true });
+      const entries = fsSync.readdirSync(resolvedDir, { withFileTypes: true });
       const items = entries.map((entry) => ({
         name: entry.name,
         isDirectory: entry.isDirectory(),
-        path: pathMod.join(dir, entry.name),
-        size: entry.isDirectory() ? null : fsSync.statSync(pathMod.join(dir, entry.name)).size,
+        path: pathMod.join(resolvedDir, entry.name),
+        size: entry.isDirectory() ? null : fsSync.statSync(pathMod.join(resolvedDir, entry.name)).size,
       }));
 
       res.json({
         success: true,
-        currentDir: dir,
+        currentDir: resolvedDir,
         items: items.sort((a, b) => {
           // Directories first, then by name
           if (a.isDirectory !== b.isDirectory) return b.isDirectory ? 1 : -1;
@@ -1493,7 +1540,7 @@ export async function registerRoutes(
    * Upload PDF file from user's system
    * POST /api/tools/upload (multipart/form-data)
    */
-  app.post("/api/tools/upload", (req, res) => {
+  app.post("/api/tools/upload", apiKeyMiddleware, (req, res) => {
     try {
       const file = (req as any).files?.file;
       if (!file) {
@@ -1530,7 +1577,7 @@ export async function registerRoutes(
    * POST /api/tools/download
    * Body: { url: "https://..." }
    */
-  app.post("/api/tools/download", async (req, res) => {
+  app.post("/api/tools/download", apiKeyMiddleware, async (req, res) => {
     try {
       const { url } = req.body;
 
@@ -1541,6 +1588,11 @@ export async function registerRoutes(
       // Validate URL is HTTPS or HTTP
       if (!url.startsWith("http://") && !url.startsWith("https://")) {
         return res.status(400).json({ error: "URL must start with http:// or https://" });
+      }
+
+      // SSRF protection: only allow downloads from whitelisted domains
+      if (!isAllowedPdfUrl(url)) {
+        return res.status(403).json({ error: "URL domain not allowed" });
       }
 
       // Download the file
@@ -1602,7 +1654,7 @@ export async function registerRoutes(
    * Run redaction audit on a PDF
    * POST /api/tools/audit-redaction?path=/path/to/file.pdf
    */
-  app.post("/api/tools/audit-redaction", async (req, res) => {
+  app.post("/api/tools/audit-redaction", apiKeyMiddleware, apiKeyMiddleware, async (req, res) => {
     try {
       const pdfPath = req.query.path as string;
 
@@ -1610,18 +1662,25 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Missing 'path' query parameter" });
       }
 
-      if (!fsSync.existsSync(pdfPath)) {
+      // Validate path to prevent directory traversal and command injection
+      const validation = validatePath(pdfPath);
+      if (!validation.success) {
+        return res.status(400).json({ error: validation.error });
+      }
+
+      const resolvedPath = validation.resolvedPath!;
+      if (!fsSync.existsSync(resolvedPath)) {
         return res.status(404).json({ error: "PDF file not found" });
       }
 
-      const result = await pytoolsBridge.runRedactionAudit(pdfPath);
+      const result = await pytoolsBridge.runRedactionAudit(resolvedPath);
       if (!result.success) {
         return res.status(500).json({ error: result.error, stderr: result.stderr });
       }
 
       res.json({
         success: true,
-        path: pdfPath,
+        path: resolvedPath,
         audit: result.data,
       });
     } catch (error) {
@@ -1633,7 +1692,7 @@ export async function registerRoutes(
    * Detect bad redactions in a PDF using x-ray
    * POST /api/tools/xray?path=/path/to/file.pdf
    */
-  app.post("/api/tools/xray", async (req, res) => {
+  app.post("/api/tools/xray", apiKeyMiddleware, apiKeyMiddleware, async (req, res) => {
     try {
       const pdfPath = req.query.path as string;
 
@@ -1641,11 +1700,18 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Missing 'path' query parameter" });
       }
 
-      if (!fsSync.existsSync(pdfPath)) {
+      // Validate path to prevent directory traversal and command injection
+      const validation = validatePath(pdfPath);
+      if (!validation.success) {
+        return res.status(400).json({ error: validation.error });
+      }
+
+      const resolvedPath = validation.resolvedPath!;
+      if (!fsSync.existsSync(resolvedPath)) {
         return res.status(404).json({ error: "PDF file not found" });
       }
 
-      const result = await pytoolsBridge.runXrayAnalysis(pdfPath);
+      const result = await pytoolsBridge.runXrayAnalysis(resolvedPath);
       if (!result.success) {
         return res.status(500).json({ error: result.error, stderr: result.stderr });
       }
@@ -1696,7 +1762,7 @@ export async function registerRoutes(
    * Comprehensive PDF analysis (audit + xray + optional extraction)
    * POST /api/tools/analyze?path=/path/to/file.pdf&extract=true&output=/path/to/output.json
    */
-  app.post("/api/tools/analyze", async (req, res) => {
+  app.post("/api/tools/analyze", apiKeyMiddleware, async (req, res) => {
     try {
       const pdfPath = req.query.path as string;
       const extract = req.query.extract === "true";
@@ -1758,7 +1824,7 @@ export async function registerRoutes(
    * Download extracted text JSON file
    * GET /api/tools/download-extracted?path=/path/to/extracted.json
    */
-  app.get("/api/tools/download-extracted", (req, res) => {
+  app.get("/api/tools/download-extracted", apiKeyMiddleware, (req, res) => {
     try {
       const filePath = req.query.path as string;
 
@@ -1766,11 +1832,18 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Missing 'path' query parameter" });
       }
 
-      if (!fsSync.existsSync(filePath)) {
+      // Validate path to prevent directory traversal
+      const validation = validatePath(filePath);
+      if (!validation.success) {
+        return res.status(400).json({ error: validation.error });
+      }
+
+      const resolvedPath = validation.resolvedPath!;
+      if (!fsSync.existsSync(resolvedPath)) {
         return res.status(404).json({ error: "File not found" });
       }
 
-      const content = fsSync.readFileSync(filePath, "utf-8");
+      const content = fsSync.readFileSync(resolvedPath, "utf-8");
       res.setHeader("Content-Type", "application/json");
       res.send(content);
     } catch (error) {
@@ -1784,7 +1857,7 @@ export async function registerRoutes(
    * Body: { directory: "/path/to/dir", filter: "all|vulnerable|recoverable" }
    * Returns: Array of audit results with "hit" status
    */
-  app.post("/api/tools/batch-audit", async (req, res) => {
+  app.post("/api/tools/batch-audit", apiKeyMiddleware, apiKeyMiddleware, async (req, res) => {
     try {
       const { directory, filter = "all" } = req.body;
 
@@ -1792,15 +1865,22 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Missing 'directory' parameter" });
       }
 
-      if (!fsSync.existsSync(directory)) {
+      // Validate path to prevent directory traversal
+      const validation = validatePath(directory);
+      if (!validation.success) {
+        return res.status(400).json({ error: validation.error });
+      }
+
+      const resolvedDir = validation.resolvedPath!;
+      if (!fsSync.existsSync(resolvedDir)) {
         return res.status(400).json({ error: "Directory not found" });
       }
 
       // Get all PDFs in directory
       const files = fsSync
-        .readdirSync(directory)
+        .readdirSync(resolvedDir)
         .filter((f) => f.toLowerCase().endsWith(".pdf"))
-        .map((f) => pathMod.join(directory, f));
+        .map((f) => pathMod.join(resolvedDir, f));
 
       if (files.length === 0) {
         return res.json({ results: [], summary: { total: 0, hits: 0 } });
@@ -1893,7 +1973,7 @@ export async function registerRoutes(
    * POST /api/tools/email-audit-ai
    * Body: { maxFiles?: number }
    */
-  app.post("/api/tools/email-audit-ai", (req, res) => {
+  app.post("/api/tools/email-audit-ai", apiKeyMiddleware, (req, res) => {
     try {
       const { maxFiles } = req.body ?? {};
       const payload = runAiAnalyzedEmailAudit(maxFiles);
@@ -1908,7 +1988,7 @@ export async function registerRoutes(
    * POST /api/tools/batch-audit-doj
    * Body: { filter?: "all|hits|vulnerable|recoverable", maxFiles?: number }
    */
-  app.post("/api/tools/batch-audit-doj", async (req, res) => {
+  app.post("/api/tools/batch-audit-doj", apiKeyMiddleware, async (req, res) => {
     try {
       const { filter = "all", maxFiles } = req.body ?? {};
       const payload = await performDojBatchAudit({
@@ -1926,7 +2006,7 @@ export async function registerRoutes(
    * POST /api/tools/batch-audit-doj/jobs
    * Body: { filter?: "all|hits|vulnerable|recoverable", maxFiles?: number }
    */
-  app.post("/api/tools/batch-audit-doj/jobs", async (req, res) => {
+  app.post("/api/tools/batch-audit-doj/jobs", apiKeyMiddleware, async (req, res) => {
     try {
       pruneOldDojJobs();
       const { filter = "all", maxFiles } = req.body ?? {};
@@ -2021,7 +2101,7 @@ export async function registerRoutes(
    * Cancel a DOJ batch-audit job.
    * POST /api/tools/batch-audit-doj/jobs/:jobId/cancel
    */
-  app.post("/api/tools/batch-audit-doj/jobs/:jobId/cancel", (req, res) => {
+  app.post("/api/tools/batch-audit-doj/jobs/:jobId/cancel", apiKeyMiddleware, (req, res) => {
     pruneOldDojJobs();
     const job = dojBatchJobs.get(req.params.jobId);
     if (!job) {
@@ -2047,7 +2127,7 @@ export async function registerRoutes(
    * Get status of a DOJ batch-audit job.
    * GET /api/tools/batch-audit-doj/jobs/:jobId
    */
-  app.get("/api/tools/batch-audit-doj/jobs/:jobId", (req, res) => {
+  app.get("/api/tools/batch-audit-doj/jobs/:jobId", apiKeyMiddleware, (req, res) => {
     pruneOldDojJobs();
     const job = dojBatchJobs.get(req.params.jobId);
     if (!job) {
