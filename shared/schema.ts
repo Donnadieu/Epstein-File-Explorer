@@ -258,6 +258,20 @@ export const insertBookmarkSchema = createInsertSchema(bookmarks).omit({ created
 export type Bookmark = typeof bookmarks.$inferSelect;
 export type InsertBookmark = typeof bookmarks.$inferInsert;
 
+export const documentVotes = pgTable("document_votes", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  userId: text("user_id").notNull(),
+  documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("idx_document_votes_user_doc").on(table.userId, table.documentId),
+  index("idx_document_votes_document_id").on(table.documentId),
+]);
+
+export const insertDocumentVoteSchema = createInsertSchema(documentVotes).omit({ createdAt: true });
+export type DocumentVote = typeof documentVotes.$inferSelect;
+export type InsertDocumentVote = typeof documentVotes.$inferInsert;
+
 // Chat tables
 export const conversations = pgTable("conversations", {
   id: serial("id").primaryKey(),

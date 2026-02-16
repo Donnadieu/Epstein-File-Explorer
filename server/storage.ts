@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import {
   persons, documents, documentPages, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking, bookmarks,
+  pipelineJobs, budgetTracking, bookmarks, documentVotes,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
@@ -10,6 +10,7 @@ import {
   type TimelineEvent, type InsertTimelineEvent,
   type PipelineJob, type BudgetTracking,
   type Bookmark, type InsertBookmark,
+  type DocumentVote, type InsertDocumentVote,
   type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
 } from "@shared/schema";
 import { db } from "./db";
@@ -59,6 +60,11 @@ export interface IStorage {
   getBookmarks(userId?: string): Promise<Bookmark[]>;
   createBookmark(bookmark: InsertBookmark): Promise<Bookmark>;
   deleteBookmark(id: number): Promise<boolean>;
+
+  getVotes(userId: string): Promise<DocumentVote[]>;
+  createVote(vote: InsertDocumentVote): Promise<DocumentVote>;
+  deleteVote(id: number): Promise<boolean>;
+  getVoteCounts(documentIds: number[]): Promise<Record<number, number>>;
 
   getPipelineJobs(status?: string): Promise<PipelineJob[]>;
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
@@ -1283,6 +1289,50 @@ export class DatabaseStorage implements IStorage {
   async deleteBookmark(id: number): Promise<boolean> {
     const result = await db.delete(bookmarks).where(eq(bookmarks.id, id)).returning();
     return result.length > 0;
+  }
+
+  async getVotes(userId: string): Promise<DocumentVote[]> {
+    return db.select().from(documentVotes)
+      .where(eq(documentVotes.userId, userId))
+      .orderBy(desc(documentVotes.createdAt));
+  }
+
+  async createVote(vote: InsertDocumentVote): Promise<DocumentVote> {
+    const v = vote as { userId: string; documentId: number };
+    const [created] = await db.insert(documentVotes).values(vote)
+      .onConflictDoNothing()
+      .returning();
+    if (!created) {
+      const existing = await db.select().from(documentVotes).where(
+        and(
+          eq(documentVotes.userId, v.userId),
+          eq(documentVotes.documentId, v.documentId),
+        )
+      );
+      return existing[0];
+    }
+    return created;
+  }
+
+  async deleteVote(id: number): Promise<boolean> {
+    const result = await db.delete(documentVotes).where(eq(documentVotes.id, id)).returning();
+    return result.length > 0;
+  }
+
+  async getVoteCounts(documentIds: number[]): Promise<Record<number, number>> {
+    if (documentIds.length === 0) return {};
+    const rows = await db.select({
+      documentId: documentVotes.documentId,
+      count: sql<number>`count(*)::int`,
+    }).from(documentVotes)
+      .where(inArray(documentVotes.documentId, documentIds))
+      .groupBy(documentVotes.documentId);
+
+    const counts: Record<number, number> = {};
+    for (const row of rows) {
+      counts[row.documentId] = row.count;
+    }
+    return counts;
   }
 
   async getPipelineJobs(status?: string): Promise<PipelineJob[]> {
