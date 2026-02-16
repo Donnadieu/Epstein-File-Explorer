@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { Readable } from "stream";
 import * as fsSync from "fs";
 import * as pathMod from "path";
-import { insertBookmarkSchema } from "@shared/schema";
+import { insertBookmarkSchema, insertDocumentVoteSchema } from "@shared/schema";
 import { storage } from "./storage";
 import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
 import { registerChatRoutes } from "./chat";
@@ -752,6 +752,72 @@ export async function registerRoutes(
       res.json({ success: true });
     } catch (error) {
       res.status(500).json({ error: "Failed to delete bookmark" });
+    }
+  });
+
+  // Vote routes
+  app.get("/api/votes/counts", async (req, res) => {
+    try {
+      const idsParam = req.query.documentIds as string;
+      if (!idsParam) {
+        return res.json({});
+      }
+      const documentIds = idsParam.split(",")
+        .map(s => parseInt(s.trim()))
+        .filter(n => !isNaN(n))
+        .slice(0, 200);
+      const counts = await storage.getVoteCounts(documentIds);
+      res.set('Cache-Control', 'public, max-age=30');
+      res.json(counts);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch vote counts" });
+    }
+  });
+
+  app.get("/api/votes", async (req, res) => {
+    try {
+      const userId = req.query.userId as string;
+      if (!userId) {
+        return res.status(400).json({ error: "userId is required" });
+      }
+      const result = await storage.getVotes(userId);
+      res.set('Cache-Control', 'private, max-age=60');
+      res.json(result);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch votes" });
+    }
+  });
+
+  app.post("/api/votes", async (req, res) => {
+    try {
+      const { documentId, userId } = req.body;
+      if (!documentId || !userId) {
+        return res.status(400).json({ error: "documentId and userId are required" });
+      }
+      const parsed = insertDocumentVoteSchema.parse({ documentId, userId });
+      const vote = await storage.createVote(parsed);
+      res.status(201).json(vote);
+    } catch (error: any) {
+      if (error?.name === "ZodError") {
+        return res.status(400).json({ error: "Invalid vote data", details: error.errors });
+      }
+      res.status(500).json({ error: "Failed to create vote" });
+    }
+  });
+
+  app.delete("/api/votes/:id", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "Invalid ID" });
+      }
+      const deleted = await storage.deleteVote(id);
+      if (!deleted) {
+        return res.status(404).json({ error: "Vote not found" });
+      }
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to delete vote" });
     }
   });
 

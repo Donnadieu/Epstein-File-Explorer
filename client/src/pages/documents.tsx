@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Link } from "wouter";
@@ -29,6 +29,8 @@ import {
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -177,6 +179,9 @@ export default function DocumentsPage() {
   const totalItems = result?.total || 0;
   const totalPages = result?.totalPages || 1;
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const documentIds = useMemo(() => (paginated ?? []).map((d) => d.id), [paginated]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(documentIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -380,24 +385,32 @@ export default function DocumentsPage() {
                       </CardContent>
                     </Card>
                   </Link>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleBookmark("document", doc.id, undefined, doc.title);
-                    }}
-                    className={`absolute top-2 right-2 p-1.5 rounded-md transition-opacity ${
-                      isBookmarked("document", doc.id)
-                        ? "opacity-100 text-primary"
-                        : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
-                    }`}
-                    aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
-                  >
-                    {isBookmarked("document", doc.id) ? (
-                      <BookmarkCheck className="w-4 h-4" />
-                    ) : (
-                      <Bookmark className="w-4 h-4" />
-                    )}
-                  </button>
+                  <div className="absolute top-2 right-2 flex items-center gap-0.5">
+                    <ImportanceVoteButton
+                      documentId={doc.id}
+                      isVoted={!!isVoted(doc.id)}
+                      count={getCount(doc.id)}
+                      onToggle={toggleVote}
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`p-1.5 rounded-md transition-opacity ${
+                        isBookmarked("document", doc.id)
+                          ? "opacity-100 text-primary"
+                          : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
                 </div>
                 );
               })}
@@ -421,24 +434,36 @@ export default function DocumentsPage() {
                       )}
                     </div>
                   </Link>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleBookmark("document", doc.id, undefined, doc.title);
-                    }}
-                    className={`absolute top-1 right-1 p-1.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
-                      isBookmarked("document", doc.id)
-                        ? "opacity-100 text-primary"
-                        : "opacity-0 group-hover:opacity-100 focus:opacity-100 text-muted-foreground hover:text-primary"
-                    }`}
-                    aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
-                  >
-                    {isBookmarked("document", doc.id) ? (
-                      <BookmarkCheck className="w-4 h-4" />
-                    ) : (
-                      <Bookmark className="w-4 h-4" />
-                    )}
-                  </button>
+                  <div className={`absolute top-1 right-1 flex items-center gap-0.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
+                    isBookmarked("document", doc.id) || isVoted(doc.id)
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100 focus-within:opacity-100"
+                  }`}>
+                    <ImportanceVoteButton
+                      documentId={doc.id}
+                      isVoted={!!isVoted(doc.id)}
+                      count={getCount(doc.id)}
+                      onToggle={toggleVote}
+                    />
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleBookmark("document", doc.id, undefined, doc.title);
+                      }}
+                      className={`p-1.5 rounded-md ${
+                        isBookmarked("document", doc.id)
+                          ? "text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                      aria-label={isBookmarked("document", doc.id) ? `Remove bookmark: ${doc.title}` : `Bookmark ${doc.title}`}
+                    >
+                      {isBookmarked("document", doc.id) ? (
+                        <BookmarkCheck className="w-4 h-4" />
+                      ) : (
+                        <Bookmark className="w-4 h-4" />
+                      )}
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>

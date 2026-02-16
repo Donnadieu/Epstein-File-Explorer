@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useParams, Link, useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -32,6 +32,8 @@ import {
 import PdfViewer from "@/components/pdf-viewer";
 import { useTrackView } from "@/hooks/use-track-view";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useImportanceVotes } from "@/hooks/use-importance-votes";
+import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import type { Document, Person, AIAnalysisDocument } from "@shared/schema";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
@@ -107,6 +109,9 @@ export default function DocumentDetailPage() {
     enabled: !!aiFileName,
     retry: false,
   });
+
+  const voteDocIds = useMemo(() => doc ? [doc.id] : [], [doc?.id]);
+  const { isVoted, getCount, toggleVote } = useImportanceVotes(voteDocIds);
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -231,6 +236,12 @@ export default function DocumentDetailPage() {
           {doc.tags?.map((tag) => (
             <Badge key={tag} variant="secondary">{tag}</Badge>
           ))}
+          <ImportanceVoteButton
+            documentId={doc.id}
+            isVoted={!!isVoted(doc.id)}
+            count={getCount(doc.id)}
+            onToggle={toggleVote}
+          />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -286,7 +297,7 @@ export default function DocumentDetailPage() {
             if (pt.pageType) typeCounts.set(pt.pageType, (typeCounts.get(pt.pageType) || 0) + 1);
           }
           if (typeCounts.size <= 1) return null;
-          const sorted = [...typeCounts.entries()].sort((a, b) => b[1] - a[1]);
+          const sorted = Array.from(typeCounts.entries()).sort((a, b) => b[1] - a[1]);
           return (
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-xs text-muted-foreground font-medium">Contains:</span>
