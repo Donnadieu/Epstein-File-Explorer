@@ -482,14 +482,33 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Redirect to R2 presigned URL (browser handles Range requests directly against R2)
+      // Stream from R2 with Range request support
       if (doc.r2Key && isR2Configured()) {
         try {
-          const url = await getPresignedUrl(doc.r2Key);
-          return res.redirect(url);
+          const r2 = await getR2Stream(doc.r2Key, req.headers.range);
+          // R2 may have wrong content type stored; derive from extension
+          const ext = pathMod.extname(doc.r2Key).toLowerCase();
+          const videoMimeMap: Record<string, string> = {
+            ".mp4": "video/mp4", ".avi": "video/x-msvideo",
+            ".mov": "video/quicktime", ".wmv": "video/x-ms-wmv",
+            ".webm": "video/webm", ".mkv": "video/x-matroska",
+          };
+          const contentType = videoMimeMap[ext] || r2.contentType || "video/mp4";
+          res.setHeader("Content-Type", contentType);
+          res.setHeader("Accept-Ranges", "bytes");
+          res.setHeader("Cache-Control", "private, max-age=3600");
+          if (r2.contentRange) {
+            res.setHeader("Content-Range", r2.contentRange);
+            if (r2.contentLength) res.setHeader("Content-Length", String(r2.contentLength));
+            res.status(206);
+          } else if (r2.contentLength) {
+            res.setHeader("Content-Length", String(r2.contentLength));
+          }
+          (r2.body as any).pipe(res);
+          return;
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 presigned URL failed for video doc ${id}: ${msg}`);
+          console.warn(`R2 stream failed for video doc ${id}: ${msg}`);
         }
       }
 
