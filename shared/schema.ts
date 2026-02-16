@@ -271,7 +271,7 @@ export const pageViews = pgTable("page_views", {
   index("idx_page_views_trending").on(table.entityType, table.createdAt, table.entityId),
 ]);
 
-export const insertPageViewSchema = createInsertSchema(pageViews).omit({ id: true, createdAt: true });
+export const insertPageViewSchema = createInsertSchema(pageViews).omit({ createdAt: true });
 export type PageView = typeof pageViews.$inferSelect;
 export type InsertPageView = typeof pageViews.$inferInsert;
 
