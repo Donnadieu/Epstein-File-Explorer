@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00080400.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-04-30",
+  "summary": "This is a letter from defense counsel Christian Everdell to Judge Alison J. Nathan requesting a court order directing the Metropolitan Detention Center (MDC) to accept two hard drives containing discovery materials for Ghislaine Maxwell's review. The government does not object but requests the MDC be allowed to note objections.",
+  "persons": [
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Presiding judge in the case United States v. Ghislaine Maxwell; the letter is addressed to her requesting an order.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case; the request is to facilitate her review of discovery materials while detained at the MDC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Cohen & Gresser LLP representing Ghislaine Maxwell; author of the letter requesting the court order.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christian Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Everdell is defense counsel for Maxwell, as indicated by his request to facilitate her review of discovery materials.",
+      "strength": 5
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is the presiding judge over Maxwell's criminal case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-18",
+      "title": "Government Discovery Production",
+      "description": "The government produced roughly 2.2 million pages of discovery in load file format.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-05-04",
+      "title": "MDC Objection Deadline",
+      "description": "Deadline for the MDC Legal Department to submit any objections to the defense's request regarding the hard drives.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "United States Courthouse, 40 Foley Square, New York, NY 10007",
+    "Metropolitan Detention Center (MDC)",
+    "Cohen & Gresser LLP, 800 Third Avenue, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "Defense counsel for Ghislaine Maxwell requested a court order to allow the MDC to accept two hard drives containing discovery materials for her review.",
+    "The discovery includes a November 18, 2020 production of approximately 2.2 million pages.",
+    "The hard drives are organized to be more user-friendly by grouping documents and eliminating duplicate file formats.",
+    "The U.S. Attorney's Office does not object to the defense's application but requested the MDC be allowed to note objections.",
+    "The document illustrates logistical challenges in managing voluminous discovery in a high-profile case while the defendant is in custody."
+  ],
+  "analyzedAt": "2026-02-15T21:13:45.742Z"
+}

@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00085173.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2008-05-29",
+  "summary": "This FBI 302 form documents an interview attempt with a witness (name redacted) at her residence on May 29, 2008. Agents served her with a grand jury subpoena to testify in the Southern District of Florida regarding Jeffrey Epstein. The witness initially declined to speak without her attorney, Diarmuid White, but later called back seeking more information.",
+  "persons": [
+    {
+      "name": "Diarmuid White",
+      "role": "Attorney for the witness",
+      "category": "legal",
+      "context": "Listed as the attorney on the business card provided by the witness when FBI agents attempted to interview her.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The FBI agents stated their interview was regarding Jeffrey Epstein, and the witness confirmed familiarity when asked.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SA Johnson",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The witness called SA Johnson later on the day of the interview attempt to inquire why agents wanted to speak with her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Diarmuid White",
+      "person2": "[Redacted Witness]",
+      "relationshipType": "attorney-client",
+      "description": "Diarmuid White is identified as the attorney for the witness, who provided his business card to FBI agents.",
+      "strength": 4
+    },
+    {
+      "person1": "[Redacted Witness]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "The witness was subpoenaed to appear before a grand jury investigating Jeffrey Epstein, indicating she may possess relevant information.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-05-29",
+      "title": "FBI Attempts Witness Interview",
+      "description": "FBI Special Agents attempted to interview a witness at her residence regarding the Jeffrey Epstein investigation. She was served with a grand jury subpoena.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "[Redacted Witness]",
+        "SA Johnson",
+        "Diarmuid White"
+      ]
+    },
+    {
+      "date": "2008-06-03",
+      "title": "Scheduled Grand Jury Appearance",
+      "description": "The witness was subpoenaed to appear before a federal grand jury in the Southern District of Florida on this date.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "[Redacted Witness]"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of Florida, United States District Court, 701 Clematis Street, West Palm Beach, Florida 33401",
+    "New York, NY 10075 (White and White Law Firm location)"
+  ],
+  "keyFacts": [
+    "A key witness in the Epstein investigation was subpoenaed to appear before a federal grand jury in West Palm Beach, Florida on June 3, 2008.",
+    "The witness initially invoked her right to counsel, providing the business card of her attorney Diarmuid White of the White and White Law Firm in New York.",
+    "FBI agents clarified the witness was not a target of investigation but was being interviewed regarding Jeffrey Epstein.",
+    "The witness later called FBI SA Johnson on the same day seeking more information about why agents wanted to speak with her.",
+    "The document indicates the witness had travel arrangements to consider for the grand jury appearance and mentioned her husband, uncle, and 10-year-old sister."
+  ],
+  "analyzedAt": "2026-02-16T02:23:29.830Z"
+}

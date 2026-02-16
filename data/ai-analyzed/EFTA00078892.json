@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA00078892.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-07-07",
+  "summary": "Email correspondence between U.S. Pretrial Services officer Natasha Ramesar and an Assistant U.S. Attorney regarding the intake and upcoming arraignment of defendant Ghislaine Maxwell. The email includes details about Maxwell's charges, her attorneys, and her housing at the Metropolitan Detention Center (MDC).",
+  "persons": [
+    {
+      "name": "Natasha Ramesar",
+      "role": "U.S. Pretrial Services Officer",
+      "category": "legal",
+      "context": "U.S. Pretrial Services officer coordinating the intake process and interview for defendant Ghislaine Maxwell.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Defendant charged with conspiracy to entice minors, transportation of a minor, and perjury; scheduled for arraignment and bail hearing.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Chris Everdell",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as retained defense counsel for Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark Cohen",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as retained defense counsel for Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge before whom Ghislaine Maxwell's arraignment and bail hearing are scheduled.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Chris Everdell",
+      "relationshipType": "attorney-client",
+      "description": "Chris Everdell is listed as retained defense counsel for Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Mark Cohen",
+      "relationshipType": "attorney-client",
+      "description": "Mark Cohen is listed as retained defense counsel for Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Natasha Ramesar",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Ramesar, as a U.S. Pretrial Services officer, is coordinating the intake process for defendant Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-10",
+      "title": "Ghislaine Maxwell's arraignment and bail hearing",
+      "description": "Scheduled arraignment and bail hearing for defendant Ghislaine Maxwell before Judge Nathan.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Nathan",
+        "Chris Everdell",
+        "Mark Cohen"
+      ]
+    },
+    {
+      "date": "2020-07-06",
+      "title": "Ghislaine Maxwell arrives in SDNY",
+      "description": "Defendant Ghislaine Maxwell arrives in the Southern District of New York and is expected to be housed at the MDC.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY)",
+    "Metropolitan Detention Center (MDC)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was indicted on charges including conspiracy to entice minors to travel to engage in illegal sex acts, transportation of a minor, and perjury.",
+    "Maxwell's arraignment and bail hearing were scheduled for July 10, 2020, before Judge Nathan.",
+    "Maxwell was represented by retained defense attorneys Chris Everdell and Mark Cohen.",
+    "Upon arrival in the Southern District of New York, Maxwell was to be housed at the Metropolitan Detention Center (MDC).",
+    "The U.S. Attorney's Office filed a motion for detention, indicating the government sought to hold Maxwell without bail."
+  ],
+  "analyzedAt": "2026-02-15T19:54:02.128Z"
+}

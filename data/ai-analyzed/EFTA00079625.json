@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00079625.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-18",
+  "summary": "An email from an Assistant U.S. Attorney in the Southern District of New York to an attorney named Jeff, discussing coordination to speak with a witness (referred to as 'she') in the Epstein case. The email involves multiple parties from the U.S. Attorney's Office and the FBI.",
+  "persons": [
+    {
+      "name": "Jeff",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "The recipient of the email, representing a witness ('she') whom the prosecutors wish to interview in connection with the Epstein case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent M",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent who had been in contact with Jeff and passed along his contact information to the prosecutors; copied on the email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, working on the Epstein case in the Southern District of New York, seeking to arrange a call with Jeff to discuss interviewing his client.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff",
+      "person2": "Special Agent M",
+      "relationshipType": "professional contact",
+      "description": "Special Agent M had been in touch with Jeff and passed along his contact information to the prosecutors.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff",
+      "person2": "Assistant U.S. Attorney",
+      "relationshipType": "attorney-prosecutor",
+      "description": "The prosecutor is emailing Jeff to coordinate a call regarding interviewing Jeff's client, a witness in the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff",
+      "person2": "Unnamed Witness",
+      "relationshipType": "attorney-client",
+      "description": "Jeff is representing an unnamed female witness ('she') whom the prosecutors wish to interview.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Special Agent M",
+      "relationshipType": "colleague",
+      "description": "Both are working on the Epstein case; the prosecutor copied the FBI agent on the email.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-18",
+      "title": "Prosecutor Reaches Out to Witness's Attorney",
+      "description": "An Assistant U.S. Attorney emails attorney Jeff to arrange a call about interviewing his client, a witness in the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeff",
+        "Assistant U.S. Attorney",
+        "Special Agent M",
+        "Unnamed Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Prosecutors in the Southern District of New York were actively seeking to interview a witness in the Epstein case as of December 2019.",
+    "The witness had previously spoken briefly with FBI agents but then referred them to her attorney, Jeff.",
+    "The email indicates coordination between the U.S. Attorney's Office and the FBI in the Epstein investigation.",
+    "The identity of the witness is protected, referred to only as 'she' and represented by counsel."
+  ],
+  "analyzedAt": "2026-02-15T20:39:58.112Z"
+}

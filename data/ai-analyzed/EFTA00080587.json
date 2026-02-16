@@ -1,0 +1,150 @@
+{
+  "fileName": "EFTA00080587.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-03-29",
+  "summary": "Email correspondence between Assistant U.S. Attorney Christian Everdell and defense attorneys regarding discovery issues in the Ghislaine Maxwell case. The emails discuss technical problems with evidence production, including missing attachments, metadata issues, and difficulties delivering discovery materials to Maxwell in prison.",
+  "persons": [
+    {
+      "name": "Christian Everdell",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor in the Southern District of New York corresponding with defense attorneys about discovery production issues in the Ghislaine Maxwell case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney copied on discovery-related emails regarding technical issues with evidence production.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney copied on discovery-related emails regarding technical issues with evidence production.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Bobbi Sternheim",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney copied on discovery-related emails regarding technical issues with evidence production.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referred to as the client who cannot read discovery disks on her prison laptop and needs alternative arrangements for accessing evidence.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Mentioned as the judge who might need to issue an order directing the MDC to accept a hard drive from the defense team.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Christian Everdell",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal",
+      "description": "Prosecutor corresponding with defense attorney about discovery issues in the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Laura Menninger",
+      "relationshipType": "legal",
+      "description": "Prosecutor corresponding with defense attorney about discovery issues in the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Bobbi Sternheim",
+      "relationshipType": "legal",
+      "description": "Prosecutor corresponding with defense attorney about discovery issues in the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff Pagliuca",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Defense attorney representing Ghislaine Maxwell in the criminal case.",
+      "strength": 4
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Defense attorney representing Ghislaine Maxwell in the criminal case.",
+      "strength": 4
+    },
+    {
+      "person1": "Bobbi Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Defense attorney representing Ghislaine Maxwell in the criminal case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019",
+      "title": "Searches of Epstein residences",
+      "description": "FBI searches of Jeffrey Epstein's residences where evidence including CDs with images was seized.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-11-09",
+      "title": "Discovery production",
+      "description": "Prosecution provided discovery letter and production of evidence including images seized from Epstein residences.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Christian Everdell"
+      ]
+    },
+    {
+      "date": "2020-11-18",
+      "title": "Discovery production",
+      "description": "Prosecution provided discovery materials to defense team, referenced in discussion about Bates number gaps.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Christian Everdell"
+      ]
+    },
+    {
+      "date": "2021-03-29",
+      "title": "Discovery issues correspondence",
+      "description": "Email exchange between prosecution and defense regarding technical problems with evidence production and access for Maxwell in prison.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Christian Everdell",
+        "Jeff Pagliuca",
+        "Laura Menninger",
+        "Bobbi Sternheim"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "MDC (Metropolitan Detention Center)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was incarcerated and had difficulty accessing discovery materials because prison computers couldn't read some files and she couldn't use disks on her laptop.",
+    "Over 109,000 emails were produced without attachments, and over 110,000 electronic documents from Epstein's devices had metadata issues with dates appearing after seizure.",
+    "Evidence included images seized during 2019 searches of Epstein residences that were not from electronic device extractions and therefore lacked CART numbers.",
+    "The defense requested metadata overlays with original metadata for files where metadata indicated creation/modification dates after the devices were seized.",
+    "There was a Bates number gap between November 18 and December 18, 2020 productions that the prosecution needed to address."
+  ],
+  "analyzedAt": "2026-02-15T21:27:37.219Z"
+}

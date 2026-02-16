@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00079960.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2019-12-11",
+  "summary": "This document is a sealed court filing from the U.S. Attorney's Office for the Southern District of New York, consisting of an application and order for a non-disclosure order related to a grand jury subpoena issued to Lyft, Inc. The subpoena seeks extensive records for any accounts associated with Ghislaine Maxwell, as part of an investigation into violations including sex trafficking. The order prohibits Lyft from notifying Maxwell or others about the subpoena for 365 days to prevent jeopardizing the investigation.",
+  "persons": [
+    {
+      "name": "Sarah L. Cave",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "Issued the sealed non-disclosure order related to the grand jury subpoena to Lyft.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Signed the grand jury subpoena and the accompanying letter to Lyft directing compliance and preservation of records.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Account Holder / Subject of Investigation",
+      "category": "key figure",
+      "context": "The subpoena rider explicitly lists her name, date of birth, phone number, and email as identifiers for which all Lyft account records are sought.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is overseeing the grand jury investigation for which Maxwell is a primary subject, as evidenced by the subpoena targeting her accounts.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-11",
+      "title": "Issuance of Sealed Subpoena and Non-Disclosure Order",
+      "description": "The U.S. Attorney's Office obtained a sealed court order and served a grand jury subpoena on Lyft, Inc., seeking all records for accounts associated with Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Sarah L. Cave",
+        "Geoffrey S. Berman",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-12-23",
+      "title": "Scheduled Grand Jury Appearance / Record Production Deadline",
+      "description": "The subpoena commands Lyft to appear before the grand jury or produce the requested records by this date.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "United States Courthouse, 40 Foley Square, Room 220, New York, NY",
+    "Lyft, Inc., 185 Berry Street, Suite 5000, San Francisco, CA 94107",
+    "Federal Bureau of Investigation, 26 Federal Plaza, New York, NY 10278"
+  ],
+  "keyFacts": [
+    "The U.S. government served a sealed grand jury subpoena on Lyft in December 2019 seeking all account records for Ghislaine Maxwell.",
+    "A federal judge issued a 365-day non-disclosure order preventing Lyft from notifying Maxwell or anyone else about the subpoena, citing risks of flight, evidence tampering, and witness intimidation.",
+    "The subpoena rider lists specific identifiers for Maxwell (name, DOB, phone, email) and requests extensive data including trip logs from September 1, 2019 onward.",
+    "The underlying investigation involves suspected violations of federal laws including sex trafficking (18 U.S.C. § 1591) and transportation for illegal sexual activity (18 U.S.C. § 2423).",
+    "The document reveals the government was actively using electronic evidence gathering (ride-sharing records) in its investigation of Maxwell at least six months before her arrest in July 2020."
+  ],
+  "analyzedAt": "2026-02-15T20:55:59.141Z"
+}

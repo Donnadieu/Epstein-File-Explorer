@@ -1,0 +1,123 @@
+{
+  "fileName": "EFTA00080953.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-30",
+  "summary": "Email correspondence between a U.S. Attorney's Office prosecutor and defense attorney Jill Greenfield regarding the SDNY investigation into Jeffrey Epstein and Ghislaine Maxwell. The prosecutor provides a list of potential questions for Greenfield's client, who appears to be a witness or victim, covering background, meeting Epstein and Maxwell, work performed, sexual abuse, knowledge of other victims, and post-investigation contact.",
+  "persons": [
+    {
+      "name": "Jill Greenfield",
+      "role": "Defense Attorney / Partner at Fieldfisher",
+      "category": "legal",
+      "context": "Attorney representing a client who is a potential witness/victim in the SDNY investigation into Jeffrey Epstein and Ghislaine Maxwell. She is coordinating with prosecutors to schedule a call and provide information from her client.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Kyle Phillips",
+      "role": "Recipient/Copied on email (likely prosecutor)",
+      "category": "legal",
+      "context": "Copied on email correspondence regarding the SDNY investigation. Likely a member of the prosecution team given the context.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Louise Scott",
+      "role": "Copied on email",
+      "category": "legal",
+      "context": "Copied on the email chain discussing the SDNY investigation and scheduling a call with attorney Jill Greenfield.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the SDNY investigation. The prosecutor's questions seek information from the witness about meeting her, working for her, and her alleged involvement in sexual abuse.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the SDNY investigation. The prosecutor's questions seek information from the witness about meeting him, working for him, and his alleged sexual abuse.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jill Greenfield",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Greenfield is an attorney representing a client who has information about Maxwell. The client worked for or had interactions with Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Jill Greenfield",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Greenfield is an attorney representing a client who has information about Epstein. The client worked for or had interactions with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Referred to together throughout the prosecutor's questions regarding sexual abuse and the witness's work. The questions probe their joint involvement.",
+      "strength": 5
+    },
+    {
+      "person1": "Jill Greenfield",
+      "person2": "Kyle Phillips",
+      "relationshipType": "legal counterpart",
+      "description": "Corresponding regarding the SDNY investigation, with Greenfield representing a witness and Phillips (likely a prosecutor) seeking information.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-12",
+      "title": "Scheduled Call between Prosecution and Defense",
+      "description": "A call is proposed for August 12, 2020, between the U.S. Attorney's Office and attorney Jill Greenfield to discuss information from her client regarding the SDNY investigation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jill Greenfield",
+        "Kyle Phillips",
+        "Louise Scott"
+      ]
+    },
+    {
+      "date": "2006-2008",
+      "title": "Epstein Under Investigation (Florida)",
+      "description": "Mentioned in prosecutor's question asking if Epstein or Maxwell contacted the witness during the 2006-08 investigation period.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2018-2020",
+      "title": "New York Investigation (SDNY)",
+      "description": "Mentioned in prosecutor's question asking if Epstein or Maxwell contacted the witness during the 2018-20 New York investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "London (mentioned as time zone for scheduling)",
+    "Southern District of New York (SDNY) (jurisdiction of the investigation)",
+    "Properties owned/used by Epstein and Maxwell (referenced generally in questions)"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office for the Southern District of New York is actively investigating Ghislaine Maxwell and Jeffrey Epstein as of July 2020, seeking information from a witness represented by attorney Jill Greenfield.",
+    "The prosecution's prepared questions indicate their investigative focus includes: how the witness met Maxwell/Epstein, the nature of work performed, travel and residence details, and specific details of alleged sexual abuse involving both Maxwell and Epstein.",
+    "A key line of questioning seeks to determine if Maxwell was directly involved in sexual contact, observed it, or was present for it, probing her level of participation.",
+    "The prosecution is also seeking information about other potential underage victims the witness may have been aware of, indicating an effort to identify additional victims.",
+    "The correspondence shows a cooperative, pre-interview phase between defense and prosecution, with the prosecution planning an 'attorney proffer' or summary based on the witness's information."
+  ],
+  "analyzedAt": "2026-02-15T21:44:44.943Z"
+}

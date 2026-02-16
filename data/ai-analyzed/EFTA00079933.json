@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00079933.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-12",
+  "summary": "This document is a chain of emails from June 2020 between the FBI's New York Child Exploitation & Human Trafficking Task Force and Expedia's Law Enforcement Request team regarding a subpoena for records related to Ghislaine Maxwell. The FBI is seeking booking information using email addresses, but Expedia reports no records found and eventually closes the request due to lack of follow-up information.",
+  "persons": [
+    {
+      "name": "Michelle",
+      "role": "Expedia Law Enforcement Request contact",
+      "category": "staff",
+      "context": "Primary contact at Expedia's Law Enforcement Request team corresponding with the FBI about the subpoena for Ghislaine Maxwell's records. She informs the FBI that no bookings were found and requests additional identifying information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent FBI",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent from the New York Child Exploitation & Human Trafficking Task Force who is submitting and following up on a subpoena to Expedia for records related to Ghislaine Maxwell.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The subject of the FBI's subpoena to Expedia. The FBI is seeking travel booking records associated with her email addresses as part of an investigation.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is investigating Ghislaine Maxwell, as evidenced by the subpoena for her travel records from Expedia.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent FBI",
+      "person2": "Michelle",
+      "relationshipType": "professional correspondence",
+      "description": "The FBI agent and the Expedia representative are corresponding professionally regarding a law enforcement subpoena for records.",
+      "strength": 3
+    },
+    {
+      "person1": "Michelle",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "records search",
+      "description": "Michelle, on behalf of Expedia, is searching company databases for booking records associated with Ghislaine Maxwell per the FBI subpoena.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-27",
+      "title": "Subpoena issued to Expedia for Maxwell records",
+      "description": "The FBI issues a subpoena to Expedia for records related to Ghislaine Maxwell. A copy is referenced as an attachment.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Special Agent FBI",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-02-01",
+      "title": "Expedia receives FBI subpoena",
+      "description": "Expedia's Law Enforcement Request team receives the subpoena from the FBI regarding Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Michelle",
+        "Special Agent FBI"
+      ]
+    },
+    {
+      "date": "2020-02-04 to 2020-03-17",
+      "title": "Expedia-FBI correspondence and search",
+      "description": "A series of emails between Expedia and the FBI where Expedia requests more identifying information (email addresses), runs searches, finds no records, and ultimately closes the case after 30 days of no response.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Michelle",
+        "Special Agent FBI",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (referenced as FBI New York field office location)",
+    "Bellevue, WA 98004 USA (Expedia Law Enforcement Request office address: 333 108th Avenue NE)"
+  ],
+  "keyFacts": [
+    "The FBI's New York Child Exploitation & Human Trafficking Task Force was actively investigating Ghislaine Maxwell as of early 2020, issuing a subpoena to Expedia for her travel records.",
+    "Expedia's search of its databases using the email addresses provided by the FBI yielded no booking records for Ghislaine Maxwell.",
+    "Expedia's policy required specific identifiers like email addresses, credit card numbers, or itinerary numbers to locate customer records, as their databases did not use date of birth for identification.",
+    "The FBI's request was ultimately closed by Expedia in March 2020 due to lack of follow-up information from the FBI after the initial 30-day period.",
+    "The correspondence shows standard law enforcement-corporate procedures for handling subpoenas and highlights the challenges of locating digital records without precise identifiers."
+  ],
+  "analyzedAt": "2026-02-15T20:54:27.185Z"
+}

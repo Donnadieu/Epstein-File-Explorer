@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00083672.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-25",
+  "summary": "This document is an email chain from September 2019, where an individual in London contacts the U.S. Attorney's Office for the Southern District of New York (SDNY) regarding a pilot for Bill Clinton. The sender offers information about this pilot, suggesting his flight manifests and lifestyle should be examined in connection with the Jeffrey Epstein scandal, and identifies themselves as one of the pilot's abandoned children.",
+  "persons": [
+    {
+      "name": "Berman",
+      "role": "U.S. Attorney",
+      "category": "legal",
+      "context": "The email sender requests their message be forwarded to Mr. Berman, presumably Geoffrey Berman, the U.S. Attorney for the Southern District of New York at the time, to provide information about a pilot.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bill Clinton",
+      "role": "Former U.S. President",
+      "category": "political",
+      "context": "Mentioned as the individual for whom the person of interest (a pilot) worked. The sender suggests the pilot's connection to Clinton might be relevant to the Epstein investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure in the scandal. The email sender suggests the pilot may be involved in or have information relevant to the Epstein case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bill Clinton",
+      "person2": "Unnamed Pilot",
+      "relationshipType": "employer-employee",
+      "description": "The email states the person of interest was a pilot for Bill Clinton.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "Email Sender",
+      "relationshipType": "familial",
+      "description": "The email sender identifies themselves as one of the pilot's abandoned children.",
+      "strength": 5
+    },
+    {
+      "person1": "Unnamed Pilot",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "The sender suggests the pilot may or may not be involved in the Epstein scandal, implying a potential connection worth investigating.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-23",
+      "title": "Initial Information Offer to SDNY",
+      "description": "An individual emails the U.S. Attorney's Office for the SDNY offering information about a pilot for Bill Clinton, suggesting a possible link to the Jeffrey Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Email Sender",
+        "Berman",
+        "Bill Clinton",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-25",
+      "title": "Follow-up on Information Forwarding",
+      "description": "The email sender follows up, asking for confirmation on who their initial message was forwarded to and expressing surprise that no one has contacted them.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Email Sender"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10007",
+    "London"
+  ],
+  "keyFacts": [
+    "An individual claiming to be an abandoned child of a pilot for Bill Clinton contacts U.S. authorities in September 2019 with information potentially relevant to the Jeffrey Epstein investigation.",
+    "The sender suggests the pilot's flight manifests and lifestyle should be examined, describing him as a potential sexual predator and sociopath.",
+    "The correspondence indicates the information was sent to the FBI and the U.S. Attorney's Office for the Southern District of New York.",
+    "The email chain shows a follow-up by the sender, who is surprised no one from law enforcement has contacted them after their initial tip."
+  ],
+  "analyzedAt": "2026-02-16T00:57:07.196Z"
+}

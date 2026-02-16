@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00082123.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-13",
+  "summary": "An email chain between FBI agents discussing the St. Thomas Jet Center's potential handling of Jeffrey Epstein's helicopter and their refusal to cooperate, suggesting the need for a subpoena to obtain flight records.",
+  "persons": [
+    {
+      "name": "Sean",
+      "role": "FBI Special Agent (implied)",
+      "category": "law enforcement",
+      "context": "Mentioned as the person who directed another agent to reach out regarding the St. Thomas Jet Center investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Pat",
+      "role": "Air traffic control employee",
+      "category": "witness",
+      "context": "Interviewed by an FBI agent regarding Epstein's helicopter; identified as an employee at St. Thomas Jet Center.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Pat Hatch",
+      "role": "Employee at St. Thomas Jet Center",
+      "category": "witness",
+      "context": "Listed as a contact at St. Thomas Jet Center, which is believed to have dealt with Epstein's helicopter.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The individual whose helicopter usage is being investigated; the St. Thomas Jet Center refused to comment on him.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sean",
+      "person2": "Pat",
+      "relationshipType": "investigator-witness",
+      "description": "Sean directed an interview of Pat, the air traffic control employee, regarding Epstein's helicopter.",
+      "strength": 3
+    },
+    {
+      "person1": "Pat Hatch",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "service provider-client",
+      "description": "St. Thomas Jet Center, where Pat Hatch works, is believed to have dealt with Epstein's helicopter, indicating a potential service relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-13",
+      "title": "FBI email regarding St. Thomas Jet Center investigation",
+      "description": "FBI agents communicate about interviewing an air traffic control employee and contacting St. Thomas Jet Center regarding Epstein's helicopter, with the company refusing to cooperate.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Sean",
+        "Pat",
+        "Pat Hatch",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "St. Thomas Jet Center",
+    "New York"
+  ],
+  "keyFacts": [
+    "The St. Thomas Jet Center is believed to have handled Jeffrey Epstein's helicopter, based on FBI interviews and phone calls.",
+    "The St. Thomas Jet Center refused to comment or confirm any information regarding Epstein when contacted by the FBI.",
+    "The FBI considered issuing a subpoena to the St. Thomas Jet Center to obtain Epstein's flight records.",
+    "The communication occurred within the FBI's New York Child Exploitation/Human Trafficking Task Force."
+  ],
+  "analyzedAt": "2026-02-15T23:37:22.820Z"
+}

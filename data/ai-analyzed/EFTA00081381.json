@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA00081381.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-04-04",
+  "summary": "This is an email chain from the U.S. Attorney's Office for the Southern District of New York regarding travel approval and logistics for prosecutors to travel to Florida for the case 'United States v. Epstein, 2018R01618', an investigation into the enticement of minors for sexual activity. The emails show coordination for travel from April 9-12, 2019, for meetings and interviews in West Palm Beach/Fort Lauderdale.",
+  "persons": [
+    {
+      "name": "Darlene Alleyne",
+      "role": "Legal Assistant, Public Corruption Unit",
+      "category": "staff",
+      "context": "Legal assistant at the U.S. Attorney's Office (SDNY) coordinating travel arrangements and requesting to be set as the travel arranger in the E2 system.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michele Duncan",
+      "role": "Travel Coordinator/Staff",
+      "category": "staff",
+      "context": "U.S. Attorney's Office staff member who sent detailed travel policy instructions and was copied on the travel approval request.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Edward Tyrrell",
+      "role": "Travel Approver",
+      "category": "staff",
+      "context": "The official who approves travel requests for the U.S. Attorney's Office, as indicated by his approval of the travel for the Epstein case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alison",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "A prosecutor (Assistant U.S. Attorney) traveling to Florida for the Epstein case for meetings and interviews. Darlene Alleyne requests to be her travel arranger.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alex",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "The Assistant U.S. Attorney who authored the travel approval requests to Edward Tyrrell for himself and Alison to travel to Florida for the Epstein investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the criminal case 'United States v. Epstein, 2018R01618', an investigation relating to enticement of minors for sexual activity.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex",
+      "person2": "Alison",
+      "relationshipType": "colleague",
+      "description": "Co-prosecutors working together on the Epstein case, coordinating joint travel to Florida for investigation meetings and interviews.",
+      "strength": 4
+    },
+    {
+      "person1": "Edward Tyrrell",
+      "person2": "Alex",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Tyrrell is the travel approver for Alex's (and Alison's) official travel request for the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Darlene Alleyne",
+      "person2": "Alison",
+      "relationshipType": "staff-support",
+      "description": "Alleyne, a legal assistant, offers to act as Alison's travel arranger in the E2 system to manage reservations.",
+      "strength": 3
+    },
+    {
+      "person1": "Alex",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Alex is an Assistant U.S. Attorney prosecuting the case United States v. Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-04-09 to 2019-04-12",
+      "title": "Prosecutor Travel to Florida for Epstein Case",
+      "description": "Prosecutors Alison and Alex travel to West Palm Beach, Florida, for approximately three days for meetings and interviews related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alison",
+        "Alex",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-04-03",
+      "title": "Travel Approval for Epstein Case",
+      "description": "Edward Tyrrell approves the travel request from prosecutors Alex and Alison to travel to Florida for the Epstein investigation.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Edward Tyrrell",
+        "Alex",
+        "Alison"
+      ]
+    },
+    {
+      "date": "2019-03-14",
+      "title": "Initial Travel Request for Epstein Case",
+      "description": "Prosecutor Alex submits an initial travel request for himself and another prosecutor (name redacted in earlier email) to travel to Florida for the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Alex"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida",
+    "Fort Lauderdale, Florida",
+    "Southern District of New York (U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "The document confirms active investigative work by the SDNY on 'United States v. Epstein, 2018R01618' in April 2019, specifically regarding the enticement of minors for sexual activity.",
+    "Prosecutors from the SDNY traveled to Florida (West Palm Beach/Fort Lauderdale) for case-related meetings and interviews, indicating coordination with local entities or witnesses.",
+    "The email chain reveals internal bureaucratic processes (travel approvals, E2 system, per diem rates) within the U.S. Attorney's Office for official travel.",
+    "The case number '2018R01618' is referenced, providing a specific identifier for the SDNY's Epstein investigation.",
+    "The travel was approved by Edward Tyrrell, indicating a chain of command for expenditure and logistical authorization within the office."
+  ],
+  "analyzedAt": "2026-02-15T23:06:03.763Z"
+}

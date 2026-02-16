@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00079501.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-01-24",
+  "summary": "This is an email chain between U.S. Attorney's Office (SDNY) staff discussing access to scanned documents from the Epstein investigation. The emails reference obtaining defense letters, draft indictments, and other materials stored on a shared drive, indicating an active review of the case files.",
+  "persons": [
+    {
+      "name": "Alex",
+      "role": "U.S. Attorney's Office Staff",
+      "category": "legal",
+      "context": "Appears as the sender of an email providing information about accessing defense letters and indictment materials related to the Epstein investigation on a shared drive.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kurland, Abigail",
+      "role": "Deputy Chief, Public Corruption Unit",
+      "category": "legal",
+      "context": "Mentioned in the email chain as a recipient; holds a senior position in the U.S. Attorney's Office for the Southern District of New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lou",
+      "role": "U.S. Attorney's Office Staff",
+      "category": "legal",
+      "context": "Referenced as the person to be contacted for share drive access to facilitate the transfer of Epstein case files.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex",
+      "person2": "Kurland, Abigail",
+      "relationshipType": "colleague",
+      "description": "Both are part of the U.S. Attorney's Office for the Southern District of New York, collaborating on accessing Epstein investigation materials.",
+      "strength": 2
+    },
+    {
+      "person1": "Alex",
+      "person2": "Lou",
+      "relationshipType": "colleague",
+      "description": "Alex plans to email Lou to request share drive access for colleagues to obtain Epstein case files.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-01-23",
+      "title": "Email Request for Epstein Documents",
+      "description": "A request is made within the U.S. Attorney's Office for scanned documents from a trip, specifically draft indictments and defense submissions related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Kurland, Abigail"
+      ]
+    },
+    {
+      "date": "2019-01-24",
+      "title": "Document Access Coordination",
+      "description": "Email correspondence confirms the location of defense letters and indictment materials on a shared drive and outlines steps to provide access to colleagues.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Lou"
+      ]
+    }
+  ],
+  "locations": [
+    "U.S. Attorney's Office for the Southern District of New York",
+    "Usa.doj.gov\\ cloud\\NYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationVglorida Scans\\Jeffrey Epstein\\Letters from Epstein's attorneys",
+    "Usa.doj.gov\\ cloud\\NYS StAndrews\\Shared\\USvEpstein-2018R01618 InvestigationVglorida Scans\\Jeffrey Epstein\\GJ"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office for the Southern District of New York was actively reviewing Epstein investigation materials as of January 2019.",
+    "Scanned documents included defense letters from Epstein's attorneys and draft indictments, stored on a shared DOJ drive.",
+    "The case referenced is 'USvEpstein-2018R01618', indicating an ongoing federal prosecution.",
+    "Access to the files required coordination through a share drive, with some files being too large to send via email."
+  ],
+  "analyzedAt": "2026-02-15T20:29:27.437Z"
+}

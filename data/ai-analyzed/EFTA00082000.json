@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00082000.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-01-15",
+  "summary": "This is an email communication regarding Ghislaine Maxwell's case, forwarding a court order. It involves legal counsel and appears to be an urgent communication about case management or a procedural matter.",
+  "persons": [
+    {
+      "name": "Bobbi C Sternheim",
+      "role": "Email recipient",
+      "category": "legal",
+      "context": "Appears as the primary recipient of an email regarding Ghislaine Maxwell's case, suggesting involvement as legal counsel or a party to the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Copied on the email, identified with a law firm email address (CohenGresser.com), indicating he is legal counsel involved in the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark S. Cohen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Copied on the email, identified with a law firm email address (cohen esser.com), indicating he is legal counsel involved in the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the email and the attached court order, indicating the communication pertains to her legal case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bobbi C Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Sternheim is receiving urgent legal communication about Maxwell's case, likely as her attorney or legal representative.",
+      "strength": 4
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Everdell is copied on legal correspondence regarding Maxwell's case, indicating he is part of her legal defense team.",
+      "strength": 4
+    },
+    {
+      "person1": "Mark S. Cohen",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Cohen is copied on legal correspondence regarding Maxwell's case, indicating he is part of her legal defense team.",
+      "strength": 4
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Mark S. Cohen",
+      "relationshipType": "professional",
+      "description": "Both are attorneys copied on the same legal email regarding Ghislaine Maxwell's case, suggesting they are colleagues on the defense team.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-15",
+      "title": "Court Order Issuance",
+      "description": "A court order regarding Ghislaine Maxwell (case number 02879-509) is issued, prompting urgent legal communication.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C Sternheim",
+        "Christian Everdell",
+        "Mark S. Cohen"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email dated January 15, 2021, regarding an urgent court order in Ghislaine Maxwell's case (02879-509).",
+    "The communication involves Ghislaine Maxwell's legal defense team, including Bobbi C Sternheim, Christian Everdell, and Mark S. Cohen.",
+    "The email forwards an embedded file named 'RELURGENT-Ghislaine_Maxwell_02879-509_-_COURT ORDER.msg', indicating the transmission of a formal court document."
+  ],
+  "analyzedAt": "2026-02-15T23:27:40.263Z"
+}

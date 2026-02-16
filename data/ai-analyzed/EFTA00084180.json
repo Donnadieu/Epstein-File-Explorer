@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00084180.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-04",
+  "summary": "This document is a chain of emails from January 2020 between federal prosecutors and an attorney, discussing investigative leads in the SDNY's Epstein investigation. It includes a subpoena result for Ghislaine Maxwell's Instagram account, planning for witness interviews in Florida and California, and an attorney proffer detailing a victim's account of Epstein's operations.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The target of a subpoena for her Instagram account; described in a proffer as the 'original girl finder' for Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey S. Pop",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney who submitted a detailed attorney proffer on behalf of his client, a victim of Epstein, to the SDNY prosecutors.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure in the investigation; his arrest, pattern of operation involving introducing girls, and interactions with associates are discussed.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is described in a victim's proffer as the 'original girl finder' for Epstein, indicating a central role in his operation.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey S. Pop",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Pop is the attorney for a client who is a victim of Epstein, providing a proffer to prosecutors about her involvement.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Unnamed Victim (Pop's client)",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim's proffer indicates Maxwell was involved in finding girls for Epstein, placing her in a perpetrator role relative to victims.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08",
+      "title": "Last login to Maxwell's Instagram",
+      "description": "The last recorded login to Ghislaine Maxwell's Instagram account occurred in August 2019 from an IP address in Vermont.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2014-05-10",
+      "title": "Maxwell Instagram account creation",
+      "description": "Ghislaine Maxwell's Instagram account was created in May 2014, with a registration IP address in New York City.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-01-03",
+      "title": "Submission of Attorney Proffer",
+      "description": "Attorney Jeffrey S. Pop submitted a detailed attorney proffer to SDNY prosecutors regarding his client's experiences with Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey S. Pop",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-12-23",
+      "title": "Prosecutor's Assurance to Attorney",
+      "description": "An AUSA communicated to attorney Jeff Pop that, based on initial information, his client did not currently have criminal exposure related to her interactions with Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey S. Pop"
+      ]
+    }
+  ],
+  "locations": [
+    "Vermont",
+    "New York City",
+    "Florida",
+    "California",
+    "Beverly Hills, California",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Investigators subpoenaed and confirmed Ghislaine Maxwell's Instagram account, with the last login in August 2019 from Vermont and account creation in New York City in 2014.",
+    "An attorney proffer from Jeffrey S. Pop contained a victim's claim that Epstein told her 'Maxwell was the \"original girl finder\"'.",
+    "Prosecutors were planning in-person interviews with witnesses in Florida and California, indicating active witness development in early 2020.",
+    "The proffer described a pattern of Epstein using multiple people to introduce girls to him, a scheme alleged to have lasted for decades.",
+    "Prosecutors had preliminarily assessed that the victim represented by Attorney Pop did not have criminal exposure based on her described interactions with Epstein."
+  ],
+  "analyzedAt": "2026-02-16T01:33:19.478Z"
+}

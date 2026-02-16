@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00080997.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-04-24",
+  "summary": "An email from attorney Sigrid McCawley to an unnamed recipient, providing information about email accounts and computer systems used by Jeffrey Epstein and Ghislaine Maxwell, referencing testimony about the MindSpring/Citrix email server and identifying individuals within Epstein's organization.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure whose email accounts and computer systems (MindSpring, Citrix) are discussed; described as employing an organization.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Co-Conspirator",
+      "category": "key figure",
+      "context": "Identified as part of Epstein's organization and as using the same network for communication.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark Lumber",
+      "role": "Computer Technician",
+      "category": "staff",
+      "context": "Computer guy who worked only for Jeffrey Epstein, set up the MindSpring system from New York and in Palm Beach.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Sigrid McCawley",
+      "role": "Partner at Boies Schiller Flexner LLP",
+      "category": "legal",
+      "context": "Sender of the email, a lawyer providing information about Epstein/Maxwell email accounts and referencing testimony.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both used the MindSpring network to communicate with employees; Maxwell is identified as part of Epstein's organization.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mark Lumber",
+      "relationshipType": "employer-employee",
+      "description": "Mark Lumber worked only for Jeffrey Epstein, setting up his computer systems.",
+      "strength": 4
+    },
+    {
+      "person1": "Sigrid McCawley",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "McCawley, as an attorney, is providing information about Epstein's case, specifically his email systems.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Testimony on MindSpring/Citrix System",
+      "description": "A witness provides testimony about the MindSpring server and Citrix program used by Epstein's organization for internal communication and email.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Mark Lumber"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach",
+    "New York",
+    "Fort Lauderdale, FL"
+  ],
+  "keyFacts": [
+    "Epstein and Maxwell used a MindSpring network and Earthlink email accounts to communicate with employees.",
+    "The MindSpring system was a pre-email message system connecting Epstein's offices, houses, employees, and friends.",
+    "Mark Lumber, a computer technician who worked exclusively for Epstein, set up the MindSpring system from New York and installed it in Palm Beach.",
+    "Epstein's organization used Citrix software to link computers for email and internet access within the organization.",
+    "The email identifies Ghislaine Maxwell and other unnamed co-conspirators as part of Epstein's organization."
+  ],
+  "analyzedAt": "2026-02-15T22:40:32.411Z"
+}

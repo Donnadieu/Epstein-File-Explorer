@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00083800.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-02-01",
+  "summary": "This is an FBI 302 form documenting an introductory video conference meeting with Eva Dubin, a potential witness or victim, and her attorney. The meeting was held to introduce Dubin to the investigative team working on the Epstein case, during which she expressed willingness to cooperate but noted her memory of past events was not the best.",
+  "persons": [
+    {
+      "name": "Eva Dubin",
+      "role": "Potential witness/victim",
+      "category": "witness",
+      "context": "Met with the investigative team via video conference; expressed willingness to cooperate with the investigation but noted her memory of past events was not the best.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tatiana Martins",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present via video as Eva Dubin's attorney during the introductory meeting with the investigative team.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Young",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Present via video as a Special Agent with the investigative team; also listed as the agent who conducted the interview.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Byrne Paul Wilson",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Listed as the agent who drafted the FBI 302 document on February 1, 2021.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Eva Dubin",
+      "person2": "Tatiana Martins",
+      "relationshipType": "attorney-client",
+      "description": "Tatiana Martins was present as Eva Dubin's attorney during the video conference with the investigative team.",
+      "strength": 4
+    },
+    {
+      "person1": "Eva Dubin",
+      "person2": "Amanda Young",
+      "relationshipType": "witness-investigator",
+      "description": "Special Agent Amanda Young was part of the investigative team meeting with Eva Dubin to discuss her cooperation in the case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-22",
+      "title": "Introductory Video Conference with Eva Dubin",
+      "description": "Investigative team held an introductory video conference meeting with Eva Dubin and her attorney to discuss her potential cooperation in the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Eva Dubin",
+        "Tatiana Martins",
+        "Amanda Young"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York, United States"
+  ],
+  "keyFacts": [
+    "Eva Dubin, a potential witness or victim, was introduced to the Epstein case investigative team via video conference.",
+    "Dubin expressed her willingness to cooperate with the investigation but stated her memory of experiences from a long time ago was 'not the best'.",
+    "The meeting included Dubin's attorney, Tatiana Martins, and law enforcement personnel including Special Agent Amanda Young.",
+    "The document is an FBI 302 form, indicating it is an official report of an interview or contact, drafted on February 1, 2021, regarding an event on January 22, 2021."
+  ],
+  "analyzedAt": "2026-02-16T01:05:02.456Z"
+}

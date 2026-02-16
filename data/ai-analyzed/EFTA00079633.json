@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA00079633.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-10",
+  "summary": "This is an email from the U.S. Attorney's Office for the Southern District of New York responding to discovery requests related to the death of Jeffrey Epstein. It addresses requests for information about the decision to house Epstein with inmate Tartaglione, the lack of recordings or reports on the incident, and provides a BOP investigative report with minimal redactions.",
+  "persons": [
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Inmate housed in the same cell as Jeffrey Epstein in the SHU at the Metropolitan Correctional Center; subject of discovery requests regarding the July 22/23 incident.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation; was housed with Tartaglione and made allegations against him prior to his death.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "cellmate",
+      "description": "Were housed together in the same cell in the Special Housing Unit (SHU) at the Metropolitan Correctional Center, leading to the July 22/23 incident.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-22",
+      "title": "Epstein Incident in MCC",
+      "description": "The incident involving Jeffrey Epstein and his cellmate Tartaglione in the Special Housing Unit at the Metropolitan Correctional Center, which preceded Epstein's death.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU)",
+    "New York, New York",
+    "One Saint Andrew's Plaza"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office confirmed no audio/video recordings of BOP interviews with Tartaglione regarding the Epstein incident exist.",
+    "No documentation exists regarding the decision to house Jeffrey Epstein and Tartaglione together in the same SHU cell.",
+    "No After Action Report was prepared by the BOP for the July 22/23 incident involving Epstein and Tartaglione.",
+    "The BOP investigative report related to the July 22/23 incident was produced with minimal redactions, primarily for an MCC duty roster and parts of Epstein's medical records.",
+    "The correspondence indicates an ongoing investigation into whether BOP conducted interviews with other inmates that might corroborate Tartaglione's account of the incident."
+  ],
+  "analyzedAt": "2026-02-15T20:40:53.958Z"
+}

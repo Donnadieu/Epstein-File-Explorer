@@ -1,0 +1,114 @@
+{
+  "fileName": "EFTA00080838.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-13",
+  "summary": "This FBI 302 form documents an interview with a BOP Lieutenant on August 10, 2019, regarding a review of Jeffrey Epstein's inmate records and activity at the Metropolitan Correctional Center (MCC) following his death. It details anomalies in his phone records, including an unrecorded call he made on August 9, 2019, and notes the notification of his next of kin.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The subject of the inmate records review. The document details his phone activity, commissary funds, and the notification of his next of kin following his death.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Mark Epstein",
+      "role": "Next of Kin",
+      "category": "associate",
+      "context": "Identified as Jeffrey Epstein's next of kin, who was notified by BOP personnel at 1100 hours on August 10, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate / Cellmate",
+      "category": "other",
+      "context": "Identified as Jeffrey Epstein's last cellmate at the MCC. His date of birth is partially redacted.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lt.",
+      "role": "BOP Lieutenant",
+      "category": "law enforcement",
+      "context": "The BOP Lieutenant interviewed by the FBI investigator. Provided details on Epstein's inmate records, phone system anomalies, and commissary funds.",
+      "mentionCount": 6
+    },
+    {
+      "name": "BOP Supervisor",
+      "role": "BOP Supervisor",
+      "category": "law enforcement",
+      "context": "Reported Epstein's August 9, 2019, phone call and provided the call details to the Lieutenant. Also notified Mark Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mark Epstein",
+      "relationshipType": "family",
+      "description": "Mark Epstein is listed as Jeffrey Epstein's next of kin in BOP records and was notified of his death.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Efrain Reyes was Jeffrey Epstein's last cellmate at the Metropolitan Correctional Center (MCC).",
+      "strength": 2
+    },
+    {
+      "person1": "Lt.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The BOP Lieutenant was responsible for reviewing and providing information on inmate Epstein's records and activity.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Unrecorded Phone Call",
+      "description": "Jeffrey Epstein made a phone call on an unsecure 'legal line' which is not recorded. He claimed he could not make a normal call due to an issue with his phone account. The call was placed to a redacted number, with Epstein indicating he was calling his deceased mother.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lt.",
+        "BOP Supervisor"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Notification of Next of Kin",
+      "description": "A BOP supervisor notified Jeffrey Epstein's next of kin, Mark Epstein, at 1100 hours.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Mark Epstein",
+        "BOP Supervisor"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "FBI Interview with BOP Lieutenant",
+      "description": "The reporting FBI investigator met with a BOP Lieutenant to review Jeffrey Epstein's inmate records and activity following his death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lt."
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York",
+    "Administrative office on the 9th floor opposite the 'L' tier (within MCC)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein made an unrecorded phone call on an unsecure 'legal line' on August 9, 2019, claiming he was calling his deceased mother after stating he had an issue with his normal phone account.",
+    "Epstein had no recorded phone calls on file with the BOP, which the Lieutenant found odd given the known August 9 call, suggesting a potential anomaly or issue with the record-keeping system.",
+    "Epstein had $566.27 in his commissary account at the time of his death and had no 'authorized persons' or anyone listed on his call log.",
+    "Epstein's last cellmate was inmate Efrain Reyes.",
+    "Epstein had no recorded visitors during his time at the MCC."
+  ],
+  "analyzedAt": "2026-02-15T21:39:40.300Z"
+}

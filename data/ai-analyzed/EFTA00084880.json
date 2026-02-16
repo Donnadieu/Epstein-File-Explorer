@@ -1,0 +1,140 @@
+{
+  "fileName": "EFTA00084880.pdf",
+  "dataSet": "9",
+  "documentType": "internal memorandum",
+  "dateOriginal": "2020-10-19",
+  "summary": "This is a U.S. Attorney's Office memorandum from October 19, 2020, detailing the protocol for reviewing image and video files seized from Jeffrey Epstein's devices. It outlines the process for FBI and prosecutors to categorize files as responsive to the investigation of Ghislaine Maxwell, with a deadline tied to her criminal case discovery.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation, property owner",
+      "category": "key figure",
+      "context": "The memorandum concerns the review of data extracted from electronic devices seized from his residences in New York and the Virgin Islands. Images or videos of him are a primary category for responsive files.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The investigation and data review are for her prosecution (Indictment 20 Cr. 330). Images or videos of her are a primary category for responsive files. She was arrested on July 2, 2020.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "The judge who ordered that all discovery in the Maxwell case be completed by November 9, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The prosecutors responsible for the Maxwell prosecution are conducting privilege and responsiveness reviews of the seized data. A specific AUSA is listed as the contact for reviewers with questions.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "The investigation and data review from Epstein's devices are being conducted for the prosecution of Maxwell, indicating their alleged association in criminal activity.",
+      "strength": 5
+    },
+    {
+      "person1": "AUSA",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The AUSAs are responsible for prosecuting Maxwell and are managing the discovery process related to her case.",
+      "strength": 5
+    },
+    {
+      "person1": "FBI",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI executed search warrants on Epstein's residences, seized his electronic devices, and is involved in reviewing the extracted data.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "FBI searches Epstein's New York residence",
+      "description": "The FBI executed multiple search warrants on Jeffrey Epstein's New York residence, seizing dozens of electronic devices.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "FBI"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "FBI searches Epstein's Virgin Islands residence",
+      "description": "The FBI executed a search warrant on Jeffrey Epstein's Virgin Islands residence, seizing approximately dozens of additional electronic devices.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "FBI"
+      ]
+    },
+    {
+      "date": "2020-06-26",
+      "title": "New warrant issued for device review",
+      "description": "The FBI obtained a new warrant authorizing the review of data from a total of 62 devices seized from Epstein's New York and Virgin Islands residences.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Ghislaine Maxwell arrested",
+      "description": "Ghislaine Maxwell was arrested on Indictment 20 Cr. 330, charging her with crimes involving the sexual abuse of minors.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-11-09",
+      "title": "Discovery deadline",
+      "description": "Judge Nathan ordered that all discovery in the Maxwell case be completed by this date.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Ghislaine Maxwell",
+        "AUSA"
+      ]
+    },
+    {
+      "date": "2020-10-31",
+      "title": "Target completion for image/video review",
+      "description": "The review of image and video files needed to be completed by this date to meet the November 9 discovery deadline.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "AUSA",
+        "FBI"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10007 (U.S. Attorney's Office address)",
+    "New York residence of Jeffrey Epstein",
+    "Virgin Islands residence of Jeffrey Epstein"
+  ],
+  "keyFacts": [
+    "The FBI seized dozens of electronic devices from Jeffrey Epstein's New York residence in July 2019 and his Virgin Islands residence in August 2019.",
+    "A June 26, 2020 warrant authorized the review of data from 62 devices seized from both locations for the investigation of Ghislaine Maxwell.",
+    "The review protocol classified responsive image/video files into two categories: 'RESPONSIVE - HIGHLY CONFIDENTIAL' (containing nudity) and 'RESPONSIVE — CONFIDENTIAL' (no nudity), with different handling procedures for each.",
+    "Files were considered responsive if they contained images/videos of Epstein, Maxwell, any female appearing under 30, travel documents, or screenshots of communications/social media regarding females.",
+    "The memorandum establishes strict controls, stating that after the review, the full data extractions would be locked off, and any future review of non-responsive items would require a new warrant."
+  ],
+  "analyzedAt": "2026-02-16T02:05:23.129Z"
+}

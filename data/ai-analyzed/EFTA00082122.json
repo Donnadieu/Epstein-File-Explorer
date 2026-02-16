@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00082122.pdf",
+  "dataSet": "9",
+  "documentType": "search warrant",
+  "dateOriginal": "2019-08-09",
+  "summary": "This document is an email from an Assistant United States Attorney in the Southern District of New York, dated August 9, 2019, requesting a last-minute addition to a search warrant application for Jeffrey Epstein's property. The addition is based on an interview with a contractor who reported seeing photographs of nude or partially nude young girls at Epstein's residence between 1999 and 2006.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the search warrant; a contractor performed work for him at the premises to be searched.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Individual-2",
+      "role": "Contractor/Witness",
+      "category": "witness",
+      "context": "A contractor who worked for Jeffrey Epstein at the subject premises from approximately 1999 to 2005/2006 and reported observing photographs of nude or partially nude young girls there.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Judge Miller",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge reviewing the search warrant application to which this email pertains.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Individual-2",
+      "relationshipType": "employer-employee",
+      "description": "Individual-2 performed work as a contractor for Jeffrey Epstein at the subject premises.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1999 to 2006",
+      "title": "Contractor Observations at Epstein Residence",
+      "description": "Individual-2, while working as a contractor at Jeffrey Epstein's premises, observed photographs of what appeared to be nude or partially nude young girls in several locations throughout the main residence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Individual-2"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "Law Enforcement Interview of Contractor",
+      "description": "In or about August 2019, law enforcement officers interviewed Individual-2, who provided information about photographs seen at Epstein's residence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Individual-2"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Search Warrant Amendment Request",
+      "description": "An Assistant United States Attorney emails to request adding a paragraph to a search warrant application based on new information obtained from interviewing a contractor.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Subject Premises (Jeffrey Epstein's main residence, location unspecified)",
+    "New York, NY 10007 (Southern District of New York office)"
+  ],
+  "keyFacts": [
+    "A contractor (Individual-2) who worked for Jeffrey Epstein from approximately 1999 to 2005/2006 reported seeing photographs of nude or partially nude young girls in Epstein's main residence.",
+    "The contractor estimated that two of the girls in the photographs appeared to be approximately 15 or 16 years old and were topless.",
+    "This information was obtained by law enforcement in August 2019 and was being used to amend a search warrant application for Epstein's property.",
+    "The search warrant application was under review by Judge Miller at the time of this email."
+  ],
+  "analyzedAt": "2026-02-15T23:37:08.588Z"
+}
