@@ -33,7 +33,7 @@ function getClient(): S3Client {
         accessKeyId: process.env.R2_ACCESS_KEY_ID!,
         secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
       },
-      requestHandler: new NodeHttpHandler({ maxSockets: 25 }),
+      requestHandler: new NodeHttpHandler({ httpsAgent: { maxSockets: 25 } } as any),
     });
   }
   return _client;
