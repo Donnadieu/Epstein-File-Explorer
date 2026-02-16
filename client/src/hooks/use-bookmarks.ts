@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useCallback, useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { getClientId } from "@/lib/client-id";
@@ -8,11 +8,15 @@ const BOOKMARKS_KEY = ["/api/bookmarks"];
 
 export function useBookmarks() {
   const queryClient = useQueryClient();
-
   const clientId = getClientId();
+  const queryKey = useMemo(() => [...BOOKMARKS_KEY, clientId], [clientId]);
 
-  const { data: bookmarks = [], ...queryRest } = useQuery<Bookmark[]>({
-    queryKey: [...BOOKMARKS_KEY, clientId],
+  // Local optimistic state layered on top of server data
+  const [pendingAdds, setPendingAdds] = useState<Bookmark[]>([]);
+  const [pendingDeletes, setPendingDeletes] = useState<Set<number>>(new Set());
+
+  const { data: serverBookmarks = [], ...queryRest } = useQuery<Bookmark[]>({
+    queryKey,
     queryFn: async () => {
       const res = await fetch(`/api/bookmarks?userId=${encodeURIComponent(clientId)}`);
       if (!res.ok) throw new Error("Failed to fetch bookmarks");
@@ -20,7 +24,11 @@ export function useBookmarks() {
     },
   });
 
-  const cacheKey = [...BOOKMARKS_KEY, clientId];
+  // Merge server data with optimistic local state
+  const bookmarks = useMemo(() => {
+    const filtered = serverBookmarks.filter((b) => !pendingDeletes.has(b.id));
+    return [...filtered, ...pendingAdds];
+  }, [serverBookmarks, pendingAdds, pendingDeletes]);
 
   const createMutation = useMutation({
     mutationFn: async (params: {
@@ -32,26 +40,12 @@ export function useBookmarks() {
       const res = await apiRequest("POST", "/api/bookmarks", { ...params, userId: clientId });
       return res.json() as Promise<Bookmark>;
     },
-    onMutate: async (params) => {
-      await queryClient.cancelQueries({ queryKey: cacheKey });
-      const previous = queryClient.getQueryData<Bookmark[]>(cacheKey);
-      const optimistic: Bookmark = {
-        id: -Date.now(),
-        userId: clientId,
-        entityType: params.entityType,
-        entityId: params.entityId ?? null,
-        searchQuery: params.searchQuery ?? null,
-        label: params.label ?? null,
-        createdAt: new Date(),
-      };
-      queryClient.setQueryData<Bookmark[]>(cacheKey, (old = []) => [...old, optimistic]);
-      return { previous };
+    onSuccess: () => {
+      setPendingAdds([]);
+      queryClient.invalidateQueries({ queryKey });
     },
-    onError: (_err, _vars, context) => {
-      if (context?.previous) queryClient.setQueryData(cacheKey, context.previous);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: BOOKMARKS_KEY });
+    onError: () => {
+      setPendingAdds([]);
     },
   });
 
@@ -59,17 +53,12 @@ export function useBookmarks() {
     mutationFn: async (id: number) => {
       await apiRequest("DELETE", `/api/bookmarks/${id}`);
     },
-    onMutate: async (id) => {
-      await queryClient.cancelQueries({ queryKey: cacheKey });
-      const previous = queryClient.getQueryData<Bookmark[]>(cacheKey);
-      queryClient.setQueryData<Bookmark[]>(cacheKey, (old = []) => old.filter((b) => b.id !== id));
-      return { previous };
+    onSuccess: (_data, id) => {
+      setPendingDeletes((prev) => { const next = new Set(prev); next.delete(id); return next; });
+      queryClient.invalidateQueries({ queryKey });
     },
-    onError: (_err, _vars, context) => {
-      if (context?.previous) queryClient.setQueryData(cacheKey, context.previous);
-    },
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: BOOKMARKS_KEY });
+    onError: (_err, id) => {
+      setPendingDeletes((prev) => { const next = new Set(prev); next.delete(id); return next; });
     },
   });
 
@@ -77,27 +66,49 @@ export function useBookmarks() {
   const personBookmarks = useMemo(() => bookmarks.filter((b) => b.entityType === "person"), [bookmarks]);
   const documentBookmarks = useMemo(() => bookmarks.filter((b) => b.entityType === "document"), [bookmarks]);
 
-  function isBookmarked(entityType: string, entityId?: number, searchQuery?: string): Bookmark | undefined {
+  const isBookmarked = useCallback((entityType: string, entityId?: number, searchQuery?: string): Bookmark | undefined => {
     return bookmarks.find((b) => {
       if (b.entityType !== entityType) return false;
       if (entityType === "search") return b.searchQuery === searchQuery;
       return b.entityId === entityId;
     });
-  }
+  }, [bookmarks]);
 
-  function toggleBookmark(
+  const toggleBookmark = useCallback((
     entityType: "person" | "document" | "search",
     entityId?: number,
     searchQuery?: string,
     label?: string,
-  ) {
-    const existing = isBookmarked(entityType, entityId, searchQuery);
+  ) => {
+    const existing = bookmarks.find((b) => {
+      if (b.entityType !== entityType) return false;
+      if (entityType === "search") return b.searchQuery === searchQuery;
+      return b.entityId === entityId;
+    });
     if (existing) {
+      // Optimistic delete — hide immediately
+      setPendingDeletes((prev) => new Set(prev).add(existing.id));
       deleteMutation.mutate(existing.id);
     } else {
+      // Optimistic create — show immediately
+      const optimistic: Bookmark = {
+        id: -Date.now(),
+        userId: clientId,
+        entityType,
+        entityId: entityId ?? null,
+        searchQuery: searchQuery ?? null,
+        label: label ?? null,
+        createdAt: new Date(),
+      };
+      setPendingAdds((prev) => [...prev, optimistic]);
       createMutation.mutate({ entityType, entityId, searchQuery, label });
     }
-  }
+  }, [bookmarks, clientId, createMutation, deleteMutation]);
+
+  const handleDeleteBookmark = useCallback((id: number) => {
+    setPendingDeletes((prev) => new Set(prev).add(id));
+    deleteMutation.mutate(id);
+  }, [deleteMutation]);
 
   return {
     bookmarks,
@@ -107,7 +118,7 @@ export function useBookmarks() {
     isBookmarked,
     toggleBookmark,
     createBookmark: createMutation.mutate,
-    deleteBookmark: deleteMutation.mutate,
+    deleteBookmark: handleDeleteBookmark,
     isLoading: queryRest.isLoading,
     isMutating: createMutation.isPending || deleteMutation.isPending,
   };
