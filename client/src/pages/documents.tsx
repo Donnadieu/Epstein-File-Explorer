@@ -26,6 +26,9 @@ import {
   List,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
+import { useVideoPlayer } from "@/hooks/use-video-player";
+import { isVideoDocument } from "@/lib/document-utils";
+import { VideoPlayerModal } from "@/components/video-player-modal";
 import type { Document } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -127,6 +130,8 @@ function DocumentCardSkeleton({ index }: { index: number }) {
 }
 
 export default function DocumentsPage() {
+  const videoPlayer = useVideoPlayer();
+
   const [filters, setFilter, resetFilters] = useUrlFilters({
     search: "",
     type: "all",
@@ -308,8 +313,13 @@ export default function DocumentsPage() {
             <div className="flex flex-col gap-2">
               {paginated?.map((doc) => {
                 const Icon = typeIcons[doc.documentType] || FileText;
+                const isVideo = isVideoDocument(doc);
+                const Wrapper = isVideo ? "div" : Link;
+                const wrapperProps = isVideo
+                  ? { onClick: () => videoPlayer.open(doc) }
+                  : { href: `/documents/${doc.id}` };
                 return (
-                  <Link key={doc.id} href={`/documents/${doc.id}`}>
+                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
                     <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
                       <CardContent className="p-4">
                         <div className="flex items-start gap-3">
@@ -374,29 +384,36 @@ export default function DocumentsPage() {
                         </div>
                       </CardContent>
                     </Card>
-                  </Link>
+                  </Wrapper>
                 );
               })}
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {paginated?.map((doc) => (
-                <Link key={doc.id} href={`/documents/${doc.id}`}>
-                  <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
-                    <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
-                      <DocumentThumbnail doc={doc} />
+              {paginated?.map((doc) => {
+                const isVideo = isVideoDocument(doc);
+                const Wrapper = isVideo ? "div" : Link;
+                const wrapperProps = isVideo
+                  ? { onClick: () => videoPlayer.open(doc) }
+                  : { href: `/documents/${doc.id}` };
+                return (
+                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
+                    <div className="group cursor-pointer" data-testid={`grid-card-${doc.id}`}>
+                      <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
+                        <DocumentThumbnail doc={doc} />
+                      </div>
+                      <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
+                        {getDisplayTitle(doc)}
+                      </p>
+                      {doc.dateOriginal && (
+                        <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
+                          <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                        </span>
+                      )}
                     </div>
-                    <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
-                      {getDisplayTitle(doc)}
-                    </p>
-                    {doc.dateOriginal && (
-                      <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
-                        <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              ))}
+                  </Wrapper>
+                );
+              })}
             </div>
           )}
 
@@ -462,6 +479,8 @@ export default function DocumentsPage() {
           )}
         </>
       )}
+
+      <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
     </div>
   );
 }
