@@ -26,6 +26,7 @@ import {
   Hash,
   Image as ImageIcon,
   Layers,
+  Loader2,
   Scale,
   Sparkles,
   Users,
@@ -600,6 +601,57 @@ function AISummarySection({
   );
 }
 
+function PresignedVideoPlayer({ doc }: { doc: DocumentDetail }) {
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+    fetch(`/api/documents/${doc.id}/content-url`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to get video URL");
+        return res.json();
+      })
+      .then((data) => setVideoUrl(data.url))
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, [doc.id]);
+
+  return (
+    <Card className="bg-muted/30 overflow-hidden">
+      <CardContent className="p-4 flex flex-col items-center gap-4">
+        {loading ? (
+          <div className="flex flex-col items-center gap-3 py-8">
+            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">Loading video...</p>
+          </div>
+        ) : error || !videoUrl ? (
+          <div className="flex flex-col items-center gap-2">
+            <Video className="w-10 h-10 text-muted-foreground/50" />
+            <p className="text-sm text-muted-foreground">Could not load video.</p>
+            {doc.sourceUrl && (
+              <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="gap-2">
+                  <ExternalLink className="w-4 h-4" /> View on DOJ
+                </Button>
+              </a>
+            )}
+          </div>
+        ) : (
+          <video
+            src={videoUrl}
+            controls
+            className="max-w-full max-h-[70vh] rounded-lg shadow-md"
+            onError={() => setError(true)}
+          />
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 function DocumentViewer({
   doc,
   initialPage,
@@ -653,36 +705,7 @@ function DocumentViewer({
   }
 
   if (isVideo) {
-    return (
-      <Card className="bg-muted/30 overflow-hidden">
-        <CardContent className="p-4 flex flex-col items-center gap-4">
-          <video
-            src={`/api/documents/${doc.id}/video`}
-            controls
-            className="max-w-full max-h-[70vh] rounded-lg shadow-md"
-            onError={(e) => {
-              (e.target as HTMLVideoElement).style.display = "none";
-              (
-                e.target as HTMLVideoElement
-              ).nextElementSibling?.classList.remove("hidden");
-            }}
-          />
-          <div className="hidden flex flex-col items-center gap-2">
-            <Video className="w-10 h-10 text-muted-foreground/50" />
-            <p className="text-sm text-muted-foreground">
-              Could not load video.
-            </p>
-            {doc.sourceUrl && (
-              <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" className="gap-2">
-                  <ExternalLink className="w-4 h-4" /> View on DOJ
-                </Button>
-              </a>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-    );
+    return <PresignedVideoPlayer doc={doc} />;
   }
 
   // Default: try PDF viewer, which will show a graceful fallback if it fails

@@ -603,51 +603,69 @@ export class DatabaseStorage implements IStorage {
     const person = await this.getPerson(id);
     if (!person) return undefined;
 
-    const pDocs = await db
-      .select({
-        id: documents.id,
-        title: documents.title,
-        description: documents.description,
-        documentType: documents.documentType,
-        dataSet: documents.dataSet,
-        sourceUrl: documents.sourceUrl,
-        datePublished: documents.datePublished,
-        dateOriginal: documents.dateOriginal,
-        pageCount: documents.pageCount,
-        isRedacted: documents.isRedacted,
-        keyExcerpt: documents.keyExcerpt,
-        tags: documents.tags,
-        context: personDocuments.context,
-        mentionType: personDocuments.mentionType,
-      })
-      .from(personDocuments)
-      .innerJoin(documents, eq(personDocuments.documentId, documents.id))
-      .where(
-        (() => {
-          const r2Cond = r2Filter();
-          return r2Cond
-            ? and(eq(personDocuments.personId, id), r2Cond)
-            : eq(personDocuments.personId, id);
-        })()
-      );
-
-    const connsFrom = await db
-      .select()
-      .from(connections)
-      .where(eq(connections.personId1, id));
-
-    const connsTo = await db
-      .select()
-      .from(connections)
-      .where(eq(connections.personId2, id));
+    // Batch 1: four independent queries in parallel
+    const [pDocs, connsFrom, connsTo, personEvents] = await Promise.all([
+      db
+        .select({
+          id: documents.id,
+          title: documents.title,
+          description: documents.description,
+          documentType: documents.documentType,
+          dataSet: documents.dataSet,
+          sourceUrl: documents.sourceUrl,
+          datePublished: documents.datePublished,
+          dateOriginal: documents.dateOriginal,
+          pageCount: documents.pageCount,
+          isRedacted: documents.isRedacted,
+          keyExcerpt: documents.keyExcerpt,
+          tags: documents.tags,
+          context: personDocuments.context,
+          mentionType: personDocuments.mentionType,
+        })
+        .from(personDocuments)
+        .innerJoin(documents, eq(personDocuments.documentId, documents.id))
+        .where(
+          (() => {
+            const r2Cond = r2Filter();
+            return r2Cond
+              ? and(eq(personDocuments.personId, id), r2Cond)
+              : eq(personDocuments.personId, id);
+          })()
+        ),
+      db.select().from(connections).where(eq(connections.personId1, id)),
+      db.select().from(connections).where(eq(connections.personId2, id)),
+      db.select().from(timelineEvents)
+        .where(sql`${id} = ANY(${timelineEvents.personIds})`)
+        .orderBy(asc(timelineEvents.date)),
+    ]);
 
     const personIds = new Set<number>();
     for (const conn of connsFrom) personIds.add(conn.personId2);
     for (const conn of connsTo) personIds.add(conn.personId1);
 
-    const connPersons = personIds.size > 0
-      ? await db.select().from(persons).where(inArray(persons.id, Array.from(personIds)))
-      : [];
+    const eventDocIds = new Set<number>();
+    const eventPersonIds = new Set<number>();
+    for (const e of personEvents) {
+      for (const did of e.documentIds ?? []) eventDocIds.add(did);
+      for (const pid of e.personIds ?? []) if (pid !== id) eventPersonIds.add(pid);
+    }
+
+    // Batch 2: dependent lookups in parallel
+    const [connPersons, eventDocRows, eventPersonRows, aiMentions] = await Promise.all([
+      personIds.size > 0
+        ? db.select().from(persons).where(inArray(persons.id, Array.from(personIds)))
+        : Promise.resolve([]),
+      eventDocIds.size > 0
+        ? db.select({ id: documents.id, title: documents.title })
+            .from(documents).where(inArray(documents.id, Array.from(eventDocIds)))
+        : Promise.resolve([]),
+      eventPersonIds.size > 0
+        ? db.select({ id: persons.id, name: persons.name })
+            .from(persons).where(inArray(persons.id, Array.from(eventPersonIds)))
+        : Promise.resolve([]),
+      getPersonAIMentions(person.name, person.aliases ?? []),
+    ]);
+
     const personMap = new Map(connPersons.map(p => [p.id, p]));
 
     const allConns = [];
@@ -664,39 +682,17 @@ export class DatabaseStorage implements IStorage {
       }
     }
 
-    const personEvents = await db
-      .select()
-      .from(timelineEvents)
-      .where(sql`${id} = ANY(${timelineEvents.personIds})`)
-      .orderBy(asc(timelineEvents.date));
-
-    // Enrich person events with document info
-    const eventDocIds = new Set<number>();
-    const eventPersonIds = new Set<number>();
-    for (const e of personEvents) {
-      for (const did of e.documentIds ?? []) eventDocIds.add(did);
-      for (const pid of e.personIds ?? []) if (pid !== id) eventPersonIds.add(pid);
-    }
     const eventDocMap = new Map<number, { id: number; title: string }>();
-    if (eventDocIds.size > 0) {
-      const docRows = await db.select({ id: documents.id, title: documents.title })
-        .from(documents).where(inArray(documents.id, Array.from(eventDocIds)));
-      for (const d of docRows) eventDocMap.set(d.id, d);
-    }
+    for (const d of eventDocRows) eventDocMap.set(d.id, d);
     const eventPersonMap = new Map<number, { id: number; name: string }>();
     eventPersonMap.set(id, { id, name: person.name });
-    if (eventPersonIds.size > 0) {
-      const pRows = await db.select({ id: persons.id, name: persons.name })
-        .from(persons).where(inArray(persons.id, Array.from(eventPersonIds)));
-      for (const p of pRows) eventPersonMap.set(p.id, p);
-    }
+    for (const p of eventPersonRows) eventPersonMap.set(p.id, p);
+
     const enrichedEvents = personEvents.map(e => ({
       ...e,
       persons: (e.personIds ?? []).map(pid => eventPersonMap.get(pid)).filter(Boolean),
       documents: (e.documentIds ?? []).map(did => eventDocMap.get(did)).filter(Boolean),
     }));
-
-    const aiMentions = await getPersonAIMentions(person.name, person.aliases ?? []);
 
     const emailDocCount = pDocs.filter(d => d.documentType === 'email').length;
 
