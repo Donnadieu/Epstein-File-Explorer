@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Video, ExternalLink } from "lucide-react";
+import { Video, ExternalLink, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -19,6 +19,26 @@ interface VideoPlayerModalProps {
 
 export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) {
   const [error, setError] = useState(false);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!open || !doc) {
+      setVideoUrl(null);
+      setError(false);
+      return;
+    }
+    setLoading(true);
+    setError(false);
+    fetch(`/api/documents/${doc.id}/content-url`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to get video URL");
+        return res.json();
+      })
+      .then((data) => setVideoUrl(data.url))
+      .catch(() => setError(true))
+      .finally(() => setLoading(false));
+  }, [open, doc?.id]);
 
   if (!doc) return null;
 
@@ -37,10 +57,15 @@ export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) 
             <Video className="w-10 h-10 text-muted-foreground/50" />
             <p className="text-sm text-muted-foreground">Could not load video.</p>
           </div>
+        ) : loading || !videoUrl ? (
+          <div className="flex flex-col items-center gap-3 py-8">
+            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
+            <p className="text-sm text-muted-foreground">Loading video...</p>
+          </div>
         ) : (
           <video
             key={doc.id}
-            src={`/api/documents/${doc.id}/video`}
+            src={videoUrl}
             controls
             autoPlay
             className="w-full max-h-[60vh] rounded-md bg-black"

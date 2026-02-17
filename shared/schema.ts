@@ -137,6 +137,8 @@ export const timelineEvents = pgTable("timeline_events", {
 }, (table) => [
   index("idx_timeline_events_date_sig").on(table.date, table.significance),
   index("idx_timeline_events_title_trgm").using("gin", sql`${table.title} gin_trgm_ops`),
+  index("idx_timeline_events_person_ids").using("gin", table.personIds),
+  index("idx_timeline_events_document_ids").using("gin", table.documentIds),
 ]);
 
 export const personsRelations = relations(persons, ({ many }) => ({

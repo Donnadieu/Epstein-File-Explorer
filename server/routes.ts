@@ -477,7 +477,7 @@ export async function registerRoutes(
       if (isNaN(id)) {
         return res.status(400).json({ error: "Invalid ID" });
       }
-      const doc = await storage.getDocumentWithDetails(id);
+      const doc = await storage.getDocument(id);
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }

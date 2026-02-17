@@ -670,11 +670,24 @@ function VideoThumbnail({ doc }: { doc: Document }) {
       await acquireThumbSlot();
       if (cancelled) { releaseThumbSlot(); return; }
 
+      let contentUrl: string;
+      try {
+        const res = await fetch(`/api/documents/${doc.id}/content-url`);
+        if (!res.ok) { releaseThumbSlot(); return; }
+        const data = await res.json();
+        contentUrl = data.url;
+      } catch {
+        releaseThumbSlot();
+        return;
+      }
+      if (cancelled) { releaseThumbSlot(); return; }
+
       const video = document.createElement("video");
       video.preload = "auto";
       video.muted = true;
       video.playsInline = true;
-      video.src = `/api/documents/${doc.id}/video`;
+      video.crossOrigin = "anonymous";
+      video.src = contentUrl;
 
       let released = false;
       const cleanup = () => {
