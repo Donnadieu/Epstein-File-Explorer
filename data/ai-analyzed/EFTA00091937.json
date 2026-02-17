@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00091937.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2019-10-22 to 2019-10-23",
+  "summary": "This document is a sealed application and order from the U.S. Attorney's Office for the Southern District of New York, seeking a non-disclosure order to prevent Google from notifying a subscriber about a grand jury subpoena. The subpoena requests extensive records for accounts associated with Ghislaine Maxwell as part of an ongoing criminal investigation into suspected violations of federal sex trafficking and conspiracy statutes.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Signs the grand jury subpoena and the accompanying letter to Google as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of Investigation / Account Holder",
+      "category": "key figure",
+      "context": "The grand jury subpoena specifically requests all records for any accounts registered to or associated with her name, phone numbers, and email addresses.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Debra Freeman",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "Signs and issues the § 2705(b) Non-Disclosure Order, sealing the application and subpoena.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is overseeing the grand jury investigation for which Maxwell is a primary subject, as evidenced by the subpoena targeting her accounts.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-23",
+      "title": "Issuance of Grand Jury Subpoena to Google",
+      "description": "The U.S. Attorney's Office issues a grand jury subpoena to Google, Inc., commanding the production of extensive records related to accounts associated with Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "title": "Court Grants Sealed Non-Disclosure Order",
+      "description": "Magistrate Judge Debra Freeman grants the government's application for a § 2705(b) order, prohibiting Google from notifying any person about the subpoena for 180 days to prevent jeopardizing the investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Debra Freeman",
+        "Geoffrey S. Berman"
+      ]
+    },
+    {
+      "date": "2019-11-07",
+      "title": "Scheduled Grand Jury Appearance Date",
+      "description": "The subpoena commands Google to appear before the grand jury on this date, though personal appearance is waived if records are produced to the FBI by the return date.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "United States Courthouse, 40 Foley Square, Room 220, New York, NY",
+    "Google, Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043",
+    "Federal Bureau of Investigation, 26 Federal Plaza, New York, NY 10278"
+  ],
+  "keyFacts": [
+    "The U.S. government obtained a sealed court order in October 2019 to secretly subpoena Google for all records associated with Ghislaine Maxwell, including subscriber info, payment details, call logs, and emails.",
+    "The investigation is described as targeting suspected violations of 18 U.S.C. §§ 1591 (sex trafficking) and 371 (conspiracy), indicating the criminal nature of the probe.",
+    "The government argued that notifying Maxwell or others about the subpoena could jeopardize the investigation by allowing targets to flee, tamper with evidence, or intimidate witnesses.",
+    "The non-disclosure order was granted for 180 days, preventing Google from revealing the subpoena's existence to Maxwell or any other person.",
+    "The document shows the investigative steps taken by federal authorities against Maxwell prior to her public arrest in July 2020."
+  ],
+  "analyzedAt": "2026-02-17T01:31:07.017Z"
+}

@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00092073.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-06 to 2019-07-09",
+  "summary": "This document is a chain of emails from July 2019 between defense attorney Joseph E. Nascimento and an Assistant U.S. Attorney from the Southern District of New York. The emails discuss scheduling a call regarding a grand jury subpoena served on a former partner's client, identified as 'Epstein', and Nascimento's role as the inventory attorney for the deceased partner's law practice.",
+  "persons": [
+    {
+      "name": "Joseph E. Nascimento",
+      "role": "Defense Attorney, Inventory Attorney",
+      "category": "legal",
+      "context": "Attorney emailing an Assistant U.S. Attorney to schedule a call regarding a grand jury subpoena served on his deceased partner's client, Jeffrey Epstein. He identifies himself as the Florida Bar-appointed inventory attorney for his former partner's practice.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Alan Ross",
+      "role": "Former Law Partner",
+      "category": "legal",
+      "context": "Deceased former law partner of Joseph Nascimento who previously represented Jeffrey Epstein. He passed away in 2018.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client/Subject of Investigation",
+      "category": "key figure",
+      "context": "Implicitly the subject of the grand jury subpoena and the discussion. Referred to as the client of the deceased attorney Alan Ross.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Joseph E. Nascimento",
+      "person2": "Alan Ross",
+      "relationshipType": "professional",
+      "description": "Former law partners. Nascimento is now the Florida Bar-appointed inventory attorney for Ross's practice following Ross's death.",
+      "strength": 4
+    },
+    {
+      "person1": "Alan Ross",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Ross represented Epstein prior to his death in 2018, as stated by Nascimento.",
+      "strength": 4
+    },
+    {
+      "person1": "Joseph E. Nascimento",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional",
+      "description": "Nascimento, as inventory attorney for his deceased partner's practice, is now involved in matters concerning the former client, Epstein, specifically regarding a grand jury subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Grand Jury Subpoena Served",
+      "description": "A grand jury subpoena was served earlier in the day on a client (implied to be Jeffrey Epstein) who was formerly represented by the now-deceased attorney Alan Ross.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Alan Ross"
+      ]
+    },
+    {
+      "date": "2019-07-09",
+      "title": "Scheduled Attorney Call",
+      "description": "Joseph Nascimento and an Assistant U.S. Attorney schedule a call for 6:30 PM to discuss the grand jury subpoena matter related to Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Joseph E. Nascimento"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami, Florida",
+    "2250 S.W. 3rd Avenue, Miami, Florida 33129 (Law office of Ross Amsel Raben Nascimento, PLLC)",
+    "Southern District of New York (jurisdiction of the Assistant U.S. Attorney)"
+  ],
+  "keyFacts": [
+    "A grand jury subpoena related to Jeffrey Epstein was served on or about July 6, 2019.",
+    "Joseph E. Nascimento, a defense attorney, was acting as the Florida Bar-appointed inventory attorney for the law practice of his deceased former partner, Alan Ross, who had represented Epstein.",
+    "Nascimento contacted the U.S. Attorney's Office for the Southern District of New York to schedule a call regarding the subpoena, indicating federal investigation activity in July 2019.",
+    "The email chain shows coordination between defense counsel and federal prosecutors shortly after the subpoena was served."
+  ],
+  "analyzedAt": "2026-02-17T01:42:06.118Z"
+}

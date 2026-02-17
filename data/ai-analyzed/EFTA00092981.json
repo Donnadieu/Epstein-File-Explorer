@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00092981.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-26",
+  "summary": "This is an email exchange between FBI personnel and the U.S. Attorney's Office for the Southern District of New York regarding securing seats for FBI leadership to attend a hearing related to Jeffrey Epstein. It shows coordination between law enforcement agencies on the case shortly after Epstein's death.",
+  "persons": [
+    {
+      "name": "SSA - Squad C-20 Crimes Against Children/Human Trafficking FBI New York",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the initial email requesting seats for FBI leadership to attend the Epstein hearing.",
+      "mentionCount": 2
+    },
+    {
+      "name": "ADIC",
+      "role": "Assistant Director in Charge, FBI",
+      "category": "law enforcement",
+      "context": "FBI leadership figure who, along with the SAC, wishes to attend the Epstein hearing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SAC",
+      "role": "Special Agent in Charge, FBI",
+      "category": "law enforcement",
+      "context": "FBI leadership figure who, along with the ADIC, wishes to attend the Epstein hearing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA - Squad C-20 Crimes Against Children/Human Trafficking FBI New York",
+      "person2": "ADIC",
+      "relationshipType": "professional",
+      "description": "The SSA is coordinating attendance for the ADIC at the Epstein hearing, indicating a chain of command relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA - Squad C-20 Crimes Against Children/Human Trafficking FBI New York",
+      "person2": "SAC",
+      "relationshipType": "professional",
+      "description": "The SSA is coordinating attendance for the SAC at the Epstein hearing, indicating a chain of command relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "ADIC",
+      "person2": "SAC",
+      "relationshipType": "professional",
+      "description": "Both are senior FBI leadership figures seeking to attend the same hearing together.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-27",
+      "title": "Epstein Hearing",
+      "description": "A court hearing related to the Jeffrey Epstein case, occurring the day after this email was sent. FBI leadership sought to attend.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SSA - Squad C-20 Crimes Against Children/Human Trafficking FBI New York",
+        "ADIC",
+        "SAC"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York",
+    "New York"
+  ],
+  "keyFacts": [
+    "The email is dated August 26, 2019, shortly after Jeffrey Epstein's death in custody on August 10, 2019.",
+    "FBI leadership (ADIC and SAC) expressed direct interest in attending a hearing related to the Epstein case.",
+    "The coordination involves the FBI's Crimes Against Children/Human Trafficking squad (C-20) and the U.S. Attorney's Office for the Southern District of New York (USANYS).",
+    "The document demonstrates ongoing legal proceedings and high-level law enforcement attention on the Epstein case post-mortem.",
+    "The subject line and context confirm the hearing was specifically regarding 'Epstein'."
+  ],
+  "analyzedAt": "2026-02-17T06:53:26.041Z"
+}

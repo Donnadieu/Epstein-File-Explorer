@@ -1,0 +1,52 @@
+{
+  "fileName": "EFTA00091953.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-17",
+  "summary": "This document is an email chain discussing the retrieval of financial records from JP Morgan Chase related to Jeffrey Epstein's accounts. An analyst reports querying the FinCen database and finding 14 SARs (Suspicious Activity Reports) and 89 CTRs (Currency Transaction Reports) referencing Epstein's SSN, which were copied to a DVD for pickup.",
+  "persons": [
+    {
+      "name": "Andrew",
+      "role": "Recipient of financial records",
+      "category": "law enforcement",
+      "context": "Mentioned as the person who will pick up the DVD containing Epstein's financial records (SARs and CTRs) from JP Morgan Chase.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of financial investigation",
+      "category": "key figure",
+      "context": "The financial records (SARs and CTRs) filed by JP Morgan Chase reference his Social Security Number (SSN), indicating scrutiny of his accounts.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigation",
+      "description": "Andrew is receiving financial records (SARs/CTRs) related to Epstein's accounts from JP Morgan Chase for investigative purposes.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-17",
+      "title": "Financial Records Retrieval for Epstein Investigation",
+      "description": "An analyst queries the FinCen database and finds 14 SARs (8 with attachments) and 89 CTRs filed by JP Morgan Chase referencing Jeffrey Epstein's SSN. The records are copied to a DVD for pickup by Andrew.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Andrew",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "JP Morgan Chase filed 14 Suspicious Activity Reports (SARs) and 89 Currency Transaction Reports (CTRs) referencing Jeffrey Epstein's Social Security Number.",
+    "The financial records were retrieved from the FinCen database and copied to a DVD for investigative pickup by someone named Andrew.",
+    "The email correspondence indicates ongoing financial investigation into Epstein's accounts around December 2019."
+  ],
+  "analyzedAt": "2026-02-17T01:32:21.251Z"
+}

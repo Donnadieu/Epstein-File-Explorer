@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA00092930.pdf",
+  "dataSet": "9",
+  "documentType": "Person of Interest Worksheet",
+  "dateOriginal": null,
+  "summary": "This is a Person of Interest Worksheet prepared by an Internal Affairs investigator, detailing extensive background information on Tova Anjanique Noel (also known as Tova Noel-Christian). The document compiles her personal identifiers, addresses, contact information, vehicle details, employment applications, travel history, and results from various database checks. It appears to be part of an investigative file, likely related to her potential connections or relevance to a broader case.",
+  "persons": [
+    {
+      "name": "Tova Anjanique Noel",
+      "role": "Person of Interest",
+      "category": "key figure",
+      "context": "The subject of the investigative worksheet, with detailed personal, residential, contact, and travel information compiled from multiple databases.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Tova Noel-Christian",
+      "role": "Person of Interest (alternate name)",
+      "category": "key figure",
+      "context": "An alias or former name for Tova Anjanique Noel, noted in connection with a divorce from Jerome Kevin Christian.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jerome Kevin Christian",
+      "role": "Former spouse",
+      "category": "associate",
+      "context": "Identified as the divorced husband of Tova Anjanique Noel, with the divorce occurring in 2013.",
+      "mentionCount": 1
+    },
+    {
+      "name": "IA Mallory Rosso",
+      "role": "Internal Affairs Investigator",
+      "category": "law enforcement",
+      "context": "The investigator who prepared the Person of Interest Worksheet, identified by ID-13/C-19.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SA Amanda Moore",
+      "role": "Case Agent",
+      "category": "law enforcement",
+      "context": "Listed as the case agent for the investigation under case number 90A-NY-3151227.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Anjanique Noel",
+      "person2": "Jerome Kevin Christian",
+      "relationshipType": "former spouse",
+      "description": "Document states Tova Noel was divorced from Jerome Kevin Christian in 2013.",
+      "strength": 4
+    },
+    {
+      "person1": "IA Mallory Rosso",
+      "person2": "Tova Anjanique Noel",
+      "relationshipType": "investigator-subject",
+      "description": "IA Mallory Rosso prepared the investigative worksheet on Tova Anjanique Noel.",
+      "strength": 3
+    },
+    {
+      "person1": "SA Amanda Moore",
+      "person2": "Tova Anjanique Noel",
+      "relationshipType": "case agent-subject",
+      "description": "SA Amanda Moore is listed as the case agent for the investigation involving Tova Anjanique Noel.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013",
+      "title": "Divorce from Jerome Kevin Christian",
+      "description": "Tova Anjanique Noel divorced her husband, Jerome Kevin Christian.",
+      "category": "personal",
+      "significance": 2,
+      "personsInvolved": [
+        "Tova Anjanique Noel",
+        "Jerome Kevin Christian"
+      ]
+    },
+    {
+      "date": "2019-04-28",
+      "title": "Return from international travel",
+      "description": "Tova Noel returned from a flight from Beijing to JFK, noted as her most recent trip.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Tova Anjanique Noel"
+      ]
+    },
+    {
+      "date": "2019-06-18",
+      "title": "Parking summons",
+      "description": "Tova Noel received a summons for parking in a no parking zone, per NYPD records.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Tova Anjanique Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "1220 Morris Avenue, Apt 1F, Bronx, NY 10456",
+    "200 White Pine Trail, East Stroudsburg, PA 18301",
+    "40 Morrow Avenue, Scarsdale, NY 10583",
+    "Beijing",
+    "JFK Airport"
+  ],
+  "keyFacts": [
+    "Tova Anjanique Noel is a US Permanent Resident from Antigua and Barbuda with extensive background checks showing no criminal history but frequent international travel.",
+    "She has applied for multiple law enforcement and corrections-related positions in New York State between 2011 and 2016, including to the NYPD and NYS DOCCS.",
+    "Her most recent international trip was returning from Beijing to JFK on April 28, 2019, as recorded in TECS.",
+    "The document is a comprehensive investigative worksheet compiled by Internal Affairs, suggesting she was a person of interest in a case where SA Amanda Moore was the case agent.",
+    "She was divorced from Jerome Kevin Christian in 2013 and has used the alias Tova Noel-Christian."
+  ],
+  "analyzedAt": "2026-02-17T02:37:25.317Z"
+}

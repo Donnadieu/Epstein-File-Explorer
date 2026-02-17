@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00091988.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-26",
+  "summary": "This document is an email chain from May 26, 2020, discussing investigative steps regarding Mark Epstein. Law enforcement officials are coordinating to issue subpoenas and emergency disclosure requests to VoIP and email service providers (SignalWire and Fastmail) to obtain subscriber and IP logs for phone numbers and email addresses associated with him.",
+  "persons": [
+    {
+      "name": "Mark Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The individual who is the subject of the investigative discussion; his email address and phone number were found via a simple Google search.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Donaleski, Rebekah",
+      "role": "Assistant United States Attorney (AUSA)",
+      "category": "legal",
+      "context": "A prosecutor with the U.S. Attorney's Office for the Southern District of New York (USANYS) who is involved in coordinating the investigation and indicates they are waiting for supervisor approval to formally handle the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda",
+      "role": "Law enforcement or investigative official",
+      "category": "law enforcement",
+      "context": "An individual who provided information about Mark Epstein's lawyer and is coordinating investigative steps like subpoenas and disclosure requests with others in the email chain.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jose",
+      "role": "Law enforcement or investigative official",
+      "category": "law enforcement",
+      "context": "A person being introduced in the email chain; likely another official involved in the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Donaleski, Rebekah",
+      "person2": "Amanda",
+      "relationshipType": "professional collaboration",
+      "description": "Collaborating on the investigation into Mark Epstein, with Amanda providing information and Donaleski coordinating legal steps like subpoenas.",
+      "strength": 3
+    },
+    {
+      "person1": "Donaleski, Rebekah",
+      "person2": "Jose",
+      "relationshipType": "professional collaboration",
+      "description": "Donaleski acknowledges meeting Jose, indicating they are working together on the investigative matter.",
+      "strength": 2
+    },
+    {
+      "person1": "Mark Epstein",
+      "person2": "Amanda",
+      "relationshipType": "investigator-subject",
+      "description": "Amanda is actively investigating Mark Epstein, including seeking his contact information and legal representation details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-26",
+      "title": "Investigation coordination for Mark Epstein",
+      "description": "Law enforcement officials exchange emails to coordinate investigative steps, including issuing subpoenas and emergency disclosure requests to technology companies for information on Mark Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Donaleski, Rebekah",
+        "Amanda",
+        "Jose",
+        "Mark Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Philly"
+  ],
+  "keyFacts": [
+    "Mark Epstein's email address and phone number were easily found via a simple Google search on May 26, 2020.",
+    "Investigators were seeking to issue subpoenas and emergency disclosure requests to VoIP provider SignalWire and email provider Fastmail to obtain subscriber and IP logs.",
+    "The U.S. Attorney's Office for the Southern District of New York (USANYS) was involved, but awaiting supervisor approval to formally handle the investigation.",
+    "Fastmail was identified as an Australian-based company, potentially complicating the legal process and possibly requiring an MLAT (Mutual Legal Assistance Treaty) request."
+  ],
+  "analyzedAt": "2026-02-17T01:34:15.784Z"
+}

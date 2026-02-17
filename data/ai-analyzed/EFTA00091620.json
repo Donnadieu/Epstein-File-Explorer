@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA00091620.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-29",
+  "summary": "An email from an Assistant U.S. Attorney in the Southern District of New York to a colleague, discussing potential statements from depositions (Boies and McCawley) related to Jeffrey Epstein's activities and strategizing about how to formulate an indictment. The email seeks to schedule a follow-up discussion.",
+  "persons": [
+    {
+      "name": "Geoff",
+      "role": "Prosecutor or legal colleague",
+      "category": "legal",
+      "context": "Mentioned as the person who was 'particularly thinking of' specific deposition statements that are being reviewed for potential use in an indictment.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Boies",
+      "role": "Deponent",
+      "category": "witness",
+      "context": "Subject of a deposition from which statements about never giving massages and not being aware of Epstein's sexual activities with others are being considered.",
+      "mentionCount": 2
+    },
+    {
+      "name": "McCawley",
+      "role": "Deponent",
+      "category": "witness",
+      "context": "Subject of a deposition from which statements about awareness of age and interactions are being considered.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referenced indirectly as the subject of the investigation, with discussions about his alleged sexual activities and a scheme to recruit underage girls.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Boies",
+      "person2": "Epstein",
+      "relationshipType": "witness-subject",
+      "description": "Boies gave a deposition containing statements about his awareness (or lack thereof) of Epstein's sexual activities.",
+      "strength": 3
+    },
+    {
+      "person1": "McCawley",
+      "person2": "Epstein",
+      "relationshipType": "witness-subject",
+      "description": "McCawley gave a deposition containing statements about his interactions and awareness related to Epstein and underage individuals.",
+      "strength": 3
+    },
+    {
+      "person1": "Geoff",
+      "person2": "Assistant U.S. Attorney",
+      "relationshipType": "colleague",
+      "description": "Geoff has conveyed thoughts to the AUSA, and they are collaborating on case strategy regarding deposition statements and indictment formulation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-28",
+      "title": "Strategy Discussion",
+      "description": "The AUSA and colleagues held a discussion about the case, providing thoughts and input on deposition statements and indictment strategy.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Geoff",
+        "Assistant U.S. Attorney"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Boies Deposition",
+      "description": "A deposition was taken from Boies, who made statements about not giving massages, not being aware of Epstein's sexual activities with others, and answers relating to sex toys.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Boies",
+        "Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "McCawley Deposition",
+      "description": "A deposition was taken from McCawley, who made statements about his awareness of age and interactions, and not knowing about Epstein's scheme to recruit underage girls.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "McCawley",
+        "Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Prosecutors are reviewing specific deposition statements from Boies and McCawley for potential use in a criminal indictment related to Jeffrey Epstein.",
+    "The statements under consideration include denials of giving massages, lack of awareness of Epstein's sexual activities with others, and questions about knowledge of a scheme to recruit underage girls.",
+    "The email indicates active strategy discussions among federal prosecutors about how to best formulate the indictment based on these witness statements.",
+    "The correspondence is dated May 29, 2020, showing ongoing investigative work after Epstein's death in August 2019."
+  ],
+  "analyzedAt": "2026-02-17T01:11:03.218Z"
+}

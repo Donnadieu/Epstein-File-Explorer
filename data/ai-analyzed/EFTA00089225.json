@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00089225.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-21",
+  "summary": "This is an email chain from August 21, 2019, regarding an update to the victim website for the Jeffrey Epstein case. It announces a court hearing scheduled for August 27, 2019, before Judge Richard M. Berman, to address the proposed nolle prosequi order following Epstein's death, and provides a link to the Department of Justice victim services page.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The deceased defendant in the criminal case United States v. Jeffrey Epstein. The email discusses the proposed nolle prosequi order following his death.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Richard M. Berman",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The Honorable Judge presiding over the case in the Southern District of New York. The hearing is scheduled to be held before him in Courtroom 17B.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email from the Southern District of New York, requesting an update to the victim website and providing details about the upcoming hearing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard M. Berman",
+      "relationshipType": "legal",
+      "description": "Judge Berman is the presiding judge over the criminal case United States v. Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant U.S. Attorney",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "The Assistant U.S. Attorney is prosecuting the case against Jeffrey Epstein on behalf of the United States.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-19",
+      "title": "Proposed Nolle Prosequi Order",
+      "description": "The United States Attorney proposed a nolle prosequi order to the Court, seeking to drop the charges following the death of defendant Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Assistant U.S. Attorney"
+      ]
+    },
+    {
+      "date": "2019-08-27",
+      "title": "Court Hearing on Nolle Prosequi",
+      "description": "A hearing is scheduled before Judge Richard M. Berman regarding the proposed nolle prosequi order. Counsel for the victims and the victims themselves will be heard.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard M. Berman",
+        "Jeffrey Epstein",
+        "Assistant U.S. Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Daniel Patrick Moynihan United States Courthouse, 500 Pearl Street, New York, New York",
+    "Courtroom 17B",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A hearing was ordered for August 27, 2019, in the case United States v. Jeffrey Epstein to address the proposed nolle prosequi (dropping of charges) following Epstein's death.",
+    "The hearing would allow counsel for the victims and the victims themselves to be heard before Judge Richard M. Berman.",
+    "The correspondence includes a link to the official Department of Justice victim and witness services page for the Epstein case.",
+    "The document is an internal email regarding updating a victim information website, showing procedural steps taken after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-16T21:18:17.644Z"
+}

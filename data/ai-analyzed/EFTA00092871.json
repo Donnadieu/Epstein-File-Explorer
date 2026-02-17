@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00092871.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-16",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to the Office of the Attorney General, forwarding charging instruments and a Fifth Circuit opinion from a prior Northern District of Texas case (U.S. v. Hernandez) for reference in the MCC/Epstein matter.",
+  "persons": [
+    {
+      "name": "Hemandez",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the attached Northern District of Texas case documents (U.S. v. Hemandez), whose conviction was affirmed by the Fifth Circuit. The case is being referenced in relation to the Epstein matter.",
+      "mentionCount": 2
+    },
+    {
+      "name": "McKinnon",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of an attached misprision information document (U.S. v. McKinnon) from the referenced Northern District of Texas case materials.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ME",
+      "person2": "Hemandez",
+      "relationshipType": "legal",
+      "description": "ME, as an AUSA, is providing legal documents related to Hemandez's prior prosecution for reference in the Epstein case.",
+      "strength": 2
+    },
+    {
+      "person1": "Hemandez",
+      "person2": "McKinnon",
+      "relationshipType": "legal",
+      "description": "Both are defendants in separate but related charging instruments from the same Northern District of Texas case package being referenced.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Prior Prosecution Case Referenced",
+      "description": "The email forwards documents from a prior prosecution in the Northern District of Texas (U.S. v. Hernandez, U.S. v. McKinnon) for reference in the MCC/Epstein matter.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Hemandez",
+        "McKinnon",
+        "ME"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Fifth Circuit Affirms Conviction",
+      "description": "The Fifth Circuit Court of Appeals issued an opinion affirming the conviction in the U.S. v. Hernandez case, a document attached to this email.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Hemandez"
+      ]
+    }
+  ],
+  "locations": [
+    "Northern District of Texas",
+    "Southern District of New York",
+    "New York, New York 10007",
+    "One St. Andrew's Plaza"
+  ],
+  "keyFacts": [
+    "The Southern District of New York (SDNY) is referencing a prior prosecution from the Northern District of Texas in relation to the Epstein case.",
+    "The referenced case includes U.S. v. Hernandez, where a conviction was affirmed by the Fifth Circuit, and U.S. v. McKinnon for misprision.",
+    "The communication demonstrates legal research or precedent gathering by the prosecution in the Epstein case as of August 2019.",
+    "The email is sent from an Assistant U.S. Attorney to the Office of the Attorney General, indicating inter-agency coordination."
+  ],
+  "analyzedAt": "2026-02-17T02:33:13.414Z"
+}

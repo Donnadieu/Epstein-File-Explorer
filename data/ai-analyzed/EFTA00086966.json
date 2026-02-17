@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00086966.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-05-27",
+  "summary": "This is an email chain from May 2020 discussing operational coordination regarding an investigation, specifically mentioning giving a heads up about opening something, concerns about Mark Epstein announcing himself as a victim, and connecting an individual named Hagan for a threats investigation.",
+  "persons": [
+    {
+      "name": "Laura",
+      "role": "Recipient of heads up",
+      "category": "other",
+      "context": "Mentioned as someone who should be given a heads up about opening an investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Geoff",
+      "role": "Recipient of heads up",
+      "category": "other",
+      "context": "Mentioned as someone who should potentially be given a heads up about opening an investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark",
+      "role": "Potential victim",
+      "category": "victim",
+      "context": "Referenced as someone who might go out and announce he's a victim, which the sender believes would not be well received.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Hagan",
+      "role": "Individual involved in investigation",
+      "category": "law enforcement",
+      "context": "Described as being 'on board for the threats investigation' and needing to be connected with an agent and defense counsel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark Epstein",
+      "role": "Subject of background information",
+      "category": "key figure",
+      "context": "Referenced as the subject about whom background information should be provided in relation to the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark",
+      "person2": "Mark Epstein",
+      "relationshipType": "likely identical person",
+      "description": "The email references 'Mark' and 'Mark Epstein' in close context, suggesting they are the same individual being discussed as a potential victim.",
+      "strength": 4
+    },
+    {
+      "person1": "Hagan",
+      "person2": "Mark Epstein",
+      "relationshipType": "investigative",
+      "description": "Hagan is brought on for a threats investigation, and background on Mark Epstein is to be provided to him and others.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-26",
+      "title": "Coordination for threats investigation",
+      "description": "An email indicates Hagan is on board for a threats investigation and needs to be connected with an agent and defense counsel, with background on Mark Epstein provided.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Hagan",
+        "Mark Epstein"
+      ]
+    },
+    {
+      "date": "2020-05-27",
+      "title": "Discussion of opening investigation and victim announcement",
+      "description": "Email discusses giving a heads up about opening an investigation and expresses concern that Mark might announce himself as a victim, which would not be well received.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Laura",
+        "Geoff",
+        "Mark"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an internal email chain from late May 2020 discussing operational aspects of an investigation.",
+    "It references a 'threats investigation' for which an individual named Hagan is brought on board.",
+    "Mark Epstein is a subject of the discussion, with background information about him to be provided to investigators.",
+    "There is expressed concern that if 'Mark' (likely Mark Epstein) publicly announces he is a victim, it 'will not be well received.'",
+    "The correspondence shows coordination between parties about managing the public and investigative aspects of a case involving Mark Epstein."
+  ],
+  "analyzedAt": "2026-02-16T19:20:40.233Z"
+}

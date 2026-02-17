@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00087365.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-07-06",
+  "summary": "This document is a chain of emails from July 2021 between FBI agents, a US Attorney's Office contractor, and an NYPD detective regarding coordination and follow-up tasks for the Ghislaine Maxwell case. It discusses obtaining files from CART (Computer Analysis and Response Team), reviewing images and .avi files, and identifying Palm Beach PD witnesses to authenticate evidence seized from Jeffrey Epstein's residence.",
+  "persons": [
+    {
+      "name": "Amanda Young",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Special Agent from the New York Field Office, Child Exploitation/Human Trafficking Desk. She is involved in coordinating the turnover of files from CART for the Maxwell case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Will",
+      "role": "Contractor for US Attorney's Office",
+      "category": "other",
+      "context": "A contractor for the US Attorney's Office (USANYS) who is coordinating to receive files related to the Maxwell case from another party.",
+      "mentionCount": 4
+    },
+    {
+      "name": "M. Byrne",
+      "role": "NYPD Detective / FBI Task Force",
+      "category": "law enforcement",
+      "context": "NYPD Detective assigned to the FBI Child Exploitation Human Trafficking Task Force. He provides updates on the status of evidence review, including photos and .avi files, and identifies a Palm Beach PD Captain as a point of contact.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant United States Attorney for the Southern District of New York. She sends a detailed email checking on multiple investigative tasks for the Maxwell case, including obtaining interview 302s, reviewing images, and finding witnesses to authenticate evidence from Epstein's Palm Beach home.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda Young",
+      "person2": "Will",
+      "relationshipType": "professional coordination",
+      "description": "Coordinating the handoff of files from CART for the Maxwell case investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "M. Byrne",
+      "person2": "Maurene Comey",
+      "relationshipType": "professional coordination",
+      "description": "NYPD detective providing updates and information to the Assistant US Attorney regarding investigative tasks for the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "M. Byrne",
+      "person2": "Amanda Young",
+      "relationshipType": "professional coordination",
+      "description": "Both are law enforcement officials (NYPD/FBI Task Force and FBI Special Agent) corresponding about case tasks.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-20",
+      "title": "Interview of Victim 1",
+      "description": "Reference to an interview conducted, likely of a victim or witness, for which draft FBI 302 reports are requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Maurene Comey",
+        "M. Byrne"
+      ]
+    },
+    {
+      "date": "2021-01-21",
+      "title": "Interview of Victim 2",
+      "description": "Reference to a second interview conducted, likely of a victim or witness, for which draft FBI 302 reports are requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Maurene Comey",
+        "M. Byrne"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Palm Beach, FL",
+    "Epstein's Palm Beach residence",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Investigators were actively working on the Ghislaine Maxwell case in mid-2021, coordinating to obtain digital evidence (.avi files) from CART and review images.",
+    "The evidence review included items seized from Jeffrey Epstein's Palm Beach residence, and there was an effort to find Palm Beach Police Department personnel to authenticate that evidence.",
+    "The email chain references prior interviews of victims (referred to as 'Victim-1' and 'Victim-2') conducted on January 20 and 21, 2021, for which FBI 302 reports were being drafted.",
+    "The CART (Computer Analysis and Response Team) was noted as being overwhelmed due to the Capitol investigation, potentially causing delays in processing evidence for the Maxwell case."
+  ],
+  "analyzedAt": "2026-02-16T19:51:33.219Z"
+}

@@ -1,0 +1,61 @@
+{
+  "fileName": "EFTA00089270.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-05-24",
+  "summary": "This is an email chain between U.S. Attorney's Office personnel discussing logistical efforts to schedule interviews with potential witnesses for the Epstein investigation. The emails focus on coordinating contact with several individuals, including one represented by attorney Sid Garcia, and stress the urgency of finalizing travel plans.",
+  "persons": [
+    {
+      "name": "Stan",
+      "role": "Contact/Intermediary",
+      "category": "other",
+      "context": "A person spoken to by the email author who is helping coordinate contact with potential witnesses, including providing phone numbers and confirming logistics.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sid Garcia",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Identified as the attorney for a potential witness referred to as 'M'. His office is coordinating scheduling for an interview.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sid Garcia",
+      "person2": "M",
+      "relationshipType": "attorney-client",
+      "description": "Sid Garcia is explicitly stated to be 'the attorney for M' and his office is handling scheduling for M's interview.",
+      "strength": 5
+    },
+    {
+      "person1": "Stan",
+      "person2": "Sid Garcia",
+      "relationshipType": "professional",
+      "description": "Both are mentioned as contacts being used by the prosecutors to facilitate communication with different potential witnesses.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-05-24",
+      "title": "Witness Interview Coordination",
+      "description": "Email correspondence detailing active efforts by the U.S. Attorney's Office to schedule interviews with multiple potential witnesses for the following week (May 28-30) and into early June.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Stan",
+        "Sid Garcia"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The U.S. Attorney's Office for the Southern District of New York was actively trying to schedule witness interviews in late May 2019 as part of the Epstein investigation.",
+    "An attorney named Sid Garcia was representing a potential witness referred to as 'M' and was coordinating the interview schedule.",
+    "A contact named Stan was acting as an intermediary to help prosecutors reach at least two other potential witnesses, confirming phone numbers and indicating their willingness to talk.",
+    "The correspondence shows a sense of urgency, with prosecutors stressing the need to finalize travel plans for the interviews.",
+    "The document indicates witness cooperation was being managed through intermediaries and attorneys, highlighting the logistical challenges of the investigation."
+  ],
+  "analyzedAt": "2026-02-16T21:24:31.553Z"
+}

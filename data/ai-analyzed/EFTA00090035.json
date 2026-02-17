@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00090035.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-05-04",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to Martin Druyan, informing him that the trial date for the case US v. Ghislaine Maxwell has been adjourned to the fall of 2021.",
+  "persons": [
+    {
+      "name": "Andrew",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The sender of the email, who works for the Southern District of New York and is providing an update on the trial schedule for US v. Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Martin Druyan",
+      "role": "Recipient of the email",
+      "category": "legal",
+      "context": "The recipient of the email, addressed as 'Martin', who is being informed about the adjournment of the Ghislaine Maxwell trial.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case referenced (US v. Ghislaine Maxwell, 20 Cr. 330 (AJN)), whose trial date is being adjourned.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew",
+      "person2": "Martin Druyan",
+      "relationshipType": "professional correspondence",
+      "description": "Andrew, an AUSA, is communicating a procedural update about the Maxwell case to Martin Druyan.",
+      "strength": 2
+    },
+    {
+      "person1": "Andrew",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Andrew, as an Assistant United States Attorney, is part of the prosecution team for the criminal case against Ghislaine Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-04",
+      "title": "Trial Adjournment Notification",
+      "description": "The Court adjourned the trial date for US v. Ghislaine Maxwell to the fall of 2021.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Andrew"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "name": "Southern District of New York",
+      "context": "The federal district court handling the case."
+    },
+    {
+      "name": "1 Saint Andrews Plaza, New York, New York 10007",
+      "context": "The address of the U.S. Attorney's Office for the Southern District of New York, from which the email was sent."
+    }
+  ],
+  "keyFacts": [
+    "The trial date for US v. Ghislaine Maxwell (case 20 Cr. 330 (AJN)) was adjourned to the fall of 2021 as of May 4, 2021.",
+    "The communication is from an Assistant United States Attorney (Andrew) to Martin Druyan, indicating Druyan is a party with interest in the case proceedings.",
+    "The document is official correspondence from the U.S. Attorney's Office for the Southern District of New York regarding a major criminal case."
+  ],
+  "analyzedAt": "2026-02-16T23:36:43.981Z"
+}

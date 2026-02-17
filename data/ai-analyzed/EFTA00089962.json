@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00089962.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-11-18",
+  "summary": "This document is an email chain from November 2021 between an Assistant United States Attorney from the Southern District of New York and Dan Besselsen of Interlochen Center for the Arts. The discussion concerns travel arrangements for a witness and the request for admissions files for students referenced as GX 742 and GX 743, likely in relation to grand jury proceedings.",
+  "persons": [
+    {
+      "name": "Dan Besselsen",
+      "role": "Assistant Vice President of Finance, Interlochen Center for the Arts",
+      "category": "witness",
+      "context": "Correspondent providing student admissions files (GX 742, 743) and coordinating travel as a potential witness for the prosecution.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor, Southern District of New York",
+      "category": "legal",
+      "context": "Government attorney requesting student admissions files and coordinating travel arrangements for Dan Besselsen as a witness.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dan Besselsen",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "witness-coordinator",
+      "description": "Prosecutor is coordinating travel and requesting documents from Besselsen, who is providing student records and acting as a witness.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-11",
+      "title": "Travel Coordination Request",
+      "description": "Assistant U.S. Attorney requests Dan Besselsen's personal information (name, DOB, address, phone) for travel arrangements to appear as a witness.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Dan Besselsen",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-11-17",
+      "title": "Request for Student Admissions Files",
+      "description": "Follow-up request for the full admissions files for students referenced as GX 742 and GX 743, beyond the initial summer camp application.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Dan Besselsen",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Interlochen Center for the Arts"
+  ],
+  "keyFacts": [
+    "The prosecution is seeking full admissions files for students identified as GX 742 and GX 743 from Interlochen Center for the Arts.",
+    "Dan Besselsen is being coordinated as a witness, with the government arranging his travel.",
+    "The document references grand jury exhibit numbers (GX 742, 743), indicating these student records are part of grand jury proceedings.",
+    "The email chain shows ongoing investigation activities as late as November 2021."
+  ],
+  "analyzedAt": "2026-02-16T23:32:34.789Z"
+}

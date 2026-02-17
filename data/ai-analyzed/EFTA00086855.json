@@ -1,0 +1,163 @@
+{
+  "fileName": "EFTA00086855.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-03-30",
+  "summary": "This is an FBI 302 interview report of a massage therapist who worked at Jeffrey Epstein's New Mexico ranch from approximately 2000-2003. The witness describes providing massages to Epstein, Ghislaine Maxwell, and others, details the layout of the ranch, and states the massages with Epstein turned sexual. She also mentions being given a non-disclosure agreement and interactions with Maxwell.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client/Subject",
+      "category": "key figure",
+      "context": "The primary subject of the investigation. The witness massaged him approximately 15 times at his New Mexico ranch, and the massages turned sexual. He visited the ranch 3-4 times per year.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "House Manager/Girlfriend of Epstein",
+      "category": "key figure",
+      "context": "Described as the 'lady of the house' and Epstein's girlfriend. She coordinated the witness's visits, gave her a non-disclosure agreement, and was massaged approximately 5 times. She made comments about the appearance of potential new masseuses.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Omer",
+      "role": "House Manager",
+      "category": "staff",
+      "context": "The house manager at Epstein's ranch who initially received a cut of the witness's payments. The witness became friends with him, and he was later circumvented as Maxwell began calling the witness directly.",
+      "mentionCount": 3
+    },
+    {
+      "name": "AUSA",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present for the FBI interview of the witness. Represents the prosecuting authority.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Present for the FBI interview of the witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present for and presumably conducting the FBI interview of the witness.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Witness thought Maxwell was Epstein's girlfriend and described her as the 'lady of the house.' They were at the ranch together for weeks at a time.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Omer",
+      "relationshipType": "employer-employee",
+      "description": "Maxwell, as the manager, began calling the witness directly, bypassing the house manager Omer who initially took a cut of payments.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Omer",
+      "relationshipType": "employer-employee",
+      "description": "Omer was the house manager at Epstein's ranch.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness (massage therapist)",
+      "relationshipType": "victim-perpetrator",
+      "description": "The witness massaged Epstein approximately 15 times and stated the massages turned sexual. She was paid by check from his corporation.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Witness (massage therapist)",
+      "relationshipType": "employer-employee",
+      "description": "Maxwell managed the witness's work at the ranch, gave her a non-disclosure agreement, and instructed her on the type of new masseuses to bring.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "1999-08",
+      "title": "Witness Graduates Massage School",
+      "description": "The witness graduated from massage school.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Witness (massage therapist)"
+      ]
+    },
+    {
+      "date": "2000",
+      "title": "Witness Begins Working at Epstein Ranch",
+      "description": "The witness began providing massage services at Jeffrey Epstein's New Mexico ranch as a professional massage therapist.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Omer",
+        "Witness (massage therapist)"
+      ]
+    },
+    {
+      "date": "2002",
+      "title": "Presented with Non-Disclosure Agreement",
+      "description": "Approximately two years after starting work at the ranch, the witness was given a non-disclosure agreement by Ghislaine Maxwell. She did not sign it due to the legal jargon.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Witness (massage therapist)"
+      ]
+    },
+    {
+      "date": "2003",
+      "title": "Vanity Fair Article Published",
+      "description": "The witness recalled reading a Vanity Fair article about Jeffrey Epstein in 2003, which made her realize the significance of her client. She had stopped going to the ranch prior to its publication.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Witness (massage therapist)"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "title": "FBI Interview of Witness",
+      "description": "The witness was interviewed by the FBI in New York, NY, regarding her experiences at Jeffrey Epstein's ranch.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness (massage therapist)",
+        "AUSA",
+        "Detective",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New Mexico (Epstein's ranch location)",
+    "Seattle, Washington",
+    "Mexico",
+    "New York, New York (interview location)",
+    "One Saint Andrews Plaza (interview location)"
+  ],
+  "keyFacts": [
+    "A massage therapist worked at Jeffrey Epstein's New Mexico ranch from approximately 2000-2003, providing massages that turned sexual with Epstein.",
+    "Ghislaine Maxwell acted as the manager of the ranch, gave the witness a non-disclosure agreement, and made specific demands that new masseuses be 'good looking, pretty, young, no hairy pits.'",
+    "The witness described the layout of Epstein's ranch in detail, including a basement area with a massage room, gym, pool, and pictures of women with exposed breasts in a bathroom.",
+    "Payments for massages were made by check from Epstein's corporation, initially routed through house manager Omer before Maxwell took over direct contact.",
+    "The witness recalled seeing a soap opera star (known to law enforcement) at the ranch on more than one occasion around 2001/2002."
+  ],
+  "analyzedAt": "2026-02-16T19:09:27.348Z"
+}

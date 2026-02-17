@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00091979.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-07-11",
+  "summary": "This is an FBI 302 interview report documenting the recovery of two suitcases from Richard Kahn, who had removed them from Jeffrey Epstein's New York residence during the execution of a search warrant on July 11, 2019. Kahn, with his attorney present, returned the suitcases to FBI agents, who inventoried and secured them. The document notes the attorney declined to say who instructed Kahn to remove the items.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Interviewee / Person in possession of suitcases",
+      "category": "associate",
+      "context": "Was interviewed by phone during the execution of a search warrant at Epstein's New York residence. He had removed two suitcases from the property and returned them to FBI agents.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Merwin Delacruz",
+      "role": "Property manager",
+      "category": "staff",
+      "context": "Property manager who contacted Richard Kahn by phone and placed the call on speaker for the FBI agent to communicate with Kahn.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Andrew Tomback",
+      "role": "Attorney for Richard Kahn",
+      "category": "legal",
+      "context": "Legal counsel for Richard Kahn, added to the call during the interview. He advised that Kahn had not opened the suitcases and arranged for their return to the FBI.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Kelly Maguire",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Interviewing FBI Special Agent who took custody of the suitcases from Richard Kahn and provided him a receipt.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sean Watson",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Supervisory Special Agent who contacted Andrew Tomback to ask who instructed Kahn to remove the items from the residence.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Andrew Tomback",
+      "relationshipType": "attorney-client",
+      "description": "Andrew Tomback is identified as the legal counsel for Richard Kahn and participated in the interview on his behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Merwin Delacruz",
+      "relationshipType": "professional",
+      "description": "Delacruz, as property manager, contacted Kahn by phone regarding items removed from the property during the FBI search.",
+      "strength": 2
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Kelly Maguire",
+      "relationshipType": "investigative",
+      "description": "FBI SA Maguire interviewed Kahn and took custody of the suitcases he returned.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Execution of search warrant at Epstein's NY residence",
+      "description": "FBI executed a search warrant at 9 East 71st Street, New York, NY. During this, it was discovered that Richard Kahn had removed two suitcases from the property.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Merwin Delacruz",
+        "Kelly Maguire",
+        "Sean Watson"
+      ]
+    },
+    {
+      "date": "2019-07-11",
+      "title": "Interview and recovery of suitcases from Richard Kahn",
+      "description": "Richard Kahn was interviewed by phone, and with his attorney Andrew Tomback, agreed to return two suitcases to FBI SA Maguire. He returned them approximately 30 minutes later, and they were secured by the FBI.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Andrew Tomback",
+        "Kelly Maguire",
+        "Sean Watson"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York 10021 (Jeffrey Epstein's New York residence)",
+    "FBI New York Operations Center (NYOC)"
+  ],
+  "keyFacts": [
+    "During the execution of a search warrant at Jeffrey Epstein's New York residence on July 11, 2019, it was discovered that Richard Kahn had removed two suitcases from the property.",
+    "Richard Kahn, with his attorney Andrew Tomback, returned the suitcases to FBI agents. Kahn stated he had not opened or tampered with them and had no knowledge of their contents.",
+    "FBI Supervisory Special Agent Sean Watson asked attorney Tomback who instructed Kahn to remove the items; Tomback declined to answer that question at the time.",
+    "The suitcases were inventoried and secured in a safe at the FBI New York Operations Center. The combination for the lock on a blue suitcase was noted as 301.",
+    "The document is an official FBI 302 report, indicating it is a factual record of an interview and evidence recovery, not containing recommendations or conclusions."
+  ],
+  "analyzedAt": "2026-02-17T01:33:24.792Z"
+}

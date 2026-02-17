@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00088595.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-03-26",
+  "summary": "This is an email from a prosecutor (SP) regarding a 'friendly subpoena' to be sent to an attorney (MI) to obtain a copy of the settlement agreement between a victim (Jane Doe) and Jeffrey Epstein, which resolved a 2009 civil suit. The document is part of the ongoing investigation into Ghislaine Maxwell's participation in the abuse.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the ongoing investigation into her participation in the abuse of a victim, which the requested settlement agreement is relevant to.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The defendant in the 2009 civil suit brought by a victim, which was resolved by the settlement agreement being sought.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MI",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "MI possesses a copy of the settlement agreement that resolved a civil suit between a victim and Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is under investigation for her participation in the abuse of a victim, which is connected to Epstein's case.",
+      "strength": 4
+    },
+    {
+      "person1": "SP",
+      "person2": "MI",
+      "relationshipType": "legal",
+      "description": "Prosecutor SP is coordinating with attorney MI to obtain a settlement agreement via a 'friendly subpoena' for an ongoing investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009",
+      "title": "Civil suit against Epstein",
+      "description": "A civil lawsuit was filed against Jeffrey Epstein by a victim, which was later resolved by a settlement agreement.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-03-26",
+      "title": "Request for friendly subpoena",
+      "description": "Prosecutor SP emails about sending a 'friendly subpoena' to attorney MI to obtain the settlement agreement from the 2009 Epstein civil case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SP",
+        "MI"
+      ]
+    }
+  ],
+  "locations": [
+    "Florida"
+  ],
+  "keyFacts": [
+    "A settlement agreement exists that resolved a 2009 civil suit against Jeffrey Epstein brought by a victim.",
+    "Attorney MI possesses a copy of this settlement agreement but believes he needs a subpoena to provide it to investigators.",
+    "The Maxwell investigation team is seeking this agreement as it is relevant to investigating Ghislaine Maxwell's participation in the abuse.",
+    "The email refers to prior interviews conducted in Florida where MI disclosed the existence of the agreement.",
+    "This document shows ongoing investigative efforts in 2021 to gather evidence related to the Epstein-Maxwell case."
+  ],
+  "analyzedAt": "2026-02-16T20:46:48.140Z"
+}

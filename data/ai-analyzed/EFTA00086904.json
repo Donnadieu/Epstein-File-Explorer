@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA00086904.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-29",
+  "summary": "This is an FBI 302 form documenting an interview conducted on August 29, 2019, with a Bureau of Prisons Lieutenant regarding his duties and observations at the Metropolitan Correctional Center (MCC) in New York, specifically concerning the housing and supervision of inmate Jeffrey Epstein. The interview focuses on protocols, staffing, and events leading up to Epstein's death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The high-profile inmate housed in the Special Housing Unit (SHU) at MCC, discussed in relation to his housing, requests, and the incident involving his cellmate.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Unnamed BOP Lieutenant",
+      "role": "BOP Lieutenant, SHU Supervisor",
+      "category": "law enforcement",
+      "context": "The interviewee, a BOP Lieutenant who supervised the SHU at MCC, including the wing where Epstein was held. He describes his duties, interactions with Epstein, and institutional protocols.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Unnamed AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Conducted the interview along with another AUSA from the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unnamed OIG Special Agent",
+      "role": "Special Agent, Office of Inspector General",
+      "category": "law enforcement",
+      "context": "Present during the interview of the BOP Lieutenant.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unnamed FBI SA",
+      "role": "Special Agent, Federal Bureau of Investigation",
+      "category": "law enforcement",
+      "context": "Present during the interview of the BOP Lieutenant.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unnamed BOP Psychologist",
+      "role": "Psychologist",
+      "category": "staff",
+      "context": "Reportedly stated that Epstein must be housed with a cellmate upon returning to the SHU.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unnamed Corrections Officer",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "A subordinate officer who was informed that Epstein needed a bunkie; the Lieutenant expected this officer to disseminate the message.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unnamed Corrections Officer (Trainee)",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "A corrections officer who, according to the Lieutenant, did not receive the mandatory SHU training.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Unnamed BOP Lieutenant",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The Lieutenant was the SHU supervisor responsible for overseeing Epstein's housing unit and had direct interactions with him regarding his requests and concerns.",
+      "strength": 4
+    },
+    {
+      "person1": "Unnamed BOP Lieutenant",
+      "person2": "Unnamed Corrections Officer",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Lieutenant communicated orders regarding Epstein's housing to this corrections officer, expecting the officer to disseminate the information to other staff.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed AUSA",
+      "person2": "Unnamed BOP Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The AUSA interviewed the BOP Lieutenant as part of an investigation into circumstances surrounding Epstein's incarceration.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unnamed BOP Psychologist",
+      "relationshipType": "inmate-professional",
+      "description": "The psychologist assessed Epstein and issued a directive that he must be housed with a cellmate upon return to the SHU.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Incident between Epstein and cellmate",
+      "description": "An incident occurred between Jeffrey Epstein and his cellmate. The BOP Lieutenant heard about it the next day and a 583 packet (including memos and photos) was completed.",
+      "category": "incident",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unnamed cellmate"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Epstein had a bunkie",
+      "description": "The BOP Lieutenant confirms that Jeffrey Epstein had a cellmate (bunkie) on this date, which was standard practice after coming off suicide watch.",
+      "category": "housing",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-29",
+      "title": "Interview of BOP Lieutenant",
+      "description": "The BOP Lieutenant was interviewed by SDNY AUSAs, an OIG SA, and an FBI SA regarding his knowledge of Epstein's housing and supervision at MCC.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed BOP Lieutenant",
+        "Unnamed AUSA",
+        "Unnamed OIG Special Agent",
+        "Unnamed FBI SA"
+      ]
+    }
+  ],
+  "locations": [
+    "1 Saint Andrews Plaza, New York, New York 10007 (Interview location)",
+    "Metropolitan Correctional Center (MCC), New York",
+    "Metropolitan Detention Center (MDC), New York",
+    "Special Housing Unit (SHU), MCC",
+    "Cell 201, SHU, MCC"
+  ],
+  "keyFacts": [
+    "The BOP Lieutenant interviewed was the SHU supervisor when Jeffrey Epstein was assigned to cell 201 in the SHU at MCC.",
+    "Executive management at MCC initially wanted to house Epstein with a cellmate (bunkie), a decision the Lieutenant followed without being asked for input.",
+    "An incident occurred between Epstein and his cellmate on July 23, 2019, documented in a 583 packet.",
+    "A BOP psychologist directed that Epstein must be housed with a cellmate upon returning to the SHU from suicide watch, which was standard institutional practice.",
+    "The Lieutenant noted staffing shortages and that at least one corrections officer had not received mandatory SHU training."
+  ],
+  "analyzedAt": "2026-02-16T19:15:53.846Z"
+}

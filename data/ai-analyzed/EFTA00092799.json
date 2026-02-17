@@ -1,0 +1,185 @@
+{
+  "fileName": "EFTA00092799.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-13",
+  "summary": "This email chain from August 12-13, 2019, summarizes voluntary interviews conducted by OIG, FBI, and USAO-SDNY with MCC employees regarding the circumstances surrounding Jeffrey Epstein's death. It details failures in protocol, including missed inmate counts and a non-working camera system in the SHU, and notes that the two officers who discovered Epstein declined to be interviewed.",
+  "persons": [
+    {
+      "name": "Geoff",
+      "role": "Email recipient, likely a supervisor or colleague",
+      "category": "other",
+      "context": "Recipient of the email summarizing the MCC interviews regarding Epstein's death.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lt.",
+      "role": "Operations Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "Discovered the radio call for medical staff, responded to the SHU, saw Officer Noel, entered Epstein's cell, and performed CPR. Confronted officers about missed counts and the missing cellmate.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Officer Noel",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "Was in the SHU and informed Lt. that Epstein had hung himself. Admitted to not conducting the 3 a.m. and 5 a.m. inmate counts and was questioned about Epstein's missing cellmate.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate, Accused",
+      "category": "key figure",
+      "context": "The inmate who was found dead in his cell in the SHU on the morning of August 10, 2019.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Officer Thomas",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "Was performing CPR on Epstein when Lt. arrived. Stated 'we messed up' and 'we didn't do the counts' regarding the protocol failures.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Lt.",
+      "role": "Institution Duty Officer at MCC",
+      "category": "law enforcement",
+      "context": "Assisted Epstein with making a personal phone call days before his death, using an unrecorded legal line. Left Epstein with Officers Noel and another male officer after the call.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Capt.",
+      "role": "Captain overseeing the whole prison at MCC",
+      "category": "law enforcement",
+      "context": "Stated he gave oral commands that Epstein needed a cellmate at all times after an earlier suicide attempt. Was unaware the cellmate had been moved or that cameras were not working until after Epstein's death.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Reyes",
+      "role": "Epstein's cellmate",
+      "category": "other",
+      "context": "Epstein's cellmate who was moved out of the cell, reportedly for court. His departure left Epstein alone in the cell.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "One of the two officers who discovered Epstein's body. She and Michael Thomas did not agree to speak with investigators.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "MCC Correctional Officer",
+      "category": "law enforcement",
+      "context": "One of the two officers who discovered Epstein's body. He and Tova Noel did not agree to speak with investigators.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Sender of the summary email from the U.S. Attorney's Office for the Southern District of New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Officer Noel",
+      "person2": "Officer Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were the correctional officers on duty in the SHU who discovered Epstein's body and were implicated in failing to conduct required inmate counts.",
+      "strength": 4
+    },
+    {
+      "person1": "Lt.",
+      "person2": "Officer Noel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Lt., as operations lieutenant, responded to Officer Noel's report of the incident and later questioned her about protocol failures.",
+      "strength": 3
+    },
+    {
+      "person1": "Lt.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Lt. assisted Epstein with making a personal phone call on an unrecorded line days before his death.",
+      "strength": 2
+    },
+    {
+      "person1": "Capt.",
+      "person2": "Lt.",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Capt. oversees all lieutenants, including those like Lt. who report to him on unit operations.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was Epstein's cellmate in the SHU before being moved out, which left Epstein alone.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Death",
+      "description": "Jeffrey Epstein was found dead in his cell in the Special Housing Unit (SHU) at the Metropolitan Correctional Center (MCC) at approximately 6:33 a.m.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer Noel",
+        "Officer Thomas",
+        "Lt."
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Missed Inmate Counts",
+      "description": "Officers Noel and Thomas admitted to not conducting the mandatory 3 a.m. and 5 a.m. inmate counts on the night/morning leading to Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Officer Noel",
+        "Officer Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "MCC Employee Interviews",
+      "description": "OIG, FBI, and USAO-SDNY conducted voluntary interviews with several MCC employees (Lt., Lt., Capt.) regarding the circumstances of Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lt.",
+        "Lt.",
+        "Capt."
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Refusal to be Interviewed",
+      "description": "Officers Tova Noel and Michael Thomas, who discovered Epstein, did not agree to speak with investigators and could not be served subpoenas.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC",
+    "One St. Andrew's Plaza, New York, New York 10007 (U.S. Attorney's Office, SDNY)"
+  ],
+  "keyFacts": [
+    "Epstein was found dead in his SHU cell on the morning of August 10, 2019; Officer Thomas was performing CPR when Lt. arrived.",
+    "Officers Noel and Thomas admitted to failing to conduct the mandatory 3 a.m. and 5 a.m. inmate counts, with Thomas stating 'we messed up'.",
+    "Epstein's cellmate, Reyes, had been moved out of the cell, leaving Epstein alone, contrary to orders that he have a cellmate at all times following a prior suicide attempt.",
+    "The camera system in the SHU was not working at the time of Epstein's death, and prison leadership (Capt.) was unaware of this issue.",
+    "The two officers who discovered Epstein's body, Tova Noel and Michael Thomas, refused to be interviewed by investigators on August 12, 2019."
+  ],
+  "analyzedAt": "2026-02-17T02:25:09.984Z"
+}

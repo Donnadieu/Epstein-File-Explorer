@@ -1,0 +1,62 @@
+{
+  "fileName": "EFTA00092337.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-24",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York discussing a financial transfer from Jeffrey Epstein to an individual (name redacted) on June 13, 2017. The transfer is noted as referencing \"Doe 43 v. Epstein et al.,\" a lawsuit, and the email mentions adding the complaint to a witness folder.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant/Accused",
+      "category": "key figure",
+      "context": "Mentioned as the source of a financial transfer on June 13, 2017, with the transfer note referencing a lawsuit against him (Doe 43 v. Epstein et al.).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Doe 43",
+      "role": "Plaintiff/Victim",
+      "category": "victim",
+      "context": "Referenced as the plaintiff in the lawsuit \"Doe 43 v. Epstein et al.,\" which is cited in the note for a financial transfer from Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Doe 43",
+      "relationshipType": "victim-perpetrator",
+      "description": "Implied by the lawsuit \"Doe 43 v. Epstein et al.,\" where Doe 43 is the plaintiff and Epstein is a defendant.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-06-13",
+      "title": "Financial Transfer from Epstein",
+      "description": "A financial transfer from Jeffrey Epstein to an individual (name redacted), with the note \"Reference Doe 43 v. Epstein et al.\"",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-02-24",
+      "title": "Email Correspondence Regarding Transfer",
+      "description": "An Assistant United States Attorney emails colleagues about noticing the 2017 transfer in a database presentation, mentioning the associated lawsuit and adding the complaint to a witness folder.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A financial transfer from Jeffrey Epstein occurred on June 13, 2017, to an individual whose name is redacted in the document.",
+    "The transfer note referenced the lawsuit \"Doe 43 v. Epstein et al.,\" indicating a connection between the payment and the legal case.",
+    "The email is from an Assistant United States Attorney in the Southern District of New York, suggesting ongoing investigation or review of Epstein's financial records.",
+    "The complaint for the lawsuit was added to a witness folder, indicating its relevance to the investigation."
+  ],
+  "analyzedAt": "2026-02-17T01:53:31.573Z"
+}

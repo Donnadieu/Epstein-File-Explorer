@@ -1,0 +1,139 @@
+{
+  "fileName": "EFTA00086956.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-01-13",
+  "summary": "This is an FBI FD-302 interview summary of a witness, identified as a former model, who describes being recruited by a party promoter named 'Ghislaine' to meet Jeffrey Epstein at his Upper East Side home in June 2004. The witness details a sexual assault by Epstein during what was presented as a massage session. The document also mentions the witness's interactions with the promoter and the owner of a modeling agency.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as the individual who sexually assaulted the witness during a massage session at his Upper East Side home in June 2004. He offered her $300 afterward.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine",
+      "role": "Party Promoter / Recruiter",
+      "category": "associate",
+      "context": "A party promoter the witness met at a nightclub. She talked about her friend 'Jeffrey' (Epstein), arranged the meeting at a subway station, and brought the witness to Epstein's home.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jean-Luc Brunel",
+      "role": "Owner of Modeling Agency",
+      "category": "associate",
+      "context": "The owner of the MC2 modeling agency. The witness met him at a club, went to his home where there was alcohol and cocaine, and recalls him being 'handsy' with other models.",
+      "mentionCount": 3
+    },
+    {
+      "name": "AUSA",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Present for the witness interview at One Saint Andrews Plaza in New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present for the witness interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Present for the witness interview.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Ghislaine described Epstein as her friend who 'loved to help people' and had connections. She recruited the witness for him.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine",
+      "person2": "Jean-Luc Brunel",
+      "relationshipType": "social",
+      "description": "Both were part of the same social and nightclub scene frequented by models. Ghislaine mentioned Brunel's agency to the witness.",
+      "strength": 2
+    },
+    {
+      "person1": "Jean-Luc Brunel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Implied connection through the modeling world and the witness's narrative, though not explicitly stated as direct in this document.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine",
+      "person2": "Witness",
+      "relationshipType": "recruiter-victim",
+      "description": "Ghislaine met the witness at a club, promoted Epstein, and personally escorted her to Epstein's home for the assault.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted the witness during a massage at his home after she was recruited by Ghislaine.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06",
+      "title": "Witness Recruited and Assaulted at Epstein's Home",
+      "description": "The witness, a new model, was recruited by Ghislaine and brought to Jeffrey Epstein's Upper East Side home. Under the guise of a massage, Epstein sexually assaulted her and afterward placed $300 on the table.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Witness",
+        "Jeffrey Epstein",
+        "Ghislaine"
+      ]
+    },
+    {
+      "date": "2004-10",
+      "title": "Witness Leaves New York City",
+      "description": "The witness left New York City in October 2004, citing the assault as the reason she turned away from modeling. She never spoke to Epstein again.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "title": "FBI Interview of Witness",
+      "description": "The witness was interviewed by the FBI, with AUSA, Special Agent, and a Detective present, at One Saint Andrews Plaza in New York.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness",
+        "AUSA",
+        "Special Agent",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York (FBI interview location)",
+    "Jeffrey Epstein's upper east side home, Manhattan, New York",
+    "Models apartment on the east side of Manhattan in the 40's next to 'Elite Food Bar'",
+    "New York City"
+  ],
+  "keyFacts": [
+    "A witness (former model) describes a June 2004 sexual assault by Jeffrey Epstein at his Upper East Side home, facilitated by a party promoter named Ghislaine.",
+    "Epstein offered the witness $300 in cash immediately following the assault.",
+    "The witness identified a 'tall slim girl... about 19 years old' in Epstein's kitchen as his 'main girlfriend'.",
+    "The witness also describes social interactions with Jean-Luc Brunel, owner of the MC2 modeling agency, at his home where there was alcohol and cocaine.",
+    "The assault caused the witness to abandon her modeling career and leave New York City by October 2004."
+  ],
+  "analyzedAt": "2026-02-16T19:19:18.548Z"
+}

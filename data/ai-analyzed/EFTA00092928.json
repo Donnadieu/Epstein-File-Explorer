@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00092928.pdf",
+  "dataSet": "9",
+  "documentType": "person of interest worksheet",
+  "dateOriginal": null,
+  "summary": "This is a law enforcement 'Person of Interest Worksheet' for Michael Albert Thomas, prepared by IA Mallory Rosso. It compiles identifying information, addresses, contact details, vehicle information, and results of database checks (criminal, civil, financial) as part of an investigation (Case 90A-NY-3151227). The document notes a prior domestic incident where Thomas was listed as a victim.",
+  "persons": [
+    {
+      "name": "Michael Albert Thomas",
+      "role": "Person of Interest",
+      "category": "key figure",
+      "context": "The subject of the investigative worksheet. The document compiles his personal details, addresses, contact information, vehicle, and results of law enforcement database checks.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mallory Rosso",
+      "role": "IA (likely Intelligence Analyst or Internal Affairs)",
+      "category": "law enforcement",
+      "context": "The officer who prepared the Person of Interest Worksheet.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Moore",
+      "role": "SA (Special Agent) Case Agent",
+      "category": "law enforcement",
+      "context": "The case agent for investigation number 90A-NY-3151227.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Monique Faare",
+      "role": "Girlfriend",
+      "category": "other",
+      "context": "Named as the other party in a domestic incident from December 2014 where Michael Thomas was listed as the victim. The incident involved an argument over custody.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ashley M Thomas",
+      "role": "Joint Bankruptcy Filer",
+      "category": "other",
+      "context": "Named in a joint Chapter 7 bankruptcy filing from Kentucky in July 2019 with a person named Michael Thomas, but the associated SSN did not match the subject of this worksheet.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Albert Thomas",
+      "person2": "Monique Faare",
+      "relationshipType": "social",
+      "description": "Were in a relationship and had an argument over custody in December 2014, resulting in a domestic incident report where Thomas was listed as the victim.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Albert Thomas",
+      "person2": "Ashley M Thomas",
+      "relationshipType": "financial",
+      "description": "Both names appear on a joint Chapter 7 bankruptcy filing in Kentucky, though the SSN did not match the subject of this worksheet, making the connection uncertain.",
+      "strength": 2
+    },
+    {
+      "person1": "Amanda Moore",
+      "person2": "Michael Albert Thomas",
+      "relationshipType": "investigative subject",
+      "description": "SA Amanda Moore is the case agent for the investigation in which Michael Thomas is a person of interest.",
+      "strength": 3
+    },
+    {
+      "person1": "Mallory Rosso",
+      "person2": "Michael Albert Thomas",
+      "relationshipType": "investigative subject",
+      "description": "IA Mallory Rosso prepared the investigative worksheet on person of interest Michael Thomas.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-12-26",
+      "title": "Domestic Incident Involving Michael Thomas",
+      "description": "An argument over custody between Michael Thomas and his girlfriend, Monique Faare, was reported to the NYPD. Thomas was listed as the victim in incident #5064637.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Michael Albert Thomas",
+        "Monique Faare"
+      ]
+    },
+    {
+      "date": "2019-07-12",
+      "title": "Joint Bankruptcy Filing in Kentucky",
+      "description": "A joint Chapter 7 bankruptcy filing was made by a Michael Thomas and Ashley M Thomas in Kentucky. The SSN associated with the filing did not match the subject of this worksheet.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Michael Albert Thomas",
+        "Ashley M Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "371 Bowler Court, Piscataway, NJ 08854",
+    "1409 Sunnyview Oval, Keasbey, NJ 08832",
+    "Kentucky (location of a bankruptcy filing)"
+  ],
+  "keyFacts": [
+    "Michael Albert Thomas is the subject of a law enforcement 'Person of Interest Worksheet' for Case 90A-NY-3151227, led by SA Amanda Moore.",
+    "Thomas was listed as the victim in a 2014 NYPD domestic incident (#5064637) involving an argument over custody with his girlfriend, Monique Faare.",
+    "Database checks showed no criminal history for Thomas in eJustice or NYPD databases, but he was associated with over 20 New Jersey civil court filings.",
+    "A joint bankruptcy filing from Kentucky in 2019 with an Ashley M Thomas was flagged, but the SSN did not match Thomas's records, indicating a possible name match only.",
+    "The document compiles extensive personal details on Thomas, including addresses, phone numbers, email, a vehicle (2016 Nissan Maxima), and results from multiple law enforcement and commercial databases."
+  ],
+  "analyzedAt": "2026-02-17T02:37:03.499Z"
+}

@@ -1,0 +1,142 @@
+{
+  "fileName": "EFTA00091904.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-01-14",
+  "summary": "This is an FBI 302 form documenting an interview with a witness, identified as a sibling of an alleged victim. The witness provides background on their family, details their and their sibling's interactions with Jeffrey Epstein and Ghislaine Maxwell in the mid-to-late 1990s, and discusses the sibling's subsequent revelations of abuse and financial ties to Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation, alleged perpetrator",
+      "category": "key figure",
+      "context": "Described as a 'godfather figure' who approached the witness's sibling at a young age, provided gifts and housing, and is the central figure in the abuse allegations discussed.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Present with Epstein during meetings with the witness and their sibling; described as Epstein's girlfriend/partner and the sibling's employer/assistant, whom the sibling described as 'MAXWELL's slave'.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Social acquaintance",
+      "category": "political",
+      "context": "Mentioned as someone the witness's sibling met at Mar-a-Lago around 1997/1998, with Epstein and Maxwell present.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bill Clinton",
+      "role": "Social acquaintance",
+      "category": "political",
+      "context": "Mentioned as someone the witness's sibling met, with Maxwell present, who asked what the sibling did, to which Maxwell replied the sibling was 'her slave'.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Described as being together during social interactions with the witness's family; Maxwell presented as Epstein's girlfriend/partner and was involved in managing interactions with the sibling.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness's sibling",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein cultivated a relationship with the sibling from a young age, providing gifts, travel, housing, and cash; the sibling later revealed she was raped by Epstein for years.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Witness's sibling",
+      "relationshipType": "employer-employee",
+      "description": "The sibling worked for Maxwell, who described the sibling as her assistant and 'slave'; they traveled together to events.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness",
+      "relationshipType": "social",
+      "description": "The witness met Epstein several times, spoke to him on the phone, and stayed at an apartment Epstein owned. Epstein also provided a computer to the witness's family.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1994-1996",
+      "title": "Sibling meets Epstein at Interlochen",
+      "description": "The witness's sibling first started talking about Jeffrey Epstein with admiration while at Interlochen arts camp. Epstein, who knew their deceased father, approached her at picnic tables.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Witness's sibling"
+      ]
+    },
+    {
+      "date": "1997-1998",
+      "title": "Sibling moves to New York City",
+      "description": "The sibling moved to New York City for her senior year of high school, staying at Epstein's seven-story house. Travel arrangements, possibly private, were made for her.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Witness's sibling",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1997-1998",
+      "title": "Meeting with Donald Trump at Mar-a-Lago",
+      "description": "The witness's sibling told the witness she met Donald Trump at Mar-a-Lago with Epstein and Maxwell present.",
+      "category": "social",
+      "significance": 2,
+      "personsInvolved": [
+        "Donald Trump",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Witness's sibling"
+      ]
+    },
+    {
+      "date": "Approx. 10 years prior to 2020",
+      "title": "Sibling first reveals abuse",
+      "description": "When the first Epstein investigation became news, the sibling subtly mentioned what happened to her. Later, she explicitly stated she was 'raped by a pedophile for years'.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Witness's sibling"
+      ]
+    },
+    {
+      "date": "2020-01-14",
+      "title": "FBI Interview of Witness",
+      "description": "The witness is interviewed by the FBI and AUSAs in New York, providing detailed background and allegations regarding Epstein, Maxwell, and his sibling.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York (interview location)",
+    "Palm Beach, Florida",
+    "Interlochen (arts camp location)",
+    "New York City (Epstein's seven-story house and apartment)",
+    "Los Angeles, California",
+    "Mar-a-Lago (Palm Beach)",
+    "New Mexico (Epstein's ranch mentioned)"
+  ],
+  "keyFacts": [
+    "The witness's sibling first met Jeffrey Epstein around age 14-15 at Interlochen arts camp, where Epstein cultivated a relationship by invoking admiration for her deceased father.",
+    "The sibling later revealed she was 'raped by a pedophile for years' by Epstein and described herself as Ghislaine Maxwell's 'slave' who was paid to work for Epstein.",
+    "Epstein provided significant financial benefits to the sibling and her family, including cash, a computer, payment for Interlochen, co-signing a lease, and the use of his properties.",
+    "The sibling had social interactions with high-profile figures including Donald Trump and Bill Clinton in the presence of Epstein and Maxwell.",
+    "The witness's mother attempted to protect the sibling from media and initially denied knowledge of the abuse, creating family tension."
+  ],
+  "analyzedAt": "2026-02-17T01:27:45.949Z"
+}

@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00089272.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-06-06",
+  "summary": "This document is an email chain between an FBI Special Agent and an Assistant United States Attorney from the Southern District of New York, discussing toll records (phone call logs) connecting a female subject's phone number to both a cell phone and Jeffrey Epstein's cell phone. The AUSA requests a clear report on the subject's prior address.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York VCAC/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI Special Agent from the New York VCAC/Human Trafficking unit is the sender of an email providing analysis of toll records and attaching a clear report on a subject's address.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The AUSA from the SDNY requests a clear report on a subject's prior address from the FBI agent, indicating coordination for an investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "Mentioned because toll records show calls between the female subject's phone number and Epstein's cell phone.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York VCAC/Human Trafficking",
+      "person2": "Assistant United States Attorney Southern District of New York",
+      "relationshipType": "professional collaboration",
+      "description": "The FBI agent and AUSA are communicating and sharing investigative information, specifically about toll records and a subject's address.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Special Agent FBI New York VCAC/Human Trafficking",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is analyzing phone records that involve Epstein's cell phone as part of an investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-06-05",
+      "title": "Email Request for Clear Report",
+      "description": "An Assistant United States Attorney emails an FBI Special Agent requesting a clear report on a subject's prior address.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York",
+        "Special Agent FBI New York VCAC/Human Trafficking"
+      ]
+    },
+    {
+      "date": "2019-06-06",
+      "title": "FBI Agent Provides Toll Analysis",
+      "description": "An FBI Special Agent responds to the AUSA, confirming that toll records show calls between a female subject's number, another cell phone, and Jeffrey Epstein's cell phone.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Special Agent FBI New York VCAC/Human Trafficking",
+        "Assistant United States Attorney Southern District of New York",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Phone toll records show calls between a female subject's number and Jeffrey Epstein's cell phone.",
+    "The FBI's New York VCAC/Human Trafficking unit was actively analyzing these records in June 2019.",
+    "An Assistant United States Attorney from the SDNY was coordinating with the FBI to obtain a clear report on the subject's prior address.",
+    "The communication indicates an ongoing investigation involving Epstein's contacts around June 2019."
+  ],
+  "analyzedAt": "2026-02-16T21:24:48.365Z"
+}

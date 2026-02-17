@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00091827.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-26",
+  "summary": "This is an email chain from May 26, 2020, between U.S. Attorney's Office personnel regarding the creation of video clips from Ghislaine Maxwell's deposition videos for the Epstein investigation. The emails discuss technical access to video files stored on a shared drive and specify the Q&A sequences to be extracted.",
+  "persons": [
+    {
+      "name": "Luke",
+      "role": "Recipient of task/request",
+      "category": "staff",
+      "context": "Addressed in an email requesting the creation of video clips from Ghislaine Maxwell's deposition. Likely a staff member or technician tasked with video editing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Geoff",
+      "role": "Requestor of video clips",
+      "category": "legal",
+      "context": "An individual (likely a prosecutor or investigator) who asked for specific video clips to be created from Ghislaine Maxwell's deposition for the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Deponent",
+      "category": "key figure",
+      "context": "Her deposition videos are the subject of the email chain; specific Q&A sequences from her deposition are to be clipped for the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoff",
+      "person2": "Luke",
+      "relationshipType": "professional",
+      "description": "Geoff has requested that Luke create video clips from deposition footage, indicating a task assignment within the legal/investigative team.",
+      "strength": 2
+    },
+    {
+      "person1": "Geoff",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigative",
+      "description": "Geoff is requesting clips from Ghislaine Maxwell's deposition as part of the Epstein investigation, indicating she is a subject of the inquiry.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-26",
+      "title": "Request for Deposition Video Clips",
+      "description": "U.S. Attorney's Office personnel coordinate the creation of video clips from specific Q&A sequences in Ghislaine Maxwell's deposition videos for the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Geoff",
+        "Luke",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Usa.doj.gov cloud NYS StAndrews Shared USvEpstein-2018R01618 Investigation"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office for the Southern District of New York was actively working on the Epstein investigation as of May 2020, specifically focusing on Ghislaine Maxwell's deposition.",
+    "Video files from Ghislaine Maxwell's deposition were in the possession of investigators and stored on a shared DOJ network drive.",
+    "Prosecutors identified specific question-and-answer sequences (pages 19-28 of an attached document) from Maxwell's deposition that were of particular interest for clipping.",
+    "The email chain demonstrates standard investigative coordination regarding evidence handling and review."
+  ],
+  "analyzedAt": "2026-02-17T01:23:07.445Z"
+}

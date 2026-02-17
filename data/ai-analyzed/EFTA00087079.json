@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00087079.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-06",
+  "summary": "Email correspondence between Assistant United States Attorneys regarding the sharing of grand jury presentation materials (scripts and PowerPoints) for the Epstein and Maxwell case. The materials include slides introducing defendants, photos of victims, and victim-specific exhibits like travel records.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Requests grand jury materials for the Epstein and Maxwell case from a colleague while another prosecutor is on vacation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ms.",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Mentioned as being on vacation, prompting the requestor to contact another colleague for the grand jury materials.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the grand jury presentation materials being requested and discussed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the grand jury presentation materials being requested and discussed alongside Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are defendants referenced together in the grand jury presentation materials.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ms.",
+      "relationshipType": "colleague",
+      "description": "Work together in the U.S. Attorney's Office; one covers for the other while she is on vacation.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Epstein",
+      "relationshipType": "legal",
+      "description": "Prosecutor preparing or requesting grand jury presentation materials targeting Epstein as a defendant.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Maxwell",
+      "relationshipType": "legal",
+      "description": "Prosecutor preparing or requesting grand jury presentation materials targeting Maxwell as a defendant.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-05",
+      "title": "Request for Grand Jury Materials",
+      "description": "An AUSA emails a colleague to request the grand jury presentation scripts and PowerPoints for the Epstein and Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2020-08-06",
+      "title": "Delivery of Grand Jury Materials",
+      "description": "A colleague responds, attaching the requested scripts and describing the PowerPoint presentations, which include defendant photos, victim photos, and victim-specific exhibits like travel records.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office Southern District of New York, One St. Andrew's Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "Prosecutors in the Southern District of New York were actively preparing grand jury presentations against Jeffrey Epstein and Ghislaine Maxwell as of August 2020.",
+    "The grand jury presentations included slides with photos of the defendants (Epstein and Maxwell), photos of victims, and victim-specific exhibits such as travel records.",
+    "The presentations were structured to introduce defendants, then present each victim with their associated evidence sequentially.",
+    "The email exchange indicates coordination among AUSAs to share trial preparation materials while a colleague was on vacation."
+  ],
+  "analyzedAt": "2026-02-16T19:32:51.429Z"
+}

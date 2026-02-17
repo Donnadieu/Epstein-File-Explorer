@@ -1,0 +1,217 @@
+{
+  "fileName": "EFTA00089117.pdf",
+  "dataSet": "9",
+  "documentType": "clinical contact notes / suicide risk assessments",
+  "dateOriginal": "2019-07-27 to 2019-08-01",
+  "summary": "A series of Bureau of Prisons clinical psychology notes documenting daily mental status evaluations of inmate Jeffrey Epstein from July 27 to August 1, 2019, while he was on psychological observation following an incident involving marks on his neck. The notes detail his complaints about sleep, noise in the SHU, physical symptoms, and his consistent denial of suicidal ideation. This document contains two Bureau of Prisons psychological assessment reports for Jeffrey Epstein, dated August 1 and August 8, 2019, while he was incarcerated at the Metropolitan Correctional Center (MCC) New York. The reports assess his suicide risk, mental status, and protective factors following an incident where he was found with a string around his neck. The psychologist concludes his acute suicide risk is low and no suicide watch is warranted.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The subject of all clinical evaluations. He is on psychological observation after an incident resulting in marks on his neck, which he claims not to remember. He complains of sleep deprivation, noise sensitivity, and physical numbness.",
+      "mentionCount": 65
+    },
+    {
+      "name": "PsyD",
+      "role": "Psychology Provider",
+      "category": "staff",
+      "context": "The primary clinician conducting most of the daily evaluations and suicide risk assessments of Jeffrey Epstein. Provides supportive interventions and psychoeducation.",
+      "mentionCount": 20
+    },
+    {
+      "name": "PhD/Chief Psychologist",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "Seen Epstein on July 29, 2019, and was consulted on July 30 regarding discontinuing psychological observation. Referred to as Miller, Bliss in the document generator field.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Unit Manager Proto",
+      "role": "Unit Manager",
+      "category": "staff",
+      "context": "Referred Epstein for a competency evaluation related to a disciplinary process for an incident report on July 23, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr.",
+      "role": "Psychologist / Psychiatrist",
+      "category": "staff",
+      "context": "Conducted prior suicide risk assessments on Epstein on July 9, 2019, which are referenced in the later notes. The name appears to be redacted.",
+      "mentionCount": 4
+    },
+    {
+      "name": "PsyD/DAPC",
+      "role": "Psychology Provider / DAPC",
+      "category": "staff",
+      "context": "Saw Epstein for a follow-up appointment on July 31, 2019, after he was removed from psychological observation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SHU Lt.",
+      "role": "Lieutenant (Special Housing Unit)",
+      "category": "staff",
+      "context": "Mentioned as the staff member informed about Epstein's need for an appropriate cellmate and who could be asked to change his cellmate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "PhD/Chief",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "The chief psychologist who conducted the follow-up session with Epstein on August 8, 2019, providing supportive interventions and psychoeducation.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PsyD",
+      "relationshipType": "provider-patient",
+      "description": "Clinical relationship where PsyD conducts daily mental status evaluations and provides therapeutic interventions to inmate Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PhD/Chief Psychologist",
+      "relationshipType": "provider-patient",
+      "description": "Clinical relationship; the Chief Psychologist evaluated Epstein and made decisions regarding his housing and observation status.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Unit Manager Proto",
+      "relationshipType": "custodial",
+      "description": "Unit Manager Proto referred Epstein for a disciplinary competency evaluation.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "SHU Lt.",
+      "relationshipType": "custodial",
+      "description": "The SHU Lieutenant was involved in housing decisions for Epstein, including cellmate assignment.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PsyD",
+      "relationshipType": "professional assessment",
+      "description": "PsyD conducted a psychological assessment and suicide risk evaluation of inmate Epstein on August 1, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PhD/Chief",
+      "relationshipType": "professional assessment",
+      "description": "PhD/Chief conducted a follow-up clinical session with Epstein on August 8, 2019, providing supportive interventions.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Incident in SHU",
+      "description": "Jeffrey Epstein was found with marks on his neck in the Special Housing Unit (SHU), leading to an incident report for code 228 (Self-Mutilation). He claims he cannot remember how it happened.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-27 to 2019-07-30",
+      "title": "Psychological Observation",
+      "description": "Epstein was placed on daily psychological observation following the neck injury incident. He was evaluated daily, complained of sleep deprivation and noise, and was eventually cleared to return to SHU.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PsyD",
+        "PhD/Chief Psychologist"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Competency Evaluation for Disciplinary Process",
+      "description": "Epstein was evaluated by psychology staff to determine his competency to proceed with the disciplinary process for the July 23 incident. He was found competent.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PsyD",
+        "Unit Manager Proto"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Court Status Hearing",
+      "description": "Epstein reported going to court for a status hearing on this date, as noted in his clinical follow-up.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-01",
+      "title": "US Marshals Form on Suicidal Tendencies",
+      "description": "Upon returning from court, US Marshals presented Epstein with a form noting he had 'suicidal tendencies,' prompting another suicide risk assessment. Epstein denied being suicidal.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein found with string around neck",
+      "description": "Jeffrey Epstein was found by staff in his Special Housing Unit (SHU) cell with a string loosely tied around his neck. Epstein stated he did not remember anything about it.",
+      "category": "incident",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-01",
+      "title": "Initial psychological assessment",
+      "description": "A psychologist (PsyD) assessed Jeffrey Epstein's suicide risk and mental status. The assessment noted the July 23 incident and concluded his acute suicide risk was low, with no suicide watch indicated.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PsyD"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Follow-up psychological session",
+      "description": "The chief psychologist (PhD/Chief) conducted a follow-up session with Epstein in the SHU. Epstein reported feeling okay, denied suicidal ideation, and expressed a desire to go to general population.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PhD/Chief"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC-NY (Metropolitan Correctional Center, New York)",
+    "SHU (Special Housing Unit) at MCC-NY",
+    "Hospital area / SW area at MCC-NY",
+    "Metropolitan Correctional Center, New York (MCC NYM or NYM)",
+    "Special Housing Unit (SHU)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found with unexplained marks on his neck in the SHU on July 23, 2019, leading to a self-mutilation incident report. He repeatedly stated he could not remember how the injury occurred.",
+    "Epstein complained extensively about an inability to sleep due to noise in the SHU and not having his CPAP machine for sleep apnea, which he later received.",
+    "Despite the incident and being placed on psychological observation, all clinical evaluations from July 27 to August 1 found Epstein denied suicidal ideation, was future-oriented, and was not an immediate danger to himself.",
+    "A competency evaluation on July 30, 2019, found Epstein competent to proceed with the disciplinary process related to the July 23 incident.",
+    "On August 1, 2019, US Marshals had Epstein sign a form noting 'suicidal tendencies,' which surprised him and led to an additional suicide risk assessment where he again denied being suicidal.",
+    "On July 23, 2019, Jeffrey Epstein was found in his SHU cell with a string loosely tied around his neck; he claimed no memory of the event.",
+    "A psychological assessment on August 1, 2019, determined Epstein's acute suicide risk was 'Low' and chronic risk was 'Absent', concluding a suicide watch was not warranted.",
+    "Epstein cited protective factors against suicide including his religion (Jewish), future plans to finish his case, and support from friends and lawyers.",
+    "During a follow-up on August 8, 2019, Epstein denied any suicidal ideation, intention, or plan and reported spending his days with his attorneys in the conference room.",
+    "The reports document Epstein's complaints of physical pain (lower back) and sleep problems, as well as his desire to be moved from the SHU to general population."
+  ],
+  "analyzedAt": "2026-02-16T21:11:34.773Z"
+}

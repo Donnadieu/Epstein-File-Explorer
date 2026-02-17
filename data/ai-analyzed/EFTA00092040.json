@@ -1,0 +1,64 @@
+{
+  "fileName": "EFTA00092040.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2019-07-08",
+  "summary": "This is a cover email from an Assistant U.S. Attorney submitting the government's bail memorandum to Judge Pitman's chambers in the case U.S. v. Epstein, 19 Cr. 490 (RMB). The memo argues for Epstein's detention, and copies were sent to defense counsel and Judge Berman's chambers.",
+  "persons": [
+    {
+      "name": "Judge Pitman",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "The email is addressed to his chambers, indicating he is the judge handling the bail argument in the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Berman",
+      "role": "Referring Judge",
+      "category": "legal",
+      "context": "He referred the presentment and arraignment to Judge Pitman, and his chambers requested to be copied on the bail memorandum.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M",
+      "person2": "Judge Pitman",
+      "relationshipType": "legal",
+      "description": "M, an Assistant U.S. Attorney, is submitting a legal document (bail memorandum) to Judge Pitman's chambers.",
+      "strength": 3
+    },
+    {
+      "person1": "Judge Berman",
+      "person2": "Judge Pitman",
+      "relationshipType": "legal",
+      "description": "Judge Berman referred the case's presentment and arraignment to Judge Pitman, indicating a procedural handoff between judges.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Submission of Government Bail Memorandum",
+      "description": "The government submits a memorandum to Judge Pitman arguing for the detention of Jeffrey Epstein, in advance of an expected bail hearing.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "M",
+        "Judge Pitman",
+        "Judge Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document is a cover email for the government's bail memorandum in the case U.S. v. Epstein, 19 Cr. 490 (RMB).",
+    "The government is arguing for Epstein's detention (i.e., against granting bail).",
+    "The case involves a presentment and arraignment that was referred by Judge Berman to Judge Pitman.",
+    "The email is sent by an Assistant U.S. Attorney identified only as 'M'.",
+    "The attached memorandum is the primary substantive document regarding the bail argument."
+  ],
+  "analyzedAt": "2026-02-17T01:39:28.205Z"
+}

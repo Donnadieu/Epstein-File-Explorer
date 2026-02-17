@@ -1,0 +1,137 @@
+{
+  "fileName": "EFTA00092531.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-18",
+  "summary": "This document is an email chain from January 2020 between attorneys and federal investigators regarding the SDNY investigation into Jeffrey Epstein. It discusses scheduling meetings with a key witness (referred to as 'Ms. pup'), planning to contact her family members and other potential witnesses, and mentions the filing of a civil lawsuit.",
+  "persons": [
+    {
+      "name": "Robert Glassman",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney at Panish Shea & Boyle representing a witness ('Ms. pup') in the SDNY investigation. He coordinates meetings and witness contact permissions with federal investigators.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Nathan Werksman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Panish Shea & Boyle copied on emails regarding the SDNY investigation and witness coordination.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Howie Simon",
+      "role": "Potential Witness",
+      "category": "witness",
+      "context": "Identified by the witness as a contact that federal investigators sought permission to reach out to.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr. Cabe",
+      "role": "Potential Witness",
+      "category": "witness",
+      "context": "Identified by the witness as a contact that federal investigators sought permission to reach out to.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Larkin",
+      "role": "Potential Witness",
+      "category": "witness",
+      "context": "Identified by the witness as a contact that federal investigators sought permission to reach out to.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referred to as a subject of the SDNY investigation, with investigators seeking to discuss specific conduct by him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Co-accused",
+      "category": "key figure",
+      "context": "Referred to alongside Epstein as a subject of the SDNY investigation, with investigators seeking to discuss specific conduct.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert Glassman",
+      "person2": "Nathan Werksman",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at the law firm Panish Shea & Boyle, working on the same case.",
+      "strength": 4
+    },
+    {
+      "person1": "Robert Glassman",
+      "person2": "Ms. pup (witness)",
+      "relationshipType": "attorney-client",
+      "description": "Glassman is the attorney representing the witness referred to as 'Ms. pup' in the SDNY investigation.",
+      "strength": 5
+    },
+    {
+      "person1": "Federal Investigators",
+      "person2": "Ms. pup (witness)",
+      "relationshipType": "investigator-witness",
+      "description": "Investigators are conducting interviews and seeking information from the witness about Epstein and Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named together as subjects of the SDNY investigation regarding specific conduct.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-18",
+      "title": "Civil Lawsuit Filing Noted",
+      "description": "Based on media reports, a civil lawsuit related to the investigation appears to have been filed. Investigators request a copy.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Glassman"
+      ]
+    },
+    {
+      "date": "2019-12-16",
+      "title": "Witness Meeting Scheduled",
+      "description": "A meeting was scheduled for Monday, December 16, 2019, at 11:00 a.m. at Robert Glassman's office between the witness, her attorneys, and federal investigators.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Glassman",
+        "Nathan Werksman",
+        "Ms. pup (witness)"
+      ]
+    },
+    {
+      "date": "2019-12-30",
+      "title": "Permission to Contact Witness Network",
+      "description": "Federal investigators received permission from attorney Robert Glassman to begin contacting individuals identified by the witness, including her siblings, mother, Howie Simon, Dr. Cabe, and John Larkin.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Glassman",
+        "Howie Simon",
+        "Dr. Cabe",
+        "John Larkin"
+      ]
+    }
+  ],
+  "locations": [
+    "Los Angeles, CA",
+    "California"
+  ],
+  "keyFacts": [
+    "Federal investigators from the SDNY were actively investigating Jeffrey Epstein and Maxwell as of late 2019/early 2020, coordinating with a key witness's attorneys.",
+    "A witness (referred to as 'Ms. pup') had identified several potential contacts for investigators, including family members (siblings, mother) and individuals named Howie Simon, Dr. Cabe, and John Larkin.",
+    "The witness's mother was overseas and considered a potentially key witness, but investigators agreed not to contact her until after speaking with the witness and her attorney.",
+    "A civil lawsuit related to the case was reported filed in January 2020, prompting investigators to request a copy from the witness's attorney.",
+    "Meetings between the witness, her attorneys (Robert Glassman, Nathan Werksman), and investigators were being scheduled in California, indicating the witness was located there."
+  ],
+  "analyzedAt": "2026-02-17T02:07:19.125Z"
+}

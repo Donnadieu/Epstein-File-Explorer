@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00090601.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-01-10",
+  "summary": "An FBI 302 form documenting an interview with Natalie M. Joseph, who was hired for security on Little St. James island. She describes her hiring process through Michael Turnball and her duties securing the docks, noting she had never met Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Natalie M. Joseph",
+      "role": "Security guard",
+      "category": "staff",
+      "context": "Interviewed by FBI regarding her employment for security on Little St. James island. She was hired through Michael Turnball and worked securing the docks.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Michael Turnball",
+      "role": "Contact for employment",
+      "category": "associate",
+      "context": "Person Natalie Joseph contacted about a security job on Little St. James, as recommended by a friend.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Property owner",
+      "category": "key figure",
+      "context": "Owner of Little St. James island, mentioned as someone Joseph had never met or seen on St. Thomas.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Natalie M. Joseph",
+      "person2": "Michael Turnball",
+      "relationshipType": "employer-employee",
+      "description": "Joseph contacted Turnball about a security job opening on Little St. James and was hired, starting work on August 12, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Natalie M. Joseph",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Joseph worked security on Epstein's private island, Little St. James, though she stated she had never met him.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-10",
+      "title": "FBI interview of Natalie Joseph",
+      "description": "FBI agents interviewed Natalie M. Joseph on Little St. James island regarding her security employment there.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Natalie M. Joseph"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Joseph's first day of work",
+      "description": "Natalie Joseph began working security on Little St. James, tasked with securing the docks to prevent unauthorized access.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Natalie M. Joseph"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Joseph contacts Turnball",
+      "description": "Natalie Joseph called Michael Turnball to inquire about a security job opening on Little St. James.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Natalie M. Joseph",
+        "Michael Turnball"
+      ]
+    }
+  ],
+  "locations": [
+    "Little St. James",
+    "St. Thomas",
+    "Virgin Islands, United States"
+  ],
+  "keyFacts": [
+    "Natalie M. Joseph was hired for security on Jeffrey Epstein's private island, Little St. James, starting August 12, 2019.",
+    "Joseph was referred to the job by a friend and contacted Michael Turnball to secure the position.",
+    "Joseph's primary duty was securing the docks to prevent tourists or unauthorized persons from coming onto the island.",
+    "Joseph stated she had never met Jeffrey Epstein nor seen him on St. Thomas prior to her employment.",
+    "The FBI interview was conducted on Little St. James island as part of an investigation, documented in an FD-302 form."
+  ],
+  "analyzedAt": "2026-02-17T00:10:18.710Z"
+}

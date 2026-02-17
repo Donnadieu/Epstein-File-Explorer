@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00092999.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-11 to 2019-08-12",
+  "summary": "This document consists of urgent email exchanges on August 11-12, 2019, between federal prosecutors and law enforcement regarding the immediate need to interview Metropolitan Correctional Center (MCC) staff following Jeffrey Epstein's death. The emails discuss interview logistics, subpoena preparation, Miranda warnings, and legal strategies for compelling testimony.",
+  "persons": [
+    {
+      "name": "Michael",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Addressee of an email from Nick regarding the status of draft subpoenas for MCC staff interviews.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nick",
+      "role": "Federal Prosecutor or Law Enforcement",
+      "category": "legal",
+      "context": "Author of an email to Michael providing an update on draft subpoenas and requesting the interview schedule.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda",
+      "role": "Federal Prosecutor or Supervisor",
+      "category": "legal",
+      "context": "Mentioned as having been consulted about the urgent need to interview MCC staff the following day.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nick",
+      "person2": "Michael",
+      "relationshipType": "professional collaboration",
+      "description": "Nick is updating Michael on the status of subpoena preparation and coordinating the interview schedule for MCC staff.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda",
+      "person2": "Nick",
+      "relationshipType": "professional collaboration",
+      "description": "The email chain indicates a prior discussion with Amanda about the urgent need to conduct the interviews.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-12",
+      "title": "Planned Interviews of MCC Staff",
+      "description": "Urgent plan to interview at least 10 Metropolitan Correctional Center staff members, including duty officers and shift supervisors, regarding Jeffrey Epstein's death. Interviews were to involve Miranda warnings and subpoenas.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "FBI agents",
+        "MCC staff"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Late-Night Coordination for Investigation",
+      "description": "Urgent email exchanges late on August 11, 2019, to coordinate the immediate investigation into Epstein's death, including legal strategy discussions about compelling testimony from MCC staff.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Federal prosecutors",
+        "FBI",
+        "OIG"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "New York (implied from USANYS - U.S. Attorney's Office for the Southern District of New York)"
+  ],
+  "keyFacts": [
+    "The emails were sent on the night of August 11, 2019, immediately following Jeffrey Epstein's death, indicating a rapid federal response to investigate the circumstances.",
+    "Prosecutors planned to interview at least 10 MCC staff members from various shifts, with some marked as 'most urgent,' including the '0:00-8:00 shift supervisor' and staff who might have heard an 'admission.'",
+    "Legal strategy discussions included using subpoenas, possibly requiring staff to surrender cell phones to the FBI, and navigating the limits of compelled interviews by the Office of the Inspector General (OIG) versus criminal case admissibility.",
+    "The document reveals the planned use of Miranda warnings and 18 U.S.C. § 1001 (false statements) warnings for the interviews, standardizing them as criminal investigative procedures."
+  ],
+  "analyzedAt": "2026-02-17T13:49:22.816Z"
+}

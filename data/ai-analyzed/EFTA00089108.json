@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA00089108.pdf",
+  "dataSet": "9",
+  "documentType": "memorandum",
+  "dateOriginal": "2019-08-10",
+  "summary": "This is a Federal Bureau of Prisons memorandum from the Federal Correctional Institution, dated August 10, 2019, detailing the discovery and emergency response to inmate Jeffrey Epstein's apparent suicide by hanging in his cell. The document notes a failure to complete required security rounds prior to the incident.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive in his cell after apparently hanging himself; the subject of the emergency medical response.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "The recipient of the memorandum and presumably the author or supervisor involved in documenting the incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shu#1 Officer",
+      "role": "Special Housing Unit Officer",
+      "category": "law enforcement",
+      "context": "The officer who announced the medical emergency via radio from the 9 South unit.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shu#2 Officer",
+      "role": "Special Housing Unit Officer",
+      "category": "law enforcement",
+      "context": "The officer who was performing CPR on Epstein when the Operations Lieutenant arrived at the cell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Clinical Nurse",
+      "role": "Clinical Nurse",
+      "category": "staff",
+      "context": "Medical staff who relieved the Operations Lieutenant and continued performing CPR on Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nurse",
+      "role": "Nurse",
+      "category": "staff",
+      "context": "Medical staff who continuously performed CPR on Epstein in the medical area until relieved by EMTs.",
+      "mentionCount": 1
+    },
+    {
+      "name": "EMT Staff",
+      "role": "Emergency Medical Technician",
+      "category": "staff",
+      "context": "Emergency medical personnel who arrived and took over care from the nurse at 6:43 am.",
+      "mentionCount": 1
+    },
+    {
+      "name": "#1 Escort Officer",
+      "role": "Escort Officer",
+      "category": "law enforcement",
+      "context": "Officer who escorted Epstein from the medical area to the ambulance.",
+      "mentionCount": 1
+    },
+    {
+      "name": "#2 Escort Officer",
+      "role": "Escort Officer",
+      "category": "law enforcement",
+      "context": "Officer who followed the ambulance in a Bureau of Prisons chase vehicle to the hospital.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S/O",
+      "role": "Security Officer",
+      "category": "law enforcement",
+      "context": "A security officer who admitted to the Operations Lieutenant that required 3am and 5am rounds were not completed and expressed distress over the failure.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "S/O",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The security officer (S/O) was responsible for conducting security rounds on Epstein's unit and admitted to failing to complete them.",
+      "strength": 3
+    },
+    {
+      "person1": "Shu#2 Officer",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The officer was found performing life-saving CPR on Epstein when the Operations Lieutenant arrived at the cell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Jeffrey Epstein's Apparent Suicide",
+      "description": "At approximately 6:33 AM, a medical emergency was announced for inmate Jeffrey Epstein in the Special Housing Unit. He was found unresponsive in his cell, having apparently hung himself. CPR was administered continuously, and he was transported to Beekman Hospital.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Shu#1 Officer",
+        "Shu#2 Officer",
+        "Operations Lieutenant",
+        "Clinical Nurse",
+        "Nurse",
+        "EMT Staff",
+        "#1 Escort Officer",
+        "#2 Escort Officer"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Failure to Complete Security Rounds",
+      "description": "A security officer (S/O) admitted to the Operations Lieutenant that required 3am and 5am security rounds were not completed on the unit housing Jeffrey Epstein prior to the discovery of his suicide attempt.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "S/O",
+        "Operations Lieutenant"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Correctional Institution (location of the incident)",
+    "Cell Z06-220 on L-tier (Epstein's cell)",
+    "2nd FL. Health Service Area (medical area within the prison)",
+    "Rear-gate area (prison exit for ambulance transfer)",
+    "Downtown Beekman Hospital (destination for emergency transport)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at approximately 6:33 AM on August 10, 2019, after apparently hanging himself.",
+    "A security officer admitted that required 3am and 5am security rounds were not completed on Epstein's unit prior to the incident, stating 'we messed up' and 'I messed up'.",
+    "CPR was administered continuously from the discovery in the cell, through transport to the prison medical area, until EMTs took over at 6:43 AM.",
+    "Epstein was transferred to an EMS ambulance at 7:10 AM and transported to Beekman Hospital under escort.",
+    "The document is a contemporaneous internal Bureau of Prisons memorandum detailing the emergency response and initial facts surrounding Epstein's death."
+  ],
+  "analyzedAt": "2026-02-16T21:10:52.910Z"
+}

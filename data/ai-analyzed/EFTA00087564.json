@@ -1,0 +1,137 @@
+{
+  "fileName": "EFTA00087564.pdf",
+  "dataSet": "9",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2020-01-29",
+  "summary": "A letter from defense attorneys Foy & Sepowitz LLC to the US Attorney's Office regarding the criminal case US v. Tova Noel, et al. The letter requests extensive discovery related to the video surveillance system at the Metropolitan Correctional Center (MCC) around the time of Jeffrey Epstein's death, including details about system failures, maintenance, and specific footage of defendants and Epstein.",
+  "persons": [
+    {
+      "name": "Jason E. Foy",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney at Foy & Sepowitz LLC who signed the letter requesting discovery related to the MCC surveillance system and the case against Tova Noel.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Named defendant in case 19 cr 830, a corrections officer at MCC accused of falsifying records related to inmate checks. The letter is addressed on her behalf.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at MCC whose death is central to the investigation. The letter requests video surveillance footage of him, including around his alleged suicide attempt.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Thomas",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Named defendant (presumably Michael Thomas) referenced alongside Tova Noel regarding alleged misconduct and video surveillance on August 10, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Officer -1",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "An unnamed corrections officer referenced in the indictment in relation to failing to perform inmate counts with defendant Tova Noel.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jason E. Foy",
+      "person2": "Tova Noel",
+      "relationshipType": "attorney-client",
+      "description": "Foy is the defense attorney representing defendant Tova Noel, as indicated by the letter being addressed on her behalf and copied to her.",
+      "strength": 5
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-defendant",
+      "description": "Both are defendants in the same criminal case (US v. Tova Noel, et al) related to conduct at the MCC.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Officer -1",
+      "relationshipType": "colleague",
+      "description": "Referenced together in the indictment regarding the alleged failure to perform a 4pm inmate count.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was a corrections officer at the MCC where Epstein was housed. The letter seeks video of Noel near Epstein's tier.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein at MCC",
+      "description": "Jeffrey Epstein was found dead in his cell at the Metropolitan Correctional Center. The document references the discovery of his body and related video surveillance.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Alleged Epstein Suicide Attempt",
+      "description": "Jeffrey Epstein allegedly attempted suicide while in custody at the MCC. The defense requests video surveillance seized as part of the investigation into this incident.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Video System Failure",
+      "description": "A reported 'system failure' of the MCC video surveillance system occurred on or about this date.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Video System Failure on DVR-2",
+      "description": "A system failure occurred on DVR-2 of the MCC surveillance system, and a technician attempted to fix the problem.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Surveillance System Replacement",
+      "description": "The video surveillance system at the MCC was replaced on or about this date, shortly after Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, NY",
+    "Special Housing Unit (SHU) at MCC",
+    "105 Main Street, Hackensack, NJ 07601 (Foy & Sepowitz LLC office)",
+    "One Saint Andrew's Plaza, New York, NY 10007 (US Attorney's Office - SDNY)",
+    "30 Wall Street 8th Floor, New York, NY 10005"
+  ],
+  "keyFacts": [
+    "The defense is seeking extensive discovery on the MCC video surveillance system, including details about its installation, maintenance, failures, and replacement around the time of Jeffrey Epstein's death in August 2019.",
+    "The letter references specific alleged misconduct by defendants Tova Noel and Thomas, including failing to perform inmate counts, sleeping on duty, and browsing the internet, and asks the government to pinpoint this conduct on specific video files.",
+    "There were reported video system failures on July 29, 2019 and August 8, 2019, and the system was replaced on or about August 12, 2019.",
+    "The defense requests all video surveillance of Jeffrey Epstein, including footage from before and after his alleged July 23, 2019 suicide attempt and footage capturing him on the system.",
+    "The document indicates an ongoing criminal case (19 cr 830) against MCC corrections officers Tova Noel and others related to falsifying records and failing to perform duties."
+  ],
+  "analyzedAt": "2026-02-16T20:01:33.745Z"
+}

@@ -1,0 +1,133 @@
+{
+  "fileName": "EFTA00086883.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-03-23",
+  "summary": "This is an FBI FD-302 interview summary of a woman (name redacted) conducted on August 26, 2019. She describes her background as a model, her recruitment in 2004 at age 19 for a massage job by a woman named 'Ghislaine', and a subsequent sexual assault by Jeffrey Epstein at his New York home. The document details the grooming, the assault, and the significant psychological impact on the victim.",
+  "persons": [
+    {
+      "name": "Teri Gibbs",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present as the attorney for the interviewee during the FBI interview at One Saint Andrews Plaza, New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as the wealthy client who paid for massages. The interviewee details being sexually assaulted by him at his New York home after being recruited.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine",
+      "role": "Recruiter",
+      "category": "associate",
+      "context": "A blonde woman with an Eastern European accent who approached the interviewee at a coffee shop, recruited her for Epstein, and facilitated the initial meeting. Described as grooming the victim.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paolo Zampolli",
+      "role": "Modeling Agency Founder",
+      "category": "associate",
+      "context": "Founder of ID Models, which the interviewee signed with at age 18. Described as 'sleazy', dating models, making her get a short haircut, and then letting her go.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Ghislaine is described as recruiting young women for Epstein, referring to him as 'Jeffrey', and arranging appointments for massages at his home.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine",
+      "person2": "Interviewee",
+      "relationshipType": "victim-perpetrator",
+      "description": "Ghislaine recruited the interviewee under false pretenses for a massage job with Epstein, which the interviewee later recognized as grooming.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Interviewee",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted the interviewee during what was presented as a massage appointment at his New York home.",
+      "strength": 5
+    },
+    {
+      "person1": "Paolo Zampolli",
+      "person2": "Interviewee",
+      "relationshipType": "employer-employee",
+      "description": "Zampolli was the founder of ID Models, which the interviewee signed with. He made her get a short haircut and then let her go.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004",
+      "title": "Recruitment by Ghislaine",
+      "description": "In the summer of 2004, the interviewee (age 19) was approached by Ghislaine at a Union Square coffee shop. Ghislaine recruited her for a massage job with a wealthy client, Jeffrey Epstein, promising cash payment.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine",
+        "Interviewee",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": "Sexual Assault by Epstein",
+      "description": "The interviewee went to Epstein's New York home for an appointment. Epstein, wearing only a towel, assaulted her after she was told he would not touch her and she would keep her clothes on.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Interviewee"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": "Victim Leaves New York",
+      "description": "Following the assault, the interviewee had a mental breakdown, was fired from her job, and called her parents to pick her up. She moved back home, feeling safer.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Interviewee"
+      ]
+    },
+    {
+      "date": "2019-08-26",
+      "title": "FBI Interview",
+      "description": "The interviewee provided a detailed account of the 2004 assault and its aftermath to the FBI, AUSA, and a detective at One Saint Andrews Plaza, New York.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Interviewee",
+        "Teri Gibbs"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York (FBI interview location)",
+    "Fort Hood, Berlin, Munich (Interviewee's childhood locations due to father's military service)",
+    "Fort Erwin, California",
+    "Los Angeles, California (modeling with ELITE MODELS)",
+    "New York, New York (modeling, coffee shop job, Epstein's home)",
+    "Paris, France (modeling trip)",
+    "Varick Street, New York (model apartment)",
+    "Williamsburg, New York",
+    "Union Square, New York (coffee shop job)",
+    "Baltimore, Maryland (interviewee's current residence)"
+  ],
+  "keyFacts": [
+    "The interviewee was recruited at age 19 in 2004 by a woman named Ghislaine, who described a wealthy client (Epstein) who liked 'young pretty girls' for massages.",
+    "During the massage appointment at Epstein's New York home, he sexually assaulted her after demanding she remove her clothes, contrary to prior assurances.",
+    "Ghislaine was described as actively grooming the victim, taking her and friends to a club, boasting about Epstein's connections (friends with a president), and her own recruitment earnings.",
+    "The assault caused severe psychological trauma, leading to a mental breakdown, job loss, and the victim fleeing New York to return to her parents.",
+    "The document is a formal FBI record (FD-302) of the victim's testimony, dated March 23, 2020, regarding an interview conducted on August 26, 2019."
+  ],
+  "analyzedAt": "2026-02-16T19:13:21.649Z"
+}

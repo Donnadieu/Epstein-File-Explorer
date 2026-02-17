@@ -1,0 +1,119 @@
+{
+  "fileName": "EFTA00086902.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-03",
+  "summary": "This is an FBI 302 form documenting an interview conducted on September 3, 2019, with an inmate at the Metropolitan Correctional Center (MCC) regarding the events surrounding the death of Jeffrey Epstein on August 10, 2019. The inmate provides a detailed eyewitness account of the morning Epstein was found unresponsive in his cell, including observations of the guards' response and subsequent actions by MCC personnel.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The document details the morning he was found unresponsive in his cell at the MCC.",
+      "mentionCount": 10
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the interviewing investigators present during the inmate interview at the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "OIG SA",
+      "role": "Special Agent, Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "An investigator from the Office of the Inspector General present during the inmate interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "An Assistant United States Attorney present during the inmate interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lieutenant",
+      "role": "MCC Lieutenant",
+      "category": "staff",
+      "context": "An MCC Lieutenant who responded to the incident in Epstein's cell and later helped coordinate covering cell windows.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lieutenant",
+      "relationshipType": "staff-inmate",
+      "description": "The Lieutenant was MCC staff who responded to the medical emergency in Epstein's cell and later supervised the covering of cell windows.",
+      "strength": 2
+    },
+    {
+      "person1": "FBI Special Agent",
+      "person2": "OIG SA",
+      "relationshipType": "colleague",
+      "description": "Both were investigators present during the joint interview of the inmate witness.",
+      "strength": 3
+    },
+    {
+      "person1": "FBI Special Agent",
+      "person2": "AUSA",
+      "relationshipType": "colleague",
+      "description": "Both were present in an official capacity during the interview of the inmate witness.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein Found Unresponsive",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center. A guard discovered him, attempted resuscitation, and medical personnel responded. He was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-09-03",
+      "title": "Inmate Witness Interview",
+      "description": "An inmate witness was interviewed by the FBI, OIG, and an AUSA regarding his observations of the morning Jeffrey Epstein was found dead in his cell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI Special Agent",
+        "OIG SA",
+        "AUSA"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Full Day",
+      "description": "The day before his death, Epstein left with his cellmate in the morning, was with his lawyers all day, and was brought back to the SHU via J Tier that night.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) L Tier",
+    "Southern District of New York, 500 Pearl Street, New York, NY",
+    "SHU G Tier",
+    "SHU H Tier",
+    "SHU J Tier",
+    "SHU multi-purpose room"
+  ],
+  "keyFacts": [
+    "An inmate witness provides a first-hand account of the morning Jeffrey Epstein was found dead, stating Epstein appeared dead when he fell with the guard who was trying to pick him up.",
+    "The witness states Epstein had no marks on his neck and he did not see a rope, contradicting an initial hanging narrative. The witness's cellmate also commented that Epstein lacked typical hanging injuries.",
+    "After the incident, MCC personnel, including a Lieutenant, covered the windows to cells on L Tier and used dividers to block views from the witness's cell and a camera.",
+    "The witness describes unusual activity the night before Epstein's death, including Epstein being taken to J Tier before returning to his cell and a lack of routine cell checks after midnight.",
+    "The witness saw a male come out of Epstein's cell with a sheet that had a loop and knot after the medical response had concluded."
+  ],
+  "analyzedAt": "2026-02-16T19:15:25.240Z"
+}

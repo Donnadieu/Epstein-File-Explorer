@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA00087570.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-02",
+  "summary": "This document is an email chain between prosecutors and defense attorneys regarding the preparation for trial in United States v. Ghislaine Maxwell. It focuses on obtaining bank account documents from JPMorgan Chase (JPMC) and securing a trial witness, Patrick McLugh, from the bank. The emails discuss Bates ranges for specific account opening documents related to Ghislaine Maxwell and other accounts.",
+  "persons": [
+    {
+      "name": "Patrick McLugh",
+      "role": "JPMC employee and prospective trial witness",
+      "category": "witness",
+      "context": "A JPMC employee who will be testifying at the Ghislaine Maxwell trial; the email requests pulling specific Bates ranges from JPMC subpoena productions for his preparation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Allison Stoddart",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "A defense attorney from WilmerHale corresponding with prosecutors about obtaining JPMC documents and arranging for a witness; she sends Bates ranges for account opening documents.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Attorney at WilmerHale",
+      "category": "legal",
+      "context": "A defense attorney from WilmerHale copied on emails regarding trial preparation and witness coordination.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case United States v. Ghislaine Maxwell; her bank account onboarding documents are specifically referenced.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Maurene",
+      "role": "Prosecutor or legal staff",
+      "category": "legal",
+      "context": "Addressed in an email regarding obtaining a trial appearance subpoena for a JPMC witness; likely an Assistant United States Attorney.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lara",
+      "role": "Prosecutor or legal staff",
+      "category": "legal",
+      "context": "Addressed alongside Maurene in an email regarding a trial subpoena for a JPMC witness; likely an Assistant United States Attorney.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "legal colleague",
+      "description": "Both are attorneys at WilmerHale law firm, copied on emails coordinating with prosecutors on trial preparation.",
+      "strength": 4
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Patrick McLugh",
+      "relationshipType": "legal-witness",
+      "description": "Stoddart is involved in coordinating the testimony of JPMC witness Patrick McLugh for the Ghislaine Maxwell trial.",
+      "strength": 3
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Stoddart, as an attorney at WilmerHale, is part of the legal defense team for Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Maurene",
+      "person2": "Lara",
+      "relationshipType": "legal colleague",
+      "description": "Both are addressed together as prosecutors or legal staff from the U.S. Attorney's Office for the Southern District of New York.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-02",
+      "title": "Request for JPMC Document Preparation",
+      "description": "An email requests pulling specific Bates ranges from JPMC subpoena productions for witness Patrick McLugh in preparation for the Ghislaine Maxwell trial.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Patrick McLugh",
+        "Allison Stoddart"
+      ]
+    },
+    {
+      "date": "2021-10-27",
+      "title": "Provision of Account Document Bates Ranges",
+      "description": "Allison Stoddart provides Bates ranges for account opening documents related to three specific accounts and Ghislaine Maxwell's onboarding documents.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "title": "Discussion of Trial Witness Subpoena",
+      "description": "Email exchange regarding JPMorgan identifying a witness for trial and the need for a trial appearance subpoena.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Maurene",
+        "Lara"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "7 World Trade Center, 250 Greenwich Street, New York, NY 10007",
+    "One Saint Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "JPMorgan Chase (JPMC) is involved in the Ghislaine Maxwell case, with employee Patrick McLugh scheduled to testify as a witness.",
+    "Specific Bates ranges for bank account documents (JPM-SDNY-00001896 to JPM-SDNY-00001943, etc.) related to three accounts and Ghislaine Maxwell's onboarding are identified for trial preparation.",
+    "The correspondence shows coordination between the defense team (WilmerHale) and prosecutors regarding document production and witness testimony.",
+    "The case referenced is United States v. Ghislaine Maxwell, 20 Cr. 330 (AJN), indicating ongoing trial preparations in late 2021.",
+    "The emails highlight the use of subpoenas to obtain financial records from JPMC for the trial."
+  ],
+  "analyzedAt": "2026-02-16T20:02:22.597Z"
+}

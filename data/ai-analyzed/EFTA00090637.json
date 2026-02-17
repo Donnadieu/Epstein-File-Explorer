@@ -1,0 +1,53 @@
+{
+  "fileName": "EFTA00090637.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-12-05",
+  "summary": "This document is an email chain regarding a query of the FinCen database for Suspicious Activity Reports (SARs) and Currency Transaction Reports (CTRs) filed by JP Morgan Chase referencing Jeffrey Epstein's Social Security Number. The results include 14 SARs (8 with attachments) and 89 CTRs, which were copied to a DVD for pickup.",
+  "persons": [
+    {
+      "name": "Andrew",
+      "role": "Recipient of investigation materials",
+      "category": "law enforcement",
+      "context": "The email author states they will leave a DVD containing the financial records for 'Andrew' to pick up.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of financial investigation",
+      "category": "key figure",
+      "context": "The query was performed utilizing his Social Security Number to locate SARs and CTRs filed by JP Morgan Chase.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Andrew",
+      "relationshipType": "investigation subject-investigator",
+      "description": "Andrew is the intended recipient of financial records pertaining to Epstein, indicating Andrew is involved in investigating Epstein's financial activities.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-05",
+      "title": "FinCen Database Query Results Provided",
+      "description": "An individual queries the FinCen database and finds 14 SARs and 89 CTRs filed by JP Morgan Chase referencing Jeffrey Epstein's SSN. The results are compiled onto a DVD for pickup.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Andrew"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A query of the FinCen database using Jeffrey Epstein's SSN yielded 14 Suspicious Activity Reports (SARs) and 89 Currency Transaction Reports (CTRs) filed by JP Morgan Chase.",
+    "Eight of the 14 SARs had attachments.",
+    "The compiled financial records were transferred to a DVD for an individual named Andrew to pick up, indicating an active financial investigation into Epstein.",
+    "The correspondence is dated December 5, 2019, which is after Epstein's death, suggesting ongoing posthumous investigation of his financial activities."
+  ],
+  "analyzedAt": "2026-02-17T00:14:33.206Z"
+}

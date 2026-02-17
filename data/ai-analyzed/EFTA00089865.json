@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA00089865.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-12-19",
+  "summary": "This document is a series of emails from December 2019 discussing the missing video surveillance footage from outside the Metropolitan Correctional Center (MCC) cell shared by Nicholas Tartaglione and Jeffrey Epstein during Epstein's alleged first suicide attempt on July 23, 2019. It reveals internal confusion and investigation within the Bureau of Prisons about the preservation and corruption of the footage, and includes a preservation request from Tartaglione's attorney.",
+  "persons": [
+    {
+      "name": "Adam Johnson",
+      "role": "Deputy Regional Counsel / Supervisory Staff Attorney",
+      "category": "legal",
+      "context": "Bureau of Prisons attorney coordinating the search for missing video footage from Epstein's cell and communicating with AUSAs and MCC staff.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Inmate who shared a cell (Z06-215) with Jeffrey Epstein at MCC New York at the time of Epstein's alleged first suicide attempt in July 2019.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The high-profile inmate whose alleged first suicide attempt in his MCC cell on July 23, 2019, is the subject of the missing video footage investigation.",
+      "mentionCount": 8
+    },
+    {
+      "name": "America Pina",
+      "role": "Special Investigative Technician",
+      "category": "law enforcement",
+      "context": "MCC New York staff member who confirmed on July 25, 2019, that she had preserved the video footage from the SHU tier containing cell Z06-215 for the requested time period.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Aida Leisenring",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Barket, Epstein, Kearon, Aldea & LoTurco LLP representing Nicholas Tartaglione; she formally requested preservation of the video surveillance footage on July 25, 2019.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Lee Plourde",
+      "role": "BOP Staff",
+      "category": "staff",
+      "context": "Bureau of Prisons staff member included on email chains about the missing Tartaglione/Epstein cell video.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Cody Kizzier",
+      "role": "BOP Staff",
+      "category": "staff",
+      "context": "Bureau of Prisons staff member included on email chains about the missing Tartaglione/Epstein cell video.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Nicole McFarland",
+      "role": "BOP Executive Staff",
+      "category": "staff",
+      "context": "Bureau of Prisons executive staff member included on email chains about the missing Tartaglione/Epstein cell video.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "cellmate",
+      "description": "They shared cell Z06-215 at the Metropolitan Correctional Center in New York at the time of Epstein's alleged suicide attempt in July 2019.",
+      "strength": 5
+    },
+    {
+      "person1": "Aida Leisenring",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Leisenring is an attorney representing inmate Nicholas Tartaglione, as evidenced by her preservation request for video evidence related to his cell.",
+      "strength": 5
+    },
+    {
+      "person1": "Adam Johnson",
+      "person2": "America Pina",
+      "relationshipType": "professional",
+      "description": "Johnson, a BOP attorney, issued a preservation order to Pina, an MCC investigative technician, who confirmed the video was preserved.",
+      "strength": 4
+    },
+    {
+      "person1": "Adam Johnson",
+      "person2": "Aida Leisenring",
+      "relationshipType": "professional",
+      "description": "Johnson accommodated Leisenring's visit with her client Tartaglione and forwarded her preservation request to MCC staff.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's First Alleged Suicide Attempt",
+      "description": "Jeffrey Epstein's alleged first suicide attempt in his cell (Z06-215) at the Metropolitan Correctional Center, which he shared with Nicholas Tartaglione.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-07-25",
+      "title": "Preservation Request for Cell Video",
+      "description": "Attorney Aida Leisenring formally requests preservation of video surveillance from outside cell Z06-215 from July 22, 11pm to July 23, 4am. America Pina confirms preservation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Aida Leisenring",
+        "Adam Johnson",
+        "America Pina",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-12-18",
+      "title": "Court Hearing on Missing Video",
+      "description": "A court hearing was held where the U.S. Attorney's Office (USAO) advised the court that MCC did not preserve the video from Epstein's first suicide attempt, contradicting earlier SIS advice.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-19",
+      "title": "Internal BOP Investigation into Missing Video",
+      "description": "Adam Johnson leads an internal BOP email investigation after a news article reveals the discrepancy about the missing video. He learns the FBI had the DVR, which was corrupted for the July 23 footage.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Adam Johnson",
+        "Cody Kizzier",
+        "Nicole McFarland",
+        "Lee Plourde"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, 150 Park Row, New York, NY 10007",
+    "Cell Z06-215, SHU tier, MCC New York",
+    "U.S. Customs House, Philadelphia, PA 19106 (Northeast Regional Office)",
+    "Garden City, NY 11530 (Barket, Epstein, Kearon, Aldea & LoTurco LLP)"
+  ],
+  "keyFacts": [
+    "Video surveillance footage from outside the MCC cell shared by Jeffrey Epstein and Nicholas Tartaglione during Epstein's alleged first suicide attempt on July 23, 2019, was reported missing and possibly corrupted.",
+    "A preservation request for the footage was made by Tartaglione's attorney on July 25, 2019, and a BOP technician confirmed it was done, creating a contradiction when the USAO later told the court it was not preserved.",
+    "The FBI had possession of the DVR containing the footage (pulled for the August 10 incident, Epstein's death) and reported the portion covering July 23 was corrupted.",
+    "The emails show internal BOP confusion and an active effort in December 2019 to locate the preserved copy and the 'orange rope' from the July 23 incident."
+  ],
+  "analyzedAt": "2026-02-16T23:26:45.978Z"
+}

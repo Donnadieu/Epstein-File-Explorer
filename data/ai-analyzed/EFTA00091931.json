@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00091931.pdf",
+  "dataSet": "9",
+  "documentType": "legal response to subpoena",
+  "dateOriginal": "2019-12-30",
+  "summary": "This document is Google LLC's formal response to a Grand Jury Subpoena dated October 23, 2019, regarding an investigation. It includes a cover letter detailing the scope of their search and production, a Certificate of Authenticity for the provided records, and an attachment listing hash values for the produced files. The response indicates Google provided data for specified accounts but objected to broader requests without a court order.",
+  "persons": [
+    {
+      "name": "Jeremy Paduano",
+      "role": "Google Legal Investigations Support / Records Custodian",
+      "category": "legal",
+      "context": "He is the Google representative who signed the response letter and the Certificate of Authenticity, certifying the authenticity of the records produced in response to the grand jury subpoena.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "The recipient of Google's response letter regarding the grand jury subpoena. The specific individual is not named.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeremy Paduano",
+      "person2": "Assistant U.S. Attorney",
+      "relationshipType": "legal correspondence",
+      "description": "Paduano, on behalf of Google, is formally responding to the Assistant U.S. Attorney's office regarding a grand jury subpoena.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-23",
+      "title": "Grand Jury Subpoena Issued",
+      "description": "A federal grand jury issued a subpoena to Google (Ref. No. 3011708) requesting documents and information.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant U.S. Attorney"
+      ]
+    },
+    {
+      "date": "2019-12-30",
+      "title": "Google's Response to Subpoena",
+      "description": "Google LLC submitted its formal response, including a cover letter, Certificate of Authenticity, and hash values for produced files, in compliance with the grand jury subpoena.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeremy Paduano",
+        "Assistant U.S. Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Mountain View, California"
+  ],
+  "keyFacts": [
+    "Google responded to a federal grand jury subpoena (Ref. No. 3011708) dated October 23, 2019, by producing data from specified account(s).",
+    "Google objected to producing data from accounts not explicitly identified in the subpoena, stating such a request would require a court order under 18 U.S.C. § 2703(d).",
+    "The response includes a Certificate of Authenticity signed by Jeremy Paduano, certifying the provided records are true copies of Google's automatically generated data.",
+    "Google indicated it found no records for the 'sign-in phone number(s)' requested, as the primary account identifier is an email address.",
+    "The document shows an active federal investigation was seeking digital evidence from Google accounts as of late 2019."
+  ],
+  "analyzedAt": "2026-02-17T01:30:27.965Z"
+}

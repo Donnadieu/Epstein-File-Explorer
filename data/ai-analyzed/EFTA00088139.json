@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00088139.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-08-23",
+  "summary": "This is an email forwarding information from a Winston & Strawn legal submission regarding Jeffrey Epstein. It references an assistant who rented a car for a victim and coordinated the delivery of roses to a victim at a high school event, citing specific messages from 'Epstein Records'.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central figure in the case; the document references records and actions related to him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Recipient or involved party in the correspondence from the Southern District of New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "legal",
+      "description": "The AUSA is part of the office prosecuting Epstein, as indicated by the document's metadata.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Delivery of roses to victim",
+      "description": "An assistant for Epstein coordinated the delivery of roses to a victim at a high school event, as detailed in a message from 'Epstein Records'.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unnamed assistant",
+        "Unnamed victim"
+      ]
+    },
+    {
+      "date": "February 2",
+      "title": "Car rental contract expiration",
+      "description": "A car rental contract for a Blue Dodge Neon, rented by an Epstein assistant for a victim, was set to expire on February 2nd.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unnamed assistant",
+        "Unnamed victim"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "High School for [redacted]"
+  ],
+  "keyFacts": [
+    "An assistant for Jeffrey Epstein rented a car for one of Epstein's victims.",
+    "The same assistant coordinated the delivery of roses to a victim at a high school event, with specific instructions for timing and delivery.",
+    "The document cites 'Epstein Records' from a public records request to the Office of the State Attorney.",
+    "The information was part of a legal submission by the law firm Winston & Strawn."
+  ],
+  "analyzedAt": "2026-02-16T20:35:16.252Z"
+}

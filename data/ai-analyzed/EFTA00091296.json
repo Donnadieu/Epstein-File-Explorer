@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00091296.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-15",
+  "summary": "An email from an Assistant United States Attorney in the Southern District of New York to an unspecified recipient, requesting access to grand jury materials from a state court in the 15th Judicial Circuit that may contain evidence relevant to the federal investigation of Jeffrey Epstein and prosecution of Ghislaine Maxwell. The email seeks guidance on the procedure for obtaining transcripts and records.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of federal investigation",
+      "category": "key figure",
+      "context": "The email states the federal prosecutors are handling an ongoing investigation regarding Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of federal prosecution",
+      "category": "key figure",
+      "context": "The email states the federal prosecutors are handling the prosecution of Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Federal prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, who is one of the federal prosecutors handling the Epstein investigation and Maxwell prosecution from the Southern District of New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Federal prosecutor",
+      "category": "legal",
+      "context": "A colleague of the sender, copied on the email, also handling the Epstein/Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Federal prosecutor",
+      "category": "legal",
+      "context": "A second colleague of the sender, copied on the email, also handling the Epstein/Maxwell case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are subjects of the same federal investigation and prosecution, as stated by the prosecutors.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "The AUSA is a federal prosecutor handling the investigation regarding Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "The AUSA is a federal prosecutor handling the prosecution of Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "AUSA",
+      "relationshipType": "professional colleague",
+      "description": "They are colleagues working together on the Epstein/Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "AUSA",
+      "relationshipType": "professional colleague",
+      "description": "They are colleagues working together on the Epstein/Maxwell case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-15",
+      "title": "Federal Prosecutors Request Grand Jury Materials",
+      "description": "Federal prosecutors from the SDNY email an official to request access to grand jury materials from a state court that may contain evidence relevant to the Epstein investigation and Maxwell prosecution.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "AUSA",
+        "AUSA",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, NY 10007",
+    "15th Judicial Circuit (state court location, unspecified)"
+  ],
+  "keyFacts": [
+    "Federal prosecutors from the SDNY were actively investigating Jeffrey Epstein and prosecuting Ghislaine Maxwell as of October 2020.",
+    "Prosecutors believed evidence, including witness testimony, relevant to their federal investigation had been presented to a state grand jury in the 15th Judicial Circuit.",
+    "The email reveals a procedural effort by federal authorities to obtain state grand jury materials, indicating a multi-jurisdictional aspect to the Epstein/Maxwell case.",
+    "The request suggests the existence of prior grand jury proceedings related to Jeffrey Epstein at the state level.",
+    "The prosecutors reference a standard procedure of obtaining federal unsealing orders for state court materials in New York, seeking to apply it in this different jurisdiction."
+  ],
+  "analyzedAt": "2026-02-17T00:51:55.225Z"
+}

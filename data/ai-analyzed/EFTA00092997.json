@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA00092997.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "This is an email chain from August 11, 2019, discussing a phone call made by Jeffrey Epstein on the night of Friday, August 9, 2019, while he was in custody at the Metropolitan Correctional Center. It reveals that Epstein was never in general population, had a lengthy legal visit that day, and that the warden provided new information about the call's duration to the OIG.",
+  "persons": [
+    {
+      "name": "Nick",
+      "role": "Unidentified individual",
+      "category": "other",
+      "context": "Mentioned as being free to attend a meeting with the warden the following day (August 12, 2019).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The subject of the email discussion; was in custody, had a legal visit and made a phone call on the night of August 9, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Warden",
+      "role": "Prison Warden",
+      "category": "law enforcement",
+      "context": "The warden of the Metropolitan Correctional Center who briefed the OIG Special Agent in Charge about the duration of Epstein's phone call.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "The author of the initial email, relaying information from the warden about Epstein's phone call and custody conditions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Warden",
+      "person2": "Special Agent",
+      "relationshipType": "professional",
+      "description": "The warden briefed the OIG Special Agent in Charge (SAC) about information regarding Jeffrey Epstein's phone call.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The Special Agent is investigating or monitoring the circumstances surrounding Epstein's custody, including his phone call.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The warden is responsible for the facility where Epstein is held and provided information about his activities.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Legal Visit and Phone Call",
+      "description": "Jeffrey Epstein had a legal visit lasting from approximately 8:00 AM until almost 7:00 PM. Later, at 7:17 PM, he made a phone call that lasted 19 minutes.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Email Discussion of Epstein's Activities",
+      "description": "An OIG Special Agent emails colleagues about new information regarding Epstein's 19-minute phone call on August 9, and a request is made to set up a meeting with the warden for the following day.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent",
+        "Nick",
+        "Warden"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (implied location of Epstein's custody)",
+    "1 Battery Park Plaza, 29th floor, New York, NY 10004 (Office of the Inspector General address)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein made a 19-minute phone call at 7:17 PM on Friday, August 9, 2019, while in federal custody.",
+    "Epstein was never placed in general population at the Metropolitan Correctional Center, which meant he did not require an approved call list.",
+    "On the same day as the phone call, Epstein had a supervised legal visit that lasted nearly 11 hours (from ~8:00 AM to almost 7:00 PM).",
+    "The email correspondence shows internal government communication and planning for a meeting regarding Epstein's custody circumstances just days before his death."
+  ],
+  "analyzedAt": "2026-02-17T13:48:54.174Z"
+}

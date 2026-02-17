@@ -1,0 +1,239 @@
+{
+  "fileName": "EFTA00091910.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-02-05",
+  "summary": "This is an FBI 302 form documenting an interview with a witness, referred to as [WITNESS], conducted in Stockholm, Sweden on February 5, 2020. The witness provides detailed information about interactions with Jeffrey Epstein and Ghislaine Maxwell, including recruitment attempts targeting the witness's daughter, financial offers, and travel. The witness also discusses perceptions of Epstein's social circle and her eventual decision to cut off contact.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure in the investigation. The witness describes him as a 'godfather figure' who, with Ghislaine Maxwell, attempted to recruit the witness's daughter, offered to pay for her education, and invited her to travel and live with them.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "key figure",
+      "context": "Actively involved with Epstein in contacting the witness and her daughter. Described by the witness as 'a wolf' who 'picks the girls,' and who presented herself as a 'big sister' or mother-like figure to facilitate access.",
+      "mentionCount": 25
+    },
+    {
+      "name": "[WITNESS]",
+      "role": "Witness / Mother of potential victim",
+      "category": "witness",
+      "context": "The individual being interviewed. She is the mother of a girl (her daughter) whom Epstein and Maxwell repeatedly attempted to recruit. She details their methods, her initial trust, and her eventual decision to cut off contact and warn others.",
+      "mentionCount": 50
+    },
+    {
+      "name": "[WITNESS'S DAUGHTER]",
+      "role": "Potential victim / Target",
+      "category": "victim",
+      "context": "The daughter of the witness. Epstein and Maxwell repeatedly attempted to have her move in with them, travel with them, and attend Juilliard, with Epstein offering to pay. The witness states her daughter does not discuss the case.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Visitor to Epstein's house",
+      "category": "political",
+      "context": "Mentioned by the witness as one of the famous people who visited Epstein's house in Palm Beach, which contributed to her initial perception that Epstein was not a criminal.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Prince",
+      "role": "Visitor to Epstein's house",
+      "category": "other",
+      "context": "Mentioned by the witness as one of the famous people (likely Prince Andrew) who visited Epstein's house in Palm Beach.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present for the witness interview in Stockholm, indicating the interview was part of a U.S. criminal investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "Law Enforcement Interviewer",
+      "category": "law enforcement",
+      "context": "Present for and presumably conducting the witness interview in Stockholm.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Swedish Police Detective Inspector",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Two Swedish police officials were present for the interview conducted in Stockholm.",
+      "mentionCount": 2
+    },
+    {
+      "name": "NYPD Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Mentioned as being present for the interview, indicating inter-agency cooperation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Driver",
+      "role": "Employee of Epstein/Maxwell",
+      "category": "staff",
+      "context": "An older, polite man who would pick up the witness's daughter from her home to bring her to Epstein's house. He reassured her about safety when traveling to New Mexico.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Housekeeper",
+      "role": "Employee of Epstein",
+      "category": "staff",
+      "context": "Would answer the phone at Epstein's house and reassure the witness that everything was okay when she called to check on her daughter.",
+      "mentionCount": 3
+    },
+    {
+      "name": "British Journalist",
+      "role": "Reporter",
+      "category": "other",
+      "context": "Contacted the witness approximately seven years prior to the interview, leading her to move to get away from the inquiries.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lawyer",
+      "role": "Epstein's Lawyer",
+      "category": "legal",
+      "context": "The witness called Epstein's office after moving to New York and spoke with his lawyer, instructing him to tell Epstein not to contact her daughter anymore and threatening a lawsuit.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Worked together to recruit the witness's daughter, with Maxwell acting as the primary contact and facilitator while Epstein provided financial incentives and the overall direction.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "[WITNESS'S DAUGHTER]",
+      "relationshipType": "recruiter-target",
+      "description": "Maxwell repeatedly contacted the daughter and her mother, presenting herself as a 'big sister' or mother-like figure, offering educational support and travel to gain trust and access.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[WITNESS'S DAUGHTER]",
+      "relationshipType": "recruiter-target",
+      "description": "Epstein was presented as a 'godfather figure,' offered to pay for Juilliard, and directly asked the daughter to travel and live with him and Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "[WITNESS]",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Had repeated phone and in-person contact over several years regarding her daughter. The witness initially trusted Maxwell but later came to distrust and blame her.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Donald Trump",
+      "relationshipType": "social",
+      "description": "The witness states Trump visited Epstein's house in Palm Beach, which she cites as a reason she initially believed Epstein was not a criminal.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Prince",
+      "relationshipType": "social",
+      "description": "The witness states a prince visited Epstein's house in Palm Beach, contributing to her perception of his legitimacy.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Driver",
+      "relationshipType": "employer-employee",
+      "description": "Maxwell would have a driver pick up the witness's daughter from her home to bring her to Epstein's house.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1995-1996",
+      "title": "Initial Contact by Maxwell",
+      "description": "Ghislaine Maxwell first contacted the witness, asking about her daughter and stating she wanted to take the daughter under her wing.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "[WITNESS]",
+        "[WITNESS'S DAUGHTER]"
+      ]
+    },
+    {
+      "date": "1996-1997",
+      "title": "Travel to New Mexico",
+      "description": "The witness's daughter, then about 15 years old, traveled with Epstein and Maxwell on his private jet from West Palm Beach to New Mexico for a weekend after initial refusals.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "[WITNESS'S DAUGHTER]",
+        "Driver"
+      ]
+    },
+    {
+      "date": "1997",
+      "title": "Move to New York",
+      "description": "The witness and her daughter moved from West Palm Beach to New York in the summer of 1997. Shortly after, the witness called Epstein's lawyer to demand no further contact with her daughter.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[WITNESS]",
+        "[WITNESS'S DAUGHTER]",
+        "Jeffrey Epstein",
+        "Lawyer"
+      ]
+    },
+    {
+      "date": "2013",
+      "title": "Warning at a Party",
+      "description": "At a party, the witness overheard a young woman planning to meet Epstein and warned her not to go.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "[WITNESS]"
+      ]
+    },
+    {
+      "date": "2020-02-05",
+      "title": "FBI Interview in Stockholm",
+      "description": "The witness was interviewed by the FBI, AUSA, and Swedish police in Stockholm, Sweden, providing detailed allegations about Epstein and Maxwell's recruitment tactics.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "[WITNESS]",
+        "FBI Special Agent",
+        "Assistant United States Attorney",
+        "Swedish Police Detective Inspector",
+        "NYPD Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "Stockholm, Sweden",
+    "Palm Beach, Florida",
+    "West Palm Beach, Florida",
+    "New York, New York",
+    "New Mexico",
+    "Los Angeles, California",
+    "Phoenix, Arizona"
+  ],
+  "keyFacts": [
+    "The witness describes a coordinated effort by Epstein and Maxwell to recruit her daughter, using offers of paid education at Juilliard, travel, and a place to live as incentives.",
+    "The witness states that seeing famous people like Donald Trump and a prince at Epstein's house initially made her believe he could not be a criminal, indicating how Epstein used his social connections to create a facade of legitimacy.",
+    "The witness characterizes Ghislaine Maxwell as 'a wolf' who 'picks the girls,' placing primary blame on her for the recruitment of young women.",
+    "The witness is willing to testify in New York if charges are brought against Ghislaine Maxwell.",
+    "The document reveals the use of staff (driver, housekeeper) to facilitate contact with and transport of the targeted girl, and to reassure concerned parents."
+  ],
+  "analyzedAt": "2026-02-17T01:28:33.133Z"
+}

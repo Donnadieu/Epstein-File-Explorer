@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00089238.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-26",
+  "summary": "This is an email from attorney Bruce Barket to several recipients, including a Bureau of Prisons email address, regarding a client named Mr. Tartaglione. Barket seeks to discuss conditions under which Tartaglione would withdraw his request to be moved from the Metropolitan Correctional Center (MCC).",
+  "persons": [
+    {
+      "name": "Bruce Barket",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney sending an email regarding his client, Mr. Tartaglione, and his conditions at MCC. He is a partner at Barket Epstein Kearon Aldea & LoTurco, LLP.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jason Swergold",
+      "role": "Recipient (likely legal or government official)",
+      "category": "legal",
+      "context": "Primary recipient of the email, addressed with a SANYS suffix suggesting a legal or state-affiliated role.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adam Johnson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Named as a recipient of the email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stephanie Scannell",
+      "role": "Recipient (Bureau of Prisons)",
+      "category": "legal",
+      "context": "Recipient with an email address at bop.gov, indicating she is a Bureau of Prisons employee.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aida Leisenring",
+      "role": "CC'd Recipient (Legal Staff)",
+      "category": "legal",
+      "context": "CC'd on the email, with an email address at the law firm barketepstein.com.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mr. Tartaglione",
+      "role": "Client/Inmate",
+      "category": "key figure",
+      "context": "The client of Bruce Barket who has requested to be moved from the Metropolitan Correctional Center (MCC). The email seeks to discuss conditions for withdrawing that request.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bruce Barket",
+      "person2": "Mr. Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Bruce Barket is the attorney representing Mr. Tartaglione regarding his incarceration conditions at MCC.",
+      "strength": 5
+    },
+    {
+      "person1": "Bruce Barket",
+      "person2": "Aida Leisenring",
+      "relationshipType": "colleague",
+      "description": "Aida Leisenring is CC'd on the email from Bruce Barket and has an email at his law firm's domain.",
+      "strength": 2
+    },
+    {
+      "person1": "Bruce Barket",
+      "person2": "Stephanie Scannell",
+      "relationshipType": "professional correspondence",
+      "description": "Barket is emailing Scannell, a Bureau of Prisons employee, regarding his client's incarceration.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-23",
+      "title": "Government's Letter to the Court",
+      "description": "The Government sent a letter to the Court, referenced as a prior event that this email is following up on.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-26",
+      "title": "Email Regarding Tartaglione's MCC Transfer Request",
+      "description": "Bruce Barket sends an email seeking to discuss conditions under which his client, Mr. Tartaglione, would withdraw his request to be moved from MCC.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Bruce Barket",
+        "Mr. Tartaglione",
+        "Jason Swergold",
+        "Adam Johnson",
+        "Stephanie Scannell",
+        "Aida Leisenring"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Garden City, NY 11530 (Law firm address: 666 Old Country Road, Ste. 700)"
+  ],
+  "keyFacts": [
+    "Attorney Bruce Barket represents an inmate named Mr. Tartaglione who is held at the Metropolitan Correctional Center (MCC).",
+    "Tartaglione has made a request to be moved from MCC, and Barket is seeking to negotiate conditions under which that request would be withdrawn.",
+    "The email is addressed to a Bureau of Prisons employee (Stephanie Scannell) and other parties, indicating official discussions about inmate conditions.",
+    "The law firm involved is 'Barket Epstein Kearon Aldea & LoTurco, LLP', which includes 'Epstein' in its name, linking it to the broader Epstein case context.",
+    "The communication is marked as potentially confidential attorney-client privileged information."
+  ],
+  "analyzedAt": "2026-02-16T21:20:13.882Z"
+}

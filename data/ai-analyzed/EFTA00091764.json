@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00091764.pdf",
+  "dataSet": "9",
+  "documentType": "search warrant",
+  "dateOriginal": "2020-06-29",
+  "summary": "This is a sealed federal court warrant and order authorizing the FBI to obtain prospective and historical location information, toll records, and pen register data for a cellphone subscribed to 'G Max' (believed to be Ghislaine Maxwell). The document states the investigation is targeting Ghislaine Maxwell and others for suspected violations including conspiracy, sex trafficking, and perjury, and seeks to prevent notification to avoid flight or witness intimidation.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Target of investigation",
+      "category": "key figure",
+      "context": "Named as the subject of an ongoing FBI investigation for suspected violations of federal statutes including conspiracy, sex trafficking of minors, and perjury.",
+      "mentionCount": 1
+    },
+    {
+      "name": "G Max",
+      "role": "Subscriber of target cellphone",
+      "category": "key figure",
+      "context": "The name under which the target cellphone is subscribed; strongly implied to be Ghislaine Maxwell based on the context of the investigation.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "G Max",
+      "relationshipType": "alias",
+      "description": "The cellphone targeted by the warrant is subscribed in the name 'G Max', which the investigation context strongly suggests is an alias or identifier for Ghislaine Maxwell.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-29",
+      "title": "Warrant Issued for Cellphone Tracking",
+      "description": "A U.S. Magistrate Judge issues a sealed warrant authorizing the FBI to track a cellphone believed to be used by Ghislaine Maxwell, including real-time location, historical data, and call records.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "G Max"
+      ]
+    },
+    {
+      "date": "2020-06-01",
+      "title": "Start Date for Historical Data Collection",
+      "description": "The warrant authorizes collection of historical cell site location information and toll records from this date forward, indicating the investigation's active timeline.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "The FBI obtained a court order in June 2020 to conduct extensive electronic surveillance of a cellphone subscribed to 'G Max', believed to be used by Ghislaine Maxwell.",
+    "The investigation targeted Ghislaine Maxwell and others for suspected violations of 18 U.S.C. §§ 371 (conspiracy), 2422 (coercion/enticement), 2423(a) (transportation of minors), and 1623 (perjury).",
+    "The warrant was sealed and included a non-disclosure order to the service provider (AT&T) for one year to prevent flight from prosecution or witness intimidation.",
+    "The surveillance authorized included 45 days of prospective real-time GPS/cell site location tracking, historical data back to June 1, 2020, and a pen register/trap and trace for all call metadata.",
+    "The document reveals the active, covert nature of the investigation into Maxwell approximately one year before her arrest in July 2021."
+  ],
+  "analyzedAt": "2026-02-17T01:20:05.577Z"
+}

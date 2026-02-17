@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA00091240.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-15",
+  "summary": "This FBI 302 report details the arrest and transport of Jeffrey E. Epstein on July 6, 2019, from Teterboro Airport to 26 Federal Plaza in Manhattan, and his subsequent transport to court on July 8, 2019. It documents the agents' interactions with Epstein regarding his medical and psychological state, his treatment during custody, and his and his attorney's appreciation for the professional handling.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Defendant / Case Subject",
+      "category": "key figure",
+      "context": "The subject of the arrest and transport. He was questioned about medical/psychological needs and thoughts of self-harm, declined offers of food and coffee, and thanked agents for professional treatment.",
+      "mentionCount": 15
+    },
+    {
+      "name": "The Author",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The reporting agent who engaged Epstein in conversation, asked about medical/psychological issues, offered food and coffee, and coordinated the arrest and transport processes.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "The Author",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "law enforcement-detainee",
+      "description": "The author was the arresting/transporting agent responsible for Epstein's custody, safety, and processing.",
+      "strength": 4
+    },
+    {
+      "person1": "SA",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "law enforcement-detainee",
+      "description": "SA assisted in transporting and providing for Epstein during custody.",
+      "strength": 3
+    },
+    {
+      "person1": "SA",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "law enforcement-detainee",
+      "description": "SA assisted in transporting Epstein and was thanked by him for professional treatment.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Epstein's Attorney",
+      "relationshipType": "attorney-client",
+      "description": "Epstein spoke with counsel via a landline phone provided by agents, and the attorney later thanked the agents for their professional treatment of Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Arrest and Transport of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was arrested at Teterboro Airport in New Jersey and transported by FBI agents to 26 Federal Plaza in Manhattan for processing. He was questioned about medical/psychological needs and denied any thoughts of self-harm.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "The Author",
+        "SA",
+        "SA"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Processing at 26 Federal Plaza",
+      "description": "Epstein's arrest process was completed in the JABS room on the 27th floor of 26 Federal Plaza. Agents reiterated questions about self-harm and offered medical attention.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "The Author"
+      ]
+    },
+    {
+      "date": "2019-07-08",
+      "title": "Transport to SDNY Courthouse",
+      "description": "Epstein was transported from the MCC facility to the U.S. Courthouse (SDNY) at 500 Pearl Street. He declined offers of coffee or food, joked with agents, and thanked them for professional treatment.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "The Author",
+        "SA"
+      ]
+    }
+  ],
+  "locations": [
+    "Teterboro Airport, Teterboro, New Jersey",
+    "26 Federal Plaza, Manhattan, New York, NY",
+    "U.S. Bureau of Prisons, MCC facility (location implied, New York, NY)",
+    "U.S. Courthouse (SDNY), 500 Pearl Street, Manhattan, New York, NY"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was arrested on July 6, 2019, at Teterboro Airport in New Jersey.",
+    "During post-arrest transport and processing, Epstein was asked multiple times by FBI agents if he had any medical/psychological issues or thoughts of harming himself or others, to which he consistently answered 'No'.",
+    "Epstein was transported using two pairs of handcuffs joined together for comfort due to the lengthy travel time.",
+    "Epstein and one of his attorneys separately thanked the FBI agents for their professional treatment during the arrest and transport process.",
+    "This document is a supplemental FBI 302 report to the main arrest report dated July 29, 2019."
+  ],
+  "analyzedAt": "2026-02-17T00:45:38.791Z"
+}

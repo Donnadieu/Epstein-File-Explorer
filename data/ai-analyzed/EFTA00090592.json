@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00090592.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-04-23",
+  "summary": "This is an email forwarding FBI 302 documents (likely interview reports) related to the Epstein case from an FBI agent to a US Attorney's Office contractor. The email is part of a series (2 of 3) and includes multiple attachments of 302 documents.",
+  "persons": [
+    {
+      "name": "Contractor",
+      "role": "US Attorney's Office Contractor",
+      "category": "legal",
+      "context": "Recipient of the forwarded FBI 302 documents from the FBI agent.",
+      "mentionCount": 1
+    },
+    {
+      "name": "FBI",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Sender of the original email containing the FBI 302 documents to the US Attorney's Office.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "FBI",
+      "person2": "Contractor",
+      "relationshipType": "professional",
+      "description": "FBI agent sending investigative documents (302s) to a US Attorney's Office contractor, indicating a law enforcement-legal collaboration.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-22",
+      "title": "FBI Sends 302 Documents",
+      "description": "An FBI agent sends FBI 302 documents (likely interview reports) to a US Attorney's Office contractor as part of the Epstein case investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI",
+        "Contractor"
+      ]
+    },
+    {
+      "date": "2020-04-23",
+      "title": "Forwarding of FBI 302s",
+      "description": "The FBI 302 documents are forwarded in an email, indicating ongoing document sharing and review between law enforcement and the US Attorney's Office.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Contractor"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email forwarding FBI 302 documents (investigative reports) related to the Epstein case.",
+    "The email indicates collaboration between the FBI and the US Attorney's Office in New York (USANYS) in April 2020.",
+    "Multiple 302 document attachments are referenced, suggesting a substantial volume of investigative material was being shared.",
+    "The correspondence is part of a series (email 2 of 3), indicating organized document transmission."
+  ],
+  "analyzedAt": "2026-02-17T00:08:31.045Z"
+}

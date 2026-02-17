@@ -1,0 +1,150 @@
+{
+  "fileName": "EFTA00092277.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-21",
+  "summary": "This document is an email chain from August 2020 between attorneys Colleen Mullen and Teri Gibbs (representing a witness) and a government prosecutor (likely from the U.S. Attorney's Office for the Southern District of New York). The chain discusses scheduling an interview for a witness who worked for Ghislaine Maxwell and possesses documents, and includes earlier correspondence from 2019-2020 about a different client who witnessed Prince Andrew's interactions with Virginia Giuffre.",
+  "persons": [
+    {
+      "name": "Colleen Mullen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing a witness (referred to as 'Ms. [Redacted]') who worked for Ghislaine Maxwell and possesses documents. She is coordinating with government prosecutors to facilitate her client's cooperation.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Teri Gibbs",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney (also referred to as 'Ted Gibbs' in some emails) working with Colleen Mullen, corresponding with government prosecutors regarding witness interviews and information.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the criminal investigation. The witness represented by Mullen worked for her from 2003-2007 and possesses documents and email correspondence with her.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Mentioned as the individual for whom the witness worked 'by extension' through Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Subject of Witness Testimony",
+      "category": "key figure",
+      "context": "Mentioned in a separate 2019 email thread where Teri Gibbs offers a client who witnessed his interactions with Virginia Giuffre.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Virginia Giuffre",
+      "role": "Accuser",
+      "category": "victim",
+      "context": "Mentioned in the 2019 email as the individual with whom Prince Andrew's interactions were witnessed by a client of Teri Gibbs.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lisa Bloom",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Mentioned as being available with Teri Gibbs for a call regarding a witness related to Prince Andrew in December 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Colleen Mullen",
+      "person2": "Teri Gibbs",
+      "relationshipType": "legal colleague",
+      "description": "Attorneys working together to represent clients with information relevant to the Epstein/Maxwell investigations.",
+      "strength": 4
+    },
+    {
+      "person1": "Colleen Mullen",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client (indirect)",
+      "description": "Mullen represents a witness who was an employee of Ghislaine Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The witness worked for Maxwell and, by extension, for Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Prince Andrew",
+      "person2": "Virginia Giuffre",
+      "relationshipType": "subject of allegation",
+      "description": "A client of Teri Gibbs witnessed interactions between Prince Andrew and Virginia Giuffre.",
+      "strength": 3
+    },
+    {
+      "person1": "Teri Gibbs",
+      "person2": "Lisa Bloom",
+      "relationshipType": "legal colleague",
+      "description": "Mentioned as being available together for a call regarding a witness in the Prince Andrew matter.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-31",
+      "title": "Court Issues Protective Order",
+      "description": "A court issued a protective order and a memorandum & order granting a government motion, attached to the email.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-07-08 to 2020-08-21",
+      "title": "Email Negotiations for Witness Interview",
+      "description": "Extended email correspondence between attorneys Mullen/Gibbs and government prosecutors to schedule an interview with a witness who worked for Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Colleen Mullen",
+        "Teri Gibbs"
+      ]
+    },
+    {
+      "date": "2020-01-06 to 2020-01-29",
+      "title": "Sharing of Witness Employment Information",
+      "description": "Attorneys share a list of office numbers used by their client during her employment with Ghislaine Maxwell from 2003-2007.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Colleen Mullen",
+        "Teri Gibbs",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-12-19 to 2020-01-03",
+      "title": "Offer of Witness on Prince Andrew",
+      "description": "Attorney Teri Gibbs contacts government prosecutors offering a client who witnessed Prince Andrew's interactions with Virginia Giuffre, leading to scheduling discussions.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Teri Gibbs",
+        "Prince Andrew",
+        "Virginia Giuffre",
+        "Lisa Bloom"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A witness represented by attorneys Colleen Mullen and Teri Gibbs worked for Ghislaine Maxwell (and by extension, Jeffrey Epstein) from 2003 to 2007 and possesses documents and email correspondence with Maxwell.",
+    "The witness is willing to fully cooperate with the criminal investigation against Ghislaine Maxwell and is described as potentially 'a valuable witness.'",
+    "The witness's attorneys express deep concern for their client's personal safety and wish to maintain her anonymity during cooperation talks.",
+    "In a separate 2019 matter, attorney Teri Gibbs offered a different client who witnessed interactions between Prince Andrew and Virginia Giuffre.",
+    "The email chain includes attached court documents from July 2020 regarding a protective order in the Maxwell case."
+  ],
+  "analyzedAt": "2026-02-17T01:51:03.343Z"
+}

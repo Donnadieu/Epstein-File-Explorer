@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA00090668.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-05-24",
+  "summary": "This document is an email chain between Assistant U.S. Attorneys and Ghislaine Maxwell's defense attorney, Laura Menninger, regarding significant technical deficiencies in the government's production of discovery materials, specifically photographs and metadata from CDs recovered from Jeffrey Epstein's residence. The correspondence details problems with corrupt files, mismatched indices, and the defense's inability to properly review the evidence.",
+  "persons": [
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney for Ghislaine Maxwell",
+      "category": "legal",
+      "context": "Partner at Haddon, Morgan & Foreman, P.C. representing Ghislaine Maxwell; she is raising numerous technical issues with the government's discovery production, including corrupt files, mismatched metadata, and insufficient access to evidence for review.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Defense Attorney for Ghislaine Maxwell",
+      "category": "legal",
+      "context": "Copied on the email chain; appears to be part of Ghislaine Maxwell's defense team.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bobbi Sternheim",
+      "role": "Defense Attorney for Ghislaine Maxwell",
+      "category": "legal",
+      "context": "Copied on the email chain; appears to be part of Ghislaine Maxwell's defense team, with email address bcsternheim@mac.com.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The client of the defense attorneys; her ability to review discovery at the Metropolitan Detention Center (MDC) is impaired due to the technical issues described.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Co-conspirator",
+      "category": "key figure",
+      "context": "Mentioned as the source of the CDs recovered from his residence, which contain the photographs at the center of the discovery dispute.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Laura Menninger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Menninger is the defense attorney representing Maxwell in the criminal case, as evidenced by her advocacy on discovery issues impacting Maxwell's review.",
+      "strength": 5
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Jeff Pagliuca",
+      "relationshipType": "legal colleague",
+      "description": "Both are part of Ghislaine Maxwell's defense team, copied on the same correspondence regarding discovery deficiencies.",
+      "strength": 4
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Bobbi Sternheim",
+      "relationshipType": "legal colleague",
+      "description": "Both are part of Ghislaine Maxwell's defense team, copied on the same correspondence regarding discovery deficiencies.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The discovery materials (CDs with photographs) were recovered from Epstein's residence and are part of the evidence in Maxwell's case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-21",
+      "title": "Defense Raises Critical Discovery Deficiencies",
+      "description": "Laura Menninger sends a detailed email to the AUSA outlining numerous problems with the photo evidence discovery, including corrupt files, unreadable images, mismatched metadata, and insufficient access for the defense and client.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Laura Menninger",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-05-20",
+      "title": "Ongoing Discovery Dispute",
+      "description": "Email exchange continues regarding discrepancies between file counts in production (SDNY011) and the non-nude index, with the defense identifying mismatched hash values and requesting new indices.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Laura Menninger"
+      ]
+    },
+    {
+      "date": "2021-05-24",
+      "title": "Government Response on Discovery Discrepancy",
+      "description": "An AUSA responds to Laura Menninger, explaining that a discrepancy in file counts is due to 31 additional files (Excel and PDF) in the SDNY011 production not included in the non-nude index.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Laura Menninger"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's residence (source of recovered CDs)",
+    "Southern District of New York",
+    "St. Andrews Plaza, New York, NY 10007 (AUSA office)",
+    "Metropolitan Detention Center (MDC) (where Ghislaine Maxwell is held)",
+    "Denver, CO 80203 (Haddon, Morgan & Foreman, P.C. office)"
+  ],
+  "keyFacts": [
+    "The defense identified major technical issues with the government's production of photographs from CDs recovered from Jeffrey Epstein's residence, including corrupt files and mismatched metadata indices.",
+    "There was a discrepancy of 31 files between the SDNY011 production (40,567 files) and the non-nude index (40,536 entries), attributed to Excel and PDF files not included in the index.",
+    "The defense reported that hash values in the government's overlay file did not match the index, preventing proper correlation of metadata to produced native files.",
+    "Ghislaine Maxwell's ability to review discovery at the MDC was severely hampered, as many photo files were unreadable on her laptop and the load file format was problematic.",
+    "The defense challenged the 'highly confidential' designation of nude/partially-nude adult photos, noting they did not appear to constitute child pornography, and requested better access for review."
+  ],
+  "analyzedAt": "2026-02-17T00:16:55.685Z"
+}

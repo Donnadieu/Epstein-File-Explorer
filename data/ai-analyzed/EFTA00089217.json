@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00089217.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-15 to 2019-08-21",
+  "summary": "This document is a chain of emails from August 2019 between attorneys, primarily Parvin Moyne of Akin Gump and others, discussing scheduling a proffer meeting regarding JPMorgan Chase's production of documents related to Jeffrey Epstein's accounts. The emails detail plans for attorneys to present an overview of Epstein's relationship with the bank and highlight transactions of interest from their internal investigation.",
+  "persons": [
+    {
+      "name": "Parvin Moyne",
+      "role": "Attorney at Akin Gump Strauss Hauer & Feld representing JPMorgan Chase",
+      "category": "legal",
+      "context": "Primary correspondent organizing a proffer meeting to present information about Jeffrey Epstein's accounts and transactions at JPMorgan Chase to federal prosecutors.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Thomas Moyer",
+      "role": "Attorney (copied on emails)",
+      "category": "legal",
+      "context": "Copied on the email chain discussing the scheduling and format of the proffer meeting regarding Epstein's bank records.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client of JPMorgan Chase, subject of investigation",
+      "category": "key figure",
+      "context": "The subject of the bank's internal investigation and document production; the proffer concerns his relationship with the bank and transactions in his accounts.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Parvin Moyne",
+      "person2": "Thomas Moyer",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys involved in coordinating the proffer meeting regarding JPMorgan Chase's production of Epstein-related documents.",
+      "strength": 3
+    },
+    {
+      "person1": "Parvin Moyne",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal representation (indirect)",
+      "description": "Moyne, as an attorney for JPMorgan Chase, is involved in presenting information about Epstein's accounts and transactions to prosecutors.",
+      "strength": 2
+    },
+    {
+      "person1": "JPMorgan Chase",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "The bank had a relationship with Epstein, maintained accounts for him, and conducted an internal investigation into transactions in those accounts.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "Document Production Index Sent",
+      "description": "Parvin Moyne sends an index of JPMorgan Chase's document productions related to Jeffrey Epstein to federal prosecutors.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Parvin Moyne"
+      ]
+    },
+    {
+      "date": "2019-08-20",
+      "title": "Proffer Format Proposed",
+      "description": "Parvin Moyne outlines the proposed format for a proffer meeting: a 2-3 hour attorney presentation on Epstein's relationship with the bank, his accounts, transaction types, and notable transactions from their internal investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Parvin Moyne"
+      ]
+    },
+    {
+      "date": "2019-08-21",
+      "title": "Scheduling Coordination",
+      "description": "Email participants discuss and propose specific dates in early September (e.g., September 5, 6, 9) for the proffer meeting.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Parvin Moyne"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10036-6745 (Akin Gump office at One Bryant Park)",
+    "SDNY (Southern District of New York - implied jurisdiction)"
+  ],
+  "keyFacts": [
+    "JPMorgan Chase, represented by Akin Gump attorneys, was producing documents to federal prosecutors regarding Jeffrey Epstein's accounts in August 2019.",
+    "The bank's attorneys planned a detailed attorney proffer (presentation) to guide prosecutors through Epstein's relationship with the bank, account structures, and specific transactions flagged in their internal investigation.",
+    "The proffer was estimated to take 2-3 hours, followed by potential meetings with specific bank personnel to answer detailed questions.",
+    "The email chain shows active coordination in mid-to-late August 2019 to schedule this proffer for early September.",
+    "The correspondence confirms an ongoing investigation and document production from JPMorgan Chase to the SDNY regarding Epstein's financial activities."
+  ],
+  "analyzedAt": "2026-02-16T21:17:35.334Z"
+}

@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00090235.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-22",
+  "summary": "This is a court order from Judge Alison J. Nathan in the Ghislaine Maxwell criminal case, denying motions to quash a subpoena and ordering the Administrator of the Epstein Victims' Compensation Program to produce materials for court review. The order also directs the parties to negotiate a protective order.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case (20-CR-330) who issued a Rule 17(c)(3) subpoena to the Epstein Victims' Compensation Program.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the case who issued this order, denying motions to quash and setting deadlines for document production and protective order negotiation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Administrator Feldman",
+      "role": "Administrator of the Epstein Victims' Compensation Program",
+      "category": "legal",
+      "context": "Filed a motion to quash the defendant's subpoena and requested oral argument, which was denied by the court.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Administrator Feldman",
+      "relationshipType": "legal",
+      "description": "Maxwell issued a subpoena to the Epstein Victims' Compensation Program, which Feldman administers, leading Feldman to file a motion to quash that was denied.",
+      "strength": 3
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is presiding over Maxwell's criminal case and issued this order regarding subpoena procedures.",
+      "strength": 4
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Administrator Feldman",
+      "relationshipType": "legal",
+      "description": "Judge Nathan denied Feldman's motion to quash and request for oral argument, ordering Feldman to produce materials to the court.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-22",
+      "title": "Court Order on Subpoena Motions",
+      "description": "Judge Alison J. Nathan denied motions to quash Ghislaine Maxwell's subpoena to the Epstein Victims' Compensation Program and ordered document production.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Ghislaine Maxwell",
+        "Administrator Feldman"
+      ]
+    },
+    {
+      "date": "2021-11-24",
+      "title": "Deadline for Document Production and Protective Order",
+      "description": "The court set a deadline for the Administrator to produce subpoenaed materials and for the parties to submit a proposed protective order.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Administrator Feldman",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "United States District Court Southern District of New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "Judge Alison J. Nathan denied motions to quash Ghislaine Maxwell's subpoena for materials from the Epstein Victims' Compensation Program.",
+    "The Administrator of the program, Feldman, was ordered to produce responsive materials to the court by November 24, 2021.",
+    "The court indicated it would review the materials first and might allow party inspection under a protective order to prevent trial delay.",
+    "The parties were ordered to negotiate and submit a protective order proposal by the same deadline."
+  ],
+  "analyzedAt": "2026-02-16T23:44:37.034Z"
+}

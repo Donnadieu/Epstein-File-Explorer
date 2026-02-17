@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00087574.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-02",
+  "summary": "Email chain between prosecutors and defense attorneys regarding the identification and subpoena of a JPMorgan Chase (JPMC) witness for the Ghislaine Maxwell trial. The emails discuss Bates ranges for account opening documents related to Maxwell and other accounts, and coordination for witness testimony.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the criminal case United States v. Ghislaine Maxwell; mentioned in relation to JPMorgan account onboarding documents.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Allison Stoddart",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from WilmerHale corresponding with prosecutors about JPMorgan witness and document production for the Maxwell trial.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Prosecutor from the Southern District of New York copied on emails regarding JPMorgan witness and document subpoena.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Maurene",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Recipient of email from Allison Stoddart regarding providing a trial appearance subpoena to JPMorgan.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lara",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Recipient of email from Allison Stoddart regarding providing a trial appearance subpoena to JPMorgan.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "legal counterpart",
+      "description": "Communicating and coordinating on legal matters related to the Ghislaine Maxwell trial, specifically regarding JPMorgan witness and document production.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Allison Stoddart",
+      "relationshipType": "attorney-client",
+      "description": "Allison Stoddart, as part of the defense team, is working on document production and witness coordination for Maxwell's trial.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-02",
+      "title": "Email coordination for JPMorgan witness",
+      "description": "Final email confirming Bates ranges for JPMorgan account documents have been saved for a witness who will testify.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Anjan Sahni"
+      ]
+    },
+    {
+      "date": "2021-10-27",
+      "title": "Call scheduling for witness discussion",
+      "description": "Prosecutor proposes a call for 3 p.m. to discuss trial witness topic with defense attorney Allison Stoddart.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Anjan Sahni"
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "title": "Subpoena discussion for JPMorgan witness",
+      "description": "Email exchange regarding providing a broadly worded subpoena to JPMorgan for a trial witness.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Maurene",
+        "Lara",
+        "Anjan Sahni"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10007",
+    "Southern District of New York",
+    "One Saint Andrew's Plaza"
+  ],
+  "keyFacts": [
+    "A JPMorgan Chase (JPMC) employee is being prepared as a witness for the Ghislaine Maxwell trial.",
+    "Specific Bates ranges for account opening documents related to three account numbers and Ghislaine Maxwell's onboarding documents were identified and provided.",
+    "The correspondence shows coordination between defense attorneys (WilmerHale) and prosecutors (Southern District of New York) regarding witness testimony and document production.",
+    "A trial appearance subpoena was requested for the JPMorgan witness.",
+    "The document references financial records from JPMorgan, indicating the investigation into financial aspects of the case."
+  ],
+  "analyzedAt": "2026-02-16T20:02:42.282Z"
+}

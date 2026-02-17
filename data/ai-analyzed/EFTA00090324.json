@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00090324.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-08-11",
+  "summary": "An FBI intake document recording an anonymous female caller's report on 08/10/2020. The caller alleges her father, an attorney in Tarpon Springs, FL, was a former recruiter for Jeffrey Epstein, that she and her five siblings were 'sold' throughout childhood, and that she met Epstein at age four. She also claims to have taken a photograph of Prince Andrew and Ghislaine Maxwell in 2001.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the FBI intake report for child sex trafficking; alleged to have been involved with the anonymous caller from her childhood.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Mentioned by the anonymous caller as being 'around' when she met Epstein at age four, and allegedly photographed with Prince Andrew in 2001.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Social associate",
+      "category": "political",
+      "context": "Allegedly photographed with Ghislaine Maxwell in 2001 by the anonymous caller.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Implicitly connected as associates in the context of the anonymous caller's allegations; Maxwell was 'around' when the caller met Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Prince Andrew",
+      "relationshipType": "social",
+      "description": "Allegedly photographed together in 2001, according to the anonymous caller.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001",
+      "title": "Photograph of Prince Andrew and Ghislaine Maxwell",
+      "description": "The anonymous caller claims she was the one who took a photograph of Prince Andrew and Ghislaine Maxwell.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Prince Andrew",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-08-10",
+      "title": "Anonymous call to FBI NTOC",
+      "description": "An anonymous female caller reported information to the FBI National Threat Operations Center regarding Jeffrey Epstein, child sex trafficking, and her father's alleged role as a recruiter.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Tarpon Springs, FL"
+  ],
+  "keyFacts": [
+    "An anonymous female caller reported her father, an attorney residing in Tarpon Springs, FL, was a former recruiter for Jeffrey Epstein.",
+    "The caller alleges she and her five siblings were 'sold' throughout their entire childhood and she met Epstein when she was four years old.",
+    "The caller claims to have taken a photograph of Prince Andrew and Ghislaine Maxwell in 2001.",
+    "The caller reported being 'under the thumb' of an unknown man who sells her and receives no money for it, and fears for the safety of her four-year-old child."
+  ],
+  "analyzedAt": "2026-02-16T23:51:18.379Z"
+}

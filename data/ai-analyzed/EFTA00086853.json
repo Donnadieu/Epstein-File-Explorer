@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00086853.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-03-17",
+  "summary": "This is an FBI FD-302 interview summary of a witness, identified by the file number SOD-NY-3027571, conducted on September 12, 2019. The witness describes being recruited for a supposed modeling casting at Jeffrey Epstein's Upper East Side home in approximately March 2004, where she was sexually assaulted by Epstein. The document details the assault, the presence of Ghislaine Maxwell and other women, and the witness's subsequent contact with the press after Epstein's 2019 arrest.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central subject of the investigation. The witness describes being sexually assaulted by him in his home in approximately March 2004 after being lured there under false pretenses of a modeling casting.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Described by the witness as a woman with short dark hair who introduced her to Epstein and instructed her to 'Be nice, he's important.' She is also the woman who escorted the witness out of the home afterward.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Andrew Lnu",
+      "role": "Modeling Booker",
+      "category": "associate",
+      "context": "The witness's modeling booker who recommended her for a casting that led her to Epstein's house. He told her how important Epstein was before she went.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell introduced the witness to Epstein in his home and instructed the witness to be nice to him, indicating her role in facilitating his interactions with young women.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrew Lnu",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional/social",
+      "description": "The modeling booker recommended the witness to Epstein for a 'casting,' indicating a prior connection or awareness of Epstein's activities.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness (Interview Subject)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted the witness in his home after luring her there under false pretenses.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Witness (Interview Subject)",
+      "relationshipType": "facilitator-victim",
+      "description": "Maxwell facilitated the witness's meeting with Epstein and later escorted her out of the home after the assault.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03",
+      "title": "Assault at Epstein's Upper East Side Home",
+      "description": "The witness was lured to Jeffrey Epstein's home under the false pretense of a modeling casting. There, Epstein sexually assaulted her, touching her face and genitals. She resisted, threw a vibrator at him, and left.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Witness (Interview Subject)",
+        "Andrew Lnu"
+      ]
+    },
+    {
+      "date": "2019-07",
+      "title": "Witness Speaks to Press After Epstein's Arrest",
+      "description": "The witness spoke to the press following Jeffrey Epstein's arrest in July 2019. Her account was featured in a New York Post article, though her name was not published.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness (Interview Subject)"
+      ]
+    },
+    {
+      "date": "2019-09-12",
+      "title": "FBI Interview of Witness",
+      "description": "The witness was interviewed by the FBI, along with her attorney, an AUSA, a detective, and a Special Agent, at 455 Madison Avenue, New York, NY.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness (Interview Subject)"
+      ]
+    }
+  ],
+  "locations": [
+    "455 Madison Avenue, New York, New York (FBI interview location)",
+    "Jeffrey Epstein's house, Upper East Side, possibly 72nd Street, New York, New York (scene of the assault)",
+    "Italy outside Venice (witness's childhood home)"
+  ],
+  "keyFacts": [
+    "A witness describes being sexually assaulted by Jeffrey Epstein in his Upper East Side home in approximately March 2004 after being recruited by her modeling booker for a fake casting.",
+    "Ghislaine Maxwell was present, introduced the witness to Epstein, and told her to 'be nice' to him because he was important.",
+    "The assault involved Epstein touching the witness's face and genitals; she resisted, threw a vibrator at him, and left. Epstein had offered her money.",
+    "The witness spoke to the press in July 2019 after Epstein's arrest, and her account appeared in the New York Post anonymously.",
+    "The FBI interview was conducted on September 12, 2019, and the 302 report was drafted on March 17, 2020."
+  ],
+  "analyzedAt": "2026-02-16T19:08:57.034Z"
+}

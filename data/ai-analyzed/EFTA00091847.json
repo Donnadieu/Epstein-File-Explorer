@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00091847.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-04-23",
+  "summary": "This document is an email chain from April 2020 regarding the transfer of financial records (likely tax returns) related to the Epstein case. An SDNY employee is leaving and handing off the case, while a paralegal specialist requests a consolidated hard drive of all financial productions.",
+  "persons": [
+    {
+      "name": "Andy",
+      "role": "Paralegal Specialist",
+      "category": "legal",
+      "context": "Requests a hard drive containing all financial returns for the Epstein case from Mark to ensure a complete set is in one place.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark",
+      "role": "SDNY Employee / Case Handler",
+      "category": "legal",
+      "context": "The recipient of the request for financial records; is coordinating with a special agent regarding attaching a hard drive to the computer system holding the financial productions.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andy",
+      "person2": "Mark",
+      "relationshipType": "professional",
+      "description": "Andy is requesting financial records from Mark for the Epstein case, indicating a working relationship within the legal investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-24",
+      "title": "SDNY Employee's Last Day",
+      "description": "An unnamed SDNY employee states their last day is Friday, April 24, 2020, and that case coordination will be handed off to another individual.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-04-20",
+      "title": "Discussion on Hard Drive Access",
+      "description": "Mark responds to a request, stating he is not allowed to attach a hard drive to the computer system holding financial productions and needs to discuss with a special agent.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Mark"
+      ]
+    },
+    {
+      "date": "2020-04-19",
+      "title": "Request for Consolidated Financial Records",
+      "description": "Andy, a paralegal specialist, emails Mark requesting a hard drive containing all financial returns received for the Epstein case to consolidate previously received discs.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Andy",
+        "Mark"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY) Office",
+    "United States Attorney's Office Southern District of New York"
+  ],
+  "keyFacts": [
+    "Financial records (referred to as 'returns') were being collected and produced for the Epstein case as of April 2020.",
+    "There were access restrictions preventing the attachment of a hard drive to the computer system holding the financial productions, requiring coordination with a special agent.",
+    "An SDNY employee was transitioning off the case in late April 2020, indicating ongoing personnel changes during the investigation."
+  ],
+  "analyzedAt": "2026-02-17T01:24:17.917Z"
+}

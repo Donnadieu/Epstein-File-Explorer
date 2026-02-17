@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00089649.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-21",
+  "summary": "This document is an email chain between U.S. Attorney's Office (SDNY) prosecutors discussing the processing of evidence from search warrants in the Ghislaine Maxwell (GM) case. They debate how to handle empty email attachments and review the massive volume of documents (1.4 million) retrieved, which includes emails discussing travel logistics, payments, and meetings with women.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure in the investigation; his email accounts and communications are the subject of the search warrant. His email address pattern 'jeevacation' is mentioned as a major search term.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Defendant",
+      "category": "key figure",
+      "context": "Referred to as a co-conspirator of Jeffrey Epstein; her name and email accounts are search terms and designated as responsive in the document review.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Flatley",
+      "role": "FBI / CART representative",
+      "category": "law enforcement",
+      "context": "FBI or Computer Analysis and Response Team member consulted about technical issues with extracting email attachments from Epstein's devices.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Explicitly identified as co-conspirators in the search warrant authorization for evidence related to subject offenses.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Flatley",
+      "relationshipType": "investigator-subject",
+      "description": "Flatley, as part of law enforcement, is involved in extracting and analyzing data from Epstein's devices as part of the investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-20",
+      "title": "Search warrant returns review",
+      "description": "Prosecutors review the results of search warrants executed on devices, finding 1.4 million potentially responsive documents out of a 1.6 million document database.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-10-21",
+      "title": "Discussion on empty attachments",
+      "description": "Prosecutors discuss how to handle 128,175 empty email attachments, deciding whether to mark them as non-responsive or explain to defense counsel that the FBI could not extract them.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Flatley"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "One Saint Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "The search warrant returns yielded 1.4 million potentially responsive documents from a 1.6 million document database, including 1,087,903 emails (majority with Epstein as sender/recipient) and 323,179 email attachments.",
+    "128,175 email attachments were empty files, likely due to the FBI's inability to fully extract data from Epstein's email platform.",
+    "Search terms included names of victims, co-conspirators (like Ghislaine Maxwell), and keywords like 'flight' and 'passenger'; 'jeevacation' (Epstein's email pattern) generated 750,000 hits.",
+    "Emails discussed logistics such as travel, meetings with women, payments for school, property renovations, and Epstein's finances, often involving a person referred to by the last name 'Muffley'.",
+    "Prosecutors referenced a prior case ('GEP' - likely referring to the Jeffrey Epstein case) where similar issues with empty attachments occurred and were marked as non-responsive."
+  ],
+  "analyzedAt": "2026-02-16T21:47:16.428Z"
+}

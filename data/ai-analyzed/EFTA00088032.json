@@ -1,0 +1,121 @@
+{
+  "fileName": "EFTA00088032.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2020-06-09",
+  "summary": "This is a court order by Judge Analisa Torres denying defendant Michael Thomas's motion to compel discovery in his criminal case. Thomas, a correctional officer at the MCC, is charged with falsifying count slips on the night Jeffrey Epstein died by suicide. The order details the discovery already provided by the government and rejects Thomas's requests for additional materials from the DOJ Inspector General and the Bureau of Prisons.",
+  "persons": [
+    {
+      "name": "Michael Thomas",
+      "role": "Defendant, Correctional Officer at MCC",
+      "category": "key figure",
+      "context": "Charged with conspiring to defraud the US and making false statements related to falsifying inmate count slips at the MCC on the night Jeffrey Epstein died.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Co-Defendant, Correctional Officer at MCC",
+      "category": "key figure",
+      "context": "Co-defendant with Thomas, also charged with falsifying count slips on the night of Epstein's death.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who hanged himself in his cell in the MCC's Special Housing Unit on the night Thomas and Noel allegedly falsified count slips.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Analisa Torres",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Issued the order denying Michael Thomas's motion to compel discovery.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Thomas",
+      "person2": "Tova Noel",
+      "relationshipType": "co-conspirator",
+      "description": "Co-defendants charged together for allegedly conspiring to submit false count slips at the MCC.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Thomas was a correctional officer responsible for supervising inmates, including Epstein, in the MCC's Special Housing Unit on the night Epstein died.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Noel was a correctional officer responsible for supervising inmates, including Epstein, in the MCC's Special Housing Unit on the night Epstein died.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09 to 2019-08-10",
+      "title": "Falsification of Count Slips and Epstein's Death",
+      "description": "Defendants Michael Thomas and Tova Noel allegedly submitted false 'count slips' certifying they conducted inmate counts in the MCC's Special Housing Unit, during which time inmate Jeffrey Epstein hanged himself in his cell.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-11-19",
+      "title": "Indictment of Thomas and Noel",
+      "description": "Michael Thomas was charged with one count of conspiracy to defraud the US and three counts of making false statements. Tova Noel was also charged.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2021-01-04",
+      "title": "Scheduled Trial Date",
+      "description": "The trial for Michael Thomas (and presumably Tova Noel) was scheduled to begin on this date.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2020-06-09",
+      "title": "Court Order Denying Motion to Compel",
+      "description": "Judge Analisa Torres issued an order denying Michael Thomas's motion to compel the government to produce additional discovery materials.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Analisa Torres",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC",
+    "Southern District of New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "Correctional officers Michael Thomas and Tova Noel are criminally charged for falsifying inmate count slips on the night Jeffrey Epstein died by suicide in his MCC cell.",
+    "The court denied Thomas's motion to compel production of the DOJ Inspector General's report on Epstein's death, as the report was not yet completed and the government stated it had already provided all relevant investigatory materials.",
+    "The court also denied Thomas's motion to compel materials from the Bureau of Prisons, finding the BOP was not part of the 'prosecution team' for this criminal case.",
+    "The government had already produced extensive discovery, including surveillance video, count slips, staffing records, phone records, employee files, and witness statements.",
+    "Thomas's motion argued for discovery to support a defense that falsifying count slips was widespread and tolerated by BOP leadership, but the court found he failed to make the required particularized showing."
+  ],
+  "analyzedAt": "2026-02-16T20:29:24.376Z"
+}

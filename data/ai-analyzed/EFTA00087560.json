@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00087560.pdf",
+  "dataSet": "9",
+  "documentType": "court filing correspondence",
+  "dateOriginal": "2021-11-23",
+  "summary": "This document is a series of email correspondences between legal counsel and the court regarding the case US v. Maxwell. It concerns a motion to quash a Rule 17(c) subpoena, requests for oral argument, and the submission of documents under temporary seal ahead of a final pre-trial conference.",
+  "persons": [
+    {
+      "name": "Alison J. Nathan",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The Honorable Judge presiding over the case US v. Maxwell, whose chambers are receiving and issuing orders on the motion to quash.",
+      "mentionCount": 2
+    },
+    {
+      "name": "R. Smith",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney submitting a letter on behalf of the defendant M. (Ghislaine Maxwell) regarding document production under temporary seal.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "R. Smith",
+      "person2": "M.",
+      "relationshipType": "attorney-client",
+      "description": "R. Smith is submitting legal documents and correspondence on behalf of the defendant M. (Ghislaine Maxwell).",
+      "strength": 5
+    },
+    {
+      "person1": "E.",
+      "person2": "M.",
+      "relationshipType": "legal",
+      "description": "E., representing the prosecution, is opposing the defendant M. by filing a motion to quash her subpoena.",
+      "strength": 4
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "M.",
+      "relationshipType": "legal",
+      "description": "Judge Nathan is presiding over the criminal case US v. Maxwell involving the defendant M.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-24",
+      "title": "Final Pre-Trial Conference",
+      "description": "A court conference scheduled where the prosecution inquired about hearing oral argument on the motion to quash.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "E.",
+        "R. Smith",
+        "M."
+      ]
+    },
+    {
+      "date": "2021-11-19",
+      "title": "Filing of Motion to Quash",
+      "description": "The prosecution (E.) filed a motion to quash the defendant's Rule 17(c) subpoena, submitted under temporary seal with exhibits.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "E.",
+        "M."
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10019"
+  ],
+  "keyFacts": [
+    "The prosecution filed a motion to quash a defense subpoena (Rule 17(c)) in the case US v. Maxwell.",
+    "Legal correspondence was submitted under temporary seal, indicating sensitive material.",
+    "A final pre-trial conference was scheduled for November 24, 2021, at 9:30 am.",
+    "The defense had not yet filed its response to the motion to quash as of November 22, 2021."
+  ],
+  "analyzedAt": "2026-02-16T20:00:23.117Z"
+}

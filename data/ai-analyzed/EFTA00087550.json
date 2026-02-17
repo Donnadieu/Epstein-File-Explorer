@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00087550.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-14",
+  "summary": "This is a brief email from an Assistant United States Attorney in the Southern District of New York requesting that an attached message from an unknown Epstein victim be added to NTW 3500 material. It indicates ongoing case preparation and the collection of victim communications.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, requesting that a victim's message be added to the NTW 3500 material for the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MAXWELL",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referenced in the subject of the forwarded message, indicating the communication is from a victim of Epstein and Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referenced in the subject of the forwarded message as the perpetrator whose victim is communicating.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "MAXWELL",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named in the context of a victim's communication, indicating their linked roles in the criminal case.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Epstein",
+      "relationshipType": "legal",
+      "description": "The prosecutor is handling case materials related to the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "MAXWELL",
+      "relationshipType": "legal",
+      "description": "The prosecutor is handling case materials related to the Maxwell prosecution.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-14",
+      "title": "Prosecutor Requests Addition of Victim Message",
+      "description": "An Assistant U.S. Attorney emails a request to add a forwarded message from an unknown Epstein victim to the NTW 3500 material.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York NY 10007"
+  ],
+  "keyFacts": [
+    "A prosecutor from the Southern District of New York is actively managing case materials (NTW 3500) related to the Epstein/Maxwell case as of November 2021.",
+    "The communication includes a forwarded message from a self-identified unknown victim of Epstein and Maxwell.",
+    "The document demonstrates the procedural step of adding victim communications to official discovery or evidence materials."
+  ],
+  "analyzedAt": "2026-02-16T19:58:47.877Z"
+}

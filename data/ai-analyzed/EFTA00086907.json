@@ -1,0 +1,117 @@
+{
+  "fileName": "EFTA00086907.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-29",
+  "summary": "This is an FBI 302 interview report of a BOP employee conducted on August 28, 2019, regarding observations of unusual document shredding at the Metropolitan Correctional Center (MCC) in New York following Jeffrey Epstein's death. The employee reported seeing an inmate with large amounts of shredded paper and hearing references to a BOP After Action team and a white man with a Southern accent involved in the shredding.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "Mentioned as the inmate whose suicide prompted a BOP After Action team investigation. The interview concerns potential document shredding related to his case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Officer [Redacted]",
+      "role": "BOP employee, interviewee",
+      "category": "law enforcement",
+      "context": "A BOP employee stationed at the rear gate of MCC who was interviewed about observing inmate [Redacted] with large bags of shredded paper and hearing comments about document shredding after Epstein's death.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Inmate [Redacted]",
+      "role": "MCC inmate with gate pass",
+      "category": "other",
+      "context": "An MCC inmate with a gate pass who was seen by the interviewee carrying large bags of shredded paper to be thrown out, and who made comments about document shredding involving a white man with a Southern accent.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Former MCC Warden [Redacted]",
+      "role": "Former warden of MCC",
+      "category": "staff",
+      "context": "Mentioned third-hand as having been told by an 'Officer [Redacted]' that Epstein should have been confined in the 10 South wing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Officer [Redacted]",
+      "person2": "Inmate [Redacted]",
+      "relationshipType": "staff-inmate",
+      "description": "Officer [Redacted] regularly checks the gate pass of Inmate [Redacted] and has frequent interactions with him, including small talk.",
+      "strength": 3
+    },
+    {
+      "person1": "Inmate [Redacted]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-inmate",
+      "description": "Inmate [Redacted] was an inmate at MCC at the same time as Epstein, and the reported shredding activity was observed in the context of the investigation into Epstein's suicide.",
+      "strength": 2
+    },
+    {
+      "person1": "Officer [Redacted]",
+      "person2": "Former MCC Warden [Redacted]",
+      "relationshipType": "staff",
+      "description": "Officer [Redacted] is mentioned in a third-hand account relaying a recommendation about Epstein's confinement to the former warden.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "Observation of Shredded Documents",
+      "description": "Inmate [Redacted] approached Officer [Redacted]'s post with approximately three large bags of shredded paper, commenting 'They are shredding everything back there,' and mentioned a white man with a Southern accent involved.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Officer [Redacted]",
+        "Inmate [Redacted]"
+      ]
+    },
+    {
+      "date": "2019-08-23",
+      "title": "Report to FBI",
+      "description": "Officer [Redacted] called the FBI to file a report about the incident involving the shredded documents.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Officer [Redacted]"
+      ]
+    },
+    {
+      "date": "2019-08-28",
+      "title": "FBI/DOJ-OIG Interview",
+      "description": "Officer [Redacted] was interviewed by the FBI and a DOJ-OIG Special Agent at 26 Federal Plaza regarding the shredded documents observation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Officer [Redacted]"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Death",
+      "description": "The suicide of Jeffrey Epstein, which prompted a BOP After Action team investigation. The document shredding was observed in this context.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "26 Federal Plaza, New York, NY 10278 (FBI interview location)",
+    "Metropolitan Correctional Center (MCC), New York, NY (primary location of events)",
+    "Metropolitan Detention Center (MDC), Brooklyn, New York (where interviewee previously worked)",
+    "Federal Correctional Institute, Danbury, Danbury, Connecticut (where interviewee previously worked)"
+  ],
+  "keyFacts": [
+    "A BOP officer reported observing an inmate with an unusually large amount of shredded paper at MCC shortly after Jeffrey Epstein's death.",
+    "The inmate reportedly stated 'They are shredding everything back there' and mentioned a white man with a Southern accent involved, who the officer surmised was part of the BOP After Action team investigating Epstein's suicide.",
+    "The officer reported this incident to the FBI, leading to a formal interview with the FBI and DOJ-OIG.",
+    "A third-hand account mentioned that an officer had told the former MCC warden that Epstein should have been confined in the 10 South wing.",
+    "The document is an FBI 302 report, indicating an official investigation into potential evidence destruction related to the Epstein case."
+  ],
+  "analyzedAt": "2026-02-16T19:16:19.520Z"
+}

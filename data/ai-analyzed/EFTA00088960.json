@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00088960.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2008-05-29",
+  "summary": "FBI agents attempted to interview an unnamed individual at her New York residence regarding Jeffrey Epstein. The individual declined to speak without her attorney, Diarmuid White, and was served a grand jury subpoena to appear in Florida on June 3, 2008. She later called back seeking more information, and agents confirmed the matter related to Epstein.",
+  "persons": [
+    {
+      "name": "Diarmuid White",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney for the unnamed individual interviewed by FBI agents; provided his business card to agents.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Confirmed by FBI agents as the reason for their interview attempt and the grand jury subpoena.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Diarmuid White",
+      "person2": "Unnamed Individual",
+      "relationshipType": "attorney-client",
+      "description": "White is identified as the attorney for the unnamed individual, who requested to speak with him before cooperating with FBI agents.",
+      "strength": 4
+    },
+    {
+      "person1": "Unnamed Individual",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The FBI's attempt to interview the individual and serve a grand jury subpoena is directly related to the investigation into Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-05-29",
+      "title": "FBI Attempted Interview",
+      "description": "FBI Special Agents visited an unnamed individual's New York residence to interview her regarding Jeffrey Epstein. She declined to speak without her attorney and was served a grand jury subpoena.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed Individual",
+        "Diarmuid White",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008-06-03",
+      "title": "Scheduled Grand Jury Appearance",
+      "description": "The unnamed individual was subpoenaed to appear before a grand jury in the Southern District of Florida regarding the Epstein investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed Individual"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (individual's residence)",
+    "148 E. 78th Street, New York, NY 10075 (White and White Law Firm)",
+    "701 Clematis Street, West Palm Beach, Florida 33401 (United States District Court, Southern District of Florida)"
+  ],
+  "keyFacts": [
+    "An unnamed individual was served a federal grand jury subpoena in connection with the Jeffrey Epstein investigation in May 2008.",
+    "The individual initially refused to speak to FBI agents without her attorney, Diarmuid White, present.",
+    "The individual later called an FBI agent back seeking more information, at which point the agent confirmed the matter related to Epstein.",
+    "The subpoena required the individual to appear in West Palm Beach, Florida, on June 3, 2008.",
+    "The document is an FBI 302 form, indicating it is an official report of an investigative interview."
+  ],
+  "analyzedAt": "2026-02-16T21:02:00.967Z"
+}
