@@ -34,7 +34,9 @@ function getClient(): S3Client {
         secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
       },
       requestHandler: new NodeHttpHandler({ httpsAgent: { maxSockets: 100 } } as any),
-    });
+      requestChecksumCalculation: "WHEN_REQUIRED",
+      responseChecksumValidation: "WHEN_REQUIRED",
+    } as any);
   }
   return _client;
 }
