@@ -36,6 +36,7 @@ interface PipelineConfig {
   batchSize?: number;
   concurrency?: number;
   retryFailed?: boolean;
+  dryRun?: boolean;
 }
 
 const STAGES = [
@@ -223,7 +224,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
         break;
 
       case "dedup-persons":
-        await deduplicatePersonsInDB();
+        await deduplicatePersonsInDB({
+          dryRun: config.dryRun,
+          batchSize: config.batchSize,
+        });
         break;
 
       case "dedup-connections":
@@ -276,6 +280,8 @@ async function main() {
       config.concurrency = parseInt(args[++i], 10);
     } else if (arg === "--retry-failed") {
       config.retryFailed = true;
+    } else if (arg === "--dry-run") {
+      config.dryRun = true;
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {
