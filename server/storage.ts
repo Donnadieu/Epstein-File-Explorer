@@ -18,6 +18,35 @@ import { db } from "./db";
 import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
 import { isR2Configured } from "./r2";
 
+/** Map raw SQL row (snake_case) to Document (camelCase) */
+function mapRowToDocument(row: any): Document {
+  return {
+    id: row.id,
+    title: row.title,
+    description: row.description,
+    documentType: row.document_type,
+    dataSet: row.data_set,
+    sourceUrl: row.source_url,
+    datePublished: row.date_published,
+    dateOriginal: row.date_original,
+    pageCount: row.page_count,
+    isRedacted: row.is_redacted,
+    keyExcerpt: row.key_excerpt,
+    tags: row.tags,
+    mediaType: row.media_type,
+    processingStatus: row.processing_status,
+    aiAnalysisStatus: row.ai_analysis_status,
+    fileSizeBytes: row.file_size_bytes,
+    fileHash: row.file_hash,
+    localPath: row.local_path,
+    r2Key: row.r2_key,
+    eftaNumber: row.efta_number,
+    mimeType: row.mime_type,
+    extractedTextLength: row.extracted_text_length,
+    aiCostCents: row.ai_cost_cents,
+  };
+}
+
 export interface IStorage {
   getPersons(): Promise<Person[]>;
   getPerson(id: number): Promise<Person | undefined>;
@@ -1310,7 +1339,7 @@ export class DatabaseStorage implements IStorage {
           ORDER BY p.view_count DESC
           LIMIT ${opts.limit} OFFSET ${offset}
         `);
-        const data: Document[] = (pageResult.rows ?? pageResult) as Document[];
+        const data: Document[] = ((pageResult.rows ?? pageResult) as any[]).map(mapRowToDocument);
 
         // Pad from non-viewed docs if page straddles the boundary
         if (data.length < opts.limit) {
@@ -1321,7 +1350,7 @@ export class DatabaseStorage implements IStorage {
             ORDER BY d.id ASC
             LIMIT ${opts.limit - data.length}
           `);
-          data.push(...((padResult.rows ?? padResult) as Document[]));
+          data.push(...((padResult.rows ?? padResult) as any[]).map(mapRowToDocument));
         }
 
         return { data, total, page: opts.page, totalPages };
@@ -1335,7 +1364,7 @@ export class DatabaseStorage implements IStorage {
           ORDER BY d.id ASC
           LIMIT ${opts.limit} OFFSET ${nonViewedOffset}
         `);
-        const data: Document[] = (result.rows ?? result) as Document[];
+        const data: Document[] = ((result.rows ?? result) as any[]).map(mapRowToDocument);
 
         return { data, total, page: opts.page, totalPages };
       }
