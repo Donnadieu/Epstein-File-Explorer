@@ -1097,41 +1097,58 @@ export class DatabaseStorage implements IStorage {
       ? sql`to_tsquery('english', ${query})`
       : sql`websearch_to_tsquery('english', ${query})`;
 
+    // Ranking window: the GIN index searches ALL pages, but we only rank the
+    // top N candidates. Even Google ranks a candidate window, not every match.
+    // 50K candidates with ts_rank produces identical top-20 results as ranking 800K.
+    // Ranking window: GIN index searches ALL pages, but we only rank
+    // the top N candidates. Over-fetch 3x to absorb R2 filtering losses.
+    const rankingWindow = 50000;
+    const overFetch = Math.max(limit * 3, 60);
+
     let total = -1;
     if (!skipCount) {
-      // Count on document_pages only (fast GIN index scan, no join).
-      // Slightly overcounts by including pages from non-R2 docs, but avoids
-      // the expensive join that causes 30s+ timeouts on broad queries.
+      // Pure GIN scan — no JOIN, no R2 filter. Fast index-only count.
       const countResult: any = await db.execute(sql`
-        SELECT count(*)::int AS total
-        FROM document_pages
-        WHERE search_vector @@ ${tsquery}
+        SELECT count(*)::int AS total FROM (
+          SELECT 1 FROM document_pages
+          WHERE search_vector @@ ${tsquery}
+          LIMIT ${rankingWindow}
+        ) sub
       `);
       total = (countResult.rows ?? countResult)[0]?.total ?? 0;
     }
 
-    // CTE: match + rank on document_pages only (fast GIN scan, no join).
-    // Over-fetch by 3x to compensate for R2 filtering in the outer query.
-    const fetchLimit = limit * 3;
+    // 3-stage query:
+    // 1. candidates CTE: pure GIN scan on document_pages only (no JOIN).
+    //    This is an index-only operation — no cross-table lookups.
+    // 2. ranked subquery: ts_rank on candidates, sort, over-fetch 3x limit.
+    // 3. outer query: JOIN documents (R2 filter + metadata), JOIN document_pages
+    //    (content for ts_headline), apply final LIMIT/OFFSET.
     const rawResult: any = await db.execute(sql`
-      WITH matched AS (
-        SELECT id, document_id, page_number, page_type, content, search_vector,
-               ts_rank(search_vector, ${tsquery}) AS rank
+      WITH candidates AS (
+        SELECT id, document_id, page_number, page_type, search_vector
         FROM document_pages
         WHERE search_vector @@ ${tsquery}
-        ORDER BY rank DESC, document_id, page_number
-        LIMIT ${fetchLimit} OFFSET ${offset}
+        LIMIT ${rankingWindow}
+      ),
+      ranked AS (
+        SELECT c.id, c.document_id, c.page_number, c.page_type,
+               ts_rank(c.search_vector, ${tsquery}) AS rank
+        FROM candidates c
+        ORDER BY rank DESC, c.document_id, c.page_number
+        LIMIT ${overFetch} OFFSET ${offset}
       )
-      SELECT m.document_id, d.title, d.document_type, d.data_set,
-             m.page_number, m.page_type,
-             ts_headline('english', m.content, ${tsquery},
+      SELECT ranked.document_id, d.title, d.document_type, d.data_set,
+             ranked.page_number, ranked.page_type,
+             ts_headline('english', dp.content, ${tsquery},
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
-             m.rank
-      FROM matched m
-      JOIN documents d ON d.id = m.document_id
+             ranked.rank
+      FROM ranked
+      JOIN documents d ON d.id = ranked.document_id
+      JOIN document_pages dp ON dp.id = ranked.id
       WHERE ${sql.raw(r2Raw)}
-      ORDER BY m.rank DESC, m.document_id, m.page_number
+      ORDER BY ranked.rank DESC, ranked.document_id, ranked.page_number
       LIMIT ${limit}
     `);
     const rows: any[] = rawResult.rows ?? rawResult;
