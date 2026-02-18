@@ -23,6 +23,7 @@ vi.mock("../storage", () => ({
     getTimelineFiltered: vi.fn(),
     getNetworkData: vi.fn(),
     search: vi.fn(),
+    searchWithTypesense: vi.fn(),
     searchPages: vi.fn(),
     getBookmarks: vi.fn(),
     createBookmark: vi.fn(),
@@ -48,6 +49,19 @@ vi.mock("../r2", () => ({
   getPresignedUrl: vi.fn(),
   getR2Stream: vi.fn(),
   getPublicUrl: vi.fn(() => null),
+}));
+
+// Mock Typesense module — disabled by default
+const mockIsTypesenseConfigured = vi.fn(() => false);
+const mockTypesenseSearchPages = vi.fn();
+const mockTypesenseSearchInstant = vi.fn();
+const mockTypesenseDocumentSearch = vi.fn();
+vi.mock("../typesense", () => ({
+  isTypesenseConfigured: (...args: any[]) => mockIsTypesenseConfigured(...args),
+  typesenseSearchPages: (...args: any[]) => mockTypesenseSearchPages(...args),
+  typesenseSearchInstant: (...args: any[]) => mockTypesenseSearchInstant(...args),
+  typesenseDocumentSearch: (...args: any[]) => mockTypesenseDocumentSearch(...args),
+  getTypesenseClient: vi.fn(() => null),
 }));
 
 // Mock chat routes
@@ -581,5 +595,123 @@ describe("GET /api/documents/:id/adjacent", () => {
   it("returns 400 for invalid ID", async () => {
     const res = await request(app).get("/api/documents/abc/adjacent");
     expect(res.status).toBe(400);
+  });
+});
+
+describe("GET /api/search/instant", () => {
+  it("returns empty when Typesense is not configured", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(false);
+
+    const res = await request(app).get("/api/search/instant?q=test");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ results: [], total: 0, page: 1, totalPages: 0 });
+    expect(mockTypesenseSearchInstant).not.toHaveBeenCalled();
+  });
+
+  it("returns empty for short query", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+
+    const res = await request(app).get("/api/search/instant?q=x");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ results: [], total: 0, page: 1, totalPages: 0 });
+  });
+
+  it("returns instant results when Typesense is configured", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    const tsResults = {
+      results: [{ documentId: 1, title: "Test Doc", documentType: "legal-filing", dataSet: null, pageNumber: 1, headline: "test <mark>match</mark>", pageType: null }],
+      total: 1,
+      page: 1,
+      totalPages: 1,
+    };
+    mockTypesenseSearchInstant.mockResolvedValue(tsResults);
+
+    const res = await request(app).get("/api/search/instant?q=test");
+    expect(res.status).toBe(200);
+    expect(res.body.results).toHaveLength(1);
+    expect(res.body.total).toBe(1);
+    expect(mockTypesenseSearchInstant).toHaveBeenCalledWith("test", 8);
+  });
+
+  it("returns empty on Typesense error", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    mockTypesenseSearchInstant.mockRejectedValue(new Error("Connection refused"));
+
+    const res = await request(app).get("/api/search/instant?q=test");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ results: [], total: 0, page: 1, totalPages: 0 });
+  });
+});
+
+describe("Typesense-first search routes", () => {
+  it("GET /api/search uses Typesense when configured", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    const tsResults = { persons: [mockPerson], documents: [mockDocument], events: [] };
+    mockedStorage.searchWithTypesense.mockResolvedValue(tsResults);
+
+    const res = await request(app).get("/api/search?q=test");
+    expect(res.status).toBe(200);
+    expect(res.body.persons).toHaveLength(1);
+    expect(mockedStorage.searchWithTypesense).toHaveBeenCalledWith("test");
+    expect(mockedStorage.search).not.toHaveBeenCalled();
+  });
+
+  it("GET /api/search falls back to PostgreSQL when Typesense fails", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    mockedStorage.searchWithTypesense.mockRejectedValue(new Error("Typesense down"));
+    const pgResults = { persons: [], documents: [mockDocument], events: [] };
+    mockedStorage.search.mockResolvedValue(pgResults);
+
+    const res = await request(app).get("/api/search?q=test");
+    expect(res.status).toBe(200);
+    expect(res.body.documents).toHaveLength(1);
+    expect(mockedStorage.search).toHaveBeenCalledWith("test");
+  });
+
+  it("GET /api/search/pages uses Typesense when configured", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    const tsResults = {
+      results: [{ documentId: 1, title: "Test", documentType: "legal-filing", dataSet: null, pageNumber: 1, headline: "match", pageType: null }],
+      total: 1,
+      page: 1,
+      totalPages: 1,
+      facets: { documentTypes: [{ value: "legal-filing", count: 1 }], dataSets: [] },
+    };
+    mockTypesenseSearchPages.mockResolvedValue(tsResults);
+
+    const res = await request(app).get("/api/search/pages?q=test&page=1&limit=20");
+    expect(res.status).toBe(200);
+    expect(res.body.results).toHaveLength(1);
+    expect(res.body.facets.documentTypes).toHaveLength(1);
+    expect(mockTypesenseSearchPages).toHaveBeenCalled();
+    expect(mockedStorage.searchPages).not.toHaveBeenCalled();
+  });
+
+  it("GET /api/search/pages falls back to PostgreSQL when Typesense fails", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    mockTypesenseSearchPages.mockRejectedValue(new Error("Typesense error"));
+    const pgResults = { results: [], total: 0, page: 1, totalPages: 0 };
+    mockedStorage.searchPages.mockResolvedValue(pgResults);
+
+    const res = await request(app).get("/api/search/pages?q=test&page=1&limit=20");
+    expect(res.status).toBe(200);
+    expect(mockedStorage.searchPages).toHaveBeenCalled();
+  });
+
+  it("GET /api/search/pages passes facet filter params to Typesense", async () => {
+    mockIsTypesenseConfigured.mockReturnValue(true);
+    const tsResults = { results: [], total: 0, page: 1, totalPages: 0 };
+    mockTypesenseSearchPages.mockResolvedValue(tsResults);
+
+    await request(app).get("/api/search/pages?q=test&page=1&limit=20&documentType=legal-filing&dataSet=set-a");
+    expect(mockTypesenseSearchPages).toHaveBeenCalledWith(
+      "test",
+      1,
+      20,
+      expect.objectContaining({
+        documentType: "legal-filing",
+        dataSet: "set-a",
+      }),
+    );
   });
 });
