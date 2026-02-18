@@ -1,0 +1,206 @@
+{
+  "fileName": "EFTA00105512.pdf",
+  "dataSet": "9",
+  "documentType": "court filing with exhibits",
+  "dateOriginal": "2019-07-17",
+  "summary": "This is a court filing by Jeffrey Epstein's defense attorneys to Judge Richard M. Berman, submitted in support of Epstein's bail application. It includes two exhibits: (A) a 2010 letter from the New Mexico Department of Public Safety stating Epstein was not required to register as a sex offender in New Mexico at that time, and (B) a series of emails from Epstein (2012-2015) notifying authorities of his travel to New Mexico, demonstrating his claimed compliance with registration laws.",
+  "persons": [
+    {
+      "name": "Reid Weingarten",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Steptoe & Johnson LLP who signed the cover letter to Judge Berman submitting documents in support of Jeffrey Epstein's bail application.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Richard M. Berman",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the case United States v. Jeffrey Epstein, to whom the bail submission documents are addressed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant / Accused",
+      "category": "key figure",
+      "context": "The defendant in the criminal case. The filing is part of his bail submission, and includes his emails and a letter concerning his sex offender registration status in New Mexico.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Martin G. Weinberg",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney listed on the filing, practicing in Boston, MA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marc Allan Fernich",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney listed on the filing, practicing in New York, NY.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Regina Chacon",
+      "role": "Assistant Bureau Chief, Law Enforcement Records Bureau",
+      "category": "law enforcement",
+      "context": "Signed the 2010 letter from the New Mexico Department of Public Safety informing Jeffrey Epstein he was not required to register as a sex offender in New Mexico at that time.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Deborah Anaya",
+      "role": "Recipient of Epstein's travel notifications",
+      "category": "law enforcement",
+      "context": "Recipient (addressed as 'DETECTIVE' in one email) of Jeffrey Epstein's emails notifying her of his travel to New Mexico, likely a law enforcement or registration official.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Copied on Epstein's travel notifications",
+      "category": "associate",
+      "context": "Consistently copied on Jeffrey Epstein's emails to Deborah Anaya notifying of travel to New Mexico, likely an attorney or assistant.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Teresa Hernandez",
+      "role": "Contact at NM Department of Public Safety",
+      "category": "staff",
+      "context": "Named in the 2010 letter as a contact person at the New Mexico Department of Public Safety for further questions about registration.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Reid Weingarten",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Weingarten is submitting bail support documents on behalf of his client, Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Martin G. Weinberg",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Weinberg is listed as defense counsel for Jeffrey Epstein on the court filing.",
+      "strength": 4
+    },
+    {
+      "person1": "Marc Allan Fernich",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Fernich is listed as defense counsel for Jeffrey Epstein on the court filing.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Deborah Anaya",
+      "relationshipType": "registrant-official",
+      "description": "Epstein sends multiple emails to Anaya (a detective/official) notifying her of his travel to New Mexico, indicating a reporting relationship related to sex offender registration.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "associate",
+      "description": "Indyke is consistently copied on Epstein's travel notification emails to Deborah Anaya, suggesting a close working or advisory relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Regina Chacon",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "official-registrant",
+      "description": "Chacon, as a state official, authored the 2010 letter to Epstein regarding his sex offender registration status in New Mexico.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2010-08-19",
+      "title": "NM DPS Registration Determination Letter",
+      "description": "The New Mexico Department of Public Safety sends a letter to Jeffrey Epstein determining he is not required to register as a sex offender in New Mexico under state law for his 2002 Florida conviction, but notes federal (Adam Walsh Act) requirements may apply during temporary residence.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Regina Chacon"
+      ]
+    },
+    {
+      "date": "2012-07-30",
+      "title": "Epstein Arrives in New Mexico",
+      "description": "Jeffrey Epstein emails Deborah Anaya to notify her that he arrived in New Mexico and will be in and out of the state for the next month.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Deborah Anaya",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2012-09-14",
+      "title": "Epstein Notifies of NM Arrival and Departure",
+      "description": "Jeffrey Epstein emails Deborah Anaya 'out of an abundance of caution' to notify her of his arrival in New Mexico and planned departure on September 18.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Deborah Anaya",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2013-12-20 to 2013-12-28",
+      "title": "Epstein's Holiday Week in New Mexico",
+      "description": "Jeffrey Epstein emails Deborah Anaya to advise he will be in New Mexico for the week of December 20-28, 2013.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Deborah Anaya",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2015-08",
+      "title": "Epstein at His Ranch for August",
+      "description": "Jeffrey Epstein emails Deborah Anaya as 'an extra precaution' to let her know he will be on his ranch for the month of August.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Deborah Anaya",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2019-07-17",
+      "title": "Bail Support Filing Submitted to Court",
+      "description": "Defense attorneys file documents with Judge Berman in further support of Jeffrey Epstein's bail application, including evidence of his past compliance with registration notifications.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Reid Weingarten",
+        "Richard M. Berman",
+        "Jeffrey Epstein",
+        "Martin G. Weinberg",
+        "Marc Allan Fernich"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY (United States Courthouse, 500 Pearl Street; Attorney offices)",
+    "Santa Fe, New Mexico (Department of Public Safety; implied location of stay)",
+    "New Mexico (State referenced in travel emails and registration letter)",
+    "Boston, MA (Martin G. Weinberg's office)",
+    "Jeffrey Epstein's ranch (location in New Mexico implied)"
+  ],
+  "keyFacts": [
+    "In 2010, New Mexico authorities determined Jeffrey Epstein was not required to register as a sex offender under state law for his 2002 Florida conviction, but noted federal Adam Walsh Act requirements might apply for temporary residence.",
+    "Between 2012 and 2015, Jeffrey Epstein sent at least seven emails to Detective Deborah Anaya notifying her of his travel to New Mexico, often citing 'an abundance of caution' or 'extra precaution.'",
+    "Epstein's defense team submitted these documents in July 2019 to support his bail application, likely to demonstrate a pattern of compliance with legal notification requirements.",
+    "The documents show Epstein had a ranch in New Mexico where he spent extended periods, including the entire month of August 2015.",
+    "Darren Indyke was consistently copied on all of Epstein's travel notification emails, indicating a close advisory or managerial role."
+  ],
+  "analyzedAt": "2026-02-18T19:54:12.095Z"
+}

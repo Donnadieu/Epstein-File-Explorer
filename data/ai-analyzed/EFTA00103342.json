@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00103342.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-17",
+  "summary": "An email from an Assistant United States Attorney in the Southern District of New York to colleagues, discussing a discovery question in the Ghislaine Maxwell case. It references a recent court opinion from Judge Nathan denying further discovery on the Non-Prosecution Agreement (NPA) but ordering the government to confirm in writing its disclosure obligations regarding exculpatory evidence. The sender plans to draft a letter and requests a call to discuss.",
+  "persons": [
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Issued an opinion denying further discovery on the Non-Prosecution Agreement (NPA) in the Ghislaine Maxwell case, but ordered the government to confirm its disclosure obligations regarding exculpatory evidence.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the email and the criminal case. The discussion centers on discovery obligations and evidence related to her defense, specifically regarding the Non-Prosecution Agreement (NPA).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, who is drafting a letter to the court regarding discovery obligations in the Maxwell case and seeking to discuss the matter with colleagues.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Maxwell",
+      "relationshipType": "legal",
+      "description": "Prosecutor for the government in the criminal case against defendant Ghislaine Maxwell, responsible for handling discovery and disclosure obligations.",
+      "strength": 4
+    },
+    {
+      "person1": "Judge Nathan",
+      "person2": "Maxwell",
+      "relationshipType": "legal",
+      "description": "Presiding judge in Ghislaine Maxwell's case, issuing rulings on discovery matters including the Non-Prosecution Agreement.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-16",
+      "title": "Judge Nathan Issues Opinion on NPA Discovery",
+      "description": "Judge Nathan issued an opinion denying further discovery on the Non-Prosecution Agreement (NPA) but ordered the government to confirm in writing within one week its views on disclosing any evidence material to Maxwell's defense under the NPA.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Maxwell",
+        "Assistant United States Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2020-10-07",
+      "title": "Government Letter to Judge Nathan on Discovery",
+      "description": "The government sent a letter to Judge Nathan outlining what they were and were not going to do with other agency files in the Maxwell case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Assistant United States Attorney Southern District of New York"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Judge Nathan denied further discovery on the Non-Prosecution Agreement (NPA) in the Ghislaine Maxwell case.",
+    "The court ordered the government to confirm in writing within one week whether it views any evidence supporting Maxwell's interpretation of the NPA as material it is required to disclose.",
+    "The government prosecutor is drafting a letter in response to the court's order and seeking to discuss the matter with colleagues.",
+    "The email references a prior letter from October 2020 where the government outlined its handling of other agency files in the case."
+  ],
+  "analyzedAt": "2026-02-18T15:42:03.450Z"
+}

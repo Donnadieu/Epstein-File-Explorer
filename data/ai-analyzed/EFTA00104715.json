@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00104715.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-10-22",
+  "summary": "This document is an email chain from October 2019 involving a U.S. Attorney's Office employee, Wendy Olsen, and a civilian named Crystal Gainey. Gainey claims to have information about Jeffrey Epstein's case, alleging he used Bitcoin spyware to monitor victims and launder money, and expresses fear for her and her daughter's safety. The email is forwarded to the FBI per standard practice.",
+  "persons": [
+    {
+      "name": "Wendy Olsen",
+      "role": "U.S. Attorney's Office employee (USANYS)",
+      "category": "legal",
+      "context": "Recipient and forwarder of an email from Crystal Gainey regarding Epstein victim information; notes the sender's email address reveals her name.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Crystal Gainey",
+      "role": "Civilian informant/claimant",
+      "category": "other",
+      "context": "Author of an email alleging information about Jeffrey Epstein's case, including claims of Bitcoin spyware monitoring victims, money laundering, and personal risk; identifies herself as a potential victim and expresses concern for her daughter's safety.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the email; alleged to have used Bitcoin spyware to monitor victims of his trafficking ring and to launder money from the Federal Reserve.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Crystal Gainey",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Gainey implies she is a victim of Epstein's trafficking ring, referencing a personal experience and fear for her daughter.",
+      "strength": 3
+    },
+    {
+      "person1": "Wendy Olsen",
+      "person2": "Crystal Gainey",
+      "relationshipType": "professional correspondence",
+      "description": "Olsen receives and forwards Gainey's email to the FBI as part of standard procedure for civilian communications about Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-03",
+      "title": "Civilian email alleging Epstein information",
+      "description": "Crystal Gainey sends an email to Wendy Olsen claiming to have information about Jeffrey Epstein's case, including allegations of Bitcoin spyware, money laundering, and personal victimization.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Crystal Gainey",
+        "Wendy Olsen",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-10-22",
+      "title": "Email forwarded to FBI",
+      "description": "Wendy Olsen's email regarding Crystal Gainey's allegations is forwarded to the FBI per standard practice for civilian communications about Epstein.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "Wendy Olsen"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A civilian, Crystal Gainey, contacted the U.S. Attorney's Office in October 2019 with allegations about Jeffrey Epstein using Bitcoin spyware to monitor victims of his trafficking ring.",
+    "Gainey claimed Epstein used a program similar to Watergate spy technology to launder money directly from the Federal Reserve.",
+    "Gainey implied personal victimization and expressed fear for her and her daughter's safety, referencing 'Pizzagate' happening locally.",
+    "The U.S. Attorney's Office forwarded the email to the FBI as per their standard practice for all civilian communications regarding Epstein.",
+    "The email reveals a procedural step in the Epstein case: civilian tips were systematically passed to the FBI for investigation."
+  ],
+  "analyzedAt": "2026-02-18T18:57:47.974Z"
+}

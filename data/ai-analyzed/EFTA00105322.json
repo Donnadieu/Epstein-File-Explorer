@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00105322.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-01",
+  "summary": "This is an email chain from April 1, 2021, in which attorney Mariann Wang informs recipients that her client has requested to cancel a scheduled meeting with prosecutors. The client, a victim of Jeffrey Epstein, is declining to be interviewed further due to emotional exhaustion from repeatedly recounting her experiences and a belief that her information would not materially advance ongoing prosecutions.",
+  "persons": [
+    {
+      "name": "Mariann Wang",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who sends the email to cancel a meeting between her client (an Epstein victim) and prosecutors, citing the client's exhaustion and assessment of the interview's utility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Appears to be copied on the email regarding the cancellation of a meeting with prosecutors involving an Epstein victim client.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named as the perpetrator with whom the attorney's client had interactions, which she has had to recount multiple times.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mariann Wang",
+      "person2": "Unnamed Client",
+      "relationshipType": "attorney-client",
+      "description": "Mariann Wang is acting as legal counsel for a client who is a victim of Jeffrey Epstein, communicating on her behalf to cancel a meeting with prosecutors.",
+      "strength": 5
+    },
+    {
+      "person1": "Gloria Allred",
+      "person2": "Unnamed Client",
+      "relationshipType": "attorney-client",
+      "description": "Gloria Allred is copied on the email concerning the client, suggesting she is also involved in the legal representation or case related to the Epstein victim.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed Client",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The client is described as having had interactions with Jeffrey Epstein, which she has had to recount multiple times, identifying her as a victim.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-02",
+      "title": "Cancelled Meeting with Prosecutors",
+      "description": "A scheduled meeting between an Epstein victim (represented by attorneys Mariann Wang and Gloria Allred) and prosecutors was cancelled at the client's request.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mariann Wang",
+        "Gloria Allred",
+        "Unnamed Client"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An Epstein victim, represented by attorneys Mariann Wang and Gloria Allred, declined a further interview with prosecutors in April 2021.",
+    "The victim cited emotional exhaustion from having to repeatedly recount her interactions with Jeffrey Epstein as the reason for cancelling.",
+    "The victim's assessment was that her information was unlikely to materially advance the ongoing prosecutions at that time.",
+    "The communication illustrates the ongoing legal proceedings and victim engagement efforts years after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-18T19:36:20.147Z"
+}

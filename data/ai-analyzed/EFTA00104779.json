@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA00104779.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "This document is an email chain from May 25, 2020, forwarded by attorney Stacey Richman. It contains a forwarded message from Mark L. Epstein to an unknown recipient, which itself includes a threatening email exchange from an individual using the alias 'Puggie'. The emails reference a brother who was killed for wanting to 'tell the court everything' and contain threats against the recipient's family.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who forwarded the email chain, likely representing a client involved in the Epstein case or related matters.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email Sender",
+      "category": "other",
+      "context": "Forwarded an email chain containing threatening messages from an alias 'Puggie' to Stacey Richman and others.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kevin Ponder",
+      "role": "Intended Recipient",
+      "category": "other",
+      "context": "Named in the subject line as the person the initial email should be forwarded to.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Puggie",
+      "role": "Threatening Correspondent",
+      "category": "other",
+      "context": "Alias used by the sender of threatening emails discussing a brother who was killed for wanting to testify and making threats against the recipient's family.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Stacey Richman",
+      "relationshipType": "correspondent",
+      "description": "Mark L. Epstein forwarded an email chain to Stacey Richman.",
+      "strength": 2
+    },
+    {
+      "person1": "Puggie",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "correspondent",
+      "description": "Puggie sent an email to Mark L. Epstein's address, which Epstein then forwarded.",
+      "strength": 2
+    },
+    {
+      "person1": "Puggie",
+      "person2": "Unnamed Brother",
+      "relationshipType": "family",
+      "description": "Puggie references 'your brother' who was killed for wanting to 'tell the court everything'.",
+      "strength": 4
+    },
+    {
+      "person1": "Puggie",
+      "person2": "Unnamed Boss",
+      "relationshipType": "employer-employee",
+      "description": "Puggie refers to 'my boss' who is 'a very kind person' and 'loved your brother' and who wants to meet the recipient.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-25",
+      "title": "Threatening Email Exchange",
+      "description": "An individual using the alias 'Puggie' sends threatening emails, referencing a brother who was killed for wanting to testify in court and threatening the recipient's family.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Puggie",
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "2027 Williamsbridge Road Bronx, New York 10461",
+      "context": "Law office address of Stacey Richman."
+    }
+  ],
+  "keyFacts": [
+    "The document contains a forwarded email chain with explicit threats, stating 'we kill your family like your brother'.",
+    "The threats are linked to a judicial process, as the reason given for the brother's death is that 'he wanted to tell the court everything'.",
+    "The correspondence involves attorney Stacey Richman, suggesting a legal context for the threats.",
+    "An unnamed 'boss' is referenced who 'loved your brother' and wants to meet the recipient ('Puggie').",
+    "The document is dated May 25, 2020, indicating threats persisted years after Jeffrey Epstein's death."
+  ],
+  "analyzedAt": "2026-02-18T19:08:38.901Z"
+}

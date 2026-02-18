@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00104751.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-26",
+  "summary": "This document is a forwarded email chain containing threatening messages sent to Mark L. Epstein from an individual using the alias 'Puggie'. The threats involve killing Epstein's children, reference his brother's death, and pressure him regarding a partnership with his brother and court testimony.",
+  "persons": [
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email recipient and subject of threats",
+      "category": "key figure",
+      "context": "The recipient of forwarded threatening emails; the threats target him and his family, referencing his brother and a potential partnership.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Stacey Richman",
+      "role": "Email recipient",
+      "category": "legal",
+      "context": "Attorney to whom Mark L. Epstein forwarded the threatening email chain.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Puggie",
+      "role": "Threat sender (alias)",
+      "category": "other",
+      "context": "Sender of a series of threatening emails to Mark L. Epstein, referencing an unnamed 'boss' and Epstein's deceased brother.",
+      "mentionCount": 7
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Puggie",
+      "relationshipType": "victim-perpetrator",
+      "description": "Puggie is sending violent threats to Mark L. Epstein and his family.",
+      "strength": 5
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Stacey Richman",
+      "relationshipType": "attorney-client",
+      "description": "Mark L. Epstein forwards threatening correspondence to his attorney, Stacey Richman.",
+      "strength": 4
+    },
+    {
+      "person1": "Puggie",
+      "person2": "Mark L. Epstein's brother",
+      "relationshipType": "victim-perpetrator",
+      "description": "Puggie's messages imply knowledge of and responsibility for the death of Mark L. Epstein's brother.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-25",
+      "title": "Initial threatening emails sent",
+      "description": "Puggie begins sending emails to Mark L. Epstein, referencing his brother's death and a 'boss', and presenting a choice to admit a partnership or face harm.",
+      "category": "threat",
+      "significance": 4,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Puggie"
+      ]
+    },
+    {
+      "date": "2020-05-26",
+      "title": "Escalated death threats",
+      "description": "Puggie escalates threats, specifically threatening to kill one of Mark L. Epstein's children within 72 hours and describing violent methods.",
+      "category": "threat",
+      "significance": 5,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Puggie"
+      ]
+    },
+    {
+      "date": "2020-05-26",
+      "title": "Threats forwarded to attorney",
+      "description": "Mark L. Epstein forwards the threatening email chain to his attorney, Stacey Richman.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Mark L. Epstein received a series of violent, anonymous threats via email in May 2020, which were later forwarded to his attorney.",
+    "The threats explicitly target Epstein's children, with one message stating an intent to kill one child within 72 hours.",
+    "The threats reference the death of Epstein's brother, implying it was a killing related to the brother's intention 'to tell the court everything'.",
+    "The sender, using the alias 'Puggie', pressures Epstein to tell the court he was in a partnership with his brother, suggesting a legal motive behind the intimidation.",
+    "The threats reference an unnamed 'boss' who 'loved your brother' and wants to meet Epstein, indicating the involvement of at least one other individual."
+  ],
+  "analyzedAt": "2026-02-18T19:03:08.456Z"
+}

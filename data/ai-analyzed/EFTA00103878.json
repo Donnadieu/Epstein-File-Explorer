@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00103878.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "Email exchange between Michael Miller, a member of Jeffrey Epstein's legal team, and an unnamed recipient regarding arrangements for Dr. Michael Baden to observe Epstein's autopsy on August 11, 2019. The email confirms Baden's scheduled attendance at 9 AM.",
+  "persons": [
+    {
+      "name": "Michael Miller",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Identifies himself as part of Jeffrey Epstein's legal team and coordinates the autopsy observation arrangements.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The deceased individual whose autopsy is being discussed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Baden",
+      "role": "Forensic Pathologist",
+      "category": "other",
+      "context": "Arranged by Epstein's legal team to observe the autopsy of Jeffrey Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Miller",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Miller identifies himself as part of Epstein's legal team, indicating a professional legal representation relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Miller",
+      "person2": "Michael Baden",
+      "relationshipType": "professional",
+      "description": "Miller arranged for Baden to observe Epstein's autopsy on behalf of the legal team.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Baden",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional",
+      "description": "Baden was engaged by Epstein's legal team to observe the autopsy, indicating a professional service relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Jeffrey Epstein Autopsy",
+      "description": "The autopsy of Jeffrey Epstein is scheduled, with arrangements made for Michael Baden to observe on behalf of Epstein's legal team.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Baden",
+        "Michael Miller"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Michael Miller, part of Jeffrey Epstein's legal team, coordinated for Dr. Michael Baden to observe Epstein's autopsy.",
+    "The autopsy was scheduled for August 11, 2019, with Baden expected at 9 AM.",
+    "This email exchange occurred shortly after Epstein's death, showing immediate legal team involvement in the autopsy process."
+  ],
+  "analyzedAt": "2026-02-18T16:10:07.926Z"
+}

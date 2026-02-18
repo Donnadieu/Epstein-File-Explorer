@@ -1,0 +1,53 @@
+{
+  "fileName": "EFTA00104907.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-04",
+  "summary": "An email chain forwarding a taxi receipt for a ride to the airport on November 4, 2019, for a trip to Palm Beach related to the Epstein case. The receipt details the fare and trip information.",
+  "persons": [
+    {
+      "name": "Cti",
+      "role": "Email Sender",
+      "category": "other",
+      "context": "Appears as the sender of the email forwarding a taxi receipt for a trip to Palm Beach for the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A Cl",
+      "role": "Email Recipient",
+      "category": "other",
+      "context": "Appears as the recipient of the email containing the taxi receipt for the Epstein case-related trip.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cti",
+      "person2": "A Cl",
+      "relationshipType": "correspondent",
+      "description": "Cti is sending a taxi receipt to A Cl, indicating a professional or logistical communication regarding travel for the Epstein case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-04",
+      "title": "Taxi Ride to Airport for Epstein Case",
+      "description": "An individual took a taxi ride to the airport at 5:49 AM for a trip to Palm Beach related to the Epstein case.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Cti"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach"
+  ],
+  "keyFacts": [
+    "A taxi receipt dated November 4, 2019, documents travel to the airport for a trip to Palm Beach related to the Epstein case.",
+    "The trip occurred early in the morning (5:49 AM) and cost $43.10.",
+    "The document is an email chain forwarding this receipt, indicating logistical planning or expense reporting connected to the case."
+  ],
+  "analyzedAt": "2026-02-18T19:19:48.296Z"
+}

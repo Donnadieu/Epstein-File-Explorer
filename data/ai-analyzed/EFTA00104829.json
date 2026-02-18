@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00104829.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-14",
+  "summary": "Email chain between American Express Global Security personnel discussing technical issues with sharing documents related to Epstein. The emails show coordination to provide Epstein-related materials, likely financial records, to an external recipient, possibly from law enforcement.",
+  "persons": [
+    {
+      "name": "Robert T Curran",
+      "role": "Director/Investigations at American Express Global Security",
+      "category": "law enforcement",
+      "context": "He is coordinating the sending of Epstein-related documents from American Express to an external recipient and mentions technical issues.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Yui Chow",
+      "role": "Employee at American Express (office of Robert Curran)",
+      "category": "staff",
+      "context": "Sent emails with links to AmEx materials related to Epstein; the recipient found her folder easiest to access.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Kristina Lee Hendrickson",
+      "role": "Manager, Growth Assignment Lead - Special Investigations, Financial Intelligence Unit, Global Financial Crimes Compliance at American Express",
+      "category": "law enforcement",
+      "context": "She is involved in sending Epstein-related information and is listed as a contact for American Express Global Security.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert T Curran",
+      "person2": "Yui Chow",
+      "relationshipType": "employer-employee",
+      "description": "Yui Chow is from Robert Curran's office at American Express, assisting in sending Epstein-related documents.",
+      "strength": 3
+    },
+    {
+      "person1": "Robert T Curran",
+      "person2": "Kristina Lee Hendrickson",
+      "relationshipType": "colleague",
+      "description": "Both are American Express Global Security/Financial Crimes Compliance personnel coordinating on providing Epstein-related materials.",
+      "strength": 3
+    },
+    {
+      "person1": "Kristina Lee Hendrickson",
+      "person2": "Yui Chow",
+      "relationshipType": "colleague",
+      "description": "Both are involved in sending Epstein-related document links from American Express to an external recipient.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Secure message about Epstein",
+      "description": "A secure, encrypted email from the Department of Justice (or related) regarding Epstein was sent to Kristina Hendrickson, requiring access by a specific date.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Kristina Lee Hendrickson"
+      ]
+    },
+    {
+      "date": "2019-07-12",
+      "title": "Document sharing coordination",
+      "description": "Multiple emails exchanged about sending Epstein-related American Express documents, with technical access issues reported.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert T Curran",
+        "Yui Chow",
+        "Kristina Lee Hendrickson"
+      ]
+    },
+    {
+      "date": "2019-07-14",
+      "title": "Status update on document access",
+      "description": "An email summarizes receipt of multiple emails with links to AmEx Epstein materials, successful downloads from some senders, and ongoing technical issues with others.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert T Curran",
+        "Yui Chow",
+        "Kristina Lee Hendrickson"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (American Express Global Security office)",
+    "Phoenix, AZ 85027 (American Express Global Financial Crimes Compliance office)"
+  ],
+  "keyFacts": [
+    "American Express Global Security and Financial Crimes Compliance personnel were actively sharing Epstein-related documents in July 2019.",
+    "The external recipient referenced prior correspondence on cases, suggesting an ongoing investigative relationship.",
+    "Technical difficulties were encountered in accessing shared document links, indicating secure or restricted data transfer.",
+    "A secure message from the Department of Justice regarding Epstein was sent to American Express on July 11, 2019, with an expiration date for access.",
+    "The emails demonstrate American Express's internal coordination to provide financial records or investigative materials related to Epstein."
+  ],
+  "analyzedAt": "2026-02-18T19:12:26.052Z"
+}

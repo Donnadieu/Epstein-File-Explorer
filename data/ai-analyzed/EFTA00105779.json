@@ -1,0 +1,216 @@
+{
+  "fileName": "EFTA00105779.pdf",
+  "dataSet": "9",
+  "documentType": "court transcript",
+  "dateOriginal": "2021-04-09",
+  "summary": "This is a transcript of oral arguments before Judge Paul A. Engelmayer in the FOIA case The New York Times Company v. Federal Bureau of Prisons. The arguments focus on the government's use of FOIA Exemption 7(A) to withhold documents related to Jeffrey Epstein's incarceration and death, citing potential interference with the pending criminal prosecutions of BOP officers Tova Noel and Michael Thomas, and the capital case of inmate Nicholas Tartaglione. The judge expresses skepticism about the breadth of the withholdings and indicates he will likely conduct an in-camera review.",
+  "persons": [
+    {
+      "name": "Paul A. Engelmayer",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "Presiding judge over the FOIA case between The New York Times and the Federal Bureau of Prisons. He questions the government's broad application of FOIA exemptions.",
+      "mentionCount": 15
+    },
+    {
+      "name": "David Edward McCraw",
+      "role": "Attorney for The New York Times Company",
+      "category": "legal",
+      "context": "Represents The New York Times in the FOIA lawsuit. Argues against the government's broad withholdings under Exemption 7(A), particularly regarding the Tartaglione and Noel cases.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alexandra Settelmayer",
+      "role": "Attorney for The New York Times Company",
+      "category": "legal",
+      "context": "Co-counsel for The New York Times. Presents arguments regarding FOIA Exemption 5 and the foreseeable harm requirement.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Steven",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Represents the Federal Bureau of Prisons (the government). Defends the use of FOIA Exemptions 7(A) and 5 to withhold documents related to Jeffrey Epstein, citing ongoing criminal proceedings.",
+      "mentionCount": 40
+    },
+    {
+      "name": "Audrey Strauss",
+      "role": "United States Attorney for the Southern District of New York",
+      "category": "legal",
+      "context": "Listed as appearing for the government, though not actively speaking in this transcript.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Walker",
+      "role": "Court Reporter",
+      "category": "staff",
+      "context": "Court reporter for the proceeding.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The subject of the FOIA request. His incarceration, apparent suicide attempt on July 23, 2019, and death on August 10, 2019, at the Metropolitan Correctional Center (MCC) are central to the documents being sought.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Federal Inmate / Criminal Defendant",
+      "category": "key figure",
+      "context": "A defendant in a capital case who was briefly housed with Jeffrey Epstein. His defense may use his interactions with Epstein (specifically reporting Epstein's July 23 suicide attempt) as a mitigating factor, which the government cites as a reason to withhold documents under Exemption 7(A).",
+      "mentionCount": 25
+    },
+    {
+      "name": "Tova Noel",
+      "role": "BOP Officer / Criminal Defendant",
+      "category": "key figure",
+      "context": "A Bureau of Prisons officer charged in connection with falsifying records related to inmate counts on the night of Jeffrey Epstein's death. Her ongoing prosecution is a primary basis for the government's Exemption 7(A) withholdings.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "BOP Officer / Criminal Defendant",
+      "category": "key figure",
+      "context": "A Bureau of Prisons officer charged alongside Tova Noel. His ongoing prosecution is also cited as a basis for Exemption 7(A) withholdings.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Capone",
+      "role": "BOP Official / Declarant",
+      "category": "law enforcement",
+      "context": "A BOP official who submitted declarations supporting the government's FOIA withholdings. His declarations are referenced throughout the arguments to justify categorical exemptions.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Christenson",
+      "role": "Government Declarant",
+      "category": "legal",
+      "context": "Submitted a declaration for the government regarding Exemption 5 withholdings. His boilerplate explanations are criticized by The Times' counsel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Oetken",
+      "role": "District Judge",
+      "category": "legal",
+      "context": "A judge in the Southern District of New York whose standard for evaluating FOIA Exemption 7(A) is discussed as an alternative to a stricter \"per-se rule.\"",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicholas Tartaglione",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "cellmate",
+      "description": "Were briefly housed together in the same cell at the MCC. Tartaglione reported Epstein's July 23, 2019, apparent suicide attempt.",
+      "strength": 4
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "Noel was a BOP officer responsible for monitoring inmates, including Epstein, on the night of his death. She is charged with falsifying count records.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "Thomas was a BOP officer charged alongside Noel in connection with falsifying records related to inmate counts on the night of Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-defendant",
+      "description": "Both are BOP officers jointly charged in the criminal case related to falsifying inmate count records.",
+      "strength": 5
+    },
+    {
+      "person1": "Steven",
+      "person2": "Federal Bureau of Prisons",
+      "relationshipType": "attorney-client",
+      "description": "The AUSA represents the BOP, the defendant in this FOIA lawsuit.",
+      "strength": 5
+    },
+    {
+      "person1": "David Edward McCraw",
+      "person2": "The New York Times Company",
+      "relationshipType": "attorney-client",
+      "description": "McCraw is counsel for The New York Times, the plaintiff in the FOIA lawsuit.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Apparent Suicide Attempt",
+      "description": "Jeffrey Epstein was found in his cell at the MCC after an apparent suicide attempt. His cellmate, Nicholas Tartaglione, reported the incident.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found dead in his cell at the Metropolitan Correctional Center (MCC). His death was ruled a suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2021-04-09",
+      "title": "FOIA Oral Arguments",
+      "description": "Oral argument before Judge Engelmayer on cross-motions for summary judgment in The New York Times Company v. Federal Bureau of Prisons, concerning the release of documents related to Jeffrey Epstein's incarceration and death.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Paul A. Engelmayer",
+        "David Edward McCraw",
+        "Alexandra Settelmayer",
+        "Steven"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Criminal Prosecution of Noel and Thomas",
+      "description": "Ongoing criminal case against BOP officers Tova Noel and Michael Thomas for falsifying records related to inmate counts, discovered in the wake of Epstein's death.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Capital Case of Nicholas Tartaglione",
+      "description": "Ongoing federal death penalty case against Nicholas Tartaglione. His defense may cite his actions regarding Epstein's suicide attempt as a mitigating factor.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Nicholas Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Southern District of New York",
+    "United States District Court, Southern District of New York"
+  ],
+  "keyFacts": [
+    "The government is withholding approximately 3,500 pages of BOP documents related to Jeffrey Epstein under FOIA Exemptions 7(A) and 5.",
+    "The primary justification for withholding under Exemption 7(A) is the potential interference with the criminal prosecutions of BOP officers Tova Noel and Michael Thomas, and the capital case of inmate Nicholas Tartaglione.",
+    "Judge Engelmayer is highly skeptical of the government's broad, categorical withholdings, describing them as having a \"trust us\" quality and expressing concern that \"too much has been withheld.\"",
+    "The judge indicates he will likely order the government to produce the withheld documents for in-camera review so he can independently assess the applicability of the claimed exemptions.",
+    "The New York Times's core interest is in understanding \"government failure\" and providing public oversight into how Epstein's suicide occurred while in BOP custody."
+  ],
+  "analyzedAt": "2026-02-18T20:08:23.903Z"
+}

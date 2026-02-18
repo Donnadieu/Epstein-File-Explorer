@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00104753.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "This is an email chain from May 2020 involving attorney Stacey Richman forwarding a message from Mark L. Epstein, who in turn forwards a message from an individual identified as 'R O'. The forwarded message references a video of an entrance with a 15-minute cut recognized by police and asks if the recipient saw a police email, concluding with a reference to the document identifier EFTA00104753.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Law Offices of Richman Hill & Associates PLLC who is forwarding an email chain. She includes a standard confidentiality notice in her email signature.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email Correspondent",
+      "category": "other",
+      "context": "Individual forwarding an email from 'R O' to Stacey Richman. The subject suggests he is seeking or providing information.",
+      "mentionCount": 2
+    },
+    {
+      "name": "R O",
+      "role": "Email Author",
+      "category": "other",
+      "context": "Author of the core message, sent from an email address 'eskadradl@gmail.com', discussing a video with a 15-minute cut and police recognition of it.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stacey Richman",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "correspondent",
+      "description": "Mark L. Epstein is sending an email to Stacey Richman, who then forwards it. The context suggests a professional or informational exchange.",
+      "strength": 2
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "R O",
+      "relationshipType": "correspondent",
+      "description": "Mark L. Epstein is forwarding an email originally sent to him by 'R O'.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-20",
+      "title": "Email from R O regarding video",
+      "description": "An individual using the identifier 'R O' sends an email to Mark L. Epstein discussing a video of an entrance that has a 15-minute cut, which police have recognized, and asks if Epstein saw a related police email.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "R O",
+        "Mark L. Epstein"
+      ]
+    },
+    {
+      "date": "2020-05-24",
+      "title": "Epstein forwards email to Richman",
+      "description": "Mark L. Epstein forwards the email from 'R O' to attorney Stacey Richman.",
+      "category": "correspondence",
+      "significance": 1,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    },
+    {
+      "date": "2020-05-25",
+      "title": "Richman forwards email chain",
+      "description": "Attorney Stacey Richman forwards the email chain from Mark L. Epstein, adding a confidentiality notice.",
+      "category": "correspondence",
+      "significance": 1,
+      "personsInvolved": [
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx, New York 10461",
+    "2027 Williamsbridge Road, Bronx, New York 10461"
+  ],
+  "keyFacts": [
+    "The document is an email chain from May 2020 involving attorney Stacey Richman and Mark L. Epstein.",
+    "The core message, from 'R O', references a video of an entrance with a 15-minute cut that police have recognized.",
+    "The message asks Mark L. Epstein if he saw a related police email.",
+    "The final line of the core message is 'Let me know if you see EFTA00104753', which is the identifier for this document file.",
+    "The correspondence includes a standard attorney-client confidentiality notice."
+  ],
+  "analyzedAt": "2026-02-18T19:03:26.736Z"
+}

@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00103512.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Electronic Communication",
+  "dateOriginal": "2008-05-31",
+  "summary": "This document is an FBI electronic communication and related forms detailing the service of a grand jury subpoena to a witness (name redacted) in New York on May 29, 2008, for testimony regarding the Jeffrey Epstein investigation. It includes the subpoena, return of service, witness travel instructions, and a summary of the agents' interaction with the witness, who requested her attorney and was informed the matter concerned Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named as the subject of the grand jury investigation for which a witness is being subpoenaed. The FBI agent tells the witness the interview is regarding him.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine N. Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Listed alongside Jeffrey Epstein in the communication's title regarding the investigation into child prostitution.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Diarmuid White",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Identified as the attorney for the subpoenaed witness. The witness provided his business card to FBI agents.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Diarmuid White",
+      "person2": "Redacted Witness",
+      "relationshipType": "attorney-client",
+      "description": "Diarmuid White is identified as the attorney for the redacted witness, who provided his business card to FBI agents.",
+      "strength": 4
+    },
+    {
+      "person1": "Redacted Witness",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "The witness is subpoenaed to testify before a grand jury investigating Jeffrey Epstein. The FBI agent confirmed the interview was regarding Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine N. Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Both are listed as subjects in the same FBI investigation titled 'JEFFREY EPSTEIN; GHISLAINE N. MAXWELL; WSTA - CHILD PROSTITUTION'.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-05-29",
+      "title": "FBI serves grand jury subpoena",
+      "description": "FBI Special Agents meet with a witness at her New York residence to serve a grand jury subpoena. The witness requests her attorney and is informed the matter concerns Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Redacted Witness",
+        "Diarmuid White",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008-06-03",
+      "title": "Scheduled grand jury testimony",
+      "description": "The witness is commanded to appear and testify before the Grand Jury of the U.S. District Court in West Palm Beach, Florida.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Redacted Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "701 Clematis Street, West Palm Beach, Florida 33401 (U.S. District Court)",
+    "New York, NY (Witness's residence)",
+    "Street, New York, NY 10075 (White and White Law Firm address)"
+  ],
+  "keyFacts": [
+    "A witness was subpoenaed on May 29, 2008, to testify before a federal grand jury in West Palm Beach regarding the Jeffrey Epstein investigation.",
+    "The witness immediately requested her attorney, Diarmuid White, and was informed by FBI agents that she was not a target of the investigation.",
+    "The FBI agent explicitly told the witness the interview was regarding Jeffrey Epstein, and asked if she was familiar with him, to which she replied 'OK...'.",
+    "The document includes detailed instructions for fact witnesses regarding travel arrangements and reimbursement, indicating standard DOJ procedures for witness management.",
+    "The investigation is formally titled to include both Jeffrey Epstein and Ghislaine N. Maxwell concerning 'WSTA - CHILD PROSTITUTION'."
+  ],
+  "analyzedAt": "2026-02-18T15:53:02.477Z"
+}

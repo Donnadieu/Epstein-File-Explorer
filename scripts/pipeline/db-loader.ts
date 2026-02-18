@@ -1,16 +1,24 @@
 import "dotenv/config";
+import { eq, inArray, or, sql } from "drizzle-orm";
 import * as fs from "fs";
+import OpenAI from "openai";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { persons, documents, connections, personDocuments, timelineEvents } from "../../shared/schema";
-import { sql, eq, or, inArray } from "drizzle-orm";
 import { normalizeName } from "../../server/storage";
-import type { RawPerson } from "./wikipedia-scraper";
-import type { DOJCatalog, DOJDataSet } from "./doj-scraper";
-import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from "./ai-analyzer";
+import {
+  connections,
+  documents,
+  personDocuments,
+  persons,
+  timelineEvents,
+} from "../../shared/schema";
+import type {
+  AIAnalysisResult
+} from "./ai-analyzer";
+import type { DOJCatalog } from "./doj-scraper";
 import { classifyAllDocuments } from "./media-classifier";
-import OpenAI from "openai";
+import type { RawPerson } from "./wikipedia-scraper";
 
 // --- Deduplication dry-run / plan types ---
 
@@ -47,27 +55,51 @@ const __filename = fileURLToPath(import.meta.url);
 // --- Canonical type normalization (shared with classify-from-pages.ts) ---
 
 const CANONICAL_TYPE_MAP: [string, RegExp][] = [
-  ["correspondence", /correspondence|email|letter|memo|fax|internal memorandum|calendar|appointment|schedule/i],
-  ["court filing", /court filing|court order|indictment|plea|subpoena|motion|docket/i],
+  [
+    "correspondence",
+    /correspondence|email|letter|memo|fax|internal memorandum|calendar|appointment|schedule/i,
+  ],
+  [
+    "court filing",
+    /court filing|court order|indictment|plea|subpoena|motion|docket/i,
+  ],
   ["fbi report", /fbi|302|bureau/i],
   ["deposition", /deposition|interview transcript/i],
   ["grand jury transcript", /grand jury/i],
   ["flight log", /flight|manifest|aircraft/i],
   ["financial record", /financial|bank|account|employment record/i],
   ["search warrant", /search warrant|seizure|elsur/i],
-  ["police report", /police|incident report|booking|prison|correctional|jail|inmate/i],
+  [
+    "police report",
+    /police|incident report|booking|prison|correctional|jail|inmate/i,
+  ],
   ["property record", /property|real estate/i],
   ["news article", /news|press|article|magazine/i],
   ["travel record", /travel|passport|immigration/i],
-  ["government record", /administrative|government|official|form|log|record|registry|certificate/i],
+  [
+    "government record",
+    /administrative|government|official|form|log|record|registry|certificate/i,
+  ],
 ];
 
 const VALID_TYPES = new Set([
-  "correspondence", "court filing", "fbi report", "deposition",
-  "grand jury transcript", "flight log", "financial record",
-  "search warrant", "police report", "property record",
-  "news article", "travel record", "email", "contact list",
-  "photograph", "video", "government record",
+  "correspondence",
+  "court filing",
+  "fbi report",
+  "deposition",
+  "grand jury transcript",
+  "flight log",
+  "financial record",
+  "search warrant",
+  "police report",
+  "property record",
+  "news article",
+  "travel record",
+  "email",
+  "contact list",
+  "photograph",
+  "video",
+  "government record",
 ]);
 
 function normalizeType(aiType: string): string {
@@ -86,13 +118,16 @@ function editDistance(a: string, b: string): number {
   if (a.length === 0) return b.length;
   if (b.length === 0) return a.length;
   const dp: number[][] = Array.from({ length: a.length + 1 }, (_, i) =>
-    Array.from({ length: b.length + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0))
+    Array.from({ length: b.length + 1 }, (_, j) =>
+      i === 0 ? j : j === 0 ? i : 0,
+    ),
   );
   for (let i = 1; i <= a.length; i++) {
     for (let j = 1; j <= b.length; j++) {
-      dp[i][j] = a[i - 1] === b[j - 1]
-        ? dp[i - 1][j - 1]
-        : 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]);
+      dp[i][j] =
+        a[i - 1] === b[j - 1]
+          ? dp[i - 1][j - 1]
+          : 1 + Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]);
     }
   }
   return dp[a.length][b.length];
@@ -149,7 +184,9 @@ export async function loadPersonsFromFile(filePath?: string): Promise<number> {
           name: person.name,
           aliases: person.aliases.length > 0 ? person.aliases : null,
           role: person.role || "Named individual",
-          description: person.description || `Named in Epstein files. ${person.occupation || ""}`.trim(),
+          description:
+            person.description ||
+            `Named in Epstein files. ${person.occupation || ""}`.trim(),
           status: person.status || "named",
           nationality: person.nationality || "Unknown",
           occupation: person.occupation || "Unknown",
@@ -168,7 +205,9 @@ export async function loadPersonsFromFile(filePath?: string): Promise<number> {
   return loaded;
 }
 
-export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<number> {
+export async function loadDocumentsFromCatalog(
+  catalogPath?: string,
+): Promise<number> {
   const file = catalogPath || path.join(DATA_DIR, "doj-catalog.json");
   if (!fs.existsSync(file)) {
     console.error(`Catalog file not found: ${file}`);
@@ -213,31 +252,41 @@ export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<nu
   return loaded;
 }
 
-export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ persons: number; connections: number; events: number; docLinks: number }> {
+export async function loadAIResults(options?: {
+  dryRun?: boolean;
+}): Promise<{
+  persons: number;
+  connections: number;
+  events: number;
+  docLinks: number;
+}> {
   const isDryRun = options?.dryRun === true;
-  const dryRunSummary = isDryRun ? {
-    personsToCreate: [] as string[],
-    personsToUpdate: [] as string[],
-    connectionsToCreate: [] as string[],
-    eventsToCreate: [] as string[],
-    eventsToUpdate: [] as string[],
-    docLinksToCreate: [] as string[],
-    docsToMark: [] as string[],
-  } : null;
+  const dryRunSummary = isDryRun
+    ? {
+        personsToCreate: [] as string[],
+        personsToUpdate: [] as string[],
+        connectionsToCreate: [] as string[],
+        eventsToCreate: [] as string[],
+        eventsToUpdate: [] as string[],
+        docLinksToCreate: [] as string[],
+        docsToMark: [] as string[],
+      }
+    : null;
   const aiDir = path.join(DATA_DIR, "ai-analyzed");
   if (!fs.existsSync(aiDir)) {
     console.error(`AI results directory not found: ${aiDir}`);
     return { persons: 0, connections: 0, events: 0, docLinks: 0 };
   }
 
-  const allFiles = fs.readdirSync(aiDir).filter(f => f.endsWith(".json"));
+  const allFiles = fs.readdirSync(aiDir).filter((f) => f.endsWith(".json"));
   if (allFiles.length === 0) {
     console.log("No AI analysis results found.");
     return { persons: 0, connections: 0, events: 0, docLinks: 0 };
   }
 
   // Skip files whose documents are already marked as loaded
-  const loadedDocs = await db.select({ title: documents.title, sourceUrl: documents.sourceUrl })
+  const loadedDocs = await db
+    .select({ title: documents.title, sourceUrl: documents.sourceUrl })
     .from(documents)
     .where(eq(documents.aiAnalysisStatus, "completed"));
   const loadedEftas = new Set<string>();
@@ -246,8 +295,11 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
     if (doc.sourceUrl) loadedEftas.add(doc.sourceUrl.toLowerCase());
   }
 
-  const files = allFiles.filter(f => {
-    const efta = f.replace(/\.json$/i, "").replace(/\.pdf$/i, "").toLowerCase();
+  const files = allFiles.filter((f) => {
+    const efta = f
+      .replace(/\.json$/i, "")
+      .replace(/\.pdf$/i, "")
+      .toLowerCase();
     // Check if any loaded doc title/sourceUrl contains this EFTA
     for (const key of loadedEftas) {
       if (key.includes(efta)) return false;
@@ -255,7 +307,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
     return true;
   });
 
-  console.log(`Loading AI results: ${files.length} new files (${allFiles.length - files.length} already loaded, ${allFiles.length} total)`);
+  console.log(
+    `Loading AI results: ${files.length} new files (${allFiles.length - files.length} already loaded, ${allFiles.length} total)`,
+  );
 
   let personsCreated = 0;
   let personsUpdated = 0;
@@ -265,9 +319,16 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
   let docLinksCreated = 0;
 
   const existingPairs = new Set<string>();
-  const existingConns = await db.select({ personId1: connections.personId1, personId2: connections.personId2 }).from(connections);
+  const existingConns = await db
+    .select({
+      personId1: connections.personId1,
+      personId2: connections.personId2,
+    })
+    .from(connections);
   for (const c of existingConns) {
-    existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
+    existingPairs.add(
+      `${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`,
+    );
   }
 
   // Pre-load all persons by lowercase name for O(1) lookups
@@ -281,7 +342,12 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
 
   // Pre-load personDocuments links into a Set
   console.log("  Pre-loading person↔document links...");
-  const allLinks = await db.select({ personId: personDocuments.personId, documentId: personDocuments.documentId }).from(personDocuments);
+  const allLinks = await db
+    .select({
+      personId: personDocuments.personId,
+      documentId: personDocuments.documentId,
+    })
+    .from(personDocuments);
   const existingLinks = new Set<string>();
   for (const l of allLinks) {
     existingLinks.add(`${l.personId}-${l.documentId}`);
@@ -290,10 +356,16 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
 
   // Pre-load document EFTA→ID map for O(1) source doc resolution
   console.log("  Pre-loading EFTA→doc mappings...");
-  const allDocs = await db.select({ id: documents.id, title: documents.title, sourceUrl: documents.sourceUrl }).from(documents);
+  const allDocs = await db
+    .select({
+      id: documents.id,
+      title: documents.title,
+      sourceUrl: documents.sourceUrl,
+    })
+    .from(documents);
   const docByEfta = new Map<string, number>();
   for (const d of allDocs) {
-    const match = (d.title || d.sourceUrl || '').match(/EFTA\d+/i);
+    const match = (d.title || d.sourceUrl || "").match(/EFTA\d+/i);
     if (match) docByEfta.set(match[0].toLowerCase(), d.id);
   }
   console.log(`  Pre-loaded ${docByEfta.size} EFTA→doc mappings`);
@@ -301,7 +373,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
   for (let fi = 0; fi < files.length; fi++) {
     const file = files[fi];
     if (fi % 100 === 0) {
-      console.log(`  [${fi}/${files.length}] ${personsCreated}p ${connectionsCreated}c ${eventsCreated}e ${docLinksCreated}d`);
+      console.log(
+        `  [${fi}/${files.length}] ${personsCreated}p ${connectionsCreated}c ${eventsCreated}e ${docLinksCreated}d`,
+      );
     }
     try {
       const data: AIAnalysisResult = JSON.parse(
@@ -334,15 +408,18 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
             personsCreated++;
           } else {
             try {
-              const [inserted] = await db.insert(persons).values({
-                name: mention.name,
-                category: mention.category,
-                role: mention.role,
-                description: newDesc,
-                status,
-                documentCount: 0,
-                connectionCount: 0,
-              }).returning();
+              const [inserted] = await db
+                .insert(persons)
+                .values({
+                  name: mention.name,
+                  category: mention.category,
+                  role: mention.role,
+                  description: newDesc,
+                  status,
+                  documentCount: 0,
+                  connectionCount: 0,
+                })
+                .returning();
               personsByName.set(inserted.name.toLowerCase(), inserted);
               personsCreated++;
             } catch {
@@ -352,16 +429,28 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
         } else {
           // Update if new data is richer
           const updates: Record<string, any> = {};
-          if (mention.category && (!existing.category || existing.category === "unknown")) updates.category = mention.category;
-          if (mention.role && (!existing.role || existing.role === "unknown")) updates.role = mention.role;
-          if (newDesc && newDesc.length > (existing.description?.length || 0)) updates.description = newDesc;
-          if (status !== "named" && existing.status === "named") updates.status = status;
+          if (
+            mention.category &&
+            (!existing.category || existing.category === "unknown")
+          )
+            updates.category = mention.category;
+          if (mention.role && (!existing.role || existing.role === "unknown"))
+            updates.role = mention.role;
+          if (newDesc && newDesc.length > (existing.description?.length || 0))
+            updates.description = newDesc;
+          if (status !== "named" && existing.status === "named")
+            updates.status = status;
 
           if (Object.keys(updates).length > 0) {
             if (isDryRun) {
-              dryRunSummary!.personsToUpdate.push(`${existing.name} (${Object.keys(updates).join(", ")})`);
+              dryRunSummary!.personsToUpdate.push(
+                `${existing.name} (${Object.keys(updates).join(", ")})`,
+              );
             } else {
-              await db.update(persons).set(updates).where(eq(persons.id, existing.id));
+              await db
+                .update(persons)
+                .set(updates)
+                .where(eq(persons.id, existing.id));
             }
             personsUpdated++;
           }
@@ -379,8 +468,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
           if (existingPairs.has(pairKey)) continue;
 
           if (isDryRun) {
-            dryRunSummary!.connectionsToCreate.push(`${conn.person1} ↔ ${conn.person2}`);
-            existingPairs.add(pairKey);
+            dryRunSummary!.connectionsToCreate.push(
+              `${conn.person1} ↔ ${conn.person2}`,
+            );
             connectionsCreated++;
           } else {
             try {
@@ -402,14 +492,18 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
       }
 
       // --- Resolve source document ID for this analysis file ---
-      const eventEfta = data.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
+      const eventEfta = data.fileName
+        .replace(/\.json$/i, "")
+        .replace(/\.pdf$/i, "");
       let sourceDocId = docByEfta.get(eventEfta.toLowerCase());
       if (sourceDocId === undefined) {
         // Fallback to DB query if not in pre-loaded map
         const [sourceDoc] = await db
           .select({ id: documents.id })
           .from(documents)
-          .where(sql`${documents.title} ILIKE ${'%' + eventEfta + '%'} OR ${documents.sourceUrl} ILIKE ${'%' + eventEfta + '%'}`)
+          .where(
+            sql`${documents.title} ILIKE ${"%" + eventEfta + "%"} OR ${documents.sourceUrl} ILIKE ${"%" + eventEfta + "%"}`,
+          )
           .limit(1);
         sourceDocId = sourceDoc?.id;
       }
@@ -425,16 +519,26 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
 
           // Check for existing event with same date + title
           const existingEvent = await db
-            .select({ id: timelineEvents.id, description: timelineEvents.description, significance: timelineEvents.significance, personIds: timelineEvents.personIds, documentIds: timelineEvents.documentIds })
+            .select({
+              id: timelineEvents.id,
+              description: timelineEvents.description,
+              significance: timelineEvents.significance,
+              personIds: timelineEvents.personIds,
+              documentIds: timelineEvents.documentIds,
+            })
             .from(timelineEvents)
-            .where(sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`)
+            .where(
+              sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`,
+            )
             .limit(1);
 
           const documentIds = sourceDocId ? [sourceDocId] : [];
 
           if (existingEvent.length === 0) {
             if (isDryRun) {
-              dryRunSummary!.eventsToCreate.push(`${event.date}: ${event.title}`);
+              dryRunSummary!.eventsToCreate.push(
+                `${event.date}: ${event.title}`,
+              );
             } else {
               await db.insert(timelineEvents).values({
                 date: event.date,
@@ -450,10 +554,19 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
           } else {
             const ex = existingEvent[0];
             const updates: Record<string, any> = {};
-            if (event.description && event.description.length > (ex.description?.length || 0)) updates.description = event.description;
+            if (
+              event.description &&
+              event.description.length > (ex.description?.length || 0)
+            )
+              updates.description = event.description;
             if (event.category) updates.category = event.category;
-            if (event.significance && event.significance > (ex.significance ?? 0)) updates.significance = event.significance;
-            if (personIds.length > (ex.personIds?.length || 0)) updates.personIds = personIds;
+            if (
+              event.significance &&
+              event.significance > (ex.significance ?? 0)
+            )
+              updates.significance = event.significance;
+            if (personIds.length > (ex.personIds?.length || 0))
+              updates.personIds = personIds;
 
             // Merge documentIds: add new doc ID if not already present
             if (sourceDocId) {
@@ -465,9 +578,14 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
 
             if (Object.keys(updates).length > 0) {
               if (isDryRun) {
-                dryRunSummary!.eventsToUpdate.push(`${event.date}: ${event.title}`);
+                dryRunSummary!.eventsToUpdate.push(
+                  `${event.date}: ${event.title}`,
+                );
               } else {
-                await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));
+                await db
+                  .update(timelineEvents)
+                  .set(updates)
+                  .where(eq(timelineEvents.id, ex.id));
               }
               eventsUpdated++;
             }
@@ -488,7 +606,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
 
           const newContext = (mention.context || "").substring(0, 500);
           if (isDryRun) {
-            dryRunSummary!.docLinksToCreate.push(`${mention.name} ↔ doc#${sourceDocId}`);
+            dryRunSummary!.docLinksToCreate.push(
+              `${mention.name} ↔ doc#${sourceDocId}`,
+            );
             existingLinks.add(linkKey);
             docLinksCreated++;
           } else {
@@ -511,16 +631,18 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
         if (isDryRun) {
           dryRunSummary!.docsToMark.push(eventEfta);
         } else {
-          const docUpdates: Record<string, any> = { aiAnalysisStatus: "completed" };
+          const docUpdates: Record<string, any> = {
+            aiAnalysisStatus: "completed",
+          };
           if (data.documentType) {
             docUpdates.documentType = normalizeType(data.documentType);
           }
-          await db.update(documents)
+          await db
+            .update(documents)
             .set(docUpdates)
             .where(eq(documents.id, sourceDocId));
         }
       }
-
     } catch (error: any) {
       console.warn(`  Error processing ${file}: ${error.message}`);
     }
@@ -530,20 +652,34 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ p
     const planPath = path.join(DATA_DIR, "ai-results-dry-run.json");
     fs.writeFileSync(planPath, JSON.stringify(dryRunSummary, null, 2));
     console.log(`\n  DRY RUN — no database changes made`);
-    console.log(`  Would create: ${dryRunSummary.personsToCreate.length} persons, ${dryRunSummary.connectionsToCreate.length} connections, ${dryRunSummary.eventsToCreate.length} events, ${dryRunSummary.docLinksToCreate.length} doc-links`);
-    console.log(`  Would update: ${dryRunSummary.personsToUpdate.length} persons, ${dryRunSummary.eventsToUpdate.length} events`);
-    console.log(`  Would mark ${dryRunSummary.docsToMark.length} docs as AI-analyzed`);
+    console.log(
+      `  Would create: ${dryRunSummary.personsToCreate.length} persons, ${dryRunSummary.connectionsToCreate.length} connections, ${dryRunSummary.eventsToCreate.length} events, ${dryRunSummary.docLinksToCreate.length} doc-links`,
+    );
+    console.log(
+      `  Would update: ${dryRunSummary.personsToUpdate.length} persons, ${dryRunSummary.eventsToUpdate.length} events`,
+    );
+    console.log(
+      `  Would mark ${dryRunSummary.docsToMark.length} docs as AI-analyzed`,
+    );
     console.log(`  Full details: ${planPath}`);
   } else {
-    console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`);
+    console.log(
+      `  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`,
+    );
   }
-  return { persons: personsCreated + personsUpdated, connections: connectionsCreated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated };
+  return {
+    persons: personsCreated + personsUpdated,
+    connections: connectionsCreated,
+    events: eventsCreated + eventsUpdated,
+    docLinks: docLinksCreated,
+  };
 }
 
 function inferStatusFromCategory(category: string, role: string): string {
   const lower = `${category} ${role}`.toLowerCase();
   if (lower.includes("victim")) return "victim";
-  if (lower.includes("convicted") || lower.includes("defendant")) return "convicted";
+  if (lower.includes("convicted") || lower.includes("defendant"))
+    return "convicted";
   if (lower.includes("witness")) return "named";
   return "named";
 }
@@ -562,7 +698,9 @@ export async function updateDocumentCounts(): Promise<void> {
     const [connCount] = await db
       .select({ count: sql<number>`count(*)::int` })
       .from(connections)
-      .where(sql`${connections.personId1} = ${person.id} OR ${connections.personId2} = ${person.id}`);
+      .where(
+        sql`${connections.personId1} = ${person.id} OR ${connections.personId2} = ${person.id}`,
+      );
 
     await db
       .update(persons)
@@ -581,17 +719,22 @@ export async function updateDocumentCounts(): Promise<void> {
  * Remaps person_documents, connections, timeline_events, collects aliases,
  * deduplicates person_documents rows, removes self-loop connections, and recalculates counts.
  */
-async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicateIds: number[], allNames: string[]): Promise<void> {
+async function mergePersonGroup(
+  canonical: typeof persons.$inferSelect,
+  duplicateIds: number[],
+  allNames: string[],
+): Promise<void> {
   if (duplicateIds.length === 0) return;
 
   // Collect variant names as aliases (exclude canonical's own name)
   const existingAliases = canonical.aliases ?? [];
   const newAliases = allNames
-    .filter(n => n !== canonical.name && !existingAliases.includes(n))
+    .filter((n) => n !== canonical.name && !existingAliases.includes(n))
     .slice(0, 20); // cap to avoid bloat
 
   // Remap person_documents
-  await db.update(personDocuments)
+  await db
+    .update(personDocuments)
     .set({ personId: canonical.id })
     .where(inArray(personDocuments.personId, duplicateIds));
 
@@ -605,23 +748,29 @@ async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicat
   `);
 
   // Remap connections
-  await db.update(connections)
+  await db
+    .update(connections)
     .set({ personId1: canonical.id })
     .where(inArray(connections.personId1, duplicateIds));
-  await db.update(connections)
+  await db
+    .update(connections)
     .set({ personId2: canonical.id })
     .where(inArray(connections.personId2, duplicateIds));
 
   // Remove self-loop connections created by remapping
-  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+  await db.execute(
+    sql`DELETE FROM connections WHERE person_id_1 = person_id_2`,
+  );
 
   // Delete any remaining connections still referencing duplicate IDs (safety net for FK constraints)
-  await db.delete(connections).where(
-    or(
-      inArray(connections.personId1, duplicateIds),
-      inArray(connections.personId2, duplicateIds),
-    )
-  );
+  await db
+    .delete(connections)
+    .where(
+      or(
+        inArray(connections.personId1, duplicateIds),
+        inArray(connections.personId2, duplicateIds),
+      ),
+    );
 
   // Remap timeline_events.person_ids (integer array)
   for (const dupId of duplicateIds) {
@@ -639,7 +788,9 @@ async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicat
   `);
 
   // Delete any remaining person_documents referencing duplicates (safety net)
-  await db.delete(personDocuments).where(inArray(personDocuments.personId, duplicateIds));
+  await db
+    .delete(personDocuments)
+    .where(inArray(personDocuments.personId, duplicateIds));
 
   // Delete duplicate person records
   await db.delete(persons).where(inArray(persons.id, duplicateIds));
@@ -652,10 +803,13 @@ async function mergePersonGroup(canonical: typeof persons.$inferSelect, duplicat
   const [connCount] = await db
     .select({ count: sql<number>`count(*)::int` })
     .from(connections)
-    .where(sql`${connections.personId1} = ${canonical.id} OR ${connections.personId2} = ${canonical.id}`);
+    .where(
+      sql`${connections.personId1} = ${canonical.id} OR ${connections.personId2} = ${canonical.id}`,
+    );
 
   const mergedAliases = [...new Set([...existingAliases, ...newAliases])];
-  await db.update(persons)
+  await db
+    .update(persons)
     .set({
       documentCount: docCount?.count || 0,
       connectionCount: connCount?.count || 0,
@@ -759,7 +913,8 @@ export function isJunkPersonName(name: string): boolean {
   if (GENERIC_NONPERSONS.has(lower)) return true;
 
   // Pronouns and fragments used as names
-  if (["her", "his", "him", "she", "he", "des", "ands"].includes(lower)) return true;
+  if (["her", "his", "him", "she", "he", "des", "ands"].includes(lower))
+    return true;
 
   // Organizations (LLC, Inc, Corp, LLP) — not persons
   if (/,?\s*(llc|inc|corp|lp|llp)\.?\s*$/i.test(trimmed)) return true;
@@ -774,10 +929,21 @@ export function isJunkPersonName(name: string): boolean {
   if (/^former\s/i.test(trimmed)) return true;
 
   // "Chief/Director/Head of..." titles
-  if (/^(chief|director|head|commissioner|superintendent|warden|commander)\s/i.test(trimmed) && /\bof\b/i.test(trimmed)) return true;
+  if (
+    /^(chief|director|head|commissioner|superintendent|warden|commander)\s/i.test(
+      trimmed,
+    ) &&
+    /\bof\b/i.test(trimmed)
+  )
+    return true;
 
   // "Deputy/Assistant [title]" roles
-  if (/^(deputy|assistant|associate|acting|interim)\s+(assistant\s+)?(attorney general|director|chief|commissioner|warden|prosecutor|counsel)/i.test(trimmed)) return true;
+  if (
+    /^(deputy|assistant|associate|acting|interim)\s+(assistant\s+)?(attorney general|director|chief|commissioner|warden|prosecutor|counsel)/i.test(
+      trimmed,
+    )
+  )
+    return true;
 
   // Parenthetical org tags: (FBI), (ODAG), (AUSA), (USMS), (NY), (SI), etc.
   if (/\([A-Z]{2,5}\)/.test(trimmed)) return true;
@@ -813,9 +979,13 @@ function loadProtectedNames(): Set<string> {
   if (fs.existsSync(protectedFile)) {
     const raw = JSON.parse(fs.readFileSync(protectedFile, "utf-8"));
     for (const p of raw) protectedNames.add(normalizeName(p.name));
-    console.log(`  Loaded ${protectedNames.size} protected person names from Wikipedia`);
+    console.log(
+      `  Loaded ${protectedNames.size} protected person names from Wikipedia`,
+    );
   } else {
-    console.log("  Warning: persons-raw.json not found, no protected names loaded");
+    console.log(
+      "  Warning: persons-raw.json not found, no protected names loaded",
+    );
   }
   return protectedNames;
 }
@@ -828,10 +998,17 @@ async function deletePersonsCascade(ids: number[]): Promise<void> {
   const CHUNK = 500;
   for (let i = 0; i < ids.length; i += CHUNK) {
     const chunk = ids.slice(i, i + CHUNK);
-    await db.delete(connections).where(
-      or(inArray(connections.personId1, chunk), inArray(connections.personId2, chunk))
-    );
-    await db.delete(personDocuments).where(inArray(personDocuments.personId, chunk));
+    await db
+      .delete(connections)
+      .where(
+        or(
+          inArray(connections.personId1, chunk),
+          inArray(connections.personId2, chunk),
+        ),
+      );
+    await db
+      .delete(personDocuments)
+      .where(inArray(personDocuments.personId, chunk));
     for (const id of chunk) {
       await db.execute(sql`
         UPDATE timeline_events
@@ -861,8 +1038,12 @@ function pickCanonical(
     const capsA = a.name === a.name.toUpperCase() ? 1 : 0;
     const capsB = b.name === b.name.toUpperCase() ? 1 : 0;
     if (capsA !== capsB) return capsA - capsB;
-    const partsA = normalizeName(a.name).split(" ").filter(p => p.length >= 2);
-    const partsB = normalizeName(b.name).split(" ").filter(p => p.length >= 2);
+    const partsA = normalizeName(a.name)
+      .split(" ")
+      .filter((p) => p.length >= 2);
+    const partsB = normalizeName(b.name)
+      .split(" ")
+      .filter((p) => p.length >= 2);
     if (partsB.length !== partsA.length) return partsB.length - partsA.length;
     if (b.name.length !== a.name.length) return b.name.length - a.name.length;
     return a.id - b.id;
@@ -870,7 +1051,11 @@ function pickCanonical(
 }
 
 // --- Pass 0: Junk Removal ---
-async function pass0JunkRemoval(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass0JunkRemoval(
+  protectedNames: Set<string>,
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   const allPersons = await db.select().from(persons);
   const junkPersons: (typeof persons.$inferSelect)[] = [];
   for (const p of allPersons) {
@@ -896,16 +1081,22 @@ async function pass0JunkRemoval(protectedNames: Set<string>, actions: Deduplicat
     }
   } else {
     if (junkPersons.length > 0) {
-      await deletePersonsCascade(junkPersons.map(p => p.id));
+      await deletePersonsCascade(junkPersons.map((p) => p.id));
     }
   }
 
-  console.log(`  Pass 0: ${actions !== null ? "Found" : "Removed"} ${junkPersons.length} junk persons`);
+  console.log(
+    `  Pass 0: ${actions !== null ? "Found" : "Removed"} ${junkPersons.length} junk persons`,
+  );
   return junkPersons.length;
 }
 
 // --- Pass 1: Exact Normalized Matches ---
-async function pass1ExactNormalized(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass1ExactNormalized(
+  protectedNames: Set<string>,
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   const allPersons = await db.select().from(persons);
   const groups = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of allPersons) {
@@ -919,7 +1110,7 @@ async function pass1ExactNormalized(protectedNames: Set<string>, actions: Dedupl
   for (const [norm, group] of groups) {
     if (group.length <= 1) continue;
     const canonical = pickCanonical(group, protectedNames);
-    const duplicates = group.filter(p => p.id !== canonical.id);
+    const duplicates = group.filter((p) => p.id !== canonical.id);
 
     if (actions !== null) {
       actions.push({
@@ -928,34 +1119,54 @@ async function pass1ExactNormalized(protectedNames: Set<string>, actions: Dedupl
         type: "merge",
         reason: "exact normalized match",
         canonical: { id: canonical.id, name: canonical.name },
-        duplicates: duplicates.map(p => ({ id: p.id, name: p.name })),
+        duplicates: duplicates.map((p) => ({ id: p.id, name: p.name })),
         status: "pending",
       });
       merged += duplicates.length;
     } else {
-      await mergePersonGroup(canonical, duplicates.map(p => p.id), group.map(p => p.name));
+      await mergePersonGroup(
+        canonical,
+        duplicates.map((p) => p.id),
+        group.map((p) => p.name),
+      );
       merged += duplicates.length;
     }
-    console.log(`  [P1] ${actions !== null ? "Would merge" : "Merged"} ${group.map(p => `"${p.name}"`).join(", ")} → "${canonical.name}"`);
+    console.log(
+      `  [P1] ${actions !== null ? "Would merge" : "Merged"} ${group.map((p) => `"${p.name}"`).join(", ")} → "${canonical.name}"`,
+    );
   }
-  console.log(`  Pass 1: ${actions !== null ? "Found" : "Merged"} ${merged} persons via exact normalized match`);
+  console.log(
+    `  Pass 1: ${actions !== null ? "Found" : "Merged"} ${merged} persons via exact normalized match`,
+  );
   return merged;
 }
 
 // --- Pass 2: Single-Word → Dominant Multi-Word (Evidence-Based) ---
-async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass2SingleWordEvidence(
+  protectedNames: Set<string>,
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   const allPersons = await db.select().from(persons);
 
   // Pre-load document sets per person for evidence scoring
-  const allPD = await db.select({ personId: personDocuments.personId, documentId: personDocuments.documentId }).from(personDocuments);
+  const allPD = await db
+    .select({
+      personId: personDocuments.personId,
+      documentId: personDocuments.documentId,
+    })
+    .from(personDocuments);
   const docsByPerson = new Map<number, Set<number>>();
   for (const pd of allPD) {
-    if (!docsByPerson.has(pd.personId)) docsByPerson.set(pd.personId, new Set());
+    if (!docsByPerson.has(pd.personId))
+      docsByPerson.set(pd.personId, new Set());
     docsByPerson.get(pd.personId)!.add(pd.documentId);
   }
 
   // Pre-load connection sets per person
-  const allConns = await db.select({ p1: connections.personId1, p2: connections.personId2 }).from(connections);
+  const allConns = await db
+    .select({ p1: connections.personId1, p2: connections.personId2 })
+    .from(connections);
   const connsByPerson = new Map<number, Set<number>>();
   for (const c of allConns) {
     if (!connsByPerson.has(c.p1)) connsByPerson.set(c.p1, new Set());
@@ -964,19 +1175,25 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: Ded
     connsByPerson.get(c.p2)!.add(c.p1);
   }
 
-  const multiWord = allPersons.filter(p => {
-    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+  const multiWord = allPersons.filter((p) => {
+    const parts = normalizeName(p.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     return parts.length >= 2;
   });
-  const singleWord = allPersons.filter(p => {
-    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+  const singleWord = allPersons.filter((p) => {
+    const parts = normalizeName(p.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     return parts.length === 1;
   });
 
   // Index multi-word persons by each word part for fast lookup
   const wordIndex = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of multiWord) {
-    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    const parts = normalizeName(p.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     for (const part of parts) {
       if (!wordIndex.has(part)) wordIndex.set(part, []);
       wordIndex.get(part)!.push(p);
@@ -988,7 +1205,7 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: Ded
 
   for (const single of singleWord) {
     const norm = normalizeName(single.name);
-    const word = norm.split(" ").filter(pt => pt.length >= 2)[0];
+    const word = norm.split(" ").filter((pt) => pt.length >= 2)[0];
     if (!word || word.length < 3) continue;
 
     // Find multi-word candidates containing this word
@@ -999,15 +1216,18 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: Ded
     const singleDocs = docsByPerson.get(single.id) || new Set();
     const singleConns = connsByPerson.get(single.id) || new Set();
 
-    const scored = candidates.map(c => {
-      const cDocs = docsByPerson.get(c.id) || new Set();
-      const cConns = connsByPerson.get(c.id) || new Set();
-      let sharedDocs = 0;
-      for (const d of singleDocs) if (cDocs.has(d)) sharedDocs++;
-      let sharedConns = 0;
-      for (const cn of singleConns) if (cConns.has(cn)) sharedConns++;
-      return { person: c, score: sharedDocs * 2 + sharedConns };
-    }).filter(s => s.score > 0).sort((a, b) => b.score - a.score);
+    const scored = candidates
+      .map((c) => {
+        const cDocs = docsByPerson.get(c.id) || new Set();
+        const cConns = connsByPerson.get(c.id) || new Set();
+        let sharedDocs = 0;
+        for (const d of singleDocs) if (cDocs.has(d)) sharedDocs++;
+        let sharedConns = 0;
+        for (const cn of singleConns) if (cConns.has(cn)) sharedConns++;
+        return { person: c, score: sharedDocs * 2 + sharedConns };
+      })
+      .filter((s) => s.score > 0)
+      .sort((a, b) => b.score - a.score);
 
     if (scored.length === 0) continue;
 
@@ -1019,12 +1239,14 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: Ded
       // CLEAR_WINNER: top >= 2x second
       winner = scored[0].person;
     } else {
-      console.log(`  [P2] Skipping "${single.name}" → ambiguous: "${scored[0].person.name}" (${scored[0].score}) vs "${scored[1].person.name}" (${scored[1].score})`);
+      console.log(
+        `  [P2] Skipping "${single.name}" → ambiguous: "${scored[0].person.name}" (${scored[0].score}) vs "${scored[1].person.name}" (${scored[1].score})`,
+      );
       continue;
     }
 
     if (actions !== null) {
-      const evidenceStr = `score ${scored[0].score} (${[...singleDocs].filter(d => (docsByPerson.get(winner.id) || new Set()).has(d)).length} shared docs, ${[...singleConns].filter(c => (connsByPerson.get(winner.id) || new Set()).has(c)).length} shared conns)`;
+      const evidenceStr = `score ${scored[0].score} (${[...singleDocs].filter((d) => (docsByPerson.get(winner.id) || new Set()).has(d)).length} shared docs, ${[...singleConns].filter((c) => (connsByPerson.get(winner.id) || new Set()).has(c)).length} shared conns)`;
       actions.push({
         id: nextId.value++,
         pass: 2,
@@ -1037,29 +1259,39 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: Ded
       });
       mergedSingleIds.add(single.id);
       merged++;
-      console.log(`  [P2] Would merge "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
+      console.log(
+        `  [P2] Would merge "${single.name}" → "${winner.name}" (score: ${scored[0].score})`,
+      );
     } else {
       try {
         await mergePersonGroup(winner, [single.id], [single.name]);
         mergedSingleIds.add(single.id);
         merged++;
-        console.log(`  [P2] Merged "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
+        console.log(
+          `  [P2] Merged "${single.name}" → "${winner.name}" (score: ${scored[0].score})`,
+        );
       } catch (err: any) {
         console.warn(`  [P2] Failed to merge "${single.name}": ${err.message}`);
       }
     }
   }
-  console.log(`  Pass 2: ${actions !== null ? "Found" : "Merged"} ${merged} single-word persons via shared evidence`);
+  console.log(
+    `  Pass 2: ${actions !== null ? "Found" : "Merged"} ${merged} single-word persons via shared evidence`,
+  );
   return merged;
 }
 
 // --- Pass 3: Delete Remaining Single-Word Names ---
-async function pass3DeleteSingleWord(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass3DeleteSingleWord(
+  protectedNames: Set<string>,
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   const allPersons = await db.select().from(persons);
-  const toDelete = allPersons.filter(p => {
+  const toDelete = allPersons.filter((p) => {
     if (protectedNames.has(normalizeName(p.name))) return false;
     const norm = normalizeName(p.name);
-    const meaningfulParts = norm.split(" ").filter(pt => pt.length >= 2);
+    const meaningfulParts = norm.split(" ").filter((pt) => pt.length >= 2);
     return meaningfulParts.length <= 1 && norm.length > 0;
   });
 
@@ -1076,23 +1308,43 @@ async function pass3DeleteSingleWord(protectedNames: Set<string>, actions: Dedup
     }
   } else {
     if (toDelete.length > 0) {
-      await deletePersonsCascade(toDelete.map(p => p.id));
+      await deletePersonsCascade(toDelete.map((p) => p.id));
     }
   }
 
-  console.log(`  Pass 3: ${actions !== null ? "Found" : "Deleted"} ${toDelete.length} remaining single-word names`);
+  console.log(
+    `  Pass 3: ${actions !== null ? "Found" : "Deleted"} ${toDelete.length} remaining single-word names`,
+  );
   return toDelete.length;
 }
 
 // --- Pass 4: Key Figure Variants (Hardcoded) ---
-const KEY_FIGURE_MERGES: { canonical: string; variants: string[]; deleteNames?: string[] }[] = [
+const KEY_FIGURE_MERGES: {
+  canonical: string;
+  variants: string[];
+  deleteNames?: string[];
+}[] = [
   {
     canonical: "Jeffrey Epstein",
-    variants: ["Jeffrey E. Epstein", "Jeffrey Edward Epstein", "Jeffery Epstein", "Jeff Epstein", "JEFFREY EPSTEIN", "JEFFREY E. EPSTEIN", "Epstein, Jeffrey"],
+    variants: [
+      "Jeffrey E. Epstein",
+      "Jeffrey Edward Epstein",
+      "Jeffery Epstein",
+      "Jeff Epstein",
+      "JEFFREY EPSTEIN",
+      "JEFFREY E. EPSTEIN",
+      "Epstein, Jeffrey",
+    ],
   },
   {
     canonical: "Ghislaine Maxwell",
-    variants: ["Ghislaine Noelle Maxwell", "GHISLAINE MAXWELL", "Ghislaine N. Maxwell", "Maxwell, Ghislaine", "G. Maxwell"],
+    variants: [
+      "Ghislaine Noelle Maxwell",
+      "GHISLAINE MAXWELL",
+      "Ghislaine N. Maxwell",
+      "Maxwell, Ghislaine",
+      "G. Maxwell",
+    ],
     deleteNames: ["Ghisiaine Maxwell", "Ghislane Maxwell", "Ghislaine Maxwel"],
   },
   {
@@ -1101,27 +1353,59 @@ const KEY_FIGURE_MERGES: { canonical: string; variants: string[]; deleteNames?: 
   },
   {
     canonical: "Alan Dershowitz",
-    variants: ["Alan M. Dershowitz", "Alan Morton Dershowitz", "ALAN DERSHOWITZ", "Dershowitz, Alan"],
+    variants: [
+      "Alan M. Dershowitz",
+      "Alan Morton Dershowitz",
+      "ALAN DERSHOWITZ",
+      "Dershowitz, Alan",
+    ],
   },
   {
     canonical: "Les Wexner",
-    variants: ["Leslie Wexner", "Leslie H. Wexner", "Leslie Herbert Wexner", "LES WEXNER"],
+    variants: [
+      "Leslie Wexner",
+      "Leslie H. Wexner",
+      "Leslie Herbert Wexner",
+      "LES WEXNER",
+    ],
   },
   {
     canonical: "Bill Clinton",
-    variants: ["William Jefferson Clinton", "William J. Clinton", "President Clinton", "BILL CLINTON", "Clinton, Bill"],
+    variants: [
+      "William Jefferson Clinton",
+      "William J. Clinton",
+      "President Clinton",
+      "BILL CLINTON",
+      "Clinton, Bill",
+    ],
   },
   {
     canonical: "Donald Trump",
-    variants: ["Donald J. Trump", "Donald John Trump", "DONALD TRUMP", "Trump, Donald"],
+    variants: [
+      "Donald J. Trump",
+      "Donald John Trump",
+      "DONALD TRUMP",
+      "Trump, Donald",
+    ],
   },
   {
     canonical: "Virginia Giuffre",
-    variants: ["Virginia Roberts", "Virginia Roberts Giuffre", "Virginia L. Giuffre", "VIRGINIA GIUFFRE", "Virginia Louise Giuffre"],
+    variants: [
+      "Virginia Roberts",
+      "Virginia Roberts Giuffre",
+      "Virginia L. Giuffre",
+      "VIRGINIA GIUFFRE",
+      "Virginia Louise Giuffre",
+    ],
   },
   {
     canonical: "Jean-Luc Brunel",
-    variants: ["Jean Luc Brunel", "JEAN-LUC BRUNEL", "Jean-Luc Bruno", "Brunel, Jean-Luc"],
+    variants: [
+      "Jean Luc Brunel",
+      "JEAN-LUC BRUNEL",
+      "Jean-Luc Bruno",
+      "Brunel, Jean-Luc",
+    ],
   },
   {
     canonical: "Nadia Marcinkova",
@@ -1145,17 +1429,24 @@ const KEY_FIGURE_MERGES: { canonical: string; variants: string[]; deleteNames?: 
   },
 ];
 
-async function pass4KeyFigures(actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass4KeyFigures(
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   let total = 0;
   for (const entry of KEY_FIGURE_MERGES) {
-    const [canonicalRow] = await db.select().from(persons)
+    const [canonicalRow] = await db
+      .select()
+      .from(persons)
       .where(sql`LOWER(${persons.name}) = LOWER(${entry.canonical})`)
       .limit(1);
     if (!canonicalRow) continue;
 
     // Merge variants
     for (const variant of entry.variants) {
-      const [variantRow] = await db.select().from(persons)
+      const [variantRow] = await db
+        .select()
+        .from(persons)
         .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
         .limit(1);
       if (variantRow && variantRow.id !== canonicalRow.id) {
@@ -1170,10 +1461,16 @@ async function pass4KeyFigures(actions: DeduplicationAction[] | null = null, nex
             status: "pending",
           });
         } else {
-          await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+          await mergePersonGroup(
+            canonicalRow,
+            [variantRow.id],
+            [variantRow.name],
+          );
         }
         total++;
-        console.log(`  [P4] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`);
+        console.log(
+          `  [P4] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`,
+        );
       }
     }
 
@@ -1181,10 +1478,13 @@ async function pass4KeyFigures(actions: DeduplicationAction[] | null = null, nex
     if (entry.deleteNames) {
       const deleteTargets: { id: number; name: string }[] = [];
       for (const name of entry.deleteNames) {
-        const [row] = await db.select().from(persons)
+        const [row] = await db
+          .select()
+          .from(persons)
           .where(sql`LOWER(${persons.name}) = LOWER(${name})`)
           .limit(1);
-        if (row && row.id !== canonicalRow.id) deleteTargets.push({ id: row.id, name: row.name });
+        if (row && row.id !== canonicalRow.id)
+          deleteTargets.push({ id: row.id, name: row.name });
       }
       if (deleteTargets.length > 0) {
         if (actions !== null) {
@@ -1199,19 +1499,27 @@ async function pass4KeyFigures(actions: DeduplicationAction[] | null = null, nex
             });
           }
         } else {
-          await deletePersonsCascade(deleteTargets.map(t => t.id));
+          await deletePersonsCascade(deleteTargets.map((t) => t.id));
         }
         total += deleteTargets.length;
-        console.log(`  [P4] ${actions !== null ? "Would delete" : "Deleted"} ${deleteTargets.length} junk variants of "${entry.canonical}"`);
+        console.log(
+          `  [P4] ${actions !== null ? "Would delete" : "Deleted"} ${deleteTargets.length} junk variants of "${entry.canonical}"`,
+        );
       }
     }
   }
-  console.log(`  Pass 4: ${actions !== null ? "Found" : "Processed"} ${total} key figure variants`);
+  console.log(
+    `  Pass 4: ${actions !== null ? "Found" : "Processed"} ${total} key figure variants`,
+  );
   return total;
 }
 
 // --- Pass 5: Middle-Initial Variants ---
-async function pass5MiddleInitial(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass5MiddleInitial(
+  protectedNames: Set<string>,
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   const allPersons = await db.select().from(persons);
 
   // Group by (first, last) words of normalized name
@@ -1219,7 +1527,9 @@ async function pass5MiddleInitial(protectedNames: Set<string>, actions: Deduplic
   const threeWordPersons: (typeof persons.$inferSelect)[] = [];
 
   for (const p of allPersons) {
-    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    const parts = normalizeName(p.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     if (parts.length === 2) twoWordPersons.push(p);
     else if (parts.length >= 3) threeWordPersons.push(p);
   }
@@ -1227,7 +1537,9 @@ async function pass5MiddleInitial(protectedNames: Set<string>, actions: Deduplic
   // Index 3+-word persons by (first, last) key
   const threeWordIndex = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of threeWordPersons) {
-    const parts = normalizeName(p.name).split(" ").filter(pt => pt.length >= 2);
+    const parts = normalizeName(p.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     const key = `${parts[0]}|${parts[parts.length - 1]}`;
     if (!threeWordIndex.has(key)) threeWordIndex.set(key, []);
     threeWordIndex.get(key)!.push(p);
@@ -1235,13 +1547,17 @@ async function pass5MiddleInitial(protectedNames: Set<string>, actions: Deduplic
 
   let merged = 0;
   for (const twoWord of twoWordPersons) {
-    const parts = normalizeName(twoWord.name).split(" ").filter(pt => pt.length >= 2);
+    const parts = normalizeName(twoWord.name)
+      .split(" ")
+      .filter((pt) => pt.length >= 2);
     if (parts.length !== 2) continue;
     const key = `${parts[0]}|${parts[1]}`;
     const matches = threeWordIndex.get(key);
     if (!matches || matches.length !== 1) {
       if (matches && matches.length > 1) {
-        console.log(`  [P5] Skipping "${twoWord.name}" → ambiguous: ${matches.map(m => `"${m.name}"`).join(", ")}`);
+        console.log(
+          `  [P5] Skipping "${twoWord.name}" → ambiguous: ${matches.map((m) => `"${m.name}"`).join(", ")}`,
+        );
       }
       continue;
     }
@@ -1249,10 +1565,26 @@ async function pass5MiddleInitial(protectedNames: Set<string>, actions: Deduplic
     const match = matches[0];
 
     // Pre-load counts for both to pick canonical with more data
-    const [twoDocs] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, twoWord.id));
-    const [twoConns] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${twoWord.id} OR ${connections.personId2} = ${twoWord.id}`);
-    const [matchDocs] = await db.select({ count: sql<number>`count(*)::int` }).from(personDocuments).where(eq(personDocuments.personId, match.id));
-    const [matchConns] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(sql`${connections.personId1} = ${match.id} OR ${connections.personId2} = ${match.id}`);
+    const [twoDocs] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(personDocuments)
+      .where(eq(personDocuments.personId, twoWord.id));
+    const [twoConns] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(connections)
+      .where(
+        sql`${connections.personId1} = ${twoWord.id} OR ${connections.personId2} = ${twoWord.id}`,
+      );
+    const [matchDocs] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(personDocuments)
+      .where(eq(personDocuments.personId, match.id));
+    const [matchConns] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(connections)
+      .where(
+        sql`${connections.personId1} = ${match.id} OR ${connections.personId2} = ${match.id}`,
+      );
 
     const twoTotal = (twoDocs?.count || 0) + (twoConns?.count || 0);
     const matchTotal = (matchDocs?.count || 0) + (matchConns?.count || 0);
@@ -1284,18 +1616,24 @@ async function pass5MiddleInitial(protectedNames: Set<string>, actions: Deduplic
         status: "pending",
       });
       merged++;
-      console.log(`  [P5] Would merge "${duplicate.name}" → "${canonical.name}"`);
+      console.log(
+        `  [P5] Would merge "${duplicate.name}" → "${canonical.name}"`,
+      );
     } else {
       try {
         await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
         merged++;
         console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
       } catch (err: any) {
-        console.warn(`  [P5] Failed to merge "${duplicate.name}": ${err.message}`);
+        console.warn(
+          `  [P5] Failed to merge "${duplicate.name}": ${err.message}`,
+        );
       }
     }
   }
-  console.log(`  Pass 5: ${actions !== null ? "Found" : "Merged"} ${merged} middle-initial variants`);
+  console.log(
+    `  Pass 5: ${actions !== null ? "Found" : "Merged"} ${merged} middle-initial variants`,
+  );
   return merged;
 }
 
@@ -1304,35 +1642,60 @@ const OCR_NICKNAME_MERGES: { canonical: string; variants: string[] }[] = [
   { canonical: "Glenn Dubin", variants: ["Glen Dubin"] },
   { canonical: "Jussie Smollett", variants: ["Jessie Smollett"] },
   { canonical: "Steven Mnuchin", variants: ["Steve Mnuchin"] },
-  { canonical: "Bobbi Sternheim", variants: ["Bobbi Stemheim", "Bobbi C. Sternheim"] },
-  { canonical: "Christian Everdell", variants: ["Christian R. Everdell", "Chrstian Everdell"] },
-  { canonical: "Bradley Edwards", variants: ["Bradley James Edwards", "Brad Edwards"] },
-  { canonical: "Eva Andersson-Dubin", variants: ["Eva Dubin", "Eva Andersson Dubin"] },
+  {
+    canonical: "Bobbi Sternheim",
+    variants: ["Bobbi Stemheim", "Bobbi C. Sternheim"],
+  },
+  {
+    canonical: "Christian Everdell",
+    variants: ["Christian R. Everdell", "Chrstian Everdell"],
+  },
+  {
+    canonical: "Bradley Edwards",
+    variants: ["Bradley James Edwards", "Brad Edwards"],
+  },
+  {
+    canonical: "Eva Andersson-Dubin",
+    variants: ["Eva Dubin", "Eva Andersson Dubin"],
+  },
   { canonical: "Peter Skinner", variants: ["Pete Skinner"] },
   { canonical: "Saimir Alimehmeti", variants: ["Sajmir Alimehmeti"] },
   { canonical: "Sigrid McCawley", variants: ["Sigrid S. McCawley"] },
   { canonical: "Paul Cassell", variants: ["Paul G. Cassell"] },
   { canonical: "David Boies", variants: ["David Boles", "David Boie"] },
   { canonical: "Lesley Groff", variants: ["Leslie Groff"] },
-  { canonical: "Sarah Kellen", variants: ["Sarah Kellen Vickers", "Sarah K. Vickers"] },
+  {
+    canonical: "Sarah Kellen",
+    variants: ["Sarah Kellen Vickers", "Sarah K. Vickers"],
+  },
   { canonical: "Alfredo Rodriguez", variants: ["Alfred Rodriguez"] },
-  { canonical: "Adriana Ross", variants: ["Adriana Mucinska", "Adriana Mucinska Ross"] },
+  {
+    canonical: "Adriana Ross",
+    variants: ["Adriana Mucinska", "Adriana Mucinska Ross"],
+  },
   { canonical: "Haley Robson", variants: ["Hailey Robson"] },
   { canonical: "Courtney Wild", variants: ["Courtney Wilde"] },
   { canonical: "Michael Reiter", variants: ["Michael Retter", "Chief Reiter"] },
   { canonical: "Joseph Recarey", variants: ["Joe Recarey", "Det. Recarey"] },
 ];
 
-async function pass6OCRNickname(actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
+async function pass6OCRNickname(
+  actions: DeduplicationAction[] | null = null,
+  nextId: { value: number } = { value: 1 },
+): Promise<number> {
   let total = 0;
   for (const entry of OCR_NICKNAME_MERGES) {
-    const [canonicalRow] = await db.select().from(persons)
+    const [canonicalRow] = await db
+      .select()
+      .from(persons)
       .where(sql`LOWER(${persons.name}) = LOWER(${entry.canonical})`)
       .limit(1);
     if (!canonicalRow) continue;
 
     for (const variant of entry.variants) {
-      const [variantRow] = await db.select().from(persons)
+      const [variantRow] = await db
+        .select()
+        .from(persons)
         .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
         .limit(1);
       if (variantRow && variantRow.id !== canonicalRow.id) {
@@ -1347,44 +1710,70 @@ async function pass6OCRNickname(actions: DeduplicationAction[] | null = null, ne
             status: "pending",
           });
         } else {
-          await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+          await mergePersonGroup(
+            canonicalRow,
+            [variantRow.id],
+            [variantRow.name],
+          );
         }
         total++;
-        console.log(`  [P6] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`);
+        console.log(
+          `  [P6] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`,
+        );
       }
     }
   }
-  console.log(`  Pass 6: ${actions !== null ? "Found" : "Merged"} ${total} OCR/nickname variants`);
+  console.log(
+    `  Pass 6: ${actions !== null ? "Found" : "Merged"} ${total} OCR/nickname variants`,
+  );
   return total;
 }
 
 // --- Plan Executor ---
-async function executePlan(planPath: string, batchSize?: number): Promise<void> {
+async function executePlan(
+  planPath: string,
+  batchSize?: number,
+): Promise<void> {
   if (!fs.existsSync(planPath)) {
     console.error(`❌ Plan file not found: ${planPath}`);
     console.error(`  Run with --dry-run first to generate a plan.`);
     return;
   }
 
-  const plan: DeduplicationPlan = JSON.parse(fs.readFileSync(planPath, "utf-8"));
-  const pending = plan.actions.filter(a => a.status === "pending");
-  const alreadyDone = plan.actions.filter(a => a.status === "executed" || a.status === "skipped").length;
+  const plan: DeduplicationPlan = JSON.parse(
+    fs.readFileSync(planPath, "utf-8"),
+  );
+  const pending = plan.actions.filter((a) => a.status === "pending");
+  const alreadyDone = plan.actions.filter(
+    (a) => a.status === "executed" || a.status === "skipped",
+  ).length;
 
   if (pending.length === 0) {
-    console.log(`  No pending actions in plan (${alreadyDone} already executed/skipped).`);
+    console.log(
+      `  No pending actions in plan (${alreadyDone} already executed/skipped).`,
+    );
     return;
   }
 
   // Check for stale plan
-  const [currentCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const [currentCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(persons);
   const drift = Math.abs((currentCount?.count ?? 0) - plan.personCountBefore);
   if (drift > 50) {
-    console.warn(`  ⚠️  Person count drifted: plan expected ${plan.personCountBefore}, now ${currentCount?.count} (diff: ${drift})`);
-    console.warn(`  Continuing anyway — existence checks will skip stale entries.`);
+    console.warn(
+      `  ⚠️  Person count drifted: plan expected ${plan.personCountBefore}, now ${currentCount?.count} (diff: ${drift})`,
+    );
+    console.warn(
+      `  Continuing anyway — existence checks will skip stale entries.`,
+    );
   }
 
-  console.log(`Executing dedup plan: ${pending.length} pending actions (${alreadyDone} already done)`);
-  if (batchSize) console.log(`  Batch size: ${batchSize} (pausing between batches)`);
+  console.log(
+    `Executing dedup plan: ${pending.length} pending actions (${alreadyDone} already done)`,
+  );
+  if (batchSize)
+    console.log(`  Batch size: ${batchSize} (pausing between batches)`);
 
   let executed = 0;
   let skipped = 0;
@@ -1404,12 +1793,16 @@ async function executePlan(planPath: string, batchSize?: number): Promise<void> 
       const action = pending[i];
 
       if (action.type === "delete") {
-        const targetIds = (action.targets || []).map(t => t.id);
+        const targetIds = (action.targets || []).map((t) => t.id);
         // Check which IDs still exist
-        const existing = targetIds.length > 0
-          ? await db.select({ id: persons.id }).from(persons).where(inArray(persons.id, targetIds))
-          : [];
-        const existingIds = existing.map(r => r.id);
+        const existing =
+          targetIds.length > 0
+            ? await db
+                .select({ id: persons.id })
+                .from(persons)
+                .where(inArray(persons.id, targetIds))
+            : [];
+        const existingIds = existing.map((r) => r.id);
 
         if (existingIds.length === 0) {
           action.status = "skipped";
@@ -1419,11 +1812,18 @@ async function executePlan(planPath: string, batchSize?: number): Promise<void> 
           await deletePersonsCascade(existingIds);
           action.status = "executed";
           executed++;
-          console.log(`  [DEL] #${action.id} deleted ${existingIds.length} person(s): ${(action.targets || []).filter(t => existingIds.includes(t.id)).map(t => t.name).join(", ")}`);
+          console.log(
+            `  [DEL] #${action.id} deleted ${existingIds.length} person(s): ${(
+              action.targets || []
+            )
+              .filter((t) => existingIds.includes(t.id))
+              .map((t) => t.name)
+              .join(", ")}`,
+          );
         }
       } else if (action.type === "merge") {
         const canonicalId = action.canonical?.id;
-        const duplicateIds = (action.duplicates || []).map(d => d.id);
+        const duplicateIds = (action.duplicates || []).map((d) => d.id);
 
         if (!canonicalId) {
           action.status = "skipped";
@@ -1433,38 +1833,57 @@ async function executePlan(planPath: string, batchSize?: number): Promise<void> 
         }
 
         // Check canonical exists
-        const [canonicalRow] = await db.select().from(persons).where(eq(persons.id, canonicalId)).limit(1);
+        const [canonicalRow] = await db
+          .select()
+          .from(persons)
+          .where(eq(persons.id, canonicalId))
+          .limit(1);
         if (!canonicalRow) {
           action.status = "skipped";
           skipped++;
-          console.log(`  [SKIP] #${action.id} merge — canonical "${action.canonical?.name}" (id ${canonicalId}) gone`);
+          console.log(
+            `  [SKIP] #${action.id} merge — canonical "${action.canonical?.name}" (id ${canonicalId}) gone`,
+          );
           continue;
         }
 
         // Check which duplicates still exist
-        const existingDups = duplicateIds.length > 0
-          ? await db.select({ id: persons.id }).from(persons).where(inArray(persons.id, duplicateIds))
-          : [];
-        const existingDupIds = existingDups.map(r => r.id);
+        const existingDups =
+          duplicateIds.length > 0
+            ? await db
+                .select({ id: persons.id })
+                .from(persons)
+                .where(inArray(persons.id, duplicateIds))
+            : [];
+        const existingDupIds = existingDups.map((r) => r.id);
 
         if (existingDupIds.length === 0) {
           action.status = "skipped";
           skipped++;
           console.log(`  [SKIP] #${action.id} merge — duplicates already gone`);
         } else {
-          const dupNames = (action.duplicates || []).filter(d => existingDupIds.includes(d.id)).map(d => d.name);
-          await mergePersonGroup(canonicalRow, existingDupIds, [canonicalRow.name, ...dupNames]);
+          const dupNames = (action.duplicates || [])
+            .filter((d) => existingDupIds.includes(d.id))
+            .map((d) => d.name);
+          await mergePersonGroup(canonicalRow, existingDupIds, [
+            canonicalRow.name,
+            ...dupNames,
+          ]);
           action.status = "executed";
           executed++;
-          console.log(`  [MERGE] #${action.id} ${dupNames.join(", ")} → "${canonicalRow.name}"`);
+          console.log(
+            `  [MERGE] #${action.id} ${dupNames.join(", ")} → "${canonicalRow.name}"`,
+          );
         }
       }
 
       // Batch pause
       if (batchSize && (i + 1) % batchSize === 0 && i + 1 < pending.length) {
-        console.log(`\n  --- Batch ${Math.floor((i + 1) / batchSize)} complete: ${executed} executed, ${skipped} skipped (${pending.length - i - 1} remaining) ---`);
+        console.log(
+          `\n  --- Batch ${Math.floor((i + 1) / batchSize)} complete: ${executed} executed, ${skipped} skipped (${pending.length - i - 1} remaining) ---`,
+        );
         console.log(`  Pausing 2s (Ctrl+C to stop)...`);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise((resolve) => setTimeout(resolve, 2000));
       }
     }
   } finally {
@@ -1477,19 +1896,26 @@ async function executePlan(planPath: string, batchSize?: number): Promise<void> 
 
   // Final self-loop cleanup
   if (!interrupted) {
-    await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+    await db.execute(
+      sql`DELETE FROM connections WHERE person_id_1 = person_id_2`,
+    );
   }
 
-  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const [afterCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(persons);
   console.log(`\n  === Execution Summary ===`);
   console.log(`  Executed: ${executed}`);
   console.log(`  Skipped: ${skipped}`);
-  if (interrupted) console.log(`  Remaining: ${pending.length - executed - skipped}`);
+  if (interrupted)
+    console.log(`  Remaining: ${pending.length - executed - skipped}`);
   console.log(`  Person count now: ${afterCount?.count}`);
 }
 
 // --- Coordinator ---
-export async function deduplicatePersonsInDB(options: DeduplicationOptions = {}): Promise<void> {
+export async function deduplicatePersonsInDB(
+  options: DeduplicationOptions = {},
+): Promise<void> {
   // Route to plan executor if --execute-plan was passed
   if (options.planPath) {
     await executePlan(options.planPath, options.batchSize);
@@ -1497,10 +1923,14 @@ export async function deduplicatePersonsInDB(options: DeduplicationOptions = {})
   }
 
   const isDryRun = options.dryRun === true;
-  console.log(`Deduplicating persons in database (6-pass conservative approach)${isDryRun ? " [DRY RUN]" : ""}...`);
+  console.log(
+    `Deduplicating persons in database (6-pass conservative approach)${isDryRun ? " [DRY RUN]" : ""}...`,
+  );
   const protectedNames = loadProtectedNames();
 
-  const [beforeCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const [beforeCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(persons);
   const personCountBefore = beforeCount?.count ?? 0;
   console.log(`  Starting person count: ${personCountBefore}`);
 
@@ -1528,7 +1958,10 @@ export async function deduplicatePersonsInDB(options: DeduplicationOptions = {})
       6: { type: "merge", label: "OCR/nickname" },
     };
 
-    const byPass: Record<string, { count: number; type: string; label: string }> = {};
+    const byPass: Record<
+      string,
+      { count: number; type: string; label: string }
+    > = {};
     for (const a of actions) {
       const key = String(a.pass);
       if (!byPass[key]) byPass[key] = { count: 0, ...PASS_LABELS[a.pass] };
@@ -1545,22 +1978,42 @@ export async function deduplicatePersonsInDB(options: DeduplicationOptions = {})
     const planPath = path.join(DATA_DIR, "dedup-plan.json");
     fs.mkdirSync(path.dirname(planPath), { recursive: true });
     fs.writeFileSync(planPath, JSON.stringify(plan, null, 2));
-    console.log(`\n  Dry-run complete: ${actions.length} actions written to ${planPath}`);
+    console.log(
+      `\n  Dry-run complete: ${actions.length} actions written to ${planPath}`,
+    );
   } else {
     // Final cleanup: delete self-loop connections
-    await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+    await db.execute(
+      sql`DELETE FROM connections WHERE person_id_1 = person_id_2`,
+    );
   }
 
-  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const [afterCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(persons);
 
   console.log("\n  === Deduplication Summary ===");
-  console.log(`  Pass 0 (junk removal):      ${stats.pass0} ${isDryRun ? "found" : "removed"}`);
-  console.log(`  Pass 1 (exact normalized):   ${stats.pass1} ${isDryRun ? "found" : "merged"}`);
-  console.log(`  Pass 2 (single→multi evidence): ${stats.pass2} ${isDryRun ? "found" : "merged"}`);
-  console.log(`  Pass 3 (delete single-word): ${stats.pass3} ${isDryRun ? "found" : "deleted"}`);
-  console.log(`  Pass 4 (key figure variants):${stats.pass4} ${isDryRun ? "found" : "processed"}`);
-  console.log(`  Pass 5 (middle-initial):     ${stats.pass5} ${isDryRun ? "found" : "merged"}`);
-  console.log(`  Pass 6 (OCR/nickname):       ${stats.pass6} ${isDryRun ? "found" : "merged"}`);
+  console.log(
+    `  Pass 0 (junk removal):      ${stats.pass0} ${isDryRun ? "found" : "removed"}`,
+  );
+  console.log(
+    `  Pass 1 (exact normalized):   ${stats.pass1} ${isDryRun ? "found" : "merged"}`,
+  );
+  console.log(
+    `  Pass 2 (single→multi evidence): ${stats.pass2} ${isDryRun ? "found" : "merged"}`,
+  );
+  console.log(
+    `  Pass 3 (delete single-word): ${stats.pass3} ${isDryRun ? "found" : "deleted"}`,
+  );
+  console.log(
+    `  Pass 4 (key figure variants):${stats.pass4} ${isDryRun ? "found" : "processed"}`,
+  );
+  console.log(
+    `  Pass 5 (middle-initial):     ${stats.pass5} ${isDryRun ? "found" : "merged"}`,
+  );
+  console.log(
+    `  Pass 6 (OCR/nickname):       ${stats.pass6} ${isDryRun ? "found" : "merged"}`,
+  );
   console.log(`  Person count: ${personCountBefore} → ${afterCount?.count}`);
 }
 
@@ -1571,7 +2024,9 @@ export async function deduplicatePersonsInDB(options: DeduplicationOptions = {})
 export async function deduplicateConnections(): Promise<void> {
   console.log("Deduplicating connections...");
 
-  const [beforeCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections);
+  const [beforeCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(connections);
   console.log(`  Connections before: ${beforeCount?.count}`);
 
   // Delete all connections that are NOT the best representative per undirected pair
@@ -1586,22 +2041,30 @@ export async function deduplicateConnections(): Promise<void> {
   `);
 
   // Also remove any self-loop connections
-  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+  await db.execute(
+    sql`DELETE FROM connections WHERE person_id_1 = person_id_2`,
+  );
 
-  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(connections);
+  const [afterCount] = await db
+    .select({ count: sql<number>`count(*)::int` })
+    .from(connections);
   console.log(`  Connections after: ${afterCount?.count}`);
-  console.log(`  Removed ${(beforeCount?.count || 0) - (afterCount?.count || 0)} duplicate connections`);
+  console.log(
+    `  Removed ${(beforeCount?.count || 0) - (afterCount?.count || 0)} duplicate connections`,
+  );
 }
 
 function inferDocumentType(description: string): string {
   const lower = description.toLowerCase();
   if (/flight log|flight manifest|passenger/i.test(lower)) return "flight log";
   if (/deposition|testimony|deposed/i.test(lower)) return "deposition";
-  if (/court|filing|indictment|grand jury|warrant/i.test(lower)) return "court filing";
+  if (/court|filing|indictment|grand jury|warrant/i.test(lower))
+    return "court filing";
   if (/fbi|302|interview|investigation/i.test(lower)) return "fbi report";
   if (/email|correspondence|communication/i.test(lower)) return "email";
   if (/photo|image|video|visual|media/i.test(lower)) return "photograph";
-  if (/financial|bank|wire|transfer|payment/i.test(lower)) return "financial record";
+  if (/financial|bank|wire|transfer|payment/i.test(lower))
+    return "financial record";
   if (/contact|address|phone/i.test(lower)) return "contact list";
   if (/surveillance|camera|footage/i.test(lower)) return "surveillance";
   if (/property|island|search|raid/i.test(lower)) return "property record";
@@ -1610,20 +2073,20 @@ function inferDocumentType(description: string): string {
 
 function mapFileTypeToDocType(fileType: string): string {
   const map: Record<string, string> = {
-    "pdf": "government record",
-    "jpg": "photograph",
-    "jpeg": "photograph",
-    "png": "photograph",
-    "gif": "photograph",
-    "mp4": "video",
-    "avi": "video",
-    "mov": "video",
-    "doc": "government record",
-    "docx": "government record",
-    "xls": "financial record",
-    "xlsx": "financial record",
-    "csv": "financial record",
-    "txt": "government record",
+    pdf: "government record",
+    jpg: "photograph",
+    jpeg: "photograph",
+    png: "photograph",
+    gif: "photograph",
+    mp4: "video",
+    avi: "video",
+    mov: "video",
+    doc: "government record",
+    docx: "government record",
+    xls: "financial record",
+    xlsx: "financial record",
+    csv: "financial record",
+    txt: "government record",
   };
   return map[fileType.toLowerCase()] || "government record";
 }
@@ -1647,7 +2110,9 @@ function inferTags(description: string): string[] {
   return tags.length > 0 ? tags : ["DOJ disclosure"];
 }
 
-export async function importDownloadedFiles(downloadDir?: string): Promise<number> {
+export async function importDownloadedFiles(
+  downloadDir?: string,
+): Promise<number> {
   const baseDir = downloadDir || path.join(DATA_DIR, "downloads");
 
   if (!fs.existsSync(baseDir)) {
@@ -1659,8 +2124,13 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
   let loaded = 0;
   let skipped = 0;
 
-  const dataSets = fs.readdirSync(baseDir)
-    .filter(d => d.startsWith("data-set-") && fs.statSync(path.join(baseDir, d)).isDirectory())
+  const dataSets = fs
+    .readdirSync(baseDir)
+    .filter(
+      (d) =>
+        d.startsWith("data-set-") &&
+        fs.statSync(path.join(baseDir, d)).isDirectory(),
+    )
     .sort();
 
   console.log(`Found ${dataSets.length} data set directories in ${baseDir}`);
@@ -1671,13 +2141,31 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
     const dsNum = parseInt(dsMatch[1], 10);
 
     const dsPath = path.join(baseDir, dsDir);
-    const supportedExtensions = [".pdf", ".mp4", ".avi", ".mov", ".wmv", ".webm", ".jpg", ".jpeg", ".png", ".gif"];
-    const files = fs.readdirSync(dsPath).filter(f => supportedExtensions.some(ext => f.toLowerCase().endsWith(ext)));
+    const supportedExtensions = [
+      ".pdf",
+      ".mp4",
+      ".avi",
+      ".mov",
+      ".wmv",
+      ".webm",
+      ".jpg",
+      ".jpeg",
+      ".png",
+      ".gif",
+    ];
+    const files = fs
+      .readdirSync(dsPath)
+      .filter((f) =>
+        supportedExtensions.some((ext) => f.toLowerCase().endsWith(ext)),
+      );
 
     const urlsFile = path.join(urlsDir, `data-set-${dsNum}-urls.txt`);
     const urlMap = new Map<string, string>();
     if (fs.existsSync(urlsFile)) {
-      const urls = fs.readFileSync(urlsFile, "utf-8").split("\n").filter(Boolean);
+      const urls = fs
+        .readFileSync(urlsFile, "utf-8")
+        .split("\n")
+        .filter(Boolean);
       for (const url of urls) {
         const fname = url.split("/").pop() || "";
         const decoded = decodeURIComponent(fname);
@@ -1688,7 +2176,9 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
 
     const dsInfo = KNOWN_DATA_SET_INFO[dsNum];
     const dsName = dsInfo?.name || `Data Set ${dsNum}`;
-    const dsDesc = dsInfo?.description || `DOJ Epstein disclosure files from Data Set ${dsNum}`;
+    const dsDesc =
+      dsInfo?.description ||
+      `DOJ Epstein disclosure files from Data Set ${dsNum}`;
 
     console.log(`  Processing ${dsName}: ${files.length} files...`);
 
@@ -1699,8 +2189,10 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
     const BATCH_SIZE = 500;
 
     // Build all file info upfront
-    const fileInfos = files.map(file => {
-      const sourceUrl = urlMap.get(file) || `https://www.justice.gov/epstein/files/DataSet%20${dsNum}/${encodeURIComponent(file)}`;
+    const fileInfos = files.map((file) => {
+      const sourceUrl =
+        urlMap.get(file) ||
+        `https://www.justice.gov/epstein/files/DataSet%20${dsNum}/${encodeURIComponent(file)}`;
       const efta = file.replace(/\.[^.]+$/, "");
       const ext = path.extname(file).toLowerCase();
       const filePath = path.join(dsPath, file);
@@ -1709,27 +2201,41 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
       const docType = [".mp4", ".avi", ".mov", ".wmv", ".webm"].includes(ext)
         ? "video"
         : [".jpg", ".jpeg", ".png", ".gif"].includes(ext)
-        ? "photograph"
-        : ext === ".pdf"
-        ? "government record"
-        : inferDocumentType(dsDesc);
-      const fileTypeTag = ext === ".pdf" ? "PDF" : ext.replace(".", "").toUpperCase();
+          ? "photograph"
+          : ext === ".pdf"
+            ? "government record"
+            : inferDocumentType(dsDesc);
+      const fileTypeTag =
+        ext === ".pdf" ? "PDF" : ext.replace(".", "").toUpperCase();
 
-      return { file, sourceUrl, efta, ext, filePath, fileSizeKB, docType, fileTypeTag };
+      return {
+        file,
+        sourceUrl,
+        efta,
+        ext,
+        filePath,
+        fileSizeKB,
+        docType,
+        fileTypeTag,
+      };
     });
 
     // Process in batches
     for (let i = 0; i < fileInfos.length; i += BATCH_SIZE) {
       const batch = fileInfos.slice(i, i + BATCH_SIZE);
-      const batchUrls = batch.map(f => f.sourceUrl);
+      const batchUrls = batch.map((f) => f.sourceUrl);
 
       // Batch SELECT — one query for up to 500 files
       const existingDocs = await db
-        .select({ id: documents.id, sourceUrl: documents.sourceUrl, localPath: documents.localPath })
+        .select({
+          id: documents.id,
+          sourceUrl: documents.sourceUrl,
+          localPath: documents.localPath,
+        })
         .from(documents)
         .where(inArray(documents.sourceUrl, batchUrls));
 
-      const existingByUrl = new Map(existingDocs.map(d => [d.sourceUrl, d]));
+      const existingByUrl = new Map(existingDocs.map((d) => [d.sourceUrl, d]));
 
       // Separate records that need localPath updates vs new inserts
       const needsLocalPathUpdate: { id: number; localPath: string }[] = [];
@@ -1739,7 +2245,10 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
         const existing = existingByUrl.get(info.sourceUrl);
         if (existing) {
           if (!existing.localPath) {
-            needsLocalPathUpdate.push({ id: existing.id, localPath: info.filePath });
+            needsLocalPathUpdate.push({
+              id: existing.id,
+              localPath: info.filePath,
+            });
           }
           skipped++;
           dsSkipped++;
@@ -1750,7 +2259,8 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
 
       // Batch UPDATE localPaths for records missing it
       for (const update of needsLocalPathUpdate) {
-        await db.update(documents)
+        await db
+          .update(documents)
           .set({ localPath: update.localPath })
           .where(eq(documents.id, update.id));
       }
@@ -1761,19 +2271,27 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
         for (let j = 0; j < newRecords.length; j += INSERT_CHUNK) {
           const chunk = newRecords.slice(j, j + INSERT_CHUNK);
           try {
-            await db.insert(documents).values(
-              chunk.map(info => ({
-                title: `${info.efta} (${dsName})`,
-                description: `${dsDesc}. File: ${info.efta}. Size: ${info.fileSizeKB}KB.`,
-                documentType: info.docType,
-                dataSet: String(dsNum),
-                sourceUrl: info.sourceUrl,
-                localPath: info.filePath,
-                datePublished: "2026-01-30",
-                isRedacted: true,
-                tags: [`data-set-${dsNum}`, "DOJ disclosure", info.fileTypeTag, info.docType],
-              }))
-            ).onConflictDoNothing();
+            await db
+              .insert(documents)
+              .values(
+                chunk.map((info) => ({
+                  title: `${info.efta} (${dsName})`,
+                  description: `${dsDesc}. File: ${info.efta}. Size: ${info.fileSizeKB}KB.`,
+                  documentType: info.docType,
+                  dataSet: String(dsNum),
+                  sourceUrl: info.sourceUrl,
+                  localPath: info.filePath,
+                  datePublished: "2026-01-30",
+                  isRedacted: true,
+                  tags: [
+                    `data-set-${dsNum}`,
+                    "DOJ disclosure",
+                    info.fileTypeTag,
+                    info.docType,
+                  ],
+                })),
+              )
+              .onConflictDoNothing();
             loaded += chunk.length;
             dsLoaded += chunk.length;
           } catch (error: any) {
@@ -1789,7 +2307,12 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
                   localPath: info.filePath,
                   datePublished: "2026-01-30",
                   isRedacted: true,
-                  tags: [`data-set-${dsNum}`, "DOJ disclosure", info.fileTypeTag, info.docType],
+                  tags: [
+                    `data-set-${dsNum}`,
+                    "DOJ disclosure",
+                    info.fileTypeTag,
+                    info.docType,
+                  ],
                 });
                 loaded++;
                 dsLoaded++;
@@ -1805,30 +2328,85 @@ export async function importDownloadedFiles(downloadDir?: string): Promise<numbe
 
       // Progress logging every 10 batches
       if (i % (BATCH_SIZE * 10) === 0 && i > 0) {
-        console.log(`    Progress: ${i}/${fileInfos.length} files processed...`);
+        console.log(
+          `    Progress: ${i}/${fileInfos.length} files processed...`,
+        );
       }
     }
 
     console.log(`    ${dsName}: ${dsLoaded} loaded, ${dsSkipped} skipped`);
   }
 
-  console.log(`\n  Total: ${loaded} new documents imported, ${skipped} skipped`);
+  console.log(
+    `\n  Total: ${loaded} new documents imported, ${skipped} skipped`,
+  );
   return loaded;
 }
 
-const KNOWN_DATA_SET_INFO: Record<number, { name: string; description: string }> = {
-  1: { name: "Data Set 1", description: "FBI investigative files, flight logs, contact books, and early case documents from the Palm Beach investigation (2005-2008)" },
-  2: { name: "Data Set 2", description: "FBI 302 interview reports, police reports from Palm Beach, and early correspondence between Epstein's legal team and federal prosecutors" },
-  3: { name: "Data Set 3", description: "FBI investigative files including victim statements, witness interviews, and law enforcement correspondence" },
-  4: { name: "Data Set 4", description: "FBI Form 302 interview summaries documenting victim statements and recruitment patterns at Epstein's properties" },
-  5: { name: "Data Set 5", description: "Grand jury transcripts, SDNY investigation documents, and indictment materials from the 2019 federal case" },
-  6: { name: "Data Set 6", description: "Search warrant applications, property inventories from FBI raids on Manhattan mansion, Palm Beach estate, and private island" },
-  7: { name: "Data Set 7", description: "Financial records including wire transfers, bank statements, and property transaction documents" },
-  8: { name: "Data Set 8", description: "Surveillance footage summaries, MCC records, property records for Little St. James Island, and death investigation materials" },
-  9: { name: "Data Set 9", description: "High-value communication records: private email correspondence between Epstein and prominent individuals, internal DOJ correspondence regarding the 2008 NPA" },
-  10: { name: "Data Set 10", description: "Visual and forensic media: 180,000+ images and 2,000+ videos seized from Epstein's properties. Female faces redacted for victim protection" },
-  11: { name: "Data Set 11", description: "Financial ledgers, additional flight manifests beyond previously published logs, and property seizure records" },
-  12: { name: "Data Set 12", description: "Supplemental and late productions: approximately 150 documents requiring prolonged legal review, released January 30, 2026" },
+const KNOWN_DATA_SET_INFO: Record<
+  number,
+  { name: string; description: string }
+> = {
+  1: {
+    name: "Data Set 1",
+    description:
+      "FBI investigative files, flight logs, contact books, and early case documents from the Palm Beach investigation (2005-2008)",
+  },
+  2: {
+    name: "Data Set 2",
+    description:
+      "FBI 302 interview reports, police reports from Palm Beach, and early correspondence between Epstein's legal team and federal prosecutors",
+  },
+  3: {
+    name: "Data Set 3",
+    description:
+      "FBI investigative files including victim statements, witness interviews, and law enforcement correspondence",
+  },
+  4: {
+    name: "Data Set 4",
+    description:
+      "FBI Form 302 interview summaries documenting victim statements and recruitment patterns at Epstein's properties",
+  },
+  5: {
+    name: "Data Set 5",
+    description:
+      "Grand jury transcripts, SDNY investigation documents, and indictment materials from the 2019 federal case",
+  },
+  6: {
+    name: "Data Set 6",
+    description:
+      "Search warrant applications, property inventories from FBI raids on Manhattan mansion, Palm Beach estate, and private island",
+  },
+  7: {
+    name: "Data Set 7",
+    description:
+      "Financial records including wire transfers, bank statements, and property transaction documents",
+  },
+  8: {
+    name: "Data Set 8",
+    description:
+      "Surveillance footage summaries, MCC records, property records for Little St. James Island, and death investigation materials",
+  },
+  9: {
+    name: "Data Set 9",
+    description:
+      "High-value communication records: private email correspondence between Epstein and prominent individuals, internal DOJ correspondence regarding the 2008 NPA",
+  },
+  10: {
+    name: "Data Set 10",
+    description:
+      "Visual and forensic media: 180,000+ images and 2,000+ videos seized from Epstein's properties. Female faces redacted for victim protection",
+  },
+  11: {
+    name: "Data Set 11",
+    description:
+      "Financial ledgers, additional flight manifests beyond previously published logs, and property seizure records",
+  },
+  12: {
+    name: "Data Set 12",
+    description:
+      "Supplemental and late productions: approximately 150 documents requiring prolonged legal review, released January 30, 2026",
+  },
 };
 
 export async function extractConnectionsFromDescriptions(): Promise<number> {
@@ -1863,7 +2441,9 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
 
   const existingConns = await db.select().from(connections);
   for (const c of existingConns) {
-    existingPairs.add(`${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`);
+    existingPairs.add(
+      `${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`,
+    );
   }
 
   // Collect all connection triples for potential AI classification
@@ -1920,13 +2500,23 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
   console.log(`  Found ${connectionTriples.length} potential connections`);
 
   // --- Cache: load previously classified connections from disk ---
-  const cacheFile = path.join(__dirname, "../../data/connection-classifications.json");
-  type CachedClassification = { connectionType: string; description: string; strength: number };
+  const cacheFile = path.join(
+    __dirname,
+    "../../data/connection-classifications.json",
+  );
+  type CachedClassification = {
+    connectionType: string;
+    description: string;
+    strength: number;
+  };
   const cache = new Map<string, CachedClassification>();
 
   if (fs.existsSync(cacheFile)) {
     try {
-      const cached = JSON.parse(fs.readFileSync(cacheFile, "utf-8")) as Record<string, CachedClassification>;
+      const cached = JSON.parse(fs.readFileSync(cacheFile, "utf-8")) as Record<
+        string,
+        CachedClassification
+      >;
       for (const [key, val] of Object.entries(cached)) {
         cache.set(key, val);
       }
@@ -1955,14 +2545,18 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
           strength: hit.strength,
         });
         connectionsCreated++;
-      } catch { /* skip duplicates */ }
+      } catch {
+        /* skip duplicates */
+      }
     } else {
       uncached.push(triple);
     }
   }
 
   if (uncached.length < connectionTriples.length) {
-    console.log(`  Used cache for ${connectionTriples.length - uncached.length} connections, ${uncached.length} need classification`);
+    console.log(
+      `  Used cache for ${connectionTriples.length - uncached.length} connections, ${uncached.length} need classification`,
+    );
   }
 
   // --- Classify uncached connections via AI or regex ---
@@ -1974,7 +2568,12 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
     for (let i = 0; i < uncached.length; i += BATCH_SIZE) {
       const batch = uncached.slice(i, i + BATCH_SIZE);
       try {
-        const prompt = batch.map((t, idx) => `${idx}. ${t.person1Name} ↔ ${t.person2Name}: "${t.context.substring(0, 200)}"`).join("\n");
+        const prompt = batch
+          .map(
+            (t, idx) =>
+              `${idx}. ${t.person1Name} ↔ ${t.person2Name}: "${t.context.substring(0, 200)}"`,
+          )
+          .join("\n");
 
         const response = await deepseek.chat.completions.create({
           model: "deepseek-chat",
@@ -2028,23 +2627,36 @@ Respond with a JSON array only.`,
                 strength: cls.strength,
               });
               connectionsCreated++;
-            } catch { /* skip */ }
+            } catch {
+              /* skip */
+            }
           }
         }
       } catch (error: any) {
-        console.warn(`  AI classification failed for batch at index ${i}, falling back to regex: ${error.message}`);
+        console.warn(
+          `  AI classification failed for batch at index ${i}, falling back to regex: ${error.message}`,
+        );
         for (const triple of batch) {
-          const { connectionType, strength } = inferRelationshipType(triple.context);
+          const { connectionType, strength } = inferRelationshipType(
+            triple.context,
+          );
           cache.set(cacheKey(triple.person1Name, triple.person2Name), {
-            connectionType, description: triple.context.substring(0, 500), strength,
+            connectionType,
+            description: triple.context.substring(0, 500),
+            strength,
           });
           try {
             await db.insert(connections).values({
-              personId1: triple.person1Id, personId2: triple.person2Id,
-              connectionType, description: triple.context.substring(0, 500), strength,
+              personId1: triple.person1Id,
+              personId2: triple.person2Id,
+              connectionType,
+              description: triple.context.substring(0, 500),
+              strength,
             });
             connectionsCreated++;
-          } catch { /* skip */ }
+          } catch {
+            /* skip */
+          }
         }
       }
 
@@ -2054,27 +2666,39 @@ Respond with a JSON array only.`,
       fs.writeFileSync(cacheFile, JSON.stringify(cacheObj, null, 2));
 
       if ((i / BATCH_SIZE) % 10 === 0) {
-        console.log(`    Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(uncached.length / BATCH_SIZE)} (${connectionsCreated} created, ${cache.size} cached)`);
+        console.log(
+          `    Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(uncached.length / BATCH_SIZE)} (${connectionsCreated} created, ${cache.size} cached)`,
+        );
       }
 
       if (i + BATCH_SIZE < uncached.length) {
-        await new Promise(r => setTimeout(r, 500));
+        await new Promise((r) => setTimeout(r, 500));
       }
     }
   } else if (uncached.length > 0) {
-    if (!deepseek) console.log("  No DEEPSEEK_API_KEY set, using regex classification...");
+    if (!deepseek)
+      console.log("  No DEEPSEEK_API_KEY set, using regex classification...");
     for (const triple of uncached) {
-      const { connectionType, strength } = inferRelationshipType(triple.context);
+      const { connectionType, strength } = inferRelationshipType(
+        triple.context,
+      );
       cache.set(cacheKey(triple.person1Name, triple.person2Name), {
-        connectionType, description: triple.context.substring(0, 500), strength,
+        connectionType,
+        description: triple.context.substring(0, 500),
+        strength,
       });
       try {
         await db.insert(connections).values({
-          personId1: triple.person1Id, personId2: triple.person2Id,
-          connectionType, description: triple.context.substring(0, 500), strength,
+          personId1: triple.person1Id,
+          personId2: triple.person2Id,
+          connectionType,
+          description: triple.context.substring(0, 500),
+          strength,
         });
         connectionsCreated++;
-      } catch { /* skip */ }
+      } catch {
+        /* skip */
+      }
     }
   }
 
@@ -2084,11 +2708,16 @@ Respond with a JSON array only.`,
   fs.writeFileSync(cacheFile, JSON.stringify(cacheObj, null, 2));
   console.log(`  Saved ${cache.size} classifications to cache`);
 
-  console.log(`  Created ${connectionsCreated} new connections from descriptions`);
+  console.log(
+    `  Created ${connectionsCreated} new connections from descriptions`,
+  );
   return connectionsCreated;
 }
 
-function inferRelationshipType(context: string): { connectionType: string; strength: number } {
+function inferRelationshipType(context: string): {
+  connectionType: string;
+  strength: number;
+} {
   const descLower = context.toLowerCase();
   let connectionType = "associated";
   let strength = 1;
@@ -2119,7 +2748,9 @@ function inferRelationshipType(context: string): { connectionType: string; stren
 
 function extractRelevantContext(description: string, name: string): string {
   const sentences = description.split(/\.\s+/);
-  const relevant = sentences.filter(s => s.includes(name) || s.includes(name.split(" ").pop()!));
+  const relevant = sentences.filter(
+    (s) => s.includes(name) || s.includes(name.split(" ").pop()!),
+  );
   if (relevant.length > 0) {
     return relevant.slice(0, 2).join(". ") + ".";
   }
@@ -2147,11 +2778,15 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       const dryRun = process.argv.includes("--dry-run");
       const hasExecutePlan = process.argv.includes("--execute-plan");
       const epIdx = process.argv.indexOf("--execute-plan");
-      const planPathArg = epIdx >= 0 && process.argv[epIdx + 1] && !process.argv[epIdx + 1].startsWith("--")
-        ? process.argv[epIdx + 1]
-        : path.join(DATA_DIR, "dedup-plan.json");
+      const planPathArg =
+        epIdx >= 0 &&
+        process.argv[epIdx + 1] &&
+        !process.argv[epIdx + 1].startsWith("--")
+          ? process.argv[epIdx + 1]
+          : path.join(DATA_DIR, "dedup-plan.json");
       const batchIdx = process.argv.indexOf("--batch");
-      const batchSize = batchIdx >= 0 ? parseInt(process.argv[batchIdx + 1], 10) : undefined;
+      const batchSize =
+        batchIdx >= 0 ? parseInt(process.argv[batchIdx + 1], 10) : undefined;
       await deduplicatePersonsInDB({
         dryRun,
         planPath: hasExecutePlan ? planPathArg : undefined,
@@ -2169,17 +2804,37 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("Commands:");
       console.log("  persons [file]       - Load persons from JSON file");
       console.log("  documents [file]     - Load documents from DOJ catalog");
-      console.log("  ai-results           - Load AI-analyzed persons, connections, and events");
-      console.log("    --dry-run              Preview what would be loaded (no DB changes)");
-      console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
-      console.log("  extract-connections  - Extract relationships from descriptions");
-      console.log("  update-counts        - Recalculate document/connection counts");
+      console.log(
+        "  ai-results           - Load AI-analyzed persons, connections, and events",
+      );
+      console.log(
+        "    --dry-run              Preview what would be loaded (no DB changes)",
+      );
+      console.log(
+        "  import-downloads [dir] - Import downloaded PDFs from filesystem",
+      );
+      console.log(
+        "  extract-connections  - Extract relationships from descriptions",
+      );
+      console.log(
+        "  update-counts        - Recalculate document/connection counts",
+      );
       console.log("  dedup-persons          - Deduplicate persons in database");
-      console.log("    --dry-run              Write proposed actions to data/dedup-plan.json (no DB changes)");
-      console.log("    --execute-plan [path]  Execute pending actions from plan file (default: data/dedup-plan.json)");
-      console.log("    --batch N              Pause every N actions during --execute-plan for monitoring");
-      console.log("  dedup-connections     - Deduplicate connections (keep best per pair)");
-      console.log("  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)");
+      console.log(
+        "    --dry-run              Write proposed actions to data/dedup-plan.json (no DB changes)",
+      );
+      console.log(
+        "    --execute-plan [path]  Execute pending actions from plan file (default: data/dedup-plan.json)",
+      );
+      console.log(
+        "    --batch N              Pause every N actions during --execute-plan for monitoring",
+      );
+      console.log(
+        "  dedup-connections     - Deduplicate connections (keep best per pair)",
+      );
+      console.log(
+        "  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)",
+      );
     }
 
     process.exit(0);

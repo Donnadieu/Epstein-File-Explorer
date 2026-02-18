@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00103737.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-04-28",
+  "summary": "This document is an email summarizing a call between an AUSA and a Palm Beach Police Department Captain on April 28, 2021. The conversation focused on identifying personnel involved in the October 2005 search of Jeffrey Epstein's residence and revealed that the Evidence Specialist who inventoried that search was later arrested for stealing money from police evidence.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of police search",
+      "category": "key figure",
+      "context": "His Palm Beach residence was searched in October 2005, which is the subject of the discussed investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Spoke with the PBPD Captain to gather information about the 2005 search and the involved Evidence Specialist.",
+      "mentionCount": 2
+    },
+    {
+      "name": "PBPD Captain",
+      "role": "Palm Beach Police Department Captain",
+      "category": "law enforcement",
+      "context": "Provided information to the AUSA about the 2005 search personnel and the arrest of the Evidence Specialist for evidence tampering.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Evidence Specialist",
+      "role": "PBPD Evidence Specialist",
+      "category": "law enforcement",
+      "context": "Conducted the inventory for the October 2005 search of Epstein's residence and was later arrested for stealing money from PBPD evidence bags around 2007.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "AUSA",
+      "person2": "PBPD Captain",
+      "relationshipType": "professional",
+      "description": "The AUSA contacted the PBPD Captain to gather investigative information regarding the 2005 Epstein search.",
+      "strength": 3
+    },
+    {
+      "person1": "PBPD Captain",
+      "person2": "Evidence Specialist",
+      "relationshipType": "employer-employee",
+      "description": "The PBPD Captain provided background information on the Evidence Specialist, who was a department employee arrested for misconduct.",
+      "strength": 3
+    },
+    {
+      "person1": "Evidence Specialist",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigative",
+      "description": "The Evidence Specialist was responsible for inventorying evidence seized during the 2005 search of Epstein's residence.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-10",
+      "title": "Search of Epstein's Palm Beach Residence",
+      "description": "The Palm Beach Police Department conducted a search of Jeffrey Epstein's Palm Beach residence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Evidence Specialist",
+        "PBPD Captain"
+      ]
+    },
+    {
+      "date": "2007",
+      "title": "Arrest of PBPD Evidence Specialist",
+      "description": "The PBPD Evidence Specialist was arrested for stealing money from PBPD evidence bags by cutting them open, removing cash, and resealing them.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Evidence Specialist"
+      ]
+    },
+    {
+      "date": "2021-04-28",
+      "title": "AUSA Call with PBPD Captain",
+      "description": "An Assistant U.S. Attorney spoke with a PBPD Captain to identify personnel from the 2005 Epstein search and discuss the background of the Evidence Specialist.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "AUSA",
+        "PBPD Captain"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach",
+    "Jeffrey Epstein's Palm Beach residence"
+  ],
+  "keyFacts": [
+    "The Palm Beach Police Department searched Jeffrey Epstein's Palm Beach residence in October 2005.",
+    "The PBPD Evidence Specialist who inventoried the 2005 search was later arrested around 2007 for stealing money from police evidence bags.",
+    "The Evidence Specialist's method involved cutting open evidence bags, removing money, and resealing them.",
+    "According to the PBPD Captain, there was no evidence the specialist tampered with evidence other than money, and since no money was seized from Epstein's residence, it is believed the Epstein evidence was not compromised.",
+    "In 2021, an AUSA was actively investigating the 2005 Epstein search by contacting the PBPD to identify involved personnel."
+  ],
+  "analyzedAt": "2026-02-18T16:00:43.826Z"
+}

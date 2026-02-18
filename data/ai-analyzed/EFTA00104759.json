@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00104759.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "This document is an email chain forwarded by attorney Stacey Richman to an unspecified recipient, likely in the U.S. Attorney's Office. The chain originates from Mark L. Epstein, who forwards a suspicious email from an individual named 'John' claiming to have information about the assassination of Mark's brother, implying it was Jeffrey Epstein. The email warns against speaking to anyone, including lawyers or the FBI, and requests contact via a separate email address.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who forwards an email chain, likely to the U.S. Attorney's Office, regarding a suspicious communication about Jeffrey Epstein's death.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Brother of Jeffrey Epstein",
+      "category": "key figure",
+      "context": "Forwards a suspicious email from 'John' claiming to have information about his brother's assassination, warning against talking to anyone including lawyers or the FBI.",
+      "mentionCount": 3
+    },
+    {
+      "name": "John",
+      "role": "Unknown individual making claims about Jeffrey Epstein's death",
+      "category": "other",
+      "context": "Claims to know how Jeffrey Epstein was killed, states it was an assassination involving people at the presidential palace, and warns Mark not to talk to anyone, including lawyers or the FBI.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Stacey Richman",
+      "relationshipType": "attorney-client",
+      "description": "Mark L. Epstein emails Stacey Richman, his attorney, forwarding a suspicious communication about his brother's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "John",
+      "relationshipType": "other",
+      "description": "John contacts Mark L. Epstein with unsolicited claims about Jeffrey Epstein's assassination, warning him not to speak to anyone.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-11",
+      "title": "Suspicious email sent to Mark L. Epstein",
+      "description": "An individual named 'John' sends an email to Mark L. Epstein claiming to have information that Jeffrey Epstein was assassinated by professionals with involvement from people at the presidential palace.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "John"
+      ]
+    },
+    {
+      "date": "2020-05-24",
+      "title": "Mark L. Epstein forwards email to attorney",
+      "description": "Mark L. Epstein forwards the suspicious email from 'John' to his attorney, Stacey Richman.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    },
+    {
+      "date": "2020-05-25",
+      "title": "Attorney forwards email chain",
+      "description": "Attorney Stacey Richman forwards the email chain, including the suspicious communication, to an unspecified recipient, likely in the U.S. Attorney's Office.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx, New York 10461",
+    "presidential palace"
+  ],
+  "keyFacts": [
+    "An individual named 'John' contacted Mark L. Epstein claiming Jeffrey Epstein was assassinated by professionals with involvement from 'people at the presidential palace'.",
+    "The email warns Mark L. Epstein not to talk to anyone about the information, including his lawyer or the FBI, suggesting the email may be monitored.",
+    "Attorney Stacey Richman forwarded the suspicious email chain to an unspecified recipient, likely authorities, indicating concern over the communication."
+  ],
+  "analyzedAt": "2026-02-18T19:04:23.234Z"
+}

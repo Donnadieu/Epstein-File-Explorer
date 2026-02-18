@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00104778.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "This document is an email chain forwarded by attorney Stacey Richman, originating from an individual claiming to be a senior police officer. The email makes serious allegations about the death of Jeffrey Epstein, naming two killers and referencing a confession file and cooperation between government members and prosecutors. It warns of increasing pressure and threats against the recipient, Mark L. Epstein.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who forwarded the email chain; her law firm's contact information is included in the header.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email Recipient / Brother of Jeffrey Epstein",
+      "category": "key figure",
+      "context": "Recipient of the original email containing allegations about his brother's death; the email chain is forwarded to his attorney.",
+      "mentionCount": 3
+    },
+    {
+      "name": "R O",
+      "role": "Alleged Senior Police Officer / Email Sender",
+      "category": "other",
+      "context": "Individual claiming to be a senior member of the police force, sending an email to Mark L. Epstein with allegations about Jeffrey Epstein's death and warnings of threats.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Stacey Richman",
+      "relationshipType": "attorney-client",
+      "description": "Mark L. Epstein is the client of attorney Stacey Richman, as evidenced by her forwarding an email sent to him.",
+      "strength": 4
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "R O",
+      "relationshipType": "correspondent",
+      "description": "R O sent an email directly to Mark L. Epstein containing allegations and warnings.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-17",
+      "title": "Allegation Email Sent",
+      "description": "An individual claiming to be a senior police officer (R O) sends an email to Mark L. Epstein alleging to have information about his brother's killers, a confession file, and cooperation between government members and prosecutors.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "R O",
+        "Mark L. Epstein"
+      ]
+    },
+    {
+      "date": "2020-05-24",
+      "title": "Email Forwarded to Attorney",
+      "description": "Mark L. Epstein forwards the allegation email to his attorney, Stacey Richman.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    },
+    {
+      "date": "2020-05-25",
+      "title": "Attorney Forwards Email Chain",
+      "description": "Attorney Stacey Richman forwards the entire email chain, presumably to another party (addressed to \"(USANYS)\").",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx, New York 10461",
+    "2027 Williamsbridge Road"
+  ],
+  "keyFacts": [
+    "An individual claiming to be a senior police officer (R O) contacted Mark L. Epstein, Jeffrey Epstein's brother, with allegations about Jeffrey's death.",
+    "The email claims to name two of Jeffrey Epstein's killers and references a 'confession file of the prison guards'.",
+    "The email alleges a 'report on the cooperation of government members and prosecutors' related to the case.",
+    "The sender warns Mark L. Epstein that 'pressure and threats against you will increase' and that 'some people are trying to take you to court'.",
+    "The correspondence was forwarded through legal channels, from Mark Epstein to his attorney Stacey Richman, who then forwarded it further."
+  ],
+  "analyzedAt": "2026-02-18T19:08:19.750Z"
+}

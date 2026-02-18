@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00103887.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-01-12",
+  "summary": "Email correspondence regarding the logistical coordination for the delivery of hard drives containing discovery materials to Ghislaine Maxwell at the Metropolitan Detention Center (MDC). The email chain involves an Assistant United States Attorney, an FBI Special Agent, and a paralegal, discussing the timing and receipt of the drives.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The recipient of hard drives containing discovery materials while incarcerated at the Metropolitan Detention Center (MDC).",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent S",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Coordinating the delivery of hard drives to Ghislaine Maxwell at the MDC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the initial email arranging for the FBI to deliver discovery drives to Maxwell and requesting coordination details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Special Agent S",
+      "relationshipType": "professional collaboration",
+      "description": "The AUSA requests the FBI Special Agent's coordination for delivering materials to a defendant.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The AUSA is facilitating the delivery of discovery materials to the defendant, Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent S",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "law enforcement-subject",
+      "description": "The FBI agent is tasked with delivering discovery drives to the incarcerated defendant.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-11",
+      "title": "Planned Drive Delivery to Maxwell",
+      "description": "The FBI was scheduled to deliver two new hard drives containing discovery materials to Ghislaine Maxwell at the MDC.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Special Agent S",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021-01-12",
+      "title": "Delivery Rescheduled",
+      "description": "Delivery of the hard drives was postponed because the paralegal responsible for logging them had a backlog and Maxwell was in a video teleconference (VTC).",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center (MDC)",
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Discovery materials were being provided to Ghislaine Maxwell in hard drive format while she was incarcerated at the MDC in January 2021.",
+    "The FBI was directly involved in the logistical coordination for delivering these materials to the defendant.",
+    "The correspondence shows ongoing legal proceedings and evidence exchange in Maxwell's case at the time."
+  ],
+  "analyzedAt": "2026-02-18T16:11:39.933Z"
+}

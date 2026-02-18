@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00104754.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "This document is an email chain from May 2020, forwarded by attorney Stacey Richman. It contains a forwarded message from Mark L. Epstein discussing a bizarre and threatening communication he received, which purports to be from a police officer offering to sell information about the death of his brother, referencing a prison guard named James. The email suggests attempts to obtain confidential police documents related to Jeffrey Epstein's case.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney forwarding an email chain; her law firm's contact information and confidentiality notice are included in the signature.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email Correspondent",
+      "category": "associate",
+      "context": "Forwarded a threatening email he received; appears to be seeking or being offered information related to his brother's death, potentially connected to the Jeffrey Epstein case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ponder",
+      "role": "Unknown Contact",
+      "category": "other",
+      "context": "Mentioned by Mark Epstein as someone he spoke to about emails not being received; likely a professional or legal contact.",
+      "mentionCount": 2
+    },
+    {
+      "name": "James",
+      "role": "Prison Guard",
+      "category": "other",
+      "context": "Identified in the forwarded email as a prison guard who met with the sender's brother five days before his death; presented as a source of information.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stacey Richman",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Stacey Richman is forwarding an email from Mark L. Epstein, suggesting a professional legal or advisory relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Ponder",
+      "relationshipType": "professional",
+      "description": "Mark states he spoke to Ponder about emails not being received, indicating some form of communication or coordination.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-19",
+      "title": "Threatening Email Sent to Mark Epstein",
+      "description": "An email, purportedly from a police officer, was sent to Mark L. Epstein offering to sell confidential information about his brother's death, referencing a meeting with a prison guard named James.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "James"
+      ]
+    },
+    {
+      "date": "2020-05-24",
+      "title": "Mark Epstein Forwards Email",
+      "description": "Mark L. Epstein forwards the threatening email to attorney Stacey Richman.",
+      "category": "correspondence",
+      "significance": 2,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Stacey Richman"
+      ]
+    },
+    {
+      "date": "2020-05-25",
+      "title": "Richman Forwards Email Chain",
+      "description": "Attorney Stacey Richman forwards the email chain, noting a follow-up about the emails with a contact named Ponder.",
+      "category": "correspondence",
+      "significance": 2,
+      "personsInvolved": [
+        "Stacey Richman",
+        "Mark L. Epstein",
+        "Ponder"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx, New York 10461",
+    "2027 Williamsbridge Road, Bronx, New York 10461"
+  ],
+  "keyFacts": [
+    "Mark L. Epstein received a threatening email in May 2020 purporting to be from police officers offering to sell confidential information about his brother's death.",
+    "The email references a prison guard named James who allegedly met with the sender's brother five days before his death.",
+    "The correspondence suggests attempts to obtain confidential police documents and witness testimony related to the Jeffrey Epstein case.",
+    "Attorney Stacey Richman was involved in the communication chain, indicating legal handling of the matter."
+  ],
+  "analyzedAt": "2026-02-18T19:03:45.690Z"
+}

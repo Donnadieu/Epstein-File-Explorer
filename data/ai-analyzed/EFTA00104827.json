@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00104827.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-04-04",
+  "summary": "Email correspondence between attorney Gloria Allred and an Assistant U.S. Attorney regarding the Epstein investigation. The discussion involves a victim's unwillingness to testify at trial to protect her privacy, but her interest in being informed about any plea deal. The email also mentions a separate investigation by the DOJ Office of Professional Responsibility into the original plea deal.",
+  "persons": [
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing a victim in the Epstein case, communicating with the U.S. Attorney's office about her client's position on testifying and receiving updates on plea negotiations.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Alex",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Assistant U.S. Attorney from the Southern District of New York corresponding with Gloria Allred about the Epstein investigation and potential contact from the DOJ Office of Professional Responsibility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Sigrid",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney mentioned in the email chain, possibly another legal representative involved in the case, as the initial email was mistakenly addressed to her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gloria Allred",
+      "person2": "Alex",
+      "relationshipType": "legal",
+      "description": "Professional correspondence regarding the Epstein investigation, discussing victim representation and plea deal updates.",
+      "strength": 3
+    },
+    {
+      "person1": "Gloria Allred",
+      "person2": "Sigrid",
+      "relationshipType": "legal",
+      "description": "Colleagues or legal associates involved in the Epstein case, as indicated by the email addressing.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-03",
+      "title": "DOJ OPR Investigation Notification",
+      "description": "The U.S. Attorney's office informs attorneys that the DOJ Office of Professional Responsibility may contact them as part of its investigation into the original Epstein plea deal.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alex",
+        "Gloria Allred",
+        "Sigrid"
+      ]
+    },
+    {
+      "date": "2020-04-04",
+      "title": "Victim Declines to Testify",
+      "description": "Gloria Allred reports that her client does not wish to testify at trial to protect her privacy but wants to be informed about any plea deal.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Gloria Allred"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A victim represented by Gloria Allred declined to testify at trial to protect her privacy but wanted to be kept informed about any plea deal.",
+    "The DOJ Office of Professional Responsibility is conducting a separate investigation into the original Epstein plea deal and may contact victims' attorneys.",
+    "The email correspondence highlights ongoing legal discussions and victim considerations in the Epstein case as of April 2020."
+  ],
+  "analyzedAt": "2026-02-18T19:12:06.793Z"
+}

@@ -1,0 +1,163 @@
+{
+  "fileName": "EFTA00104865.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an email forwarding a summary of an interview with the warden of the Metropolitan Correctional Center (MCC) regarding the circumstances surrounding Jeffrey Epstein's incarceration and death. It details the timeline from his apparent suicide attempt on July 23, 2019, his placement and removal from suicide watch, his transfer back to the SHU with a specific cellmate order, and the failure of that order on the night of his death. It also names the correctional officers on duty.",
+  "persons": [
+    {
+      "name": "Geoffre S. .Berm",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Appears as the primary recipient of the forwarded email containing the interview summary.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The document details the timeline of his incarceration, suicide watch, and the circumstances leading to his death in the MCC.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Inmate selected to be Epstein's cellmate in the SHU; was transferred out of MCC on August 9, 2019, leaving Epstein without a cellmate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "Corrections officer who routinely worked in the SHU and was on a voluntary overtime shift the night Epstein was found dead.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "Officer who normally worked in the warehouse but was on a voluntary overtime shift; was the first person to find Epstein deceased.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Capt.",
+      "role": "Supervisor of the SHU",
+      "category": "staff",
+      "context": "The captain of the Secure Housing Unit who was directed by the Warden to ensure Epstein always had a cellmate and who confirmed relaying those instructions.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was selected to be Epstein's cellmate when Epstein was transferred back to the SHU on July 29, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were the duty correctional officers working voluntary overtime shifts in the SHU on the night of August 9-10, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Capt.",
+      "relationshipType": "employer-employee",
+      "description": "The Warden directed Capt., the supervisor of the SHU, to ensure Epstein had a cellmate at all times.",
+      "strength": 4
+    },
+    {
+      "person1": "Warden",
+      "person2": "Epstein",
+      "relationshipType": "custodial",
+      "description": "The Warden of the MCC was responsible for Epstein's custody and was briefed on his status and cellmate assignments.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Apparent Suicide Attempt",
+      "description": "Jeffrey Epstein was found in his cell in an apparent suicide attempt. He was moved to the suicide watch unit on the 2nd floor of the MCC.",
+      "category": "suicide attempt",
+      "significance": 5,
+      "personsInvolved": [
+        "Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Downgraded to Psychological Observation",
+      "description": "Epstein was downgraded from suicide watch to psychological observation but remained on the suicide watch unit. He was deemed no longer suicidal by the chief psychologist.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Epstein Transferred Back to SHU",
+      "description": "Epstein was removed from psychological observation and transferred back to the Secure Housing Unit (SHU) on the 9th floor. The Warden ordered that he must have a cellmate at all times, selecting inmate Reyes.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Epstein",
+        "Reyes",
+        "Warden",
+        "Capt."
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Cellmate Reyes Transferred",
+      "description": "Inmate Reyes was transferred from the MCC SHU to a GEO facility. Epstein was left without a cellmate, and the Warden was not notified.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Epstein",
+        "Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Deceased",
+      "description": "Correctional Officer Michael Thomas found Jeffrey Epstein deceased in his cell in the SHU. Officers Tova Noel and Michael Thomas were on duty.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Epstein",
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "MCC Warden Interview",
+      "description": "The OIG, FBI, and USAO-SDNY conducted a recorded, voluntary interview with the warden of the MCC regarding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Warden"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Secure Housing Unit (SHU) - 9th floor, MCC",
+    "Suicide watch unit - 2nd floor, MCC",
+    "GEO (facility)"
+  ],
+  "keyFacts": [
+    "Epstein was placed on suicide watch on July 23, 2019, after an apparent suicide attempt, but was downgraded to psychological observation the next day after being deemed no longer suicidal.",
+    "On July 29, Epstein was transferred back to the SHU with explicit orders from the Warden that he must have a cellmate at all times; inmate Reyes was selected.",
+    "On August 9, 2019, inmate Reyes was transferred out of the MCC, leaving Epstein without a cellmate. The Warden was not notified of this change.",
+    "Correctional Officers Tova Noel and Michael Thomas were on voluntary overtime duty in the SHU on the night of August 9-10, 2019. Thomas found Epstein deceased.",
+    "The document reveals a chain of procedural failures, including the removal from suicide watch, the broken cellmate order, and the lack of notification to the Warden about the cellmate's transfer."
+  ],
+  "analyzedAt": "2026-02-18T19:16:04.523Z"
+}

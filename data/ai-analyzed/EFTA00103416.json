@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00103416.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-04-12",
+  "summary": "This is a court order from a FOIA lawsuit filed by The New York Times against the Federal Bureau of Prisons, seeking documents related to the circumstances of Jeffrey Epstein's 2019 suicide. The judge orders the BOP to submit withheld records for in-camera review, as the BOP's justification for withholding them under FOIA Exemption 7(A) is insufficiently detailed, citing potential interference with two other pending prosecutions.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The FOIA case concerns the circumstances surrounding his 2019 suicide while in BOP custody.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Defendant in a pending prosecution",
+      "category": "legal",
+      "context": "The BOP cites his pending prosecution as one of two that could be disrupted by the disclosure of withheld documents related to Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Defendant in a pending prosecution",
+      "category": "legal",
+      "context": "The BOP cites her pending prosecution as one of two that could be disrupted by the disclosure of withheld documents related to Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Defendant in a pending prosecution",
+      "category": "legal",
+      "context": "The BOP cites his pending prosecution as one of two that could be disrupted by the disclosure of withheld documents related to Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul A. Engelmayer",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the FOIA case, who issued this order directing the BOP to provide withheld records for in-camera review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christenson",
+      "role": "Declarant for the BOP",
+      "category": "legal",
+      "context": "Filed a supplemental declaration (Dkt. 39-1) with Exhibit 1 identifying withheld records.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-defendant",
+      "description": "Both are named as defendants in a pending prosecution cited by the BOP.",
+      "strength": 3
+    },
+    {
+      "person1": "Federal Bureau of Prisons",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The BOP was the custodian of Jeffrey Epstein at the time of his death.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019",
+      "title": "Suicide of Jeffrey Epstein",
+      "description": "Jeffrey Epstein died by suicide while in the custody of the Federal Bureau of Prisons.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-04-09",
+      "title": "FOIA Case Argument",
+      "description": "The court held an argument in the FOIA case concerning documents about Epstein's suicide.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Paul A. Engelmayer"
+      ]
+    },
+    {
+      "date": "2021-04-12",
+      "title": "Court Order for In-Camera Review",
+      "description": "Judge Engelmayer ordered the BOP to provide withheld documents for in-camera review by May 14, 2021.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Paul A. Engelmayer"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The Federal Bureau of Prisons is withholding documents related to Jeffrey Epstein's 2019 suicide under FOIA Exemption 7(A), claiming disclosure could interfere with the pending prosecutions of Nicholas Tartaglione and Tova Noel and Michael Thomas.",
+    "The court found the BOP's justification for withholding the documents insufficiently detailed, failing to show a 'rational link' between the documents and potential interference with the cited prosecutions.",
+    "Judge Paul A. Engelmayer ordered the BOP to submit the withheld records for in-camera review, with a schedule for all records to be provided by May 14, 2021.",
+    "The FOIA lawsuit was filed by The New York Times Company seeking transparency into the circumstances surrounding Epstein's death in BOP custody.",
+    "The document is a court order, not the withheld records themselves, indicating an ongoing legal battle for information about Epstein's suicide."
+  ],
+  "analyzedAt": "2026-02-18T15:44:32.573Z"
+}

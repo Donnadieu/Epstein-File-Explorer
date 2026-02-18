@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA00104764.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-05-25",
+  "summary": "An email chain forwarded by attorney Stacey Richman to a U.S. Attorney's office, containing a forwarded email from Mark L. Epstein that includes a threatening message sent to him. The threat demands he tell the court he partnered with his brother or his family will be killed.",
+  "persons": [
+    {
+      "name": "Stacey Richman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney forwarding an email chain containing a threat to a U.S. Attorney's office, expressing concern and seeking advice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email Forwarder / Threat Recipient",
+      "category": "other",
+      "context": "Individual who forwarded a threatening email he received to attorney Stacey Richman. The threat references a court and his brother.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Mansfield",
+      "role": "Email Recipient (Cc)",
+      "category": "other",
+      "context": "Copied on the initial email from Stacey Richman to the U.S. Attorney's office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Puggie",
+      "role": "Threat Sender",
+      "category": "other",
+      "context": "Sender of a threatening email to Mark L. Epstein, demanding he tell the court he partnered with his brother or face violence.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stacey Richman",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Mark L. Epstein forwarded a threatening email to Stacey Richman, who then forwarded it to authorities, suggesting a legal or advisory relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "Puggie",
+      "relationshipType": "threatener-victim",
+      "description": "Puggie sent a direct death threat to Mark L. Epstein concerning a court matter and his brother.",
+      "strength": 4
+    },
+    {
+      "person1": "Stacey Richman",
+      "person2": "Michael Mansfield",
+      "relationshipType": "professional",
+      "description": "Mansfield was copied on Richman's email to the U.S. Attorney, indicating a professional association.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-25",
+      "title": "Threatening Email Sent to Mark L. Epstein",
+      "description": "An individual using the alias 'Puggie' sends an email to Mark L. Epstein threatening to kill his family if he does not tell the court he partnered with his brother.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Mark L. Epstein",
+        "Puggie"
+      ]
+    },
+    {
+      "date": "2020-05-25",
+      "title": "Attorney Forwards Threat to Authorities",
+      "description": "Attorney Stacey Richman forwards the threatening email chain to a U.S. Attorney's office, expressing serious concern and seeking advice.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Stacey Richman",
+        "Mark L. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx, New York 10461",
+    "2027 Williamsbridge Road, Bronx, New York 10461"
+  ],
+  "keyFacts": [
+    "A direct death threat was sent via email to Mark L. Epstein on May 25, 2020, demanding he make a false statement to a court about partnering with his brother.",
+    "Attorney Stacey Richman considered the threat serious and aggressive enough to forward it to a U.S. Attorney's office for advice.",
+    "The threat suggests Mark L. Epstein was involved in a court proceeding where the nature of his partnership with his brother was relevant.",
+    "The communication shows a potential attempt to intimidate or influence a legal proceeding involving Mark L. Epstein."
+  ],
+  "analyzedAt": "2026-02-18T19:05:21.674Z"
+}
