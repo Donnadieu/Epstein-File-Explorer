@@ -1,11 +1,12 @@
-import { useState, useCallback, useEffect, useRef, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Skeleton } from "@/components/ui/skeleton";
+
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
@@ -25,6 +26,7 @@ import {
   ChevronLeft,
   ChevronRight,
   BookOpen,
+  Loader2,
 } from "lucide-react";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
 import { getClientId } from "@/lib/client-id";
@@ -64,30 +66,34 @@ interface PageSearchResponse {
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
-  const [debouncedQuery, setDebouncedQuery] = useState("");
-  const prevQueryRef = useRef("");
+  const [submittedQuery, setSubmittedQuery] = useState("");
   const { searchBookmarks, isBookmarked, toggleBookmark, deleteBookmark } = useBookmarks();
   const { history, addSearch, clearHistory } = useSearchHistory();
 
-  // Debounce search queries to avoid hammering the API on every keystroke
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedQuery(query);
-      setFtPage(1);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, [query]);
-
   const [ftPage, setFtPage] = useState(1);
 
+  const executeSearch = useCallback((term: string) => {
+    const trimmed = term.trim();
+    setQuery(trimmed);
+    if (trimmed.length >= 2) {
+      setSubmittedQuery(trimmed);
+      setFtPage(1);
+      addSearch(trimmed);
+    }
+  }, [addSearch]);
+
+  const handleSearchSubmit = useCallback(() => {
+    executeSearch(query);
+  }, [query, executeSearch]);
+
   const { data, isLoading, isFetching } = useQuery<SearchResults>({
-    queryKey: ["/api/search?q=" + encodeURIComponent(debouncedQuery)],
-    enabled: debouncedQuery.length >= 2,
+    queryKey: ["/api/search?q=" + encodeURIComponent(submittedQuery)],
+    enabled: submittedQuery.length >= 2,
   });
 
   const { data: pageData } = useQuery<PageSearchResponse>({
-    queryKey: [`/api/search/pages?q=${encodeURIComponent(debouncedQuery)}&page=${ftPage}&limit=20`],
-    enabled: debouncedQuery.length >= 2,
+    queryKey: [`/api/search/pages?q=${encodeURIComponent(submittedQuery)}&page=${ftPage}&limit=20`],
+    enabled: submittedQuery.length >= 2,
   });
 
   const searchDocumentIds = useMemo(() => (data?.documents ?? []).map((d) => d.id), [data?.documents]);
@@ -98,20 +104,17 @@ export default function SearchPage() {
     staleTime: 120_000,
   });
 
-  // Record search to history when results arrive
+  // Record search query server-side for trending
   useEffect(() => {
-    if (data && query.length >= 2 && query !== prevQueryRef.current) {
-      addSearch(query);
-      prevQueryRef.current = query;
-      // Record search query server-side for trending
+    if (data && submittedQuery.length >= 2) {
       const totalResults = (data.persons?.length || 0) + (data.documents?.length || 0) + (data.events?.length || 0);
       fetch("/api/search/record", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, sessionId: getClientId(), resultCount: totalResults }),
+        body: JSON.stringify({ query: submittedQuery, sessionId: getClientId(), resultCount: totalResults }),
       }).catch(() => {});
     }
-  }, [data, query, addSearch]);
+  }, [data, submittedQuery]);
 
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
@@ -143,17 +146,17 @@ export default function SearchPage() {
   }, [pageData?.results]);
 
   const handleSavedSearchSelect = useCallback((searchQuery: string) => {
-    setQuery(searchQuery);
-  }, []);
+    executeSearch(searchQuery);
+  }, [executeSearch]);
 
   const handleHistorySelect = useCallback((term: string) => {
-    setQuery(term);
-  }, []);
+    executeSearch(term);
+  }, [executeSearch]);
 
   const videoPlayer = useVideoPlayer();
   const docViewer = useDocumentViewer();
 
-  const searchIsBookmarked = isBookmarked("search", undefined, query);
+  const searchIsBookmarked = isBookmarked("search", undefined, submittedQuery);
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto w-full">
@@ -184,16 +187,31 @@ export default function SearchPage() {
               placeholder="Search names, documents, events, keywords..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  handleSearchSubmit();
+                }
+              }}
               className="pl-10 h-11 text-base"
               data-testid="input-global-search"
               autoFocus
             />
           </div>
-          {query.length >= 2 && (
+          <Button
+            onClick={handleSearchSubmit}
+            disabled={query.trim().length < 2}
+            className="h-11 px-4"
+            data-testid="button-submit-search"
+          >
+            <SearchIcon className="w-4 h-4 mr-1.5" />
+            Search
+          </Button>
+          {submittedQuery.length >= 2 && (
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => toggleBookmark("search", undefined, query, query)}
+              onClick={() => toggleBookmark("search", undefined, submittedQuery, submittedQuery)}
               className={searchIsBookmarked ? "text-primary" : "text-muted-foreground"}
               data-testid="button-bookmark-search"
               aria-label={searchIsBookmarked ? "Remove search bookmark" : "Bookmark this search"}
@@ -204,7 +222,7 @@ export default function SearchPage() {
         </div>
 
         {/* Search History */}
-        {history.length > 0 && query.length < 2 && (
+        {history.length > 0 && submittedQuery.length < 2 && (
           <div className="flex items-center gap-1.5 max-w-2xl" data-testid="search-history-section">
             <History className="w-3 h-3 text-muted-foreground/50 shrink-0" />
             {history.map((term) => (
@@ -229,10 +247,14 @@ export default function SearchPage() {
         )}
       </div>
 
-      {query.length < 2 ? (
+      {submittedQuery.length < 2 ? (
         <div className="flex flex-col items-center justify-center py-20 gap-4">
           <SearchIcon className="w-12 h-12 text-muted-foreground/20" />
-          <p className="text-sm text-muted-foreground">Enter at least 2 characters to search.</p>
+          <p className="text-sm text-muted-foreground">
+            {query.trim().length >= 2
+              ? "Press Enter or click Search to find results."
+              : "Enter at least 2 characters to search."}
+          </p>
           {trendingSearches && trendingSearches.length > 0 ? (
             <div className="flex flex-col gap-2 items-center">
               <span className="text-xs text-muted-foreground/60 flex items-center gap-1">
@@ -244,7 +266,7 @@ export default function SearchPage() {
                     key={s.query}
                     variant="outline"
                     className="cursor-pointer border-primary/30 text-primary/80 hover:bg-primary/5"
-                    onClick={() => setQuery(s.query)}
+                    onClick={() => executeSearch(s.query)}
                     data-testid={`badge-trending-${s.query.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {s.query}
@@ -264,7 +286,7 @@ export default function SearchPage() {
                     key={term}
                     variant="outline"
                     className="cursor-pointer"
-                    onClick={() => setQuery(term)}
+                    onClick={() => executeSearch(term)}
                     data-testid={`badge-suggestion-${term.toLowerCase().replace(" ", "-")}`}
                   >
                     {term}
@@ -277,7 +299,7 @@ export default function SearchPage() {
                     key={term}
                     variant="outline"
                     className="cursor-pointer text-muted-foreground/60"
-                    onClick={() => setQuery(term)}
+                    onClick={() => executeSearch(term)}
                     data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     {term}
@@ -288,15 +310,16 @@ export default function SearchPage() {
           )}
         </div>
       ) : isLoading || isFetching ? (
-        <div className="flex flex-col gap-3">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Skeleton key={i} className="h-20 w-full" />
-          ))}
+        <div className="flex flex-col items-center justify-center py-20 gap-3">
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          <p className="text-sm text-muted-foreground">
+            Searching for &ldquo;{submittedQuery}&rdquo;&hellip;
+          </p>
         </div>
       ) : (
         <>
           <p className="text-xs text-muted-foreground">
-            {totalResults} results for "{query}"
+            {totalResults} results for &ldquo;{submittedQuery}&rdquo;
           </p>
           <Tabs defaultValue="all" className="w-full">
             <TabsList data-testid="tabs-search-results">
@@ -346,27 +369,27 @@ export default function SearchPage() {
                   ))}
                 </div>
               )}
-              {totalResults === 0 && <NoResultsState query={query} />}
+              {totalResults === 0 && <NoResultsState query={submittedQuery} />}
             </TabsContent>
 
             <TabsContent value="people" className="mt-4 flex flex-col gap-2">
               {data?.persons?.map((person) => <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.persons || data.persons.length === 0) && (
-                <EmptyState type="people" query={query} />
+                <EmptyState type="people" query={submittedQuery} />
               )}
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
               {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} onDocClick={docViewer.open} />)}
               {(!data?.documents || data.documents.length === 0) && (
-                <EmptyState type="documents" query={query} />
+                <EmptyState type="documents" query={submittedQuery} />
               )}
             </TabsContent>
 
             <TabsContent value="events" className="mt-4 flex flex-col gap-2">
               {data?.events?.map((event) => <EventResult key={event.id} event={event} />)}
               {(!data?.events || data.events.length === 0) && (
-                <EmptyState type="events" query={query} />
+                <EmptyState type="events" query={submittedQuery} />
               )}
             </TabsContent>
 
@@ -418,7 +441,7 @@ export default function SearchPage() {
                   ))}
                 </Accordion>
               ) : (
-                <EmptyState type="full text" query={query} />
+                <EmptyState type="full text" query={submittedQuery} />
               )}
               {pageData && pageData.totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 pt-3">

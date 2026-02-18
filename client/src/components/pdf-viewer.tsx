@@ -1,19 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
-import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+  AlertCircle,
   ChevronLeft,
   ChevronRight,
-  ZoomIn,
-  ZoomOut,
+  ExternalLink,
+  Loader2,
   Maximize,
   Minimize,
-  ExternalLink,
-  AlertCircle,
-  Loader2,
+  ZoomIn,
+  ZoomOut,
 } from "lucide-react";
+import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
+import * as pdfjsLib from "pdfjs-dist";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -39,7 +39,13 @@ const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 
-export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPage, pageTypes }: PdfViewerProps) {
+export default function PdfViewer({
+  documentId,
+  sourceUrl,
+  publicUrl,
+  initialPage,
+  pageTypes,
+}: PdfViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
@@ -59,7 +65,10 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
     async (pageNum: number) => {
       const pdfDoc = pdfDocRef.current;
       const canvas = canvasRef.current;
-      if (!pdfDoc || !canvas) return;
+      if (!pdfDoc || !canvas) {
+        setIsRendering(false);
+        return;
+      }
 
       // Cancel any ongoing render
       if (renderTaskRef.current) {
@@ -85,7 +94,11 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
         canvas.style.height = `${viewport.height}px`;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        const renderTask = page.render({ canvasContext: ctx, viewport, canvas });
+        const renderTask = page.render({
+          canvasContext: ctx,
+          viewport,
+          canvas,
+        });
         renderTaskRef.current = renderTask;
         await renderTask.promise;
         renderTaskRef.current = null;
@@ -119,7 +132,9 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
       if (cancelled) return;
 
       // Try proxy endpoint first (avoids CORS), then direct URL
-      const urls = (got404 ? [sourceUrl] : [proxyUrl, sourceUrl]).filter(Boolean) as string[];
+      const urls = (got404 ? [sourceUrl] : [proxyUrl, sourceUrl]).filter(
+        Boolean,
+      ) as string[];
 
       for (const url of urls) {
         if (cancelled) return;
@@ -131,7 +146,10 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
           }
           pdfDocRef.current = doc;
           setTotalPages(doc.numPages);
-          const startPage = Math.max(1, Math.min(initialPage ?? 1, doc.numPages));
+          const startPage = Math.max(
+            1,
+            Math.min(initialPage ?? 1, doc.numPages),
+          );
           setCurrentPage(startPage);
           setPageInputValue(String(startPage));
           setViewerState("ready");
@@ -166,9 +184,13 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
       if (!cancelled) {
         if (got404) {
-          setErrorMessage("This document could not be found. It may have been removed from the source or is no longer available.");
+          setErrorMessage(
+            "This document could not be found. It may have been removed from the source or is no longer available.",
+          );
         } else {
-          setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");
+          setErrorMessage(
+            "Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.",
+          );
         }
         setViewerState("error");
       }
@@ -191,6 +213,8 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
   const goToPage = (page: number) => {
     const clamped = Math.max(1, Math.min(page, totalPages));
+    if (clamped === currentPage) return;
+    setIsRendering(true);
     setCurrentPage(clamped);
     setPageInputValue(String(clamped));
     const url = new URL(window.location.href);
@@ -237,7 +261,8 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
       setIsFullscreen(!!document.fullscreenElement);
     };
     document.addEventListener("fullscreenchange", handleFsChange);
-    return () => document.removeEventListener("fullscreenchange", handleFsChange);
+    return () =>
+      document.removeEventListener("fullscreenchange", handleFsChange);
   }, []);
 
   if (viewerState === "error") {
@@ -245,11 +270,14 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
       <Card className="bg-muted/30">
         <CardContent className="flex flex-col items-center gap-4 py-8">
           <AlertCircle className="w-8 h-8 text-muted-foreground/50" />
-          <p className="text-sm text-muted-foreground text-center max-w-md">{errorMessage}</p>
+          <p className="text-sm text-muted-foreground text-center max-w-md">
+            {errorMessage}
+          </p>
           {sourceUrl && (
             <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="gap-2">
-                <ExternalLink className="w-4 h-4" /> Browse Source on DOJ Website
+                <ExternalLink className="w-4 h-4" /> Browse Source on DOJ
+                Website
               </Button>
             </a>
           )}
@@ -328,7 +356,7 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
         {/* Page type badge */}
         {(() => {
-          const pt = pageTypes?.find(p => p.pageNumber === currentPage);
+          const pt = pageTypes?.find((p) => p.pageNumber === currentPage);
           return pt ? (
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground capitalize whitespace-nowrap">
               {pt.pageType}
@@ -338,7 +366,13 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
         {/* Zoom controls */}
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" className="h-8 w-8" onClick={zoomOut} disabled={scale <= MIN_ZOOM}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={zoomOut}
+            disabled={scale <= MIN_ZOOM}
+          >
             <ZoomOut className="w-4 h-4" />
           </Button>
           <button
@@ -347,23 +381,43 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
           >
             {Math.round(scale * 100)}%
           </button>
-          <Button variant="ghost" size="icon" className="h-8 w-8" onClick={zoomIn} disabled={scale >= MAX_ZOOM}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={zoomIn}
+            disabled={scale >= MAX_ZOOM}
+          >
             <ZoomIn className="w-4 h-4" />
           </Button>
-          <Button variant="ghost" size="icon" className="h-8 w-8" onClick={toggleFullscreen}>
-            {isFullscreen ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8"
+            onClick={toggleFullscreen}
+          >
+            {isFullscreen ? (
+              <Minimize className="w-4 h-4" />
+            ) : (
+              <Maximize className="w-4 h-4" />
+            )}
           </Button>
         </div>
       </div>
 
       {/* Canvas area */}
-      <div className={`overflow-auto bg-muted/20 flex justify-center p-4 ${isFullscreen ? "flex-1" : "max-h-[70vh]"}`}>
+      <div
+        className={`overflow-auto bg-muted/20 flex justify-center p-4 ${isFullscreen ? "flex-1" : "max-h-[70vh]"}`}
+      >
         {isRendering && (
           <div className="flex flex-col items-center justify-center gap-3 w-[600px] h-[780px] max-w-full">
             <div className="w-full h-full rounded-md bg-muted/40 animate-pulse" />
           </div>
         )}
-        <canvas ref={canvasRef} className={`shadow-md ${isRendering ? "hidden" : ""}`} />
+        <canvas
+          ref={canvasRef}
+          className={`shadow-md ${isRendering ? "hidden" : ""}`}
+        />
       </div>
     </div>
   );
