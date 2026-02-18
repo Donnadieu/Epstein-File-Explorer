@@ -488,8 +488,8 @@ const networkDataCache = createCache<{
 
 const personsCache = createCache<Person[]>(5 * 60 * 1000);
 const timelineEventsCache = createCache<TimelineEvent[]>(5 * 60 * 1000);
-const trendingPersonsCache = createCache<Person[]>(5 * 60 * 1000);
-const trendingDocumentsCache = createCache<Document[]>(5 * 60 * 1000);
+const trendingPersonsCache = createCache<Person[]>(2 * 60 * 1000);
+const trendingDocumentsCache = createCache<Document[]>(2 * 60 * 1000);
 
 const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
 const COUNT_TTL = 60_000;

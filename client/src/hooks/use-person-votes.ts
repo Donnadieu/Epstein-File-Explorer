@@ -12,6 +12,7 @@ interface PersonVote {
 
 const VOTES_KEY = ["/api/person-votes"];
 const VOTE_COUNTS_KEY = ["/api/person-votes/counts"];
+const MOST_VOTED_PERSONS_KEY = ["/api/most-voted/persons?limit=6"];
 
 export function usePersonVotes(personIds: number[] = []) {
   const queryClient = useQueryClient();
@@ -99,6 +100,7 @@ export function usePersonVotes(personIds: number[] = []) {
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
+      queryClient.invalidateQueries({ queryKey: MOST_VOTED_PERSONS_KEY });
     },
   });
 
@@ -114,6 +116,7 @@ export function usePersonVotes(personIds: number[] = []) {
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
+      queryClient.invalidateQueries({ queryKey: MOST_VOTED_PERSONS_KEY });
     },
   });
 
