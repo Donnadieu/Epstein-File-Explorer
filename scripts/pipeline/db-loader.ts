@@ -263,13 +263,13 @@ export async function loadAIResults(options?: {
   const isDryRun = options?.dryRun === true;
   const dryRunSummary = isDryRun
     ? {
-        personsToCreate: [] as string[],
-        personsToUpdate: [] as string[],
-        connectionsToCreate: [] as string[],
-        eventsToCreate: [] as string[],
-        eventsToUpdate: [] as string[],
-        docLinksToCreate: [] as string[],
-        docsToMark: [] as string[],
+        personsToCreate: [] as { name: string; category: string; role: string; status: string; source: string }[],
+        personsToUpdate: [] as { name: string; fields: Record<string, { from: string; to: string }>; source: string }[],
+        connectionsToCreate: [] as { person1: string; person2: string; type: string; strength: number; description: string; source: string }[],
+        eventsToCreate: [] as { date: string; title: string; category: string; significance: number; personsInvolved: string[]; source: string }[],
+        eventsToUpdate: [] as { date: string; title: string; fieldsChanged: string[]; source: string }[],
+        docLinksToCreate: [] as { person: string; documentId: number; source: string }[],
+        docsToMark: [] as { efta: string; documentType: string }[],
       }
     : null;
   const aiDir = path.join(DATA_DIR, "ai-analyzed");
@@ -393,7 +393,7 @@ export async function loadAIResults(options?: {
 
         if (!existing) {
           if (isDryRun) {
-            dryRunSummary!.personsToCreate.push(mention.name);
+            dryRunSummary!.personsToCreate.push({ name: mention.name, category: mention.category, role: mention.role, status, source: file });
             // Add simulated person so downstream resolution still works
             personsByName.set(mention.name.toLowerCase(), {
               id: -(personsCreated + 1),
@@ -443,9 +443,12 @@ export async function loadAIResults(options?: {
 
           if (Object.keys(updates).length > 0) {
             if (isDryRun) {
-              dryRunSummary!.personsToUpdate.push(
-                `${existing.name} (${Object.keys(updates).join(", ")})`,
-              );
+              const fieldChanges: Record<string, { from: string; to: string }> = {};
+              if (updates.category) fieldChanges.category = { from: existing.category || "unknown", to: updates.category };
+              if (updates.role) fieldChanges.role = { from: existing.role || "unknown", to: updates.role };
+              if (updates.description) fieldChanges.description = { from: `${existing.description?.length || 0} chars`, to: `${updates.description.length} chars` };
+              if (updates.status) fieldChanges.status = { from: existing.status, to: updates.status };
+              dryRunSummary!.personsToUpdate.push({ name: existing.name, fields: fieldChanges, source: file });
             } else {
               await db
                 .update(persons)
@@ -468,9 +471,11 @@ export async function loadAIResults(options?: {
           if (existingPairs.has(pairKey)) continue;
 
           if (isDryRun) {
-            dryRunSummary!.connectionsToCreate.push(
-              `${conn.person1} ↔ ${conn.person2}`,
-            );
+            dryRunSummary!.connectionsToCreate.push({
+              person1: conn.person1, person2: conn.person2,
+              type: conn.relationshipType, strength: conn.strength,
+              description: (conn.description || "").substring(0, 200), source: file,
+            });
             connectionsCreated++;
           } else {
             try {
@@ -536,9 +541,10 @@ export async function loadAIResults(options?: {
 
           if (existingEvent.length === 0) {
             if (isDryRun) {
-              dryRunSummary!.eventsToCreate.push(
-                `${event.date}: ${event.title}`,
-              );
+              dryRunSummary!.eventsToCreate.push({
+                date: event.date, title: event.title, category: event.category,
+                significance: event.significance, personsInvolved: event.personsInvolved, source: file,
+              });
             } else {
               await db.insert(timelineEvents).values({
                 date: event.date,
@@ -578,9 +584,7 @@ export async function loadAIResults(options?: {
 
             if (Object.keys(updates).length > 0) {
               if (isDryRun) {
-                dryRunSummary!.eventsToUpdate.push(
-                  `${event.date}: ${event.title}`,
-                );
+                dryRunSummary!.eventsToUpdate.push({ date: event.date, title: event.title, fieldsChanged: Object.keys(updates), source: file });
               } else {
                 await db
                   .update(timelineEvents)
@@ -606,9 +610,7 @@ export async function loadAIResults(options?: {
 
           const newContext = (mention.context || "").substring(0, 500);
           if (isDryRun) {
-            dryRunSummary!.docLinksToCreate.push(
-              `${mention.name} ↔ doc#${sourceDocId}`,
-            );
+            dryRunSummary!.docLinksToCreate.push({ person: mention.name, documentId: sourceDocId, source: file });
             existingLinks.add(linkKey);
             docLinksCreated++;
           } else {
@@ -629,7 +631,7 @@ export async function loadAIResults(options?: {
       // --- Mark document as AI-analyzed + update documentType from AI ---
       if (sourceDocId) {
         if (isDryRun) {
-          dryRunSummary!.docsToMark.push(eventEfta);
+          dryRunSummary!.docsToMark.push({ efta: eventEfta, documentType: normalizeType(data.documentType || "unknown") });
         } else {
           const docUpdates: Record<string, any> = {
             aiAnalysisStatus: "completed",
@@ -650,7 +652,21 @@ export async function loadAIResults(options?: {
 
   if (isDryRun && dryRunSummary) {
     const planPath = path.join(DATA_DIR, "ai-results-dry-run.json");
-    fs.writeFileSync(planPath, JSON.stringify(dryRunSummary, null, 2));
+    const output = {
+      generatedAt: new Date().toISOString(),
+      filesProcessed: files.length,
+      summary: {
+        personsToCreate: dryRunSummary.personsToCreate.length,
+        personsToUpdate: dryRunSummary.personsToUpdate.length,
+        connectionsToCreate: dryRunSummary.connectionsToCreate.length,
+        eventsToCreate: dryRunSummary.eventsToCreate.length,
+        eventsToUpdate: dryRunSummary.eventsToUpdate.length,
+        docLinksToCreate: dryRunSummary.docLinksToCreate.length,
+        docsToMark: dryRunSummary.docsToMark.length,
+      },
+      ...dryRunSummary,
+    };
+    fs.writeFileSync(planPath, JSON.stringify(output, null, 2));
     console.log(`\n  DRY RUN — no database changes made`);
     console.log(
       `  Would create: ${dryRunSummary.personsToCreate.length} persons, ${dryRunSummary.connectionsToCreate.length} connections, ${dryRunSummary.eventsToCreate.length} events, ${dryRunSummary.docLinksToCreate.length} doc-links`,
