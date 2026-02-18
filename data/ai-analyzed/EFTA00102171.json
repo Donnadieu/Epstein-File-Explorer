@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00102171.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-08-19",
+  "summary": "This is an email chain from August 2020 between federal prosecutors and law enforcement agents (FBI/NYPD) regarding discovery requests in the Ghislaine Maxwell case. The prosecutors are requesting various evidence items including grand jury transcripts, message pad scans, FBI files, and materials from seized devices, with discussions about logistical challenges and timelines.",
+  "persons": [
+    {
+      "name": "Mandy",
+      "role": "Law enforcement/FBI agent",
+      "category": "law enforcement",
+      "context": "FBI agent involved in compiling and providing discovery materials to prosecutors in the Maxwell case. Mentioned as working on scanning evidence and coordinating responses.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Tony Figuero",
+      "role": "Unknown contact",
+      "category": "other",
+      "context": "Mentioned as someone a law enforcement agent has a scheduled call with, indicating a potential professional contact relevant to the investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Reiter",
+      "role": "Evidence provider",
+      "category": "other",
+      "context": "Individual or entity that provided files to the FBI, which are part of the discovery materials being requested by prosecutors.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mandy",
+      "person2": "Reiter",
+      "relationshipType": "evidence handler",
+      "description": "Mandy (FBI) is handling files provided by Reiter that are part of the discovery materials in the Maxwell case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-18",
+      "title": "Discovery request follow-up",
+      "description": "Prosecutors send detailed follow-up questions and requests for additional discovery materials including grand jury transcripts, message pad scans, FBI files, and evidence from seized devices.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Mandy"
+      ]
+    },
+    {
+      "date": "2020-08-19",
+      "title": "Discovery coordination update",
+      "description": "FBI agent provides a summary response to discovery requests, detailing what is available, what is being processed (including removal of nude/semi-nude images), and requesting more time for certain items.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mandy"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Southern District of New York",
+    "St. Andrew's Plaza, New York, NY 10007",
+    "Miami (referenced for case file)",
+    "New York Field Office (FBI)",
+    "VI (likely U.S. Virgin Islands, referenced for searches)"
+  ],
+  "keyFacts": [
+    "Prosecutors are actively seeking grand jury testimony from the earlier Miami case against Epstein as part of discovery for the Maxwell prosecution.",
+    "The FBI is processing a large volume of evidence from seized disks, specifically working to remove nude/semi-nude images before production.",
+    "There is ongoing coordination about scanning physical evidence, including message pads with and without post-it notes, indicating attention to detail in document handling.",
+    "The email chain reveals logistical challenges in meeting discovery deadlines, with the FBI requesting more time to compile certain materials.",
+    "Evidence was seized from searches in New York and the U.S. Virgin Islands, and from files provided by an individual/entity named Reiter."
+  ],
+  "analyzedAt": "2026-02-17T23:37:41.975Z"
+}

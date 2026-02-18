@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00100554.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-02-05",
+  "summary": "This is an email from an Assistant U.S. Attorney to Peter Skinner regarding service of a grand jury subpoena directed to the law firm Boies Schiller Flexner LLP in connection with the civil case Jane Doe 43 v. Epstein, et al. The email includes an attachment of the subpoena.",
+  "persons": [
+    {
+      "name": "Peter Skinner",
+      "role": "Recipient of legal correspondence, authorized to accept service for Boies Schiller Flexner LLP",
+      "category": "legal",
+      "context": "Addressed in an email from an Assistant U.S. Attorney as the person authorized to accept service of a grand jury subpoena on behalf of the law firm Boies Schiller Flexner LLP.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alex",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Sender of the email, serving a grand jury subpoena related to the Jane Doe 43 v. Epstein case to Peter Skinner on behalf of the Southern District of New York U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jane Doe 43",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "The plaintiff in the referenced civil lawsuit (Jane Doe 43 v. Epstein, et al.) which is the subject of the grand jury subpoena.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referenced as a defendant in the civil case Jane Doe 43 v. Epstein, et al., which is connected to the grand jury subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alex",
+      "person2": "Peter Skinner",
+      "relationshipType": "legal",
+      "description": "Assistant U.S. Attorney Alex is serving legal process (a grand jury subpoena) to Peter Skinner, who is authorized to accept service for the law firm Boies Schiller Flexner LLP.",
+      "strength": 3
+    },
+    {
+      "person1": "Peter Skinner",
+      "person2": "Boies Schiller Flexner LLP",
+      "relationshipType": "employer-employee",
+      "description": "Peter Skinner is authorized to accept service on behalf of the law firm Boies Schiller Flexner LLP, indicating a professional/representative relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jane Doe 43",
+      "person2": "Epstein",
+      "relationshipType": "legal",
+      "description": "Plaintiff and defendant in the civil lawsuit 'Jane Doe 43 v. Epstein, et al.' referenced in the subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-02-05",
+      "title": "Service of Grand Jury Subpoena",
+      "description": "An Assistant U.S. Attorney emails Peter Skinner to serve a grand jury subpoena directed to Boies Schiller Flexner LLP in connection with the Jane Doe 43 v. Epstein civil case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alex",
+        "Peter Skinner"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A grand jury subpoena was issued to the law firm Boies Schiller Flexner LLP in February 2019.",
+    "The subpoena is connected to the civil case Jane Doe 43 v. Epstein, et al., indicating a link between the civil litigation and a criminal grand jury investigation.",
+    "The U.S. Attorney's Office for the Southern District of New York was actively involved in the Epstein investigation as of early 2019.",
+    "Peter Skinner was identified as authorized to accept legal service on behalf of the prominent law firm Boies Schiller Flexner LLP."
+  ],
+  "analyzedAt": "2026-02-17T22:11:58.050Z"
+}

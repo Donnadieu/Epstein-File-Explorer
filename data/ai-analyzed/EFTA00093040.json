@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00093040.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-16",
+  "summary": "This is an email chain from attorney Jack Scarola regarding preparations for a video interview with a witness (referred to as 'V1'). It includes a list of persons with whom V1 interacted in connection with Jeffrey Epstein, detailing various contacts and observations at Epstein's Palm Beach residence.",
+  "persons": [
+    {
+      "name": "Jack Scarola",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney sending the email, organizing a video meeting for a witness interview, and providing a list of persons the witness interacted with regarding Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mike",
+      "role": "Associate/Colleague",
+      "category": "legal",
+      "context": "Mentioned as being with Jack Scarola in a conference room for the upcoming video meeting; appears to be involved in the legal proceedings.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Met V1 about 10 times at Epstein's house; V1 saw nude photos of her and she acted like a secretary making appointments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure; V1 saw him over 100 times, was naked with him several times, and describes activities at his Palm Beach residence.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mary McCann",
+      "role": "Legal Staff/Recipient",
+      "category": "legal",
+      "context": "Cc'd on an email in the chain regarding scheduling the witness interview.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "V1",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "V1 saw Epstein over 100 times, was naked with him several times, and was brought to his house by his drivers about 50 times.",
+      "strength": 5
+    },
+    {
+      "person1": "V1",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "V1 met Maxwell about 10 times at Epstein's house, saw nude photos of her, and Maxwell acted as a secretary making appointments.",
+      "strength": 4
+    },
+    {
+      "person1": "Jack Scarola",
+      "person2": "V1",
+      "relationshipType": "attorney-client",
+      "description": "Scarola is organizing a video interview for V1 and providing a list of her contacts to assist in the interview.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell is described as acting like a secretary for Epstein, making appointments and arrangements.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-17",
+      "title": "Scheduled Video Interview",
+      "description": "A video conference interview is scheduled for V1, organized by attorney Jack Scarola, to discuss her contacts with Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jack Scarola",
+        "Mike",
+        "V1"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, FL",
+    "West Palm Beach, FL 33402",
+    "Epstein Palm Beach residence"
+  ],
+  "keyFacts": [
+    "V1 interacted with Jeffrey Epstein over 100 times and was naked with him several times at his Palm Beach residence.",
+    "Ghislaine Maxwell met V1 about 10 times at Epstein's house, and V1 saw nude photos of Maxwell; Maxwell acted as a secretary making appointments.",
+    "V1 was picked up by Epstein's male drivers about 50 times and brought to his house.",
+    "V1 observed two housekeeping couples at Epstein's residence, with one couple quitting because they did not want to be there.",
+    "The document is an attorney-client communication preparing for a witness interview, indicating ongoing legal proceedings related to Epstein in July 2020."
+  ],
+  "analyzedAt": "2026-02-17T15:34:45.693Z"
+}

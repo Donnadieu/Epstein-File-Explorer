@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00100894.pdf",
+  "dataSet": "9",
+  "documentType": "Suspicious Activity Report (SAR)",
+  "dateOriginal": "2019-07-19",
+  "summary": "A Suspicious Activity Report (SAR) filed by Fidelity Brokerage Services LLC and affiliates regarding a corporate brokerage account established for Southern Trust Company Inc., with Jeffrey Epstein and Richard Kahn as authorized individuals. The report details financial transactions from April to July 2019 and was triggered by adverse media related to Epstein's July 2019 arrest on sex trafficking charges.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Authorized individual on corporate account, Subject of SAR",
+      "category": "key figure",
+      "context": "Identified as an authorized individual on a corporate brokerage account for Southern Trust Company Inc., which he 100% owns. The SAR was filed due to adverse media concerning his arrest on sex trafficking charges.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Authorized individual on corporate account",
+      "category": "associate",
+      "context": "Listed alongside Jeffrey Epstein as an authorized individual on the Southern Trust Company Inc. brokerage account at Fidelity.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Kahn",
+      "relationshipType": "financial",
+      "description": "Both were authorized individuals on the same corporate brokerage account for Southern Trust Company Inc.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Southern Trust Company, Inc.",
+      "relationshipType": "financial",
+      "description": "Epstein is identified as the 100% owner of Southern Trust Company Inc., which was the entity holding the account in question.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-04-12",
+      "title": "Corporate Account Established",
+      "description": "A corporate brokerage account for Southern Trust Company Inc. was established at Fidelity with Jeffrey Epstein and Richard Kahn as authorized individuals.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Kahn"
+      ]
+    },
+    {
+      "date": "2019-04-12 to 2019-07-18",
+      "title": "Suspicious Financial Activity",
+      "description": "Multiple large deposits and wire transfers into and out of the Southern Trust Company Inc. account, including funds from Deutsche Bank Trust Company and transfers to FirstBank Puerto Rico, Banco Popular, and Interactive Brokers.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-05-30",
+      "title": "Account Restricted",
+      "description": "The Southern Trust Company Inc. account at Fidelity was restricted to closing transactions only.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Epstein Arrested on Federal Charges",
+      "description": "Jeffrey Epstein was arrested and charged with one count of sex trafficking of minors and one count of conspiracy to engage in sex trafficking of minors.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Epstein's Prior Conviction",
+      "description": "Jeffrey Epstein was sentenced to 13 months in prison in Florida after pleading guilty to charges of soliciting prostitution, requiring him to settle with victims and register as a sex offender.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter B3, St. Thomas, VI 00802 (Epstein's address and Southern Trust Company Inc. address)",
+    "200 Seaport Blvd, Boston, MA 02210 (National Financial Services LLC)",
+    "245 Summer Street, Boston, MA 02210 (Fidelity Investments Institutional Operations Company, Inc.)",
+    "900 Salem Street, Smithfield, RI 02917 (Fidelity Brokerage Services LLC)"
+  ],
+  "keyFacts": [
+    "A corporate brokerage account for Southern Trust Company Inc. was opened at Fidelity on April 12, 2019, with Jeffrey Epstein and Richard Kahn as authorized signers.",
+    "Between April and July 2019, the account received deposits totaling $5,250,650.18, including a $250,000 check from FirstBank and wire transfers of $2M and $3M from Deutsche Bank Trust Company.",
+    "In June 2019, over $4.8 million was wired out of the account to FirstBank Puerto Rico, Banco Popular De Puerto Rico, and later to Interactive Brokers, before the account was closed with a zero balance.",
+    "The SAR was filed specifically because Fidelity discovered adverse media regarding Jeffrey Epstein's arrest on federal sex trafficking charges on July 6, 2019.",
+    "The document confirms Jeffrey Epstein was the 100% owner of Southern Trust Company Inc., the entity on the account."
+  ],
+  "analyzedAt": "2026-02-17T22:34:15.580Z"
+}

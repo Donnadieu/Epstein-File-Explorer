@@ -1,0 +1,124 @@
+{
+  "fileName": "EFTA00098078.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-03",
+  "summary": "This is an FBI 302 interview report of an inmate (INMATE 2) at the Metropolitan Correctional Center (MCC) regarding the events surrounding the death of Jeffrey Epstein. The inmate describes witnessing a guard discover Epstein unresponsive in his cell, attempts at resuscitation, and observations about the scene and prison procedures.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The deceased inmate found unresponsive in his cell at MCC. The interview details the discovery of his body and the subsequent response.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Andy Patel",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as an attorney in attendance during the FBI interview of INMATE 2.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Shellow",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as an attorney in attendance during the FBI interview of INMATE 2.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donald Yanella",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Listed as an attorney in attendance during the FBI interview of INMATE 2.",
+      "mentionCount": 1
+    },
+    {
+      "name": "INMATE 2",
+      "role": "Witness",
+      "category": "witness",
+      "context": "The inmate being interviewed. He was housed in the SHU and witnessed the events surrounding the discovery of Jeffrey Epstein's body.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "INMATE 2",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "INMATE 2 witnessed the events surrounding Epstein's death from his cell in the same housing unit.",
+      "strength": 2
+    },
+    {
+      "person1": "Andy Patel",
+      "person2": "INMATE 2",
+      "relationshipType": "attorney-client",
+      "description": "Andy Patel was present as an attorney during the FBI interview of INMATE 2.",
+      "strength": 3
+    },
+    {
+      "person1": "Jill Shellow",
+      "person2": "INMATE 2",
+      "relationshipType": "attorney-client",
+      "description": "Jill Shellow was present as an attorney during the FBI interview of INMATE 2.",
+      "strength": 3
+    },
+    {
+      "person1": "Donald Yanella",
+      "person2": "INMATE 2",
+      "relationshipType": "attorney-client",
+      "description": "Donald Yanella was present as an attorney during the FBI interview of INMATE 2.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center. A guard discovered him, attempted resuscitation, and medical personnel responded, but he was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "INMATE 2"
+      ]
+    },
+    {
+      "date": "2019-09-03",
+      "title": "FBI Interview of INMATE 2",
+      "description": "The FBI and an AUSA interviewed INMATE 2 at 500 Pearl Street, NY, regarding his observations of Epstein's death. His attorneys were present.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "INMATE 2",
+        "Andy Patel",
+        "Jill Shellow",
+        "Donald Yanella"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Full Day",
+      "description": "The day before his death, Epstein was with his lawyers all day. Upon return to SHU, guards took him to J Tier before returning him to his cell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Southern District of New York, 500 Pearl Street, New York, NY",
+    "Special Housing Unit (SHU) L Tier",
+    "J Tier"
+  ],
+  "keyFacts": [
+    "An inmate witness (INMATE 2) states he saw a guard discover Jeffrey Epstein unresponsive in his cell and attempt CPR.",
+    "The witness claims Epstein had no marks around his neck and he did not see a rope, contradicting an initial hanging narrative.",
+    "The witness states he later saw a male come out of Epstein's cell with a sheet that had a loop and knot.",
+    "After the incident, MCC personnel covered cell windows and brought in dividers to block views from the witness's cell and the camera.",
+    "The night before Epstein died, a count was done just before midnight, but the witness heard no counts after midnight and did not see or hear anyone enter Epstein's cell that night."
+  ],
+  "analyzedAt": "2026-02-17T19:55:50.238Z"
+}

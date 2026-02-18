@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00096553.pdf",
+  "dataSet": "9",
+  "documentType": "email chain",
+  "dateOriginal": "2021-05-24 to 2021-05-25",
+  "summary": "An email chain between FBI agents and Assistant U.S. Attorneys regarding a threat assessment for a victim who is one of the Epstein guards. The threat was sent to the victim's attorney, and the FBI is asked to investigate its credibility. The chain includes forwarding of the threat email and discussions about generating subpoenas for subscriber information.",
+  "persons": [
+    {
+      "name": "Jason Foy",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Foy & Seplowitz LLC who received a forwarded threat email and is requesting the government investigate it as a threat against his client's safety.",
+      "mentionCount": 3
+    },
+    {
+      "name": "James Seplowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Partner at Foy & Seplowitz LLC who initially received the threat email and forwarded it to Jason Foy.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Eric Sarraga",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Named in the threat email subject line along with the victim; specific role unclear from context.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Vegas Army Vet",
+      "role": "Threat sender",
+      "category": "other",
+      "context": "Pseudonym or identifier of the person who sent the threatening email from Las Vegas, stating 'THIS ISN'T OVER!!' to the victim's attorney.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Det. M",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Mentioned as a potential contact for the threat assessment, though his availability is uncertain.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jason Foy",
+      "person2": "James Seplowitz",
+      "relationshipType": "professional partnership",
+      "description": "Partners at the law firm Foy & Seplowitz LLC, working together on the client's case involving the threat.",
+      "strength": 4
+    },
+    {
+      "person1": "Jason Foy",
+      "person2": "Vegas Army Vet",
+      "relationshipType": "threat sender-target attorney",
+      "description": "Foy received a forwarded threat from Vegas Army Vet targeting his client, prompting him to request an FBI investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "James Seplowitz",
+      "person2": "Vegas Army Vet",
+      "relationshipType": "threat sender-recipient",
+      "description": "Seplowitz was the initial recipient of the threat email from Vegas Army Vet, which he then forwarded to his partner.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-24",
+      "title": "Threat email sent to attorney",
+      "description": "An email with the subject 'THIS ISN'T OVER!!' is sent from 'Vegas Army Vet' to attorney James Seplowitz, perceived as a threat against a victim (an Epstein guard).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Vegas Army Vet",
+        "James Seplowitz"
+      ]
+    },
+    {
+      "date": "2021-05-24",
+      "title": "Attorney requests FBI threat assessment",
+      "description": "Jason Foy forwards the threat email to government contacts, requesting an expeditious investigation into its credibility to assess the safety risk to his client.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jason Foy",
+        "James Seplowitz"
+      ]
+    },
+    {
+      "date": "2021-05-25",
+      "title": "FBI discusses subpoena and investigation",
+      "description": "FBI agents and AUSAs discuss generating a subpoena to Google for subscriber information related to the threat email account and conducting a threat assessment.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Las Vegas",
+    "Hackensack, NJ 07601",
+    "New York"
+  ],
+  "keyFacts": [
+    "A victim identified as one of the Epstein guards received a perceived threat via email, prompting a request for an FBI threat assessment.",
+    "The threat email was sent from 'Vegas Army Vet' in Las Vegas and stated 'THIS ISN'T OVER!!' targeting the victim and Eric Sarraga.",
+    "Attorneys Jason Foy and James Seplowitz of Foy & Seplowitz LLC are representing the victim and requested government intervention.",
+    "The FBI and AUSAs discussed issuing a subpoena to Google for subscriber information related to the threatening email account.",
+    "The victim's plea to the DP (likely meaning 'District of Pennsylvania' or similar jurisdiction) was scheduled for the next day (May 25, 2021)."
+  ],
+  "analyzedAt": "2026-02-17T18:38:31.410Z"
+}

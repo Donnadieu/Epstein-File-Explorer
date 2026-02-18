@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00094863.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-28",
+  "summary": "Email correspondence from American Express Special Investigations Manager Kristina Hendrickson regarding a Suspicious Activity Report (SAR) filed on Jeffrey Epstein's accounts. The email discusses providing the SAR and supporting documentation to a law enforcement contact, with instructions for secure access and legal use restrictions.",
+  "persons": [
+    {
+      "name": "Kristina Lee Hendrickson",
+      "role": "Manager - Special Investigations, Financial Intelligence Unit at American Express",
+      "category": "law enforcement",
+      "context": "American Express employee who filed a SAR on Jeffrey Epstein's accounts and is coordinating with law enforcement to provide the documentation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Rossmiller",
+      "role": "Law enforcement contact",
+      "category": "law enforcement",
+      "context": "Recipient of the email, addressed as 'Mr. Rossmiller', who previously discussed Epstein's account activity with Hendrickson and is requesting the SAR documentation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of financial investigation",
+      "category": "key figure",
+      "context": "The individual whose American Express account activity prompted the filing of a Suspicious Activity Report (SAR) by American Express.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Kristina Lee Hendrickson",
+      "person2": "Rossmiller",
+      "relationshipType": "professional",
+      "description": "Correspondence regarding sharing financial investigation materials (SAR on Epstein) from American Express to law enforcement.",
+      "strength": 3
+    },
+    {
+      "person1": "Kristina Lee Hendrickson",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Hendrickson, as American Express Special Investigations Manager, filed a SAR on Epstein's account activity.",
+      "strength": 3
+    },
+    {
+      "person1": "Rossmiller",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Law enforcement contact investigating Epstein's financial activity, based on previous discussions with American Express.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-24",
+      "title": "American Express files SAR on Epstein",
+      "description": "American Express filed a Suspicious Activity Report (SAR) regarding activity on Jeffrey Epstein's accounts.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Kristina Lee Hendrickson"
+      ]
+    },
+    {
+      "date": "2020-01-28",
+      "title": "Documentation transfer coordination",
+      "description": "American Express coordinates secure transfer of SAR and supporting documentation to law enforcement.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Kristina Lee Hendrickson",
+        "Rossmiller"
+      ]
+    }
+  ],
+  "locations": [
+    "18850 N. 56th Street, PHOENIX, AZ 85058 (American Express Financial Intelligence Unit office)"
+  ],
+  "keyFacts": [
+    "American Express filed a Suspicious Activity Report (SAR) regarding Jeffrey Epstein's account activity.",
+    "The SAR and supporting documentation were being provided to law enforcement for investigative purposes in January 2020.",
+    "All documents were encrypted and required secure access procedures, indicating sensitive financial intelligence.",
+    "The correspondence emphasizes that the documents must be subpoenaed for use in court proceedings.",
+    "This shows ongoing financial investigation into Epstein's activities even after his death in 2019."
+  ],
+  "analyzedAt": "2026-02-17T16:51:29.914Z"
+}

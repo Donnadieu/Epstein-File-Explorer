@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA00096510.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-05-12",
+  "summary": "This is a defense filing by Ghislaine Maxwell's attorney Jeffrey Pagliuca to Judge Alison Nathan, responding to government letters regarding subpoena requests for evidence including a journal, boots, and photographs. The filing argues the government is improperly handling evidence, selectively disclosing information, and interfering with Maxwell's defense investigation.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the criminal case, whose defense team is filing this motion to obtain evidence including a journal, boots, and photographs.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffrey Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from Haddon, Morgan and Foreman representing Ghislaine Maxwell, who authored and submitted this filing.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Judge presiding over the United States v. Ghislaine Maxwell case, to whom this filing is addressed.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Deceased financier and alleged co-conspirator; the journal in question describes Accuser-2's interactions with him.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Accuser-2",
+      "role": "Alleged Victim/Witness",
+      "category": "victim",
+      "context": "An alleged victim represented by Boies, Schiller, and Flexner who kept a journal in 1996 describing interactions with Jeffrey Epstein; her journal is central to the subpoena dispute.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Michael Baker",
+      "role": "Journalist",
+      "category": "other",
+      "context": "Host of The Daily Podcast from The New York Times who interviewed Accuser-2 about her journal.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Pagliuca",
+      "relationshipType": "attorney-client",
+      "description": "Pagliuca is Maxwell's defense attorney filing this motion on her behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Accuser-2",
+      "relationshipType": "accuser-accused",
+      "description": "Accuser-2 is an alleged victim who has sued Maxwell and participated in the Epstein Victim Compensation Fund.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is alleged to have been involved with Epstein's activities; the indictment references her interaction with Accuser-2 at Epstein's residence.",
+      "strength": 4
+    },
+    {
+      "person1": "Accuser-2",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Accuser-2's journal describes her interactions with Epstein, whom she alleges abused her.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-03-15",
+      "title": "Maxwell's Subpoena Application",
+      "description": "Ghislaine Maxwell asked the court to issue a Rule 17(c) subpoena for evidence controlled by Boies, Schiller, and Flexner lawyers.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Pagliuca"
+      ]
+    },
+    {
+      "date": "2021-04-12 to 2021-04-16",
+      "title": "Defense Review of Physical Evidence",
+      "description": "Maxwell and her lawyers traveled to New York to review all physical evidence, including original photographs, in person.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Pagliuca"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "Accuser-2's Journal Entries",
+      "description": "Accuser-2 kept a journal documenting her interactions with Jeffrey Epstein in New York during this period.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Accuser-2",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-08-26",
+      "title": "NY Times Daily Podcast Interview",
+      "description": "Accuser-2 discussed her journal and experiences with Jeffrey Epstein on The Daily Podcast, mentioning using the journal to refresh her memory.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Accuser-2",
+        "Michael Baker"
+      ]
+    }
+  ],
+  "locations": [
+    "40 Foley Square, New York, NY 10007",
+    "150 East 10th Avenue, Denver, Colorado 80203",
+    "Epstein's residence in New Mexico"
+  ],
+  "keyFacts": [
+    "The defense is seeking a full journal from 1996 kept by Accuser-2, alleging the government only has selectively produced 7 photocopied pages and has not examined the remainder.",
+    "The government admitted it does not have the remaining journal pages and has made no effort to read them, yet claims they contain no relevant material.",
+    "The defense notes discrepancies between photocopies of journal entries produced in civil litigation versus criminal discovery, raising questions about potential manipulation.",
+    "Regarding requested boots, the government is attempting to 'moot' the defense subpoena by having the FBI secure them, which the defense argues interferes with Maxwell's investigation.",
+    "The defense argues the government has been inconsistent about which original photographs it possesses and failed to make them available during Maxwell's evidence review in April 2021."
+  ],
+  "analyzedAt": "2026-02-17T18:36:48.551Z"
+}

@@ -1,0 +1,135 @@
+{
+  "fileName": "EFTA00095361.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-25",
+  "summary": "Email from attorney Robert Lewis to federal prosecutors Alexander and Alison regarding a potential witness in the Epstein case. Lewis informs them that the New York Times is investigating the Dubins' ties to Epstein and has obtained deposition testimony from the Maxwell civil case, which was subject to confidentiality. He also mentions allegations that the witness lied in his deposition and issues with Epstein's flight documentation.",
+  "persons": [
+    {
+      "name": "Robert Lewis",
+      "role": "Attorney representing a potential witness",
+      "category": "legal",
+      "context": "Author of the email; represents a potential witness in the Epstein case and previously represented the same witness in the Maxwell civil case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alexander",
+      "role": "Federal prosecutor",
+      "category": "legal",
+      "context": "Recipient of the email; part of the prosecution team in the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alison",
+      "role": "Federal prosecutor",
+      "category": "legal",
+      "context": "Recipient of the email; part of the prosecution team in the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mike McIntire",
+      "role": "New York Times reporter",
+      "category": "other",
+      "context": "Reporter aggressively reaching out to the witness and his lawyer for comments and information about the Dubins and their ties to Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jesse Rose",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Lawyer for the potential witness; contacted by the New York Times along with Robert Lewis.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dubins",
+      "role": "Subject of New York Times investigation",
+      "category": "associate",
+      "context": "Individuals whose ties to Epstein are being investigated by the New York Times; allegedly had a representative claim the witness lied in his deposition.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert Lewis",
+      "person2": "Jesse Rose",
+      "relationshipType": "legal",
+      "description": "Both are lawyers representing the same potential witness; contacted together by the New York Times.",
+      "strength": 3
+    },
+    {
+      "person1": "Robert Lewis",
+      "person2": "Alexander",
+      "relationshipType": "professional",
+      "description": "Lewis is communicating with prosecutor Alexander about developments regarding a witness in the Epstein case.",
+      "strength": 2
+    },
+    {
+      "person1": "Robert Lewis",
+      "person2": "Alison",
+      "relationshipType": "professional",
+      "description": "Lewis is communicating with prosecutor Alison about developments regarding a witness in the Epstein case.",
+      "strength": 2
+    },
+    {
+      "person1": "Dubins",
+      "person2": "Epstein",
+      "relationshipType": "social",
+      "description": "The New York Times is investigating the Dubins' ties to Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "New York Times investigation into Dubins-Epstein ties",
+      "description": "New York Times reporter Mike McIntire is aggressively reaching out to a witness and his lawyers for comments and information about the Dubins and their ties to Epstein, planning to run a story.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mike McIntire",
+        "Robert Lewis",
+        "Jesse Rose",
+        "Dubins"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Deposition in Maxwell civil case",
+      "description": "A witness gave deposition testimony in the Maxwell civil case, which was subject to a confidentiality order. The New York Times reportedly has a copy of all or part of this deposition.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Robert Lewis"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Allegation witness lied in deposition",
+      "description": "A representative of the Dubins allegedly told the New York Times that the witness 'lied' in his deposition, which Lewis states is defamatory and breaches a non-disparagement settlement agreement.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Dubins"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Settlement of employment dispute",
+      "description": "The witness settled an employment dispute with the Dubins, which included destroying all documents he possessed pertaining to the Dubins that might have corroborated his testimony.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Dubins"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The New York Times is investigating the Dubins' ties to Jeffrey Epstein and has obtained deposition testimony from the Maxwell civil case that was under a confidentiality order.",
+    "A representative of the Dubins allegedly told the New York Times that a witness 'lied' in his deposition, which the witness's attorney claims is defamatory and breaches a settlement agreement.",
+    "The witness destroyed all documents pertaining to the Dubins as part of a settlement of an employment dispute, potentially eliminating evidence that could corroborate his testimony.",
+    "Epstein's flight documentation is described as 'incomplete and materially inaccurate,' according to the email.",
+    "Attorney Robert Lewis is withholding cooperation with the New York Times due to confidentiality obligations and a desire to avoid undermining the criminal prosecution of Epstein."
+  ],
+  "analyzedAt": "2026-02-17T17:18:37.639Z"
+}

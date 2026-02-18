@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00101184.pdf",
+  "dataSet": "9",
+  "documentType": "court order",
+  "dateOriginal": "2020-12-08",
+  "summary": "This is a court order from Judge Alison J. Nathan in the criminal case against Ghislaine Maxwell. The order denies Maxwell's request to summon the MDC warden to personally address her concerns about confinement conditions but mandates the government to provide regular written updates on her access to legal materials and communication with counsel.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case who raised concerns about her conditions of confinement at the MDC and requested the warden be summoned.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge who issued the order, denying the defendant's request and mandating government updates on confinement conditions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Heriberto Tellez",
+      "role": "Warden",
+      "category": "law enforcement",
+      "context": "The warden of the MDC (Metropolitan Detention Center) whom the defendant requested be summoned to personally respond to questions about her confinement conditions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Heriberto Tellez",
+      "relationshipType": "detainee-authority",
+      "description": "Maxwell is a detainee at the MDC facility where Tellez is the warden; she sought his personal testimony regarding her conditions.",
+      "strength": 2
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Nathan is presiding over the criminal case against defendant Maxwell and issued this order regarding her confinement.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-24",
+      "title": "Defendant's Letter on Confinement Conditions",
+      "description": "Ghislaine Maxwell submitted a letter raising concerns about her conditions of confinement at the MDC.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-12-04",
+      "title": "MDC Legal Counsel Response",
+      "description": "Legal counsel for the MDC responded in writing to the concerns raised by the defendant in her November 24 letter.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-12-07",
+      "title": "Defendant's Response to MDC Letter",
+      "description": "Ghislaine Maxwell responded to the MDC counsel's letter, reiterating her request for the warden to be summoned.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-12-08",
+      "title": "Court Order on Confinement Updates",
+      "description": "Judge Alison J. Nathan issued an order denying the request to summon the warden but mandating regular government updates on Maxwell's confinement conditions.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "United States District Court Southern District of New York",
+    "New York, New York",
+    "MDC (Metropolitan Detention Center, implied location of confinement)"
+  ],
+  "keyFacts": [
+    "The court denied Ghislaine Maxwell's request to have MDC Warden Heriberto Tellez summoned to personally address her concerns about jail conditions.",
+    "The court ordered the government to submit written updates every 60 days detailing any material changes to Maxwell's confinement conditions.",
+    "The mandated updates must specifically cover Maxwell's access to legal materials (mail, email) and her ability to communicate with her defense counsel.",
+    "The order references prior docket entries (75, 88, 78, 91, 49) showing an ongoing procedural history regarding Maxwell's confinement conditions."
+  ],
+  "analyzedAt": "2026-02-17T22:49:06.890Z"
+}

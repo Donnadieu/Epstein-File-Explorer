@@ -1,0 +1,64 @@
+{
+  "fileName": "EFTA00101890.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-01",
+  "summary": "This is an email from a U.S. Attorney to victim's counsel regarding the commencement of discovery production in the Ghislaine Maxwell case. It discusses the protective order preventing public identification of victims, notes that materials concerning the client identified as Victim-2 will be produced, and seeks permission to identify the victim's counsel to the defense to prevent direct contact.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case for which discovery is being produced; the protective order was entered in her case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Victim-2",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A client of the email recipient who is identified as Victim-2 in the indictment against Ghislaine Maxwell; her personal information will be included in the discovery production.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Victim-2",
+      "relationshipType": "victim-perpetrator",
+      "description": "Victim-2 is identified as a victim in the indictment against Ghislaine Maxwell.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-31",
+      "title": "Protective Order Entered in Maxwell Case",
+      "description": "The court granted a protective order preventing defense counsel from publicly disclosing the identity of victims or witnesses referenced in discovery.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-08-03",
+      "title": "Planned Start of Discovery Production",
+      "description": "The government expects to begin making discovery productions to Ghislaine Maxwell's defense counsel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A protective order has been entered in the Ghislaine Maxwell case, strongly prohibiting the defense from publicly disclosing the identity of any victims or witnesses.",
+    "The government is preparing to begin discovery production to the defense, which will include identifying information about Victim-2, such as her name and date of birth.",
+    "The government seeks permission from victim's counsel to identify them to the defense to preempt attempts at direct contact with represented witnesses.",
+    "The correspondence highlights the government's efforts to balance transparency with protecting victim confidentiality during the legal process."
+  ],
+  "analyzedAt": "2026-02-17T23:14:55.286Z"
+}

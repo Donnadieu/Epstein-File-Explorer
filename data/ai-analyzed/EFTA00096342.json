@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00096342.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-09-02",
+  "summary": "This is a September 2, 2020 letter from the law firm WilmerHale to the U.S. Attorney's Office, transmitting JPMorgan Chase's production of financial records in response to grand jury subpoenas related to Jeffrey Epstein and Ghislaine Maxwell. The letter details the production of wire data and account information spanning from at least 2007 to August 2019, lists associated email addresses, and includes a confidentiality request for the materials.",
+  "persons": [
+    {
+      "name": "Anjan Sahni",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney from Wilmer Cutler Pickering Hale and Dorr LLP who signed the letter, representing JPMorgan Chase in its response to grand jury subpoenas.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused / Client",
+      "category": "key figure",
+      "context": "Subject of the grand jury investigation; the letter details the production of his financial account data and associated email addresses from JPMorgan Chase.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused / Associate",
+      "category": "key figure",
+      "context": "Subject of the grand jury investigation; the letter details the production of her financial account data and associated email addresses from JPMorgan Chase.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Darren K Indyke",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Listed in Appendix A as having accounts (Darren K Indyke PLLC) categorized under 'JE DM' accounts, indicating a professional/fiduciary relationship with Jeffrey Epstein's financial matters.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Shared financial accounts and entities (e.g., 'JE DM' accounts, 'JE DM & Maxwell Accounts' like 116 EAST 65TH ST LLC, Ellmax) as detailed in the bank records produced by JPMorgan.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren K Indyke",
+      "relationshipType": "attorney-client",
+      "description": "Indyke's law firm accounts are listed under 'JE DM' accounts in the financial production, suggesting he served as an attorney or fiduciary for Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "JPMorgan Chase",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Bank-client relationship; JPMorgan produced extensive financial records for Epstein's accounts in response to grand jury subpoenas.",
+      "strength": 5
+    },
+    {
+      "person1": "JPMorgan Chase",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Bank-client relationship; JPMorgan produced financial records for Maxwell's accounts in response to grand jury subpoenas.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Grand Jury Subpoenas to JPMorgan",
+      "description": "Grand jury subpoenas issued to JPMorgan Chase Bank, N.A., Chase Bank USA, N.A., and J.P. Morgan Securities LLC.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "JPMorgan Chase"
+      ]
+    },
+    {
+      "date": "2019-11-15",
+      "title": "Initial Wire Data Production",
+      "description": "JPMorgan, via counsel, produced initial wire data for accounts related to Jeffrey Epstein or Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "JPMorgan Chase"
+      ]
+    },
+    {
+      "date": "2020-09-02",
+      "title": "Final Subpoena Response Submission",
+      "description": "WilmerHale submits final production of documents and data in response to the grand jury subpoenas, completing JPMorgan's response.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Anjan Sahni",
+        "JPMorgan Chase"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York",
+    "One St. Andrew's Plaza, New York, New York 10007",
+    "7 World Trade Center, 250 Greenwich Street, New York, New York 10007",
+    "116 East 65th Street (referenced via corporate entity 116 EAST 65TH ST LLC)"
+  ],
+  "keyFacts": [
+    "JPMorgan Chase produced extensive financial records from at least 2007 to August 2019 for accounts associated with Jeffrey Epstein, Ghislaine Maxwell, and related entities in response to grand jury subpoenas.",
+    "The production includes data for a complex network of accounts and entities, categorized under Epstein, 'JE DM' (Epstein's overall firm relationship), Maxwell, and overlapping accounts.",
+    "Email addresses associated with Epstein included jeevacation@gmail.com, jeffrey@jeffreyepstein.org, and jeeproject@yahoo.com; communications were identified with the first and third.",
+    "The document reveals the involvement of Epstein's attorney, Darren K Indyke, through law firm accounts listed in the financial records.",
+    "The law firm requested confidential treatment for all produced materials, citing FOIA exemptions and potential competitive harm to JPMorgan."
+  ],
+  "analyzedAt": "2026-02-17T18:24:22.999Z"
+}

@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00097954.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-18",
+  "summary": "This document is an email chain from November 2019 among federal prosecutors in the Southern District of New York (SDNY) discussing scheduling a meeting to catch up on the Epstein investigation. It includes a substantive update about a meeting in California with a potential victim, noting that an enticement charge was unlikely and the victim was undecided about pursuing a criminal case.",
+  "persons": [
+    {
+      "name": "Unknown SDNY Prosecutor 1",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Participant in email chain scheduling a meeting to discuss the Epstein investigation; mentions having a lunch meeting and a call.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unknown SDNY Prosecutor 2",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Participant in email chain; suggests meeting times and provides a substantive update about a California interview with a potential victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unknown SDNY Prosecutor 3",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Participant in email chain; coordinates meeting times and mentions being in White Plains.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Unknown SDNY Prosecutor 1",
+      "person2": "Unknown SDNY Prosecutor 2",
+      "relationshipType": "colleague",
+      "description": "Colleagues within the SDNY office coordinating a meeting to discuss the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Unknown SDNY Prosecutor 2",
+      "person2": "Unknown SDNY Prosecutor 3",
+      "relationshipType": "colleague",
+      "description": "Colleagues within the SDNY office discussing case updates and scheduling.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11",
+      "title": "California Interview with Potential Victim",
+      "description": "Prosecutors met with a potential victim in California; the meeting did not yield significant new information, and an enticement charge was deemed unlikely based on timing/location. The victim was undecided about pursuing a criminal case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Unknown SDNY Prosecutor 2",
+        "Potential Victim (unnamed)"
+      ]
+    },
+    {
+      "date": "2019-11-26",
+      "title": "Scheduled Proffer Session",
+      "description": "A person (likely a witness or associate) is scheduled to come in for a limited proffer to discuss her background.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Unknown SDNY Prosecutor 2"
+      ]
+    }
+  ],
+  "locations": [
+    "California",
+    "White Plains"
+  ],
+  "keyFacts": [
+    "Prosecutors from the SDNY were actively investigating Epstein-related matters in November 2019, after Epstein's death in August 2019.",
+    "A meeting with a potential victim in California concluded that an enticement charge was 'almost certainly' not viable due to timing and location facts.",
+    "The potential victim from the California meeting was still unsure about pursuing a criminal case as of November 2019.",
+    "Prosecutors were working through a 'pile of memos' and had scheduled a limited proffer session with an individual for late November 2019."
+  ],
+  "analyzedAt": "2026-02-17T19:46:44.841Z"
+}

@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00094900.pdf",
+  "dataSet": "9",
+  "documentType": "internal memorandum",
+  "dateOriginal": "2019-08-19",
+  "summary": "This is an internal Department of Justice memorandum from the Southern District of New York requesting approval under the Hammad Memo/New York Rule of Professional Conduct 4.2 to interview inmate Nicholas Lopez without his attorney present. The interview is part of an investigation into the circumstances surrounding Jeffrey Epstein's suicide in custody, specifically focusing on staff failures, falsification of records, and potential obstruction of justice through document destruction at the Metropolitan Correctional Center.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The subject of the investigation; died by suicide while in custody at the Metropolitan Correctional Center on August 10, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Nicholas Lopez",
+      "role": "Inmate/witness",
+      "category": "witness",
+      "context": "A sentenced inmate at MCC who reportedly brought bales of shredded paper to the rear gate and may have information about document destruction by BOP staff after Epstein's death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Warden",
+      "role": "MCC Warden",
+      "category": "law enforcement",
+      "context": "Issued direct orders regarding the assignment of a cellmate to Epstein, which were not followed by MCC staff.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nicholas Lopez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-investigation subject",
+      "description": "Lopez is a potential witness who may have information about document destruction activities at MCC following Epstein's death.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Suicide",
+      "description": "Jeffrey Epstein died by suicide while in custody at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Failure to Assign Cellmate and Perform Checks",
+      "description": "MCC staff failed to reassign a cellmate to Epstein contrary to BOP practice and direct orders from the Warden. Correctional officers in the SHU also failed to perform required overnight counts and 30-minute checks and falsified related records.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Warden"
+      ]
+    },
+    {
+      "date": "2019-08-15",
+      "title": "Reported Document Shredding",
+      "description": "A guard reported seeing inmate Nicholas Lopez bring bales of shredded paper to the rear gate, indicating potential document destruction by the BOP after-action team.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Nicholas Lopez"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Continued Document Shredding",
+      "description": "Further reports of shredded paper being brought to the rear gate, suggesting ongoing destruction of records.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Nicholas Lopez"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC",
+    "Southern District of New York",
+    "District of Connecticut"
+  ],
+  "keyFacts": [
+    "The DOJ is investigating the circumstances of Jeffrey Epstein's suicide, specifically MCC staff's failure to follow procedures (cellmate assignment, inmate checks) and falsification of records.",
+    "Investigators received a tip that inmate Nicholas Lopez reported being asked to shred documents by the BOP after-action team following Epstein's death, and that 'they are shredding everything.'",
+    "All institutional count slips for dates prior to August 10, 2019, which were requested on August 12, 2019, are reportedly 'missing.'",
+    "The memorandum seeks approval to interview inmate Nicholas Lopez without his attorney present, arguing he is not represented in connection with his status as a witness and agents will avoid questions about his prior criminal case.",
+    "The investigation includes examining potential obstruction of justice through the destruction of relevant records at MCC after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-17T16:55:50.787Z"
+}

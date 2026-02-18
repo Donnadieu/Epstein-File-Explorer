@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00101980.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-08-06",
+  "summary": "This is an email chain from August 6, 2020, forwarding a news article about Prince Andrew and Jeffrey Epstein. It references a claim by attorney Lisa Bloom that investigators did not want to interview one of her clients, and includes a link to a Newsweek article containing allegations from a witness.",
+  "persons": [
+    {
+      "name": "Lisa Bloom",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who allegedly told a reporter that investigators did not want to interview one of her clients. Mentioned in the email forwarding a news article.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "British Royal",
+      "category": "political",
+      "context": "Subject of allegations in a forwarded Newsweek article, described as being at a club with Jeffrey Epstein and a young girl according to a witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Central figure in the case; the forwarded Newsweek article alleges Prince Andrew was at a club with him and a young girl.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Prince Andrew",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Alleged to have been together at a club with a young girl, according to a witness cited in the forwarded Newsweek article.",
+      "strength": 3
+    },
+    {
+      "person1": "Lisa Bloom",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Lisa Bloom is an attorney mentioned in connection with the Epstein case, representing a client she claims investigators did not want to interview.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-06",
+      "title": "Email Forwarding Newsweek Article",
+      "description": "An email is sent forwarding a Newsweek article containing allegations from a witness about Prince Andrew being at a club with Jeffrey Epstein and a young girl. The email also references a claim by attorney Lisa Bloom.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Lisa Bloom",
+        "Prince Andrew",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Attorney Lisa Bloom claimed investigators did not want to interview one of her clients in the Epstein case.",
+    "A Newsweek article from August 2020 contained allegations from a witness that Prince Andrew was at a club with Jeffrey Epstein and a young girl.",
+    "The document is an internal email chain forwarding media coverage and legal developments related to the Epstein case."
+  ],
+  "analyzedAt": "2026-02-17T23:21:05.070Z"
+}

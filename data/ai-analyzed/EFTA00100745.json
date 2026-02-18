@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00100745.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-07-02 to 2021-08-16",
+  "summary": "Email chain between a Senior Paralegal at FedEx and an Assistant U.S. Attorney from the Southern District of New York regarding the authentication of FedEx shipping records for Jeffrey Epstein and Ghislaine Maxwell. The discussion involves identifying a records custodian to testify at Maxwell's upcoming trial and providing shipment data from 2007-2020.",
+  "persons": [
+    {
+      "name": "Andrew",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant U.S. Attorney for the Southern District of New York leading the request for FedEx records authentication and a records custodian for the Ghislaine Maxwell trial.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Subject of the upcoming criminal trial in New York for which FedEx records are being authenticated.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Individual whose FedEx account records are being sought, referenced in relation to a 2008 subpoena from the Southern District of Florida.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Both are subjects of the investigation and trial; records for both are being sought from FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrew",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Andrew, as an AUSA, is prosecuting Maxwell and seeking evidence (FedEx records) for her trial.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrew",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Andrew is investigating Epstein's activities, evidenced by the request for his FedEx shipment records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-02",
+      "title": "Subpoena to FedEx from SD Florida",
+      "description": "The U.S. Attorney's Office for the Southern District of Florida sent a subpoena to FedEx regarding Jeffrey Epstein's account.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-11",
+      "title": "Ghislaine Maxwell Trial",
+      "description": "Criminal trial for Ghislaine Maxwell scheduled to start in New York.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Andrew"
+      ]
+    },
+    {
+      "date": "2007-2020",
+      "title": "FedEx Shipment Records Period",
+      "description": "FedEx provides a spreadsheet of shipments on Jeffrey Epstein's account from 2007 to 2020.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Memphis, TN 38125 (FedEx Legal Department, 3620 Hacks Cross Road Building B 3rd Floor)",
+    "New York, New York 10007 (Southern District of New York U.S. Attorney's Office, 1 Saint Andrews Plaza)"
+  ],
+  "keyFacts": [
+    "FedEx provided shipment data from Jeffrey Epstein's account covering the period 2007-2020 in response to a request from the U.S. Attorney's Office.",
+    "The U.S. Attorney's Office for the Southern District of Florida had previously subpoenaed FedEx for Epstein records in February 2008.",
+    "The correspondence is part of preparations for the Ghislaine Maxwell criminal trial, seeking a FedEx records custodian to authenticate documents and potentially testify.",
+    "FedEx's IT system could not retrieve records prior to 2007.",
+    "The emails show coordination between law enforcement and corporate legal departments to obtain evidence for the high-profile case."
+  ],
+  "analyzedAt": "2026-02-17T22:27:50.475Z"
+}

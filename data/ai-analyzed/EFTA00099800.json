@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00099800.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-21",
+  "summary": "This document appears to be an email or internal communication forwarding a news article from the Daily Mail. The article alleges that Ghislaine Maxwell paid Jacob Wohl $25,000 to smear victims of Jeffrey Epstein. The communication is dated July 21, 2020.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Allegedly paid Jacob Wohl to smear victims of Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jacob Wohl",
+      "role": "Political Operative",
+      "category": "associate",
+      "context": "Allegedly paid by Ghislaine Maxwell to smear victims of Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "His victims were allegedly the target of a smear campaign paid for by Ghislaine Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jacob Wohl",
+      "relationshipType": "financial",
+      "description": "Alleged payment from Maxwell to Wohl for services to smear Epstein's victims.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell is alleged to have taken action (funding a smear campaign) related to Epstein's victims.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-21",
+      "title": "Daily Mail Article on Maxwell-Wohl Allegation",
+      "description": "The Daily Mail publishes an article alleging Ghislaine Maxwell paid Jacob Wohl $25,000 to smear Jeffrey Epstein's victims.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jacob Wohl",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An article from the Daily Mail dated July 21, 2020, is referenced.",
+    "The article alleges Ghislaine Maxwell paid Jacob Wohl $25,000.",
+    "The alleged payment was for Wohl to smear the victims of Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-17T21:35:09.791Z"
+}

@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00096152.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-08",
+  "summary": "This document is a series of email exchanges on July 8, 2019, regarding the pretrial processing of Jeffrey Epstein following his arrest. It includes coordination between law enforcement and pretrial services, mentions a sealed indictment, and references a search warrant executed at Epstein's residence where images were discovered.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the emails; his arrest, indictment, and pretrial processing are being coordinated. His date of birth is provided.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Offers to provide travel/passport information for Epstein and information about images found during a search of his residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Pretrial Services Technician",
+      "role": "Pretrial Services Technician",
+      "category": "legal",
+      "context": "Requests Epstein's pedigree information, charging instrument, and estimated arrival time for pretrial services processing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. C.",
+      "role": "Prosecutor or Government Attorney",
+      "category": "legal",
+      "context": "Provides the sealed indictment, Epstein's date of birth, and states the Government will be seeking detention.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The Special Agent is providing investigative information (travel/passport data and evidence from a search) about the defendant, Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "D. C.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "D. C. is prosecuting Epstein, has filed a sealed indictment against him, and is seeking his detention.",
+      "strength": 5
+    },
+    {
+      "person1": "Pretrial Services Technician",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal processing",
+      "description": "The technician is coordinating the logistical intake and processing of Epstein following his arrest.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Coordination for Epstein's Pretrial Processing",
+      "description": "Email exchanges coordinate the provision of Epstein's information, indictment, and arrival at pretrial services following his arrest.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Special Agent",
+        "Pretrial Services Technician",
+        "D. C."
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Search of Epstein's Residence",
+      "description": "A search warrant was executed at Jeffrey Epstein's residence, resulting in the discovery of images.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Special Agent"
+      ]
+    },
+    {
+      "date": "2019-07-08",
+      "title": "Unsealing of Indictment",
+      "description": "A sealed indictment against Jeffrey Epstein is attached to an email, with plans to unseal it within the hour.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "D. C."
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Defendant's residence (location unspecified, searched pursuant to warrant)"
+  ],
+  "keyFacts": [
+    "A search warrant was executed at Jeffrey Epstein's residence, leading to the discovery of images.",
+    "A sealed indictment against Epstein (19 Cr. 490) was being prepared for unsealing on July 8, 2019.",
+    "The U.S. Government was seeking pretrial detention for Epstein.",
+    "Emails show coordination between the FBI, prosecutors, and pretrial services following Epstein's arrest."
+  ],
+  "analyzedAt": "2026-02-17T18:09:39.702Z"
+}

@@ -1,0 +1,131 @@
+{
+  "fileName": "EFTA00094629.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-09",
+  "summary": "This is an email chain between prosecutors from the U.S. Attorney's Office for the Southern District of New York and defense attorneys from WilmerHale, discussing logistical coordination for the trial of Ghislaine Maxwell. The emails focus on scheduling calls, providing updates on trial witnesses, and the issuance of a subpoena to JPMorgan Chase to identify a witness.",
+  "persons": [
+    {
+      "name": "Allison Stoddart",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from WilmerHale representing a party (likely JPMorgan Chase) in the Ghislaine Maxwell case, coordinating with prosecutors on witness matters and subpoenas.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Anjan Sahni",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from WilmerHale copied on emails regarding the Ghislaine Maxwell case, involved in discussions about trial witnesses.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Pat McHugh",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Assistant United States Attorney for the Southern District of New York, part of the prosecution team for the Ghislaine Maxwell case, to be included on a call.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case referenced (United States v. Ghislaine Maxwell, 20 Cr. 330).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maurene",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Assistant United States Attorney for the Southern District of New York, corresponding with defense about subpoenas and witness identification for the Maxwell trial.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lara",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Assistant United States Attorney for the Southern District of New York, copied on correspondence regarding the Maxwell trial.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Maurene",
+      "relationshipType": "legal-adversary",
+      "description": "Prosecutor and defense attorney corresponding about trial logistics, witness subpoenas, and scheduling calls for the Ghislaine Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "Anjan Sahni",
+      "relationshipType": "colleague",
+      "description": "Both are attorneys at the law firm WilmerHale, working together on matters related to the Ghislaine Maxwell case.",
+      "strength": 4
+    },
+    {
+      "person1": "Maurene",
+      "person2": "Pat McHugh",
+      "relationshipType": "colleague",
+      "description": "Both are Assistant U.S. Attorneys for the Southern District of New York, part of the prosecution team for the Ghislaine Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Allison Stoddart",
+      "person2": "JPMorgan Chase",
+      "relationshipType": "attorney-client",
+      "description": "Stoddart, as a WilmerHale attorney, is acting on behalf of JPMorgan Chase in relation to providing a witness for the Ghislaine Maxwell trial.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-10",
+      "title": "Court Hearing",
+      "description": "A hearing is scheduled in the Ghislaine Maxwell case, requiring the prosecution team to be in court for most of the day.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Maurene",
+        "Pat McHugh",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-10-18",
+      "title": "Subpoena Discussion for JPMorgan",
+      "description": "Prosecutors provide a broadly worded subpoena to JPMorgan Chase to identify a witness for the Ghislaine Maxwell trial, following a request from the defense.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Maurene",
+        "Anjan Sahni"
+      ]
+    },
+    {
+      "date": "2021-10-27",
+      "title": "Call Scheduled on Trial Witness Topic",
+      "description": "Prosecutors and defense attorneys schedule a call to discuss updates on the topic of trial witnesses for the Ghislaine Maxwell case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Stoddart",
+        "Maurene",
+        "Anjan Sahni"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "7 World Trade Center, 250 Greenwich Street, New York, NY 10007 (WilmerHale office)",
+    "One Saint Andrew's Plaza, New York, NY 10007 (U.S. Attorney's Office, Southern District of New York)"
+  ],
+  "keyFacts": [
+    "Prosecutors from the SDNY are coordinating with defense attorneys from WilmerHale, who represent JPMorgan Chase, regarding a trial witness for the Ghislaine Maxwell case.",
+    "A subpoena was issued to JPMorgan Chase to identify an appropriate witness to testify at Maxwell's trial.",
+    "The email chain shows ongoing logistical planning between the prosecution and a third-party financial institution (JPMorgan) involved in the case.",
+    "The correspondence is focused on procedural and witness-preparation aspects of the trial, not on the underlying allegations of abuse."
+  ],
+  "analyzedAt": "2026-02-17T16:36:12.455Z"
+}

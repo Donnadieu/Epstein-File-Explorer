@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA00096215.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-25",
+  "summary": "Email correspondence between journalists, attorneys, and a prosecutor regarding a leak of false information about Nicholas Tartaglione being questioned about a possible attack on Jeffrey Epstein at the Metropolitan Correctional Center (MCC). The emails discuss complaints to the court about the leak and suggest Epstein's camp might have leaked information to counter a narrative that Epstein tried to harm himself.",
+  "persons": [
+    {
+      "name": "Bruce Barket",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing Nicholas Tartaglione who forwarded a complaint about false information being leaked regarding his client being questioned about a possible attack on Jeffrey Epstein at MCC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Adam Johnson",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Federal prosecutor copied on email correspondence regarding the leak of false information about Nicholas Tartaglione and Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tracy Connor",
+      "role": "Executive Editor",
+      "category": "other",
+      "context": "Journalist from The Daily Beast who contacted someone regarding a story about Nicholas Tartaglione being questioned about a possible attack on Jeffrey Epstein at MCC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "Subject of the leaked information regarding a possible attack on him at the Metropolitan Correctional Center (MCC).",
+      "mentionCount": 4
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate/Client",
+      "category": "other",
+      "context": "Client of Bruce Barket who was reportedly questioned about a possible attack on Jeffrey Epstein at MCC, with false information about this being leaked.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bruce Barket",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "attorney-client",
+      "description": "Bruce Barket is the defense attorney representing Nicholas Tartaglione, as indicated in his email signature and complaint about leaked information.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "other",
+      "description": "Tartaglione was reportedly questioned about a possible attack on Epstein at MCC, connecting them through the alleged incident and investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Adam Johnson",
+      "person2": "Bruce Barket",
+      "relationshipType": "legal",
+      "description": "Both are legal professionals (prosecutor and defense attorney) communicating about a case involving leaked information regarding Epstein and Tartaglione.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Leak of false information about Tartaglione",
+      "description": "False information was leaked about Nicholas Tartaglione being questioned about a possible attack on Jeffrey Epstein at MCC, prompting complaints to the court.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Nicholas Tartaglione",
+        "Jeffrey Epstein",
+        "Bruce Barket"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Daily Beast story inquiry",
+      "description": "Tracy Connor from The Daily Beast contacted someone regarding a story about Tartaglione being questioned about a possible attack on Epstein at MCC.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Tracy Connor",
+        "Nicholas Tartaglione",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)"
+  ],
+  "keyFacts": [
+    "False information was leaked about Nicholas Tartaglione being questioned regarding a possible attack on Jeffrey Epstein at the Metropolitan Correctional Center (MCC).",
+    "Bruce Barket, Tartaglione's attorney, made complaints to the court about the leak, suggesting someone in the facility leaked the false information.",
+    "The email suggests Epstein's camp might have leaked information to counter a narrative that Epstein tried to harm himself.",
+    "The Daily Beast was pursuing a story about Tartaglione being questioned about the possible attack on Epstein.",
+    "The correspondence reveals concerns about information control and narrative shaping regarding Epstein's incarceration and safety."
+  ],
+  "analyzedAt": "2026-02-17T18:13:24.444Z"
+}

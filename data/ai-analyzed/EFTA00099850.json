@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00099850.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-03-04",
+  "summary": "An email from an unknown sender to an FBI recipient describing a dinner event in Bologna, Italy, attended by various high-profile individuals including Boris Johnson, with references to social connections and gifts exchanged.",
+  "persons": [
+    {
+      "name": "Baron",
+      "role": "Attendee at dinner",
+      "category": "other",
+      "context": "Mentioned as receiving a silver beaded necklace from Arab attendees at the Bologna dinner.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Contessa",
+      "role": "Attendee at dinner",
+      "category": "other",
+      "context": "Described as having a 'Purse empire' and attending the dinner with the Baron.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Emst",
+      "role": "Social connector",
+      "category": "associate",
+      "context": "Described as knowing everyone at the dinner event in Bologna.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Boris Johnson",
+      "role": "Attendee at dinner",
+      "category": "political",
+      "context": "Allegedly present at table #3 at the Bologna dinner, according to the sender who claims to recognize his face and personality.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Baron",
+      "person2": "Contessa",
+      "relationshipType": "social",
+      "description": "Attended the same dinner event together, with the Contessa described as being with the Baron.",
+      "strength": 2
+    },
+    {
+      "person1": "Emst",
+      "person2": "Baron",
+      "relationshipType": "social",
+      "description": "Emst knew everyone at the dinner, implying a social connection to the Baron and other attendees.",
+      "strength": 2
+    },
+    {
+      "person1": "Emst",
+      "person2": "Contessa",
+      "relationshipType": "social",
+      "description": "Emst knew everyone at the dinner, implying a social connection to the Contessa.",
+      "strength": 2
+    },
+    {
+      "person1": "Emst",
+      "person2": "Boris Johnson",
+      "relationshipType": "social",
+      "description": "Emst knew everyone at the dinner, implying a social connection to Boris Johnson if he was present.",
+      "strength": 2
+    },
+    {
+      "person1": "Baron",
+      "person2": "Arabs",
+      "relationshipType": "social",
+      "description": "Arab attendees gave silver beaded necklaces to the Baron and the Contessa at the dinner.",
+      "strength": 2
+    },
+    {
+      "person1": "Contessa",
+      "person2": "Arabs",
+      "relationshipType": "social",
+      "description": "Arab attendees gave silver beaded necklaces to the Contessa and the Baron at the dinner.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Bologna Italy dinner",
+      "description": "A dinner event in Bologna, Italy, attended by three groups/tables including Arabs, the Baron and Contessa, and allegedly Boris Johnson, with gifts of silver beaded necklaces exchanged.",
+      "category": "social",
+      "significance": 3,
+      "personsInvolved": [
+        "Baron",
+        "Contessa",
+        "Emst",
+        "Boris Johnson",
+        "Arabs"
+      ]
+    }
+  ],
+  "locations": [
+    "Bologna, Italy"
+  ],
+  "keyFacts": [
+    "The email alleges Boris Johnson was present at a dinner in Bologna, Italy, though the sender states 'can't prove it.'",
+    "The dinner involved three groups/tables, including Arab attendees who gave silver beaded necklaces to the Baron and Contessa.",
+    "An individual named Emst is described as knowing everyone at the event, suggesting broad social connections.",
+    "The email was sent to an FBI recipient in March 2021, indicating ongoing interest or investigation into Epstein-related social networks."
+  ],
+  "analyzedAt": "2026-02-17T21:39:46.578Z"
+}

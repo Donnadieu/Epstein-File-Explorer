@@ -1,0 +1,200 @@
+{
+  "fileName": "EFTA00097783.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2020-07-08",
+  "summary": "This is a superseding indictment filed in the Southern District of New York against Ghislaine Maxwell. It charges her with six counts related to the sexual exploitation of minors, including conspiracy to entice minors to travel for illegal sex acts, enticement, transportation of a minor, and perjury. The document details her alleged role in recruiting, grooming, and facilitating the abuse of multiple minor victims by Jeffrey Epstein between approximately 1994 and 1997, and her subsequent false statements under oath in 2016.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant charged with conspiracy, enticement, transportation of minors, and perjury for her alleged role in facilitating Jeffrey Epstein's sexual abuse of minor girls.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator / Perpetrator",
+      "category": "key figure",
+      "context": "The financier whose sexual abuse of minor girls is central to the charges; Maxwell is alleged to have assisted, facilitated, and contributed to his abuse.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Minor Victim-1",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A minor victim, approximately 14 years old when met, who was groomed and abused by Maxwell and Epstein in New York and Florida between 1994 and 1997.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Minor Victim-2",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A minor victim under 18 who interacted with Maxwell and Epstein in New Mexico in or about 1996, where Maxwell provided an unsolicited topless massage.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Minor Victim-3",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A minor victim under 18 groomed by Maxwell in London between 1994 and 1995, introduced to Epstein, and sexually abused by him during massages.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Audrey Strauss",
+      "role": "Acting United States Attorney",
+      "category": "legal",
+      "context": "The Acting U.S. Attorney who signed and filed the superseding indictment.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Alleged co-conspirators in a scheme to entice and transport minors for illegal sexual activity. They had a personal and professional relationship, including an intimate relationship and Maxwell managing Epstein's properties.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator facilitator",
+      "description": "Maxwell allegedly facilitated Epstein's access to minor victims, groomed them, and was present for and participated in sexual abuse.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Minor Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell allegedly befriended, groomed, and was present for the sexual abuse of Minor Victim-1 by Epstein, and involved her in group sexual encounters.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Minor Victim-2",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell interacted with Minor Victim-2 in New Mexico, groomed her, and provided an unsolicited topless massage.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Minor Victim-3",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell groomed and befriended Minor Victim-3 in London, introduced her to Epstein, and encouraged her to massage Epstein knowing it would lead to sexual abuse.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused Minor Victim-1, with acts including touching and the use of sex toys, facilitated by Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-3",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused Minor Victim-3 during massages that Maxwell encouraged.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1994-1997",
+      "title": "Conspiracy and Abuse Period",
+      "description": "The period during which Ghislaine Maxwell and Jeffrey Epstein allegedly conspired to entice and transport minors, and during which the abuse of Minor Victims 1, 2, and 3 occurred.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Minor Victim-1",
+        "Minor Victim-2",
+        "Minor Victim-3"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "Minor Victim-1 Travel from Florida to New York",
+      "description": "Minor Victim-1 was enticed to travel from Florida to New York for the purpose of being sexually abused at Epstein's New York Residence.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Minor Victim-1"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "Interaction with Minor Victim-2 in New Mexico",
+      "description": "Maxwell and Epstein interacted with Minor Victim-2 in New Mexico, where Maxwell provided an unsolicited topless massage and encouraged her to massage Epstein.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Minor Victim-2"
+      ]
+    },
+    {
+      "date": "1994-1995",
+      "title": "Grooming of Minor Victim-3 in London",
+      "description": "Maxwell groomed Minor Victim-3 in London, introduced her to Epstein, and arranged interactions where Epstein sexually abused her.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Minor Victim-3"
+      ]
+    },
+    {
+      "date": "2016-04-22",
+      "title": "First Perjurious Deposition",
+      "description": "During a deposition, Ghislaine Maxwell gave false testimony under oath, denying knowledge of Epstein's scheme to recruit underage girls and claiming limited awareness of underage interactions.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2016-07-22",
+      "title": "Second Perjurious Deposition",
+      "description": "During a deposition, Ghislaine Maxwell gave false testimony under oath, denying awareness of sex toys at Epstein's home, knowledge of his other sexual partners, and ever giving massages.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-08",
+      "title": "Filing of Superseding Indictment",
+      "description": "The superseding indictment against Ghislaine Maxwell was filed in the United States District Court for the Southern District of New York.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Audrey Strauss"
+      ]
+    }
+  ],
+  "locations": [
+    "Upper East Side, Manhattan, New York (Epstein's New York Residence)",
+    "Palm Beach, Florida (Epstein's Palm Beach Residence)",
+    "Santa Fe, New Mexico (Epstein's New Mexico Residence)",
+    "London, England (Maxwell's personal residence)",
+    "Southern District of New York (jurisdiction for the legal proceedings)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell is charged with six criminal counts: conspiracy to entice minors, enticement of a minor, conspiracy to transport minors, transportation of a minor, and two counts of perjury.",
+    "The indictment alleges Maxwell played a central role in recruiting, grooming, and facilitating the sexual abuse of at least three minor victims (aged approximately 14 and older) for Jeffrey Epstein between 1994 and 1997.",
+    "Specific abusive acts detailed include Maxwell undressing in front of victims, being present during abuse, providing and encouraging sexualized massages, and participating in group sexual encounters.",
+    "Maxwell is accused of lying under oath during 2016 depositions by denying knowledge of Epstein's scheme, his use of sex toys, his other sexual partners, and ever giving massages.",
+    "The abuse and grooming occurred at multiple Epstein-owned properties in New York, Florida, and New Mexico, as well as at Maxwell's residence in London."
+  ],
+  "analyzedAt": "2026-02-17T19:32:08.435Z"
+}

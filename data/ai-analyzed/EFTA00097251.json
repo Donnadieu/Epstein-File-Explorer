@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00097251.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-10-08",
+  "summary": "This is an email correspondence from October 8, 2019, regarding the preparation of a subpoena for JP Morgan Chase in connection with the Epstein investigation. It involves an Assistant United States Attorney from the Southern District of New York and an FBI Forensic Accountant, and includes instructions for serving the subpoena and forwarding results.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email requesting the preparation of a subpoena for JP Morgan Chase and providing instructions for its service and handling.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Forensic Accountant",
+      "role": "FBI Forensic Accountant",
+      "category": "law enforcement",
+      "context": "Identified as a contact for questions regarding the subpoena and is based at the FBI New York Field Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Another contact for questions regarding the subpoena and the designated recipient for the subpoena results at the FBI's New York office.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Forensic Accountant",
+      "relationshipType": "professional",
+      "description": "The prosecutor is coordinating with the FBI forensic accountant regarding a financial subpoena in the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Special Agent",
+      "relationshipType": "professional",
+      "description": "The prosecutor is instructing that subpoena results be forwarded to the FBI Special Agent.",
+      "strength": 3
+    },
+    {
+      "person1": "Forensic Accountant",
+      "person2": "Special Agent",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel involved in the financial investigation, with the forensic accountant as a contact and the special agent as a results recipient.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-08",
+      "title": "Subpoena Preparation for JP Morgan Chase",
+      "description": "An Assistant United States Attorney requests the preparation of a subpoena for JP Morgan Chase regarding the Epstein investigation, providing a rider and instructions for service and electronic results delivery.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Forensic Accountant",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "26 Federal Plaza, New York, NY 10278",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "A subpoena was being prepared for JP Morgan Chase on October 8, 2019, as part of the Epstein investigation.",
+    "The subpoena was requested by an Assistant United States Attorney from the Southern District of New York.",
+    "FBI personnel, including a Forensic Accountant and a Special Agent, were key contacts and recipients for the subpoena process.",
+    "The document indicates an active financial investigation into Epstein's affairs, targeting major banking institutions."
+  ],
+  "analyzedAt": "2026-02-17T19:06:19.905Z"
+}

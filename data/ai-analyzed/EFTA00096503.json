@@ -1,0 +1,143 @@
+{
+  "fileName": "EFTA00096503.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-05-12",
+  "summary": "This document is an email chain between Ghislaine Maxwell's defense attorneys and Assistant U.S. Attorneys regarding discovery issues in Maxwell's criminal case. The discussion focuses on technical problems with electronic evidence production, including missing attachments, metadata issues with files from Epstein's devices, and difficulties delivering discovery materials to Maxwell in prison.",
+  "persons": [
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Partner at Haddon, Morgan & Foreman, P.C. representing Ghislaine Maxwell. She is requesting detailed information about discovery files, specifically asking for metadata and file format details for evidence from Epstein's devices.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney at Cohen & Gresser LLP representing Ghislaine Maxwell. He initiates the discovery issues email and coordinates with prosecutors about delivering discovery materials to Maxwell in prison.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bobbi Sternheim",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney for Ghislaine Maxwell, copied on discovery discussions regarding technical issues with evidence production.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeff Pagliuca",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney for Ghislaine Maxwell, copied on discovery discussions about metadata and file format issues.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case. The emails discuss difficulties delivering discovery materials to her at the Metropolitan Detention Center (MDC) and her inability to read certain file formats on prison computers.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Presiding judge in Ghislaine Maxwell's case. The prosecutors mention they would not object to an application to Judge Nathan for an order directing the MDC to accept a discovery drive from defense counsel.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Laura Menninger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Menninger is a defense attorney representing Maxwell in her criminal case, as evidenced by her active participation in discovery discussions on Maxwell's behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Christian Everdell",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Everdell is a defense attorney representing Maxwell, coordinating discovery delivery to her at MDC and raising technical issues about evidence.",
+      "strength": 5
+    },
+    {
+      "person1": "Bobbi Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Sternheim is part of Maxwell's defense team, copied on all discovery discussions regarding evidence issues.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeff Pagliuca",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Pagliuca is part of Maxwell's defense team, involved in discovery discussions about metadata and file format problems.",
+      "strength": 4
+    },
+    {
+      "person1": "Laura Menninger",
+      "person2": "Christian Everdell",
+      "relationshipType": "legal colleague",
+      "description": "Both are defense attorneys on Ghislaine Maxwell's legal team, collaborating on discovery issues and communicating with prosecutors.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The prosecutor is responding to discovery requests from Maxwell's defense team regarding evidence in her criminal case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019",
+      "title": "Searches of Epstein residences",
+      "description": "FBI conducted searches of Jeffrey Epstein's residences, seizing CDs containing images that were later produced as evidence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-11-09",
+      "title": "SUPP discovery production",
+      "description": "Prosecutors produced supplemental discovery materials to Ghislaine Maxwell's defense team, including electronic files from Epstein's devices.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Laura Menninger",
+        "Christian Everdell"
+      ]
+    },
+    {
+      "date": "2021-03-29",
+      "title": "Discovery issues raised",
+      "description": "Defense attorney Christian Everdell sends detailed list of discovery problems to prosecutors, including missing attachments, metadata issues, and difficulties delivering materials to Maxwell in prison.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Christian Everdell",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center (MDC)",
+    "Southern District of New York",
+    "Epstein residences (searched in 2019)"
+  ],
+  "keyFacts": [
+    "Over 109,000 emails were produced without attachments, with attachments appearing only as slip-sheets in the discovery.",
+    "Over 110,000 electronic documents from Epstein's devices had metadata showing 'date created' or 'date last modified' dates in July 2020 or later, raising questions about evidence handling.",
+    "Over 6,500 photographs were produced without CART numbers and had date stamps after July 2019, creating chain of custody concerns.",
+    "Ghislaine Maxwell could not read discovery files on prison computers because the MDC computers couldn't read some file formats, creating access issues for her defense.",
+    "Images within Bates range SDNY_GM_00467566 through SDNY_GM_00514100 were seized during 2019 searches of Epstein residences and came from CDs, not from electronic device extractions."
+  ],
+  "analyzedAt": "2026-02-17T18:36:16.199Z"
+}

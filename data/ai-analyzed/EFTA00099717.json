@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA00099717.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a collection of FedEx invoices and shipping summaries from 2000-2003 for accounts associated with Jeffrey Epstein and his company, J Epstein & Co Inc. It details shipping charges, addresses, and some recipient information, providing a record of financial transactions and correspondence logistics.",
+  "persons": [
+    {
+      "name": "Jeffrey E Epstein",
+      "role": "Account holder and shipper/recipient",
+      "category": "key figure",
+      "context": "Appears as the named account holder and recipient/sender on multiple FedEx invoices for shipments to/from his New York and Palm Beach addresses.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mrs. Sherman",
+      "role": "Addressee/Contact",
+      "category": "staff",
+      "context": "Listed as part of the shipping/billing address for J Epstein & Co Inc on several invoices, suggesting a role in handling correspondence.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Antoinette",
+      "role": "Package recipient",
+      "category": "other",
+      "context": "Appears as the name of a recipient for a FedEx 2Day shipment from J Epstein & Co Inc in July/August 2000.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E Epstein",
+      "person2": "Mrs. Sherman",
+      "relationshipType": "employer-employee",
+      "description": "Mrs. Sherman is listed as part of the company address for J Epstein & Co Inc, suggesting an administrative or staff role.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E Epstein",
+      "person2": "Antoinette",
+      "relationshipType": "social/financial",
+      "description": "Epstein's company shipped a package to Antoinette, indicating a recipient of correspondence or goods.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2000-07-31",
+      "title": "Shipment to Antoinette",
+      "description": "A FedEx 2Day package from J Epstein & Co Inc was picked up for delivery to Antoinette. The delivery was attempted on Aug 2, 2000, but noted with an 'INCORRECT RECIPIENT ADDRESS' and was delivered on Aug 3, 2000.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E Epstein",
+        "Antoinette"
+      ]
+    },
+    {
+      "date": "2000-08-08",
+      "title": "Overnight Shipment from Jeffrey Epstein",
+      "description": "A FedEx Standard Overnight envelope was sent from Jeffrey Epstein, delivered on Aug 9, 2000.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E Epstein"
+      ]
+    },
+    {
+      "date": "2000-12-14",
+      "title": "Holiday Season Shipment",
+      "description": "A FedEx 2Day package from J Epstein & Co Inc was picked up and delivered on Dec 18, 2000, during the Christmas holiday period.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E Epstein"
+      ]
+    },
+    {
+      "date": "2001-02-12",
+      "title": "Overnight Pak Shipment",
+      "description": "A FedEx Standard Overnight 'Pak' was sent from Jeffrey E Epstein, delivered on Feb 13, 2001.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-16",
+      "title": "Weather-Delayed Shipment",
+      "description": "A FedEx Standard Overnight envelope to Jeffrey E Epstein was picked up but delayed due to a thunderstorm, delivered on Oct 20, 2003.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeffrey E Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, New York, NY 10022-6843",
+    "457 Madison Ave, New York, NY 10022-6809",
+    "FedEx P.O. Box 1140, Memphis, TN 38101-1140"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein used FedEx account number 1144-2081-6 for shipping from at least 2000 to 2003.",
+    "Invoices show shipments billed to both 'Jeffrey E Epstein' personally and his company 'J Epstein & Co Inc' at the same 457 Madison Ave address.",
+    "A 'Mrs. Sherman' is consistently listed as part of the shipping/billing address for J Epstein & Co Inc, indicating a staff member handling mail.",
+    "One shipment in 2000 was addressed to a person named 'Antoinette' and was initially flagged for an incorrect recipient address.",
+    "The documents include a cryptic, numbered list labeled 'MASSEUSES' (likely 'Masseuses') from 1 to 254, appended after the financial invoices, the purpose of which is unclear from the provided text."
+  ],
+  "analyzedAt": "2026-02-17T21:32:01.529Z"
+}

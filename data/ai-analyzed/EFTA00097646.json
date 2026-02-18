@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00097646.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-10-16",
+  "summary": "This is an FBI 302 interview report of a victim (name redacted) who describes being recruited as a 15-year-old in 2004 to give Jeffrey Epstein a massage at his Palm Beach Island home, where he masturbated and paid her. The victim identifies Ghislaine Maxwell as present at the scene. The interview was conducted in West Palm Beach, Florida, in October 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as the man who paid the victim for a massage during which he masturbated. He is identified as living on Palm Beach Island and owning a modeling agency.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Identified by the victim as a tall, thin woman with short brown hair who was present in Epstein's bathroom, handed her lotion, and then left the room.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Victim (Redacted)",
+      "role": "Victim/Witness",
+      "category": "victim",
+      "context": "The interviewee, who was 15 years old in approximately 2004 when she was recruited by a friend to give Epstein a massage for money at his Palm Beach Island home.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Friend (Redacted)",
+      "role": "Recruiter/Associate",
+      "category": "associate",
+      "context": "A friend of the victim who attended Dwyer High School, told her about Epstein, arranged the meeting, drove her to Epstein's house, and was paid $150 for bringing her.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Maxwell was present in Epstein's home during the victim's visit, handing lotion to the victim before Epstein entered.",
+      "strength": 3
+    },
+    {
+      "person1": "Victim (Redacted)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim was recruited as a minor to give Epstein a massage, during which he masturbated and paid her $200.",
+      "strength": 4
+    },
+    {
+      "person1": "Victim (Redacted)",
+      "person2": "Friend (Redacted)",
+      "relationshipType": "social",
+      "description": "The friend recruited the victim, drove her to Epstein's house, and was paid $150 for bringing her. They used drugs together afterward.",
+      "strength": 4
+    },
+    {
+      "person1": "Friend (Redacted)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "The friend was paid $150 by Epstein for bringing the victim to his house.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004",
+      "title": "Victim's recruitment and visit to Epstein's home",
+      "description": "A 15-year-old victim was recruited by a friend, driven to Jeffrey Epstein's Palm Beach Island home, and paid $200 after giving him a massage during which he masturbated. Ghislaine Maxwell was present.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Victim (Redacted)",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Friend (Redacted)"
+      ]
+    },
+    {
+      "date": "2019-10-16",
+      "title": "FBI interview of victim",
+      "description": "The victim was interviewed by the FBI at 505 S Flagler Drive, West Palm Beach, Florida, regarding her experiences with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (Redacted)"
+      ]
+    },
+    {
+      "date": "Approx. 2005-2006",
+      "title": "Victim files civil suit",
+      "description": "The victim retained an attorney and filed a civil suit at age 17 related to the incident with Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim (Redacted)"
+      ]
+    }
+  ],
+  "locations": [
+    "505 S Flagler Drive, West Palm Beach, Florida",
+    "West Palm Beach, Florida",
+    "Palm Beach Island",
+    "Epstein's house on Palm Beach Island"
+  ],
+  "keyFacts": [
+    "A victim was recruited at age 15 (around 2004) by a friend to give Jeffrey Epstein a massage for money at his Palm Beach Island home.",
+    "The victim identified Ghislaine Maxwell as being present in Epstein's bathroom, handing her lotion before Epstein entered.",
+    "Epstein paid the victim $200 and paid her friend $150 for bringing her.",
+    "The victim filed a civil suit at age 17 and was interviewed by the FBI in October 2019.",
+    "The friend who recruited the victim instructed her to lie and tell Epstein she was 16 years old."
+  ],
+  "analyzedAt": "2026-02-17T19:30:00.641Z"
+}

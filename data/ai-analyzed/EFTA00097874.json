@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA00097874.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-08-18",
+  "summary": "A letter from Ghislaine Maxwell's defense attorney Bobbi C. Sternheim to Judge J. Nathan detailing ongoing interference with attorney-client communications at the Metropolitan Detention Center (MDC). The letter alleges breaches of confidentiality in video teleconferences, unauthorized third-party access, restrictions on document sharing, and concerns about potential recording of privileged communications, all of which are claimed to impede Maxwell's trial preparation.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the criminal case, currently detained at MDC, whose attorney-client communications are allegedly being interfered with by the facility.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Bobbi C. Sternheim",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney for Ghislaine Maxwell who authored the letter to the court detailing interference with attorney-client communications and restrictions at MDC.",
+      "mentionCount": 3
+    },
+    {
+      "name": "J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "The judge presiding over the case United States v. Ghislaine Maxwell to whom the letter is addressed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leon",
+      "role": "MDC Technician",
+      "category": "staff",
+      "context": "An MDC technician tasked with dealing with Ghislaine Maxwell's electronics issues, who was reportedly present during a breach of the Zoom room.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bobbi C. Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Sternheim is the defense attorney representing Maxwell, as evidenced by the letter detailing efforts to protect their confidential communications.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Leon",
+      "relationshipType": "staff-detainee",
+      "description": "Leon is an MDC technician responsible for handling Maxwell's electronics and VTC issues at the detention center.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-06-14",
+      "title": "VTC Monitor Placed in Box",
+      "description": "The MDC placed the VTC monitor inside a box with a screen, severely impacting Ghislaine Maxwell's ability to see her counsel and documents during video conferences.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-08-06",
+      "title": "MDC Changes VTC Platform",
+      "description": "MDC Legal informed defense counsel that starting August 9, they could no longer use the defense's WebEx platform and must use one of four Zoom access codes provided by MDC.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C. Sternheim"
+      ]
+    },
+    {
+      "date": "2021-08-12",
+      "title": "Zoom Room Breach",
+      "description": "Third parties accessed the Zoom room used by Ghislaine Maxwell and her counsel for a VTC session, a breach reported to and witnessed by MDC staff.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C. Sternheim",
+        "Leon"
+      ]
+    },
+    {
+      "date": "2021-08-13",
+      "title": "MDC Denies Breach",
+      "description": "MDC Legal responded via email to the reported breach, stating there was a miscommunication and no breach occurred, and that they were creating a more secure line.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-08-14",
+      "title": "Restricted In-Person Visit",
+      "description": "During an in-person legal visit, both Ghislaine Maxwell and her attorney Bobbi Sternheim were told they could not pass documents, frustrating the productivity of the four-hour visit.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C. Sternheim"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Detention Center (MDC)",
+    "United States Courthouse, 40 Foley Square, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense attorney alleges the MDC has interfered with attorney-client confidentiality by changing VTC platforms, allowing third-party access to Zoom sessions, and restricting document sharing.",
+    "The defense has reason to believe VTCs between Maxwell and her counsel may have been tape-recorded by the MDC, a concern that aligns with observed interference and lack of response from staff.",
+    "Restrictions on the quantity of legal documents Maxwell may bring to the VTC room or day room, coupled with VTC problems, are claimed to severely hamper her ability to prepare for trial.",
+    "The letter requests the court to direct MDC Legal to show cause for the platform change, delays in resuming VTCs, and to provide a sworn statement regarding any interference, listening, or recording of the VTCs."
+  ],
+  "analyzedAt": "2026-02-17T19:38:52.095Z"
+}

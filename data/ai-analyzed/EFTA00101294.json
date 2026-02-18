@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00101294.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-07-19",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York to an AT&T representative named James, regarding the submission of two subpoenas for telephone records. The email includes attachments of the subpoenas and a draft certification, seeking responsive records from AT&T.",
+  "persons": [
+    {
+      "name": "James",
+      "role": "AT&T Representative",
+      "category": "other",
+      "context": "Recipient of the email from the prosecutor, being asked to respond to subpoenas for telephone records.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sender of the email, working in the Southern District of New York, coordinating the issuance of subpoenas to AT&T for records.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "James",
+      "relationshipType": "legal-investigative",
+      "description": "Prosecutor communicating with AT&T representative to obtain records via subpoena as part of an investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-16",
+      "title": "Phone call regarding subpoenas",
+      "description": "A phone call took place between the prosecutor and James from AT&T to discuss the subpoenas for records.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "James"
+      ]
+    },
+    {
+      "date": "2021-07-19",
+      "title": "Subpoenas issued to AT&T",
+      "description": "Two subpoenas were issued to AT&T, one for a specific invoice and one broader, seeking responsive telephone records.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "James"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "1 Saint Andrews Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "Prosecutors from the Southern District of New York were actively subpoenaing AT&T for telephone records as part of an investigation in July 2021.",
+    "Two specific subpoenas were issued: one targeting a particular invoice and one with a broader scope.",
+    "The communication indicates coordination between law enforcement and AT&T to obtain certification for the records."
+  ],
+  "analyzedAt": "2026-02-17T22:57:45.403Z"
+}

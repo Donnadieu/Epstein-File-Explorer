@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00102102.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-02-25",
+  "summary": "This is an internal email from an Assistant U.S. Attorney in the Southern District of New York, reporting a brief phone call from a woman who identified herself as a former victim of Jeffrey Epstein. The email details the victim's connection to an attorney, her prior contact with law enforcement, and the prosecutor's office's previous unsuccessful attempts to contact victims through that attorney.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Identified as the perpetrator by the caller, who described herself as a former victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-defendant",
+      "category": "key figure",
+      "context": "Mentioned in the subject line as the person whose arrest the caller was reportedly 'ecstatic' about.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the email, reporting on a call from an Epstein victim and detailing prior attempts to contact victims through an attorney.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell's arrest is noted as a source of satisfaction for an Epstein victim, implying their connection in the criminal case.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Assistant U.S. Attorney",
+      "relationshipType": "legal",
+      "description": "The prosecutor is investigating Epstein's crimes and attempting to contact his victims.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-02-25",
+      "title": "Epstein Victim Calls Prosecutor",
+      "description": "A woman identifying as a former victim of Jeffrey Epstein calls the Assistant U.S. Attorney's office. She provides her contact information but no substantive case details.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant U.S. Attorney"
+      ]
+    },
+    {
+      "date": "2020",
+      "title": "Prosecutor's Office Contacts Victims' Attorney",
+      "description": "The U.S. Attorney's office was in contact with an attorney who claimed to represent at least nine Epstein victims, but the attorney was uncooperative and the victims were reportedly unwilling to speak.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant U.S. Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "An Epstein victim directly contacted the U.S. Attorney's office in February 2021, expressing happiness over Ghislaine Maxwell's arrest.",
+    "The victim had been represented by an attorney for the Epstein Victim Compensation Fund but was not currently represented by him for legal matters.",
+    "The victim had previously been in contact with an NYPD detective but had not heard back.",
+    "The U.S. Attorney's office had prior, unsuccessful dealings with an attorney who claimed to represent multiple Epstein victims but was uncooperative.",
+    "The call was brief and no substantive case information was exchanged; the prosecutor's office planned to follow up."
+  ],
+  "analyzedAt": "2026-02-17T23:31:14.338Z"
+}

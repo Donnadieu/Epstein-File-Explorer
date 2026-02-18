@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00099302.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-18",
+  "summary": "This is an internal email chain among US Attorney's Office for the Southern District of New York (USANYS) staff discussing upcoming case-related events for the week of January 18, 2020. It references scheduling for the Avenatti case before Judge Gardephe, a moot court, a DAG visit, and a meeting with an attorney.",
+  "persons": [
+    {
+      "name": "Avenatti",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referenced as having a conference before Judge Gardephe, marking his first appearance since his arrest, with a trial date expected to be set.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Judge Gardephe",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "Presiding over a conference in the Avenatti case, expected to set a trial date for January 27, 2020.",
+      "mentionCount": 2
+    },
+    {
+      "name": "DAG",
+      "role": "Deputy Attorney General",
+      "category": "legal",
+      "context": "A visit from the Deputy Attorney General is scheduled, with presentations from PC (likely a person or group) to GEP/AOC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Avenatti",
+      "person2": "Judge Gardephe",
+      "relationshipType": "legal",
+      "description": "Judge Gardephe is presiding over a conference in Avenatti's case, setting a trial date.",
+      "strength": 3
+    },
+    {
+      "person1": "MA",
+      "person2": "Avenatti",
+      "relationshipType": "likely same person",
+      "description": "MA is referenced in the context of Avenatti's case, suggesting MA is likely Michael Avenatti.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-22",
+      "title": "Conference in Avenatti case before Judge Gardephe",
+      "description": "A conference is scheduled in the Avenatti case before Judge Gardephe, marking Avenatti's first appearance since his arrest. A trial date of January 27 is expected to be set.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Avenatti",
+        "Judge Gardephe",
+        "MA"
+      ]
+    },
+    {
+      "date": "2020-01-22",
+      "title": "Rescheduled moot of opening in Avenatti",
+      "description": "A rescheduled moot court session for an opening statement in the Avenatti case is planned.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-01-24",
+      "title": "DAG visit with GEP/AOC presentations",
+      "description": "A visit from the Deputy Attorney General (DAG) is scheduled, featuring presentations from PC to GEP/AOC.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "DAG"
+      ]
+    },
+    {
+      "date": "2020-01-24",
+      "title": "Meeting with attorney",
+      "description": "A meeting with an attorney is scheduled, though the specific attorney is not named.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The email discusses scheduling for the Avenatti case, indicating ongoing legal proceedings in early 2020.",
+    "Avenatti's first appearance since his arrest is noted, with a trial date expected to be set for January 27, 2020.",
+    "The email references internal preparations at the US Attorney's Office, including a moot court and a DAG visit.",
+    "The correspondence is among USANYS staff, showing coordination on multiple cases and administrative matters."
+  ],
+  "analyzedAt": "2026-02-17T21:10:21.913Z"
+}

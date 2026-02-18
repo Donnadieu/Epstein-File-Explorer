@@ -1,0 +1,162 @@
+{
+  "fileName": "EFTA00095502.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-07-08",
+  "summary": "An FBI Crisis Intake report documenting an anonymous call received on July 8, 2019, regarding Jeffrey Epstein. The caller provides detailed allegations of Epstein's recruitment of women, his relationship with Ghislaine Maxwell, and social interactions with high-profile individuals like Donald Trump, including disturbing conversations about young women.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central subject of the report, accused of child sex trafficking and described as recruiting women, making inappropriate sexual comments, and hosting individuals at his properties.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Carolyn Doughtery",
+      "role": "Recruiter",
+      "category": "associate",
+      "context": "Described as Epstein's recruiter who introduced the anonymous caller to Epstein around 2004 and attempted to recruit her and other women for Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine",
+      "role": "Epstein's Girlfriend/Associate",
+      "category": "associate",
+      "context": "Epstein's girlfriend, described as being aware of his activities. She asked for models' names at a nightclub and made a comment about 'one less blow job' for her.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Todd Meister",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Individual whose father did business with Epstein. Ghislaine asked him to bring beautiful female models over to her at a New York City nightclub.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joe",
+      "role": "Caller's Ex-Boyfriend",
+      "category": "associate",
+      "context": "The anonymous caller's ex-boyfriend who was good friends with Epstein. The caller visited Epstein's island with him.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Sarah Ferguson",
+      "role": "Visitor",
+      "category": "associate",
+      "context": "Reported to have visited Epstein's island sometimes, taking photographs and making a photo album.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leon Black",
+      "role": "Visitor",
+      "category": "associate",
+      "context": "Was visiting Epstein's island. Epstein showed him a compound and discussed plans for seven massage rooms and an area for his 'harem'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Associate",
+      "category": "political",
+      "context": "Described as being seen with Epstein 'a lot,' including at the movies and on a trip to Palm Beach. The caller overheard a disturbing conversation between Trump and Epstein about young women.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Carolyn Doughtery",
+      "relationshipType": "employer-employee",
+      "description": "Doughtery is described as Epstein's recruiter, who introduced women to him and tried to recruit them on his behalf.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine",
+      "relationshipType": "co-conspirator",
+      "description": "Described as girlfriend and associate who was aware of Epstein's activities and actively helped procure women for him.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Donald Trump",
+      "relationshipType": "social",
+      "description": "The caller reports seeing them together frequently socially, including at movies and on a trip to Palm Beach, and overhearing a private conversation between them.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine",
+      "person2": "Todd Meister",
+      "relationshipType": "social",
+      "description": "Ghislaine asked Meister to bring beautiful female models over to her at a New York City nightclub.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Joe",
+      "relationshipType": "social",
+      "description": "Described as being good friends. The caller visited Epstein's island with Joe.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Leon Black",
+      "relationshipType": "social",
+      "description": "Black was a visitor to Epstein's island, where Epstein showed him a compound and discussed his plans.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004",
+      "title": "Caller introduced to Epstein",
+      "description": "The anonymous caller was introduced to Jeffrey Epstein by his recruiter, Carolyn Doughtery, at Epstein's house on 71st Street.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Carolyn Doughtery",
+        "Anonymous Caller"
+      ]
+    },
+    {
+      "date": "2001-09-11",
+      "title": "Post-9/11 Palm Beach trip",
+      "description": "After 9/11/2001, Epstein, Trump, Ghislaine, Joe, and the caller went to Palm Beach, FL for the weekend. The caller overheard a disturbing conversation between Epstein and Trump about young women.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Donald Trump",
+        "Ghislaine",
+        "Joe",
+        "Anonymous Caller"
+      ]
+    },
+    {
+      "date": "2019-07-08",
+      "title": "FBI Crisis Intake Call",
+      "description": "An anonymous individual called the FBI National Threat Operations Center (NTOC) to report information regarding Jeffrey Epstein and child sex trafficking.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Anonymous Caller"
+      ]
+    }
+  ],
+  "locations": [
+    "71st Street (Epstein's house, location unspecified, likely New York City)",
+    "New York City",
+    "Little St. Jeffrey's (Epstein's island)",
+    "Palm Beach, FL",
+    "Moscow (mentioned as a destination Epstein asked the caller about)"
+  ],
+  "keyFacts": [
+    "An anonymous caller reported to the FBI in July 2019 that Jeffrey Epstein's recruiter, Carolyn Doughtery, attempted to recruit her as 'one of Epstein's women' around 2004.",
+    "The caller alleges Ghislaine Maxwell was fully aware of Epstein's activities, stating 'One less blow job for me' when procuring models for him.",
+    "The caller overheard a conversation between Donald Trump and Jeffrey Epstein on a plane after 9/11, where Trump spoke about a sheik giving him his 'virgin daughter' and Epstein responded approvingly, discussing the attributes of 'younger women'.",
+    "Epstein showed visitor Leon Black a compound on his island, detailing plans for seven massage rooms and an area for his 'harem'.",
+    "The caller describes two types of women Epstein kept around: 'young women he would pay' and 'the high-end girlfriends'."
+  ],
+  "analyzedAt": "2026-02-17T17:27:26.595Z"
+}

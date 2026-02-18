@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA00098083.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2019-10-10",
+  "summary": "This document is a filing from the United States Attorney's Office for the Southern District of New York, summarizing the findings of an investigation into the events at the Metropolitan Correctional Center (MCC) on August 9-10, 2019, the night Jeffrey Epstein died by suicide. It details that two prison officers failed to conduct required checks, falsified records, and that Epstein was left without a cellmate contrary to policy. The investigation involved over 40 interviews and review of records.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who died by suicide at the Metropolitan Correctional Center on the morning of August 10, 2019. He was left without a cellmate and was not observed by prison officials for approximately nine hours prior to his death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Prison Officer",
+      "category": "law enforcement",
+      "context": "One of the two prison officers responsible for the Special Housing Unit (SHU) area during the night of August 9-10, 2019. He and his partner failed to conduct required counts and rounds, falsified forms, and were engaged in other activities like using the computer or sleeping.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Prison Officer",
+      "category": "law enforcement",
+      "context": "One of the two prison officers responsible for the Special Housing Unit (SHU) area during the night of August 9-10, 2019. She and her partner failed to conduct required counts and rounds, falsified forms, and were engaged in other activities.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Chief Psychologist",
+      "role": "MCC Chief Psychologist",
+      "category": "staff",
+      "context": "Issued a directive, along with the then-Warden, that Epstein should not be left without a cellmate, a directive that was not followed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Warden",
+      "role": "Then-Warden of MCC",
+      "category": "staff",
+      "context": "Issued a directive, along with the Chief Psychologist, that Epstein should not be left without a cellmate, a directive that was not followed.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Thomas",
+      "person2": "Tova Noel",
+      "relationshipType": "co-conspirator",
+      "description": "Worked together as the two prison officers on duty in the SHU the night of Epstein's death. Both failed to perform required duties and falsified records.",
+      "strength": 5
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was one of the prison officers responsible for monitoring Epstein in the SHU. He had been on duty during Epstein's prior suicide attempt.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Noel was one of the prison officers responsible for monitoring Epstein in the SHU on the night of his death.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein Left Without Cellmate",
+      "description": "Contrary to MCC policy and a specific directive, Jeffrey Epstein was left without a cellmate from the morning of August 9 through his death.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Chief Psychologist",
+        "Warden"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Failure to Conduct Prison Checks",
+      "description": "Prison officers Michael Thomas and Tova Noel failed to conduct required institutional counts at 12 a.m., 3 a.m., and 5 a.m., and failed to conduct most required 30-minute rounds in the SHU.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Body",
+      "description": "Jeffrey Epstein's body was discovered at approximately 6:30 a.m. in his cell at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-10-10",
+      "title": "SDNY Investigation Update",
+      "description": "The United States Attorney's Office for the Southern District of New York presented findings from its investigation into the circumstances surrounding Epstein's death, based on over 40 witness interviews and record reviews.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) at MCC"
+  ],
+  "keyFacts": [
+    "Prison officers Michael Thomas and Tova Noel failed to conduct any of the required 12 a.m., 3 a.m., and 5 a.m. counts and most required 30-minute rounds on the night of Epstein's death.",
+    "No prison official observed Jeffrey Epstein from approximately 9:30 p.m. on August 9 until his body was discovered at approximately 6:30 a.m. on August 10.",
+    "Thomas and Noel falsified numerous forms to indicate they had performed the required rounds and counts when they had not, and were instead performing other tasks, using the computer, talking, or sleeping.",
+    "Epstein was left without a cellmate from the morning of August 9 through his death, contrary to MCC policy and a specific directive from the Chief Psychologist and then-Warden.",
+    "The investigation was conducted by the SDNY's Public Corruption Unit and involved interviews with more than 40 witnesses, including 27 MCC employees and 16 inmates."
+  ],
+  "analyzedAt": "2026-02-17T19:56:23.574Z"
+}

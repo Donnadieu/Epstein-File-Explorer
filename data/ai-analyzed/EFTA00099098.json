@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00099098.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-08-29",
+  "summary": "An email from an Assistant United States Attorney in the Southern District of New York requesting service of a trial subpoena on a court reporter named Sandra, who recorded a deposition involving an individual referred to as 'MI'. The email includes an attachment of the subpoena and a deposition transcript for reference.",
+  "persons": [
+    {
+      "name": "Sandra",
+      "role": "Court Reporter",
+      "category": "witness",
+      "context": "The court reporter for a deposition who is being subpoenaed for trial, potentially to admit prior statements about 'MI' contacting her about work.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "The sender of the email, working in the Southern District of New York, who is coordinating the service of a trial subpoena and witness management for an upcoming trial.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sandra",
+      "person2": "MI",
+      "relationshipType": "professional contact",
+      "description": "MI allegedly called Sandra about work, as referenced in a prior deposition transcript that Sandra recorded.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Sandra",
+      "relationshipType": "legal-procedural",
+      "description": "The prosecutor is issuing a trial subpoena to Sandra to secure her testimony as a witness.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Issuance of Trial Subpoena",
+      "description": "An Assistant United States Attorney requests service of a trial subpoena on court reporter Sandra to testify about prior statements regarding 'MI'.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Sandra"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Prior Deposition",
+      "description": "A deposition was previously recorded by court reporter Sandra, which contains statements about 'MI' contacting her about work.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Sandra",
+        "MI"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, NY 10007",
+    "1 St. Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A trial subpoena was issued for court reporter Sandra to testify about prior statements involving 'MI'.",
+    "The subpoena is related to a deposition Sandra recorded, where 'MI' allegedly called her about work.",
+    "The correspondence indicates active trial preparation by the U.S. Attorney's Office in the Southern District of New York.",
+    "The document references an attached deposition transcript that may contain relevant evidence about 'MI's activities."
+  ],
+  "analyzedAt": "2026-02-17T20:52:53.661Z"
+}

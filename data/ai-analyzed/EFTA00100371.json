@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00100371.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-09",
+  "summary": "Email correspondence between a NYPD/FBI detective and an Assistant U.S. Attorney regarding the issuance of a subpoena for Larry Visoski in July 2019. The email includes an attachment of the subpoena and mentions plans to meet in Florida.",
+  "persons": [
+    {
+      "name": "Larry Visoski",
+      "role": "Subject of subpoena",
+      "category": "other",
+      "context": "Individual for whom a subpoena is being issued, as indicated in the email subject and attachment filename.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sends the attached subpoena for Larry Visoski and provides contact information, indicating coordination with law enforcement.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "NYPD / FBI Child Exploitation Human Trafficking Task Force",
+      "category": "law enforcement",
+      "context": "Requests the subpoena for Larry Visoski from the prosecutor, identified as part of a joint task force.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "professional collaboration",
+      "description": "Working together on a case involving Larry Visoski, with the detective requesting a subpoena and the prosecutor providing it.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective",
+      "person2": "Larry Visoski",
+      "relationshipType": "investigation target",
+      "description": "The detective is involved in issuing a subpoena to Larry Visoski as part of an investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Larry Visoski",
+      "relationshipType": "legal proceeding",
+      "description": "The prosecutor is handling the subpoena process for Larry Visoski.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-09",
+      "title": "Subpoena issued for Larry Visoski",
+      "description": "An Assistant U.S. Attorney sends a subpoena for Larry Visoski to a NYPD/FBI detective, with plans to meet in Florida.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Larry Visoski",
+        "Assistant United States Attorney",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "Florida",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A subpoena was issued for Larry Visoski on July 9, 2019, as part of an investigation.",
+    "The communication involves a NYPD/FBI Child Exploitation Human Trafficking Task Force detective and an Assistant U.S. Attorney from the Southern District of New York.",
+    "The parties planned to meet in Florida, suggesting investigative activities or proceedings there.",
+    "The document indicates ongoing legal actions in the Epstein case in mid-2019, post-Epstein's arrest."
+  ],
+  "analyzedAt": "2026-02-17T21:59:14.285Z"
+}

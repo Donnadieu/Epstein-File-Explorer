@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00097899.pdf",
+  "dataSet": "9",
+  "documentType": "court filing correspondence",
+  "dateOriginal": "2020-04-22",
+  "summary": "This document is a communication regarding the case U.S. v. Tartaglione, referencing an ex parte order issued by Judge Karas. The order directs disclosure of documents to Government firewall counsel and sets a deadline for a response from Mr. Barket. It also mentions an upcoming hearing will be rescheduled.",
+  "persons": [
+    {
+      "name": "Judge Karas",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Issued an ex parte order directing disclosure of documents to Government firewall counsel and set a deadline for Mr. Barket's response.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mr. Barket",
+      "role": "Defense Counsel",
+      "category": "legal",
+      "context": "Given until May 5, 2020, to file any additional response to the court order.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "Sent the email communication attaching copies of documents and relaying the judge's orders.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Judge Karas",
+      "person2": "Mr. Barket",
+      "relationshipType": "judge-attorney",
+      "description": "Judge Karas issued an order providing Mr. Barket a deadline to file a response.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-22",
+      "title": "Ex Parte Order Issued",
+      "description": "Judge Karas issued an ex parte order directing disclosure of documents to Government firewall counsel upon defense counsels' requests.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Judge Karas",
+        "Mr. Barket"
+      ]
+    },
+    {
+      "date": "2020-05-05",
+      "title": "Deadline for Response",
+      "description": "Mr. Barket is given until May 5, 2020, to file any additional response to the court order.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Mr. Barket"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10001"
+  ],
+  "keyFacts": [
+    "The document pertains to the case U.S. v. Tartaglione, indicating a legal proceeding separate from but potentially related to the Epstein case context.",
+    "Judge Karas issued an ex parte order for document disclosure to Government firewall counsel, suggesting sensitive or protected materials are involved.",
+    "A hearing in the case is mentioned as being rescheduled, indicating ongoing judicial activity."
+  ],
+  "analyzedAt": "2026-02-17T19:41:47.240Z"
+}

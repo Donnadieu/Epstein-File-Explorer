@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00100357.pdf",
+  "dataSet": "9",
+  "documentType": "search warrant affidavit",
+  "dateOriginal": "2019-07-05",
+  "summary": "This is an FBI agent's affidavit in support of a search warrant for Jeffrey Epstein's New York residence at 9 East 71st Street. It details probable cause based on a grand jury indictment and victim testimony alleging Epstein sexually abused and sex trafficked minor girls at the premises from approximately 2002 to 2005. The affidavit seeks to document the interior of the residence to corroborate a victim's account.",
+  "persons": [
+    {
+      "name": "Amanda Young",
+      "role": "FBI Special Agent and Affiant",
+      "category": "law enforcement",
+      "context": "The FBI agent who authored and swore the affidavit in support of the search warrant for Jeffrey Epstein's New York residence. She details the investigation and probable cause.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Target Subject / Defendant",
+      "category": "key figure",
+      "context": "The primary target of the investigation, indicted for sex trafficking of minors and conspiracy. The affidavit alleges he sexually abused multiple minor girls at the 9 East 71st Street residence from 2002-2005.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Barbara Moses",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "The judge before whom the affidavit was sworn on July 5, 2019, and who would issue the search warrant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda Young",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-target",
+      "description": "Agent Young is the investigating FBI agent submitting the affidavit establishing probable cause against target subject Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "The affidavit states Epstein sexually abused Victim-1 on multiple occasions at the Subject Premises when she was under 18.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-2005",
+      "title": "Period of Alleged Abuse at NY Residence",
+      "description": "Jeffrey Epstein allegedly sexually abused multiple minor girls, including Victim-1, at his residence at 9 East 71st Street, New York.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Victim-1"
+      ]
+    },
+    {
+      "date": "2019-07-02",
+      "title": "Grand Jury Indictment of Epstein",
+      "description": "A grand jury in the Southern District of New York returned an indictment charging Jeffrey Epstein with sex trafficking of minors and conspiracy.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-05",
+      "title": "Swearing of Search Warrant Affidavit",
+      "description": "FBI Special Agent Amanda Young swore the affidavit before Magistrate Judge Barbara Moses in support of a search warrant for 9 East 71st Street.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Amanda Young",
+        "Barbara Moses"
+      ]
+    },
+    {
+      "date": "2011-12",
+      "title": "Transfer of Property to Maple, Inc.",
+      "description": "Ownership of 9 East 71st Street was transferred from Nine East 71st Street Corp. to Maple, Inc., a Virgin Islands entity, for $10, a transaction the affidavit suggests was controlled by Epstein.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York (Jeffrey Epstein's New York residence, the 'Subject Premises')",
+    "Southern District of New York (jurisdiction of the court and grand jury)",
+    "U.S. Virgin Islands (where Epstein resided and where Maple, Inc. is registered)"
+  ],
+  "keyFacts": [
+    "The affidavit establishes probable cause that Epstein's residence at 9 East 71st Street contains evidence of sex trafficking of minors and conspiracy from at least 2002-2005.",
+    "A victim (Victim-1) provided detailed descriptions of the interior layout of the residence, which the FBI seeks to corroborate through photographic and video documentation.",
+    "Epstein allegedly used a 'massage' scenario to escalate to sexual abuse of minor victims as young as 14 at the residence, paying them in cash afterward.",
+    "Epstein is alleged to have enticed victims to recruit other minor girls for abuse, creating a victim-recruiter scheme.",
+    "Property records show the residence was owned by a corporation with Epstein as president and was later transferred to a Virgin Islands entity for $10, suggesting continued control by Epstein."
+  ],
+  "analyzedAt": "2026-02-17T21:58:09.089Z"
+}

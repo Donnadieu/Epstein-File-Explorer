@@ -1,0 +1,150 @@
+{
+  "fileName": "EFTA00102344.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2021-11-10",
+  "summary": "This is a joint letter from the prosecution and defense in the Ghislaine Maxwell case regarding procedures for protecting witness identities at trial. It outlines proposed nomenclature for witnesses, voir dire procedures, jury instructions, and handling of sealed exhibits. The document also includes a transcript excerpt from a court proceeding where the judge denied a defense motion for a mistrial and issued a jury instruction about witness name protection.",
+  "persons": [
+    {
+      "name": "Alison J. Nathan",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Presiding judge in the Ghislaine Maxwell case, addressed in the letter and making rulings in the transcript excerpt.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the criminal case referenced throughout the document (United States v. Ghislaine Maxwell).",
+      "mentionCount": 2
+    },
+    {
+      "name": "Damian Williams",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The United States Attorney for the Southern District of New York who signed the submission letter.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Garaufis",
+      "role": "United States District Judge",
+      "category": "legal",
+      "context": "Judge in the Eastern District of New York who presided over United States v. Raniere; his jury instruction on witness anonymity is cited as a model.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MS. PENZA",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Government attorney speaking in the court transcript, responding to the judge's questions and requests.",
+      "mentionCount": 3
+    },
+    {
+      "name": "MR. AGNIFILO",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Defense attorney speaking in the court transcript, objecting to the judge's proposed jury instruction.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Denise Parisi",
+      "role": "Official Court Reporter",
+      "category": "staff",
+      "context": "Court reporter certified for the transcript excerpt included in the document.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "MR. AGNIFILO",
+      "relationshipType": "attorney-client",
+      "description": "MR. AGNIFILO is acting as defense counsel for Ghislaine Maxwell, objecting to procedures and making a motion for mistrial on her behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Damian Williams",
+      "person2": "MS. PENZA",
+      "relationshipType": "colleague",
+      "description": "Both are prosecutors representing the United States in the case against Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Alison J. Nathan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Nathan is presiding over the criminal trial of defendant Ghislaine Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Judge Garaufis",
+      "person2": "Alison J. Nathan",
+      "relationshipType": "colleague",
+      "description": "Both are United States District Judges; Judge Nathan's court is considering a jury instruction modeled on one given by Judge Garaufis in a prior case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-01",
+      "title": "Pretrial Conference",
+      "description": "Court directed parties to file a joint letter regarding protections for witness identities at trial.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "Prosecution team",
+        "Defense team"
+      ]
+    },
+    {
+      "date": "2021-11-29",
+      "title": "Trial Begin Date",
+      "description": "Scheduled start date for the trial of Ghislaine Maxwell.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Alison J. Nathan"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Defense Motion for Mistrial",
+      "description": "Defense moved for a mistrial, arguing issues with witness name protection procedures were not tenable. The motion was denied by Judge Nathan.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "MR. AGNIFILO",
+        "Alison J. Nathan",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Court Issues Jury Instruction on Anonymity",
+      "description": "Judge Nathan issued a jury instruction explaining that witnesses use first names only to protect privacy, but their full names are known to the court, government, and defendant.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alison J. Nathan",
+        "MS. PENZA",
+        "MR. AGNIFILO"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "United States Courthouse, 40 Foley Square, New York, New York 10007",
+    "Eastern District of New York (referenced for prior case)"
+  ],
+  "keyFacts": [
+    "The prosecution and defense agreed on procedures to protect witness identities at Ghislaine Maxwell's trial, including using pseudonyms or first names only for certain witnesses.",
+    "Judge Alison J. Nathan denied a defense motion for a mistrial related to witness identity protection issues, opting instead to cure any problems with a jury instruction.",
+    "The trial was scheduled to begin on November 29, 2021.",
+    "The prosecution requested that all exhibits containing witness identifying information be sealed or redacted, and proposed providing jurors with individual binders for such exhibits to prevent public viewing.",
+    "The defense proposed an alternative jury instruction on witness anonymity, emphasizing media attention and witness choice, but the judge implemented her own version."
+  ],
+  "analyzedAt": "2026-02-17T23:48:03.774Z"
+}

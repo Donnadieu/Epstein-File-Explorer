@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00097897.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-09-28",
+  "summary": "Email correspondence between an Assistant United States Attorney from the Southern District of New York and Amazon.com, Inc. legal counsel regarding a subpoena (reference CRIM1071168) issued to Amazon, likely as part of the Epstein investigation. The email includes scheduling of a call and an attached subpoena document.",
+  "persons": [
+    {
+      "name": "Ben Langner",
+      "role": "Senior Corporate Counsel, Government & Regulatory Litigation at Amazon.com, Inc.",
+      "category": "legal",
+      "context": "Amazon legal counsel coordinating with federal prosecutors regarding a subpoena. He is scheduling a call to discuss the subpoena.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Goldberg",
+      "role": "Legal counsel (likely at Amazon.com, Inc.)",
+      "category": "legal",
+      "context": "Recipient of the email from the prosecutor, involved in previous discussions about the Amazon subpoena.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor, Southern District of New York",
+      "category": "legal",
+      "context": "Federal prosecutor from the SDNY following up on a subpoena (CRIM1071168) issued to Amazon, seeking to ask additional questions and schedule a call.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Ben Langner",
+      "relationshipType": "legal",
+      "description": "Prosecutor communicating with Amazon's corporate counsel regarding a subpoena as part of an investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Jeffrey Goldberg",
+      "relationshipType": "legal",
+      "description": "Prosecutor reaching out to legal counsel (likely at Amazon) who had previously been contacted about the subpoena.",
+      "strength": 3
+    },
+    {
+      "person1": "Ben Langner",
+      "person2": "Jeffrey Goldberg",
+      "relationshipType": "colleague",
+      "description": "Both are legal counsel at Amazon.com, Inc. copied on the same email thread regarding the subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-24",
+      "title": "Call regarding Amazon subpoena",
+      "description": "A call took place between the prosecutor and Ben Langner to discuss the subpoena issued to Amazon.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Ben Langner"
+      ]
+    },
+    {
+      "date": "2020",
+      "title": "Previous discussions about Amazon subpoena",
+      "description": "The prosecutor's colleagues previously spoke with Amazon counsel about subpoena reference CRIM1071168.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Jeffrey Goldberg",
+        "Ben Langner"
+      ]
+    }
+  ],
+  "locations": [
+    "Seattle, WA 98121 (Amazon.com, Inc. office at 2021 7th Avenue)",
+    "New York, New York 10007 (Southern District of New York office at 1 Saint Andrews Plaza)"
+  ],
+  "keyFacts": [
+    "The Southern District of New York issued a subpoena to Amazon.com, Inc. with reference number CRIM1071168, likely related to the Epstein investigation.",
+    "Amazon's legal counsel (Ben Langner and Jeffrey Goldberg) were in communication with federal prosecutors regarding this subpoena.",
+    "The document is an email thread from September 2021, showing ongoing investigative activity years after Epstein's death.",
+    "The subpoena attachment is titled '2021.09.27_Court_Subpoenas_Amazon.pdf', indicating it is a court-issued subpoena.",
+    "The prosecutor is seeking additional information and a follow-up call regarding the subpoena originally discussed the previous year."
+  ],
+  "analyzedAt": "2026-02-17T19:41:21.200Z"
+}

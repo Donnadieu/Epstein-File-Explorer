@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA00096336.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-26",
+  "summary": "Email exchange between attorney Bruce Barket and an MCC official regarding an investigation into potential retaliation against inmate Nicholas Tartaglione, and a forwarded inquiry from a journalist about Tartaglione being questioned regarding a possible attack on Jeffrey Epstein at MCC.",
+  "persons": [
+    {
+      "name": "Bruce Barket",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing inmate Nicholas Tartaglione, corresponding with MCC officials about an investigation and potential leaks to the press.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Nick",
+      "role": "Client/Inmate",
+      "category": "key figure",
+      "context": "Referred to as Bruce Barket's client, an inmate at MCC who was reportedly questioned about a possible attack on Jeffrey Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tracy Connor",
+      "role": "Executive Editor",
+      "category": "other",
+      "context": "Journalist from The Daily Beast who emailed Bruce Barket seeking confirmation of an NBC story about his client being questioned regarding Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "Mentioned as the subject of a possible attack at MCC, which prompted a journalist's inquiry about Barket's client being questioned.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Client/Inmate",
+      "category": "key figure",
+      "context": "Full name of 'Nick', Bruce Barket's client at MCC who was the subject of an internal investigation and press inquiries.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bruce Barket",
+      "person2": "Nick (Nicholas Tartaglione)",
+      "relationshipType": "attorney-client",
+      "description": "Bruce Barket is the legal representative for inmate Nicholas Tartaglione, advocating on his behalf regarding prison conditions and media leaks.",
+      "strength": 5
+    },
+    {
+      "person1": "Nick (Nicholas Tartaglione)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "fellow inmate",
+      "description": "Both were inmates at MCC; Tartaglione was reportedly questioned about a possible attack on Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Bruce Barket",
+      "person2": "Tracy Connor",
+      "relationshipType": "professional contact",
+      "description": "Connor, a journalist, contacted Barket seeking confirmation of a news story about his client and Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Journalist Inquiry About Epstein Attack",
+      "description": "Tracy Connor from The Daily Beast emails Bruce Barket seeking confirmation of an NBC story that his client, Nicholas Tartaglione, was questioned about a possible attack on Jeffrey Epstein at MCC.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tracy Connor",
+        "Bruce Barket",
+        "Nicholas Tartaglione",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-25",
+      "title": "MCC Official Responds on Investigation",
+      "description": "An MCC official (name redacted) responds to Bruce Barket, stating the matter is under an open investigation and that staff have been reminded not to retaliate against his client.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Bruce Barket",
+        "Nick (Nicholas Tartaglione)"
+      ]
+    },
+    {
+      "date": "2019-07-26",
+      "title": "Barket Thanks MCC Official",
+      "description": "Bruce Barket thanks an MCC official for personally checking on his client Nick and swapping out his books, acknowledging good work done.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Bruce Barket",
+        "Nick (Nicholas Tartaglione)"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "666 Old Country Road, Ste. 700, Garden City, NY 11530"
+  ],
+  "keyFacts": [
+    "An internal investigation was ongoing at MCC regarding potential retaliation against inmate Nicholas Tartaglione, client of attorney Bruce Barket.",
+    "A journalist from The Daily Beast contacted Barket to confirm an NBC story that Tartaglione was questioned about a possible attack on Jeffrey Epstein at MCC.",
+    "MCC officials stated they had reminded staff not to retaliate against Tartaglione and that no information had been shared with the press about the open investigation.",
+    "The email chain shows attorney Bruce Barket actively monitoring his client's treatment in custody and engaging with both prison officials and the media."
+  ],
+  "analyzedAt": "2026-02-17T18:23:21.822Z"
+}

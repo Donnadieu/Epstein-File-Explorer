@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00102072.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-09-02",
+  "summary": "This document is a chain of emails from September 2, 2021, concerning Ghislaine Maxwell's legal communications. Defense attorney Bobbi C. Sternheim notifies the government and prison officials of suspected third-party interference with a secure Webex line used for confidential attorney-client communications, contradicting prior assurances from the MDC. The email was initially misdirected to a Bureau of Prisons attorney.",
+  "persons": [
+    {
+      "name": "Bobbi C. Sternheim",
+      "role": "Defense Attorney for Ghislaine Maxwell",
+      "category": "legal",
+      "context": "Attorney notifying the government and prison officials of interference with secure communication lines between her client, Ghislaine Maxwell, and counsel.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The incarcerated defendant who observed suspicious activity on her VTC monitor during a confidential legal communication session.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Christian Everdell",
+      "role": "Attorney (likely for the government/prosecution)",
+      "category": "legal",
+      "context": "Copied on the initial notification email from Bobbi Sternheim regarding the communication interference.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bobbi C. Sternheim",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Sternheim is Maxwell's defense attorney, representing her and raising concerns about breaches in their confidential communications.",
+      "strength": 5
+    },
+    {
+      "person1": "Bobbi C. Sternheim",
+      "person2": "Christian Everdell",
+      "relationshipType": "legal",
+      "description": "Sternheim is communicating a legal issue (interference with attorney-client privilege) to Everdell, who is likely a government or opposing counsel.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-01",
+      "title": "Suspicious VTC Activity Observed",
+      "description": "At the conclusion of a VTC session, Ghislaine Maxwell observed suspicious activity on the monitor and alerted MDC staff. A Case Manager witnessed the activity.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Bobbi C. Sternheim"
+      ]
+    },
+    {
+      "date": "2021-08-25",
+      "title": "Court Order Issued",
+      "description": "The Court issued an order referenced by Sternheim, likely concerning the resolution of Maxwell's communication difficulties with counsel.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "FMC Butner, Old Highway 75, P.O. Box 1600, Butner, North Carolina 27509",
+    "Metropolitan Detention Center (MDC) - implied location where Maxwell is held",
+    "225 Broadway, Suite 715, New York, NY 10007 (Law Offices of Bobbi C. Sternheim)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's attorney, Bobbi Sternheim, reported a new incident of suspected third-party interference with their secure Webex communication line on September 1, 2021.",
+    "An MDC Case Manager witnessed the suspicious VTC activity, providing an 'insider' witness to support Maxwell's and her counsel's long-standing complaints.",
+    "This incident directly contradicts prior government and MDC Legal assurances to the court that Maxwell's confidential communication issues had been resolved.",
+    "The communication was part of a chain where an email was initially mis-sent to a Federal Bureau of Prisons attorney at FMC Butner."
+  ],
+  "analyzedAt": "2026-02-17T23:27:59.581Z"
+}

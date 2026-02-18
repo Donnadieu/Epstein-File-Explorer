@@ -1,0 +1,212 @@
+{
+  "fileName": "EFTA00098115.pdf",
+  "dataSet": "9",
+  "documentType": "financial record / timesheet",
+  "dateOriginal": null,
+  "summary": "This document appears to be a series of faxed timesheets or work logs detailing tasks performed at a property, likely Jeffrey Epstein's residence. It lists dates, hours worked, tasks (house sitting, cleaning, maintenance, errands), and payments. It references interactions with staff and contractors, and includes property details like addresses and alarm codes.",
+  "persons": [
+    {
+      "name": "Michelle",
+      "role": "Recipient of fax / point of contact",
+      "category": "staff",
+      "context": "Addressed in fax headers and notes, appears to be the person receiving the work logs and timesheets for review or payment.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Cook",
+      "role": "Worker / service provider",
+      "category": "staff",
+      "context": "Listed as a worker for a pickup task on 9/6/03.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Douglas",
+      "role": "Architect",
+      "category": "associate",
+      "context": "Mentioned as an architect present during house sitting on 12/03/03.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tricia",
+      "role": "Worker / associate",
+      "category": "associate",
+      "context": "Mentioned alongside 'Bishop Water & Brent' during house sitting on 12/03/03.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gerome",
+      "role": "Worker / associate",
+      "category": "staff",
+      "context": "Mentioned multiple times in January 2004 as being present during house sitting with cleaners and workers.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey",
+      "role": "Property owner / key figure",
+      "category": "key figure",
+      "context": "Referenced indirectly as 'Jeffrey's friend' who was to borrow a Mercedes, and his full name 'Jeffrey E. Epstein' appears at the end of the document.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lynn Binden",
+      "role": "Associate / contact",
+      "category": "associate",
+      "context": "Name appears on a fax header from 8/24/04.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John C Cassidy",
+      "role": "Associate / contact",
+      "category": "associate",
+      "context": "Name appears on a fax header from 8/24/04, possibly related to Cassidy Air mentioned elsewhere.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lucia",
+      "role": "Associate / recipient",
+      "category": "associate",
+      "context": "Had mail sent to her per task log on 8/24/04.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rushia",
+      "role": "Associate / recipient",
+      "category": "associate",
+      "context": "Had mail sent to her per task log on 8/24/04.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ms. Maxwell",
+      "role": "Associate / manager",
+      "category": "key figure",
+      "context": "Met with on 8/27/04 to discuss house repairs; she made a payment towards hours owed. Likely Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lenny",
+      "role": "Contractor",
+      "category": "associate",
+      "context": "Was waited for to fix shutters on 8/31/04.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christoph",
+      "role": "Associate / passenger",
+      "category": "associate",
+      "context": "Was picked up and driven on 10/21/04, involving a Mercedes and trip to Jet Aviation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard",
+      "role": "Associate / contact",
+      "category": "associate",
+      "context": "Spoke to on 8/05/05 regarding resetting an alarm.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Helen",
+      "role": "Recipient of fax",
+      "category": "staff",
+      "context": "Addressed in a fax header on 10/21/04.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paula",
+      "role": "Associated with alarm code",
+      "category": "staff",
+      "context": "Name listed as the alarm password for the property.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michelle",
+      "person2": "Ms. Maxwell",
+      "relationshipType": "staff-management",
+      "description": "Michelle receives work logs and timesheets; Ms. Maxwell is involved in managing property repairs and making payments.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ms. Maxwell",
+      "relationshipType": "associate",
+      "description": "Ms. Maxwell is managing repairs and payments for a property associated with Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Gerome",
+      "person2": "Workers/Cleaners",
+      "relationshipType": "co-worker",
+      "description": "Gerome is repeatedly mentioned alongside other workers and cleaners during house sitting tasks.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-09-06",
+      "title": "Airport Pickup",
+      "description": "Worker 'Cook' performed an airport pickup.",
+      "category": "travel",
+      "significance": 1,
+      "personsInvolved": [
+        "Cook"
+      ]
+    },
+    {
+      "date": "2003-12-03",
+      "title": "House Sitting with Various Workers",
+      "description": "House sitting involved workers, a painter, an architect (Douglas), Tricia, Bishop Water & Brent, and waiting for a plumber.",
+      "category": "staff",
+      "significance": 1,
+      "personsInvolved": [
+        "Douglas",
+        "Tricia"
+      ]
+    },
+    {
+      "date": "2004-01-28",
+      "title": "House Sitting with Gerome",
+      "description": "House sitting tasks performed with workers, cleaners, and Gerome.",
+      "category": "staff",
+      "significance": 1,
+      "personsInvolved": [
+        "Gerome"
+      ]
+    },
+    {
+      "date": "2004-08-27",
+      "title": "Meeting with Ms. Maxwell",
+      "description": "Met with Ms. Maxwell to discuss what needs to be fixed around the house; she paid $1,000 towards hours owed.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Ms. Maxwell"
+      ]
+    },
+    {
+      "date": "2004-10-21",
+      "title": "Transport for Christoph",
+      "description": "Picked up Christoph, proceeded to a house to get a Mercedes unlocked, reset alarm, and drove him back to Jet Aviation.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Christoph"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein House Main House",
+    "Staff House",
+    "4312 F (likely an address)",
+    "4313 (likely an address)",
+    "Jet Aviation (likely an FBO or airport facility)"
+  ],
+  "keyFacts": [
+    "Document contains detailed timesheets/logs of work performed at a property, including house sitting, cleaning, maintenance, and errands, spanning from 2003 to 2005.",
+    "References a 'Ms. Maxwell' who was involved in managing property repairs and making payments to workers.",
+    "Includes specific property details: 'Epstein House Main House', 'Staff House', addresses '4312 F' and '4313', and an alarm password 'Paula'.",
+    "Shows a pattern of staff and contractor management for the property, with tasks often coordinated while staff or owners were out of town.",
+    "Jeffrey Epstein's name appears at the end of the document, confirming the property's association with him."
+  ],
+  "analyzedAt": "2026-02-17T19:59:38.981Z"
+}

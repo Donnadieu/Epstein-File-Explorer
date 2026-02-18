@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00098785.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-07-06",
+  "summary": "This is an email chain from July 2021 among U.S. Attorney's Office (SDNY) and FBI/NYPD personnel regarding discovery preparation for the Ghislaine Maxwell case. It discusses issues with processing surveillance video files from CART, requests for interview 302s, and the need to authenticate evidence seized from Jeffrey Epstein's Palm Beach residence.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Author of the main task list email from the Southern District of New York, directing follow-up on evidence including 302s, image review, video files, and witness authentication for the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "NYPD Detective / FBI Task Force",
+      "category": "law enforcement",
+      "context": "NYPD detective assigned to the FBI Child Exploitation Human Trafficking Task Force, provides updates on the status of evidence processing including 302s, photos, and .avi files.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Palm Beach PD Captain",
+      "role": "Police Captain",
+      "category": "law enforcement",
+      "context": "Point of contact at Palm Beach Police Department for a task related to authenticating evidence seized from Epstein's residence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "M",
+      "relationshipType": "professional collaboration",
+      "description": "The AUSA is directing M, an FBI/NYPD contact, on tasks related to evidence preparation for the Maxwell prosecution.",
+      "strength": 4
+    },
+    {
+      "person1": "M",
+      "person2": "N.",
+      "relationshipType": "colleague",
+      "description": "Both are law enforcement agents (FBI/NYPD) copied on the same emails and working on the same evidence tasks for the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Detective",
+      "relationshipType": "professional collaboration",
+      "description": "The Detective provides status updates to the AUSA regarding the completion of evidence review tasks.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-20",
+      "title": "Interview of Victim/Witness",
+      "description": "An interview was conducted, presumably of a victim or witness in the Maxwell case, for which draft FBI 302 reports were requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-01-21",
+      "title": "Interview of Victim/Witness",
+      "description": "A second interview was conducted, presumably of a victim or witness in the Maxwell case, for which draft FBI 302 reports were requested.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-07-06",
+      "title": "Discovery Issue with Surveillance Videos",
+      "description": "Prosecution team identifies that 16,000 fragmented .avi video clips provided are unusable and requests they be combined into full-length videos.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "S"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Palm Beach (residence of Jeffrey Epstein)",
+    "FBI New York Field Office"
+  ],
+  "keyFacts": [
+    "Prosecutors were dealing with 16,000 fragmented surveillance video files (.avi) totaling 0.5 GB that were deemed 'useless' as separate clips and needed to be combined.",
+    "The evidence review included authenticating items seized from Jeffrey Epstein's Palm Beach residence, with specific Palm Beach PD personnel identified as potential witnesses.",
+    "Draft FBI 302 reports from interviews conducted on January 20 and 21, 2021, were requested for review, indicating ongoing witness interviews in the Maxwell case.",
+    "CART (Computer Analysis and Response Team) was processing the video files but was reportedly 'under water' due to the Capitol investigation, causing delays.",
+    "The email chain shows active coordination between the U.S. Attorney's Office (SDNY) and a joint FBI/NYPD Child Exploitation Human Trafficking Task Force in mid-2021."
+  ],
+  "analyzedAt": "2026-02-17T20:33:02.128Z"
+}

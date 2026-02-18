@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00102335.pdf",
+  "dataSet": "9",
+  "documentType": "court transcript",
+  "dateOriginal": null,
+  "summary": "This is a transcript of a court proceeding, likely a pre-trial hearing in the Ghislaine Maxwell case, where the judge rules on government motions. The judge denies the defense's motion to preclude the term 'victim' and grants the government's motion to allow eight witnesses and alleged victims to testify using pseudonyms or first names to protect their privacy and prevent harassment. The judge also addresses logistics for voir dire and the handling of exhibits.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the criminal case, referred to as 'Ms. Maxwell' by the judge. The defense argued she poses no threat to witnesses.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Co-conspirator / Perpetrator",
+      "category": "key figure",
+      "context": "Referenced by the judge in relation to the allegations and public statements made by alleged victims.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Furman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "A judge in the case of United States v. Dupigny, whose decision is cited by the presiding judge in this transcript.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Implicitly connected through the case; the judge notes alleged victims made public statements relating to both.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-17",
+      "title": "Hearing in United States v. Dupigny",
+      "description": "A court hearing referenced by the judge, where the transcript (Docket No. 198) discussed the use of the term 'victim'.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Judge Furman"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (S.D.N.Y.)",
+    "Eastern District of New York (E.D.N.Y.)"
+  ],
+  "keyFacts": [
+    "The judge ruled that the government may use the term 'victim' to represent its litigating position, finding defense arguments unpersuasive.",
+    "The judge granted the government's motion to allow eight individuals (alleged victims and related witnesses) to be referred to by pseudonyms or first names during the trial to protect their privacy and prevent harassment.",
+    "The defense is aware of the real identities of all eight individuals, and the jury will also be made aware; the pseudonyms are only for open court references.",
+    "The judge ordered the parties to submit a joint proposal by November 10 for the pseudonym nomenclature and a limiting instruction for the jury regarding the privacy precautions.",
+    "The judge emphasized that the defense's right to cross-examine witnesses would not be unduly limited by the use of pseudonyms, though specific identifying information (employer names, addresses) should be withheld."
+  ],
+  "analyzedAt": "2026-02-17T23:47:36.720Z"
+}

@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00101256.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-11",
+  "summary": "Email correspondence between Parvin Moyne of Akin Gump and an external recipient regarding an upcoming Wall Street Journal article about Jeffrey Epstein. The email flags that the article will mention Deutsche Bank and Epstein's charity Gratitude America holding accounts at the bank, with a proffer meeting scheduled for Thursday.",
+  "persons": [
+    {
+      "name": "Parvin Daphne Moyne",
+      "role": "Attorney at Akin Gump Strauss Hauer & Feld LLP",
+      "category": "legal",
+      "context": "Attorney communicating with external parties about an upcoming WSJ article mentioning Deutsche Bank's connection to Epstein's charity Gratitude America.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Thomas Moyer",
+      "role": "Email recipient (Cc)",
+      "category": "other",
+      "context": "Copied on email correspondence regarding the WSJ article about Epstein and Deutsche Bank.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of the news article",
+      "category": "key figure",
+      "context": "Mentioned as the individual who controlled the charity Gratitude America, which held accounts at Deutsche Bank.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Parvin Daphne Moyne",
+      "person2": "Thomas Moyer",
+      "relationshipType": "professional",
+      "description": "Colleagues or professional associates copied on the same email chain regarding Epstein-related banking matters.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Parvin Daphne Moyne",
+      "relationshipType": "legal",
+      "description": "Attorney Moyne is communicating about legal/banking matters involving Epstein's charity and Deutsche Bank.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-12",
+      "title": "Wall Street Journal article publication",
+      "description": "Article reports Epstein controlled charity Gratitude America which held accounts at Deutsche Bank.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-12",
+      "title": "Proffer meeting scheduled",
+      "description": "Meeting planned to cover the topic of Epstein's charity and Deutsche Bank accounts.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Parvin Daphne Moyne"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10036-6745",
+    "One Bryant Park, New York, NY"
+  ],
+  "keyFacts": [
+    "Deutsche Bank received information about an upcoming Wall Street Journal article related to Jeffrey Epstein that would mention the bank.",
+    "The article reports that Epstein controlled a charity called Gratitude America.",
+    "Gratitude America held accounts at Deutsche Bank.",
+    "A proffer meeting was scheduled for Thursday to cover this topic.",
+    "The email correspondence shows legal representatives proactively managing public relations and legal exposure related to Epstein's financial activities."
+  ],
+  "analyzedAt": "2026-02-17T22:53:42.105Z"
+}

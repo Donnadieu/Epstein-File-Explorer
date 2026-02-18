@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00094986.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-19",
+  "summary": "This is an FBI 302 interview report of Metropolitan Correctional Center inmate Edward Jimenez, conducted on August 16, 2019. Jimenez provides his observations from the Special Housing Unit on the nights of August 9-10, 2019, leading up to the discovery of Jeffrey Epstein's medical emergency.",
+  "persons": [
+    {
+      "name": "Edward Jimenez",
+      "role": "MCC Inmate / Witness",
+      "category": "witness",
+      "context": "Inmate housed in the Special Housing Unit (L-tier, cell #215) at the Metropolitan Correctional Center who was interviewed about his observations on the nights of August 9-10, 2019, regarding Jeffrey Epstein.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "MCC Inmate / Accused",
+      "category": "key figure",
+      "context": "The high-profile inmate whose cell was near Jimenez's; Jimenez observed him being taken out on a stretcher on the morning of August 10, 2019.",
+      "mentionCount": 6
+    },
+    {
+      "name": "TF0",
+      "role": "FBI Task Force Officer",
+      "category": "law enforcement",
+      "context": "A task force officer present during the FBI interview of Edward Jimenez.",
+      "mentionCount": 1
+    },
+    {
+      "name": "0IG Investigator",
+      "role": "Investigator",
+      "category": "law enforcement",
+      "context": "An investigator from an Office of Inspector General present during the interview of Edward Jimenez.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MCC Lt.",
+      "role": "MCC Lieutenant",
+      "category": "law enforcement",
+      "context": "A lieutenant from the Metropolitan Correctional Center present during the FBI interview of inmate Edward Jimenez.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Edward Jimenez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "Jimenez was an inmate housed in the same Special Housing Unit tier as Epstein and provided eyewitness observations about Epstein's condition and activities prior to his medical emergency.",
+      "strength": 2
+    },
+    {
+      "person1": "SA",
+      "person2": "Edward Jimenez",
+      "relationshipType": "interviewer-interviewee",
+      "description": "SA, along with other officials, interviewed Jimenez as part of the investigation into the circumstances surrounding Jeffrey Epstein's death.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Evening in Cell",
+      "description": "Edward Jimenez, an inmate in the SHU, recalls being awake, listening to the radio, and observing guard activity. He notes food was brought to Epstein's cell and believes Epstein's roommate was not present.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Edward Jimenez",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Medical Emergency",
+      "description": "Jimenez recalls waking around 6am and possibly hearing a male voice say 'breathe.' He later saw Jeffrey Epstein on a stretcher with his eyes closed being taken out of his cell.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Edward Jimenez",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "FBI Interview of Edward Jimenez",
+      "description": "FBI Special Agents, a Task Force Officer, an OIG Investigator, and an MCC Lieutenant interviewed inmate Edward Jimenez at the Metropolitan Correctional Center regarding his observations from August 9-10, 2019.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Edward Jimenez",
+        "SA",
+        "TF0",
+        "0IG Investigator",
+        "MCC Lt."
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY",
+    "Special Housing Unit (SHU), L-tier, cell #215"
+  ],
+  "keyFacts": [
+    "Inmate Edward Jimenez was housed in cell #215 on L-tier of the MCC's Special Housing Unit on August 9-10, 2019.",
+    "Jimenez recalls hearing a possible male voice saying 'breathe' around 6am on August 10, 2019, shortly before Epstein was found.",
+    "Jimenez observed Jeffrey Epstein being removed from his cell on a stretcher with his eyes closed, but could not recall seeing any marks on his face.",
+    "Jimenez noted that Epstein's cell door was visible from his own cell, but he could not see inside Epstein's cell and did not recall anyone entering or leaving it after food was delivered on the evening of August 9.",
+    "The interview was conducted as part of the official investigation (90A-NY-3151227) into the circumstances surrounding Jeffrey Epstein's death."
+  ],
+  "analyzedAt": "2026-02-17T17:07:29.076Z"
+}

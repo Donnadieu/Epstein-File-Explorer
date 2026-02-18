@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA00101073.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-12",
+  "summary": "Email correspondence between Assistant U.S. Attorneys in the Southern District of New York discussing privilege review of materials from Epstein search warrants. The emails focus on identifying attorneys representing Epstein's estate and flagging communications involving private investigators for potential privilege claims.",
+  "persons": [
+    {
+      "name": "Marc Weinstein",
+      "role": "Attorney representing estate co-executors",
+      "category": "legal",
+      "context": "Identified as representing the co-executors of Epstein's estate along with Andrew Tomback.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andrew Tomback",
+      "role": "Attorney representing estate co-executors",
+      "category": "legal",
+      "context": "Identified as representing the co-executors of Epstein's estate along with Marc Weinstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Co-executor of Epstein's estate",
+      "category": "legal",
+      "context": "Named as one of the co-executors of Jeffrey Epstein's estate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Co-executor of Epstein's estate",
+      "category": "legal",
+      "context": "Named as one of the co-executors of Jeffrey Epstein's estate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Roy Black",
+      "role": "Private investigator",
+      "category": "other",
+      "context": "Mentioned as a private investigator hired by Epstein in connection with Florida criminal investigation and civil litigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jack Goldberger",
+      "role": "Attorney who represented Epstein",
+      "category": "legal",
+      "context": "Identified as an attorney who represented Jeffrey Epstein, with his email address flagged for privilege review.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Richard Kahn",
+      "relationshipType": "professional",
+      "description": "Both serve as co-executors of Jeffrey Epstein's estate.",
+      "strength": 4
+    },
+    {
+      "person1": "Marc Weinstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "attorney-client",
+      "description": "Weinstein represents Indyke as co-executor of Epstein's estate.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrew Tomback",
+      "person2": "Richard Kahn",
+      "relationshipType": "attorney-client",
+      "description": "Tomback represents Kahn as co-executor of Epstein's estate.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jack Goldberger",
+      "relationshipType": "attorney-client",
+      "description": "Goldberger represented Epstein in legal matters.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Roy Black",
+      "relationshipType": "employer-employee",
+      "description": "Epstein hired private investigator Roy Black for Florida criminal investigation and civil litigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-12",
+      "title": "Email exchange about Epstein search warrant review",
+      "description": "Assistant U.S. Attorneys discuss privilege review of materials from Epstein search warrants, including communications with private investigators and estate attorneys.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Marc Weinstein",
+        "Andrew Tomback",
+        "Darren Indyke",
+        "Richard Kahn",
+        "Roy Black",
+        "Jack Goldberger"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Florida"
+  ],
+  "keyFacts": [
+    "Epstein's estate co-executors are Darren Indyke and Richard Kahn, represented by attorneys Marc Weinstein and Andrew Tomback.",
+    "Epstein hired private investigators including Roy Black in connection with Florida criminal investigation and civil litigation.",
+    "Prosecutors flagged communications involving attorney Jack Goldberger for privilege review as he represented Epstein.",
+    "The document reveals ongoing government review of Epstein search warrant materials for privilege issues in October 2020.",
+    "The correspondence shows coordination between prosecutors and estate attorneys regarding privilege claims over investigative materials."
+  ],
+  "analyzedAt": "2026-02-17T22:38:36.722Z"
+}

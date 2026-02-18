@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00094621.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-07-02",
+  "summary": "This FBI 302 form documents the arrest of Ghislaine Maxwell on July 2, 2020, at a property in Bradford, New Hampshire. It details the execution of the arrest warrant, Maxwell's behavior during the arrest, the discovery of cell phones (including one wrapped in tin foil), and her inquiry about Sarah Kellen during transport.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Arrested Individual",
+      "category": "key figure",
+      "context": "The subject of the federal arrest warrant. She was arrested at 338 East Washington Road, Bradford, New Hampshire, on charges including conspiracy to entice minors, enticement of a minor, conspiracy to transport minors, transportation of a minor, and perjury.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Martin Jackson",
+      "role": "Security Member",
+      "category": "staff",
+      "context": "Identified as a member of Maxwell's security. He was observed running with a handheld radio on the property during the arrest operation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sarah Kellen",
+      "role": "Named Individual",
+      "category": "associate",
+      "context": "Maxwell asked about her during transport to the correctional facility, inquiring if the charges were related to her. The agent declined to discuss details about other individuals.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Martin Jackson",
+      "relationshipType": "employer-employee",
+      "description": "Martin Jackson is identified as a member of Maxwell's security, indicating an employment relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Sarah Kellen",
+      "relationshipType": "associate",
+      "description": "Maxwell's inquiry about Sarah Kellen in relation to the charges suggests a significant association, prompting her to ask if the charges pertained to Kellen.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-02",
+      "title": "Arrest of Ghislaine Maxwell",
+      "description": "FBI agents and task force officers executed an arrest warrant, breaching a locked gate and the front door of a residence in Bradford, New Hampshire, to arrest Ghislaine Maxwell. She was taken into custody without incident.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Martin Jackson"
+      ]
+    }
+  ],
+  "locations": [
+    "338 East Washington Road, Bradford, New Hampshire",
+    "Merrimack County Department of Corrections"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was arrested on July 2, 2020, at a property in Bradford, New Hampshire, on federal charges related to the enticement and transportation of minors, and perjury.",
+    "During the arrest, agents discovered a cell phone wrapped in tin foil on a desk upstairs, which Maxwell declined to bring with her.",
+    "While being transported, Maxwell asked if the charges pertained to one victim or more, and specifically inquired, 'What about Sarah Kellen?'",
+    "A member of Maxwell's security, Martin Jackson, was present at the property and was observed running with a handheld radio during the arrest operation."
+  ],
+  "analyzedAt": "2026-02-17T16:35:01.459Z"
+}

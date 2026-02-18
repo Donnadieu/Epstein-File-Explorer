@@ -1,0 +1,138 @@
+{
+  "fileName": "EFTA00102372.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-24",
+  "summary": "This document is a chain of emails from July 2020 between U.S. Attorney's Office personnel and defense attorney Glen McGorty regarding attempts to schedule a meeting and convey investigative questions to McGorty's client, referred to as 'Mr. [REDACTED]'. The prosecutors seek to determine if the client recognizes an individual named [REDACTED] who had connections to Jeffrey Epstein in the Virgin Islands.",
+  "persons": [
+    {
+      "name": "Glen McGorty",
+      "role": "Defense Attorney, Managing Partner at Crowell & Moring LLP",
+      "category": "legal",
+      "context": "Attorney representing a client ('Mr. [REDACTED]') who is being asked questions by the U.S. Attorney's Office regarding an individual connected to Jeffrey Epstein. He facilitates communication and scheduling.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Danielle Giffuni",
+      "role": "Legal Professional (likely paralegal or associate)",
+      "category": "legal",
+      "context": "CC'd on emails, assists with administrative tasks like confirming client contact information for Glen McGorty.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Daniel Zelenko",
+      "role": "Assistant U.S. Attorney, Southern District of New York",
+      "category": "legal",
+      "context": "Prosecutor from the U.S. Attorney's Office leading the outreach to Glen McGorty to ask investigative questions about an Epstein associate. He references an 'ongoing investigation'.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Donnie Murrell",
+      "role": "Criminal Defense Attorney (Board Certified Criminal Trial Lawyer)",
+      "category": "legal",
+      "context": "Previously involved in communications in 2019 regarding scheduling a meeting with the same client ('Mr. [REDACTED]') for the U.S. Attorney's Office.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Mentioned as the central figure whom an individual named [REDACTED] was potentially friends with and visited in the Virgin Islands.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Glen McGorty",
+      "person2": "Mr. [REDACTED]",
+      "relationshipType": "attorney-client",
+      "description": "McGorty is the legal representative for the unnamed client, conveying questions from prosecutors and managing communication.",
+      "strength": 5
+    },
+    {
+      "person1": "Daniel Zelenko",
+      "person2": "Glen McGorty",
+      "relationshipType": "legal counterpart",
+      "description": "Prosecutor Zelenko is communicating with defense attorney McGorty as part of an ongoing investigation, seeking information from McGorty's client.",
+      "strength": 4
+    },
+    {
+      "person1": "[REDACTED]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "The individual [REDACTED] may have had a friendship with Epstein, visited his home in the Virgin Islands, and accompanied him on boat, helicopter, and/or plane trips.",
+      "strength": 4
+    },
+    {
+      "person1": "Mr. [REDACTED]",
+      "person2": "[REDACTED]",
+      "relationshipType": "social",
+      "description": "Prosecutors are asking if McGorty's client recognizes [REDACTED], as [REDACTED] was listed as a contact in the client's phone and may have introduced individuals to him in the Virgin Islands.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-17",
+      "title": "Prosecutor Re-initiates Contact Regarding Investigation",
+      "description": "Assistant U.S. Attorney Daniel Zelenko emails attorney Donnie Murrell to re-initiate contact after a long pause, stating 'our world changed substantially' after August 2019. He requests asking a client specific questions about recognizing an individual in a photo.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Daniel Zelenko",
+        "Donnie Murrell",
+        "Mr. [REDACTED]"
+      ]
+    },
+    {
+      "date": "2020-06-20",
+      "title": "Attorney Acknowledges 'Crazy Times' at SDNY",
+      "description": "Glen McGorty emails prosecutors, acknowledging 'crazy times in the Office these days' and referencing efforts by alumni to support the Office over 'recent developments'.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Glen McGorty",
+        "Daniel Zelenko"
+      ]
+    },
+    {
+      "date": "2020-07-16",
+      "title": "Prosecutors Provide Details on Epstein Associate",
+      "description": "Prosecutors provide Glen McGorty with detailed information about an individual named [REDACTED] to convey to his client, including [REDACTED]'s connection to Epstein in the Virgin Islands.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Daniel Zelenko",
+        "Glen McGorty",
+        "Mr. [REDACTED]",
+        "[REDACTED]",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Previous Scheduling Discussions for Meeting",
+      "description": "Earlier email exchange shows prosecutors and attorney Donnie Murrell were tentatively scheduling a meeting with 'Mr. [REDACTED]' for the week of August 19, 2019.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Donnie Murrell",
+        "Mr. [REDACTED]"
+      ]
+    }
+  ],
+  "locations": [
+    "Saint Thomas",
+    "Virgin Islands",
+    "New York Office (Crowell & Moring LLP)",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office was actively investigating Jeffrey Epstein's network in July 2020, seeking information about an associate named [REDACTED] who worked in Saint Thomas and was connected to Epstein.",
+    "The investigation involved asking a third party ('Mr. [REDACTED]', represented by attorney Glen McGorty) if he recognized [REDACTED], as [REDACTED] was listed in the client's phone and may have introduced people to him in the Virgin Islands.",
+    "The email chain references a major disruption ('our world changed substantially') around August 2019, coinciding with Epstein's arrest and death, which paused earlier planned meetings.",
+    "Attorney Glen McGorty alludes to internal turmoil ('crazy times') and external support efforts for the SDNY in June 2020, likely referencing fallout from the Epstein case or other controversies.",
+    "The correspondence is explicitly marked as privileged attorney-client communication and attorney work product, indicating the sensitive nature of the discussions."
+  ],
+  "analyzedAt": "2026-02-17T23:50:55.419Z"
+}

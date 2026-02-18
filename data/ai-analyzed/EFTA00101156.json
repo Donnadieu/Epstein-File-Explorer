@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00101156.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-18",
+  "summary": "This is an email from an unspecified sender to Stan Pottinger, attaching a signed proffer agreement for Jeffrey Epstein's associate Ghislaine Maxwell. It requests assistance in identifying communications and physical possessions related to Epstein's circle and offers help with data retrieval.",
+  "persons": [
+    {
+      "name": "Stan Pottinger",
+      "role": "Recipient of email regarding evidence collection",
+      "category": "legal",
+      "context": "Addressed in an email regarding the collection of communications and physical evidence from Ghislaine Maxwell related to Jeffrey Epstein's network.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of proffer agreement and evidence collection",
+      "category": "key figure",
+      "context": "Referred to as 'her' in the email; a signed proffer agreement is attached, and the sender requests identification of her communications and physical possessions connected to Epstein's orbit.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Central figure whose orbit is referenced",
+      "category": "key figure",
+      "context": "Mentioned in relation to the collection of communications and physical possessions from Ghislaine Maxwell connected to anyone in his orbit.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell is in Epstein's orbit, and the email seeks evidence of communications and possessions related to him.",
+      "strength": 4
+    },
+    {
+      "person1": "Stan Pottinger",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Pottinger is involved in the process of collecting evidence from Maxwell, as indicated by the email discussing her proffer agreement and records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-17",
+      "title": "Signing of proffer agreement",
+      "description": "Ghislaine Maxwell signed a proffer agreement, a scanned copy of which is attached to the email.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-07-18",
+      "title": "Email regarding evidence collection",
+      "description": "An email was sent to Stan Pottinger following a meeting, attaching the signed proffer agreement and requesting assistance in identifying Maxwell's communications and physical possessions related to Epstein's orbit.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Stan Pottinger",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A signed proffer agreement from Ghislaine Maxwell was executed on July 17, 2019.",
+    "Investigators were actively seeking communications (emails, text messages) and physical possessions (cameras, cellphones) from Maxwell related to Jeffrey Epstein's network.",
+    "The email indicates ongoing investigative efforts to gather evidence from Maxwell regarding Epstein's associates and activities."
+  ],
+  "analyzedAt": "2026-02-17T22:45:54.286Z"
+}

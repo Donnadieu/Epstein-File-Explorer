@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00102401.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-07-07",
+  "summary": "This document is an email chain from July 6-7, 2020, between a U.S. Pretrial Services officer and an Assistant U.S. Attorney regarding the intake and upcoming arraignment of defendant Ghislaine Maxwell. It includes administrative details, the charges against Maxwell, and identifies her defense attorneys.",
+  "persons": [
+    {
+      "name": "Natasha Ramesar",
+      "role": "U.S. Pretrial Services Officer",
+      "category": "legal",
+      "context": "The U.S. Pretrial Services officer coordinating the intake process and requesting to speak with the AUSA about the Ghislaine Maxwell case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the case, whose intake form is being processed. She is charged with conspiracy, enticement, transportation of a minor, and perjury.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Chris Everdell",
+      "role": "Defense Counsel",
+      "category": "legal",
+      "context": "Listed as one of Ghislaine Maxwell's retained defense attorneys in the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark Cohen",
+      "role": "Defense Counsel",
+      "category": "legal",
+      "context": "Listed as one of Ghislaine Maxwell's retained defense attorneys in the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "U.S. District Judge",
+      "category": "legal",
+      "context": "The judge before whom Ghislaine Maxwell is scheduled to be arraigned and have a bail hearing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Chris Everdell",
+      "relationshipType": "attorney-client",
+      "description": "Chris Everdell is listed as retained defense counsel for Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Mark Cohen",
+      "relationshipType": "attorney-client",
+      "description": "Mark Cohen is listed as retained defense counsel for Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Chris Everdell",
+      "person2": "Mark Cohen",
+      "relationshipType": "legal colleagues",
+      "description": "Both are listed as defense counsel for the same client, Ghislaine Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Natasha Ramesar",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Ramesar, as a Pretrial Services officer, is handling the administrative intake for defendant Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-10",
+      "title": "Scheduled Arraignment and Bail Hearing for Ghislaine Maxwell",
+      "description": "Ghislaine Maxwell is scheduled to be arraigned and have a bail hearing before Judge Nathan.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Judge Nathan"
+      ]
+    },
+    {
+      "date": "2020-07-06",
+      "title": "Maxwell's Arrival in SDNY and Housing at MDC",
+      "description": "Ghislaine Maxwell arrived in the Southern District of New York and was expected to be housed at the Metropolitan Detention Center (MDC).",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY)",
+    "Metropolitan Detention Center (MDC)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell was in custody and housed at the Metropolitan Detention Center (MDC) as of July 6, 2020.",
+    "Maxwell faced charges including conspiracy to entice minors to travel for illegal sex acts, enticement of a minor, conspiracy to transport minors, transportation of a minor, and perjury.",
+    "Her arraignment and bail hearing were scheduled for July 10, 2020, before Judge Nathan.",
+    "Her retained defense attorneys were identified as Chris Everdell and Mark Cohen.",
+    "The email chain shows administrative coordination between the U.S. Attorney's Office and U.S. Pretrial Services following Maxwell's arrest."
+  ],
+  "analyzedAt": "2026-02-17T23:52:53.147Z"
+}
