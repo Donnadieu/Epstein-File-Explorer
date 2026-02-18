@@ -16,6 +16,7 @@ import {
   ThumbsUp,
   AlertTriangle,
   Scale,
+  Eye,
 } from "lucide-react";
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
@@ -59,7 +60,7 @@ function StatCard({
   );
 }
 
-function PersonCard({ person }: { person: Person }) {
+function PersonCard({ person }: { person: Person & { viewCount?: number } }) {
   const initials = person.name
     .split(" ")
     .map((n) => n[0])
@@ -96,6 +97,11 @@ function PersonCard({ person }: { person: Person }) {
                   {person.category}
                 </Badge>
                 <span className="text-[10px] text-muted-foreground">{person.documentCount} docs</span>
+                {person.viewCount != null && person.viewCount > 0 && (
+                  <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                    <Eye className="w-3 h-3" /> {person.viewCount}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -105,7 +111,7 @@ function PersonCard({ person }: { person: Person }) {
   );
 }
 
-function RecentDocCard({ doc, onVideoClick, onDocClick }: { doc: Document; onVideoClick?: (doc: Document) => void; onDocClick?: (doc: Document) => void }) {
+function RecentDocCard({ doc, onVideoClick, onDocClick }: { doc: Document & { viewCount?: number }; onVideoClick?: (doc: Document) => void; onDocClick?: (doc: Document) => void }) {
   const typeIcons: Record<string, any> = {
     "flight log": Clock,
     "court filing": Scale,
@@ -131,6 +137,11 @@ function RecentDocCard({ doc, onVideoClick, onDocClick }: { doc: Document; onVid
             <Badge variant="secondary" className="text-[10px] bg-destructive/10 text-destructive">
               Redacted
             </Badge>
+          )}
+          {doc.viewCount != null && doc.viewCount > 0 && (
+            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+              <Eye className="w-3 h-3" /> {doc.viewCount}
+            </span>
           )}
         </div>
       </div>
@@ -160,12 +171,12 @@ export default function Dashboard() {
     staleTime: 300_000,
   });
 
-  const { data: featuredPeople, isLoading: peopleLoading } = useQuery<Person[]>({
+  const { data: featuredPeople, isLoading: peopleLoading } = useQuery<(Person & { viewCount: number })[]>({
     queryKey: ["/api/trending/persons?limit=6"],
     staleTime: 120_000,
   });
 
-  const { data: recentDocs, isLoading: docsLoading } = useQuery<Document[]>({
+  const { data: recentDocs, isLoading: docsLoading } = useQuery<(Document & { viewCount: number })[]>({
     queryKey: ["/api/trending/documents?limit=5"],
     staleTime: 120_000,
   });

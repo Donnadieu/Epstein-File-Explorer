@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,12 +22,14 @@ import {
   History,
   X,
   Sparkles,
+  TrendingUp,
   ChevronLeft,
   ChevronRight,
   BookOpen,
   Loader2,
 } from "lucide-react";
 import type { Person, Document, TimelineEvent } from "@shared/schema";
+import { getClientId } from "@/lib/client-id";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { ImportanceVoteButton } from "@/components/importance-vote-button";
@@ -96,6 +98,23 @@ export default function SearchPage() {
 
   const searchDocumentIds = useMemo(() => (data?.documents ?? []).map((d) => d.id), [data?.documents]);
   const { isVoted, getCount, toggleVote } = useImportanceVotes(searchDocumentIds);
+
+  const { data: trendingSearches } = useQuery<{ query: string; searchCount: number }[]>({
+    queryKey: ["/api/trending/searches?limit=10"],
+    staleTime: 120_000,
+  });
+
+  // Record search query server-side for trending
+  useEffect(() => {
+    if (data && submittedQuery.length >= 2) {
+      const totalResults = (data.persons?.length || 0) + (data.documents?.length || 0) + (data.events?.length || 0);
+      fetch("/api/search/record", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: submittedQuery, sessionId: getClientId(), resultCount: totalResults }),
+      }).catch(() => {});
+    }
+  }, [data, submittedQuery]);
 
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
@@ -236,37 +255,59 @@ export default function SearchPage() {
               ? "Press Enter or click Search to find results."
               : "Enter at least 2 characters to search."}
           </p>
-          <div className="flex flex-col gap-2 items-center">
-            <span className="text-xs text-muted-foreground/60 flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> Popular searches
-            </span>
-            <div className="flex items-center gap-2 flex-wrap justify-center">
-              {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein"].map((term) => (
-                <Badge
-                  key={term}
-                  variant="outline"
-                  className="cursor-pointer"
-                  onClick={() => executeSearch(term)}
-                  data-testid={`badge-suggestion-${term.toLowerCase().replace(" ", "-")}`}
-                >
-                  {term}
-                </Badge>
-              ))}
+          {trendingSearches && trendingSearches.length > 0 ? (
+            <div className="flex flex-col gap-2 items-center">
+              <span className="text-xs text-muted-foreground/60 flex items-center gap-1">
+                <TrendingUp className="w-3 h-3" /> Trending searches
+              </span>
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                {trendingSearches.map((s) => (
+                  <Badge
+                    key={s.query}
+                    variant="outline"
+                    className="cursor-pointer border-primary/30 text-primary/80 hover:bg-primary/5"
+                    onClick={() => executeSearch(s.query)}
+                    data-testid={`badge-trending-${s.query.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {s.query}
+                    <span className="ml-1 text-[10px] text-muted-foreground">({s.searchCount})</span>
+                  </Badge>
+                ))}
+              </div>
             </div>
-            <div className="flex items-center gap-2 flex-wrap justify-center mt-1">
-              {["witness testimony", "financial records", "travel records"].map((term) => (
-                <Badge
-                  key={term}
-                  variant="outline"
-                  className="cursor-pointer text-muted-foreground/60"
-                  onClick={() => executeSearch(term)}
-                  data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {term}
-                </Badge>
-              ))}
+          ) : (
+            <div className="flex flex-col gap-2 items-center">
+              <span className="text-xs text-muted-foreground/60 flex items-center gap-1">
+                <Sparkles className="w-3 h-3" /> Popular searches
+              </span>
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                {["Clinton", "flight log", "Maxwell", "deposition", "FBI", "island", "Epstein"].map((term) => (
+                  <Badge
+                    key={term}
+                    variant="outline"
+                    className="cursor-pointer"
+                    onClick={() => executeSearch(term)}
+                    data-testid={`badge-suggestion-${term.toLowerCase().replace(" ", "-")}`}
+                  >
+                    {term}
+                  </Badge>
+                ))}
+              </div>
+              <div className="flex items-center gap-2 flex-wrap justify-center mt-1">
+                {["witness testimony", "financial records", "travel records"].map((term) => (
+                  <Badge
+                    key={term}
+                    variant="outline"
+                    className="cursor-pointer text-muted-foreground/60"
+                    onClick={() => executeSearch(term)}
+                    data-testid={`badge-suggestion-${term.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {term}
+                  </Badge>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       ) : isLoading || isFetching ? (
         <div className="flex flex-col items-center justify-center py-20 gap-3">
