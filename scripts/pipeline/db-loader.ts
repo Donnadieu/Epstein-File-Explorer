@@ -5,7 +5,7 @@ import OpenAI from "openai";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { normalizeName } from "../../server/storage";
+import { normalizeName, isSamePerson } from "../../server/storage";
 import {
   connections,
   documents,
@@ -13,6 +13,7 @@ import {
   persons,
   timelineEvents,
 } from "../../shared/schema";
+import type { Person } from "../../shared/schema";
 import type {
   AIAnalysisResult
 } from "./ai-analyzer";
@@ -110,6 +111,101 @@ function normalizeType(aiType: string): string {
   }
   return "government record";
 }
+
+// --- Canonical connection-type normalization ---
+
+const CANONICAL_CONNECTION_TYPE_MAP: [string, RegExp][] = [
+  ["legal", /legal|attorney|lawyer|judge|counsel|prosecutor|defendant|court|judicial|adversar|co-counsel|co-defendant/i],
+  ["employment", /employ|colleague|co-worker|supervisor|subordinate|staff|hierarchi/i],
+  ["social", /social|personal|family|familial|friend|cellmate|co-inmate|fellow inmate|mentor|acquaintance|romantic|sibling|spouse/i],
+  ["financial", /financial|business|investor|fiduciary|donor|trustee|transaction/i],
+  ["travel", /travel|flight|companion/i],
+  ["correspondence", /correspond|letter|email|recipient|sender|media|journalist|informant/i],
+  ["victim-related", /victim|perpetrator|accuser|accused|recruiter|abuser|traffick/i],
+  ["political", /politic|advocate|government|regulatory|oversight|official/i],
+];
+
+function normalizeConnectionType(aiType: string): string {
+  const lower = (aiType || "").toLowerCase().trim();
+  if (!lower) return "associated";
+  for (const [canonical, pattern] of CANONICAL_CONNECTION_TYPE_MAP) {
+    if (pattern.test(lower)) return canonical;
+  }
+  return "associated";
+}
+
+// --- Event date normalization ---
+
+const MONTH_MAP: Record<string, string> = {
+  january: "01", february: "02", march: "03", april: "04",
+  may: "05", june: "06", july: "07", august: "08",
+  september: "09", october: "10", november: "11", december: "12",
+};
+
+function normalizeEventDate(raw: string | null): string | null {
+  if (!raw) return null;
+  const s = raw.trim();
+  if (!s) return null;
+
+  // Already valid YYYY-MM-DD
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  // Already valid YYYY-MM
+  if (/^\d{4}-\d{2}$/.test(s)) return s;
+  // Already valid YYYY
+  if (/^\d{4}$/.test(s)) return s;
+
+  // Malformed "YYYY-MM-YYYY" → "YYYY-MM"
+  const malformed = s.match(/^(\d{4}-\d{2})-\d{4}$/);
+  if (malformed) return malformed[1];
+
+  // Ranges with "to": "2019-05-28 to 2019-05-30" → start date
+  const toRange = s.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+to\s/i);
+  if (toRange) return normalizeEventDate(toRange[1]);
+
+  // Year ranges: "1994-1997" (two 4-digit years separated by dash)
+  const yearRange = s.match(/^(\d{4})-(\d{4})$/);
+  if (yearRange) return yearRange[1];
+
+  // Named months: "November 2021", "March 15, 2020"
+  const namedMonth = s.match(/^(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2},?\s+)?(\d{4})/i);
+  if (namedMonth) {
+    const mm = MONTH_MAP[namedMonth[1].toLowerCase()];
+    const yyyy = namedMonth[3];
+    const dayMatch = namedMonth[2]?.match(/(\d{1,2})/);
+    if (dayMatch) {
+      const dd = dayMatch[1].padStart(2, "0");
+      return `${yyyy}-${mm}-${dd}`;
+    }
+    return `${yyyy}-${mm}`;
+  }
+
+  // Seasons: "2016-summer", "spring 2020"
+  const seasonYear = s.match(/(\d{4})[- ]?(spring|summer|fall|autumn|winter)/i) ||
+    s.match(/(spring|summer|fall|autumn|winter)[- ]?(\d{4})/i);
+  if (seasonYear) {
+    const year = seasonYear[1].match(/\d{4}/) ? seasonYear[1] : seasonYear[2];
+    return year;
+  }
+
+  // Approximate: "2004 (approximate)", "circa 2004", "approximately 2004"
+  const approx = s.match(/(\d{4})\s*\(approximate\)/i) ||
+    s.match(/(?:circa|approximately|approx\.?)\s*(\d{4})/i);
+  if (approx) {
+    const year = approx[1].match(/\d{4}/) ? approx[1] : approx[2];
+    return year;
+  }
+
+  // Decades: "late 1990s", "early 2000s", "1990s"
+  const decade = s.match(/(\d{4})s/i);
+  if (decade) return decade[1];
+
+  // Last resort: extract any 4-digit year in 1900-2030 range
+  const yearExtract = s.match(/\b(19\d{2}|20[0-2]\d|2030)\b/);
+  if (yearExtract) return yearExtract[1];
+
+  return null;
+}
+
 const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
@@ -335,10 +431,42 @@ export async function loadAIResults(options?: {
   console.log("  Pre-loading persons...");
   const allPersonsList = await db.select().from(persons);
   const personsByName = new Map<string, typeof persons.$inferSelect>();
+  const personsByNormalized = new Map<string, typeof persons.$inferSelect>();
   for (const p of allPersonsList) {
     personsByName.set(p.name.toLowerCase(), p);
+    const norm = normalizeName(p.name);
+    if (norm && !personsByNormalized.has(norm)) {
+      personsByNormalized.set(norm, p);
+    }
   }
   console.log(`  Pre-loaded ${personsByName.size} persons`);
+
+  // Build a list of high-connectivity persons for fuzzy isSamePerson scan
+  const topPersons = allPersonsList
+    .filter(p => (p.documentCount || 0) + (p.connectionCount || 0) > 2)
+    .sort((a, b) => ((b.documentCount || 0) + (b.connectionCount || 0)) - ((a.documentCount || 0) + (a.connectionCount || 0)))
+    .slice(0, 50);
+
+  function findPerson(name: string): typeof persons.$inferSelect | undefined {
+    // Tier 1: exact lowercase match
+    const exact = personsByName.get(name.toLowerCase());
+    if (exact) return exact;
+
+    // Tier 2: normalized name match
+    const norm = normalizeName(name);
+    if (norm) {
+      const normMatch = personsByNormalized.get(norm);
+      if (normMatch) return normMatch;
+    }
+
+    // Tier 3: isSamePerson scan against top persons (catches OCR variants)
+    const candidate = { name, id: 0, category: null, role: null, description: null, status: "named", documentCount: 0, connectionCount: 0, aliases: null, imageUrl: null } as Person;
+    for (const tp of topPersons) {
+      if (isSamePerson(candidate, tp)) return tp;
+    }
+
+    return undefined;
+  }
 
   // Pre-load personDocuments links into a Set
   console.log("  Pre-loading person↔document links...");
@@ -386,7 +514,7 @@ export async function loadAIResults(options?: {
       for (const mention of data.persons) {
         if (isJunkPersonName(mention.name)) continue;
 
-        const existing = personsByName.get(mention.name.toLowerCase());
+        const existing = findPerson(mention.name);
 
         const newDesc = (mention.context || "").substring(0, 500);
         const status = inferStatusFromCategory(mention.category, mention.role);
@@ -395,7 +523,7 @@ export async function loadAIResults(options?: {
           if (isDryRun) {
             dryRunSummary!.personsToCreate.push({ name: mention.name, category: mention.category, role: mention.role, status, source: file });
             // Add simulated person so downstream resolution still works
-            personsByName.set(mention.name.toLowerCase(), {
+            const simPerson = {
               id: -(personsCreated + 1),
               name: mention.name,
               category: mention.category,
@@ -404,7 +532,12 @@ export async function loadAIResults(options?: {
               status,
               documentCount: 0,
               connectionCount: 0,
-            } as unknown as typeof persons.$inferSelect);
+            } as unknown as typeof persons.$inferSelect;
+            personsByName.set(mention.name.toLowerCase(), simPerson);
+            const simNorm = normalizeName(mention.name);
+            if (simNorm && !personsByNormalized.has(simNorm)) {
+              personsByNormalized.set(simNorm, simPerson);
+            }
             personsCreated++;
           } else {
             try {
@@ -421,6 +554,10 @@ export async function loadAIResults(options?: {
                 })
                 .returning();
               personsByName.set(inserted.name.toLowerCase(), inserted);
+              const insNorm = normalizeName(inserted.name);
+              if (insNorm && !personsByNormalized.has(insNorm)) {
+                personsByNormalized.set(insNorm, inserted);
+              }
               personsCreated++;
             } catch {
               /* skip duplicates */
@@ -462,10 +599,11 @@ export async function loadAIResults(options?: {
 
       // --- Connections ---
       for (const conn of data.connections) {
-        const person1 = personsByName.get(conn.person1.toLowerCase());
-        const person2 = personsByName.get(conn.person2.toLowerCase());
+        const person1 = findPerson(conn.person1);
+        const person2 = findPerson(conn.person2);
 
         if (person1 && person2) {
+          if (person1.id === person2.id) continue;
           const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
 
           if (existingPairs.has(pairKey)) continue;
@@ -473,7 +611,7 @@ export async function loadAIResults(options?: {
           if (isDryRun) {
             dryRunSummary!.connectionsToCreate.push({
               person1: conn.person1, person2: conn.person2,
-              type: conn.relationshipType, strength: conn.strength,
+              type: normalizeConnectionType(conn.relationshipType), strength: conn.strength,
               description: (conn.description || "").substring(0, 200), source: file,
             });
             connectionsCreated++;
@@ -483,7 +621,7 @@ export async function loadAIResults(options?: {
               await db.insert(connections).values({
                 personId1: person1.id,
                 personId2: person2.id,
-                connectionType: conn.relationshipType,
+                connectionType: normalizeConnectionType(conn.relationshipType),
                 description: newDesc,
                 strength: conn.strength,
               });
@@ -516,9 +654,12 @@ export async function loadAIResults(options?: {
       // --- Events ---
       for (const event of data.events) {
         try {
+          const normalizedDate = normalizeEventDate(event.date);
+          if (!normalizedDate) continue; // skip unparseable dates (date is NOT NULL)
+
           const personIds: number[] = [];
           for (const name of event.personsInvolved) {
-            const p = personsByName.get(name.toLowerCase());
+            const p = findPerson(name);
             if (p) personIds.push(p.id);
           }
 
@@ -533,7 +674,7 @@ export async function loadAIResults(options?: {
             })
             .from(timelineEvents)
             .where(
-              sql`${timelineEvents.date} = ${event.date} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`,
+              sql`${timelineEvents.date} = ${normalizedDate} AND LOWER(${timelineEvents.title}) = LOWER(${event.title})`,
             )
             .limit(1);
 
@@ -542,12 +683,12 @@ export async function loadAIResults(options?: {
           if (existingEvent.length === 0) {
             if (isDryRun) {
               dryRunSummary!.eventsToCreate.push({
-                date: event.date, title: event.title, category: event.category,
+                date: normalizedDate, title: event.title, category: event.category,
                 significance: event.significance, personsInvolved: event.personsInvolved, source: file,
               });
             } else {
               await db.insert(timelineEvents).values({
-                date: event.date,
+                date: normalizedDate,
                 title: event.title,
                 description: event.description,
                 category: event.category,
@@ -602,7 +743,7 @@ export async function loadAIResults(options?: {
       // --- Person↔Document links ---
       if (sourceDocId) {
         for (const mention of data.persons) {
-          const person = personsByName.get(mention.name.toLowerCase());
+          const person = findPerson(mention.name);
           if (!person) continue;
 
           const linkKey = `${person.id}-${sourceDocId}`;
@@ -692,11 +833,24 @@ export async function loadAIResults(options?: {
 }
 
 function inferStatusFromCategory(category: string, role: string): string {
-  const lower = `${category} ${role}`.toLowerCase();
-  if (lower.includes("victim")) return "victim";
-  if (lower.includes("convicted") || lower.includes("defendant"))
+  const catLower = (category || "").toLowerCase();
+  const roleLower = (role || "").toLowerCase();
+
+  // Legal/law enforcement/political/staff: role keywords describe
+  // who they represent, not their own status
+  if (["legal", "law enforcement", "political", "staff", "financial", "academic"].includes(catLower)) {
+    return "named";
+  }
+
+  // Trust explicit victim categorization
+  if (catLower === "victim") return "victim";
+
+  // Only infer convicted when the person IS the defendant
+  if (/\bconvicted\b/.test(roleLower)) return "convicted";
+  if (/\bdefendant\b/.test(roleLower) && !/\b(for|representing|of)\b/.test(roleLower)) {
     return "convicted";
-  if (lower.includes("witness")) return "named";
+  }
+
   return "named";
 }
 
@@ -848,7 +1002,7 @@ export function isJunkPersonName(name: string): boolean {
   if (trimmed.length > 60) return true;
 
   // Contains special characters that don't appear in real names (including OCR artifacts)
-  if (/[!;&$%^°•\\*<>]/.test(trimmed)) return true;
+  if (/[!;&$%^°•\\*<>=]/.test(trimmed)) return true;
 
   // Contains slashes (role combos, OCR junk)
   if (trimmed.includes("/")) return true;
@@ -887,6 +1041,18 @@ export function isJunkPersonName(name: string): boolean {
     "evening watch shu officer in charge",
     "u.s. attorney",
     "assistant u.s. attorney",
+    "detective",
+    "officer",
+    "captain",
+    "sergeant",
+    "warden",
+    "chief",
+    "administrator",
+    "attorney",
+    "defendant",
+    "lieutenant",
+    "budget",
+    "unknown",
   ]);
   if (GENERIC_ROLES.has(trimmed.toLowerCase())) return true;
 
@@ -925,6 +1091,10 @@ export function isJunkPersonName(name: string): boolean {
     "flight engineer",
     "customs officer",
     "co-pilot",
+    "fbi victim specialist",
+    "legal assistant",
+    "defense counsel",
+    "corrections officer",
   ]);
   if (GENERIC_NONPERSONS.has(lower)) return true;
 
@@ -981,6 +1151,21 @@ export function isJunkPersonName(name: string): boolean {
 
   // Comma-digit patterns: "InEir, 3 Unit Manager", "M, 1"
   if (/,\s*\d/.test(trimmed)) return true;
+
+  // Credential-only entries: "Esq.", "PsyD", "Ph.D.", "M.D.", "J.D.", "LL.M."
+  if (/^(esq\.?|psyd|ph\.?d\.?|m\.?d\.?|j\.?d\.?|ll\.?m\.?)$/i.test(trimmed)) return true;
+
+  // Escaped quotes / backslash garbage in short strings
+  if (/["\\]/.test(trimmed) && trimmed.length < 30) return true;
+
+  // Relational descriptions: "spouse of ...", "sister of ...", etc.
+  if (/^(spouse|sister|brother|son|daughter|mother|father|wife|husband)\s+of\s/i.test(trimmed)) return true;
+
+  // "Friend/Victim/Inmate (Redacted)" patterns
+  if (/\(redacted\)$/i.test(trimmed)) return true;
+
+  // "Accuser-N" / "Witness-N" / "Doe N" patterns
+  if (/^(accuser|witness|doe)\s*-?\s*\d/i.test(trimmed)) return true;
 
   return false;
 }
