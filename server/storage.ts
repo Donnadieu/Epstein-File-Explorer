@@ -1252,7 +1252,7 @@ export class DatabaseStorage implements IStorage {
     const offset = (opts.page - 1) * opts.limit;
 
     if (opts.sort === "popular") {
-      // Step 1: Get top viewed document IDs from page_views (small result set)
+      // Step 1: Get ALL popular doc IDs viewed in last 30 days (small result set)
       const popularResult: any = await db.execute(sql`
         SELECT entity_id, COUNT(*) AS view_count
         FROM page_views
@@ -1260,39 +1260,58 @@ export class DatabaseStorage implements IStorage {
           AND created_at > NOW() - INTERVAL '30 days'
         GROUP BY entity_id
         ORDER BY view_count DESC
-        LIMIT ${opts.limit + offset + 100}
       `);
       const popularRows: any[] = popularResult.rows ?? popularResult;
-      const popularIds = popularRows.map((r: any) => Number(r.entity_id));
+      const allPopularIds = popularRows.map((r: any) => Number(r.entity_id));
 
-      // Step 2: Fetch those documents and apply filters
-      let filteredDocs: Document[] = [];
-      if (popularIds.length > 0) {
-        const popularConds = [...conditions, inArray(documents.id, popularIds)];
+      // Step 2: Fetch popular docs that pass filters, maintaining popularity order
+      let filteredPopular: Document[] = [];
+      if (allPopularIds.length > 0) {
+        const popularConds = [...conditions, inArray(documents.id, allPopularIds)];
         const rows = await db.select().from(documents).where(and(...popularConds));
-        // Restore popularity order
         const byId = new Map(rows.map(r => [r.id, r]));
-        filteredDocs = popularIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+        filteredPopular = allPopularIds.map(id => byId.get(id)).filter(Boolean) as Document[];
       }
 
-      // Step 3: Paginate from the ordered result
-      const data = filteredDocs.slice(offset, offset + opts.limit);
+      const popularCount = filteredPopular.length;
 
-      // Step 4: Pad with non-viewed docs if not enough results on first page
-      if (data.length < opts.limit && offset === 0) {
-        const excludeIds = filteredDocs.map(d => d.id);
-        const padConds = excludeIds.length > 0
-          ? [...conditions, sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`]
-          : conditions;
+      // Build exclude condition for non-viewed doc queries
+      const buildExcludeConds = () => {
+        if (filteredPopular.length === 0) return conditions;
+        const excludeIds = filteredPopular.map(d => d.id);
+        return [...conditions, sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`];
+      };
+
+      // Step 3: Determine which segment the requested page falls in
+      if (offset < popularCount) {
+        // Page overlaps with popular segment
+        const data = filteredPopular.slice(offset, offset + opts.limit);
+
+        // Pad from non-viewed docs if page straddles the boundary
+        if (data.length < opts.limit) {
+          const padConds = buildExcludeConds();
+          const padClause = padConds.length > 0 ? and(...padConds) : undefined;
+          const padDocs = await db.select().from(documents)
+            .where(padClause)
+            .orderBy(asc(documents.id))
+            .limit(opts.limit - data.length);
+          data.push(...padDocs);
+        }
+
+        return { data, total, page: opts.page, totalPages };
+      } else {
+        // Page is entirely in the non-viewed segment
+        const nonViewedOffset = offset - popularCount;
+        const padConds = buildExcludeConds();
         const padClause = padConds.length > 0 ? and(...padConds) : undefined;
-        const padDocs = await db.select().from(documents)
+        const data = await db.select().from(documents)
           .where(padClause)
           .orderBy(asc(documents.id))
-          .limit(opts.limit - data.length);
-        data.push(...padDocs);
-      }
+          .limit(opts.limit)
+          .offset(nonViewedOffset);
 
-      return { data, total, page: opts.page, totalPages };
+        return { data, total, page: opts.page, totalPages };
+      }
     }
 
     const data = await db
