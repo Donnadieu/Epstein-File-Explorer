@@ -8,9 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X, Bookmark, BookmarkCheck } from "lucide-react";
+import { Users, Search, FileText, Network, ArrowUpDown, ChevronLeft, ChevronRight, X, Bookmark, BookmarkCheck, Eye } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
+import { useViewCounts } from "@/hooks/use-view-counts";
 import { usePersonVotes } from "@/hooks/use-person-votes";
 import { PersonVoteButton } from "@/components/person-vote-button";
 import type { Person } from "@shared/schema";
@@ -96,6 +97,7 @@ export default function PeoplePage() {
 
   const pagePersonIds = useMemo(() => paginated?.map((p) => p.id) || [], [paginated]);
   const { isVoted, getCount, toggleVote } = usePersonVotes(pagePersonIds);
+  const { getViewCount } = useViewCounts("person", pagePersonIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -207,6 +209,11 @@ export default function PeoplePage() {
                               <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
                                 <Network className="w-2.5 h-2.5" /> {person.connectionCount}
                               </span>
+                              {getViewCount(person.id) > 0 && (
+                                <span className="text-[10px] text-primary flex items-center gap-0.5">
+                                  <Eye className="w-2.5 h-2.5" /> {getViewCount(person.id)}
+                                </span>
+                              )}
                             </div>
                           </div>
                         </div>

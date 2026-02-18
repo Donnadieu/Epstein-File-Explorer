@@ -98,7 +98,7 @@ function PersonCard({ person }: { person: Person & { viewCount?: number } }) {
                 </Badge>
                 <span className="text-[10px] text-muted-foreground">{person.documentCount} docs</span>
                 {person.viewCount != null && person.viewCount > 0 && (
-                  <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                  <span className="text-[10px] text-primary flex items-center gap-0.5">
                     <Eye className="w-3 h-3" /> {person.viewCount}
                   </span>
                 )}
@@ -139,7 +139,7 @@ function RecentDocCard({ doc, onVideoClick, onDocClick }: { doc: Document & { vi
             </Badge>
           )}
           {doc.viewCount != null && doc.viewCount > 0 && (
-            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+            <span className="text-[10px] text-primary flex items-center gap-0.5">
               <Eye className="w-3 h-3" /> {doc.viewCount}
             </span>
           )}

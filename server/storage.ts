@@ -91,6 +91,7 @@ export interface IStorage {
   getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
 
   recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void>;
+  getViewCounts(entityType: string, ids: number[]): Promise<Record<number, number>>;
   getTrendingPersons(limit: number): Promise<(Person & { viewCount: number })[]>;
   getTrendingDocuments(limit: number): Promise<(Document & { viewCount: number })[]>;
 
@@ -1803,6 +1804,23 @@ export class DatabaseStorage implements IStorage {
     if (existing) return;
 
     await db.insert(pageViews).values({ entityType, entityId, sessionId });
+  }
+
+  async getViewCounts(entityType: string, ids: number[]): Promise<Record<number, number>> {
+    if (ids.length === 0) return {};
+    const rows: any[] = await db.execute(sql`
+      SELECT entity_id, COUNT(*)::int AS view_count
+      FROM page_views
+      WHERE entity_type = ${entityType}
+        AND entity_id = ANY(${ids})
+        AND created_at > NOW() - INTERVAL '30 days'
+      GROUP BY entity_id
+    `).then((r: any) => r.rows ?? r);
+    const result: Record<number, number> = {};
+    for (const row of rows) {
+      result[Number(row.entity_id)] = Number(row.view_count);
+    }
+    return result;
   }
 
   async getTrendingPersons(limit: number): Promise<(Person & { viewCount: number })[]> {
