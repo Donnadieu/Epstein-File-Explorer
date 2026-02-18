@@ -12,6 +12,7 @@ interface DocumentVote {
 
 const VOTES_KEY = ["/api/votes"];
 const VOTE_COUNTS_KEY = ["/api/votes/counts"];
+const MOST_VOTED_DOCS_KEY = ["/api/most-voted/documents?limit=5"];
 
 export function useImportanceVotes(documentIds: number[] = []) {
   const queryClient = useQueryClient();
@@ -103,6 +104,7 @@ export function useImportanceVotes(documentIds: number[] = []) {
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
+      queryClient.invalidateQueries({ queryKey: MOST_VOTED_DOCS_KEY });
     },
   });
 
@@ -118,6 +120,7 @@ export function useImportanceVotes(documentIds: number[] = []) {
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: VOTES_KEY });
       queryClient.invalidateQueries({ queryKey: VOTE_COUNTS_KEY });
+      queryClient.invalidateQueries({ queryKey: MOST_VOTED_DOCS_KEY });
     },
   });
 
