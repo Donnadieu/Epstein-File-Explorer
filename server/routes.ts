@@ -97,7 +97,7 @@ export async function registerRoutes(
     try {
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 6));
       const persons = await storage.getTrendingPersons(limit);
-      res.set("Cache-Control", "public, max-age=300");
+      res.set("Cache-Control", "public, max-age=120");
       res.json(persons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch trending persons" });
@@ -108,7 +108,7 @@ export async function registerRoutes(
     try {
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
       const documents = await storage.getTrendingDocuments(limit);
-      res.set("Cache-Control", "public, max-age=300");
+      res.set("Cache-Control", "public, max-age=120");
       res.json(documents.map(omitInternal));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch trending documents" });
@@ -119,7 +119,7 @@ export async function registerRoutes(
     try {
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
       const docs = await storage.getMostVotedDocuments(limit);
-      res.set("Cache-Control", "public, max-age=120");
+      res.set("Cache-Control", "public, max-age=30");
       res.json(docs.map((d) => ({ ...omitInternal(d), voteCount: d.voteCount })));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch most voted documents" });
@@ -130,7 +130,7 @@ export async function registerRoutes(
     try {
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
       const persons = await storage.getMostVotedPersons(limit);
-      res.set("Cache-Control", "public, max-age=120");
+      res.set("Cache-Control", "public, max-age=30");
       res.json(persons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch most voted persons" });

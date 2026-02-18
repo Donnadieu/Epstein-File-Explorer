@@ -156,22 +156,22 @@ export default function Dashboard() {
 
   const { data: featuredPeople, isLoading: peopleLoading } = useQuery<Person[]>({
     queryKey: ["/api/trending/persons?limit=6"],
-    staleTime: 300_000,
+    staleTime: 120_000,
   });
 
   const { data: recentDocs, isLoading: docsLoading } = useQuery<Document[]>({
     queryKey: ["/api/trending/documents?limit=5"],
-    staleTime: 300_000,
+    staleTime: 120_000,
   });
 
   const { data: mostVotedDocs, isLoading: votedDocsLoading } = useQuery<(Document & { voteCount: number })[]>({
     queryKey: ["/api/most-voted/documents?limit=5"],
-    staleTime: 300_000,
+    staleTime: 30_000,
   });
 
   const { data: mostVotedPersons } = useQuery<(Person & { voteCount: number })[]>({
     queryKey: ["/api/most-voted/persons?limit=6"],
-    staleTime: 300_000,
+    staleTime: 30_000,
   });
 
   const videoPlayer = useVideoPlayer();
