@@ -106,8 +106,8 @@ export default function PdfViewer({
       } catch (err: any) {
         if (err?.name !== "RenderingCancelledException") {
           console.error("PDF render error:", err);
-          setIsRendering(false);
         }
+        setIsRendering(false);
       }
     },
     [scale],
@@ -406,18 +406,13 @@ export default function PdfViewer({
       </div>
 
       {/* Canvas area */}
-      <div
-        className={`overflow-auto bg-muted/20 flex justify-center p-4 ${isFullscreen ? "flex-1" : "max-h-[70vh]"}`}
-      >
-        {isRendering && (
-          <div className="flex flex-col items-center justify-center gap-3 w-[600px] h-[780px] max-w-full">
-            <div className="w-full h-full rounded-md bg-muted/40 animate-pulse" />
-          </div>
-        )}
-        <canvas
-          ref={canvasRef}
-          className={`shadow-md ${isRendering ? "hidden" : ""}`}
-        />
+      <div className={`overflow-auto bg-muted/20 flex justify-center p-4 ${isFullscreen ? "flex-1" : "max-h-[70vh]"}`}>
+        <div className="relative">
+          {isRendering && (
+            <div className="absolute inset-0 z-10 rounded-md bg-muted/40 animate-pulse" />
+          )}
+          <canvas ref={canvasRef} className="shadow-md" />
+        </div>
       </div>
     </div>
   );

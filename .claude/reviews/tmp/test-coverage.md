@@ -1,53 +1,52 @@
 ---
 agent: test-coverage
 status: complete
-issues_found: 14
+issues_found: 18
 ---
 
 # Test Coverage Review
 
 ## Summary
-- Total test files found: 0
-- Test framework: None configured
-- Overall coverage assessment: **Poor** — No tests exist anywhere in the project
+- Total test files found: 4 (3 unit test files + 1 E2E spec)
+- Backend test coverage: Partial -- routes test covers ~51% of endpoints; storage utility functions well tested; chat/R2/worker have zero tests
+- Frontend test coverage: Zero test files
+- E2E test coverage: Minimal -- only verifies pages load
 
-The project has zero test files. There is no test runner configured (no vitest, jest, mocha, or any test-related dependency in devDependencies). No `test` script in package.json. The project has substantial server-side logic, complex utility functions, 19 pipeline scripts, 25+ API endpoints, and 12 frontend pages — all completely untested.
+## Existing Test Files
+1. `server/__tests__/routes.test.ts` -- 48 test cases covering 20 of 39 API routes
+2. `server/__tests__/storage.unit.test.ts` -- 22 test cases for `normalizeName` (8) and `isSamePerson` (14)
+3. `shared/__tests__/schema.test.ts` -- 12 test cases validating 5 Zod insert schemas
+4. `e2e/health.spec.ts` -- 5 Playwright smoke tests
 
 ## Critical Gaps (no tests at all)
-
-1. **Database Schema and Models** (`shared/schema.ts`) — 8+ tables, 6 Zod insert schemas, complex relations — zero tests
-2. **Storage Layer** (`server/storage.ts`) — `DatabaseStorage` class with 30+ methods, person deduplication logic (`isSamePerson`, `normalizeName`, `deduplicatePersons`) with edit distance, nickname maps, OCR space collapse — the most test-worthy code in the project
-3. **API Routes** (`server/routes.ts`) — 25+ REST endpoints, helper functions `isAllowedPdfUrl`, `escapeCsvField`, `toCsvRow`, `omitInternal` — all untested
-4. **Chat / AI Integration** (`server/chat/`) — `chunkText`, `calculateCostCents`, `buildTsQuery`, `extractKeywords`, `matchesPersonName`, `stripHtmlTags` — all pure functions, all untested
-5. **R2 Cloud Storage** (`server/r2.ts`) — `buildR2Key` sanitization logic with security implications (path traversal prevention) — untested
-6. **Pipeline Scripts** (`scripts/pipeline/`) — 19 pipeline scripts with zero test coverage
-7. **Background Worker** (`server/background-worker.ts`) — `processOneJob`, `isJunkName`, `inferStatus`, `getTodaySpend` — untested
-8. **Migration System** (`server/migrate.ts`) — Custom migration runner with 7 migrations — untested
-9. **Rate Limiting** (`server/index.ts`) — Custom `rateLimit` middleware — untested
-10. **Seed Data** (`server/seed.ts`) — `seedDatabase` with complex data relationships — no integration tests
+1. **Chat service** (`server/chat/service.ts`) - streaming AI chat, history truncation
+2. **Chat retriever** (`server/chat/retriever.ts`) - RAG context builder with 5+ pure utility functions
+3. **Chat extractor** (`server/chat/extractor.ts`) - `buildTsQuery` pure function
+4. **Chat analyze** (`server/chat/analyze.ts`) - `chunkText`, `calculateCostCents` pure functions
+5. **Chat routes** (`server/chat/routes.ts`) - 5 untested endpoints
+6. **R2 integration** (`server/r2.ts`) - `buildR2Key` (security-relevant), `isR2Configured`, `getPublicUrl`
+7. **Background worker** (`server/background-worker.ts`) - `isJunkName`, `inferStatus` pure functions
+8. **Storage DB methods** (`server/storage.ts`) - 30+ database query methods, zero integration tests
+9. **Frontend components** (17 custom components) - zero tests
+10. **Frontend pages** (13 pages) - zero tests
+11. **Frontend hooks** (12 custom hooks) - zero tests
+12. **Pipeline scripts** (19 scripts) - zero tests
 
 ## High Priority (partial coverage)
-- **Security-sensitive code untested**: `buildR2Key` (path traversal), `isAllowedPdfUrl` (domain whitelist), fileName validation
-- **Person name matching** (lines 154-395 in `server/storage.ts`): `normalizeName`, `isSamePerson`, `collapseOCRSpaces`, `editDistance` — a single bug could silently merge unrelated people
+13. **19 of 39 routes untested** including all vote routes (8), trending routes (4), content proxy routes (pdf/image/video), and the views endpoint
+14. **Route helper functions untested** - `isAllowedPdfUrl` (security), `escapeCsvField`, `toCsvRow`, `toPublicDocument` (not exported)
+15. **Schema tests missing 10+ insert schemas** - only 5 of 15+ schemas tested
 
 ## Medium Priority (could improve)
-- Frontend Hooks (`client/src/hooks/`) — 5 custom hooks untested
-- Frontend Pages (`client/src/pages/`) — 12 pages, no component tests
-- Frontend Components (`client/src/components/`) — 10 custom + 38 shadcn/ui components
-- Client Utilities (`client/src/lib/queryClient.ts`) — `apiRequest`, `throwIfResNotOk`, `getQueryFn` untested
+16. **Storage `createCache` utility** - pure caching logic, untested
+17. **E2E smoke-test only** - no user flow coverage
+18. **Storage `readAllAnalysisFiles` and `r2Filter`** - file I/O and R2 filtering, untested
 
-## Detailed Findings
+## Key Finding: Coverage Config Masks Gaps
+The `vitest.config.ts` explicitly excludes `server/r2.ts`, `server/chat/**`, and `server/background-worker.ts` from coverage. This hides the fact that security-relevant code (`buildR2Key` path traversal prevention) and core business logic (AI chat, document analysis) have zero test coverage.
 
-### Pure Utility Functions (Low-Hanging Fruit for Testing)
-All testable immediately with no mocking:
-- `buildTsQuery`, `extractKeywords`, `stripHtmlTags`, `truncateToLimit`
-- `chunkText`, `calculateCostCents`
-- `escapeCsvField`, `toCsvRow`, `escapeLikePattern`
-- `isJunkName`, `inferStatus`
-- `normalizeName`, `isSamePerson`, `editDistance`
-
-### Recommended Test Priority
-1. **Immediate**: Install vitest, write unit tests for `normalizeName`, `isSamePerson`, `buildTsQuery`, `buildR2Key`, `isAllowedPdfUrl`
-2. **Short-term**: Unit tests for all pure utility functions
-3. **Medium-term**: Integration tests for critical API endpoints using supertest
-4. **Long-term**: Frontend component tests, E2E tests with Playwright (already in devDependencies)
+## Recommended Priority
+- **Tier 1 (immediate)**: Pure functions with security implications -- `buildR2Key`, `isAllowedPdfUrl`, `buildTsQuery`, `chunkText`, `calculateCostCents`, `extractKeywords`, `isJunkName`, `inferStatus`
+- **Tier 2 (short-term)**: Vote and trending route tests (12 untested endpoints), content proxy routes
+- **Tier 3 (medium-term)**: Storage integration tests, chat retriever with mocked storage
+- **Tier 4 (long-term)**: Frontend hooks, component tests, full E2E user flows
