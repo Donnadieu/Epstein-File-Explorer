@@ -93,8 +93,8 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
       } catch (err: any) {
         if (err?.name !== "RenderingCancelledException") {
           console.error("PDF render error:", err);
-          setIsRendering(false);
         }
+        setIsRendering(false);
       }
     },
     [scale],

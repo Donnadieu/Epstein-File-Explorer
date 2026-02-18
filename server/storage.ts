@@ -1095,28 +1095,34 @@ export class DatabaseStorage implements IStorage {
 
     let total = -1;
     if (!skipCount) {
+      // Count only on document_pages (GIN index scan), skip the expensive JOIN to documents
       const countResult: any = await db.execute(sql`
         SELECT count(*)::int AS total
-        FROM document_pages dp
-        JOIN documents d ON d.id = dp.document_id
-        WHERE dp.search_vector @@ ${tsquery}
-          AND ${sql.raw(r2Raw)}
+        FROM document_pages
+        WHERE search_vector @@ ${tsquery}
       `);
       total = (countResult.rows ?? countResult)[0]?.total ?? 0;
     }
 
     const rawResult: any = await db.execute(sql`
-      SELECT dp.document_id, d.title, d.document_type, d.data_set,
-             dp.page_number, dp.page_type,
-             ts_headline('english', dp.content, ${tsquery},
+      WITH matched AS (
+        SELECT id, document_id, page_number, page_type, content, search_vector,
+               ts_rank(search_vector, ${tsquery}) AS rank
+        FROM document_pages
+        WHERE search_vector @@ ${tsquery}
+        ORDER BY rank DESC, document_id, page_number
+        LIMIT ${limit} OFFSET ${offset}
+      )
+      SELECT m.document_id, d.title, d.document_type, d.data_set,
+             m.page_number, m.page_type,
+             ts_headline('english', m.content, ${tsquery},
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
-             ts_rank(dp.search_vector, ${tsquery}) AS rank
-      FROM document_pages dp
-      JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ ${tsquery} AND ${sql.raw(r2Raw)}
-      ORDER BY rank DESC, dp.document_id, dp.page_number
-      LIMIT ${limit} OFFSET ${offset}
+             m.rank
+      FROM matched m
+      JOIN documents d ON d.id = m.document_id
+      WHERE ${sql.raw(r2Raw)}
+      ORDER BY m.rank DESC, m.document_id, m.page_number
     `);
     const rows: any[] = rawResult.rows ?? rawResult;
 
