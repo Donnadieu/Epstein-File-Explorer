@@ -12,6 +12,36 @@ import type { AIAnalysisResult, AIPersonMention, AIConnection, AIEvent } from ".
 import { classifyAllDocuments } from "./media-classifier";
 import OpenAI from "openai";
 
+// --- Deduplication dry-run / plan types ---
+
+interface DeduplicationAction {
+  id: number;
+  pass: number;
+  type: "delete" | "merge";
+  reason: string;
+  targets?: { id: number; name: string }[];
+  canonical?: { id: number; name: string };
+  duplicates?: { id: number; name: string }[];
+  evidence?: string;
+  status: "pending" | "rejected" | "executed" | "skipped";
+}
+
+interface DeduplicationPlan {
+  createdAt: string;
+  personCountBefore: number;
+  summary: {
+    totalActions: number;
+    byPass: Record<string, { count: number; type: string; label: string }>;
+  };
+  actions: DeduplicationAction[];
+}
+
+interface DeduplicationOptions {
+  dryRun?: boolean;
+  planPath?: string;
+  batchSize?: number;
+}
+
 const __filename = fileURLToPath(import.meta.url);
 
 // --- Canonical type normalization (shared with classify-from-pages.ts) ---
@@ -776,27 +806,42 @@ function pickCanonical(
 }
 
 // --- Pass 0: Junk Removal ---
-async function pass0JunkRemoval(protectedNames: Set<string>): Promise<number> {
+async function pass0JunkRemoval(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   const allPersons = await db.select().from(persons);
-  const junkIds: number[] = [];
+  const junkPersons: (typeof persons.$inferSelect)[] = [];
   for (const p of allPersons) {
     if (isJunkPersonName(p.name)) {
       if (protectedNames.has(normalizeName(p.name))) {
         console.log(`  PROTECTED: Skipping junk-deletion of "${p.name}"`);
         continue;
       }
-      junkIds.push(p.id);
+      junkPersons.push(p);
     }
   }
-  if (junkIds.length > 0) {
-    await deletePersonsCascade(junkIds);
+
+  if (actions !== null) {
+    for (const p of junkPersons) {
+      actions.push({
+        id: nextId.value++,
+        pass: 0,
+        type: "delete",
+        reason: "junk name",
+        targets: [{ id: p.id, name: p.name }],
+        status: "pending",
+      });
+    }
+  } else {
+    if (junkPersons.length > 0) {
+      await deletePersonsCascade(junkPersons.map(p => p.id));
+    }
   }
-  console.log(`  Pass 0: Removed ${junkIds.length} junk persons`);
-  return junkIds.length;
+
+  console.log(`  Pass 0: ${actions !== null ? "Found" : "Removed"} ${junkPersons.length} junk persons`);
+  return junkPersons.length;
 }
 
 // --- Pass 1: Exact Normalized Matches ---
-async function pass1ExactNormalized(protectedNames: Set<string>): Promise<number> {
+async function pass1ExactNormalized(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   const allPersons = await db.select().from(persons);
   const groups = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of allPersons) {
@@ -810,17 +855,31 @@ async function pass1ExactNormalized(protectedNames: Set<string>): Promise<number
   for (const [norm, group] of groups) {
     if (group.length <= 1) continue;
     const canonical = pickCanonical(group, protectedNames);
-    const duplicateIds = group.filter(p => p.id !== canonical.id).map(p => p.id);
-    await mergePersonGroup(canonical, duplicateIds, group.map(p => p.name));
-    merged += duplicateIds.length;
-    console.log(`  [P1] Merged ${group.map(p => `"${p.name}"`).join(", ")} → "${canonical.name}"`);
+    const duplicates = group.filter(p => p.id !== canonical.id);
+
+    if (actions !== null) {
+      actions.push({
+        id: nextId.value++,
+        pass: 1,
+        type: "merge",
+        reason: "exact normalized match",
+        canonical: { id: canonical.id, name: canonical.name },
+        duplicates: duplicates.map(p => ({ id: p.id, name: p.name })),
+        status: "pending",
+      });
+      merged += duplicates.length;
+    } else {
+      await mergePersonGroup(canonical, duplicates.map(p => p.id), group.map(p => p.name));
+      merged += duplicates.length;
+    }
+    console.log(`  [P1] ${actions !== null ? "Would merge" : "Merged"} ${group.map(p => `"${p.name}"`).join(", ")} → "${canonical.name}"`);
   }
-  console.log(`  Pass 1: Merged ${merged} persons via exact normalized match`);
+  console.log(`  Pass 1: ${actions !== null ? "Found" : "Merged"} ${merged} persons via exact normalized match`);
   return merged;
 }
 
 // --- Pass 2: Single-Word → Dominant Multi-Word (Evidence-Based) ---
-async function pass2SingleWordEvidence(protectedNames: Set<string>): Promise<number> {
+async function pass2SingleWordEvidence(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   const allPersons = await db.select().from(persons);
 
   // Pre-load document sets per person for evidence scoring
@@ -900,21 +959,38 @@ async function pass2SingleWordEvidence(protectedNames: Set<string>): Promise<num
       continue;
     }
 
-    try {
-      await mergePersonGroup(winner, [single.id], [single.name]);
+    if (actions !== null) {
+      const evidenceStr = `score ${scored[0].score} (${[...singleDocs].filter(d => (docsByPerson.get(winner.id) || new Set()).has(d)).length} shared docs, ${[...singleConns].filter(c => (connsByPerson.get(winner.id) || new Set()).has(c)).length} shared conns)`;
+      actions.push({
+        id: nextId.value++,
+        pass: 2,
+        type: "merge",
+        reason: "single-word evidence",
+        canonical: { id: winner.id, name: winner.name },
+        duplicates: [{ id: single.id, name: single.name }],
+        evidence: evidenceStr,
+        status: "pending",
+      });
       mergedSingleIds.add(single.id);
       merged++;
-      console.log(`  [P2] Merged "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
-    } catch (err: any) {
-      console.warn(`  [P2] Failed to merge "${single.name}": ${err.message}`);
+      console.log(`  [P2] Would merge "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
+    } else {
+      try {
+        await mergePersonGroup(winner, [single.id], [single.name]);
+        mergedSingleIds.add(single.id);
+        merged++;
+        console.log(`  [P2] Merged "${single.name}" → "${winner.name}" (score: ${scored[0].score})`);
+      } catch (err: any) {
+        console.warn(`  [P2] Failed to merge "${single.name}": ${err.message}`);
+      }
     }
   }
-  console.log(`  Pass 2: Merged ${merged} single-word persons via shared evidence`);
+  console.log(`  Pass 2: ${actions !== null ? "Found" : "Merged"} ${merged} single-word persons via shared evidence`);
   return merged;
 }
 
 // --- Pass 3: Delete Remaining Single-Word Names ---
-async function pass3DeleteSingleWord(protectedNames: Set<string>): Promise<number> {
+async function pass3DeleteSingleWord(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   const allPersons = await db.select().from(persons);
   const toDelete = allPersons.filter(p => {
     if (protectedNames.has(normalizeName(p.name))) return false;
@@ -923,10 +999,24 @@ async function pass3DeleteSingleWord(protectedNames: Set<string>): Promise<numbe
     return meaningfulParts.length <= 1 && norm.length > 0;
   });
 
-  if (toDelete.length > 0) {
-    await deletePersonsCascade(toDelete.map(p => p.id));
+  if (actions !== null) {
+    for (const p of toDelete) {
+      actions.push({
+        id: nextId.value++,
+        pass: 3,
+        type: "delete",
+        reason: "single-word name",
+        targets: [{ id: p.id, name: p.name }],
+        status: "pending",
+      });
+    }
+  } else {
+    if (toDelete.length > 0) {
+      await deletePersonsCascade(toDelete.map(p => p.id));
+    }
   }
-  console.log(`  Pass 3: Deleted ${toDelete.length} remaining single-word names`);
+
+  console.log(`  Pass 3: ${actions !== null ? "Found" : "Deleted"} ${toDelete.length} remaining single-word names`);
   return toDelete.length;
 }
 
@@ -991,10 +1081,9 @@ const KEY_FIGURE_MERGES: { canonical: string; variants: string[]; deleteNames?: 
   },
 ];
 
-async function pass4KeyFigures(): Promise<number> {
+async function pass4KeyFigures(actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   let total = 0;
   for (const entry of KEY_FIGURE_MERGES) {
-    // Find canonical in DB
     const [canonicalRow] = await db.select().from(persons)
       .where(sql`LOWER(${persons.name}) = LOWER(${entry.canonical})`)
       .limit(1);
@@ -1006,34 +1095,59 @@ async function pass4KeyFigures(): Promise<number> {
         .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
         .limit(1);
       if (variantRow && variantRow.id !== canonicalRow.id) {
-        await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        if (actions !== null) {
+          actions.push({
+            id: nextId.value++,
+            pass: 4,
+            type: "merge",
+            reason: "key figure variant",
+            canonical: { id: canonicalRow.id, name: canonicalRow.name },
+            duplicates: [{ id: variantRow.id, name: variantRow.name }],
+            status: "pending",
+          });
+        } else {
+          await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        }
         total++;
-        console.log(`  [P4] Merged "${variantRow.name}" → "${canonicalRow.name}"`);
+        console.log(`  [P4] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`);
       }
     }
 
     // Delete junk variants
     if (entry.deleteNames) {
-      const deleteIds: number[] = [];
+      const deleteTargets: { id: number; name: string }[] = [];
       for (const name of entry.deleteNames) {
         const [row] = await db.select().from(persons)
           .where(sql`LOWER(${persons.name}) = LOWER(${name})`)
           .limit(1);
-        if (row && row.id !== canonicalRow.id) deleteIds.push(row.id);
+        if (row && row.id !== canonicalRow.id) deleteTargets.push({ id: row.id, name: row.name });
       }
-      if (deleteIds.length > 0) {
-        await deletePersonsCascade(deleteIds);
-        total += deleteIds.length;
-        console.log(`  [P4] Deleted ${deleteIds.length} junk variants of "${entry.canonical}"`);
+      if (deleteTargets.length > 0) {
+        if (actions !== null) {
+          for (const t of deleteTargets) {
+            actions.push({
+              id: nextId.value++,
+              pass: 4,
+              type: "delete",
+              reason: `junk variant of ${entry.canonical}`,
+              targets: [t],
+              status: "pending",
+            });
+          }
+        } else {
+          await deletePersonsCascade(deleteTargets.map(t => t.id));
+        }
+        total += deleteTargets.length;
+        console.log(`  [P4] ${actions !== null ? "Would delete" : "Deleted"} ${deleteTargets.length} junk variants of "${entry.canonical}"`);
       }
     }
   }
-  console.log(`  Pass 4: Processed ${total} key figure variants`);
+  console.log(`  Pass 4: ${actions !== null ? "Found" : "Processed"} ${total} key figure variants`);
   return total;
 }
 
 // --- Pass 5: Middle-Initial Variants ---
-async function pass5MiddleInitial(protectedNames: Set<string>): Promise<number> {
+async function pass5MiddleInitial(protectedNames: Set<string>, actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   const allPersons = await db.select().from(persons);
 
   // Group by (first, last) words of normalized name
@@ -1094,15 +1208,30 @@ async function pass5MiddleInitial(protectedNames: Set<string>): Promise<number> 
       duplicate = canonical.id === twoWord.id ? match : twoWord;
     }
 
-    try {
-      await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
+    if (actions !== null) {
+      actions.push({
+        id: nextId.value++,
+        pass: 5,
+        type: "merge",
+        reason: "middle-initial variant",
+        canonical: { id: canonical.id, name: canonical.name },
+        duplicates: [{ id: duplicate.id, name: duplicate.name }],
+        evidence: `2-word data: ${twoTotal}, 3+-word data: ${matchTotal}`,
+        status: "pending",
+      });
       merged++;
-      console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
-    } catch (err: any) {
-      console.warn(`  [P5] Failed to merge "${duplicate.name}": ${err.message}`);
+      console.log(`  [P5] Would merge "${duplicate.name}" → "${canonical.name}"`);
+    } else {
+      try {
+        await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
+        merged++;
+        console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
+      } catch (err: any) {
+        console.warn(`  [P5] Failed to merge "${duplicate.name}": ${err.message}`);
+      }
     }
   }
-  console.log(`  Pass 5: Merged ${merged} middle-initial variants`);
+  console.log(`  Pass 5: ${actions !== null ? "Found" : "Merged"} ${merged} middle-initial variants`);
   return merged;
 }
 
@@ -1130,7 +1259,7 @@ const OCR_NICKNAME_MERGES: { canonical: string; variants: string[] }[] = [
   { canonical: "Joseph Recarey", variants: ["Joe Recarey", "Det. Recarey"] },
 ];
 
-async function pass6OCRNickname(): Promise<number> {
+async function pass6OCRNickname(actions: DeduplicationAction[] | null = null, nextId: { value: number } = { value: 1 }): Promise<number> {
   let total = 0;
   for (const entry of OCR_NICKNAME_MERGES) {
     const [canonicalRow] = await db.select().from(persons)
@@ -1143,48 +1272,232 @@ async function pass6OCRNickname(): Promise<number> {
         .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
         .limit(1);
       if (variantRow && variantRow.id !== canonicalRow.id) {
-        await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        if (actions !== null) {
+          actions.push({
+            id: nextId.value++,
+            pass: 6,
+            type: "merge",
+            reason: "OCR/nickname variant",
+            canonical: { id: canonicalRow.id, name: canonicalRow.name },
+            duplicates: [{ id: variantRow.id, name: variantRow.name }],
+            status: "pending",
+          });
+        } else {
+          await mergePersonGroup(canonicalRow, [variantRow.id], [variantRow.name]);
+        }
         total++;
-        console.log(`  [P6] Merged "${variantRow.name}" → "${canonicalRow.name}"`);
+        console.log(`  [P6] ${actions !== null ? "Would merge" : "Merged"} "${variantRow.name}" → "${canonicalRow.name}"`);
       }
     }
   }
-  console.log(`  Pass 6: Merged ${total} OCR/nickname variants`);
+  console.log(`  Pass 6: ${actions !== null ? "Found" : "Merged"} ${total} OCR/nickname variants`);
   return total;
 }
 
+// --- Plan Executor ---
+async function executePlan(planPath: string, batchSize?: number): Promise<void> {
+  if (!fs.existsSync(planPath)) {
+    console.error(`❌ Plan file not found: ${planPath}`);
+    console.error(`  Run with --dry-run first to generate a plan.`);
+    return;
+  }
+
+  const plan: DeduplicationPlan = JSON.parse(fs.readFileSync(planPath, "utf-8"));
+  const pending = plan.actions.filter(a => a.status === "pending");
+  const alreadyDone = plan.actions.filter(a => a.status === "executed" || a.status === "skipped").length;
+
+  if (pending.length === 0) {
+    console.log(`  No pending actions in plan (${alreadyDone} already executed/skipped).`);
+    return;
+  }
+
+  // Check for stale plan
+  const [currentCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  const drift = Math.abs((currentCount?.count ?? 0) - plan.personCountBefore);
+  if (drift > 50) {
+    console.warn(`  ⚠️  Person count drifted: plan expected ${plan.personCountBefore}, now ${currentCount?.count} (diff: ${drift})`);
+    console.warn(`  Continuing anyway — existence checks will skip stale entries.`);
+  }
+
+  console.log(`Executing dedup plan: ${pending.length} pending actions (${alreadyDone} already done)`);
+  if (batchSize) console.log(`  Batch size: ${batchSize} (pausing between batches)`);
+
+  let executed = 0;
+  let skipped = 0;
+  let interrupted = false;
+
+  // SIGINT handler: save progress before exit
+  const onSigint = () => {
+    interrupted = true;
+    console.log(`\n  SIGINT received — saving progress...`);
+  };
+  process.on("SIGINT", onSigint);
+
+  try {
+    for (let i = 0; i < pending.length; i++) {
+      if (interrupted) break;
+
+      const action = pending[i];
+
+      if (action.type === "delete") {
+        const targetIds = (action.targets || []).map(t => t.id);
+        // Check which IDs still exist
+        const existing = targetIds.length > 0
+          ? await db.select({ id: persons.id }).from(persons).where(inArray(persons.id, targetIds))
+          : [];
+        const existingIds = existing.map(r => r.id);
+
+        if (existingIds.length === 0) {
+          action.status = "skipped";
+          skipped++;
+          console.log(`  [SKIP] #${action.id} delete — targets already gone`);
+        } else {
+          await deletePersonsCascade(existingIds);
+          action.status = "executed";
+          executed++;
+          console.log(`  [DEL] #${action.id} deleted ${existingIds.length} person(s): ${(action.targets || []).filter(t => existingIds.includes(t.id)).map(t => t.name).join(", ")}`);
+        }
+      } else if (action.type === "merge") {
+        const canonicalId = action.canonical?.id;
+        const duplicateIds = (action.duplicates || []).map(d => d.id);
+
+        if (!canonicalId) {
+          action.status = "skipped";
+          skipped++;
+          console.log(`  [SKIP] #${action.id} merge — no canonical ID`);
+          continue;
+        }
+
+        // Check canonical exists
+        const [canonicalRow] = await db.select().from(persons).where(eq(persons.id, canonicalId)).limit(1);
+        if (!canonicalRow) {
+          action.status = "skipped";
+          skipped++;
+          console.log(`  [SKIP] #${action.id} merge — canonical "${action.canonical?.name}" (id ${canonicalId}) gone`);
+          continue;
+        }
+
+        // Check which duplicates still exist
+        const existingDups = duplicateIds.length > 0
+          ? await db.select({ id: persons.id }).from(persons).where(inArray(persons.id, duplicateIds))
+          : [];
+        const existingDupIds = existingDups.map(r => r.id);
+
+        if (existingDupIds.length === 0) {
+          action.status = "skipped";
+          skipped++;
+          console.log(`  [SKIP] #${action.id} merge — duplicates already gone`);
+        } else {
+          const dupNames = (action.duplicates || []).filter(d => existingDupIds.includes(d.id)).map(d => d.name);
+          await mergePersonGroup(canonicalRow, existingDupIds, [canonicalRow.name, ...dupNames]);
+          action.status = "executed";
+          executed++;
+          console.log(`  [MERGE] #${action.id} ${dupNames.join(", ")} → "${canonicalRow.name}"`);
+        }
+      }
+
+      // Batch pause
+      if (batchSize && (i + 1) % batchSize === 0 && i + 1 < pending.length) {
+        console.log(`\n  --- Batch ${Math.floor((i + 1) / batchSize)} complete: ${executed} executed, ${skipped} skipped (${pending.length - i - 1} remaining) ---`);
+        console.log(`  Pausing 2s (Ctrl+C to stop)...`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    }
+  } finally {
+    process.removeListener("SIGINT", onSigint);
+
+    // Save progress back to plan file
+    fs.writeFileSync(planPath, JSON.stringify(plan, null, 2));
+    console.log(`\n  Plan updated: ${planPath}`);
+  }
+
+  // Final self-loop cleanup
+  if (!interrupted) {
+    await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+  }
+
+  const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
+  console.log(`\n  === Execution Summary ===`);
+  console.log(`  Executed: ${executed}`);
+  console.log(`  Skipped: ${skipped}`);
+  if (interrupted) console.log(`  Remaining: ${pending.length - executed - skipped}`);
+  console.log(`  Person count now: ${afterCount?.count}`);
+}
+
 // --- Coordinator ---
-export async function deduplicatePersonsInDB(): Promise<void> {
-  console.log("Deduplicating persons in database (6-pass conservative approach)...");
+export async function deduplicatePersonsInDB(options: DeduplicationOptions = {}): Promise<void> {
+  // Route to plan executor if --execute-plan was passed
+  if (options.planPath) {
+    await executePlan(options.planPath, options.batchSize);
+    return;
+  }
+
+  const isDryRun = options.dryRun === true;
+  console.log(`Deduplicating persons in database (6-pass conservative approach)${isDryRun ? " [DRY RUN]" : ""}...`);
   const protectedNames = loadProtectedNames();
 
   const [beforeCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
-  console.log(`  Starting person count: ${beforeCount?.count}`);
+  const personCountBefore = beforeCount?.count ?? 0;
+  console.log(`  Starting person count: ${personCountBefore}`);
+
+  const actions: DeduplicationAction[] | null = isDryRun ? [] : null;
+  const nextId = { value: 1 };
 
   const stats = {
-    pass0: await pass0JunkRemoval(protectedNames),
-    pass1: await pass1ExactNormalized(protectedNames),
-    pass2: await pass2SingleWordEvidence(protectedNames),
-    pass3: await pass3DeleteSingleWord(protectedNames),
-    pass4: await pass4KeyFigures(),
-    pass5: await pass5MiddleInitial(protectedNames),
-    pass6: await pass6OCRNickname(),
+    pass0: await pass0JunkRemoval(protectedNames, actions, nextId),
+    pass1: await pass1ExactNormalized(protectedNames, actions, nextId),
+    pass2: await pass2SingleWordEvidence(protectedNames, actions, nextId),
+    pass3: await pass3DeleteSingleWord(protectedNames, actions, nextId),
+    pass4: await pass4KeyFigures(actions, nextId),
+    pass5: await pass5MiddleInitial(protectedNames, actions, nextId),
+    pass6: await pass6OCRNickname(actions, nextId),
   };
 
-  // Final cleanup: delete self-loop connections
-  await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+  if (isDryRun && actions) {
+    const PASS_LABELS: Record<number, { type: string; label: string }> = {
+      0: { type: "delete", label: "junk removal" },
+      1: { type: "merge", label: "exact normalized" },
+      2: { type: "merge", label: "single-word evidence" },
+      3: { type: "delete", label: "single-word cleanup" },
+      4: { type: "mixed", label: "key figure variants" },
+      5: { type: "merge", label: "middle-initial" },
+      6: { type: "merge", label: "OCR/nickname" },
+    };
+
+    const byPass: Record<string, { count: number; type: string; label: string }> = {};
+    for (const a of actions) {
+      const key = String(a.pass);
+      if (!byPass[key]) byPass[key] = { count: 0, ...PASS_LABELS[a.pass] };
+      byPass[key].count++;
+    }
+
+    const plan: DeduplicationPlan = {
+      createdAt: new Date().toISOString(),
+      personCountBefore,
+      summary: { totalActions: actions.length, byPass },
+      actions,
+    };
+
+    const planPath = path.join(DATA_DIR, "dedup-plan.json");
+    fs.mkdirSync(path.dirname(planPath), { recursive: true });
+    fs.writeFileSync(planPath, JSON.stringify(plan, null, 2));
+    console.log(`\n  Dry-run complete: ${actions.length} actions written to ${planPath}`);
+  } else {
+    // Final cleanup: delete self-loop connections
+    await db.execute(sql`DELETE FROM connections WHERE person_id_1 = person_id_2`);
+  }
 
   const [afterCount] = await db.select({ count: sql<number>`count(*)::int` }).from(persons);
 
   console.log("\n  === Deduplication Summary ===");
-  console.log(`  Pass 0 (junk removal):      ${stats.pass0} removed`);
-  console.log(`  Pass 1 (exact normalized):   ${stats.pass1} merged`);
-  console.log(`  Pass 2 (single→multi evidence): ${stats.pass2} merged`);
-  console.log(`  Pass 3 (delete single-word): ${stats.pass3} deleted`);
-  console.log(`  Pass 4 (key figure variants):${stats.pass4} processed`);
-  console.log(`  Pass 5 (middle-initial):     ${stats.pass5} merged`);
-  console.log(`  Pass 6 (OCR/nickname):       ${stats.pass6} merged`);
-  console.log(`  Person count: ${beforeCount?.count} → ${afterCount?.count}`);
+  console.log(`  Pass 0 (junk removal):      ${stats.pass0} ${isDryRun ? "found" : "removed"}`);
+  console.log(`  Pass 1 (exact normalized):   ${stats.pass1} ${isDryRun ? "found" : "merged"}`);
+  console.log(`  Pass 2 (single→multi evidence): ${stats.pass2} ${isDryRun ? "found" : "merged"}`);
+  console.log(`  Pass 3 (delete single-word): ${stats.pass3} ${isDryRun ? "found" : "deleted"}`);
+  console.log(`  Pass 4 (key figure variants):${stats.pass4} ${isDryRun ? "found" : "processed"}`);
+  console.log(`  Pass 5 (middle-initial):     ${stats.pass5} ${isDryRun ? "found" : "merged"}`);
+  console.log(`  Pass 6 (OCR/nickname):       ${stats.pass6} ${isDryRun ? "found" : "merged"}`);
+  console.log(`  Person count: ${personCountBefore} → ${afterCount?.count}`);
 }
 
 /**
@@ -1766,7 +2079,19 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
     } else if (command === "update-counts") {
       await updateDocumentCounts();
     } else if (command === "dedup-persons") {
-      await deduplicatePersonsInDB();
+      const dryRun = process.argv.includes("--dry-run");
+      const hasExecutePlan = process.argv.includes("--execute-plan");
+      const epIdx = process.argv.indexOf("--execute-plan");
+      const planPathArg = epIdx >= 0 && process.argv[epIdx + 1] && !process.argv[epIdx + 1].startsWith("--")
+        ? process.argv[epIdx + 1]
+        : path.join(DATA_DIR, "dedup-plan.json");
+      const batchIdx = process.argv.indexOf("--batch");
+      const batchSize = batchIdx >= 0 ? parseInt(process.argv[batchIdx + 1], 10) : undefined;
+      await deduplicatePersonsInDB({
+        dryRun,
+        planPath: hasExecutePlan ? planPathArg : undefined,
+        batchSize,
+      });
     } else if (command === "dedup-connections") {
       await deduplicateConnections();
     } else if (command === "classify-media") {
@@ -1783,7 +2108,10 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
-      console.log("  dedup-persons         - Deduplicate persons in database");
+      console.log("  dedup-persons          - Deduplicate persons in database");
+      console.log("    --dry-run              Write proposed actions to data/dedup-plan.json (no DB changes)");
+      console.log("    --execute-plan [path]  Execute pending actions from plan file (default: data/dedup-plan.json)");
+      console.log("    --batch N              Pause every N actions during --execute-plan for monitoring");
       console.log("  dedup-connections     - Deduplicate connections (keep best per pair)");
       console.log("  classify-media [dir]  - Classify documents by media type (--reclassify to redo all)");
     }
