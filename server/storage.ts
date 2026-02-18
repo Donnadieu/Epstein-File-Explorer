@@ -1219,8 +1219,8 @@ export class DatabaseStorage implements IStorage {
       const stats = await this.getStats();
       total = stats.documentCount;
 
-      // For first page with no filters, serve from cache
-      if (opts.page === 1) {
+      // For first page with no filters and default sort, serve from cache
+      if (opts.page === 1 && !opts.sort) {
         const cachedFirstPage = await firstPageDocsCache.get(() =>
           db.select().from(documents).where(r2Cond).orderBy(asc(documents.id)).limit(50)
         );
