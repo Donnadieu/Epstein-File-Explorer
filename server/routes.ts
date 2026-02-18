@@ -149,6 +149,25 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/view-counts", async (req, res) => {
+    try {
+      const entityType = req.query.entityType as string;
+      if (entityType !== "person" && entityType !== "document") {
+        return res.status(400).json({ error: "entityType must be 'person' or 'document'" });
+      }
+      const idsParam = (req.query.ids as string) || "";
+      const ids = idsParam.split(",").map(Number).filter((n) => !isNaN(n) && n > 0).slice(0, 200);
+      if (ids.length === 0) {
+        return res.json({});
+      }
+      const counts = await storage.getViewCounts(entityType, ids);
+      res.set("Cache-Control", "public, max-age=60");
+      res.json(counts);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch view counts" });
+    }
+  });
+
   app.post("/api/search/record", async (req, res) => {
     try {
       const { query, sessionId, resultCount } = req.body;

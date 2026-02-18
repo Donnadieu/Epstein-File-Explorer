@@ -27,11 +27,13 @@ import {
   Bookmark,
   BookmarkCheck,
   Loader2,
+  Eye,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { ImportanceVoteButton } from "@/components/importance-vote-button";
+import { useViewCounts } from "@/hooks/use-view-counts";
 import { useVideoPlayer } from "@/hooks/use-video-player";
 import { useDocumentViewer } from "@/hooks/use-document-viewer";
 import { isVideoDocument } from "@/lib/document-utils";
@@ -277,6 +279,7 @@ export default function DocumentsPage() {
 
   const documentIds = useMemo(() => (paginated ?? []).map((d) => d.id), [paginated]);
   const { isVoted, getCount, toggleVote } = useImportanceVotes(documentIds);
+  const { getViewCount } = useViewCounts("document", documentIds);
 
   const activeFilters = Object.entries(filters).filter(
     ([key, value]) =>
@@ -489,6 +492,11 @@ export default function DocumentsPage() {
                               {doc.tags?.map((tag) => (
                                 <Badge key={tag} variant="secondary" className="text-[10px]">{tag}</Badge>
                               ))}
+                              {getViewCount(doc.id) > 0 && (
+                                <span className="text-[10px] text-primary flex items-center gap-0.5">
+                                  <Eye className="w-2.5 h-2.5" /> {getViewCount(doc.id)}
+                                </span>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -547,11 +555,18 @@ export default function DocumentsPage() {
                         <p className="text-xs font-medium mt-1.5 line-clamp-2 leading-tight">
                           {getDisplayTitle(doc)}
                         </p>
-                        {doc.dateOriginal && (
-                          <span className="text-[10px] text-muted-foreground flex items-center gap-0.5 mt-0.5">
-                            <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
-                          </span>
-                        )}
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {doc.dateOriginal && (
+                            <span className="text-[10px] text-muted-foreground flex items-center gap-0.5">
+                              <Clock className="w-2.5 h-2.5" /> {doc.dateOriginal}
+                            </span>
+                          )}
+                          {getViewCount(doc.id) > 0 && (
+                            <span className="text-[10px] text-primary flex items-center gap-0.5">
+                              <Eye className="w-2.5 h-2.5" /> {getViewCount(doc.id)}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className={`absolute top-1 right-1 flex items-center gap-0.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
