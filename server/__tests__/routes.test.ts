@@ -46,6 +46,7 @@ vi.mock("../r2", () => ({
   isR2Configured: vi.fn(() => false),
   getPresignedUrl: vi.fn(),
   getR2Stream: vi.fn(),
+  getPublicUrl: vi.fn(() => null),
 }));
 
 // Mock chat routes

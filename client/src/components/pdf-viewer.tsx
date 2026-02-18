@@ -28,6 +28,7 @@ interface PageTypeInfo {
 interface PdfViewerProps {
   documentId: number;
   sourceUrl?: string;
+  publicUrl?: string | null;
   initialPage?: number;
   pageTypes?: PageTypeInfo[];
 }
@@ -38,7 +39,7 @@ const ZOOM_STEP = 0.25;
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 
-export default function PdfViewer({ documentId, sourceUrl, initialPage, pageTypes }: PdfViewerProps) {
+export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPage, pageTypes }: PdfViewerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const pdfDocRef = useRef<PDFDocumentProxy | null>(null);
@@ -122,18 +123,26 @@ export default function PdfViewer({ documentId, sourceUrl, initialPage, pageType
 
       if (cancelled) return;
 
-      // pdf.js failed — try presigned URL in an iframe (avoids CORS)
-      try {
-        const resp = await fetch(`/api/documents/${documentId}/content-url`);
-        if (resp.ok) {
-          const { url } = await resp.json();
-          if (!cancelled) {
-            setIframeUrl(url);
-            setViewerState("iframe");
-            return;
-          }
+      // pdf.js failed — try public URL or presigned URL in an iframe
+      if (publicUrl) {
+        if (!cancelled) {
+          setIframeUrl(publicUrl);
+          setViewerState("iframe");
+          return;
         }
-      } catch {}
+      } else {
+        try {
+          const resp = await fetch(`/api/documents/${documentId}/content-url`);
+          if (resp.ok) {
+            const { url } = await resp.json();
+            if (!cancelled) {
+              setIframeUrl(url);
+              setViewerState("iframe");
+              return;
+            }
+          }
+        } catch {}
+      }
 
       if (!cancelled) {
         setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");

@@ -177,6 +177,7 @@ export type Person = typeof persons.$inferSelect;
 export type InsertPerson = typeof persons.$inferInsert;
 export type Document = typeof documents.$inferSelect;
 export type InsertDocument = typeof documents.$inferInsert;
+export type PublicDocument = Omit<Document, 'localPath' | 'r2Key' | 'fileHash'> & { publicUrl?: string | null };
 export type DocumentPage = typeof documentPages.$inferSelect;
 export type InsertDocumentPage = typeof documentPages.$inferInsert;
 export type Connection = typeof connections.$inferSelect;

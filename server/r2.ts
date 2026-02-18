@@ -96,6 +96,12 @@ export async function getR2Stream(key: string, range?: string): Promise<{
   };
 }
 
+export function getPublicUrl(key: string): string | null {
+  const domain = process.env.R2_PUBLIC_DOMAIN;
+  if (!domain) return null;
+  return `https://${domain}/${key}`;
+}
+
 export async function existsInR2(key: string): Promise<boolean> {
   try {
     await getClient().send(

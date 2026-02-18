@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Video, ExternalLink, Loader2 } from "lucide-react";
+import { Video, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,38 +9,24 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import type { Document } from "@shared/schema";
+import type { PublicDocument } from "@shared/schema";
 
 interface VideoPlayerModalProps {
-  doc: Document | null;
+  doc: PublicDocument | null;
   open: boolean;
   onClose: () => void;
 }
 
 export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) {
   const [error, setError] = useState(false);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!open || !doc) {
-      setVideoUrl(null);
-      setError(false);
-      return;
-    }
-    setLoading(true);
-    setError(false);
-    fetch(`/api/documents/${doc.id}/content-url`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to get video URL");
-        return res.json();
-      })
-      .then((data) => setVideoUrl(data.url))
-      .catch(() => setError(true))
-      .finally(() => setLoading(false));
-  }, [open, doc?.id]);
+    if (!open) setError(false);
+  }, [open]);
 
   if (!doc) return null;
+
+  const videoUrl = doc.publicUrl || `/api/documents/${doc.id}/video`;
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) onClose(); }}>
@@ -56,11 +42,6 @@ export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) 
           <div className="flex flex-col items-center gap-3 py-8">
             <Video className="w-10 h-10 text-muted-foreground/50" />
             <p className="text-sm text-muted-foreground">Could not load video.</p>
-          </div>
-        ) : loading || !videoUrl ? (
-          <div className="flex flex-col items-center gap-3 py-8">
-            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">Loading video...</p>
           </div>
         ) : (
           <video

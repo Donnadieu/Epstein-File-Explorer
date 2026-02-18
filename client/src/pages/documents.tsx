@@ -34,7 +34,7 @@ import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import { useVideoPlayer } from "@/hooks/use-video-player";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
-import type { Document } from "@shared/schema";
+import type { Document, PublicDocument } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
 
@@ -47,7 +47,7 @@ function isNonDescriptiveTitle(title: string): boolean {
   return EFTA_PATTERN.test(trimmed) || NON_DESCRIPTIVE_PATTERN.test(trimmed);
 }
 
-function getDisplayTitle(doc: Document): string {
+function getDisplayTitle(doc: PublicDocument): string {
   if (!isNonDescriptiveTitle(doc.title)) return doc.title;
 
   // Prefer AI-generated description if available
@@ -561,7 +561,7 @@ export default function DocumentsPage() {
   );
 }
 
-function PdfThumbnail({ doc }: { doc: Document }) {
+function PdfThumbnail({ doc }: { doc: PublicDocument }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [failed, setFailed] = useState(false);
 
@@ -609,7 +609,7 @@ function PdfThumbnail({ doc }: { doc: Document }) {
   return <canvas ref={canvasRef} width={400} className="w-full h-full object-cover" />;
 }
 
-function isPdfDocument(doc: Document): boolean {
+function isPdfDocument(doc: PublicDocument): boolean {
   if (doc.sourceUrl?.toLowerCase().endsWith(".pdf")) return true;
   if (doc.mediaType?.toLowerCase() === "pdf") return true;
   if (doc.mimeType?.toLowerCase()?.includes("pdf")) return true;
@@ -644,7 +644,7 @@ function releaseThumbSlot() {
 // Cache thumbnail data URLs across re-renders
 const thumbCache = new Map<number, string>();
 
-function VideoThumbnail({ doc }: { doc: Document }) {
+function VideoThumbnail({ doc }: { doc: PublicDocument }) {
   const [thumbUrl, setThumbUrl] = useState<string | null>(() => thumbCache.get(doc.id) ?? null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -670,16 +670,8 @@ function VideoThumbnail({ doc }: { doc: Document }) {
       await acquireThumbSlot();
       if (cancelled) { releaseThumbSlot(); return; }
 
-      let contentUrl: string;
-      try {
-        const res = await fetch(`/api/documents/${doc.id}/content-url`);
-        if (!res.ok) { releaseThumbSlot(); return; }
-        const data = await res.json();
-        contentUrl = data.url;
-      } catch {
-        releaseThumbSlot();
-        return;
-      }
+      const contentUrl = doc.publicUrl;
+      if (!contentUrl) { releaseThumbSlot(); return; }
       if (cancelled) { releaseThumbSlot(); return; }
 
       const video = document.createElement("video");
@@ -750,7 +742,7 @@ function VideoThumbnail({ doc }: { doc: Document }) {
   );
 }
 
-function DocumentThumbnail({ doc }: { doc: Document }) {
+function DocumentThumbnail({ doc }: { doc: PublicDocument }) {
   const mediaType = doc.mediaType?.toLowerCase() || "";
   const docType = doc.documentType?.toLowerCase() || "";
   const isPdf = isPdfDocument(doc);
@@ -761,7 +753,7 @@ function DocumentThumbnail({ doc }: { doc: Document }) {
   if (isPhoto) {
     return (
       <img
-        src={`/api/documents/${doc.id}/image`}
+        src={doc.publicUrl || `/api/documents/${doc.id}/image`}
         alt={doc.title}
         className="w-full h-full object-cover"
         loading="lazy"
