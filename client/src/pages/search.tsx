@@ -32,8 +32,10 @@ import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import { useSearchHistory } from "@/hooks/use-search-history";
 import { SavedSearches } from "@/components/saved-searches";
 import { useVideoPlayer } from "@/hooks/use-video-player";
+import { useDocumentViewer } from "@/hooks/use-document-viewer";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
+import { DocumentViewerModal } from "@/components/document-viewer-modal";
 
 interface SearchResults {
   persons: Person[];
@@ -135,6 +137,7 @@ export default function SearchPage() {
   }, []);
 
   const videoPlayer = useVideoPlayer();
+  const docViewer = useDocumentViewer();
 
   const searchIsBookmarked = isBookmarked("search", undefined, query);
 
@@ -293,7 +296,7 @@ export default function SearchPage() {
                     <FileText className="w-4 h-4 text-primary" /> Documents
                   </h3>
                   {data.documents.slice(0, 5).map((doc) => (
-                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} />
+                    <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} onDocClick={docViewer.open} />
                   ))}
                 </div>
               )}
@@ -318,7 +321,7 @@ export default function SearchPage() {
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
-              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} />)}
+              {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} onDocClick={docViewer.open} />)}
               {(!data?.documents || data.documents.length === 0) && (
                 <EmptyState type="documents" query={query} />
               )}
@@ -412,6 +415,7 @@ export default function SearchPage() {
       )}
 
       <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
+      <DocumentViewerModal doc={docViewer.viewerDoc} open={docViewer.isOpen} onClose={docViewer.close} />
     </div>
   );
 }
@@ -466,7 +470,7 @@ function PersonResult({ person, isBookmarked, toggleBookmark }: {
   );
 }
 
-function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount, onToggleVote, onVideoClick }: {
+function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount, onToggleVote, onVideoClick, onDocClick }: {
   doc: Document;
   isBookmarked: (entityType: string, entityId?: number, searchQuery?: string) => any;
   toggleBookmark: (entityType: "person" | "document" | "search", entityId?: number, searchQuery?: string, label?: string) => void;
@@ -474,6 +478,7 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount,
   voteCount: number;
   onToggleVote: (documentId: number) => void;
   onVideoClick?: (doc: Document) => void;
+  onDocClick?: (doc: Document) => void;
 }) {
   const bookmarked = isBookmarked("document", doc.id);
   const typeIcons: Record<string, any> = {
@@ -482,6 +487,12 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount,
   };
   const Icon = typeIcons[doc.documentType] || FileText;
   const isVideo = isVideoDocument(doc);
+
+  const handleClick = isVideo && onVideoClick
+    ? () => onVideoClick(doc)
+    : onDocClick
+      ? () => onDocClick(doc)
+      : undefined;
 
   const innerContent = (
     <>
@@ -509,8 +520,8 @@ function DocumentResult({ doc, isBookmarked, toggleBookmark, isVoted, voteCount,
     <Card className="hover-elevate cursor-pointer group" data-testid={`result-document-${doc.id}`}>
       <CardContent className="p-3">
         <div className="flex items-start gap-3">
-          {isVideo && onVideoClick ? (
-            <div onClick={() => onVideoClick(doc)} className="flex items-start gap-3 min-w-0 flex-1 cursor-pointer">
+          {handleClick ? (
+            <div onClick={handleClick} className="flex items-start gap-3 min-w-0 flex-1 cursor-pointer">
               {innerContent}
             </div>
           ) : (

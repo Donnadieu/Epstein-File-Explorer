@@ -53,6 +53,7 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
   const [scale, setScale] = useState(1);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [pageInputValue, setPageInputValue] = useState("1");
+  const [isRendering, setIsRendering] = useState(false);
 
   const renderPage = useCallback(
     async (pageNum: number) => {
@@ -66,11 +67,16 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
         renderTaskRef.current = null;
       }
 
+      setIsRendering(true);
+
       try {
         const page = await pdfDoc.getPage(pageNum);
         const viewport = page.getViewport({ scale });
         const ctx = canvas.getContext("2d");
-        if (!ctx) return;
+        if (!ctx) {
+          setIsRendering(false);
+          return;
+        }
 
         const dpr = window.devicePixelRatio || 1;
         canvas.width = viewport.width * dpr;
@@ -83,9 +89,11 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
         renderTaskRef.current = renderTask;
         await renderTask.promise;
         renderTaskRef.current = null;
+        setIsRendering(false);
       } catch (err: any) {
         if (err?.name !== "RenderingCancelledException") {
           console.error("PDF render error:", err);
+          setIsRendering(false);
         }
       }
     },
@@ -98,8 +106,20 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
     async function loadPdf() {
       setViewerState("loading");
 
+      // Check proxy endpoint first for 404 before trying pdf.js
+      let got404 = false;
+      const proxyUrl = `/api/documents/${documentId}/pdf`;
+      try {
+        const headResp = await fetch(proxyUrl, { method: "HEAD" });
+        if (headResp.status === 404) got404 = true;
+      } catch {
+        // Network error — will try pdf.js anyway
+      }
+
+      if (cancelled) return;
+
       // Try proxy endpoint first (avoids CORS), then direct URL
-      const urls = [`/api/documents/${documentId}/pdf`, sourceUrl].filter(Boolean) as string[];
+      const urls = (got404 ? [sourceUrl] : [proxyUrl, sourceUrl]).filter(Boolean) as string[];
 
       for (const url of urls) {
         if (cancelled) return;
@@ -145,7 +165,11 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
       }
 
       if (!cancelled) {
-        setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");
+        if (got404) {
+          setErrorMessage("This document could not be found. It may have been removed from the source or is no longer available.");
+        } else {
+          setErrorMessage("Could not load PDF. The document may not have been uploaded to our storage yet, or the source URL points to a directory page rather than a direct PDF file.");
+        }
         setViewerState("error");
       }
     }
@@ -334,7 +358,12 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
       {/* Canvas area */}
       <div className={`overflow-auto bg-muted/20 flex justify-center p-4 ${isFullscreen ? "flex-1" : "max-h-[70vh]"}`}>
-        <canvas ref={canvasRef} className="shadow-md" />
+        {isRendering && (
+          <div className="flex flex-col items-center justify-center gap-3 w-[600px] h-[780px] max-w-full">
+            <div className="w-full h-full rounded-md bg-muted/40 animate-pulse" />
+          </div>
+        )}
+        <canvas ref={canvasRef} className={`shadow-md ${isRendering ? "hidden" : ""}`} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "wouter";
-import { Video, ExternalLink } from "lucide-react";
+import { Video, ExternalLink, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,16 +17,43 @@ interface VideoPlayerModalProps {
   onClose: () => void;
 }
 
+type ErrorType = "not-found" | "network" | "generic" | null;
+
 export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) {
-  const [error, setError] = useState(false);
+  const [errorType, setErrorType] = useState<ErrorType>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!open) setError(false);
+    if (!open) setErrorType(null);
   }, [open]);
+
+  const handleVideoError = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) {
+      setErrorType("generic");
+      return;
+    }
+
+    // MediaError code 4 = MEDIA_ERR_SRC_NOT_SUPPORTED (often 404/403)
+    // networkState 3 = NETWORK_NO_SOURCE
+    if (video.error?.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED || video.networkState === 3) {
+      setErrorType("not-found");
+    } else if (video.error?.code === MediaError.MEDIA_ERR_NETWORK) {
+      setErrorType("network");
+    } else {
+      setErrorType("generic");
+    }
+  }, []);
 
   if (!doc) return null;
 
   const videoUrl = doc.publicUrl || `/api/documents/${doc.id}/video`;
+
+  const errorMessages: Record<NonNullable<ErrorType>, string> = {
+    "not-found": "This video is no longer available. It may have been removed from the source.",
+    "network": "Could not connect to load this video. Please check your connection and try again.",
+    "generic": "Could not load video.",
+  };
 
   return (
     <Dialog open={open} onOpenChange={(v) => { if (!v) onClose(); }}>
@@ -38,19 +65,28 @@ export function VideoPlayerModal({ doc, open, onClose }: VideoPlayerModalProps) 
           </DialogTitle>
         </DialogHeader>
 
-        {error ? (
+        {errorType ? (
           <div className="flex flex-col items-center gap-3 py-8">
-            <Video className="w-10 h-10 text-muted-foreground/50" />
-            <p className="text-sm text-muted-foreground">Could not load video.</p>
+            <AlertCircle className="w-10 h-10 text-muted-foreground/50" />
+            <p className="text-sm text-muted-foreground text-center max-w-sm">{errorMessages[errorType]}</p>
+            {doc.sourceUrl && (
+              <a href={doc.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" className="gap-1.5">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  Try source on DOJ
+                </Button>
+              </a>
+            )}
           </div>
         ) : (
           <video
+            ref={videoRef}
             key={doc.id}
             src={videoUrl}
             controls
             autoPlay
             className="w-full max-h-[60vh] rounded-md bg-black"
-            onError={() => setError(true)}
+            onError={handleVideoError}
           />
         )}
 

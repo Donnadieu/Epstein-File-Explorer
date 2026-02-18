@@ -34,8 +34,10 @@ import {
   Users
 } from "lucide-react";
 import { useVideoPlayer } from "@/hooks/use-video-player";
+import { useDocumentViewer } from "@/hooks/use-document-viewer";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
+import { DocumentViewerModal } from "@/components/document-viewer-modal";
 import { Link, useParams } from "wouter";
 
 interface PersonAIMentions {
@@ -72,6 +74,7 @@ export default function PersonDetail() {
   });
 
   const videoPlayer = useVideoPlayer();
+  const docViewer = useDocumentViewer();
 
   if (isLoading) {
     return (
@@ -347,12 +350,11 @@ export default function PersonDetail() {
             <div className="flex flex-col gap-2">
               {person.documents.map((doc) => {
                 const isVideo = isVideoDocument(doc);
-                const Wrapper = isVideo ? "div" : Link;
-                const wrapperProps = isVideo
-                  ? { onClick: () => videoPlayer.open(doc) }
-                  : { href: `/documents/${doc.id}` };
+                const handleClick = isVideo
+                  ? () => videoPlayer.open(doc)
+                  : () => docViewer.open(doc);
                 return (
-                  <Wrapper key={doc.id} {...(wrapperProps as any)}>
+                  <div key={doc.id} onClick={handleClick}>
                     <Card className="hover-elevate cursor-pointer" data-testid={`card-doc-${doc.id}`}>
                       <CardContent className="p-4">
                         <div className="flex items-start gap-3">
@@ -387,7 +389,7 @@ export default function PersonDetail() {
                         </div>
                       </CardContent>
                     </Card>
-                  </Wrapper>
+                  </div>
                 );
               })}
             </div>
@@ -567,6 +569,7 @@ export default function PersonDetail() {
       </Tabs>
 
       <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
+      <DocumentViewerModal doc={docViewer.viewerDoc} open={docViewer.isOpen} onClose={docViewer.close} />
     </div>
   );
 }
