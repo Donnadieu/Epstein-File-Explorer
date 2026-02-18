@@ -1095,27 +1095,28 @@ export class DatabaseStorage implements IStorage {
 
     let total = -1;
     if (!skipCount) {
+      // Count on document_pages only (fast GIN index scan, no join).
+      // Slightly overcounts by including pages from non-R2 docs, but avoids
+      // the expensive join that causes 30s+ timeouts on broad queries.
       const countResult: any = await db.execute(sql`
         SELECT count(*)::int AS total
-        FROM document_pages dp
-        JOIN documents d ON d.id = dp.document_id
-        WHERE dp.search_vector @@ ${tsquery}
-          AND ${sql.raw(r2Raw)}
+        FROM document_pages
+        WHERE search_vector @@ ${tsquery}
       `);
       total = (countResult.rows ?? countResult)[0]?.total ?? 0;
     }
 
+    // CTE: match + rank on document_pages only (fast GIN scan, no join).
+    // Over-fetch by 3x to compensate for R2 filtering in the outer query.
+    const fetchLimit = limit * 3;
     const rawResult: any = await db.execute(sql`
       WITH matched AS (
-        SELECT dp.id, dp.document_id, dp.page_number, dp.page_type,
-               dp.content, dp.search_vector,
-               ts_rank(dp.search_vector, ${tsquery}) AS rank
-        FROM document_pages dp
-        JOIN documents d ON d.id = dp.document_id
-        WHERE dp.search_vector @@ ${tsquery}
-          AND ${sql.raw(r2Raw)}
-        ORDER BY rank DESC, dp.document_id, dp.page_number
-        LIMIT ${limit} OFFSET ${offset}
+        SELECT id, document_id, page_number, page_type, content, search_vector,
+               ts_rank(search_vector, ${tsquery}) AS rank
+        FROM document_pages
+        WHERE search_vector @@ ${tsquery}
+        ORDER BY rank DESC, document_id, page_number
+        LIMIT ${fetchLimit} OFFSET ${offset}
       )
       SELECT m.document_id, d.title, d.document_type, d.data_set,
              m.page_number, m.page_type,
@@ -1125,7 +1126,9 @@ export class DatabaseStorage implements IStorage {
              m.rank
       FROM matched m
       JOIN documents d ON d.id = m.document_id
+      WHERE ${sql.raw(r2Raw)}
       ORDER BY m.rank DESC, m.document_id, m.page_number
+      LIMIT ${limit}
     `);
     const rows: any[] = rawResult.rows ?? rawResult;
 
@@ -1252,63 +1255,82 @@ export class DatabaseStorage implements IStorage {
     const offset = (opts.page - 1) * opts.limit;
 
     if (opts.sort === "popular") {
-      // Step 1: Get ALL popular doc IDs viewed in last 30 days (small result set)
-      const popularResult: any = await db.execute(sql`
-        SELECT entity_id, COUNT(*) AS view_count
-        FROM page_views
-        WHERE entity_type = 'document'
-          AND created_at > NOW() - INTERVAL '30 days'
-        GROUP BY entity_id
-        ORDER BY view_count DESC
-      `);
-      const popularRows: any[] = popularResult.rows ?? popularResult;
-      const allPopularIds = popularRows.map((r: any) => Number(r.entity_id));
-
-      // Step 2: Fetch popular docs that pass filters, maintaining popularity order
-      let filteredPopular: Document[] = [];
-      if (allPopularIds.length > 0) {
-        const popularConds = [...conditions, inArray(documents.id, allPopularIds)];
-        const rows = await db.select().from(documents).where(and(...popularConds));
-        const byId = new Map(rows.map(r => [r.id, r]));
-        filteredPopular = allPopularIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+      // Build raw SQL WHERE parts for use in raw queries
+      const docWhere: string[] = [];
+      if (isR2Configured()) docWhere.push(`d.r2_key IS NOT NULL`);
+      docWhere.push(`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`);
+      if (opts.type) docWhere.push(`d.document_type = '${opts.type.replace(/'/g, "''")}'`);
+      if (opts.dataSet) docWhere.push(`d.data_set = '${opts.dataSet.replace(/'/g, "''")}'`);
+      if (opts.redacted === "redacted") docWhere.push(`d.is_redacted = true`);
+      else if (opts.redacted === "unredacted") docWhere.push(`d.is_redacted = false`);
+      if (opts.mediaType) docWhere.push(`d.media_type = '${opts.mediaType.replace(/'/g, "''")}'`);
+      if (opts.search) {
+        const pageResults = await this.searchPages(opts.search, 1, 100, false, true);
+        const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
+        if (docIds.length === 0) return { data: [], total: 0, page: opts.page, totalPages: 0 };
+        docWhere.push(`d.id IN (${docIds.join(",")})`);
       }
+      const whereSQL = docWhere.join(" AND ");
 
-      const popularCount = filteredPopular.length;
+      // Step 1: Count how many popular docs pass filters (small aggregation)
+      const countResult: any = await db.execute(sql.raw(`
+        SELECT COUNT(*)::int AS cnt FROM (
+          SELECT DISTINCT pv.entity_id
+          FROM page_views pv
+          JOIN documents d ON d.id = pv.entity_id
+          WHERE pv.entity_type = 'document'
+            AND pv.created_at > NOW() - INTERVAL '30 days'
+            AND ${whereSQL}
+        ) sub
+      `));
+      const popularCount = (countResult.rows ?? countResult)[0]?.cnt ?? 0;
 
-      // Build exclude condition for non-viewed doc queries
-      const buildExcludeConds = () => {
-        if (filteredPopular.length === 0) return conditions;
-        const excludeIds = filteredPopular.map(d => d.id);
-        return [...conditions, sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`];
-      };
+      const viewedSubquery = `SELECT DISTINCT entity_id FROM page_views WHERE entity_type = 'document' AND created_at > NOW() - INTERVAL '30 days'`;
 
-      // Step 3: Determine which segment the requested page falls in
       if (offset < popularCount) {
-        // Page overlaps with popular segment
-        const data = filteredPopular.slice(offset, offset + opts.limit);
+        // Step 2a: Page falls within the popular segment
+        const pageResult: any = await db.execute(sql.raw(`
+          WITH popular AS (
+            SELECT entity_id, COUNT(*) AS view_count
+            FROM page_views
+            WHERE entity_type = 'document'
+              AND created_at > NOW() - INTERVAL '30 days'
+            GROUP BY entity_id
+            ORDER BY view_count DESC
+          )
+          SELECT d.*
+          FROM popular p
+          JOIN documents d ON d.id = p.entity_id
+          WHERE ${whereSQL}
+          ORDER BY p.view_count DESC
+          LIMIT ${opts.limit} OFFSET ${offset}
+        `));
+        const data: Document[] = (pageResult.rows ?? pageResult) as Document[];
 
         // Pad from non-viewed docs if page straddles the boundary
         if (data.length < opts.limit) {
-          const padConds = buildExcludeConds();
-          const padClause = padConds.length > 0 ? and(...padConds) : undefined;
-          const padDocs = await db.select().from(documents)
-            .where(padClause)
-            .orderBy(asc(documents.id))
-            .limit(opts.limit - data.length);
-          data.push(...padDocs);
+          const padResult: any = await db.execute(sql.raw(`
+            SELECT d.* FROM documents d
+            WHERE ${whereSQL}
+              AND d.id NOT IN (${viewedSubquery})
+            ORDER BY d.id ASC
+            LIMIT ${opts.limit - data.length}
+          `));
+          data.push(...((padResult.rows ?? padResult) as Document[]));
         }
 
         return { data, total, page: opts.page, totalPages };
       } else {
-        // Page is entirely in the non-viewed segment
+        // Step 2b: Page is entirely in the non-viewed segment
         const nonViewedOffset = offset - popularCount;
-        const padConds = buildExcludeConds();
-        const padClause = padConds.length > 0 ? and(...padConds) : undefined;
-        const data = await db.select().from(documents)
-          .where(padClause)
-          .orderBy(asc(documents.id))
-          .limit(opts.limit)
-          .offset(nonViewedOffset);
+        const result: any = await db.execute(sql.raw(`
+          SELECT d.* FROM documents d
+          WHERE ${whereSQL}
+            AND d.id NOT IN (${viewedSubquery})
+          ORDER BY d.id ASC
+          LIMIT ${opts.limit} OFFSET ${nonViewedOffset}
+        `));
+        const data: Document[] = (result.rows ?? result) as Document[];
 
         return { data, total, page: opts.page, totalPages };
       }
@@ -1327,19 +1349,19 @@ export class DatabaseStorage implements IStorage {
 
   async getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }> {
     return documentFiltersCache.get(async () => {
-    const r2Cond = r2Filter();
+    // Skip R2 filter — distinct types/dataSets/mediaTypes are the same
+    // regardless of R2 status, and dropping it enables index-only scans.
     const [typeRows, dataSetRows, mediaTypeRows] = await Promise.all([
       db.selectDistinct({ documentType: documents.documentType })
         .from(documents)
-        .where(r2Cond)
         .orderBy(asc(documents.documentType)),
       db.selectDistinct({ dataSet: documents.dataSet })
         .from(documents)
-        .where(r2Cond ? and(isNotNull(documents.dataSet), r2Cond) : isNotNull(documents.dataSet))
+        .where(isNotNull(documents.dataSet))
         .orderBy(asc(documents.dataSet)),
       db.selectDistinct({ mediaType: documents.mediaType })
         .from(documents)
-        .where(r2Cond ? and(isNotNull(documents.mediaType), r2Cond) : isNotNull(documents.mediaType))
+        .where(isNotNull(documents.mediaType))
         .orderBy(asc(documents.mediaType)),
     ]);
 
