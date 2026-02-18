@@ -164,6 +164,7 @@ export async function registerRoutes(
       res.set("Cache-Control", "public, max-age=60");
       res.json(counts);
     } catch (error) {
+      console.error("Failed to fetch view counts:", error);
       res.status(500).json({ error: "Failed to fetch view counts" });
     }
   });

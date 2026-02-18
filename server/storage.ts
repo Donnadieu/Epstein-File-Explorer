@@ -1808,17 +1808,19 @@ export class DatabaseStorage implements IStorage {
 
   async getViewCounts(entityType: string, ids: number[]): Promise<Record<number, number>> {
     if (ids.length === 0) return {};
-    const rows: any[] = await db.execute(sql`
-      SELECT entity_id, COUNT(*)::int AS view_count
-      FROM page_views
-      WHERE entity_type = ${entityType}
-        AND entity_id = ANY(${ids})
-        AND created_at > NOW() - INTERVAL '30 days'
-      GROUP BY entity_id
-    `).then((r: any) => r.rows ?? r);
+    const rows = await db.select({
+      entityId: pageViews.entityId,
+      count: sql<number>`count(*)::int`,
+    }).from(pageViews)
+      .where(and(
+        eq(pageViews.entityType, entityType),
+        inArray(pageViews.entityId, ids),
+        sql`${pageViews.createdAt} > NOW() - INTERVAL '30 days'`
+      ))
+      .groupBy(pageViews.entityId);
     const result: Record<number, number> = {};
     for (const row of rows) {
-      result[Number(row.entity_id)] = Number(row.view_count);
+      result[row.entityId] = row.count;
     }
     return result;
   }
