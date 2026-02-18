@@ -686,6 +686,7 @@ function VideoThumbnail({ doc }: { doc: Document }) {
       video.preload = "auto";
       video.muted = true;
       video.playsInline = true;
+      video.crossOrigin = "anonymous";
       video.src = contentUrl;
 
       let released = false;
