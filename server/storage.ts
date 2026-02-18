@@ -15,7 +15,7 @@ import {
   type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne } from "drizzle-orm";
+import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
 import { isR2Configured } from "./r2";
 
 export interface IStorage {
@@ -1255,25 +1255,25 @@ export class DatabaseStorage implements IStorage {
     const offset = (opts.page - 1) * opts.limit;
 
     if (opts.sort === "popular") {
-      // Build raw SQL WHERE parts for use in raw queries
-      const docWhere: string[] = [];
-      if (isR2Configured()) docWhere.push(`d.r2_key IS NOT NULL`);
-      docWhere.push(`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`);
-      if (opts.type) docWhere.push(`d.document_type = '${opts.type.replace(/'/g, "''")}'`);
-      if (opts.dataSet) docWhere.push(`d.data_set = '${opts.dataSet.replace(/'/g, "''")}'`);
-      if (opts.redacted === "redacted") docWhere.push(`d.is_redacted = true`);
-      else if (opts.redacted === "unredacted") docWhere.push(`d.is_redacted = false`);
-      if (opts.mediaType) docWhere.push(`d.media_type = '${opts.mediaType.replace(/'/g, "''")}'`);
+      // Build parameterized WHERE conditions
+      const conditions: SQL[] = [];
+      if (isR2Configured()) conditions.push(sql`d.r2_key IS NOT NULL`);
+      conditions.push(sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`);
+      if (opts.type) conditions.push(sql`d.document_type = ${opts.type}`);
+      if (opts.dataSet) conditions.push(sql`d.data_set = ${opts.dataSet}`);
+      if (opts.redacted === "redacted") conditions.push(sql`d.is_redacted = true`);
+      else if (opts.redacted === "unredacted") conditions.push(sql`d.is_redacted = false`);
+      if (opts.mediaType) conditions.push(sql`d.media_type = ${opts.mediaType}`);
       if (opts.search) {
         const pageResults = await this.searchPages(opts.search, 1, 100, false, true);
         const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
         if (docIds.length === 0) return { data: [], total: 0, page: opts.page, totalPages: 0 };
-        docWhere.push(`d.id IN (${docIds.join(",")})`);
+        conditions.push(sql`d.id = ANY(${docIds})`);
       }
-      const whereSQL = docWhere.join(" AND ");
+      const whereSQL = sql.join(conditions, sql` AND `);
 
       // Step 1: Count how many popular docs pass filters (small aggregation)
-      const countResult: any = await db.execute(sql.raw(`
+      const countResult: any = await db.execute(sql`
         SELECT COUNT(*)::int AS cnt FROM (
           SELECT DISTINCT pv.entity_id
           FROM page_views pv
@@ -1282,14 +1282,14 @@ export class DatabaseStorage implements IStorage {
             AND pv.created_at > NOW() - INTERVAL '30 days'
             AND ${whereSQL}
         ) sub
-      `));
+      `);
       const popularCount = (countResult.rows ?? countResult)[0]?.cnt ?? 0;
 
-      const viewedSubquery = `SELECT DISTINCT entity_id FROM page_views WHERE entity_type = 'document' AND created_at > NOW() - INTERVAL '30 days'`;
+      const viewedSubquery = sql`SELECT DISTINCT entity_id FROM page_views WHERE entity_type = 'document' AND created_at > NOW() - INTERVAL '30 days'`;
 
       if (offset < popularCount) {
         // Step 2a: Page falls within the popular segment
-        const pageResult: any = await db.execute(sql.raw(`
+        const pageResult: any = await db.execute(sql`
           WITH popular AS (
             SELECT entity_id, COUNT(*) AS view_count
             FROM page_views
@@ -1304,18 +1304,18 @@ export class DatabaseStorage implements IStorage {
           WHERE ${whereSQL}
           ORDER BY p.view_count DESC
           LIMIT ${opts.limit} OFFSET ${offset}
-        `));
+        `);
         const data: Document[] = (pageResult.rows ?? pageResult) as Document[];
 
         // Pad from non-viewed docs if page straddles the boundary
         if (data.length < opts.limit) {
-          const padResult: any = await db.execute(sql.raw(`
+          const padResult: any = await db.execute(sql`
             SELECT d.* FROM documents d
             WHERE ${whereSQL}
               AND d.id NOT IN (${viewedSubquery})
             ORDER BY d.id ASC
             LIMIT ${opts.limit - data.length}
-          `));
+          `);
           data.push(...((padResult.rows ?? padResult) as Document[]));
         }
 
@@ -1323,13 +1323,13 @@ export class DatabaseStorage implements IStorage {
       } else {
         // Step 2b: Page is entirely in the non-viewed segment
         const nonViewedOffset = offset - popularCount;
-        const result: any = await db.execute(sql.raw(`
+        const result: any = await db.execute(sql`
           SELECT d.* FROM documents d
           WHERE ${whereSQL}
             AND d.id NOT IN (${viewedSubquery})
           ORDER BY d.id ASC
           LIMIT ${opts.limit} OFFSET ${nonViewedOffset}
-        `));
+        `);
         const data: Document[] = (result.rows ?? result) as Document[];
 
         return { data, total, page: opts.page, totalPages };
