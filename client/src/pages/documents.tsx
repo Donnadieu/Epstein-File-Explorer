@@ -19,12 +19,14 @@ import {
   Filter,
   ChevronLeft,
   ChevronRight,
+  MoreHorizontal,
   X,
   Video,
   LayoutGrid,
   List,
   Bookmark,
   BookmarkCheck,
+  Loader2,
 } from "lucide-react";
 import { useUrlFilters } from "@/hooks/use-url-filters";
 import { useBookmarks } from "@/hooks/use-bookmarks";
@@ -135,6 +137,92 @@ function DocumentCardSkeleton({ index }: { index: number }) {
   );
 }
 
+function getPageNumbers(currentPage: number, totalPages: number): (number | "ellipsis")[] {
+  if (totalPages <= 7) {
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }
+
+  const pages: (number | "ellipsis")[] = [1];
+
+  if (currentPage > 3) {
+    pages.push("ellipsis");
+  }
+
+  const start = Math.max(2, currentPage - 1);
+  const end = Math.min(totalPages - 1, currentPage + 1);
+
+  for (let i = start; i <= end; i++) {
+    pages.push(i);
+  }
+
+  if (currentPage < totalPages - 2) {
+    pages.push("ellipsis");
+  }
+
+  pages.push(totalPages);
+
+  return pages;
+}
+
+function PaginationBar({
+  currentPage,
+  totalPages,
+  goToPage,
+}: {
+  currentPage: number;
+  totalPages: number;
+  goToPage: (page: number) => void;
+}) {
+  if (totalPages <= 1) return null;
+
+  const pages = getPageNumbers(currentPage, totalPages);
+
+  return (
+    <div className="flex items-center justify-center gap-1" data-testid="pagination-bar">
+      <Button
+        variant="outline"
+        size="sm"
+        disabled={currentPage <= 1}
+        onClick={() => goToPage(currentPage - 1)}
+        data-testid="button-prev-page"
+      >
+        <ChevronLeft className="w-4 h-4 mr-1" />
+        Previous
+      </Button>
+      <div className="flex items-center gap-0.5 mx-1">
+        {pages.map((page, i) =>
+          page === "ellipsis" ? (
+            <span key={`ellipsis-${i}`} className="flex h-8 w-8 items-center justify-center">
+              <MoreHorizontal className="w-4 h-4 text-muted-foreground" />
+            </span>
+          ) : (
+            <Button
+              key={page}
+              variant={page === currentPage ? "default" : "outline"}
+              size="sm"
+              className="h-8 w-8 p-0"
+              onClick={() => goToPage(page)}
+              data-testid={`page-${page}`}
+            >
+              {page}
+            </Button>
+          )
+        )}
+      </div>
+      <Button
+        variant="outline"
+        size="sm"
+        disabled={currentPage >= totalPages}
+        onClick={() => goToPage(currentPage + 1)}
+        data-testid="button-next-page"
+      >
+        Next
+        <ChevronRight className="w-4 h-4 ml-1" />
+      </Button>
+    </div>
+  );
+}
+
 export default function DocumentsPage() {
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const videoPlayer = useVideoPlayer();
@@ -169,7 +257,7 @@ export default function DocumentsPage() {
       ? (mediaTypeTitles[filters.mediaType] || filters.mediaType.charAt(0).toUpperCase() + filters.mediaType.slice(1))
       : "Document Browser";
 
-  const { data: result, isLoading } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
+  const { data: result, isLoading, isFetching } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
     queryKey: [`/api/documents?${queryParams.toString()}`],
     placeholderData: keepPreviousData,
   });
@@ -198,7 +286,11 @@ export default function DocumentsPage() {
 
   const hasActiveFilters = activeFilters.length > 0;
 
-  const goToPage = (page: number) => setFilter("page", String(page));
+  const listRef = useRef<HTMLDivElement>(null);
+  const goToPage = (page: number) => {
+    setFilter("page", String(page));
+    listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const resetPage = () => setFilter("page", "1");
 
   return (
@@ -317,9 +409,16 @@ export default function DocumentsPage() {
         </div>
       ) : (
         <>
-          <p className="text-xs text-muted-foreground">
-            Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} documents
-          </p>
+          <div ref={listRef} className="flex items-center justify-between flex-wrap gap-2">
+            <p className="text-xs text-muted-foreground">
+              Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} documents
+              {isFetching && (
+                <Loader2 className="inline-block w-3 h-3 ml-1.5 animate-spin text-muted-foreground" />
+              )}
+            </p>
+            <PaginationBar currentPage={currentPage} totalPages={totalPages} goToPage={goToPage} />
+          </div>
+          <div className={`transition-opacity duration-200 ${isFetching ? "opacity-60 pointer-events-none" : ""}`}>
           {viewMode === "list" ? (
             <div className="flex flex-col gap-2">
               {paginated?.map((doc) => {
@@ -493,6 +592,8 @@ export default function DocumentsPage() {
             </div>
           )}
 
+          </div>
+
           {totalItems === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-4">
               <FileText className="w-10 h-10 text-muted-foreground/40" />
@@ -526,33 +627,7 @@ export default function DocumentsPage() {
             </div>
           )}
 
-          {totalPages > 1 && (
-            <div className="flex items-center justify-center gap-2 pt-2">
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={currentPage <= 1}
-                onClick={() => goToPage(currentPage - 1)}
-                data-testid="button-prev-page"
-              >
-                <ChevronLeft className="w-4 h-4 mr-1" />
-                Previous
-              </Button>
-              <span className="text-sm text-muted-foreground px-3">
-                Page {currentPage} of {totalPages}
-              </span>
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={currentPage >= totalPages}
-                onClick={() => goToPage(currentPage + 1)}
-                data-testid="button-next-page"
-              >
-                Next
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </div>
-          )}
+          <PaginationBar currentPage={currentPage} totalPages={totalPages} goToPage={goToPage} />
         </>
       )}
 
