@@ -48,7 +48,7 @@ export interface IStorage {
   getStats(): Promise<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>;
   getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
-  searchPages(query: string, page: number, limit: number, useOrMode?: boolean): Promise<{
+  searchPages(query: string, page: number, limit: number, useOrMode?: boolean, skipCount?: boolean): Promise<{
     results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string; pageType: string | null }[];
     total: number; page: number; totalPages: number;
   }>;
@@ -1052,7 +1052,7 @@ export class DatabaseStorage implements IStorage {
         )
       ).limit(20),
 
-      this.searchPages(query, 1, 20),
+      this.searchPages(query, 1, 20, false, true),
 
       db.select().from(timelineEvents).where(
         or(
@@ -1080,7 +1080,7 @@ export class DatabaseStorage implements IStorage {
     return result;
   }
 
-  async searchPages(query: string, page: number, limit: number, useOrMode = false) {
+  async searchPages(query: string, page: number, limit: number, useOrMode = false, skipCount = false) {
     const offset = (page - 1) * limit;
 
     // Mirror r2Filter() logic as raw SQL for the JOIN
@@ -1093,14 +1093,17 @@ export class DatabaseStorage implements IStorage {
       ? sql`to_tsquery('english', ${query})`
       : sql`websearch_to_tsquery('english', ${query})`;
 
-    const countResult: any = await db.execute(sql`
-      SELECT count(*)::int AS total
-      FROM document_pages dp
-      JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ ${tsquery}
-        AND ${sql.raw(r2Raw)}
-    `);
-    const total: number = (countResult.rows ?? countResult)[0]?.total ?? 0;
+    let total = -1;
+    if (!skipCount) {
+      const countResult: any = await db.execute(sql`
+        SELECT count(*)::int AS total
+        FROM document_pages dp
+        JOIN documents d ON d.id = dp.document_id
+        WHERE dp.search_vector @@ ${tsquery}
+          AND ${sql.raw(r2Raw)}
+      `);
+      total = (countResult.rows ?? countResult)[0]?.total ?? 0;
+    }
 
     const rawResult: any = await db.execute(sql`
       SELECT dp.document_id, d.title, d.document_type, d.data_set,
@@ -1129,7 +1132,7 @@ export class DatabaseStorage implements IStorage {
       })),
       total,
       page,
-      totalPages: Math.ceil(total / limit),
+      totalPages: total >= 0 ? Math.ceil(total / limit) : -1,
     };
   }
 
@@ -1169,7 +1172,7 @@ export class DatabaseStorage implements IStorage {
 
     if (opts.search) {
       // Use full-text search on pages to find matching document IDs (fast, uses GIN index)
-      const pageResults = await this.searchPages(opts.search, 1, 100);
+      const pageResults = await this.searchPages(opts.search, 1, 100, false, true);
       const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
       if (docIds.length === 0) {
         return { data: [], total: 0, page: opts.page, totalPages: 0 };
@@ -1239,48 +1242,46 @@ export class DatabaseStorage implements IStorage {
     const offset = (opts.page - 1) * opts.limit;
 
     if (opts.sort === "popular") {
-      // Sort by page view count (last 30 days), then by id
-      // Build WHERE conditions as raw SQL fragments to pass into the raw query
-      const whereParts: string[] = [];
-      if (r2Cond) whereParts.push(`d.r2_key IS NOT NULL`);
-      if (opts.type) whereParts.push(`d.document_type = '${opts.type.replace(/'/g, "''")}'`);
-      if (opts.dataSet) whereParts.push(`d.data_set = '${opts.dataSet.replace(/'/g, "''")}'`);
-      if (opts.redacted === "redacted") whereParts.push(`d.is_redacted = true`);
-      else if (opts.redacted === "unredacted") whereParts.push(`d.is_redacted = false`);
-      if (opts.mediaType) whereParts.push(`d.media_type = '${opts.mediaType.replace(/'/g, "''")}'`);
-      if (opts.search) {
-        // search condition already narrowed by inArray above, re-apply here
-        const pageResults = await this.searchPages(opts.search, 1, 100);
-        const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
-        if (docIds.length === 0) {
-          return { data: [], total: 0, page: opts.page, totalPages: 0 };
-        }
-        whereParts.push(`d.id IN (${docIds.join(",")})`);
-      }
-      const whereSQL = whereParts.length > 0 ? sql.raw(`WHERE ${whereParts.join(" AND ")}`) : sql.raw("");
-
-      const viewedResult: any = await db.execute(sql`
-        SELECT d.id
-        FROM documents d
-        LEFT JOIN (
-          SELECT entity_id, COUNT(*) AS view_count
-          FROM page_views
-          WHERE entity_type = 'document'
-            AND created_at > NOW() - INTERVAL '30 days'
-          GROUP BY entity_id
-        ) pv ON d.id = pv.entity_id
-        ${whereSQL}
-        ORDER BY COALESCE(pv.view_count, 0) DESC, d.id ASC
-        LIMIT ${opts.limit} OFFSET ${offset}
+      // Step 1: Get top viewed document IDs from page_views (small result set)
+      const popularResult: any = await db.execute(sql`
+        SELECT entity_id, COUNT(*) AS view_count
+        FROM page_views
+        WHERE entity_type = 'document'
+          AND created_at > NOW() - INTERVAL '30 days'
+        GROUP BY entity_id
+        ORDER BY view_count DESC
+        LIMIT ${opts.limit + offset + 100}
       `);
-      const orderedIds: number[] = (viewedResult.rows ?? viewedResult).map((r: any) => r.id);
-      if (orderedIds.length === 0) {
-        return { data: [], total, page: opts.page, totalPages };
+      const popularRows: any[] = popularResult.rows ?? popularResult;
+      const popularIds = popularRows.map((r: any) => Number(r.entity_id));
+
+      // Step 2: Fetch those documents and apply filters
+      let filteredDocs: Document[] = [];
+      if (popularIds.length > 0) {
+        const popularConds = [...conditions, inArray(documents.id, popularIds)];
+        const rows = await db.select().from(documents).where(and(...popularConds));
+        // Restore popularity order
+        const byId = new Map(rows.map(r => [r.id, r]));
+        filteredDocs = popularIds.map(id => byId.get(id)).filter(Boolean) as Document[];
       }
-      const rows = await db.select().from(documents).where(inArray(documents.id, orderedIds));
-      // Restore the popularity order
-      const byId = new Map(rows.map(r => [r.id, r]));
-      const data = orderedIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+
+      // Step 3: Paginate from the ordered result
+      const data = filteredDocs.slice(offset, offset + opts.limit);
+
+      // Step 4: Pad with non-viewed docs if not enough results on first page
+      if (data.length < opts.limit && offset === 0) {
+        const excludeIds = filteredDocs.map(d => d.id);
+        const padConds = excludeIds.length > 0
+          ? [...conditions, sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`]
+          : conditions;
+        const padClause = padConds.length > 0 ? and(...padConds) : undefined;
+        const padDocs = await db.select().from(documents)
+          .where(padClause)
+          .orderBy(asc(documents.id))
+          .limit(opts.limit - data.length);
+        data.push(...padDocs);
+      }
+
       return { data, total, page: opts.page, totalPages };
     }
 
@@ -1751,59 +1752,91 @@ export class DatabaseStorage implements IStorage {
 
   async getTrendingPersons(limit: number): Promise<Person[]> {
     return trendingPersonsCache.get(async () => {
-      const result: any = await db.execute(sql`
-        WITH view_scores AS (
-          SELECT entity_id,
-                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
-          FROM page_views
-          WHERE entity_type = 'person'
-            AND created_at > NOW() - INTERVAL '7 days'
-          GROUP BY entity_id
-          HAVING COUNT(*) >= 2
-        )
-        SELECT p.*,
-               COALESCE(vs.score, 0) AS trending_score
-        FROM persons p
-        LEFT JOIN view_scores vs ON p.id = vs.entity_id
-        ORDER BY
-          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
-          p.document_count DESC
+      // Step 1: Get top trending person IDs from page_views (small result set, uses index)
+      const trendingResult: any = await db.execute(sql`
+        SELECT entity_id,
+               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+        FROM page_views
+        WHERE entity_type = 'person'
+          AND created_at > NOW() - INTERVAL '7 days'
+        GROUP BY entity_id
+        HAVING COUNT(*) >= 2
+        ORDER BY score DESC
         LIMIT ${limit}
       `);
-      const rows: any[] = result.rows ?? result;
-      return rows.map(({ trending_score, ...rest }: any) => rest as Person);
+      const trendingRows: any[] = trendingResult.rows ?? trendingResult;
+      const trendingIds = trendingRows.map((r: any) => Number(r.entity_id));
+
+      // Step 2: Fetch those specific persons by ID (index scan)
+      let trendingPersons: Person[] = [];
+      if (trendingIds.length > 0) {
+        const rows = await db.select().from(persons).where(inArray(persons.id, trendingIds));
+        const byId = new Map(rows.map(r => [r.id, r]));
+        trendingPersons = trendingIds.map(id => byId.get(id)).filter(Boolean) as Person[];
+      }
+
+      // Step 3: Pad with high document_count persons if fewer than limit
+      if (trendingPersons.length < limit) {
+        const excludeIds = trendingPersons.map(p => p.id);
+        const padCond = excludeIds.length > 0
+          ? sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`
+          : undefined;
+        const padPersons = await db.select().from(persons)
+          .where(padCond)
+          .orderBy(desc(persons.documentCount))
+          .limit(limit - trendingPersons.length);
+        trendingPersons.push(...padPersons);
+      }
+
+      return trendingPersons;
     });
   }
 
   async getTrendingDocuments(limit: number): Promise<Document[]> {
     return trendingDocumentsCache.get(async () => {
-      const r2Cond = isR2Configured()
-        ? sql`d.r2_key IS NOT NULL AND (d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`
-        : sql`(d.file_size_bytes IS NULL OR d.file_size_bytes != 0)`;
+      const r2Cond = r2Filter();
 
-      const result: any = await db.execute(sql`
-        WITH view_scores AS (
-          SELECT entity_id,
-                 SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
-          FROM page_views
-          WHERE entity_type = 'document'
-            AND created_at > NOW() - INTERVAL '7 days'
-          GROUP BY entity_id
-          HAVING COUNT(*) >= 2
-        )
-        SELECT d.*,
-               COALESCE(vs.score, 0) AS trending_score
-        FROM documents d
-        LEFT JOIN view_scores vs ON d.id = vs.entity_id
-        WHERE ${r2Cond}
-        ORDER BY
-          CASE WHEN vs.score IS NOT NULL THEN vs.score ELSE 0 END DESC,
-          d.page_count DESC NULLS LAST,
-          d.id DESC
+      // Step 1: Get top trending entity_ids from page_views (small result set, uses index)
+      const trendingResult: any = await db.execute(sql`
+        SELECT entity_id,
+               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+        FROM page_views
+        WHERE entity_type = 'document'
+          AND created_at > NOW() - INTERVAL '7 days'
+        GROUP BY entity_id
+        HAVING COUNT(*) >= 2
+        ORDER BY score DESC
         LIMIT ${limit}
       `);
-      const rows: any[] = result.rows ?? result;
-      return rows.map(({ trending_score, ...rest }: any) => rest as Document);
+      const trendingRows: any[] = trendingResult.rows ?? trendingResult;
+      const trendingIds = trendingRows.map((r: any) => Number(r.entity_id));
+
+      // Step 2: Fetch those specific documents by ID (index scan)
+      let trendingDocs: Document[] = [];
+      if (trendingIds.length > 0) {
+        const conds = r2Cond
+          ? and(inArray(documents.id, trendingIds), r2Cond)
+          : inArray(documents.id, trendingIds);
+        const rows = await db.select().from(documents).where(conds);
+        // Restore trending score order
+        const byId = new Map(rows.map(r => [r.id, r]));
+        trendingDocs = trendingIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+      }
+
+      // Step 3: Pad with popular docs (by page_count) if fewer than limit
+      if (trendingDocs.length < limit) {
+        const excludeIds = trendingDocs.map(d => d.id);
+        const padConds = excludeIds.length > 0
+          ? (r2Cond ? and(sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`, r2Cond) : sql`id NOT IN (${sql.join(excludeIds.map(id => sql`${id}`), sql`, `)})`)
+          : r2Cond;
+        const padDocs = await db.select().from(documents)
+          .where(padConds || undefined)
+          .orderBy(sql`page_count DESC NULLS LAST, id DESC`)
+          .limit(limit - trendingDocs.length);
+        trendingDocs.push(...padDocs);
+      }
+
+      return trendingDocs;
     });
   }
 }
