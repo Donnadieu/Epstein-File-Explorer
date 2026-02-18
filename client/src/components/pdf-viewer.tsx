@@ -191,6 +191,8 @@ export default function PdfViewer({ documentId, sourceUrl, publicUrl, initialPag
 
   const goToPage = (page: number) => {
     const clamped = Math.max(1, Math.min(page, totalPages));
+    if (clamped === currentPage) return;
+    setIsRendering(true);
     setCurrentPage(clamped);
     setPageInputValue(String(clamped));
     const url = new URL(window.location.href);
