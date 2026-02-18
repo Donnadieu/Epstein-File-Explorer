@@ -1105,18 +1105,30 @@ export class DatabaseStorage implements IStorage {
       total = (countResult.rows ?? countResult)[0]?.total ?? 0;
     }
 
+    // Inner subquery: GIN index scan + ts_rank on all matches, sorted + limited.
+    // Does NOT select dp.content — avoids reading full text for all matches.
+    // Outer query: joins back by PK to fetch content only for the final rows,
+    // then computes ts_headline on just those rows (expensive op on ~20 rows, not 800K+).
     const rawResult: any = await db.execute(sql`
-      SELECT dp.document_id, d.title, d.document_type, d.data_set,
-             dp.page_number, dp.page_type,
+      SELECT ranked.document_id, d.title, d.document_type, d.data_set,
+             ranked.page_number, ranked.page_type,
              ts_headline('english', dp.content, ${tsquery},
                'MaxWords=35, MinWords=15, StartSel=<mark>, StopSel=</mark>, MaxFragments=2'
              ) AS headline,
-             ts_rank(dp.search_vector, ${tsquery}) AS rank
-      FROM document_pages dp
-      JOIN documents d ON d.id = dp.document_id
-      WHERE dp.search_vector @@ ${tsquery} AND ${sql.raw(r2Raw)}
-      ORDER BY rank DESC, dp.document_id, dp.page_number
-      LIMIT ${limit} OFFSET ${offset}
+             ranked.rank
+      FROM (
+        SELECT dp.id, dp.document_id, dp.page_number, dp.page_type,
+               ts_rank(dp.search_vector, ${tsquery}) AS rank
+        FROM document_pages dp
+        JOIN documents d ON d.id = dp.document_id
+        WHERE dp.search_vector @@ ${tsquery}
+          AND ${sql.raw(r2Raw)}
+        ORDER BY rank DESC, dp.document_id, dp.page_number
+        LIMIT ${limit} OFFSET ${offset}
+      ) ranked
+      JOIN document_pages dp ON dp.id = ranked.id
+      JOIN documents d ON d.id = ranked.document_id
+      ORDER BY ranked.rank DESC, ranked.document_id, ranked.page_number
     `);
     const rows: any[] = rawResult.rows ?? rawResult;
 
