@@ -41,6 +41,11 @@ import { VideoPlayerModal } from "@/components/video-player-modal";
 import { DocumentViewerModal } from "@/components/document-viewer-modal";
 import type { Document, PublicDocument } from "@shared/schema";
 
+pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString();
+
 const ITEMS_PER_PAGE = 50;
 
 /** Detect if a document title is just an EFTA reference number or other non-descriptive ID */
@@ -663,7 +668,8 @@ function PdfThumbnail({ doc }: { doc: PublicDocument }) {
 
     (async () => {
       try {
-        const pdf = await pdfjsLib.getDocument({ url: `/api/documents/${doc.id}/pdf` }).promise;
+        const url = doc.publicUrl || `/api/documents/${doc.id}/pdf`;
+        const pdf = await pdfjsLib.getDocument({ url }).promise;
         if (cancelled) return;
         const page = await pdf.getPage(1);
         if (cancelled) return;
@@ -678,7 +684,8 @@ function PdfThumbnail({ doc }: { doc: PublicDocument }) {
           viewport: scaledViewport,
           canvas,
         }).promise;
-      } catch {
+      } catch (err) {
+        console.error(`[PdfThumb] doc ${doc.id} failed:`, err, "url:", doc.publicUrl || `/api/documents/${doc.id}/pdf`);
         if (!cancelled) setFailed(true);
       }
     })();
@@ -761,8 +768,7 @@ function VideoThumbnail({ doc }: { doc: PublicDocument }) {
       await acquireThumbSlot();
       if (cancelled) { releaseThumbSlot(); return; }
 
-      const contentUrl = doc.publicUrl;
-      if (!contentUrl) { releaseThumbSlot(); return; }
+      const contentUrl = doc.publicUrl || `/api/documents/${doc.id}/video`;
       if (cancelled) { releaseThumbSlot(); return; }
 
       const video = document.createElement("video");
