@@ -200,7 +200,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
         break;
 
       case "load-ai-results":
-        await loadAIResults();
+        await loadAIResults({ dryRun: config.dryRun });
         break;
 
       case "load-persons":

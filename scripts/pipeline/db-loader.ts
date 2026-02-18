@@ -213,7 +213,17 @@ export async function loadDocumentsFromCatalog(catalogPath?: string): Promise<nu
   return loaded;
 }
 
-export async function loadAIResults(): Promise<{ persons: number; connections: number; events: number; docLinks: number }> {
+export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{ persons: number; connections: number; events: number; docLinks: number }> {
+  const isDryRun = options?.dryRun === true;
+  const dryRunSummary = isDryRun ? {
+    personsToCreate: [] as string[],
+    personsToUpdate: [] as string[],
+    connectionsToCreate: [] as string[],
+    eventsToCreate: [] as string[],
+    eventsToUpdate: [] as string[],
+    docLinksToCreate: [] as string[],
+    docsToMark: [] as string[],
+  } : null;
   const aiDir = path.join(DATA_DIR, "ai-analyzed");
   if (!fs.existsSync(aiDir)) {
     console.error(`AI results directory not found: ${aiDir}`);
@@ -308,8 +318,11 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
         const status = inferStatusFromCategory(mention.category, mention.role);
 
         if (!existing) {
-          try {
-            const [inserted] = await db.insert(persons).values({
+          if (isDryRun) {
+            dryRunSummary!.personsToCreate.push(mention.name);
+            // Add simulated person so downstream resolution still works
+            personsByName.set(mention.name.toLowerCase(), {
+              id: -(personsCreated + 1),
               name: mention.name,
               category: mention.category,
               role: mention.role,
@@ -317,11 +330,24 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
               status,
               documentCount: 0,
               connectionCount: 0,
-            }).returning();
-            personsByName.set(inserted.name.toLowerCase(), inserted);
+            } as unknown as typeof persons.$inferSelect);
             personsCreated++;
-          } catch {
-            /* skip duplicates */
+          } else {
+            try {
+              const [inserted] = await db.insert(persons).values({
+                name: mention.name,
+                category: mention.category,
+                role: mention.role,
+                description: newDesc,
+                status,
+                documentCount: 0,
+                connectionCount: 0,
+              }).returning();
+              personsByName.set(inserted.name.toLowerCase(), inserted);
+              personsCreated++;
+            } catch {
+              /* skip duplicates */
+            }
           }
         } else {
           // Update if new data is richer
@@ -332,7 +358,11 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           if (status !== "named" && existing.status === "named") updates.status = status;
 
           if (Object.keys(updates).length > 0) {
-            await db.update(persons).set(updates).where(eq(persons.id, existing.id));
+            if (isDryRun) {
+              dryRunSummary!.personsToUpdate.push(`${existing.name} (${Object.keys(updates).join(", ")})`);
+            } else {
+              await db.update(persons).set(updates).where(eq(persons.id, existing.id));
+            }
             personsUpdated++;
           }
         }
@@ -348,19 +378,25 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
 
           if (existingPairs.has(pairKey)) continue;
 
-          try {
-            const newDesc = (conn.description || "").substring(0, 500);
-            await db.insert(connections).values({
-              personId1: person1.id,
-              personId2: person2.id,
-              connectionType: conn.relationshipType,
-              description: newDesc,
-              strength: conn.strength,
-            });
+          if (isDryRun) {
+            dryRunSummary!.connectionsToCreate.push(`${conn.person1} ↔ ${conn.person2}`);
             existingPairs.add(pairKey);
             connectionsCreated++;
-          } catch {
-            /* skip */
+          } else {
+            try {
+              const newDesc = (conn.description || "").substring(0, 500);
+              await db.insert(connections).values({
+                personId1: person1.id,
+                personId2: person2.id,
+                connectionType: conn.relationshipType,
+                description: newDesc,
+                strength: conn.strength,
+              });
+              existingPairs.add(pairKey);
+              connectionsCreated++;
+            } catch {
+              /* skip */
+            }
           }
         }
       }
@@ -397,15 +433,19 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           const documentIds = sourceDocId ? [sourceDocId] : [];
 
           if (existingEvent.length === 0) {
-            await db.insert(timelineEvents).values({
-              date: event.date,
-              title: event.title,
-              description: event.description,
-              category: event.category,
-              significance: event.significance,
-              personIds,
-              documentIds,
-            });
+            if (isDryRun) {
+              dryRunSummary!.eventsToCreate.push(`${event.date}: ${event.title}`);
+            } else {
+              await db.insert(timelineEvents).values({
+                date: event.date,
+                title: event.title,
+                description: event.description,
+                category: event.category,
+                significance: event.significance,
+                personIds,
+                documentIds,
+              });
+            }
             eventsCreated++;
           } else {
             const ex = existingEvent[0];
@@ -424,7 +464,11 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
             }
 
             if (Object.keys(updates).length > 0) {
-              await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));
+              if (isDryRun) {
+                dryRunSummary!.eventsToUpdate.push(`${event.date}: ${event.title}`);
+              } else {
+                await db.update(timelineEvents).set(updates).where(eq(timelineEvents.id, ex.id));
+              }
               eventsUpdated++;
             }
           }
@@ -443,28 +487,38 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
           if (existingLinks.has(linkKey)) continue;
 
           const newContext = (mention.context || "").substring(0, 500);
-          try {
-            await db.insert(personDocuments).values({
-              personId: person.id,
-              documentId: sourceDocId,
-              context: newContext,
-            });
+          if (isDryRun) {
+            dryRunSummary!.docLinksToCreate.push(`${mention.name} ↔ doc#${sourceDocId}`);
             existingLinks.add(linkKey);
             docLinksCreated++;
-          } catch {
-            /* skip */
+          } else {
+            try {
+              await db.insert(personDocuments).values({
+                personId: person.id,
+                documentId: sourceDocId,
+                context: newContext,
+              });
+              existingLinks.add(linkKey);
+              docLinksCreated++;
+            } catch {
+              /* skip */
+            }
           }
         }
       }
       // --- Mark document as AI-analyzed + update documentType from AI ---
       if (sourceDocId) {
-        const docUpdates: Record<string, any> = { aiAnalysisStatus: "completed" };
-        if (data.documentType) {
-          docUpdates.documentType = normalizeType(data.documentType);
+        if (isDryRun) {
+          dryRunSummary!.docsToMark.push(eventEfta);
+        } else {
+          const docUpdates: Record<string, any> = { aiAnalysisStatus: "completed" };
+          if (data.documentType) {
+            docUpdates.documentType = normalizeType(data.documentType);
+          }
+          await db.update(documents)
+            .set(docUpdates)
+            .where(eq(documents.id, sourceDocId));
         }
-        await db.update(documents)
-          .set(docUpdates)
-          .where(eq(documents.id, sourceDocId));
       }
 
     } catch (error: any) {
@@ -472,7 +526,17 @@ export async function loadAIResults(): Promise<{ persons: number; connections: n
     }
   }
 
-  console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`);
+  if (isDryRun && dryRunSummary) {
+    const planPath = path.join(DATA_DIR, "ai-results-dry-run.json");
+    fs.writeFileSync(planPath, JSON.stringify(dryRunSummary, null, 2));
+    console.log(`\n  DRY RUN — no database changes made`);
+    console.log(`  Would create: ${dryRunSummary.personsToCreate.length} persons, ${dryRunSummary.connectionsToCreate.length} connections, ${dryRunSummary.eventsToCreate.length} events, ${dryRunSummary.docLinksToCreate.length} doc-links`);
+    console.log(`  Would update: ${dryRunSummary.personsToUpdate.length} persons, ${dryRunSummary.eventsToUpdate.length} events`);
+    console.log(`  Would mark ${dryRunSummary.docsToMark.length} docs as AI-analyzed`);
+    console.log(`  Full details: ${planPath}`);
+  } else {
+    console.log(`  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`);
+  }
   return { persons: personsCreated + personsUpdated, connections: connectionsCreated, events: eventsCreated + eventsUpdated, docLinks: docLinksCreated };
 }
 
@@ -2071,7 +2135,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
     } else if (command === "documents") {
       await loadDocumentsFromCatalog(process.argv[3]);
     } else if (command === "ai-results") {
-      await loadAIResults();
+      const dryRun = process.argv.includes("--dry-run");
+      await loadAIResults({ dryRun });
     } else if (command === "extract-connections") {
       await extractConnectionsFromDescriptions();
     } else if (command === "import-downloads") {
@@ -2105,6 +2170,7 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       console.log("  persons [file]       - Load persons from JSON file");
       console.log("  documents [file]     - Load documents from DOJ catalog");
       console.log("  ai-results           - Load AI-analyzed persons, connections, and events");
+      console.log("    --dry-run              Preview what would be loaded (no DB changes)");
       console.log("  import-downloads [dir] - Import downloaded PDFs from filesystem");
       console.log("  extract-connections  - Extract relationships from descriptions");
       console.log("  update-counts        - Recalculate document/connection counts");
