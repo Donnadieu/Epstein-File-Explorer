@@ -1,11 +1,17 @@
-import { useState, useCallback, useMemo, useEffect } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -62,38 +68,70 @@ interface PageSearchResponse {
   total: number;
   page: number;
   totalPages: number;
+  facets?: {
+    documentTypes: { value: string; count: number }[];
+    dataSets: { value: string; count: number }[];
+  };
 }
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
-  const [submittedQuery, setSubmittedQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
   const { searchBookmarks, isBookmarked, toggleBookmark, deleteBookmark } = useBookmarks();
   const { history, addSearch, clearHistory } = useSearchHistory();
 
   const [ftPage, setFtPage] = useState(1);
+  const [docTypeFilter, setDocTypeFilter] = useState("__all__");
+  const [dataSetFilter, setDataSetFilter] = useState("__all__");
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>();
 
+  // Debounce query input — 200ms delay for type-as-you-search
+  useEffect(() => {
+    const trimmed = query.trim();
+    if (trimmed.length < 2) {
+      setDebouncedQuery("");
+      return;
+    }
+    debounceRef.current = setTimeout(() => {
+      setDebouncedQuery(trimmed);
+      setFtPage(1);
+      addSearch(trimmed);
+    }, 200);
+    return () => clearTimeout(debounceRef.current);
+  }, [query, addSearch]);
+
+  // Immediate search (Enter key, badge/history clicks) — bypass debounce
   const executeSearch = useCallback((term: string) => {
     const trimmed = term.trim();
     setQuery(trimmed);
     if (trimmed.length >= 2) {
-      setSubmittedQuery(trimmed);
+      clearTimeout(debounceRef.current);
+      setDebouncedQuery(trimmed);
       setFtPage(1);
+      setDocTypeFilter("__all__");
+      setDataSetFilter("__all__");
       addSearch(trimmed);
     }
   }, [addSearch]);
 
-  const handleSearchSubmit = useCallback(() => {
-    executeSearch(query);
-  }, [query, executeSearch]);
+  // Build page search URL with optional facet filters
+  const pageSearchUrl = useMemo(() => {
+    let url = `/api/search/pages?q=${encodeURIComponent(debouncedQuery)}&page=${ftPage}&limit=20`;
+    if (docTypeFilter !== "__all__") url += `&documentType=${encodeURIComponent(docTypeFilter)}`;
+    if (dataSetFilter !== "__all__") url += `&dataSet=${encodeURIComponent(dataSetFilter)}`;
+    return url;
+  }, [debouncedQuery, ftPage, docTypeFilter, dataSetFilter]);
 
   const { data, isLoading, isFetching } = useQuery<SearchResults>({
-    queryKey: ["/api/search?q=" + encodeURIComponent(submittedQuery)],
-    enabled: submittedQuery.length >= 2,
+    queryKey: ["/api/search?q=" + encodeURIComponent(debouncedQuery)],
+    enabled: debouncedQuery.length >= 2,
+    staleTime: 60_000,
   });
 
   const { data: pageData } = useQuery<PageSearchResponse>({
-    queryKey: [`/api/search/pages?q=${encodeURIComponent(submittedQuery)}&page=${ftPage}&limit=20`],
-    enabled: submittedQuery.length >= 2,
+    queryKey: [pageSearchUrl],
+    enabled: debouncedQuery.length >= 2,
+    staleTime: 60_000,
   });
 
   const searchDocumentIds = useMemo(() => (data?.documents ?? []).map((d) => d.id), [data?.documents]);
@@ -106,15 +144,15 @@ export default function SearchPage() {
 
   // Record search query server-side for trending
   useEffect(() => {
-    if (data && submittedQuery.length >= 2) {
+    if (data && debouncedQuery.length >= 2) {
       const totalResults = (data.persons?.length || 0) + (data.documents?.length || 0) + (data.events?.length || 0);
       fetch("/api/search/record", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: submittedQuery, sessionId: getClientId(), resultCount: totalResults }),
+        body: JSON.stringify({ query: debouncedQuery, sessionId: getClientId(), resultCount: totalResults }),
       }).catch(() => {});
     }
-  }, [data, submittedQuery]);
+  }, [data, debouncedQuery]);
 
   const totalResults =
     (data?.persons?.length || 0) + (data?.documents?.length || 0) + (data?.events?.length || 0);
@@ -156,7 +194,7 @@ export default function SearchPage() {
   const videoPlayer = useVideoPlayer();
   const docViewer = useDocumentViewer();
 
-  const searchIsBookmarked = isBookmarked("search", undefined, submittedQuery);
+  const searchIsBookmarked = isBookmarked("search", undefined, debouncedQuery);
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-5xl mx-auto w-full">
@@ -184,34 +222,28 @@ export default function SearchPage() {
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search names, documents, events, keywords..."
+              placeholder="Start typing to search names, documents, events..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   e.preventDefault();
-                  handleSearchSubmit();
+                  executeSearch(query);
                 }
               }}
               className="pl-10 h-11 text-base"
               data-testid="input-global-search"
               autoFocus
             />
+            {isFetching && debouncedQuery.length >= 2 && (
+              <Loader2 className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 animate-spin text-muted-foreground" />
+            )}
           </div>
-          <Button
-            onClick={handleSearchSubmit}
-            disabled={query.trim().length < 2}
-            className="h-11 px-4"
-            data-testid="button-submit-search"
-          >
-            <SearchIcon className="w-4 h-4 mr-1.5" />
-            Search
-          </Button>
-          {submittedQuery.length >= 2 && (
+          {debouncedQuery.length >= 2 && (
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => toggleBookmark("search", undefined, submittedQuery, submittedQuery)}
+              onClick={() => toggleBookmark("search", undefined, debouncedQuery, debouncedQuery)}
               className={searchIsBookmarked ? "text-primary" : "text-muted-foreground"}
               data-testid="button-bookmark-search"
               aria-label={searchIsBookmarked ? "Remove search bookmark" : "Bookmark this search"}
@@ -222,7 +254,7 @@ export default function SearchPage() {
         </div>
 
         {/* Search History */}
-        {history.length > 0 && submittedQuery.length < 2 && (
+        {history.length > 0 && debouncedQuery.length < 2 && (
           <div className="flex items-center gap-1.5 max-w-2xl" data-testid="search-history-section">
             <History className="w-3 h-3 text-muted-foreground/50 shrink-0" />
             {history.map((term) => (
@@ -247,13 +279,11 @@ export default function SearchPage() {
         )}
       </div>
 
-      {submittedQuery.length < 2 ? (
+      {debouncedQuery.length < 2 ? (
         <div className="flex flex-col items-center justify-center py-20 gap-4">
           <SearchIcon className="w-12 h-12 text-muted-foreground/20" />
           <p className="text-sm text-muted-foreground">
-            {query.trim().length >= 2
-              ? "Press Enter or click Search to find results."
-              : "Enter at least 2 characters to search."}
+            Enter at least 2 characters to search.
           </p>
           {trendingSearches && trendingSearches.length > 0 ? (
             <div className="flex flex-col gap-2 items-center">
@@ -313,13 +343,13 @@ export default function SearchPage() {
         <div className="flex flex-col items-center justify-center py-20 gap-3">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
           <p className="text-sm text-muted-foreground">
-            Searching for &ldquo;{submittedQuery}&rdquo;&hellip;
+            Searching for &ldquo;{debouncedQuery}&rdquo;&hellip;
           </p>
         </div>
       ) : (
         <>
           <p className="text-xs text-muted-foreground">
-            {totalResults} results for &ldquo;{submittedQuery}&rdquo;
+            {totalResults} results for &ldquo;{debouncedQuery}&rdquo;
           </p>
           <Tabs defaultValue="all" className="w-full">
             <TabsList data-testid="tabs-search-results">
@@ -369,31 +399,70 @@ export default function SearchPage() {
                   ))}
                 </div>
               )}
-              {totalResults === 0 && <NoResultsState query={submittedQuery} />}
+              {totalResults === 0 && <NoResultsState query={debouncedQuery} />}
             </TabsContent>
 
             <TabsContent value="people" className="mt-4 flex flex-col gap-2">
               {data?.persons?.map((person) => <PersonResult key={person.id} person={person} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} />)}
               {(!data?.persons || data.persons.length === 0) && (
-                <EmptyState type="people" query={submittedQuery} />
+                <EmptyState type="people" query={debouncedQuery} />
               )}
             </TabsContent>
 
             <TabsContent value="documents" className="mt-4 flex flex-col gap-2">
               {data?.documents?.map((doc) => <DocumentResult key={doc.id} doc={doc} isBookmarked={isBookmarked} toggleBookmark={toggleBookmark} isVoted={!!isVoted(doc.id)} voteCount={getCount(doc.id)} onToggleVote={toggleVote} onVideoClick={videoPlayer.open} onDocClick={docViewer.open} />)}
               {(!data?.documents || data.documents.length === 0) && (
-                <EmptyState type="documents" query={submittedQuery} />
+                <EmptyState type="documents" query={debouncedQuery} />
               )}
             </TabsContent>
 
             <TabsContent value="events" className="mt-4 flex flex-col gap-2">
               {data?.events?.map((event) => <EventResult key={event.id} event={event} />)}
               {(!data?.events || data.events.length === 0) && (
-                <EmptyState type="events" query={submittedQuery} />
+                <EmptyState type="events" query={debouncedQuery} />
               )}
             </TabsContent>
 
             <TabsContent value="fulltext" className="mt-4 flex flex-col gap-2">
+              {pageData?.facets && (pageData.facets.documentTypes.length > 1 || pageData.facets.dataSets.length > 1) && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  {pageData.facets.documentTypes.length > 1 && (
+                    <Select value={docTypeFilter} onValueChange={(v) => { setDocTypeFilter(v); setFtPage(1); }}>
+                      <SelectTrigger className="w-44 h-8 text-xs">
+                        <SelectValue placeholder="Document Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="__all__">All Types</SelectItem>
+                        {pageData.facets.documentTypes.map((f) => (
+                          <SelectItem key={f.value} value={f.value}>
+                            {f.value} ({f.count.toLocaleString()})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  )}
+                  {pageData.facets.dataSets.length > 1 && (
+                    <Select value={dataSetFilter} onValueChange={(v) => { setDataSetFilter(v); setFtPage(1); }}>
+                      <SelectTrigger className="w-44 h-8 text-xs">
+                        <SelectValue placeholder="Data Set" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="__all__">All Sets</SelectItem>
+                        {pageData.facets.dataSets.map((f) => (
+                          <SelectItem key={f.value} value={f.value}>
+                            {f.value} ({f.count.toLocaleString()})
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  )}
+                  {(docTypeFilter !== "__all__" || dataSetFilter !== "__all__") && (
+                    <Button variant="ghost" size="sm" className="h-8 text-xs" onClick={() => { setDocTypeFilter("__all__"); setDataSetFilter("__all__"); setFtPage(1); }}>
+                      <X className="w-3 h-3 mr-1" /> Clear filters
+                    </Button>
+                  )}
+                </div>
+              )}
               {groupedFullTextResults.length > 0 ? (
                 <Accordion type="multiple" defaultValue={groupedFullTextResults.map((g) => String(g.documentId))} className="w-full">
                   {groupedFullTextResults.map((group) => (
@@ -441,7 +510,7 @@ export default function SearchPage() {
                   ))}
                 </Accordion>
               ) : (
-                <EmptyState type="full text" query={submittedQuery} />
+                <EmptyState type="full text" query={debouncedQuery} />
               )}
               {pageData && pageData.totalPages > 1 && (
                 <div className="flex items-center justify-center gap-2 pt-3">

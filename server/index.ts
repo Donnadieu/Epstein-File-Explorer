@@ -7,6 +7,7 @@ import { storage } from "./storage";
 import { pool } from "./db";
 import { runMigrations } from "./migrate";
 import { startBackgroundWorker } from "./background-worker";
+import { isTypesenseConfigured, getTypesenseClient } from "./typesense";
 
 const app = express();
 const httpServer = createServer(app);
@@ -94,6 +95,15 @@ app.use((req, res, next) => {
     log("Database migrations complete");
   } catch (err: any) {
     log(`Database migration warning: ${err.message}`);
+  }
+
+  if (isTypesenseConfigured()) {
+    try {
+      const health = await getTypesenseClient()!.health.retrieve();
+      log(`Typesense: ${health.ok ? "healthy" : "unhealthy"}`);
+    } catch (err: any) {
+      log(`Typesense unavailable: ${err.message} — using PostgreSQL fallback`);
+    }
   }
 
   const port = parseInt(process.env.PORT || "5000", 10);

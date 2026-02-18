@@ -1,6 +1,8 @@
 import type { Person, ChatCitation, AIAnalysisListItem, AIAnalysisDocument } from "@shared/schema";
 import { storage } from "../storage";
 import { extractSearchQuery, buildTsQuery, type ExtractedQuery } from "./extractor";
+import { isTypesenseConfigured, typesenseSearchPages } from "../typesense";
+import { isR2Configured } from "../r2";
 
 export interface RetrievalResult {
   contextText: string;
@@ -103,13 +105,22 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
       ? extracted.searchTerms
       : keywords;
 
-  // Use buildTsQuery + OR mode for extracted terms; fall back to raw query for websearch_to_tsquery
+  // Typesense-first for page search, PostgreSQL fallback
   let pageResults;
   const tsQuery = buildTsQuery(searchTerms);
-  if (tsQuery) {
-    pageResults = await storage.searchPages(tsQuery, 1, 20, true);
-  } else {
-    pageResults = await storage.searchPages(query, 1, 20);
+  if (isTypesenseConfigured()) {
+    try {
+      pageResults = await typesenseSearchPages(tsQuery || query, 1, 20, { filterR2: isR2Configured() });
+    } catch {
+      // fall through to PostgreSQL
+    }
+  }
+  if (!pageResults) {
+    if (tsQuery) {
+      pageResults = await storage.searchPages(tsQuery, 1, 20, true);
+    } else {
+      pageResults = await storage.searchPages(query, 1, 20);
+    }
   }
 
   // Step 1: Find matched persons — prefer LLM-extracted names, fall back to keywords

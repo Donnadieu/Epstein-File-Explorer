@@ -17,6 +17,7 @@ import {
 import { db } from "./db";
 import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
 import { isR2Configured } from "./r2";
+import { isTypesenseConfigured, typesenseDocumentSearch, typesenseSearchPages } from "./typesense";
 
 export interface IStorage {
   getPersons(): Promise<Person[]>;
@@ -1084,6 +1085,71 @@ export class DatabaseStorage implements IStorage {
     return result;
   }
 
+  /**
+   * Search using Typesense for documents, PostgreSQL for persons/events.
+   * Falls through to caller if Typesense fails (caller should catch and use search()).
+   */
+  async searchWithTypesense(query: string) {
+    const normalizedQuery = query.toLowerCase().trim();
+    const cachedResult = searchCache.get(normalizedQuery);
+    if (cachedResult && Date.now() - cachedResult.cachedAt < SEARCH_CACHE_TTL) {
+      return cachedResult.data;
+    }
+
+    const searchPattern = `%${escapeLikePattern(query)}%`;
+
+    const [matchedPersons, tsPageResults, matchedEvents] = await Promise.all([
+      db.select().from(persons).where(
+        or(
+          ilike(persons.name, searchPattern),
+          ilike(persons.occupation, searchPattern)
+        )
+      ).limit(20),
+
+      typesenseDocumentSearch(query, 20),
+
+      db.select().from(timelineEvents).where(
+        or(
+          ilike(timelineEvents.title, searchPattern),
+          ilike(timelineEvents.description, searchPattern),
+          ilike(timelineEvents.category, searchPattern)
+        )
+      ).limit(20),
+    ]);
+
+    const docIds = Array.from(new Set(tsPageResults.map(r => r.documentId))).slice(0, 20);
+    const matchedDocuments = docIds.length > 0
+      ? await db.select().from(documents).where(inArray(documents.id, docIds))
+      : [];
+
+    const result = {
+      persons: matchedPersons,
+      documents: matchedDocuments,
+      events: matchedEvents,
+    };
+
+    searchCache.set(normalizedQuery, { data: result, cachedAt: Date.now() });
+    evictExpired(searchCache, SEARCH_CACHE_TTL, MAX_SEARCH_CACHE);
+    return result;
+  }
+
+  /**
+   * Search for document IDs using Typesense-first, PostgreSQL fallback.
+   * Used by getDocumentsFiltered() when opts.search is set.
+   */
+  private async searchDocumentIds(query: string, limit: number): Promise<number[]> {
+    if (isTypesenseConfigured()) {
+      try {
+        const result = await typesenseSearchPages(query, 1, limit, { filterR2: isR2Configured() });
+        return [...new Set(result.results.map(r => r.documentId))];
+      } catch {
+        // fall through to PostgreSQL
+      }
+    }
+    const result = await this.searchPages(query, 1, limit, false, true);
+    return [...new Set(result.results.map(r => r.documentId))];
+  }
+
   async searchPages(query: string, page: number, limit: number, useOrMode = false, skipCount = false) {
     const offset = (page - 1) * limit;
 
@@ -1201,9 +1267,7 @@ export class DatabaseStorage implements IStorage {
     if (r2Cond) conditions.push(r2Cond);
 
     if (opts.search) {
-      // Use full-text search on pages to find matching document IDs (fast, uses GIN index)
-      const pageResults = await this.searchPages(opts.search, 1, 100, false, true);
-      const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
+      const docIds = await this.searchDocumentIds(opts.search, 100);
       if (docIds.length === 0) {
         return { data: [], total: 0, page: opts.page, totalPages: 0 };
       }

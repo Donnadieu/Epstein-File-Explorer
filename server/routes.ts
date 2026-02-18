@@ -11,6 +11,12 @@ import { Readable } from "stream";
 import { registerChatRoutes } from "./chat";
 import { getPresignedUrl, getPublicUrl, getR2Stream, isR2Configured } from "./r2";
 import { storage } from "./storage";
+import {
+  isTypesenseConfigured,
+  typesenseSearchPages,
+  typesenseSearchInstant,
+  typesenseDocumentSearch,
+} from "./typesense";
 
 let activeProxyStreams = 0;
 const MAX_PROXY_STREAMS = 10;
@@ -786,6 +792,18 @@ export async function registerRoutes(
       if (query.length < 2) {
         return res.json({ persons: [], documents: [], events: [] });
       }
+
+      // Typesense-first: use Typesense for document search, PostgreSQL for persons/events
+      if (isTypesenseConfigured()) {
+        try {
+          const results = await storage.searchWithTypesense(query);
+          res.set("Cache-Control", "public, max-age=60");
+          return res.json(results);
+        } catch (err) {
+          console.warn("Typesense search failed, falling back to PostgreSQL:", err);
+        }
+      }
+
       const results = await storage.search(query);
       res.set("Cache-Control", "public, max-age=60");
       res.json(results);
@@ -805,12 +823,44 @@ export async function registerRoutes(
         50,
         Math.max(1, parseInt(req.query.limit as string) || 20),
       );
+
+      // Typesense-first with PostgreSQL fallback
+      if (isTypesenseConfigured()) {
+        try {
+          const results = await typesenseSearchPages(query, page, limit, {
+            filterR2: isR2Configured(),
+            documentType: (req.query.documentType as string) || undefined,
+            dataSet: (req.query.dataSet as string) || undefined,
+          });
+          res.set("Cache-Control", "public, max-age=60");
+          return res.json(results);
+        } catch (err) {
+          console.warn("Typesense search/pages failed, falling back to PostgreSQL:", err);
+        }
+      }
+
       const results = await storage.searchPages(query, page, limit);
       res.set("Cache-Control", "public, max-age=60");
       res.json(results);
     } catch (error: any) {
       console.error("search/pages error:", error);
       res.status(500).json({ error: "Failed to search pages" });
+    }
+  });
+
+  // Lightweight instant search for type-ahead (Typesense only)
+  app.get("/api/search/instant", async (req, res) => {
+    try {
+      const query = (req.query.q as string) || "";
+      if (query.length < 2 || !isTypesenseConfigured()) {
+        return res.json({ results: [], total: 0, page: 1, totalPages: 0 });
+      }
+      const results = await typesenseSearchInstant(query, 8);
+      res.set("Cache-Control", "public, max-age=30");
+      res.json(results);
+    } catch (error: any) {
+      console.warn("Instant search error:", error);
+      res.json({ results: [], total: 0, page: 1, totalPages: 0 });
     }
   });
 

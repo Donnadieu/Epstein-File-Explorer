@@ -1,0 +1,284 @@
+import Typesense from "typesense";
+import Client from "typesense/lib/Typesense/Client";
+import type { CollectionCreateSchema } from "typesense/lib/Typesense/Collections";
+import type { SearchResponseHit } from "typesense/lib/Typesense/Documents";
+import { isR2Configured } from "./r2";
+
+// --- Client ---
+
+let client: Client | null = null;
+
+export function isTypesenseConfigured(): boolean {
+  return !!(
+    process.env.TYPESENSE_HOST &&
+    (process.env.TYPESENSE_SEARCH_API_KEY || process.env.TYPESENSE_API_KEY)
+  );
+}
+
+export function getTypesenseClient(): Client | null {
+  if (client) return client;
+
+  const host = process.env.TYPESENSE_HOST;
+  const apiKey =
+    process.env.TYPESENSE_SEARCH_API_KEY || process.env.TYPESENSE_API_KEY;
+
+  if (!host || !apiKey) return null;
+
+  client = new Typesense.Client({
+    nodes: [
+      {
+        host,
+        port: parseInt(process.env.TYPESENSE_PORT || "8108"),
+        protocol: process.env.TYPESENSE_PROTOCOL || "http",
+      },
+    ],
+    apiKey,
+    connectionTimeoutSeconds: 5,
+    retryIntervalSeconds: 0.1,
+    numRetries: 3,
+  });
+
+  return client;
+}
+
+// --- Collection Schema ---
+
+export const COLLECTION_NAME = "document_pages";
+
+export const COLLECTION_SCHEMA: CollectionCreateSchema = {
+  name: COLLECTION_NAME,
+  fields: [
+    { name: "pg_id", type: "int32", index: false },
+    { name: "document_id", type: "int32", facet: true },
+    { name: "page_number", type: "int32", sort: true },
+    { name: "content", type: "string" },
+    { name: "title", type: "string" },
+    { name: "document_type", type: "string", facet: true },
+    { name: "data_set", type: "string", facet: true, optional: true },
+    { name: "page_type", type: "string", facet: true, optional: true },
+    { name: "is_viewable", type: "bool" },
+  ],
+  default_sorting_field: "page_number",
+  token_separators: ["-", "_", "."],
+};
+
+// --- Types ---
+
+export interface TypesensePageResult {
+  documentId: number;
+  title: string;
+  documentType: string;
+  dataSet: string | null;
+  pageNumber: number;
+  headline: string;
+  pageType: string | null;
+}
+
+export interface TypesenseSearchResponse {
+  results: TypesensePageResult[];
+  total: number;
+  page: number;
+  totalPages: number;
+  facets?: {
+    documentTypes: { value: string; count: number }[];
+    dataSets: { value: string; count: number }[];
+  };
+}
+
+// --- Document shape stored in Typesense ---
+
+interface TSDocument {
+  id: string;
+  pg_id: number;
+  document_id: number;
+  page_number: number;
+  content: string;
+  title: string;
+  document_type: string;
+  data_set?: string;
+  page_type?: string;
+  is_viewable: boolean;
+}
+
+// --- Search Functions ---
+
+function buildFilterBy(options?: {
+  filterR2?: boolean;
+  documentType?: string;
+  dataSet?: string;
+}): string | undefined {
+  const parts: string[] = [];
+
+  if (options?.filterR2) {
+    parts.push("is_viewable:true");
+  }
+  if (options?.documentType) {
+    parts.push(`document_type:=${options.documentType}`);
+  }
+  if (options?.dataSet) {
+    parts.push(`data_set:=${options.dataSet}`);
+  }
+
+  return parts.length > 0 ? parts.join(" && ") : undefined;
+}
+
+function hitToResult(hit: SearchResponseHit<TSDocument>): TypesensePageResult {
+  const doc = hit.document;
+  const highlights = hit.highlights ?? [];
+  const contentHighlight = highlights.find(
+    (h) => h.field === "content",
+  );
+
+  const snippet = contentHighlight?.snippets
+    ? contentHighlight.snippets.join(" &hellip; ")
+    : (doc.content || "").slice(0, 200);
+
+  return {
+    documentId: doc.document_id,
+    title: doc.title,
+    documentType: doc.document_type,
+    dataSet: doc.data_set ?? null,
+    pageNumber: doc.page_number,
+    headline: snippet,
+    pageType: doc.page_type ?? null,
+  };
+}
+
+function extractFacets(
+  facetCounts: Array<{ field_name: string; counts: Array<{ value: string; count: number }> }>,
+): TypesenseSearchResponse["facets"] {
+  const byField = new Map<string, { value: string; count: number }[]>();
+  for (const facet of facetCounts) {
+    byField.set(
+      facet.field_name,
+      (facet.counts ?? []).map((c) => ({ value: c.value, count: c.count })),
+    );
+  }
+  return {
+    documentTypes: byField.get("document_type") ?? [],
+    dataSets: byField.get("data_set") ?? [],
+  };
+}
+
+/**
+ * Full paginated search — used by /api/search/pages.
+ */
+export async function typesenseSearchPages(
+  query: string,
+  page: number,
+  limit: number,
+  options?: { filterR2?: boolean; documentType?: string; dataSet?: string },
+): Promise<TypesenseSearchResponse> {
+  const ts = getTypesenseClient();
+  if (!ts) throw new Error("Typesense not configured");
+
+  const filterBy = buildFilterBy(options);
+
+  const result = await ts
+    .collections<TSDocument>(COLLECTION_NAME)
+    .documents()
+    .search({
+      q: query,
+      query_by: "content,title",
+      query_by_weights: "2,1",
+      highlight_fields: "content",
+      highlight_start_tag: "<mark>",
+      highlight_end_tag: "</mark>",
+      snippet_threshold: 40,
+      per_page: limit,
+      page,
+      filter_by: filterBy,
+      facet_by: "document_type,data_set",
+      max_facet_values: 50,
+      num_typos: 1,
+      typo_tokens_threshold: 2,
+      drop_tokens_threshold: 1,
+    });
+
+  return {
+    results: (result.hits ?? []).map(hitToResult),
+    total: result.found ?? 0,
+    page,
+    totalPages: Math.ceil((result.found ?? 0) / limit),
+    facets: extractFacets((result.facet_counts as any) ?? []),
+  };
+}
+
+/**
+ * Lightweight instant search — used by type-ahead /api/search/instant.
+ * Returns minimal results quickly.
+ */
+export async function typesenseSearchInstant(
+  query: string,
+  limit: number,
+): Promise<TypesenseSearchResponse> {
+  const ts = getTypesenseClient();
+  if (!ts) throw new Error("Typesense not configured");
+
+  const filterBy = isR2Configured() ? "is_viewable:true" : undefined;
+
+  const result = await ts
+    .collections<TSDocument>(COLLECTION_NAME)
+    .documents()
+    .search({
+      q: query,
+      query_by: "content,title",
+      query_by_weights: "2,1",
+      highlight_fields: "content",
+      highlight_start_tag: "<mark>",
+      highlight_end_tag: "</mark>",
+      snippet_threshold: 30,
+      per_page: limit,
+      page: 1,
+      filter_by: filterBy,
+      num_typos: 1,
+      prefix: true,
+    });
+
+  return {
+    results: (result.hits ?? []).map(hitToResult),
+    total: result.found ?? 0,
+    page: 1,
+    totalPages: Math.ceil((result.found ?? 0) / limit),
+  };
+}
+
+/**
+ * Multi-search for /api/search endpoint — groups results by document_id
+ * to find unique documents matching the query.
+ */
+export async function typesenseDocumentSearch(
+  query: string,
+  limit: number = 20,
+): Promise<TypesensePageResult[]> {
+  const ts = getTypesenseClient();
+  if (!ts) throw new Error("Typesense not configured");
+
+  const filterBy = isR2Configured() ? "is_viewable:true" : undefined;
+
+  const result = await ts
+    .collections<TSDocument>(COLLECTION_NAME)
+    .documents()
+    .search({
+      q: query,
+      query_by: "content,title",
+      query_by_weights: "2,1",
+      highlight_fields: "content",
+      highlight_start_tag: "<mark>",
+      highlight_end_tag: "</mark>",
+      per_page: limit,
+      page: 1,
+      filter_by: filterBy,
+      group_by: "document_id",
+      group_limit: 1,
+      num_typos: 1,
+    });
+
+  // Grouped results come in grouped_hits
+  const grouped = (result as any).grouped_hits ?? [];
+  return grouped.map((g: any) => {
+    const hit = g.hits?.[0];
+    if (!hit) return null;
+    return hitToResult(hit);
+  }).filter(Boolean) as TypesensePageResult[];
+}
