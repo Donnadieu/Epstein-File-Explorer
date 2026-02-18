@@ -1210,7 +1210,8 @@ export class DatabaseStorage implements IStorage {
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
     // Check if user applied any filters beyond the automatic r2 filter
-    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType || opts.sort);
+    // sort only changes ordering, not the result set count, so exclude it
+    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType);
 
     // For unfiltered queries, use the cached stats total to avoid COUNT(*) on 1.38M rows
     let total: number;
