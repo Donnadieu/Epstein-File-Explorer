@@ -47,7 +47,7 @@ function isNonDescriptiveTitle(title: string): boolean {
   return EFTA_PATTERN.test(trimmed) || NON_DESCRIPTIVE_PATTERN.test(trimmed);
 }
 
-function getDisplayTitle(doc: Document): string {
+function getDisplayTitle(doc: PublicDocument): string {
   if (!isNonDescriptiveTitle(doc.title)) return doc.title;
 
   // Prefer AI-generated description if available
@@ -561,7 +561,7 @@ export default function DocumentsPage() {
   );
 }
 
-function PdfThumbnail({ doc }: { doc: Document }) {
+function PdfThumbnail({ doc }: { doc: PublicDocument }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [failed, setFailed] = useState(false);
 
@@ -609,7 +609,7 @@ function PdfThumbnail({ doc }: { doc: Document }) {
   return <canvas ref={canvasRef} width={400} className="w-full h-full object-cover" />;
 }
 
-function isPdfDocument(doc: Document): boolean {
+function isPdfDocument(doc: PublicDocument): boolean {
   if (doc.sourceUrl?.toLowerCase().endsWith(".pdf")) return true;
   if (doc.mediaType?.toLowerCase() === "pdf") return true;
   if (doc.mimeType?.toLowerCase()?.includes("pdf")) return true;

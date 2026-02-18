@@ -39,7 +39,7 @@ import { ImportanceVoteButton } from "@/components/importance-vote-button";
 
 const EFTA_PATTERN = /^[A-Z]{2,6}[-_]?\d{4,}/i;
 
-function getDisplayTitle(doc: Document): string {
+function getDisplayTitle(doc: PublicDocument): string {
   const trimmed = doc.title.trim();
   if (!EFTA_PATTERN.test(trimmed)) return doc.title;
 
