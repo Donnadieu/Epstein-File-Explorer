@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import {
   persons, documents, documentPages, connections, personDocuments, timelineEvents,
-  pipelineJobs, budgetTracking, bookmarks, pageViews, documentVotes, personVotes,
+  pipelineJobs, budgetTracking, bookmarks, pageViews, documentVotes, personVotes, searchQueries,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
@@ -91,8 +91,11 @@ export interface IStorage {
   getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
 
   recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void>;
-  getTrendingPersons(limit: number): Promise<Person[]>;
-  getTrendingDocuments(limit: number): Promise<Document[]>;
+  getTrendingPersons(limit: number): Promise<(Person & { viewCount: number })[]>;
+  getTrendingDocuments(limit: number): Promise<(Document & { viewCount: number })[]>;
+
+  recordSearchQuery(query: string, sessionId: string, resultCount: number): Promise<void>;
+  getTrendingSearches(limit: number): Promise<{ query: string; searchCount: number }[]>;
 }
 
 function escapeLikePattern(input: string): string {
@@ -496,8 +499,9 @@ const networkDataCache = createCache<{
 
 const personsCache = createCache<Person[]>(5 * 60 * 1000);
 const timelineEventsCache = createCache<TimelineEvent[]>(5 * 60 * 1000);
-const trendingPersonsCache = createCache<Person[]>(2 * 60 * 1000);
-const trendingDocumentsCache = createCache<Document[]>(2 * 60 * 1000);
+const trendingPersonsCache = createCache<(Person & { viewCount: number })[]>(2 * 60 * 1000);
+const trendingDocumentsCache = createCache<(Document & { viewCount: number })[]>(2 * 60 * 1000);
+const trendingSearchesCache = createCache<{ query: string; searchCount: number }[]>(2 * 60 * 1000);
 
 const countCacheMap = new Map<string, { count: number; cachedAt: number }>();
 const COUNT_TTL = 60_000;
@@ -1750,12 +1754,13 @@ export class DatabaseStorage implements IStorage {
     await db.insert(pageViews).values({ entityType, entityId, sessionId });
   }
 
-  async getTrendingPersons(limit: number): Promise<Person[]> {
+  async getTrendingPersons(limit: number): Promise<(Person & { viewCount: number })[]> {
     return trendingPersonsCache.get(async () => {
       // Step 1: Get top trending person IDs from page_views (small result set, uses index)
       const trendingResult: any = await db.execute(sql`
         SELECT entity_id,
-               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score,
+               COUNT(*)::int AS view_count
         FROM page_views
         WHERE entity_type = 'person'
           AND created_at > NOW() - INTERVAL '7 days'
@@ -1766,13 +1771,19 @@ export class DatabaseStorage implements IStorage {
       `);
       const trendingRows: any[] = trendingResult.rows ?? trendingResult;
       const trendingIds = trendingRows.map((r: any) => Number(r.entity_id));
+      const viewCountMap = new Map(trendingRows.map((r: any) => [Number(r.entity_id), Number(r.view_count)]));
 
       // Step 2: Fetch those specific persons by ID (index scan)
-      let trendingPersons: Person[] = [];
+      let trendingPersons: (Person & { viewCount: number })[] = [];
       if (trendingIds.length > 0) {
         const rows = await db.select().from(persons).where(inArray(persons.id, trendingIds));
         const byId = new Map(rows.map(r => [r.id, r]));
-        trendingPersons = trendingIds.map(id => byId.get(id)).filter(Boolean) as Person[];
+        trendingPersons = trendingIds
+          .map(id => {
+            const person = byId.get(id);
+            return person ? { ...person, viewCount: viewCountMap.get(id) ?? 0 } : null;
+          })
+          .filter((p): p is Person & { viewCount: number } => p !== null);
       }
 
       // Step 3: Pad with high document_count persons if fewer than limit
@@ -1785,21 +1796,22 @@ export class DatabaseStorage implements IStorage {
           .where(padCond)
           .orderBy(desc(persons.documentCount))
           .limit(limit - trendingPersons.length);
-        trendingPersons.push(...padPersons);
+        trendingPersons.push(...padPersons.map(p => ({ ...p, viewCount: 0 })));
       }
 
       return trendingPersons;
     });
   }
 
-  async getTrendingDocuments(limit: number): Promise<Document[]> {
+  async getTrendingDocuments(limit: number): Promise<(Document & { viewCount: number })[]> {
     return trendingDocumentsCache.get(async () => {
       const r2Cond = r2Filter();
 
       // Step 1: Get top trending entity_ids from page_views (small result set, uses index)
       const trendingResult: any = await db.execute(sql`
         SELECT entity_id,
-               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score,
+               COUNT(*)::int AS view_count
         FROM page_views
         WHERE entity_type = 'document'
           AND created_at > NOW() - INTERVAL '7 days'
@@ -1810,17 +1822,22 @@ export class DatabaseStorage implements IStorage {
       `);
       const trendingRows: any[] = trendingResult.rows ?? trendingResult;
       const trendingIds = trendingRows.map((r: any) => Number(r.entity_id));
+      const viewCountMap = new Map(trendingRows.map((r: any) => [Number(r.entity_id), Number(r.view_count)]));
 
       // Step 2: Fetch those specific documents by ID (index scan)
-      let trendingDocs: Document[] = [];
+      let trendingDocs: (Document & { viewCount: number })[] = [];
       if (trendingIds.length > 0) {
         const conds = r2Cond
           ? and(inArray(documents.id, trendingIds), r2Cond)
           : inArray(documents.id, trendingIds);
         const rows = await db.select().from(documents).where(conds);
-        // Restore trending score order
         const byId = new Map(rows.map(r => [r.id, r]));
-        trendingDocs = trendingIds.map(id => byId.get(id)).filter(Boolean) as Document[];
+        trendingDocs = trendingIds
+          .map(id => {
+            const doc = byId.get(id);
+            return doc ? { ...doc, viewCount: viewCountMap.get(id) ?? 0 } : null;
+          })
+          .filter((d): d is Document & { viewCount: number } => d !== null);
       }
 
       // Step 3: Pad with popular docs (by page_count) if fewer than limit
@@ -1833,10 +1850,50 @@ export class DatabaseStorage implements IStorage {
           .where(padConds || undefined)
           .orderBy(sql`page_count DESC NULLS LAST, id DESC`)
           .limit(limit - trendingDocs.length);
-        trendingDocs.push(...padDocs);
+        trendingDocs.push(...padDocs.map(d => ({ ...d, viewCount: 0 })));
       }
 
       return trendingDocs;
+    });
+  }
+
+  async recordSearchQuery(query: string, sessionId: string, resultCount: number): Promise<void> {
+    const normalized = query.toLowerCase().trim();
+    if (normalized.length < 2 || resultCount === 0) return;
+
+    // Dedup: skip if same session searched same query in last 5 minutes
+    const [existing] = await db.select({ id: searchQueries.id })
+      .from(searchQueries)
+      .where(and(
+        eq(searchQueries.sessionId, sessionId),
+        eq(searchQueries.query, normalized),
+        sql`${searchQueries.createdAt} > NOW() - INTERVAL '5 minutes'`
+      ))
+      .limit(1);
+
+    if (existing) return;
+
+    await db.insert(searchQueries).values({ query: normalized, sessionId, resultCount });
+  }
+
+  async getTrendingSearches(limit: number): Promise<{ query: string; searchCount: number }[]> {
+    return trendingSearchesCache.get(async () => {
+      const result: any = await db.execute(sql`
+        SELECT query,
+               COUNT(*)::int AS search_count,
+               SUM(EXP(-EXTRACT(EPOCH FROM (NOW() - created_at)) / 86400.0)) AS score
+        FROM search_queries
+        WHERE created_at > NOW() - INTERVAL '7 days'
+        GROUP BY query
+        HAVING COUNT(*) >= 2
+        ORDER BY score DESC
+        LIMIT ${limit}
+      `);
+      const rows: any[] = result.rows ?? result;
+      return rows.map((r: any) => ({
+        query: r.query as string,
+        searchCount: Number(r.search_count),
+      }));
     });
   }
 }

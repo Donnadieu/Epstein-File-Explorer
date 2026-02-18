@@ -278,6 +278,23 @@ export const insertPageViewSchema = createInsertSchema(pageViews).omit({ created
 export type PageView = typeof pageViews.$inferSelect;
 export type InsertPageView = typeof pageViews.$inferInsert;
 
+// Search query tracking for trending searches
+export const searchQueries = pgTable("search_queries", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  query: text("query").notNull(),
+  sessionId: text("session_id").notNull(),
+  resultCount: integer("result_count").notNull().default(0),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  index("idx_search_queries_query").on(table.query),
+  index("idx_search_queries_created_at").on(table.createdAt),
+  index("idx_search_queries_trending").on(table.query, table.createdAt),
+]);
+
+export const insertSearchQuerySchema = createInsertSchema(searchQueries).omit({ createdAt: true });
+export type SearchQuery = typeof searchQueries.$inferSelect;
+export type InsertSearchQuery = typeof searchQueries.$inferInsert;
+
 export const documentVotes = pgTable("document_votes", {
   id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
   userId: text("user_id").notNull(),

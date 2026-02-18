@@ -129,9 +129,41 @@ export async function registerRoutes(
       );
       const documents = await storage.getTrendingDocuments(limit);
       res.set("Cache-Control", "public, max-age=120");
-      res.json(documents.map(toPublicDocument));
+      res.json(documents.map((d) => ({ ...toPublicDocument(d), viewCount: d.viewCount })));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch trending documents" });
+    }
+  });
+
+  app.get("/api/trending/searches", async (req, res) => {
+    try {
+      const limit = Math.min(
+        20,
+        Math.max(1, parseInt(req.query.limit as string) || 10),
+      );
+      const searches = await storage.getTrendingSearches(limit);
+      res.set("Cache-Control", "public, max-age=120");
+      res.json(searches);
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch trending searches" });
+    }
+  });
+
+  app.post("/api/search/record", async (req, res) => {
+    try {
+      const { query, sessionId, resultCount } = req.body;
+      if (!query || typeof query !== "string" || query.length < 2) {
+        return res.status(400).json({ error: "query must be at least 2 characters" });
+      }
+      if (!sessionId || typeof sessionId !== "string" || sessionId.length > 100) {
+        return res.status(400).json({ error: "sessionId is required" });
+      }
+      const count = typeof resultCount === "number" ? resultCount : 0;
+      await storage.recordSearchQuery(query, sessionId, count);
+      res.status(204).end();
+    } catch (error) {
+      console.warn("Failed to record search query:", error);
+      res.status(204).end();
     }
   });
 
