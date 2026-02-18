@@ -1097,9 +1097,6 @@ export class DatabaseStorage implements IStorage {
       ? sql`to_tsquery('english', ${query})`
       : sql`websearch_to_tsquery('english', ${query})`;
 
-    // Ranking window: the GIN index searches ALL pages, but we only rank the
-    // top N candidates. Even Google ranks a candidate window, not every match.
-    // 50K candidates with ts_rank produces identical top-20 results as ranking 800K.
     // Ranking window: GIN index searches ALL pages, but we only rank
     // the top N candidates. Over-fetch 3x to absorb R2 filtering losses.
     const rankingWindow = 50000;
