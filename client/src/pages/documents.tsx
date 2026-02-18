@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState, useMemo } from "react";
 import * as pdfjsLib from "pdfjs-dist";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -32,8 +31,10 @@ import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useImportanceVotes } from "@/hooks/use-importance-votes";
 import { ImportanceVoteButton } from "@/components/importance-vote-button";
 import { useVideoPlayer } from "@/hooks/use-video-player";
+import { useDocumentViewer } from "@/hooks/use-document-viewer";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
+import { DocumentViewerModal } from "@/components/document-viewer-modal";
 import type { Document, PublicDocument } from "@shared/schema";
 
 const ITEMS_PER_PAGE = 50;
@@ -137,6 +138,7 @@ function DocumentCardSkeleton({ index }: { index: number }) {
 export default function DocumentsPage() {
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const videoPlayer = useVideoPlayer();
+  const docViewer = useDocumentViewer();
   const [filters, setFilter, resetFilters] = useUrlFilters({
     search: "",
     type: "all",
@@ -323,13 +325,12 @@ export default function DocumentsPage() {
               {paginated?.map((doc) => {
                 const Icon = typeIcons[doc.documentType] || FileText;
                 const isVideo = isVideoDocument(doc);
-                const Wrapper = isVideo ? "div" : Link;
-                const wrapperProps = isVideo
-                  ? { onClick: () => videoPlayer.open(doc) }
-                  : { href: `/documents/${doc.id}` };
+                const handleClick = isVideo
+                  ? () => videoPlayer.open(doc)
+                  : () => docViewer.open(doc);
                 return (
                   <div key={doc.id} className="relative group">
-                    <Wrapper {...(wrapperProps as any)}>
+                    <div onClick={handleClick}>
                       <Card className="hover-elevate cursor-pointer" data-testid={`card-document-${doc.id}`}>
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
@@ -394,7 +395,7 @@ export default function DocumentsPage() {
                         </div>
                       </CardContent>
                     </Card>
-                    </Wrapper>
+                    </div>
                     <div className={`absolute top-2 right-2 flex items-center gap-0.5 transition-opacity ${
                         isBookmarked("document", doc.id) || isVoted(doc.id)
                           ? "opacity-100"
@@ -434,13 +435,12 @@ export default function DocumentsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {paginated?.map((doc) => {
                 const isVideo = isVideoDocument(doc);
-                const Wrapper = isVideo ? "div" : Link;
-                const wrapperProps = isVideo
-                  ? { onClick: () => videoPlayer.open(doc) }
-                  : { href: `/documents/${doc.id}` };
+                const handleClick = isVideo
+                  ? () => videoPlayer.open(doc)
+                  : () => docViewer.open(doc);
                 return (
                   <div key={doc.id} className="relative group">
-                    <Wrapper {...(wrapperProps as any)}>
+                    <div onClick={handleClick}>
                       <div className="cursor-pointer" data-testid={`grid-card-${doc.id}`}>
                         <div className="aspect-[3/4] rounded-lg overflow-hidden bg-muted border relative flex items-center justify-center transition-shadow group-hover:shadow-md group-hover:border-primary/30">
                           <DocumentThumbnail doc={doc} />
@@ -454,7 +454,7 @@ export default function DocumentsPage() {
                           </span>
                         )}
                       </div>
-                    </Wrapper>
+                    </div>
                     <div className={`absolute top-1 right-1 flex items-center gap-0.5 rounded-md bg-background/80 backdrop-blur-sm transition-opacity ${
                         isBookmarked("document", doc.id) || isVoted(doc.id)
                           ? "opacity-100"
@@ -557,6 +557,7 @@ export default function DocumentsPage() {
       )}
 
       <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
+      <DocumentViewerModal doc={docViewer.viewerDoc} open={docViewer.isOpen} onClose={docViewer.close} />
     </div>
   );
 }

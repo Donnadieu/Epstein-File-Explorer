@@ -20,8 +20,10 @@ import {
 import { PersonHoverCard } from "@/components/person-hover-card";
 import { ExportButton } from "@/components/export-button";
 import { useVideoPlayer } from "@/hooks/use-video-player";
+import { useDocumentViewer } from "@/hooks/use-document-viewer";
 import { isVideoDocument } from "@/lib/document-utils";
 import { VideoPlayerModal } from "@/components/video-player-modal";
+import { DocumentViewerModal } from "@/components/document-viewer-modal";
 import type { Person, Document } from "@shared/schema";
 
 function StatCard({
@@ -103,7 +105,7 @@ function PersonCard({ person }: { person: Person }) {
   );
 }
 
-function RecentDocCard({ doc, onVideoClick }: { doc: Document; onVideoClick?: (doc: Document) => void }) {
+function RecentDocCard({ doc, onVideoClick, onDocClick }: { doc: Document; onVideoClick?: (doc: Document) => void; onDocClick?: (doc: Document) => void }) {
   const typeIcons: Record<string, any> = {
     "flight log": Clock,
     "court filing": Scale,
@@ -137,6 +139,10 @@ function RecentDocCard({ doc, onVideoClick }: { doc: Document; onVideoClick?: (d
 
   if (isVideo && onVideoClick) {
     return <div onClick={() => onVideoClick(doc)}>{content}</div>;
+  }
+
+  if (onDocClick) {
+    return <div onClick={() => onDocClick(doc)}>{content}</div>;
   }
 
   return <Link href={`/documents/${doc.id}`}>{content}</Link>;
@@ -175,6 +181,7 @@ export default function Dashboard() {
   });
 
   const videoPlayer = useVideoPlayer();
+  const docViewer = useDocumentViewer();
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-7xl mx-auto w-full">
@@ -277,7 +284,7 @@ export default function Dashboard() {
               ) : (
                 <div className="flex flex-col">
                   {recentDocs?.map((doc) => (
-                    <RecentDocCard key={doc.id} doc={doc} onVideoClick={videoPlayer.open} />
+                    <RecentDocCard key={doc.id} doc={doc} onVideoClick={videoPlayer.open} onDocClick={docViewer.open} />
                   ))}
                 </div>
               )}
@@ -394,6 +401,7 @@ export default function Dashboard() {
       </Card>
 
       <VideoPlayerModal doc={videoPlayer.videoDoc} open={videoPlayer.isOpen} onClose={videoPlayer.close} />
+      <DocumentViewerModal doc={docViewer.viewerDoc} open={docViewer.isOpen} onClose={docViewer.close} />
     </div>
   );
 }
