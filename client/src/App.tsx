@@ -25,7 +25,7 @@ import PersonDetail from "@/pages/person-detail";
 import DocumentsPage from "@/pages/documents";
 import DocumentDetailPage from "@/pages/document-detail";
 import DocumentComparePage from "@/pages/document-compare";
-// import TimelinePage from "@/pages/timeline";
+import TimelinePage from "@/pages/timeline";
 import NetworkPage from "@/pages/network";
 import SearchPage from "@/pages/search";
 import AIInsightsPage from "@/pages/ai-insights";
@@ -41,7 +41,7 @@ function Router() {
       <Route path="/documents" component={DocumentsPage} />
       <Route path="/documents/compare" component={DocumentComparePage} />
       <Route path="/documents/:id" component={DocumentDetailPage} />
-      {/* <Route path="/timeline" component={TimelinePage} /> */}
+      <Route path="/timeline" component={TimelinePage} />
       <Route path="/network" component={NetworkPage} />
       <Route path="/search" component={SearchPage} />
       <Route path="/bookmarks" component={BookmarksPage} />

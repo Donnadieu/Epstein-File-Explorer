@@ -718,12 +718,22 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/timeline", async (_req, res) => {
+  app.get("/api/timeline", async (req, res) => {
     try {
-      const events = await storage.getTimelineEvents();
+      const page = Math.max(1, parseInt(req.query.page as string) || 1);
+      const limit = Math.min(100, Math.max(1, parseInt((req.query.limit as string) || "50") || 50));
+      const category = (req.query.category as string) || undefined;
+      const rawFrom = parseInt(req.query.yearFrom as string);
+      const yearFrom = !isNaN(rawFrom) ? String(rawFrom) : undefined;
+      const rawTo = parseInt(req.query.yearTo as string);
+      const yearTo = !isNaN(rawTo) ? String(rawTo) : undefined;
+      const significance = req.query.significance ? parseInt(req.query.significance as string) : undefined;
+
+      const result = await storage.getTimelineFiltered({ page, limit, category, yearFrom, yearTo, significance });
       res.set("Cache-Control", "public, max-age=300");
-      res.json(events);
+      res.json(result);
     } catch (error) {
+      console.error("Timeline fetch error:", error);
       res.status(500).json({ error: "Failed to fetch timeline events" });
     }
   });
