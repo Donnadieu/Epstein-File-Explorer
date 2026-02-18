@@ -1,5 +1,4 @@
-import { useState, useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -11,14 +10,24 @@ import {
   Eye,
   Star,
   X,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import type { TimelineEvent } from "@shared/schema";
 import TimelineViz from "@/components/timeline-viz";
+import { useUrlFilters } from "@/hooks/use-url-filters";
 
 interface EnrichedTimelineEvent extends TimelineEvent {
   persons?: { id: number; name: string }[];
   documents?: { id: number; title: string }[];
 }
+
+const ITEMS_PER_PAGE = 50;
+
+const CATEGORIES = [
+  "all", "legal", "arrest", "investigation", "travel",
+  "court", "political", "death", "disclosure", "relationship",
+];
 
 const DECADES = [
   { label: "All Time", start: 0, end: 2099 },
@@ -31,46 +40,53 @@ const DECADES = [
 ];
 
 export default function TimelinePage() {
-  const [categoryFilter, setCategoryFilter] = useState("all");
-  const [zoomLevel, setZoomLevel] = useState<"all" | "key">("all");
-  const [yearFrom, setYearFrom] = useState("1980");
-  const [yearTo, setYearTo] = useState("");
-
-  const { data: events, isLoading } = useQuery<EnrichedTimelineEvent[]>({
-    queryKey: ["/api/timeline"],
-    staleTime: 600_000,
+  const [filters, setFilter, resetFilters] = useUrlFilters({
+    category: "all",
+    significance: "all",
+    yearFrom: "1980",
+    yearTo: "",
+    page: "1",
   });
 
-  const categories = useMemo(
-    () => ["all", ...Array.from(new Set(events?.map((e) => e.category) || []))],
-    [events]
-  );
+  const currentPage = Math.max(1, parseInt(filters.page) || 1);
 
-  const filtered = useMemo(() => {
-    if (!events) return [];
-    return events.filter((e) => {
-      if (categoryFilter !== "all" && e.category !== categoryFilter) return false;
-      if (zoomLevel === "key" && e.significance < 2) return false;
-      const yearMatch = e.date.match(/\b(19|20)\d{2}\b/);
-      const year = yearMatch ? parseInt(yearMatch[0], 10) : 0;
-      if (yearFrom && year < parseInt(yearFrom, 10)) return false;
-      if (yearTo && year > parseInt(yearTo, 10)) return false;
-      return true;
-    });
-  }, [events, categoryFilter, zoomLevel, yearFrom, yearTo]);
+  const queryParams = new URLSearchParams();
+  queryParams.set("page", String(currentPage));
+  queryParams.set("limit", String(ITEMS_PER_PAGE));
+  if (filters.category !== "all") queryParams.set("category", filters.category);
+  if (filters.yearFrom) queryParams.set("yearFrom", filters.yearFrom);
+  if (filters.yearTo) queryParams.set("yearTo", filters.yearTo);
+  if (filters.significance === "key") queryParams.set("significance", "5");
 
-  const hasActiveFilters = categoryFilter !== "all" || zoomLevel !== "all" || yearFrom !== "1980" || yearTo;
+  const { data: result, isLoading } = useQuery<{
+    data: EnrichedTimelineEvent[];
+    total: number;
+    page: number;
+    totalPages: number;
+  }>({
+    queryKey: [`/api/timeline?${queryParams.toString()}`],
+    placeholderData: keepPreviousData,
+  });
 
-  const clearFilters = () => {
-    setCategoryFilter("all");
-    setZoomLevel("all");
-    setYearFrom("1980");
-    setYearTo("");
+  const events = result?.data ?? [];
+  const total = result?.total ?? 0;
+  const totalPages = result?.totalPages ?? 1;
+
+  const hasActiveFilters =
+    filters.category !== "all" ||
+    filters.significance !== "all" ||
+    filters.yearFrom !== "1980" ||
+    filters.yearTo !== "";
+
+  const goToPage = (p: number) => setFilter("page", String(p));
+
+  const handleFilterChange = (key: keyof typeof filters, value: string) => {
+    setFilter(key, value);
+    setFilter("page", "1");
   };
 
-  const jumpToDecade = (start: number, end: number) => {
-    setYearFrom(String(start));
-    setYearTo(String(end));
+  const clearFilters = () => {
+    resetFilters();
   };
 
   return (
@@ -92,18 +108,19 @@ export default function TimelinePage() {
         {DECADES.map((d) => (
           <Button
             key={d.label}
-            variant={yearFrom === String(d.start) && yearTo === String(d.end) ? "default" : "outline"}
+            variant={filters.yearFrom === String(d.start) && filters.yearTo === String(d.end) ? "default" : "outline"}
             size="sm"
             className="h-7 text-xs px-2.5"
             onClick={() => {
               if (d.start === 0) {
-                setYearFrom("");
-                setYearTo("");
-              } else if (yearFrom === String(d.start) && yearTo === String(d.end)) {
-                setYearFrom("1980");
-                setYearTo("");
+                handleFilterChange("yearFrom", "");
+                setFilter("yearTo", "");
+              } else if (filters.yearFrom === String(d.start) && filters.yearTo === String(d.end)) {
+                handleFilterChange("yearFrom", "1980");
+                setFilter("yearTo", "");
               } else {
-                jumpToDecade(d.start, d.end);
+                handleFilterChange("yearFrom", String(d.start));
+                setFilter("yearTo", String(d.end));
               }
             }}
           >
@@ -117,12 +134,12 @@ export default function TimelinePage() {
         <Filter className="w-3 h-3 text-muted-foreground" />
 
         {/* Category filter */}
-        <Select value={categoryFilter} onValueChange={setCategoryFilter}>
+        <Select value={filters.category} onValueChange={(v) => handleFilterChange("category", v)}>
           <SelectTrigger className="w-40 h-8 text-xs" data-testid="select-timeline-category">
             <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
-            {categories.map((cat) => (
+            {CATEGORIES.map((cat) => (
               <SelectItem key={cat} value={cat}>
                 {cat === "all" ? "All Categories" : cat.charAt(0).toUpperCase() + cat.slice(1)}
               </SelectItem>
@@ -130,22 +147,22 @@ export default function TimelinePage() {
           </SelectContent>
         </Select>
 
-        {/* Zoom level toggle */}
+        {/* Significance toggle */}
         <div className="flex items-center border border-border rounded-md overflow-hidden">
           <Button
-            variant={zoomLevel === "all" ? "default" : "ghost"}
+            variant={filters.significance === "all" ? "default" : "ghost"}
             size="sm"
             className="h-8 text-xs rounded-none px-2.5"
-            onClick={() => setZoomLevel("all")}
+            onClick={() => handleFilterChange("significance", "all")}
           >
             <Eye className="w-3 h-3 mr-1" />
             All
           </Button>
           <Button
-            variant={zoomLevel === "key" ? "default" : "ghost"}
+            variant={filters.significance === "key" ? "default" : "ghost"}
             size="sm"
             className="h-8 text-xs rounded-none px-2.5"
-            onClick={() => setZoomLevel("key")}
+            onClick={() => handleFilterChange("significance", "key")}
           >
             <Star className="w-3 h-3 mr-1" />
             Key Only
@@ -157,8 +174,8 @@ export default function TimelinePage() {
           <Input
             type="number"
             placeholder="From"
-            value={yearFrom}
-            onChange={(e) => setYearFrom(e.target.value)}
+            value={filters.yearFrom}
+            onChange={(e) => handleFilterChange("yearFrom", e.target.value)}
             className="w-20 h-8 text-xs"
             min={1950}
             max={2030}
@@ -167,8 +184,8 @@ export default function TimelinePage() {
           <Input
             type="number"
             placeholder="To"
-            value={yearTo}
-            onChange={(e) => setYearTo(e.target.value)}
+            value={filters.yearTo}
+            onChange={(e) => handleFilterChange("yearTo", e.target.value)}
             className="w-20 h-8 text-xs"
             min={1950}
             max={2030}
@@ -193,10 +210,10 @@ export default function TimelinePage() {
       {!isLoading && (
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <Badge variant="secondary" className="text-[10px]">
-            {filtered.length} event{filtered.length !== 1 ? "s" : ""}
+            {total} event{total !== 1 ? "s" : ""}
           </Badge>
-          {hasActiveFilters && events && (
-            <span>of {events.length} total</span>
+          {totalPages > 1 && (
+            <span>page {currentPage} of {totalPages}</span>
           )}
         </div>
       )}
@@ -219,7 +236,34 @@ export default function TimelinePage() {
           ))}
         </div>
       ) : (
-        <TimelineViz events={filtered} />
+        <TimelineViz events={events} />
+      )}
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="flex items-center justify-center gap-2 pt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage <= 1}
+            onClick={() => goToPage(currentPage - 1)}
+          >
+            <ChevronLeft className="w-4 h-4 mr-1" />
+            Previous
+          </Button>
+          <span className="text-sm text-muted-foreground px-3">
+            Page {currentPage} of {totalPages}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage >= totalPages}
+            onClick={() => goToPage(currentPage + 1)}
+          >
+            Next
+            <ChevronRight className="w-4 h-4 ml-1" />
+          </Button>
+        </div>
       )}
     </div>
   );

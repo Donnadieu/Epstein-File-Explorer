@@ -20,6 +20,7 @@ vi.mock("../storage", () => ({
     getAdjacentDocumentIds: vi.fn(),
     getSidebarCounts: vi.fn(),
     getTimelineEvents: vi.fn(),
+    getTimelineFiltered: vi.fn(),
     getNetworkData: vi.fn(),
     search: vi.fn(),
     searchPages: vi.fn(),
@@ -287,11 +288,45 @@ describe("GET /api/sidebar-counts", () => {
 
 describe("GET /api/timeline", () => {
   it("returns timeline events", async () => {
-    mockedStorage.getTimelineEvents.mockResolvedValue([mockEvent]);
+    mockedStorage.getTimelineFiltered.mockResolvedValue({
+      data: [mockEvent],
+      total: 1,
+      page: 1,
+      totalPages: 1,
+    });
 
     const res = await request(app).get("/api/timeline");
     expect(res.status).toBe(200);
-    expect(res.body).toHaveLength(1);
+    expect(res.body.data).toHaveLength(1);
+    expect(res.body.total).toBe(1);
+    expect(res.body.page).toBe(1);
+  });
+
+  it("passes filter params to storage", async () => {
+    mockedStorage.getTimelineFiltered.mockResolvedValue({
+      data: [],
+      total: 0,
+      page: 1,
+      totalPages: 0,
+    });
+
+    const res = await request(app).get("/api/timeline?category=legal&yearFrom=2000&yearTo=2020&significance=5&page=2&limit=10");
+    expect(res.status).toBe(200);
+    expect(mockedStorage.getTimelineFiltered).toHaveBeenCalledWith({
+      page: 2,
+      limit: 10,
+      category: "legal",
+      yearFrom: "2000",
+      yearTo: "2020",
+      significance: 5,
+    });
+  });
+
+  it("returns 500 on error", async () => {
+    mockedStorage.getTimelineFiltered.mockRejectedValue(new Error("DB error"));
+    const res = await request(app).get("/api/timeline");
+    expect(res.status).toBe(500);
+    expect(res.body.error).toBe("Failed to fetch timeline events");
   });
 });
 

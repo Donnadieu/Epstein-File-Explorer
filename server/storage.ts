@@ -35,6 +35,14 @@ export interface IStorage {
   createPersonDocument(pd: InsertPersonDocument): Promise<PersonDocument>;
 
   getTimelineEvents(): Promise<TimelineEvent[]>;
+  getTimelineFiltered(opts: {
+    page: number;
+    limit: number;
+    category?: string;
+    yearFrom?: string;
+    yearTo?: string;
+    significance?: number;
+  }): Promise<{ data: any[]; total: number; page: number; totalPages: number }>;
   createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent>;
 
   getStats(): Promise<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>;
@@ -861,6 +869,81 @@ export class DatabaseStorage implements IStorage {
           .filter(Boolean),
       }));
     });
+  }
+
+  async getTimelineFiltered(opts: {
+    page: number;
+    limit: number;
+    category?: string;
+    yearFrom?: string;
+    yearTo?: string;
+    significance?: number;
+  }): Promise<{ data: any[]; total: number; page: number; totalPages: number }> {
+    const conditions = [];
+    const minSig = opts.significance ?? 3;
+    conditions.push(sql`${timelineEvents.significance} >= ${minSig}`);
+
+    if (opts.category) {
+      conditions.push(eq(timelineEvents.category, opts.category));
+    }
+    if (opts.yearFrom) {
+      conditions.push(sql`${timelineEvents.date} >= ${opts.yearFrom}`);
+    }
+    if (opts.yearTo) {
+      // Include the full year by comparing against year+1
+      const endYear = parseInt(opts.yearTo, 10);
+      if (!isNaN(endYear)) {
+        conditions.push(sql`${timelineEvents.date} < ${String(endYear + 1)}`);
+      }
+    }
+
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    const [countResult] = await db
+      .select({ count: sql<number>`count(*)::int` })
+      .from(timelineEvents)
+      .where(whereClause);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / opts.limit);
+    const offset = (opts.page - 1) * opts.limit;
+
+    const events = await db.select().from(timelineEvents)
+      .where(whereClause)
+      .orderBy(asc(timelineEvents.date))
+      .limit(opts.limit)
+      .offset(offset);
+
+    // Enrich only the paginated slice with person/document info
+    const allPersonIds = new Set<number>();
+    const allDocumentIds = new Set<number>();
+    for (const e of events) {
+      for (const pid of e.personIds ?? []) allPersonIds.add(pid);
+      for (const did of e.documentIds ?? []) allDocumentIds.add(did);
+    }
+
+    const personMap = new Map<number, { id: number; name: string }>();
+    if (allPersonIds.size > 0) {
+      const personRows = await db.select({ id: persons.id, name: persons.name })
+        .from(persons)
+        .where(inArray(persons.id, Array.from(allPersonIds)));
+      for (const p of personRows) personMap.set(p.id, p);
+    }
+
+    const documentMap = new Map<number, { id: number; title: string }>();
+    if (allDocumentIds.size > 0) {
+      const docRows = await db.select({ id: documents.id, title: documents.title })
+        .from(documents)
+        .where(inArray(documents.id, Array.from(allDocumentIds)));
+      for (const d of docRows) documentMap.set(d.id, d);
+    }
+
+    const data = events.map(e => ({
+      ...e,
+      persons: (e.personIds ?? []).map(pid => personMap.get(pid)).filter(Boolean),
+      documents: (e.documentIds ?? []).map(did => documentMap.get(did)).filter(Boolean),
+    }));
+
+    return { data, total, page: opts.page, totalPages };
   }
 
   async createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent> {

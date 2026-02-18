@@ -17,7 +17,7 @@ import {
   LayoutDashboard,
   Users,
   FileText,
-  // Clock,
+  Clock,
   Search,
   Network,
   Brain,
@@ -148,7 +148,7 @@ export function AppSidebar() {
 
   const investigationItems: NavItem[] = [
     { title: "People", url: "/people", icon: Users, count: counts?.persons },
-    // { title: "Timeline", url: "/timeline", icon: Clock, count: counts?.events },
+    { title: "Timeline", url: "/timeline", icon: Clock, count: counts?.events },
     { title: "Network", url: "/network", icon: Network },
     { title: "AI Insights", url: "/ai-insights", icon: Brain },
   ];
