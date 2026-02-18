@@ -1,12 +1,16 @@
+import {
+  insertBookmarkSchema,
+  insertDocumentVoteSchema,
+  insertPersonVoteSchema,
+} from "@shared/schema";
 import type { Express } from "express";
-import { createServer, type Server } from "http";
-import { Readable } from "stream";
 import * as fsSync from "fs";
+import { type Server } from "http";
 import * as pathMod from "path";
-import { insertBookmarkSchema, insertDocumentVoteSchema, insertPersonVoteSchema } from "@shared/schema";
-import { storage } from "./storage";
-import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
+import { Readable } from "stream";
 import { registerChatRoutes } from "./chat";
+import { getPresignedUrl, getR2Stream, isR2Configured } from "./r2";
+import { storage } from "./storage";
 
 let activeProxyStreams = 0;
 const MAX_PROXY_STREAMS = 10;
@@ -23,7 +27,9 @@ const ALLOWED_PDF_DOMAINS = [
   "ia800500.us.archive.org",
 ];
 
-function omitInternal<T extends Record<string, unknown>>(doc: T): Omit<T, 'localPath' | 'r2Key' | 'fileHash'> {
+function omitInternal<T extends Record<string, unknown>>(
+  doc: T,
+): Omit<T, "localPath" | "r2Key" | "fileHash"> {
   const { localPath, r2Key, fileHash, ...rest } = doc as any;
   return rest;
 }
@@ -32,33 +38,35 @@ function isAllowedPdfUrl(url: string): boolean {
   try {
     const parsed = new URL(url);
     return ALLOWED_PDF_DOMAINS.some(
-      (d) => parsed.hostname === d || parsed.hostname.endsWith("." + d)
+      (d) => parsed.hostname === d || parsed.hostname.endsWith("." + d),
     );
   } catch {
     return false;
   }
 }
 
-
 function escapeCsvField(value: unknown): string {
   const str = String(value ?? "");
   return str.includes(",") || str.includes('"') || str.includes("\n")
-    ? `"${str.replace(/"/g, '""')}"` : str;
+    ? `"${str.replace(/"/g, '""')}"`
+    : str;
 }
 
 function toCsvRow(headers: string[], obj: Record<string, unknown>): string {
-  return headers.map(h => escapeCsvField(obj[h])).join(",");
+  return headers.map((h) => escapeCsvField(obj[h])).join(",");
 }
 
 export async function registerRoutes(
   httpServer: Server,
-  app: Express
+  app: Express,
 ): Promise<Server> {
-
   // Redirect legacy fly.dev hostname to custom domain
   app.use((req, res, next) => {
-    if (req.hostname === 'epstein-file-explorer.fly.dev') {
-      return res.redirect(301, `https://epstein-file-explorer.com${req.originalUrl}`);
+    if (req.hostname === "epstein-file-explorer.fly.dev") {
+      return res.redirect(
+        301,
+        `https://epstein-file-explorer.com${req.originalUrl}`,
+      );
     }
     next();
   });
@@ -66,7 +74,7 @@ export async function registerRoutes(
   app.get("/api/stats", async (_req, res) => {
     try {
       const stats = await storage.getStats();
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(stats);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch stats" });
@@ -77,12 +85,20 @@ export async function registerRoutes(
     try {
       const { entityType, entityId, sessionId } = req.body;
       if (!entityType || !["person", "document"].includes(entityType)) {
-        return res.status(400).json({ error: "entityType must be 'person' or 'document'" });
+        return res
+          .status(400)
+          .json({ error: "entityType must be 'person' or 'document'" });
       }
       if (!entityId || typeof entityId !== "number" || entityId < 1) {
-        return res.status(400).json({ error: "entityId must be a positive integer" });
+        return res
+          .status(400)
+          .json({ error: "entityId must be a positive integer" });
       }
-      if (!sessionId || typeof sessionId !== "string" || sessionId.length > 100) {
+      if (
+        !sessionId ||
+        typeof sessionId !== "string" ||
+        sessionId.length > 100
+      ) {
         return res.status(400).json({ error: "sessionId is required" });
       }
       await storage.recordPageView(entityType, entityId, sessionId);
@@ -95,7 +111,10 @@ export async function registerRoutes(
 
   app.get("/api/trending/persons", async (req, res) => {
     try {
-      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 6));
+      const limit = Math.min(
+        20,
+        Math.max(1, parseInt(req.query.limit as string) || 6),
+      );
       const persons = await storage.getTrendingPersons(limit);
       res.set("Cache-Control", "public, max-age=120");
       res.json(persons);
@@ -106,7 +125,10 @@ export async function registerRoutes(
 
   app.get("/api/trending/documents", async (req, res) => {
     try {
-      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const limit = Math.min(
+        20,
+        Math.max(1, parseInt(req.query.limit as string) || 5),
+      );
       const documents = await storage.getTrendingDocuments(limit);
       res.set("Cache-Control", "public, max-age=120");
       res.json(documents.map(omitInternal));
@@ -117,10 +139,15 @@ export async function registerRoutes(
 
   app.get("/api/most-voted/documents", async (req, res) => {
     try {
-      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const limit = Math.min(
+        20,
+        Math.max(1, parseInt(req.query.limit as string) || 5),
+      );
       const docs = await storage.getMostVotedDocuments(limit);
       res.set("Cache-Control", "public, max-age=30");
-      res.json(docs.map((d) => ({ ...omitInternal(d), voteCount: d.voteCount })));
+      res.json(
+        docs.map((d) => ({ ...omitInternal(d), voteCount: d.voteCount })),
+      );
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch most voted documents" });
     }
@@ -128,7 +155,10 @@ export async function registerRoutes(
 
   app.get("/api/most-voted/persons", async (req, res) => {
     try {
-      const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
+      const limit = Math.min(
+        20,
+        Math.max(1, parseInt(req.query.limit as string) || 5),
+      );
       const persons = await storage.getMostVotedPersons(limit);
       res.set("Cache-Control", "public, max-age=30");
       res.json(persons);
@@ -149,14 +179,17 @@ export async function registerRoutes(
 
       if (pageParam) {
         const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
+        const limit = Math.min(
+          100,
+          Math.max(1, parseInt(limitParam || "50") || 50),
+        );
         const result = await storage.getPersonsPaginated(page, limit);
-        res.set('Cache-Control', 'public, max-age=300');
+        res.set("Cache-Control", "public, max-age=300");
         return res.json(result);
       }
 
       const persons = await storage.getPersons();
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(persons);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch persons" });
@@ -173,7 +206,7 @@ export async function registerRoutes(
       if (!person) {
         return res.status(404).json({ error: "Person not found" });
       }
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(person);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch person" });
@@ -188,7 +221,10 @@ export async function registerRoutes(
   app.get("/api/documents", async (req, res) => {
     try {
       const page = Math.max(1, parseInt(req.query.page as string) || 1);
-      const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string || "50") || 50));
+      const limit = Math.min(
+        100,
+        Math.max(1, parseInt((req.query.limit as string) || "50") || 50),
+      );
       const search = (req.query.search as string) || undefined;
       const type = (req.query.type as string) || undefined;
       const dataSet = (req.query.dataSet as string) || undefined;
@@ -196,8 +232,17 @@ export async function registerRoutes(
       const mediaType = (req.query.mediaType as string) || undefined;
       const sort = (req.query.sort as string) || undefined;
 
-      const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType, sort });
-      res.set('Cache-Control', 'public, max-age=60');
+      const result = await storage.getDocumentsFiltered({
+        page,
+        limit,
+        search,
+        type,
+        dataSet,
+        redacted,
+        mediaType,
+        sort,
+      });
+      res.set("Cache-Control", "public, max-age=60");
       res.json({ ...result, data: result.data.map(omitInternal) });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
@@ -207,7 +252,7 @@ export async function registerRoutes(
   app.get("/api/documents/filters", async (_req, res) => {
     try {
       const filters = await storage.getDocumentFilters();
-      res.set('Cache-Control', 'public, max-age=600');
+      res.set("Cache-Control", "public, max-age=600");
       res.json(filters);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document filters" });
@@ -217,7 +262,7 @@ export async function registerRoutes(
   app.get("/api/sidebar-counts", async (_req, res) => {
     try {
       const counts = await storage.getSidebarCounts();
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(counts);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch sidebar counts" });
@@ -231,7 +276,7 @@ export async function registerRoutes(
         return res.status(400).json({ error: "Invalid ID" });
       }
       const adjacent = await storage.getAdjacentDocumentIds(id);
-      res.set('Cache-Control', 'public, max-age=600');
+      res.set("Cache-Control", "public, max-age=600");
       res.json(adjacent);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch adjacent documents" });
@@ -248,7 +293,7 @@ export async function registerRoutes(
       if (!doc) {
         return res.status(404).json({ error: "Document not found" });
       }
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(omitInternal(doc));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document" });
@@ -262,9 +307,10 @@ export async function registerRoutes(
       if (isNaN(id)) return res.status(400).json({ error: "Invalid ID" });
       const doc = await storage.getDocument(id);
       if (!doc) return res.status(404).json({ error: "Document not found" });
-      if (!doc.r2Key || !isR2Configured()) return res.status(404).json({ error: "No R2 content available" });
+      if (!doc.r2Key || !isR2Configured())
+        return res.status(404).json({ error: "No R2 content available" });
       const url = await getPresignedUrl(doc.r2Key);
-      res.set("Cache-Control", "private, max-age=3000");
+      res.set("Cache-Control", "no-cache, no-store");
       res.json({ url });
     } catch (error) {
       res.status(500).json({ error: "Failed to generate content URL" });
@@ -287,13 +333,16 @@ export async function registerRoutes(
         try {
           const r2 = await getR2Stream(doc.r2Key);
           res.setHeader("Content-Type", r2.contentType || "application/pdf");
-          if (r2.contentLength) res.setHeader("Content-Length", r2.contentLength);
+          if (r2.contentLength)
+            res.setHeader("Content-Length", r2.contentLength);
           res.setHeader("Cache-Control", "public, max-age=3600");
           r2.body.pipe(res);
           return;
         } catch (err: unknown) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.warn(`R2 stream failed for doc ${id}, falling through: ${msg}`);
+          console.warn(
+            `R2 stream failed for doc ${id}, falling through: ${msg}`,
+          );
         }
       }
 
@@ -306,7 +355,8 @@ export async function registerRoutes(
           res.setHeader("Cache-Control", "private, max-age=3600");
           const stream = fsSync.createReadStream(absPath);
           stream.on("error", () => {
-            if (!res.headersSent) res.status(500).json({ error: "File read error" });
+            if (!res.headersSent)
+              res.status(500).json({ error: "File read error" });
           });
           stream.pipe(res);
           return;
@@ -314,7 +364,9 @@ export async function registerRoutes(
       }
 
       if (!doc.sourceUrl) {
-        return res.status(404).json({ error: "No source URL for this document" });
+        return res
+          .status(404)
+          .json({ error: "No source URL for this document" });
       }
 
       if (!isAllowedPdfUrl(doc.sourceUrl)) {
@@ -323,35 +375,49 @@ export async function registerRoutes(
 
       if (activeProxyStreams >= MAX_PROXY_STREAMS) {
         res.setHeader("Retry-After", "5");
-        return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+        return res
+          .status(503)
+          .json({ error: "Too many proxy requests, try again shortly" });
       }
       activeProxyStreams++;
-      res.on("close", () => { activeProxyStreams--; });
+      res.on("close", () => {
+        activeProxyStreams--;
+      });
 
       req.setTimeout(60_000, () => {
-        if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+        if (!res.headersSent)
+          res.status(504).json({ error: "Proxy request timed out" });
       });
 
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 60_000);
 
       try {
-        const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+        const response = await fetch(doc.sourceUrl, {
+          signal: controller.signal,
+        });
         clearTimeout(timeout);
 
         if (!response.ok) {
-          return res.status(502).json({ error: "Failed to fetch PDF from source" });
+          return res
+            .status(502)
+            .json({ error: "Failed to fetch PDF from source" });
         }
 
         const contentType = response.headers.get("content-type") || "";
-        if (!contentType.includes("pdf") && !contentType.includes("octet-stream")) {
+        if (
+          !contentType.includes("pdf") &&
+          !contentType.includes("octet-stream")
+        ) {
           return res.status(502).json({ error: "Source did not return a PDF" });
         }
 
         const contentLength = response.headers.get("content-length");
         const MAX_SIZE = 50 * 1024 * 1024; // 50MB
         if (contentLength && parseInt(contentLength) > MAX_SIZE) {
-          return res.status(413).json({ error: "PDF exceeds maximum size limit" });
+          return res
+            .status(413)
+            .json({ error: "PDF exceeds maximum size limit" });
         }
 
         res.setHeader("Content-Type", "application/pdf");
@@ -408,15 +474,19 @@ export async function registerRoutes(
         if (absPath.startsWith(downloadsDir) && fsSync.existsSync(absPath)) {
           const ext = pathMod.extname(absPath).toLowerCase();
           const mimeMap: Record<string, string> = {
-            ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
-            ".png": "image/png", ".gif": "image/gif",
-            ".webp": "image/webp", ".bmp": "image/bmp",
+            ".jpg": "image/jpeg",
+            ".jpeg": "image/jpeg",
+            ".png": "image/png",
+            ".gif": "image/gif",
+            ".webp": "image/webp",
+            ".bmp": "image/bmp",
           };
           res.setHeader("Content-Type", mimeMap[ext] || "image/jpeg");
           res.setHeader("Cache-Control", "private, max-age=3600");
           const stream = fsSync.createReadStream(absPath);
           stream.on("error", () => {
-            if (!res.headersSent) res.status(500).json({ error: "File read error" });
+            if (!res.headersSent)
+              res.status(500).json({ error: "File read error" });
           });
           stream.pipe(res);
           return;
@@ -427,24 +497,34 @@ export async function registerRoutes(
       if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
         if (activeProxyStreams >= MAX_PROXY_STREAMS) {
           res.setHeader("Retry-After", "5");
-          return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+          return res
+            .status(503)
+            .json({ error: "Too many proxy requests, try again shortly" });
         }
         activeProxyStreams++;
-        res.on("close", () => { activeProxyStreams--; });
+        res.on("close", () => {
+          activeProxyStreams--;
+        });
 
         req.setTimeout(60_000, () => {
-          if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+          if (!res.headersSent)
+            res.status(504).json({ error: "Proxy request timed out" });
         });
 
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 60_000);
         try {
-          const response = await fetch(doc.sourceUrl, { signal: controller.signal });
+          const response = await fetch(doc.sourceUrl, {
+            signal: controller.signal,
+          });
           clearTimeout(timeout);
           if (!response.ok) {
-            return res.status(502).json({ error: "Failed to fetch image from source" });
+            return res
+              .status(502)
+              .json({ error: "Failed to fetch image from source" });
           }
-          const contentType = response.headers.get("content-type") || "image/jpeg";
+          const contentType =
+            response.headers.get("content-type") || "image/jpeg";
           const contentLength = response.headers.get("content-length");
           res.setHeader("Content-Type", contentType);
           if (contentLength) res.setHeader("Content-Length", contentLength);
@@ -489,17 +569,22 @@ export async function registerRoutes(
           // R2 may have wrong content type stored; derive from extension
           const ext = pathMod.extname(doc.r2Key).toLowerCase();
           const videoMimeMap: Record<string, string> = {
-            ".mp4": "video/mp4", ".avi": "video/x-msvideo",
-            ".mov": "video/quicktime", ".wmv": "video/x-ms-wmv",
-            ".webm": "video/webm", ".mkv": "video/x-matroska",
+            ".mp4": "video/mp4",
+            ".avi": "video/x-msvideo",
+            ".mov": "video/quicktime",
+            ".wmv": "video/x-ms-wmv",
+            ".webm": "video/webm",
+            ".mkv": "video/x-matroska",
           };
-          const contentType = videoMimeMap[ext] || r2.contentType || "video/mp4";
+          const contentType =
+            videoMimeMap[ext] || r2.contentType || "video/mp4";
           res.setHeader("Content-Type", contentType);
           res.setHeader("Accept-Ranges", "bytes");
           res.setHeader("Cache-Control", "private, max-age=3600");
           if (r2.contentRange) {
             res.setHeader("Content-Range", r2.contentRange);
-            if (r2.contentLength) res.setHeader("Content-Length", String(r2.contentLength));
+            if (r2.contentLength)
+              res.setHeader("Content-Length", String(r2.contentLength));
             res.status(206);
           } else if (r2.contentLength) {
             res.setHeader("Content-Length", String(r2.contentLength));
@@ -519,8 +604,10 @@ export async function registerRoutes(
         if (absPath.startsWith(downloadsDir) && fsSync.existsSync(absPath)) {
           const ext = pathMod.extname(absPath).toLowerCase();
           const mimeMap: Record<string, string> = {
-            ".mp4": "video/mp4", ".avi": "video/x-msvideo",
-            ".mov": "video/quicktime", ".wmv": "video/x-ms-wmv",
+            ".mp4": "video/mp4",
+            ".avi": "video/x-msvideo",
+            ".mov": "video/quicktime",
+            ".wmv": "video/x-ms-wmv",
             ".webm": "video/webm",
           };
           const stat = fsSync.statSync(absPath);
@@ -542,14 +629,16 @@ export async function registerRoutes(
             res.status(206);
             const stream = fsSync.createReadStream(absPath, { start, end });
             stream.on("error", () => {
-              if (!res.headersSent) res.status(500).json({ error: "File read error" });
+              if (!res.headersSent)
+                res.status(500).json({ error: "File read error" });
             });
             stream.pipe(res);
           } else {
             res.setHeader("Content-Length", String(fileSize));
             const stream = fsSync.createReadStream(absPath);
             stream.on("error", () => {
-              if (!res.headersSent) res.status(500).json({ error: "File read error" });
+              if (!res.headersSent)
+                res.status(500).json({ error: "File read error" });
             });
             stream.pipe(res);
           }
@@ -561,13 +650,18 @@ export async function registerRoutes(
       if (doc.sourceUrl && isAllowedPdfUrl(doc.sourceUrl)) {
         if (activeProxyStreams >= MAX_PROXY_STREAMS) {
           res.setHeader("Retry-After", "5");
-          return res.status(503).json({ error: "Too many proxy requests, try again shortly" });
+          return res
+            .status(503)
+            .json({ error: "Too many proxy requests, try again shortly" });
         }
         activeProxyStreams++;
-        res.on("close", () => { activeProxyStreams--; });
+        res.on("close", () => {
+          activeProxyStreams--;
+        });
 
         req.setTimeout(60_000, () => {
-          if (!res.headersSent) res.status(504).json({ error: "Proxy request timed out" });
+          if (!res.headersSent)
+            res.status(504).json({ error: "Proxy request timed out" });
         });
 
         const controller = new AbortController();
@@ -575,12 +669,18 @@ export async function registerRoutes(
         try {
           const fetchHeaders: Record<string, string> = {};
           if (req.headers.range) fetchHeaders["Range"] = req.headers.range;
-          const response = await fetch(doc.sourceUrl, { signal: controller.signal, headers: fetchHeaders });
+          const response = await fetch(doc.sourceUrl, {
+            signal: controller.signal,
+            headers: fetchHeaders,
+          });
           clearTimeout(timeout);
           if (!response.ok && response.status !== 206) {
-            return res.status(502).json({ error: "Failed to fetch video from source" });
+            return res
+              .status(502)
+              .json({ error: "Failed to fetch video from source" });
           }
-          const contentType = response.headers.get("content-type") || "video/mp4";
+          const contentType =
+            response.headers.get("content-type") || "video/mp4";
           const contentLength = response.headers.get("content-length");
           const contentRange = response.headers.get("content-range");
           res.setHeader("Content-Type", contentType);
@@ -613,7 +713,7 @@ export async function registerRoutes(
   app.get("/api/timeline", async (_req, res) => {
     try {
       const events = await storage.getTimelineEvents();
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(events);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch timeline events" });
@@ -623,7 +723,7 @@ export async function registerRoutes(
   app.get("/api/network", async (_req, res) => {
     try {
       const data = await storage.getNetworkData();
-      res.set('Cache-Control', 'public, max-age=300');
+      res.set("Cache-Control", "public, max-age=300");
       res.json(data);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch network data" });
@@ -637,7 +737,7 @@ export async function registerRoutes(
         return res.json({ persons: [], documents: [], events: [] });
       }
       const results = await storage.search(query);
-      res.set('Cache-Control', 'public, max-age=60');
+      res.set("Cache-Control", "public, max-age=60");
       res.json(results);
     } catch (error) {
       res.status(500).json({ error: "Failed to search" });
@@ -651,9 +751,12 @@ export async function registerRoutes(
         return res.json({ results: [], total: 0, page: 1, totalPages: 0 });
       }
       const page = Math.max(1, parseInt(req.query.page as string) || 1);
-      const limit = Math.min(50, Math.max(1, parseInt(req.query.limit as string) || 20));
+      const limit = Math.min(
+        50,
+        Math.max(1, parseInt(req.query.limit as string) || 20),
+      );
       const results = await storage.searchPages(query, page, limit);
-      res.set('Cache-Control', 'public, max-age=60');
+      res.set("Cache-Control", "public, max-age=60");
       res.json(results);
     } catch (error: any) {
       console.error("search/pages error:", error);
@@ -709,7 +812,10 @@ export async function registerRoutes(
 
       if (pageParam) {
         const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(100, Math.max(1, parseInt(limitParam || "50") || 50));
+        const limit = Math.min(
+          100,
+          Math.max(1, parseInt(limitParam || "50") || 50),
+        );
         const offset = (page - 1) * limit;
         const paginated = list.slice(offset, offset + limit);
         return res.json({
@@ -730,7 +836,11 @@ export async function registerRoutes(
   app.get("/api/ai-analyses/:fileName", async (req, res) => {
     try {
       const { fileName } = req.params;
-      if (fileName.includes("..") || fileName.includes("/") || fileName.includes("\\")) {
+      if (
+        fileName.includes("..") ||
+        fileName.includes("/") ||
+        fileName.includes("\\")
+      ) {
         return res.status(400).json({ error: "Invalid file name" });
       }
       const analysis = await storage.getAIAnalysis(fileName);
@@ -739,7 +849,10 @@ export async function registerRoutes(
       }
       res.json(analysis);
     } catch (error) {
-      console.error(`GET /api/ai-analyses/${req.params.fileName} failed:`, error);
+      console.error(
+        `GET /api/ai-analyses/${req.params.fileName} failed:`,
+        error,
+      );
       res.status(500).json({ error: "Failed to fetch AI analysis" });
     }
   });
@@ -749,7 +862,7 @@ export async function registerRoutes(
     try {
       const userId = (req.query.userId as string) || "anonymous";
       const result = await storage.getBookmarks(userId);
-      res.set('Cache-Control', 'no-store');
+      res.set("Cache-Control", "no-store");
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch bookmarks" });
@@ -759,8 +872,15 @@ export async function registerRoutes(
   app.post("/api/bookmarks", async (req, res) => {
     try {
       const { entityType, entityId, searchQuery, label, userId } = req.body;
-      if (!entityType || !["person", "document", "search"].includes(entityType)) {
-        return res.status(400).json({ error: "entityType must be 'person', 'document', or 'search'" });
+      if (
+        !entityType ||
+        !["person", "document", "search"].includes(entityType)
+      ) {
+        return res
+          .status(400)
+          .json({
+            error: "entityType must be 'person', 'document', or 'search'",
+          });
       }
 
       const parsed = insertBookmarkSchema.parse({
@@ -775,7 +895,9 @@ export async function registerRoutes(
       res.status(201).json(bookmark);
     } catch (error: any) {
       if (error?.name === "ZodError") {
-        return res.status(400).json({ error: "Invalid bookmark data", details: error.errors });
+        return res
+          .status(400)
+          .json({ error: "Invalid bookmark data", details: error.errors });
       }
       res.status(500).json({ error: "Failed to create bookmark" });
     }
@@ -804,12 +926,13 @@ export async function registerRoutes(
       if (!idsParam) {
         return res.json({});
       }
-      const documentIds = idsParam.split(",")
-        .map(s => parseInt(s.trim()))
-        .filter(n => !isNaN(n))
+      const documentIds = idsParam
+        .split(",")
+        .map((s) => parseInt(s.trim()))
+        .filter((n) => !isNaN(n))
         .slice(0, 200);
       const counts = await storage.getVoteCounts(documentIds);
-      res.set('Cache-Control', 'no-store');
+      res.set("Cache-Control", "no-store");
       res.json(counts);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch vote counts" });
@@ -823,7 +946,7 @@ export async function registerRoutes(
         return res.status(400).json({ error: "userId is required" });
       }
       const result = await storage.getVotes(userId);
-      res.set('Cache-Control', 'no-store');
+      res.set("Cache-Control", "no-store");
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch votes" });
@@ -834,14 +957,18 @@ export async function registerRoutes(
     try {
       const { documentId, userId } = req.body;
       if (!documentId || !userId) {
-        return res.status(400).json({ error: "documentId and userId are required" });
+        return res
+          .status(400)
+          .json({ error: "documentId and userId are required" });
       }
       const parsed = insertDocumentVoteSchema.parse({ documentId, userId });
       const vote = await storage.createVote(parsed);
       res.status(201).json(vote);
     } catch (error: any) {
       if (error?.name === "ZodError") {
-        return res.status(400).json({ error: "Invalid vote data", details: error.errors });
+        return res
+          .status(400)
+          .json({ error: "Invalid vote data", details: error.errors });
       }
       res.status(500).json({ error: "Failed to create vote" });
     }
@@ -870,12 +997,13 @@ export async function registerRoutes(
       if (!idsParam) {
         return res.json({});
       }
-      const personIds = idsParam.split(",")
-        .map(s => parseInt(s.trim()))
-        .filter(n => !isNaN(n))
+      const personIds = idsParam
+        .split(",")
+        .map((s) => parseInt(s.trim()))
+        .filter((n) => !isNaN(n))
         .slice(0, 200);
       const counts = await storage.getPersonVoteCounts(personIds);
-      res.set('Cache-Control', 'no-store');
+      res.set("Cache-Control", "no-store");
       res.json(counts);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch person vote counts" });
@@ -889,7 +1017,7 @@ export async function registerRoutes(
         return res.status(400).json({ error: "userId is required" });
       }
       const result = await storage.getPersonVotes(userId);
-      res.set('Cache-Control', 'no-store');
+      res.set("Cache-Control", "no-store");
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch person votes" });
@@ -900,14 +1028,18 @@ export async function registerRoutes(
     try {
       const { personId, userId } = req.body;
       if (!personId || !userId) {
-        return res.status(400).json({ error: "personId and userId are required" });
+        return res
+          .status(400)
+          .json({ error: "personId and userId are required" });
       }
       const parsed = insertPersonVoteSchema.parse({ personId, userId });
       const vote = await storage.createPersonVote(parsed);
       res.status(201).json(vote);
     } catch (error: any) {
       if (error?.name === "ZodError") {
-        return res.status(400).json({ error: "Invalid vote data", details: error.errors });
+        return res
+          .status(400)
+          .json({ error: "Invalid vote data", details: error.errors });
       }
       res.status(500).json({ error: "Failed to create person vote" });
     }
@@ -931,19 +1063,34 @@ export async function registerRoutes(
 
   // Data export routes
   app.get("/api/export/persons", async (req, res) => {
-
     try {
       const format = (req.query.format as string) || "json";
       const persons = await storage.getPersons();
 
       if (format === "csv") {
-        const headers = ["id", "name", "role", "description", "status", "nationality", "occupation", "category", "documentCount", "connectionCount"];
+        const headers = [
+          "id",
+          "name",
+          "role",
+          "description",
+          "status",
+          "nationality",
+          "occupation",
+          "category",
+          "documentCount",
+          "connectionCount",
+        ];
         const csvRows = [headers.join(",")];
         for (const p of persons) {
-          csvRows.push(toCsvRow(headers, p as unknown as Record<string, unknown>));
+          csvRows.push(
+            toCsvRow(headers, p as unknown as Record<string, unknown>),
+          );
         }
         res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", "attachment; filename=persons.csv");
+        res.setHeader(
+          "Content-Disposition",
+          "attachment; filename=persons.csv",
+        );
         return res.send(csvRows.join("\n"));
       }
 
@@ -956,24 +1103,42 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/documents", async (req, res) => {
-
     try {
       const format = (req.query.format as string) || "json";
       const documents = await storage.getDocuments();
 
       if (format === "csv") {
-        const headers = ["id", "title", "documentType", "dataSet", "datePublished", "dateOriginal", "pageCount", "isRedacted", "processingStatus", "aiAnalysisStatus"];
+        const headers = [
+          "id",
+          "title",
+          "documentType",
+          "dataSet",
+          "datePublished",
+          "dateOriginal",
+          "pageCount",
+          "isRedacted",
+          "processingStatus",
+          "aiAnalysisStatus",
+        ];
         const csvRows = [headers.join(",")];
         for (const d of documents) {
-          csvRows.push(toCsvRow(headers, d as unknown as Record<string, unknown>));
+          csvRows.push(
+            toCsvRow(headers, d as unknown as Record<string, unknown>),
+          );
         }
         res.setHeader("Content-Type", "text/csv");
-        res.setHeader("Content-Disposition", "attachment; filename=documents.csv");
+        res.setHeader(
+          "Content-Disposition",
+          "attachment; filename=documents.csv",
+        );
         return res.send(csvRows.join("\n"));
       }
 
       res.setHeader("Content-Type", "application/json");
-      res.setHeader("Content-Disposition", "attachment; filename=documents.json");
+      res.setHeader(
+        "Content-Disposition",
+        "attachment; filename=documents.json",
+      );
       res.json(documents);
     } catch (error) {
       res.status(500).json({ error: "Failed to export documents" });
@@ -981,31 +1146,59 @@ export async function registerRoutes(
   });
 
   app.get("/api/export/search", async (req, res) => {
-
     try {
       const query = (req.query.q as string) || "";
       const format = (req.query.format as string) || "json";
 
       if (query.length < 2) {
-        return res.status(400).json({ error: "Query must be at least 2 characters" });
+        return res
+          .status(400)
+          .json({ error: "Query must be at least 2 characters" });
       }
 
       const results = await storage.search(query);
 
-      res.setHeader("Content-Type", format === "csv" ? "text/csv" : "application/json");
-      res.setHeader("Content-Disposition", `attachment; filename=search-results.${format === "csv" ? "csv" : "json"}`);
+      res.setHeader(
+        "Content-Type",
+        format === "csv" ? "text/csv" : "application/json",
+      );
+      res.setHeader(
+        "Content-Disposition",
+        `attachment; filename=search-results.${format === "csv" ? "csv" : "json"}`,
+      );
 
       if (format === "csv") {
         const headers = ["type", "id", "name_or_title", "description"];
         const rows = [headers.join(",")];
         for (const p of results.persons) {
-          rows.push(toCsvRow(headers, { type: "person", id: p.id, name_or_title: p.name, description: p.description }));
+          rows.push(
+            toCsvRow(headers, {
+              type: "person",
+              id: p.id,
+              name_or_title: p.name,
+              description: p.description,
+            }),
+          );
         }
         for (const d of results.documents) {
-          rows.push(toCsvRow(headers, { type: "document", id: d.id, name_or_title: d.title, description: d.description }));
+          rows.push(
+            toCsvRow(headers, {
+              type: "document",
+              id: d.id,
+              name_or_title: d.title,
+              description: d.description,
+            }),
+          );
         }
         for (const e of results.events) {
-          rows.push(toCsvRow(headers, { type: "event", id: e.id, name_or_title: e.title, description: e.description }));
+          rows.push(
+            toCsvRow(headers, {
+              type: "event",
+              id: e.id,
+              name_or_title: e.title,
+              description: e.description,
+            }),
+          );
         }
         return res.send(rows.join("\n"));
       }
