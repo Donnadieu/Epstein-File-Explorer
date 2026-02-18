@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useTrackView } from "@/hooks/use-track-view";
-import type { AIAnalysisDocument, Document, Person } from "@shared/schema";
+import type { AIAnalysisDocument, Document, Person, PublicDocument } from "@shared/schema";
 import { useQuery } from "@tanstack/react-query";
 import {
   AlertTriangle,
@@ -73,7 +73,7 @@ interface PageTypeInfo {
   pageType: string;
 }
 
-interface DocumentDetail extends Document {
+interface DocumentDetail extends PublicDocument {
   persons: (Person & { mentionType: string; context: string | null })[];
   timelineEvents?: DocumentEvent[];
   pageTypes?: PageTypeInfo[];
@@ -601,33 +601,14 @@ function AISummarySection({
   );
 }
 
-function PresignedVideoPlayer({ doc }: { doc: DocumentDetail }) {
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+function VideoPlayer({ doc }: { doc: DocumentDetail }) {
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    setError(false);
-    fetch(`/api/documents/${doc.id}/content-url`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to get video URL");
-        return res.json();
-      })
-      .then((data) => setVideoUrl(data.url))
-      .catch(() => setError(true))
-      .finally(() => setLoading(false));
-  }, [doc.id]);
+  const videoUrl = doc.publicUrl || `/api/documents/${doc.id}/video`;
 
   return (
     <Card className="bg-muted/30 overflow-hidden">
       <CardContent className="p-4 flex flex-col items-center gap-4">
-        {loading ? (
-          <div className="flex flex-col items-center gap-3 py-8">
-            <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">Loading video...</p>
-          </div>
-        ) : error || !videoUrl ? (
+        {error ? (
           <div className="flex flex-col items-center gap-2">
             <Video className="w-10 h-10 text-muted-foreground/50" />
             <p className="text-sm text-muted-foreground">Could not load video.</p>
@@ -674,7 +655,7 @@ function DocumentViewer({
       <Card className="bg-muted/30 overflow-hidden">
         <CardContent className="p-4 flex flex-col items-center gap-4">
           <img
-            src={`/api/documents/${doc.id}/image`}
+            src={doc.publicUrl || `/api/documents/${doc.id}/image`}
             alt={doc.title}
             className="max-w-full max-h-[70vh] rounded-lg shadow-md"
             onError={(e) => {
@@ -705,7 +686,7 @@ function DocumentViewer({
   }
 
   if (isVideo) {
-    return <PresignedVideoPlayer doc={doc} />;
+    return <VideoPlayer doc={doc} />;
   }
 
   // Default: try PDF viewer, which will show a graceful fallback if it fails
@@ -713,6 +694,7 @@ function DocumentViewer({
     <PdfViewer
       documentId={doc.id}
       sourceUrl={doc.sourceUrl ?? undefined}
+      publicUrl={doc.publicUrl}
       initialPage={initialPage}
       pageTypes={doc.pageTypes}
     />

@@ -5,7 +5,7 @@ import * as fsSync from "fs";
 import * as pathMod from "path";
 import { insertBookmarkSchema, insertDocumentVoteSchema, insertPersonVoteSchema } from "@shared/schema";
 import { storage } from "./storage";
-import { isR2Configured, getPresignedUrl, getR2Stream } from "./r2";
+import { isR2Configured, getPresignedUrl, getR2Stream, getPublicUrl } from "./r2";
 import { registerChatRoutes } from "./chat";
 
 let activeProxyStreams = 0;
@@ -23,9 +23,9 @@ const ALLOWED_PDF_DOMAINS = [
   "ia800500.us.archive.org",
 ];
 
-function omitInternal<T extends Record<string, unknown>>(doc: T): Omit<T, 'localPath' | 'r2Key' | 'fileHash'> {
+function toPublicDocument<T extends Record<string, unknown>>(doc: T) {
   const { localPath, r2Key, fileHash, ...rest } = doc as any;
-  return rest;
+  return { ...rest, publicUrl: r2Key ? getPublicUrl(r2Key) : null };
 }
 
 function isAllowedPdfUrl(url: string): boolean {
@@ -109,7 +109,7 @@ export async function registerRoutes(
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
       const documents = await storage.getTrendingDocuments(limit);
       res.set("Cache-Control", "public, max-age=300");
-      res.json(documents.map(omitInternal));
+      res.json(documents.map(toPublicDocument));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch trending documents" });
     }
@@ -120,7 +120,7 @@ export async function registerRoutes(
       const limit = Math.min(20, Math.max(1, parseInt(req.query.limit as string) || 5));
       const docs = await storage.getMostVotedDocuments(limit);
       res.set("Cache-Control", "public, max-age=120");
-      res.json(docs.map((d) => ({ ...omitInternal(d), voteCount: d.voteCount })));
+      res.json(docs.map((d) => ({ ...toPublicDocument(d), voteCount: d.voteCount })));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch most voted documents" });
     }
@@ -198,7 +198,7 @@ export async function registerRoutes(
 
       const result = await storage.getDocumentsFiltered({ page, limit, search, type, dataSet, redacted, mediaType, sort });
       res.set('Cache-Control', 'public, max-age=60');
-      res.json({ ...result, data: result.data.map(omitInternal) });
+      res.json({ ...result, data: result.data.map(toPublicDocument) });
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch documents" });
     }
@@ -249,7 +249,7 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
       res.set('Cache-Control', 'public, max-age=300');
-      res.json(omitInternal(doc));
+      res.json(toPublicDocument(doc));
     } catch (error) {
       res.status(500).json({ error: "Failed to fetch document" });
     }
@@ -263,8 +263,13 @@ export async function registerRoutes(
       const doc = await storage.getDocument(id);
       if (!doc) return res.status(404).json({ error: "Document not found" });
       if (!doc.r2Key || !isR2Configured()) return res.status(404).json({ error: "No R2 content available" });
+      const publicUrl = getPublicUrl(doc.r2Key);
+      if (publicUrl) {
+        res.set("Cache-Control", "public, max-age=86400");
+        return res.json({ url: publicUrl });
+      }
       const url = await getPresignedUrl(doc.r2Key);
-      res.set("Cache-Control", "private, max-age=3000");
+      res.set("Cache-Control", "no-store");
       res.json({ url });
     } catch (error) {
       res.status(500).json({ error: "Failed to generate content URL" });
@@ -390,8 +395,13 @@ export async function registerRoutes(
         return res.status(404).json({ error: "Document not found" });
       }
 
-      // Redirect to R2 presigned URL
+      // Redirect to R2 public URL (or presigned URL as fallback)
       if (doc.r2Key && isR2Configured()) {
+        const publicUrl = getPublicUrl(doc.r2Key);
+        if (publicUrl) {
+          res.set("Cache-Control", "public, max-age=86400");
+          return res.redirect(publicUrl);
+        }
         try {
           const url = await getPresignedUrl(doc.r2Key);
           return res.redirect(url);
