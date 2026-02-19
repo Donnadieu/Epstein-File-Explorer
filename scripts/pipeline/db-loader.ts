@@ -5,7 +5,8 @@ import OpenAI from "openai";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { normalizeName, isSamePerson } from "../../server/storage";
+import { isSamePerson, normalizeName } from "../../server/storage";
+import type { Person } from "../../shared/schema";
 import {
   connections,
   documents,
@@ -13,10 +14,7 @@ import {
   persons,
   timelineEvents,
 } from "../../shared/schema";
-import type { Person } from "../../shared/schema";
-import type {
-  AIAnalysisResult
-} from "./ai-analyzer";
+import type { AIAnalysisResult } from "./ai-analyzer";
 import type { DOJCatalog } from "./doj-scraper";
 import { classifyAllDocuments } from "./media-classifier";
 import type { RawPerson } from "./wikipedia-scraper";
@@ -115,13 +113,31 @@ function normalizeType(aiType: string): string {
 // --- Canonical connection-type normalization ---
 
 const CANONICAL_CONNECTION_TYPE_MAP: [string, RegExp][] = [
-  ["legal", /legal|attorney|lawyer|judge|counsel|prosecutor|defendant|court|judicial|adversar|co-counsel|co-defendant/i],
-  ["employment", /employ|colleague|co-worker|supervisor|subordinate|staff|hierarchi/i],
-  ["social", /social|personal|family|familial|friend|cellmate|co-inmate|fellow inmate|mentor|acquaintance|romantic|sibling|spouse/i],
-  ["financial", /financial|business|investor|fiduciary|donor|trustee|transaction/i],
+  [
+    "legal",
+    /legal|attorney|lawyer|judge|counsel|prosecutor|defendant|court|judicial|adversar|co-counsel|co-defendant/i,
+  ],
+  [
+    "employment",
+    /employ|colleague|co-worker|supervisor|subordinate|staff|hierarchi/i,
+  ],
+  [
+    "social",
+    /social|personal|family|familial|friend|cellmate|co-inmate|fellow inmate|mentor|acquaintance|romantic|sibling|spouse/i,
+  ],
+  [
+    "financial",
+    /financial|business|investor|fiduciary|donor|trustee|transaction/i,
+  ],
   ["travel", /travel|flight|companion/i],
-  ["correspondence", /correspond|letter|email|recipient|sender|media|journalist|informant/i],
-  ["victim-related", /victim|perpetrator|accuser|accused|recruiter|abuser|traffick/i],
+  [
+    "correspondence",
+    /correspond|letter|email|recipient|sender|media|journalist|informant/i,
+  ],
+  [
+    "victim-related",
+    /victim|perpetrator|accuser|accused|recruiter|abuser|traffick/i,
+  ],
   ["political", /politic|advocate|government|regulatory|oversight|official/i],
 ];
 
@@ -137,9 +153,18 @@ function normalizeConnectionType(aiType: string): string {
 // --- Event date normalization ---
 
 const MONTH_MAP: Record<string, string> = {
-  january: "01", february: "02", march: "03", april: "04",
-  may: "05", june: "06", july: "07", august: "08",
-  september: "09", october: "10", november: "11", december: "12",
+  january: "01",
+  february: "02",
+  march: "03",
+  april: "04",
+  may: "05",
+  june: "06",
+  july: "07",
+  august: "08",
+  september: "09",
+  october: "10",
+  november: "11",
+  december: "12",
 };
 
 function normalizeEventDate(raw: string | null): string | null {
@@ -167,7 +192,9 @@ function normalizeEventDate(raw: string | null): string | null {
   if (yearRange) return yearRange[1];
 
   // Named months: "November 2021", "March 15, 2020"
-  const namedMonth = s.match(/^(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2},?\s+)?(\d{4})/i);
+  const namedMonth = s.match(
+    /^(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2},?\s+)?(\d{4})/i,
+  );
   if (namedMonth) {
     const mm = MONTH_MAP[namedMonth[1].toLowerCase()];
     const yyyy = namedMonth[3];
@@ -180,7 +207,8 @@ function normalizeEventDate(raw: string | null): string | null {
   }
 
   // Seasons: "2016-summer", "spring 2020"
-  const seasonYear = s.match(/(\d{4})[- ]?(spring|summer|fall|autumn|winter)/i) ||
+  const seasonYear =
+    s.match(/(\d{4})[- ]?(spring|summer|fall|autumn|winter)/i) ||
     s.match(/(spring|summer|fall|autumn|winter)[- ]?(\d{4})/i);
   if (seasonYear) {
     const year = seasonYear[1].match(/\d{4}/) ? seasonYear[1] : seasonYear[2];
@@ -188,7 +216,8 @@ function normalizeEventDate(raw: string | null): string | null {
   }
 
   // Approximate: "2004 (approximate)", "circa 2004", "approximately 2004"
-  const approx = s.match(/(\d{4})\s*\(approximate\)/i) ||
+  const approx =
+    s.match(/(\d{4})\s*\(approximate\)/i) ||
     s.match(/(?:circa|approximately|approx\.?)\s*(\d{4})/i);
   if (approx) {
     const year = approx[1].match(/\d{4}/) ? approx[1] : approx[2];
@@ -348,9 +377,7 @@ export async function loadDocumentsFromCatalog(
   return loaded;
 }
 
-export async function loadAIResults(options?: {
-  dryRun?: boolean;
-}): Promise<{
+export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   persons: number;
   connections: number;
   events: number;
@@ -359,12 +386,45 @@ export async function loadAIResults(options?: {
   const isDryRun = options?.dryRun === true;
   const dryRunSummary = isDryRun
     ? {
-        personsToCreate: [] as { name: string; category: string; role: string; status: string; source: string }[],
-        personsToUpdate: [] as { name: string; fields: Record<string, { from: string; to: string }>; source: string }[],
-        connectionsToCreate: [] as { person1: string; person2: string; type: string; strength: number; description: string; source: string }[],
-        eventsToCreate: [] as { date: string; title: string; category: string; significance: number; personsInvolved: string[]; source: string }[],
-        eventsToUpdate: [] as { date: string; title: string; fieldsChanged: string[]; source: string }[],
-        docLinksToCreate: [] as { person: string; documentId: number; source: string }[],
+        personsToCreate: [] as {
+          name: string;
+          category: string;
+          role: string;
+          status: string;
+          source: string;
+        }[],
+        personsToUpdate: [] as {
+          name: string;
+          fields: Record<string, { from: string; to: string }>;
+          source: string;
+        }[],
+        connectionsToCreate: [] as {
+          person1: string;
+          person2: string;
+          type: string;
+          strength: number;
+          description: string;
+          source: string;
+        }[],
+        eventsToCreate: [] as {
+          date: string;
+          title: string;
+          category: string;
+          significance: number;
+          personsInvolved: string[];
+          source: string;
+        }[],
+        eventsToUpdate: [] as {
+          date: string;
+          title: string;
+          fieldsChanged: string[];
+          source: string;
+        }[],
+        docLinksToCreate: [] as {
+          person: string;
+          documentId: number;
+          source: string;
+        }[],
         docsToMark: [] as { efta: string; documentType: string }[],
       }
     : null;
@@ -443,8 +503,13 @@ export async function loadAIResults(options?: {
 
   // Build a list of high-connectivity persons for fuzzy isSamePerson scan
   const topPersons = allPersonsList
-    .filter(p => (p.documentCount || 0) + (p.connectionCount || 0) > 2)
-    .sort((a, b) => ((b.documentCount || 0) + (b.connectionCount || 0)) - ((a.documentCount || 0) + (a.connectionCount || 0)))
+    .filter((p) => (p.documentCount || 0) + (p.connectionCount || 0) > 2)
+    .sort(
+      (a, b) =>
+        (b.documentCount || 0) +
+        (b.connectionCount || 0) -
+        ((a.documentCount || 0) + (a.connectionCount || 0)),
+    )
     .slice(0, 50);
 
   function findPerson(name: string): typeof persons.$inferSelect | undefined {
@@ -460,7 +525,18 @@ export async function loadAIResults(options?: {
     }
 
     // Tier 3: isSamePerson scan against top persons (catches OCR variants)
-    const candidate = { name, id: 0, category: null, role: null, description: null, status: "named", documentCount: 0, connectionCount: 0, aliases: null, imageUrl: null } as Person;
+    const candidate = {
+      name,
+      id: 0,
+      category: null,
+      role: null,
+      description: null,
+      status: "named",
+      documentCount: 0,
+      connectionCount: 0,
+      aliases: null,
+      imageUrl: null,
+    } as Person;
     for (const tp of topPersons) {
       if (isSamePerson(candidate, tp)) return tp;
     }
@@ -526,7 +602,13 @@ export async function loadAIResults(options?: {
 
         if (!existing) {
           if (isDryRun) {
-            dryRunSummary!.personsToCreate.push({ name: mention.name, category: mention.category, role: mention.role, status, source: file });
+            dryRunSummary!.personsToCreate.push({
+              name: mention.name,
+              category: mention.category,
+              role: mention.role,
+              status,
+              source: file,
+            });
             // Add simulated person so downstream resolution still works
             const simPerson = {
               id: -(personsCreated + 1),
@@ -585,12 +667,33 @@ export async function loadAIResults(options?: {
 
           if (Object.keys(updates).length > 0) {
             if (isDryRun) {
-              const fieldChanges: Record<string, { from: string; to: string }> = {};
-              if (updates.category) fieldChanges.category = { from: existing.category || "unknown", to: updates.category };
-              if (updates.role) fieldChanges.role = { from: existing.role || "unknown", to: updates.role };
-              if (updates.description) fieldChanges.description = { from: `${existing.description?.length || 0} chars`, to: `${updates.description.length} chars` };
-              if (updates.status) fieldChanges.status = { from: existing.status, to: updates.status };
-              dryRunSummary!.personsToUpdate.push({ name: existing.name, fields: fieldChanges, source: file });
+              const fieldChanges: Record<string, { from: string; to: string }> =
+                {};
+              if (updates.category)
+                fieldChanges.category = {
+                  from: existing.category || "unknown",
+                  to: updates.category,
+                };
+              if (updates.role)
+                fieldChanges.role = {
+                  from: existing.role || "unknown",
+                  to: updates.role,
+                };
+              if (updates.description)
+                fieldChanges.description = {
+                  from: `${existing.description?.length || 0} chars`,
+                  to: `${updates.description.length} chars`,
+                };
+              if (updates.status)
+                fieldChanges.status = {
+                  from: existing.status,
+                  to: updates.status,
+                };
+              dryRunSummary!.personsToUpdate.push({
+                name: existing.name,
+                fields: fieldChanges,
+                source: file,
+              });
             } else {
               await db
                 .update(persons)
@@ -604,7 +707,8 @@ export async function loadAIResults(options?: {
 
       // --- Connections ---
       for (const conn of data.connections) {
-        if (typeof conn !== "object" || !conn?.person1 || !conn?.person2) continue;
+        if (typeof conn !== "object" || !conn?.person1 || !conn?.person2)
+          continue;
         const person1 = findPerson(conn.person1);
         const person2 = findPerson(conn.person2);
 
@@ -616,9 +720,12 @@ export async function loadAIResults(options?: {
 
           if (isDryRun) {
             dryRunSummary!.connectionsToCreate.push({
-              person1: conn.person1, person2: conn.person2,
-              type: normalizeConnectionType(conn.relationshipType), strength: conn.strength,
-              description: (conn.description || "").substring(0, 200), source: file,
+              person1: conn.person1,
+              person2: conn.person2,
+              type: normalizeConnectionType(conn.relationshipType),
+              strength: conn.strength,
+              description: (conn.description || "").substring(0, 200),
+              source: file,
             });
             connectionsCreated++;
           } else {
@@ -690,8 +797,12 @@ export async function loadAIResults(options?: {
           if (existingEvent.length === 0) {
             if (isDryRun) {
               dryRunSummary!.eventsToCreate.push({
-                date: normalizedDate, title: event.title, category: event.category,
-                significance: event.significance, personsInvolved: event.personsInvolved, source: file,
+                date: normalizedDate,
+                title: event.title,
+                category: event.category,
+                significance: event.significance,
+                personsInvolved: event.personsInvolved,
+                source: file,
               });
             } else {
               await db.insert(timelineEvents).values({
@@ -732,7 +843,12 @@ export async function loadAIResults(options?: {
 
             if (Object.keys(updates).length > 0) {
               if (isDryRun) {
-                dryRunSummary!.eventsToUpdate.push({ date: event.date, title: event.title, fieldsChanged: Object.keys(updates), source: file });
+                dryRunSummary!.eventsToUpdate.push({
+                  date: event.date,
+                  title: event.title,
+                  fieldsChanged: Object.keys(updates),
+                  source: file,
+                });
               } else {
                 await db
                   .update(timelineEvents)
@@ -758,7 +874,11 @@ export async function loadAIResults(options?: {
 
           const newContext = (mention.context || "").substring(0, 500);
           if (isDryRun) {
-            dryRunSummary!.docLinksToCreate.push({ person: mention.name, documentId: sourceDocId, source: file });
+            dryRunSummary!.docLinksToCreate.push({
+              person: mention.name,
+              documentId: sourceDocId,
+              source: file,
+            });
             existingLinks.add(linkKey);
             docLinksCreated++;
           } else {
@@ -779,7 +899,10 @@ export async function loadAIResults(options?: {
       // --- Mark document as AI-analyzed + update documentType from AI ---
       if (sourceDocId) {
         if (isDryRun) {
-          dryRunSummary!.docsToMark.push({ efta: eventEfta, documentType: normalizeType(data.documentType || "unknown") });
+          dryRunSummary!.docsToMark.push({
+            efta: eventEfta,
+            documentType: normalizeType(data.documentType || "unknown"),
+          });
         } else {
           const docUpdates: Record<string, any> = {
             aiAnalysisStatus: "completed",
@@ -992,8 +1115,17 @@ async function mergePersonGroup(
  */
 function isBareKeyFigureName(name: string): boolean {
   const BARE_KEY_FIGURES = new Set([
-    "epstein", "maxwell", "ghislaine", "jeffrey", "giuffre", "trump",
-    "brunel", "wexner", "dershowitz", "clinton", "dubin",
+    "epstein",
+    "maxwell",
+    "ghislaine",
+    "jeffrey",
+    "giuffre",
+    "trump",
+    "brunel",
+    "wexner",
+    "dershowitz",
+    "clinton",
+    "dubin",
   ]);
   const lower = name.trim().toLowerCase();
   return !lower.includes(" ") && BARE_KEY_FIGURES.has(lower);
@@ -1013,17 +1145,27 @@ export function isJunkPersonName(name: string): boolean {
   if (trimmed.length > 60) return true;
 
   // Contains special characters that don't appear in real names (including OCR artifacts)
-  if (/[!;&$%^°•\\*<>=()]/.test(trimmed)) return true;
+  if (/[!;&$%^°•\\*<>=]/.test(trimmed)) return true;
+
+  // Parentheses: allow alternate-name patterns like "Ann (Anne) Maxwell" or
+  // "C Jacobus Petrus (Koos) Bekker", but reject system strings like "(USANYS)"
+  if (/[()]/.test(trimmed)) {
+    const parenContent = trimmed.match(/\(([^)]+)\)/)?.[1] || "";
+    const isAlternateName =
+      /^[A-Z][a-z]/.test(parenContent) || // Capitalized name: (Anne), (Koos)
+      /^(Eva|formerly)\s/i.test(parenContent); // "Eva Dubin", "formerly ..."
+    if (!isAlternateName) return true;
+  }
 
   // Contains slashes (role combos, OCR junk)
   if (trimmed.includes("/")) return true;
 
-  // Multiple consecutive digits (EFTA numbers, codes, OCR garbage)
-  if (/[0-9]{2,}/.test(trimmed)) return true;
-
-  // Digits mixed with letters in garbled patterns (e.g. "Donald Po4lon", "I3aktaj")
-  if (/[0-9].*[a-zA-Z].*[0-9]/.test(trimmed)) return true;
-  if (/^[A-Z][a-z]*[0-9][a-z]/.test(trimmed)) return true;
+  // Arabic digits in names indicate OCR errors or codes, not real person names.
+  // Reject any name containing Arabic digits (0-9).
+  // Note: Roman numerals use letters (I, V, X, L, etc.), not Arabic digits.
+  if (/\d/.test(trimmed)) {
+    return true;
+  }
 
   // Bracketed text: [REDACTED], [redacted], etc.
   if (/^\[.*\]$/.test(trimmed)) return true;
@@ -1163,14 +1305,23 @@ export function isJunkPersonName(name: string): boolean {
   // Comma-digit patterns: "InEir, 3 Unit Manager", "M, 1"
   if (/,\s*\d/.test(trimmed)) return true;
 
-  // Credential-only entries: "Esq.", "PsyD", "Ph.D.", "M.D.", "J.D.", "LL.M."
-  if (/^(esq\.?|psyd|ph\.?d\.?|m\.?d\.?|j\.?d\.?|ll\.?m\.?)$/i.test(trimmed)) return true;
+  // OCR comma-in-word: "John D,r", "Bre,t" (comma with no space before it, inside a word)
+  if (/\w,\w/.test(trimmed)) return true;
 
-  // Escaped quotes / backslash garbage in short strings
-  if (/["\\]/.test(trimmed) && trimmed.length < 30) return true;
+  // Credential-only entries: "Esq.", "PsyD", "Ph.D.", "M.D.", "J.D.", "LL.M."
+  if (/^(esq\.?|psyd|ph\.?d\.?|m\.?d\.?|j\.?d\.?|ll\.?m\.?)$/i.test(trimmed))
+    return true;
+
+  // Backslash garbage in names
+  if (/\\/.test(trimmed)) return true;
 
   // Relational descriptions: "spouse of ...", "sister of ...", etc.
-  if (/^(spouse|sister|brother|son|daughter|mother|father|wife|husband)\s+of\s/i.test(trimmed)) return true;
+  if (
+    /^(spouse|sister|brother|son|daughter|mother|father|wife|husband)\s+of\s/i.test(
+      trimmed,
+    )
+  )
+    return true;
 
   // "Friend/Victim/Inmate (Redacted)" patterns
   if (/\(redacted\)$/i.test(trimmed)) return true;
@@ -1182,15 +1333,44 @@ export function isJunkPersonName(name: string): boolean {
   if (/\(unnamed\)/i.test(trimmed)) return true;
 
   // "Accuser-N" / "Witness-N" / "Doe N" / "Attorney-N" / "Employee-N" / "Individual-N" patterns
-  if (/^(accuser|witness|doe|attorney|employee|individual|officer|client|subject)\s*-?\s*\d/i.test(trimmed)) return true;
+  if (
+    /^(accuser|witness|doe|attorney|employee|individual|officer|client|subject)\s*-?\s*\d/i.test(
+      trimmed,
+    )
+  )
+    return true;
 
   // Standalone single-word roles/titles (no accompanying name)
   const STANDALONE_ROLES = new Set([
-    "housekeeper", "nurse", "lawyer", "claimant", "contractor", "server",
-    "spokesperson", "driver", "merchant", "prince", "pilot", "stewardess",
-    "receptionist", "bodyguard", "chauffeur", "butler", "chef", "maid",
-    "gardener", "nanny", "masseuse", "therapist", "accountant", "broker",
-    "agent", "investigator", "analyst", "examiner", "coordinator",
+    "housekeeper",
+    "nurse",
+    "lawyer",
+    "claimant",
+    "contractor",
+    "server",
+    "spokesperson",
+    "driver",
+    "merchant",
+    "prince",
+    "pilot",
+    "stewardess",
+    "receptionist",
+    "bodyguard",
+    "chauffeur",
+    "butler",
+    "chef",
+    "maid",
+    "gardener",
+    "nanny",
+    "masseuse",
+    "therapist",
+    "accountant",
+    "broker",
+    "agent",
+    "investigator",
+    "analyst",
+    "examiner",
+    "coordinator",
   ]);
   if (STANDALONE_ROLES.has(lower)) return true;
 
@@ -1198,9 +1378,26 @@ export function isJunkPersonName(name: string): boolean {
   if (/^(capt|det|sgt|lt|cpl|supt)\.\s*$/i.test(trimmed)) return true;
 
   // OCR artifacts: consecutive uppercase letters in the middle of a word (aMMIla, i'MMa, M.IMII)
-  if (/[a-z].?[A-Z]{2,}/.test(trimmed) || /^[A-Z]\.[A-Z]{2,}/.test(trimmed)) return true;
+  // Strip trailing Roman numerals (II, III) and professional suffixes (QC, MD, RN, JD, etc.)
+  const withoutSuffix = trimmed
+    .replace(/\s+(I{2,3}|IV|VI{0,3}|IX|X{1,3})$/, "")
+    .replace(/\s+(QC|MD|RN|JD|LLP|KC|OBE|CBE|KBE|MBE|PhD|EdD|DDS|DO|OD|PA|NP|LPN|CPA|PE|SE|AIA|FAIA|Esq)$/i, "");
+  if (
+    /[a-z].?[A-Z]{2,}/.test(withoutSuffix) ||
+    /^[A-Z]\.[A-Z]{2,}/.test(withoutSuffix)
+  ) {
+    // Allow "FirstName LASTNAME" legal formatting (e.g. "Henry FERNANDEZ"):
+    // exactly 2 words, first is normally cased, second is all-caps with no triple repeats
+    const words = withoutSuffix.split(/\s+/);
+    const isLegalFormatted =
+      words.length === 2 &&
+      /^[A-Z][a-z]+$/.test(words[0]) &&
+      /^[A-Z]{2,}$/.test(words[1]) &&
+      !/(.)\1{2}/.test(words[1]); // reject "HALLWDDD" (triple repeat = OCR)
+    if (!isLegalFormatted) return true;
+  }
 
-  // USANYS patterns: "(USANYS)", "M (USANYS)", "IM (USANYS) [Contractor]"
+  // USANYS patterns
   if (/usanys/i.test(trimmed)) return true;
 
   // #N prefix patterns: "#1 Escort Officer", "#2 Officer"
@@ -1216,10 +1413,19 @@ export function isJunkPersonName(name: string): boolean {
   if (/^(ica-|wetjet|limo|bunny)/i.test(trimmed)) return true;
 
   // "MS. PENZA", "MR. AGNIFILO" — court transcript attorney references (all caps after title)
-  if (/^(mr|mrs|ms|dr)\.\s+[A-Z]{3,}$/i.test(trimmed) && /[A-Z]{3,}$/.test(trimmed)) return true;
+  if (
+    /^(mr|mrs|ms|dr)\.\s+[A-Z]{3,}$/i.test(trimmed) &&
+    /[A-Z]{3,}$/.test(trimmed)
+  )
+    return true;
 
   // Single-word 4-char names that look like OCR fragments (no vowels, or garbled)
-  if (!/\s/.test(trimmed) && trimmed.length === 4 && !/[aeiouAEIOU]/.test(trimmed)) return true;
+  if (
+    !/\s/.test(trimmed) &&
+    trimmed.length === 4 &&
+    !/[aeiouAEIOU]/.test(trimmed)
+  )
+    return true;
 
   // Trailing hyphen (truncated name): "Jean-", "Mary-"
   if (/-$/.test(trimmed)) return true;
@@ -1231,9 +1437,15 @@ export function isJunkPersonName(name: string): boolean {
   if (/^([A-Za-z]\.){2,}$/.test(trimmed)) return true;
 
   // "Superintenden" — truncated words (ends abruptly without vowel after 8+ chars)
-  if (!/\s/.test(trimmed) && trimmed.length >= 8 && /[^aeiou]$/i.test(trimmed) && !/[aeiou].{0,2}$/i.test(trimmed)) {
+  if (
+    !/\s/.test(trimmed) &&
+    trimmed.length >= 8 &&
+    /[^aeiou]$/i.test(trimmed) &&
+    !/[aeiou].{0,2}$/i.test(trimmed)
+  ) {
     // Only flag if it looks like a truncated title/role, not a real surname
-    const TRUNCATED_ROLES = /^(superintenden|investigat|coordinat|administrat|commission)/i;
+    const TRUNCATED_ROLES =
+      /^(superintenden|investigat|coordinat|administrat|commission)/i;
     if (TRUNCATED_ROLES.test(trimmed)) return true;
   }
 
@@ -1446,28 +1658,45 @@ async function pass2SingleWordEvidence(
     connsByPerson.get(c.p2)!.add(c.p1);
   }
 
+  // Split into multi-word vs single-word using all parts (including initials).
+  // "J. Smith" normalizes to "j smith" → 2 parts → multi-word (correct).
+  // Previously filtered by pt.length >= 2 which dropped initials, causing
+  // "J. Smith" to be treated as single-word "smith" and deleted in Pass 3.
   const multiWord = allPersons.filter((p) => {
-    const parts = normalizeName(p.name)
-      .split(" ")
-      .filter((pt) => pt.length >= 2);
+    const parts = normalizeName(p.name).split(" ").filter(Boolean);
     return parts.length >= 2;
   });
   const singleWord = allPersons.filter((p) => {
-    const parts = normalizeName(p.name)
-      .split(" ")
-      .filter((pt) => pt.length >= 2);
+    const parts = normalizeName(p.name).split(" ").filter(Boolean);
     return parts.length === 1;
   });
 
-  // Index multi-word persons by each word part for fast lookup
-  const wordIndex = new Map<string, (typeof persons.$inferSelect)[]>();
+  // Index multi-word persons by first name AND last name separately.
+  // A single-word name like "Mark" should only match candidates where
+  // "Mark" is the FIRST name (e.g. "Mark Epstein"), not where it's the
+  // last name (e.g. "Robert Mark"). Similarly, "Spitzer" should match
+  // "Eliot Spitzer" via last-name index.
+  // Index on parts with length >= 2 so single-char initials don't become
+  // keys, but use allParts.length to decide if the name is multi-word
+  // (so "J. Smith" with parts ["j","smith"] is still indexed under "smith").
+  const firstNameIndex = new Map<string, (typeof persons.$inferSelect)[]>();
+  const lastNameIndex = new Map<string, (typeof persons.$inferSelect)[]>();
   for (const p of multiWord) {
-    const parts = normalizeName(p.name)
-      .split(" ")
-      .filter((pt) => pt.length >= 2);
-    for (const part of parts) {
-      if (!wordIndex.has(part)) wordIndex.set(part, []);
-      wordIndex.get(part)!.push(p);
+    const allParts = normalizeName(p.name).split(" ").filter(Boolean);
+    if (allParts.length < 2) continue; // need at least 2 real parts
+    const firstPart = allParts[0];
+    const lastPart = allParts[allParts.length - 1];
+
+    // Only index first name if it has length >= 2 (skip single-char initials)
+    if (firstPart.length >= 2) {
+      if (!firstNameIndex.has(firstPart)) firstNameIndex.set(firstPart, []);
+      firstNameIndex.get(firstPart)!.push(p);
+    }
+
+    // Only index last name if it has length >= 2 and differs from first name
+    if (lastPart.length >= 2 && lastPart !== firstPart) {
+      if (!lastNameIndex.has(lastPart)) lastNameIndex.set(lastPart, []);
+      lastNameIndex.get(lastPart)!.push(p);
     }
   }
 
@@ -1476,14 +1705,35 @@ async function pass2SingleWordEvidence(
 
   for (const single of singleWord) {
     const norm = normalizeName(single.name);
-    const word = norm.split(" ").filter((pt) => pt.length >= 2)[0];
-    if (!word || word.length < 3) continue;
+    const word = norm.split(" ").filter(Boolean)[0];
+    if (!word || word.length < 2) continue;
 
-    // Find multi-word candidates containing this word
-    const candidates = wordIndex.get(word) || [];
+    // Find multi-word candidates where this word is their first or last name.
+    // Single-word names can match either first names (e.g., "Mark" → "Mark Epstein")
+    // or last names (e.g., "Spitzer" → "Eliot Spitzer"), but last-name matches
+    // require higher evidence (4+ vs 2+) to reduce false positives.
+    const candidateSource = new Map<number, "firstName" | "lastName">();
+    const candidates: (typeof persons.$inferSelect)[] = [];
+    for (const c of firstNameIndex.get(word) || []) {
+      if (!candidateSource.has(c.id)) {
+        candidateSource.set(c.id, "firstName");
+        candidates.push(c);
+      }
+    }
+    for (const c of lastNameIndex.get(word) || []) {
+      if (!candidateSource.has(c.id)) {
+        candidateSource.set(c.id, "lastName");
+        candidates.push(c);
+      } else if (candidateSource.get(c.id) === "lastName") {
+        // Already marked as lastName, keep it as such
+      } else {
+        // Found via both indexes - prefer firstName (lower threshold)
+        candidateSource.set(c.id, "firstName");
+      }
+    }
     if (candidates.length === 0) continue;
 
-    // Score by shared evidence
+    // Score by shared evidence (shared docs weighted 2x, shared connections 1x)
     const singleDocs = docsByPerson.get(single.id) || new Set();
     const singleConns = connsByPerson.get(single.id) || new Set();
 
@@ -1495,9 +1745,22 @@ async function pass2SingleWordEvidence(
         for (const d of singleDocs) if (cDocs.has(d)) sharedDocs++;
         let sharedConns = 0;
         for (const cn of singleConns) if (cConns.has(cn)) sharedConns++;
-        return { person: c, score: sharedDocs * 2 + sharedConns };
+        const rawScore = sharedDocs * 2 + sharedConns;
+
+        // Use the tracked source to determine if this is a first-name or last-name match.
+        // Candidates found via firstNameIndex are considered first-name matches (lower threshold).
+        // Candidates found via lastNameIndex are considered last-name matches (higher threshold).
+        const matchSource = candidateSource.get(c.id) || "lastName";
+        const isFirstNameMatch = matchSource === "firstName";
+
+        // Minimum evidence score of 4 for all matches.
+        // First-name matches (e.g. "Audrey") previously used 3, but this was
+        // too lenient — a score of 3 with 0 shared docs is weak evidence.
+        const minScore = 4;
+
+        return { person: c, score: rawScore, minScore };
       })
-      .filter((s) => s.score > 0)
+      .filter((s) => s.score >= s.minScore)
       .sort((a, b) => b.score - a.score);
 
     if (scored.length === 0) continue;
@@ -1553,18 +1816,147 @@ async function pass2SingleWordEvidence(
 }
 
 // --- Pass 3: Delete Remaining Single-Word Names ---
+// Before deleting, try to merge title-prefixed names (Mr./Ms./Dr.) into
+// their full-name counterparts via last-name matching.
 async function pass3DeleteSingleWord(
   protectedNames: Set<string>,
   actions: DeduplicationAction[] | null = null,
   nextId: { value: number } = { value: 1 },
+  handledIds?: Set<number>,
 ): Promise<number> {
   const allPersons = await db.select().from(persons);
-  const toDelete = allPersons.filter((p) => {
+
+  // Build a last-name index of multi-word persons for title-prefixed and surname matching.
+  // Exclude persons already handled by earlier passes to avoid false ambiguity
+  // (e.g. "Pete Skinner" merged in Pass 6 shouldn't block "Mr. Skinner" → "Peter Skinner").
+  const lastNameIndex = new Map<string, (typeof persons.$inferSelect)[]>();
+  for (const p of allPersons) {
+    if (handledIds?.has(p.id)) continue;
+    const parts = normalizeName(p.name).split(" ").filter(Boolean);
+    if (parts.length >= 2) {
+      const last = parts[parts.length - 1];
+      if (!lastNameIndex.has(last)) lastNameIndex.set(last, []);
+      lastNameIndex.get(last)!.push(p);
+    }
+  }
+
+  const singleWordPersons = allPersons.filter((p) => {
     if (protectedNames.has(normalizeName(p.name))) return false;
+    if (handledIds?.has(p.id)) return false;
     const norm = normalizeName(p.name);
-    const meaningfulParts = norm.split(" ").filter((pt) => pt.length >= 2);
-    return meaningfulParts.length <= 1 && norm.length > 0;
+    const realParts = norm.split(" ").filter(Boolean);
+    return realParts.length <= 1 && norm.length > 0;
   });
+
+  // Separate title-prefixed names for merge attempts vs plain deletes
+  const titlePrefixPattern = /^(mr\.?|ms\.?|mrs\.?|dr\.?|judge|prof\.?)\s+/i;
+  // Gender check: avoid merging "Ms. Arnold" (female) into "Dave Arnold" (male)
+  const MALE_FIRST = new Set(["adam", "alan", "alex", "andrew", "barry", "benjamin", "bill", "bob", "brad", "brandon", "brian", "bruce", "carl", "chad", "charles", "chris", "christopher", "clay", "craig", "dale", "dan", "daniel", "darren", "dave", "david", "dean", "dennis", "don", "donald", "donnie", "doug", "douglas", "drew", "earl", "edward", "eli", "eric", "eugene", "frank", "gary", "gene", "george", "glen", "glenn", "grant", "greg", "gregory", "harold", "henry", "howard", "ivan", "jack", "jacob", "james", "jason", "jeff", "jeffrey", "jerry", "jim", "joe", "joel", "john", "jonathan", "jose", "joseph", "joshua", "juan", "justin", "keith", "kenneth", "kevin", "kirk", "kurt", "kyle", "lance", "larry", "lee", "leon", "lloyd", "marcus", "mark", "marshall", "martin", "matthew", "max", "michael", "mike", "neal", "neil", "nelson", "nicholas", "nick", "norman", "oliver", "omar", "oscar", "owen", "patrick", "paul", "percy", "perry", "peter", "philip", "ralph", "randy", "ray", "raymond", "reed", "rene", "rex", "richard", "rick", "robert", "roger", "roland", "ronald", "ross", "roy", "russell", "ryan", "samuel", "scott", "sean", "seth", "spencer", "stan", "stanley", "stephen", "steve", "steven", "stuart", "terry", "thomas", "timothy", "todd", "tom", "tony", "tracy", "travis", "troy", "tyler", "vernon", "victor", "wade", "walter", "warren", "wayne", "wesley", "william"]);
+  const FEMALE_FIRST = new Set(["alice", "amanda", "amy", "andrea", "angela", "ann", "anna", "anne", "annie", "april", "ashley", "barbara", "betty", "blanche", "bonnie", "brenda", "carol", "carolyn", "catherine", "charlotte", "cherry", "christina", "christine", "claire", "constance", "crystal", "cynthia", "daisy", "dawn", "deborah", "debra", "denise", "diana", "diane", "dolores", "donna", "dorothy", "edith", "elaine", "elena", "elizabeth", "ellen", "emily", "emma", "ethel", "eva", "evelyn", "faith", "faye", "florence", "frances", "gail", "gloria", "grace", "gwen", "hazel", "heather", "helen", "holly", "hope", "irene", "iris", "ivy", "jade", "janet", "janice", "jean", "jennifer", "jessica", "joan", "joanne", "joy", "joyce", "judith", "judy", "julia", "julie", "june", "karen", "katherine", "kathleen", "kathy", "kay", "kelly", "kimberly", "lara", "laura", "lauren", "linda", "lisa", "lois", "lorraine", "lucy", "lynn", "mabel", "madison", "margaret", "maria", "marie", "marilyn", "martha", "mary", "maxine", "megan", "melissa", "michelle", "mildred", "miriam", "molly", "monica", "nancy", "natalie", "nicole", "norma", "olivia", "paige", "pamela", "patricia", "paula", "pearl", "penny", "phyllis", "rachel", "rebekah", "rebecca", "regina", "renee", "robin", "rose", "rosemary", "ruby", "ruth", "sally", "samantha", "sandra", "sarah", "shannon", "sharon", "shirley", "stacy", "stella", "stephanie", "susan", "sylvia", "tammy", "teresa", "theresa", "tina", "toni", "valerie", "vanessa", "vera", "vicki", "victoria", "violet", "virginia", "vivian", "wendy"]);
+  const toDelete: (typeof persons.$inferSelect)[] = [];
+
+  for (const p of singleWordPersons) {
+    // Try to merge title-prefixed names by last-name match
+    if (titlePrefixPattern.test(p.name)) {
+      const norm = normalizeName(p.name);
+      const word = norm.split(" ").filter(Boolean)[0];
+      if (word && word.length >= 3) {
+        let candidates = lastNameIndex.get(word) || [];
+
+        // Apply gender filter BEFORE checking candidate count.
+        // "Ms. Comey" should match "Maurene Comey" but not "James Comey".
+        const isFemaleTitle = /^(ms\.?|mrs\.?)\s/i.test(p.name);
+        const isMaleTitle = /^mr\.?\s/i.test(p.name);
+        if (isFemaleTitle || isMaleTitle) {
+          candidates = candidates.filter((c) => {
+            const firstName = normalizeName(c.name).split(" ").filter(Boolean)[0];
+            if (isFemaleTitle && MALE_FIRST.has(firstName)) return false;
+            if (isMaleTitle && FEMALE_FIRST.has(firstName)) return false;
+            return true;
+          });
+        }
+
+        // If multiple candidates share the same first name, they're likely
+        // variants of the same person (e.g. "Arthur Aidala" + "Arthur L. Aidala").
+        // Collapse to the lowest-ID candidate.
+        if (candidates.length > 1) {
+          const firstNames = new Set(
+            candidates.map((c) => normalizeName(c.name).split(" ").filter(Boolean)[0]),
+          );
+          if (firstNames.size === 1) {
+            candidates = [candidates.reduce((a, b) => (a.id < b.id ? a : b))];
+          }
+        }
+
+        // Only merge if exactly one unambiguous candidate after filtering
+        if (candidates.length === 1) {
+          const target = candidates[0];
+          if (actions !== null) {
+            actions.push({
+              id: nextId.value++,
+              pass: 3,
+              type: "merge",
+              reason: "title-prefixed → full name",
+              canonical: { id: target.id, name: target.name },
+              duplicates: [{ id: p.id, name: p.name }],
+              status: "pending",
+            });
+          } else {
+            try {
+              await mergePersonGroup(target, [p.id], [p.name]);
+            } catch {
+              // Fall through to delete
+              toDelete.push(p);
+              continue;
+            }
+          }
+          console.log(
+            `  [P3] ${actions !== null ? "Would merge" : "Merged"} "${p.name}" → "${target.name}"`,
+          );
+          continue;
+        }
+      }
+    }
+    // For bare single-word names (no title prefix), attempt surname-based merge
+    // if the name is NOT a common first name and has exactly one surname match.
+    // This catches distinctive surnames like "Kellen" → "Sarah Kellen",
+    // "Boies" → "David Boies", etc.
+    // Skip title-prefixed names — they already had their chance with gender-aware logic.
+    const bareWord = normalizeName(p.name).split(" ").filter(Boolean)[0];
+    if (
+      bareWord && bareWord.length >= 3
+      && !titlePrefixPattern.test(p.name)
+      && !MALE_FIRST.has(bareWord) && !FEMALE_FIRST.has(bareWord)
+    ) {
+      const surnameCandidates = lastNameIndex.get(bareWord) || [];
+      if (surnameCandidates.length === 1) {
+        const target = surnameCandidates[0];
+        if (actions !== null) {
+          actions.push({
+            id: nextId.value++,
+            pass: 3,
+            type: "merge",
+            reason: "bare surname → full name",
+            canonical: { id: target.id, name: target.name },
+            duplicates: [{ id: p.id, name: p.name }],
+            status: "pending",
+          });
+        } else {
+          try {
+            await mergePersonGroup(target, [p.id], [p.name]);
+          } catch {
+            toDelete.push(p);
+            continue;
+          }
+        }
+        console.log(
+          `  [P3] ${actions !== null ? "Would merge" : "Merged"} "${p.name}" → "${target.name}" (surname)`,
+        );
+        continue;
+      }
+    }
+    toDelete.push(p);
+  }
 
   if (actions !== null) {
     for (const p of toDelete) {
@@ -1583,10 +1975,18 @@ async function pass3DeleteSingleWord(
     }
   }
 
-  console.log(
-    `  Pass 3: ${actions !== null ? "Found" : "Deleted"} ${toDelete.length} remaining single-word names`,
-  );
-  return toDelete.length;
+  const mergedCount = singleWordPersons.length - toDelete.length;
+  const totalCount = mergedCount + toDelete.length;
+  if (mergedCount > 0) {
+    console.log(
+      `  Pass 3: ${actions !== null ? "Found" : "Processed"} ${totalCount} single-word names (${mergedCount} merged, ${toDelete.length} deleted)`,
+    );
+  } else {
+    console.log(
+      `  Pass 3: ${actions !== null ? "Found" : "Deleted"} ${toDelete.length} remaining single-word names`,
+    );
+  }
+  return totalCount;
 }
 
 // --- Pass 4: Key Figure Variants (Hardcoded) ---
@@ -1620,7 +2020,7 @@ const KEY_FIGURE_MERGES: {
   },
   {
     canonical: "Alexander Acosta",
-    variants: ["R. Alexander Acosta", "R Alexander Acosta", "ALEXANDER ACOSTA"],
+    variants: ["R. Alexander Acosta", "R Alexander Acosta", "ALEXANDER ACOSTA", "Acosta"],
   },
   {
     canonical: "Alan Dershowitz",
@@ -1657,6 +2057,7 @@ const KEY_FIGURE_MERGES: {
       "Donald John Trump",
       "DONALD TRUMP",
       "Trump, Donald",
+      "Mr. Trump",
     ],
   },
   {
@@ -1697,6 +2098,45 @@ const KEY_FIGURE_MERGES: {
   {
     canonical: "Isabel Maxwell",
     variants: ["ISABEL MAXWELL"],
+  },
+  // Known-figure bare surnames and title-prefixed variants rescued from Pass 3 deletion.
+  // These are the most prominent Epstein-case figures whose bare surnames appear in
+  // AI-extracted data and would otherwise be deleted as ambiguous single-word names.
+  {
+    canonical: "Sarah Kellen",
+    variants: ["Sara Kellen", "Kellen"],
+  },
+  {
+    canonical: "David Rodgers",
+    variants: ["Rodgers"],
+  },
+  {
+    canonical: "Michael Reiter",
+    variants: ["Reiter"],
+  },
+  {
+    canonical: "Geoffrey Berman",
+    variants: ["Berrnan"],
+  },
+  {
+    canonical: "Sigrid McCawley",
+    variants: ["McCawley"],
+  },
+  {
+    canonical: "Darren Indyke",
+    variants: ["Indyke"],
+  },
+  {
+    canonical: "Paul Cassell",
+    variants: ["Cassell"],
+  },
+  {
+    canonical: "Audrey Strauss",
+    variants: ["Strauss"],
+  },
+  {
+    canonical: "William Barr",
+    variants: ["Barr"],
   },
 ];
 
@@ -1790,6 +2230,7 @@ async function pass5MiddleInitial(
   protectedNames: Set<string>,
   actions: DeduplicationAction[] | null = null,
   nextId: { value: number } = { value: 1 },
+  handledIds?: Set<number>,
 ): Promise<number> {
   const allPersons = await db.select().from(persons);
 
@@ -1798,6 +2239,10 @@ async function pass5MiddleInitial(
   const threeWordPersons: (typeof persons.$inferSelect)[] = [];
 
   for (const p of allPersons) {
+    // Skip persons already handled by earlier passes (dry-run only)
+    if (handledIds?.has(p.id)) continue;
+    // Skip compound names like "Jen and Steve Marshal" — these are multiple people
+    if (/\band\b|\b&\b/i.test(p.name)) continue;
     const parts = normalizeName(p.name)
       .split(" ")
       .filter((pt) => pt.length >= 2);
@@ -1817,15 +2262,27 @@ async function pass5MiddleInitial(
   }
 
   let merged = 0;
+  // Track IDs already used as DUPLICATES in this pass.
+  // Only duplicate IDs are tracked (not canonical) so that multiple 2-word
+  // names can merge into the same 3-word canonical (e.g. "Lesley K Groff"
+  // AND "Lesley Groff" both merging into "Lesley Katherine Groff").
+  // But a person already consumed as a duplicate can't be reused.
+  const usedAsDuplicate = new Set<number>();
+
   for (const twoWord of twoWordPersons) {
+    if (usedAsDuplicate.has(twoWord.id)) continue;
     const parts = normalizeName(twoWord.name)
       .split(" ")
       .filter((pt) => pt.length >= 2);
     if (parts.length !== 2) continue;
     const key = `${parts[0]}|${parts[1]}`;
-    const matches = threeWordIndex.get(key);
-    if (!matches || matches.length !== 1) {
-      if (matches && matches.length > 1) {
+    let matches = threeWordIndex.get(key);
+    if (!matches) continue;
+
+    // Filter out matches already consumed as duplicates
+    matches = matches.filter((m) => !usedAsDuplicate.has(m.id));
+    if (matches.length !== 1) {
+      if (matches.length > 1) {
         console.log(
           `  [P5] Skipping "${twoWord.name}" → ambiguous: ${matches.map((m) => `"${m.name}"`).join(", ")}`,
         );
@@ -1887,6 +2344,7 @@ async function pass5MiddleInitial(
         status: "pending",
       });
       merged++;
+      usedAsDuplicate.add(duplicate.id);
       console.log(
         `  [P5] Would merge "${duplicate.name}" → "${canonical.name}"`,
       );
@@ -1894,6 +2352,8 @@ async function pass5MiddleInitial(
       try {
         await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
         merged++;
+        mergedInPass5.add(twoWord.id);
+        mergedInPass5.add(match.id);
         console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
       } catch (err: any) {
         console.warn(
@@ -1948,11 +2408,13 @@ const OCR_NICKNAME_MERGES: { canonical: string; variants: string[] }[] = [
   { canonical: "Courtney Wild", variants: ["Courtney Wilde"] },
   { canonical: "Michael Reiter", variants: ["Michael Retter", "Chief Reiter"] },
   { canonical: "Joseph Recarey", variants: ["Joe Recarey", "Det. Recarey"] },
+  { canonical: "Arthur L. Aidala", variants: ["Arthur Aidala"] },
 ];
 
 async function pass6OCRNickname(
   actions: DeduplicationAction[] | null = null,
   nextId: { value: number } = { value: 1 },
+  handledIds?: Set<number>,
 ): Promise<number> {
   let total = 0;
   for (const entry of OCR_NICKNAME_MERGES) {
@@ -1970,6 +2432,8 @@ async function pass6OCRNickname(
         .where(sql`LOWER(${persons.name}) = LOWER(${variant})`)
         .limit(1);
       if (variantRow && variantRow.id !== canonicalRow.id) {
+        // Skip if already handled by an earlier pass (dry-run only)
+        if (handledIds?.has(variantRow.id)) continue;
         if (actions !== null) {
           actions.push({
             id: nextId.value++,
@@ -2208,15 +2672,48 @@ export async function deduplicatePersonsInDB(
   const actions: DeduplicationAction[] | null = isDryRun ? [] : null;
   const nextId = { value: 1 };
 
+  // In dry-run mode, track IDs already handled by earlier passes so Pass 3
+  // doesn't re-list them as deletions (since no actual DB changes occur).
+  const handledIds = isDryRun ? new Set<number>() : undefined;
+
   const stats = {
-    pass0: await pass0JunkRemoval(protectedNames, actions, nextId),
-    pass1: await pass1ExactNormalized(protectedNames, actions, nextId),
-    pass2: await pass2SingleWordEvidence(protectedNames, actions, nextId),
-    pass3: await pass3DeleteSingleWord(protectedNames, actions, nextId),
-    pass4: await pass4KeyFigures(actions, nextId),
-    pass5: await pass5MiddleInitial(protectedNames, actions, nextId),
-    pass6: await pass6OCRNickname(actions, nextId),
+    pass0: 0 as number,
+    pass1: 0 as number,
+    pass2: 0 as number,
+    pass3: 0 as number,
+    pass4: 0 as number,
+    pass5: 0 as number,
+    pass6: 0 as number,
   };
+
+  // Helper to collect handled IDs from all actions so far.
+  // Includes ALL delete targets (Pass 0 junk + Pass 4 junk variants) and
+  // ALL merge duplicates from any pass — so later passes don't re-list them.
+  const collectHandledIds = () => {
+    if (!handledIds || !actions) return;
+    handledIds.clear();
+    for (const a of actions) {
+      if (a.type === "delete" && a.targets) {
+        for (const t of a.targets) handledIds.add(t.id);
+      }
+      if (a.duplicates) {
+        for (const d of a.duplicates) handledIds.add(d.id);
+      }
+    }
+  };
+
+  // Run passes in groups, collecting handled IDs between them
+  // to prevent cross-pass conflicts in dry-run mode.
+  stats.pass0 = await pass0JunkRemoval(protectedNames, actions, nextId);
+  stats.pass1 = await pass1ExactNormalized(protectedNames, actions, nextId);
+  stats.pass2 = await pass2SingleWordEvidence(protectedNames, actions, nextId);
+  stats.pass4 = await pass4KeyFigures(actions, nextId);
+  collectHandledIds(); // Pass 5 needs to skip Pass 4 merge targets
+  stats.pass5 = await pass5MiddleInitial(protectedNames, actions, nextId, handledIds);
+  collectHandledIds(); // Pass 6 needs to skip Pass 4/5 merge targets
+  stats.pass6 = await pass6OCRNickname(actions, nextId, handledIds);
+  collectHandledIds(); // Pass 3 needs to skip all earlier pass targets
+  stats.pass3 = await pass3DeleteSingleWord(protectedNames, actions, nextId, handledIds);
 
   if (isDryRun && actions) {
     const PASS_LABELS: Record<number, { type: string; label: string }> = {
