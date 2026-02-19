@@ -8,6 +8,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NavActions } from "@/components/nav-actions";
+import { LiveCounter } from "@/components/live-counter";
 import { AppBreadcrumbs } from "@/components/breadcrumbs";
 import { useKeyboardShortcuts, shortcutsList } from "@/hooks/use-keyboard-shortcuts";
 import {
@@ -72,6 +73,7 @@ function AppShell() {
               <AppBreadcrumbs />
             </div>
             <div className="flex items-center">
+              <LiveCounter />
               <NavActions />
               <ThemeToggle />
             </div>
