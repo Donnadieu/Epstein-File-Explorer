@@ -17,7 +17,7 @@ import {
 import { db } from "./db";
 import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
 import { isR2Configured } from "./r2";
-import { isTypesenseConfigured, typesenseDocumentSearch, typesenseSearchPages } from "./typesense";
+import { isTypesenseConfigured, typesenseDocumentSearch, typesenseSearchPages, typesenseSearchPersons } from "./typesense";
 
 /** Map raw SQL row (snake_case) to Document (camelCase) */
 function mapRowToDocument(row: any): Document {
@@ -1077,15 +1077,24 @@ export class DatabaseStorage implements IStorage {
 
     const searchPattern = `%${escapeLikePattern(query)}%`;
 
-    // Use full-text search on pages to find matching documents (fast, uses GIN index)
-    // Persons and events are small tables so ILIKE is fine for them
-    const [matchedPersons, pageResults, matchedEvents] = await Promise.all([
-      db.select().from(persons).where(
-        or(
-          ilike(persons.name, searchPattern),
-          ilike(persons.occupation, searchPattern)
+    const personSearch = isTypesenseConfigured()
+      ? typesenseSearchPersons(query, 20).then(async (tsPersons) => {
+          const ids = tsPersons.map(p => p.pgId);
+          if (ids.length === 0) return [];
+          const rows = await db.select().from(persons).where(inArray(persons.id, ids));
+          const byId = new Map(rows.map(r => [r.id, r]));
+          return ids.map(id => byId.get(id)).filter(Boolean) as typeof rows;
+        }).catch(() =>
+          db.select().from(persons).where(
+            or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))
+          ).limit(20)
         )
-      ).limit(20),
+      : db.select().from(persons).where(
+          or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))
+        ).limit(20);
+
+    const [matchedPersons, pageResults, matchedEvents] = await Promise.all([
+      personSearch,
 
       this.searchPages(query, 1, 20, false, true),
 
@@ -1128,13 +1137,24 @@ export class DatabaseStorage implements IStorage {
 
     const searchPattern = `%${escapeLikePattern(query)}%`;
 
-    const [matchedPersons, tsPageResults, matchedEvents] = await Promise.all([
-      db.select().from(persons).where(
-        or(
-          ilike(persons.name, searchPattern),
-          ilike(persons.occupation, searchPattern)
+    const personSearch = isTypesenseConfigured()
+      ? typesenseSearchPersons(query, 20).then(async (tsPersons) => {
+          const ids = tsPersons.map(p => p.pgId);
+          if (ids.length === 0) return [];
+          const rows = await db.select().from(persons).where(inArray(persons.id, ids));
+          const byId = new Map(rows.map(r => [r.id, r]));
+          return ids.map(id => byId.get(id)).filter(Boolean) as typeof rows;
+        }).catch(() =>
+          db.select().from(persons).where(
+            or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))
+          ).limit(20)
         )
-      ).limit(20),
+      : db.select().from(persons).where(
+          or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))
+        ).limit(20);
+
+    const [matchedPersons, tsPageResults, matchedEvents] = await Promise.all([
+      personSearch,
 
       typesenseDocumentSearch(query, 20),
 
@@ -1167,10 +1187,18 @@ export class DatabaseStorage implements IStorage {
    * Search for document IDs using Typesense-first, PostgreSQL fallback.
    * Used by getDocumentsFiltered() when opts.search is set.
    */
-  private async searchDocumentIds(query: string, limit: number): Promise<number[]> {
+  private async searchDocumentIds(
+    query: string,
+    limit: number,
+    opts?: { documentType?: string; dataSet?: string },
+  ): Promise<number[]> {
     if (isTypesenseConfigured()) {
       try {
-        const result = await typesenseSearchPages(query, 1, limit, { filterR2: isR2Configured() });
+        const result = await typesenseSearchPages(query, 1, limit, {
+          filterR2: isR2Configured(),
+          documentType: opts?.documentType,
+          dataSet: opts?.dataSet,
+        });
         return [...new Set(result.results.map(r => r.documentId))];
       } catch {
         // fall through to PostgreSQL
@@ -1296,12 +1324,17 @@ export class DatabaseStorage implements IStorage {
     const r2Cond = r2Filter();
     if (r2Cond) conditions.push(r2Cond);
 
+    // Resolve search doc IDs once — reused by both the Drizzle WHERE and the popular-sort raw SQL
+    let searchDocIds: number[] | undefined;
     if (opts.search) {
-      const docIds = await this.searchDocumentIds(opts.search, 100);
-      if (docIds.length === 0) {
+      searchDocIds = await this.searchDocumentIds(opts.search, 100, {
+        documentType: opts.type,
+        dataSet: opts.dataSet,
+      });
+      if (searchDocIds.length === 0) {
         return { data: [], total: 0, page: opts.page, totalPages: 0 };
       }
-      conditions.push(inArray(documents.id, docIds));
+      conditions.push(inArray(documents.id, searchDocIds));
     }
 
     if (opts.type) {
@@ -1376,11 +1409,8 @@ export class DatabaseStorage implements IStorage {
       if (opts.redacted === "redacted") conditions.push(sql`d.is_redacted = true`);
       else if (opts.redacted === "unredacted") conditions.push(sql`d.is_redacted = false`);
       if (opts.mediaType) conditions.push(sql`d.media_type = ${opts.mediaType}`);
-      if (opts.search) {
-        const pageResults = await this.searchPages(opts.search, 1, 100, false, true);
-        const docIds = Array.from(new Set(pageResults.results.map(r => r.documentId)));
-        if (docIds.length === 0) return { data: [], total: 0, page: opts.page, totalPages: 0 };
-        conditions.push(sql`d.id = ANY(${docIds})`);
+      if (searchDocIds) {
+        conditions.push(sql`d.id = ANY(${searchDocIds})`);
       }
       const whereSQL = sql.join(conditions, sql` AND `);
 
