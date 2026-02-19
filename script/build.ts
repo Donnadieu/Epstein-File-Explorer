@@ -1,6 +1,6 @@
 import { build as esbuild } from "esbuild";
+import { readFile, rm } from "fs/promises";
 import { build as viteBuild } from "vite";
-import { rm, readFile } from "fs/promises";
 
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
@@ -73,6 +73,21 @@ async function buildAll() {
     },
     define: {
       "import.meta.url": "__pipeline_import_meta_url",
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: true,
+    external: externals,
+    logLevel: "info",
+  });
+
+  console.log("building typesense indexer...");
+  await esbuild({
+    entryPoints: ["scripts/typesense-index.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/typesense-index.cjs",
+    define: {
       "process.env.NODE_ENV": '"production"',
     },
     minify: true,
