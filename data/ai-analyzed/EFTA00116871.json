@@ -1,0 +1,174 @@
+{
+  "fileName": "EFTA00116871.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-09-01",
+  "summary": "This is a transcript of a DOJ Office of the Inspector General interview with a Federal Bureau of Prisons Lieutenant conducted on September 1, 2021, as part of the investigation into the death of Jeffrey Epstein. The interview focuses on the lieutenant's actions and knowledge during the early morning hours of August 10, 2019, at the Metropolitan Correctional Center, including inmate counts, log entries, and Epstein's lack of a cellmate.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The inmate whose death is the subject of the OIG investigation. The interview discusses the circumstances surrounding his death, including his cell assignment and suicide watch status.",
+      "mentionCount": 40
+    },
+    {
+      "name": "Fernandez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate who was discovered in R&D (Receiving and Discharge) during the lieutenant's shift, leading to count discrepancies that are a major focus of the interview.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Reyes",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "other",
+      "context": "Epstein's cellmate who was transferred out of MCC on August 9, 2019, leaving Epstein without a cellmate, which is a key point of inquiry.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer the lieutenant claims to have spoken with about the inmate Fernandez being in R&D. The officer is also mentioned in the context of rounds and being tired.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer present in the SHU during the feeding period after Epstein's medical emergency. Described as new but trained.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Dr. [Redacted]",
+      "role": "Psychologist",
+      "category": "staff",
+      "context": "A psychologist who allegedly sent an email stating Epstein was required to have a cellmate. The lieutenant claims not to have seen this email.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Captain [Redacted]",
+      "role": "BOP Captain",
+      "category": "law enforcement",
+      "context": "A captain who emailed the lieutenant on August 12, 2019, requesting a supervisor memorandum about the Epstein incident.",
+      "mentionCount": 2
+    },
+    {
+      "name": "El Chapo",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Referenced by the lieutenant as an example of a high-profile inmate who received extensive, around-the-clock supervision, unlike Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was Epstein's cellmate prior to being transferred out of MCC on August 9, 2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Lieutenant (Interviewee)",
+      "person2": "Thomas",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The lieutenant was the supervising ops lieutenant and claims to have had a conversation with Officer Thomas about the inmate Fernandez in R&D.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant (Interviewee)",
+      "person2": "Noel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The lieutenant was the supervising ops lieutenant for Officer Noel during the shift in question.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant (Interviewee)",
+      "person2": "Captain [Redacted]",
+      "relationshipType": "subordinate-supervisor",
+      "description": "The captain was the lieutenant's superior who requested a memorandum regarding the Epstein incident.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Jeffrey Epstein's Death",
+      "description": "Jeffrey Epstein was found deceased in his cell at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Transfer of Epstein's Cellmate",
+      "description": "Inmate Reyes, Epstein's cellmate, was transferred out of MCC (listed as pre-remove/WAD), leaving Epstein without a cellmate.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Reyes"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Previous Suicide Attempt",
+      "description": "Jeffrey Epstein previously attempted to harm himself, after which he was placed on suicide watch.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Epstein Removed from Suicide Watch",
+      "description": "Epstein was removed from suicide watch. The interview questions whether this was premature.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Midnight Count Discrepancy",
+      "description": "During the 12:00 a.m. count, the lieutenant discovered inmate Fernandez was in R&D but still counted in the SHU, leading to corrections in the inmate tracking system.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Fernandez",
+        "Lieutenant (Interviewee)",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2021-09-01",
+      "title": "OIG Interview",
+      "description": "The DOJ OIG conducts a follow-up interview with a BOP Lieutenant regarding the death of Jeffrey Epstein and surrounding circumstances.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant (Interviewee)"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York",
+    "SHU (Special Housing Unit) at MCC",
+    "R&D (Receiving and Discharge) at MCC",
+    "Ten South (a housing unit with cameras, referenced as a potential placement for Epstein)"
+  ],
+  "keyFacts": [
+    "The interviewed BOP Lieutenant was the operations lieutenant on the morning watch shift from approximately 10:00 p.m. on August 9, 2019, to around 6:00 a.m. on August 10, 2019, when Epstein was found deceased.",
+    "A major point of contention is the lieutenant's involvement in correcting inmate count logs related to inmate Fernandez, who was physically in R&D but still counted in the SHU, creating discrepancies in the 10:00 p.m. and midnight counts.",
+    "The lieutenant repeatedly states she was unaware that Jeffrey Epstein was required to have a cellmate after coming off suicide watch and was unaware his cellmate, Reyes, had been transferred out, despite an alleged email from psychology staff.",
+    "The lieutenant certified conducting a round in the SHU at 5:21 a.m. on August 10 but describes this as \"visiting\" the unit and talking to staff, not physically checking on each inmate in their cells, which she states was not a formal requirement at the time.",
+    "The interview reveals significant staffing shortages and officer fatigue at MCC during this period, with officers being mandated for overtime frequently, which the lieutenant cites as a contributing factor to operational challenges."
+  ],
+  "analyzedAt": "2026-02-19T10:11:31.173Z"
+}

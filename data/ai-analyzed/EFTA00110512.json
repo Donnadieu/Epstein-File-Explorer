@@ -1,0 +1,214 @@
+{
+  "fileName": "EFTA00110512.pdf",
+  "dataSet": "9",
+  "documentType": "prison incident timeline",
+  "dateOriginal": "2019-08-09 to 2019-08-14",
+  "summary": "This document is a detailed timeline of events surrounding the death of Jeffrey Epstein at the Metropolitan Correctional Center (MCC) New York. It chronicles his activities on August 9, 2019, the discovery of his body on August 10, the immediate response by prison staff and external agencies, and the subsequent investigation over the following days.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate whose death by apparent suicide is the central event of the document. He was visited by attorneys on August 9 and was found unresponsive in his cell on August 10.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Judge Berman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge presiding over Epstein's case, who was notified of his death at 10:00 am on August 10 and later provided with a press release.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Warden",
+      "role": "Prison Warden",
+      "category": "law enforcement",
+      "context": "Arrived at the institution at 7:30 am on August 10 after the incident, notified the PIO and OIG, and was present for the response.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SIS Lt",
+      "role": "Special Investigative Services Lieutenant",
+      "category": "law enforcement",
+      "context": "Notified of the incident at 7:20 am on August 10, arrived at the institution at 8:10 am, and reported to the SHU to conduct inmate interviews.",
+      "mentionCount": 3
+    },
+    {
+      "name": "CMC",
+      "role": "Case Management Coordinator",
+      "category": "staff",
+      "context": "Notified of the incident, arrived at the institution, traveled to Beekman Hospital to secure Epstein's fingerprints, photographs, and clothing, and notified Epstein's next of kin.",
+      "mentionCount": 5
+    },
+    {
+      "name": "IDO",
+      "role": "Institution Duty Officer",
+      "category": "staff",
+      "context": "Reported providing Epstein a social call on August 9 where he was in 'good spirits', and later accompanied the CMC to Beekman Hospital on August 10.",
+      "mentionCount": 3
+    },
+    {
+      "name": "PIO",
+      "role": "Public Information Officer",
+      "category": "staff",
+      "context": "Notified of the incident by the Warden at 7:32 am on August 10, arrived at the institution later, and was involved in releasing a press release.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Acting Chief Psychologist",
+      "role": "Psychologist",
+      "category": "staff",
+      "context": "Notified of the incident at 7:40 am on August 10 and arrived at the institution at 9:30 am.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Captain",
+      "role": "Prison Captain",
+      "category": "law enforcement",
+      "context": "Arrived at the institution at 8:00 am on August 10.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SCSS",
+      "role": "Senior Captain/Supervisor",
+      "category": "law enforcement",
+      "context": "Notified of the incident at 8:10 am and arrived at the institution at 9:50 am on August 10.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Computer Services Manager",
+      "role": "IT Manager",
+      "category": "staff",
+      "context": "Arrived at the institution at 10:15 pm on August 10 to remove and replace hard drives from computers in the SHU, departing early the next morning.",
+      "mentionCount": 2
+    },
+    {
+      "name": "OIG Agent",
+      "role": "Office of the Inspector General Agent",
+      "category": "law enforcement",
+      "context": "Arrived at the institution on August 10 and 11 to investigate, departing with computer hard drives as evidence.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Regional Director",
+      "role": "Bureau of Prisons Regional Director",
+      "category": "law enforcement",
+      "context": "Arrived at the institution on the morning of August 13, 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Warden",
+      "relationshipType": "custodial",
+      "description": "Epstein was an inmate under the custodial authority of the Warden at MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Judge Berman",
+      "relationshipType": "legal",
+      "description": "Judge Berman was the presiding judge in Epstein's criminal case and was officially notified of his death.",
+      "strength": 2
+    },
+    {
+      "person1": "CMC",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "custodial",
+      "description": "The Case Management Coordinator was responsible for Epstein's case file and notified his next of kin of his death.",
+      "strength": 3
+    },
+    {
+      "person1": "IDO",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "custodial",
+      "description": "The Institution Duty Officer interacted with Epstein during a social call the night before his death and reported on his demeanor.",
+      "strength": 2
+    },
+    {
+      "person1": "OIG Agent",
+      "person2": "FBI",
+      "relationshipType": "investigative",
+      "description": "Both the OIG Agent and FBI agents were on site investigating Epstein's death, arriving and departing the SHU together on August 10.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "PIO",
+      "relationshipType": "organizational",
+      "description": "The Warden directly notified the Public Information Officer of the incident, initiating external communications.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Full Day",
+      "description": "Jeffrey Epstein spends the day in attorney conferences and is reported to be in 'good spirits' during a social call with the IDO at 7:00 pm before returning to his SHU cell.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "IDO"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Body",
+      "description": "At 6:33 am, a body alarm is activated in the SHU. Staff find inmate Jeffrey Epstein unresponsive in his cell. CPR is initiated, EMS is called, and he is transported to Beekman Hospital where he is pronounced dead at 7:36 am.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Official Notifications and Investigation Launch",
+      "description": "Following the death, a cascade of notifications occurs to the USMS, FBI, AUSA, Judge Berman, and next of kin. The FBI and OIG arrive on site to begin their investigation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Judge Berman",
+        "Warden",
+        "FBI",
+        "OIG Agent",
+        "CMC"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Evidence Collection at Hospital and Prison",
+      "description": "The CMC and IDO go to Beekman Hospital to secure Epstein's fingerprints, photographs, and clothing. Later that night, the Computer Services Manager removes hard drives from SHU computers.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "CMC",
+        "IDO",
+        "Computer Services Manager"
+      ]
+    },
+    {
+      "date": "2019-08-14",
+      "title": "Suicide Reconstruction Team Arrives",
+      "description": "A suicide reconstruction team arrives at MCC New York, four days after Epstein's death, likely to analyze the circumstances of the incident.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "Special Housing Unit (SHU) at MCC New York",
+    "Beekman Hospital"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at the MCC New York SHU at 6:33 am on Saturday, August 10, 2019, and was pronounced dead at a hospital at 7:36 am.",
+    "The night before his death (August 9, 7:00 pm), an Institution Duty Officer (IDO) reported Epstein was 'in good spirits' during a social call, with 'nothing unusual' noted.",
+    "Critical evidence, including computer hard drives from the SHU, was removed and replaced by a Computer Services Manager beginning at 10:15 pm on the night of Epstein's death.",
+    "Multiple external agencies were swiftly notified and involved, including the FBI (notified at 8:34 am), the U.S. Attorney's Office (AUSA at 9:00 am), and the Office of the Inspector General (OIG).",
+    "Epstein's next of kin, identified as his brother, was notified of his death by the Case Management Coordinator at 11:00 am on August 10."
+  ],
+  "analyzedAt": "2026-02-19T09:04:12.824Z"
+}

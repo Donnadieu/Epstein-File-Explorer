@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00108613.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2009-10-27",
+  "summary": "This FBI document requests the opening of a new obstruction of justice investigation (72-MM-113327) into Alfredo Rodriguez, a former employee of Jeffrey Epstein. Rodriguez attempted to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000, despite having been subpoenaed to provide them.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former employee of Jeffrey Epstein, subject of obstruction investigation",
+      "category": "associate",
+      "context": "Former employee of Jeffrey Epstein who attempted to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000, despite being under a federal subpoena to provide them.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Bradley James Edwards",
+      "role": "Attorney representing plaintiffs in civil suit against Jeffrey Epstein",
+      "category": "legal",
+      "context": "Attorney representing four female individuals suing Jeffrey Epstein. He deposed Alfredo Rodriguez, served him with a federal subpoena, and reported Rodriguez's attempt to sell the subpoenaed documents.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant in a civil lawsuit",
+      "category": "key figure",
+      "context": "The subject of a civil lawsuit brought by four female individuals represented by Bradley Edwards. His former employee, Alfredo Rodriguez, possessed documents related to the case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was an employee for Epstein, as stated in the document.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "legal",
+      "description": "Edwards, as an attorney in a civil suit against Epstein, deposed Rodriguez and served him with a federal subpoena. Rodriguez then attempted to sell documents to Edwards.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Edwards is the attorney representing four female individuals who are suing Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Contact between Rodriguez and Edwards",
+      "description": "On or about August 2009, attorney Bradley Edwards was contacted by Alfredo Rodriguez regarding documents related to the Epstein civil case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-27",
+      "title": "FBI opens obstruction of justice investigation",
+      "description": "The FBI drafts a document to open a new obstruction of justice matter (72-MM-113327) against Alfredo Rodriguez based on his attempt to sell subpoenaed documents.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami, FL",
+    "Palm Beach County",
+    "New Jersey (Rodriguez's place of birth)",
+    "Miami, FL 33173 (Rodriguez's listed address)"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000.",
+    "Rodriguez had already been deposed by Edwards and served with a federal subpoena requiring him to provide the documents, making his sale demand potentially illegal.",
+    "The FBI is opening a formal obstruction of justice investigation (Case 72-MM-113327) into Rodriguez's actions based on this information.",
+    "Bradley Edwards is identified as the attorney representing four female individuals in a civil suit against Jeffrey Epstein.",
+    "The document reveals an attempt to monetize evidence in the Epstein case by an insider, highlighting potential witness tampering or evidence obstruction."
+  ],
+  "analyzedAt": "2026-02-19T07:45:16.644Z"
+}

@@ -1,0 +1,189 @@
+{
+  "fileName": "EFTA00112079.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-07-15",
+  "summary": "This is a DOJ Office of the Inspector General interview transcript from July 15, 2021, with a Federal Bureau of Prisons electronics technician at MCC New York. The interview focuses on the circumstances surrounding the death of inmate Jeffrey Epstein on August 9-10, 2019, specifically regarding the malfunctioning of surveillance cameras in the Special Housing Unit (SHU) and the events of that morning.",
+  "persons": [
+    {
+      "name": "Daniels",
+      "role": "Electronics Technician, Federal Bureau of Prisons",
+      "category": "staff",
+      "context": "The witness being interviewed, a BOP electronics technician at MCC New York who was responsible for maintaining cameras and communication systems. He discusses discovering camera recording failures on August 9, 2019, and responding to the body alarm on August 10.",
+      "mentionCount": 150
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate whose death is under investigation. Found unresponsive in his SHU cell on August 10, 2019.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Tay",
+      "role": "SIS Technician",
+      "category": "staff",
+      "context": "SIS technician who was in the video room on August 9-10, 2019. He had access to the recording room but did not go into the back room where the recorders were.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer present in the SHU when Epstein was found. He was inside the tier and helped move Epstein.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Officer present in the SHU when Epstein was found. She was outside the tier with a key and appeared disheveled and stressed after the incident.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Lamine N'Diaye",
+      "role": "Warden",
+      "category": "staff",
+      "context": "Warden at MCC at the time. The witness provided phone logs to him after the incident.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Columbo",
+      "role": "Physician Assistant (PA)",
+      "category": "staff",
+      "context": "Medical PA who responded to the body alarm and worked on Epstein, applying the AED and providing medical assistance.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Anderson-Lane",
+      "role": "Lieutenant",
+      "category": "staff",
+      "context": "Lieutenant who was present during the feeding of inmates in the SHU after the incident. Inmates made accusations toward her about not doing rounds.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Beckwin",
+      "role": "Facility Manager",
+      "category": "staff",
+      "context": "Former facility manager mentioned by the witness. The witness discussed camera upgrade needs with him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Charles",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "Former Associate Warden whom the witness discussed camera issues with.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Daniels",
+      "person2": "Tay",
+      "relationshipType": "colleague",
+      "description": "Daniels interacted with Tay, the SIS technician, to gain access to the video recorder room on August 9th.",
+      "strength": 2
+    },
+    {
+      "person1": "Daniels",
+      "person2": "Lamine N'Diaye",
+      "relationshipType": "employee-supervisor",
+      "description": "Daniels reported camera and phone log issues to Warden N'Diaye after Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Tova Noel",
+      "relationshipType": "colleague",
+      "description": "Both were correctional officers on duty in the SHU when Epstein was found. Inmates accused them of not doing rounds.",
+      "strength": 4
+    },
+    {
+      "person1": "Daniels",
+      "person2": "Beckwin",
+      "relationshipType": "employee-supervisor",
+      "description": "Daniels reported camera system failures and upgrade needs to Facility Manager Beckwin.",
+      "strength": 3
+    },
+    {
+      "person1": "Daniels",
+      "person2": "Charles",
+      "relationshipType": "employee-supervisor",
+      "description": "Daniels discussed camera issues and upgrade requirements with Associate Warden Charles.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Camera System Failure Discovered",
+      "description": "Daniels discovers around 50-60 cameras, including most in the SHU, are not recording due to failed hard drives in the old analog system. He notifies a supervisor and plans to fix it the next day.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Daniels"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein Found Unresponsive",
+      "description": "Body alarm activated around 6:33 AM in the SHU. Epstein found in his cell on L Tier. Officers cut him down, moved him to a stretcher, and began CPR. He was taken to medical and then to the hospital.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas",
+        "Tova Noel",
+        "Daniels",
+        "Columbo"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Inmate Accusations in SHU",
+      "description": "After the incident, inmates in the SHU accused officers Thomas and Noel of killing Epstein by not doing their rounds all night.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Tova Noel",
+        "Anderson-Lane"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "FBI Investigation and Evidence Seizure",
+      "description": "FBI agents interview Daniels about the camera system and seize all hard drives and the recording system. Only one camera (the 46-door camera outside 10 South) was recording.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Daniels"
+      ]
+    },
+    {
+      "date": "2021-07-15",
+      "title": "DOJ OIG Interview",
+      "description": "DOJ Office of the Inspector General conducts a sworn interview with Daniels as part of the investigation into Epstein's death and surrounding circumstances.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Daniels"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY",
+    "Special Housing Unit (SHU) - 9 South, MCC",
+    "Video Recorder Room (within SIS office, third floor), MCC",
+    "Terre Haute, Indiana Federal Complex",
+    "La Guardia Community College, New York City"
+  ],
+  "keyFacts": [
+    "On August 9, 2019, the day before Epstein's death, approximately 50-60 cameras in the MCC, including nearly all cameras in the SHU, were not recording due to failed hard drives in an outdated analog system.",
+    "Only one camera in the SHU area (the '46-door' camera outside 10 South) was recording on August 9-10, 2019. The footage was grainy but usable.",
+    "Daniels, the electronics technician, discovered the recording failure around 1:00-2:00 PM on August 9th, notified a supervisor, and was told to go home and fix it the next day, which was standard practice at MCC.",
+    "Inmates in the SHU accused correctional officers Michael Thomas and Tova Noel of 'killing' Epstein by not doing their rounds all night.",
+    "The FBI seized all hard drives and the entire recording system the day after Epstein's death. The data was reportedly corrupt and unrecoverable."
+  ],
+  "analyzedAt": "2026-02-19T09:28:22.758Z"
+}

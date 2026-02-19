@@ -1,0 +1,148 @@
+{
+  "fileName": "EFTA00108846.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Lead Request",
+  "dateOriginal": "2010-09-01",
+  "summary": "An FBI Miami Division lead request asking the Trenton Resident Agency to interview federal inmate Steven Hoffenberg regarding information he claimed to have about Jeffrey Epstein's involvement in the 1985 murder of attorney Arthur L. Shapiro. The document also summarizes the obstruction of justice case against Alfredo Rodriguez, Epstein's former house manager, for attempting to sell victim information.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein",
+      "category": "associate",
+      "context": "Subject of an obstruction of justice case for attempting to sell lists of additional Epstein victims to an undercover employee for $50,000 after being deposed in civil litigation.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of child prostitution investigation",
+      "category": "key figure",
+      "context": "Palm Beach County resident who pled guilty to state offenses via a non-prosecution agreement; his criminal conduct involved bringing underage girls to his home for massages and sex acts.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bradley Edwards",
+      "role": "Attorney representing several of Epstein's victims",
+      "category": "legal",
+      "context": "Deposed Alfredo Rodriguez in civil litigation; was later contacted by Rodriguez about victim lists and by Steven Hoffenberg about information on a murder.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Steven Hoffenberg",
+      "role": "Federal inmate and former business associate/acquaintance of Epstein",
+      "category": "associate",
+      "context": "A federal inmate at FCI Fort Dix serving a 20-year sentence for a Ponzi scheme; contacted Edwards' law firm claiming to have information about Epstein's involvement in the murder of Arthur Shapiro.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Arthur L. Shapiro",
+      "role": "Columbus, Ohio attorney",
+      "category": "other",
+      "context": "Murder victim from 1985; Hoffenberg claimed Epstein was involved in his killing.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the house manager and butler for Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Bradley Edwards",
+      "relationshipType": "legal",
+      "description": "Rodriguez was deposed by Edwards in civil litigation and later contacted him attempting to sell victim information.",
+      "strength": 3
+    },
+    {
+      "person1": "Steven Hoffenberg",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Hoffenberg is described as a former business associate or acquaintance of Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Steven Hoffenberg",
+      "person2": "Bradley Edwards",
+      "relationshipType": "legal",
+      "description": "Hoffenberg contacted Edwards' law firm with information about Epstein and a murder.",
+      "strength": 2
+    },
+    {
+      "person1": "Steven Hoffenberg",
+      "person2": "Arthur L. Shapiro",
+      "relationshipType": "other",
+      "description": "Hoffenberg claimed to have information linking Epstein to Shapiro's murder.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "FBI Investigation of Epstein Begins",
+      "description": "Miami Division began investigating Jeffrey Epstein for child prostitution.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009-10",
+      "title": "Obstruction Case Opened Against Rodriguez",
+      "description": "Miami Division opened an obstruction of justice case against Alfredo Rodriguez.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2009-11",
+      "title": "Rodriguez Attempts to Sell Information",
+      "description": "Rodriguez attempted to sell lists of additional Epstein victims to an undercover employee for $50,000.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "1985-03-06",
+      "title": "Murder of Arthur Shapiro",
+      "description": "Attorney Arthur L. Shapiro was killed in the Columbus, Ohio area; the case remains unsolved.",
+      "category": "death",
+      "significance": 4,
+      "personsInvolved": [
+        "Arthur L. Shapiro"
+      ]
+    },
+    {
+      "date": "2010-09-02",
+      "title": "FBI Request to Interview Hoffenberg",
+      "description": "FBI Miami requested Trenton RA to interview federal inmate Steven Hoffenberg regarding his claims about Epstein and Shapiro's murder.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Steven Hoffenberg",
+        "Jeffrey Epstein",
+        "Arthur L. Shapiro"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach County",
+    "Fort Dix Federal Correctional Institution (FCI), New Jersey",
+    "Columbus, Ohio area"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Epstein's former house manager, was charged with obstruction of justice for attempting to sell lists of additional Epstein victims for $50,000 to an undercover employee.",
+    "Steven Hoffenberg, a federal inmate and former Epstein associate, claimed to have information that Jeffrey Epstein was involved in the 1985 murder of Columbus attorney Arthur L. Shapiro.",
+    "The FBI document notes Hoffenberg appears to have a history of mental illness and did not offer this information as a proffer during his own Ponzi scheme case.",
+    "Jeffrey Epstein entered a non-prosecution agreement with the U.S. Attorney's Office, pleading guilty to lesser state offenses and receiving a sentence of state prison followed by community supervision as a registered sex offender.",
+    "The FBI's Miami Division was requesting an interview with Hoffenberg to assess his claims about Epstein's alleged involvement in a decades-old unsolved murder."
+  ],
+  "analyzedAt": "2026-02-19T08:10:29.630Z"
+}

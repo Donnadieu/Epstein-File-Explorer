@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00110400.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-09 to 2019-08-10",
+  "summary": "This document is a compilation of Bureau of Prisons (BOP) health services records for inmate Jeffrey Epstein, covering the period from July 7 to August 10, 2019, while he was held at the Metropolitan Correctional Center, New York (NYM). It includes detailed medical encounter notes, vital signs, medication orders, health problem lists, and a transfer summary prepared for his move on August 10, 2019. The records show routine medical management of chronic conditions and note a history of constipation.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Federal Inmate",
+      "category": "key figure",
+      "context": "The primary subject of all medical records, identified by BOP registration number 76318-054. The documents detail his health status, examinations, and treatments while incarcerated at the Metropolitan Correctional Center, New York (NYM).",
+      "mentionCount": 50
+    },
+    {
+      "name": "MLP",
+      "role": "Mid-Level Provider",
+      "category": "medical staff",
+      "context": "A medical provider (Mid-Level Provider, e.g., Nurse Practitioner or Physician Assistant) who conducted Epstein's physical examination on July 9, 2019, and entered several medication orders and vital sign readings.",
+      "mentionCount": 15
+    },
+    {
+      "name": "PA-C",
+      "role": "Physician Assistant",
+      "category": "medical staff",
+      "context": "A physician assistant who administered a PPD (tuberculosis) test to Epstein on July 6, 2019, and noted 'No Known Allergies' in the record.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MLP",
+      "relationshipType": "patient-provider",
+      "description": "MLP performed a comprehensive physical examination on Epstein on July 9, 2019, and prescribed medication for his constipation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MD",
+      "relationshipType": "patient-provider",
+      "description": "The MD cosigned the MLP's clinical encounter and is listed as the prescribing provider for several of Epstein's medications and diagnoses.",
+      "strength": 3
+    },
+    {
+      "person1": "MLP",
+      "person2": "MD",
+      "relationshipType": "professional",
+      "description": "The MD cosigned the clinical documentation completed by the MLP, indicating a supervisory or collaborative professional relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-09",
+      "title": "Medical Encounter and Examination",
+      "description": "Jeffrey Epstein underwent a comprehensive physical examination by a Mid-Level Provider (MLP) at the Metropolitan Correctional Center, New York. He was noted to have a history of constipation and was prescribed Bisacodyl.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019-07-11",
+      "title": "Medical Note Cosign",
+      "description": "A physician (MD) cosigned the medical encounter documentation from the July 9, 2019, examination performed by the MLP.",
+      "category": "medical",
+      "significance": 1,
+      "personsInvolved": [
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Medical Transfer Preparation",
+      "description": "A registered nurse (RN) generated a comprehensive health services transfer summary for Jeffrey Epstein, listing all his health problems, medications, and pending appointments in preparation for a transfer.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "RN"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York (NYM), NEW YORK, New York 10007"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's Bureau of Prisons medical records from July-August 2019 detail the management of multiple chronic health conditions, including hyperlipidemia, sleep apnea, hypertension, constipation, low back pain, neuralgia, prediabetes, and an elevated BMI.",
+    "A transfer summary dated August 10, 2019, was prepared for Epstein, listing his medications, allergies (fish), and cell restrictions (lower bunk).",
+    "The records show Epstein was prescribed regular insulin via sliding scale and had a CPAP machine for sleep apnea issued on July 30, 2019.",
+    "Epstein refused portions of his physical exam on July 9, 2019, specifically the rectal and male genitalia examinations.",
+    "The document notes a history of 'constipation, unspecified' and an 'injury, unspecified' with a comment to 'R/O self inflicted injuries' from July 23, 2019."
+  ],
+  "analyzedAt": "2026-02-19T09:01:09.031Z"
+}

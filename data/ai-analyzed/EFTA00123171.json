@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00123171.pdf",
+  "dataSet": "9",
+  "documentType": "prisoner custody alert notice and internal email",
+  "dateOriginal": "2019-08-01",
+  "summary": "This document consists of an internal email and a Prisoner Custody Alert Notice for Jeffrey Epstein. The email, dated August 1, 2019, provides a synopsis of Epstein's recent activity, noting he was taken off suicide watch on July 30, 2019, and a Suicide Risk Assessment conducted on August 1 found him psychologically stable, despite a note indicating suicidal tendencies after a court appearance. The attached notice formally documents his custody status and alerts, including his offense and mental concerns.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Prisoner/Accused",
+      "category": "key figure",
+      "context": "The prisoner at FCI Estill, subject of the custody alert and internal email synopsis detailing his schedule, removal from suicide watch, and a Suicide Risk Assessment.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dr. [Redacted]",
+      "role": "Psychologist/Doctor",
+      "category": "other",
+      "context": "Conducted the Suicide Risk Assessment (SRA) on Epstein on August 1, 2019, with findings indicating he was psychologically stable. The SRA was initiated due to a note Epstein had.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Associate Warden (O)",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "Sender of the internal email from FCI Estill providing the synopsis of Epstein's activity.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Dr. [Redacted]",
+      "relationshipType": "medical evaluation",
+      "description": "Dr. [Redacted] conducted a Suicide Risk Assessment on Epstein on August 1, 2019, and found him psychologically stable.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Associate Warden (O)",
+      "relationshipType": "custodial",
+      "description": "The Associate Warden is responsible for the facility housing Epstein and provided an update on his status and schedule.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-30",
+      "title": "Epstein removed from suicide watch",
+      "description": "Jeffrey Epstein was taken off psychological observation/suicide watch.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Epstein's court appearance",
+      "description": "Epstein had recreation from 6:30-7:30 AM and was in court from 9:30-11:30 AM.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-01",
+      "title": "Attorney conference and Suicide Risk Assessment",
+      "description": "Epstein had an attorney conference beginning at 9:00 AM. A Suicide Risk Assessment (SRA) was conducted by Dr. [Redacted], finding him psychologically stable. The SRA was initiated because Epstein returned from court with a note indicating suicidal tendencies.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Dr. [Redacted]"
+      ]
+    }
+  ],
+  "locations": [
+    "FCI Estill, 100 Prison Road, Estill, SC 29918"
+  ],
+  "keyFacts": [
+    "On August 1, 2019, a Suicide Risk Assessment (SRA) was conducted on Jeffrey Epstein, with findings indicating he was 'psychologically stable.'",
+    "The SRA was initiated because Epstein had returned from a court appearance on July 31, 2019, with a note indicating suicidal tendencies.",
+    "Epstein had been taken off psychological observation/suicide watch on Tuesday, July 30, 2019.",
+    "The Prisoner Custody Alert Notice formally documents Epstein's offense as '18 USC 371 SEX TRAFFICKING CONSPIRACY' and lists alerts for 'Sex Offense' and 'Mental Concerns/Suicidal Tendencies.'",
+    "The document highlights the timeline and institutional awareness of Epstein's mental state and custody status in the days leading up to his death."
+  ],
+  "analyzedAt": "2026-02-19T12:40:23.201Z"
+}

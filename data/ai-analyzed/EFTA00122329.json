@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA00122329.pdf",
+  "dataSet": "9",
+  "documentType": "audit report",
+  "dateOriginal": "2003-07",
+  "summary": "This is a July 2003 audit report by the U.S. Department of Justice Office of the Inspector General (OIG) reviewing the application controls of the Federal Bureau of Prisons' (BOP) SENTRY inmate database system. The audit identified weaknesses in supervisory reviews, audit logs, access controls, and computer matching of transaction data, concluding the system was at low risk but recommending improvements to data integrity and security.",
+  "persons": [
+    {
+      "name": "Director Federal Bureau Prisons",
+      "role": "BOP Director",
+      "category": "legal",
+      "context": "Addressee of the OIG's audit report and responsible for implementing the recommendations. The director's office provided a formal response to the draft report.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant Inspector General For Audit",
+      "role": "OIG Assistant Inspector General",
+      "category": "law enforcement",
+      "context": "Recipient of the BOP Director's memorandum responding to the OIG's draft audit report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Deputy Assistant Director, Program Review Division",
+      "role": "BOP Senior Deputy Assistant Director",
+      "category": "staff",
+      "context": "BOP point of contact for questions regarding the BOP's response to the audit, as indicated in the memorandum.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Director Federal Bureau Prisons",
+      "person2": "Assistant Inspector General For Audit",
+      "relationshipType": "correspondence",
+      "description": "The BOP Director sent a formal memorandum response to the Assistant Inspector General regarding the OIG's audit findings and recommendations.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-03-27",
+      "title": "SENTRY Contingency Plan Test",
+      "description": "The BOP tested its SENTRY database contingency plan, as confirmed to the OIG prior to the report's issuance.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2003-07-01",
+      "title": "Planned Enforcement of BP-337 Form Policy",
+      "description": "The BOP's target date to notify all Community Corrections Offices (CCOs) of the mandatory requirement to use the BP-337 form as the sole source document for inputting initial inmate data.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Director Federal Bureau Prisons"
+      ]
+    },
+    {
+      "date": "2003-10-01",
+      "title": "Target Date for Exception Report Distribution",
+      "description": "The BOP's target date to begin creating and forwarding SENTRY audit log exception reports to the Information Security Officer on at least a weekly basis.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Director Federal Bureau Prisons"
+      ]
+    },
+    {
+      "date": "2003-12-05",
+      "title": "Target Date for SENTRY Manual Revision",
+      "description": "The BOP's target date to complete a revision of the SENTRY General Use Manual (GUM), including correct procedures for loading initial inmate data.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Director Federal Bureau Prisons"
+      ]
+    },
+    {
+      "date": "2003-12-12",
+      "title": "Target Date for Security Guide Update",
+      "description": "The BOP's target date to update the 'SENTRY System Security Guide' to require routine generation and review of exception reports.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Director Federal Bureau Prisons"
+      ]
+    }
+  ],
+  "locations": [
+    "Dallas, Texas",
+    "Washington, D.C.",
+    "Annapolis Junction, Maryland",
+    "Philadelphia, Pennsylvania",
+    "Chicago, Illinois"
+  ],
+  "keyFacts": [
+    "The SENTRY database is the BOP's primary system for tracking over 165,000 federal inmates, processing over 1 million transactions daily.",
+    "The OIG audit found data entry errors at BOP offices, including incorrect offense codes, commitment dates, and missing fine information in inmate records.",
+    "A significant access control weakness was identified: users with limited profiles could access restricted data (like sensitive medical records) when logged onto terminals configured for higher-authorization users.",
+    "The BOP's 'SENTRY System Security Guide' did not require routine review of audit log exception reports, and such reports were not being generated or reviewed.",
+    "The BOP agreed with most OIG recommendations but requested further discussion on two recommendations (redesigning and modifying the BP-337 form) before providing an official response."
+  ],
+  "analyzedAt": "2026-02-19T11:59:45.308Z"
+}

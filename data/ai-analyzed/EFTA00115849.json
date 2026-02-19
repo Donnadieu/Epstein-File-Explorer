@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00115849.pdf",
+  "dataSet": "9",
+  "documentType": "sworn statement / interview transcript",
+  "dateOriginal": "2021-08-05",
+  "summary": "This is a digitally recorded sworn statement of a Federal Bureau of Prisons Senior Officer, taken by DOJ OIG agents on August 5, 2021, as part of the investigation into the death of Jeffrey Epstein. The officer, who worked the SHU on August 9, 2019, is questioned about his shift, the failure to conduct counts, the lack of a cellmate for Epstein, and his observations and actions that night.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The high-profile inmate whose death in the Metropolitan Correctional Center is the subject of the OIG investigation. The interview focuses on the circumstances surrounding his incarceration and death on August 9-10, 2019.",
+      "mentionCount": 60
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate who was previously Epstein's cellmate. The officer references an incident where Epstein claimed Tartaglione attacked him, which led to increased scrutiny and instructions that Epstein needed a cellmate at all times.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Epstein's cellmate who was transferred out of the MCC (With All Belongings / WAB) on the morning of August 9, 2019, leaving Epstein without a cellmate.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Leonardo Fernandez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate in the SHU on August 9, 2019, who was placed on a dry cell after an incident during a visit, contributing to the chaotic events of the day.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "former cellmate",
+      "description": "Were previously cellmates. An incident occurred where Epstein claimed Tartaglione attacked him, which Epstein later claimed was a suicide attempt.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates until Reyes was transferred out of the MCC on the morning of August 9, 2019.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Final Day",
+      "description": "Jeffrey Epstein spent the day with his lawyers, was returned to the SHU around 8:00 PM, was given a phone call (potentially on a legal line), and was placed back in his cell without a cellmate. The officer on duty noted Epstein 'looked different' and instructed colleagues to watch him closely before leaving at 10:00 PM.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Death",
+      "description": "Jeffrey Epstein was found dead in his cell at the MCC. The officer being interviewed was not present for this discovery.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Failure to Conduct 4:00 PM Count",
+      "description": "The 4:00 PM inmate count in the SHU was not physically conducted. The officer admitted to pre-populating the count sheet using the inmate locator list, not by actually counting.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Reyes Transferred / Epstein Left Without Cellmate",
+      "description": "Inmate Reyes was transferred out of the MCC (WAB) at 8:38 AM. Despite Epstein being on a mandatory cellmate protocol after a prior suicide watch, no replacement cellmate was provided for him throughout the day.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Other Inmate Disturbances",
+      "description": "Two other inmates in the SHU threatened or attempted suicide, diverting staff attention and contributing to the chaotic environment on the tier where Epstein was housed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York City",
+    "Special Housing Unit (SHU) at MCC",
+    "G-tier shower (where Epstein made his phone call)",
+    "L-tier (where Epstein's cell was located)"
+  ],
+  "keyFacts": [
+    "The officer confirmed the 4:00 PM inmate count on August 9, 2019, was not conducted; he pre-filled the count sheet based on a locator list.",
+    "The officer stated he realized Epstein was without a cellmate around 9:30 PM, discussed it with two other officers, and called someone in authority (lieutenant's office or control) to notify them, though he cannot recall who he spoke to.",
+    "The officer expressed his belief that systemic problems—understaffing, overwork, lack of clear directives, and the decision to house a high-profile inmate like Epstein in the SHU instead of a more secure unit like Ten South—contributed to the circumstances leading to Epstein's death.",
+    "The officer reviewed round sheets and believed they appeared to be pre-filled by another officer, a practice he was aware of but claimed not to engage in.",
+    "The officer stated that cell searches were not being conducted on the evening shift in the SHU due to chronic understaffing, contrary to BOP policy."
+  ],
+  "analyzedAt": "2026-02-19T10:03:23.787Z"
+}

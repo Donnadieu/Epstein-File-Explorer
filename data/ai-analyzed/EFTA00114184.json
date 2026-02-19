@@ -1,0 +1,151 @@
+{
+  "fileName": "EFTA00114184.pdf",
+  "dataSet": "9",
+  "documentType": "OIG sworn statement transcript",
+  "dateOriginal": "2021-06-14",
+  "summary": "This is a transcript of a June 14, 2021, DOJ OIG interview with Federal Bureau of Prisons Lieutenant Marci Bratton regarding the death of inmate Jeffrey Epstein at the Metropolitan Correctional Center (MCC) in August 2019. The interview focuses on staffing, procedures, communication failures, and the requirement for Epstein to have a cellmate.",
+  "persons": [
+    {
+      "name": "Marci Bratton",
+      "role": "BOP Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "The witness being interviewed. She was the operations lieutenant on the morning watch shift (approx. 10 p.m. to 6 a.m.) on August 9-10, 2019, when Epstein died. She discusses staffing issues, counts, rounds, and lack of knowledge about Epstein's cellmate requirement.",
+      "mentionCount": 150
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at the center of the investigation. The interview discusses his prior suicide attempt in July 2019, his placement, and the requirement for him to have a cellmate.",
+      "mentionCount": 80
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "CO assigned to the Special Housing Unit (SHU) with Tova Noel on the morning of August 10, 2019. Bratton recalls he was the one who called in the midnight count issue and was the officer watching Epstein during his prior suicide watch.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "CO assigned to the SHU with Michael Thomas on the morning of August 10, 2019. Bratton spoke to her after Epstein was found.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Efren Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Inmate who was Epstein's cellmate and was removed from the MCC on August 9, 2019. His removal left Epstein without a required cellmate.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Marci Bratton",
+      "person2": "Michael Thomas",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Bratton was the supervising lieutenant for CO Thomas during the shift. She recalls he called her about the midnight count issue and she instructed him to do a recount.",
+      "strength": 3
+    },
+    {
+      "person1": "Marci Bratton",
+      "person2": "Tova Noel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Bratton was the supervising lieutenant for CO Noel during the shift. She spoke to Noel twice during her rounds and after the incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efren Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was assigned as Epstein's cellmate. He was removed from the MCC on August 9, 2019, leaving Epstein without a cellmate in violation of a psychological requirement.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Tova Noel",
+      "relationshipType": "co-worker",
+      "description": "Both were correctional officers assigned to the SHU on the morning of August 10, 2019. They worked together on counts and rounds.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's prior suicide attempt",
+      "description": "Jeffrey Epstein was found in his cell after an apparent suicide attempt. He was placed on suicide watch, with Officer Michael Thomas assigned to watch him.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas",
+        "Marci Bratton"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Email from psychology on cellmate requirement",
+      "description": "A psychologist sent an email stating Epstein was being taken off psych observation and needed to be housed with an appropriate cellmate. Bratton states she never saw this email.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Removal of cellmate Efren Reyes",
+      "description": "Inmate Efren Reyes, Epstein's cellmate, was removed from the MCC (left for court around 8:30 a.m. and was gone from the institution by 1:30 p.m.). This left Epstein without a required cellmate.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Efren Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found deceased in his cell at the MCC's Special Housing Unit in the morning.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas",
+        "Tova Noel",
+        "Marci Bratton"
+      ]
+    },
+    {
+      "date": "2021-06-14",
+      "title": "OIG Interview of Marci Bratton",
+      "description": "DOJ OIG conducts a voluntary, sworn interview with Lieutenant Marci Bratton as part of its investigation into Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Marci Bratton"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Third-floor telephone monitor room, MCC",
+    "Special Housing Unit (SHU), MCC",
+    "10 South unit (maximum-security unit), MCC",
+    "Second floor medical/psych unit, MCC",
+    "Receiving and Discharge (R&D) unit, MCC",
+    "FCI Terminal Island",
+    "FCI Jessup, Georgia",
+    "28632 Roadside Drive, Suite 285, Agoura Hills, CA 91301 (Resolute Documentation Services)"
+  ],
+  "keyFacts": [
+    "Lieutenant Marci Bratton was unaware of the July 30, 2019, email from psychology requiring Jeffrey Epstein to have a cellmate, stating she never saw it due to being overwhelmed with other duties.",
+    "Bratton states that Epstein's cellmate, Efren Reyes, was removed from the MCC on August 9, 2019, and no one informed her that Epstein was left without a required cellmate.",
+    "Bratton asserts that Epstein should have been placed in the maximum-security unit (10 South) from the beginning due to his high-profile status and prior suicide attempt, as it has cameras in each cell and constant staff monitoring.",
+    "During the midnight count on August 10, CO Michael Thomas called in a count of 73 but noted an inmate was in R&D; Bratton instructed him to do a recount for 72, but she never saw a corrected count slip.",
+    "Bratton claims the MCC was severely understaffed at the time, with officers working 16+ hour days due to mandatory overtime, impacting the ability to conduct proper counts and rounds and to communicate critical information."
+  ],
+  "analyzedAt": "2026-02-19T09:51:47.128Z"
+}

@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00123521.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena",
+  "dateOriginal": "2019-08-30",
+  "summary": "This is a grand jury subpoena issued by the U.S. Attorney's Office for the Southern District of New York to Equifax, demanding financial account information and credit reports for two individuals, Tova A. Noel and Michael A. Thomas, as part of a criminal investigation into suspected felony violations. The document includes a confidentiality request to prevent disclosure of the subpoena's existence.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Issued the grand jury subpoena as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova A. Noel",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "One of two individuals whose financial account information and credit reports are being subpoenaed by the grand jury.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael A. Thomas",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "One of two individuals whose financial account information and credit reports are being subpoenaed by the grand jury.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova A. Noel",
+      "person2": "Michael A. Thomas",
+      "relationshipType": "co-subject",
+      "description": "Both individuals are named as subjects of the same grand jury subpoena for financial records, indicating they are linked in the same criminal investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Tova A. Noel",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is authorizing the subpoena for Noel's financial records as part of a grand jury investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Michael A. Thomas",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is authorizing the subpoena for Thomas's financial records as part of a grand jury investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-13",
+      "title": "Grand Jury Appearance Date",
+      "description": "Scheduled date for Equifax's custodian of records to appear before the grand jury, unless records are produced beforehand.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-30",
+      "title": "Subpoena Issued",
+      "description": "Date the grand jury subpoena was issued to Equifax for financial records of Tova A. Noel and Michael A. Thomas.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey S. Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "1550 Peachtree Street, NW Atlanta, GA 30309",
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, NY",
+    "One St. Andrew's Plaza, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "A federal grand jury subpoena was issued to Equifax on August 30, 2019, demanding financial account information and credit reports for Tova A. Noel and Michael A. Thomas.",
+    "The investigation involves suspected felony violations of 18 U.S.C. §§ 1791 and 201 (relating to bribery and graft).",
+    "The U.S. Attorney's Office requested confidentiality, asking Equifax not to disclose the existence of the subpoena to any third party to preserve the investigation.",
+    "The subpoena allows Equifax to avoid a personal appearance by producing the requested records with a custodian declaration by the return date of September 13, 2019."
+  ],
+  "analyzedAt": "2026-02-19T13:02:37.478Z"
+}

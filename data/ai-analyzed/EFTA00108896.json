@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00108896.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2010-11-08",
+  "summary": "This FBI 302 document records that the Consolidated Legal Center provided Bureau of Prisons (BOP) records for inmates Steven Hoffenberg and Berry Kessler. An FBI agent was advised that the two inmates were never housed in the same BOP facilities during their incarcerations. The records were placed in the case file.",
+  "persons": [
+    {
+      "name": "Steven Hoffenberg",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Subject of BOP records request; inmate with BOP number 35601-054.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Berry Kessler",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Subject of BOP records request; inmate with BOP number 61264-061.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Person of interest",
+      "category": "other",
+      "context": "Mentioned in the case ID details (72-MM-113327).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steven Hoffenberg",
+      "person2": "Berry Kessler",
+      "relationshipType": "investigative link",
+      "description": "Both were subjects of a BOP records request by the FBI, but were confirmed to have never been housed in the same facilities.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2010-11-09",
+      "title": "FBI Investigation and Records Receipt",
+      "description": "An FBI Special Agent conducted an investigation and received BOP records for inmates Steven Hoffenberg and Berry Kessler via facsimile from the Consolidated Legal Center.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Steven Hoffenberg",
+        "Berry Kessler"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Correctional Complex, Coleman, Florida"
+  ],
+  "keyFacts": [
+    "The FBI's Consolidated Legal Center provided BOP records for inmates Steven Hoffenberg and Berry Kessler.",
+    "Hoffenberg's BOP number is 35601-054 and Kessler's is 61264-061.",
+    "The FBI was advised that Hoffenberg and Kessler were never housed in the same BOP facilities during their incarcerations.",
+    "The document is an FBI 302 form dated November 8, 2010, detailing an investigation conducted on November 9, 2010.",
+    "The inmate records were placed in a 1-A envelope and added to the case file."
+  ],
+  "analyzedAt": "2026-02-19T08:16:48.675Z"
+}

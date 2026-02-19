@@ -1,0 +1,188 @@
+{
+  "fileName": "EFTA00112450.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-08-04",
+  "summary": "This is a DOJ Office of the Inspector General interview transcript from August 4, 2021, with a Federal Bureau of Prisons facilities manager at the Metropolitan Correctional Center (MCC) in New York. The interview focuses on the camera system failures at MCC on August 9-10, 2019, surrounding the death of inmate Jeffrey Epstein, and the witness's knowledge of the events and personnel involved.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at MCC whose death by reported suicide on August 10, 2019, is the subject of the OIG investigation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nobile",
+      "role": "Facilities Manager, MCC",
+      "category": "staff",
+      "context": "BOP employee being interviewed about his role, knowledge of the camera system, and events surrounding Epstein's death. He was on vacation August 9-10, 2019.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Thomas",
+      "role": "DOJ/OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "Lead interviewer conducting the OIG investigation into Epstein's death and camera system failures.",
+      "mentionCount": 40
+    },
+    {
+      "name": "Michael",
+      "role": "DOJ/OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Second OIG agent present and participating in the interview.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Tovar",
+      "role": "Electronic Technician/Comtech, MCC",
+      "category": "staff",
+      "context": "The only comtech at MCC in August 2019; the person who allegedly discovered the camera recorders were down on August 9 and was told to fix them the next day.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Lopes",
+      "role": "Acting Supervisor (General Maintenance Foreman), MCC",
+      "category": "staff",
+      "context": "One of the individuals who could have been acting facilities manager in Nobile's absence; mentioned as a possible person Tovar might have notified.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Allard",
+      "role": "Associate Warden, MCC",
+      "category": "staff",
+      "context": "Associate warden at MCC in August 2019; identified as a supervisor Tovar should have notified about the camera failure.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Sheila",
+      "role": "Associate Warden, MCC",
+      "category": "staff",
+      "context": "Another associate warden at MCC at the time; also a potential supervisor in the chain of command.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Captain",
+      "role": "Captain, SIS, MCC",
+      "category": "staff",
+      "context": "Unnamed captain in charge of the Special Investigative Supervisor (SIS) unit, which controlled access to the camera recorder room.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Lieutenant, SIS, MCC",
+      "category": "staff",
+      "context": "Unnamed SIS lieutenant; part of the unit with access to the camera system area.",
+      "mentionCount": 5
+    },
+    {
+      "name": "SIA",
+      "role": "Special Investigative Agent, MCC",
+      "category": "staff",
+      "context": "Unnamed Special Investigative Agent; part of SIS leadership.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Steve Smith",
+      "role": "Salesperson, SIGNET Technologies",
+      "category": "other",
+      "context": "Contractor salesperson for SIGNET, the company that worked on the NICE camera equipment; may have records of service calls.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nobile",
+      "person2": "Tovar",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Nobile was the facilities manager and Tovar's supervisor. Nobile states he had to talk to Tovar about improving communication.",
+      "strength": 4
+    },
+    {
+      "person1": "Tovar",
+      "person2": "Lopes",
+      "relationshipType": "colleague",
+      "description": "Lopes was a potential acting supervisor Tovar might have notified about the camera failure on August 9.",
+      "strength": 3
+    },
+    {
+      "person1": "Tovar",
+      "person2": "Allard",
+      "relationshipType": "chain of command",
+      "description": "Allard was an associate warden and part of the chain of command Tovar should have notified about the camera system failure.",
+      "strength": 3
+    },
+    {
+      "person1": "Nobile",
+      "person2": "Allard",
+      "relationshipType": "chain of command",
+      "description": "Nobile reported to Associate Warden Allard.",
+      "strength": 3
+    },
+    {
+      "person1": "Thomas",
+      "person2": "Nobile",
+      "relationshipType": "interviewer-witness",
+      "description": "DOJ/OIG agent conducting the official interview of BOP employee Nobile.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found dead in his cell at MCC New York, an apparent suicide by hanging.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Camera System Failure at MCC",
+      "description": "The camera recording system at MCC failed, with multiple hard drives down, resulting in no recording in the SHU (except one camera) during the period leading to Epstein's death.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Tovar",
+        "Nobile"
+      ]
+    },
+    {
+      "date": "2021-08-04",
+      "title": "OIG Interview of BOP Facilities Manager",
+      "description": "DOJ Office of the Inspector General interviews BOP facilities manager Nobile about the camera failures and circumstances surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Nobile",
+        "Thomas",
+        "Michael"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Tovar Discovers Camera Failure",
+      "description": "Electronic technician Tovar allegedly discovered the camera recorders were not recording at the end of his shift (~2 PM) and claims he notified a supervisor, who told him to fix it the next day.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tovar"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correction Center (MCC), New York, New York",
+    "SHU (Special Housing Unit) - Ten South, MCC",
+    "SIS Office (Special Investigative Supervisor), MCC"
+  ],
+  "keyFacts": [
+    "The camera recording system at MCC was not working properly on August 9-10, 2019; only one camera in the SHU was recording, which captured footage outside Epstein's cell.",
+    "BOP employee Tovar, the only comtech at the time, allegedly discovered the failure on August 9 but was told to fix it the next day.",
+    "Facilities manager Nobile was on vacation August 9-10, 2019, and has no specific recollection of being notified about the camera failure.",
+    "The camera system was old, antiquated, and a replacement project had been initiated in 2018 but was not completed by August 2019.",
+    "Access to the physical camera recorders was controlled by the SIS unit; only comtechs like Tovar had administrative rights to take cameras offline via the software."
+  ],
+  "analyzedAt": "2026-02-19T09:30:37.632Z"
+}

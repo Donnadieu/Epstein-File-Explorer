@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00109044.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena",
+  "dateOriginal": "2019-10-02",
+  "summary": "This is a grand jury subpoena issued by the U.S. Attorney's Office for the Southern District of New York to First Premier Bank, requesting financial records for an account holder named Robert Adams for the period from January 1, 2018 onward. The subpoena is part of a criminal investigation into suspected felony violations of 18 U.S.C. §§ 1791 and 201, and includes detailed instructions for document production and reimbursement procedures under the Right to Financial Privacy Act.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Issued and signed the grand jury subpoena as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jacie Brunick",
+      "role": "Subpoena Processing Contact",
+      "category": "staff",
+      "context": "The subpoena is addressed to their attention at First Premier Bank's subpoena processing department in Sioux Falls, SD.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Robert Adams",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "The subject of the subpoena; the bank is commanded to produce all records for any account(s) controlled by him from January 1, 2018, onward.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Robert Adams",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, is leading the investigation into Adams, as evidenced by the subpoena for Adams's financial records.",
+      "strength": 3
+    },
+    {
+      "person1": "Jacie Brunick",
+      "person2": "Robert Adams",
+      "relationshipType": "financial institution-customer",
+      "description": "Brunick, as a representative of First Premier Bank, is the point of contact for producing the subpoenaed financial records of account holder Adams.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-16",
+      "title": "Grand Jury Appearance Date",
+      "description": "The subpoena commands First Premier Bank to appear before the grand jury to testify and produce documents, though appearance can be waived if documents are produced beforehand.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jacie Brunick",
+        "Geoffrey S. Berman"
+      ]
+    },
+    {
+      "date": "2019-10-02",
+      "title": "Subpoena Issued",
+      "description": "The grand jury subpoena is dated and issued by the U.S. Attorney's Office for the Southern District of New York.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Geoffrey S. Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, NY",
+    "First Premier Bank, 3820 N Louise Ave, Sioux Falls, SD 57107",
+    "U.S. Attorney's Office for the Southern District of New York, One Saint Andrew's Plaza, New York, NY 10007",
+    "U.S. Attorney's Office - SDNY Accounts Payable Department, 86 Chambers Street, 3rd floor, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "The subpoena is part of an active federal grand jury investigation into suspected felony violations of 18 U.S.C. §§ 1791 and 201.",
+    "The investigation targets an individual named Robert Adams, whose financial records at First Premier Bank from January 1, 2018, are being sought.",
+    "The U.S. Attorney's Office requests the bank to keep the subpoena confidential to avoid impeding the investigation.",
+    "The document includes extensive, detailed instructions for the electronic production of financial records, indicating a sophisticated financial investigation.",
+    "The subpoena references the Right to Financial Privacy Act and outlines specific reimbursement procedures for the bank's costs."
+  ],
+  "analyzedAt": "2026-02-19T08:25:28.964Z"
+}

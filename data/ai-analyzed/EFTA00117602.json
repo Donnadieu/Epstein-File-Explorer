@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00117602.pdf",
+  "dataSet": "9",
+  "documentType": "service request",
+  "dateOriginal": "2019-09-20",
+  "summary": "This is a service request ticket (EFTA00117602) for the installation of a new NICE VISION system at the Metropolitan Correctional Center (MCC) in New York, where Jeffrey Epstein was held. The request was created on September 20, 2019, and assigned to technical staff for priority support.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service technician assigned to request",
+      "category": "staff",
+      "context": "Listed as assigned to the service request for installing the NICE VISION system at the MCC New York facility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Service technician working on request",
+      "category": "staff",
+      "context": "Noted as working on the service request to install the NICE VISION system; a comment indicates he is helping with IP address changes on encoders.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service technician assigned to request",
+      "category": "staff",
+      "context": "Listed as assigned to the service request alongside Jeff Cranor and Jeff McKenzie.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Anil",
+      "role": "Individual receiving technical assistance",
+      "category": "staff",
+      "context": "Mentioned in the detailed description as the person being helped by Jeff McKenzie to change IP addresses on encoders for the NICE VISION system installation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Anil",
+      "relationshipType": "colleague",
+      "description": "Jeff McKenzie is providing technical assistance to Anil, helping change IP addresses on encoders for the system installation.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both are assigned to the same service request for the NICE VISION system installation at MCC New York.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-20",
+      "title": "NICE VISION System Service Request Created",
+      "description": "A priority service request is created to install a new NICE VISION system at the Metropolitan Correctional Center (MCC) in New York.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeff Cranor",
+        "Jeff McKenzie",
+        "Justin Houston",
+        "Anil"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, 150 Park Row, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A service request was initiated on September 20, 2019, to install a new NICE VISION system at the Metropolitan Correctional Center (MCC) in New York, where Jeffrey Epstein was incarcerated.",
+    "The request was marked as a priority (P3) with next-day service required, indicating urgency.",
+    "The detailed description notes technicians were helping 'Anil change IP Addresses on the encoders' as part of the installation process.",
+    "The document is a routine IT service ticket, but its location (MCC New York) and timing (2019) connect it to the facility where Epstein died."
+  ],
+  "analyzedAt": "2026-02-19T10:25:45.981Z"
+}

@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00123157.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-23",
+  "summary": "This document consists of internal email correspondence from July 23, 2019, regarding inmate Jeffrey Epstein's status on suicide watch at the Metropolitan Correctional Center. It reports that Epstein complained of a swollen throat, requested to call his attorney, and alleged that his cellmate tried to kill him in the early morning hours.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The incarcerated individual at the center of the communications, identified by inmate number #76318-054, who is on suicide watch and reports health issues and an alleged assault.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Inmate Companion",
+      "role": "Correctional Staff / Observer",
+      "category": "staff",
+      "context": "An unidentified staff member (likely a correctional officer or assigned observer) on suicide watch duty who relays Epstein's complaints and requests to other personnel via phone calls.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Inmate Companion",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The Inmate Companion is monitoring Epstein on suicide watch and serves as the communication channel for his reported medical issue and request to contact his attorney.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein reports swollen throat and requests attorney",
+      "description": "Through the Inmate Companion, inmate Jeffrey Epstein reports that his throat is swollen and expresses a desire to call his attorney.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Inmate Companion"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein alleges cellmate attempted murder",
+      "description": "According to a Suicide Watch Log entry from about 2:15 AM, inmate Epstein told staff watching him that his cellmate tried to kill him.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York (inferred from context and inmate number format)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was on formal suicide watch at the Metropolitan Correctional Center on July 23, 2019.",
+    "Epstein reported a medical issue (swollen throat) and requested to contact his attorney on that date.",
+    "Epstein alleged, according to a log entry from early that morning, that his cellmate had tried to kill him.",
+    "The communications are internal, time-stamped emails marked 'CONFIDENTIAL' from the SDNY (Southern District of New York).",
+    "These events occurred approximately two weeks before Epstein's death by suicide on August 10, 2019."
+  ],
+  "analyzedAt": "2026-02-19T12:38:29.070Z"
+}

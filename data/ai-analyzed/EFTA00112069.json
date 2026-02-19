@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00112069.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-09-16",
+  "summary": "This is an email from a Deputy Assistant Inspector General at the DOJ Office of the Inspector General, dated September 16, 2021, regarding an internal investigation into Jeffrey Epstein's death. The sender requests adding a doctor (DR. [redacted]) to a list of interviews, as they could not locate a prior interview of this individual. The email references the doctor's involvement in assessing Epstein's suicide risk and housing recommendations while he was in custody.",
+  "persons": [
+    {
+      "name": "Dr. [Redacted]",
+      "role": "Medical/psychological consultant",
+      "category": "staff",
+      "context": "A doctor who consulted about Jeffrey Epstein's risk factors and ordered him placed on watch status for a suicide risk assessment after he returned from court. The doctor also got involved in Epstein's housing recommendations.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Dr. S",
+      "role": "National Suicide Prevention Coordinator",
+      "category": "staff",
+      "context": "A National Suicide Prevention Coordinator from the Central Office with whom Dr. [Redacted] had a conversation regarding Epstein's housing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The deceased inmate whose psychological health, risk factors, and housing were being assessed by medical staff while in custody.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Deputy Assistant Inspector General",
+      "role": "Investigator",
+      "category": "law enforcement",
+      "context": "The sender of the email from the Office of the Inspector General, Department of Justice, requesting an individual be added to an interview list for an investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dr. [Redacted]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "medical assessment",
+      "description": "Dr. [Redacted] consulted on Epstein's risk factors and ordered him placed on watch status for a suicide risk assessment.",
+      "strength": 4
+    },
+    {
+      "person1": "Dr. [Redacted]",
+      "person2": "Dr. S",
+      "relationshipType": "professional consultation",
+      "description": "Dr. [Redacted] had a conversation with Dr. S, the National Suicide Prevention Coordinator, regarding Epstein's housing.",
+      "strength": 3
+    },
+    {
+      "person1": "Deputy Assistant Inspector General",
+      "person2": "Dr. [Redacted]",
+      "relationshipType": "investigative",
+      "description": "The Deputy Assistant Inspector General is seeking to interview Dr. [Redacted] as part of an investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-16",
+      "title": "Email Request for Interview Addition",
+      "description": "A Deputy Assistant Inspector General sends an email requesting that Dr. [Redacted] be added to a list of interviews for an investigation, as a prior interview could not be located.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Deputy Assistant Inspector General",
+        "Dr. [Redacted]"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein's Suicide Risk Assessment",
+      "description": "After returning from court, Dr. [Redacted] ordered Jeffrey Epstein be placed on watch status to allow psychology to complete a thorough suicide risk assessment.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Dr. [Redacted]",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein's Housing Recommendation",
+      "description": "Following a conversation with Dr. S, Dr. [Redacted] got involved in Epstein's housing and recommended he be housed with a sex offender in the Special Housing Unit (SHU).",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Dr. [Redacted]",
+        "Dr. S",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "NYFO (presumably New York Field Office)",
+    "SHU (Special Housing Unit)",
+    "Central Office"
+  ],
+  "keyFacts": [
+    "A doctor (DR. [redacted]) was involved in assessing Jeffrey Epstein's suicide risk and housing while he was in custody, but a prior interview of this doctor could not be located by investigators.",
+    "Dr. [Redacted] ordered Epstein be placed on watch status for a suicide risk assessment after he returned from court.",
+    "Dr. [Redacted], after consulting with the National Suicide Prevention Coordinator (Dr. S), recommended housing Epstein with a sex offender in the Special Housing Unit (SHU).",
+    "The email is part of an Office of the Inspector General investigation, indicating an ongoing internal review of events surrounding Epstein's death.",
+    "The document references attached reports and emails (References #1 and #6) that contain further details about the risk assessment and housing recommendations."
+  ],
+  "analyzedAt": "2026-02-19T09:26:47.930Z"
+}

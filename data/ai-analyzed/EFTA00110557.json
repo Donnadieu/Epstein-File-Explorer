@@ -1,0 +1,147 @@
+{
+  "fileName": "EFTA00110557.pdf",
+  "dataSet": "9",
+  "documentType": "Bureau of Prisons procedural memorandum and institutional response",
+  "dateOriginal": "2019-11-13",
+  "summary": "This document is a Bureau of Prisons memorandum from the Metropolitan Correctional Center (MCC) New York, dated November 13, 2019, responding to a psychological reconstruction report on inmate Jeffrey Epstein. It details institutional procedures for inmates with PSY ALERT status and provides point-by-point responses to findings and recommendations from the reconstruction team regarding Epstein's incarceration and death, including cellmate assignments, documentation errors, and suicide prevention protocols.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the psychological reconstruction report. The document details the procedures and failures related to his incarceration, suicide watch, and death at MCC New York.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Dr. L. Grey",
+      "role": "Staff Psychologist",
+      "category": "staff",
+      "context": "A psychologist at MCC New York mentioned in the context of documentation errors and email communications regarding Epstein's mental state and procedures.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Officer T. T. T.",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "An officer who responded to Epstein's emergency on July 23, 2019, and wrote a memorandum describing the scene. Also noted for using the incorrect suicide watch log book.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ms. Ken",
+      "role": "Drug Treatment Specialist",
+      "category": "staff",
+      "context": "A Drug Treatment Specialist who noticed an officer's error in the suicide watch log book and subsequently hand-copied entries into the correct log, creating documentation irregularities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Unit Manager Proto",
+      "role": "Unit Manager",
+      "category": "staff",
+      "context": "Facilitated a monitored telephone call for Jeffrey Epstein on July 30, 2019, to a friend, which was documented in a log.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mr. Hoyt",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate in SHU with a history of sex offenses who was considered but deemed too dangerous to be housed with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr. National Suicide Prevention Coordinator",
+      "role": "National Suicide Prevention Coordinator",
+      "category": "staff",
+      "context": "Consulted by MCC psychology staff regarding the recommendation that Epstein be housed with another inmate accused of a sex offense.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mr. Hoyt",
+      "relationshipType": "potential cellmate",
+      "description": "Mr. Hoyt was considered as a potential cellmate for Epstein due to a shared history of sex offenses but was deemed dangerous and not chosen.",
+      "strength": 1
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unit Manager Proto",
+      "relationshipType": "staff-inmate",
+      "description": "Unit Manager Proto provided Epstein with a monitored telephone call, which is noted as standard procedure for new arrivals.",
+      "strength": 2
+    },
+    {
+      "person1": "Ms. Ken",
+      "person2": "Officer T. T. T.",
+      "relationshipType": "staff colleague",
+      "description": "Ms. Ken attempted to correct Officer T. T. T.'s error by copying his suicide watch log entries into the correct book, leading to documentation issues.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Epstein arrives at MCC New York",
+      "description": "Jeffrey Epstein arrives at the Metropolitan Correctional Center in New York and is noted as appearing distraught and withdrawn during the evening count.",
+      "category": "arrest",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein found unresponsive in cell",
+      "description": "Jeffrey Epstein is found unresponsive in his SHU cell with abrasions on his neck and knee, leading to placement on suicide watch. Inconsistencies exist in staff reports about what was found around his neck.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer T. T. T."
+      ]
+    },
+    {
+      "date": "2019-07-18",
+      "title": "Epstein denied bail",
+      "description": "Jeffrey Epstein is denied bail, which the document notes was a significant disappointment likely challenging his ability to adapt to incarceration.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's death",
+      "description": "Jeffrey Epstein is found dead in his cell at MCC New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-17",
+      "title": "Psychological reconstruction report issued",
+      "description": "A psychological reconstruction report on inmate Jeffrey Epstein is dated, forming the basis for the institutional response document.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York 10007",
+    "Special Housing Unit (SHU) at MCC New York",
+    "Health Services suicide watch cells (H01-001L to H01-004L)"
+  ],
+  "keyFacts": [
+    "The document establishes that Jeffrey Epstein had a PSY ALERT assignment, a Bureau of Prisons designation for inmates with substantial mental health concerns or high-profile cases, requiring extra psychological review.",
+    "Significant documentation errors and procedural failures are detailed, including inconsistent reports of Epstein's July 23 incident, incorrect log book entries, typographical errors in his records, and inaccurate SENTRY cell assignments.",
+    "The institutional response defends the cellmate selection process for Epstein, stating Executive Staff considered his sex-offender status but prioritized housing him with high-profile inmates or cooperators deemed less likely to harm him.",
+    "The Psychology Department at MCC New York eliminated the use of 'Psychological Observation' status to avoid confusion, using only 'Suicide Watch' procedures following Epstein's case.",
+    "The document reveals that after Epstein's death, log books (including Attorney Log Books) were not initially secured as potential evidence, and a system of control for these logs was found to be inadequate."
+  ],
+  "analyzedAt": "2026-02-19T09:08:59.858Z"
+}

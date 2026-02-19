@@ -1,0 +1,193 @@
+{
+  "fileName": "EFTA00115744.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-10-13",
+  "summary": "This is a transcript of a voluntary interview conducted by DOJ Office of the Inspector General agents with a retired BOP Regional Director regarding the investigation into Jeffrey Epstein's death at the Metropolitan Correctional Center. The interview focuses on the after-action report, security failures, camera system issues, and staff responsibilities leading up to Epstein's suicide.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "High-profile inmate who died by suicide at MCC on August 10, 2019. The interview discusses the circumstances surrounding his death, cellmate assignments, and security failures.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "Epstein's cellmate involved in a July 23, 2019 incident where Epstein was found with a rope around his neck. Tartaglione claimed Epstein tried to hang himself.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Raymond",
+      "role": "Retired BOP Regional Director",
+      "category": "law enforcement",
+      "context": "The witness being interviewed. He was the Regional Director for the Northeast region overseeing MCC at the time of Epstein's death. He retired in December 2019.",
+      "mentionCount": 100
+    },
+    {
+      "name": "Warden",
+      "role": "MCC Warden",
+      "category": "law enforcement",
+      "context": "Warden at Metropolitan Correctional Center who reported to the regional director. Discussed cellmate assignments and communications regarding Epstein.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Captain",
+      "role": "MCC Captain",
+      "category": "law enforcement",
+      "context": "Captain at MCC involved in the chain of command for notifying staff about Epstein's cellmate requirement and camera issues.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Skipper-Scott",
+      "role": "MCC II (Internal Investigator)",
+      "category": "law enforcement",
+      "context": "MCC Internal Investigator who was involved in notifications about camera failures and the after-action investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Carlos Perez",
+      "role": "MCC Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "Operations lieutenant on duty who knew Epstein's cellmate was leaving but didn't pass information to his relief or ensure Epstein got a new cellmate.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Cannata",
+      "role": "MCC Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "Relieving operations lieutenant who should have been notified about Epstein needing a new cellmate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lieutenant",
+      "role": "MCC SIS Lieutenant",
+      "category": "law enforcement",
+      "context": "SIS lieutenant who became aware on August 8, 2019, that MCC cameras were not recording.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Comtech",
+      "role": "MCC Communications Technician",
+      "category": "staff",
+      "context": "Communications technician notified about camera system failures at MCC.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Unit Manager",
+      "role": "MCC Unit Manager",
+      "category": "staff",
+      "context": "Unit manager who provided Epstein with an unmonitored social phone call on August 9, 2019, to call his mother.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Raymond",
+      "person2": "Warden",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Raymond was the Regional Director overseeing Warden at MCC. They communicated about Epstein's case and institutional issues.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates in July 2019. Involved in incident where Epstein was found with rope around neck.",
+      "strength": 3
+    },
+    {
+      "person1": "Raymond",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Raymond oversaw the captain as part of the MCC chain of command.",
+      "strength": 3
+    },
+    {
+      "person1": "Carlos Perez",
+      "person2": "Cannata",
+      "relationshipType": "colleague",
+      "description": "Both were operations lieutenants at MCC. Perez failed to pass critical information about Epstein's cellmate to Cannata.",
+      "strength": 2
+    },
+    {
+      "person1": "Warden",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Warden supervised the captain at MCC regarding Epstein's housing and security measures.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein-Tartaglione incident",
+      "description": "Jeffrey Epstein found with rope around his neck in cell with inmate Tartaglione. Tartaglione claimed Epstein tried to hang himself.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Cellmate transferred, unmonitored phone call",
+      "description": "Epstein's cellmate was transferred from MCC. Epstein was provided an unmonitored social phone call by unit manager to call his deceased mother.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unit Manager"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein found dead",
+      "description": "At 6:33 a.m., body alarm activated in SHU. Epstein found unresponsive in his cell. CPR initiated. Pronounced dead at 7:36 a.m. by emergency room physician.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Camera system failure discovered",
+      "description": "MCC SIS Lieutenant and II discovered cameras were not recording. Notified Comtech and Captain. System had stopped recording since July 29.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lieutenant",
+        "Skipper-Scott",
+        "Comtech",
+        "Captain"
+      ]
+    },
+    {
+      "date": "2021-10-13",
+      "title": "OIG interview with retired Regional Director",
+      "description": "DOJ OIG agents interview retired BOP Regional Director Raymond about Epstein's death, after-action report, and security failures at MCC.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Raymond"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Northeast Region BOP facilities",
+    "GEO prison (where Epstein's cellmate was transferred)"
+  ],
+  "keyFacts": [
+    "The retired Regional Director stated that not providing Epstein with a cellmate and failure to conduct proper rounds/counts were the two main factors that led to his suicide.",
+    "MCC had replacement camera equipment since October 2018 but hadn't installed it before Epstein's death in August 2019, despite known system failures.",
+    "Epstein was given an unmonitored phone call on August 9, 2019, where he claimed to call his deceased mother; a male answered the phone.",
+    "The after-action report indicated multiple staff knew Epstein required a cellmate, but no fail-safe system ensured this requirement was met after his initial cellmate was transferred.",
+    "The witness acknowledged the political nature of the investigation, noting there were 'a dozen suicides that year' but only Epstein's was being investigated."
+  ],
+  "analyzedAt": "2026-02-19T10:02:07.058Z"
+}

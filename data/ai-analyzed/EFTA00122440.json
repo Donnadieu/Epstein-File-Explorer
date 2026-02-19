@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00122440.pdf",
+  "dataSet": "9",
+  "documentType": "Bureau of Prisons memorandum",
+  "dateOriginal": "2019-08-10",
+  "summary": "This is a Bureau of Prisons memorandum from the Federal Correctional Institution detailing the discovery and emergency response to inmate Jeffrey Epstein's apparent suicide by hanging on the morning of August 10, 2019. It includes a statement from a distressed officer admitting that scheduled security rounds were not completed.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive in his cell after reportedly hanging himself; the subject of the emergency medical response.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Shu#1",
+      "role": "Officer",
+      "category": "staff",
+      "context": "The officer who announced the medical emergency on 9 South via radio.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shu#2",
+      "role": "Officer",
+      "category": "staff",
+      "context": "The officer who was performing life-saving CPR on Epstein when the author arrived at the cell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "sioMMI",
+      "role": "Officer",
+      "category": "staff",
+      "context": "An officer who stated to the author that the 3am and 5am security rounds were not completed and expressed distress, saying 'we messed up'.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Shu#2",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Shu#2 officer was performing CPR on inmate Epstein in an attempt to save his life.",
+      "strength": 2
+    },
+    {
+      "person1": "sioMMI",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "sioMMI was an officer responsible for security rounds related to Epstein's unit and admitted to failing to complete them.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Jeffrey Epstein's suicide attempt",
+      "description": "At approximately 6:33 A.M., inmate Jeffrey Epstein was found unresponsive in his cell on 9 South, L-tier, after reportedly hanging himself. Officers and medical staff performed CPR and he was transported to the hospital.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Shu#1",
+        "Shu#2",
+        "sioMMI"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Failure to complete security rounds",
+      "description": "Officer sioMMI admitted that the scheduled 3am and 5am security rounds were not completed, stating 'we messed up' and 'I messed up'.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "sioMMI"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Emergency medical response and transport",
+      "description": "CPR was administered continuously from the cell to the medical area. 911 was called at 6:35 a.m., EMTs arrived at 6:43 a.m., and Epstein was transferred to an ambulance at 7:10 a.m. for transport to Beekman Hospital.",
+      "category": "death",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Correctional Institution",
+    "9 South, L-tier (cell location)",
+    "2nd FL. Health Service Area (medical area)",
+    "Rear-gate area",
+    "Beekman Hospital"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at approximately 6:33 A.M. on August 10, 2019, after reportedly hanging himself.",
+    "An officer (sioMMI) admitted that the required 3am and 5am security rounds were not completed, stating 'we messed up' and 'I messed up'.",
+    "CPR was administered continuously from the time of discovery until Epstein was transferred to EMT staff at 6:43 a.m.",
+    "Epstein was transported via ambulance from the prison to Beekman Hospital at 7:10 a.m.",
+    "The document is a contemporaneous internal Bureau of Prisons memorandum detailing the immediate response to the incident."
+  ],
+  "analyzedAt": "2026-02-19T12:08:46.382Z"
+}

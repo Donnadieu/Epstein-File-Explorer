@@ -1,0 +1,170 @@
+{
+  "fileName": "EFTA00115159.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-07-15",
+  "summary": "This is a transcript of a voluntary sworn interview conducted by DOJ OIG Special Agents with a Federal Bureau of Prisons Correctional Systems Officer (S. ) regarding the death of inmate Jeffrey Epstein and the surrounding circumstances at the Metropolitan Correctional Center on August 9-10, 2019. The interview focuses on inmate movement procedures, count verification, the removal of Epstein's cellmate Efrain Reyes, and discrepancies in inmate counts in the Special Housing Unit (SHU).",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who died by suicide at MCC on August 10, 2019. The interview focuses on the circumstances surrounding his death, including his cellmate situation and housing conditions.",
+      "mentionCount": 25
+    },
+    {
+      "name": "S. ",
+      "role": "Correctional Systems Officer",
+      "category": "staff",
+      "context": "The witness being interviewed. A BOP employee who worked in both R&D (Receiving and Discharge) and custody, providing insights into inmate movement procedures and count verification during the relevant period.",
+      "mentionCount": 150
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "Jeffrey Epstein's cellmate who was removed from MCC on August 9, 2019, for court and did not return, leaving Epstein without a cellmate.",
+      "mentionCount": 40
+    },
+    {
+      "name": "Fernandez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate placed on dry cell watch in R&D on August 9, 2019, whose improper tracking caused count discrepancies in the SHU.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Lieutenant ",
+      "role": "BOP Lieutenant",
+      "category": "staff",
+      "context": "The Operations Lieutenant who took the midnight count on August 10, 2019, and discovered the count discrepancy involving inmate Fernandez.",
+      "mentionCount": 10
+    },
+    {
+      "name": "CO Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A fairly new correctional officer who worked in the SHU on the day of the incident (August 10, 2019).",
+      "mentionCount": 3
+    },
+    {
+      "name": "CO Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Mentioned as working in the SHU, though the transcript shows correction to CO Noel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Mentioned in relation to SHU operations and camera visibility questions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Mentioned in passing as someone who might not have known about Epstein's cellmate requirement.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was Epstein's cellmate until he was removed from MCC for court on August 9, 2019, and did not return.",
+      "strength": 4
+    },
+    {
+      "person1": "S. ",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The officer had knowledge of Epstein's situation through her work in R&D and custody, including awareness of his cellmate leaving.",
+      "strength": 3
+    },
+    {
+      "person1": "S. ",
+      "person2": "Lieutenant ",
+      "relationshipType": "colleague",
+      "description": "Worked together during the midnight shift on August 10, 2019, with the Lieutenant taking counts while the officer worked Control.",
+      "strength": 3
+    },
+    {
+      "person1": "S. ",
+      "person2": "CO Noel",
+      "relationshipType": "colleague",
+      "description": "Both were BOP staff working during the relevant period, with Noel being in the SHU.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Removal of Epstein's cellmate",
+      "description": "Inmate Efrain Reyes, Jeffrey Epstein's cellmate, was pre-removed from MCC at 8:38 a.m. for court and did not return, leaving Epstein without a cellmate.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Efrain Reyes",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Inmate placed on dry cell watch",
+      "description": "Inmate Fernandez was placed on dry cell watch in R&D at 3:15 p.m., but was not properly keyed out of the SHU, causing count discrepancies.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Fernandez"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's death",
+      "description": "Jeffrey Epstein was found dead in his cell at MCC, having died by suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Count discrepancy discovered",
+      "description": "Lieutenant discovered during the midnight count that the SHU count was off by one inmate (Fernandez) who was in R&D but still keyed to SHU.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant ",
+        "Fernandez"
+      ]
+    },
+    {
+      "date": "2021-07-15",
+      "title": "OIG interview conducted",
+      "description": "DOJ OIG Special Agents interviewed BOP Correctional Systems Officer S.  regarding Epstein's death and surrounding circumstances.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "S. "
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Road (MCC New York)",
+    "Special Housing Unit (SHU) at MCC",
+    "R&D (Receiving and Discharge) at MCC",
+    "Control Center at MCC"
+  ],
+  "keyFacts": [
+    "Epstein's cellmate Efrain Reyes was removed from MCC at 8:38 a.m. on August 9, 2019, for court and did not return, leaving Epstein without a cellmate.",
+    "There were significant count discrepancies in the SHU on August 9-10, 2019, with inmate Fernandez improperly tracked as being in SHU when he was actually in R&D on dry cell watch.",
+    "The witness stated that if staff knew an inmate was WAB (With All Belongings) and not returning, and knew Epstein required a cellmate, they should have taken immediate action to assign a new cellmate.",
+    "Camera coverage in the SHU was poor, with only a distant view of the multi-purpose area that didn't show individual cells clearly.",
+    "The witness believes Epstein took his own life and has no knowledge of anyone assisting him or causing his death."
+  ],
+  "analyzedAt": "2026-02-19T09:59:04.682Z"
+}

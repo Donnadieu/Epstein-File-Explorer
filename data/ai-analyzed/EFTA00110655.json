@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00110655.pdf",
+  "dataSet": "9",
+  "documentType": "prison memorandum",
+  "dateOriginal": "2019-08-10",
+  "summary": "This document consists of multiple memoranda from the Metropolitan Correctional Center in New York summarizing psychological contacts, observations, and administrative details regarding inmate Jeffrey Epstein from his arrival on July 8, 2019, through the date of his death on August 10, 2019. It details his mental health assessments, suicide watch placements, and the official response to his death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The primary subject of the memoranda, detailing his incarceration, psychological assessments, suicide watch incidents, and death.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Officer Adams",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "Responded to MCC NY for emergency hospital detail on August 10, 2019, and was responsible for watching Epstein's remains at New York Presbyterian Hospital.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Prison Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "Contacted the on-call psychologist on July 23, 2019, to report Epstein was being placed on suicide watch after being found with a string around his neck.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Operations Lieutenant",
+      "relationshipType": "custodial",
+      "description": "The Operations Lieutenant was involved in the administrative decision to place Epstein on suicide watch on July 23, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Officer Adams",
+      "relationshipType": "custodial",
+      "description": "Officer Adams was assigned to guard Epstein's remains at the hospital on August 10, 2019.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Epstein's Intake and Initial Suicide Watch",
+      "description": "Jeffrey Epstein arrived at MCC and underwent an intake screening. Due to risk factors, it was determined he should be placed on suicide watch.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-09",
+      "title": "Suicide Risk Assessment",
+      "description": "Epstein was assessed for suicide risk. He denied any suicidal ideation, intention, or plan. Protective factors were deemed to outweigh risk factors, and he was removed from suicide watch.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Incident with Neck Injury",
+      "description": "Epstein was found with a string around his neck and placed on suicide watch. He later told staff his cellmate tried to kill him, but during assessment denied remembering the incident.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Social Call to Family",
+      "description": "Epstein was escorted to make a social call, which he stated was to his mother. The call was ended after 15 minutes.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's Death and Body Transport",
+      "description": "Epstein was found deceased. Officer Adams was detailed to guard his remains at New York Presbyterian Hospital. The remains were later transported to the city morgue by the Office of the Chief Medical Examiner.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer Adams"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York",
+    "New York Presbyterian Hospital",
+    "SHU (Special Housing Unit)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found with a string around his neck on July 23, 2019, and claimed his cellmate tried to kill him, though he later denied remembering the event.",
+    "Epstein consistently denied suicidal ideation, intention, or plan during multiple psychological assessments from July to August 2019.",
+    "On August 10, 2019, Epstein was found deceased, and his remains were transported from New York Presbyterian Hospital to the city morgue.",
+    "Epstein made a social call on August 9, 2019, which he stated was to his mother, using a number starting with 347.",
+    "The documents show a pattern of Epstein requesting transfer to general population and complaining about conditions in SHU, such as noise."
+  ],
+  "analyzedAt": "2026-02-19T09:11:14.542Z"
+}

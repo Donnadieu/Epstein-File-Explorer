@@ -1,0 +1,157 @@
+{
+  "fileName": "EFTA00116353.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-09-23",
+  "summary": "This is a transcript of a DOJ Office of the Inspector General interview with a Federal Bureau of Prisons correctional lieutenant at the Metropolitan Correctional Center in New York City. The interview focuses on the circumstances surrounding the death of inmate Jeffrey Epstein on August 10, 2019, including the prior suicide attempt on July 23, 2019, the failure to assign him a cellmate after his cellmate was transferred, the malfunctioning camera system, and various procedural failures by MCC staff.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate whose death by suicide is the subject of the OIG investigation. He was housed at the MCC and had a prior suicide attempt on July 23, 2019.",
+      "mentionCount": 80
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate during the July 23, 2019 suicide attempt. The lieutenant interviewed him and Epstein, and the investigation was inconclusive.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate who was transferred out of the MCC on August 9, 2019, leaving Epstein without a cellmate the night before his death.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who was one of the first responders to Epstein's cell on August 10, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who was one of the first responders to Epstein's cell on August 10, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "America",
+      "role": "SIS Technician",
+      "category": "staff",
+      "context": "SIS Technician who assisted the lieutenant in collecting evidence from Epstein's cell after his death, including taking photographs.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nathaniel",
+      "role": "Unit Manager",
+      "category": "staff",
+      "context": "Epstein's unit manager who provided him with an unauthorized, unmonitored phone call on an unsecured line the night before his death.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates during Epstein's first alleged suicide attempt on July 23, 2019. Epstein stated Tartaglione did not try to harm him.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates until Reyes was transferred out of the MCC on August 9, 2019, leaving Epstein alone in his cell.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nathaniel",
+      "relationshipType": "staff-inmate",
+      "description": "Unit manager provided Epstein with an unauthorized, unmonitored phone call on an unsecured line the night before his death.",
+      "strength": 2
+    },
+    {
+      "person1": "America",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "SIS Technician who assisted in collecting evidence from Epstein's cell and took photographs after his death.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's First Suicide Attempt",
+      "description": "Jeffrey Epstein was found with a noose in his cell. The SIS investigation was inconclusive. He was placed on suicide watch and then psychological observation.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Cameras Found Not Working",
+      "description": "The SIS lieutenant discovered the MCC's camera system was not recording. She notified the captain and associate warden and wrote a memo.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Reyes Transferred, Epstein Left Without Cellmate",
+      "description": "Inmate Efrain Reyes was transferred out of the MCC. Staff failed to assign a new cellmate to Jeffrey Epstein, leaving him alone in his cell contrary to psychology requirements.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Efrain Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Unauthorized Phone Call to Epstein",
+      "description": "Unit manager Nathaniel provided Epstein with an unmonitored phone call on an unsecured line. Epstein claimed to be calling his mother, but a male answered the number.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nathaniel"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found deceased in his cell at the MCC. He was found with a noose. The incident was investigated as a suicide.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Thomas",
+        "Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York City",
+    "SIS Shop (MCC)",
+    "Special Housing Unit (SHU) (MCC)",
+    "Receiving and Discharge (R&D) area (MCC)"
+  ],
+  "keyFacts": [
+    "The lieutenant's investigation into Epstein's July 23 suicide attempt was inconclusive, with Epstein denying self-harm and denying his cellmate harmed him.",
+    "Epstein's cellmate, Efrain Reyes, was transferred out on August 9, 2019. Multiple staff failures led to Epstein not being assigned a new cellmate, contrary to psychology requirements.",
+    "The MCC's camera system stopped recording on July 29, 2019, and was not fixed prior to Epstein's death, despite the SIS lieutenant notifying the captain and associate warden on August 8.",
+    "Epstein was given an unauthorized, unmonitored phone call on an unsecured line by his unit manager the night before his death, a significant security violation.",
+    "The lieutenant attributes Epstein's ability to take his own life to systematic failures, including the lack of a cellmate and failures in conducting counts and rounds."
+  ],
+  "analyzedAt": "2026-02-19T10:08:14.064Z"
+}

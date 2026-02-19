@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00109004.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena",
+  "dateOriginal": "2019-10-02",
+  "summary": "This document is a grand jury subpoena issued by the U.S. Attorney's Office for the Southern District of New York to Credit One Bank, requesting financial records for an account holder named Robert Adams for the period from January 1, 2018 onward. It includes detailed instructions for document production and procedures for reimbursement under the Right to Financial Privacy Act.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "Assistant United States Attorney / United States Attorney",
+      "category": "legal",
+      "context": "Issued the grand jury subpoena and signed the accompanying letter requesting confidentiality of the investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sonya Foster-Brown",
+      "role": "Custodian of Records",
+      "category": "staff",
+      "context": "Addressed as the custodian of records at Credit One Bank who is to receive and comply with the subpoena.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Robert Adams",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Individual whose financial account records at Credit One Bank are being subpoenaed as part of a grand jury investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Sonya Foster-Brown",
+      "relationshipType": "legal-authority",
+      "description": "Berman, as U.S. Attorney, is issuing a legal command (subpoena) to Foster-Brown in her official capacity as Custodian of Records.",
+      "strength": 2
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Robert Adams",
+      "relationshipType": "investigator-subject",
+      "description": "Berman's office is investigating a suspected felony and is subpoenaing the financial records of Robert Adams.",
+      "strength": 3
+    },
+    {
+      "person1": "Sonya Foster-Brown",
+      "person2": "Robert Adams",
+      "relationshipType": "custodian-client",
+      "description": "Foster-Brown, as bank custodian, holds the financial records for account holder Robert Adams that are being requested.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-16",
+      "title": "Scheduled Grand Jury Appearance",
+      "description": "Sonya Foster-Brown is commanded to appear before the grand jury to testify and produce documents, though appearance can be waived if documents are produced beforehand.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Sonya Foster-Brown",
+        "Geoffrey S. Berman"
+      ]
+    },
+    {
+      "date": "2019-10-02",
+      "title": "Issuance of Grand Jury Subpoena",
+      "description": "The U.S. Attorney's Office issues a subpoena to Credit One Bank for financial records related to Robert Adams as part of a criminal investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Sonya Foster-Brown"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, NY",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "86 Chambers Street, New York, NY 10007",
+    "Washington, D.C. 20530"
+  ],
+  "keyFacts": [
+    "A federal grand jury in the Southern District of New York is conducting a criminal investigation into a suspected felony, as indicated by the subpoena.",
+    "The subpoena specifically targets all financial records for an account held by 'Robert Adams' at Credit One Bank from January 1, 2018, to the present (October 2019).",
+    "The U.S. Attorney's Office requested that the bank voluntarily refrain from disclosing the existence of the subpoena to preserve the investigation's confidentiality.",
+    "The document references potential violations of U.S. criminal codes 18 U.S.C. §§ 1791 and 201, though the specific suspected felony is not detailed.",
+    "Detailed instructions are provided for the electronic production of transaction records, including wire transfers, ACH transfers, and check images, indicating a focus on financial tracing."
+  ],
+  "analyzedAt": "2026-02-19T08:22:18.085Z"
+}

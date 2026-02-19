@@ -1,0 +1,62 @@
+{
+  "fileName": "EFTA00122389.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an internal email from a Captain at the Metropolitan Correctional Center reminding a Lieutenant to submit a supervisor memorandum regarding the 'inmate Epstein incident' that occurred on August 10, 2019. It highlights the administrative follow-up required after the incident involving Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Thabita",
+      "role": "Lieutenant at Metropolitan Correctional Center",
+      "category": "staff",
+      "context": "Addressed in the email as 'Lt.' and is being reminded to submit a supervisor memorandum regarding the Epstein incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Captain",
+      "role": "Captain at Metropolitan Correctional Center",
+      "category": "staff",
+      "context": "Author of the email, instructing Lieutenant Thabita to submit the required memorandum.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Captain",
+      "person2": "Thabita",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Captain is directing Lieutenant Thabita to complete and submit a report, indicating a chain of command relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Inmate Epstein Incident",
+      "description": "An incident involving inmate Jeffrey Epstein occurred at the Metropolitan Correctional Center.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-13",
+      "title": "Memorandum Submission Deadline",
+      "description": "The deadline for Lieutenant Thabita to submit the complete supervisor memorandum regarding the Epstein incident.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Thabita",
+        "Captain"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center"
+  ],
+  "keyFacts": [
+    "The document is an email dated August 12, 2019, referencing an 'inmate Epstein incident' that occurred on August 10, 2019.",
+    "A Captain at the Metropolitan Correctional Center is directing a Lieutenant named Thabita to submit a supervisor memorandum about the incident by August 13, 2019.",
+    "The email indicates internal administrative procedures were initiated immediately following the incident involving Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-19T12:00:51.121Z"
+}

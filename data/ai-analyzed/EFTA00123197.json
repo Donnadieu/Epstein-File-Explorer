@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00123197.pdf",
+  "dataSet": "9",
+  "documentType": "incident report",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Metropolitan Correctional Center memorandum from a Senior Officer Specialist detailing the discovery of inmate Jeffrey Epstein in his cell with a cloth around his neck on July 23, 2019, at approximately 1:27 AM. The incident prompted an immediate response from staff, who secured the cell and removed Epstein without further incident.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate found in his cell with a piece of handmade orange cloth around his neck, prompting an emergency response from correctional staff.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Officer",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "An officer who assisted EM by keeping visual contact with Epstein, applying restraints to Epstein's cellmate, and helping secure the scene.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "EM",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "EM, as a Senior Officer Specialist, was responsible for monitoring and responding to the incident involving inmate Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Officer",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The Officer assisted in the emergency response to secure Epstein and his cellmate during the incident.",
+      "strength": 3
+    },
+    {
+      "person1": "EM",
+      "person2": "Officer",
+      "relationshipType": "colleague",
+      "description": "EM and the Officer worked together as correctional staff to respond to the incident involving inmate Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Discovery of Epstein with cloth around neck",
+      "description": "At approximately 1:27 AM, correctional officers discovered inmate Jeffrey Epstein in his cell with a piece of handmade orange cloth around his neck, prompting an emergency response.",
+      "category": "incident",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "EM",
+        "Officer"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York",
+    "Special Housing Unit",
+    "Cell Z05-124"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, at approximately 1:27 AM, inmate Jeffrey Epstein was discovered in his cell with a handmade orange cloth around his neck.",
+    "The incident occurred in Cell Z05-124 within the Special Housing Unit of the Metropolitan Correctional Center in New York.",
+    "Correctional staff, including EM and another Officer, responded immediately, secured the cellmate, and removed Epstein from the cell without further incident.",
+    "The document is an official government memorandum detailing the initial discovery and response, predating Epstein's death by suicide on August 10, 2019."
+  ],
+  "analyzedAt": "2026-02-19T12:43:10.706Z"
+}

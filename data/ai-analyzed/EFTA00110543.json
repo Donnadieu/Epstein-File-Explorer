@@ -1,0 +1,166 @@
+{
+  "fileName": "EFTA00110543.pdf",
+  "dataSet": "9",
+  "documentType": "institutional response memorandum",
+  "dateOriginal": "November 13, 2019",
+  "summary": "This is a Bureau of Prisons memorandum from the Warden of the Metropolitan Correctional Center New York responding to a psychological reconstruction report on inmate Jeffrey Epstein's death. It details institutional responses to 13 findings regarding suicide prevention protocols, cellmate assignments, documentation errors, and operational failures surrounding Epstein's incarceration and death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the psychological reconstruction report. He was found unresponsive in his cell on July 23, 2019, and died on August 10, 2019.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Dr. M",
+      "role": "National Suicide Prevention Coordinator",
+      "category": "law enforcement",
+      "context": "Consulted regarding Epstein's housing needs, specifically recommending he be housed with another inmate accused of a sex offense.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mr. Hoyt",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate in SHU with a history of sex offenses who was deemed too dangerous and threatening to be housed with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unit Manager Proto",
+      "role": "Unit Manager",
+      "category": "staff",
+      "context": "Provided Epstein with a monitored telephone call on July 30, 2019, to a friend, as Epstein had trouble using the inmate telephone system.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant Medina",
+      "role": "Lieutenant",
+      "category": "staff",
+      "context": "Opened an email expressing concern about Epstein's mental state on July 6, 2019, but did not contact the on-call psychologist as required.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Officer I.",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Failed to sign post orders for the SHU #3 post during the 3rd quarter of 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mr. Hoyt",
+      "relationshipType": "co-inmate",
+      "description": "Both were inmates in the SHU. Hoyt was considered as a potential cellmate for Epstein due to a shared history of sex offenses but was rejected for being threatening.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unit Manager Proto",
+      "relationshipType": "staff-inmate",
+      "description": "Proto facilitated a monitored telephone call for Epstein when he had difficulty using the standard inmate phone system.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Epstein arrives at MCC New York",
+      "description": "Jeffrey Epstein arrives at the Metropolitan Correctional Center New York and is placed in custody. A facilities assistant observes him as 'distraught, sad and a little confused' but no immediate psychological follow-up occurs.",
+      "category": "arrest",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lieutenant Medina"
+      ]
+    },
+    {
+      "date": "2019-07-07",
+      "title": "Epstein placed in SHU",
+      "description": "Executive staff decide to place Epstein in the Special Housing Unit (SHU) and assign him a high-profile cellmate, an ex-police officer charged with multiple murders.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "First suicide attempt/gesture",
+      "description": "Epstein is found unresponsive in his cell with abrasions on his neck and knee. His cellmate alerts staff. Descriptions of the incident vary (string vs. orange cloth around neck). He is placed on suicide watch.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Removed from suicide watch",
+      "description": "Epstein is removed from suicide watch and placed on psychological observation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-25",
+      "title": "Housing recommendation email",
+      "description": "Dr. M, the National Suicide Prevention Coordinator, recommends via email that Epstein be housed with another inmate accused of a sex offense. There is no evidence this was acted upon.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dr. M"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Monitored phone call",
+      "description": "Unit Manager Proto provides Epstein with a monitored telephone call to a friend.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unit Manager Proto"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Court appearance",
+      "description": "Epstein appears in court. Upon return, the U.S. Marshals provide a Prisoner Custody Alert Notice stating he has 'Mental Concerns Suicidal Tendencies.' This alert is not properly acted upon by R&D staff.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's death",
+      "description": "Jeffrey Epstein is found dead in his cell. The document references SENTRY records showing three inmates assigned to his double-occupancy cell at the time.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center New York, New York 10007",
+    "Special Housing Unit (SHU)",
+    "Health Services (suicide watch cells H01-001L to H01-004L)",
+    "Receiving and Discharge (R&D) area"
+  ],
+  "keyFacts": [
+    "The psychological reconstruction identified 13 areas of concern regarding Epstein's incarceration and death, including single-cell placement, rounds, cellmate assignments, documentation accuracy, and failure to follow suicide prevention protocols.",
+    "Epstein was initially housed in SHU with a high-profile inmate, an ex-police officer charged with multiple murders, rather than with another sex offender as later recommended by psychological services.",
+    "Significant documentation errors and inconsistencies were found, including conflicting descriptions of Epstein's July 23 suicide attempt, incorrect logbook entries, and inaccurate SENTRY cell assignments.",
+    "The institution failed to properly act on multiple alerts regarding Epstein's suicidal tendencies, including an email from a concerned staff member on July 6 and a U.S. Marshals alert on July 31.",
+    "The institutional response outlines corrective actions, including eliminating psychological observation, implementing daily checks of suicide watch logs and SENTRY rosters, and retraining staff on PSY ALERT procedures and sex offender risk factors."
+  ],
+  "analyzedAt": "2026-02-19T09:08:27.392Z"
+}

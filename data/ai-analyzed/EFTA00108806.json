@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00108806.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal request form",
+  "dateOriginal": "2010-06-23",
+  "summary": "This is an FBI internal request form from the Miami Division to the Records Management Division and Special Technologies and Applications Office, requesting scanning, automation, and data formatting assistance for telephone records related to the obstruction of justice case against Alfredo Rodriguez. The records are from an address book belonging to Jeffrey Epstein that Rodriguez attempted to sell, which is believed to contain contact information for additional underage victims.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein",
+      "category": "associate",
+      "context": "Subject of an FBI obstruction of justice case opened in October 2009. He came into possession of an address book belonging to Jeffrey Epstein containing names and numbers of potential underage victims and attempted to sell it to an undercover employee (UCE) instead of complying with federal subpoenas.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of a child prostitution case",
+      "category": "key figure",
+      "context": "The individual to whom Alfredo Rodriguez was employed. The address book Rodriguez possessed belonged to Epstein and is believed to contain contact information for additional underage victims previously unknown to investigators.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the former house manager and butler to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Rodriguez possessed Epstein's address book containing potential victim information and attempted to sell it, obstructing the investigation into Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10",
+      "title": "FBI opens obstruction case against Rodriguez",
+      "description": "Miami Division of the FBI opened an obstruction of justice case against Alfredo Rodriguez.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2001-09-01",
+      "title": "Start date for telephone record review",
+      "description": "The FBI request notes that telephone records generated between this date and the present (2010) are included in the review, even for closed cases.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2010-06-23",
+      "title": "FBI request for records processing",
+      "description": "The Miami Division submits a formal request to the Document Conversion Laboratory (DocLab) to scan, automate, and format telephone records from an address book for incorporation into the Telephone Application (TA) database.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Winchester, Virginia 22602 (DocLab - Telephone Application Audit Processing Team, FBI, 170 Marcel Drive)",
+    "Miami (FBI Miami Division office)"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Epstein's former house manager, possessed an address book belonging to Epstein that contained names and telephone numbers of what were believed to be additional, previously unknown underage victims.",
+    "Rodriguez attempted to sell the address book to an Undercover Employee (UCE) instead of turning it over to law enforcement or attorneys in response to federal subpoenas, leading to an FBI obstruction of justice case against him.",
+    "The FBI's 'Baleen Sweep' project was processing telephone records, with a specific target number 340-771-2024, believed to belong to Epstein or his associates or potential victims.",
+    "The document reveals internal FBI procedures for handling evidence, including scanning documents into multiple formats (TIFF, TXT, PDF) and using a centralized repository called the Telephone Application (TA) for investigative searches.",
+    "The request emphasizes that all information and phone records from the address book are considered unclassified, but the scanning process itself occurs on a SECRET-level system."
+  ],
+  "analyzedAt": "2026-02-19T08:06:40.236Z"
+}

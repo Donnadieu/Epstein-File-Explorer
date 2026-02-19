@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00123113.pdf",
+  "dataSet": "9",
+  "documentType": "prison incident report",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Bureau of Prisons Form 583 Report of Incident documenting an apparent suicide attempt by Jeffrey Epstein in the Special Housing Unit (SHU) at the Metropolitan Correctional Center on July 23, 2019. The report details staff finding Epstein with a red neck and marks, his transportation to medical, and his placement on suicide watch.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Victim",
+      "category": "key figure",
+      "context": "The inmate who reportedly attempted suicide by hanging/asphyxiation in his SHU cell. He was found on the floor, breathing heavily, with a red neck and marks, and was placed on suicide watch.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Another inmate listed as involved in the incident report, with no specific details about his role in this event provided in the visible text.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Staff",
+      "category": "staff",
+      "context": "A staff member listed as involved in the incident. The report does not specify his actions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. (MLP)",
+      "role": "Medical Staff",
+      "category": "staff",
+      "context": "A Mid-Level Practitioner (MLP) who examined and treated Jeffrey Epstein for a circular line of erythema (redness) on his neck and a small mark on his knee after the incident.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "fellow inmate",
+      "description": "Both were inmates listed as involved in the same incident report from the Special Housing Unit on July 23, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "M. (MLP)",
+      "relationshipType": "patient-provider",
+      "description": "The medical practitioner examined and treated Epstein's injuries following his reported suicide attempt.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Apparent Suicide Attempt in SHU",
+      "description": "Jeffrey Epstein was found in his SHU cell after an apparent suicide attempt by hanging/asphyxiation. Staff observed him on the floor, breathing heavily with a red neck. He was restrained, placed on a stretcher, taken to medical, examined, and placed on suicide watch.",
+      "category": "suicide attempt",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "M. (MLP)",
+        "Michael Thomas",
+        "Nicholas Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York (NYM)",
+    "Special Housing Unit (SHU), 9 SOUTH",
+    "Cell Z05-124LAO",
+    "HA-Unit (likely Health Services Unit)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found in his SHU cell on July 23, 2019, at approximately 1:27 a.m. following an apparent suicide attempt by hanging/asphyxiation.",
+    "Staff observed Epstein lying on the floor, breathing heavily and snoring, with a red neck showing no abrasions. He would open his eyes and then shut them when staff made eye contact.",
+    "Epstein was examined by medical staff (MLP M.) who noted a circular line of erythema (redness) at the base of his neck with marks of friction and a small erythema on his left knee.",
+    "The incident resulted in Epstein being placed in a suicide smock and on formal suicide watch.",
+    "Another inmate, Nicholas Tartaglione, is listed as involved in the same incident report, though his specific role is not detailed in the provided text."
+  ],
+  "analyzedAt": "2026-02-19T12:34:25.869Z"
+}

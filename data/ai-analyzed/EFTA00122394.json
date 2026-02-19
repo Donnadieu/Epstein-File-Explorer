@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00122394.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-16",
+  "summary": "This is a brief internal email from August 16, 2019, regarding arranging a contact with an individual referred to as 'M. Thomas'. The sender requests that either the recipient or 'the Captain' make the contact the following week, specifically on Tuesday, as 'MN Edge' will be unavailable. The email suggests a preference for trusted personnel over a Department Head or Acting head for this task.",
+  "persons": [
+    {
+      "name": "M. Thomas",
+      "role": "Contact subject",
+      "category": "other",
+      "context": "The individual who is to be contacted by the email's recipient or 'the Captain' the following week.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Captain",
+      "role": "Captain",
+      "category": "other",
+      "context": "A person, referred to by title, who is authorized along with the email recipient to make contact with M. Thomas.",
+      "mentionCount": 2
+    },
+    {
+      "name": "MN Edge",
+      "role": "Unavailable colleague",
+      "category": "staff",
+      "context": "A colleague who will be out, prompting the need for the Captain or the recipient to make the contact with M. Thomas on Tuesday.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Captain",
+      "person2": "M. Thomas",
+      "relationshipType": "social",
+      "description": "The Captain is instructed to make contact with M. Thomas.",
+      "strength": 1
+    },
+    {
+      "person1": "MN Edge",
+      "person2": "Captain",
+      "relationshipType": "colleague",
+      "description": "MN Edge's unavailability necessitates the Captain taking on a contact task.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-20",
+      "title": "Planned contact with M. Thomas",
+      "description": "A contact is to be made with M. Thomas on the Tuesday following the email (August 20, 2019), as MN Edge will be out.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "M. Thomas",
+        "Captain"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The email is dated August 16, 2019, shortly after Jeffrey Epstein's death in custody on August 10, 2019.",
+    "It shows internal coordination to contact an individual named M. Thomas, with a specific preference for trusted personnel ('you or the Captain') over standard department leadership.",
+    "The reason for the contact and the identity/role of M. Thomas are not specified in the provided text."
+  ],
+  "analyzedAt": "2026-02-19T12:01:41.631Z"
+}

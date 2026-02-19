@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA00117415.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / OIG Interview Memorandum",
+  "dateOriginal": "2021-09-01",
+  "summary": "This is a memorandum from the DOJ Office of the Inspector General documenting a voluntary interview conducted on September 1, 2021, with a Lieutenant from the Federal Bureau of Prisons at the Metropolitan Correctional Center (MCC) New York. The interview is part of an official OIG investigation into the death of inmate Jeffrey Epstein on August 10, 2019. The lieutenant was assigned to the Special Housing Unit on August 9, 2019, the day before Epstein was found unresponsive.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The inmate whose death on August 10, 2019, at the MCC New York is the subject of the OIG investigation. He is referred to by his register number 76318-054.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "BOP Lieutenant, MCC New York Staff",
+      "category": "law enforcement",
+      "context": "A Federal Bureau of Prisons lieutenant assigned to the MCC New York Special Housing Unit on August 9, 2019, who was voluntarily interviewed by the OIG regarding the circumstances surrounding Jeffrey Epstein's death.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Senior Special Agent",
+      "role": "DOJ OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Lieutenant as part of the OIG investigation into Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "DOJ OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Lieutenant alongside the Senior Special Agent.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leonardo Fernandez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate at MCC New York whose quarters history is included as an attachment to the interview report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Preparer",
+      "role": "OIG Report Preparer",
+      "category": "legal",
+      "context": "The individual who prepared this OIG memorandum of investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Reviewer",
+      "role": "OIG Report Reviewer",
+      "category": "legal",
+      "context": "The individual who reviewed this OIG memorandum of investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "OIG Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Signed the OIG memorandum of investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent in Charge",
+      "role": "OIG Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Signed the OIG memorandum of investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Senior Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The Senior Special Agent, along with a Special Agent, conducted a voluntary interview of the BOP Lieutenant as part of the OIG investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The Special Agent, along with a Senior Special Agent, conducted a voluntary interview of the BOP Lieutenant as part of the OIG investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodian-inmate",
+      "description": "The BOP Lieutenant was a staff member assigned to the Special Housing Unit where inmate Jeffrey Epstein was housed prior to his death.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-01",
+      "title": "OIG Interview of BOP Lieutenant",
+      "description": "Senior Special Agent and Special Agent from the DOJ Office of the Inspector General conducted a voluntary, recorded interview of a BOP Lieutenant from MCC New York regarding the death of Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Senior Special Agent",
+        "Special Agent",
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein Found Unresponsive",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center (MCC) New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Lieutenant's Assignment Prior to Epstein's Death",
+      "description": "The interviewed BOP Lieutenant was assigned to the MCC New York Special Housing Unit, where Epstein was housed, the day before Epstein was found dead.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York",
+    "Boston Area Office (DOJ OIG Reporting Office)"
+  ],
+  "keyFacts": [
+    "The DOJ Office of the Inspector General was actively investigating Jeffrey Epstein's death as of September 2021, conducting interviews with prison staff.",
+    "A BOP Lieutenant from the MCC New York Special Housing Unit was interviewed regarding the day (August 9, 2019) before Epstein was found dead.",
+    "The interview was recorded and transcribed, and the report includes several attachments such as daily rosters, activity reports, and emails from August 2019.",
+    "The document is an internal OIG memorandum that states it contains neither recommendations nor conclusions, and its contents are not to be distributed outside the receiving agency."
+  ],
+  "analyzedAt": "2026-02-19T10:18:48.495Z"
+}

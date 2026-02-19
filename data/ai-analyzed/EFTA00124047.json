@@ -1,0 +1,121 @@
+{
+  "fileName": "EFTA00124047.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": "2016-12-12",
+  "summary": "This document is a Capital One auto finance application and approval for a 2015 Jeep Wrangler, submitted by Sergio Amestegui through dealer Major World Chevrolet. It includes the credit application, approval details, and a NADA vehicle valuation report. The document appears to be part of financial records related to vehicle purchases. This document is a New York State vehicle registration/title application and associated insurance certificate for a 2015 Jeep Wrangler, registered to an individual at a Brooklyn address. It includes insurance documentation from Allstate Fire and Casualty Insurance Company and a dealer certification from Major World Chevrolet/Chrysler Jeep Dodge Ram.",
+  "persons": [
+    {
+      "name": "Sergio Amestegui",
+      "role": "Credit Applicant / Vehicle Purchaser",
+      "category": "other",
+      "context": "Individual applying for and approved for auto financing to purchase a 2015 Jeep Wrangler from Major World Chevrolet.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alphonso Clark",
+      "role": "Dealer Representative",
+      "category": "staff",
+      "context": "Listed on the dealer bill of sale document, likely a salesperson or manager at Major World Chevrolet.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Borislay Tabak",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Capital One analyst listed as the Relationship Manager for the auto finance application.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Matthew Paella",
+      "role": "Funding Manager",
+      "category": "staff",
+      "context": "Capital One analyst listed as the Funding Manager for the auto finance application.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jared Shulman",
+      "role": "Insurance Broker",
+      "category": "staff",
+      "context": "Listed as the broker name on the Allstate Fire and Casualty Insurance Company certificate for the insured vehicle.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sergio Amestegui",
+      "person2": "Alphonso Clark",
+      "relationshipType": "customer-salesperson",
+      "description": "Amestegui is the customer purchasing a vehicle from dealer Major World Chevrolet, where Clark is a representative.",
+      "strength": 2
+    },
+    {
+      "person1": "Sergio Amestegui",
+      "person2": "Borislay Tabak",
+      "relationshipType": "financial",
+      "description": "Tabak is the Capital One Relationship Manager who processed Amestegui's auto loan application.",
+      "strength": 2
+    },
+    {
+      "person1": "Sergio Amestegui",
+      "person2": "Matthew Paella",
+      "relationshipType": "financial",
+      "description": "Paella is the Capital One Funding Manager involved in the approval and funding of Amestegui's auto loan.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-12-12",
+      "title": "Auto Loan Application Approved",
+      "description": "Capital One Auto Finance approves Sergio Amestegui's application for financing a 2015 Jeep Wrangler.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Sergio Amestegui",
+        "Borislay Tabak",
+        "Matthew Paella"
+      ]
+    },
+    {
+      "date": "2016-12-12",
+      "title": "Vehicle Insurance Policy Effective",
+      "description": "An insurance policy for a 2015 Jeep Wrangler, registered to an individual in Brooklyn, becomes effective.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jared Shulman"
+      ]
+    },
+    {
+      "date": "2016-12-13",
+      "title": "Insurance Certificate Issued",
+      "description": "Allstate Fire and Casualty Insurance Company issues a certificate of insurance for the vehicle.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Jared Shulman"
+      ]
+    }
+  ],
+  "locations": [
+    "BROOKLYN, NY 11234",
+    "Long Island City, NY 11101",
+    "Major World Chevrolet, L.L.C., 43-40 Northern Blvd., Long Island City, NY 11101",
+    "P. R. BOX 660068 SACRAMENTO, CA 95666",
+    "PO BOX 255605 SACRAMENTO, CA 95865"
+  ],
+  "keyFacts": [
+    "Sergio Amestegui was approved for a Capital One auto loan on December 12, 2016, to finance a used 2015 Jeep Wrangler.",
+    "The application lists Amestegui's employer as the NY STATE ASSEMBLY with an annual salary of $79,500.00 and an occupation listed as 'ASSEMBLER'.",
+    "The vehicle purchase was processed through dealer Major World Chevrolet, with dealer representative Alphonso Clark listed on the bill of sale.",
+    "The loan was approved for $21,392.00 at an APR of 8.64% for a 72-month term, with a $6,000 down payment.",
+    "The document includes a NADA vehicle valuation report dated December 12, 2016, assessing the Jeep's value.",
+    "The document is a vehicle registration application for a 2015 Jeep Wrangler, with a Brooklyn, NY 11234 address listed for the primary registrant.",
+    "Insurance is provided by Allstate Fire and Casualty Insurance Company, with broker Jared Shulman listed.",
+    "The lienholder/finance company is listed as CAPITAL ONE, with an address in Sacramento, CA.",
+    "The associated dealership is Major World Chevrolet/Chrysler Jeep Dodge Ram.",
+    "The primary registrant's name is redacted in the provided text, appearing as blank fields or placeholders."
+  ],
+  "analyzedAt": "2026-02-19T13:21:47.168Z"
+}

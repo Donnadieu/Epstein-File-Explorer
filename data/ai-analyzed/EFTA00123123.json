@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA00123123.pdf",
+  "dataSet": "9",
+  "documentType": "policy/procedure document",
+  "dateOriginal": null,
+  "summary": "This document outlines revised Bureau of Prisons (BOP) policies and procedures at the Metropolitan Correctional Center, New York (MCC-NY) regarding suicide prevention, inmate housing (particularly single-cell placement and cellmate assignments), documentation accuracy, and the management of high-profile inmates and sex offenders. It appears to be a response or reconstruction following an incident, detailing systemic changes to prevent future issues.",
+  "persons": [
+    {
+      "name": "Warden",
+      "role": "Prison Warden",
+      "category": "staff",
+      "context": "The senior official at MCC-NY who is notified of inmates placed on or off suicide watch and determines their housing placement and observation details.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Chief Psychologist",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "Leads the Psychology Department, counsels staff on documentation, monitors log books, provides training, and offers feedback on managing sex offender inmates at executive meetings.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Drug Abuse Coordinator",
+      "role": "Drug Abuse Coordinator",
+      "category": "staff",
+      "context": "A shared supervisory position that counseled a Drug Treatment Specialist (DTS) about documentation errors. The Warden is working to re-establish this as a full-time position.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Drug Treatment Specialist",
+      "role": "Drug Treatment Specialist",
+      "category": "staff",
+      "context": "A staff member who was counseled for incorrectly documenting in a suicide watch log book, though with no ill intent, as she was trying to assist an officer.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Staff Attorney",
+      "role": "Staff Attorney",
+      "category": "legal",
+      "context": "Assists when an inmate's attorney or the court expresses concerns about the inmate, particularly regarding mental health or housing needs.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden, Programs",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "An executive staff member who is notified if there are inconsistencies in the daily SENTRY roster of inmates on suicide watch in the hospital area.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Captain",
+      "role": "Prison Captain",
+      "category": "staff",
+      "context": "Discusses inmate needs in meetings and is to be notified immediately if hourly rounds or log book signings by Lieutenants and Unit Officers are not being conducted, to enforce accountability.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Prison Lieutenant",
+      "category": "staff",
+      "context": "Notified when inmates are removed from suicide watch for cellmate placement. Required to sign suicide watch log books each shift and receive additional training. The SHU Lieutenant examines training sign-in sheets.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Staff Psychologist",
+      "role": "Staff Psychologist",
+      "category": "staff",
+      "context": "Psychology staff members who interview inmates, review documentation, and are to be contacted verbally for mental health concerns. A second Staff Psychologist has been added to help reduce workload.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unit 2 Officer",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Assigned to round the suicide watch area hourly and sign the suicide watch log books during their Unit 2 rounds.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unit Officer",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A general reference to officers who round the suicide area hourly and sign log books. Their failure to conduct rounds triggers notification to the Captain.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Chief Psychologist",
+      "person2": "Drug Treatment Specialist",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Chief Psychologist, along with the Drug Abuse Coordinator, counseled the DTS concerning errors in her documentation in the suicide watch log book.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Chief Psychologist",
+      "relationshipType": "colleagues",
+      "description": "Both are part of the executive staff and collaborate on decisions regarding inmate housing, suicide watch status, and staffing (e.g., re-establishing the Drug Abuse Coordinator position).",
+      "strength": 3
+    },
+    {
+      "person1": "Psychology Staff",
+      "person2": "Lieutenant",
+      "relationshipType": "operational coordination",
+      "description": "Psychology staff verbally notify Lieutenants when inmates are removed from suicide watch for cellmate placement, and both groups receive joint training on procedures.",
+      "strength": 3
+    },
+    {
+      "person1": "Captain",
+      "person2": "Lieutenant",
+      "relationshipType": "chain of command",
+      "description": "The Captain is to be notified if Lieutenants fail to perform required rounds and sign log books, and will then enforce accountability.",
+      "strength": 3
+    },
+    {
+      "person1": "Staff Attorney",
+      "person2": "Inmate's Attorney",
+      "relationshipType": "legal interface",
+      "description": "The Staff Attorney assists when concerns are raised by an inmate's attorney or the court regarding the inmate's treatment or housing.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    {
+      "name": "Metropolitan Correctional Center, New York (MCC-NY)",
+      "context": "The federal detention facility where these revised suicide prevention and inmate management policies are being implemented."
+    },
+    {
+      "name": "Hospital Area (H01)",
+      "context": "The specific area within MCC-NY containing suicide watch cells (H01-001L to H01-004L)."
+    },
+    {
+      "name": "Special Housing Unit (SHU)",
+      "context": "A segregated unit within the prison discussed in meetings and for which specific suicide prevention training is conducted."
+    }
+  ],
+  "keyFacts": [
+    "The Psychology Department has eliminated 'Psychological Observation' status at MCC-NY to avoid confusion about inmate needs, indicating a policy overhaul.",
+    "A system is now in place to prevent single-celling, with specific procedures involving the Warden, Psychology, and Lieutenants to ensure at-risk inmates have cellmates after suicide watch.",
+    "Suicide watch log books are now strictly controlled; only the staff member directly observing the inmate may document in them, and they are monitored daily by the Chief Psychologist.",
+    "The document mentions using 'PSY ALERT codes more frequently with high profile cases and with inmates with a history or charge of a sex offense,' suggesting special protocols for certain inmate categories.",
+    "Legal visits for inmates on suicide watch require prior authorization from Psychology, Lieutenants, and the Captain, and involve continuous staff observation with 15-minute documentation intervals."
+  ],
+  "analyzedAt": "2026-02-19T12:36:05.465Z"
+}

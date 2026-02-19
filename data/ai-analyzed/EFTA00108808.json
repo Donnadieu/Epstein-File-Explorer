@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00108808.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal memorandum/request",
+  "dateOriginal": "2010-06-23",
+  "summary": "This is an FBI Miami Division request to the Records Management Division's Document Conversion Laboratory (DocLab) for scanning and automation assistance regarding telephone records obtained in an obstruction of justice investigation. The records are related to an address book belonging to Jeffrey Epstein's former house manager, which contained names and numbers of potential underage victims. The request includes instructions for processing the data and loading it into the FBI's Telephone Application (TA) repository.",
+  "persons": [
+    {
+      "name": "Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein",
+      "category": "associate",
+      "context": "He was the subject of an obstruction of justice case opened in October 2009. He came into possession of an address book containing names and telephone numbers of potential underage victims of Epstein and attempted to sell it to an Undercover Employee (UCE).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of a child prostitution case",
+      "category": "key figure",
+      "context": "He is identified as the employer of Rodriguez and the central figure in a child prostitution case. The address book in question is believed to contain contact information for his associates and potential underage victims.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the former house manager and butler to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Rodriguez possessed an address book believed to contain information on Epstein's potential underage victims and attempted to sell it, obstructing the investigation into Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10",
+      "title": "Miami Division opens obstruction case",
+      "description": "The FBI's Miami Division opened an obstruction of justice case against Rodriguez, Epstein's former house manager.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Rodriguez"
+      ]
+    },
+    {
+      "date": "2010-06-23",
+      "title": "Request for document processing",
+      "description": "FBI Miami sends a formal request to the DocLab to scan and automate telephone records from an address book related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Winchester, Virginia 22602 (DocLab address: 170 Marcel Drive)"
+  ],
+  "keyFacts": [
+    "An FBI obstruction of justice case was opened in October 2009 against Rodriguez, Jeffrey Epstein's former house manager and butler.",
+    "Rodriguez possessed an address book containing names and telephone numbers believed to belong to additional, previously unknown underage victims of Jeffrey Epstein.",
+    "Rodriguez attempted to sell this address book to an Undercover Employee (UCE) instead of turning it over to law enforcement or attorneys in response to federal subpoenas.",
+    "The FBI requested scanning and data processing of telephone records from this address book (target number 340-771-2024) for incorporation into its centralized Telephone Application (TA) repository.",
+    "The document outlines detailed FBI internal procedures for handling evidence, classification levels (SECRET/UNCLASSIFIED), and coordination between field offices and technical support units like the DocLab and STAO."
+  ],
+  "analyzedAt": "2026-02-19T08:06:58.223Z"
+}

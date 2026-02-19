@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00111489.pdf",
+  "dataSet": "9",
+  "documentType": "service request record",
+  "dateOriginal": "2019-08-03",
+  "summary": "This document is a service request record (#24975) for technical support regarding a RAID system failure at the Metropolitan Correctional Center (MCC) in New York. It details troubleshooting steps for a NICE Vision recording system, indicating a data corruption incident following improper drive replacement procedures.",
+  "persons": [
+    {
+      "name": "Milady",
+      "role": "Person who reported the technical problem",
+      "category": "staff",
+      "context": "Identified as the individual who reported the RAID system failure at the MCC New York facility.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Support Engineer",
+      "role": "Technical support engineer providing guidance",
+      "category": "other",
+      "context": "An engineer from a support company (likely Cognify) who provided steps to rebuild the RAID array via email correspondence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Customer Technician",
+      "role": "Customer technician requesting documentation",
+      "category": "staff",
+      "context": "A technician from SigNet Technologies who requested RAID rebuild documentation in a prior email from February 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "RAID System Failure Reported",
+      "description": "A service request is created after a RAID system at MCC New York shows 2 bad drives, leading to a crash and potential data loss.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Milady"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Improper Drive Replacement Attempt",
+      "description": "An individual attempts to replace the failed RAID drives without proper shutdown, corrupting the video database.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-02-26",
+      "title": "Prior RAID Documentation Request",
+      "description": "A senior customer technician from SigNet Technologies emails support requesting RAID rebuild documentation.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "Senior Customer Technician",
+        "Senior Support Engineer"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "Metropolitan Correctional Center (MCC) New York MS0109",
+    "Bettsville, MD 20705"
+  ],
+  "keyFacts": [
+    "The service request is for a RAID system failure at the Metropolitan Correctional Center (MCC) in New York, a federal detention facility.",
+    "The failure involved a NICE Vision recording system, and improper drive replacement corrupted the video database, potentially causing data loss.",
+    "The incident occurred in August 2019, which is shortly after Jeffrey Epstein's arrest and during his detention at MCC New York.",
+    "The document references prior technical correspondence from February 2019 regarding RAID rebuild procedures.",
+    "The location (150 Park Row, NY) is the address of the MCC New York, where Epstein was held."
+  ],
+  "analyzedAt": "2026-02-19T09:18:28.116Z"
+}

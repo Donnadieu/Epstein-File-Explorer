@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00123420.pdf",
+  "dataSet": "9",
+  "documentType": "evidence custody document",
+  "dateOriginal": "2021-11-18",
+  "summary": "This document is an Office of the Inspector General memo regarding evidence retrieved from the FBI for OIG Case 2019-010614. It details the chain of custody for two log books seized from the Metropolitan Correctional Center (MCC) in 2019, noting the original custody document is missing.",
+  "persons": [
+    {
+      "name": "Special Agent",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "The OIG Special Agent who retrieved evidence from an FBI SA and turned it over to the NYFO Evidence Custodian.",
+      "mentionCount": 2
+    },
+    {
+      "name": "FBI SA",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI Special Agent from whom evidence was retrieved by the OIG SA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SA McGinnis",
+      "role": "Special Agent McGinnis",
+      "category": "law enforcement",
+      "context": "The evidence was transferred to this agent as part of a related OIG case (2019-011073).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "FBI SA",
+      "relationshipType": "professional",
+      "description": "The OIG SA retrieved evidence from the FBI SA as part of an evidence transfer.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "SA McGinnis",
+      "relationshipType": "professional",
+      "description": "Evidence was transferred to SA McGinnis as part of a related OIG investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-21",
+      "title": "Seizure of Log Books from MCC",
+      "description": "Property, including a green Law Enforcement/BOP Staff log book and a green social visiting log book, was seized from the Metropolitan Correctional Center (MCC).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-11-17",
+      "title": "Evidence Retrieved from FBI",
+      "description": "An OIG Special Agent retrieved the seized log book evidence from an FBI SA and turned it over to the NYFO Evidence Custodian.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent",
+        "FBI SA"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "New York Field Office (NYFO)"
+  ],
+  "keyFacts": [
+    "Two log books (a Law Enforcement/BOP Staff log and a social visiting log) were seized from the Metropolitan Correctional Center (MCC) on August 21, 2019.",
+    "The original Evidence Custody Document (ECD) for this seizure (Log #6) cannot be located, creating a gap in the documented chain of custody.",
+    "The evidence was part of OIG Case 2019-010614 and was later transferred as part of a related case, OIG Case 2019-011073.",
+    "The memo from November 18, 2021, documents the retrieval of this evidence from the FBI and its placement into the NYFO evidence room."
+  ],
+  "analyzedAt": "2026-02-19T12:57:39.480Z"
+}

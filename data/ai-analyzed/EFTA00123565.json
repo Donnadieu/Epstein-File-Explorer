@@ -1,0 +1,36 @@
+{
+  "fileName": "EFTA00123565.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-19",
+  "summary": "This is a technical email from Apple to an Assistant United States Attorney (AUSA) regarding the secure delivery of encrypted customer data in response to a legal request. It provides detailed instructions for decrypting and accessing the files using GPG software. The document is part of a law enforcement investigation, case number 2019R01059.",
+  "persons": [
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The recipient of Apple's email, to whom encrypted customer data is being provided in response to a legal request for investigation case 2019R01059.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-09-19",
+      "title": "Apple's Data Production to AUSA",
+      "description": "Apple sends an encrypted file containing customer personally identifying information (PII) to an Assistant United States Attorney in response to a legal request related to case 2019R01059.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "AUSA"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Apple provided encrypted customer PII data to law enforcement (an AUSA) in response to a legal request for case number 2019R01059.",
+    "The data transfer occurred on September 19, 2019, and required the use of GPG encryption software for decryption, with specific technical instructions provided.",
+    "The document demonstrates law enforcement's use of legal processes to obtain digital evidence from technology companies during investigations."
+  ],
+  "analyzedAt": "2026-02-19T13:05:53.308Z"
+}

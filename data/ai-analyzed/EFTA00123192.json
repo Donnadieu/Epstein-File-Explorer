@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA00123192.pdf",
+  "dataSet": "9",
+  "documentType": "incident report",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Federal Bureau of Prisons memorandum from the Metropolitan Correctional Center detailing a possible suicide attempt by inmate Jeffrey Epstein on July 23, 2019. The report describes the incident, Epstein's behavior, and conflicting accounts from Epstein and his cellmate regarding what occurred.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who allegedly attempted suicide; observed lying on his cell floor with a red neck, breathing heavily and snoring, and later exhibited unpredictable behavior.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Nick",
+      "role": "Cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate who reported the incident, stating he found Epstein with a string around his neck and called the guards.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nick",
+      "relationshipType": "cellmate",
+      "description": "Shared a prison cell; Epstein accused Nick of attempting to kill him, while Nick reported finding Epstein with a string around his neck.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Possible Suicide Attempt by Jeffrey Epstein",
+      "description": "At approximately 1:27 a.m., a call for assistance was announced for the Special Housing Unit. Jeffrey Epstein was found lying on his cell floor, breathing heavily with a red neck. He was placed on suicide watch after exhibiting concerning behavior.",
+      "category": "incident",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nick"
+      ]
+    },
+    {
+      "date": "2019-07-22",
+      "title": "Epstein's Legal Visit",
+      "description": "Epstein returned from a legal visit at approximately 8:00 PM, after which staff handed him a copy of the Daily News.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
+    "Special Housing Unit, cell Z05-124LAD",
+    "HA-Unit (suicide watch unit)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found in his cell in a fetal position with a red neck, breathing heavily and snoring, after a reported suicide attempt.",
+    "Epstein accused his cellmate, Nick, of attempting to kill him and harassing him, while Nick claimed he found Epstein with a string around his neck.",
+    "Epstein exhibited unpredictable behavior, including pretending to be unconscious and attempting to fall head-first off his bed while on suicide watch.",
+    "Medical assessment was delayed as no medical staff was available after 10:00 PM; Epstein was later treated for a circular line of erythema at the base of his neck.",
+    "Epstein mentioned that his picture was in the Daily News and that he was reported to be worth seventy-seven million dollars."
+  ],
+  "analyzedAt": "2026-02-19T12:42:11.995Z"
+}

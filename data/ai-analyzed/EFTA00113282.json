@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00113282.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2022-05-31",
+  "summary": "This is a DOJ Office of the Inspector General memorandum documenting a video conference interview conducted on May 31, 2022, with a Medical Examiner from the New York City Office of the Chief Medical Examiner regarding the autopsy of Jeffrey Epstein. The interview is part of an official OIG investigation into Epstein's death by hanging in his cell at the Metropolitan Correctional Center New York on August 10, 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased BOP inmate",
+      "category": "key figure",
+      "context": "The subject of the investigation; found hanged in his cell at MCC New York on August 10, 2019. The Medical Examiner conducted his autopsy.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Doctor-",
+      "role": "Medical Examiner",
+      "category": "witness",
+      "context": "The Medical Examiner from the New York City Office of the Chief Medical Examiner who conducted the autopsy of Jeffrey Epstein on August 11, 2019, and was interviewed by OIG agents.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Special Agent in Charge",
+      "role": "OIG Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Conducted the video conference interview of the Medical Examiner as part of the OIG investigation into Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the video conference interview of the Medical Examiner alongside the Special Agent in Charge.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Doctor-",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional",
+      "description": "Doctor- conducted the autopsy of Jeffrey Epstein on August 11, 2019, as the Medical Examiner.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent in Charge",
+      "person2": "Doctor-",
+      "relationshipType": "investigator-witness",
+      "description": "The Special Agent in Charge interviewed Doctor- as part of the OIG investigation into Epstein's death.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Doctor-",
+      "relationshipType": "investigator-witness",
+      "description": "The Special Agent interviewed Doctor- alongside the Special Agent in Charge as part of the OIG investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found hanged in his assigned cell (Cell 220) in the Special Housing Unit at the Metropolitan Correctional Center New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Autopsy of Jeffrey Epstein",
+      "description": "The Medical Examiner, Doctor-, conducted the autopsy of Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Doctor-"
+      ]
+    },
+    {
+      "date": "2022-05-31",
+      "title": "OIG Interview of Medical Examiner",
+      "description": "Special Agent in Charge and Special Agent from the DOJ OIG conducted a video conference interview of Doctor- regarding the autopsy and investigation into Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Doctor-",
+        "Special Agent in Charge",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center New York, New York (MCC New York)",
+    "Special Housing Unit (SHU) within MCC New York",
+    "Cell 220 (SHU cell at MCC New York)",
+    "New York City Office of the Chief Medical Examiner (OCME), New York, New York"
+  ],
+  "keyFacts": [
+    "The document is a DOJ OIG memorandum from an interview with the Medical Examiner who performed Jeffrey Epstein's autopsy.",
+    "Epstein was found hanged in his assigned cell (Cell 220) in the SHU at MCC New York on August 10, 2019.",
+    "The Medical Examiner's autopsy was conducted on August 11, 2019.",
+    "The OIG interview of the Medical Examiner took place via video conference on May 31, 2022, as part of the ongoing investigation into Epstein's death.",
+    "The report includes attachments such as the autopsy report, pictures of Epstein, pictures of Cell 220, and pictures of the ligature collected as evidence."
+  ],
+  "analyzedAt": "2026-02-19T09:42:45.497Z"
+}

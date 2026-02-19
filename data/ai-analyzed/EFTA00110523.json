@@ -1,0 +1,177 @@
+{
+  "fileName": "EFTA00110523.pdf",
+  "dataSet": "9",
+  "documentType": "Bureau of Prisons internal memorandum",
+  "dateOriginal": "2020-01-27",
+  "summary": "This is a Bureau of Prisons memorandum from the Warden of the Metropolitan Correctional Center (MCC) New York to the Assistant Director of the Reentry Services Division, dated January 27, 2020. It is the institution's formal response to a 'psychological reconstruction' report dated December 27, 2019, concerning inmate Jeffrey Epstein. The document addresses multiple operational and procedural issues raised in the reconstruction, including video monitoring rounds, cellmate assignments, documentation accuracy, telephone calls, staff training, inmate accountability, and log book audits, in the wake of Epstein's death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the Metropolitan Correctional Center New York, register number 76318-054, who is the subject of the psychological reconstruction and this institutional response. The document discusses procedures and incidents related to his incarceration.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Warden",
+      "role": "Warden, MCC New York",
+      "category": "staff",
+      "context": "The author of the memorandum, responding to the psychological reconstruction report on behalf of the Metropolitan Correctional Center New York. The warden's signature is redacted on the referral regarding an unmonitored phone call for Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Associate Warden",
+      "role": "Associate Warden of Programs",
+      "category": "staff",
+      "context": "Mentioned in the context of housing decisions and maintaining documentation (checklists) for inmates with psychological concerns.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Chief Psychologist",
+      "role": "Chief Psychologist or Acting Chief Psychologist",
+      "category": "staff",
+      "context": "Attends institutional meetings to provide recommendations on housing for inmates with mental health or suicide risks. Also conducted follow-up suicide prevention trainings.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Captain",
+      "role": "Captain",
+      "category": "staff",
+      "context": "Responsible for reviewing a two-hour block of SHU surveillance video weekly to check adherence to 30-minute rounds and count procedures, and submitting an assurance memo.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Correctional Services Administrator",
+      "role": "Correctional Services Administrator (CSA)",
+      "category": "staff",
+      "context": "A recipient of the Captain's video review assurance memo.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Institutional Duty Officer",
+      "role": "Institutional Duty Officer (IDO)",
+      "category": "staff",
+      "context": "Required to review six hours of SHU surveillance video for accuracy of 30-minute rounds, documented in a weekly report.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Lieutenant",
+      "category": "staff",
+      "context": "Mentioned in the context of possibly facilitating two telephone calls for Epstein and in relation to training and log book checks.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Activities Lieutenant",
+      "role": "Activities Lieutenant",
+      "category": "staff",
+      "context": "Responsible for checking all Front Lobby log books and addressing discrepancies.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unit Manager",
+      "role": "Unit Manager",
+      "category": "staff",
+      "context": "Receives emails documenting discrepancies from daily bed book counts for corrective action.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SIA",
+      "role": "Staff member (likely Systems Integration Analyst or similar)",
+      "category": "staff",
+      "context": "Downloads SHU surveillance footage for the Institutional Duty Officers to review.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Warden",
+      "relationshipType": "inmate-warden",
+      "description": "The Warden is the head of the institution where Epstein was incarcerated and is formally responding to a report about his case.",
+      "strength": 3
+    },
+    {
+      "person1": "Chief Psychologist",
+      "person2": "Associate Warden",
+      "relationshipType": "colleague",
+      "description": "The Chief Psychologist consults with the Associate Warden and other executive staff on housing decisions for inmates with psychological concerns.",
+      "strength": 3
+    },
+    {
+      "person1": "Captain",
+      "person2": "Institutional Duty Officer",
+      "relationshipType": "colleague",
+      "description": "Both are involved in the video review process for the Special Housing Unit (SHU), with the Captain reviewing 2 hours and IDOs reviewing 6 hours.",
+      "strength": 2
+    },
+    {
+      "person1": "Activities Lieutenant",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Captain ensures the Activities Lieutenant's log book checks are included in the Lieutenant's Daily Log.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Incident in Cell",
+      "description": "An incident occurred involving Jeffrey Epstein where it was unclear if he engaged in self-directed violence or was assaulted. An SIS investigation was conducted but could not determine the cause.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-29",
+      "title": "Referral for Unmonitored Phone Call",
+      "description": "The Warden signed a referral to the Office of Internal Affairs regarding a failure to follow policy in allowing Epstein to complete an unmonitored phone call.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Warden"
+      ]
+    },
+    {
+      "date": "2019-09-25",
+      "title": "Log Book Audit",
+      "description": "An audit of various visitor and attorney log books at MCC New York was conducted, revealing multiple documentation deficiencies.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-27",
+      "title": "Psychological Reconstruction Report",
+      "description": "A 'psychological reconstruction' report concerning inmate Jeffrey Epstein was completed, prompting this institutional response.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-01-06",
+      "title": "Start of Annual Training",
+      "description": "The institution began its Annual Training for all staff, which included new guidance on report writing and incident documentation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center New York, New York 10007",
+    "Special Housing Unit (SHU)"
+  ],
+  "keyFacts": [
+    "The document is a response to a 'psychological reconstruction' of Jeffrey Epstein dated December 27, 2019, indicating a post-mortem review of procedures and incidents related to his incarceration.",
+    "It reveals a prior incident on July 23, 2019, involving Epstein where it was undetermined if he was assaulted or engaged in self-directed violence, and notes a 'local bias' among some staff in presuming it was self-harm.",
+    "A referral was made to the Office of Internal Affairs on August 29, 2019, regarding a policy violation for allowing Epstein an unmonitored phone call, which was pending as of this memo.",
+    "The institution implemented new procedures including weekly video reviews by a Captain and IDOs to ensure 30-minute rounds in the SHU, and daily bed book counts by Executive Staff.",
+    "An audit of log books revealed significant documentation failures, including missing pat search records and incomplete attorney logs, leading to new corrective measures."
+  ],
+  "analyzedAt": "2026-02-19T09:06:34.751Z"
+}

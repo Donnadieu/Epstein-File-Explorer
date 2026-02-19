@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00123195.pdf",
+  "dataSet": "9",
+  "documentType": "incident report",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Metropolitan Correctional Center memorandum detailing a suicide attempt by inmate Jeffrey Epstein on July 23, 2019. Staff responded to his cell after his cellmate reported the incident, found Epstein with a homemade rope around his neck, and performed life-saving measures before he was removed from the unit.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who attempted suicide by hanging in his cell in the Special Housing Unit.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Wm Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Epstein's cellmate who alerted correctional officers to Epstein's suicide attempt.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ops Lt.",
+      "role": "Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "The recipient of the memorandum and a supervisor who arrived to assist during the incident.",
+      "mentionCount": 2
+    },
+    {
+      "name": "S/O",
+      "role": "Security Officer",
+      "category": "law enforcement",
+      "context": "A security officer who heard the noise and assisted in responding to the incident.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Wm Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "They were cellmates in the Special Housing Unit at the Metropolitan Correctional Center.",
+      "strength": 3
+    },
+    {
+      "person1": "S/O",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The security officer responded to the incident, entered Epstein's cell, and performed chest compressions.",
+      "strength": 2
+    },
+    {
+      "person1": "Ops Lt.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "supervisor-inmate",
+      "description": "The Operations Lieutenant arrived to assist during the suicide attempt response.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Suicide Attempt in MCC",
+      "description": "Jeffrey Epstein attempted to hang himself in his cell at the Metropolitan Correctional Center using a homemade orange rope. His cellmate alerted officers, who intervened and performed life-saving measures.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Wm Tartaglione",
+        "S/O",
+        "Ops Lt."
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York",
+    "Special Housing Unit, M tier, Cell 124"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein attempted suicide by hanging in his cell at the Metropolitan Correctional Center on July 23, 2019.",
+    "The attempt was discovered by his cellmate, Wm Tartaglione, who alerted correctional officers.",
+    "Epstein was found with an orange homemade rope around his neck, was breathing but unresponsive.",
+    "Correctional staff performed chest compressions and removed him from the Special Housing Unit.",
+    "This incident occurred approximately three weeks before Epstein's death in the same facility."
+  ],
+  "analyzedAt": "2026-02-19T12:42:41.997Z"
+}

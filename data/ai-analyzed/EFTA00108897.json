@@ -1,0 +1,62 @@
+{
+  "fileName": "EFTA00108897.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2010-11-09",
+  "summary": "This FBI 302 document records an investigation conducted on November 9, 2010, regarding the incarceration history of inmates Berry Kessler and Steven Hoffenberg. The investigation, involving a paralegal from the Federal Correctional Complex in Coleman, Florida, confirmed that Kessler and Hoffenberg were never housed in the same BOP facilities during their respective periods of incarceration.",
+  "persons": [
+    {
+      "name": "Berry Kessler",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Mentioned as an inmate with a BOP number whose incarceration records were reviewed to determine if he was ever housed in the same facility as Steven Hoffenberg.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steven Hoffenberg",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "Mentioned as an inmate with a BOP number whose incarceration history was investigated to see if he was ever housed with Berry Kessler.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Green",
+      "role": "BOP Paralegal/Contact",
+      "category": "staff",
+      "context": "Advised via phone call that inmates Berry Kessler and Steven Hoffenberg were never housed in the same BOP facilities during their incarcerations.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Berry Kessler",
+      "person2": "Steven Hoffenberg",
+      "relationshipType": "co-inmate (investigated)",
+      "description": "The subject of an investigation to determine if they were ever incarcerated together in the same BOP facility.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2010-11-09",
+      "title": "Investigation into Incarceration History",
+      "description": "Special Agent conducted an investigation, involving a phone call with BOP paralegal Green, to review BOP records and determine if inmates Berry Kessler and Steven Hoffenberg were ever housed together.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Berry Kessler",
+        "Steven Hoffenberg",
+        "Green"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Correctional Complex, Coleman, Florida"
+  ],
+  "keyFacts": [
+    "An investigation was conducted on November 9, 2010, regarding the incarceration of Berry Kessler and Steven Hoffenberg.",
+    "BOP paralegal Green advised that Kessler and Hoffenberg were never housed in the same BOP facilities during their respective periods of incarceration.",
+    "The inmate records for both individuals were obtained and placed in the case file."
+  ],
+  "analyzedAt": "2026-02-19T08:17:01.426Z"
+}

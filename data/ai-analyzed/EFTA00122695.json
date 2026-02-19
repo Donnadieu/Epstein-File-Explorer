@@ -1,0 +1,136 @@
+{
+  "fileName": "EFTA00122695.pdf",
+  "dataSet": "9",
+  "documentType": "incident timeline report",
+  "dateOriginal": "August 9-13, 2019",
+  "summary": "This document is a detailed timeline of events surrounding the death of Jeffrey Epstein at the Metropolitan Correctional Center (MCC) in New York. It chronicles his activities on August 9, 2019, the discovery of his unresponsive body on August 10, the emergency response, notifications to officials, and subsequent investigative actions by the FBI and OIG.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive in his cell on August 10, 2019, and later pronounced dead. The timeline details his activities and the response to his medical emergency.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Reyes Efrain",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate who departed for court on the morning of August 9, 2019, as noted at the beginning of the timeline.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Berman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge was notified of the incident at 10:00 am on August 10 and was provided a press release at 11:15 am.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kerwin John",
+      "role": "OIG Agent",
+      "category": "law enforcement",
+      "context": "An OIG agent who arrived at the institution on August 11, 2019, and departed with two computers from the SHU.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Guido Modano",
+      "role": "OIG Agent",
+      "category": "law enforcement",
+      "context": "An OIG agent who arrived with Agent Kerwin John on August 11, 2019, and departed later that afternoon.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Reyes Efrain",
+      "relationshipType": "cellmate",
+      "description": "Reyes Efrain is explicitly identified as Epstein's cellmate in the timeline.",
+      "strength": 3
+    },
+    {
+      "person1": "Kerwin John",
+      "person2": "Guido Modano",
+      "relationshipType": "colleague",
+      "description": "Both are OIG agents who arrived together at the institution on August 11, 2019, to conduct investigative work.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Final Day of Attorney Visits",
+      "description": "Epstein spent the day in attorney conferences from 8:30 am until 6:45 pm. At 7:00 pm, he was provided a social call and was reported to be in good spirits.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein Unresponsive",
+      "description": "At 6:33 am, a body alarm was activated. Staff found Epstein unresponsive in his cell. CPR was initiated, EMS was called, and he was transported to Beekman Hospital.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Pronounced Dead",
+      "description": "At 7:36 am, the ER physician reported the official time of death. Next of kin (brother) was notified at 11:00 am.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Investigative Notifications and Arrivals",
+      "description": "Multiple agencies were notified, including the USMS, FBI, AUSA, OIG, and Judge Berman. The FBI and OIG arrived at the institution to begin investigations.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Berman"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Body Released for Autopsy",
+      "description": "At 12:15 pm, Epstein's body was released to the Medical Examiner (ME) for an autopsy.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "OIG Agents Collect Evidence",
+      "description": "OIG Agents Kerwin John and Guido Modano arrived, and Agent Kerwin John departed with two computers from the Special Housing Unit (SHU).",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Kerwin John",
+        "Guido Modano"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "Special Housing Unit (SHU)",
+    "Beekman Hospital"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at the MCC New York SHU at 6:33 am on Saturday, August 10, 2019.",
+    "Epstein had been in 'good spirits' during a social call at 7:00 pm the night before (August 9) and had spent the prior day in attorney conferences.",
+    "His cellmate, Reyes Efrain, had departed for court on the morning of August 9, 2019.",
+    "The official time of death was reported by an ER physician at 7:36 am on August 10, 2019, after life-saving measures failed.",
+    "Investigative actions began immediately, with the FBI and OIG notified and arriving on site, and computer hard drives from the SHU were removed and replaced on the night of August 10-11."
+  ],
+  "analyzedAt": "2026-02-19T12:22:42.133Z"
+}

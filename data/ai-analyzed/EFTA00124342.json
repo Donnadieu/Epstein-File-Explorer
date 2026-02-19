@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00124342.pdf",
+  "dataSet": "9",
+  "documentType": "preservation confirmation letter",
+  "dateOriginal": "2019-08-15",
+  "summary": "A confirmation letter from Sprint Corporate Security to the U.S. Attorney's Office acknowledging receipt and compliance with a preservation request for records related to target phone numbers. It details the types of records preserved (stored content, IP connection logs, call detail records with cell site info, subscriber information) and outlines Sprint's data retention policies.",
+  "persons": [
+    {
+      "name": "Nicolas Roos",
+      "role": "Recipient of preservation confirmation",
+      "category": "legal",
+      "context": "Addressed in the letter from Sprint regarding the preservation of records for a case. Likely a prosecutor or legal official with the U.S. Attorney's Office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steven Hayes",
+      "role": "Subpoena Specialist, Sprint Corporate Security",
+      "category": "staff",
+      "context": "The Sprint employee who signed the confirmation letter, detailing the records preserved in response to a request from the U.S. Attorney's Office.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steven Hayes",
+      "person2": "Nicolas Roos",
+      "relationshipType": "correspondence",
+      "description": "Hayes, representing Sprint Corporate Security, is formally responding to and confirming compliance with a legal preservation request from Roos, who is likely with the U.S. Attorney's Office.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "Preservation Request Acknowledgment",
+      "description": "Sprint Corporate Security confirms receipt and completion of a search in response to a preservation request from the U.S. Attorney's Office, preserving records for specified target numbers.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Nicolas Roos",
+        "Steven Hayes"
+      ]
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office One Saint Andrew's Plaza New York, NY 10007"
+  ],
+  "keyFacts": [
+    "Sprint preserved records including stored content, IP connection logs, call detail records with cell site information, and subscriber information for target numbers in case 2019R0159.",
+    "The preservation request was submitted by the U.S. Attorney's Office on August 15, 2019, indicating active investigative steps related to the Epstein case at that time.",
+    "Sprint's data retention policy for CDMA networks is detailed: call detail records with incoming digits and cell site info are stored online for 90 days to 18 months; older records exist only in customer bill format without location data.",
+    "The document highlights the legal process (requiring a warrant or court order under 18 U.S.C. § 2703) for law enforcement to obtain the content of stored communications from telecom providers."
+  ],
+  "analyzedAt": "2026-02-19T13:29:01.039Z"
+}

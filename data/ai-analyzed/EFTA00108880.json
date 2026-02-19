@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00108880.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2010-11-18",
+  "summary": "This is an FBI communication from New York to Miami regarding the interview of interior designer Robert Couturier on November 16, 2010. Couturier described being hired by Jeffrey Epstein to decorate homes, but declined the job after Epstein requested a room with four beds and computers for visiting girls, which made Couturier uncomfortable. The document includes details of their financial dispute and settlement.",
+  "persons": [
+    {
+      "name": "Robert Couturier",
+      "role": "Interior Designer interviewed by FBI",
+      "category": "witness",
+      "context": "Interviewed by the FBI regarding his professional interactions with Jeffrey Epstein. He was hired to design Epstein's homes but declined the job after Epstein described plans for a room with multiple beds and computers for girls.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation, client of Couturier",
+      "category": "key figure",
+      "context": "Hired Robert Couturier to decorate his Manhattan and U.S. Virgin Islands homes. Described plans for a room with four beds and computers for visiting girls, which led Couturier to decline the job. Later sued Couturier over a deposit.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Robert Couturier",
+      "relationshipType": "employer-employee",
+      "description": "Epstein hired Couturier as an interior designer to decorate his homes in Manhattan and the U.S. Virgin Islands.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Robert Couturier",
+      "relationshipType": "financial",
+      "description": "Epstein paid Couturier a $50,000 deposit, then sued him when Couturier declined the job. They later settled, with Couturier returning $15,000.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2010-11-16",
+      "title": "FBI Interview of Robert Couturier",
+      "description": "The FBI interviewed interior designer Robert Couturier at his New York design studio regarding his interactions with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Couturier"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein's Design Request",
+      "description": "Jeffrey Epstein described to Robert Couturier his plans for a room specifically for girls, to be equipped with four beds and computers with Internet connectivity, citing that 'all these girls were on Facebook and MySpace all the time'.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Robert Couturier"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Financial Dispute and Settlement",
+      "description": "After Couturier declined the job, Epstein sued him to recover a $50,000 deposit. To avoid lengthy litigation, Couturier settled by returning $15,000 to Epstein.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Robert Couturier"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "U.S. Virgin Islands",
+    "Manhattan"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein described to interior designer Robert Couturier his plans for a room specifically for visiting girls, to be equipped with four beds and computers with Internet connectivity.",
+    "Epstein told Couturier that 'all these girls were on Facebook and MySpace all the time' and he wanted to make them comfortable.",
+    "Couturier's discomfort with this request was a primary reason he declined to work for Epstein.",
+    "Epstein paid Couturier a $50,000 deposit, sued him when he declined the job, and they later settled with Couturier returning $15,000.",
+    "The FBI interview was part of the Miami Division's investigation into Epstein, referenced as case 72-MM-113327 regarding obstruction of justice."
+  ],
+  "analyzedAt": "2026-02-19T08:14:48.954Z"
+}

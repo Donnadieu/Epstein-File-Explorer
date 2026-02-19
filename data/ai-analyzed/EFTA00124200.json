@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00124200.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena response",
+  "dateOriginal": "2019-09-16",
+  "summary": "This document is Experian's response to a federal grand jury subpoena from the U.S. Attorney's Office for the Southern District of New York, dated August 30, 2019. Experian states it cannot locate credit records for two individuals (one name redacted and Tova A. Noel) but encloses the record for Michael A. Thomas. The subpoena seeks financial account information for these individuals in connection with an investigation into alleged violations of 18 U.S.C. §§ 1791 and 201.",
+  "persons": [
+    {
+      "name": "Rick V. Haas",
+      "role": "Custodian of Records at Experian Consumer Affairs",
+      "category": "staff",
+      "context": "Signs the response letter to the U.S. Attorney's Office, stating Experian cannot locate credit records for two individuals and encloses a record for Michael A. Thomas.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tova A. Noel",
+      "role": "Subject of grand jury subpoena",
+      "category": "other",
+      "context": "Named in the subpoena rider as an individual for whom the grand jury seeks all financial account information and credit reports. Experian states it cannot locate her credit records.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael A. Thomas",
+      "role": "Subject of grand jury subpoena",
+      "category": "other",
+      "context": "Named in the subpoena rider as an individual for whom the grand jury seeks all financial account information and credit reports. Experian encloses his record in its response.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Signed the grand jury subpoena dated August 30, 2019, as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Tova A. Noel",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, signed the grand jury subpoena seeking financial records for Noel as part of an investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Michael A. Thomas",
+      "relationshipType": "investigator-subject",
+      "description": "Berman, as U.S. Attorney, signed the grand jury subpoena seeking financial records for Thomas as part of an investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Rick V. Haas",
+      "person2": "Tova A. Noel",
+      "relationshipType": "record custodian-subject",
+      "description": "Haas, as Experian's Custodian of Records, responded to the subpoena regarding Noel's credit records, stating they could not be located.",
+      "strength": 2
+    },
+    {
+      "person1": "Rick V. Haas",
+      "person2": "Michael A. Thomas",
+      "relationshipType": "record custodian-subject",
+      "description": "Haas, as Experian's Custodian of Records, responded to the subpoena regarding Thomas's credit records and enclosed his record.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-30",
+      "title": "Grand Jury Subpoena Issued",
+      "description": "A federal grand jury subpoena is issued by the U.S. Attorney's Office for the Southern District of New York to Experian, demanding financial account information for Tova A. Noel, Michael A. Thomas, and another individual.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Tova A. Noel",
+        "Michael A. Thomas"
+      ]
+    },
+    {
+      "date": "2019-09-13",
+      "title": "Scheduled Grand Jury Appearance",
+      "description": "The subpoena commanded an appearance before the grand jury at the U.S. Courthouse in Manhattan. The response indicates compliance by producing records instead.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Rick V. Haas"
+      ]
+    },
+    {
+      "date": "2019-09-16",
+      "title": "Experian's Subpoena Response",
+      "description": "Experian, via Rick V. Haas, responds to the grand jury subpoena, stating it cannot locate records for two individuals but encloses the record for Michael A. Thomas.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Rick V. Haas",
+        "Tova A. Noel",
+        "Michael A. Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "701 Experian Parkway, Allen, Texas 75013",
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, NY"
+  ],
+  "keyFacts": [
+    "A federal grand jury subpoena was issued on August 30, 2019, seeking financial records for Tova A. Noel, Michael A. Thomas, and at least one other individual (name redacted) as part of an investigation into alleged violations of 18 U.S.C. §§ 1791 and 201.",
+    "Experian responded on September 16, 2019, stating it could not locate credit records for Tova A. Noel and the other redacted individual but did provide the record for Michael A. Thomas.",
+    "The subpoena was signed by then-U.S. Attorney Geoffrey S. Berman for the Southern District of New York, indicating federal investigative activity in September 2019 related to the Epstein case or associated matters.",
+    "The document shows the use of grand jury power to obtain credit reports from a major consumer credit bureau as part of a federal investigation.",
+    "The response indicates that at least one individual's name (the first listed on the rider) is redacted in the released document."
+  ],
+  "analyzedAt": "2026-02-19T13:27:00.823Z"
+}

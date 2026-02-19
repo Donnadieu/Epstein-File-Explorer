@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA00117618.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / OIG interview memorandum",
+  "dateOriginal": "2022-04-07",
+  "summary": "This is a memorandum from the DOJ Office of the Inspector General documenting a voluntary interview of a Federal Bureau of Prisons Communications Technician from the Metropolitan Correctional Center (MCC) New York. The interview was conducted as part of the OIG's investigation into the death of inmate Jeffrey Epstein at MCC New York. The document lists attachments including the interview transcript and related emails and records.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The subject of the OIG investigation; he died while housed at the Metropolitan Correctional Center (MCC) New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Communications Technician",
+      "role": "Electronics Technician, Federal Bureau of Prisons",
+      "category": "witness",
+      "context": "A BOP employee at MCC New York who was voluntarily interviewed by the OIG regarding the investigation into Jeffrey Epstein's death.",
+      "mentionCount": 4
+    },
+    {
+      "name": "ASAC",
+      "role": "Assistant Special Agent in Charge, OIG",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Communications Technician along with a Special Agent.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, OIG",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Communications Technician along with an ASAC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Lieutenant, MCC New York",
+      "category": "staff",
+      "context": "Author of a memorandum dated August 10, 2019, which is listed as an attachment to the report.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ASAC",
+      "person2": "Communications Technician",
+      "relationshipType": "interviewer-witness",
+      "description": "ASAC, along with a Special Agent, conducted a voluntary interview of the Communications Technician as part of the OIG investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Communications Technician",
+      "relationshipType": "interviewer-witness",
+      "description": "Special Agent, along with an ASAC, conducted a voluntary interview of the Communications Technician as part of the OIG investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Communications Technician",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The Communications Technician was an Electronics Technician at MCC New York when Epstein was housed there.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-04-07",
+      "title": "OIG Interview of BOP Communications Technician",
+      "description": "Assistant Special Agent in Charge (ASAC) and a Special Agent from the DOJ Office of the Inspector General conducted a voluntary, recorded interview of a BOP Communications Technician from MCC New York regarding the death of Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "ASAC",
+        "Special Agent",
+        "Communications Technician"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Lieutenant's Memorandum",
+      "description": "A memorandum was written by a Lieutenant at MCC New York; it is attached to the OIG report.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein, inmate register number 76318-054, died while housed at the Metropolitan Correctional Center (MCC) New York, prompting an OIG investigation.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York",
+    "OIG's New York Field Office"
+  ],
+  "keyFacts": [
+    "The DOJ Office of the Inspector General conducted a voluntary interview of a BOP Communications Technician from MCC New York as part of its investigation into Jeffrey Epstein's death.",
+    "The interviewed individual was the Electronics Technician at MCC New York when Epstein was housed there.",
+    "The interview was recorded and transcribed on April 7, 2022.",
+    "The report includes multiple email attachments from 2019 regarding camera systems, deliveries, and technical issues at MCC New York.",
+    "The document is labeled 'LIMITED OFFICIAL USE' and contains neither recommendations nor conclusions of the OIG."
+  ],
+  "analyzedAt": "2026-02-19T10:28:19.372Z"
+}

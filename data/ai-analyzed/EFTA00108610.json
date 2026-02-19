@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA00108610.pdf",
+  "dataSet": "9",
+  "documentType": "FBI investigative memo",
+  "dateOriginal": "2009-10-28",
+  "summary": "An FBI memo detailing an investigation into Alfredo Rodriguez, a former employee of Jeffrey Epstein, who attempted to sell documents related to Epstein's civil case to attorney Bradley Edwards for $50,000. The memo outlines a plan for an undercover operation to record Rodriguez and complete the transaction as evidence of obstruction of justice.",
+  "persons": [
+    {
+      "name": "Bradley James Edwards",
+      "role": "Attorney representing plaintiffs suing Jeffrey Epstein",
+      "category": "legal",
+      "context": "Attorney who was contacted by Alfredo Rodriguez and reported the attempt to sell documents; he will facilitate an undercover operation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former employee of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Attempted to sell documents related to the Epstein civil case to attorney Bradley Edwards for $50,000, leading to an FBI obstruction of justice investigation.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of civil lawsuit",
+      "category": "key figure",
+      "context": "The defendant in a civil case for which Rodriguez possessed documents he tried to sell.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael J. Donohoe",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent associated with the investigation, listed as a contact on the memo.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gavin Gumbinner",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent associated with the investigation, listed as a contact on the memo.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Frank Navas",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent associated with the investigation, listed as a contact on the memo.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Santino",
+      "role": "Undercover Employee (UCE)",
+      "category": "law enforcement",
+      "context": "Undercover FBI employee introduced to Rodriguez to complete the document transaction and collect evidence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was an employee for Epstein, as stated in the document.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "legal-adversary",
+      "description": "Edwards, as an attorney for plaintiffs suing Epstein, deposed and served a subpoena on Rodriguez, who then attempted to sell him documents.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Edwards is an attorney representing four female individuals who are suing Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Santino",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "investigative",
+      "description": "Santino, as an undercover employee, was introduced to Rodriguez to complete the document transaction and collect criminal evidence.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Rodriguez contacts Edwards to sell documents",
+      "description": "Alfredo Rodriguez contacted attorney Bradley Edwards and attempted to sell him documents related to the Jeffrey Epstein civil case for $50,000.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-28",
+      "title": "FBI authorizes undercover operation",
+      "description": "The FBI memo outlines a plan for an undercover employee to contact Rodriguez, record conversations, and complete the document transaction to gather evidence of obstruction of justice.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Paul Santino",
+        "Bradley James Edwards",
+        "Michael J. Donohoe",
+        "Gavin Gumbinner"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Florida",
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents related to Epstein's civil case to attorney Bradley Edwards for $50,000 in August 2009.",
+    "Bradley Edwards, representing plaintiffs suing Epstein, had previously deposed Rodriguez and served him with a federal subpoena for the documents.",
+    "The FBI initiated an undercover operation, involving an undercover employee (Paul Santino), to record Rodriguez and complete the transaction as evidence of obstruction of justice.",
+    "The investigation was documented under FBI case number 72-MM-113327 and involved multiple FBI agents from the Miami field office.",
+    "The memo indicates the undercover operation was approved for consensual monitoring and evidence collection over a 90-day period."
+  ],
+  "analyzedAt": "2026-02-19T07:44:49.753Z"
+}

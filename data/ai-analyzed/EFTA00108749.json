@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00108749.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal request form",
+  "dateOriginal": "2010-06-22",
+  "summary": "This is an FBI internal request form from the Miami Division to the Document Conversion Laboratory (DocLab) and Special Technologies and Applications Office (STAG) to process telephone records related to the obstruction of justice case against Alfredo Rodriguez. The document reveals Rodriguez, Jeffrey Epstein's former house manager, attempted to sell an address book believed to contain contact information for additional underage victims rather than surrender it to authorities.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein; subject of obstruction of justice case",
+      "category": "associate",
+      "context": "The subject of the FBI's obstruction of justice investigation. He allegedly came into possession of an address book containing names and numbers of potential underage victims of Epstein and attempted to sell it.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of a child prostitution case",
+      "category": "key figure",
+      "context": "Described as the subject of a child prostitution case for whom Rodriguez worked. The address book in Rodriguez's possession is believed to contain information related to Epstein's underage victims.",
+      "mentionCount": 2
+    },
+    {
+      "name": "John Sinskie",
+      "role": "FBI Special Technology contact",
+      "category": "law enforcement",
+      "context": "Listed as the 'Special Technology Attn' contact in the document's header, indicating his role in the technical processing request.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the former house manager and butler to Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Rodriguez possessed an address book believed to contain information on Epstein's underage victims and attempted to sell it, obstructing the investigation into Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10",
+      "title": "FBI opens obstruction case against Rodriguez",
+      "description": "Miami Division opened an obstruction of justice case against Alfredo Rodriguez.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2010-06-22",
+      "title": "FBI requests document conversion for telephone records",
+      "description": "The FBI Miami Division submits a formal request to the Document Conversion Laboratory to scan and process telephone records related to the Rodriguez/Epstein investigation for incorporation into the Telephone Application (TA) database.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Winchester, Virginia 22602 (FBI DocLab address)",
+    "Miami (FBI Division office)"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Epstein's former house manager, came into possession of an address book believed to contain names and telephone numbers of additional, previously unknown underage victims of Jeffrey Epstein.",
+    "Rodriguez attempted to sell the address book rather than turn it over to law enforcement or attorneys in response to federal subpoenas, leading to an FBI obstruction of justice case against him opened in October 2009.",
+    "The FBI is processing telephone records (target number 323-314-4043) from the address book, believed to belong to Epstein, his associates, or potential underage victims.",
+    "The document is a formal request for the FBI's Document Conversion Laboratory to scan and automate these records for integration into the Bureau-wide 'Telephone Application' (TA) investigative database.",
+    "The records are considered unclassified, and the processing is part of a project called 'Baleen Sweep'."
+  ],
+  "analyzedAt": "2026-02-19T08:02:36.646Z"
+}

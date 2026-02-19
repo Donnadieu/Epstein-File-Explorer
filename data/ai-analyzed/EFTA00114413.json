@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00114413.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / OIG interview memorandum",
+  "dateOriginal": "2021-06-14",
+  "summary": "This is a memorandum documenting a voluntary interview conducted by the DOJ Office of the Inspector General with a BOP Lieutenant regarding the death of inmate Jeffrey Epstein at the Metropolitan Correctional Center in New York. The document references attached interview recordings, transcripts, and prison records from August 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The subject of the OIG investigation; a BOP inmate who died while housed at MCC New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Operations Lieutenant at MCC New York",
+      "category": "law enforcement",
+      "context": "A BOP lieutenant interviewed by OIG Senior Special Agent regarding the circumstances surrounding Jeffrey Epstein's death while in custody.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Senior Special Agent",
+      "role": "OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the voluntary interview of the BOP Lieutenant as part of the OIG investigation into Epstein's death.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Participated in or is referenced in the interview process; part of the OIG investigation team.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "OIG Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Reviewed the prepared memorandum of the interview.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Senior Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The Senior Special Agent conducted a voluntary interview of the Lieutenant as part of the OIG investigation into Epstein's death.",
+      "strength": 4
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The Lieutenant was an Operations Lieutenant at the MCC New York when Epstein was housed there, placing him in a position of custodial responsibility.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-06-14",
+      "title": "OIG Interview of BOP Lieutenant",
+      "description": "Senior Special Agent conducted a voluntary, recorded interview of a BOP Lieutenant regarding the death of Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Senior Special Agent",
+        "Lieutenant",
+        "Special Agent"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Prison Counts and Rosters",
+      "description": "Referenced prison documents (Daily Assignment Rosters, Count documentation) from the day before Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Prison Counts and Rosters",
+      "description": "Referenced prison documents (Daily Assignment Roster, Count documentation) from the day of Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York",
+    "Boston Area Office (DOJ OIG reporting office)"
+  ],
+  "keyFacts": [
+    "The DOJ Office of the Inspector General conducted an investigation into the death of BOP inmate Jeffrey Epstein.",
+    "A voluntary, recorded interview was conducted with a BOP Operations Lieutenant who was on duty when Epstein was housed at MCC New York.",
+    "The investigation gathered specific prison records from August 9-10, 2019, including daily assignment rosters and inmate count documentation.",
+    "The document is an internal OIG memorandum that contains no recommendations or conclusions, and its distribution is restricted."
+  ],
+  "analyzedAt": "2026-02-19T09:52:07.114Z"
+}

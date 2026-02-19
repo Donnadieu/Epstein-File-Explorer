@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00108607.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 (Notification of Authority Granted for Use of Electronic Monitoring Equipment)",
+  "dateOriginal": "2009-10-28",
+  "summary": "This is an FBI FD-759 form requesting authority for consensual electronic monitoring in the investigation of Alfredo Rodriguez for obstruction of justice. The document details that Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000, despite being under subpoena to produce them.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Subject of Investigation / Former Epstein Employee",
+      "category": "associate",
+      "context": "Former employee of Jeffrey Epstein who is attempting to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000, despite being under a federal subpoena to produce them.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bradley James Edwards",
+      "role": "Attorney / Consenting Party for Monitoring",
+      "category": "legal",
+      "context": "Attorney representing four female plaintiffs suing Jeffrey Epstein. He was contacted by Alfredo Rodriguez and is cooperating with the FBI by making consensual calls to Rodriguez to facilitate an undercover operation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant in Civil Lawsuit",
+      "category": "key figure",
+      "context": "The subject of a civil lawsuit brought by four female individuals represented by Bradley Edwards. His former employee, Alfredo Rodriguez, is trying to sell documents related to this case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez is identified as a former employee of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Bradley James Edwards",
+      "relationshipType": "legal adversary",
+      "description": "Rodriguez was deposed and served with a federal subpoena by Edwards. Rodriguez is now attempting to illegally sell documents to Edwards that he is legally obligated to produce.",
+      "strength": 5
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Edwards is the attorney representing four female plaintiffs in a civil lawsuit against Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Initial Contact by Rodriguez to Edwards",
+      "description": "Alfredo Rodriguez contacted attorney Bradley Edwards regarding documents related to the Jeffrey Epstein civil case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-28",
+      "title": "FBI Authorization for Consensual Monitoring",
+      "description": "The FBI Miami field office submitted an FD-759 form to obtain authority for consensual electronic monitoring of Alfredo Rodriguez as part of an obstruction of justice investigation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents related to a civil lawsuit against Epstein to plaintiff's attorney Bradley Edwards for $50,000.",
+    "Rodriguez had already been deposed and served with a federal subpoena requiring him to produce these documents, making his attempt to sell them a potential obstruction of justice.",
+    "Attorney Bradley Edwards is cooperating with the FBI, agreeing to make consensual calls to Rodriguez and introduce an Undercover Employee (UCE) to facilitate the investigation.",
+    "The FBI sought and obtained authorization for consensual electronic monitoring (body recorder, telephone) to collect evidence against Rodriguez for violations of 18 U.S.C. §§ 1509 and 1510.",
+    "The investigation involves a planned undercover operation where a UCE will call and meet with Rodriguez to complete the document transaction and collect criminal evidence."
+  ],
+  "analyzedAt": "2026-02-19T07:44:25.305Z"
+}

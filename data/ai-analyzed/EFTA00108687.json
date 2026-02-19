@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00108687.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2009-11-05",
+  "summary": "An FBI document dated November 5, 2009, requesting $177.30 in case funding to reimburse hotel expenses for an undercover meeting with Alfredo Rodriguez. Rodriguez, a former employee of Jeffrey Epstein, was attempting to sell documents related to a civil lawsuit against Epstein for $50,000, despite having been served a federal subpoena to produce them.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former employee of Jeffrey Epstein, individual attempting to sell documents",
+      "category": "associate",
+      "context": "A former employee of Jeffrey Epstein who was contacted by an FBI agent in August 2009. He is an attorney representing four women suing Epstein and is attempting to sell documents related to the civil case for $50,000, despite being served a federal subpoena to produce them.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of civil lawsuit",
+      "category": "key figure",
+      "context": "The defendant in a civil lawsuit brought by four female individuals. His former employee, Alfredo Rodriguez, possesses documents related to this case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was a former employee of Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Rodriguez, as an attorney, is representing four female individuals who are suing Jeffrey Epstein in a civil case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Initial Contact with Alfredo Rodriguez",
+      "description": "An FBI agent contacted Alfredo Rodriguez regarding his possession of documents related to the Jeffrey Epstein civil case and his illegal attempt to sell them.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2009-11-03",
+      "title": "Undercover FBI Meeting with Rodriguez",
+      "description": "An undercover meeting was arranged between Alfredo Rodriguez and an FBI Undercover Employee (UCE) at the Hilton Suites in Boca Raton, FL, to address the sale of documents.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Hilton Suites, 7920 Glades Road, Boca Raton, FL"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee and attorney for Jeffrey Epstein, was attempting to sell documents pertinent to a civil lawsuit against Epstein for $50,000.",
+    "Rodriguez had been served a federal subpoena requiring him to turn over all documents related to the Epstein case, making his attempt to sell them illegal.",
+    "The FBI arranged an undercover meeting with Rodriguez on November 3, 2009, at a hotel in Boca Raton, Florida, incurring expenses of $177.30.",
+    "The document is a funding request from the FBI to reimburse the cost of the hotel rooms used for the undercover operation.",
+    "The case highlights attempts to profit from or obstruct justice in the Epstein civil litigation."
+  ],
+  "analyzedAt": "2026-02-19T07:55:23.942Z"
+}

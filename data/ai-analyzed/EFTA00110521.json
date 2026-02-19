@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA00110521.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-12",
+  "summary": "A memorandum from the Metropolitan Correctional Center in New York dated August 12, 2019, documenting information passed on August 9, 2019, regarding inmate Jeffrey Epstein. It notes that another inmate was going to the hospital and might not return, and that Epstein would need a cellmate upon returning from an attorney visit.",
+  "persons": [
+    {
+      "name": "S/O/S",
+      "role": "Staff member at Metropolitan Correctional Center",
+      "category": "staff",
+      "context": "Author of the memorandum, passing on information from the Special Housing Unit regarding inmate movements and needs.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Warden",
+      "role": "Warden of the Metropolitan Correctional Center",
+      "category": "law enforcement",
+      "context": "Recipient of the memorandum regarding inmate status and housing needs.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Office",
+      "role": "Oncoming staff member",
+      "category": "staff",
+      "context": "Staff member to whom information was passed regarding inmate movements.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Inmate #76318-054, noted as needing a cellmate upon his return from an attorney visit.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "S/O/S",
+      "person2": "Warden",
+      "relationshipType": "staff-supervisor",
+      "description": "S/O/S is reporting information to the Warden via memorandum.",
+      "strength": 2
+    },
+    {
+      "person1": "S/O/S",
+      "person2": "Office",
+      "relationshipType": "staff-colleague",
+      "description": "S/O/S passed information to oncoming staff member Office.",
+      "strength": 2
+    },
+    {
+      "person1": "S/O/S",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "S/O/S is documenting housing needs for inmate Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Information passed regarding inmate movements",
+      "description": "At approximately 1:50 p.m., staff passed information that an inmate was going to the hospital (WA13) and might not return, and that inmate Jeffrey Epstein would need a cellmate upon returning from an attorney visit.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "S/O/S",
+        "Office",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York"
+  ],
+  "keyFacts": [
+    "The document is a memorandum from the Metropolitan Correctional Center dated August 12, 2019, referencing events from August 9, 2019.",
+    "It notes that inmate Jeffrey Epstein (Inmate #76318-054) would need a cellmate upon returning from an attorney visit.",
+    "It also mentions another inmate was going to the hospital (WA13) and might not return.",
+    "The document is a routine internal communication about inmate housing and movements within the correctional facility."
+  ],
+  "analyzedAt": "2026-02-19T09:05:48.061Z"
+}

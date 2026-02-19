@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00108658.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2009-10-28",
+  "summary": "This FBI document details an investigation into Alfredo Rodriguez, a former employee of Jeffrey Epstein, who attempted to sell documents related to Epstein's civil case to attorney Bradley Edwards for $50,000. Edwards, representing four female plaintiffs, had previously deposed and subpoenaed Rodriguez. The FBI authorized a consensual call and undercover operation to gather evidence of obstruction of justice.",
+  "persons": [
+    {
+      "name": "Bradley James Edwards",
+      "role": "Attorney representing plaintiffs in civil case against Jeffrey Epstein",
+      "category": "legal",
+      "context": "Contacted by Alfredo Rodriguez who tried to sell him documents related to the Epstein case; he informed Rodriguez this was illegal and cooperated with the FBI in an undercover operation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former employee of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Attempted to sell documents related to Jeffrey Epstein's civil case to attorney Bradley Edwards for $50,000, leading to an FBI investigation for obstruction of justice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of civil lawsuit",
+      "category": "key figure",
+      "context": "The defendant in a civil case where Bradley Edwards represents four female plaintiffs; his former employee Rodriguez possessed documents related to the case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "legal-adversarial",
+      "description": "Edwards, as attorney for plaintiffs suing Epstein, deposed and subpoenaed Rodriguez; Rodriguez then attempted to sell him case documents.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was a former employee of Jeffrey Epstein and possessed documents related to Epstein's case.",
+      "strength": 3
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal-adversarial",
+      "description": "Edwards is the attorney representing four female plaintiffs who are suing Jeffrey Epstein in a civil case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Rodriguez contacts Edwards to sell documents",
+      "description": "Alfredo Rodriguez contacted attorney Bradley Edwards and offered to sell him documents related to the Jeffrey Epstein civil case for $50,000.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-28",
+      "title": "FBI authorizes undercover operation",
+      "description": "The FBI authorized a consensual call and introduction of an undercover employee to complete the document transaction with Rodriguez as part of an obstruction of justice investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of Florida",
+    "Florida"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former Epstein employee, attempted to sell case-related documents to plaintiff's attorney Bradley Edwards for $50,000 in August 2009.",
+    "Bradley Edwards informed Rodriguez that his demands were illegal and that he was obligated under a federal subpoena to turn over the documents.",
+    "The FBI authorized a consensual monitoring operation involving an undercover employee to gather evidence of obstruction of justice.",
+    "The document indicates the investigation was for potential violations of U.S. Code Title 18, Sections 1509 and 1510 (obstruction of justice).",
+    "The document contains metadata errors and submission failures, suggesting it was part of an internal FBI reporting system."
+  ],
+  "analyzedAt": "2026-02-19T07:51:11.933Z"
+}

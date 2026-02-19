@@ -1,0 +1,133 @@
+{
+  "fileName": "EFTA00110361.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-14 to 2019-07-28",
+  "summary": "A series of Bureau of Prisons clinical encounter notes for inmate Jeffrey Epstein from July 2019, documenting medical evaluations and injuries in the days leading up to his death. The records include notes on neck injuries, neurological symptoms, and his refusal to discuss how the injuries occurred, hinting at an altercation with his cellmate.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The primary subject of all medical records, being treated for various complaints including neck injuries, neuropathy, and chronic conditions while incarcerated at the Metropolitan Correctional Center (MCC) New York.",
+      "mentionCount": 50
+    },
+    {
+      "name": "MLP",
+      "role": "Mid-Level Provider",
+      "category": "staff",
+      "context": "Conducted injury assessments on July 23 and 24, 2019, documenting Epstein's neck injuries and his insinuation that his cellmate was involved.",
+      "mentionCount": 10
+    },
+    {
+      "name": "SAD",
+      "role": "Staff (amendment maker)",
+      "category": "staff",
+      "context": "Made an amendment to a clinical note on July 26, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Operational Lt",
+      "role": "Custody Staff Lieutenant",
+      "category": "law enforcement",
+      "context": "Notified by medical staff about Epstein's statements regarding his injuries; requested the injury report on July 23, 2019.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MD",
+      "relationshipType": "patient-provider",
+      "description": "Epstein was under the medical care of Bureau of Prisons physicians who evaluated his chronic conditions and cosigned treatment notes.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "RN",
+      "relationshipType": "patient-provider",
+      "description": "Epstein was assessed by registered nurses for symptoms like neuropathy and numbness, with vital signs taken and follow-up plans made.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MLP",
+      "relationshipType": "patient-provider",
+      "description": "A mid-level provider conducted key injury assessments where Epstein insinuated his cellmate was involved in his neck injuries but refused to elaborate.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Operational Lt",
+      "relationshipType": "inmate-custody",
+      "description": "Custody staff, specifically an Operational Lieutenant, was notified by medical staff about Epstein's statements and requested the injury report.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Epstein's cellmate",
+      "relationshipType": "cellmate",
+      "description": "Epstein insinuated to medical staff that his cellmate 'had to do with what happened to me' regarding the neck injuries, but refused to provide details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Neck Injury",
+      "description": "Epstein was found in his cell in the Special Housing Unit with a rope around his neck, sitting on the floor. He reported waking up 'snorting' and had circular erythema (redness) around his neck. He was placed on suicide watch.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP",
+        "Operational Lt"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Insinuates Cellmate Involvement",
+      "description": "During a medical follow-up, Epstein told an MLP, 'I think my room mate had to do with what happened to me,' but refused to say anything more about the neck injuries.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019-07-28",
+      "title": "Epstein Reports Neurological Symptoms",
+      "description": "Epstein reported to nursing staff that he woke up with no control over his right arm for a few minutes and later reported persistent 'pins and needles' in his right hand.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "RN"
+      ]
+    },
+    {
+      "date": "2019-07-14",
+      "title": "Chronic Care Evaluation",
+      "description": "Epstein had a physician evaluation for chronic conditions including hypertriglyceridemia, sleep apnea, and severe spinal stenosis causing numbness and shooting pain.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    }
+  ],
+  "locations": [
+    "NYM (Metropolitan Correctional Center New York)",
+    "Special Housing Unit 205-Cell 124"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, Jeffrey Epstein was found in his cell with a rope around his neck and was placed on suicide watch.",
+    "On July 24, 2019, Epstein told a medical provider, 'I think my room mate had to do with what happened to me,' but refused to elaborate further.",
+    "Medical records document unexplained circular erythema (redness) and abrasions on Epstein's neck consistent with a ligature injury.",
+    "Epstein reported neurological symptoms on July 28, 2019, including loss of control over his right arm and persistent 'pins and needles'.",
+    "The records show medical staff notified custody (Operational Lt) about Epstein's statements and injuries, indicating internal reporting protocols were followed."
+  ],
+  "analyzedAt": "2026-02-19T09:00:21.814Z"
+}

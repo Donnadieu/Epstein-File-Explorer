@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00117584.pdf",
+  "dataSet": "9",
+  "documentType": "service request record",
+  "dateOriginal": "2019-08-08",
+  "summary": "This is a service request record from August 2019 regarding a failed RAID array in a NICE Vision Pro Unit NVR at the Metropolitan Correctional Center (MCC) in New York. The document details technical support attempts to recover the system, which involved corrupted video data due to improper drive replacement.",
+  "persons": [
+    {
+      "name": "PRIVAT",
+      "role": "Service requester/technician",
+      "category": "staff",
+      "context": "Made a service call on August 8, 2019, reporting two bad drives on a RAID unit of a NICE Vision Pro Unit NVR at the MCC New York facility. Later called for phone support on August 10th.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Senior Support Engineer",
+      "role": "Technical support engineer",
+      "category": "staff",
+      "context": "Provided technical guidance via email on rebuilding the RAID array, including steps to set RAID level to none, replace faulty drives, then set to RAID 5, and initialize.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Customer Su Technician",
+      "role": "Customer support technician at SigNet Technologies",
+      "category": "staff",
+      "context": "Sent an email on February 26, 2019, requesting Pro Unit RAID rebuild documentation from Qognify support.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "PRIVAT",
+      "person2": "Senior Support Engineer",
+      "relationshipType": "service provider-client",
+      "description": "PRIVAT contacted support (implied to be Qognify/Signet) for technical assistance with a failed RAID unit; the Senior Support Engineer provided rebuild instructions.",
+      "strength": 2
+    },
+    {
+      "person1": "Senior Customer Su Technician",
+      "person2": "Senior Support Engineer",
+      "relationshipType": "professional correspondence",
+      "description": "The technician from SigNet Technologies emailed Qognify support requesting RAID rebuild documentation in February 2019.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "RAID failure reported at MCC New York",
+      "description": "PRIVAT reported a RAID crash showing 2 'Ws' on the display of a NICE Vision Pro Unit NVR at the Metropolitan Correctional Center in New York.",
+      "category": "technical",
+      "significance": 2,
+      "personsInvolved": [
+        "PRIVAT"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Phone support and failed drive replacement attempt",
+      "description": "PRIVAT called Signet for phone support while attempting to replace RAID drives. The drives began to rebuild, but improper shutdown corrupted the video database.",
+      "category": "technical",
+      "significance": 2,
+      "personsInvolved": [
+        "PRIVAT"
+      ]
+    },
+    {
+      "date": "2019-02-26",
+      "title": "Prior RAID documentation request",
+      "description": "A Senior Customer Support Technician from SigNet Technologies emailed Qognify support requesting Pro Unit RAID rebuild documentation.",
+      "category": "technical",
+      "significance": 1,
+      "personsInvolved": [
+        "Senior Customer Su Technician",
+        "Senior Support Engineer"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "Metropolitan Correctional Center (MCC) New York",
+    "12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "A RAID array failure occurred in a NICE Vision Pro Unit NVR at the Metropolitan Correctional Center (MCC) in New York on or before August 8, 2019.",
+    "The failure involved two bad drives, and an attempt to replace them without proper shutdown corrupted the video database, potentially causing data loss.",
+    "The service request indicates the system was at 'FBOP MCC New York', linking it to the Federal Bureau of Prisons facility where Jeffrey Epstein was held.",
+    "Technical support communications reference prior requests for RAID rebuild documentation dating back to February 2019.",
+    "The document is a routine IT service record but gains significance due to its location (MCC New York) and timing (August 2019) relative to Epstein's incarceration."
+  ],
+  "analyzedAt": "2026-02-19T10:23:10.986Z"
+}

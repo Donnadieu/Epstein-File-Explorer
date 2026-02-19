@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00108695.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2010-03-17",
+  "summary": "This is an FBI case funding request document detailing an undercover operation targeting Alfredo Rodriguez, a former employee of Jeffrey Epstein. Rodriguez attempted to sell documents related to the civil litigation against Epstein to attorney Bradley J. Edwards, who was representing four female plaintiffs. The FBI authorized $50,000 in 'show money' and incurred $275 in associated fees for the operation.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Previous employee of Jeffrey Epstein",
+      "category": "associate",
+      "context": "A former Epstein employee who was subpoenaed in a civil case. He attempted to sell documents related to the litigation to attorney Bradley Edwards instead of complying with the subpoena, leading to an FBI undercover operation.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bradley J. Edwards",
+      "role": "Attorney representing plaintiffs",
+      "category": "legal",
+      "context": "An attorney representing four female plaintiffs in a civil lawsuit against Jeffrey Epstein. He deposed Alfredo Rodriguez, served him with a subpoena, and reported Rodriguez's attempt to sell the subpoenaed documents.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffery Epstein",
+      "role": "Defendant in civil litigation",
+      "category": "key figure",
+      "context": "The subject of a civil lawsuit brought by four female plaintiffs represented by Bradley Edwards. His former employee, Alfredo Rodriguez, possessed documents related to this case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffery Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez is identified as a previous employee of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley J. Edwards",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "legal",
+      "description": "Edwards, as an attorney in the civil case against Epstein, deposed Rodriguez and served him with a federal subpoena. Their interaction turned confrontational when Rodriguez attempted to sell the subpoenaed documents.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley J. Edwards",
+      "person2": "Jeffery Epstein",
+      "relationshipType": "legal",
+      "description": "Edwards was the attorney representing four female plaintiffs who were suing Jeffrey Epstein in civil litigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Initial Contact by Rodriguez",
+      "description": "Alfredo Rodriguez contacted attorney Bradley Edwards. Edwards had deposed Rodriguez and served him with a federal subpoena related to the Epstein civil case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley J. Edwards"
+      ]
+    },
+    {
+      "date": "2009-11-03",
+      "title": "Undercover Meeting to Sell Documents",
+      "description": "Alfredo Rodriguez met with an FBI undercover employee (UCE) in an attempt to sell documents he was subpoenaed to provide in the Epstein civil case.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2010-03-17",
+      "title": "FBI Funding Request",
+      "description": "The FBI requested reimbursement of $275 for wire transfer fees related to an undercover operation involving 'show money' intended for Alfredo Rodriguez.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Miami"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents subpoenaed in a civil case against Epstein to the plaintiffs' attorney, Bradley Edwards, instead of turning them over as required.",
+    "The FBI initiated an undercover operation, authorizing $50,000 in 'show money' to facilitate Rodriguez's attempt to sell the documents, leading to a meeting with an undercover employee on November 3, 2009.",
+    "This document is a funding request to reimburse $275 in fees associated with obtaining the 'show money' for the undercover operation, indicating law enforcement's active investigation into obstruction related to the Epstein case."
+  ],
+  "analyzedAt": "2026-02-19T07:57:29.656Z"
+}

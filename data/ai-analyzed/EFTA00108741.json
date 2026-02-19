@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00108741.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal request form",
+  "dateOriginal": "2010-06-23",
+  "summary": "An FBI Miami Division request to the Document Conversion Laboratory (DocLab) for scanning and processing telephone records related to the obstruction of justice case against Alfredo Rodriguez, Jeffrey Epstein's former house manager. The records, from an address book believed to contain contacts of underage victims, are to be loaded into the Telephone Application (TA) database for analysis.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein; subject of obstruction of justice case",
+      "category": "associate",
+      "context": "The subject of the FBI's obstruction of justice investigation. He allegedly possessed an address book with names and numbers of potential underage victims of Epstein and attempted to sell it rather than comply with federal subpoenas.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of a child prostitution case",
+      "category": "key figure",
+      "context": "Identified as the individual whose former house manager, Alfredo Rodriguez, possessed an address book believed to contain contacts for his potential underage victims.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the former house manager and butler to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Rodriguez possessed an address book believed to contain information on Epstein's potential underage victims and attempted to sell it, obstructing the investigation into Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10",
+      "title": "FBI opens obstruction case against Alfredo Rodriguez",
+      "description": "Miami Division opened an obstruction of justice case against Alfredo Rodriguez, Epstein's former house manager.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2001-09-01 to 2010-06-23",
+      "title": "Timeframe for telephone records collection",
+      "description": "Telephone records generated between September 1, 2001, and the present (June 2010) are prioritized for processing in the investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": null,
+      "title": "Rodriguez attempts to sell victim address book",
+      "description": "Alfredo Rodriguez attempted to sell an address book containing names and numbers of potential underage victims of Jeffrey Epstein to an Undercover Employee (UCE), instead of turning it over to law enforcement or attorneys as required by federal subpoenas.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Winchester, Virginia 22602 (DocLab - Telephone Application Audit Processing Team, 170 Marcel Drive)",
+    "Miami (FBI Miami Division)"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Jeffrey Epstein's former house manager and butler, was the subject of an FBI obstruction of justice case for attempting to sell an address book believed to contain contact information for additional, previously unknown underage victims of Epstein.",
+    "The FBI was processing telephone records from the address book, believed to belong to Epstein, his associates, or potential underage victims, for incorporation into the Bureau-wide Telephone Application (TA) database.",
+    "The document reveals an internal FBI process (Baleen Sweep) for scanning, automating, and analyzing large volumes of telephone record data in support of investigations.",
+    "The address book and related records were evidence in pending civil litigation, and federal subpoenas had been issued for such materials."
+  ],
+  "analyzedAt": "2026-02-19T08:01:42.826Z"
+}

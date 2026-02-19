@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00108691.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2009-12-02",
+  "summary": "This FBI 302 form documents an interview with Alfredo Rodriguez, a former house manager for Jeffrey Epstein. Rodriguez describes witnessing evidence of sexual abuse of minors at Epstein's residence and reveals his possession of a 'black book' containing contact information for individuals, many of whom he claimed were underage females, which he attempted to sell for $50,000.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former House Manager for Jeffrey Epstein, Interviewee",
+      "category": "associate",
+      "context": "Former employee of Jeffrey Epstein who was interviewed by the FBI. He described witnessing naked minor females at Epstein's pool, images on his computer, and being tasked with cleaning sex toys. He possessed a 'black book' he tried to sell.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Employer, Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation. Rodriguez's former employer, whom he accused of having sexual contact with minor females at his residence.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bradley Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "An attorney to whom Rodriguez wanted to sell the 'black book' and other papers for $50,000.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez worked as a house manager for Epstein for approximately six months between 2004 and 2005.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Bradley Edwards",
+      "relationshipType": "financial",
+      "description": "Rodriguez attempted to sell the 'black book' and other papers to attorney Bradley Edwards for $50,000.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "victim-perpetrator",
+      "description": "Rodriguez is a witness to Epstein's alleged sexual abuse of minors, having seen evidence and cleaned related items.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-2005",
+      "title": "Rodriguez's Employment with Epstein",
+      "description": "Alfredo Rodriguez worked as a house manager for Jeffrey Epstein for approximately six months during this period.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009-12-02",
+      "title": "FBI Interview of Alfredo Rodriguez",
+      "description": "Rodriguez was interviewed by FBI agents in Boca Raton, Florida, after waiving his Miranda rights. He provided detailed allegations about Epstein's activities.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2009",
+      "title": "Attempt to Sell 'Black Book'",
+      "description": "In the months leading up to the interview, Rodriguez attempted to sell a 'black book' and other papers containing contact information for numerous individuals, many claimed to be underage females, to attorney Bradley Edwards for $50,000.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley Edwards"
+      ]
+    }
+  ],
+  "locations": [
+    "11349 SW 86th Lane, Miami, Florida (Rodriguez's address)",
+    "Boca Raton, Florida (Location of FBI interview)",
+    "Jeffrey Epstein's residence (location of alleged abuse, specific address not given)"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Epstein's former house manager, witnessed naked minor females sunbathing at Epstein's pool and images of naked minors on his computer.",
+    "Rodriguez stated he knew Epstein was having sexual contact with minor females at his house and was occasionally tasked with cleaning sex toys after they departed.",
+    "Rodriguez possessed a copy of a 'black book' and other papers with contact information for numerous individuals, many of whom he claimed were underage females.",
+    "Rodriguez attempted to sell these items to attorney Bradley Edwards for $50,000, citing financial hardship after losing his job with Epstein.",
+    "Rodriguez admitted he did not previously report this information to the FBI or other law enforcement despite knowing of the investigation, because he was scared of Epstein."
+  ],
+  "analyzedAt": "2026-02-19T07:56:16.070Z"
+}

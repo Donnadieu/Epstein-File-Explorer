@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00108628.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2009-10-28",
+  "summary": "This FBI document from October 28, 2009, details the opening of an obstruction of justice investigation (72-MM-NEW) against Alfredo Rodriguez, a former employee of Jeffrey Epstein. Rodriguez attempted to sell documents related to a civil lawsuit against Epstein to attorney Bradley Edwards for $50,000, despite having been served with a federal subpoena to produce them.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former employee of Jeffrey Epstein, subject of obstruction investigation",
+      "category": "associate",
+      "context": "He is the main subject of the document, accused of attempting to sell documents related to the Epstein civil case to attorney Bradley Edwards for $50,000, in violation of a federal subpoena.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Bradley James Edwards",
+      "role": "Attorney representing plaintiffs in civil suit against Jeffrey Epstein",
+      "category": "legal",
+      "context": "He was contacted by Alfredo Rodriguez, who tried to sell him documents pertinent to the civil case. Edwards informed Rodriguez that his demands were illegal and that he was obligated to turn the documents over under subpoena.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant in a civil lawsuit",
+      "category": "key figure",
+      "context": "He is the subject of the civil lawsuit for which the documents are sought. His former employee, Alfredo Rodriguez, is attempting to sell documents related to this case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was an employee for Epstein, as stated in the document.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Bradley James Edwards",
+      "relationshipType": "legal",
+      "description": "Rodriguez contacted attorney Edwards to try to sell him documents related to Edwards' civil case against Epstein, after Edwards had deposed him and served him with a subpoena.",
+      "strength": 4
+    },
+    {
+      "person1": "Bradley James Edwards",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Edwards is an attorney representing four female individuals who are suing Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-08",
+      "title": "Rodriguez contacts Edwards to sell documents",
+      "description": "On or about August 2009, Alfredo Rodriguez contacted attorney Bradley Edwards and attempted to sell him documents related to the civil lawsuit against Jeffrey Epstein for $50,000.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Bradley James Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-28",
+      "title": "FBI opens obstruction investigation",
+      "description": "The FBI document is drafted to open a new obstruction of justice matter (72-MM-NEW) against Alfredo Rodriguez based on his attempt to sell subpoenaed documents.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami, FL",
+    "Palm Beach, FL",
+    "Lodi, Miami, FL 33173"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, a former employee of Jeffrey Epstein, attempted to sell documents related to a civil lawsuit against Epstein to plaintiff's attorney Bradley Edwards for $50,000.",
+    "Rodriguez had already been deposed by Edwards and served with a federal subpoena requiring him to produce the documents, making his attempt to sell them a potential obstruction of justice.",
+    "The FBI opened a formal obstruction of justice investigation (Case ID 72-MM-NEW) into Rodriguez's actions on October 28, 2009.",
+    "The document reveals internal efforts by Epstein associates to potentially profit from or control evidence related to the civil litigation against him."
+  ],
+  "analyzedAt": "2026-02-19T07:47:14.269Z"
+}

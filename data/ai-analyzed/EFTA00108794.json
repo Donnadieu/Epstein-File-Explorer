@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00108794.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal request form",
+  "dateOriginal": "2010-06-23",
+  "summary": "An FBI Miami Division request to the Document Conversion Laboratory (DocLab) for scanning and automation assistance regarding telephone records in the obstruction of justice case against Alfredo Rodriguez. The document reveals Rodriguez, former house manager for Jeffrey Epstein, attempted to sell an address book believed to contain contact information for additional, previously unknown underage victims of Epstein.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former house manager and butler to Jeffrey Epstein; subject of obstruction of justice case",
+      "category": "associate",
+      "context": "The subject of the FBI's obstruction of justice investigation. He allegedly came into possession of an address book containing names and numbers of potential underage Epstein victims and attempted to sell it rather than comply with legal obligations.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of a child prostitution case",
+      "category": "key figure",
+      "context": "Identified as the individual whose former house manager, Alfredo Rodriguez, possessed an address book believed to contain information on his additional underage victims.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez was the former house manager and butler to Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Rodriguez possessed an address book believed to contain information on Epstein's associates and potential underage victims.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10",
+      "title": "FBI opens obstruction case against Alfredo Rodriguez",
+      "description": "Miami Division opened an obstruction of justice case against Alfredo Rodriguez.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2001-09-01 to present (2010)",
+      "title": "Timeframe for relevant telephone records",
+      "description": "Telephone records generated between September 1, 2001, and the present (circa 2010) are noted as relevant for cases, even if now closed.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2010-06-23",
+      "title": "FBI request for document scanning and processing",
+      "description": "The FBI Miami Division formally requests the Document Conversion Laboratory to scan and automate telephone records related to the Alfredo Rodriguez obstruction case for incorporation into the Telephone Application (TA) database.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Washington, DC",
+    "Winchester Office"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez, Jeffrey Epstein's former house manager and butler, was the subject of an FBI obstruction of justice case opened in October 2009.",
+    "Rodriguez came into possession of an address book containing names and telephone numbers believed to belong to additional, previously unknown underage victims of Jeffrey Epstein.",
+    "Rodriguez attempted to sell this address book to an Undercover Employee (UCE) instead of turning it over to law enforcement or attorneys in response to federal subpoenas.",
+    "The FBI was processing telephone records ('toll records') obtained from this address book, believed to belong to Epstein, his associates, or potential underage victims.",
+    "The document is an internal FBI request for technical support to scan and load these records into the Bureau's 'Telephone Application' (TA) database for investigative use."
+  ],
+  "analyzedAt": "2026-02-19T08:05:48.427Z"
+}

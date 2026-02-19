@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00123208.pdf",
+  "dataSet": "9",
+  "documentType": "government memorandum",
+  "dateOriginal": "2019-08-10",
+  "summary": "This is a psychology services memorandum from the Metropolitan Correctional Center in New York summarizing contacts with inmate Jeffrey Epstein from his arrival on July 8, 2019, through August 8, 2019. It details his mental health assessments, placement on and off suicide watch, an incident where he was found with a string around his neck, and his repeated denials of suicidal ideation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The subject of the psychology memorandum, detailing his mental health status, suicide risk assessments, and incidents while incarcerated at the Metropolitan Correctional Center.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "Contacted the on-call psychologist at approximately 2am on July 23, 2019, to report that Epstein was being placed on suicide watch after being found with a string around his neck.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Chief Psychologist",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "Spoke with Central Office on July 8, 2019, regarding Epstein's initial intake and the decision to place him on suicide watch.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Operations Lieutenant",
+      "relationshipType": "guard-inmate",
+      "description": "The Operations Lieutenant reported the incident of Epstein being found with a string around his neck, leading to his placement on suicide watch.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Chief Psychologist",
+      "relationshipType": "professional assessment",
+      "description": "The Chief Psychologist was involved in the initial assessment and decision to place Epstein on suicide watch upon his arrival.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Epstein's Incarceration and Initial Assessment",
+      "description": "Jeffrey Epstein arrived at the Metropolitan Correctional Center and underwent an intake screening. The Chief Psychologist consulted with Central Office and it was determined he should be placed on suicide watch due to increased risk factors.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Chief Psychologist"
+      ]
+    },
+    {
+      "date": "2019-07-09",
+      "title": "First Suicide Risk Assessment",
+      "description": "Epstein was assessed for suicide risk. He denied any suicidal ideation, intention, or plan. His protective factors were deemed to outweigh his risk factors, and he was removed from suicide watch and placed on psychology observation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Neck Injury Incident",
+      "description": "At approximately 2am, the on-call psychologist was contacted because Epstein was found with a string hanging around his neck. He was placed on suicide watch. During assessment, he claimed not to remember the event and later told staff his cellmate tried to kill him.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Operations Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-08-01",
+      "title": "Court Note on Suicidal Tendencies",
+      "description": "Epstein returned from court with a note from the court indicating 'suicidal tendencies.' He was assessed again and denied being suicidal. His protective factors were again deemed to outweigh risk factors, so he was not placed on suicide watch.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, Jeffrey Epstein was found in his cell with a string around his neck, leading to his placement on suicide watch. He later told staff his cellmate tried to kill him.",
+    "Epstein repeatedly denied any suicidal ideation, intention, or plan during all psychological assessments, stating he wanted to fight his case and that suicide was against his religion.",
+    "The memo documents a pattern of Epstein requesting to be moved from the Special Housing Unit (SHU) to general population and complaining about conditions like noise and lack of a spoon.",
+    "A note from the court on August 1, 2019, indicated Epstein had 'suicidal tendencies,' but a subsequent risk assessment concluded his protective factors outweighed his risks, and he was not placed on watch.",
+    "The document provides a detailed timeline of Epstein's psychological state and supervision in the weeks leading up to his death."
+  ],
+  "analyzedAt": "2026-02-19T12:45:26.198Z"
+}

@@ -1,0 +1,132 @@
+{
+  "fileName": "EFTA00122683.pdf",
+  "dataSet": "9",
+  "documentType": "prison timeline/log",
+  "dateOriginal": "2019-08-09 to 2019-08-12",
+  "summary": "This document is a detailed timeline of events at the Metropolitan Correctional Center (MCC) New York leading up to and following the death of inmate Jeffrey Epstein on August 10, 2019. It records his activities, the discovery of his body, the medical response, notifications to authorities, and the subsequent investigation and evidence collection.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The inmate whose death by suicide is the central event of the document. He was visited by attorneys on August 9 and found unresponsive in his cell on August 10.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Reyes Efrain",
+      "role": "Inmate/Cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate who departed for court on the morning of August 9, 2019, before Epstein was found deceased.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Darden",
+      "role": "Captain",
+      "category": "staff",
+      "context": "A Captain who arrived at the institution at 8:00 am on August 10, 2019, following the incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Berman",
+      "role": "Judge",
+      "category": "legal",
+      "context": "The judge presiding over Epstein's case, who was notified of his death at 10:00 am on August 10, 2019, and later provided with a press release.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Reyes Efrain",
+      "relationshipType": "cellmate",
+      "description": "Reyes Efrain is explicitly identified as Epstein's cellmate in the SHU.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Judge Berman",
+      "relationshipType": "legal",
+      "description": "Judge Berman was the presiding judge in Epstein's case, as evidenced by the notification of his death to the judge.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Full Day",
+      "description": "Epstein spends the day in attorney conferences and is reported to be in good spirits during a social call at 7:00 pm.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein Unresponsive",
+      "description": "At 6:33 am, a body alarm is activated. Staff find Epstein unresponsive in his cell. CPR is initiated, EMS is called, and he is transported to Beekman Hospital.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Official Time of Death",
+      "description": "At 7:36 am, the ER physician reports the official time of death for Jeffrey Epstein.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Next of Kin Notification",
+      "description": "At 11:00 am, Epstein's brother is notified of his death by the Case Management Coordinator.",
+      "category": "death",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "FBI and OIG Investigation Initiated",
+      "description": "The FBI and Office of the Inspector General (OIG) are notified and arrive at the MCC to investigate the death, conducting interviews and evidence collection in the SHU.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Evidence Collection - Computer Hard Drives",
+      "description": "Late in the evening, a Computer Services Manager arrives to remove and replace computer hard drives from the SHU.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-11",
+      "title": "OIG Removes Evidence",
+      "description": "An OIG Agent departs the institution with two computers (FPS 021407270 and FPS 0214207268) as evidence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "Special Housing Unit (SHU) at MCC New York",
+    "Beekman Hospital"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unresponsive in his cell at the MCC New York SHU at 6:33 am on Saturday, August 10, 2019.",
+    "Epstein's official time of death was reported by an ER physician at 7:36 am on August 10, after failed resuscitation efforts.",
+    "Epstein's cellmate, Reyes Efrain, had departed for court the previous morning (August 9), leaving Epstein alone in the cell.",
+    "On the night before his death (August 9 at 7:00 pm), an IDO reported Epstein was 'in good spirits, nothing unusual' during a social call.",
+    "Computer hard drives were removed from the SHU and replaced on the night of Epstein's death, and two computers were taken as evidence by the OIG the following day."
+  ],
+  "analyzedAt": "2026-02-19T12:21:58.147Z"
+}
