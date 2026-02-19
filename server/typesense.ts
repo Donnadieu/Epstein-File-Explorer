@@ -41,7 +41,7 @@ export function getTypesenseClient(): Client | null {
   return client;
 }
 
-// --- Collection Schema ---
+// --- Collection Schemas ---
 
 export const COLLECTION_NAME = "document_pages";
 
@@ -59,6 +59,22 @@ export const COLLECTION_SCHEMA: CollectionCreateSchema = {
     { name: "is_viewable", type: "bool" },
   ],
   default_sorting_field: "page_number",
+  token_separators: ["-", "_", "."],
+};
+
+export const PERSONS_COLLECTION = "persons";
+
+export const PERSONS_SCHEMA: CollectionCreateSchema = {
+  name: PERSONS_COLLECTION,
+  fields: [
+    { name: "pg_id", type: "int32", index: false },
+    { name: "name", type: "string" },
+    { name: "aliases", type: "string[]", optional: true },
+    { name: "role", type: "string", facet: true },
+    { name: "description", type: "string" },
+    { name: "occupation", type: "string", optional: true },
+    { name: "category", type: "string", facet: true },
+  ],
   token_separators: ["-", "_", "."],
 };
 
@@ -83,6 +99,16 @@ export interface TypesenseSearchResponse {
     documentTypes: { value: string; count: number }[];
     dataSets: { value: string; count: number }[];
   };
+}
+
+export interface TypesensePersonResult {
+  pgId: number;
+  name: string;
+  aliases: string[];
+  role: string;
+  description: string;
+  occupation: string | null;
+  category: string;
 }
 
 // --- Document shape stored in Typesense ---
@@ -281,4 +307,54 @@ export async function typesenseDocumentSearch(
     if (!hit) return null;
     return hitToResult(hit);
   }).filter(Boolean) as TypesensePageResult[];
+}
+
+// --- Persons Search ---
+
+interface TSPerson {
+  id: string;
+  pg_id: number;
+  name: string;
+  aliases?: string[];
+  role: string;
+  description: string;
+  occupation?: string;
+  category: string;
+}
+
+/**
+ * Search persons via Typesense — typo-tolerant search on name, aliases, occupation, description.
+ */
+export async function typesenseSearchPersons(
+  query: string,
+  limit: number = 20,
+): Promise<TypesensePersonResult[]> {
+  const ts = getTypesenseClient();
+  if (!ts) throw new Error("Typesense not configured");
+
+  const result = await ts
+    .collections<TSPerson>(PERSONS_COLLECTION)
+    .documents()
+    .search({
+      q: query,
+      query_by: "name,aliases,occupation,description",
+      query_by_weights: "4,3,2,1",
+      per_page: limit,
+      page: 1,
+      num_typos: 2,
+      typo_tokens_threshold: 1,
+    });
+
+  return (result.hits ?? []).map((hit) => {
+    const doc = hit.document;
+    return {
+      pgId: doc.pg_id,
+      name: doc.name,
+      aliases: doc.aliases ?? [],
+      role: doc.role,
+      description: doc.description,
+      occupation: doc.occupation ?? null,
+      category: doc.category,
+    };
+  });
 }
