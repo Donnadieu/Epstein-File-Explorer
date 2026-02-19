@@ -1199,17 +1199,13 @@ export class DatabaseStorage implements IStorage {
           documentType: opts?.documentType,
           dataSet: opts?.dataSet,
         });
-        const ids = [...new Set(result.results.map(r => r.documentId))];
-        console.log(`searchDocumentIds: Typesense returned ${ids.length} doc IDs for "${query}"`);
-        return ids;
-      } catch (err) {
-        console.warn(`searchDocumentIds: Typesense failed, falling back to PostgreSQL:`, err);
+        return [...new Set(result.results.map(r => r.documentId))];
+      } catch {
+        // fall through to PostgreSQL
       }
     }
     const result = await this.searchPages(query, 1, limit, false, true);
-    const ids = [...new Set(result.results.map(r => r.documentId))];
-    console.log(`searchDocumentIds: PostgreSQL returned ${ids.length} doc IDs for "${query}"`);
-    return ids;
+    return [...new Set(result.results.map(r => r.documentId))];
   }
 
   async searchPages(query: string, page: number, limit: number, useOrMode = false, skipCount = false) {
