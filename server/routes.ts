@@ -301,6 +301,7 @@ export async function registerRoutes(
       res.set("Cache-Control", "public, max-age=60");
       res.json({ ...result, data: result.data.map(toPublicDocument) });
     } catch (error) {
+      console.error("GET /api/documents error:", error);
       res.status(500).json({ error: "Failed to fetch documents" });
     }
   });

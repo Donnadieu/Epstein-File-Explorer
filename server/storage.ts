@@ -1410,7 +1410,7 @@ export class DatabaseStorage implements IStorage {
       else if (opts.redacted === "unredacted") conditions.push(sql`d.is_redacted = false`);
       if (opts.mediaType) conditions.push(sql`d.media_type = ${opts.mediaType}`);
       if (searchDocIds) {
-        conditions.push(sql`d.id = ANY(${searchDocIds})`);
+        conditions.push(sql`d.id = ANY(${searchDocIds}::int[])`);
       }
       const whereSQL = sql.join(conditions, sql` AND `);
 
