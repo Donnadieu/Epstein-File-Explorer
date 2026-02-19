@@ -250,6 +250,32 @@ describe("GET /api/documents", () => {
       mediaType: "pdf",
     });
   });
+
+  it("passes search with type and dataSet filters to storage", async () => {
+    const filtered = { data: [], total: 0, page: 1, totalPages: 0 };
+    mockedStorage.getDocumentsFiltered.mockResolvedValue(filtered);
+
+    await request(app).get("/api/documents?page=1&limit=10&search=epstein&type=legal-filing&dataSet=set-a");
+    expect(mockedStorage.getDocumentsFiltered).toHaveBeenCalledWith(
+      expect.objectContaining({
+        search: "epstein",
+        type: "legal-filing",
+        dataSet: "set-a",
+      }),
+    );
+  });
+
+  it("passes sort=popular to storage", async () => {
+    const filtered = { data: [mockDocument], total: 1, page: 1, totalPages: 1 };
+    mockedStorage.getDocumentsFiltered.mockResolvedValue(filtered);
+
+    await request(app).get("/api/documents?page=1&limit=10&sort=popular");
+    expect(mockedStorage.getDocumentsFiltered).toHaveBeenCalledWith(
+      expect.objectContaining({
+        sort: "popular",
+      }),
+    );
+  });
 });
 
 describe("GET /api/documents/:id", () => {
