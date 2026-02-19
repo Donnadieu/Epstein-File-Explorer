@@ -117,4 +117,78 @@ describe("typesense module", () => {
       expect((dataSet as any).facet).toBe(true);
     });
   });
+
+  describe("PERSONS_SCHEMA", () => {
+    it("has the expected collection name", async () => {
+      const { PERSONS_COLLECTION } = await import("../typesense");
+      expect(PERSONS_COLLECTION).toBe("persons");
+    });
+
+    it("has required fields", async () => {
+      const { PERSONS_SCHEMA } = await import("../typesense");
+      const fieldNames = PERSONS_SCHEMA.fields!.map((f: any) => f.name);
+      expect(fieldNames).toContain("pg_id");
+      expect(fieldNames).toContain("name");
+      expect(fieldNames).toContain("aliases");
+      expect(fieldNames).toContain("role");
+      expect(fieldNames).toContain("description");
+      expect(fieldNames).toContain("occupation");
+      expect(fieldNames).toContain("category");
+    });
+
+    it("has faceted fields for role and category", async () => {
+      const { PERSONS_SCHEMA } = await import("../typesense");
+      const role = PERSONS_SCHEMA.fields!.find((f: any) => f.name === "role");
+      const category = PERSONS_SCHEMA.fields!.find((f: any) => f.name === "category");
+      expect((role as any).facet).toBe(true);
+      expect((category as any).facet).toBe(true);
+    });
+  });
+
+  describe("typesenseSearchPersons", () => {
+    it("searches persons with correct query_by and weights", async () => {
+      process.env.TYPESENSE_HOST = "localhost";
+      process.env.TYPESENSE_API_KEY = "test-key";
+
+      mockSearch.mockResolvedValue({
+        hits: [
+          {
+            document: {
+              pg_id: 42,
+              name: "Ghislaine Maxwell",
+              aliases: ["G. Maxwell"],
+              role: "associate",
+              description: "British socialite",
+              occupation: "socialite",
+              category: "associate",
+            },
+            highlights: [],
+          },
+        ],
+        found: 1,
+      });
+
+      const { typesenseSearchPersons } = await import("../typesense");
+      const results = await typesenseSearchPersons("Ghislaine", 20);
+
+      expect(mockSearch).toHaveBeenCalledWith(
+        expect.objectContaining({
+          q: "Ghislaine",
+          query_by: "name,aliases,occupation,description",
+          query_by_weights: "4,3,2,1",
+          num_typos: 2,
+        }),
+      );
+      expect(results).toHaveLength(1);
+      expect(results[0].pgId).toBe(42);
+      expect(results[0].name).toBe("Ghislaine Maxwell");
+    });
+
+    it("throws when Typesense is not configured", async () => {
+      delete process.env.TYPESENSE_HOST;
+      delete process.env.TYPESENSE_API_KEY;
+      const { typesenseSearchPersons } = await import("../typesense");
+      await expect(typesenseSearchPersons("test")).rejects.toThrow("Typesense not configured");
+    });
+  });
 });
