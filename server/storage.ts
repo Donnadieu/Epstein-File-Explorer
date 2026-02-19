@@ -1081,7 +1081,9 @@ export class DatabaseStorage implements IStorage {
       ? typesenseSearchPersons(query, 20).then(async (tsPersons) => {
           const ids = tsPersons.map(p => p.pgId);
           if (ids.length === 0) return [];
-          return db.select().from(persons).where(inArray(persons.id, ids));
+          const rows = await db.select().from(persons).where(inArray(persons.id, ids));
+          const byId = new Map(rows.map(r => [r.id, r]));
+          return ids.map(id => byId.get(id)).filter(Boolean) as typeof rows;
         }).catch(() =>
           db.select().from(persons).where(
             or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))
@@ -1139,7 +1141,9 @@ export class DatabaseStorage implements IStorage {
       ? typesenseSearchPersons(query, 20).then(async (tsPersons) => {
           const ids = tsPersons.map(p => p.pgId);
           if (ids.length === 0) return [];
-          return db.select().from(persons).where(inArray(persons.id, ids));
+          const rows = await db.select().from(persons).where(inArray(persons.id, ids));
+          const byId = new Map(rows.map(r => [r.id, r]));
+          return ids.map(id => byId.get(id)).filter(Boolean) as typeof rows;
         }).catch(() =>
           db.select().from(persons).where(
             or(ilike(persons.name, searchPattern), ilike(persons.occupation, searchPattern))

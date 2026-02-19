@@ -139,10 +139,10 @@ function buildFilterBy(options?: {
     parts.push("is_viewable:true");
   }
   if (options?.documentType) {
-    parts.push(`document_type:=${options.documentType}`);
+    parts.push(`document_type:=\`${options.documentType}\``);
   }
   if (options?.dataSet) {
-    parts.push(`data_set:=${options.dataSet}`);
+    parts.push(`data_set:=\`${options.dataSet}\``);
   }
 
   return parts.length > 0 ? parts.join(" && ") : undefined;
