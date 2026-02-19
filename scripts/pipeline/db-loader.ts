@@ -599,6 +599,7 @@ export async function loadAIResults(options?: {
 
       // --- Connections ---
       for (const conn of data.connections) {
+        if (typeof conn !== "object" || !conn?.person1 || !conn?.person2) continue;
         const person1 = findPerson(conn.person1);
         const person2 = findPerson(conn.person2);
 
@@ -653,6 +654,7 @@ export async function loadAIResults(options?: {
 
       // --- Events ---
       for (const event of data.events) {
+        if (typeof event !== "object" || !event?.title) continue;
         try {
           const normalizedDate = normalizeEventDate(event.date);
           if (!normalizedDate) continue; // skip unparseable dates (date is NOT NULL)
@@ -832,24 +834,13 @@ export async function loadAIResults(options?: {
   };
 }
 
-function inferStatusFromCategory(category: string, role: string): string {
+function inferStatusFromCategory(category: string, _role: string): string {
   const catLower = (category || "").toLowerCase();
-  const roleLower = (role || "").toLowerCase();
 
-  // Legal/law enforcement/political/staff: role keywords describe
-  // who they represent, not their own status
-  if (["legal", "law enforcement", "political", "staff", "financial", "academic"].includes(catLower)) {
-    return "named";
-  }
-
-  // Trust explicit victim categorization
+  // Only trust explicit category-level classification, never infer from role text.
+  // Role text is too unreliable — "Defendant" in a role string often describes
+  // the document's subject, not the person's actual legal status.
   if (catLower === "victim") return "victim";
-
-  // Only infer convicted when the person IS the defendant
-  if (/\bconvicted\b/.test(roleLower)) return "convicted";
-  if (/\bdefendant\b/.test(roleLower) && !/\b(for|representing|of)\b/.test(roleLower)) {
-    return "convicted";
-  }
 
   return "named";
 }
@@ -1002,7 +993,7 @@ export function isJunkPersonName(name: string): boolean {
   if (trimmed.length > 60) return true;
 
   // Contains special characters that don't appear in real names (including OCR artifacts)
-  if (/[!;&$%^°•\\*<>=]/.test(trimmed)) return true;
+  if (/[!;&$%^°•\\*<>=()]/.test(trimmed)) return true;
 
   // Contains slashes (role combos, OCR junk)
   if (trimmed.includes("/")) return true;
@@ -1164,8 +1155,74 @@ export function isJunkPersonName(name: string): boolean {
   // "Friend/Victim/Inmate (Redacted)" patterns
   if (/\(redacted\)$/i.test(trimmed)) return true;
 
-  // "Accuser-N" / "Witness-N" / "Doe N" patterns
-  if (/^(accuser|witness|doe)\s*-?\s*\d/i.test(trimmed)) return true;
+  // "X [Redacted]" patterns: "Officer [Redacted]", "Inmate [Redacted]", etc.
+  if (/\[redacted\]/i.test(trimmed)) return true;
+
+  // "X (Unnamed)" patterns: "Sender (Unnamed)", "Daughter (Unnamed)"
+  if (/\(unnamed\)/i.test(trimmed)) return true;
+
+  // "Accuser-N" / "Witness-N" / "Doe N" / "Attorney-N" / "Employee-N" / "Individual-N" patterns
+  if (/^(accuser|witness|doe|attorney|employee|individual|officer|client|subject)\s*-?\s*\d/i.test(trimmed)) return true;
+
+  // Standalone single-word roles/titles (no accompanying name)
+  const STANDALONE_ROLES = new Set([
+    "housekeeper", "nurse", "lawyer", "claimant", "contractor", "server",
+    "spokesperson", "driver", "merchant", "prince", "pilot", "stewardess",
+    "receptionist", "bodyguard", "chauffeur", "butler", "chef", "maid",
+    "gardener", "nanny", "masseuse", "therapist", "accountant", "broker",
+    "agent", "investigator", "analyst", "examiner", "coordinator",
+  ]);
+  if (STANDALONE_ROLES.has(lower)) return true;
+
+  // "Capt.", "Det.", "Sgt." etc. — abbreviation-only entries
+  if (/^(capt|det|sgt|lt|cpl|supt)\.\s*$/i.test(trimmed)) return true;
+
+  // Bare key-figure last names that should match existing persons, not create new ones
+  const BARE_KEY_FIGURES = new Set([
+    "epstein", "maxwell", "ghislaine", "jeffrey", "giuffre", "trump",
+    "brunel", "wexner", "dershowitz", "clinton", "dubin",
+  ]);
+  if (BARE_KEY_FIGURES.has(lower)) return true;
+
+  // OCR artifacts: consecutive uppercase letters in the middle of a word (aMMIla, i'MMa, M.IMII)
+  if (/[a-z].?[A-Z]{2,}/.test(trimmed) || /^[A-Z]\.[A-Z]{2,}/.test(trimmed)) return true;
+
+  // USANYS patterns: "(USANYS)", "M (USANYS)", "IM (USANYS) [Contractor]"
+  if (/usanys/i.test(trimmed)) return true;
+
+  // #N prefix patterns: "#1 Escort Officer", "#2 Officer"
+  if (/^#\d/.test(trimmed)) return true;
+
+  // Role descriptions with department/unit qualifiers
+  if (/^(nypd|pbpd|fbi|cseu|ny cart|oig)\s/i.test(trimmed)) return true;
+
+  // "Legal Assistant -- Criminal Clerk" and similar role descriptions with dashes
+  if (/\s--\s/.test(trimmed)) return true;
+
+  // Non-person entity names (brands, handles, companies)
+  if (/^(ica-|wetjet|limo|bunny)/i.test(trimmed)) return true;
+
+  // "MS. PENZA", "MR. AGNIFILO" — court transcript attorney references (all caps after title)
+  if (/^(mr|mrs|ms|dr)\.\s+[A-Z]{3,}$/i.test(trimmed) && /[A-Z]{3,}$/.test(trimmed)) return true;
+
+  // Single-word 4-char names that look like OCR fragments (no vowels, or garbled)
+  if (!/\s/.test(trimmed) && trimmed.length === 4 && !/[aeiouAEIOU]/.test(trimmed)) return true;
+
+  // Trailing hyphen (truncated name): "Jean-", "Mary-"
+  if (/-$/.test(trimmed)) return true;
+
+  // "Gmax", "Gmaxl" — email handle fragments, not person names
+  if (/^gmax/i.test(trimmed) && trimmed.length <= 6) return true;
+
+  // Dot-separated initials only: "J.b.", "N.B.", "C.M.A."
+  if (/^([A-Za-z]\.){2,}$/.test(trimmed)) return true;
+
+  // "Superintenden" — truncated words (ends abruptly without vowel after 8+ chars)
+  if (!/\s/.test(trimmed) && trimmed.length >= 8 && /[^aeiou]$/i.test(trimmed) && !/[aeiou].{0,2}$/i.test(trimmed)) {
+    // Only flag if it looks like a truncated title/role, not a real surname
+    const TRUNCATED_ROLES = /^(superintenden|investigat|coordinat|administrat|commission)/i;
+    if (TRUNCATED_ROLES.test(trimmed)) return true;
+  }
 
   return false;
 }
