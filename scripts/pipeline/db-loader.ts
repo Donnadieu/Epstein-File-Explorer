@@ -519,6 +519,11 @@ export async function loadAIResults(options?: {
         const newDesc = (mention.context || "").substring(0, 500);
         const status = inferStatusFromCategory(mention.category, mention.role);
 
+        // Skip bare key-figure names that would create duplicates.
+        // Only applied during creation — not in isJunkPersonName() which is
+        // also used by dedup Pass 0 (where deleting "Maxwell" would be destructive).
+        if (!existing && isBareKeyFigureName(mention.name)) continue;
+
         if (!existing) {
           if (isDryRun) {
             dryRunSummary!.personsToCreate.push({ name: mention.name, category: mention.category, role: mention.role, status, source: file });
@@ -980,6 +985,21 @@ async function mergePersonGroup(
 }
 
 /**
+ * Returns true if a single-word name matches a known key figure.
+ * Used ONLY during AI results loading to avoid creating duplicate persons.
+ * NOT used in isJunkPersonName() because that function is also called during
+ * dedup Pass 0 — where deleting an existing "Maxwell" record would be destructive.
+ */
+function isBareKeyFigureName(name: string): boolean {
+  const BARE_KEY_FIGURES = new Set([
+    "epstein", "maxwell", "ghislaine", "jeffrey", "giuffre", "trump",
+    "brunel", "wexner", "dershowitz", "clinton", "dubin",
+  ]);
+  const lower = name.trim().toLowerCase();
+  return !lower.includes(" ") && BARE_KEY_FIGURES.has(lower);
+}
+
+/**
  * Returns true if a person name is junk (OCR artifact, generic role, placeholder, etc.)
  * and should be removed from the database entirely.
  */
@@ -1176,13 +1196,6 @@ export function isJunkPersonName(name: string): boolean {
 
   // "Capt.", "Det.", "Sgt." etc. — abbreviation-only entries
   if (/^(capt|det|sgt|lt|cpl|supt)\.\s*$/i.test(trimmed)) return true;
-
-  // Bare key-figure last names that should match existing persons, not create new ones
-  const BARE_KEY_FIGURES = new Set([
-    "epstein", "maxwell", "ghislaine", "jeffrey", "giuffre", "trump",
-    "brunel", "wexner", "dershowitz", "clinton", "dubin",
-  ]);
-  if (BARE_KEY_FIGURES.has(lower)) return true;
 
   // OCR artifacts: consecutive uppercase letters in the middle of a word (aMMIla, i'MMa, M.IMII)
   if (/[a-z].?[A-Z]{2,}/.test(trimmed) || /^[A-Z]\.[A-Z]{2,}/.test(trimmed)) return true;
