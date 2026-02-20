@@ -13,6 +13,7 @@ import {
   loadPersonsFromFile,
   updateDocumentCounts,
 } from "./db-loader";
+import { generateProfiles } from "./generate-profiles";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
 import { migrateToR2 } from "./r2-migration";
@@ -54,6 +55,7 @@ const STAGES = [
   "extract-connections",
   "dedup-connections",
   "update-counts",
+  "generate-profiles",
 ];
 
 function printUsage() {
@@ -90,6 +92,7 @@ STAGES:
   extract-connections  Extract relationships from person descriptions
   dedup-connections  Deduplicate connections in database
   update-counts    Recalculate document/connection counts per person
+  generate-profiles  Generate profile sections and fetch Wikipedia images for all persons
 
 SHORTCUTS:
   quick            Run scrape-wikipedia + load-persons + extract-connections + update-counts
@@ -232,6 +235,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "dedup-connections":
         await deduplicateConnections();
+        break;
+
+      case "generate-profiles":
+        await generateProfiles();
         break;
 
       default:

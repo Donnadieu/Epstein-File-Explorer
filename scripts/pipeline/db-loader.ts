@@ -772,7 +772,8 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
           if (!normalizedDate) continue; // skip unparseable dates (date is NOT NULL)
 
           const personIds: number[] = [];
-          for (const name of event.personsInvolved) {
+          const involvedArr = Array.isArray(event.personsInvolved) ? event.personsInvolved : typeof event.personsInvolved === "string" ? event.personsInvolved.split(",").map(s => s.trim()) : [];
+          for (const name of involvedArr) {
             const p = findPerson(name);
             if (p) personIds.push(p.id);
           }

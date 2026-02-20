@@ -101,7 +101,8 @@ function aggregatePersonData(
 
     if (Array.isArray(data.events)) {
       for (const event of data.events) {
-        const involved = (event as any).personsInvolved ?? [];
+        const rawInvolved = (event as any).personsInvolved;
+        const involved = Array.isArray(rawInvolved) ? rawInvolved : typeof rawInvolved === "string" ? rawInvolved.split(",").map((s: string) => s.trim()) : [];
         if (
           involved.some((p: string) => p.toLowerCase().includes(personName.split(" ").pop()!.toLowerCase())) ||
           (event.title ?? "").toLowerCase().includes(personName.toLowerCase()) ||
@@ -147,7 +148,7 @@ function generateSections(
   if (uniqueContexts.length > 0 || description) {
     const summaryParts = [description];
     const addedContexts = uniqueContexts
-      .filter(c => c.length > 50 && !description.toLowerCase().includes(c.toLowerCase().slice(0, 30)))
+      .filter(c => c.length > 50 && !(description ?? "").toLowerCase().includes(c.toLowerCase().slice(0, 30)))
       .slice(0, 5);
     if (addedContexts.length > 0) {
       summaryParts.push(...addedContexts);
@@ -278,7 +279,7 @@ async function fetchWikipediaImage(name: string): Promise<{ imageUrl: string | n
   }
 }
 
-async function main() {
+export async function generateProfiles() {
   console.log("Loading AI analysis files...");
   const allFiles = readAllAnalysisFiles();
   console.log(`Loaded ${allFiles.length} analysis files`);
@@ -334,10 +335,12 @@ async function main() {
   }
 
   console.log("\nProfile generation complete!");
-  process.exit(0);
 }
 
-main().catch(err => {
-  console.error("Fatal error:", err);
-  process.exit(1);
-});
+// Allow direct execution
+if (process.argv[1]?.includes(path.basename(__filename))) {
+  generateProfiles().catch(err => {
+    console.error("Fatal error:", err);
+    process.exit(1);
+  });
+}

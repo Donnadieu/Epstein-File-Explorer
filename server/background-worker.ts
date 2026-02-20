@@ -191,7 +191,8 @@ async function processOneJob(): Promise<void> {
     for (const event of result.events) {
       try {
         const personIds: number[] = [];
-        for (const name of event.personsInvolved ?? []) {
+        const involvedArr = Array.isArray(event.personsInvolved) ? event.personsInvolved : typeof event.personsInvolved === "string" ? (event.personsInvolved as string).split(",").map(s => s.trim()) : [];
+        for (const name of involvedArr) {
           const [p] = await db.select().from(persons).where(sql`LOWER(${persons.name}) = LOWER(${name})`).limit(1);
           if (p) personIds.push(p.id);
         }
