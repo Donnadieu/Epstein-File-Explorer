@@ -1145,7 +1145,7 @@ export function isJunkPersonName(name: string): boolean {
   if (trimmed.length > 60) return true;
 
   // Contains special characters that don't appear in real names (including OCR artifacts)
-  if (/[!;&$%^°•\\*<>=]/.test(trimmed)) return true;
+  if (/[!;&$%^°•\\*<>=:\[\]«»_]/.test(trimmed)) return true;
 
   // Parentheses: allow alternate-name patterns like "Ann (Anne) Maxwell" or
   // "C Jacobus Petrus (Koos) Bekker", but reject system strings like "(USANYS)"
@@ -1229,6 +1229,15 @@ export function isJunkPersonName(name: string): boolean {
 
   // Title-only entries like "Mr." or "Dr." with nothing substantial after
   if (/^(mr|mrs|ms|dr|lt|sgt|det|cap)\.\s*$/i.test(trimmed)) return true;
+
+  // Title/rank prefix followed by only 1-2 characters (OCR fragments, redacted initials)
+  // e.g. "Lt. D", "SA M", "Agent L", "Dr. Ho", "Mr. MI", "Dr. NB"
+  if (
+    /^(Lt|Sgt|Det|Dr|Mr|Mrs|Ms|Cpl|Off|Ofc|Capt|SSA|SA|CO|AUSA|ADA|Agent|Deputy|Atty)\.?\s+\S{1,2}\.?$/i.test(
+      trimmed,
+    )
+  )
+    return true;
 
   // Single word, 3 chars or fewer (Des, Her, Ann, Bob, etc. are not useful without last names)
   if (!/\s/.test(trimmed) && trimmed.length <= 3) return true;
