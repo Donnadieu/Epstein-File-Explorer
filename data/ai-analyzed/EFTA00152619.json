@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00152619.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-06",
+  "summary": "This document is an email chain from October 2020 among U.S. Attorney's Office staff and IT personnel discussing technical difficulties in accessing and processing discovery materials for the Ghislaine Maxwell case. The materials include Blu-Ray discs containing potential GPS/cell phone data and physical media like VHS and cassette tapes.",
+  "persons": [
+    {
+      "name": "Enrique",
+      "role": "Paralegal Specialist",
+      "category": "legal",
+      "context": "Paralegal Specialist at the U.S. Attorney's Office for the SDNY who is having difficulty opening files (Blu-Ray discs 102, 103, 104) related to the Maxwell discovery and seeks technical assistance.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Will",
+      "role": "Paralegal Specialist",
+      "category": "legal",
+      "context": "Paralegal Specialist at the U.S. Attorney's Office for the SDNY who, along with Enrique, is having difficulty figuring out how to open files believed to be GPS data for a cell phone.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Enrique",
+      "person2": "Will",
+      "relationshipType": "colleague",
+      "description": "Both are Paralegal Specialists at the U.S. Attorney's Office for the SDNY working together on processing discovery materials for the Maxwell case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-01",
+      "title": "Vendor Processing Deadline",
+      "description": "A vendor was expected to complete processing of 15 VHS tapes and 39 cassette tapes by this date.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-10-02",
+      "title": "Discovery File Analysis",
+      "description": "Staff attempt to open and analyze files from Blu-Ray discs (102, 103, 104, 105) containing potential GPS/cell phone data for Ghislaine Maxwell, encountering technical difficulties.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Enrique",
+        "Will"
+      ]
+    },
+    {
+      "date": "2020-10-06",
+      "title": "Follow-up on Technical Issues",
+      "description": "A follow-up email is sent requesting connection with the FBI personnel who prepared the problematic Blu-Ray discs to resolve access issues.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Enrique"
+      ]
+    }
+  ],
+  "locations": [
+    "U.S. Attorney's Office, SDNY, New York, NY 10007",
+    "Room 307 (likely within the U.S. Attorney's Office)",
+    "Network share: \\\\Usa.doj.gov\\cloud\\NYS\\StAndrews\\Shared\\USvEpstein-2018R01618"
+  ],
+  "keyFacts": [
+    "Discovery materials for the Ghislaine Maxwell case included four Blu-Ray discs (labeled 102, 103, 104, 105) containing files suspected to be GPS/cell phone data for Maxwell's phone, which prosecutors had difficulty accessing.",
+    "Additional physical evidence included 15 VHS tapes and 39 cassette tapes, which were sent to a vendor for conversion and digital storage.",
+    "The emails reveal internal logistical and technical challenges within the U.S. Attorney's Office in processing and reviewing digital evidence obtained from the FBI.",
+    "The correspondence indicates an ongoing effort to prepare a 'Fifth Production' of discovery materials for the defense.",
+    "The evidence was stored on a specific DOJ network share path dedicated to the 'USvEpstein-2018R01618' case."
+  ],
+  "analyzedAt": "2026-02-20T10:10:36.609Z"
+}

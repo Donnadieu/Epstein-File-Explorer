@@ -1,0 +1,124 @@
+{
+  "fileName": "EFTA00126948.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an FBI 302 interview summary of a BOP Captain from the Metropolitan Correctional Center (MCC) regarding the supervision and circumstances surrounding Jeffrey Epstein's incarceration and death. The Captain details Epstein's housing status, manipulative behavior, the July 23 incident, and the failures in protocol leading up to Epstein being found unresponsive in his cell on August 10, 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The high-profile inmate at MCC who was found unresponsive in his cell on August 10, 2019. The interview details his behavior, housing assignments, and the circumstances leading to his death.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate (Epstein's former cellmate)",
+      "category": "associate",
+      "context": "Epstein's cellmate during a July 23, 2019 incident where Epstein was found unresponsive. Epstein claimed Tartaglione tried to take his life.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate (Epstein's cellmate)",
+      "category": "associate",
+      "context": "The inmate selected to be Epstein's cellmate after the July 23 incident. He was out of the cell for court on August 9, 2019, and his property was removed, leaving Epstein alone.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who admitted to entering Epstein's cell without supervision on the morning Epstein was found.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Noel",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "A correctional officer who, along with Officer Thomas, admitted to failures in protocol related to rounds and counts on the night of Epstein's death.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were housed together in the SHU. Epstein accused Tartaglione of trying to kill him during the July 23 incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was selected as Epstein's new cellmate after the July 23 incident. He was Epstein's cellmate until he left for court on August 9.",
+      "strength": 3
+    },
+    {
+      "person1": "Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Officer Thomas was one of the correctional officers responsible for monitoring Epstein and admitted to entering his cell without supervision.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found Unresponsive in Cell",
+      "description": "Jeffrey Epstein was found unresponsive on the floor of his cell with a homemade piece of fabric on his chest. He claimed his cellmate, Nicholas Tartaglione, tried to take his life. He was placed on Suicide Watch.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Cellmate Removed",
+      "description": "Epstein's cellmate, Efrain Reyes, was out for court. His property was removed from the cell, indicating he would not return, leaving Epstein without a cellmate contrary to the Warden's directive.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Efrain Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Dead",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at MCC in the early morning. He was pronounced dead. The interview reveals failures in 30-minute rounds, counts, and camera surveillance.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Thomas",
+        "Noel"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "FBI Interview of BOP Captain",
+      "description": "The BOP Captain was interviewed by the FBI and OIG regarding his oversight of Epstein's incarceration and the events leading to his death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY 10007",
+    "FBI New York Field Office, 290 Broadway, New York, NY 10278",
+    "Metropolitan Detention Center (MDC), Brooklyn, NY"
+  ],
+  "keyFacts": [
+    "Epstein was initially placed in the SHU but manipulated staff to avoid having a cellmate, including requesting psychological evaluations to be placed on Suicide Watch.",
+    "After the July 23 incident, the Warden issued a directive that Epstein must have a cellmate at all times, but this directive was communicated only verbally and informally among lieutenants.",
+    "On August 9, 2019, Epstein's cellmate Efrain Reyes went to court and his property was removed, leaving Epstein alone in his cell. The Captain was not notified of this.",
+    "Critical security protocols failed on the night of Epstein's death: 30-minute rounds and 3:00 AM/5:00 AM counts were not completed, and the camera system in the SHU was down.",
+    "Correctional Officers Thomas and Noel admitted to not completing rounds and counts, and Officer Thomas entered Epstein's cell without supervision."
+  ],
+  "analyzedAt": "2026-02-19T17:25:22.869Z"
+}

@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00141114.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-12-20",
+  "summary": "This is an FBI 302 form documenting a proffer interview conducted on December 20, 2019, with an individual named SANCHEZ-GALAN at the U.S. Attorney's Office for the Southern District of New York. The interview was attended by federal prosecutors and law enforcement agents as part of an investigation.",
+  "persons": [
+    {
+      "name": "SANCHEZ-GALAN",
+      "role": "Interviewee / Proffer Source",
+      "category": "witness",
+      "context": "Provided information relating to an investigation during a proffer interview at the U.S. Attorney's Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Attended the proffer interview with SANCHEZ-GALAN at the U.S. Attorney's Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "Investigating Agent",
+      "category": "law enforcement",
+      "context": "Attended the proffer interview with SANCHEZ-GALAN.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Office of Inspector General SA",
+      "role": "Investigating Agent",
+      "category": "law enforcement",
+      "context": "Attended the proffer interview with SANCHEZ-GALAN.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SANCHEZ-GALAN",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "legal",
+      "description": "SANCHEZ-GALAN was interviewed by AUSAs under a proffer agreement as part of an investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "SANCHEZ-GALAN",
+      "person2": "FBI Special Agent",
+      "relationshipType": "legal",
+      "description": "FBI SA was present and involved in the proffer interview of SANCHEZ-GALAN.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-20",
+      "title": "Proffer Interview of SANCHEZ-GALAN",
+      "description": "SANCHEZ-GALAN was interviewed under a proffer agreement at the U.S. Attorney's Office in New York, providing information related to an investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SANCHEZ-GALAN",
+        "Assistant United States Attorney",
+        "FBI Special Agent",
+        "Office of Inspector General SA"
+      ]
+    },
+    {
+      "date": "2019-09-09",
+      "title": "Prior Investigation Activity",
+      "description": "Notes reference an investigation activity that occurred in New York, New York.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "United States Attorneys Office of the Southern District of New York, 1 St. Andrews, New York, New York",
+    "New York, New York, United States"
+  ],
+  "keyFacts": [
+    "A proffer interview was conducted with SANCHEZ-GALAN on December 20, 2019, as part of an ongoing investigation.",
+    "The interview took place at the U.S. Attorney's Office for the Southern District of New York and was attended by federal prosecutors and law enforcement agents.",
+    "The document references a prior investigation activity dated September 9, 2019, in New York.",
+    "The identities of the specific AUSAs and SAs are redacted in the provided text."
+  ],
+  "analyzedAt": "2026-02-20T00:12:38.795Z"
+}

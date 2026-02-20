@@ -1,0 +1,132 @@
+{
+  "fileName": "EFTA00155254.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-06-20",
+  "summary": "This is an FBI report documenting an anonymous tip from a therapist to the FBI National Threat Operations Center. The caller reported that a client (the Victim) has been trafficked since age five and was sexually abused by Jeffrey Epstein and Ghislaine Maxwell between ages 7-9 and as a teenager. The Victim is currently being stalked and beaten by her lifelong trafficker (UNSUB) and fears for her life if she reports the abuse.",
+  "persons": [
+    {
+      "name": "Anonymous",
+      "role": "Therapist / Tipster",
+      "category": "witness",
+      "context": "A therapist who anonymously called the FBI to report that her client (the Victim) has been trafficked her whole life and was abused by Jeffrey Epstein and Ghislaine Maxwell.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused Sex Trafficker",
+      "category": "key figure",
+      "context": "Named by the anonymous therapist as someone the Victim was taken to for sexual abuse between ages 7-9 and as a teenager.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused Co-conspirator",
+      "category": "key figure",
+      "context": "Described by the anonymous therapist as an active participant in the sexual abuse and exploitation of the Victim.",
+      "mentionCount": 2
+    },
+    {
+      "name": "UNSUB",
+      "role": "Unknown Subject / Trafficker",
+      "category": "associate",
+      "context": "An unidentified man who has trafficked, stalked, beaten, and abused the Victim her whole life, causing her severe injuries requiring multiple surgeries.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as perpetrators involved in the sexual abuse and exploitation of the Victim.",
+      "strength": 4
+    },
+    {
+      "person1": "UNSUB",
+      "person2": "Victim",
+      "relationshipType": "victim-perpetrator",
+      "description": "UNSUB has trafficked, beaten, and abused the Victim her entire life, causing severe physical injuries.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim",
+      "relationshipType": "victim-perpetrator",
+      "description": "The Victim was taken to Jeffrey Epstein for sexual abuse between ages 7-9 and as a teenager.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Victim",
+      "relationshipType": "victim-perpetrator",
+      "description": "Ghislaine Maxwell was an active participant in the sexual abuse and exploitation of the Victim.",
+      "strength": 4
+    },
+    {
+      "person1": "Anonymous",
+      "person2": "Victim",
+      "relationshipType": "therapist-client",
+      "description": "Anonymous is a therapist who has been gathering information from the Victim for approximately one year and nine months.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-06-20",
+      "title": "Anonymous Tip to FBI NTOC",
+      "description": "An anonymous therapist called the FBI National Threat Operations Center to report a client being trafficked and abused, including by Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Anonymous",
+        "Victim",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "UNSUB"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Childhood Rape by Police Officer",
+      "description": "When the Victim was five years old, an unidentified police officer raped her with his gun, leading to her distrust of police.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Victim"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Sexual Abuse by Epstein and Maxwell",
+      "description": "The Victim was taken to Jeffrey Epstein between ages 7-9 and as a teenager, with Ghislaine Maxwell participating in the sexual abuse and exploitation.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Victim",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Ongoing Abuse and Stalking by UNSUB",
+      "description": "The Victim is currently being stalked, beaten, and abused by UNSUB, her lifelong trafficker, requiring multiple surgeries for genital injuries.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Victim",
+        "UNSUB"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An anonymous therapist reported to the FBI that her client (the Victim) has been trafficked since approximately age five.",
+    "The Victim was sexually abused by Jeffrey Epstein and Ghislaine Maxwell between ages 7-9 and periodically as a teenager.",
+    "The Victim was raped with a gun by an unidentified police officer at age five, leading to deep distrust of law enforcement.",
+    "The Victim is currently being stalked and beaten by her lifelong trafficker (UNSUB), suffering injuries requiring multiple genital surgeries.",
+    "The therapist connected the Victim's story to Epstein after watching documentaries, noting similarities in descriptions of a house and fence."
+  ],
+  "analyzedAt": "2026-02-20T13:22:06.914Z"
+}

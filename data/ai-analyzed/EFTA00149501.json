@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00149501.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-08",
+  "summary": "This document is an email chain from July 2020 between the U.S. Attorney's Office (SDNY) and FBI NY CART forensic examiners regarding the processing and transfer of digital evidence seized from Jeffrey Epstein's New York and U.S. Virgin Islands residences. The emails discuss logistical challenges, data volume (approximately 350 GB initially, with terabytes total), formatting issues, and the urgent need for the evidence to support potential additional charges.",
+  "persons": [
+    {
+      "name": "Rossmiller",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Assistant U.S. Attorney in the Southern District of New York who is part of the Epstein case team, coordinating receipt and review of seized digital evidence.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Watson",
+      "role": "SSA, FBI New York",
+      "category": "law enforcement",
+      "context": "FBI Supervisory Special Agent in New York involved in coordinating the transfer and discussion of Epstein search warrant evidence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Rossmiller",
+      "person2": "Watson",
+      "relationshipType": "professional collaboration",
+      "description": "Both are involved in the Epstein investigation, with Rossmiller from the U.S. Attorney's Office and Watson from the FBI, coordinating on evidence transfer and review.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-07",
+      "title": "Evidence Export Readiness",
+      "description": "FBI NY CART Coordinator informs the U.S. Attorney's Office that most evidence from New York and USVI searches is ready for export, totaling about 350 GB initially, with concerns about email attachment linkages.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-06-30",
+      "title": "Follow-up on USVI Materials",
+      "description": "U.S. Attorney's Office follows up on the estimated timeline for receiving all evidence from the U.S. Virgin Islands searches.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-05-29",
+      "title": "Updated Device Descriptions Provided",
+      "description": "FBI NY CART provides updated descriptions of seized devices, noting that many thumb drives and SD cards have electronically reported serial numbers.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-03-09",
+      "title": "Review Problems Identified",
+      "description": "U.S. Attorney's Office details significant problems with previously received data, including inability to link emails to attachments and mismatched load files, making review nearly impossible.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Rossmiller"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (NY) - Epstein's mansion/residence",
+    "U.S. Virgin Islands (USVI) - Epstein's island property",
+    "Manhattan apartment"
+  ],
+  "keyFacts": [
+    "The digital evidence seized from Epstein's properties includes terabytes of data from devices like Macs, Windows computers, servers, iPhones, iPads, DVRs, loose hard drives, thumb drives, and SD cards.",
+    "Significant processing challenges included dealing with APFS-formatted Macs from the island, encryption on multiple devices, and forensic tool limitations in linking emails to their attachments.",
+    "The U.S. Attorney's Office urgently needed the evidence to support possible additional charges in the case, indicating an active investigative phase in mid-2020.",
+    "Previous data transfers (over 1 million documents) were in an unusable format for discovery, necessitating a complete re-production of raw data in a searchable format.",
+    "Evidence was seized from searches in July and September (likely 2019) at Epstein's New York and U.S. Virgin Islands residences, and from his person upon arrest."
+  ],
+  "analyzedAt": "2026-02-20T07:34:48.161Z"
+}

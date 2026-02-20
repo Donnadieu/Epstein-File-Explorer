@@ -1,0 +1,119 @@
+{
+  "fileName": "EFTA00126127.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": null,
+  "summary": "This is a federal indictment against correctional officers Tova Noel and Michael Thomas for conspiracy and making false records related to their failure to conduct required inmate counts and rounds at the Metropolitan Correctional Center (MCC) on August 9-10, 2019. The indictment details how their dereliction of duty resulted in no monitoring of the Special Housing Unit (SHU) during the period when inmate Jeffrey Epstein committed suicide.",
+  "persons": [
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer at MCC, Defendant",
+      "category": "legal",
+      "context": "Indicted for conspiracy and making false records by failing to perform required inmate counts and rounds in the SHU on August 9-10, 2019, and falsifying count slips.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer at MCC, Defendant",
+      "category": "legal",
+      "context": "Indicted for conspiracy and making false records alongside Noel for failing to perform required inmate counts and rounds in the SHU on August 9-10, 2019, and falsifying count slips.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate at MCC, Accused",
+      "category": "key figure",
+      "context": "The inmate who committed suicide by hanging in his SHU cell on August 10, 2019, while unobserved due to the defendants' failure to conduct counts and rounds.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The prosecutor who signed and filed the indictment against Noel and Thomas.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-conspirator",
+      "description": "Indicted together for conspiring to defraud the United States by failing to perform their duties and falsifying count slips on August 9-10, 2019.",
+      "strength": 5
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Noel was one of the correctional officers responsible for monitoring Epstein in the SHU on the night of his suicide.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-prisoner",
+      "description": "Thomas was one of the correctional officers responsible for monitoring Epstein in the SHU on the night of his suicide; he also responded to Epstein's prior apparent suicide attempt on July 23, 2019.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Epstein's Arrest and Detention",
+      "description": "Jeffrey Epstein was arrested and detained at the MCC on sex trafficking charges.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Prior Apparent Suicide Attempt",
+      "description": "MCC officers, including Michael Thomas, found Epstein in his SHU cell with a strip of bedsheet around his neck. He was placed on suicide watch.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Failure to Perform Counts and Rounds",
+      "description": "Correctional officers Tova Noel and Michael Thomas failed to perform mandated institutional counts and 30-minute rounds in the SHU, instead falsifying count slips and sleeping or browsing the internet.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Body",
+      "description": "At approximately 6:30 a.m., Noel and Thomas discovered Epstein's body in his cell after serving breakfast. He had committed suicide by hanging overnight while unobserved.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), Manhattan",
+    "Special Housing Unit (SHU) at MCC, ninth floor",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "Correctional officers Tova Noel and Michael Thomas are charged with conspiracy and making false records for failing to conduct any inmate counts or rounds in the MCC's Special Housing Unit from approximately 10:30 p.m. on August 9 to 6:30 a.m. on August 10, 2019.",
+    "Jeffrey Epstein committed suicide by hanging in his SHU cell during the period when no counts or rounds were conducted due to the defendants' dereliction of duty.",
+    "The defendants falsified count slips for five institutional counts (4 p.m., 10 p.m., 12 a.m., 3 a.m., and 5 a.m.) and over 75 separate 30-minute round entries, leading the MCC to believe inmates were being monitored.",
+    "Video surveillance confirmed that the last time anyone approached Epstein's tier before his body was discovered was at approximately 10:30 p.m. on August 9, 2019.",
+    "Epstein had been placed on suicide watch after a prior incident on July 23, 2019, and was supposed to have a cellmate per psychological staff direction, but was alone in his cell on the night of his death."
+  ],
+  "analyzedAt": "2026-02-19T17:06:54.499Z"
+}

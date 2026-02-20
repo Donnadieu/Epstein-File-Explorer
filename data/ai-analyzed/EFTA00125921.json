@@ -1,0 +1,140 @@
+{
+  "fileName": "EFTA00125921.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2021-10-27",
+  "summary": "This is a sworn statement transcript of an interview conducted by the DOJ Office of the Inspector General with a Federal Bureau of Prisons Captain III. The interview is part of an investigation into the death of inmate Jeffrey Epstein, focusing on administrative procedures, specifically whether Correctional Officer Tova Noel was improperly directed to sign training documents without receiving mandatory Special Housing Unit (SHU) and suicide prevention training in June 2019. The witness denies instructing Noel to sign the forms.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at the Metropolitan Correctional Center (MCC) New York; the subject of the OIG death investigation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "witness",
+      "context": "A correctional officer at MCC New York who was out on workers' compensation from March to June 2019. She alleges that the witness instructed her to sign SHU and suicide prevention training documents without actually receiving the training.",
+      "mentionCount": 60
+    },
+    {
+      "name": "Lieutenant Rice",
+      "role": "SHU Lieutenant",
+      "category": "staff",
+      "context": "The Special Housing Unit lieutenant at MCC New York in 2019, responsible for conducting quarterly SHU training. The witness states Rice was the one who should have provided training to Tova Noel.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Dr. Miller",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "Conducted suicide prevention training for SHU staff at MCC New York in 2018 and 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dr. Imeri",
+      "role": "Psychologist",
+      "category": "staff",
+      "context": "Mentioned as the psychologist who sent an email regarding Jeffrey Epstein coming off suicide watch and requiring a cellmate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Inmate who was Jeffrey Epstein's cellmate in SHU; involved in an incident with Epstein on July 23, 2019.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Lieutenant Rice",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Rice was the SHU lieutenant responsible for providing mandatory quarterly training to Noel, according to the witness.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Noel was a correctional officer at the MCC where Epstein was held, though the witness states Noel had no direct interactions with Epstein.",
+      "strength": 1
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Tartaglione was Epstein's cellmate in the Special Housing Unit after Epstein came off suicide watch.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-06-06",
+      "title": "Quarterly SHU Training Session",
+      "description": "Mandatory quarterly Special Housing Unit training was scheduled and conducted for MCC staff. Tova Noel was absent due to workers' compensation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Tova Noel",
+        "Lieutenant Rice"
+      ]
+    },
+    {
+      "date": "2019-06-26",
+      "title": "Noel Signs Training Documents",
+      "description": "Tova Noel signed sign-in sheets for both quarterly SHU training and suicide prevention training, dating her signature June 26, 2019. She claims she was instructed to sign by the witness without receiving training.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein-Tartaglione Incident",
+      "description": "An incident occurred between inmate Jeffrey Epstein and his cellmate, inmate Tartaglione, in the Special Housing Unit.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein Found Dead",
+      "description": "Jeffrey Epstein was found deceased in his cell at the Metropolitan Correctional Center, New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-10-27",
+      "title": "OIG Interview of BOP Captain",
+      "description": "The DOJ Office of the Inspector General conducts a voluntary, sworn interview with a BOP Captain III as part of its investigation into Epstein's death, focusing on training documentation issues.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "FCI Fort Dix, New Jersey",
+    "OIG New York Field Office, 29th floor, One Battery Park Plaza, New York, New York",
+    "Indiana (witness's home state and location during Epstein's death)"
+  ],
+  "keyFacts": [
+    "The witness, a BOP Captain III and former administrative lieutenant at MCC New York, is interviewed regarding allegations that she instructed CO Tova Noel to falsify training records.",
+    "Tova Noel claims under oath that the witness directly gave her sign-in sheets and told her to sign, acknowledging she never received the mandatory SHU or suicide prevention training, doing so only because 'they need it for a program review.'",
+    "The witness vehemently denies under oath ever giving Noel the sheets to sign or telling her not to date them, stating she only informed Noel she needed to complete the training and that the SHU lieutenant (Rice) was responsible for providing it.",
+    "The interview reveals systemic concerns about training documentation and pressure to have records in order for BOP program reviews, with Noel alleging the problem 'starts from the top.'",
+    "The witness states she was not present at MCC on August 9-10, 2019 (when Epstein died), as she was in Indiana due to her father's stroke, and she believes Epstein took his own life."
+  ],
+  "analyzedAt": "2026-02-19T17:00:24.214Z"
+}

@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00153653.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-04-30",
+  "summary": "This is an email chain from April 2020 discussing a victim's eligibility for the New York Office of Victim Services (OVS) compensation. The conversation clarifies that the victim's abuse occurred in Florida, not New York, which may affect her eligibility. An OVS application for the victim is attached, and she plans to seek treatment from Randee Kogan.",
+  "persons": [
+    {
+      "name": "Brittany Henderson",
+      "role": "Trial Attorney",
+      "category": "legal",
+      "context": "She is the sender of the forwarded email, attaching an OVS application for a victim and mentioning the victim's planned treatment with Randee Kogan.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "He is copied on the forwarded email from Brittany Henderson regarding the OVS application.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Randee Kogan",
+      "role": "Treatment Provider",
+      "category": "other",
+      "context": "Mentioned as the person the victim plans to treat with if approved for OVS compensation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the email chain; the discussion pertains to a victim of his abuse.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Brad Edwards",
+      "relationshipType": "professional",
+      "description": "Both are legal professionals copied on correspondence regarding a victim's OVS application.",
+      "strength": 2
+    },
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Randee Kogan",
+      "relationshipType": "professional",
+      "description": "Henderson mentions the victim plans to treat with Kogan if OVS is approved.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-29",
+      "title": "OVS Application Discussion",
+      "description": "Email chain discusses a victim's eligibility for New York Office of Victim Services compensation, noting her abuse occurred in Florida.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Brittany Henderson",
+        "Brad Edwards"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Florida",
+    "Fort Lauderdale, Florida 33301"
+  ],
+  "keyFacts": [
+    "A victim of Jeffrey Epstein's abuse is applying for compensation from the New York Office of Victim Services (OVS).",
+    "The victim's abuse occurred in Florida, not New York, raising questions about her eligibility for New York's OVS program.",
+    "The victim plans to seek treatment from Randee Kogan if her OVS application is approved.",
+    "The email chain involves legal professionals Brittany Henderson and Brad Edwards discussing the victim's case."
+  ],
+  "analyzedAt": "2026-02-20T11:27:32.992Z"
+}

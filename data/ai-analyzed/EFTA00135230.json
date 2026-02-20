@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00135230.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-06",
+  "summary": "This is an FBI 302 interview report of a forensic psychologist at the Manhattan Correctional Center (MCC) regarding her evaluation of Jeffrey Epstein on July 24, 2019, while he was on suicide watch. The psychologist details her clinical assessment, her decision to step him down to psychological observation, and her reaction to his subsequent death.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate being evaluated while on suicide watch at MCC. The psychologist interviewed him on July 24, 2019, and he later died by suicide.",
+      "mentionCount": 12
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Participated in the interview of the forensic psychologist regarding the evaluation of Jeffrey Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dr.",
+      "role": "Doctor",
+      "category": "staff",
+      "context": "A doctor with whom the forensic psychologist discussed her decision to step Epstein down from suicide watch to psychological observation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "A prison administrator with whom the forensic psychologist discussed her decision regarding Epstein's suicide watch status.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Dr.",
+      "relationshipType": "medical",
+      "description": "Dr. was consulted by the forensic psychologist and concurred with the decision to change Epstein's suicide watch status.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Associate Warden",
+      "relationshipType": "custodial",
+      "description": "The Associate Warden was consulted and concurred with the psychologist's decision regarding Epstein's suicide watch status.",
+      "strength": 2
+    },
+    {
+      "person1": "SA",
+      "person2": "AUSA",
+      "relationshipType": "professional",
+      "description": "Collaborated in conducting the interview of the forensic psychologist.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Suicide Watch Evaluation",
+      "description": "Forensic psychologist evaluated inmate Jeffrey Epstein for approximately 30 minutes while he was on suicide watch at MCC. She found him energetic, smiling, and denying suicidal intent.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-06",
+      "title": "FBI Interview of MCC Psychologist",
+      "description": "FBI Special Agent and Assistant U.S. Attorneys interviewed the forensic psychologist regarding her evaluation and treatment of Jeffrey Epstein prior to his death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SA",
+        "AUSA"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein died by suicide in his cell at the Manhattan Correctional Center. The psychologist described the incident as 'tragic'.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "1 Saint Andrews Plaza, NY NY (Interview location)",
+    "Manhattan Correctional Center (MCC), 150 Park Row, NY NY",
+    "Federal Medical Center, Butner, NC"
+  ],
+  "keyFacts": [
+    "A forensic psychologist evaluated Jeffrey Epstein on July 24, 2019, while he was on suicide watch at MCC.",
+    "Epstein denied self-harm and suicidal intent to the psychologist, stating he was 'not interested in killing myself' and 'had a wonderful life'.",
+    "The psychologist stepped Epstein down from suicide watch to a 'psychological observation' status, which allowed him more privileges like legal visits, hygiene products, and novels.",
+    "The psychologist consulted with a doctor and an associate warden, who concurred with her decision to change Epstein's status.",
+    "Epstein allegedly reported that his cell mate injured him and that he was unaware of how he got marks on his neck."
+  ],
+  "analyzedAt": "2026-02-19T20:15:28.683Z"
+}

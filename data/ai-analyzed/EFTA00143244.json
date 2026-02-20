@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00143244.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-14",
+  "summary": "This document is an email chain from August 14, 2019, containing a forwarded inmate message from the Metropolitan Correctional Center (MCC) New York. The inmate, assigned to plumbing work, is in a dispute with a psychiatrist over medication side effects and compliance. The inmate's message includes angry accusations and a hope that the psychiatrist is involved in the 'negligence of Epstein' and gets fired.",
+  "persons": [
+    {
+      "name": "Associate Warden MCC New York",
+      "role": "Prison Administrator",
+      "category": "staff",
+      "context": "The email is addressed to the Associate Warden at MCC New York, indicating they are a recipient of the forwarded inmate message regarding a medication dispute.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Psychiatrist",
+      "role": "Prison Psychiatrist",
+      "category": "staff",
+      "context": "A psychiatrist at MCC New York who previously communicated with the inmate about medication non-compliance. The inmate's message is a hostile reply to this psychiatrist.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Inmate",
+      "person2": "Psychiatrist",
+      "relationshipType": "provider-patient",
+      "description": "A contentious provider-patient relationship where the inmate is refusing medication due to side effects and accusing the psychiatrist of negligence.",
+      "strength": 4
+    },
+    {
+      "person1": "Psychiatrist",
+      "person2": "D.",
+      "relationshipType": "colleague",
+      "description": "Implied professional relationship; the psychiatrist informs the inmate that D. is following their case.",
+      "strength": 2
+    },
+    {
+      "person1": "Inmate",
+      "person2": "Associate Warden MCC New York",
+      "relationshipType": "administrative",
+      "description": "The inmate's message is formally forwarded to the Associate Warden, indicating the warden has administrative oversight of the inmate's situation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-13",
+      "title": "Inmate-Psychiatrist Medication Dispute",
+      "description": "A psychiatrist at MCC New York sends a message to an inmate regarding their non-compliance with medication. The inmate sends an angry reply accusing the medication of causing migraines and a metallic taste, and hopes the psychiatrist is involved in 'the negligence of Epstein' and gets fired.",
+      "category": "other",
+      "significance": 3,
+      "personsInvolved": [
+        "Inmate",
+        "Psychiatrist"
+      ]
+    },
+    {
+      "date": "2019-08-14",
+      "title": "Message Forwarded to Associate Warden",
+      "description": "The contentious message exchange between the inmate and psychiatrist is forwarded to the Associate Warden at MCC New York, escalating the administrative review of the incident.",
+      "category": "administrative",
+      "significance": 2,
+      "personsInvolved": [
+        "Associate Warden MCC New York",
+        "Psychiatrist",
+        "Inmate"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York, 150 Park Row, New York, NY"
+  ],
+  "keyFacts": [
+    "The document is an internal prison email from August 2019, after Jeffrey Epstein's death, showing inmate communications at MCC New York.",
+    "An inmate assigned to plumbing work is in a heated dispute with a prison psychiatrist over medication side effects and compliance.",
+    "The inmate's message explicitly references 'the negligence of Epstein,' directly connecting their personal grievance to the Epstein case and the scrutiny surrounding his death in custody.",
+    "The communication protocol requires messages to be sent from a departmental mailbox, not a personal one, to reach the inmate, highlighting institutional procedures.",
+    "The inmate's work assignment is listed as 'PLUMBING,' providing context about their status and activities within the correctional facility."
+  ],
+  "analyzedAt": "2026-02-20T03:10:26.826Z"
+}

@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA00128379.pdf",
+  "dataSet": "9",
+  "documentType": "forensic examination notes",
+  "dateOriginal": "2020-01-08 to 2020-01-09",
+  "summary": "This document contains detailed forensic examination notes for two desktop computer images (Z6E8KD3N.E01 and JP15721E36LSNK.E01) from case 2019-010614. It describes the verification, processing, and analysis using forensic tools like EnCase, FTK, and AXIOM, including extensive artifact recovery and timeline analysis of user activity on August 9-10, 2019. This document is a forensic analysis report detailing computer system activity logs from a Bureau of Prisons (BOP) system, covering dates around August 9-10, 2019. It records user logins, lock/unlock events, application launches, and internet activity, and concludes a search for documents or communications related to inmates Jeffrey Epstein and Reyes found no relevant hits on the examined devices.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Subject of a forensic keyword search on the BOP computer systems; the analysis found no documents or communication hits for his name on the examined devices.",
+      "mentionCount": 4
+    },
+    {
+      "name": "LITS",
+      "role": "Forensic Examiner",
+      "category": "law enforcement",
+      "context": "Listed as the examiner on the AXIOM case information for both computer images in this forensic analysis.",
+      "mentionCount": 2
+    },
+    {
+      "name": "User 8OP18923",
+      "role": "Computer User",
+      "category": "other",
+      "context": "Identified user on the system Z6E8KD3N.E01 with detailed timeline of activity including logon, password reset, and application usage on August 9-10, 2019.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Robert Adams",
+      "role": "BOP User",
+      "category": "staff",
+      "context": "Identified as the user (BOP55722) who successfully logged onto the system on August 10, 2019, at 14:04:11.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "User 8OP18923",
+      "relationshipType": "device association",
+      "description": "The forensic examination is of computer images potentially associated with Jeffrey Epstein, and user 8OP18923 is an active user on one of those systems.",
+      "strength": 2
+    },
+    {
+      "person1": "LITS",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "LITS is the forensic examiner analyzing computer images in a case (2019-010614) where Epstein's name is referenced.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-16",
+      "title": "Forensic Image Verification",
+      "description": "Verification of two desktop computer images (Z6E8KD3N.E01 and JP15721E36LSNK.E01) using MD5 and SHA1 checksums.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "LITS"
+      ]
+    },
+    {
+      "date": "2020-01-08",
+      "title": "AXIOM Processing of First Image",
+      "description": "Forensic processing of image Z6E8KD3N.E01 in AXIOM software, resulting in extensive artifact recovery including internet history, documents, and pictures.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "LITS"
+      ]
+    },
+    {
+      "date": "2020-01-09",
+      "title": "AXIOM Processing of Second Image",
+      "description": "Forensic processing of image JP15721E36LSNK.E01 in AXIOM software, with similar extensive artifact recovery.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "LITS"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "User Activity Timeline",
+      "description": "Detailed timeline of user 8OP18923's activity on system Z6E8KD3N including logon, password reset, and use of GroupWise, Internet Explorer, and Microsoft Access.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "User 8OP18923"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "BOP Computer System Activity",
+      "description": "Extensive user activity recorded on a BOP computer system, including repeated system lock/unlock events by user BOP18923, launches of GroupWise email client and Internet Explorer, and numerous instances of internet activity recorded throughout the day and night.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "User BOP18923"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Forensic Search for Epstein/Reyes Communications",
+      "description": "Forensic analysis completed, reporting that a search for keywords related to inmates Jeffrey Edward Epstein and Reyes on two specific devices (Z6E8KD3N.E01 and JP1572JE36LSNK.E01) found no document or communication hits for Epstein and only a few bookmarked documents for Reyes.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The forensic examination recovered massive amounts of digital evidence including 953,022 pictures, 1,813 Word documents, 1,280 PDFs, extensive internet history, and social media artifacts from the computer images.",
+    "Specific search categories included 'Human Trafficking Site URLs' with 7 hits on one image and 1 hit on the other, indicating targeted forensic searching.",
+    "The timeline analysis shows precise user activity on August 9-10, 2019, including password reset and access to what appears to be an internal system ('https://10.33.56.106/TRUACCESS').",
+    "The forensic process was comprehensive, utilizing multiple tools (EnCase, FTK, AXIOM) and examining diverse artifact types from encrypted files to cryptocurrency-related data.",
+    "The forensic analysis found no documents or communications related to Jeffrey Epstein on the examined Bureau of Prisons computer devices.",
+    "User activity logs show intensive computer use by user BOP18923 on August 9, 2019, including email (GroupWise) and internet browsing late into the night.",
+    "The report notes that BOP email via GroupWise does not cache locally, meaning emails must be requested directly from BOP for analysis.",
+    "A period of no user computer activity was identified from August 8, 2019, at 08:26:59 to August 10, 2019, at 08:09:24 on one of the systems.",
+    "The analysis was specifically tasked with searching for keywords related to inmates 'Jeffrey Edward Epstein' and 'Reyes'."
+  ],
+  "analyzedAt": "2026-02-19T17:48:39.324Z"
+}

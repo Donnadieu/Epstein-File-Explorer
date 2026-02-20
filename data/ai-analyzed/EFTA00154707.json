@@ -1,0 +1,114 @@
+{
+  "fileName": "EFTA00154707.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2025-02-28",
+  "summary": "An email forwarding details of a call between an FBI Special Agent (SA) and a DOJ Attorney regarding the status of evidence in the Jeffrey Epstein case. The DOJ Attorney inquires about sealed warrants, child sexual abuse material (CSAM), surveillance video, victim identification, and electronic device imaging.",
+  "persons": [
+    {
+      "name": "Attorney",
+      "role": "DOJ Attorney",
+      "category": "legal",
+      "context": "Contacted the FBI SA to ask specific questions about the status of warrants, CSAM, surveillance video, victims, and electronic device imaging in the Epstein case.",
+      "mentionCount": 5
+    },
+    {
+      "name": "SSA",
+      "role": "Squad Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Was cc'd on the email and, along with SA, notified the DOJ Attorney that a victim testified under a pseudonym.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the criminal case. The email references his arrest and suicide.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Victim-Protect Identity",
+      "role": "Victim/Witness",
+      "category": "victim",
+      "context": "A victim in the case who testified during the trial under a court-authorized pseudonym, as noted by SSA and SA.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SA",
+      "person2": "Attorney",
+      "relationshipType": "professional communication",
+      "description": "SA received a call from the DOJ Attorney to answer questions about evidence in the Epstein case, indicating an inter-agency information exchange.",
+      "strength": 3
+    },
+    {
+      "person1": "SA",
+      "person2": "SSA",
+      "relationshipType": "colleague",
+      "description": "Both are FBI agents; SSA was cc'd on the email and jointly provided information about a victim's testimony.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA",
+      "person2": "Victim-Protect Identity",
+      "relationshipType": "investigator-witness",
+      "description": "SSA was aware of and communicated details about this victim's testimony under a pseudonym.",
+      "strength": 2
+    },
+    {
+      "person1": "SA",
+      "person2": "Victim-Protect Identity",
+      "relationshipType": "investigator-witness",
+      "description": "SA was aware of and communicated details about this victim's testimony under a pseudonym.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "DOJ Attorney Inquiry Call",
+      "description": "A DOJ Attorney called an FBI SA to ask specific questions about evidence in the Epstein case, including warrants, CSAM, surveillance, and victims.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SA",
+        "Attorney"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Epstein's Arrest and Suicide",
+      "description": "Referenced in the context of surveillance footage that observed events around the time of these incidents.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Victim Testimony Under Pseudonym",
+      "description": "A victim in the case testified during the trial using a court-authorized pseudonym to protect their identity.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim-Protect Identity"
+      ]
+    }
+  ],
+  "locations": [
+    "NYO (likely New York Office of the FBI)",
+    "SDNY (Southern District of New York)",
+    "USAO-SDNY (U.S. Attorney's Office for the Southern District of New York)",
+    "Epstein properties (unspecified locations)"
+  ],
+  "keyFacts": [
+    "A DOJ Attorney was actively seeking information in February 2025 about the status of sealed warrants, CSAM, surveillance video, and electronic device imaging from the Epstein case.",
+    "The FBI SA stated that any Child Sexual Abuse Material (CSAM) was digital and only on one device, and that there were nude/topless images of victims that might not meet the legal definition of CSAM.",
+    "Surveillance video from outside Epstein properties was limited and captured events around his arrest and suicide, but did not show victims.",
+    "A victim in the case testified at trial under a court-authorized pseudonym to protect their identity.",
+    "The NYO FBI was coordinating with their Computer Analysis Response Team (CART) to address questions about encryption and device imaging."
+  ],
+  "analyzedAt": "2026-02-20T12:45:42.511Z"
+}

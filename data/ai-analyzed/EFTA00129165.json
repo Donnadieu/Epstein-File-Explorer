@@ -1,0 +1,174 @@
+{
+  "fileName": "EFTA00129165.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-30",
+  "summary": "An FBI 302 report documenting a telephonic interview conducted on August 29, 2019. The witness, referred to by the pseudonym 'TARA', discusses her upcoming deposition in the EB-5/Palm House civil litigation, her concerns about her attorney's connections, and provides allegations regarding Jeffrey Epstein and Glenn Straub's use of an investigator to procure underage girls from Cuba. The document also details a 2014 social trip on Straub's yacht.",
+  "persons": [
+    {
+      "name": "Tara",
+      "role": "Witness / Interviewee",
+      "category": "witness",
+      "context": "The primary source of information for the FBI interview. She is securing her business interests in Florida ahead of Hurricane Dorian and is scheduled for a deposition in the EB-5/Palm House civil litigation.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bobby LNU",
+      "role": "Employee of Tara's company",
+      "category": "associate",
+      "context": "Accompanied Tara to a meeting at Moon Thai & Japanese restaurant in Royal Palm Beach, Florida.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Craig Galle",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Described as Glenn Straub's attorney and a friend of Tara's own attorney. Tara despised and distrusted him because he had positioned himself to receive 2% of Straub's estate as executor before being replaced.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Glenn Straub",
+      "role": "Businessman / Associate of Epstein",
+      "category": "key figure",
+      "context": "A businessman whose attorney is Craig Galle. Tara alleges that both Straub and Jeffrey Epstein used an investigator named 'Danny LNU' to procure underage girls. Tara traveled on his yacht in 2014.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Larry Zink",
+      "role": "Executor",
+      "category": "legal",
+      "context": "Replaced Craig Galle as the executor of Glenn Straub's will.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Allegedly used an investigator named 'Danny LNU' in Miami to procure underage girls from Cuba, according to Tara's statements.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Danny LNU",
+      "role": "Investigator",
+      "category": "associate",
+      "context": "An investigator allegedly used by both Jeffrey Epstein and Glenn Straub to procure underage girls from Cuba by luring them with a fake business opportunity advertised on Telemundo.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bash Kazi",
+      "role": "Foreign arms dealer / Social acquaintance",
+      "category": "associate",
+      "context": "Met by Tara during a 2014 yacht trip with Glenn Straub. He lived on Straub's yacht during polo seasons and his team combined with Straub's to win a tournament. Described as a 'foreign arms dealer.'",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tara",
+      "person2": "Glenn Straub",
+      "relationshipType": "social",
+      "description": "Tara traveled on Straub's yacht to the Hamptons in 2014 for a polo tournament, indicating a social or business acquaintance.",
+      "strength": 3
+    },
+    {
+      "person1": "Glenn Straub",
+      "person2": "Craig Galle",
+      "relationshipType": "attorney-client",
+      "description": "Galle was Straub's attorney and had been the executor of his will before being replaced.",
+      "strength": 4
+    },
+    {
+      "person1": "Glenn Straub",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "According to Tara, both Straub and Epstein used the same investigator, Danny LNU, to procure underage girls, suggesting a potential connection in their activities.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Danny LNU",
+      "relationshipType": "employer-employee",
+      "relationshipType_alt": "co-conspirator",
+      "description": "Epstein allegedly used Danny LNU to procure underage girls from Cuba through deceptive advertisements.",
+      "strength": 4
+    },
+    {
+      "person1": "Glenn Straub",
+      "person2": "Danny LNU",
+      "relationshipType": "employer-employee",
+      "relationshipType_alt": "co-conspirator",
+      "description": "Straub allegedly used Danny LNU to procure underage girls from Cuba, according to Tara's allegations.",
+      "strength": 4
+    },
+    {
+      "person1": "Tara",
+      "person2": "Craig Galle",
+      "relationshipType": "adversarial",
+      "description": "Tara despised and distrusted Galle, partly because he was a friend of her own attorney and due to his actions regarding Straub's estate.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-29",
+      "title": "FBI Interview of Tara",
+      "description": "Tara was interviewed telephonically by the FBI. She discussed her upcoming deposition, attorney concerns, and made allegations about Epstein and Straub.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tara"
+      ]
+    },
+    {
+      "date": "2019-08-29",
+      "title": "Meeting at Moon Thai & Japanese",
+      "description": "Tara met with an FBI source at a restaurant in Royal Palm Beach, Florida, accompanied by her employee Bobby LNU, to discuss her deposition and other matters.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Tara",
+        "Bobby LNU"
+      ]
+    },
+    {
+      "date": "2014",
+      "title": "Yacht Trip to Hamptons Polo Tournament",
+      "description": "Tara traveled on Glenn Straub's yacht to the Hamptons for a polo tournament Straub was playing in. She met Bash Kazi on this trip.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Tara",
+        "Glenn Straub",
+        "Bash Kazi"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Alleged Procurement of Underage Girls",
+      "description": "Tara alleged that Jeffrey Epstein and Glenn Straub used investigator Danny LNU to lure approximately 15-year-old girls from Cuba through a fake business opportunity advertised on Telemundo.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Glenn Straub",
+        "Danny LNU"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach area, Florida",
+    "Moon Thai & Japanese, 11071 Southern Boulevard, #100, Royal Palm Beach, Florida",
+    "Miami, Florida",
+    "Cuba",
+    "The Hamptons",
+    "Italy"
+  ],
+  "keyFacts": [
+    "The witness 'Tara' alleges that both Jeffrey Epstein and businessman Glenn Straub used the same investigator, 'Danny LNU', to procure underage girls (approximately 15 years old) from Cuba.",
+    "The procurement method involved luring girls through a deceptive advertisement for a business opportunity run on the Spanish-language network Telemundo.",
+    "Tara expressed distrust of her own attorney in a civil deposition because that attorney was a friend of Craig Galle, who was Glenn Straub's attorney and had attempted to benefit from Straub's estate.",
+    "The document records a social connection between Tara and Glenn Straub, including a 2014 yacht trip to a polo tournament in the Hamptons where she met an alleged 'foreign arms dealer' named Bash Kazi.",
+    "The interview was conducted as Hurricane Dorian approached Florida, with Tara in the area to secure her business interests."
+  ],
+  "analyzedAt": "2026-02-19T18:35:17.937Z"
+}

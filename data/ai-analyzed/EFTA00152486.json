@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00152486.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-29",
+  "summary": "This is an internal FBI email chain from July 29, 2020, in which a Supervisory Special Agent (SSA) from the FBI New York Office requests assistance for Squad C-20 (VCACIHT) related to the ongoing Epstein/Maxwell investigation. The email seeks to identify available agents for this high-profile case.",
+  "persons": [
+    {
+      "name": "Supervisory Special Agent FBI New York Office",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the initial email requesting assistance for Squad C-20 related to the Epstein/Maxwell investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "A Supervisory Special Agent whose approval is needed for an agent to assist on the Epstein/Maxwell case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Supervisory Special Agent FBI New York Office",
+      "person2": "SA",
+      "relationshipType": "colleague",
+      "description": "Both are FBI agents involved in coordinating assistance for the Epstein/Maxwell investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "SA",
+      "person2": "SSA",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The SA indicates they need approval from their SSA to assist on the case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-29",
+      "title": "FBI Request for Assistance on Epstein/Maxwell Case",
+      "description": "An internal FBI email is sent seeking agent assistance for Squad C-20's ongoing investigation into Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Supervisory Special Agent FBI New York Office",
+        "SA",
+        "SSA"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York Office"
+  ],
+  "keyFacts": [
+    "The FBI's Squad C-20 (VCACIHT) was actively investigating the Epstein/Maxwell case as of July 2020.",
+    "The investigation was considered a 'high profile case' and a 'unique opportunity' within the FBI.",
+    "The email chain shows internal FBI coordination to allocate resources to the Epstein/Maxwell investigation.",
+    "Approval from a Supervisory Special Agent (SSA) was required for agents to assist on the case."
+  ],
+  "analyzedAt": "2026-02-20T09:56:45.390Z"
+}

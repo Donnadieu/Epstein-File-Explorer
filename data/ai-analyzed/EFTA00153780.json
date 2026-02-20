@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00153780.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-03-02",
+  "summary": "This document is a chain of emails from March 2020, with earlier threads dating back to December 2019, between the FBI/U.S. Attorney's Office and FirstBank Puerto Rico regarding a federal grand jury subpoena. The U.S. Attorney's Office is attempting to serve and enforce a subpoena for bank records, citing delinquency and threatening court action. The bank's customer service initially fails to properly process the request.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Sends the final email in March 2020, attaching the subpoena and asking when materials will be produced.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant U.S. Attorney Southern District of New York",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "The primary correspondent attempting to serve and enforce a criminal grand jury subpoena on FirstBank Puerto Rico, threatening court action for non-compliance.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York",
+      "person2": "Assistant U.S. Attorney Southern District of New York",
+      "relationshipType": "colleague",
+      "description": "Both are law enforcement/legal officials from the same investigation (FBI and U.S. Attorney's Office) corresponding about the same grand jury subpoena.",
+      "strength": 4
+    },
+    {
+      "person1": "Assistant U.S. Attorney Southern District of New York",
+      "person2": "FirstBank Puerto Rico",
+      "relationshipType": "legal-adversarial",
+      "description": "The prosecutor is attempting to compel the bank to produce documents under a subpoena, with the bank being non-responsive.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-31",
+      "title": "Initial Subpoena Submission",
+      "description": "The Assistant U.S. Attorney initially attempts to serve a criminal grand jury subpoena on FirstBank Puerto Rico via email, but the bank's system rejects it.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2020-01-03",
+      "title": "Subpoena Served and Received",
+      "description": "The federal grand jury subpoena is successfully served and received by FirstBank Puerto Rico, as confirmed by a customer service fax receipt.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2020-01-15",
+      "title": "Subpoena Return Deadline",
+      "description": "The deadline for FirstBank to produce materials in response to the subpoena passes without a response, making the bank delinquent.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2020-01-24",
+      "title": "Prosecutor Follow-Up on Delinquency",
+      "description": "The Assistant U.S. Attorney follows up, noting the bank is delinquent and threatening to seek court enforcement of the subpoena.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant U.S. Attorney Southern District of New York"
+      ]
+    },
+    {
+      "date": "2020-03-02",
+      "title": "FBI Agent Final Request",
+      "description": "An FBI Special Agent sends a final email attaching the subpoena and asking when the materials will be produced.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York",
+    "Puerto Rico",
+    "Rio Piedras, PR 00927",
+    "Ave. Munoz Rivera 1130, Rio Piedras, PR 00927"
+  ],
+  "keyFacts": [
+    "A federal grand jury subpoena was served on FirstBank Puerto Rico on January 3, 2020, with a return deadline of January 15, 2020.",
+    "By late January 2020, FirstBank was delinquent in its response to the subpoena, prompting threats of court enforcement from the U.S. Attorney's Office.",
+    "The subpoena is related to a criminal grand jury investigation, indicating an active federal probe, likely connected to the Epstein case given the document set.",
+    "Communication issues plagued the process, with the bank's customer service initially failing to register the request and providing unclear points of contact for its legal department.",
+    "The correspondence shows persistent efforts by the U.S. Attorney's Office and FBI to secure bank records, highlighting the investigative focus on financial transactions."
+  ],
+  "analyzedAt": "2026-02-20T11:39:12.500Z"
+}

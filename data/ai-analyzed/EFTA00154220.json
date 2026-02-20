@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00154220.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-09",
+  "summary": "This document is a series of emails from April 2021 among FBI personnel and an AUSA coordinating logistics for Ghislaine Maxwell and her defense team to review evidence at the 500 Pearl Street courthouse. It details security protocols, agent assignments, and scheduling for the evidence review sessions.",
+  "persons": [
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Ghislaine Maxwell is the defendant in the case. The emails detail the logistics for her transport, custody, and monitoring while she and her defense team review evidence at the courthouse.",
+      "mentionCount": 8
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "An Assistant U.S. Attorney is mentioned as being present for all three days of the evidence review and coordinating with the FBI agents on logistics.",
+      "mentionCount": 4
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Special Agent or Support Staff",
+      "category": "law enforcement",
+      "context": "Referred to as 'SOS', this individual is described as being present all three days, familiar with the case, and a point of contact for the assisting agents.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "FBI agents",
+      "person2": "Maxwell",
+      "relationshipType": "custodial",
+      "description": "FBI agents are assigned to pull Maxwell from Marshal custody, monitor her throughout the evidence review, and escort her to the restroom, maintaining physical custody.",
+      "strength": 5
+    },
+    {
+      "person1": "AUSA",
+      "person2": "FBI agents",
+      "relationshipType": "professional coordination",
+      "description": "The AUSA is coordinating with the FBI agents on the logistics of the evidence review, will meet them at the courthouse, and be present during the sessions.",
+      "strength": 4
+    },
+    {
+      "person1": "Maxwell",
+      "person2": "Defense team",
+      "relationshipType": "attorney-client",
+      "description": "Maxwell's defense team will be present with her to review evidence. They are to have a private room for conferences.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-13",
+      "title": "Start of Maxwell Evidence Review",
+      "description": "First day of a scheduled three-day evidence review for Ghislaine Maxwell and her defense team at the 500 Pearl Street courthouse.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell",
+        "AUSA",
+        "FBI agents",
+        "Defense team"
+      ]
+    },
+    {
+      "date": "2021-04-13 to 2021-04-15",
+      "title": "Multi-Day Evidence Review Sessions",
+      "description": "Scheduled evidence review sessions from 9:00 AM to 4:30 PM each day at 500 Pearl Street, involving Maxwell, her attorneys, FBI agents, and an AUSA.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Maxwell",
+        "AUSA",
+        "FBI agents",
+        "Defense team",
+        "SOS"
+      ]
+    }
+  ],
+  "locations": [
+    "500 Pearl Street (courthouse, New York, NY)",
+    "5th Floor, US Attorney office, Marshal door, proffer rooms (specific locations within 500 Pearl Street)"
+  ],
+  "keyFacts": [
+    "The emails detail high-security protocols for Ghislaine Maxwell during evidence review, including her being handcuffed, escorted by FBI agents with a key, and monitored even during restroom breaks.",
+    "The evidence review was scheduled for three consecutive days (April 13-15, 2021) at the 500 Pearl Street federal courthouse in New York.",
+    "Multiple FBI agents from Squad C-20 were assigned to assist on different days to provide security and custodial oversight for Maxwell.",
+    "An Assistant U.S. Attorney (AUSA) and an FBI staff member (SOS) familiar with the case were to be present for all three days of the review.",
+    "The logistics included reserving three separate proffer rooms: one for evidence, one for private defense conferences, and one as a break area for law enforcement."
+  ],
+  "analyzedAt": "2026-02-20T12:05:45.531Z"
+}

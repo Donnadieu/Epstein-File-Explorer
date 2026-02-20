@@ -1,0 +1,149 @@
+{
+  "fileName": "EFTA00128267.pdf",
+  "dataSet": "9",
+  "documentType": "forensic notes",
+  "dateOriginal": null,
+  "summary": "This document is a detailed forensic examination report of two desktop computers (Z6E8M349 and Z6E8K1EV) seized from the Metropolitan Correctional Center (MCC) by the Bureau of Prisons (BOP). The analysis focuses on user activity logs, particularly for BOP officers Tova Noel and Michael Thomas, around the time of Jeffrey Epstein's death on August 10, 2019. The report details the forensic imaging process, timeline reconstruction, and findings of personal internet usage during their shifts.",
+  "persons": [
+    {
+      "name": "Tova Noel",
+      "role": "BOP Officer",
+      "category": "staff",
+      "context": "A Bureau of Prisons officer whose user account (bop61232) was logged into desktop Z6E8K1EV during the early morning hours of August 10, 2019, around the time of Jeffrey Epstein's death. Her computer activity showed searches for news about Epstein.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "BOP Officer",
+      "category": "staff",
+      "context": "A Bureau of Prisons officer whose user account (bop19012) was logged into desktop Z6E8M349 during the early morning hours of August 10, 2019. His computer activity included searches for motorcycles and sports news.",
+      "mentionCount": 15
+    },
+    {
+      "name": "LITS Leonard",
+      "role": "Forensic Examiner",
+      "category": "law enforcement",
+      "context": "A forensic examiner with the FBI's Laboratory Information Technology Section (LITS) who received the seized hard drives for analysis in Dallas, TX.",
+      "mentionCount": 3
+    },
+    {
+      "name": "ASAC",
+      "role": "Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "An FBI Assistant Special Agent in Charge who collected the desktops from MCC, transported them to the lab, forensically imaged them, and was briefed on preliminary findings.",
+      "mentionCount": 6
+    },
+    {
+      "name": "SSA",
+      "role": "Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI Supervisory Special Agent consulted regarding a technical timeout error during the forensic processing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Case Agent",
+      "role": "FBI Case Agent",
+      "category": "law enforcement",
+      "context": "The primary FBI agent on the case who was consulted and briefed on the forensic findings regarding officer activity.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Kenyatta Taiste",
+      "role": "Person Searched",
+      "category": "other",
+      "context": "An individual whose name was searched for by Tova Noel on Google on August 10, 2019, at 5:38 AM.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Omar Amanat",
+      "role": "Person Searched",
+      "category": "other",
+      "context": "An individual whose name was searched for by Tova Noel on Google on August 10, 2019, at 5:53 AM, in relation to news about Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were BOP officers on duty at the Metropolitan Correctional Center during the same shift around the time of Jeffrey Epstein's death. Their computer activities were analyzed in parallel.",
+      "strength": 3
+    },
+    {
+      "person1": "ASAC",
+      "person2": "LITS Leonard",
+      "relationshipType": "professional",
+      "description": "ASAC collected and imaged the evidence, then handed it off to LITS Leonard for transport and further forensic examination.",
+      "strength": 3
+    },
+    {
+      "person1": "Case Agent",
+      "person2": "ASAC",
+      "relationshipType": "professional",
+      "description": "The Case Agent and ASAC were both briefed on the preliminary forensic findings in a phone conference.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Death in Custody",
+      "description": "Jeffrey Epstein was found deceased in his cell at the Metropolitan Correctional Center. The forensic examination is focused on BOP officer computer activity leading up to and around this time.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "BOP Officer Computer Activity",
+      "description": "Forensic timeline shows Tova Noel and Michael Thomas were logged into BOP computers. Activity includes personal internet searches (motorcycles, news, insurance) instead of work-related tasks during their shift.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Creation of Unfilled Check Sheet",
+      "description": "A file named 'SHU 30 CHECK SHEET (CONDENSED) l.docx' was created and last modified on Michael Thomas's computer but was not filled out. This document was meant for recording 30-minute inmate checks.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-14 to 2019-09-20",
+      "title": "Forensic Imaging and Analysis",
+      "description": "FBI forensic examiners imaged and analyzed the seized BOP desktop computers using EnCase and Magnet AXIOM tools, creating timelines of user activity.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "LITS Leonard",
+        "ASAC",
+        "SSA"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York",
+    "Crystal City, VA (FBI Forensic Laboratory)",
+    "Dallas, TX (Dallas Field Office)",
+    "SHU-0214207270.BOP.GOV (Computer hostname)",
+    "SHU-0214207268.BOP.GOV (Computer hostname)"
+  ],
+  "keyFacts": [
+    "BOP officers Tova Noel and Michael Thomas were logged into their respective government computers during the early morning hours of August 10, 2019, when Jeffrey Epstein died.",
+    "Forensic analysis revealed extensive personal internet usage during their shifts, including searches for motorcycles, insurance, jobs, furniture, and news about 'Epstein in jail' and 'omar amanat'.",
+    "A key work document, a 30-minute check sheet for inmate rounds, was created on Michael Thomas's computer but was never populated with data, suggesting rounds may not have been conducted as required.",
+    "The forensic report was created as part of the investigation into potential negligence or misconduct by BOP staff surrounding Epstein's death.",
+    "The BOP email system (GroupWise) was not cached locally, meaning the investigators needed to request email records directly from BOP servers."
+  ],
+  "analyzedAt": "2026-02-19T17:45:23.794Z"
+}

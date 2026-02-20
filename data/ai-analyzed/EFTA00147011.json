@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00147011.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-11",
+  "summary": "This document is an email chain between FBI agents in New York discussing the need for personnel to assist with executing a search warrant at Jeffrey Epstein's residence for digital media and computer equipment. The emails reveal coordination challenges as agents are occupied with other cases, including a kidnapping investigation and victim interviews in Florida.",
+  "persons": [
+    {
+      "name": "R. M. Hammond",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as an FBI agent who apologizes for being unable to assist with the search warrant due to catching a kidnapping case the previous night.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. I. P.",
+      "role": "Supervisory Special Agent (SSA), FBI",
+      "category": "law enforcement",
+      "context": "FBI Supervisory Special Agent in New York who coordinates the request for search assistance and acknowledges the response from another agent.",
+      "mentionCount": 2
+    },
+    {
+      "name": "I. M. J.",
+      "role": "Supervisory Special Agent (SSA), FBI/NYPD",
+      "category": "law enforcement",
+      "context": "FBI Supervisory Special Agent with the NYPD Violent Crimes Task Force who responds to the assistance request, noting his squad is busy but can provide one agent.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The target of the planned search warrant at his residence for digital media and computer equipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M. I. P.",
+      "person2": "I. M. J.",
+      "relationshipType": "colleague",
+      "description": "FBI colleagues coordinating operational support for executing a search warrant at Epstein's residence.",
+      "strength": 3
+    },
+    {
+      "person1": "R. M. Hammond",
+      "person2": "M. I. P.",
+      "relationshipType": "colleague",
+      "description": "FBI agents communicating about availability for the Epstein search warrant operation.",
+      "strength": 2
+    },
+    {
+      "person1": "M. I. P.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "FBI agent leading the investigation and planning a search of Epstein's residence.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Planned search warrant execution at Epstein's residence",
+      "description": "FBI agents discuss needing to execute another search warrant at Jeffrey Epstein's residence for digital media and computer equipment.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "M. I. P.",
+        "I. M. J.",
+        "R. M. Hammond",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-10",
+      "title": "Kidnapping case assignment",
+      "description": "FBI Special Agent R. M. Hammond catches a kidnapping case, affecting availability for the Epstein search.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "R. M. Hammond"
+      ]
+    },
+    {
+      "date": "2019-07",
+      "title": "Victim interviews in Florida",
+      "description": "Most of the FBI squad is in Florida interviewing victims related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M. I. P."
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Florida",
+    "Epstein's residence"
+  ],
+  "keyFacts": [
+    "The FBI was planning to execute another search warrant at Jeffrey Epstein's residence in July 2019 specifically targeting digital media and computer equipment.",
+    "FBI resources were stretched thin, with most of Squad C-20 (Crimes Against Children/Human Trafficking) in Florida interviewing victims.",
+    "The email chain reveals internal FBI coordination challenges, with agents citing other significant investigations, trials, and a kidnapping case as competing priorities.",
+    "The document indicates ongoing active investigation into Epstein by the FBI's Crimes Against Children/Human Trafficking unit in New York."
+  ],
+  "analyzedAt": "2026-02-20T04:53:47.109Z"
+}

@@ -1,0 +1,166 @@
+{
+  "fileName": "EFTA00154683.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": null,
+  "summary": "This document appears to be an FBI interview summary (302 form) of a witness, referred to as [REDACTED], who was a close friend and former boyfriend of a victim, referred to as [REDACTED]. The witness recounts the victim's disclosures about being sexually assaulted by Jeffrey Epstein and Ghislaine Maxwell at a ranch in New Mexico in the summer of 1996, following a trip to Thailand arranged by Epstein. The witness also describes a later incident in New York where he observed Epstein inappropriately touching the victim.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as a wealthy benefactor who arranged a trip to Thailand for the victim and her sister, and who sexually assaulted the victim at a ranch in New Mexico. Later observed inappropriately touching the victim in New York.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as charming and well-put-together; picked up the victim in New Mexico, took her shopping, and was present during the massage that led to the sexual assault by Epstein.",
+      "mentionCount": 8
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Witness / Victim's Confidant",
+      "category": "witness",
+      "context": "The individual being interviewed by the FBI. He is a baker from Arizona, was a close friend and former boyfriend of the victim ([REDACTED]), and recounts her disclosures about the abuse by Epstein and Maxwell.",
+      "mentionCount": 30
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Victim",
+      "category": "victim",
+      "context": "The victim who disclosed being sexually assaulted by Epstein and Maxwell at a New Mexico ranch in the summer of 1996. She was an artist from a single-parent family, and Epstein was initially presented as a benefactor of her art.",
+      "mentionCount": 25
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Victim's Sister",
+      "category": "victim",
+      "context": "The younger sister of the victim ([REDACTED]). Epstein learned about her through the victim and offered to help pay for her college education.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Acted together in the New Mexico incident where Maxwell facilitated the victim's arrival and set up the massage, after which Epstein assaulted her.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[REDACTED]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted the victim ([REDACTED]) during a massage at a New Mexico ranch and later inappropriately touched her during a Broadway show in New York.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "[REDACTED]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell facilitated the victim's ([REDACTED]) trip to New Mexico, set up the massage, and was present during the initial stages of the assault.",
+      "strength": 4
+    },
+    {
+      "person1": "[REDACTED]",
+      "person2": "[REDACTED]",
+      "relationshipType": "social",
+      "description": "Close friends and former romantic partners who attended neighboring high schools. The victim confided in the witness about the abuse by Epstein and Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[REDACTED]",
+      "relationshipType": "financial",
+      "description": "Epstein was presented as a wealthy benefactor who helped the victim's family, paid for a trip to Thailand for the victim, and offered to pay for her sister's college.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1996-04",
+      "title": "High School Prom Meeting",
+      "description": "The witness ([REDACTED]) first met the victim ([REDACTED]) at their junior year prom and after-party.",
+      "category": "social",
+      "significance": 1,
+      "personsInvolved": [
+        "[REDACTED]",
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "1996-Summer",
+      "title": "Thailand Trip",
+      "description": "Jeffrey Epstein arranged and paid for a trip to Thailand for the victim ([REDACTED]) shortly after she met the witness.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "1996-Summer",
+      "title": "New Mexico Ranch Assault",
+      "description": "The victim ([REDACTED]) was taken to a ranch in New Mexico by Ghislaine Maxwell. Under the guise of a massage, she was sexually assaulted by Jeffrey Epstein, who also got into bed with her afterward.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "1996-1997",
+      "title": "Initial Disclosure to Confidant",
+      "description": "The victim ([REDACTED]) first disclosed details of the New Mexico assault to her close friend and confidant ([REDACTED]) during their senior year of high school.",
+      "category": "testimony",
+      "significance": 3,
+      "personsInvolved": [
+        "[REDACTED]",
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "2002",
+      "title": "Emotional Outburst in Iowa City",
+      "description": "While the victim ([REDACTED]) was living in Iowa City, she had an emotional outburst with the witness ([REDACTED]), crying and stating that the feelings from the Epstein incident resurface during physical intimacy.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "[REDACTED]",
+        "[REDACTED]"
+      ]
+    },
+    {
+      "date": "2001-2002",
+      "title": "New York Broadway Show Incident",
+      "description": "During a trip to New York to see a Broadway show, the witness ([REDACTED]) observed Jeffrey Epstein sitting between him and the victim ([REDACTED]) and inappropriately touching her leg.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[REDACTED]",
+        "[REDACTED]"
+      ]
+    }
+  ],
+  "locations": [
+    "Phoenix, Arizona",
+    "New Mexico (ranch)",
+    "Thailand",
+    "New York City (Broadway show)",
+    "Iowa City, Iowa"
+  ],
+  "keyFacts": [
+    "A victim ([REDACTED]) disclosed being sexually assaulted by Jeffrey Epstein and Ghislaine Maxwell at a ranch in New Mexico in the summer of 1996, following a trip to Thailand that Epstein arranged.",
+    "The assault occurred during a massage where Epstein entered the room unexpectedly, fondled the victim, and later got into bed with her.",
+    "Ghislaine Maxwell facilitated the trip, picked up the victim, took her shopping, and was present during the setup of the massage.",
+    "A witness and close friend ([REDACTED]) also observed Epstein inappropriately touching the victim's leg during a Broadway show in New York years later.",
+    "The victim experienced lasting trauma, with emotional outbursts related to the incident recurring into her adult life, particularly in contexts of physical intimacy."
+  ],
+  "analyzedAt": "2026-02-20T12:41:31.525Z"
+}

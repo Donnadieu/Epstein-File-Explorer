@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00146874.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-27",
+  "summary": "This is an email chain from June 27, 2020, forwarding a picture. The email is from 'RO' to Mark L. Epstein, with the subject 'Re: Final', instructing him to 'Read this picture'. The document is part of the Epstein case files and appears to be a communication regarding an image attachment.",
+  "persons": [
+    {
+      "name": "Mark L. Epstein",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "The email is addressed to Mark L. Epstein, with the subject 'Re: Final' and the instruction to 'Read this picture'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stacey Richman",
+      "role": "Email recipient (CC'd or forwarded to)",
+      "category": "legal",
+      "context": "The email is forwarded to Stacey Richman, who is likely an attorney or legal representative involved in the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MLE",
+      "role": "Email forwarder",
+      "category": "other",
+      "context": "The email is forwarded by 'MLE' to Stacey Richman and possibly others, with the original date and attachment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "RO",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "correspondence",
+      "description": "RO sends an email directly to Mark L. Epstein with an instruction and an image attachment.",
+      "strength": 2
+    },
+    {
+      "person1": "MLE",
+      "person2": "Stacey Richman",
+      "relationshipType": "correspondence",
+      "description": "MLE forwards the email from RO to Mark L. Epstein onward to Stacey Richman.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-27",
+      "title": "Email forwarding regarding picture",
+      "description": "An email is forwarded by MLE to Stacey Richman, containing an original email from RO to Mark L. Epstein with the subject 'Re: Final' and an instruction to 'Read this picture', along with an image attachment.",
+      "category": "correspondence",
+      "significance": 2,
+      "personsInvolved": [
+        "RO",
+        "Mark L. Epstein",
+        "MLE",
+        "Stacey Richman"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email chain dated June 27, 2020, involving Mark L. Epstein and others.",
+    "The email instructs Mark L. Epstein to 'Read this picture', indicating the significance of an attached image (IMG_20200627_113832.jpg).",
+    "The email is forwarded to Stacey Richman, suggesting her involvement in legal or advisory matters related to the correspondence.",
+    "The document is part of the Epstein case files (EFTA00146874), indicating it is relevant to the investigation or legal proceedings."
+  ],
+  "analyzedAt": "2026-02-20T04:43:37.945Z"
+}

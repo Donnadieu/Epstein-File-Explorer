@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00147452.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-08",
+  "summary": "This is an email chain from July 2019 between FBI personnel regarding the Epstein case, specifically coordinating surveillance of Epstein's private jet at the airport in St. Thomas, U.S. Virgin Islands, and discussing potential law enforcement actions related to an arrest warrant.",
+  "persons": [
+    {
+      "name": "Joseph Picarello",
+      "role": "NYPD contact",
+      "category": "law enforcement",
+      "context": "Appears as a recipient of the email, involved in discussions about the Epstein case and potential airport surveillance.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Guillermo Gonzalez",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as a recipient of the email (cc'd), involved in FBI coordination regarding the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Referred to as the subject of the case; his private jet is to be surveilled at the airport in St. Thomas.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Joseph Picarello",
+      "person2": "Guillermo Gonzalez",
+      "relationshipType": "professional collaboration",
+      "description": "Both are law enforcement personnel (NYPD and FBI) coordinating on the Epstein case, as shown by being cc'd on the same email.",
+      "strength": 2
+    },
+    {
+      "person1": "FBI personnel (sender)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI is actively investigating Epstein, discussing surveillance of his jet and an arrest warrant.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Email coordination on Epstein surveillance",
+      "description": "FBI personnel email NYPD and other FBI contacts to coordinate quiet surveillance of Epstein's private jet at the St. Thomas airport and discuss the status of his arrest warrant.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Joseph Picarello",
+        "Guillermo Gonzalez",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "St. Thomas, U.S. Virgin Islands",
+    "New York"
+  ],
+  "keyFacts": [
+    "In July 2019, the FBI was actively coordinating with NYPD to surveil Jeffrey Epstein's private jet at the airport in St. Thomas, U.S. Virgin Islands.",
+    "The email discusses an arrest warrant for Epstein and potential law enforcement actions needed in St. Thomas.",
+    "The FBI indicates familiarity with Epstein in the U.S. Virgin Islands context, suggesting prior investigative knowledge of his activities there."
+  ],
+  "analyzedAt": "2026-02-20T05:38:11.699Z"
+}

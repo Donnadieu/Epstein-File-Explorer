@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00147287.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-24",
+  "summary": "This is an internal FBI email chain from July 24, 2019, discussing an incident where Jeffrey Epstein was found unconscious in his cell at the Metropolitan Correctional Center (MCC) with marks on his neck. The email reveals his cellmate was Nick Tartaglione, a former police officer and death penalty-eligible defendant in a quadruple homicide case. The document shows the FBI's internal notification and coordination regarding the incident and media inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The subject of the email; found unconscious in his cell at MCC with red marks on his neck, revived but could not recall what happened.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Nick Tartaglione",
+      "role": "Cellmate, Former Police Officer, Defendant",
+      "category": "associate",
+      "context": "Identified as Epstein's cellmate at MCC; a former police officer and subject of a quadruple homicide case who has been approved for the death penalty; denied knowing anything about the incident.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ponder",
+      "role": "FBI Contact",
+      "category": "law enforcement",
+      "context": "Mentioned as someone the email author plans to loop in to have an agent who covers the jails work contacts for details about the Epstein incident.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nick Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were sharing a cell at the Metropolitan Correctional Center (MCC) when Epstein was found unconscious.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found Unconscious in Cell",
+      "description": "Jeffrey Epstein was found unconscious in his cell at MCC with red marks on his neck. He was revived by staff but could not recall what happened. His cellmate, Nick Tartaglione, denied knowledge. An investigation was initiated by MCC.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nick Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "New York Office (FBI)",
+    "HVRA (likely Hudson Valley Region Area)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found unconscious in his cell at MCC with red marks on his neck on or before July 23, 2019.",
+    "Epstein's cellmate was identified as Nick Tartaglione, a former police officer and defendant in a quadruple homicide case approved for the death penalty.",
+    "The Metropolitan Correctional Center (MCC) initiated a standard operating procedure investigation into the incident.",
+    "The Washington Post had made an inquiry about the incident, indicating media attention.",
+    "The FBI New York Office was internally coordinating to gather details about the incident through jail contacts."
+  ],
+  "analyzedAt": "2026-02-20T05:22:17.194Z"
+}

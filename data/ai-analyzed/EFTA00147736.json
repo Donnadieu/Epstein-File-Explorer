@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00147736.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-02",
+  "summary": "This is an internal FBI email from July 2, 2019, regarding the indictment and impending arrest of Jeffrey Epstein. It details the operational planning required for his arrest upon his return to the U.S., the execution of a search warrant at his NYC residence, and interviews with co-conspirators and individuals in Florida.",
+  "persons": [
+    {
+      "name": "Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the email; he has been indicted in SDNY, a warrant for his arrest has been issued, and he is believed to be in France at the time of the email.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the original email, directing the squad (C-20) to prepare for the arrest operation, searches, and interviews related to the Epstein case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA",
+      "person2": "Epstein",
+      "relationshipType": "investigator-target",
+      "description": "The SSA is organizing the FBI squad's operational response to arrest Epstein and execute related warrants.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-02",
+      "title": "Epstein Indicted and Arrest Warrant Issued",
+      "description": "Jeffrey Epstein was indicted in the Southern District of New York (SDNY) and a warrant for his arrest was sworn out.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-02",
+      "title": "FBI Operational Planning for Epstein Arrest",
+      "description": "The FBI's Squad C-20 is placed on standby to arrest Epstein upon his return to the U.S., execute a search warrant at his NYC residence, interview co-conspirators, and deploy agents to Florida to serve subpoenas and interview individuals.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA",
+        "Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "France",
+    "U.S.",
+    "NYC",
+    "Florida",
+    "Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was indicted in the Southern District of New York on July 2, 2019, and an arrest warrant was issued.",
+    "At the time of the email, Epstein was believed to be in France, and the FBI planned to arrest him immediately upon his return to the United States.",
+    "The FBI's operational plan included executing a search warrant at Epstein's New York City residence and interviewing co-conspirators.",
+    "The FBI also planned to deploy agents to Florida to serve subpoenas and interview 1-3 individuals there.",
+    "The email indicates the investigation and arrest operation involved the entire FBI squad C-20, with assistance from other units."
+  ],
+  "analyzedAt": "2026-02-20T05:58:44.977Z"
+}

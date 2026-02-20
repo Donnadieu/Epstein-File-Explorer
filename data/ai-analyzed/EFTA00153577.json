@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00153577.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-04-26",
+  "summary": "This is a forwarded email chain from April 26, 2020, discussing a potential meeting regarding victims of Jeffrey Epstein. The correspondence involves an FBI agent, attorney Robert C. Josefsberg, and Brittany Henderson, concerning therapeutic services for victims.",
+  "persons": [
+    {
+      "name": "Robert C. Josefsberg",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "An attorney who represents some of the victims of Jeffrey Epstein and is attempting to set up a telephone call to discuss therapeutic services.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Britton Henderson",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "Recipient of an email from Robert Josefsberg regarding therapeutic services for Epstein victims; appears to be involved in providing or discussing such services.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brittany Henderson",
+      "role": "Correspondent",
+      "category": "other",
+      "context": "Sent an email to Robert Josefsberg regarding victims of Jeffrey Epstein, likely initiating the contact about therapeutic services.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named as the perpetrator whose victims are the subject of the email discussion regarding therapeutic services.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Robert C. Josefsberg",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Josefsberg represents some of the victims of Jeffrey Epstein, indicating an attorney-client relationship with the victims regarding the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Robert C. Josefsberg",
+      "person2": "Britton Henderson",
+      "relationshipType": "professional",
+      "description": "Josefsberg is attempting to set up a telephone call with Britton Henderson to discuss therapeutic services for Epstein victims.",
+      "strength": 2
+    },
+    {
+      "person1": "Britton Henderson",
+      "person2": "Brittany Henderson",
+      "relationshipType": "professional",
+      "description": "Both are correspondents in the email chain regarding therapeutic services for Epstein victims; likely colleagues or associated in this context.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-26",
+      "title": "Email Discussion on Epstein Victims' Services",
+      "description": "Email correspondence involving Robert C. Josefsberg, Britton Henderson, and Brittany Henderson regarding setting up a call to discuss therapeutic services available for victims of Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Robert C. Josefsberg",
+        "Britton Henderson",
+        "Brittany Henderson"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Attorney Robert C. Josefsberg represents some of the victims of Jeffrey Epstein.",
+    "There was a prior 'Miami meeting' referenced in the email chain regarding Epstein victims.",
+    "The correspondence focuses on organizing therapeutic services for victims of Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-20T11:19:16.182Z"
+}

@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00141684.pdf",
+  "dataSet": "9",
+  "documentType": "memorandum",
+  "dateOriginal": "2025-07-18",
+  "summary": "This DOJ OIG memorandum documents the transfer of a CDR containing video footage from the MCC New York Special Housing Unit (SHU) from August 9-10, 2019, related to the investigation into Jeffrey Epstein's death. The footage was originally extracted by the FBI and later copied and retained by the OIG.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate",
+      "category": "key figure",
+      "context": "The inmate whose death at MCC New York is under investigation; the video footage from the SHU where he was held is the subject of this transfer.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "DOJ OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Transferred the CDR containing MCC SHU video footage to the FBI and later made an authenticated copy for OIG case files.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The Special Agent is handling evidence (video footage) related to the investigation into Epstein's death.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Video Footage Recording Begins",
+      "description": "Security camera video recording from within the MCC New York Special Housing Unit (SHU) begins at 9:00 p.m.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Video Footage Recording Ends / Epstein's Death",
+      "description": "Security camera video recording from within the MCC New York SHU ends at 8:00 a.m., covering the period around Jeffrey Epstein's death.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "FBI Seizes DVR and Conducts Forensic Extraction",
+      "description": "Immediately after Epstein's death, the FBI seized MCC New York security camera DVR systems and the FBI Computer Analysis Response Team conducted a forensic extraction from the camera near unit 10 South.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2025-07-18",
+      "title": "Transfer of CDR Video Footage",
+      "description": "A DOJ OIG Special Agent transferred a CDR labeled with FBI case number 90A-NY-3151227, containing the extracted SHU video footage, back to the FBI.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center New York (MCC New York), New York",
+    "MCC New York Special Housing Unit (SHU)",
+    "Unit 10 South (MCC New York)"
+  ],
+  "keyFacts": [
+    "The FBI seized MCC New York security camera DVR systems immediately after Jeffrey Epstein's death and forensically extracted video from a camera near the entrance of unit 10 South in the SHU.",
+    "The transferred CDR contained 11 MP4 files of video footage from within the SHU from August 9, 2019, at 9:00 p.m. through August 10, 2019, at 8:00 a.m.",
+    "The DOJ OIG made an authenticated copy of the CDR before returning the original to the FBI and retained the copy in their case files.",
+    "The video footage is central to the joint DOJ OIG and FBI investigation into the circumstances of Epstein's death at MCC New York."
+  ],
+  "analyzedAt": "2026-02-20T00:29:36.424Z"
+}

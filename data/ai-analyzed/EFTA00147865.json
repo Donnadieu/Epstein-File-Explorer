@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00147865.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-27",
+  "summary": "This document is an internal FBI email chain from January 27, 2020, discussing a press conference held by the U.S. Attorney's Office for the Southern District of New York (SDNY/USAO) in front of Jeffrey Epstein's brownstone. FBI personnel from New York, Washington, and Seattle express frustration that they were not notified about the event, causing anger and feelings of betrayal among victims and victim specialists.",
+  "persons": [
+    {
+      "name": "M, (NY) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "The sender of the initial email in the chain, stating they are waiting to hear details about the press conference from SDNY and that they knew nothing about it.",
+      "mentionCount": 2
+    },
+    {
+      "name": "N. (NY) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "The recipient of the forwarded email, being asked to provide information about the press conference and the communication breakdown.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M, (DO) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent at the Department of Justice who received an inquiry about the press conference and forwarded it, noting they were in a meeting.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M, (SE) (FBI)",
+      "role": "FBI Agent / Victim Specialist",
+      "category": "law enforcement",
+      "context": "An FBI agent from the Seattle Division's Bellingham Resident Agency who sent the original complaint. They report that victim specialists (VSs) and victims are angry about not receiving a heads-up about the press briefing.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M, (SE) (FBI)",
+      "person2": "M, (DO) (FBI)",
+      "relationshipType": "professional colleague",
+      "description": "M (SE) contacts M (DO) to complain about the lack of notification regarding the USAO press conference, indicating a working relationship within the FBI.",
+      "strength": 2
+    },
+    {
+      "person1": "M, (DO) (FBI)",
+      "person2": "N. (NY) (FBI)",
+      "relationshipType": "professional colleague",
+      "description": "M (DO) forwards the complaint email to N (NY), asking for information and indicating a chain of communication within the FBI regarding the incident.",
+      "strength": 2
+    },
+    {
+      "person1": "M, (SE) (FBI)",
+      "person2": "Victims",
+      "relationshipType": "liaison",
+      "description": "M (SE) states they are receiving irate communications from victims and victim specialists about the press conference, acting as a point of contact.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-27",
+      "title": "USAO Epstein Press Conference",
+      "description": "The U.S. Attorney's Office for the Southern District of New York held a press briefing in front of Jeffrey Epstein's brownstone. The FBI was not given advance notice, causing significant distress among victims and victim specialists.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "U.S. Attorney's Office (SDNY)",
+        "Victims",
+        "FBI personnel"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's brownstone",
+    "Washington",
+    "Seattle",
+    "Bellingham Resident Agency"
+  ],
+  "keyFacts": [
+    "On January 27, 2020, the SDNY/USAO held a press conference at Jeffrey Epstein's brownstone without notifying the FBI in advance.",
+    "The lack of notification caused anger and feelings of betrayal among victims and FBI victim specialists, who heard about it through news reports.",
+    "Internal FBI emails show frustration and a desire to identify the communication breakdown to prevent it from happening again.",
+    "The email chain involves FBI personnel from the New York Field Office, the Department of Justice, and the Seattle Division's Bellingham Resident Agency."
+  ],
+  "analyzedAt": "2026-02-20T06:14:48.152Z"
+}

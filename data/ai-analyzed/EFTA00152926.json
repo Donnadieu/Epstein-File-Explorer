@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00152926.pdf",
+  "dataSet": "9",
+  "documentType": "financial record",
+  "dateOriginal": "2020-09-02",
+  "summary": "This is an invoice from Oakbrook Counseling Center to the law firm Edwards Pottinger LLC for individual therapy sessions provided by Shelley Kavanagh, LCSW, to a client. The document is a financial record showing payment for therapeutic services, likely related to a client of the law firm involved in the Epstein case.",
+  "persons": [
+    {
+      "name": "John Morin",
+      "role": "Counseling Center Professional",
+      "category": "staff",
+      "context": "Listed as part of Oakbrook Counseling Center on the invoice header.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Levenson",
+      "role": "Counseling Center Professional",
+      "category": "staff",
+      "context": "Listed as part of Oakbrook Counseling Center on the invoice header.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shelley Kavanagh",
+      "role": "Therapist",
+      "category": "staff",
+      "context": "Identified as the therapist providing individual therapy sessions, with a Florida license number (LCSW #15669).",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maria Cardenal",
+      "role": "Law Firm Contact",
+      "category": "legal",
+      "context": "Listed as the 'Bill To' contact at the law firm Edwards Pottinger LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Shelley Kavanagh",
+      "person2": "Maria Cardenal",
+      "relationshipType": "service provider-client",
+      "description": "Kavanagh's counseling center invoiced Cardenal's law firm for therapy services provided to a client.",
+      "strength": 3
+    },
+    {
+      "person1": "John Morin",
+      "person2": "Jill Levenson",
+      "relationshipType": "professional colleague",
+      "description": "Both are listed as professionals associated with Oakbrook Counseling Center.",
+      "strength": 2
+    },
+    {
+      "person1": "Shelley Kavanagh",
+      "person2": "John Morin",
+      "relationshipType": "professional colleague",
+      "description": "Both are associated with Oakbrook Counseling Center, as indicated on the invoice header.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-09-02",
+      "title": "Therapy Services Invoice Issued",
+      "description": "Oakbrook Counseling Center issued an invoice to Edwards Pottinger LLC for individual therapy sessions provided by Shelley Kavanagh, LCSW.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Shelley Kavanagh",
+        "Maria Cardenal",
+        "John Morin",
+        "Jill Levenson"
+      ]
+    }
+  ],
+  "locations": [
+    "Oakbrook Counseling Center, 4804 W. Commercial Blvd, Tamarac, FL 33319",
+    "Edwards Pottinger LLC, 425 North Andrews Avenue, Suite 2, Fort Lauderdale, Florida 33301"
+  ],
+  "keyFacts": [
+    "The law firm Edwards Pottinger LLC was billed for therapy services provided by Shelley Kavanagh, LCSW, to a client in September 2020.",
+    "The invoice indicates the law firm was arranging and paying for therapeutic services for a client, which is a common practice in victim representation cases.",
+    "The document is a financial record linking a counseling service provider to a law firm known for representing clients in high-profile cases, potentially including Epstein-related matters."
+  ],
+  "analyzedAt": "2026-02-20T10:40:16.300Z"
+}

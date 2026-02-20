@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00149388.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-19",
+  "summary": "This document is a chain of emails from June 2020 between the U.S. Attorney's Office (SDNY) and FBI NY CART forensic examiners regarding the processing and transfer of digital evidence seized from Jeffrey Epstein's properties in New York and the U.S. Virgin Islands. The emails discuss urgent requests for hard drives, delays due to staffing and COVID-19, technical challenges with data formats, and the need for detailed inventories to support potential additional charges.",
+  "persons": [
+    {
+      "name": "SSA",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI New York agent involved in coordinating the forensic examination and data transfer of Epstein evidence. Mentioned as a recipient and participant in conference call planning.",
+      "mentionCount": 3
+    },
+    {
+      "name": "NY CART Coordinator Senior Forensic Examiner",
+      "role": "FBI Forensic Examiner",
+      "category": "law enforcement",
+      "context": "Primary FBI forensic examiner handling the digital evidence from Epstein searches, responsible for extracting, processing, and transferring data to the U.S. Attorney's Office. Discusses technical challenges, staffing issues, and timelines.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA",
+      "person2": "NY CART Coordinator Senior Forensic Examiner",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel working together on the forensic examination and data transfer for the Epstein case, coordinating on technical and logistical issues.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-19",
+      "title": "Urgent Request for Hard Drives",
+      "description": "The U.S. Attorney's Office urgently requests hard drives from the FBI to copy forensic data from Epstein searches, citing recent case developments and the need to move forward with possible additional charges.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2020-07",
+      "title": "Epstein Property Searches (Referenced)",
+      "description": "Reference to searches conducted at Epstein's residences in July (and September) 2019, from which digital evidence was seized and is being forensically examined.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-05-29",
+      "title": "Updated Device Descriptions Provided",
+      "description": "FBI NY CART provides updated descriptions of seized digital devices, including serial numbers and details about thumb drives, SD cards, and hard drives.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2020-04-07",
+      "title": "Conference Call Scheduled",
+      "description": "Planning for a conference call to discuss issues with the Epstein search warrant evidence processing and data transfer between the U.S. Attorney's Office and FBI personnel.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "SSA",
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2020-03-09",
+      "title": "Significant Data Review Problems Reported",
+      "description": "The U.S. Attorney's Office reports major problems reviewing over 1 million documents received, including inability to link emails and attachments, mismatched load files, and invisible large files.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York (NY) - Epstein's mansion/apartment where devices were seized",
+    "U.S. Virgin Islands (USVI) - Epstein's property where devices were seized",
+    "Manhattan apartment (referenced as location of seized IDE hard drives)"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office was urgently seeking forensic data from Epstein search warrants in June 2020 to support potential additional charges.",
+    "Forensic examination involved terabytes of data from numerous devices including servers, laptops, phones, tablets, DVRs, cameras, and loose media (thumb drives, SD cards, hard drives).",
+    "Significant technical and logistical challenges delayed the process, including data format issues, staffing reductions due to COVID-19, and difficulties matching prior productions to specific devices.",
+    "The FBI had previously processed over 1 million documents but provided them in a format that was largely unusable for review and discovery purposes.",
+    "Evidence was seized from searches at Epstein's New York and U.S. Virgin Islands properties in July and September 2019, including multiple copies of hard drives from a July 2007 search."
+  ],
+  "analyzedAt": "2026-02-20T07:28:18.222Z"
+}

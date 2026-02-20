@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00148379.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-03-17",
+  "summary": "This document is a chain of emails from March 17, 2020, within the U.S. Department of Justice and FBI, regarding attempts to contact a person named Ms. Sarnoff who claims to have information on the Epstein matter. The request originates from the Attorney General's office, and the emails show coordination failures and urgency in establishing contact.",
+  "persons": [
+    {
+      "name": "Ms. Sarnoff",
+      "role": "Individual with purported information on Epstein matter",
+      "category": "witness",
+      "context": "She contacted the AG's office and advised she has information on the Epstein matter; she had previously contacted about purported information but had not returned follow-up emails or calls from DOJ officials.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dal",
+      "role": "DOJ/FBI contact point",
+      "category": "law enforcement",
+      "context": "Referred to in emails as having sent initial information; the AG's office requested the FBI contact Ms. Sarnoff based on an email from Dal.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+      "role": "DOJ official",
+      "category": "legal",
+      "context": "Author of the initial request email, asking the FBI to ensure contact is made with Ms. Sarnoff and to report back so the AG can be advised.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ms. Sarnoff",
+      "person2": "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+      "relationshipType": "witness-investigator",
+      "description": "The DOJ official has attempted to contact Ms. Sarnoff multiple times to discuss her information on Epstein, but she has not responded.",
+      "strength": 2
+    },
+    {
+      "person1": "Ms. Sarnoff",
+      "person2": "Dal",
+      "relationshipType": "informant-contact",
+      "description": "Dal is noted as having forwarded Ms. Sarnoff's contact information or request to the AG's office, initiating the FBI's outreach effort.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03-17",
+      "title": "DOJ/FBI Coordination to Contact Informant",
+      "description": "The Attorney General's office requests the FBI contact Ms. Sarnoff, who claims to have information on the Epstein matter. Multiple email attempts and a phone call are made, but her mailbox is full and she does not respond.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ms. Sarnoff",
+        "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+        "Dal"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Ms. Sarnoff contacted the Attorney General's office claiming to have information on the Epstein matter, marking her first direct outreach to DOJ leaders.",
+    "The DOJ had previously attempted to contact Ms. Sarnoff multiple times without success, as she did not return emails or calls.",
+    "On March 17, 2020, an FBI agent tried calling Ms. Sarnoff but found her phone mailbox full and unable to accept messages, indicating communication barriers.",
+    "The request for FBI contact with Ms. Sarnoff was marked as 'High' importance, showing urgency from the AG's office in following up on potential leads.",
+    "The email chain reveals internal DOJ/FBI coordination challenges in reaching a witness who may possess relevant information about the Epstein case."
+  ],
+  "analyzedAt": "2026-02-20T06:52:40.104Z"
+}

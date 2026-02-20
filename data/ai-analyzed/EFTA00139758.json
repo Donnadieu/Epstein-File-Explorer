@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00139758.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-24",
+  "summary": "This is an email chain from July 24, 2019, discussing the management of Jeffrey Epstein while he was on suicide watch at the Metropolitan Correctional Center (MCC). The emails reveal internal debate about Epstein's status, his attendance at a legal visit while on watch, and skepticism about his account of an injury to his neck.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The subject of the email chain; an inmate on suicide watch at MCC with a significant scar on his neck, whose story about the injury is met with skepticism.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sodhi",
+      "role": "Staff",
+      "category": "staff",
+      "context": "A staff member (likely at MCC) who, along with Columbo, questioned Epstein being in regular clothes during a legal visit while on suicide watch.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Columbo",
+      "role": "Staff",
+      "category": "staff",
+      "context": "A staff member (likely at MCC) who, along with Sodhi, questioned Epstein being in regular clothes during a legal visit while on suicide watch.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sodhi",
+      "person2": "Columbo",
+      "relationshipType": "colleague",
+      "description": "Both are staff members who jointly questioned the protocol regarding Epstein's legal visit.",
+      "strength": 3
+    },
+    {
+      "person1": "I",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "'I' had read an email or communication about Epstein having problems with his cellmate.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Placed on Suicide Watch",
+      "description": "Jeffrey Epstein was placed on suicide watch at the Metropolitan Correctional Center (MCC), reportedly due to a significant scar on his neck.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Internal Email Debate on Epstein's Status",
+      "description": "Staff at MCC exchanged emails debating the appropriateness of Epstein being on suicide watch, his attendance at a legal visit in regular clothes, and the credibility of his story about a neck injury.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Sodhi",
+        "Columbo",
+        "I"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "SHU (Special Housing Unit at MCC)"
+  ],
+  "keyFacts": [
+    "On July 24, 2019, Jeffrey Epstein was on suicide watch at the Metropolitan Correctional Center (MCC).",
+    "Epstein had a 'significant scar' or 'huge scar' on his neck, but his account of how it occurred was met with internal skepticism and described as having 'a ton of dishonesty and holes.'",
+    "Despite being on suicide watch, Epstein was allowed to attend a legal visit while wearing regular clothes, a decision that was questioned by staff members Sodhi and Columbo.",
+    "Internal emails reveal a debate about the overuse of suicide watch at MCC and contrast it with practices at other detention centers like one in Chicago.",
+    "The document suggests Epstein may have had an altercation with a cellmate in the SHU prior to these events."
+  ],
+  "analyzedAt": "2026-02-19T22:31:34.529Z"
+}

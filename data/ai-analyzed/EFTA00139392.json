@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00139392.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an email correspondence dated August 12, 2019, regarding a chronological log for Jeffrey Epstein's incarceration. It notes an administrative error where the wrong logbook (I/M companion log) was used instead of the required Staff Suicide Watch log for Epstein on July 23-24, 2019, and that a second, corrected log was completed.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Incarcerated Individual",
+      "category": "key figure",
+      "context": "The subject of the suicide watch log discrepancy; identified by his registration number 73618-054.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DTS",
+      "role": "Staff Member",
+      "category": "staff",
+      "context": "The individual who discovered the wrong logbook (I/M companion log) was being used for Epstein's suicide watch.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "Recipient or subject of the confidential communication regarding the log discrepancy.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "DTS",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "DTS was involved in monitoring Epstein's status, specifically discovering an error in the logbook used for his suicide watch.",
+      "strength": 2
+    },
+    {
+      "person1": "Associate Warden",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The Associate Warden is being informed about a procedural error concerning the logging of Epstein's suicide watch.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Suicide Watch Logging Period Begins",
+      "description": "The period for which a staff suicide watch log was required for Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Suicide Watch Logging Period Ends",
+      "description": "The end of the period for which a staff suicide watch log was required for Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Log Discrepancy Reported",
+      "description": "An email is sent reporting that the wrong logbook (I/M companion log) was used for Epstein's suicide watch on July 23-24, and that a second, corrected log was completed.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "DTS",
+        "Associate Warden"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An administrative error occurred where the 'I/M companion log' was used instead of the official 'Staff Suicide Watch log' for Jeffrey Epstein on July 23-24, 2019.",
+    "The error was discovered by an individual identified as DTS, who then completed a second, corrected log using the proper Suicide Watch logbook.",
+    "The document is marked 'CONFIDENTIAL' and pertains to internal jail procedures shortly before Epstein's death."
+  ],
+  "analyzedAt": "2026-02-19T22:00:23.493Z"
+}

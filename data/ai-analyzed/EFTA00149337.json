@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00149337.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-29 to 2020-07-02",
+  "summary": "This document is a series of internal FBI emails from late June to early July 2020 concerning the planning, approval, and execution of the arrest operation for Ghislaine Maxwell. It details logistical coordination, cost approvals, and real-time updates on her location and the execution of a search warrant.",
+  "persons": [
+    {
+      "name": "SSA - Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The primary correspondent requesting updates on the arrest operation, asking for a Significant Case Notification (SCN) to be submitted upon arrest, and requesting cost estimates.",
+      "mentionCount": 4
+    },
+    {
+      "name": "SSA- FBI New York",
+      "role": "FBI Supervisory Special Agent, New York Field Office",
+      "category": "law enforcement",
+      "context": "The primary agent on the ground coordinating the arrest operation. Provides updates on target location, search warrant status, and arrest execution.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA- FBI New York",
+      "person2": "SSA - Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "relationshipType": "colleague",
+      "description": "Professional correspondence and coordination regarding the arrest operation for Ghislaine Maxwell. The New York SSA provides operational updates to the HQ-based SSA.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA- FBI New York",
+      "person2": "M",
+      "relationshipType": "subordinate-supervisor",
+      "description": "The New York SSA requests and receives approval for travel expenses and operational plans from M, who appears to be a supervising or budget authority.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-30",
+      "title": "Location Intelligence on Maxwell's Phone",
+      "description": "FBI agents report that historical data from a phone indicates Ghislaine Maxwell is located in New Hampshire, causing a shift in operational planning.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA- FBI New York"
+      ]
+    },
+    {
+      "date": "2020-07-01",
+      "title": "Travel Approval for Arrest Operation",
+      "description": "Approval is granted for travel and expenses for a team of approximately 3-4 agents to arrest a target (understood to be Ghislaine Maxwell) believed to be in Massachusetts.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "M",
+        "SSA- FBI New York"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Execution of Search Warrant and Arrest",
+      "description": "Agents await the signing of a search warrant, then execute it. The target (Ghislaine Maxwell) is taken into custody.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "SSA- FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "New Hampshire",
+    "Massachusetts",
+    "New York",
+    "Boston",
+    "Newark"
+  ],
+  "keyFacts": [
+    "The FBI was actively tracking Ghislaine Maxwell's location via her phone's historical data in late June 2020, initially pinpointing New Hampshire.",
+    "The arrest operation required shifting technical assets from Boston and Newark to assist in locating Maxwell's phone, indicating a multi-state effort.",
+    "A search warrant was executed at the property where Maxwell was located prior to her arrest on or around July 2, 2020.",
+    "Internal FBI emails show detailed logistical planning and budget approval (using EAN 564339.1) for the travel and arrest of a high-profile target in the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-20T07:22:41.837Z"
+}

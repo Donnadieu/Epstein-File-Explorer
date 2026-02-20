@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00151231.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-10-08",
+  "summary": "An email from FBI Forensic Accountant Mark Lubin to Eric Ryan at UBS, requesting the password for a CD containing financial production related to the Ghislaine Maxwell subpoena. The email is copied to FBI Special Agent Amanda Young.",
+  "persons": [
+    {
+      "name": "Mark Lubin",
+      "role": "Forensic Accountant, FBI New York Field Office",
+      "category": "law enforcement",
+      "context": "Author of the email requesting the password for a CD containing financial production related to the Ghislaine Maxwell subpoena.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Eric Ryan",
+      "role": "UBS employee",
+      "category": "other",
+      "context": "Recipient of the email at UBS, presumably involved in providing financial records in response to a subpoena related to Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Young",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Copied on the email from Mark Lubin regarding the Ghislaine Maxwell subpoena financial production.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of subpoena",
+      "category": "key figure",
+      "context": "The individual whose financial records are being subpoenaed, as indicated by the email's subject line.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark Lubin",
+      "person2": "Eric Ryan",
+      "relationshipType": "investigative contact",
+      "description": "Lubin is contacting Ryan to obtain a password for financial data related to the Maxwell investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Mark Lubin",
+      "person2": "Amanda Young",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel; Lubin copies Young on the email regarding the Maxwell subpoena.",
+      "strength": 2
+    },
+    {
+      "person1": "Mark Lubin",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Lubin, as an FBI forensic accountant, is involved in obtaining financial records related to Maxwell via subpoena.",
+      "strength": 2
+    },
+    {
+      "person1": "Eric Ryan",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Ryan, at UBS, is involved in providing financial production in response to a subpoena related to Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-08",
+      "title": "Email request for subpoena data password",
+      "description": "FBI Forensic Accountant Mark Lubin emails Eric Ryan at UBS to request the password for a CD containing financial production related to the Ghislaine Maxwell subpoena.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark Lubin",
+        "Eric Ryan",
+        "Amanda Young",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York Field Office, 26 Federal Plaza"
+  ],
+  "keyFacts": [
+    "The FBI was actively subpoenaing financial records related to Ghislaine Maxwell as of October 2019.",
+    "Financial institution UBS was involved in providing records (a 'financial production') to the FBI in response to a subpoena.",
+    "The records were delivered on a password-protected CD, indicating sensitive financial data.",
+    "The email demonstrates coordination between FBI forensic accounting and field agents in the Maxwell investigation."
+  ],
+  "analyzedAt": "2026-02-20T08:42:21.574Z"
+}

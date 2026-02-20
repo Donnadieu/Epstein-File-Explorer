@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00147266.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-20",
+  "summary": "Internal FBI email chain from August 20, 2019, discussing the handling and processing of hard drives seized in the Jeffrey Epstein investigation. The emails reveal that drives were initially missed during a search, later recovered from a third-party residence, and were undergoing a 'taint process' due to potential privileged information. High-level FBI officials (DD, ADIC, CID, AG) are inquiring about prioritizing the exploitation of this media to identify co-conspirators.",
+  "persons": [
+    {
+      "name": "Sony",
+      "role": "FBI recipient/colleague",
+      "category": "law enforcement",
+      "context": "Addressee in the email chain; the sender apologizes for having to run to a meeting.",
+      "mentionCount": 1
+    },
+    {
+      "name": "ADIC",
+      "role": "Assistant Director in Charge",
+      "category": "law enforcement",
+      "context": "Mentioned as having informed the DD about evidence received from a third-party residence in mid to late July.",
+      "mentionCount": 2
+    },
+    {
+      "name": "CID",
+      "role": "Criminal Investigative Division (head/representative)",
+      "category": "law enforcement",
+      "context": "Listed alongside ADIC as inquiring about the prioritization of media exploitation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "EAD",
+      "role": "Executive Assistant Director",
+      "category": "law enforcement",
+      "context": "Requested clarification on the evidence and asked OTD to be on standby for questions.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "DD",
+      "person2": "ADIC",
+      "relationshipType": "organizational hierarchy",
+      "description": "ADIC provided information to the DD about evidence in the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "DD",
+      "person2": "CID",
+      "relationshipType": "organizational hierarchy",
+      "description": "Both the DD and CID are jointly inquiring about the prioritization of evidence exploitation.",
+      "strength": 3
+    },
+    {
+      "person1": "AG",
+      "person2": "DD",
+      "relationshipType": "organizational oversight",
+      "description": "The DD's focus on the evidence is driven by the AG's attention on finding co-conspirators.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "Evidence received from third-party residence",
+      "description": "Evidence (hard drives) related to the Epstein investigation was received from a third-party residence. The residence owner turned it over quickly, stating they didn't want anything to do with it after it was placed there by an associate.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "ADIC",
+        "residence owner (unnamed)",
+        "associate (unnamed)"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Media evidence logged",
+      "description": "Evidence sheets indicate media was received on this date, but without details on encryption or association with the third-party residence.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-20",
+      "title": "High-level FBI meeting and follow-up",
+      "description": "A meeting involving the DD sparked urgent inquiries into specific Epstein evidence—hard drives that were initially missed in a search warrant, later found missing, and then recovered. The drives were being processed with a 'taint process' due to potential privileged information.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "DD",
+        "ADIC",
+        "CID",
+        "EAD",
+        "AG"
+      ]
+    }
+  ],
+  "locations": [
+    "Third-party residence (location unspecified, evidence received mid to late July)",
+    "Federal Bureau of Investigation - NYO (New York Office)"
+  ],
+  "keyFacts": [
+    "Hard drives central to the Epstein investigation were initially in a safe during a first search warrant but could not be seized due to lack of authority. When investigators returned a week later, the drives were missing.",
+    "The missing drives were recovered after the individual who took them was contacted and 'brought them over right away.'",
+    "The drives were being processed with a 'taint process' due to the potential for containing privileged information, indicating concerns about attorney-client or other protected material.",
+    "High-level FBI officials (DD, ADIC, CID) and the Attorney General (AG) were focused on prioritizing the exploitation of this media specifically to identify co-conspirators.",
+    "There was internal confusion about whether the drives were encrypted, with initial indications they were, but the evidence sheets from 8/16 did not mention encryption."
+  ],
+  "analyzedAt": "2026-02-20T05:19:34.252Z"
+}

@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00125918.pdf",
+  "dataSet": "9",
+  "documentType": "service request record",
+  "dateOriginal": "2019-08-08",
+  "summary": "This is a service request record from Convergint Federal Solutions/SigNet Technologies regarding a RAID failure and data corruption incident at the Metropolitan Correctional Center (MCC) in New York on August 8, 2019. The document details technical support efforts to replace failed drives in a NICE Vision Pro Unit NVR, which resulted in the corruption of the video database, likely wiping all data.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Customer Support Technician",
+      "category": "staff",
+      "context": "Assigned to work on the RAID failure service request at the MCC New York facility; mentioned as the one who will be working on the case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Senior Customer Support Technician",
+      "category": "staff",
+      "context": "Created the service request assignment and provided technical comments regarding the RAID failure and data corruption process at the MCC.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Assigned Technician",
+      "category": "staff",
+      "context": "Assigned to the service request for the RAID failure at the MCC New York facility from August 8-16, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Hughwon",
+      "role": "On-site Technician/Contact",
+      "category": "staff",
+      "context": "Reported the RAID failure, attempted to locate replacement drives, and performed the drive replacement which led to video database corruption.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Derek Barr",
+      "role": "Senior Support Engineer",
+      "category": "staff",
+      "context": "Provided technical guidance via email on how to rebuild the RAID array, including steps and password information.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cranor",
+      "relationshipType": "colleague",
+      "description": "Both are customer support technicians assigned to the same service request for the MCC RAID failure.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both are assigned technicians working on the same service request for the MCC RAID failure.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Derek Barr",
+      "relationshipType": "professional correspondence",
+      "description": "Jeff McKenzie emailed Derek Barr requesting RAID rebuild documentation, and Derek Barr responded with technical guidance.",
+      "strength": 2
+    },
+    {
+      "person1": "Hughwon",
+      "person2": "Jeff McKenzie",
+      "relationshipType": "service requester-provider",
+      "description": "Hughwon contacted Jeff McKenzie's team to report the RAID failure and request support for drive replacement.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "RAID Failure Reported at MCC New York",
+      "description": "A service request is created after a RAID array at the Metropolitan Correctional Center in New York shows 2 failed drives on a NICE Vision Pro Unit NVR.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Hughwon",
+        "Jeff McKenzie",
+        "Jeff Cranor",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Drive Replacement Attempt Leads to Data Corruption",
+      "description": "Hughwon gains access to the DVR room and attempts to replace the failed RAID drives. During the rebuild, drives are removed without proper shutdown, corrupting the video database and likely wiping all data.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Hughwon"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "Metropolitan Correctional Center (MCC) New York",
+    "12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "A RAID failure occurred at the Metropolitan Correctional Center (MCC) in New York on August 8, 2019, affecting a NICE Vision Pro Unit NVR used for video recording.",
+    "The attempted repair on August 10, 2019, by replacing drives without proper shutdown corrupted the video database, likely resulting in the loss of all recorded data.",
+    "The service request was handled by Convergint Federal Solutions/SigNet Technologies, indicating potential third-party management of surveillance systems at the MCC.",
+    "The incident timeline suggests potential gaps in surveillance recording capability at the MCC during a critical period in August 2019.",
+    "Technical guidance was provided by Derek Barr, a senior support engineer, outlining RAID rebuild procedures that require a password ('1111')."
+  ],
+  "analyzedAt": "2026-02-19T16:59:25.707Z"
+}

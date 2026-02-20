@@ -1,0 +1,136 @@
+{
+  "fileName": "EFTA00140222.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-07 to 2019-08-10",
+  "summary": "A collection of Bureau of Prisons health service records for inmate Jeffrey Epstein, covering the period from his intake in July 2019 until August 10, 2019. The documents include vision screens, immunization records, medical duty status reports, medication summaries, dental exams, and lab results, providing a detailed snapshot of his health while incarcerated at the Metropolitan Correctional Center in New York.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The subject of all medical and dental examinations and records. Documents detail his health status, medications, and treatment refusals while incarcerated at MCC New York.",
+      "mentionCount": 50
+    },
+    {
+      "name": "MLP",
+      "role": "Mid-Level Practitioner",
+      "category": "medical staff",
+      "context": "A healthcare provider who prescribed medication (Bisacodyl) and authorized medical duty status reports for inmate Epstein.",
+      "mentionCount": 8
+    },
+    {
+      "name": "DDS",
+      "role": "Dentist",
+      "category": "medical staff",
+      "context": "A dentist who performed dental health history and A&O examinations on inmate Epstein on July 26, 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dental Asst",
+      "role": "Dental Assistant",
+      "category": "medical staff",
+      "context": "Noted on a dental screening encounter that Epstein had several call-outs but was not escorted to the clinic.",
+      "mentionCount": 1
+    },
+    {
+      "name": "RN/IC/P/10C",
+      "role": "Nursing/Medical Staff",
+      "category": "medical staff",
+      "context": "Generated the immunization record report.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MD",
+      "relationshipType": "patient-provider",
+      "description": "MD was the prescribing physician for multiple medications and cosigned lab results for inmate Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MLP",
+      "relationshipType": "patient-provider",
+      "description": "MLP prescribed medication and authorized medical duty status reports for inmate Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "DDS",
+      "relationshipType": "patient-provider",
+      "description": "DDS conducted dental examinations and documented Epstein's dental health history.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-09",
+      "title": "Vision Screen and Immunization Record Entry",
+      "description": "Jeffrey Epstein underwent a vision screen showing distance vision of 20/100 and 20/70. His immunization history was recorded as unknown for several vaccines.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Refusal of Eye Doctor Evaluation",
+      "description": "Jeffrey Epstein signed a BP-5358 form refusing the recommended 'Eye Doctor Evaluation' treatment, acknowledging the potential inability to diagnose current ophthalmologic diseases.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-26",
+      "title": "Dental Health History and A&O Exam",
+      "description": "Epstein underwent a comprehensive dental examination which documented multiple health problems, a history of chlamydia in 2015, and dental findings including gingival recession and 14 filled teeth.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "DDS"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "CPAP Machine Issued and Insulin Prescribed",
+      "description": "Medical records show Epstein was issued a CPAP machine for sleep apnea and was prescribed regular insulin subcutaneously via a sliding scale.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-09 to 2019-07-10",
+      "title": "Comprehensive Lab Work",
+      "description": "Blood work collected on July 9 showed elevated AST, ALT, cholesterol, triglycerides, hemoglobin A1C, and low HDL cholesterol. HIV and RPR tests were negative.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    }
+  ],
+  "locations": [
+    "NYM--NEW YORK MCC (Metropolitan Correctional Center, New York)",
+    "1900 W. Sunshine Street, Springfield, MO 65807 (U.S. Medical Center for Federal Prisons - lab location)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein refused an 'Eye Doctor Evaluation' on July 24, 2019, signing a Bureau of Prisons treatment refusal form.",
+    "Epstein's dental health history from July 26, 2019, notes a history of chlamydia in 2015, which was treated.",
+    "Lab results from July 9-10, 2019, showed several health markers outside normal ranges, including elevated triglycerides (413 mg/dL), cholesterol (216 mg/dL), and hemoglobin A1C (6.3%).",
+    "Medical records list multiple active health problems for Epstein, including hyperlipidemia, sleep apnea, constipation, low back pain, and neuralgia.",
+    "Epstein was housed in a single cell on the first floor with a lower bunk restriction and was issued a CPAP machine on July 30, 2019."
+  ],
+  "analyzedAt": "2026-02-19T23:15:13.062Z"
+}

@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00149255.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-03",
+  "summary": "This document is an email chain from July 3, 2020, between a potential witness/victim and FBI officials regarding the Epstein investigation. The witness, who identifies as a rape victim from 20 years prior, is offering information and requesting a secure interview, preferably via Zoom. FBI officials coordinate to have a case agent contact her.",
+  "persons": [
+    {
+      "name": "Mandy",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI Special Agent mentioned in internal coordination about contacting a potential witness.",
+      "mentionCount": 2
+    },
+    {
+      "name": "William",
+      "role": "Assistant Director in Charge, FBI New York Field Office",
+      "category": "law enforcement",
+      "context": "FBI Assistant Director who responds to the witness's initial outreach, explains the investigation process, and coordinates with the Special Agent in Charge.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ms. MEL",
+      "role": "Potential Witness/Victim",
+      "category": "witness",
+      "context": "An individual who emailed the FBI claiming to have information related to a rape she experienced 20 years ago, potentially connected to the Epstein case. She requests a Zoom interview for security and comfort.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "William",
+      "person2": "Ms. MEL",
+      "relationshipType": "investigator-potential witness",
+      "description": "William, as the FBI Assistant Director, is the primary point of contact responding to Ms. MEL's offer of information and arranging for her to be interviewed by the Epstein task force.",
+      "strength": 3
+    },
+    {
+      "person1": "Mandy",
+      "person2": "Ms. MEL",
+      "relationshipType": "investigator-potential witness",
+      "description": "Mandy, an FBI Special Agent, is tasked with making initial contact with Ms. MEL to set up a further discussion.",
+      "strength": 2
+    },
+    {
+      "person1": "William",
+      "person2": "Mandy",
+      "relationshipType": "colleague",
+      "description": "They are colleagues within the FBI New York Field Office, coordinating on the response to the potential witness.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-03",
+      "title": "Witness Outreach to FBI",
+      "description": "A person using the name Ms. MEL contacts the FBI New York Field Office via email, offering information related to a past rape that may connect to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ms. MEL",
+        "William"
+      ]
+    },
+    {
+      "date": "2020-07-03",
+      "title": "FBI Coordination Call",
+      "description": "FBI officials internally coordinate to have a case agent from the Epstein task force contact the potential witness, Ms. MEL.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "William",
+        "Mandy"
+      ]
+    },
+    {
+      "date": "~2000",
+      "title": "Alleged Rape of Witness",
+      "description": "Ms. MEL references being raped approximately 20 years prior to 2020 and indicates she had previously tried to seek justice.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ms. MEL"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (FBI New York Field Office)",
+    "West Coast (where the witness, Ms. MEL, is located)"
+  ],
+  "keyFacts": [
+    "A potential witness/victim, Ms. MEL, contacted the FBI in July 2020 claiming to have information about a rape from 20 years ago that may be relevant to the Epstein investigation.",
+    "The witness expressed a strong preference for a Zoom interview over a phone call due to security concerns and past negative online experiences.",
+    "FBI Assistant Director William confirmed the Epstein investigation was being handled by a dedicated task force within the New York Field Office.",
+    "The witness indicated she had lived under 'provable online threat' for over 20 years, though it had diminished.",
+    "The FBI internal correspondence shows standard protocol for handling a sensitive witness, including avoiding LinkedIn for communication and planning an interview that respects the witness's comfort level."
+  ],
+  "analyzedAt": "2026-02-20T07:15:02.962Z"
+}

@@ -1,0 +1,117 @@
+{
+  "fileName": "EFTA00153858.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-12",
+  "summary": "This FBI 302 form documents an interview with a victim (DOB 9/12/19) regarding an alleged sexual assault by Jeffrey Epstein in approximately March 2004 at his Upper East Side home. The victim describes being recruited under false pretenses, being introduced to Epstein by a woman believed to be Ghislaine Maxwell, and Epstein's aggressive sexual advances. The victim spoke to the press in July 2019 following Epstein's arrest.",
+  "persons": [
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present during the victim's interview, representing or supporting the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andrew Lnu",
+      "role": "Booker/Modeling Agent",
+      "category": "associate",
+      "context": "The victim's booker who recommended her for what was presented as a casting for Victoria's Secret, which led her to Jeffrey Epstein's house.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused Perpetrator",
+      "category": "key figure",
+      "context": "Allegedly sexually assaulted the victim at his Upper East Side home in 2004 after she was brought there under false pretenses of a modeling opportunity.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Associate",
+      "category": "key figure",
+      "context": "Described by the victim as a woman with short dark hair who introduced her to Epstein and instructed her to 'Be nice, he's important.'",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew Lnu",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Andrew Lnu, the victim's booker, recommended her to go to a 'casting' at Epstein's house, indicating a prior connection or knowledge of Epstein's activities.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell introduced the victim to Epstein at his home and facilitated the encounter by escorting her and emphasizing Epstein's importance.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is the alleged perpetrator of sexual assault against the victim, who was brought to him under circumstances facilitated by Maxwell.",
+      "strength": 5
+    },
+    {
+      "person1": "Gloria Allred",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Allred was present as an attorney during the victim's interview regarding the allegations against Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03",
+      "title": "Alleged Assault at Epstein's Home",
+      "description": "The victim was brought to Jeffrey Epstein's Upper East Side home under false pretenses of a modeling casting. Epstein, wearing a robe, became aggressive, touched her inappropriately including her genitals, and offered her money. She refused, threw a vibrator at him, and left.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Andrew Lnu"
+      ]
+    },
+    {
+      "date": "2019-07",
+      "title": "Victim Speaks to Press After Epstein's Arrest",
+      "description": "The victim gave an interview to the press, which was featured in the New York Post, following Jeffrey Epstein's arrest.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-12",
+      "title": "FBI Interview of Victim",
+      "description": "The victim was interviewed by law enforcement officials, with attorney Gloria Allred present, regarding the 2004 incident with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Gloria Allred",
+        "AUSA",
+        "Detective",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "Jeffrey Epstein's house on the Upper East Side, possibly 72nd Street, New York, NY",
+    "Europe",
+    "New York"
+  ],
+  "keyFacts": [
+    "A victim alleges Jeffrey Epstein sexually assaulted her at his Upper East Side home in approximately March 2004 after she was recruited under false pretenses of a modeling opportunity.",
+    "The victim's modeling booker, Andrew Lnu, recommended her for what was presented as a Victoria's Secret casting that led to Epstein's house.",
+    "A woman matching the description of Ghislaine Maxwell introduced the victim to Epstein, told her to 'be nice' to him, and escorted her within the home.",
+    "The victim described Epstein's aggressive behavior, including touching her face and genitals, the presence of a massage table and sex toys (a vibrator) in the room, and his offer of money.",
+    "The victim spoke publicly to the press in July 2019 following Epstein's arrest, and her account was documented in this FBI 302 interview on September 12, 2019."
+  ],
+  "analyzedAt": "2026-02-20T11:44:49.280Z"
+}

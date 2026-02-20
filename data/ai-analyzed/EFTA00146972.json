@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00146972.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal email",
+  "dateOriginal": "2019-09-03",
+  "summary": "An FBI internal email from September 2019 providing a financial update on the Epstein investigation. It lists subpoenas served and productions received from financial institutions, including specific mentions of subpoenas related to Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Sean",
+      "role": "FBI recipient of the email",
+      "category": "law enforcement",
+      "context": "Addressed in the email as the recipient of the requested financial update.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of financial subpoenas",
+      "category": "key figure",
+      "context": "Named as the subject of subpoenas served to PayPal/Venmo and MoneyGram, with one production returning no records.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Sean",
+      "relationshipType": "investigation target-investigator",
+      "description": "Sean, an FBI agent, is receiving an update on financial subpoenas related to the investigation of Ghislaine Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-03",
+      "title": "Financial Investigation Update",
+      "description": "An FBI agent provides an update on subpoenas served and productions received from financial institutions as part of the Epstein investigation, including those targeting Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Sean",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York Field Office 26 Federal Plaza NYC, NY 10278"
+  ],
+  "keyFacts": [
+    "Subpoenas were served to PayPal/Venmo, Experian, MoneyGram, and JP Morgan Chase as part of the Epstein financial investigation.",
+    "At least one subpoena was specifically for Ghislaine Maxwell's financial records via PayPal/Venmo.",
+    "A MoneyGram subpoena for Ghislaine Maxwell returned no records found.",
+    "The document indicates active financial forensic work was being conducted by the FBI New York Field Office in September 2019."
+  ],
+  "analyzedAt": "2026-02-20T04:48:57.403Z"
+}

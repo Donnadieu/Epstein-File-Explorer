@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00127527.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2022-03-21 to 2022-04-01",
+  "summary": "This document is a chain of emails from March-April 2022 between a DOJ OIG Assistant Special Agent in Charge and a Convergint Federal sales representative. The correspondence concerns an inquiry to verify the delivery timeline of a 'Nice Vision' camera system and related equipment to the Metropolitan Correctional Center (MCC) New York, which was installed in August 2019. The OIG is seeking to reconcile conflicting information about whether components were delivered in October 2018 or later.",
+  "persons": [
+    {
+      "name": "Justin",
+      "role": "Employee of Convergint Federal/SigNet Technologies",
+      "category": "staff",
+      "context": "Mentioned as the person who has the shipping/delivery information for camera equipment, but was on vacation during the email exchange.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Chris",
+      "role": "Federal Sales Representative at Convergint Federal/SigNet Technologies",
+      "category": "staff",
+      "context": "Primary correspondent from the vendor, providing information about the delivery of the Nice Vision system to MCC New York and coordinating to get shipping details.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Chris",
+      "person2": "Justin",
+      "relationshipType": "colleague",
+      "description": "Chris indicates Justin is the colleague who has the specific camera delivery information and that Justin was on vacation.",
+      "strength": 3
+    },
+    {
+      "person1": "Chris",
+      "person2": "Assistant Special Agent in Charge",
+      "relationshipType": "business correspondence",
+      "description": "Email exchange regarding a government contract for security camera equipment delivery and installation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-10",
+      "title": "Reported Delivery of Nice System to MCC NY",
+      "description": "Prior information indicated parts of the Nice Vision system (items 1-7 and 10) were delivered to the Metropolitan Correctional Center New York.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Chris"
+      ]
+    },
+    {
+      "date": "2019-03-22",
+      "title": "Email Indicates Cameras Not Delivered",
+      "description": "An attached email from this date indicated the cameras and related items had not been delivered to MCC New York, contradicting the October 2018 delivery claim.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Camera System Installation at MCC NY",
+      "description": "The camera system was installed by SigNet Technologies at the Metropolitan Correctional Center New York during the week of this date.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2018-09-21",
+      "title": "Contract Date",
+      "description": "Date of the attached contract for the camera system referenced in the inquiry.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "MCC New York (Metropolitan Correctional Center New York)",
+    "Mclean, VA 22102-4935 (SigNet Technologies/Convergint Federal office)"
+  ],
+  "keyFacts": [
+    "The U.S. Department of Justice Office of the Inspector General (OIG) is investigating the delivery timeline of a security camera system to the Metropolitan Correctional Center (MCC) New York.",
+    "There is conflicting information: one source says parts were delivered in October 2018, but a March 2019 email says the cameras were not delivered at that time.",
+    "The camera system in question was a 'Nice Vision' system installed at MCC New York in August 2019.",
+    "The inquiry focuses on validating deliverables from a September 2018 contract and obtaining shipping/receiving reports.",
+    "Key vendor personnel mentioned are 'Chris', a Federal Sales Representative, and 'Justin', who possesses the specific delivery information."
+  ],
+  "analyzedAt": "2026-02-19T17:35:58.475Z"
+}

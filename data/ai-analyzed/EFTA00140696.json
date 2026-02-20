@@ -1,0 +1,112 @@
+{
+  "fileName": "EFTA00140696.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-26",
+  "summary": "This document is an email chain from July 2019 between Bureau of Prisons officials discussing inmate Jeffrey Epstein's status at the Metropolitan Correctional Center (MCC) New York. It details his removal from suicide watch to psychological observation, a pending incident report for self-mutilation, and plans to house him with another inmate, Cesar Sayoc, in the Special Housing Unit (SHU).",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The primary subject of the email chain; an inmate at MCC New York who was on psychological observation, pending a hearing for self-mutilation, and planned to be celled with Cesar Sayoc.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Shirley",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "The Associate Warden at MCC New York who is providing updates on inmate Epstein's status and housing arrangements to the Regional Director.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Cesar Sayoc",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate at MCC New York in the Special Housing Unit (SHU) for protective custody; pleaded guilty to mailing explosive devices. Planned to be Epstein's cell mate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dr.",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "The Chief Psychologist who provided the definition of 'Psychological Observation' status for inmate Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Shirley",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Shirley, as Associate Warden, is responsible for monitoring and reporting on Epstein's status, housing, and disciplinary matters.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Cesar Sayoc",
+      "relationshipType": "cell mate",
+      "description": "Planned to be housed together in the Special Housing Unit (SHU) at MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Dr.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "medical evaluation",
+      "description": "The Chief Psychologist's services assessed Epstein, leading to his placement on Psychological Observation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Epstein removed from Suicide Watch",
+      "description": "Inmate Jeffrey Epstein was removed from Suicide Watch and stepped down to Psychological Observation status. He was escorted for a medical assessment and then to meet with his attorney.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Pending Incident Report for Self-Mutilation",
+      "description": "Epstein was pending a Code 228 incident report for 'Tattooing or Self-Mutilation' after officers observed him with a makeshift noose around his neck. He was scheduled for a UDC hearing.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-26",
+      "title": "Sayoc's scheduled release",
+      "description": "Inmate (MI), who was considered as a potential cell mate for Epstein, was scheduled for release on this date.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-03",
+      "title": "Cesar Sayoc pleads guilty",
+      "description": "Cesar Sayoc pleaded guilty to mailing improvised explosive devices to prominent figures including Barack Obama, Joe Biden, Hillary Clinton, Cory Booker, and Kamala Harris.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Cesar Sayoc"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, New York 10007",
+    "Special Housing Unit (SHU)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was on 'Psychological Observation' status at MCC New York in July 2019, having been stepped down from Suicide Watch.",
+    "Epstein faced a pending disciplinary report (Code 228) for self-mutilation after officers observed him with a makeshift noose around his neck.",
+    "Plans were made to house Epstein in the Special Housing Unit (SHU) with inmate Cesar Sayoc, who was in protective custody after pleading guilty to mailing explosives.",
+    "The email chain shows Bureau of Prisons officials closely monitoring Epstein's status and housing arrangements just weeks before his death.",
+    "The definition of 'Psychological Observation' indicates Epstein was deemed to have an impaired mental status but was not considered imminently suicidal."
+  ],
+  "analyzedAt": "2026-02-19T23:46:48.534Z"
+}

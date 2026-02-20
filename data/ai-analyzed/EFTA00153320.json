@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA00153320.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-10-11",
+  "summary": "An email from an FBI Victim Services Division Program Manager requesting TSA assistance for a victim traveling from Durango to Miami to attend an Epstein briefing. The victim has a temporary paper ID and is traveling with a support person believed to be her boyfriend.",
+  "persons": [
+    {
+      "name": "Program Manager",
+      "role": "FBI Victim Services Division Program Manager",
+      "category": "law enforcement",
+      "context": "Author of the email requesting TSA assistance for a victim traveling to an Epstein briefing in Miami.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Program Manager",
+      "person2": "Victim",
+      "relationshipType": "service provider-client",
+      "description": "FBI Victim Services Division is assisting the victim with travel arrangements and security escort to attend the Epstein briefing.",
+      "strength": 3
+    },
+    {
+      "person1": "Victim",
+      "person2": "Boyfriend",
+      "relationshipType": "social",
+      "description": "The victim is traveling with a support person believed to be her boyfriend to the Epstein briefing.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-14",
+      "title": "Victim travel to Epstein briefing",
+      "description": "A victim of Epstein, assisted by FBI Victim Services, is scheduled to travel from Durango to Miami via Phoenix to attend an Epstein briefing.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim",
+        "Boyfriend",
+        "Program Manager"
+      ]
+    },
+    {
+      "date": "2019-10",
+      "title": "Epstein briefing in Miami",
+      "description": "A briefing related to the Epstein case was scheduled in Miami, requiring victim travel and FBI coordination.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim"
+      ]
+    }
+  ],
+  "locations": [
+    "Durango",
+    "Miami",
+    "Phoenix"
+  ],
+  "keyFacts": [
+    "The FBI Victim Services Division was actively assisting victims in traveling to attend an Epstein-related briefing in Miami in October 2019.",
+    "A victim was traveling with only a temporary paper Colorado ID and no picture ID, requiring special TSA assistance and escort through security.",
+    "The victim had a support person, believed to be her boyfriend, traveling with her to the briefing.",
+    "The travel was booked by the Victim Services Division, indicating organized victim support for case-related events."
+  ],
+  "analyzedAt": "2026-02-20T11:00:17.453Z"
+}

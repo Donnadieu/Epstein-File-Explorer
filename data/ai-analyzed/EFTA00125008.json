@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00125008.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena and related correspondence",
+  "dateOriginal": "2019-08-30",
+  "summary": "This document set includes a federal grand jury subpoena issued to TransUnion on August 30, 2019, by the U.S. Attorney's Office for the Southern District of New York, seeking financial account information and credit reports for two individuals. It is accompanied by a cover letter requesting confidentiality and a response from TransUnion indicating incomplete information was provided.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Issued the grand jury subpoena to TransUnion and signed the accompanying letter requesting confidentiality of the investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Named as the AUSA to whom subpoenaed records should be delivered and is referenced in the subpoena rider.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Susan Cali/Irak",
+      "role": "Litigation Support Department",
+      "category": "staff",
+      "context": "Signed TransUnion's response letter indicating the subpoena request was incomplete and required additional information.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Maurene Comey",
+      "relationshipType": "colleague",
+      "description": "Both are federal prosecutors with the U.S. Attorney's Office for the Southern District of New York working on the same grand jury investigation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-30",
+      "title": "Grand Jury Subpoena Issued to TransUnion",
+      "description": "The U.S. Attorney's Office issues a grand jury subpoena to TransUnion, commanding the production of financial account information and credit reports for two specified individuals.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Maurene Comey"
+      ]
+    },
+    {
+      "date": "2019-09-11",
+      "title": "TransUnion Requests Additional Information",
+      "description": "TransUnion responds to the subpoena, stating it cannot comply due to incomplete information (missing full Social Security numbers and last known addresses) and requests an amended submission.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Susan Cali/Irak"
+      ]
+    },
+    {
+      "date": "2019-09-13",
+      "title": "Scheduled Grand Jury Appearance",
+      "description": "The subpoena commands TransUnion's custodian of records to appear before the grand jury, though appearance is waived if records are produced to AUSA Comey by that date.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "TransUnion, 555 West Adams, Chicago, IL 60661",
+    "U.S. Attorney's Office, One St. Andrew's Plaza, New York, New York 10007",
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, NY"
+  ],
+  "keyFacts": [
+    "A federal grand jury subpoena was issued to credit bureau TransUnion on August 30, 2019, as part of a criminal investigation into suspected felonies.",
+    "The subpoena sought all financial account information and credit reports for two individuals, whose names and partial details are listed but are redacted in the provided text.",
+    "The U.S. Attorney's Office specifically requested TransUnion not disclose the existence of the subpoena to preserve the confidentiality of the investigation.",
+    "TransUnion responded that it could not comply with the initial request because it lacked full Social Security numbers and last known addresses for the subjects.",
+    "The investigation is being conducted under statutes 18 U.S.C. §§ 1791 and 201, which relate to bribery and illegal monetary transactions."
+  ],
+  "analyzedAt": "2026-02-19T16:37:43.678Z"
+}

@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00155571.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-11-02",
+  "summary": "This is an email chain regarding the Finest Foundation Awards ceremony on November 9, 2021, where investigators from the NYPD/FBI Child Exploitation and Human Trafficking Task Force are being recognized for their work on the Epstein case. The emails contain congratulations and logistical details for the event.",
+  "persons": [
+    {
+      "name": "Inspector",
+      "role": "Commanding Officer - Vice Human Trafficking Unit",
+      "category": "law enforcement",
+      "context": "The Inspector is the commanding officer of the NYPD's Vice Human Trafficking Unit and is congratulating the award recipients.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Detective on the NYPD/FBI Task Force",
+      "category": "law enforcement",
+      "context": "A detective on the NYPD/FBI Child Exploitation and Human Trafficking Task Force who worked on the Epstein case and is receiving an award. Recipients are asked to RSVP to this detective.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "SA",
+      "relationshipType": "colleague",
+      "description": "Both are investigators on the NYPD/FBI Child Exploitation and Human Trafficking Task Force who worked together on the Epstein case.",
+      "strength": 4
+    },
+    {
+      "person1": "Inspector",
+      "person2": "Detective",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Inspector is the commanding officer of the Vice Human Trafficking Unit, which likely oversees or works with the task force detectives.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-09",
+      "title": "Finest Foundation Awards Ceremony",
+      "description": "An awards ceremony held at 1 Police Plaza Auditorium to recognize investigators, including those who worked on the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Detective",
+        "SA",
+        "Inspector"
+      ]
+    }
+  ],
+  "locations": [
+    "1 PP Auditorium (1 Police Plaza, New York, NY)",
+    "\"S\" level parking (likely at 1 Police Plaza)"
+  ],
+  "keyFacts": [
+    "Investigators from the NYPD/FBI Child Exploitation and Human Trafficking Task Force were formally recognized with an award for their work on the Epstein case in November 2021.",
+    "The recognition indicates ongoing institutional acknowledgment of the law enforcement effort related to the Epstein investigation years after his death.",
+    "The email chain shows coordination within the NYPD and with the FBI regarding the awards ceremony and task force operations."
+  ],
+  "analyzedAt": "2026-02-20T13:46:34.744Z"
+}

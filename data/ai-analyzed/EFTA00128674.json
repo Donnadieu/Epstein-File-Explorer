@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00128674.pdf",
+  "dataSet": "9",
+  "documentType": "court filing and FBI correspondence",
+  "dateOriginal": "2009-10-20",
+  "summary": "This document consists of an FBI letter dated October 20, 2009, responding to a subpoena in the civil case Jane Doe v. Jeffrey Epstein, Case No. 08-80893. The letter outlines the legal requirements (CFR and Privacy Act) for the FBI to release investigative information. It is followed by a case summary screen showing an FBI investigation into Jeffrey Epstein for child prostitution opened in 2006, and the actual subpoena issued to the FBI demanding all evidence from the Epstein investigation.",
+  "persons": [
+    {
+      "name": "Seth Lehrman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Addressee of the FBI's letter regarding the subpoena in the civil case Jane Doe v. Jeffrey Epstein. He is an attorney at Rothstein Rosenfeldt Adler.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the FBI investigation (Case ID 31E-MM-108062) for child prostitution and the defendant in the civil case Jane Doe v. Jeffrey Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "The plaintiff in the civil lawsuit against Jeffrey Epstein, Case No. 08-80893.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing plaintiff Jane Doe, who issued the subpoena to the FBI. His contact information is listed on the subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jane Doe",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Jane Doe is the plaintiff suing Jeffrey Epstein in civil case 08-80893, implying an alleged victim-perpetrator relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Brad Edwards",
+      "person2": "Jane Doe",
+      "relationshipType": "attorney-client",
+      "description": "Brad Edwards is listed as the attorney representing Jane Doe, the plaintiff, in the civil case.",
+      "strength": 5
+    },
+    {
+      "person1": "Seth Lehrman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Seth Lehrman is addressed on FBI correspondence related to the Epstein civil case, suggesting a legal professional connection to the case, likely representing a party involved.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-07-25",
+      "title": "FBI Investigation Opened on Jeffrey Epstein",
+      "description": "The FBI opened a case (31E-MM-108062) on Jeffrey Epstein for child prostitution.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009-10-16",
+      "title": "FBI Receives Subpoena in Civil Case",
+      "description": "The FBI's North Miami Beach office received a subpoena related to the civil case Jane Doe v. Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Seth Lehrman",
+        "Jeffrey Epstein",
+        "Jane Doe"
+      ]
+    },
+    {
+      "date": "2009-10-20",
+      "title": "FBI Sends Response Letter on Subpoena",
+      "description": "The FBI's Chief Division Counsel sent a letter to Seth Lehrman outlining the legal requirements (CFR, Privacy Act) for complying with the subpoena for Epstein investigation materials.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Seth Lehrman"
+      ]
+    },
+    {
+      "date": "2009-11-09",
+      "title": "Scheduled Deposition of FBI",
+      "description": "A subpoena commanded the FBI to appear for a deposition and produce all evidence from the Jeffrey Epstein investigation at 1:00 PM.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "North Miami Beach, Florida 33169 (FBI office address)",
+    "Fort Lauderdale, FL 33301 (Law firm Rothstein Rosenfeldt Adler address)",
+    "Miami, FL 331 (Location for scheduled deposition)",
+    "Palm Beach, Florida (Mentioned as source of police evidence)"
+  ],
+  "keyFacts": [
+    "The FBI had an active investigation (Case ID 31E-MM-108062) into Jeffrey Epstein for 'CHILD PROSTITUTION' opened on July 25, 2006.",
+    "A civil lawsuit, Jane Doe v. Jeffrey Epstein (Case No. 08-80893), was underway, with the plaintiff's attorney (Brad Edwards) subpoenaing the FBI for all evidence from its Epstein investigation.",
+    "The FBI's response cites strict legal barriers (Title 28 CFR and the Privacy Act) to releasing investigative files, requiring either a court order or notarized consent from each record subject.",
+    "The subpoena specifically demands all evidence the FBI obtained from the Palm Beach Police Department and Palm Beach County Sheriff's Office regarding Epstein, including videos, CDs, DVDs, and photographs.",
+    "The document shows direct interaction between a civil suit against Epstein and the federal criminal investigation into him, highlighting efforts to obtain FBI evidence for the civil case."
+  ],
+  "analyzedAt": "2026-02-19T17:57:56.175Z"
+}

@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00154185.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-02-10",
+  "summary": "An introductory email from an FBI Special Agent to a potential witness, arranging an interview for the investigation into Jeffrey Epstein and Ghislaine Maxwell. The email outlines the investigative team and their focus on child exploitation and human trafficking.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named as a subject of the FBI's investigation into child exploitation and human trafficking.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named as a subject of the FBI's investigation alongside Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Author of the email, identifies as a case agent assigned to the Epstein/Maxwell investigation working out of the New York Field Office on child exploitation and human trafficking matters.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Detective Constable",
+      "role": "Detective Constable",
+      "category": "law enforcement",
+      "context": "Copied on the email; previously in contact with the recipient.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective M",
+      "role": "NYPD Detective",
+      "category": "law enforcement",
+      "context": "Partner of the FBI Special Agent, member of the child exploitation/human trafficking task force.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as subjects of the same FBI investigation into child exploitation and human trafficking.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI Special Agent is a case agent assigned to the investigation into Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI Special Agent is a case agent assigned to the investigation into Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Detective M",
+      "relationshipType": "professional partner",
+      "description": "Work alongside each other as partners on the child exploitation/human trafficking task force investigating Epstein and Maxwell.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-02-10",
+      "title": "FBI Introductory Email Sent",
+      "description": "An FBI Special Agent sends an introductory email to a potential witness to arrange an interview for the Epstein/Maxwell investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent",
+        "Detective Constable"
+      ]
+    },
+    {
+      "date": "2021-03",
+      "title": "Planned Witness Interview",
+      "description": "The FBI proposes conducting a video conference interview with the recipient around the first week of March 2021.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent",
+        "Detective Constable",
+        "Detective M"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)"
+  ],
+  "keyFacts": [
+    "The FBI is actively investigating Jeffrey Epstein and Ghislaine Maxwell for child exploitation and human trafficking as of February 2021.",
+    "The investigative team includes an FBI Special Agent, an NYPD Detective (Detective M), and three Assistant United States Attorneys.",
+    "The FBI is reaching out to potential witnesses to conduct interviews as part of a thorough investigation.",
+    "The communication indicates ongoing law enforcement efforts related to the Epstein case after his death."
+  ],
+  "analyzedAt": "2026-02-20T12:02:01.786Z"
+}

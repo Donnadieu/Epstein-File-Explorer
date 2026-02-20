@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00152995.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-10-04",
+  "summary": "This is an RSVP form from the FBI Victim Services Division for two victim briefings regarding the Epstein case, scheduled for October 15, 2019 in Miami, FL and October 23, 2019 in New York, NY. The form collects travel and logistical information for a victim and their support person (the victim's mother) to attend.",
+  "persons": [
+    {
+      "name": "Victim",
+      "role": "Victim attending FBI briefing",
+      "category": "victim",
+      "context": "A victim of the Epstein case who is invited to attend an FBI briefing. The form collects their personal and travel information, including date of birth (2/1/1987) and indicates they have a 4-year-old daughter.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Mother",
+      "role": "Support person for victim",
+      "category": "other",
+      "context": "The mother of the victim, listed as the support person who will accompany the victim to the FBI briefing. Her travel and lodging information is collected in the form.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Victim",
+      "person2": "Mother",
+      "relationshipType": "family",
+      "description": "The mother is listed as the support person for the victim, indicating a familial relationship where the mother is providing support to her daughter who is a victim in the Epstein case.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-15",
+      "title": "FBI Victim Services Briefing - Miami",
+      "description": "An FBI Victim Services Division briefing for victims of the Epstein case held in Miami, FL.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim",
+        "Mother"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "title": "FBI Victim Services Briefing - New York",
+      "description": "An FBI Victim Services Division briefing for victims of the Epstein case held in New York, NY.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim",
+        "Mother"
+      ]
+    },
+    {
+      "date": "2019-10-04",
+      "title": "RSVP Deadline for FBI Briefings",
+      "description": "Deadline for victims to RSVP to the FBI Victim Services Division for the upcoming briefings in Miami and New York.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Victim"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami, FL",
+    "New York, NY",
+    "Lakewood (city, state unspecified from support person's address)",
+    "West Palm (referenced as origin for Brightline rail travel to Miami)"
+  ],
+  "keyFacts": [
+    "The FBI Victim Services Division organized briefings for Epstein case victims in October 2019 in Miami and New York.",
+    "A victim, born February 1, 1987, planned to attend with her mother as a support person and her 4-year-old daughter.",
+    "The FBI authorized travel arrangements including economy fares, lodging for two nights, and mileage reimbursement for victims attending the briefings.",
+    "The RSVP form required detailed personal and travel information, indicating organized logistical support for victim participation.",
+    "The document shows the FBI was actively engaging with victims after Epstein's death in August 2019."
+  ],
+  "analyzedAt": "2026-02-20T10:47:41.716Z"
+}

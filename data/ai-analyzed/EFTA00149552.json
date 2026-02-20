@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00149552.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-08",
+  "summary": "Internal FBI email chain discussing coordination with SDNY regarding a press release about Prince Andrew's response to an MLAT request, and providing updates on the investigation into Ghislaine Maxwell, including planned indictment charges and surveillance efforts.",
+  "persons": [
+    {
+      "name": "Prince Andrew",
+      "role": "Subject of MLAT request and investigation",
+      "category": "key figure",
+      "context": "His counsel is issuing a public statement in response to the MLAT request from SDNY; there have been conversations about interviewing him.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of ongoing criminal investigation",
+      "category": "key figure",
+      "context": "SDNY plans to obtain a six-count indictment against her; charges include conspiracy to entice, enticement, conspiracy to transport minors, transportation, and perjury; surveillance and mail cover are being conducted.",
+      "mentionCount": 3
+    },
+    {
+      "name": "John",
+      "role": "Unidentified individual referenced in email",
+      "category": "other",
+      "context": "Mentioned as someone from whom the email sender has not heard regarding SDNY's plans to speak with the USA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "HeyM",
+      "role": "Email recipient/participant",
+      "category": "law enforcement",
+      "context": "Appears to be an FBI agent or staff member copied on emails discussing investigation updates and coordination with SDNY.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Prince Andrew",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Both are subjects of investigation in the Epstein case; the email discusses MLAT requests for Prince Andrew and indictment plans for Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Prince Andrew",
+      "person2": "HeyM",
+      "relationshipType": "investigative",
+      "description": "HeyM is involved in FBI discussions regarding the MLAT request and investigation involving Prince Andrew.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "HeyM",
+      "relationshipType": "investigative",
+      "description": "HeyM is copied on emails detailing investigation updates, indictment plans, and surveillance efforts targeting Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-08",
+      "title": "MLAT Response Coordination",
+      "description": "Prince Andrew's counsel issues a public statement in response to an MLAT request; SDNY plans to issue a statement in response and has drafts being made.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Prince Andrew"
+      ]
+    },
+    {
+      "date": "2020-06-08",
+      "title": "Maxwell Indictment Planning",
+      "description": "SDNY plans to obtain a six-count indictment against Ghislaine Maxwell once a grand jury is available; charges include conspiracy to entice, enticement, conspiracy to transport minors, transportation, and perjury.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-06-08",
+      "title": "Surveillance and Mail Cover",
+      "description": "FBI has a mail cover on an address believed to be Maxwell's residence and renewed a Pen register for her phone; plans for physical surveillance are mentioned.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "SDNY (Southern District of New York)"
+  ],
+  "keyFacts": [
+    "Prince Andrew's counsel was issuing a public statement in response to an MLAT request from SDNY, with SDNY planning a coordinated press release.",
+    "SDNY planned to indict Ghislaine Maxwell on six counts: conspiracy to entice, enticement, conspiracy to transport minors, transportation, and two counts of perjury.",
+    "Investigative measures against Maxwell included a mail cover on her suspected address, a renewed Pen register for her phone, and planned surveillance.",
+    "The email indicates ongoing coordination between the FBI and SDNY regarding the Epstein case investigations into both Prince Andrew and Ghislaine Maxwell."
+  ],
+  "analyzedAt": "2026-02-20T07:36:22.370Z"
+}

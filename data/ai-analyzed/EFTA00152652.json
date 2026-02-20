@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00152652.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-10-03",
+  "summary": "Email chain between FBI Victim Services and the law firm Podhurst Orseck regarding an FBI briefing for victims of Jeffrey Epstein. The firm provides names of additional victims and notes missing contact information for some.",
+  "persons": [
+    {
+      "name": "Mary E. Valledor",
+      "role": "Assistant to Robert C. Josefsberg and Ramon A. Rasco",
+      "category": "legal",
+      "context": "Legal assistant at Podhurst Orseck law firm who communicates with the FBI Victim Specialist to provide names of additional Epstein victims for an upcoming briefing.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Robert C. Josefsberg",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Podhurst Orseck law firm who forwards the initial FBI briefing invitation to his assistant, Mary Valledor.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ramon A. Rasco",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney at Podhurst Orseck law firm; mentioned as someone Mary Valledor also assists.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the case; the FBI briefing is for victims of his crimes.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mary E. Valledor",
+      "person2": "Robert C. Josefsberg",
+      "relationshipType": "employer-employee",
+      "description": "Valledor is the assistant to attorney Josefsberg at Podhurst Orseck law firm.",
+      "strength": 4
+    },
+    {
+      "person1": "Mary E. Valledor",
+      "person2": "Ramon A. Rasco",
+      "relationshipType": "employer-employee",
+      "description": "Valledor is also the assistant to attorney Rasco at the same law firm.",
+      "strength": 3
+    },
+    {
+      "person1": "Robert C. Josefsberg",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Implied connection as Josefsberg's law firm is representing victims of Epstein, suggesting an attorney-client relationship with those victims in the case against Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-15",
+      "title": "FBI Victim Briefing in Miami",
+      "description": "The FBI Victim Services Division hosts a briefing for identified victims of Jeffrey Epstein at the Miami Field Office.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Victim Specialist",
+        "Epstein victims"
+      ]
+    },
+    {
+      "date": "2019-10-23",
+      "title": "FBI Victim Briefing in New York",
+      "description": "The FBI Victim Services Division hosts a briefing for identified victims of Jeffrey Epstein at the New York Field Office.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Victim Specialist",
+        "Epstein victims"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami Field Office (FBI), Miami, FL",
+    "New York Field Office (FBI), New York, NY",
+    "SunTrust International Center, One SE Third Avenue, Suite 2300, Miami, FL 33131 (Podhurst Orseck law firm address)"
+  ],
+  "keyFacts": [
+    "The Podhurst Orseck law firm was representing multiple identified victims of Jeffrey Epstein as of September-October 2019.",
+    "The FBI Victim Services Division organized briefings for Epstein victims in Miami (October 15) and New York (October 23) in 2019.",
+    "The law firm provided the FBI with names of additional Epstein victims, but noted they lacked current contact information for some of them.",
+    "Communication shows coordination between victim attorneys and the FBI regarding victim outreach and support services post-Epstein's arrest and death."
+  ],
+  "analyzedAt": "2026-02-20T10:13:07.420Z"
+}

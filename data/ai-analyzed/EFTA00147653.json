@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00147653.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-03",
+  "summary": "An FBI email from July 3, 2019, discussing operational planning for the arrest of Jeffrey Epstein. It outlines a two-wave deployment of agents to Florida to serve subpoenas to co-conspirators and interview victims, while noting the SDNY's desire to keep the investigation separate from the 2008 Miami case.",
+  "persons": [
+    {
+      "name": "Epstein",
+      "role": "Target of arrest operation",
+      "category": "key figure",
+      "context": "The subject of the planned arrest operation discussed in the email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sean",
+      "role": "FBI Supervisory Special Agent (SSA)",
+      "category": "law enforcement",
+      "context": "The author of the email, an FBI SSA in New York, outlining the operational plan for Epstein's arrest and subsequent investigative actions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sean",
+      "person2": "Epstein",
+      "relationshipType": "investigator-target",
+      "description": "Sean, an FBI SSA, is planning the operational details for the arrest of Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-03",
+      "title": "Planning for Epstein's Arrest",
+      "description": "FBI email outlines a two-wave operational plan for agents to deploy to Florida following Epstein's arrest: first to serve subpoenas to co-conspirators, then to conduct victim interviews.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Sean",
+        "Epstein"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Prior Miami Investigation",
+      "description": "Reference to a previous investigation into Epstein in Miami from 2008, which the SDNY wants the current operation kept separate from.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Florida",
+    "Miami",
+    "New York"
+  ],
+  "keyFacts": [
+    "The FBI was actively planning the operational details for Jeffrey Epstein's arrest as of July 3, 2019.",
+    "The plan involved a two-wave deployment of FBI agents to Florida: first to serve subpoenas to co-conspirators, then to conduct 'knock and talk' interviews with victims.",
+    "The SDNY (Southern District of New York) directed that no agents from the Miami field office be used, to keep this investigation separate from the prior 2008 Miami case involving Epstein.",
+    "The email seeks authorization to use an EAN (likely a government travel authorization number) for the agent deployments, indicating the operation was in its logistical planning phase."
+  ],
+  "analyzedAt": "2026-02-20T05:49:19.420Z"
+}

@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00152507.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-13",
+  "summary": "An email chain forwarded to the FBI and US Attorney's Office for the Southern District of New York regarding the USA v. Maxwell case. The chain contains a tip from Mike Jones suggesting that Johan Eliasch, a Swedish businessman living in the UK, may have ties to the case and recommending a search of his aircraft logs.",
+  "persons": [
+    {
+      "name": "Mike Jones",
+      "role": "Tipster / Correspondent",
+      "category": "other",
+      "context": "Individual who emails the US Attorney's Office with information suggesting Johan Eliasch may have ties to the USA v. Maxwell case and recommends searching his aircraft logs.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Johan Eliasch",
+      "role": "Subject of Tip",
+      "category": "associate",
+      "context": "Swedish businessman living in the UK who is suggested by Mike Jones to have possible ties to the underlying acts in the USA v. Maxwell case. He owns three aircraft.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Paul Byrne",
+      "role": "Email Recipient (FBI)",
+      "category": "law enforcement",
+      "context": "FBI agent copied on the forwarded email chain regarding the tip about Johan Eliasch.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mike Jones",
+      "person2": "Johan Eliasch",
+      "relationshipType": "investigator-subject",
+      "description": "Mike Jones states he has been 'doing a lot of work with regards to Johan Eliasch over the previous 2-3 years' and is providing a tip about him to prosecutors.",
+      "strength": 2
+    },
+    {
+      "person1": "Johan Eliasch",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "suspected associate",
+      "description": "Mike Jones suggests Johan Eliasch 'may also have some ties to the underlying acts' in the USA v. Maxwell case, implying a potential connection to Ghislaine Maxwell.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-13",
+      "title": "Tip forwarded to FBI and SDNY",
+      "description": "An email tip from Mike Jones regarding Johan Eliasch is forwarded within the US Attorney's Office and to FBI agent Paul Byrne in the context of the USA v. Maxwell investigation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Mike Jones",
+        "Paul Byrne",
+        "Johan Eliasch"
+      ]
+    },
+    {
+      "date": "2020-07-03",
+      "title": "Initial tip email sent",
+      "description": "Mike Jones sends an initial email to a US Attorney introducing himself and suggesting Johan Eliasch may have ties to the USA v. Maxwell case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Mike Jones",
+        "Johan Eliasch"
+      ]
+    }
+  ],
+  "locations": [
+    "United Kingdom",
+    "Sweden",
+    "Aruba",
+    "New York"
+  ],
+  "keyFacts": [
+    "A tipster named Mike Jones suggests Swedish businessman Johan Eliasch may have ties to the underlying acts in the USA v. Maxwell case.",
+    "Jones recommends searching the logs of Eliasch's three aircraft, noting one recently changed its tail number to an Aruba registration.",
+    "The tip was forwarded to FBI agent Paul Byrne and the US Attorney's Office for the Southern District of New York on July 13, 2020.",
+    "Johan Eliasch is identified as a non-US citizen, Swedish, living in the UK.",
+    "The correspondence shows the investigation into Ghislaine Maxwell was receiving external tips regarding potential associates and their travel records."
+  ],
+  "analyzedAt": "2026-02-20T09:59:42.456Z"
+}

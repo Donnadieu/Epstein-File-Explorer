@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00155510.pdf",
+  "dataSet": "9",
+  "documentType": "FBI intake/lead report",
+  "dateOriginal": "2020-07-09",
+  "summary": "This is an FBI intake document dated July 9, 2020, recording a social media tip received on July 6, 2020. The tip, from a Twitter user, alleges that Ghislaine Maxwell was involved in providing underage females for sex to celebrities. The document outlines the FBI's process for monitoring social media for potential threats.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named in the case title for child sex trafficking. The document is part of the investigation into his activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Associate",
+      "category": "associate",
+      "context": "A Twitter user alleges she was involved in providing underage females for sex to celebrities, which prompted this FBI intake.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "The social media tip alleges Maxwell's involvement in providing underage females, which is central to the Epstein child sex trafficking investigation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-06",
+      "title": "Social Media Tip Received",
+      "description": "The FBI Office of Public Affairs forwarded a comment from Twitter user @justagook alleging Ghislaine Maxwell's involvement in providing underage females for sex to celebrities.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-09",
+      "title": "FBI Intake Document Created",
+      "description": "An FBI intake document (Case ID 50D-NY-3027571) was drafted, formally recording the social media tip for assessment and potential investigation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The FBI's Office of Public Affairs monitors social media comments for keywords that may indicate threats, automatically generating tips for assessment.",
+    "A Twitter user (@justagook) alleged that Ghislaine Maxwell was involved in providing underage females for sex to celebrities, prompting this FBI intake.",
+    "The document shows the FBI's procedural response to public tips related to the ongoing Jeffrey Epstein child sex trafficking investigation.",
+    "The tip was processed by the National Threat Operations Center (NTOC) for a credibility assessment."
+  ],
+  "analyzedAt": "2026-02-20T13:40:26.589Z"
+}

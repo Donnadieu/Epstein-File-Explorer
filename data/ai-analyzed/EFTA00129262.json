@@ -1,0 +1,132 @@
+{
+  "fileName": "EFTA00129262.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-09-07",
+  "summary": "This FBI 302 document records an interview with Allison Huxtable, who alleges Jeffrey Epstein raped her when she was 19. She discusses her denied claim to the Jeffrey Epstein Victim Compensation Fund, her criticism of the fund's administrator Jordana Feldman, and a prior tip she gave the FBI about Cesar Sayoc. The interviewing agent formally admonished her against further contact with the fund or Feldman.",
+  "persons": [
+    {
+      "name": "Allison Huxtable",
+      "role": "Interview Subject / Alleged Victim",
+      "category": "victim",
+      "context": "Interview subject who alleges Jeffrey Epstein raped her when she was 19 years old. She submitted a claim to the Jeffrey Epstein Victim Compensation Fund which was denied, and she criticizes the fund's administrator.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Allegedly raped Allison Huxtable when she was 19 years old. The interview is part of the investigation into his crimes.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jordana Feldman",
+      "role": "Attorney / Fund Administrator",
+      "category": "legal",
+      "context": "Described as the personal attorney Allison Huxtable retained in 2001 after the alleged rape, and later as the administrator of the Jeffrey Epstein Victim Compensation Fund. Huxtable is critical of her, alleging she used her story to make money.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Cesar Sayoc",
+      "role": "Subject of Prior Tip",
+      "category": "other",
+      "context": "An individual Allison Huxtable previously identified to the FBI as a 'weird guy.' She was told she might get a reward if he was convicted.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SA Ricks",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI Special Agent Allison Huxtable spoke with years ago regarding her tip about Cesar Sayoc. He told her he would enter the information and she might get a reward.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Allison Huxtable",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Huxtable alleges that Epstein raped her when she was 19 years old.",
+      "strength": 5
+    },
+    {
+      "person1": "Allison Huxtable",
+      "person2": "Jordana Feldman",
+      "relationshipType": "attorney-client",
+      "description": "Huxtable paid Feldman $1 to retain her as her personal attorney in 2001 after telling her about the alleged rape. The relationship is now severed.",
+      "strength": 4
+    },
+    {
+      "person1": "Allison Huxtable",
+      "person2": "SA Ricks",
+      "relationshipType": "witness-informant",
+      "description": "Huxtable previously provided a tip to SA Ricks about Cesar Sayoc, and he informed her about a potential reward.",
+      "strength": 2
+    },
+    {
+      "person1": "Jordana Feldman",
+      "person2": "Jeffrey Epstein Victim Compensation Fund",
+      "relationshipType": "administrator",
+      "description": "Feldman is described as the administrator of the fund, which Huxtable alleges pays claims to Feldman's law firm.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2001",
+      "title": "Huxtable Retains Feldman as Attorney",
+      "description": "Allison Huxtable met Jordana Feldman in New York and paid her $1 to retain her as her personal attorney after telling her about the alleged rape by Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Allison Huxtable",
+        "Jordana Feldman"
+      ]
+    },
+    {
+      "date": "2020-07",
+      "title": "Huxtable Submits Claim to Epstein Victim Fund",
+      "description": "Allison Huxtable submitted a claim to the Jeffrey Epstein Victim Compensation Fund. She was later interviewed by five members of the fund, but her claim was denied.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Allison Huxtable"
+      ]
+    },
+    {
+      "date": "2021-09-07",
+      "title": "FBI Interview and Admonishment",
+      "description": "Allison Huxtable was interviewed by the FBI at the Oklahoma City Field Office. The interviewing agent formally admonished her, warning of federal prosecution if she made further attempts to contact the Victim Compensation Fund or Jordana Feldman.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Allison Huxtable"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Prior FBI Tip Regarding Cesar Sayoc",
+      "description": "Years prior to this interview, Allison Huxtable called the FBI and spoke with SA Ricks about Cesar Sayoc, whom she identified as a 'weird guy.' She was told she might get a reward if he was convicted.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Allison Huxtable",
+        "SA Ricks",
+        "Cesar Sayoc"
+      ]
+    }
+  ],
+  "locations": [
+    "Oklahoma City, Oklahoma 73118 (Huxtable's home address)",
+    "Oklahoma City Field Office, 3301 West Memorial Road, Oklahoma City, Oklahoma 73134 (Interview location)",
+    "New York (Where Huxtable met Jordana Feldman)"
+  ],
+  "keyFacts": [
+    "Allison Huxtable alleges Jeffrey Epstein raped her when she was 19 years old.",
+    "Huxtable's claim to the Jeffrey Epstein Victim Compensation Fund was denied by a panel of five members, which she criticized as 'non-victims' making $100,000 a year.",
+    "Huxtable was formally admonished by the FBI interviewing agent and warned she would be federally prosecuted if she contacted the Victim Compensation Fund or Jordana Feldman again.",
+    "Huxtable had previously provided a tip to the FBI about Cesar Sayoc, expecting a reward upon his conviction, but found her name was not in the file.",
+    "Huxtable created a Facebook page titled 'Tells the Truth About Corrupt Jordana Feldman,' criticizing the fund's administrator."
+  ],
+  "analyzedAt": "2026-02-19T18:41:47.274Z"
+}

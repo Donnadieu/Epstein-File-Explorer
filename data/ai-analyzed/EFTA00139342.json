@@ -1,0 +1,165 @@
+{
+  "fileName": "EFTA00139342.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-09 to 2019-08-10",
+  "summary": "This document is a compilation of Bureau of Prisons (BOP) medical records for inmate Jeffrey Epstein from July to August 2019, detailing physical examinations, vital signs, diagnoses, medications, and treatment plans. It includes records from the Metropolitan Correctional Center (MCC) in New York and documents his health status and medical care leading up to his transfer in August 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The subject of all medical records, detailing his health status, examinations, diagnoses, and treatments while incarcerated at the Metropolitan Correctional Center (MCC) New York.",
+      "mentionCount": 50
+    },
+    {
+      "name": "MLP",
+      "role": "Mid-Level Provider",
+      "category": "staff",
+      "context": "A medical provider (Mid-Level Provider) who conducted physical examinations, recorded vitals, and entered medical orders for Jeffrey Epstein on multiple dates, including July 9, 2019.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Robert Beaudown",
+      "role": "Physician (MD)",
+      "category": "staff",
+      "context": "A physician (MD) who cosigned medical documentation and entered medication orders for regular insulin for Jeffrey Epstein on July 31, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "PA-C",
+      "role": "Physician Assistant",
+      "category": "staff",
+      "context": "A physician assistant who administered a PPD test and noted 'No Known Allergies' for Jeffrey Epstein on July 6, 2019.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MLP",
+      "relationshipType": "provider-patient",
+      "description": "MLP was a primary medical provider conducting examinations and entering orders for inmate Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Robert Beaudown",
+      "relationshipType": "provider-patient",
+      "description": "Dr. Beaudown entered and cosigned medication orders (insulin) for Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MD",
+      "relationshipType": "provider-patient",
+      "description": "Multiple physicians were involved in cosigning documents and managing Epstein's medical care.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "RN",
+      "relationshipType": "provider-patient",
+      "description": "Registered nurses monitored vitals, provided education, and prepared transfer documents for Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PA-C",
+      "relationshipType": "provider-patient",
+      "description": "A physician assistant administered a tuberculosis test and recorded allergy information for Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-09",
+      "title": "Comprehensive Physical Examination",
+      "description": "Jeffrey Epstein underwent a detailed physical examination at the MCC, which noted normal findings in multiple systems but a history of constipation, for which medication (Bisacodyl) was prescribed.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019-07-09",
+      "title": "PPD Tuberculosis Test Reading",
+      "description": "A previously administered PPD skin test was read, showing 0mm induration (negative result).",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019-07-11",
+      "title": "Medical Encounter Cosign",
+      "description": "A physician (MD) cosigned the medical encounter documentation from July 9, 2019.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-12",
+      "title": "Pain Management Intervention",
+      "description": "Epstein received a Medrol Dose Pack for shooting back pain, documented in pain management records.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "CPAP Machine Issued",
+      "description": "A CPAP machine was issued to Epstein for his diagnosed sleep apnea.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Insulin Order Initiated",
+      "description": "Dr. Robert Beaudown ordered regular insulin to be administered subcutaneously per a sliding scale for 7 days, indicating management of blood glucose levels.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Robert Beaudown"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Medical Transfer Preparation",
+      "description": "A comprehensive medical transfer summary was generated, listing Epstein's health problems, medications, and pending appointments in preparation for a transfer.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "RN"
+      ]
+    }
+  ],
+  "locations": [
+    "NEW YORK MCC (Metropolitan Correctional Center), 150 PARK ROW, NEW YORK, New York 10007",
+    "NYM (Bureau of Prisons facility designation, likely MCC New York)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's BOP medical records from July-August 2019 document numerous chronic health conditions including hyperlipidemia, sleep apnea, hypertension, constipation, low back pain, neuralgia, prediabetes, and an elevated BMI.",
+    "Epstein was prescribed regular insulin via sliding scale starting July 31, 2019, indicating active management of blood glucose levels, alongside other medications like Vascepa and stool softeners.",
+    "A CPAP machine was issued on July 30, 2019, for diagnosed sleep apnea.",
+    "The records note 'R/O self inflicted injuries' (Rule Out self-inflicted injuries) under an 'Injury, unspecified' diagnosis entered on July 23, 2019.",
+    "A medical transfer document was prepared on August 10, 2019, summarizing his health status for transfer, listing allergies (fish) and a cell restriction (lower bunk)."
+  ],
+  "analyzedAt": "2026-02-19T21:59:14.411Z"
+}

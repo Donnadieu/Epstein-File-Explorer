@@ -1,0 +1,114 @@
+{
+  "fileName": "EFTA00139901.pdf",
+  "dataSet": "9",
+  "documentType": "prison incident report",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Federal Bureau of Prisons memorandum from the Metropolitan Correctional Center in New York detailing a possible suicide attempt by inmate Jeffrey Epstein on July 23, 2019. The report describes the incident, Epstein's behavior, his allegations against his cellmate, and the medical findings, including marks on his neck.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who allegedly attempted suicide; observed with a red neck and marks, made allegations against his cellmate, and was placed on suicide watch.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Operations Lieutenant",
+      "category": "law enforcement",
+      "context": "Author of the memorandum who responded to the incident, observed Epstein, directed his placement on suicide watch, and interviewed him and his cellmate.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Officer",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "Staff member who observed inmate Epstein and reported that Epstein was alert and had made allegations against his cellmate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dr.",
+      "role": "Duty Medical Doctor",
+      "category": "other",
+      "context": "Medical staff notified and briefed about the incident; determined no further medical attention was needed initially.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MLP Y.",
+      "role": "Medical Licensed Practitioner",
+      "category": "other",
+      "context": "Medical staff who examined and treated Jeffrey Epstein after the incident, noting marks on his neck and knee.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Operations Lieutenant",
+      "relationshipType": "guard-inmate",
+      "description": "The Operations Lieutenant was the responding officer who found Epstein, directed his medical handling, and interviewed him about the incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Officer",
+      "relationshipType": "guard-inmate",
+      "description": "Officer observed Epstein and relayed his allegations that his cellmate had attempted to kill him.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "MLP Y.",
+      "relationshipType": "medical provider-patient",
+      "description": "MLP Y. examined and treated Epstein for injuries sustained during the incident.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Possible Suicide Attempt by Jeffrey Epstein",
+      "description": "At approximately 1:27 a.m., inmate Jeffrey Epstein was found in his cell after an alleged suicide attempt. He was observed with a red neck, breathing heavily, and snoring. He was placed on suicide watch and later examined for injuries.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Operations Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Medical Examination of Epstein",
+      "description": "After the incident, MLP Y. examined Jeffrey Epstein and found a circular line of erythema at the base of his neck with friction marks and a small erythema on his left knee.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "MLP Y."
+      ]
+    },
+    {
+      "date": "2019-07-22",
+      "title": "Epstein's Legal Visit",
+      "description": "Jeffrey Epstein returned from a legal visit at approximately 8:00 p.m. the evening before the incident and was given a copy of the Daily News by staff.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
+    "Special Housing Unit, cell Z05-124LAD",
+    "HA-Unit (suicide watch unit)"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, at approximately 1:27 a.m., Jeffrey Epstein was found in his cell after an alleged suicide attempt, with a red neck and marks.",
+    "Epstein alleged to staff that his cellmate had attempted to kill him and had been harassing him, and that the cellmate had informed his attorney of this matter.",
+    "Medical examination after the incident revealed a circular line of erythema at the base of Epstein's neck with friction marks and a small erythema on his left knee.",
+    "Epstein was placed on suicide watch and displayed unpredictable behavior, including pretending to fall head-first off the bed.",
+    "The cellmate reported finding Epstein with a string around his neck and called for guards."
+  ],
+  "analyzedAt": "2026-02-19T22:47:07.218Z"
+}

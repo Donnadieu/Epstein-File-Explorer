@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00139318.pdf",
+  "dataSet": "9",
+  "documentType": "medical records",
+  "dateOriginal": "2019-06-16 to 2019-08-10",
+  "summary": "This document is a collection of Bureau of Prisons medical and dental records for inmate Jeffrey Epstein, covering the period from June to August 2019. It includes multiple medical treatment refusal forms, dental examination records, lab results, and a detailed clinical encounter report documenting the emergency resuscitation efforts on August 10, 2019, the day of his death.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Federal Inmate",
+      "category": "key figure",
+      "context": "The primary subject of all medical records, identified by BOP register number 76318-054. He is documented refusing medical treatment on multiple dates and is the subject of the final resuscitation report.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Provider Bak",
+      "role": "Medical Provider / Code Leader",
+      "category": "staff",
+      "context": "Listed as the 'Provider' and 'Team/Code Leader' in the emergency resuscitation encounter on August 10, 2019, documenting the medical response to Epstein's cardiac arrest.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Provider Bak",
+      "relationshipType": "patient-provider",
+      "description": "Provider Bak was the medical provider and code leader documented as responding to Epstein's medical emergency and leading resuscitation efforts on August 10, 2019.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-10",
+      "title": "Epstein Refuses Medical Treatment",
+      "description": "Jeffrey Epstein signed a Bureau of Prisons form refusing an unspecified medical treatment recommended by BOP medical staff.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Refuses Medical Treatment Again",
+      "description": "Jeffrey Epstein signed multiple Bureau of Prisons forms refusing an unspecified medical treatment recommended by BOP medical staff.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Unresponsive & Resuscitation Attempt",
+      "description": "Correctional officers responded to a body alarm at 06:35 and found Jeffrey Epstein unresponsive on the floor of his cell in the Special Housing Unit. He was cold, had bruising around the neck, fixed and dilated pupils, and no palpable pulses. CPR was initiated, EMS was called, and he was transported to a local ER with CPR in progress, but was ultimately pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Provider Bak"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York (Metropolitan Correctional Center, New York)",
+    "Special Housing Unit (SHU) at MCC New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein refused recommended medical treatment on at least two documented occasions: July 10, 2019, and July 24, 2019.",
+    "On August 10, 2019, at approximately 6:35 AM, Epstein was found unresponsive in his cell in the Special Housing Unit at MCC New York.",
+    "The emergency medical report notes 'circumferential Bruising around the neck' and 'posterior mottling' upon finding Epstein.",
+    "Resuscitation efforts, including CPR, intubation, and administration of epinephrine and sodium bicarbonate, were performed but were unsuccessful.",
+    "Epstein was transported to a local emergency room with CPR still in progress."
+  ],
+  "analyzedAt": "2026-02-19T21:58:40.816Z"
+}

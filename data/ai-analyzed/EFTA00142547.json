@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00142547.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "This document is an email chain regarding the installation of new video recording equipment at the Metropolitan Correctional Center (MCC) in New York. It involves technical planning between a SigNet Technologies representative and MCC staff, sent shortly after Jeffrey Epstein's death at the facility.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "MCC staff recipient",
+      "category": "staff",
+      "context": "Appears as a recipient of the email regarding the installation of new recording equipment at MCC New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steve Smith",
+      "role": "Federal Sales Representative at SigNet Technologies/Convergint Federal Solutions",
+      "category": "staff",
+      "context": "Author of the email detailing the technical plan for installing new video recording hardware and restoring recording to all channels at MCC New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey McKenzie",
+      "role": "SigNet representative",
+      "category": "staff",
+      "context": "Mentioned as being from SigNet and will be on site Monday to handle NCIC forms related to the equipment installation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Email recipient",
+      "category": "staff",
+      "context": "Appears as a recipient copied on the email about the MCC equipment installation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steve Smith",
+      "person2": "Jeff Cranor",
+      "relationshipType": "professional",
+      "description": "Smith is communicating technical installation plans to Cranor, who is likely MCC staff.",
+      "strength": 2
+    },
+    {
+      "person1": "Steve Smith",
+      "person2": "Jeffrey McKenzie",
+      "relationshipType": "colleague",
+      "description": "Both are associated with SigNet Technologies working on the MCC equipment installation project.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Planning for MCC Recording Equipment Installation",
+      "description": "Email correspondence outlines the technical plan for unboxing new hardware, installing it in new racks, and restoring video recording for all channels at MCC New York.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve Smith",
+        "Jeff Cranor",
+        "Jeffrey McKenzie",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Jeffrey McKenzie Site Visit",
+      "description": "Planned for Jeffrey McKenzie from SigNet to be on site at MCC New York to handle NCIC forms related to the equipment installation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey McKenzie"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC-New York, 150 Park Row, New York, NY 10007-1704",
+    "SigNet Technologies/Convergint Federal Solutions, 12300 Kiln Ct Suite E, Beltsville, MD 20705"
+  ],
+  "keyFacts": [
+    "This email concerns the installation of new video recording hardware at the Metropolitan Correctional Center (MCC) in New York.",
+    "The primary goal is to restore recording to all channels, with redundancy and PTZ control conversion to follow.",
+    "The correspondence is dated August 11, 2019, which is shortly after Jeffrey Epstein's death in the MCC on August 10, 2019.",
+    "The existing analog system was to continue recording until the new system was ready for cutover.",
+    "The document suggests an upgrade or repair to the facility's surveillance recording capabilities was underway."
+  ],
+  "analyzedAt": "2026-02-20T00:57:44.674Z"
+}

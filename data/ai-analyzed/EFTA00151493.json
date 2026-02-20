@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00151493.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-13",
+  "summary": "An email from an FBI agent in New York to FBI agent Paul Byrne, introducing a fellow Quantico classmate who is an agent in West Palm Beach and has possible information on the Epstein case. The email provides the West Palm agent's contact number.",
+  "persons": [
+    {
+      "name": "Paul Byrne",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Recipient of an email from a New York FBI agent regarding a West Palm Beach FBI agent with possible information on the Epstein case.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Paul Byrne",
+      "person2": "Unnamed NY FBI Agent",
+      "relationshipType": "professional",
+      "description": "Colleagues within the FBI; the NY agent is reaching out to Byrne with a lead.",
+      "strength": 2
+    },
+    {
+      "person1": "Paul Byrne",
+      "person2": "Unnamed West Palm FBI Agent",
+      "relationshipType": "professional",
+      "description": "Connected via the NY agent; the West Palm agent is a Quantico classmate of the NY agent and has possible case information.",
+      "strength": 1
+    },
+    {
+      "person1": "Unnamed NY FBI Agent",
+      "person2": "Unnamed West Palm FBI Agent",
+      "relationshipType": "professional",
+      "description": "Quantico classmates; the NY agent is facilitating contact regarding the Epstein case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-13",
+      "title": "Email regarding Epstein case lead",
+      "description": "An FBI agent in New York emails Paul Byrne to introduce a Quantico classmate, an agent in West Palm Beach, who has possible information on the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Paul Byrne",
+        "Unnamed NY FBI Agent",
+        "Unnamed West Palm FBI Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "West Palm Beach",
+    "Quantico"
+  ],
+  "keyFacts": [
+    "The email is dated July 13, 2019, shortly after Jeffrey Epstein's arrest on July 6, 2019.",
+    "An FBI agent in West Palm Beach reportedly has possible information on the Epstein case.",
+    "The communication shows internal FBI coordination regarding the Epstein investigation.",
+    "The West Palm Beach agent is identified as a Quantico classmate of the sending New York agent."
+  ],
+  "analyzedAt": "2026-02-20T08:53:54.511Z"
+}

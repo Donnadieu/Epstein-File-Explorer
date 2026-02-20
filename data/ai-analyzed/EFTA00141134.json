@@ -1,0 +1,140 @@
+{
+  "fileName": "EFTA00141134.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-14",
+  "summary": "This is an FBI FD-302 interview report of a Federal Bureau of Prisons Lieutenant, conducted on August 14, 2019. The interview details the standard operating procedures for prisoner counts and rounds at the Metropolitan Correctional Facility (MCC) in New York, where Jeffrey Epstein was held. The lieutenant describes her duties and the process, but states she has no specific knowledge of any lapses in procedure related to Epstein's death and did not speak with the guards directly involved.",
+  "persons": [
+    {
+      "name": "Lieutenant",
+      "role": "Federal Bureau of Prisons Lieutenant",
+      "category": "law enforcement",
+      "context": "A BOP Lieutenant interviewed by the FBI and OIG regarding standard prison procedures at the MCC. She described the count and rounds process and stated she had no knowledge of procedures not being followed related to Epstein's death.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, Office of the Inspector General",
+      "category": "law enforcement",
+      "context": "Participated in the interview of the BOP Lieutenant as part of the investigation into Jeffrey Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, Federal Bureau of Investigation",
+      "category": "law enforcement",
+      "context": "Participated in the interview of the BOP Lieutenant as part of the FBI investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Assistant United States Attorney, Southern District of New York",
+      "category": "legal",
+      "context": "Participated in the interview of the BOP Lieutenant regarding procedures at the MCC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Assistant United States Attorney, Southern District of New York",
+      "category": "legal",
+      "context": "Participated in the interview of the BOP Lieutenant regarding procedures at the MCC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Prisoner",
+      "category": "key figure",
+      "context": "Referenced in the context of the investigation into his death while in custody at the MCC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Guard Thomas",
+      "role": "MCC Guard",
+      "category": "staff",
+      "context": "One of the guards the lieutenant stated she did not speak with about the events surrounding Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Guard Noel",
+      "role": "MCC Guard",
+      "category": "staff",
+      "context": "One of the guards the lieutenant stated she did not speak with about the events surrounding Epstein's death.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lieutenant",
+      "person2": "Guard Thomas",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The lieutenant supervises guards at the MCC, including Thomas, but stated she did not speak with him about the Epstein incident.",
+      "strength": 2
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Guard Noel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The lieutenant supervises guards at the MCC, including Noel, but stated she did not speak with him about the Epstein incident.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The OIG Special Agent interviewed the BOP Lieutenant as part of the investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The FBI Special Agent interviewed the BOP Lieutenant as part of the investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Lieutenant",
+      "relationshipType": "interviewer-interviewee",
+      "description": "The AUSAs from the SDNY interviewed the BOP Lieutenant as part of the investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-14",
+      "title": "FBI/OIG Interview of BOP Lieutenant",
+      "description": "Federal investigators interviewed a Bureau of Prisons Lieutenant regarding standard operating procedures for prisoner counts and rounds at the Metropolitan Correctional Center (MCC).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant",
+        "Special Agent",
+        "Special Agent",
+        "Assistant United States Attorney",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "Death of Jeffrey Epstein",
+      "description": "The interview is conducted in the context of the investigation into the death of Jeffrey Epstein while in custody at the MCC.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Facility (MCC), New York, New York",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A BOP Lieutenant with over 24 years of experience at the MCC was interviewed about prison procedures following Jeffrey Epstein's death.",
+    "The lieutenant described a detailed, two-person verification process for official prisoner counts, which involves physical checks, recording numbers, and verbal confirmation with an internal control center.",
+    "Guards are also required to conduct visual welfare \"rounds\" every 30-40 minutes to verify prisoners are alive and in their cells.",
+    "The lieutenant stated she had no knowledge of counts or rounds not being conducted and that no one would inform her if such lapses occurred.",
+    "She explicitly stated she did not speak with guards Thomas and Noel about the events surrounding Epstein's death on the night/morning in question."
+  ],
+  "analyzedAt": "2026-02-20T00:15:38.412Z"
+}

@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00135543.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-05",
+  "summary": "FBI 302 report documenting an interview with a Bureau of Prisons forensic psychologist regarding intake screening of Jeffrey Epstein on July 8, 2019, and a meeting on August 9, 2019, where Epstein's attorney opposed him having a cellmate. The psychologist explained that because Epstein was in the 'shoe' and was a sex offender, he needed a cellmate.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The subject of a psychological intake interview on July 8, 2019, at the Metropolitan Correctional Center. He denied any mental health, suicide, or substance abuse history and stated he was doing fine despite being in the 'shoe' (Special Housing Unit).",
+      "mentionCount": 5
+    },
+    {
+      "name": "EMPLOYEE 5",
+      "role": "Bureau of Prisons Forensic Psychologist",
+      "category": "staff",
+      "context": "A forensic psychologist who conducted an intake interview of Jeffrey Epstein on July 8, 2019, and participated in a meeting on August 9, 2019, regarding Epstein's housing.",
+      "mentionCount": 4
+    },
+    {
+      "name": "EMPLOYEE 25",
+      "role": "Bureau of Prisons Staff",
+      "category": "staff",
+      "context": "Participated with EMPLOYEE 5 in explaining to Epstein's attorney on August 9, 2019, why Epstein needed a cellmate.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "EMPLOYEE 5",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "professional assessment",
+      "description": "EMPLOYEE 5, a forensic psychologist, conducted a psychological intake evaluation of inmate Jeffrey Epstein on July 8, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "EMPLOYEE 5",
+      "person2": "EMPLOYEE 25",
+      "relationshipType": "colleague",
+      "description": "Both were present and jointly explained Bureau of Prisons policy regarding cellmate assignment for Jeffrey Epstein to his attorney on August 9, 2019.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Epstein Psychological Intake Interview",
+      "description": "Forensic psychologist EMPLOYEE 5 conducted an intake interview of Jeffrey Epstein at the Metropolitan Correctional Center. Epstein denied any mental health history, suicide history, and substance abuse history.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "EMPLOYEE 5"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Meeting on Epstein's Cellmate Status",
+      "description": "A meeting was held regarding Jeffrey Epstein's housing. Epstein's attorney opposed him having a cellmate. BOP staff EMPLOYEE 5 and EMPLOYEE 25 explained that because Epstein was in the 'shoe' (Special Housing Unit) and was a sex offender, he needed a cellmate.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "EMPLOYEE 5",
+        "EMPLOYEE 25"
+      ]
+    },
+    {
+      "date": "2019-08-30",
+      "title": "FBI Interview of BOP Psychologist",
+      "description": "FBI and OIG agents interviewed Bureau of Prisons forensic psychologist EMPLOYEE 5 regarding interactions with Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "EMPLOYEE 5"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY, 10007 (US Attorney's Office, Southern District of New York)",
+    "Metropolitan Detention Center",
+    "Metropolitan Correctional Center"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein underwent a psychological intake interview on July 8, 2019, where he denied any history of mental health issues, suicide attempts, or substance abuse.",
+    "On August 9, 2019, Epstein's attorney argued against Epstein having a cellmate, but Bureau of Prisons staff insisted he needed one because he was in the Special Housing Unit ('the shoe') and was a sex offender.",
+    "The document clarifies that the potential release of Epstein's cellmate was NOT discussed at the August 9, 2019 meeting.",
+    "The interview of the BOP psychologist was conducted by the FBI and Office of the Inspector General on August 30, 2019, as part of the investigation into Epstein's death."
+  ],
+  "analyzedAt": "2026-02-19T20:27:02.469Z"
+}

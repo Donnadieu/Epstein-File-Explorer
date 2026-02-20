@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00155127.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-05-18",
+  "summary": "This is an email from an FBI Assistant Legal Attaché in London to a recipient named Mandy, forwarding a response from UK authorities regarding travel records for subjects in the Epstein case. The UK indicates travel data is only retained for 5 years and suggests the FBI request Passenger Name Records (PNR) in the US for intelligence or submit an ILOR to UKCA for evidential travel data.",
+  "persons": [
+    {
+      "name": "Mandy",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Recipient of the email from the FBI Assistant Legal Attaché regarding travel record requests for subjects in the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "T/Senior Intelligence Officer",
+      "role": "Senior Intelligence Officer, Operations and Intelligence Directorate",
+      "category": "law enforcement",
+      "context": "UK official who provided the response regarding retention of travel information and methods for the FBI to request travel data.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant Legal Attaché FBI/Legal Attaché Office",
+      "role": "FBI Assistant Legal Attaché",
+      "category": "law enforcement",
+      "context": "Sender of the email, based at the American Embassy in London, coordinating with UK authorities on travel record requests related to the Epstein case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant Legal Attaché FBI/Legal Attaché Office",
+      "person2": "Mandy",
+      "relationshipType": "professional correspondence",
+      "description": "The FBI Assistant Legal Attaché is communicating with Mandy regarding UK travel record requests for Epstein case subjects.",
+      "strength": 2
+    },
+    {
+      "person1": "Assistant Legal Attaché FBI/Legal Attaché Office",
+      "person2": "T/Senior Intelligence Officer",
+      "relationshipType": "inter-agency coordination",
+      "description": "The FBI official is relaying a response from the UK Senior Intelligence Officer about travel data retention and request procedures.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-05-18",
+      "title": "Email regarding UK travel records request",
+      "description": "FBI Assistant Legal Attaché in London emails Mandy with UK response about travel data retention and methods for obtaining travel records for subjects.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant Legal Attaché FBI/Legal Attaché Office",
+        "Mandy",
+        "T/Senior Intelligence Officer"
+      ]
+    }
+  ],
+  "locations": [
+    "London",
+    "UK",
+    "American Embassy London"
+  ],
+  "keyFacts": [
+    "UK travel information is only retained for the last 5 years.",
+    "The FBI can request Passenger Name Records (PNR) in the US for intelligence purposes regarding subjects.",
+    "For evidential purposes, the FBI can submit an ILOR (International Letter of Request) to UKCA for 5-year travel data.",
+    "The communication shows ongoing investigative coordination between US and UK authorities regarding travel records in the Epstein case."
+  ],
+  "analyzedAt": "2026-02-20T13:11:40.941Z"
+}

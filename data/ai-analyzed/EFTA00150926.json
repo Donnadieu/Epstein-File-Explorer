@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00150926.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal communication",
+  "dateOriginal": "2019-12-10",
+  "summary": "An FBI email dated December 10, 2019, containing a list of individuals associated with Ghislaine Maxwell. The list includes names, dates of birth, addresses, and phone numbers, with some entries flagged as associates of Jeffrey Epstein. The document is marked with handling caveats (U//FOUO).",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The document is a list of individuals associated with her, compiled by the FBI.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Associate of listed individuals",
+      "category": "key figure",
+      "context": "One entry is specifically noted as an 'Associate of Epstein'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bella Klein",
+      "role": "Listed individual",
+      "category": "associate",
+      "context": "Listed as 'Bella Kline' (with a note on spelling) and mentioned by an unspecified source. Her address is in New York, NY.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "The document's purpose is to list individuals associated with Maxwell, and Epstein is referenced as an associate of one of those individuals, implying their known connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Bella Klein",
+      "relationshipType": "associate",
+      "description": "Bella Klein is listed among individuals associated with Ghislaine Maxwell, as per the FBI's compilation.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Los Angeles, CA 90049",
+    "New York, NY 10036",
+    "Fenton, MI 48430",
+    "Batesburg, SC 29006",
+    "North Salem, NY 10560",
+    "New York, NY 10028",
+    "New York, NY 10001",
+    "Marion, OH 43302",
+    "Birmingham, MI 48009",
+    "Bloomfield Hills, MI 48301",
+    "New York, NY 10065",
+    "New York, NY 10013",
+    "Greensville, SC 29609",
+    "Atlanta, GA 30305",
+    "Santa Ana, CA 92707",
+    "New York, NY 10128"
+  ],
+  "keyFacts": [
+    "The FBI was actively compiling a list of individuals associated with Ghislaine Maxwell as of December 2019.",
+    "The list contains personal identifiers (DOB, SSN, addresses, phone numbers) for multiple individuals, though most names are redacted in this version.",
+    "One entry is explicitly noted as an 'Associate of Epstein'.",
+    "The document shows the use of open-source information to narrow down individuals for investigation.",
+    "Multiple entries are flagged as 'Not definitive' or 'Inconclusive' based on unconfirmed identifiers, indicating an ongoing verification process."
+  ],
+  "analyzedAt": "2026-02-20T08:24:42.044Z"
+}

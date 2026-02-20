@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00140127.pdf",
+  "dataSet": "9",
+  "documentType": "prison medical/administrative record",
+  "dateOriginal": "2019-07-28 to 2019-07-29",
+  "summary": "This document contains internal prison communications from the Metropolitan Correctional Center (MCC) New York regarding inmate Jeffrey Epstein's psychological observation and pending transfer to the Special Housing Unit (SHU). It details his complaints of physical ailments (numbness in arm/neck, sleep apnea) and his expressed desire to remain in a 'safe' area, with staff determining he is psychologically stable for SHU placement.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The incarcerated individual at MCC New York, complaining of physical ailments (numb arm/neck, sleep apnea) and requesting to stay in a 'safe' area rather than return to the SHU.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Lopez",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Another inmate at MCC New York, referenced by inmate number (#20472-038) in the bedspace and observation log.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Nurse",
+      "role": "Medical Staff",
+      "category": "staff",
+      "context": "Medical professional who saw inmate Epstein regarding his complaints of a numb arm.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Chief Psychologist",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "The author of the main communication, reporting on Epstein's psychological status and the decision to return him to the SHU after receiving his CPAP machine.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden",
+      "role": "Associate Warden",
+      "category": "staff",
+      "context": "The intended recipient of the initial communication at MCC New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Chief Psychologist",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The Chief Psychologist is conducting a psychological observation of inmate Epstein and communicating the plan for his housing.",
+      "strength": 3
+    },
+    {
+      "person1": "Nurse",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The Nurse provided medical assessment for Epstein's complaints of a numb arm.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-28",
+      "title": "Epstein's Medical Complaints and Observation",
+      "description": "Inmate Jeffrey Epstein complains of numbness in his right arm and neck. A nurse examines him. He is noted to be psychologically stable and placed on psychological observation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nurse",
+        "Chief Psychologist"
+      ]
+    },
+    {
+      "date": "2019-07-29",
+      "title": "Epstein Requests to Stay in 'Safe' Area",
+      "description": "Epstein states his memory may be impaired due to sleep apnea and requests to remain in the current area where he feels 'safe' for a week. The Chief Psychologist denies the request, allowing only one more night to receive a CPAP machine before returning him to the SHU.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Chief Psychologist"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
+    "Special Housing Unit (SHU) at MCC New York"
+  ],
+  "keyFacts": [
+    "On July 28-29, 2019, Jeffrey Epstein was on psychological observation at MCC New York pending transfer to the Special Housing Unit (SHU).",
+    "Epstein complained of physical issues including numbness in his right arm and neck, and cited sleep apnea as potentially impairing his memory of a prior neck injury.",
+    "Epstein explicitly requested to remain in the current area because he felt it was 'safe,' but prison staff denied this, stating there were no mental health issues precluding his return to the SHU.",
+    "Prison staff arranged for Epstein to receive a CPAP machine for his sleep apnea and planned to return him to the SHU with a cellmate the following day.",
+    "The document records internal prison protocol and decision-making regarding a high-profile inmate's housing and medical care just weeks before his death."
+  ],
+  "analyzedAt": "2026-02-19T23:09:17.347Z"
+}

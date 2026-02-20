@@ -1,0 +1,30 @@
+{
+  "fileName": "EFTA00128333.pdf",
+  "dataSet": "9",
+  "documentType": "forensic imaging log",
+  "dateOriginal": "2019-08-11",
+  "summary": "This is a forensic imaging log from a Tableau TD2 device, recording the partial imaging of a 500GB Seagate hard drive (S/N: Z6E8M349) associated with the Epstein case. The operation was cancelled, resulting in only 87 of 233 expected image files being created. The log contains technical details about the source and destination drives, including hash values.",
+  "persons": [],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Forensic imaging attempt of Epstein case hard drive",
+      "description": "An attempt was made to create a forensic image of a 500GB Seagate hard drive (property # 0214 207268) using a Tableau TD2 device. The operation was cancelled, resulting in an incomplete image.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "TD2 CRYSTAL CITY 2"
+  ],
+  "keyFacts": [
+    "A forensic imaging operation on a hard drive related to the Epstein case was attempted on August 11, 2019, but was cancelled before completion.",
+    "The source drive was a 500GB Seagate hard drive with serial number Z6E8M349, property number 0214 207268.",
+    "Only 87 of 233 expected image files were written before the operation was cancelled.",
+    "The source drive's SHA1 hash was recorded as 465c7bf5f62aebb6c98ecfc60534110f56274c25.",
+    "The imaging was performed at a location identified as 'TD2 CRYSTAL CITY 2'."
+  ],
+  "analyzedAt": "2026-02-19T17:45:33.314Z"
+}

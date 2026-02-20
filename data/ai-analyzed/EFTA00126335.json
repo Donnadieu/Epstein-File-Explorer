@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00126335.pdf",
+  "dataSet": "9",
+  "documentType": "FBI Report",
+  "dateOriginal": "2021-09-29",
+  "summary": "This FBI report documents a meeting on September 18, 2019, with a DVR vendor to investigate catastrophic disk failures in a surveillance system. The technical review concluded no recordings were available after July 29, 2019, and found no evidence of a system rebuild.",
+  "persons": [
+    {
+      "name": "Justin Houston",
+      "role": "Technical Support Representative",
+      "category": "staff",
+      "context": "A DVR vendor representative from SigNet Technologies who provided an overview of the system operation during an FBI investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "David Loveall",
+      "role": "Senior Advisor",
+      "category": "law enforcement",
+      "context": "Reviewed DVR controller logs with Justin Houston and determined catastrophic disk failures prevented recordings after July 29, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mike Beaudin",
+      "role": "Computer Scientist",
+      "category": "law enforcement",
+      "context": "Was provided access to the beginning sectors of 16 drives to investigate potential clues of a system rebuild.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "David Loveall",
+      "person2": "Justin Houston",
+      "relationshipType": "professional",
+      "description": "Collaborated on reviewing DVR controller logs to assess system failures.",
+      "strength": 3
+    },
+    {
+      "person1": "David Loveall",
+      "person2": "Mike Beaudin",
+      "relationshipType": "professional",
+      "description": "Both were involved in the technical investigation of the DVR system's disk failures.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-18",
+      "title": "DVR System Investigation Meeting",
+      "description": "A meeting was conducted with DVR vendor SigNet Technologies to investigate catastrophic disk failures in a surveillance system.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Justin Houston",
+        "David Loveall",
+        "Mike Beaudin"
+      ]
+    },
+    {
+      "date": "2019-07-29",
+      "title": "DVR System Failure Date",
+      "description": "The date after which no recordings would have been available due to catastrophic disk failures in the DVR array.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "One Battery Park Plaza, 29th Floor, New York, NY 10004"
+  ],
+  "keyFacts": [
+    "A DVR system experienced catastrophic disk failures, resulting in no available recordings after July 29, 2019.",
+    "Technical experts found no apparent clues indicating a possible rebuild of the system from the 16 drives examined.",
+    "The investigation was conducted by the U.S. Department of Justice Office of the Inspector General, New York Field Office."
+  ],
+  "analyzedAt": "2026-02-19T17:22:17.422Z"
+}

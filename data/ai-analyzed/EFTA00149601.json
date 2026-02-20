@@ -1,0 +1,54 @@
+{
+  "fileName": "EFTA00149601.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-07-07",
+  "summary": "This is an email from a forensic examiner discussing the status of evidence processing in the Epstein case, specifically mentioning counting items like a laptop and drive, and referencing coordination with NY CART.",
+  "persons": [
+    {
+      "name": "NY CART Coordinator",
+      "role": "Forensic coordinator",
+      "category": "law enforcement",
+      "context": "Mentioned as the recipient or coordinator in the email chain regarding evidence processing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Senior Forensic Examiner",
+      "role": "Forensic examiner",
+      "category": "law enforcement",
+      "context": "Author of the email discussing evidence item counts and processing timelines.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Senior Forensic Examiner",
+      "person2": "NY CART Coordinator",
+      "relationshipType": "professional",
+      "description": "Communication regarding evidence processing status and coordination.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-07",
+      "title": "Evidence status update",
+      "description": "Email exchange about counting evidence items including a laptop and drive, and discussing processing timelines.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Senior Forensic Examiner",
+        "NY CART Coordinator"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "Evidence processing was ongoing as of July 2020, involving items like a laptop and drive.",
+    "The email indicates potential double-counting of items when counting the laptop and its internal drive separately.",
+    "The timeline for processing other evidence was described as dependent on external factors, possibly not under the examiner's full control."
+  ],
+  "analyzedAt": "2026-02-20T07:38:33.652Z"
+}

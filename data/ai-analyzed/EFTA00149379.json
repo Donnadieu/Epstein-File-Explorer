@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00149379.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-29 to 2020-07-01",
+  "summary": "This document is a series of internal FBI emails from late June/early July 2020 concerning operational planning and approval for travel to arrest a target in the Epstein investigation, believed to be Ghislaine Maxwell, who was located in New Hampshire. The emails discuss shifting resources, obtaining GPS data, and coordinating the arrest notification.",
+  "persons": [
+    {
+      "name": "SSA FBI New York",
+      "role": "FBI Supervisory Special Agent in New York",
+      "category": "law enforcement",
+      "context": "Communicates about shifting operational focus to New Hampshire based on phone data and requests approval for moving technical assets and associated expenses.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "role": "FBI Supervisory Special Agent at Headquarters",
+      "category": "law enforcement",
+      "context": "Requests immediate notification of the arrest and any significant activity to submit a Significant Case Notification (SCN).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA FBI New York",
+      "person2": "M",
+      "relationshipType": "colleague",
+      "description": "SSA FBI New York is requesting travel approval from M for an arrest operation.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA FBI New York",
+      "person2": "SSA Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "relationshipType": "colleague",
+      "description": "They are coordinating on the arrest operation, with the HQ SSA requesting updates from the New York SSA.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-30",
+      "title": "Operational Shift to New Hampshire",
+      "description": "FBI analysis of historical phone data indicates the target (Maxwell) is in New Hampshire, requiring a shift in operational planning away from Massachusetts.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA FBI New York"
+      ]
+    },
+    {
+      "date": "2020-06-29",
+      "title": "Travel Request for Arrest Operation",
+      "description": "An FBI agent requests approval for travel to Massachusetts to arrest a target in the Epstein investigation, involving a team of four driving up and possibly escorting the target back to New York.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "M",
+        "SSA FBI New York"
+      ]
+    },
+    {
+      "date": "2020-07-01",
+      "title": "Request to Move Technical Assets",
+      "description": "SSA FBI New York requests approval to move technical assets from Boston and Newark to assist in locating Maxwell's phone, incurring lodging expenses.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SSA FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Boston",
+    "Newark",
+    "New Hampshire",
+    "Massachusetts",
+    "New York"
+  ],
+  "keyFacts": [
+    "The FBI was actively planning the arrest of Ghislaine Maxwell in late June 2020, initially believing she was in Massachusetts.",
+    "Historical phone data placed Maxwell in New Hampshire, causing a significant shift in operational planning.",
+    "The operation involved moving technical assets from Boston and Newark to locate Maxwell's phone.",
+    "The FBI's Crimes Against Children and Human Trafficking Unit required immediate notification of the arrest to file a Significant Case Notification (SCN).",
+    "The travel plan involved a team of four agents driving, with estimated expenses totaling $1060 for hotel, per diem, and parking."
+  ],
+  "analyzedAt": "2026-02-20T07:27:01.732Z"
+}

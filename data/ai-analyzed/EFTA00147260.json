@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00147260.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-22",
+  "summary": "An email chain between FBI personnel and former FBI agent Jeffrey Carrie, now a security director at Weill Cornell Medical Center, reporting a conversation he overheard in a New Jersey bar about the Epstein case. Carrie provided photos of two women discussing suspicious details about Epstein's death, including money transfers and alleged BOP employee involvement.",
+  "persons": [
+    {
+      "name": "Jeffrey Carrie",
+      "role": "Former FBI Agent, Director of Security & Emergency Management at Weill Cornell Medical Center",
+      "category": "witness",
+      "context": "Former FBI agent who overheard a conversation about the Epstein case at a bar in Montclair, NJ, and reported it to the FBI with photos of the individuals involved.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Diego",
+      "role": "Unspecified associate at NYP",
+      "category": "associate",
+      "context": "Mentioned as someone Jeffrey Carrie now works for at NYP (likely NewYork-Presbyterian Hospital).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Carrie",
+      "person2": "Diego",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey Carrie works for Diego at NYP (NewYork-Presbyterian Hospital).",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Carrie",
+      "person2": "FBI",
+      "relationshipType": "informant",
+      "description": "Carrie, a former FBI agent, reported overheard information about the Epstein case to the FBI.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "Conversation Overheard at De Novo Bar",
+      "description": "Jeffrey Carrie and his wife were at the De Novo Bar in Montclair, NJ, where he overheard two women discussing the Epstein case, including claims about money sent to a Swiss bank account after his death and alleged involvement of four BOP employees.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Carrie",
+        "Unidentified woman with light-colored/grey hair",
+        "Unidentified second woman"
+      ]
+    },
+    {
+      "date": "2019-08-21",
+      "title": "Email and Photos Sent to FBI",
+      "description": "Jeffrey Carrie sent an email to the FBI with attached photos of the two women he overheard, including one getting into an Acura.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Carrie"
+      ]
+    },
+    {
+      "date": "2019-08-22",
+      "title": "FBI Internal Email Forwarding Report",
+      "description": "An FBI agent forwarded Jeffrey Carrie's report internally, summarizing the overheard conversation and requesting vetting for connections to the case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Carrie"
+      ]
+    }
+  ],
+  "locations": [
+    "De Novo Bar, Montclair, NJ",
+    "Weill Cornell Medical Center",
+    "NYP (NewYork-Presbyterian Hospital)"
+  ],
+  "keyFacts": [
+    "A former FBI agent overheard a conversation in a New Jersey bar where a woman claimed money was sent to a Swiss bank account after Jeffrey Epstein's death.",
+    "The same woman alleged that four Bureau of Prisons (BOP) employees were involved and could retire within the next year.",
+    "She also stated that procedural errors occurred, including moving Epstein's cellmate out and correctional officers not performing proper checks.",
+    "The witness took photos of the two women and the license plate of an Acura they departed in, providing them to the FBI.",
+    "The FBI treated the report seriously enough to internally forward it for vetting against known individuals in the case."
+  ],
+  "analyzedAt": "2026-02-20T05:18:36.419Z"
+}

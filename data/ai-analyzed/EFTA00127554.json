@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00127554.pdf",
+  "dataSet": "9",
+  "documentType": "service request form",
+  "dateOriginal": "2019-09-20",
+  "summary": "This is a service request form from the Federal Bureau of Prisons (FBOP) for technical support at the Metropolitan Correctional Center (MCC) in New York. The request involves troubleshooting and programming Vicon V942D cameras to integrate them into a NICE Vision surveillance system. The document indicates the request was assigned to technicians Jeff Cranor and Justin Houston, with Jeff McKenzie as the contact.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Listed as assigned to the service request for installing and programming cameras at the MCC New York facility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Customer Contact",
+      "category": "staff",
+      "context": "Appears as the contact name for the Federal Bureau of Prisons regarding the camera installation and troubleshooting request.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Listed alongside Jeff Cranor as assigned to the service request for the camera installation at MCC New York.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both are assigned as service technicians to the same camera installation and troubleshooting request at MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cranor",
+      "relationshipType": "client-service provider",
+      "description": "Jeff McKenzie is the customer contact for the FBOP, and Jeff Cranor is a technician assigned to fulfill the service request.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "client-service provider",
+      "description": "Jeff McKenzie is the customer contact for the FBOP, and Justin Houston is a technician assigned to fulfill the service request.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-20",
+      "title": "Service Request Created for MCC New York",
+      "description": "A service request (#25576) is created by the Federal Bureau of Prisons for the installation and integration of Vicon V942D cameras into the NICE Vision system at the Metropolitan Correctional Center in New York.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff McKenzie",
+        "Jeff Cranor",
+        "Justin Houston"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "MCC New York",
+    "Federal Bureau of Prisons MCC New York MS0109 (130104.001)"
+  ],
+  "keyFacts": [
+    "This document is a service request form related to surveillance camera installation at the Metropolitan Correctional Center (MCC) in New York, a facility where Jeffrey Epstein was held.",
+    "The request is marked as an emergency, requiring a call 'Today', and is assigned a 'Next Day' priority.",
+    "The technical issue involves integrating Vicon V942D cameras into a NICE Vision surveillance system, indicating an upgrade or expansion of monitoring capabilities at the facility.",
+    "The document date is September 20, 2019, which is shortly after Jeffrey Epstein's death in the MCC New York on August 10, 2019.",
+    "The requestor is the Federal Bureau of Prisons (FBOP), specifically the MCC New York location."
+  ],
+  "analyzedAt": "2026-02-19T17:39:13.759Z"
+}

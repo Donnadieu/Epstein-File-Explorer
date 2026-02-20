@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA00129192.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-01-17",
+  "summary": "This is an FBI Electronic Communication (FD-1057) summarizing a complaint letter from Daniel A. Ward, who claims to have filed a lawsuit against multiple entities and mentions Jeffrey Epstein and Jennifer Cipriana in the context of dismissed sexual assault cases. The document is a brief synopsis of the complaint.",
+  "persons": [
+    {
+      "name": "Daniel A Ward",
+      "role": "Complainant / Prisoner",
+      "category": "other",
+      "context": "The individual who submitted the complaint letter, claiming false incarceration and that sexual assault cases are dismissed when the accused have money. He is incarcerated at S.O.C.F. Prison.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Dennis Hartley",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Named as the attorney for Daniel A. Ward, with contact information provided in the complaint.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Mentioned Individual",
+      "category": "key figure",
+      "context": "Named as one of the 'others' mentioned in the complaint letter in the context of sexual assault cases being dismissed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jennifer Cipriana",
+      "role": "Mentioned Individual",
+      "category": "other",
+      "context": "Named as one of the 'others' mentioned in the complaint letter alongside Jeffrey Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Daniel A Ward",
+      "person2": "Dennis Hartley",
+      "relationshipType": "attorney-client",
+      "description": "Dennis Hartley is listed as the attorney for complainant Daniel A. Ward.",
+      "strength": 3
+    },
+    {
+      "person1": "Daniel A Ward",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "other",
+      "description": "Both are mentioned in the same complaint letter regarding the dismissal of sexual assault cases.",
+      "strength": 1
+    },
+    {
+      "person1": "Daniel A Ward",
+      "person2": "Jennifer Cipriana",
+      "relationshipType": "other",
+      "description": "Both are mentioned in the same complaint letter regarding the dismissal of sexual assault cases.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-01-17",
+      "title": "FBI Receipt of Complaint Letter",
+      "description": "The FBI documents an electronic communication summarizing a complaint letter from Daniel A. Ward.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "Daniel A Ward"
+      ]
+    }
+  ],
+  "locations": [
+    "City of Cleveland, Cuyahoga County",
+    "112 East High Street Eaton Ohio 45320",
+    "S.O.C.F. Prison J4.58 MHC-1 PO BOX 45699 Luccusville Ohio 45699"
+  ],
+  "keyFacts": [
+    "Daniel A. Ward, a prisoner, filed a complaint alleging a lawsuit against the City of Cleveland, Cuyahoga County, the FBI, and the CIA.",
+    "The complaint claims sexual assault cases are dismissed when the accused have 'lots of money' and mentions Jeffrey Epstein and Jennifer Cipriana in this context.",
+    "The document is an FBI internal communication (FD-1057) summarizing the receipt of this complaint letter.",
+    "The complainant is incarcerated at S.O.C.F. Prison in Lucasville, Ohio."
+  ],
+  "analyzedAt": "2026-02-19T18:38:11.092Z"
+}

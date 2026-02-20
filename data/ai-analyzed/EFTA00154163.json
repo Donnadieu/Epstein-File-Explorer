@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00154163.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-02-25",
+  "summary": "This is a February 2021 email chain between a Special Agent and an Assistant U.S. Attorney regarding a potential victim of Jeffrey Epstein who called the prosecutor's office. The email discusses the victim's prior attorney, Jordan Merson, and past difficulties in contacting victims he represented. It outlines a request for the FBI to conduct an initial screening of the caller.",
+  "persons": [
+    {
+      "name": "Jordan Merson",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Identified as an attorney who previously represented at least nine Epstein victims and was handling matters related to the Victim Fund for the caller. Prosecutors had prior difficulties contacting his clients.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referenced as the perpetrator whose victim the caller claims to be.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jordan Merson",
+      "person2": "Unnamed Caller",
+      "relationshipType": "attorney-client",
+      "description": "Merson represented the caller for purposes of the Epstein Victim Compensation Fund, though he was not currently representing her at the time of the call.",
+      "strength": 3
+    },
+    {
+      "person1": "Jordan Merson",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Merson is identified as an attorney who represented multiple victims of Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-02-25",
+      "title": "Potential Epstein victim calls prosecutor's office",
+      "description": "An unnamed woman called an Assistant U.S. Attorney's desk line, identifying herself as a former victim of Jeffrey Epstein and a former client of attorney Jordan Merson. She provided her contact information but no substantive case details.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Unnamed Caller",
+        "Jordan Merson"
+      ]
+    },
+    {
+      "date": "2020",
+      "title": "Prosecutor communications with Jordan Merson",
+      "description": "The U.S. Attorney's Office was in contact with attorney Jordan Merson multiple times in 2020 regarding at least nine Epstein victims he claimed to represent, all of whom were reportedly unwilling to speak with investigators.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jordan Merson"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A woman identifying as a former victim of Jeffrey Epstein contacted the U.S. Attorney's Office in February 2021, stating her prior attorney was Jordan Merson.",
+    "The caller stated Merson had represented her for the Epstein Victim Compensation Fund but was not currently her attorney.",
+    "Prosecutors noted prior difficulties in 2020 contacting at least nine Epstein victims represented by Jordan Merson, who were reportedly unwilling to speak.",
+    "The email chain shows an active effort by law enforcement in 2021 to screen and potentially interview new leads in the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-20T12:00:04.577Z"
+}

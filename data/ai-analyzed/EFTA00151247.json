@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00151247.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena and financial records",
+  "dateOriginal": "2019-12-11",
+  "summary": "This document is a grand jury subpoena issued by the U.S. Attorney's Office for the Southern District of New York to USAA Federal Savings Bank, seeking extensive financial records related to Ghislaine Maxwell and associated entities. It includes the subpoena, a cover letter requesting non-disclosure, a declaration of records custodian, and a sample bank statement for a joint account held by Scott Borgerson and Ghislaine Maxwell. The subpoena is part of an investigation into alleged violations of 18 U.S.C. § 2423(a).",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Issued the grand jury subpoena to USAA Federal Savings Bank as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "Named as an individual whose financial records are being subpoenaed by the grand jury. Also appears as a joint account holder with Scott Borgerson on a USAA bank statement.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Scott Borgerson",
+      "role": "Joint Account Holder",
+      "category": "associate",
+      "context": "Appears as a joint account holder with Ghislaine Maxwell on a USAA bank statement from October-November 2018. The account application from 2012 lists him as the primary applicant.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Isabel Luna",
+      "role": "Custodian of Records",
+      "category": "staff",
+      "context": "Signed the Declaration of Custodian of Records for USAA Federal Savings Bank, certifying the records provided in response to the subpoena.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Scott Borgerson",
+      "relationshipType": "financial",
+      "description": "Joint holders of a USAA Classic Checking account, as shown on a bank statement addressed to both names.",
+      "strength": 4
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Berman, as U.S. Attorney, is leading the investigation that issued a subpoena for Maxwell's financial records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-11",
+      "title": "Grand Jury Subpoena Issued",
+      "description": "The U.S. Attorney's Office for the SDNY issues a grand jury subpoena to USAA Federal Savings Bank for records related to Ghislaine Maxwell and associated entities.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-12-27",
+      "title": "Subpoena Return Date",
+      "description": "The date by which USAA was commanded to appear before the grand jury or produce the requested records.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-19",
+      "title": "Custodian Declaration Executed",
+      "description": "Isabel Luna, custodian of records for USAA, signs the declaration certifying the records provided in response to the subpoena.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Isabel Luna"
+      ]
+    },
+    {
+      "date": "2012-04-15",
+      "title": "Bank Account Opened",
+      "description": "Scott Borgerson applies for and opens a USAA Four Star Checking account, which later appears as a joint account with Ghislaine Maxwell.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Scott Borgerson"
+      ]
+    }
+  ],
+  "locations": [
+    "10750 McDermott Freeway, San Antonio, TX 78288 (USAA Federal Savings Bank Headquarters)",
+    "40 Foley Square, Room 220, New York, NY (United States Courthouse for Grand Jury appearance)",
+    "26 Federal Plaza, New York, NY 10278 (FBI office for record delivery)",
+    "301 Summer St, Manchester, MA 01944 (Address on bank statement for Scott Borgerson and Ghislaine Maxwell)",
+    "One Saint Andrew's Plaza, New York, NY 10007 (U.S. Attorney's Office, SDNY)"
+  ],
+  "keyFacts": [
+    "A federal grand jury subpoena was issued to USAA bank on December 11, 2019, seeking extensive financial records for Ghislaine Maxwell and entities like Terramar Project Inc., Ellmax Inc., and MAX Foundation.",
+    "The investigation is for alleged violations of 18 U.S.C. § 2423(a), which relates to transportation of minors for illegal sexual activity.",
+    "A USAA bank statement from October-November 2018 shows a joint checking account in the names of 'SCOTT BORGERSON OR GHISLAINE MAXWELL' at an address in Manchester, Massachusetts.",
+    "The U.S. Attorney's office specifically requested that USAA not disclose the existence of the subpoena to any third party to preserve the confidentiality of the investigation.",
+    "The subpoena rider lists 17 categories of detailed financial records requested, including wire transfers, safe deposit records, credit card statements, and online banking information."
+  ],
+  "analyzedAt": "2026-02-20T08:44:48.732Z"
+}

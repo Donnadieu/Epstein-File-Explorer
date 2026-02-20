@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00140053.pdf",
+  "dataSet": "9",
+  "documentType": "medical emergency report",
+  "dateOriginal": "2019-08-10",
+  "summary": "This is a Federal Bureau of Prisons Office Memorandum detailing the medical emergency response to inmate Jeffrey Epstein on August 10, 2019, at the Metropolitan Correctional Center in New York. It describes finding Epstein unresponsive in his cell and the initiation of CPR.",
+  "persons": [
+    {
+      "name": "Epstein, J",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate who was found unresponsive on the floor of his cell during a medical emergency.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Correctional Officer Lieutenant",
+      "role": "Correctional Officer Lieutenant",
+      "category": "law enforcement",
+      "context": "A correctional officer who was performing CPR on inmate Epstein when the responding officer arrived.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Officer",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "An officer who assisted with CPR during the transport to Health Services.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Correctional Officer Lieutenant",
+      "person2": "Epstein, J",
+      "relationshipType": "guard-inmate",
+      "description": "The Correctional Officer Lieutenant was performing CPR on inmate Epstein during the medical emergency.",
+      "strength": 2
+    },
+    {
+      "person1": "PA",
+      "person2": "Epstein, J",
+      "relationshipType": "medical staff-patient",
+      "description": "The Physician Assistant was performing CPR on inmate Epstein during the medical emergency.",
+      "strength": 2
+    },
+    {
+      "person1": "Officer",
+      "person2": "Epstein, J",
+      "relationshipType": "guard-inmate",
+      "description": "The officer assisted with CPR on inmate Epstein during transport to Health Services.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Medical Emergency of Jeffrey Epstein",
+      "description": "At approximately 6:33 a.m., inmate Jeffrey Epstein was found unresponsive on the floor of his cell. CPR was initiated by correctional and medical staff, and he was transported to Health Services.",
+      "category": "medical emergency",
+      "significance": 5,
+      "personsInvolved": [
+        "Epstein, J",
+        "Correctional Officer Lieutenant",
+        "PA",
+        "Officer"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10007",
+    "9 South (cell location)",
+    "Health Services (within the correctional facility)"
+  ],
+  "keyFacts": [
+    "The medical emergency involving inmate Jeffrey Epstein occurred on August 10, 2019, at approximately 6:33 a.m.",
+    "Epstein was found unresponsive on the floor of his cell in the 9 South unit.",
+    "CPR was in progress by a Correctional Officer Lieutenant and a Physician Assistant when the responding officer arrived.",
+    "The document is a confidential Bureau of Prisons memorandum regarding the incident."
+  ],
+  "analyzedAt": "2026-02-19T23:01:26.500Z"
+}

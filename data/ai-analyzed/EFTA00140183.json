@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00140183.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-12",
+  "summary": "This document is a Bureau of Prisons Health Services clinical encounter record for inmate Jeffrey Edward Epstein, dated July 12, 2019. It details a medical evaluation performed at the Metropolitan Correctional Center (MCC) in New York, documenting Epstein's chronic health conditions, complaints, physical exam findings, and prescribed medications. The record includes his medical history, vital signs, and notes on his condition shortly after his arrest.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The subject of the medical evaluation, a 66-year-old male inmate with multiple chronic health conditions including hyperlipidemia, sleep apnea, and back pain.",
+      "mentionCount": 20
+    },
+    {
+      "name": "MLP",
+      "role": "Mid-Level Practitioner",
+      "category": "medical staff",
+      "context": "A mid-level practitioner who conducted an earlier History & Physical examination on Epstein on July 9, 2019, documenting his medical and social history.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MD",
+      "relationshipType": "patient-provider",
+      "description": "Epstein was evaluated and treated by the MD for his chronic health conditions during the clinical encounter.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "MLP",
+      "relationshipType": "patient-provider",
+      "description": "Epstein underwent an intake History & Physical examination conducted by the MLP.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-12",
+      "title": "Epstein's Medical Evaluation",
+      "description": "Jeffrey Epstein underwent a chronic care physician evaluation at the Bureau of Prisons Health Services. He reported multiple health issues including severe back pain, hyperlipidemia, and sleep apnea, and was prescribed medications.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MD"
+      ]
+    },
+    {
+      "date": "2019-07-09",
+      "title": "Epstein's Intake History & Physical",
+      "description": "A mid-level practitioner conducted a comprehensive medical intake examination on Jeffrey Epstein, documenting his medical history, social history (including sexual history), and vital signs.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    },
+    {
+      "date": "2019",
+      "title": "Epstein's Arrest",
+      "description": "The document references that Epstein had his CPAP machine with him 'when he arrested,' indicating his arrest occurred prior to this medical evaluation.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "NYM (Metropolitan Correctional Center, New York)",
+    "Mount Sinai Hospital (referenced as location of past hospitalization)",
+    "Paris (referenced as travel location prior to arrest)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was experiencing significant health issues in July 2019, including severe L4-L5 spinal issues causing shooting pain, hyperlipidemia, sleep apnea requiring a CPAP machine, and constipation.",
+    "Epstein's medical history, taken on July 9, 2019, notes he reported having '10+' female sexual partners in the last 5 years, 'sometimes' used condoms, and had a history of chlamydia in 2015.",
+    "Epstein stated he traveled to Paris for three weeks up until the time of his arrest.",
+    "The medical record shows Epstein was prescribed medications including MethylPREDNISolone for neuralgia, Magnesium Hydroxide and later Docusate Sodium for constipation.",
+    "Epstein's family history included his father dying at age 74 from diabetes complications and his mother dying at age 81 from kidney failure."
+  ],
+  "analyzedAt": "2026-02-19T23:14:16.055Z"
+}

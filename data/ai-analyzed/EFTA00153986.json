@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00153986.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-08",
+  "summary": "This document is an email exchange between two FBI Special Agents, one from the New York Field Office and one from Seattle Cyber, regarding a question about case SOD-NY-3027571. The New York agent follows up on a missed connection and offers to discuss the case-related question.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York Field Office",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the follow-up email on December 8, 2020, working in the Child Exploitation/Human Trafficking unit, attempting to connect with a colleague in Seattle to discuss a case question.",
+      "mentionCount": 1
+    },
+    {
+      "name": "FBI Seattle Cyber",
+      "role": "FBI Special Agent / Duty Agent",
+      "category": "law enforcement",
+      "context": "The recipient and original sender of the email on December 2, 2020, who had a question related to case SOD-NY-3027571 while serving as Duty Agent.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York Field Office",
+      "person2": "FBI Seattle Cyber",
+      "relationshipType": "professional colleague",
+      "description": "Colleagues within the FBI communicating about a specific case (SOD-NY-3027571), with the Seattle agent seeking clarification from the New York agent.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-02",
+      "title": "Case Question from Duty Agent",
+      "description": "An FBI Special Agent from Seattle Cyber, while serving as Duty Agent, had a question related to case SOD-NY-3027571 and emailed the New York Field Office agent for clarification.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "FBI Seattle Cyber",
+        "Special Agent FBI New York Field Office"
+      ]
+    },
+    {
+      "date": "2020-12-08",
+      "title": "Follow-up on Case Question",
+      "description": "The FBI Special Agent from the New York Field Office follows up on a missed call and connection from the previous week, offering to discuss the case question.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "Special Agent FBI New York Field Office",
+        "FBI Seattle Cyber"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office",
+    "Seattle Cyber"
+  ],
+  "keyFacts": [
+    "The communication references an active FBI case with the identifier SOD-NY-3027571.",
+    "The case involves coordination between the FBI's New York Field Office (Child Exploitation/Human Trafficking unit) and the Seattle Cyber division.",
+    "The correspondence indicates ongoing investigative activity related to the case as of December 2020."
+  ],
+  "analyzedAt": "2026-02-20T11:53:05.444Z"
+}

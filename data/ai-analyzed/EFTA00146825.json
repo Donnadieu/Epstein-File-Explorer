@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00146825.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email correspondence",
+  "dateOriginal": "2020-05-27",
+  "summary": "This is an internal FBI email chain from May 27, 2020, discussing Mark Epstein receiving messages from individuals claiming to have information about his brother Jeffrey Epstein's death. The FBI identifies one email threat as originating from Iran and advises reaffirming the government's official position that Jeffrey Epstein's death was a suicide.",
+  "persons": [
+    {
+      "name": "Mark Epstein",
+      "role": "Brother of Jeffrey Epstein",
+      "category": "associate",
+      "context": "He is the recipient of emails and text messages from individuals claiming to have information about his brother's death, and his contact information is publicly accessible.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Supervisory Special Agent",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The author of the email instructing to reaffirm the government's position that Jeffrey Epstein's death was a suicide and to treat contrary claims as scams.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Boss",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent who identified the origin of an email threat to Mark Epstein and discusses the need for grand jury subpoenas to investigate text messages.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark Epstein",
+      "person2": "Supervisory Special Agent",
+      "relationshipType": "subject-investigator",
+      "description": "The FBI agent is advising on how to handle communications Mark Epstein is receiving about his brother's death.",
+      "strength": 2
+    },
+    {
+      "person1": "Mark Epstein",
+      "person2": "Boss",
+      "relationshipType": "subject-investigator",
+      "description": "The FBI agent is investigating threatening communications sent to Mark Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-27",
+      "title": "FBI email discussion on Mark Epstein communications",
+      "description": "FBI agents correspond about Mark Epstein receiving emails and texts from people claiming to have information about Jeffrey Epstein's death, with one threat traced to Iran.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark Epstein",
+        "Supervisory Special Agent",
+        "Boss"
+      ]
+    }
+  ],
+  "locations": [
+    "Iran"
+  ],
+  "keyFacts": [
+    "Mark Epstein was receiving emails and text messages from individuals claiming to have information about his brother Jeffrey Epstein's death.",
+    "The FBI traced one email threat sent to Mark Epstein as originating from Iran.",
+    "The FBI's official position, as communicated internally, is that Jeffrey Epstein's death was a suicide and any claims to the contrary should be treated as scams.",
+    "Mark Epstein's phone number and email address were easily found via a simple Google search, raising concerns about increased contact due to a Netflix documentary series."
+  ],
+  "analyzedAt": "2026-02-20T04:37:22.942Z"
+}

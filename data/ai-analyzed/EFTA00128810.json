@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00128810.pdf",
+  "dataSet": "9",
+  "documentType": "internal bank correspondence",
+  "dateOriginal": "2015-02-06",
+  "summary": "Internal Deutsche Bank emails from February 2015 discussing AML/KYC alerts related to a beneficiary of the 'Butterfly Trust' established by Jeffrey Epstein. The alerts pertain to a 2008 lawsuit alleging sexual abuse by Epstein, which was dropped, and a racketeering lawsuit. Compliance confirms the beneficiary was cleared of all charges and is only a beneficiary with no account authority.",
+  "persons": [
+    {
+      "name": "Monifa Crawford",
+      "role": "AML Compliance Officer",
+      "category": "staff",
+      "context": "Deutsche Bank AML Compliance officer who reviews and clears alerts related to a beneficiary of the Butterfly Trust, referencing prior clearances from 2013.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Bank Employee",
+      "category": "staff",
+      "context": "Deutsche Bank employee corresponding with AML Compliance regarding KYC alerts and the status of a trust beneficiary.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Urvashi Lavania",
+      "role": "Bank Research Employee",
+      "category": "staff",
+      "context": "Deutsche Bank employee who forwards an AML/KYC alert to Amanda Kirby for compliance review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Grantor of Butterfly Trust",
+      "category": "key figure",
+      "context": "Identified as the grantor of the Butterfly Trust, to which the alerted individual is a beneficiary. Reference is made to his 2008 guilty plea for soliciting prostitution.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Monifa Crawford",
+      "relationshipType": "financial",
+      "description": "Crawford, as a Deutsche Bank AML officer, is reviewing financial alerts related to Epstein's Butterfly Trust.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "financial",
+      "description": "Kirby is involved in the KYC process for a beneficiary of Epstein's trust.",
+      "strength": 2
+    },
+    {
+      "person1": "Monifa Crawford",
+      "person2": "Amanda Kirby",
+      "relationshipType": "professional",
+      "description": "Colleagues at Deutsche Bank corresponding about compliance alerts and clearances.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2008",
+      "title": "Sexual Abuse Lawsuit Filed and Dropped",
+      "description": "A lawsuit was filed alleging Jeffrey Epstein sexually abused underage girls. The suit was dropped, and Epstein later pleaded guilty to soliciting prostitution.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2013-12-04",
+      "title": "Prior AML Clearance Issued",
+      "description": "Deutsche Bank AML Compliance issued a clearance and senior management approval for alerts related to a beneficiary of the Butterfly Trust.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Monifa Crawford"
+      ]
+    },
+    {
+      "date": "2015-02-06",
+      "title": "KYC Alert Review and Re-clearance",
+      "description": "Internal Deutsche Bank emails discuss and re-clear AML/KYC alerts from 2008 related to a beneficiary of Jeffrey Epstein's Butterfly Trust, confirming the beneficiary's status.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Monifa Crawford",
+        "Amanda Kirby",
+        "Urvashi Lavania"
+      ]
+    }
+  ],
+  "locations": [
+    "5022 Gate Parkway, Suite 400, Jacksonville, Florida 32256, USA",
+    "Deutsche Bank Securities Inc., Private Wealth Management - AML Compliance"
+  ],
+  "keyFacts": [
+    "Deutsche Bank's AML Compliance was reviewing alerts in 2015 related to a beneficiary of Jeffrey Epstein's 'Butterfly Trust'.",
+    "The alerts pertained to a 2008 lawsuit alleging Epstein sexually abused underage girls (which was dropped) and a racketeering lawsuit.",
+    "The bank had previously cleared the beneficiary in December 2013, confirming the individual was only a beneficiary with no authority over the trust account.",
+    "The correspondence confirms Epstein was the grantor of the Butterfly Trust and had previously pleaded guilty to soliciting prostitution.",
+    "The document shows internal bank processes for handling high-risk clients and the re-review of historical legal issues during KYC updates."
+  ],
+  "analyzedAt": "2026-02-19T18:07:38.055Z"
+}

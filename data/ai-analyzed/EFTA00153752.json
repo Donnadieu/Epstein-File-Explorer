@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00153752.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-07",
+  "summary": "Email correspondence regarding a subpoena for records related to Maxwell from Expedia. The email chain indicates Expedia received a subpoena on February 1, 2020, but requires additional identifying information (email addresses, credit card numbers, or itinerary numbers) to locate responsive records, as their databases lack date of birth information to positively identify customers by name alone.",
+  "persons": [
+    {
+      "name": "Michelle",
+      "role": "Expedia representative",
+      "category": "staff",
+      "context": "Responds to a subpoena request for records related to Maxwell, explaining Expedia needs more identifying information to proceed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SAM",
+      "role": "Law enforcement or legal recipient",
+      "category": "law enforcement",
+      "context": "Recipient of the email from Expedia regarding the subpoena for Maxwell-related records.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Subject of subpoena",
+      "category": "key figure",
+      "context": "Individual whose records are being sought via subpoena from Expedia.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SAM",
+      "person2": "Maxwell",
+      "relationshipType": "investigation",
+      "description": "SAM is seeking records related to Maxwell via a subpoena to Expedia.",
+      "strength": 3
+    },
+    {
+      "person1": "Michelle",
+      "person2": "SAM",
+      "relationshipType": "correspondence",
+      "description": "Michelle is communicating with SAM regarding the subpoena request for Maxwell's records.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-01",
+      "title": "Subpoena received by Expedia",
+      "description": "Expedia received a subpoena related to Maxwell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Maxwell",
+        "SAM"
+      ]
+    },
+    {
+      "date": "2020-02-04",
+      "title": "Expedia requests more information",
+      "description": "Expedia emails SAM stating they need more identifying information (email, credit card, itinerary numbers) to locate records for Maxwell, as their databases lack DOB info.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Michelle",
+        "SAM",
+        "Maxwell"
+      ]
+    },
+    {
+      "date": "2020-02-07",
+      "title": "Email forwarded",
+      "description": "The email chain regarding the subpoena is forwarded.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A subpoena was issued to Expedia for records related to Maxwell, received on February 1, 2020.",
+    "Expedia's databases do not contain date of birth information, so they cannot positively identify customers by name alone; they require email addresses, credit card numbers, or itinerary numbers to locate responsive records.",
+    "Expedia set a 30-day deadline for receiving additional information, after which they would consider the matter closed."
+  ],
+  "analyzedAt": "2026-02-20T11:37:08.521Z"
+}

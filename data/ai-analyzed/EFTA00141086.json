@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00141086.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-11-20",
+  "summary": "This FBI 302 report documents the arrest and processing of Tova Noel and Michael Thomas on November 19, 2019, pursuant to an arrest warrant issued by Magistrate Judge Sarah Netburn. The individuals self-surrendered at the FBI New York Field Office, were transported to the Southern District of New York, processed, granted bail, and released.",
+  "persons": [
+    {
+      "name": "Tova Noel",
+      "role": "Arrested individual",
+      "category": "key figure",
+      "context": "Arrested pursuant to a warrant issued by Magistrate Judge Sarah Netburn, self-surrendered at the FBI New York Field Office, processed, granted bail, and released.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Arrested individual",
+      "category": "key figure",
+      "context": "Arrested pursuant to a warrant issued by Magistrate Judge Sarah Netburn, self-surrendered at the FBI New York Field Office, processed, granted bail, and released.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Sarah Netburn",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "Issued the arrest warrant for Noel and Thomas and presided over their initial appearance where they were granted a bail package.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-accused",
+      "description": "Both were arrested on the same day pursuant to warrants issued by the same judge, processed together, and appeared together before the magistrate.",
+      "strength": 4
+    },
+    {
+      "person1": "Sarah Netburn",
+      "person2": "Tova Noel",
+      "relationshipType": "legal",
+      "description": "Judge Netburn issued the arrest warrant for Noel and presided over her initial appearance.",
+      "strength": 3
+    },
+    {
+      "person1": "Sarah Netburn",
+      "person2": "Michael Thomas",
+      "relationshipType": "legal",
+      "description": "Judge Netburn issued the arrest warrant for Thomas and presided over his initial appearance.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-19",
+      "title": "Arrest of Tova Noel and Michael Thomas",
+      "description": "Tova Noel and Michael Thomas self-surrendered at the FBI New York Field Office pursuant to an arrest warrant issued by Magistrate Judge Sarah Netburn. They were arrested, processed, transported to the Southern District of New York, and later appeared before Judge Netburn.",
+      "category": "arrest",
+      "significance": 4,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas",
+        "Sarah Netburn"
+      ]
+    },
+    {
+      "date": "2019-11-19",
+      "title": "Initial Appearance and Bail Hearing",
+      "description": "Noel and Thomas appeared before Magistrate Judge Sarah Netburn, were granted a bail package, agreed to and signed it, and were released.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Tova Noel",
+        "Michael Thomas",
+        "Sarah Netburn"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Bureau of Investigation (FBI) New York Field Office, 290 Broadway, New York, New York",
+    "Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "Tova Noel and Michael Thomas were arrested on November 19, 2019, based on a warrant issued by U.S. Magistrate Judge Sarah Netburn.",
+    "The individuals self-surrendered at the FBI New York Field Office at approximately 10:00 AM.",
+    "After processing and meeting with pre-trial services and their defense attorneys, they appeared before Judge Netburn, were granted bail, and were released.",
+    "The document is an FBI 302 report dated November 20, 2019, documenting the arrest and processing procedures.",
+    "The report notes the involvement of multiple FBI and OIG personnel, though their names are redacted in the provided text."
+  ],
+  "analyzedAt": "2026-02-20T00:07:53.490Z"
+}

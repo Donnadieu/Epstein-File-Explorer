@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00147685.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-13",
+  "summary": "This is an email chain from August 12-13, 2019, between FBI personnel discussing the search of Jeffrey Epstein's property. It reports the seizure of computers, storage devices, documents, and servers, and notes that nothing appears to be an immediate 'smoking gun'.",
+  "persons": [
+    {
+      "name": "M. (CID) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as a recipient and sender in the email chain regarding the Epstein search operation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "P. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Sent an email update on the search of Epstein's property, detailing seized items.",
+      "mentionCount": 1
+    },
+    {
+      "name": "F. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as a recipient in the forwarded email chain regarding the Epstein situation report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Supervisory Special Agent FBI New York",
+      "role": "Supervisory Special Agent, FBI New York Violent Crimes Task Force",
+      "category": "law enforcement",
+      "context": "Sent the final email forwarding the situation report regarding investigative activities surrounding Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M. (CID) (FBI)",
+      "person2": "P. (NY) (FBI)",
+      "relationshipType": "colleague",
+      "description": "Communicating via email regarding the status of the Epstein property search.",
+      "strength": 2
+    },
+    {
+      "person1": "Supervisory Special Agent FBI New York",
+      "person2": "F. (NY) (FBI)",
+      "relationshipType": "colleague",
+      "description": "Supervisory Special Agent forwarding a situation report to F. (NY) (FBI) and others.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-12",
+      "title": "Search of Epstein Property",
+      "description": "FBI agents conducted a search of Jeffrey Epstein's property, seizing several computers, storage devices, documents, and servers.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "P. (NY) (FBI)",
+        "M. (CID) (FBI)",
+        "Supervisory Special Agent FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "26 Federal Plaza New York, NY 10278",
+    "New York"
+  ],
+  "keyFacts": [
+    "A search of Jeffrey Epstein's property was conducted on or around August 12, 2019.",
+    "Items seized included several computers, storage devices, documents, and servers.",
+    "Initial assessment by FBI agents indicated nothing appeared to be an immediate 'smoking gun' type of evidence.",
+    "The email chain involves multiple FBI personnel from the New York office and CID, coordinating on the investigation."
+  ],
+  "analyzedAt": "2026-02-20T05:52:33.877Z"
+}

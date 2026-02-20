@@ -1,0 +1,124 @@
+{
+  "fileName": "EFTA00140822.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-23",
+  "summary": "This document is a series of email exchanges from July 23, 2019, among staff at the Metropolitan Correctional Center (MCC) New York regarding inmate Jeffrey Epstein. It details an incident where Epstein was found with marks on his neck, his placement on suicide watch, and administrative discussions about his status and cell placement.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate at the center of the incident, found with red marks on his neck in his SHU cell, placed on suicide watch, and alleging his cellmate attempted to kill him.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Operations Lieutenant",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "The staff member who initially responded to the assistance call in the Special Housing Unit and found inmate Epstein on the floor.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Physician Assistant",
+      "role": "Medical Staff",
+      "category": "staff",
+      "context": "Conducted a medical assessment of Epstein at 6:30 a.m., noting physical findings including erythema on his neck and knee, and Epstein's lack of explanation for the marks.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Psychologist",
+      "role": "Mental Health Staff",
+      "category": "staff",
+      "context": "Evaluated Epstein and determined he should remain on suicide watch for further observation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden MCC New York",
+      "role": "Prison Administrator",
+      "category": "law enforcement",
+      "context": "The apparent sender/recipient of several emails, coordinating information about Epstein's status, attorney visits, and plans for his placement.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Operations Lieutenant",
+      "relationshipType": "guard-inmate",
+      "description": "The Lieutenant was the first responder to find Epstein in distress in his cell.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Physician Assistant",
+      "relationshipType": "patient-provider",
+      "description": "The Physician Assistant medically assessed Epstein following the incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Psychologist",
+      "relationshipType": "patient-provider",
+      "description": "The Psychologist evaluated Epstein's mental state and decided to keep him on suicide watch.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Associate Warden MCC New York",
+      "relationshipType": "administrator-inmate",
+      "description": "The Associate Warden was involved in administrative oversight of Epstein's case, status, and placement.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Neck Marks in SHU",
+      "description": "At 1:27 a.m., staff responded to Epstein's SHU cell. The Operations Lieutenant found him on the floor in a fetal position with red marks on his neck. He was unresponsive initially, then placed in restraints and moved to a suicide watch cell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Operations Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's Medical and Psychological Assessments",
+      "description": "Epstein was medically assessed at 6:30 a.m. (noting neck and knee marks but no distress) and psychologically evaluated at 9:10 a.m. (resulting in continued suicide watch).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Physician Assistant",
+        "Psychologist"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Administrative Review for General Population Placement",
+      "description": "Following the incident, prison staff reviewed Epstein's case for potential placement in the general population (Unit 7 South) and were seeking an appropriate cellmate.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Associate Warden MCC New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, 150 Park Row, New York, New York 10007",
+    "Special Housing Unit (SHU) at MCC New York",
+    "Suicide Cell at MCC New York",
+    "Unit 7 South (general population unit at MCC New York)"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, Jeffrey Epstein was found in his SHU cell with unexplained red marks on his neck, leading to his placement on suicide watch.",
+    "Epstein alleged to staff that his cellmate had attempted to kill him and had been harassing him, and that he had informed his attorney of this matter.",
+    "Medical assessment found a circular line of erythema (redness) at the base of his neck, approximately 2 inches wide, covering two-thirds of the neck circumference, with friction marks in front.",
+    "Despite the physical marks, Epstein was described as ambulatory, oriented, in no apparent distress, and smiling during the clinical encounter; he claimed not to know what happened.",
+    "Prison administration was actively reviewing his case for movement to the general population and seeking a suitable cellmate on the same day as this incident."
+  ],
+  "analyzedAt": "2026-02-19T23:56:47.848Z"
+}

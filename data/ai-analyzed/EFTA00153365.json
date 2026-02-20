@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00153365.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-12-07",
+  "summary": "This document is an email chain between law enforcement officials discussing the results of a Facebook subpoena related to the investigation of Ghislaine Maxwell. The emails indicate the subpoena results returned two pages with IP addresses in Miami and Virginia, and the officials conclude the accounts do not appear to be used by Maxwell, even as fake accounts. An attachment named 'Maxwell clear.pdf' is referenced.",
+  "persons": [
+    {
+      "name": "Paul Byrne",
+      "role": "NYPD Officer",
+      "category": "law enforcement",
+      "context": "Sends an email on December 6, 2019, to an FBI agent discussing Facebook subpoena results related to Ghislaine Maxwell, concluding the accounts do not appear to be used by her.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda N. Young",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Appears as a recipient (anyoung2@fbi.gov) of an email from NYPD Officer Paul Byrne regarding Facebook subpoena results in the Maxwell investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "The subject of the Facebook subpoena discussed in the email. Law enforcement is attempting to locate her or accounts associated with her.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Paul Byrne",
+      "person2": "Amanda N. Young",
+      "relationshipType": "professional collaboration",
+      "description": "NYPD Officer Byrne is communicating FBI Agent Young regarding investigative findings (Facebook subpoena results) in the Ghislaine Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Byrne",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Byrne, as part of the NYPD/FBI task force, is involved in the investigation to locate or gather evidence on Maxwell.",
+      "strength": 2
+    },
+    {
+      "person1": "Amanda N. Young",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Young, as an FBI agent, is a recipient of investigative information pertaining to the search for Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-06",
+      "title": "Email on Facebook Subpoena Results",
+      "description": "NYPD Officer Paul Byrne emails FBI Agent Amanda Young with results from a Facebook subpoena related to Ghislaine Maxwell, noting IP addresses in Miami and Virginia and concluding the accounts are unlikely to be used by Maxwell.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Paul Byrne",
+        "Amanda N. Young",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Virginia"
+  ],
+  "keyFacts": [
+    "Law enforcement executed a Facebook subpoena as part of the investigation into Ghislaine Maxwell's whereabouts or activities.",
+    "The subpoena results returned two pages with IP addresses geolocated to Miami and Virginia.",
+    "Investigators assessed that the accounts did not appear to be used by Ghislaine Maxwell, even as fake accounts.",
+    "The email communication demonstrates active collaboration between the NYPD and FBI on the Maxwell case in December 2019.",
+    "An attachment named 'Maxwell clear.pdf' was included with the email, suggesting it contained related cleared or analyzed information."
+  ],
+  "analyzedAt": "2026-02-20T11:03:22.478Z"
+}

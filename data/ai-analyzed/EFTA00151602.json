@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA00151602.pdf",
+  "dataSet": "9",
+  "documentType": "flight log",
+  "dateOriginal": "2004",
+  "summary": "This document contains multiple passenger manifests for JEGE, Inc. flights (registration N908JE, a Boeing 727-31) from 2004, listing Jeffrey Epstein as the sole passenger on several trips. The manifests record flight details including pilots, destinations, and fuel usage, providing evidence of Epstein's private air travel patterns.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Passenger",
+      "category": "key figure",
+      "context": "Listed as the sole passenger on multiple private flights operated by JEGE, Inc. in 2004.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "Identified as a pilot for JEGE, Inc. flights on the Boeing 727-31 (N908JE).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "Identified as a pilot for JEGE, Inc. flights on the Boeing 727-31 (N908JE).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Flight Engineer",
+      "category": "staff",
+      "context": "Identified as the flight engineer for JEGE, Inc. flights on the Boeing 727-31 (N908JE).",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ralph Pascal",
+      "role": "Flight Engineer",
+      "category": "staff",
+      "context": "Appears on one manifest as the flight engineer for a JEGE, Inc. flight.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Rodgers served as a pilot for Epstein's private aircraft (JEGE, Inc.), indicating an employment relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Visoski served as a pilot for Epstein's private aircraft (JEGE, Inc.), indicating an employment relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "employer-employee",
+      "description": "Morrison served as the flight engineer for Epstein's private aircraft (JEGE, Inc.), indicating an employment relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Dave Rodgers",
+      "person2": "Larry Visoski",
+      "relationshipType": "co-worker",
+      "description": "Both listed as pilots on the same flight manifests for JEGE, Inc.",
+      "strength": 3
+    },
+    {
+      "person1": "Dave Rodgers",
+      "person2": "Larry Morrison",
+      "relationshipType": "co-worker",
+      "description": "Rodgers as pilot and Morrison as flight engineer on the same flight manifests for JEGE, Inc.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004",
+      "title": "Multiple Private Flights",
+      "description": "Several private flights operated by JEGE, Inc. (aircraft N908JE) with Jeffrey Epstein as passenger.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rodgers",
+        "Larry Visoski",
+        "Larry Morrison",
+        "Ralph Pascal"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Jeffrey Epstein was the sole passenger listed on multiple private flights in 2004 aboard his Boeing 727-31 (registration N908JE) operated by JEGE, Inc.",
+    "The flight manifests document operational details including pilots (Dave Rodgers, Larry Visoski), flight engineers (Larry Morrison, Ralph Pascal), and flight metrics (distance, fuel, altitude).",
+    "The documents are part of the Epstein flight log records, which have been significant in investigations into his travel patterns and potential co-travelers.",
+    "The manifests show flights originating from and destined for locations partially legible as possibly including New York (NY), Pennsylvania (PA), and Florida (FL)."
+  ],
+  "analyzedAt": "2026-02-20T09:00:31.912Z"
+}

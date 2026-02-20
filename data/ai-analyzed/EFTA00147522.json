@@ -1,0 +1,117 @@
+{
+  "fileName": "EFTA00147522.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-16",
+  "summary": "This document is an email chain from July 2019 between FBI personnel and U.S. Attorney's Office prosecutors regarding the scanning and transfer of case records related to two FBI case files (72-MM-113327 and 31E-MM-108062). It details the discovery of missing items, the handling of pornographic images, and logistical arrangements for sending physical and digital materials from the FBI's IMD to the New York office.",
+  "persons": [
+    {
+      "name": "A. (IMD) (FBI)",
+      "role": "FBI personnel coordinating scanning",
+      "category": "law enforcement",
+      "context": "FBI employee from the Investigative Management Division (IMD) managing the scanning of case record boxes, providing updates on progress, missing items, and protocols.",
+      "mentionCount": 10
+    },
+    {
+      "name": "(USANYS)",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Prosecutor from the U.S. Attorney's Office for the Southern District of New York coordinating the receipt and review of scanned case materials for an investigation.",
+      "mentionCount": 12
+    },
+    {
+      "name": "(NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Special Agent from the New York office, part of Squad C-20 VCAC/Human Trafficking, involved in shipping case materials and communication about the scanning process.",
+      "mentionCount": 15
+    },
+    {
+      "name": "(USANYS)",
+      "role": "Prosecutor colleague",
+      "category": "legal",
+      "context": "Colleague prosecutor from the U.S. Attorney's Office copied on emails, working on the investigation.",
+      "mentionCount": 8
+    }
+  ],
+  "connections": [
+    {
+      "person1": "A. (IMD) (FBI)",
+      "person2": "(USANYS)",
+      "relationshipType": "professional coordination",
+      "description": "Coordinating the scanning and transfer of case records from the FBI's IMD to the U.S. Attorney's Office for an investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "(NY) (FBI)",
+      "person2": "(USANYS)",
+      "relationshipType": "professional coordination",
+      "description": "Working together on logistics for shipping case materials and ensuring proper handling for the investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "A. (IMD) (FBI)",
+      "person2": "(NY) (FBI)",
+      "relationshipType": "inter-agency coordination",
+      "description": "Collaborating on the transfer of physical case boxes and digital scans between FBI divisions.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-16",
+      "title": "Shipment of scanned case records",
+      "description": "Final shipment of scanned case records (discs and boxes) sent via FedEx from FBI IMD to FBI New York.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "A. (IMD) (FBI)",
+        "(NY) (FBI)",
+        "(USANYS)"
+      ]
+    },
+    {
+      "date": "2019-07-12",
+      "title": "Completion of scanning and discovery of issues",
+      "description": "Scanning of 22 boxes completed; discovery that three 1As (1A10, 1A28, 1A84) and two serials were missing from files, and pornographic images of young girls were identified but not scanned per protocol.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "A. (IMD) (FBI)"
+      ]
+    },
+    {
+      "date": "2019-07-03",
+      "title": "Receipt of 22 case boxes",
+      "description": "22 boxes of case materials received by FBI IMD, with a note that some had been previously scanned in 2013 by the Miami Field Office.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "A. (IMD) (FBI)"
+      ]
+    },
+    {
+      "date": "2019-06-28",
+      "title": "Shipment of case boxes to IMD",
+      "description": "Case boxes shipped via FedEx from New York to the FBI's Investigative Management Division for scanning.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "(NY) (FBI)"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York",
+    "VA (Virginia, likely FBI IMD location)",
+    "Miami Field Office"
+  ],
+  "keyFacts": [
+    "The document references two specific FBI case files being processed: 72-MM-113327 and 31E-MM-108062.",
+    "During scanning, pornographic images of young girls were found in the case materials and were not scanned per FBI protocols; a 'possible child pornography DO NOT SCAN' notation was used.",
+    "Missing items were discovered: three 1As (1A10, 1A28, 1A84) and two serials from file 31E-MM-108062-GJ SEC 001 SER 1-45, which had to be regenerated from digital copies.",
+    "The materials included approximately 22 boxes, with some having been partially scanned by the Miami Field Office back in 2013.",
+    "The communication highlights the logistical and procedural coordination between the FBI's Investigative Management Division, the New York FBI office, and the U.S. Attorney's Office for the Southern District of New York in July 2019."
+  ],
+  "analyzedAt": "2026-02-20T05:44:30.974Z"
+}

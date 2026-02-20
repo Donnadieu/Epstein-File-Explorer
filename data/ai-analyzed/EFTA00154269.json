@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00154269.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-06",
+  "summary": "This is an email chain from April 2021 regarding the scheduling of evidence transport for defense review in the Ghislaine Maxwell case. It involves an FBI Special Agent and an Office Services Supervisor coordinating the movement of evidence from a Bronx location to 500 Pearl Street for Maxwell's defense team to view.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The evidence is being transported for her defense team's review as part of her criminal case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Initiates the email chain to coordinate a visit to the Bronx and transport of evidence to 500 Pearl Street for defense review.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Office Services Supervisor (OSS)",
+      "role": "Office Services Supervisor",
+      "category": "staff",
+      "context": "Coordinates the evidence transport logistics, confirms scheduling for the week of April 12, and offers to arrange transport with an 'KT' at 500 Pearle.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "Office Services Supervisor (OSS)",
+      "relationshipType": "professional",
+      "description": "Colleagues coordinating logistics for evidence transport related to the Ghislaine Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Special Agent",
+      "relationshipType": "legal",
+      "description": "The FBI Special Agent is involved in the investigation/prosecution, and evidence is being made available for Maxwell's defense review.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-12",
+      "title": "Scheduled Evidence Review for Maxwell Defense",
+      "description": "Planned date for transporting evidence from a Bronx location to 500 Pearl Street for Ghislaine Maxwell's defense team to review.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Special Agent",
+        "Office Services Supervisor (OSS)"
+      ]
+    }
+  ],
+  "locations": [
+    "Bronx (location of evidence storage)",
+    "500 Pearl Street, New York, NY (location for defense evidence review)"
+  ],
+  "keyFacts": [
+    "Evidence related to the Ghislaine Maxwell case was stored in the Bronx and needed transport to 500 Pearl Street for defense review.",
+    "The evidence transport and defense review were scheduled for the week of April 12, 2021.",
+    "An FBI Special Agent from the Child Exploitation/Human Trafficking Desk and an Office Services Supervisor coordinated the logistics.",
+    "The email chain demonstrates ongoing pre-trial evidence management procedures in Maxwell's criminal case in April 2021."
+  ],
+  "analyzedAt": "2026-02-20T12:11:48.550Z"
+}

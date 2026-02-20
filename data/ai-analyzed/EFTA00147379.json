@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00147379.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-10",
+  "summary": "This is an internal FBI email chain from July 10, 2019, discussing a victim interview related to Jeffrey Epstein. A Public Affairs Specialist forwards a media link about an Epstein accuser, and an FBI Supervisory Special Agent (SSA) confirms they are tracking the case and will reach out to the victim, noting she accurately describes Epstein's residence.",
+  "persons": [
+    {
+      "name": "Public Affairs Specialist FBI New York",
+      "role": "FBI Public Affairs Specialist",
+      "category": "law enforcement",
+      "context": "Forwards a media link (Today show video) about a Jeffrey Epstein accuser sharing her story of alleged rape for the first time to an FBI colleague.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA FBI New York",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Responds to the forwarded media link, stating the FBI is tracking the case, will reach out to the victim, and notes the victim accurately describes the residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the victim's allegations; the email chain is about an interview with his accuser.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Public Affairs Specialist FBI New York",
+      "person2": "SSA FBI New York",
+      "relationshipType": "colleague",
+      "description": "Internal FBI communication regarding a victim interview in the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "SSA FBI New York",
+      "relationshipType": "investigation target-investigator",
+      "description": "The SSA is part of the FBI team tracking the case and planning to interview an Epstein accuser.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-10",
+      "title": "FBI Email Coordination on Victim Interview",
+      "description": "Internal FBI email chain where a Public Affairs Specialist forwards a media report about an Epstein accuser, and a Supervisory Special Agent confirms the FBI is tracking the case and will contact the victim.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Public Affairs Specialist FBI New York",
+        "SSA FBI New York",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-10",
+      "title": "Epstein Accuser Media Interview",
+      "description": "A victim of Jeffrey Epstein shares her story of alleged rape for the first time in a media interview on the Today show, which prompts FBI attention.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "An FBI Public Affairs Specialist forwarded a Today show video link about a Jeffrey Epstein accuser to an FBI colleague on July 10, 2019.",
+    "An FBI Supervisory Special Agent responded that the FBI was tracking the case and would reach out to the victim.",
+    "The FBI agent noted the victim in the media interview 'accurately describes the residence,' corroborating details of the alleged abuse location.",
+    "The email indicates active FBI investigation and victim outreach in the Epstein case in July 2019, following public media allegations."
+  ],
+  "analyzedAt": "2026-02-20T05:29:16.216Z"
+}

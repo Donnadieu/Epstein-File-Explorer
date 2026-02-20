@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00149718.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email correspondence",
+  "dateOriginal": "2020-05-26",
+  "summary": "This document is an internal FBI email chain from May 26, 2020, discussing the status and location of Ghislaine Maxwell. It reveals coordination between FBI field offices (CID and NY) and mentions that AUSAs agreed no enforcement action against Maxwell would occur until a grand jury begins. It also references a news article about Maxwell winning a delay in a civil lawsuit deposition.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The alleged madam of Jeffrey Epstein, subject of an ongoing criminal investigation by SDNY. Her location and legal status are the primary topics of the email chain.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Laura Menninger",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Ghislaine Maxwell's lawyer who asked a federal judge to stay Maxwell's deposition in a civil lawsuit, citing the ongoing criminal investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Debra Freeman",
+      "role": "Magistrate Judge",
+      "category": "legal",
+      "context": "The magistrate judge who ruled to delay Ghislaine Maxwell's questioning in a civil lawsuit on the grounds of potential self-incrimination.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased financier, accused",
+      "category": "key figure",
+      "context": "Referred to as the 'disgraced financier' for whom Ghislaine Maxwell allegedly acted as a madam.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Maxwell is described as the 'alleged madam' for Epstein's activities, indicating a close operational association.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Laura Menninger",
+      "relationshipType": "attorney-client",
+      "description": "Laura Menninger is identified as Maxwell's lawyer, representing her in a civil lawsuit and seeking to delay her deposition.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-05-22",
+      "title": "Maxwell wins deposition delay",
+      "description": "Magistrate Judge Debra Freeman rules to delay Ghislaine Maxwell's questioning in a civil lawsuit, citing the risk of self-incrimination given the ongoing criminal investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Debra Freeman",
+        "Laura Menninger"
+      ]
+    },
+    {
+      "date": "2020-05-11",
+      "title": "AUSAs agree on enforcement timing",
+      "description": "Assistant U.S. Attorneys agree that no enforcement action against Ghislaine Maxwell will occur until a grand jury begins.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-05-26",
+      "title": "FBI status update on Maxwell",
+      "description": "FBI agents in New York and CID coordinate via email to get an update on Ghislaine Maxwell's location and the status of the SDNY investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Boston AOR (Area of Responsibility)",
+    "Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "As of May 26, 2020, the FBI was actively tracking Ghislaine Maxwell's location, with a specific inquiry about whether she was still in the Boston area.",
+    "Assistant U.S. Attorneys had agreed on May 11, 2020, that no enforcement action (like an arrest) against Maxwell would happen until a grand jury began its work.",
+    "A magistrate judge had recently granted Maxwell's request to delay her deposition in a civil lawsuit due to the risk of self-incrimination in the parallel criminal investigation.",
+    "The email chain shows internal FBI coordination (between NY and CID offices) regarding the Maxwell investigation."
+  ],
+  "analyzedAt": "2026-02-20T07:45:57.858Z"
+}

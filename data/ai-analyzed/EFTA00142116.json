@@ -1,0 +1,190 @@
+{
+  "fileName": "EFTA00142116.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2022-03-16",
+  "summary": "This is a transcript of a March 16, 2022, DOJ Office of the Inspector General interview with a Federal Bureau of Prisons Lieutenant regarding the investigation into the death of inmate Jeffrey Epstein. The interview focuses on camera system failures at MCC New York on August 8-10, 2019, a phone call allegedly made by Epstein on August 9, and standard emergency response procedures.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The inmate whose death in August 2019 is the subject of the OIG investigation. The interview discusses the camera system status around the time of his death and a phone call he allegedly made.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Lieutenant",
+      "role": "BOP SIS Lieutenant, witness",
+      "category": "law enforcement",
+      "context": "The Federal Bureau of Prisons employee being interviewed. She was the SIS Lieutenant at MCC New York in August 2019 and discovered the camera system was not recording or had blacked-out feeds on August 8.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Special Agent",
+      "role": "DOJ/OIG Special Agent, interviewer",
+      "category": "law enforcement",
+      "context": "A DOJ OIG Special Agent conducting the interview. He asks detailed questions about the camera system failure, memo timing, and Epstein's phone call.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Assistant Special Agent-in-Charge",
+      "role": "DOJ/OIG Assistant Special Agent-in-Charge, interviewer",
+      "category": "law enforcement",
+      "context": "A DOJ OIG Assistant Special Agent-in-Charge present and asking questions during the interview.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Captain",
+      "role": "Captain at MCC New York",
+      "category": "staff",
+      "context": "A Captain whom the Lieutenant says she notified about the camera system failure on August 8, though the Captain later stated he wasn't told until August 10.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Communications Technician",
+      "role": "BOP Communications Technician",
+      "category": "staff",
+      "context": "The communications technician who was notified about the camera system failure on August 8 and stated he would fix it. He later told the Lieutenant he 'fixed it yesterday' (August 9) and was there to 'finish up' on August 10.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "A correctional officer who, along with Michael Thomas, discovered Epstein and would have activated an emergency body alarm.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "A correctional officer who, along with Tova Noel, discovered Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unit Manager",
+      "role": "BOP Unit Manager",
+      "category": "staff",
+      "context": "A unit manager who, according to hearsay the Lieutenant heard, gave Jeffrey Epstein a phone call on the night of August 9, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "OIG Agent",
+      "role": "OIG Agent (investigator)",
+      "category": "law enforcement",
+      "context": "An OIG agent who was investigating an incident with another inmate, which prompted the Lieutenant to review camera footage on August 8.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lieutenant",
+      "person2": "AW",
+      "relationshipType": "colleague",
+      "description": "Were together reviewing cameras when the Lieutenant discovered the playback failure on August 8, 2019.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Lieutenant reported the camera system failure to the Captain, though there is a discrepancy about when this notification occurred.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Communications Technician",
+      "relationshipType": "colleague",
+      "description": "The Lieutenant notified the technician of the camera failure on August 8 and later discussed the repair status with him on August 10.",
+      "strength": 3
+    },
+    {
+      "person1": "Unit Manager",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Hearsay indicates the Unit Manager gave Epstein a phone call on the night of August 9, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "colleague",
+      "description": "Correctional officers who discovered Jeffrey Epstein together.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "Camera System Failure Discovered",
+      "description": "Lieutenant discovers the NiceVision camera system at MCC New York is not recording and has multiple blacked-out feeds while trying to review footage related to another inmate investigation. She notifies Communications Technician and Captain.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lieutenant",
+        "AW",
+        "Communications Technician",
+        "Captain"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Alleged Phone Call by Epstein",
+      "description": "According to hearsay relayed by the Lieutenant, Unit Manager gave Jeffrey Epstein a phone call. A call log for a ~21 minute call from the institution exists for 6:58 PM on this date.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unit Manager"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Deceased",
+      "description": "Jeffrey Epstein is found deceased in his cell in the Special Housing Unit (SHU) at MCC New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel",
+        "Michael Thomas"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Memo Written on Camera Failure",
+      "description": "Lieutenant writes a memorandum documenting the camera system failure she discovered on August 8. The memo is dated August 10, 2019.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2022-03-16",
+      "title": "OIG Interview of BOP Lieutenant",
+      "description": "The Department of Justice Office of the Inspector General conducts a voluntary, sworn interview with a BOP Lieutenant as part of its investigation into the death of Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lieutenant",
+        "Special Agent",
+        "Assistant Special Agent-in-Charge"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal Bureau of Prisons Metropolitan Detention Center (MDC), Brooklyn, New York (interview location)",
+    "MCC New York, 150 Park Road, New York (primary location of discussed events)",
+    "Special Housing Unit (SHU) at MCC New York",
+    "SIS office at MCC New York"
+  ],
+  "keyFacts": [
+    "The camera system at MCC New York was malfunctioning on August 8-10, 2019, with some feeds blacked out and the system not recording, preventing retrieval of video footage from that period.",
+    "There is a discrepancy between the Lieutenant's recollection (that she notified Captain about the camera failure on August 8) and the Captain's statement (that he wasn't told until August 10).",
+    "Hearsay evidence suggests Unit Manager gave Jeffrey Epstein a phone call on the night of August 9, 2019, which the Lieutenant states was against policy if not monitored and logged.",
+    "The Lieutenant wrote a memorandum documenting the camera failure, but dated it August 10, 2019, not August 8 as she initially assumed.",
+    "The interview clarifies BOP emergency response procedures, including the use of body alarms on radios and the expected response times and logging practices for emergencies."
+  ],
+  "analyzedAt": "2026-02-20T00:42:10.250Z"
+}

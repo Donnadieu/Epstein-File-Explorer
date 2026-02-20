@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00155378.pdf",
+  "dataSet": "9",
+  "documentType": "FBI Crisis Intake Report",
+  "dateOriginal": "2019-08-16",
+  "summary": "This is an FBI Crisis Intake report documenting a social media tip received on August 15, 2019. The tip, from a Twitter user, referenced a video about Julian Assange and Wikileaks possibly containing Jeffrey Epstein's 'blackbook' and reported online harassment. The FBI's Office of Public Affairs forwarded the comment for assessment.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named in the case title for child sex trafficking; the social media tip references a video possibly containing his 'blackbook'.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Julian Assange",
+      "role": "Founder of Wikileaks",
+      "category": "other",
+      "context": "Mentioned in the social media post as the subject of a video that may contain Jeffrey Epstein's blackbook.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kittyhundal",
+      "role": "Social media complainant",
+      "category": "other",
+      "context": "Twitter username (kittyhundal) who posted a comment about blocking a user and reporting possible harassment to the FBI. Listed as the complainant.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Kittyhundal",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Kittyhundal's social media post referenced a video about Julian Assange that may contain Jeffrey Epstein's blackbook, linking them thematically in the online tip.",
+      "strength": 1
+    },
+    {
+      "person1": "Julian Assange",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Linked thematically in a social media video post, which was reported to the FBI, suggesting the video connected Assange/Wikileaks to Epstein's blackbook.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "Social Media Tip to FBI",
+      "description": "Twitter user 'kittyhundal' posted a comment regarding a video about Julian Assange and Wikileaks possibly containing Jeffrey Epstein's blackbook, and reported online harassment. The FBI Office of Public Affairs forwarded the comment to the National Threat Operations Center.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Kittyhundal",
+        "Jeffrey Epstein",
+        "Julian Assange"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "FBI Crisis Intake Report Created",
+      "description": "An FBI Crisis Intake report was drafted to document the social media tip received the previous day concerning Jeffrey Epstein and potential online harassment.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The FBI received a social media tip on August 15, 2019, linking a video about Julian Assange and Wikileaks to Jeffrey Epstein's alleged 'blackbook'.",
+    "The tip also included a complaint about online harassment, with the user ('kittyhundal') claiming someone was 'tormenting his mother publically' and questioning if it was a hack or a Twitter employee.",
+    "The document is a routine FBI intake form for assessing potential threats from social media, showing the bureau was monitoring online chatter about Epstein shortly after his 2019 arrest.",
+    "The case is formally titled under Jeffrey Epstein for child sex trafficking (Case ID: 31E-NY-3027571)."
+  ],
+  "analyzedAt": "2026-02-20T13:31:35.496Z"
+}

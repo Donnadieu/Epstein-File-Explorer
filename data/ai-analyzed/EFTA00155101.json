@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00155101.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2024-11-15",
+  "summary": "Email exchange between FBI Special Agent and Victim Specialist regarding an Epstein victim named Elisabetta, who was represented by attorney Gloria Allred. The FBI notes Allred made direct communication with victims difficult, but resources were provided. The victim's current contact information is not available as she refused to provide it.",
+  "persons": [
+    {
+      "name": "Elisabetta",
+      "role": "Epstein victim",
+      "category": "victim",
+      "context": "Epstein victim who was represented by attorney Gloria Allred; she refused to provide current contact information to the FBI.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Represented Elisabetta and made it difficult for the FBI to speak directly with the victims she represented.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Special Agent from the New York Field Office, Child Exploitation/Human Trafficking Desk, responding about resources provided to Elisabetta.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Victim Specialist",
+      "role": "FBI Victim Specialist",
+      "category": "law enforcement",
+      "context": "FBI Victim Specialist from the New York Division who forwarded a message from a victim regarding Elisabetta.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gloria Allred",
+      "person2": "Elisabetta",
+      "relationshipType": "attorney-client",
+      "description": "Gloria Allred represented Elisabetta as her attorney in matters related to being an Epstein victim.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Elisabetta",
+      "relationshipType": "investigator-victim",
+      "description": "FBI Special Agent provided victim resource information to Elisabetta through her attorney.",
+      "strength": 2
+    },
+    {
+      "person1": "Victim Specialist",
+      "person2": "Elisabetta",
+      "relationshipType": "investigator-victim",
+      "description": "FBI Victim Specialist received a message about Elisabetta from another victim and forwarded it to the Special Agent.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2024-11-08",
+      "title": "Victim message about Elisabetta",
+      "description": "FBI Victim Specialist received a text message from a victim in a separate human trafficking case regarding Epstein victim Elisabetta.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Victim Specialist",
+        "Elisabetta"
+      ]
+    },
+    {
+      "date": "2024-11-15",
+      "title": "FBI response on victim resources",
+      "description": "FBI Special Agent responded that victim resources were provided to Elisabetta through her attorney Gloria Allred, but direct communication was blocked.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent",
+        "Elisabetta",
+        "Gloria Allred"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office",
+    "26 Federal Plaza, 29th Fl., NY, NY 10278"
+  ],
+  "keyFacts": [
+    "Epstein victim Elisabetta was represented by attorney Gloria Allred.",
+    "Gloria Allred made it difficult for the FBI to speak directly with the victims she represented, requiring all correspondence to go through her.",
+    "The FBI provided victim resource information to Elisabetta through Allred, but does not have her current contact information as she refused to provide it.",
+    "The communication occurred in November 2024, indicating ongoing FBI engagement with Epstein victims years after his death.",
+    "The FBI notes Elisabetta is welcome to reach out for additional services if needed."
+  ],
+  "analyzedAt": "2026-02-20T13:09:34.284Z"
+}

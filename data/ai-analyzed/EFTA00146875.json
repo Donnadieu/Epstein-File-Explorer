@@ -1,0 +1,54 @@
+{
+  "fileName": "EFTA00146875.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": null,
+  "summary": "An anonymous message from someone claiming to be 'John' who states they have secret information from Mark Epstein regarding Jeffrey Epstein's assets and partners. The message claims Jeffrey Epstein stored over $18 million in digital currency in a wallet controlled by the Epstein brand and references letters, emails, and Telegram communications.",
+  "persons": [
+    {
+      "name": "John",
+      "role": "Anonymous informant",
+      "category": "other",
+      "context": "Claims to have secret information from Mark Epstein regarding Jeffrey Epstein's digital currency assets and partners, and communicates via this message with threats about timing and anonymity.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mark Epstein",
+      "role": "Source of information",
+      "category": "associate",
+      "context": "Described as the source of the secret information, which includes letters, emails, and Telegram conversations about Jeffrey Epstein's assets and partners.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of information",
+      "category": "key figure",
+      "context": "The message claims he stored more than $18 million in digital currency in a wallet controlled by the Epstein brand, and that documents about his partners are included.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mark Epstein",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Mark Epstein is presented as having information about Jeffrey Epstein's financial assets and partners.",
+      "strength": 3
+    },
+    {
+      "person1": "John",
+      "person2": "Mark Epstein",
+      "relationshipType": "informant-source",
+      "description": "John claims to have secret information originating from Mark Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document claims Jeffrey Epstein stored over $18 million in digital currency in a wallet controlled by the Epstein brand.",
+    "The information is said to originate from Mark Epstein and includes the text of two letters, a loan fund number, and email/Telegram conversations.",
+    "The anonymous sender 'John' issues warnings about not answering other questions, not trying to identify them, and that late replies may result in losing access to the information."
+  ],
+  "analyzedAt": "2026-02-20T04:43:49.679Z"
+}

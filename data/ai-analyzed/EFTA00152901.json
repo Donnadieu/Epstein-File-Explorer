@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00152901.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-09-20",
+  "summary": "This document is a chain of internal FBI emails from September 2019 discussing potential compensation for victims of Jeffrey Epstein. The emails involve FBI personnel from New York and the Victim Services Division, and reference a request from the New York State Office of Victim Services (OVS) for a prosecutorial letter to enable victim compensation.",
+  "persons": [
+    {
+      "name": "SSA FBI New York",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as the sender/recipient in the email chain, following up on information regarding Epstein victims and victim compensation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Program Manager FBI Victim Services Division",
+      "role": "FBI Program Manager",
+      "category": "law enforcement",
+      "context": "Receives and forwards a request regarding Epstein victim compensation, suggesting it be pushed to the SDNY (Southern District of New York).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Executive Director",
+      "role": "Executive Director (likely of OVS)",
+      "category": "legal",
+      "context": "Mentioned as the title of a person whose forwarded message is part of the email chain discussing victim compensation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MS",
+      "person2": "Program Manager FBI Victim Services Division",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel involved in victim services, communicating about victim compensation applications.",
+      "strength": 2
+    },
+    {
+      "person1": "SSA FBI New York",
+      "person2": "MS",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel in New York corresponding about victim-related inquiries.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-12",
+      "title": "OVS Inquiry about Epstein Victim Compensation",
+      "description": "A Victim Specialist (MS) emails the Office of Victim Services (OVS) to ask if Epstein victims can still apply for compensation even though they disclosed abuse years after it occurred.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "MS"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's Death",
+      "description": "Referenced indirectly in an OVS representative's email stating 'I'm so angry about what happened over the weekend,' which contextually refers to Jeffrey Epstein's death in jail on August 10, 2019.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York City (NYC) area",
+    "New York Field Office (FBI)"
+  ],
+  "keyFacts": [
+    "The FBI was actively discussing victim compensation for Epstein's victims in September 2019, shortly after his death.",
+    "The New York State Office of Victim Services (OVS) indicated it could provide compensation if it received a letter from a District Attorney or Assistant U.S. Attorney stating they would have prosecuted Epstein if the case had been brought in a timely manner.",
+    "The email chain reveals frustration among officials, with one OVS representative stating 'I'm so angry about what happened over the weekend,' referencing Epstein's death.",
+    "The communication shows coordination between FBI Victim Specialists, the FBI Victim Services Division, and the OVS regarding victim support."
+  ],
+  "analyzedAt": "2026-02-20T10:36:55.274Z"
+}

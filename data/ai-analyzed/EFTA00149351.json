@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA00149351.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-29 to 2020-07-02",
+  "summary": "This document is a series of internal FBI emails from late June to early July 2020, discussing operational planning and approval for travel to arrest a target (Ghislaine Maxwell) in the Epstein investigation. The emails detail logistical planning, cost estimates, and the shifting location of the target from Massachusetts to New Hampshire.",
+  "persons": [
+    {
+      "name": "SSA FBI New York",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The primary FBI agent in New York coordinating the operational planning, travel approval, and arrest logistics for the target (Maxwell). They provide updates on the target's location and the status of the search warrant.",
+      "mentionCount": 6
+    },
+    {
+      "name": "SSA Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI supervisor from the Crimes Against Children and Human Trafficking Unit at FBI Headquarters, requesting to be notified of the arrest and significant activity, and involved in approving operational expenses.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Target of arrest operation",
+      "category": "key figure",
+      "context": "Referred to as the target of the arrest operation in the Epstein investigation. The emails discuss locating her phone and planning her arrest and escort back to New York.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA FBI New York",
+      "person2": "SSA Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "relationshipType": "colleague",
+      "description": "Professional colleagues within the FBI coordinating on the operational planning, approval, and notification for the arrest of Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "SSA FBI New York",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-target",
+      "description": "The FBI agent is planning and coordinating the operational travel and arrest of Maxwell, the target in the Epstein investigation.",
+      "strength": 5
+    },
+    {
+      "person1": "SSA Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-target",
+      "description": "The FBI supervisor is overseeing the operation and requests immediate notification upon Maxwell's arrest.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-30",
+      "title": "Location shift to New Hampshire",
+      "description": "The FBI updates that historical phone data indicates the target (Maxwell) is in New Hampshire, necessitating a shift in operational planning from Massachusetts.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA FBI New York",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Awaiting search warrant execution",
+      "description": "The FBI is waiting for a search warrant to be signed before executing the operation to arrest the target.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "SSA FBI New York"
+      ]
+    },
+    {
+      "date": "2020-06-29",
+      "title": "Travel approval request for arrest operation",
+      "description": "An FBI agent submits a formal request for travel approval to arrest a target (Maxwell) in the Epstein investigation, initially believed to be in Massachusetts. The request includes cost estimates for a team of four.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Massachusetts",
+    "New Hampshire",
+    "New York",
+    "Boston",
+    "Newark"
+  ],
+  "keyFacts": [
+    "In late June 2020, the FBI was actively planning an operation to arrest Ghislaine Maxwell, a key target in the Epstein investigation.",
+    "The target's estimated location shifted based on phone data, moving the operational focus from Massachusetts to New Hampshire.",
+    "The operation required internal FBI approval for travel expenses and the potential use of technical assets from Boston and Newark to locate Maxwell's phone.",
+    "The arrest was pending the signing of a search warrant as of July 2, 2020.",
+    "The planning involved a team of approximately four FBI personnel who intended to fly, possibly escort the target back to New York, and incurred estimated expenses of $1060."
+  ],
+  "analyzedAt": "2026-02-20T07:23:45.227Z"
+}

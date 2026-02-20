@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00154277.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-03-30",
+  "summary": "This is an email chain from March 2021 regarding the Ghislaine Maxwell case. An FBI agent (Kane) requests a case update from Amanda, and a subsequent email mentions a superseding indictment being issued.",
+  "persons": [
+    {
+      "name": "Kane, A.",
+      "role": "FBI agent (CID)",
+      "category": "law enforcement",
+      "context": "FBI agent who sends an email requesting a case update on Ghislaine Maxwell from Amanda.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Amanda",
+      "role": "Recipient of FBI inquiry",
+      "category": "other",
+      "context": "Person to whom the FBI agent directs the request for a case update on Ghislaine Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of case",
+      "category": "key figure",
+      "context": "The individual whose criminal case is the subject of the email inquiry for updates.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Kane, A.",
+      "person2": "Amanda",
+      "relationshipType": "professional",
+      "description": "Kane, an FBI agent, is requesting a case update from Amanda, indicating a professional working relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Kane, A.",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Kane is an FBI agent inquiring about updates on the criminal case against Ghislaine Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-03-29",
+      "title": "FBI request for Maxwell case update",
+      "description": "FBI agent Kane emails Amanda requesting a brief synopsis of any significant updates in the Ghislaine Maxwell case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Kane, A.",
+        "Amanda",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-03-30",
+      "title": "Mention of superseding indictment",
+      "description": "An email states that a superseding indictment was issued in the Maxwell case.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An FBI agent requested a case update on Ghislaine Maxwell in late March 2021.",
+    "A superseding indictment was issued in the Ghislaine Maxwell case around March 30, 2021.",
+    "The communication shows ongoing law enforcement activity and coordination regarding the Maxwell prosecution in 2021."
+  ],
+  "analyzedAt": "2026-02-20T12:12:49.482Z"
+}

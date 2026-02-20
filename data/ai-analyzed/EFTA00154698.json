@@ -1,0 +1,207 @@
+{
+  "fileName": "EFTA00154698.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2025-01-15",
+  "summary": "This document is an email chain from January 15, 2025, containing a civilian report forwarded by an Assistant United States Attorney to a case team. The report details allegations from a former employee of Wests Mogadore Country Club in Ohio, who claims to have encountered Jeffrey Epstein, Ghislaine Maxwell, and others there between 2002-2004, and separately alleges disturbing encounters with celebrities Marshall Mathers (Eminem) and Marilyn Manson, as well as a mention of P Diddy.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Forwards a civilian report to a case team regarding allegations related to Epstein/Maxwell, consistent with established practice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Allegedly visited Wests Mogadore Country Club with Ghislaine Maxwell and others between 2002-2004.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Allegedly visited Wests Mogadore Country Club with Jeffrey Epstein and others between 2002-2004.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Marshall Mathers",
+      "role": "Alleged Participant",
+      "category": "other",
+      "context": "Allegedly visited Wests Mogadore Country Club on a separate occasion; the witness was forced to pour him a drink and flirt, but she does not know if he had sex with her.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Marilyn Manson",
+      "role": "Alleged Perpetrator",
+      "category": "other",
+      "context": "Allegedly visited the witness's aunt's house twice when she was a child (around ages 10-11 and 13), engaging in inappropriate behavior; also known as Brian.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Eric West",
+      "role": "Employer/Boss",
+      "category": "staff",
+      "context": "Owner/boss of Wests Mogadore Country Club; took over cooking to allow another man to talk to the witness and was involved in pressuring her.",
+      "mentionCount": 2
+    },
+    {
+      "name": "P Diddy",
+      "role": "Alleged Participant",
+      "category": "other",
+      "context": "Mentioned in a hazy memory from around 2010-2011, allegedly taking a video of the witness while she was pregnant in a trailer near Akron, OH.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brian",
+      "role": "Alleged Perpetrator",
+      "category": "other",
+      "context": "Real name referenced for Marilyn Manson; the witness's father said she would never see Brian again after an incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Witness's Dad",
+      "role": "Family Member",
+      "category": "other",
+      "context": "Allowed Marilyn Manson to trace the witness's breasts onto a t-shirt when she was 10-11; later pulled her out of the house after an upsetting incident; refused to discuss events before his death in 2020.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Allegedly visited Wests Mogadore Country Club together with others between 2002-2004.",
+      "strength": 3
+    },
+    {
+      "person1": "Eric West",
+      "person2": "Witness",
+      "relationshipType": "employer-employee",
+      "description": "Eric West was the witness's boss at the country club where she worked from 2002-2004.",
+      "strength": 3
+    },
+    {
+      "person1": "Eric West",
+      "person2": "Unnamed Man",
+      "relationshipType": "associate",
+      "description": "Eric West took over cooking to allow an unnamed man to talk to and pressure the witness regarding Marshall Mathers.",
+      "strength": 3
+    },
+    {
+      "person1": "Marilyn Manson",
+      "person2": "Witness's Dad",
+      "relationshipType": "social",
+      "description": "Marilyn Manson (Brian) visited the witness's aunt's house and interacted with her father, who was initially permissive but later protective.",
+      "strength": 3
+    },
+    {
+      "person1": "Marilyn Manson",
+      "person2": "Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "The witness alleges inappropriate encounters with Marilyn Manson during her childhood, which she describes as feeling like dreams or hypnosis.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-2004",
+      "title": "Epstein/Maxwell Visit to Country Club",
+      "description": "Jeffrey Epstein and Ghislaine Maxwell allegedly visited Wests Mogadore Country Club in Ohio. A bed was moved into the banquet space.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Witness",
+        "Eric West"
+      ]
+    },
+    {
+      "date": "2002-2004",
+      "title": "Marshall Mathers Incident at Country Club",
+      "description": "Marshall Mathers (Eminem) visited the country club. The witness was forced to pour him a drink and flirt, was drugged, and later found herself in a different part of the club telling a man that Mathers didn't have sex with her.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Marshall Mathers",
+        "Witness",
+        "Eric West",
+        "Unnamed Man"
+      ]
+    },
+    {
+      "date": "approx. 1998-2000",
+      "title": "First Marilyn Manson Visit",
+      "description": "When the witness was around 10-11 years old, Marilyn Manson (Brian) visited her aunt's house and, with her father's permission, traced her developing breasts onto a white t-shirt.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Marilyn Manson",
+        "Witness",
+        "Witness's Dad"
+      ]
+    },
+    {
+      "date": "approx. 2001-2002",
+      "title": "Second Marilyn Manson Visit",
+      "description": "When the witness was around 13, Marilyn Manson visited again with a group of men. After Manson said something that upset her father, he pulled her out and said she'd never see Brian again.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Marilyn Manson",
+        "Witness",
+        "Witness's Dad"
+      ]
+    },
+    {
+      "date": "2010-2011",
+      "title": "Alleged P Diddy Encounter",
+      "description": "While pregnant and living in a trailer near Akron, OH, the witness has a hazy memory of someone she thinks is P Diddy taking a video of her with a phone.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "P Diddy",
+        "Witness"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": "Separate Rape Incident",
+      "description": "The witness was raped by her boyfriend's drug dealer in 2005. She tried to report it, but her boyfriend died and there are no records.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness"
+      ]
+    },
+    {
+      "date": "2020",
+      "title": "Death of Witness's Father",
+      "description": "The witness's father passed away in 2020. Prior to his death, he refused to discuss the events she described.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Witness's Dad",
+        "Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "Wests Mogadore Country Club, Mogadore, Ohio (golf course, bar, bowling alley)",
+    "Akron, Ohio",
+    "Trailer near Akron, OH",
+    "Witness's aunt's house (location unspecified)"
+  ],
+  "keyFacts": [
+    "A former employee of Wests Mogadore Country Club in Ohio alleges encounters with Jeffrey Epstein and Ghislaine Maxwell there between 2002-2004, including a bed being moved into a banquet space.",
+    "The witness separately alleges a traumatic incident involving Marshall Mathers (Eminem) at the same country club, where she was drugged and threatened.",
+    "The witness provides detailed allegations of inappropriate childhood encounters with Marilyn Manson (real name Brian) at her aunt's house, including an incident where he traced her breasts onto a t-shirt with her father's permission.",
+    "The witness describes her memories as feeling unreal, like dreams or hypnosis, and states they have become increasingly overwhelming, affecting her mental health.",
+    "The report was forwarded by an Assistant United States Attorney to a case team, indicating it was treated as a potentially relevant civilian report in the Epstein/Maxwell investigation."
+  ],
+  "analyzedAt": "2026-02-20T12:44:19.225Z"
+}

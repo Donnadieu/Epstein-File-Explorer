@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00154241.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-08",
+  "summary": "This document is a series of internal FBI emails from April 8, 2021, coordinating logistics for FBI agents to assist with the evidence review for the Ghislaine Maxwell case. The review is scheduled for April 13-15, 2021, at the courthouse, involving Maxwell, her defense team, an AUSA, and FBI agents who will monitor Maxwell and the evidence.",
+  "persons": [
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The defendant in the case for which the evidence review is being organized. She will be produced by the Marshals and monitored by FBI agents during the review.",
+      "mentionCount": 5
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The federal prosecutor who will be present for all three days of the evidence review and has reserved the proffer rooms.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Special Agent/Supervisor",
+      "category": "law enforcement",
+      "context": "An FBI agent familiar with the Maxwell case who will be present all three days of the evidence review and is a point of contact.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "FBI agents",
+      "person2": "Maxwell",
+      "relationshipType": "custodial",
+      "description": "FBI agents are responsible for monitoring Maxwell, escorting her from the Marshal cellblock, and accompanying her to the bathroom during the evidence review.",
+      "strength": 4
+    },
+    {
+      "person1": "AUSA",
+      "person2": "Maxwell",
+      "relationshipType": "legal-adversarial",
+      "description": "The AUSA is the prosecutor in the case against defendant Maxwell, overseeing the evidence review process.",
+      "strength": 4
+    },
+    {
+      "person1": "Maxwell",
+      "person2": "Defense team",
+      "relationshipType": "attorney-client",
+      "description": "Maxwell's defense counsel will be present with her to review evidence in the proffer room.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-13",
+      "title": "Start of Maxwell evidence review",
+      "description": "First day of a scheduled three-day review of evidence by Ghislaine Maxwell and her defense team at the courthouse, monitored by FBI agents and an AUSA.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell",
+        "AUSA",
+        "FBI agents",
+        "Defense team"
+      ]
+    },
+    {
+      "date": "2021-04-13 to 2021-04-15",
+      "title": "Multi-day evidence review session",
+      "description": "A three-day evidence review session for the Ghislaine Maxwell case, taking place from 9:00 AM to approximately 4:30 PM each day at the courthouse.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell",
+        "AUSA",
+        "FBI agents",
+        "Defense team",
+        "SOS"
+      ]
+    }
+  ],
+  "locations": [
+    "Courthouse (5th floor proffer room area)",
+    "Marshal cellblock (at the courthouse)"
+  ],
+  "keyFacts": [
+    "The FBI was coordinating logistics for a critical, multi-day evidence review in the Ghislaine Maxwell case scheduled for April 13-15, 2021.",
+    "Maxwell was to be in custody during the review, produced by Marshals and monitored by FBI agents who needed handcuff keys, indicating she was considered a security risk.",
+    "The evidence review involved significant resources: multiple FBI agents, an AUSA, Maxwell's defense team, and the FBI Evidence Unit for transport.",
+    "The email chain shows detailed planning for the secure handling of both the defendant and the physical evidence, using multiple secured proffer rooms in the courthouse."
+  ],
+  "analyzedAt": "2026-02-20T12:07:55.474Z"
+}

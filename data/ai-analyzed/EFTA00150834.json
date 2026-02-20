@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00150834.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2017-12-18",
+  "summary": "This is an internal FBI email chain from December 18, 2017, regarding an upcoming visit by EAD Abbate to the Baltimore field office. The sender, John Brosnan, requests talking points about the VCAC program in Baltimore, with a joking comment about the office's ability to select good SSAs.",
+  "persons": [
+    {
+      "name": "John J. Brosnan",
+      "role": "FBI Agent (CID)",
+      "category": "law enforcement",
+      "context": "Sender of the main email, requesting talking points about the VCAC program in Baltimore for an upcoming visit by EAD Abbate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Amanda L. Detterline",
+      "role": "FBI Agent (CID)",
+      "category": "law enforcement",
+      "context": "Primary recipient of the email, asked to provide bullet points on the VCAC program in Baltimore.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sean P. Watson",
+      "role": "FBI Agent (NY)",
+      "category": "law enforcement",
+      "context": "Copied on the email, indicating involvement or need for awareness of the request.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kevin P. Lyons",
+      "role": "FBI Agent (CID)",
+      "category": "law enforcement",
+      "context": "Sender of the forwarded email, requesting bullet points on how the program is doing in Baltimore for EAD Abbate's visit.",
+      "mentionCount": 1
+    },
+    {
+      "name": "EAD Abbate",
+      "role": "FBI Executive Assistant Director",
+      "category": "law enforcement",
+      "context": "FBI official who is scheduled to visit the Baltimore field office, prompting the request for program updates.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "John J. Brosnan",
+      "person2": "Amanda L. Detterline",
+      "relationshipType": "colleague",
+      "description": "Brosnan emails Detterline requesting information, indicating a working relationship within the FBI.",
+      "strength": 2
+    },
+    {
+      "person1": "John J. Brosnan",
+      "person2": "Kevin P. Lyons",
+      "relationshipType": "colleague",
+      "description": "Brosnan forwards an email from Lyons, showing internal communication chain regarding the same request.",
+      "strength": 2
+    },
+    {
+      "person1": "Kevin P. Lyons",
+      "person2": "EAD Abbate",
+      "relationshipType": "reporting",
+      "description": "Lyons is preparing information for Abbate's visit, suggesting a subordinate-superior or support relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-12-19",
+      "title": "EAD Abbate's visit to Baltimore field office",
+      "description": "FBI Executive Assistant Director Abbate is scheduled to visit the Baltimore field office, prompting a request for program updates.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "EAD Abbate"
+      ]
+    }
+  ],
+  "locations": [
+    "Baltimore field office"
+  ],
+  "keyFacts": [
+    "The email is an internal FBI communication dated December 18, 2017.",
+    "The subject involves preparing talking points about the VCAC program for an FBI executive's visit to Baltimore.",
+    "The email contains a sarcastic comment about the Baltimore office's ability to 'select good SSA's'.",
+    "The communication shows routine internal FBI coordination and reporting ahead of a senior official's visit.",
+    "The document is part of the Epstein case files but does not directly mention Epstein or related individuals."
+  ],
+  "analyzedAt": "2026-02-20T08:16:49.515Z"
+}

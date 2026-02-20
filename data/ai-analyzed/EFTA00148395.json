@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00148395.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-03-17",
+  "summary": "This is an internal FBI email chain forwarding a request from the DOJ's Associate Deputy Attorney General for the FBI to contact a woman named Ms. Sarnoff, who claims to have information on the Epstein matter. The DOJ notes she has previously contacted DOJ leadership and has not responded to their outreach, so they want the FBI to contact her directly.",
+  "persons": [
+    {
+      "name": "Lenny",
+      "role": "FBI employee",
+      "category": "law enforcement",
+      "context": "FBI employee forwarding a DOJ request to colleagues to contact Ms. Sarnoff regarding Epstein information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ms. Sarnoff",
+      "role": "Individual with information",
+      "category": "witness",
+      "context": "A person who has contacted the DOJ claiming to have information on the Epstein case and whom the DOJ has requested the FBI contact directly.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+      "role": "DOJ official",
+      "category": "legal",
+      "context": "DOJ official who sent the original request to the FBI, asking them to contact Ms. Sarnoff regarding her Epstein information and to confirm contact.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ms. Sarnoff",
+      "person2": "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+      "relationshipType": "informant-contact",
+      "description": "Ms. Sarnoff has contacted the DOJ official claiming to have information on the Epstein matter.",
+      "strength": 2
+    },
+    {
+      "person1": "Lenny",
+      "person2": "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+      "relationshipType": "professional",
+      "description": "Lenny is forwarding a work request from the DOJ official to FBI colleagues.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03-17",
+      "title": "DOJ requests FBI contact with informant",
+      "description": "The DOJ's Associate Deputy Attorney General sends an email to the FBI requesting they contact Ms. Sarnoff, who claims to have information on the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Associate Deputy Attorney General & National Coordinator for Child Exploitation & Human Trafficking",
+        "Ms. Sarnoff",
+        "Lenny"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An individual named Ms. Sarnoff contacted the DOJ claiming to have information on the Epstein matter.",
+    "This was not Ms. Sarnoff's first time reaching out to DOJ leadership; she had previously contacted them about purported information.",
+    "The DOJ had attempted to contact Ms. Sarnoff but she did not return their emails or calls.",
+    "The DOJ's Associate Deputy Attorney General, who is also the National Coordinator for Child Exploitation & Human Trafficking, formally requested the FBI contact Ms. Sarnoff directly.",
+    "The FBI was asked to confirm once contact was made so the DOJ could be advised."
+  ],
+  "analyzedAt": "2026-02-20T06:54:35.106Z"
+}

@@ -1,0 +1,123 @@
+{
+  "fileName": "EFTA00147851.pdf",
+  "dataSet": "9",
+  "documentType": "email chain",
+  "dateOriginal": "2019-08-07",
+  "summary": "This is an email chain from August 2019 among FBI personnel coordinating logistics for the planned search of Jeffrey Epstein's private island, Little St. James (LSJ), near St. Thomas. It discusses planning for personnel, lodging, transportation, and equipment, and references the drafting of a search warrant affidavit by the SDNY.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation, property owner",
+      "category": "key figure",
+      "context": "The target of the investigation; the planned search is for his private island, Little St. James (LSJ).",
+      "mentionCount": 4
+    },
+    {
+      "name": "Osborn, A.",
+      "role": "FBI Special Agent (NY)",
+      "category": "law enforcement",
+      "context": "FBI agent from New York Field Office who authored an email on July 27, 2019, detailing the plan to secure a search warrant for Epstein's island and referencing the prior search of Epstein's NYC residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "ASAC",
+      "role": "Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "An FBI Assistant Special Agent in Charge involved in planning the island search operation, coordinating logistics like lodging and transportation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "SSRA",
+      "role": "Supervisory Senior Resident Agent",
+      "category": "law enforcement",
+      "context": "An FBI Supervisory Senior Resident Agent covering the islands, involved in coordination discussions for the search operation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SSA",
+      "role": "Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI Supervisory Special Agent serving as a point of contact (POC) and coordinator for the search operation while another agent is away.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Osborn, A.",
+      "person2": "ASAC",
+      "relationshipType": "colleague",
+      "description": "Worked together on planning the framework for the search of Epstein's island, as per Osborn's email.",
+      "strength": 3
+    },
+    {
+      "person1": "ASAC",
+      "person2": "SSRA",
+      "relationshipType": "colleague",
+      "description": "Both were part of discussions and agreements on the general timeline for the island search operation.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA",
+      "person2": "SSRA",
+      "relationshipType": "colleague",
+      "description": "Coordinating together and with other law enforcement partners (CBP, USCG) for the search operation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-06",
+      "title": "Planning call for island search",
+      "description": "FBI NY team met to sketch out a plan for the search of Little St. James Island and scheduled a call with other teams to finalize it.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Osborn, A.",
+        "ASAC",
+        "SSRA"
+      ]
+    },
+    {
+      "date": "2019-07-27",
+      "title": "Initial planning email for island warrant",
+      "description": "FBI Agent Osborn sent an email detailing the plan to secure probable cause for a search warrant for Epstein's island, referencing the prior NYC residence search.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Osborn, A.",
+        "ASAC"
+      ]
+    },
+    {
+      "date": "2019-08-02",
+      "title": "Conference call on probable cause",
+      "description": "Planned conference call between FBI NY and SDNY to discuss probable cause regarding Little St. James island, which would determine the scope and timing of the search.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Anticipated search warrant execution",
+      "description": "The SDNY was drafting an affidavit for the search of LSJ Island, with coordination to get it sworn out, likely on Thursday, August 8, 2019.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Little St. James (LSJ) Island",
+    "St. Thomas",
+    "New York City (NYC)",
+    "Sugar Bay Resort",
+    "Quantico"
+  ],
+  "keyFacts": [
+    "The FBI was actively planning a substantial search operation of Jeffrey Epstein's private island, Little St. James, in August 2019.",
+    "The Southern District of New York (SDNY) was drafting the search warrant affidavit, indicating a serious federal investigation was underway.",
+    "Logistical challenges included securing lodging on St. Thomas due to limited options following a hurricane, and arranging boat transport via CBP.",
+    "A prior search of Epstein's NYC residence in July 2019 yielded 845 pictures during a 13-hour operation, after initial entry for pictures revealed further probable cause.",
+    "The email chain shows deliberate efforts to isolate the 2019 case from the investigation into Epstein that occurred 12 years prior (circa 2007)."
+  ],
+  "analyzedAt": "2026-02-20T06:12:40.280Z"
+}

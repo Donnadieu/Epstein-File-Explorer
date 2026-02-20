@@ -1,0 +1,194 @@
+{
+  "fileName": "EFTA00141145.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-03",
+  "summary": "This is an FBI 302 report documenting an interview with Dr. [REDACTED], the Chief Psychologist at the Metropolitan Correctional Center (MCC), conducted on August 29, 2019. The interview details the psychological intake process, suicide risk assessments, and observations of Jeffrey Epstein from his intake on July 8, 2019, until his death. It includes information about a prior incident where Epstein was found with a loose noose, his housing assignments, and the psychologist's concerns about staffing and cellmate policies.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The high-profile inmate at MCC, charged with sex offenses. The document details his psychological assessments, housing status, complaints, and the psychologist's interactions with him leading up to his death.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Dr. [REDACTED]",
+      "role": "Chief Psychologist at MCC",
+      "category": "staff",
+      "context": "The interviewee, who oversaw psychological services at MCC. She conducted and supervised suicide risk assessments on Jeffrey Epstein, managed his housing status, and interacted with him and his attorneys.",
+      "mentionCount": 25
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the interviewing agents present during the interview with the Chief Psychologist.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Present at the interview with the Chief Psychologist.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Present at the interview with the Chief Psychologist.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Inmate / Cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate in the Special Housing Unit (SHU) after July 11, 2019. Epstein accused him of trying to kill him during the July 23 incident.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dr. [REDACTED]",
+      "role": "Psychologist",
+      "category": "staff",
+      "context": "A psychologist who met with Epstein on July 24, 2019, and took him off Suicide Watch, placing him on Psychological Observation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "National Suicide Prevention Coordinator",
+      "category": "staff",
+      "context": "A BOP Central Office official consulted regarding Epstein's housing. Recommended housing Epstein with a sex offender in SHU.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lt. [REDACTED]",
+      "role": "Lieutenant",
+      "category": "staff",
+      "context": "A SHU Lieutenant whom the Chief Psychologist passed Epstein's demands to. Described as very regimented.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[REDACTED]",
+      "role": "Warden",
+      "category": "staff",
+      "context": "The Warden of MCC, present at executive staff meetings where inmate psychological status was discussed.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dr. [REDACTED]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Chief Psychologist responsible for Epstein's psychological assessments, suicide risk evaluations, and housing recommendations at MCC.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[REDACTED]",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates in the SHU. Epstein accused [REDACTED] of trying to kill him during the July 23 incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Dr. [REDACTED]",
+      "person2": "[REDACTED]",
+      "relationshipType": "colleague",
+      "description": "Both were staff psychologists at MCC involved in Epstein's care. Dr. [REDACTED] took Epstein off Suicide Watch on July 24.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lt. [REDACTED]",
+      "relationshipType": "inmate-staff",
+      "description": "Epstein's complaints and demands were passed by the psychologist to Lt. [REDACTED] for action.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-08",
+      "title": "Epstein's Intake and Initial Assessment",
+      "description": "Jeffrey Epstein completed the Psychological Services Intake Questionnaire (PSIQ) at MCC. He marked nothing, which would typically result in a Care Code 1. Due to his high-profile status, he was placed on observation for a thorough suicide risk assessment.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dr. [REDACTED]"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Loose Noose",
+      "description": "Epstein was found in his cell with a loose noose around his neck and placed on Suicide Watch. He told staff his cellmate, [REDACTED], tried to kill him, but later told the psychologist he didn't remember what happened.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[REDACTED]",
+        "Dr. [REDACTED]"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Epstein Taken Off Suicide Watch",
+      "description": "Dr. [REDACTED] met with Epstein, who reported being fearful of his cellmate. Epstein was taken off Suicide Watch and placed on Psychological Observation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dr. [REDACTED]"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Epstein Returned to SHU",
+      "description": "Epstein was transitioned back to the Special Housing Unit (SHU) from Psychological Observation. An email was sent updating staff of the need for him to be housed with a cellmate.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dr. [REDACTED]"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Epstein Signs New Will",
+      "description": "Epstein signed a new will. The psychologist stated she was unaware; had she known, it would have been considered a red flag warranting placement on Psychological Observation.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-29",
+      "title": "Interview of Chief Psychologist",
+      "description": "FBI, OIG, and AUSA personnel interviewed Dr. [REDACTED], the Chief Psychologist at MCC, regarding Epstein's psychological care and the circumstances leading to his death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Dr. [REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]",
+        "[REDACTED]"
+      ]
+    }
+  ],
+  "locations": [
+    "1 Saint Andrews Plaza, New York, NY, 10007 (US Attorney's Office, Southern District of New York)",
+    "Metropolitan Correctional Center (MCC)",
+    "Metropolitan Detention Center (MDC) Brooklyn",
+    "Federal Detention Center, Miami",
+    "East Jersey State Prison"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein underwent three suicide risk assessments during his time at MCC, which was described as unusual.",
+    "On July 23, 2019, Epstein was found with a loose noose; he accused his cellmate of trying to kill him, but later claimed not to remember the incident.",
+    "The Chief Psychologist believed the lack of a cellmate and understaffing contributed to Epstein's death, noting that SHU policy emphasized cellmates for suicide prevention.",
+    "Epstein signed a new will on August 8, 2019, a fact not communicated to Psychological Services, which would have been considered a major red flag.",
+    "The psychologist stated that regular rounds by correctional officers in the SHU were not being completed, a fact she was unaware of due to her executive staff status."
+  ],
+  "analyzedAt": "2026-02-20T00:17:23.118Z"
+}

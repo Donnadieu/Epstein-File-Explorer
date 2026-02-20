@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00146787.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email chain",
+  "dateOriginal": "2019-08-22",
+  "summary": "This is an internal FBI email chain from August 22, 2019, providing updates on the investigation into Jeffrey Epstein's death. It details interviews with Metropolitan Correctional Center (MCC) inmates and guards, the issuance of grand jury subpoenas for bank account information, and search warrants for cellular phone records. The investigation appears focused on potential evidence destruction and the circumstances surrounding Epstein's death.",
+  "persons": [
+    {
+      "name": "Jose",
+      "role": "FBI recipient/colleague",
+      "category": "law enforcement",
+      "context": "Addressed in an email thanking him, appears to be an FBI colleague involved in the Epstein investigation communication chain.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Skiles",
+      "role": "FBI recipient (likely supervisor)",
+      "category": "law enforcement",
+      "context": "Email is addressed to 'UC Skiles', providing a summary of investigative activity for August 20, 2019, regarding the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate/subject of investigation",
+      "category": "key figure",
+      "context": "The investigation is named after him. The document references interviews about possible shredding of his documents and the circumstances when he 'was found' (dead).",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Skiles",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Skiles is receiving investigative updates on the case concerning Epstein's death and potential evidence tampering.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-20",
+      "title": "FBI interviews MCC inmate regarding document shredding",
+      "description": "FBINY/NYOIG interviewed an MCC inmate regarding possible shredding of Epstein documents. The inmate stated he had no information or knowledge of any suspicious acts or MCC employees shredding documents.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-20",
+      "title": "FBI interviews multiple BOP MCC guards",
+      "description": "FBINY/NYOIG conducted several interviews with BOP MCC guards. One guard refused to answer questions and asked for an attorney. Another guard, who worked the 8x4 shift in the SHU, was not working when Epstein was found. A guard lieutenant had nothing significant to add. Another guard also refused to answer questions and requested an attorney.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-20",
+      "title": "Search warrants served on Sprint and Verizon",
+      "description": "FBINY served search warrants on cell phone companies Sprint and Verizon for cellular phones belonging to two individuals (names redacted, one is an MCC CO) for Call Detail Records (CDRs) and subscriber information.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-22",
+      "title": "Update on Grand Jury Subpoenas for bank accounts",
+      "description": "SDNY Grand Jury subpoenas were sent for bank account information for two individuals (names redacted) and the FBI is awaiting returns from the respective banks for analysis.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-23",
+      "title": "Planned retrieval of cellular phone from BOP MCC Guard",
+      "description": "The FBI planned to possibly retrieve a cellular phone from a BOP MCC Guard the following day (August 23, 2019).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "SDNY (Southern District of New York)",
+    "BOP (Bureau of Prisons) MCC"
+  ],
+  "keyFacts": [
+    "The FBI was actively investigating potential evidence destruction (shredding of Epstein documents) at the MCC following Epstein's death.",
+    "Multiple BOP MCC guards invoked their right to an attorney and refused to answer FBI questions during interviews on August 20, 2019.",
+    "The FBI served search warrants on major cell phone carriers (Sprint and Verizon) to obtain records for phones belonging to at least one MCC Corrections Officer and another individual.",
+    "Federal Grand Jury subpoenas were issued to banks for account information of two individuals as part of the investigation.",
+    "The FBI was awaiting the Medical Examiner's (ME/OCME) report on Epstein's death and financial records on BOP MCC guards."
+  ],
+  "analyzedAt": "2026-02-20T04:33:49.980Z"
+}

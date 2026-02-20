@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00128377.pdf",
+  "dataSet": "9",
+  "documentType": "forensic examination report",
+  "dateOriginal": "December 12, 2019",
+  "summary": "This is a forensic examination report from the DOJ Office of the Inspector General analyzing two BOP computers from the Special Housing Unit at the Metropolitan Correctional Center where Jeffrey Epstein was housed. The examination sought user activity timelines and documents related to Epstein's death and the keyword 'Reyes', finding no communications about Epstein but identifying documents containing 'Reyes'.",
+  "persons": [
+    {
+      "name": "Michael Thomas",
+      "role": "Correctional Officer",
+      "category": "staff",
+      "context": "Correctional Officer with the Federal Bureau of Prisons at the Metropolitan Correctional Center in New York, NY; the digital devices examined were seized under administrative authority from BOP.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leonard",
+      "role": "Lead Information Technology Specialist",
+      "category": "law enforcement",
+      "context": "OIG Lead Information Technology Specialist with the Cyber Investigations Office (CYBER) who processed and forensically analyzed the two BOP computer devices, created timelines, and identified documents containing the keyword 'Reyes'.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Thomas",
+      "person2": "Leonard",
+      "relationshipType": "investigator-subject",
+      "description": "Leonard, as the forensic examiner, analyzed devices seized from the BOP facility where Michael Thomas worked, though no direct interaction is described.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein's Suicide",
+      "description": "Jeffrey Epstein died by suicide while housed in the Special Housing Unit at the Metropolitan Correctional Center in New York, NY.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Period Before Epstein's Death",
+      "description": "The forensic examination specifically requested analysis of user activity and work product from this date through August 10, 2019, surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-12-12",
+      "title": "Forensic Examination Request",
+      "description": "A DOJ OIG Special Agent submitted a Digital Forensics Examination Request form seeking analysis of two BOP computers from the MCC's Special Housing Unit.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, NY",
+    "Special Housing Unit, Metropolitan Correctional Center, New York, NY",
+    "New York Field Office (DOJ OIG)",
+    "Dallas lab (CYBER Archive Network Attached Storage location)"
+  ],
+  "keyFacts": [
+    "Two BOP-owned computers were seized from the Special Housing Unit at the Metropolitan Correctional Center where Jeffrey Epstein was housed at the time of his suicide on August 10, 2019.",
+    "The forensic examination found no communications between BOP personnel on the devices regarding Jeffrey Epstein.",
+    "The examiner identified documents containing the keyword 'Reyes' but did not specify their content or relevance.",
+    "BOP uses GroupWise for email, which does not cache locally on the computers, so email communications were not recovered in this examination.",
+    "The forensic analysis created a preliminary summary timeline of user activity on each device for the period around Epstein's death (August 9-10, 2019)."
+  ],
+  "analyzedAt": "2026-02-19T17:48:16.136Z"
+}

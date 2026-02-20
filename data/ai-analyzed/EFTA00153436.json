@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA00153436.pdf",
+  "dataSet": "9",
+  "documentType": "law enforcement correspondence",
+  "dateOriginal": "2019-12-07",
+  "summary": "This document is a brief email from a law enforcement officer (likely NYPD/FBI task force) reporting the results of Facebook subpoenas related to the Ghislaine Maxwell investigation. It indicates two Facebook profiles were identified, but the IP addresses suggest they are not being used by Maxwell, even as fake accounts.",
+  "persons": [
+    {
+      "name": "Lorraine Magill",
+      "role": "Facebook account holder",
+      "category": "other",
+      "context": "Owner of one of the Facebook profiles (lorraine.magill.9) identified via subpoena results. The IP address associated with the account was traced to Miami.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The target of the Facebook subpoena. The document concludes the identified accounts do not appear to be used by her, even as fake accounts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Lorraine Magill",
+      "relationshipType": "investigative link",
+      "description": "Magill's Facebook account was identified and examined as part of a subpoena in the investigation of Maxwell. Law enforcement concluded the account was not being used by Maxwell.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-07",
+      "title": "Facebook Subpoena Results Reported",
+      "description": "A law enforcement officer reports the results of Facebook subpoenas, identifying two profiles with recent IP addresses in Miami and Virginia, concluding they are not being used by Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Lorraine Magill"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami",
+    "Virginia"
+  ],
+  "keyFacts": [
+    "Law enforcement executed Facebook subpoenas as part of the Ghislaine Maxwell investigation.",
+    "Two Facebook profiles were identified: one belonging to Lorraine Magill and another with a numeric ID.",
+    "The recent IP addresses for the accounts were traced to Miami and Virginia, respectively.",
+    "The investigating officer concluded these accounts did not appear to be used by Maxwell, even as fake accounts.",
+    "The communication originated from a member of the NYPD FBI Child Exploitation Human Trafficking Task Force."
+  ],
+  "analyzedAt": "2026-02-20T11:04:01.607Z"
+}

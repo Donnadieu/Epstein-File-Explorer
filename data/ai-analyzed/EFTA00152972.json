@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00152972.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-21",
+  "summary": "An email from an FBI Special Agent in the New York Field Office to an unnamed recipient (likely another FBI agent) regarding the Maxwell/Epstein case. The sender is requesting to schedule a call to discuss discovery deadlines and ensure no lingering case information exists, referencing the initial investigation and the Rodriguez investigation.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the email, who is reaching out to schedule a discovery call regarding the Maxwell/Epstein case and the Rodriguez investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSAs",
+      "role": "Assistant United States Attorneys",
+      "category": "legal",
+      "context": "The prosecutors who asked the email sender to reach out to schedule a call to discuss the Maxwell/Epstein case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "person2": "MM",
+      "relationshipType": "colleague",
+      "description": "Both are FBI agents, with the sender reaching out to the recipient for a case-related call.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "person2": "AUSAs",
+      "relationshipType": "professional",
+      "description": "The AUSAs asked the FBI agent to contact MM regarding the Maxwell/Epstein case discovery.",
+      "strength": 2
+    },
+    {
+      "person1": "MM",
+      "person2": "AUSAs",
+      "relationshipType": "professional",
+      "description": "The AUSAs want to schedule a call with MM to discuss case information.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-21",
+      "title": "Discovery deadline email",
+      "description": "An FBI agent emails a colleague to schedule a call regarding approaching discovery deadlines in the Maxwell/Epstein case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+        "MM",
+        "AUSAs"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office"
+  ],
+  "keyFacts": [
+    "The email indicates ongoing legal proceedings in the Maxwell/Epstein case as of October 2020, with approaching discovery deadlines.",
+    "The recipient (MM) worked on both the initial Epstein investigation and a subsequent 'Rodriguez investigation'.",
+    "Assistant U.S. Attorneys (AUSAs) are actively involved and seeking to ensure no lingering case information exists.",
+    "The communication is between FBI personnel in the Child Exploitation/Human Trafficking unit."
+  ],
+  "analyzedAt": "2026-02-20T10:45:19.816Z"
+}

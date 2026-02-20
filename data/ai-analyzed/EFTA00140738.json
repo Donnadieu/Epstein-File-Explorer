@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA00140738.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-25",
+  "summary": "This is an email chain from July 25, 2019, regarding difficulties obtaining information about an incident involving high-profile prisoner Jeffrey Epstein at the Metropolitan Correctional Center (MCC) New York. A USMS official requests assistance from the Bureau of Prisons (BOP) after being unable to get information from the MCC warden and assistant warden.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "High-profile prisoner",
+      "category": "key figure",
+      "context": "The subject of the incident at MCC New York that officials are trying to get information about.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DAD M",
+      "role": "Bureau of Prisons official",
+      "category": "law enforcement",
+      "context": "The recipient of the initial email from USMS, who is asked for assistance in obtaining information about the Epstein incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden",
+      "role": "BOP Associate Warden",
+      "category": "law enforcement",
+      "context": "Identified by the BOP official as the person who can provide information about the incident at MCC New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "USM",
+      "role": "United States Marshal",
+      "category": "law enforcement",
+      "context": "Mentioned as having no luck obtaining information from the MCC warden and assistant warden.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Chief",
+      "role": "USMS Chief for S/New York office",
+      "category": "law enforcement",
+      "context": "Mentioned alongside the USM as having no luck obtaining information from MCC leadership.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Warden",
+      "role": "MCC New York Warden",
+      "category": "law enforcement",
+      "context": "One of the MCC officials from whom USMS officials have been unable to obtain information about the Epstein incident.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant Warden",
+      "role": "MCC New York Assistant Warden",
+      "category": "law enforcement",
+      "context": "One of the MCC officials from whom USMS officials have been unable to obtain information about the Epstein incident.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "USM",
+      "person2": "Chief",
+      "relationshipType": "colleague",
+      "description": "Both are USMS officials in the S/New York office who are jointly trying to get information about the Epstein incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Warden",
+      "person2": "Assistant Warden",
+      "relationshipType": "colleague",
+      "description": "Both are senior officials at MCC New York who are not providing information about the Epstein incident to external law enforcement.",
+      "strength": 3
+    },
+    {
+      "person1": "DAD M",
+      "person2": "Associate Warden",
+      "relationshipType": "colleague",
+      "description": "DAD M contacts the Associate Warden to provide assistance to the USMS in obtaining information about the Epstein incident.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-25",
+      "title": "Incident involving Jeffrey Epstein at MCC New York",
+      "description": "An unspecified incident occurs with high-profile prisoner Jeffrey Epstein at the Metropolitan Correctional Center in New York, prompting USMS officials to seek information from BOP officials.",
+      "category": "incident",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-25",
+      "title": "USMS requests BOP assistance regarding Epstein incident",
+      "description": "USMS officials contact BOP official DAD M for help obtaining basic information about the Epstein incident after being unable to get information from MCC New York warden and assistant warden.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "USM",
+        "Chief",
+        "DAD M",
+        "Warden",
+        "Assistant Warden"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York (Metropolitan Correctional Center, New York)",
+    "320 1st St. NW, HOLC Bldg. 545, Washington, DC 20534 (Federal Bureau of Prisons office)"
+  ],
+  "keyFacts": [
+    "On July 25, 2019, there was an incident involving Jeffrey Epstein at MCC New York.",
+    "US Marshals Service officials were unable to obtain basic information about the incident from MCC New York's warden and assistant warden.",
+    "A USMS official reached out to a Bureau of Prisons official (DAD M) for assistance in getting information about the Epstein incident.",
+    "The BOP official indicated that an Associate Warden would be able to provide the requested information."
+  ],
+  "analyzedAt": "2026-02-19T23:51:43.998Z"
+}

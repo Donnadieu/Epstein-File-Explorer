@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA00155131.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-07-06",
+  "summary": "This document is an email chain from July 2021 among FBI agents, a US Attorney's Office contractor, and an NYPD detective, coordinating the transfer of files related to the Ghislaine Maxwell case. It references tasks such as obtaining .avi files from CART, reviewing images, and identifying Palm Beach Police Department witnesses to authenticate evidence seized from Jeffrey Epstein's residence.",
+  "persons": [
+    {
+      "name": "Will",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Special Agent from the New York Field Office, Child Exploitation/Human Trafficking Desk, coordinating the handover of files from CART related to the Maxwell investigation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Byrne",
+      "role": "NYPD Detective / FBI Task Force",
+      "category": "law enforcement",
+      "context": "NYPD detective assigned to the FBI Child Exploitation Human Trafficking Task Force, providing updates on evidence processing including .avi files and photo reviews.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Banasiak",
+      "role": "Palm Beach Police Department Officer",
+      "category": "law enforcement",
+      "context": "PBPD officer who searched various areas of Epstein's Palm Beach residence during the evidence seizure.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Banaskiak",
+      "role": "Palm Beach Police Department Officer",
+      "category": "law enforcement",
+      "context": "PBPD officer (likely a variant spelling of Banasiak) who searched areas of Epstein's Palm Beach residence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Will",
+      "person2": "S",
+      "relationshipType": "professional coordination",
+      "description": "Will is coordinating to obtain files from S, as part of evidence handling for the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "M",
+      "person2": "Byrne",
+      "relationshipType": "professional coordination",
+      "description": "M, an AUSA, is following up with Detective Byrne on tasks including evidence review and witness identification for the Maxwell case.",
+      "strength": 4
+    },
+    {
+      "person1": "Byrne",
+      "person2": "Will",
+      "relationshipType": "professional coordination",
+      "description": "Both are law enforcement officials (NYPD/FBI task force and FBI Special Agent) collaborating on evidence collection and review for the Maxwell investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "M",
+      "person2": "N.",
+      "relationshipType": "professional coordination",
+      "description": "M (AUSA) and N. (FBI Special Agent) are working together on Maxwell case tasks, as seen in email coordination.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-20",
+      "title": "Interview of witness",
+      "description": "Interview of an individual (name redacted) conducted as part of the Maxwell investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M",
+        "N."
+      ]
+    },
+    {
+      "date": "2021-01-21",
+      "title": "Interview of witness",
+      "description": "Second interview of the same individual (name redacted) conducted as part of the Maxwell investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M",
+        "N."
+      ]
+    },
+    {
+      "date": "2021-07-06",
+      "title": "File transfer coordination",
+      "description": "Email exchange coordinating the physical handover of files from CART related to the Maxwell case from S to FBI Special Agent Will.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Will",
+        "S"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "New York Field Office (FBI)",
+    "Southern District of New York",
+    "1 St. Andrew's Plaza, New York, NY 10007",
+    "Palm Beach, Florida",
+    "Epstein's Palm Beach residence"
+  ],
+  "keyFacts": [
+    "The email chain shows ongoing coordination in July 2021 between the FBI, NYPD, and the U.S. Attorney's Office for the Southern District of New York on evidence and witness tasks for the Ghislaine Maxwell case.",
+    "Specific tasks include obtaining .avi files from CART (likely computer analysis), reviewing images for photos of a specific individual, and identifying Palm Beach Police Department witnesses to authenticate evidence seized from Jeffrey Epstein's residence.",
+    "The document references interviews of a witness conducted on January 20 and 21, 2021, for which draft FBI 302 reports were requested.",
+    "Several Palm Beach Police Department officers are listed as potential witnesses for authenticating evidence seized from Epstein's home, including those who searched specific rooms and handled electronic devices.",
+    "The correspondence indicates that evidence processing was delayed, partly due to the CART unit being occupied with the Capitol investigation."
+  ],
+  "analyzedAt": "2026-02-20T13:12:29.554Z"
+}

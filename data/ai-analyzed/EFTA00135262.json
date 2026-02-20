@@ -1,0 +1,156 @@
+{
+  "fileName": "EFTA00135262.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-16",
+  "summary": "This is an FBI 302 interview report of a Lieutenant at the Metropolitan Correctional Center (MCC) regarding the death of Jeffrey Epstein. The Lieutenant details MCC procedures for inmate checks and counts, and describes the discovery of Epstein's body, noting that the assigned officers admitted to not performing required 3:00am and 5:00am rounds and that Epstein did not have a required cellmate.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate found in his cell in the Special Housing Unit (SHU) on August 10, 2019. The interview details the discovery of his body and the failure of staff to follow procedures regarding his monitoring and cellmate assignment.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Lieutenant",
+      "role": "GS-11 Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "The interviewee, a supervisor at MCC with 17 years of experience. He describes MCC procedures, his shift on the morning of Epstein's death, and his interactions with the officers who discovered the body.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Officer Noel",
+      "role": "Corrections Officer at MCC",
+      "category": "law enforcement",
+      "context": "One of the two COs present when Epstein's body was discovered. She admitted to the Lieutenant that she and Officer Thomas did not perform the 3:00am and 5:00am rounds and stated 'EPSTEIN hung himself.' She did not write a memo about the incident and had not returned to work.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Officer Thomas",
+      "role": "Corrections Officer at MCC",
+      "category": "law enforcement",
+      "context": "One of the two COs present when Epstein's body was discovered; he was attempting to administer CPR. He was distraught, left MCC without writing a memo, and had not returned to work.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Lieutenant",
+      "role": "GS-11 Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "Another GS-11 Lieutenant who worked the shift prior to the interviewee's shift on August 10, 2019. The interviewee states this lieutenant should have documented any inmate movements, such as the removal of a cellmate.",
+      "mentionCount": 2
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the interview of the MCC Lieutenant along with an Assistant United States Attorney and an OIG Special Agent.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Present during the FBI interview of the MCC Lieutenant.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Inspector General Special Agent",
+      "role": "OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Present during the FBI interview of the MCC Lieutenant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Officer Noel",
+      "person2": "Officer Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were Corrections Officers assigned to the same shift and were together when they discovered Jeffrey Epstein's body.",
+      "strength": 4
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Officer Noel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Lieutenant was the supervising GS-11 Lieutenant who responded to the scene and later advised Officer Noel to document what happened.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Officer Thomas",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The Lieutenant was the supervising GS-11 Lieutenant who responded to the scene and took over CPR from Officer Thomas.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Lieutenant",
+      "relationshipType": "co-worker",
+      "description": "Both are GS-11 Lieutenants at MCC. The interviewee relieved the other lieutenant at the start of his shift on August 10, 2019.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Jeffrey Epstein's Death",
+      "description": "Jeffrey Epstein was found unresponsive in his cell in the Special Housing Unit (SHU) at MCC. Officers Noel and Thomas discovered him. A noose made from bed sheets was present. Epstein was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer Noel",
+        "Officer Thomas",
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Placed on Suicide Watch",
+      "description": "Jeffrey Epstein was first placed on suicide watch at MCC, as indicated by him wearing a smock.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "FBI Interview of MCC Lieutenant",
+      "description": "An FBI Special Agent, along with an AUSA and OIG Special Agent, interviewed an MCC Lieutenant regarding the circumstances surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Lieutenant",
+        "FBI Special Agent",
+        "Assistant United States Attorney",
+        "Inspector General Special Agent"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Failure to Perform Inmate Counts",
+      "description": "Officers Noel and Thomas admitted to not performing the required 3:00am and 5:00am official inmate count rounds on the night/morning leading to Epstein's discovery.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Officer Noel",
+        "Officer Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, New York",
+    "FBI-New York offices at 290 Broadway, New York, New York"
+  ],
+  "keyFacts": [
+    "Corrections Officers Noel and Thomas admitted to the supervising Lieutenant that they failed to perform the mandatory 3:00am and 5:00am inmate count rounds on the night Jeffrey Epstein died.",
+    "Epstein did not have a cellmate ('bunkie') at the time of his death, which violated MCC's 'basic 101' policy requiring inmates on suicide watch or psychological observation to have one.",
+    "The Lieutenant who discovered the scene saw a noose fabricated from bed sheets but could not recall if it was around Epstein's neck or on the ground.",
+    "Neither Officer Noel nor Officer Thomas wrote a required memo about the incident, and neither had returned to work since Epstein's death.",
+    "MCC policy requires logs of all inmate movements to be passed between shifts; the absence of a log entry about Epstein's cellmate being removed suggests a procedural failure."
+  ],
+  "analyzedAt": "2026-02-19T20:17:42.183Z"
+}

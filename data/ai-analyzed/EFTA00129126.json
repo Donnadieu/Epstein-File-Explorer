@@ -1,0 +1,169 @@
+{
+  "fileName": "EFTA00129126.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2016-11-23",
+  "summary": "This is an FBI complaint form (FD-71) summarizing a report made to the FBI's Public Access Line by attorney Thomas F. Meagher on behalf of his client, 'Jane Doe'. The report alleges that in the summer of 1994, when Doe was 13, she was sexually exploited and raped by Jeffrey E. Epstein and Donald J. Trump at parties in New York City, facilitated by a recruiter named 'Tiffany Doe'. The document details the alleged assaults and notes that civil complaints were filed in 2016.",
+  "persons": [
+    {
+      "name": "Thomas F. Meagher",
+      "role": "Complainant / Attorney",
+      "category": "legal",
+      "context": "Attorney who reported the alleged sexual exploitation of his client, Jane Doe, to the FBI's Public Access Line. He filed civil complaints on her behalf in 2016.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Victim / Client",
+      "category": "victim",
+      "context": "The alleged victim, who was 13 years old in the summer of 1994. She is reported to have been enticed to attend parties in New York City where she was sexually assaulted by Epstein and Trump.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Accused / Main Subject",
+      "category": "key figure",
+      "context": "Allegedly hosted parties where the victim was sexually exploited. He is accused of rape and sexual assault of the minor victim.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Donald J. Trump",
+      "role": "Accused / Main Subject",
+      "category": "key figure",
+      "context": "Alleged guest at Epstein's parties who is accused of sexual assault and rape of the minor victim.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Tiffany Doe",
+      "role": "Reference / Recruiter",
+      "category": "associate",
+      "context": "Allegedly recruited the victim to attend Epstein's parties with promises of modeling opportunities and payment. Instructed the victim to use the alias 'Katie Johnson'.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Thomas F. Meagher",
+      "person2": "Jane Doe",
+      "relationshipType": "attorney-client",
+      "description": "Meagher is the attorney representing Jane Doe and filed complaints on her behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Doe is alleged to have been sexually assaulted and raped by Epstein at parties he hosted.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Donald J. Trump",
+      "relationshipType": "victim-perpetrator",
+      "description": "Doe is alleged to have been sexually assaulted and raped by Trump at Epstein's parties.",
+      "strength": 5
+    },
+    {
+      "person1": "Tiffany Doe",
+      "person2": "Jane Doe",
+      "relationshipType": "recruiter-victim",
+      "description": "Tiffany recruited Jane Doe to attend Epstein's parties, provided her with a plane ticket, and instructed her to use an alias.",
+      "strength": 4
+    },
+    {
+      "person1": "Tiffany Doe",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Tiffany's job was reportedly to recruit young girls to attend Epstein's parties, knowing they would be coerced into sexual activities.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Donald J. Trump",
+      "relationshipType": "social",
+      "description": "Both are mentioned as being present at the same parties where the alleged assaults occurred. Trump is described as Epstein's guest.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1994-06",
+      "title": "Alleged Initial Assaults Begin",
+      "description": "After her 7th grade year ended, Jane Doe travels to New York City. She is recruited by Tiffany Doe and begins attending parties hosted by Jeffrey Epstein.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jane Doe",
+        "Tiffany Doe",
+        "Jeffrey E. Epstein",
+        "Donald J. Trump"
+      ]
+    },
+    {
+      "date": "1994-06 to 1994-08",
+      "title": "Series of Four Alleged Assault Parties",
+      "description": "Jane Doe attends four parties. At the first, she is asked to massage Epstein and Trump. At subsequent parties, she is forced to perform oral sex on Trump and is eventually raped by both Trump and Epstein.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jane Doe",
+        "Jeffrey E. Epstein",
+        "Donald J. Trump",
+        "Tiffany Doe"
+      ]
+    },
+    {
+      "date": "2016-04-26",
+      "title": "Doe Files Initial Complaint",
+      "description": "Jane Doe files a complaint against Epstein and Trump under the alias 'Katie Johnson'. The complaint is dismissed for being incorrectly filed as a civil rights violation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jane Doe",
+        "Jeffrey E. Epstein",
+        "Donald J. Trump"
+      ]
+    },
+    {
+      "date": "2016-06-20",
+      "title": "Meagher Refiles Complaint",
+      "description": "Attorney Thomas Meagher takes up Jane Doe's case and refiles the complaint under a different legal approach.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Thomas F. Meagher",
+        "Jane Doe"
+      ]
+    },
+    {
+      "date": "2016-07-04",
+      "title": "Report to FBI Public Access Line",
+      "description": "Thomas Meagher contacts the FBI's Public Access Line by telephone to report the alleged sexual exploitation and rape of Jane Doe.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Thomas F. Meagher"
+      ]
+    },
+    {
+      "date": "2016-09-02",
+      "title": "Scheduled Court Meeting",
+      "description": "A court order sets a meeting for scheduling regarding the refiled complaints. The complaints had not yet been served to Epstein or Trump at the time of this FBI report.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York City, NY",
+    "Princeton, NJ 08542"
+  ],
+  "keyFacts": [
+    "The FBI document records an allegation that Donald J. Trump and Jeffrey E. Epstein sexually assaulted and raped a 13-year-old girl, 'Jane Doe', at parties in New York City during the summer of 1994.",
+    "The alleged victim was recruited by a woman named 'Tiffany Doe', who promised modeling opportunities, paid her to attend parties, and instructed her to use the alias 'Katie Johnson'.",
+    "The alleged assaults escalated over four parties, culminating in vaginal rape by Trump and subsequent vaginal and anal rape by Epstein, during which the victim was also struck and threatened.",
+    "Attorney Thomas F. Meagher reported these allegations to the FBI on July 4, 2016, after having refiled a civil complaint on the victim's behalf in June 2016.",
+    "The document notes that the victim's parents were never informed of the incidents and that there is no statute of limitations for rape in New York State."
+  ],
+  "analyzedAt": "2026-02-19T18:30:51.266Z"
+}

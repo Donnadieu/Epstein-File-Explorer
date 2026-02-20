@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00148204.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email correspondence",
+  "dateOriginal": "2020-07-07",
+  "summary": "This document is a chain of FBI emails from July 2020 regarding a woman who contacted the FBI via LinkedIn, claiming to have information potentially related to the Epstein investigation due to a similar rape she experienced in Europe 20 years prior. The FBI interviewed her but determined the information was not substantive to their investigation.",
+  "persons": [
+    {
+      "name": "Ms.",
+      "role": "Potential witness/informant",
+      "category": "witness",
+      "context": "A woman who contacted the FBI via LinkedIn, reporting she was raped in Europe by a wealthy individual 20 years ago and believed it might be similar to the Epstein case. She was interviewed but her information was deemed not substantive.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is referenced as the central figure in the investigation that the potential witness thought her rape might be related to.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Ghislaine Maxwell is referenced alongside Epstein as part of the investigation the potential witness thought her experience might connect to.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ms.",
+      "person2": "Epstein",
+      "relationshipType": "potential victim-perpetrator",
+      "description": "Ms. believed her rape experience in Europe might be connected to Epstein's case due to similarities, though no direct contact was established.",
+      "strength": 1
+    },
+    {
+      "person1": "Ms.",
+      "person2": "Maxwell",
+      "relationshipType": "potential victim-perpetrator",
+      "description": "Ms. mentioned Maxwell alongside Epstein as potentially related to her experience, though she stated she never had any contact with Maxwell.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-03",
+      "title": "Woman contacts FBI via LinkedIn",
+      "description": "A woman (Ms.) contacts the FBI Assistant Director in Charge via LinkedIn, offering information about a rape she experienced 20 years ago that she believes might connect to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ms."
+      ]
+    },
+    {
+      "date": "2020-07-07",
+      "title": "FBI interview and assessment",
+      "description": "The FBI interviews Ms. and determines her information is not substantive to their Epstein investigation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ms."
+      ]
+    },
+    {
+      "date": "2000",
+      "title": "Rape in Europe",
+      "description": "Ms. reports being raped in Europe by a wealthy individual approximately 20 years prior to 2020.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Ms."
+      ]
+    }
+  ],
+  "locations": [
+    "Europe",
+    "New York",
+    "West Coast"
+  ],
+  "keyFacts": [
+    "A woman contacted the FBI in July 2020 via LinkedIn, claiming a rape she experienced in Europe 20 years earlier might be connected to the Epstein case due to similarities.",
+    "The woman stated she never had any contact with Jeffrey Epstein or Ghislaine Maxwell.",
+    "The FBI interviewed the woman but determined her information was not substantive to their Epstein investigation.",
+    "The woman reported living under provable online threat for over 20 years following the rape.",
+    "The communication shows the FBI's process for handling potential leads and witness contacts during the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-20T06:41:00.609Z"
+}

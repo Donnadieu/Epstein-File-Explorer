@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00152749.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-08-13",
+  "summary": "An email from a Department of Homeland Security Special Agent reporting that Judge Mimi Tsankov received an external email to her personal Gmail account, which was forwarded for review. The email indicates coordination between DHS and FBI JTTF regarding this communication.",
+  "persons": [
+    {
+      "name": "Mimi Tsankov",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Immigration judge assigned to 26 Federal Plaza who received an external email to her personal Gmail account while teleworking.",
+      "mentionCount": 3
+    },
+    {
+      "name": "JWM",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Department of Homeland Security Federal Protective Service Special Agent from Region 2 who sent the email reporting Judge Tsankov's receipt of an external email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "DHS FPS SA",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Department of Homeland Security Federal Protective Service Special Agent who is copied on the email and can provide additional information.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "JWM",
+      "person2": "Mimi Tsankov",
+      "relationshipType": "investigation",
+      "description": "JWM is reporting to others about an email received by Judge Tsankov, indicating some form of monitoring or security concern.",
+      "strength": 2
+    },
+    {
+      "person1": "JWM",
+      "person2": "DHS FPS SA",
+      "relationshipType": "colleague",
+      "description": "Both are DHS Federal Protective Service agents, with JWM copying DHS FPS SA on the email for coordination.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-08-13",
+      "title": "Report of External Email to Judge",
+      "description": "DHS Special Agent JWM reports that Judge Mimi Tsankov received an external email to her personal Gmail account, which was forwarded for review.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mimi Tsankov",
+        "JWM"
+      ]
+    }
+  ],
+  "locations": [
+    "26 Federal Plaza",
+    "New York"
+  ],
+  "keyFacts": [
+    "Judge Mimi Tsankov received an external email to her personal Gmail account, not her work email.",
+    "The email was reported by DHS Federal Protective Service Special Agent JWM to others, including an FBI JTTF contact.",
+    "Judge Tsankov was teleworking at the time and is an immigration judge with the Executive Office for Immigration Review."
+  ],
+  "analyzedAt": "2026-02-20T10:22:21.818Z"
+}

@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00152927.pdf",
+  "dataSet": "9",
+  "documentType": "invoice",
+  "dateOriginal": "2020-11-18",
+  "summary": "An invoice from Oakbrook Counseling Center to the law firm Edwards Pottinger LLC for six individual therapy sessions provided to an unspecified client, totaling $975. The invoice is addressed to attorneys Maria Cardenal and Maria Kelljchian and requests payment to counselor Shelley Kavanagh.",
+  "persons": [
+    {
+      "name": "Shelley Kavanagh",
+      "role": "Licensed Clinical Social Worker (LCSW)",
+      "category": "staff",
+      "context": "The therapist providing the individual therapy sessions billed in this invoice and the person to whom payment should be made.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maria Cardenal",
+      "role": "Attorney at Edwards Pottinger LLC",
+      "category": "legal",
+      "context": "One of the attorneys at the law firm billed for the therapy services, listed as a recipient of the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maria Kelljchian",
+      "role": "Attorney at Edwards Pottinger LLC",
+      "category": "legal",
+      "context": "One of the attorneys at the law firm billed for the therapy services, listed alongside Maria Cardenal as a recipient of the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maria Cardenal",
+      "person2": "Maria Kelljchian",
+      "relationshipType": "professional colleague",
+      "description": "Both are attorneys at the same law firm, Edwards Pottinger LLC, and are jointly addressed on the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Shelley Kavanagh",
+      "person2": "Maria Cardenal",
+      "relationshipType": "service provider-client",
+      "description": "Kavanagh's counseling center is billing Cardenal's law firm for therapy services, indicating a professional service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Shelley Kavanagh",
+      "person2": "Maria Kelljchian",
+      "relationshipType": "service provider-client",
+      "description": "Kavanagh's counseling center is billing Kelljchian's law firm for therapy services, indicating a professional service relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-18",
+      "title": "Therapy Services Invoice Issued",
+      "description": "Oakbrook Counseling Center issued an invoice to the law firm Edwards Pottinger LLC for six individual therapy sessions.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Shelley Kavanagh",
+        "Maria Cardenal",
+        "Maria Kelljchian"
+      ]
+    }
+  ],
+  "locations": [
+    "Oakbrook Counseling Center, 4804 West Commercial Blvd, Tamarac, FL 33319",
+    "Edwards Pottinger LLC, 425 North Andrews Ave Suite 2, Fort Lauderdale, FL 33301"
+  ],
+  "keyFacts": [
+    "The law firm Edwards Pottinger LLC was billed for six individual therapy sessions provided by Oakbrook Counseling Center in November 2020.",
+    "The therapy sessions were likely provided to a client represented by the law firm, though the client's identity is not specified in the invoice.",
+    "The invoice indicates a financial relationship between a counseling service provider and a law firm involved in the Epstein case.",
+    "The total amount billed was $975 for sessions occurring at a standard rate of $150 per hour, with one extended 1.5-hour session at $225."
+  ],
+  "analyzedAt": "2026-02-20T10:40:32.576Z"
+}

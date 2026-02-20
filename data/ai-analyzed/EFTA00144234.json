@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00144234.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2023-04-04",
+  "summary": "This document is an email chain from April 2023 between FBI agents discussing a FinCEN request to deconflict the release of Suspicious Activity Reports (SARs) related to Jeffrey Epstein. The SARs are sought for civil lawsuits against JP Morgan Chase and Deutsche Bank. The emails reveal a pending appeal related to Ghislaine Maxwell is causing the USAO to withhold information, but the FBI ultimately has no objection to the release.",
+  "persons": [
+    {
+      "name": "Amanda",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI Special Agent from the New York Field Office, Child Exploitation/Human Trafficking Desk, who responds to the deconfliction request regarding the release of SARs related to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Defendant",
+      "category": "key figure",
+      "context": "Mentioned as the subject of a pending appeal, which is causing the U.S. Attorney's Office (USAO) to withhold the release of information related to her and Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused sex offender",
+      "category": "key figure",
+      "context": "The central figure in the investigation; the civil lawsuits against the banks are based on their provision of financial services to him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Robert Trivers",
+      "role": "Individual named for deconfliction",
+      "category": "associate",
+      "context": "One of ten additional names provided by FinCEN to the FBI for review and deconfliction regarding the release of SARs.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Linked in the legal context as co-defendants; a pending appeal regarding Maxwell is affecting the release of information related to Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Robert Trivers",
+      "relationshipType": "financial",
+      "description": "Trivers is listed among names for deconfliction in SARs related to Epstein's financial transactions, suggesting a financial or transactional link.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-03-28",
+      "title": "FinCEN Deconfliction Request Initiated",
+      "description": "A Supervisory Special Agent from the FBI FinCEN Liaison Office sends an urgent request to the NY FBI to review names for deconfliction regarding the release of SARs related to Jeffrey Epstein, for use in civil lawsuits against JP Morgan and Deutsche Bank.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2023-04-04",
+      "title": "FBI Provides No Objection to SAR Release",
+      "description": "After internal discussion citing a pending appeal related to Ghislaine Maxwell, the FBI indicates it has no objection to FinCEN releasing the Suspicious Activity Reports for the civil litigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Amanda",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal District Court for the SDNY (Southern District of New York)",
+    "U.S. Virgin Islands"
+  ],
+  "keyFacts": [
+    "FinCEN requested FBI deconfliction to release SARs related to Jeffrey Epstein for civil lawsuits against JP Morgan Chase and Deutsche Bank.",
+    "The U.S. Attorney's Office (USAO) had been withholding information release due to a pending appeal regarding Ghislaine Maxwell.",
+    "The FBI's New York field office ultimately had no objection to the release of the SARs.",
+    "One of the ten additional names provided by FinCEN for deconfliction was Robert Trivers.",
+    "The civil litigation involves an unnamed Epstein victim (and a class) suing the banks, and the government of the U.S. Virgin Islands separately suing JP Morgan."
+  ],
+  "analyzedAt": "2026-02-20T03:57:34.352Z"
+}

@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00144243.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2023-04-04",
+  "summary": "This is an email chain from April 2023 between FBI FinCEN Liaison Officers and the New York FBI field office regarding an urgent deconfliction request. FinCEN seeks FBI's position on releasing Suspicious Activity Reports (SARs) related to Jeffrey Epstein's financial transactions for use in civil lawsuits against JPMorgan Chase and Deutsche Bank. The document provides background on the litigation and lists entities and one individual for review.",
+  "persons": [
+    {
+      "name": "Seamus",
+      "role": "FBI recipient of deconfliction request",
+      "category": "law enforcement",
+      "context": "Addressed in the email as the recipient who must provide a response regarding the deconfliction of names provided by FinCEN.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sex offender, subject of financial SARs",
+      "category": "key figure",
+      "context": "Central figure in the civil lawsuits against banks. The SARs in question relate to financial services provided to him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Robert Trivers",
+      "role": "Individual listed for deconfliction",
+      "category": "associate",
+      "context": "One of ten additional names provided by FinCEN for the FBI to review and potentially object to the release of information related to.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Robert Trivers",
+      "relationshipType": "financial",
+      "description": "Robert Trivers is listed among names in SARs related to Epstein's financial transactions, suggesting a financial connection referenced in the reports.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-03-28",
+      "title": "Initial Deconfliction Request",
+      "description": "FBI FinCEN Liaison Officer sends an urgent request to the NY FBI field office to review names in investigation NY-3027571 and object if necessary to the release of SARs related to Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2023-04-04",
+      "title": "Follow-up with Additional Names",
+      "description": "FBI FinCEN Liaison Officer provides 10 additional names from FinCEN, including Robert Trivers, for deconfliction review in the ongoing SAR disclosure matter.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Robert Trivers",
+        "Seamus"
+      ]
+    }
+  ],
+  "locations": [
+    "Federal District Court for the SDNY",
+    "U.S. Virgin Islands"
+  ],
+  "keyFacts": [
+    "FinCEN is seeking to release Suspicious Activity Reports (SARs) related to Jeffrey Epstein's financial transactions for use in civil lawsuits against JPMorgan Chase and Deutsche Bank.",
+    "The civil lawsuits involve an unnamed Epstein victim (and a class 'Doe') and the government of the U.S. Virgin Islands, alleging the banks provided financial services to Epstein.",
+    "The presiding judge has indicated he may order the disclosure of the SARs if FinCEN does not authorize it, creating urgency for the FBI's deconfliction review.",
+    "One of the individuals listed for deconfliction is Robert Trivers, indicating his name appears in SARs related to Epstein's financial activity.",
+    "The FBI investigation referenced is NY-3027571, which contains the names of individuals and entities to be reviewed before SAR disclosure."
+  ],
+  "analyzedAt": "2026-02-20T03:58:33.896Z"
+}

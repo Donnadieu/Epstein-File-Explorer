@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00141166.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": null,
+  "summary": "This document appears to be a compilation of FBI 302 interview summaries from Bureau of Prisons staff regarding the events surrounding Jeffrey Epstein's death by suicide at the Metropolitan Correctional Center on August 10, 2019. It details staff accounts of the night of his death, the discovery of his body, the response, and references to his prior suicide attempt on July 23, 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The inmate who died by suicide in his cell at the Metropolitan Correctional Center on August 10, 2019. The document details the events leading to his death and the response.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Tova Noel",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "Worked the midnight to 8 am shift in the SHU on August 9-10, 2019. She was present at the desk and assisted with feeding. She stated she never slept during her shift.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "Worked in the SHU on August 9-10, 2019. He discovered Epstein unresponsive in his cell during the morning feeding, cut him down, and initiated CPR.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "Epstein's former cellmate. The document references Epstein's prior suicide attempt on July 23, 2019, and statements Epstein made alleging Tartaglione tried to harm him.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates prior to Epstein's first suicide attempt on July 23, 2019. Epstein allegedly stated Tartaglione tried to beat him up.",
+      "strength": 3
+    },
+    {
+      "person1": "Tova Noel",
+      "person2": "Michael Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both were Corrections Officers working in the SHU on the night of Epstein's death. Thomas discovered Epstein and Noel was at the desk.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Thomas was the officer who discovered Epstein hanging in his cell, cut him down, and performed chest compressions.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center SHU. Officer Michael Thomas discovered him hanging from a sheet, cut him down, and initiated CPR. He was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michael Thomas",
+        "Tova Noel"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein's First Suicide Attempt",
+      "description": "Epstein was found with a sheet tied around his neck in his cell. He was revived and placed on suicide watch. He allegedly made statements that his cellmate, Nicholas Tartaglione, tried to harm him.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Night Shift Before Epstein's Death",
+      "description": "Epstein was returned to his cell in the SHU around 8 pm after attorney visits. He was alone in his cell, contrary to a requirement for a cellmate. Staff conducted counts but rounds were inconsistently performed.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tova Noel"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU)",
+    "L Tier (SHU)",
+    "10 South (Unit 10 South)"
+  ],
+  "keyFacts": [
+    "Epstein was found dead in his cell on the morning of August 10, 2019. Officer Michael Thomas discovered him hanging from a sheet and performed CPR.",
+    "Epstein was supposed to have a cellmate but was alone in his cell on the night of his death. Several staff members noted this absence but protocols for notification were not followed.",
+    "Staff accounts indicate inconsistent rounds and counts in the SHU on the night of Epstein's death, with some officers dozing off during their shifts.",
+    "Epstein had previously attempted suicide on July 23, 2019, and allegedly stated his then-cellmate, Nicholas Tartaglione, tried to harm him.",
+    "All interviewed staff believed Epstein acted alone in taking his own life and denied any knowledge of others being involved in harming him."
+  ],
+  "analyzedAt": "2026-02-20T00:19:11.284Z"
+}

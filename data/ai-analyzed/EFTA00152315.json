@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA00152315.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-10-03",
+  "summary": "Email correspondence regarding arrangements for victim Estela Vastardis to attend an FBI briefing in Florida on October 15, 2019. The email involves coordination between a trial attorney, an FBI victim services representative, and the victim's support person.",
+  "persons": [
+    {
+      "name": "Brittany",
+      "role": "Trial Attorney",
+      "category": "legal",
+      "context": "Attorney representing client Estela Vastardis, coordinating her attendance at an FBI briefing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Angela",
+      "role": "FBI Victim Services Representative",
+      "category": "law enforcement",
+      "context": "FBI representative copied on email, coordinating logistics for victim attendance at briefing.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Estela Vastardis",
+      "role": "Client/Victim",
+      "category": "victim",
+      "context": "Client of attorney Brittany, identified as a victim wishing to attend FBI briefing in Florida.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Estella",
+      "role": "Support Person",
+      "category": "other",
+      "context": "Support person for Estela Vastardis; contact info needed for office entry to the briefing.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brittany",
+      "person2": "Estela Vastardis",
+      "relationshipType": "attorney-client",
+      "description": "Brittany is the trial attorney representing client Estela Vastardis.",
+      "strength": 4
+    },
+    {
+      "person1": "Estela Vastardis",
+      "person2": "Estella",
+      "relationshipType": "social",
+      "description": "Estella is identified as a support person for victim Estela Vastardis.",
+      "strength": 3
+    },
+    {
+      "person1": "Angela",
+      "person2": "Estela Vastardis",
+      "relationshipType": "victim-perpetrator",
+      "description": "Angela, as FBI Victim Services, is coordinating briefing access for victim Estela Vastardis.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-10-15",
+      "title": "FBI Victim Briefing in Florida",
+      "description": "Scheduled FBI briefing for victims, which Estela Vastardis plans to attend with a support person.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Estela Vastardis",
+        "Angela",
+        "Estella"
+      ]
+    }
+  ],
+  "locations": [
+    "Florida"
+  ],
+  "keyFacts": [
+    "Estela Vastardis is identified as a victim in the Epstein case and is represented by attorney Brittany.",
+    "An FBI victim briefing was scheduled for October 15, 2019, in Florida.",
+    "Victims were permitted to bring a support person to the FBI briefing.",
+    "Coordination for victim attendance involved FBI Victim Services and legal representatives."
+  ],
+  "analyzedAt": "2026-02-20T09:43:59.246Z"
+}

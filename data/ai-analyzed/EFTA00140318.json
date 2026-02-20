@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00140318.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-22",
+  "summary": "Email chain from July 22, 2019, discussing concerns raised by Jeffrey Epstein's attorneys regarding his conditions at the Metropolitan Correctional Center in New York. The attorneys request better bathroom access during legal visits, promised phone calls, and the ability to eat lunch in the attorney conference room.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Client",
+      "category": "key figure",
+      "context": "The incarcerated client at the Metropolitan Correctional Center whose attorneys are advocating for improved conditions regarding bathroom access, phone calls, and meals during legal visits.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mariel Colon Miro",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from the Law Offices of Michael Lambert representing Jeffrey Epstein, who emails the Bureau of Prisons staff detailing her client's complaints about visitation conditions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Officer White",
+      "role": "Correctional Officer",
+      "category": "law enforcement",
+      "context": "MCC correctional officer who informed Epstein and his attorney that Epstein would not be allowed to use the bathroom during legal visits without specific authorization.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mariel Colon Miro",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Colon Miro is advocating on behalf of her client Epstein regarding his conditions of confinement and legal visit accommodations.",
+      "strength": 5
+    },
+    {
+      "person1": "Officer White",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "Officer White enforced rules restricting Epstein's bathroom access during legal visits, prompting the attorney's complaint.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-19",
+      "title": "Epstein's meeting regarding visitation conditions",
+      "description": "Epstein met with an unspecified individual (likely a Bureau of Prisons staff member) who told him he would be allowed to use the bathroom once every hour during attorney visits and that he would have 2 phone calls.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-21",
+      "title": "Officer White denies bathroom access",
+      "description": "Officer White told Epstein and his attorney that Epstein would not be allowed to use the bathroom during legal visits unless a Lieutenant authorized it or a specific memo was provided.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Officer White",
+        "Mariel Colon Miro"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
+    "Law Offices of Michael Lambert, 369 Lexington Ave. 2nd floor PMB#229, New York, NY 10016"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's attorneys raised formal complaints about his conditions at the Metropolitan Correctional Center in July 2019, shortly before his death.",
+    "Specific complaints included restricted bathroom access during legal visits despite a prior promise, unfulfilled promises of 2 phone calls, and inability to eat proper meals during all-day legal meetings.",
+    "The email chain shows communication between Epstein's defense team and Bureau of Prisons staff regarding inmate treatment and procedural issues.",
+    "Epstein was reportedly eating only snacks from vending machines for several days because he couldn't leave attorney conferences for meals without losing visitation time."
+  ],
+  "analyzedAt": "2026-02-19T23:25:46.078Z"
+}

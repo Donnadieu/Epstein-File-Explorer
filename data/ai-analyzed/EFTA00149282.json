@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00149282.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-22",
+  "summary": "This document is a chain of emails from June 22, 2020, between FBI personnel discussing the imminent arrest and charging of Ghislaine Maxwell. It details the planned charges, her suspected location in Massachusetts, and coordination for her arrest and subsequent investigation.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the planned arrest and indictment. The emails discuss charging her with conspiracy, enticement, transportation of minors, and perjury.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased co-conspirator",
+      "category": "key figure",
+      "context": "Mentioned in a question from a Deputy Director (DD) asking for an update on the status of the Epstein investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SSA FBI New York",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "The primary author providing updates on the Maxwell investigation, planned charges, her location, and arrest strategy.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is being investigated and charged in connection with the Epstein case, as indicated by the context of the emails discussing both.",
+      "strength": 4
+    },
+    {
+      "person1": "SSA FBI New York",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is leading the investigation and planning the arrest and indictment of Maxwell.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-22",
+      "title": "Planning for Maxwell's Arrest",
+      "description": "FBI personnel hold a conference call with SDNY to discuss moving up the arrest of Ghislaine Maxwell from August to within the next few weeks.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "SSA FBI New York",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-06-22",
+      "title": "Charges Finalized Against Maxwell",
+      "description": "The FBI lists the specific federal charges planned against Ghislaine Maxwell, including conspiracy, enticement, transportation of minors, and perjury.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-06-22",
+      "title": "Location Tracking of Maxwell",
+      "description": "The FBI states they believe Maxwell is in Massachusetts, quarantining at a boyfriend's house, and have identified two possible mobile phones for GPS tracking upon obtaining an arrest warrant.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "SSA FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "Massachusetts",
+    "New York",
+    "SDNY (Southern District of New York)"
+  ],
+  "keyFacts": [
+    "On June 22, 2020, the FBI was actively planning to arrest Ghislaine Maxwell and had moved the timeline up from August to 'within the next few weeks'.",
+    "The planned federal charges against Maxwell included conspiracy to entice, enticement, conspiracy to transport minors, transportation of minors, and two counts of perjury.",
+    "The FBI believed Maxwell was located in Massachusetts, quarantining at a boyfriend's house, and had identified two mobile phones for GPS tracking.",
+    "The communication shows high-level coordination between FBI New York and SDNY prosecutors regarding the arrest and charging strategy.",
+    "A question from a Deputy Director (DD) indicates ongoing investigative work related to Jeffrey Epstein even after his death."
+  ],
+  "analyzedAt": "2026-02-20T07:17:55.375Z"
+}

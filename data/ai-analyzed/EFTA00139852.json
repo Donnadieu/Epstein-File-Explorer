@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00139852.pdf",
+  "dataSet": "9",
+  "documentType": "medical/observation report",
+  "dateOriginal": "2019-07-28",
+  "summary": "This is a medical observation report from the Metropolitan Correctional Center documenting Jeffrey Epstein's condition and complaints on July 28, 2019, shortly before his death. It notes his psychological stability, physical complaints of numbness, and issues with his cell toilet.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate being observed; he complains of numbness in his right arm and neck, and about a running toilet in his cell.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Nurse",
+      "role": "Medical Staff",
+      "category": "staff",
+      "context": "A nurse who saw Epstein regarding his complaints of numbness.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Imeri",
+      "role": "Author/Staff",
+      "category": "staff",
+      "context": "Appears to be the author of the observation note, reporting on Epstein's status and the plan to address his cell issues.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nurse",
+      "relationshipType": "medical care",
+      "description": "Epstein was seen by a nurse for his complaints of numbness in his arm and neck.",
+      "strength": 2
+    },
+    {
+      "person1": "Imeri",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "Imeri is documenting observations and plans regarding inmate Epstein's condition and cell assignment.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-28",
+      "title": "Epstein's Medical Observation",
+      "description": "Jeffrey Epstein is observed as psychologically stable but complains of numbness in his right arm and neck. He also reports a running toilet in his cell disturbing him the previous night. He is being taken off Psych Observation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nurse",
+        "Imeri"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (implied, as Epstein's place of incarceration)",
+    "SHU (Special Housing Unit) - Pending bed space noted"
+  ],
+  "keyFacts": [
+    "On July 28, 2019, Jeffrey Epstein was assessed as 'psychologically stable' and was being taken off of Psych Observation.",
+    "Epstein complained of specific physical symptoms: numbness in his right arm and neck, and an inability to make a fist with his right hand.",
+    "Epstein reported a disruptive running toilet in his cell for 45 minutes the previous night, with a plan to move him if the issue persisted.",
+    "The document is dated just days before Epstein's death on August 10, 2019, making it a critical record of his final condition in custody."
+  ],
+  "analyzedAt": "2026-02-19T22:42:11.318Z"
+}

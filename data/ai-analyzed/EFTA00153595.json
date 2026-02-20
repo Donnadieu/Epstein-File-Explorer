@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00153595.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-30 to 2020-04-21",
+  "summary": "This document is a chain of emails primarily between an FBI Victim Specialist and staff at the New York State Office of Victim Services (OVS) regarding the processing of victim compensation claims related to the Epstein case. The emails discuss missing information (dates and county of crime) needed to process a claim for a victim, referencing an FBI 302 report and indicating the abuse started when the victim was 14.",
+  "persons": [
+    {
+      "name": "Atanasio",
+      "role": "Processing staff at OVS",
+      "category": "staff",
+      "context": "Referred to as a contact in the OVS Processing unit who can help firm up missing information (date of crime) for a victim's claim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Juliet",
+      "role": "Victim",
+      "category": "victim",
+      "context": "A victim for whom a claim application was being faxed to OVS; mentioned in the context of submitting documents for minor victims of child pornography.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Atanasio",
+      "person2": "Juliet",
+      "relationshipType": "staff-victim",
+      "description": "Atanasio, as OVS processing staff, is involved in handling the compensation claim for victim Juliet.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-21",
+      "title": "Email regarding victim's age and claim dates",
+      "description": "An email states the abuse for a victim 'started when was 14 and lasted until she was an adult,' and mentions checking the victim's FBI 302 report for dates.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2020-02-20",
+      "title": "Fax issues with victim claim documents",
+      "description": "Multiple emails discuss difficulties faxing claim applications for victims to the OVS, specifically mentioning documents for 'Juliet'.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Juliet"
+      ]
+    },
+    {
+      "date": "2020-01-30",
+      "title": "Initial outreach regarding OVS claim investigation",
+      "description": "An OVS Crime Victim Specialist reaches out to discuss a victim compensation claim and how OVS may obtain a copy of the criminal justice report relating to the dates of crime.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York State Office of Victim Services",
+    "FBI New York Office"
+  ],
+  "keyFacts": [
+    "The emails concern victim compensation claims filed with the New York State Office of Victim Services (OVS) related to the Epstein case.",
+    "A specific claim was rejected due to missing information: the county of the crime and the date of the crime.",
+    "An email from April 21, 2020, contains a key factual claim: the abuse for a victim 'started when was 14 and lasted until she was an adult,' and references checking an FBI 302 report.",
+    "The correspondence shows logistical challenges (fax issues, remote work during COVID-19) in processing these victim claims.",
+    "The claims are explicitly linked to 'Epstein victim' and 'minor victims' of 'child pornography'."
+  ],
+  "analyzedAt": "2026-02-20T11:21:26.400Z"
+}

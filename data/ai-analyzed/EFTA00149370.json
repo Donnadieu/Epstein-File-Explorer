@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00149370.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-22",
+  "summary": "This is an email chain between FBI personnel discussing the imminent arrest of Ghislaine Maxwell and the status of the Jeffrey Epstein investigation. It reveals internal planning to move up Maxwell's arrest timeline and mentions the need for follow-up travel for interviews.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of arrest planning",
+      "category": "key figure",
+      "context": "The email discusses the process of charging and arresting her, with plans potentially moving up from August to within the next few weeks.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The email references a question about the status of the Epstein investigation and what remains to be done.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SSA - FBI New York",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of two emails in the chain, providing updates on Maxwell's arrest planning and the need for follow-up travel.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is discussed in the context of the Epstein investigation, with her arrest being planned as part of that ongoing case.",
+      "strength": 4
+    },
+    {
+      "person1": "SSA - FBI New York",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is communicating plans to charge and arrest Maxwell.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-22",
+      "title": "Internal discussion of Maxwell arrest timeline",
+      "description": "FBI personnel discuss moving up the arrest of Ghislaine Maxwell from an initial August timeline to potentially within the next few weeks.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "SSA - FBI New York"
+      ]
+    },
+    {
+      "date": "2020-06-22",
+      "title": "Conference call with SDNY on Maxwell case",
+      "description": "A conference call is scheduled with the Southern District of New York to discuss accelerating Maxwell's arrest.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SSA - FBI New York"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "SDNY (Southern District of New York)"
+  ],
+  "keyFacts": [
+    "The FBI was actively planning the arrest of Ghislaine Maxwell in June 2020, considering moving it up from an initial August timeline.",
+    "Follow-up travel for interviews was anticipated after Maxwell's arrest.",
+    "Senior officials (DD) were inquiring about the status of the Jeffrey Epstein investigation and what remained to be done.",
+    "The email chain shows coordination between FBI New York and SDNY regarding the timing of Maxwell's arrest."
+  ],
+  "analyzedAt": "2026-02-20T07:25:45.850Z"
+}

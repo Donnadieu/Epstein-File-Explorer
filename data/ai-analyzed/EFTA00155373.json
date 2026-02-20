@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA00155373.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-07-08",
+  "summary": "An FBI Crisis Intake report from July 8, 2019, documenting a call from a business owner (name redacted) who provided information about Jeffrey Epstein. The caller reported that from 2006-2008, she sent her employees to Epstein's West Palm Beach home to perform manicures, pedicures, and waxing on topless young girls, who expressed discomfort but were paid well.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The central figure in the child sex trafficking investigation. The report details allegations that young girls received services at his home while topless.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unnamed Business Owner",
+      "role": "Witness/Informant",
+      "category": "witness",
+      "context": "A business owner who called the FBI to report that from 2001-2008, she owned a business in West Palm Beach and received calls from Epstein's associates to send employees to his home for services on young girls.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Unnamed Business Owner",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "service provider-client",
+      "description": "The business owner's company was hired by Epstein's associates to provide manicure/pedicure services at his home from 2006-2008.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unnamed Employees",
+      "relationshipType": "employer-service provider",
+      "description": "Epstein (via his associates) hired the business owner's employees to perform services on young girls at his home.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unnamed Young Girls",
+      "relationshipType": "victim-perpetrator",
+      "description": "The report alleges young girls were present at Epstein's home receiving services while topless and expressed discomfort.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-2008",
+      "title": "Regular service appointments at Epstein's home",
+      "description": "Every three weeks, the business owner sent 3-4 employees to Jeffrey Epstein's West Palm Beach home to perform manicures, pedicures, and waxing on young girls who were usually topless.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unnamed Business Owner",
+        "Unnamed Employees",
+        "Unnamed Young Girls"
+      ]
+    },
+    {
+      "date": "2019-07-08",
+      "title": "FBI Crisis Intake report filed",
+      "description": "A business owner called the FBI National Threat Operations Center to report information regarding Jeffrey Epstein and child sex trafficking allegations.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Unnamed Business Owner",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, FL",
+    "Jeffrey Epstein's home in West Palm Beach, FL (owned from 2001-2008)"
+  ],
+  "keyFacts": [
+    "A business owner reported to the FBI that from 2006-2008, she sent employees to Jeffrey Epstein's West Palm Beach home every three weeks to perform services on young girls.",
+    "The young girls receiving manicures, pedicures, and waxing were usually topless, which the employees found strange and the girls felt uncomfortable about.",
+    "Epstein paid well for these services, making it difficult for the business to refuse the jobs.",
+    "The business owner stated she still has the names of the employees who went to Epstein's home and could provide them upon request.",
+    "This intake report was created by the FBI on July 8, 2019, as part of the child sex trafficking investigation into Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-20T13:30:28.000Z"
+}

@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00149413.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-03",
+  "summary": "This document is an email chain from July 3, 2020, between a potential witness/victim and FBI officials regarding the Epstein investigation. The witness, who experienced a rape 20 years prior, is proactively reaching out to provide information and requests a secure interview, preferably via Zoom. FBI officials acknowledge the communication and arrange for a case agent to make contact.",
+  "persons": [
+    {
+      "name": "EIM",
+      "role": "FBI Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "FBI Special Agent in Charge of the New York Criminal Division, who is copied on the email chain and acknowledges the witness's outreach, stating a case agent will make contact.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "W",
+      "person2": "M",
+      "relationshipType": "witness-law enforcement",
+      "description": "W is a potential witness/victim providing information to FBI Assistant Director in Charge M regarding the Epstein investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "W",
+      "person2": "EIM",
+      "relationshipType": "witness-law enforcement",
+      "description": "W's communication is forwarded to and acknowledged by FBI Special Agent in Charge EIM, who is overseeing the response.",
+      "strength": 2
+    },
+    {
+      "person1": "M",
+      "person2": "EIM",
+      "relationshipType": "colleague",
+      "description": "Both are FBI officials in the New York Field Office coordinating on the response to the witness regarding the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-03",
+      "title": "Witness outreach to FBI",
+      "description": "A potential witness/victim (W) emails the FBI New York Field Office to provide information about a rape from 20 years ago that may be relevant to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "W",
+        "M",
+        "EIM"
+      ]
+    },
+    {
+      "date": "Approx. 2000",
+      "title": "Alleged rape of witness",
+      "description": "The witness (W) references experiencing a rape 20 years prior to the 2020 email and had previously attempted to seek justice.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "W"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (FBI New York Field Office)",
+    "West Coast (where witness W is located)"
+  ],
+  "keyFacts": [
+    "A potential witness/victim (W) contacted the FBI in July 2020 claiming to have information about a rape from 20 years prior that may help 'connect dots' in the Epstein investigation.",
+    "The witness expressed a preference for a Zoom interview over a phone call due to security concerns and past negative online experiences.",
+    "FBI officials from the New York Field Office, including an Assistant Director in Charge and a Special Agent in Charge, acknowledged the communication and initiated a process to have a case agent make contact.",
+    "The witness mentioned having lived under 'provable online threat for over 20 years,' though the threats had diminished by 2020.",
+    "The email chain shows the FBI's protocol for handling sensitive witness outreach during the Epstein investigation, noting security concerns preclude using platforms like LinkedIn or Zoom in some cases."
+  ],
+  "analyzedAt": "2026-02-20T07:29:26.932Z"
+}

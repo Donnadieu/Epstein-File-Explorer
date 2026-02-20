@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00134783.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Bureau of Prisons Health Services Clinical Encounter form documenting an injury assessment for inmate Jeffrey Epstein on July 23, 2019. The document records that Epstein was found in his cell with a rope around his neck, was placed on suicide watch, and shows clinical notes describing marks on his neck and his statement that he did not know what happened.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The primary subject of the medical encounter. He is assessed for injuries after being found in his cell with a rope around his neck and is placed on suicide watch.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Operational Lt.",
+      "role": "Custody Staff",
+      "category": "law enforcement",
+      "context": "Requested the injury report. The document states information about the incident came from custody staff.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Operational Lt.",
+      "relationshipType": "custodial",
+      "description": "Epstein is an inmate under the custody and supervision of the Operational Lieutenant and other prison staff.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Rope in Cell",
+      "description": "Jeffrey Epstein was found in his cell (Special Housing Unit 205-Cell 124) with a rope around his neck, sitting on the floor. He was subsequently assessed by medical staff and placed on suicide watch.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Medical Injury Assessment",
+      "description": "A clinical encounter was performed at the prison health services unit to assess Epstein's injuries. He reported not knowing what happened and had visible marks on his neck.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "NYM (Metropolitan Correctional Center, New York)",
+    "Special Housing Unit 205-Cell 124",
+    "Health Services Unit H01"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein was found in his prison cell on July 23, 2019, with a rope around his neck, sitting on the floor.",
+    "Epstein told medical staff 'I do not know. Just went to drink a little water and wake up snorting' and could not explain the marks on his neck.",
+    "The clinical assessment noted a 'circular line of erythema at the base of the neck' approximately 2 inches wide, sparing the back of the neck, with signs of friction in the front.",
+    "Epstein was immediately placed on suicide watch following this incident.",
+    "The medical record's assessment includes 'R/O self-inflicted injuries' (Rule Out self-inflicted injuries)."
+  ],
+  "analyzedAt": "2026-02-19T19:57:35.523Z"
+}

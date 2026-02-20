@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00152554.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-17 to 2020-07-08",
+  "summary": "This document is a chain of internal FBI emails from June-July 2020 regarding a request for assistance with a 'taint review' in connection with the Jeffrey Epstein case. The emails show FBI agents in New York and another office (TD) coordinating volunteer help for this high-profile investigation.",
+  "persons": [
+    {
+      "name": "M, I. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Appears to be the primary case agent or coordinator for the Epstein case taint review, sending and receiving emails to organize volunteer assistance from other FBI personnel.",
+      "mentionCount": 5
+    },
+    {
+      "name": "(TD) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent from another office (likely a field office designated 'TD') who volunteers to assist with the Epstein case taint review and coordinates logistics for accessing systems and training.",
+      "mentionCount": 7
+    },
+    {
+      "name": "M, M. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent in New York copied on the initial request for taint review assistance, part of the internal coordination.",
+      "mentionCount": 2
+    },
+    {
+      "name": "E. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Recipient of the initial email from SA M, I. (NY) (FBI) requesting help with the Epstein case taint review.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the high-profile investigation for which the FBI is conducting a taint review.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M, I. (NY) (FBI)",
+      "person2": "(TD) (FBI)",
+      "relationshipType": "professional colleague",
+      "description": "Coordinating volunteer assistance for the Epstein case taint review, with (TD) (FBI) offering help and M, I. (NY) (FBI) managing access and onboarding.",
+      "strength": 3
+    },
+    {
+      "person1": "M, I. (NY) (FBI)",
+      "person2": "E. (NY) (FBI)",
+      "relationshipType": "professional colleague",
+      "description": "M, I. (NY) (FBI) reaches out to E. (NY) (FBI) to request assistance with the Epstein case taint review.",
+      "strength": 2
+    },
+    {
+      "person1": "M, I. (NY) (FBI)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "M, I. (NY) (FBI) is the case agent or coordinator for the taint review related to the investigation of Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-17",
+      "title": "Initial Taint Review Request",
+      "description": "SA M, I. (NY) (FBI) sends an email to SA E. (NY) (FBI) requesting assistance with a taint review for the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M, I. (NY) (FBI)",
+        "E. (NY) (FBI)"
+      ]
+    },
+    {
+      "date": "2020-06-18",
+      "title": "Formal Assistance Request Circulated",
+      "description": "A formal request for volunteer assistance for the Epstein case taint review is circulated among FBI personnel, describing it as a 'unique opportunity to work on a high profile investigation.'",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M, I. (NY) (FBI)",
+        "M, M. (NY) (FBI)",
+        "(TD) (FBI)"
+      ]
+    },
+    {
+      "date": "2020-07-09",
+      "title": "Planned In-Person Coordination",
+      "description": "(TD) (FBI) plans to be at '26 fed' (likely 26 Federal Plaza, NYC FBI office) for training and to meet with M, I. (NY) (FBI) for an overview of the taint review.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "(TD) (FBI)",
+        "M, I. (NY) (FBI)"
+      ]
+    }
+  ],
+  "locations": [
+    "26 fed (likely 26 Federal Plaza, New York, NY - FBI New York Field Office)",
+    "New York Field Office",
+    "9th floor (likely of the FBI New York Field Office)"
+  ],
+  "keyFacts": [
+    "The FBI was actively seeking volunteer assistance for a 'taint review' related to the Jeffrey Epstein investigation as of June-July 2020.",
+    "The taint review was described as a 'unique opportunity to work on a high profile investigation,' indicating its significance within the FBI.",
+    "The coordination involved setting up a 'CAIR account' and access 'on the high side,' suggesting the review involved classified or sensitive systems.",
+    "The primary case agent for this aspect of the Epstein investigation is SA M, I. (NY) (FBI) from the Child Exploitation/Human Trafficking squad in New York.",
+    "The emails show internal FBI procedural steps for onboarding additional personnel onto a sensitive case."
+  ],
+  "analyzedAt": "2026-02-20T10:03:23.928Z"
+}

@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00141109.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-15",
+  "summary": "This is an FBI 302 form documenting an interview with inmate FREDERICO RANCIER, conducted on August 15, 2019, regarding his observations while housed in the Special Housing Unit (SHU) at the Metropolitan Correctional Center (MCC) in New York from July 16-26, 2019. The interview focuses on the events surrounding an incident where a fellow inmate, implied to be Jeffrey Epstein, attempted suicide by hanging in his cell in the early morning hours, and the subsequent response by correctional officers.",
+  "persons": [
+    {
+      "name": "Frederico Rancier",
+      "role": "Inmate witness",
+      "category": "witness",
+      "context": "Inmate housed in the SHU at MCC from July 16-26, 2019. He provided a detailed account of the events surrounding a fellow inmate's suicide attempt and the officers' response.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Hacinta Garcia",
+      "role": "Inmate (cellmate of witness)",
+      "category": "witness",
+      "context": "Was the cellmate of Frederico Rancier for the entire duration of his stay in the SHU at MCC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ernest Hammer",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney present during the FBI interview of Frederico Rancier at the U.S. Attorney's Office.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Frederico Rancier",
+      "person2": "Hacinta Garcia",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates in the Special Housing Unit at MCC for the period of July 16-26, 2019.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "Inmate Suicide Attempt at MCC",
+      "description": "An inmate (implied to be Jeffrey Epstein) attempted to hang himself from the ladder of his bed in the SHU at MCC around 1:20-1:30 AM. His cellmate awoke and alerted officers. The responding officers did not administer CPR. The inmate was removed on a stretcher.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Frederico Rancier"
+      ]
+    },
+    {
+      "date": "2019-08-15",
+      "title": "FBI Interview of Frederico Rancier",
+      "description": "FBI agents and an Assistant U.S. Attorney interviewed inmate Frederico Rancier at the U.S. Attorney's Office regarding his observations of the suicide attempt incident at MCC.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Frederico Rancier",
+        "Ernest Hammer"
+      ]
+    },
+    {
+      "date": "2019-07-16 to 2019-07-26",
+      "title": "Rancier's Incarceration in SHU",
+      "description": "Frederico Rancier was housed in the Special Housing Unit at the Metropolitan Correctional Center in New York.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Frederico Rancier",
+        "Hacinta Garcia"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, New York",
+    "United States Attorneys Office (USAO), Southern District of New York (SDNY)"
+  ],
+  "keyFacts": [
+    "An inmate in the MCC SHU attempted suicide by hanging around 1:20-1:30 AM. The witness (Rancier) states there had been no inmate check at midnight prior to the incident.",
+    "The responding correctional officers did not administer CPR to the inmate, who appeared blue and dead. They handled him roughly, dropping him hard onto a stretcher.",
+    "After the incident, a Lieutenant recorded the cell with a video camera, but the witness claims she initially held it pointed at her leg, not at the cell, while it was being cleaned.",
+    "The witness states that after the incident, procedures changed in the SHU: officers started bringing books, inmates didn't have to wait for phone calls, and regular checks (12am, 3am, 5am) began.",
+    "The document is an FBI 302 form, indicating the FBI was investigating the circumstances surrounding Jeffrey Epstein's initial suicide attempt in July 2019 while in federal custody."
+  ],
+  "analyzedAt": "2026-02-20T00:12:08.784Z"
+}

@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA00142353.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-20",
+  "summary": "This is an email chain between employees of SigNet Technologies/Convergint Federal Solutions regarding an order for security cameras to be shipped to the Metropolitan Correctional Center (MCC) in New York. The email is dated August 20, 2019, shortly after Jeffrey Epstein's death at the MCC.",
+  "persons": [
+    {
+      "name": "Fred Pridemore",
+      "role": "Procurement employee",
+      "category": "staff",
+      "context": "Employee of SigNet Technologies/Convergint Federal Solutions who receives and processes an order for security cameras to be shipped to the MCC New York site.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Program Manager for FBOP Contracts",
+      "category": "staff",
+      "context": "Employee of SigNet Technologies/Convergint Federal Solutions who sends the order request for security cameras to be shipped directly to the MCC New York site.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Fred Pridemore",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both are employees of SigNet Technologies/Convergint Federal Solutions, with Houston (Program Manager) sending a procurement request to Pridemore (Procurement).",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-19",
+      "title": "Camera order request for MCC New York",
+      "description": "Justin Houston sends an email to Fred Pridemore with an order for security cameras (including a specific model change) to be shipped directly to the MCC New York site.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Justin Houston",
+        "Fred Pridemore"
+      ]
+    },
+    {
+      "date": "2019-08-20",
+      "title": "Camera order confirmation for MCC New York",
+      "description": "Fred Pridemore responds to confirm the order for security cameras for the MCC New York site.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Fred Pridemore",
+        "Justin Houston"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "Beltsville, MD 20705 (SigNet Technologies/Convergint Federal Solutions office)"
+  ],
+  "keyFacts": [
+    "The document is an email chain dated August 19-20, 2019, regarding an order for security cameras to be shipped to the Metropolitan Correctional Center (MCC) in New York.",
+    "The order is placed shortly after Jeffrey Epstein's death at the MCC on August 10, 2019, suggesting possible post-incident security upgrades.",
+    "The correspondence is between employees of SigNet Technologies/Convergint Federal Solutions, a contractor for the Federal Bureau of Prisons (FBOP)."
+  ],
+  "analyzedAt": "2026-02-20T00:44:01.650Z"
+}

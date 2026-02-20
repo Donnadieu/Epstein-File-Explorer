@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00153567.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-07",
+  "summary": "This document is an email chain from February 2020 between an FBI Special Agent in New York and a 'LE Request' entity, likely a law enforcement or records custodian. The FBI is seeking information related to Maxwell, and the recipient requests more identifying details (email addresses, credit card numbers, itinerary numbers) to locate responsive records, stating they cannot proceed without it.",
+  "persons": [
+    {
+      "name": "SA FBI New York Child Exploitation/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the email on February 7, 2020, providing email addresses for identifying information in response to a request related to Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michelle",
+      "role": "Correspondent for LE Request",
+      "category": "other",
+      "context": "The author of the initial email on February 4, 2020, responding to a subpoena, requesting more identifying information (email addresses, credit card numbers, itinerary numbers) to locate records and proceed with an investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SA FBI New York Child Exploitation/Human Trafficking",
+      "person2": "Michelle",
+      "relationshipType": "professional correspondence",
+      "description": "Engaged in email correspondence regarding a subpoena and investigation related to Maxwell, with the FBI agent providing information and Michelle requesting additional details.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-01",
+      "title": "Subpoena Received",
+      "description": "A subpoena related to Maxwell was received by the LE Request entity.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SA FBI New York Child Exploitation/Human Trafficking",
+        "Michelle"
+      ]
+    },
+    {
+      "date": "2020-02-04",
+      "title": "Request for More Information",
+      "description": "Michelle from LE Request emails the FBI, stating they need more identifying information (email addresses, credit card numbers, itinerary numbers) to proceed with the investigation related to the subpoena.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Michelle",
+        "SA FBI New York Child Exploitation/Human Trafficking"
+      ]
+    },
+    {
+      "date": "2020-02-07",
+      "title": "FBI Provides Email Addresses",
+      "description": "An FBI Special Agent from New York responds to the request, providing email addresses for identifying information.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SA FBI New York Child Exploitation/Human Trafficking",
+        "Michelle"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The FBI's Child Exploitation/Human Trafficking task force in New York was actively investigating Maxwell as of February 2020.",
+    "A subpoena was issued and received on February 1, 2020, related to Maxwell.",
+    "The entity holding records (LE Request) required specific identifiers like email addresses, credit card numbers, or itinerary numbers to locate responsive records, indicating the investigation sought financial or travel documentation.",
+    "The correspondence shows procedural hurdles in obtaining records, with a 30-day deadline set for the FBI to provide additional information or the matter would be considered closed."
+  ],
+  "analyzedAt": "2026-02-20T11:18:20.133Z"
+}

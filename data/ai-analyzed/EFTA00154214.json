@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00154214.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-09",
+  "summary": "This document is an email chain among FBI agents in the New York Field Office coordinating logistics for Ghislaine Maxwell and her defense team to review evidence at the courthouse from April 13-15, 2021. It details scheduling, security, and the roles of agents and an Assistant U.S. Attorney.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused in the case; her defense team is scheduled to review evidence at the courthouse under FBI supervision.",
+      "mentionCount": 4
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Will be present for all three days of evidence review and will meet agents at the courthouse.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Will be present all three days, is familiar with the case, and agents are encouraged to reach out to her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "AUSA",
+      "relationshipType": "legal",
+      "description": "AUSA is the prosecutor overseeing the evidence review process for Maxwell's case.",
+      "strength": 3
+    },
+    {
+      "person1": "FBI agents",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "custodial",
+      "description": "FBI agents are responsible for pulling Maxwell from Marshal custody, monitoring her, and escorting her during the evidence review.",
+      "strength": 4
+    },
+    {
+      "person1": "SOS",
+      "person2": "FBI agents",
+      "relationshipType": "colleague",
+      "description": "SOS is an FBI agent familiar with the case and is available to assist other agents during the evidence review.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-13",
+      "title": "Start of evidence review",
+      "description": "Ghislaine Maxwell and her defense team begin reviewing evidence at the courthouse, with FBI agents providing security and monitoring.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "AUSA",
+        "FBI agents"
+      ]
+    },
+    {
+      "date": "2021-04-13 to 2021-04-15",
+      "title": "Three-day evidence review",
+      "description": "Scheduled evidence review sessions from 9:00 AM to 4:30 PM each day at the courthouse, involving Maxwell, her defense team, AUSA, and FBI agents.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "AUSA",
+        "FBI agents"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)",
+    "courthouse (proffer room area on the 5th floor)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense team was scheduled to review evidence from April 13-15, 2021, under FBI supervision.",
+    "FBI agents were responsible for escorting Maxwell from Marshal custody, monitoring her, and ensuring security during the evidence review.",
+    "An Assistant U.S. Attorney (AUSA) was present for all three days of the evidence review.",
+    "The evidence was transported to and from the courthouse by an evidence unit, with no transport responsibility for the monitoring agents.",
+    "Multiple FBI agents from Squad C-20 were coordinated to assist on different days, indicating the logistical scale of the operation."
+  ],
+  "analyzedAt": "2026-02-20T12:05:05.594Z"
+}

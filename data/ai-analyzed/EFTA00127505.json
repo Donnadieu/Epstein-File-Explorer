@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00127505.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-09-01",
+  "summary": "Email chain between a DOJ OIG Special Agent and Justin Houston of SigNet Technologies regarding the failure of video recording drives from the Metropolitan Correctional Center (MCC) in August 2019, which occurred around the time of Jeffrey Epstein's death. The correspondence seeks technical details and contact information for FBI personnel involved in examining the drives.",
+  "persons": [
+    {
+      "name": "Justin Houston",
+      "role": "Program Manager, FBOP Contracts, Convergint Federal SigNet Technologies",
+      "category": "staff",
+      "context": "Responds to a DOJ OIG Special Agent's inquiry about the failure of video recording drives from the MCC in August 2019, providing technical details and contact information for FBI personnel.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "FBI agent who worked on the case involving the failed MCC recording drives; his contact information is provided by Justin Houston.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeff Cranor",
+      "role": "Technical specialist (likely with SigNet Technologies or FBI Comm Tech)",
+      "category": "staff",
+      "context": "Worked with Jeff McKenzie on the case involving the failed MCC recording drives; his contact information is provided by Justin Houston.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Justin Houston",
+      "person2": "Jeff McKenzie",
+      "relationshipType": "professional",
+      "description": "Houston provided McKenzie's contact information and indicates McKenzie was the FBI agent he worked with on the MCC drive failure case.",
+      "strength": 3
+    },
+    {
+      "person1": "Justin Houston",
+      "person2": "Jeff Cranor",
+      "relationshipType": "professional",
+      "description": "Houston indicates Cranor worked on the MCC drive failure case and provides his contact information.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cranor",
+      "relationshipType": "professional",
+      "description": "Both worked on the case involving the failed MCC recording drives with the Comm Tech onsite.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08",
+      "title": "MCC Video Recording Drive Failures",
+      "description": "Two hard drives in the video recording system at the Metropolitan Correctional Center (MCC) failed, causing the RAID array to fail and resulting in loss of recording capability. The second drive failed on August 10th, 2019.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Justin Houston",
+        "Jeff McKenzie",
+        "Jeff Cranor"
+      ]
+    },
+    {
+      "date": "2021-08-31",
+      "title": "Houston's Response to OIG Inquiry",
+      "description": "Justin Houston responds to a DOJ OIG Special Agent's inquiry, explaining a delay due to an FBI non-disclosure agreement and providing details about the MCC drive failures and contact information.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Justin Houston"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Quantico (likely FBI Academy or lab)",
+    "One Battery Park Plaza, 29th Floor, New York, NY 10004 (DOJ OIG New York Field Office)",
+    "12300 Kiln Court, Suite E, Beltsville, MD 20705 (SigNet Technologies address)"
+  ],
+  "keyFacts": [
+    "Two hard drives in the MCC's video recording system failed in August 2019, with the second failure on August 10th causing a complete loss of recording capability.",
+    "The drive failures occurred around the time of Jeffrey Epstein's death in MCC custody on August 10, 2019, making them a subject of investigation.",
+    "Justin Houston of SigNet Technologies had to obtain clearance from the FBI due to a non-disclosure agreement before responding to the DOJ OIG's inquiry.",
+    "The DOJ Office of the Inspector General is investigating the circumstances of the MCC recording system failures, seeking technical reports and communications."
+  ],
+  "analyzedAt": "2026-02-19T17:34:30.118Z"
+}

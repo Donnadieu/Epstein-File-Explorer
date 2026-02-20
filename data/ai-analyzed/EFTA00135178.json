@@ -1,0 +1,153 @@
+{
+  "fileName": "EFTA00135178.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-21",
+  "summary": "This is an FBI 302 interview report of a Bureau of Prisons Lieutenant conducted on August 21, 2019, regarding the circumstances surrounding Jeffrey Epstein's incarceration and death at the Metropolitan Correctional Center (MCC) in New York. The lieutenant describes his duties, the events of August 9-10, 2019, and his limited interactions with Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate/Accused",
+      "category": "key figure",
+      "context": "The high-profile inmate at the Metropolitan Correctional Center (MCC) whose death is the subject of the investigation. The lieutenant observed his intake, knew he had frequent legal visits, and was involved after his death.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Captain",
+      "role": "Supervisor",
+      "category": "law enforcement",
+      "context": "The supervisor of the interviewed lieutenant at the Metropolitan Correctional Center.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lieutenant",
+      "role": "SHU Lieutenant",
+      "category": "law enforcement",
+      "context": "The Special Housing Unit (SHU) lieutenant who would have been responsible for enforcing the roommate rule for Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lieutenant",
+      "role": "Lieutenant",
+      "category": "law enforcement",
+      "context": "A lieutenant who worked the 2PM to 10PM shift on August 9, 2019, and was the operations lieutenant that evening.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Reyes",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Epstein's former roommate at MCC who had left, leaving Epstein without a required cellmate.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Officer Thomas",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "A corrections officer known to the interviewed lieutenant for a few years, who was on scene at the hospital after Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Officer Noel",
+      "role": "Corrections Officer",
+      "category": "law enforcement",
+      "context": "A newer corrections officer known to the interviewed lieutenant, who was on scene at the hospital after Epstein's death.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was Epstein's former roommate/cellmate in the Special Housing Unit (SHU) at MCC before leaving.",
+      "strength": 2
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Captain",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Captain was the supervisor of the interviewed lieutenant.",
+      "strength": 3
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Lieutenant",
+      "relationshipType": "colleague",
+      "description": "Both were lieutenants at MCC; one was the operations lieutenant and the other the activities lieutenant on the evening of August 9, 2019.",
+      "strength": 2
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Officer Thomas",
+      "relationshipType": "colleague",
+      "description": "The interviewed lieutenant knew Officer Thomas for a few years as a fellow corrections officer.",
+      "strength": 2
+    },
+    {
+      "person1": "Lieutenant",
+      "person2": "Officer Noel",
+      "relationshipType": "colleague",
+      "description": "The interviewed lieutenant knew Officer Noel as a newer corrections officer.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Final Night in Custody",
+      "description": "The interviewed lieutenant worked the 2PM to 10PM shift at MCC. Epstein was in the SHU without a required roommate, a fact the lieutenant was unaware of at the time.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lieutenant",
+        "Lieutenant",
+        "Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Discovery of Epstein's Death",
+      "description": "At approximately 6:30-6:45 AM, the lieutenant received a call from Lt. informing him Epstein had attempted suicide and to report to the hospital. At the hospital, escorting staff informed him Epstein had died.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lieutenant",
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-08-21",
+      "title": "FBI Interview of BOP Lieutenant",
+      "description": "The FBI and OIG interviewed a BOP lieutenant regarding Epstein's incarceration and death at the MCC.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lieutenant"
+      ]
+    },
+    {
+      "date": "2003",
+      "title": "Past MCC Suicide",
+      "description": "The lieutenant recalled a suicide taking place at MCC in 2003.",
+      "category": "death",
+      "significance": 1,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "United States Attorney's Office, 1 Saint Andrews Plaza, New York, New York",
+    "Metropolitan Correctional Center (MCC), New York",
+    "Federal Correctional Institution (FCI) Fort Dix"
+  ],
+  "keyFacts": [
+    "The interviewed lieutenant was on duty the night Jeffrey Epstein was brought to MCC and observed his intake processing.",
+    "Epstein was required to have a roommate in the Special Housing Unit (SHU), but his former roommate Reyes had left, leaving him alone on the night of August 9, 2019. The lieutenant stated he was unaware of this at the time.",
+    "The lieutenant learned of Epstein's suicide attempt via a phone call from another lieutenant on the morning of August 10, 2019, and was informed of his death at the hospital.",
+    "The lieutenant advised his officers and hospital security not to speak to anyone about Epstein's death and to direct questions to the prison public relations officer.",
+    "The lieutenant stated he was not aware of any destruction of records related to the incident."
+  ],
+  "analyzedAt": "2026-02-19T20:13:15.046Z"
+}

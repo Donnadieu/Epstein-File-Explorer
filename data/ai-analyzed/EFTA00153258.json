@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00153258.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-22",
+  "summary": "Email exchange between law enforcement personnel regarding scheduling a discovery call for the Maxwell/Epstein case. The sender, a former investigator now working as a legal instructor, provides availability to discuss case information with AUSAs.",
+  "persons": [
+    {
+      "name": "AUSAs",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Assistant U.S. Attorneys who requested a call to ask questions and ensure no lingering case information exists.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "JE",
+      "person2": "GM",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named together in the 'Maxwell/Epstein case' as subjects of the investigation and discovery deadlines.",
+      "strength": 3
+    },
+    {
+      "person1": "AUSAs",
+      "person2": "JE",
+      "relationshipType": "legal",
+      "description": "AUSAs are involved in the prosecution of JE as part of the Maxwell/Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "AUSAs",
+      "person2": "GM",
+      "relationshipType": "legal",
+      "description": "AUSAs are involved in the prosecution of GM as part of the Maxwell/Epstein case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-22",
+      "title": "Discovery call scheduling",
+      "description": "Email exchange to schedule a discovery call between law enforcement personnel and AUSAs regarding the Maxwell/Epstein case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "AUSAs"
+      ]
+    },
+    {
+      "date": "2020-10-23",
+      "title": "Proposed discovery call",
+      "description": "A call is proposed for 11am to discuss case information with AUSAs.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "AUSAs"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm"
+  ],
+  "keyFacts": [
+    "The email discusses scheduling a discovery call for the Maxwell/Epstein case, indicating ongoing legal proceedings in October 2020.",
+    "The sender previously worked on the initial and subsequent investigations of the case and is now a legal instructor.",
+    "The purpose of the call is for AUSAs to ask questions and ensure no lingering case information exists."
+  ],
+  "analyzedAt": "2026-02-20T10:55:41.395Z"
+}

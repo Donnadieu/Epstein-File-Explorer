@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00147183.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-11",
+  "summary": "This document is an email chain from July 11, 2019, between FBI personnel and a Wall Street Journal reporter. The reporter, Nicole Hong, requests comment on a story about Ghislaine Maxwell, citing a sworn affidavit from an alleged victim who claims to have reported a 1996 sexual assault by Maxwell and Jeffrey Epstein to the FBI and NYPD, with no action taken. The FBI declines to comment.",
+  "persons": [
+    {
+      "name": "Nicole Hong",
+      "role": "Reporter",
+      "category": "other",
+      "context": "A Wall Street Journal reporter who emails the FBI requesting comment on a story about Ghislaine Maxwell and Jeffrey Epstein, citing a sworn affidavit from an alleged victim.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as a 'top lieutenant' for Jeffrey Epstein and accused in a sworn affidavit of sexually assaulting an alleged victim in 1996 in Ohio alongside Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Named alongside Ghislaine Maxwell in a sworn affidavit alleging he sexually assaulted a victim in 1996 in Ohio.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is described as a 'top lieutenant' for Epstein, and both are accused together in a sworn affidavit of sexually assaulting an alleged victim in 1996.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Nicole Hong",
+      "relationshipType": "subject-reporter",
+      "description": "Nicole Hong is a reporter contacting the FBI for comment on a story about allegations against Ghislaine Maxwell.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicole Hong",
+      "relationshipType": "subject-reporter",
+      "description": "Nicole Hong is a reporter contacting the FBI for comment on a story about allegations involving Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "1996",
+      "title": "Alleged Sexual Assault in Ohio",
+      "description": "A sworn affidavit from an alleged victim states she was sexually assaulted by Ghislaine Maxwell and Jeffrey Epstein in a mansion in Ohio.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "Report to FBI and NYPD",
+      "description": "The alleged victim reported the 1996 sexual assault incident to the FBI and NYPD. According to the victim, the FBI took no action against Maxwell or Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-11",
+      "title": "Wall Street Journal Story Inquiry",
+      "description": "Reporter Nicole Hong contacts the FBI requesting comment on a story about Ghislaine Maxwell and the 1996 allegations. The FBI declines to comment.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Nicole Hong",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Ohio",
+    "Mansion in Ohio (unspecified location)"
+  ],
+  "keyFacts": [
+    "A sworn affidavit from an alleged victim accuses Ghislaine Maxwell and Jeffrey Epstein of sexually assaulting her in 1996 in a mansion in Ohio.",
+    "The alleged victim reported the 1996 incident to both the FBI and NYPD, and claims the FBI took no action against Maxwell or Epstein.",
+    "In July 2019, a Wall Street Journal reporter contacted the FBI for comment on these allegations, but the FBI declined to comment.",
+    "The document is an internal FBI email chain forwarding a media inquiry, indicating the allegations were being reported in major news media."
+  ],
+  "analyzedAt": "2026-02-20T05:11:16.652Z"
+}

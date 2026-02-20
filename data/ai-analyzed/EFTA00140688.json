@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00140688.pdf",
+  "dataSet": "9",
+  "documentType": "medical communication",
+  "dateOriginal": "2019-07-24",
+  "summary": "This document is an email chain from July 24, 2019, regarding the medication administration for an inmate on Psychological Observation at the Metropolitan Correctional Center (MCC) in New York. The communication involves a U.S. Public Health Service Chief Pharmacist discussing the inmate's claim of not receiving his constipation medication (docusate sodium/Colace).",
+  "persons": [
+    {
+      "name": "CAPT",
+      "role": "U.S. Public Health Service Chief Pharmacist",
+      "category": "staff",
+      "context": "The Chief Pharmacist at MCC New York who is communicating about an inmate's medication issue, specifically regarding docusate sodium (Colace).",
+      "mentionCount": 3
+    },
+    {
+      "name": "Duty PA",
+      "role": "Duty Physician Assistant",
+      "category": "staff",
+      "context": "Mentioned as someone who could be advised to ensure the inmate receives medication while on Psychological Observation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "CAPT",
+      "person2": "RN",
+      "relationshipType": "colleague",
+      "description": "CAPT states they will talk to RN about the inmate's medication, indicating a working relationship within the medical staff.",
+      "strength": 2
+    },
+    {
+      "person1": "CAPT",
+      "person2": "MD",
+      "relationshipType": "colleague",
+      "description": "CAPT mentions they can ask MD for a new prescription, indicating a professional medical collaboration.",
+      "strength": 2
+    },
+    {
+      "person1": "CAPT",
+      "person2": "Duty PA",
+      "relationshipType": "colleague",
+      "description": "CAPT suggests advising the Duty PA to ensure medication administration, indicating a chain of medical responsibility.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-12",
+      "title": "Medication filled",
+      "description": "A 30-day supply of docusate sodium 100mg (Colace) was filled for the inmate.",
+      "category": "medical",
+      "significance": 2,
+      "personsInvolved": [
+        "CAPT"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Medication inquiry",
+      "description": "Communication occurs regarding an inmate on Psychological Observation who claims he has not been receiving his constipation medication.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "CAPT",
+        "RN",
+        "MD",
+        "Duty PA"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "The document is dated July 24, 2019, and concerns medical care at the Metropolitan Correctional Center (MCC) in New York.",
+    "The subject is an inmate on Psychological Observation who reported not receiving his constipation medication, docusate sodium (Colace).",
+    "A 30-day supply of the medication was reportedly filled on July 12, 2019.",
+    "The communication involves U.S. Public Health Service medical staff, including a Chief Pharmacist (CAPT), discussing how to ensure the inmate receives his medication."
+  ],
+  "analyzedAt": "2026-02-19T23:45:40.818Z"
+}

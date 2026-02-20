@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA00147273.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-07-26",
+  "summary": "This is an internal FBI email chain discussing the coordination of victim lists between the Miami (MM) and New York (NY) Epstein cases. It involves the transfer of identified victims from the Miami case's Victim Notification System (VNS) to the New York case, with FBI personnel coordinating the process.",
+  "persons": [
+    {
+      "name": "(NY) (FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "An FBI agent from the New York case who is coordinating the import of the Miami victim list and wants their Victim Specialist (VS) to handle the coordination.",
+      "mentionCount": 3
+    },
+    {
+      "name": "(DO) (FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "An FBI agent who forwarded the Miami victim list from the Victim Notification System to the New York case agent and offered assistance with importing the list.",
+      "mentionCount": 2
+    },
+    {
+      "name": "(CID) (FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "The primary recipient of the forwarded email containing the Miami victim list, likely a Criminal Investigative Division agent.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "(NY) (FBI)",
+      "person2": "(DO) (FBI)",
+      "relationshipType": "professional collaboration",
+      "description": "Collaborating on transferring victim information between the Miami and New York Epstein investigations.",
+      "strength": 3
+    },
+    {
+      "person1": "(DO) (FBI)",
+      "person2": "(CID) (FBI)",
+      "relationshipType": "professional communication",
+      "description": "(DO) (FBI) is forwarding victim list information to (CID) (FBI) for the New York case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-26",
+      "title": "Coordination of Epstein Victim Lists",
+      "description": "FBI agents from the Miami and New York Epstein cases communicate via email to coordinate the transfer of identified victim information from the Miami case's Victim Notification System to the New York case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "(NY) (FBI)",
+        "(DO) (FBI)",
+        "(CID) (FBI)"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The FBI maintained separate victim lists for the Miami (MM) and New York (NY) Epstein investigations, indicating multiple jurisdictional cases.",
+    "There was an active effort in July 2019 to consolidate victim information from the Miami case into the New York case's system.",
+    "The communication highlights the use of a Victim Notification System (VNS) to track and communicate with victims in the Epstein case.",
+    "The email chain demonstrates internal FBI coordination and sensitivity around handling victim Personally Identifiable Information (PII)."
+  ],
+  "analyzedAt": "2026-02-20T05:20:25.986Z"
+}

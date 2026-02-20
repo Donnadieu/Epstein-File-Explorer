@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00129199.pdf",
+  "dataSet": "9",
+  "documentType": "FBI administrative communication",
+  "dateOriginal": "2020-12-23",
+  "summary": "This FBI administrative communication from the New York Operations Command documents receipt of an international mail letter from the UK addressed to the NYO FBI. The letter includes a copy of a US District Court ruling dismissing allegations against Ghislaine Maxwell and Jeffrey Epstein for lack of jurisdiction, and requests FBI assistance in appealing the action. The sender also submitted a statement about a sexual encounter with Maxwell and photos of items received in exchange for silence.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant in civil case",
+      "category": "key figure",
+      "context": "Named in a US District Court Southern District of New York civil judgment; allegations of rape in the UK were dismissed for lack of subject-matter jurisdiction.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant in civil case",
+      "category": "key figure",
+      "context": "Named alongside Ghislaine Maxwell in a US District Court Southern District of New York civil judgment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Both named as defendants in the same civil judgment case (1:20-cv-06928-LLS).",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-19",
+      "title": "Court ruling dismissing allegations",
+      "description": "US District Court Southern District of New York ruling in Case 1:20-cv-06928-LLS dismissed allegations of being raped by Ghislaine Maxwell in the UK for lack of subject-matter jurisdiction.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-12-23",
+      "title": "FBI receives international mail letter",
+      "description": "NYOC receives an international mail letter from the UK addressed to the NYO FBI, containing the court ruling and a request for FBI assistance in appealing the action.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "United Kingdom",
+    "New York"
+  ],
+  "keyFacts": [
+    "A US District Court ruling dated November 19, 2020, dismissed allegations of rape against Ghislaine Maxwell in the UK for lack of subject-matter jurisdiction.",
+    "An individual from the UK sent the ruling to the FBI, requesting assistance in appealing the dismissal and submitted a statement of a sexual encounter with Maxwell.",
+    "The sender also provided photos of items they received in exchange for their silence regarding the alleged encounter.",
+    "The FBI's Legat London and IA (likely International Affairs or Internal Affairs) were added to the communication for awareness.",
+    "The document indicates ongoing international interest and attempts to seek legal recourse related to allegations against Maxwell and Epstein."
+  ],
+  "analyzedAt": "2026-02-19T18:38:49.477Z"
+}

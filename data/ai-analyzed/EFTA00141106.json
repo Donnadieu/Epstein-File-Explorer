@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA00141106.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-12-20",
+  "summary": "This is an FBI FD-302 form documenting a proffer interview conducted with an individual named PEREZ at the Southern District of New York on August 21, 2019. The interview was attended by two Assistant U.S. Attorneys and two law enforcement officers, and the information relates to an investigation.",
+  "persons": [
+    {
+      "name": "PEREZ",
+      "role": "Proffer Interview Subject",
+      "category": "witness",
+      "context": "Individual interviewed pursuant to a Proffer Agreement at the SDNY, providing information relating to an investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the interviewing investigators present at the proffer interview with PEREZ.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "FBI Task Force Officer",
+      "category": "law enforcement",
+      "context": "FBI Task Force Officer present at the proffer interview with PEREZ.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney (AUSA)",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "One of two AUSAs present and taking notes at the proffer interview with PEREZ.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "PEREZ",
+      "person2": "Assistant United States Attorney (AUSA)",
+      "relationshipType": "legal",
+      "description": "PEREZ was interviewed by AUSAs as part of a proffer agreement, indicating a formal legal/prosecutorial interaction.",
+      "strength": 4
+    },
+    {
+      "person1": "PEREZ",
+      "person2": "FBI Special Agent",
+      "relationshipType": "investigative",
+      "description": "FBI Special Agent was one of the interviewing investigators of PEREZ during the proffer session.",
+      "strength": 4
+    },
+    {
+      "person1": "PEREZ",
+      "person2": "Detective",
+      "relationshipType": "investigative",
+      "description": "FBI Task Force Officer Detective was present as an interviewing investigator during PEREZ's proffer session.",
+      "strength": 4
+    },
+    {
+      "person1": "FBI Special Agent",
+      "person2": "Detective",
+      "relationshipType": "colleague",
+      "description": "Both were law enforcement officers present as interviewing investigators at the same proffer interview.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney (AUSA)",
+      "person2": "FBI Special Agent",
+      "relationshipType": "colleague",
+      "description": "Both were part of the investigative/prosecutorial team conducting the proffer interview with PEREZ.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-21",
+      "title": "Proffer Interview of PEREZ",
+      "description": "An individual named PEREZ was interviewed pursuant to a Proffer Agreement at the Southern District of New York, providing information relating to an investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "PEREZ",
+        "Assistant United States Attorney (AUSA)",
+        "FBI Special Agent",
+        "Detective"
+      ]
+    },
+    {
+      "date": "2019-12-20",
+      "title": "FD-302 Document Drafted",
+      "description": "The FBI FD-302 form documenting the August 21, 2019 proffer interview was drafted.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Southern District of New York (SDNY), 5D0 Pearl Street, New York, New York",
+    "New York, New York, United States"
+  ],
+  "keyFacts": [
+    "An individual named PEREZ participated in a proffer interview with prosecutors and FBI agents on August 21, 2019.",
+    "The interview was conducted under a formal Proffer Agreement, indicating cooperation with an investigation.",
+    "The FD-302 form was drafted on December 20, 2019, documenting the earlier interview.",
+    "The document is part of FBI case file 90A-NY-3151227.",
+    "The document contains a standard FBI disclaimer that it is the property of the FBI and not for distribution outside the receiving agency."
+  ],
+  "analyzedAt": "2026-02-20T00:11:29.592Z"
+}

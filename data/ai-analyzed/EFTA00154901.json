@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00154901.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-09-13",
+  "summary": "This document is an email chain from September 2021 regarding a discovery request from the FBI Victim Services Division to its staff. The request seeks contact information for victims, witnesses, and their attorneys involved in the Jeffrey Epstein/Ghislaine Maxwell investigation (case 50D-NY-3027571) for an upcoming trial scheduled for November 29, 2021. It reveals internal FBI procedures for gathering victim communications for discovery purposes.",
+  "persons": [
+    {
+      "name": "Gloria Allred",
+      "role": "Attorney representing victims",
+      "category": "legal",
+      "context": "Identified as the attorney for victims in the Epstein/Maxwell case; her email address is requested as part of the discovery process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the New York investigation referenced in the discovery request; his case is scheduled for trial.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-defendant",
+      "category": "key figure",
+      "context": "Co-subject of the New York investigation referenced in the discovery request; her case is scheduled for trial alongside Epstein's.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gloria Allred",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "legal",
+      "description": "Allred is identified as an attorney representing victims in the criminal case against Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Gloria Allred",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "legal",
+      "description": "Allred is identified as an attorney representing victims in the criminal case against Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as subjects of the same New York investigation and scheduled for trial.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-29",
+      "title": "Epstein/Maxwell Trial Date",
+      "description": "The trial for the New York investigation of Jeffrey Epstein and Ghislaine Maxwell (case 50D-NY-3027571) is scheduled to begin.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-09-10",
+      "title": "Discovery Request Initiated",
+      "description": "The FBI Victim Program Management Unit sends a request to Victim Specialists for contact information of victims, witnesses, and attorneys involved in the Epstein/Maxwell case for discovery purposes.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-09-13",
+      "title": "Discovery Deadline",
+      "description": "The deadline for Victim Specialists to provide requested victim/witness/attorney contact information to the FBI Program Manager.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Los Angeles Field Office",
+    "New York"
+  ],
+  "keyFacts": [
+    "The FBI Victim Services Division was actively gathering contact information for victims, witnesses, and their attorneys in the Epstein/Maxwell case for discovery ahead of a November 2021 trial.",
+    "Attorney Gloria Allred is specifically named as representing victims in the case, with her email address being part of the requested discovery.",
+    "The document references a specific FBI case number for the New York investigation: 50D-NY-3027571.",
+    "The communication reveals internal FBI protocols for collecting victim communications (texts, emails, voicemails) to be turned over to the U.S. Attorney's Office (USAO).",
+    "The email chain indicates that some Victim Specialists had met with victims in person but had no electronic communication with them, highlighting the methods of victim contact."
+  ],
+  "analyzedAt": "2026-02-20T12:51:18.169Z"
+}

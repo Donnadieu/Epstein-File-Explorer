@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA00154711.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2025-03-20",
+  "summary": "An email from an FBI employee (sender redacted) to multiple recipients (likely FBI agents) regarding potential contact from the Office of the Deputy Attorney General (ODAG) about the Epstein case. The email indicates ODAG may reach out to discuss evidence and mentions possible travel to DC or phone calls.",
+  "persons": [
+    {
+      "name": "MIN IMIE",
+      "role": "Email sender (likely FBI employee)",
+      "category": "law enforcement",
+      "context": "Appears as the sender of the email, relaying information from the A/SAC about potential ODAG contact regarding the Epstein case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A/SAC",
+      "role": "Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "Provided a heads-up to the email sender that the ODAG may be reaching out to case participants for Epstein to discuss evidence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "NYO EM",
+      "role": "New York Office Evidence Management or personnel",
+      "category": "law enforcement",
+      "context": "Passed the phone numbers of the email recipients to the ODAG contact.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MIN IMIE",
+      "person2": "A/SAC",
+      "relationshipType": "colleague",
+      "description": "MIN IMIE relays information received from the A/SAC to the email recipients.",
+      "strength": 3
+    },
+    {
+      "person1": "MIN IMIE",
+      "person2": "NYO EM",
+      "relationshipType": "colleague",
+      "description": "NYO EM provided contact information for the recipients to the ODAG, as mentioned in MIN IMIE's email.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2025-03-20",
+      "title": "Potential ODAG Contact Notification",
+      "description": "An FBI employee emails case participants to inform them that the Office of the Deputy Attorney General may contact them to discuss evidence in the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "MIN IMIE",
+        "A/SAC"
+      ]
+    }
+  ],
+  "locations": [
+    "DC",
+    "New York Office (NYO)"
+  ],
+  "keyFacts": [
+    "The Office of the Deputy Attorney General (ODAG) was potentially reaching out to FBI case participants in the Epstein investigation as of March 2025.",
+    "The contact was for the purpose of discussing evidence, and an evidence transport team was also included in the notification.",
+    "Phone numbers of the recipients were passed by 'NYO EM' (New York Office Evidence Management or similar).",
+    "The email suggests ongoing high-level DOJ interest or review of the Epstein case evidence years after Epstein's death.",
+    "Multiple names/contacts (the ODAG contact, and another FBI point of contact) are redacted in the email text."
+  ],
+  "analyzedAt": "2026-02-20T12:46:09.690Z"
+}

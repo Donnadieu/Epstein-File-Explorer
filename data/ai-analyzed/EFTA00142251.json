@@ -1,0 +1,135 @@
+{
+  "fileName": "EFTA00142251.pdf",
+  "dataSet": "9",
+  "documentType": "OIG interview transcript",
+  "dateOriginal": "2022-04-07",
+  "summary": "This is a transcript of a DOJ Office of the Inspector General interview with a Federal Bureau of Prisons electronics technician (referred to as MR. I.) conducted on April 7, 2022. The interview focuses on the camera system at the Metropolitan Correctional Center (MCC) New York around the time of Jeffrey Epstein's death, including issues with camera recording, storage of new camera equipment, and the timeline of camera upgrades. The witness also provides information about a phone call made from Epstein's unit on August 9, 2019.",
+  "persons": [
+    {
+      "name": "MR. I.",
+      "role": "BOP Electronics Technician",
+      "category": "staff",
+      "context": "The primary witness being interviewed. He was the electronics technician at MCC New York responsible for the camera system and its upgrades. He discusses camera malfunctions, equipment storage, and his communications with vendors.",
+      "mentionCount": 150
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate at the center of the OIG investigation. His death is the subject of the investigation into potential security failures at MCC New York.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Justin Houston",
+      "role": "SigNet Point of Contact",
+      "category": "associate",
+      "context": "Point of contact at SigNet, the vendor for the NiceVision camera system upgrade at MCC. Communicated with MR. I. about equipment orders, shipping delays, and technical issues.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Steve Smith",
+      "role": "Head of Nice (SigNet)",
+      "category": "associate",
+      "context": "Described as 'the brains behind' the NiceVision system at SigNet. Was copied on emails regarding camera orders.",
+      "mentionCount": 3
+    },
+    {
+      "name": "John Hodge",
+      "role": "SigNet Contact",
+      "category": "associate",
+      "context": "New contact at SigNet who became involved after Epstein's death, copied on email correspondence about equipment.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Fred Pridemore",
+      "role": "SigNet Employee",
+      "category": "associate",
+      "context": "SigNet employee who received an email from Justin Houston about getting the 'all-clear' to order cameras for the MCC project in August 2019.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MR. I.",
+      "person2": "Justin Houston",
+      "relationshipType": "business",
+      "description": "MR. I. was the primary BOP contact for Justin Houston at SigNet regarding the camera system upgrade. They communicated frequently about equipment orders, technical issues, and shipping logistics.",
+      "strength": 4
+    },
+    {
+      "person1": "MR. I.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "MR. I. was a BOP staff member at the facility where Epstein was housed. His work on the camera system is part of the investigation into the circumstances surrounding Epstein's death.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "Camera System Failure Identified",
+      "description": "SIS Lieutenant discovered the NiceVision camera system was not recording and could not retrieve video footage. MR. I. was called to investigate.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "MR. I."
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Phone Call",
+      "description": "A phone call was made from the SHU (Special Housing Unit) at MCC New York to number (646) 243-8517, lasting approximately 21 minutes. This call is believed to be Epstein's last.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein died by suicide in his cell at MCC New York. This event triggered the OIG investigation into security and camera system failures.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2018-09-21",
+      "title": "Camera Upgrade Contract Awarded",
+      "description": "The initial contract (GS-07F-0322T) for upgrading the MCC New York camera system to NiceVision was awarded.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2022-04-07",
+      "title": "OIG Interview Conducted",
+      "description": "The DOJ Office of the Inspector General conducted a voluntary interview with BOP electronics technician MR. I. as part of its investigation into events surrounding Epstein's death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "MR. I."
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York (Metropolitan Correctional Center)",
+    "MDC Brooklyn (Metropolitan Detention Center)",
+    "Brooklyn Navy Yard",
+    "Building Four (warehouse at Brooklyn Navy Yard)",
+    "DOJ/OIG New York Field Office",
+    "30 Percent Room (storage room at MCC)",
+    "SIS Shop / Video Room (at MCC)",
+    "SHU (Special Housing Unit at MCC)"
+  ],
+  "keyFacts": [
+    "The witness (MR. I.) stated he told the vendor, SigNet, to hold off on shipping new cameras in 2018 due to storage space issues and part number/approval problems, not because of technical incompetence.",
+    "The camera system at MCC was not recording and video could not be retrieved on August 8, 2019, just days before Epstein's death. The issue was reportedly fixed later.",
+    "The witness pulled a phone record showing a 21-minute call from the SHU on August 9, 2019, at 6:58 p.m., which investigators believe was Epstein's last phone call.",
+    "The camera upgrade project was massively behind schedule; as of August 2019, only one housing unit had been fully prepared for new cameras, and the project was still incomplete years later when MCC closed.",
+    "The witness did not have a key to the room containing the camera DVR recorders prior to Epstein's death; access was controlled by SIS staff, which he described as a security problem."
+  ],
+  "analyzedAt": "2026-02-20T00:43:48.086Z"
+}

@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00126125.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-19",
+  "summary": "This is an FBI 302 interview report of a Federal Bureau of Prisons guard conducted on August 19, 2019, regarding the death of Jeffrey Epstein. The guard discusses his duties, general awareness among staff to monitor Epstein, and denies specific knowledge of guards NOEL and THOMAS failing to perform rounds.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The interview is about the circumstances surrounding his death while in custody at the Metropolitan Correctional Center (MCC). The guard states 'everybody knew the deal' with him and that staff were told to keep an eye on him.",
+      "mentionCount": 2
+    },
+    {
+      "name": "NOEL",
+      "role": "BOP Guard",
+      "category": "staff",
+      "context": "Mentioned by the interviewed guard when asked if he had knowledge of rounds not being done, specifically referencing NOEL and THOMAS. The guard replied 'no' to having such knowledge.",
+      "mentionCount": 1
+    },
+    {
+      "name": "THOMAS",
+      "role": "BOP Guard",
+      "category": "staff",
+      "context": "Mentioned alongside NOEL as guards the interviewee was asked about regarding potential failure to perform rounds. The interviewee denied having knowledge of them not doing rounds.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "NOEL",
+      "person2": "THOMAS",
+      "relationshipType": "co-worker",
+      "description": "Both are BOP guards referenced together in the context of questions about whether they failed to perform their rounds.",
+      "strength": 2
+    },
+    {
+      "person1": "BOP Guard (Interviewee)",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The guard was aware of Epstein as an inmate requiring special attention, stating he was told by supervisors and other guards to 'keep an eye on him'.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "Jeffrey Epstein was found dead in his cell at the Metropolitan Correctional Center in New York.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-05",
+      "title": "Guard's last SHU assignment",
+      "description": "The interviewed BOP guard last worked in the Special Housing Unit (SHU) prior to the interview.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "BOP Guard (Interviewee)"
+      ]
+    },
+    {
+      "date": "2019-08-19",
+      "title": "FBI interview of BOP guard",
+      "description": "FBI and OIG agents interviewed a BOP guard regarding Epstein's death, procedures, and the actions of specific guards.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "BOP Guard (Interviewee)"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU)"
+  ],
+  "keyFacts": [
+    "A BOP guard stated that 'everybody knew the deal' with Jeffrey Epstein and that he was instructed by guards and supervisors to 'keep an eye on him'.",
+    "The guard, who was assigned to 'station 11 south', heard commotion on the day of Epstein's death and remarked, 'Thank God I wasn't working (SHU), would not happen if I was there, I do my rounds'.",
+    "The guard denied having any knowledge of rounds not being done or of specific guards NOEL and THOMAS failing to perform their rounds.",
+    "The interview was conducted by FBI and OIG agents along with Assistant U.S. Attorneys for the Southern District of New York.",
+    "The document is an FBI 302 report, which is a summary of an investigative interview, and contains a standard disclaimer that it is not to be distributed outside the receiving agency."
+  ],
+  "analyzedAt": "2026-02-19T17:06:26.711Z"
+}

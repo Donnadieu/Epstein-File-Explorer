@@ -1,0 +1,178 @@
+{
+  "fileName": "EFTA00126169.pdf",
+  "dataSet": "9",
+  "documentType": "law enforcement database search result",
+  "dateOriginal": "2019-12-11",
+  "summary": "This document is a series of law enforcement database search results from the FBI's New York office and the NYS Division of Criminal Justice Services, conducted on or around December 11, 2019. The search queries the NCIC and III systems for individuals named 'MICHAEL THOMAS' and returns multiple potential suspect matches with criminal history information, physical descriptions, and aliases. It appears to be part of an investigative background check, likely related to case number 90A-NY-3151227.",
+  "persons": [
+    {
+      "name": "Michael Thomas",
+      "role": "Search subject / Suspect",
+      "category": "key figure",
+      "context": "The primary subject of the law enforcement database search across NCIC and III systems. Multiple individuals with variations of this name are returned as potential matches with criminal histories.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Michael W King",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as the top search result (Suspect 1) with a score of 97.0. Identified as Michael Thomas King, born in Jamaica, with physical descriptors provided.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael Thomas Bonanza",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 2 with a score of 96.0. Identified as a white male born in New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Thomas Cole",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 3 with a score of 94.0. Physical descriptors provided but place of birth is blank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "James D Hunter",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 4 with a score of 93.0. Has multiple alias names listed including James Spencer, James Monroe, and others. Has a criminal record in other states.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Latiek Bligen",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 5 with a score of 93.0. Has aliases including Latik Bligen and Lank Bligen. Criminal record in NYS only.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Manuel Parker",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 6 with a score of 93.0. Also known as Michael Thomas and Manuel Quanah Parker. Has a criminal record in other states.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael G Thomas",
+      "role": "Suspect match",
+      "category": "other",
+      "context": "Listed as Suspect 7 with a score of 92.0. Born in New York and South Carolina. Criminal record in NYS only.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mary Irene Thames",
+      "role": "Wanted person",
+      "category": "other",
+      "context": "Appears in an NCIC wanted person record (unrelated to the main search) with cautions for being armed and dangerous, and a probation violation for fraud.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Michael Albert Thomas",
+      "role": "Criminal history subject",
+      "category": "other",
+      "context": "Appears in an III record with a New Jersey birth place, tattoos, and alias names including Michael Thomas and Michael Albert.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Michael Wilkie-Thomas Jr",
+      "role": "Criminal history subject",
+      "category": "other",
+      "context": "Appears in an III record with a Georgia birth place, tattoos, and multiple alias names including Wilkes, Thomas and Wilkie, Michael. Has criminal history records in multiple states.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael C. Green",
+      "role": "Executive Deputy Commissioner",
+      "category": "law enforcement",
+      "context": "Identified as the Executive Deputy Commissioner of the NYS Division of Criminal Justice Services. His name appears on the official letterhead of the search results.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Thomas",
+      "person2": "Michael W King",
+      "relationshipType": "identity match",
+      "description": "Michael W King is returned as a potential identity match for the search subject 'Michael Thomas' in the law enforcement database query.",
+      "strength": 2
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Manuel Parker",
+      "relationshipType": "identity match",
+      "description": "Manuel Parker is listed with the alias 'Michael Thomas', indicating a potential identity link in the law enforcement database.",
+      "strength": 2
+    },
+    {
+      "person1": "James D Hunter",
+      "person2": "James Spencer",
+      "relationshipType": "alias",
+      "description": "James Spencer is listed as an alias for James D Hunter in the suspect search results.",
+      "strength": 4
+    },
+    {
+      "person1": "Latiek Bligen",
+      "person2": "Latik Bligen",
+      "relationshipType": "alias",
+      "description": "Latik Bligen is listed as an alias for Latiek Bligen in the suspect search results.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Albert Thomas",
+      "person2": "Michael Thomas",
+      "relationshipType": "alias",
+      "description": "Michael Albert Thomas has 'Thomas, Michael' listed as an alias name in the III record.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael Wilkie-Thomas Jr",
+      "person2": "Wilkes, Thomas",
+      "relationshipType": "alias",
+      "description": "Wilkes, Thomas is listed as an alias for Michael Wilkie-Thomas Jr in the III record.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-11",
+      "title": "Law Enforcement Database Inquiry",
+      "description": "The FBI's New York office conducts an NCIC and III database search for individuals named 'Michael Thomas', returning multiple potential matches with criminal histories.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael Thomas",
+        "Michael C. Green"
+      ]
+    },
+    {
+      "date": "2018-08-01",
+      "title": "Warrant Issued for Mary Irene Thames",
+      "description": "An NCIC record indicates a warrant was issued for Mary Irene Thames for probation violation related to fraud with insufficient funds.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Mary Irene Thames"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Albany, New York",
+    "80 South Swan St., Albany, New York 12210",
+    "Alfred E. Smith Building",
+    "Jamaica",
+    "New Jersey",
+    "Georgia",
+    "South Carolina"
+  ],
+  "keyFacts": [
+    "A law enforcement database search was conducted for 'MICHAEL THOMAS', returning 32 suspects with a match score of 85 or greater, with the top 7 detailed in the document.",
+    "The search was performed by the FBI's New York office in conjunction with the NYS Division of Criminal Justice Services, under case number 90A-NY-3151227.",
+    "Multiple individuals with the name 'Michael Thomas' or variations have criminal records across various states including New York, New Jersey, Georgia, South Carolina, Washington, Indiana, and North Carolina.",
+    "The document includes warnings about the proper access, use, and dissemination of NCIC information, citing Title 28, Part 20 of the Code of Federal Regulations.",
+    "One unrelated NCIC hit for 'Mary Irene Thames' shows a wanted person caution for being armed and dangerous with a probation violation for fraud."
+  ],
+  "analyzedAt": "2026-02-19T17:08:20.779Z"
+}

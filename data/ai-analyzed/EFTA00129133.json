@@ -1,0 +1,137 @@
+{
+  "fileName": "EFTA00129133.pdf",
+  "dataSet": "9",
+  "documentType": "FBI eGuardian incident report",
+  "dateOriginal": "2023-03-04",
+  "summary": "An FBI eGuardian incident report documenting a telephone tip received on March 4, 2023, alleging historical child sexual abuse involving Jeffrey Epstein and an individual named George Epstein. The complainant, an adult male from West Plains, MO (later associated with Lindenwold, NJ), made wide-ranging allegations of abuse starting in childhood, international travel, and ongoing intimidation. The Philadelphia Division assessed the complaint and closed it as 'Information Only,' citing the complainant's adult status, lack of current abuse allegations, the deceased status of the subject (Jeffrey Epstein), and the complainant's prior categorization by local law enforcement.",
+  "persons": [
+    {
+      "name": "Jefferey Epstein",
+      "role": "Subject of abuse allegations",
+      "category": "key figure",
+      "context": "Named by the complainant as someone who was 'in his life' and who, along with George Epstein, took him 'all over the world' in the context of alleged sexual abuse parties.",
+      "mentionCount": 4
+    },
+    {
+      "name": "George Epstein",
+      "role": "Subject of abuse allegations",
+      "category": "associate",
+      "context": "Named by the complainant alongside Jeffrey Epstein as someone who took him 'all over the world.' The complainant stated he knows 'George's name was a fake name.'",
+      "mentionCount": 3
+    },
+    {
+      "name": "Melissa Gillbom",
+      "role": "Subject/Reference",
+      "category": "other",
+      "context": "Mentioned by name by the complainant in the context of having 'a lot of traumas.' Database queries for her name were conducted but revealed no results.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Kelly Trippett",
+      "role": "Incident Author",
+      "category": "law enforcement",
+      "context": "Listed as the author of the incident report in the 'Incident Author Information' section.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cole Canales",
+      "role": "Report Creator/Owner",
+      "category": "law enforcement",
+      "context": "Listed as the 'Report Creator' and 'Report Owner' in the initial header. Also authored the 'Assessment' note.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Nicole Canales",
+      "role": "FBI Personnel",
+      "category": "law enforcement",
+      "context": "Authored the 'Assessment' note and is listed as an approver/supervisor. Likely involved in the decision to close the report.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Austin Messner",
+      "role": "FBI Personnel",
+      "category": "law enforcement",
+      "context": "Created the note titled 'Tips Query Conducted' for the Philadelphia field office.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ben Gindville",
+      "role": "Task Force Officer",
+      "category": "law enforcement",
+      "context": "A Task Force Officer who ran a search through the Camden County Police RMS system for the complainant on 03/06/2023.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jefferey Epstein",
+      "person2": "George Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "According to the complainant's allegations, both individuals were involved in taking him 'all over the world' in the context of alleged sexual abuse.",
+      "strength": 3
+    },
+    {
+      "person1": "Jefferey Epstein",
+      "person2": "George Epstein",
+      "relationshipType": "travel companion",
+      "description": "The complainant alleges they took him 'all over the world.'",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-03-04",
+      "title": "FBI NTOC receives abuse allegation call",
+      "description": "An individual called the FBI National Threat Operations Center (NTOC) to report allegations of historical child sexual abuse involving Jeffrey Epstein and George Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jefferey Epstein",
+        "George Epstein"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Alleged incident with girl and dog",
+      "description": "The complainant describes an incident where a girl came to his door, later returned with a dog, and an altercation ensued where he was dragged from his apartment by a group of people.",
+      "category": "abuse",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2023-03-06",
+      "title": "Camden County Police records check",
+      "description": "Task Force Officer Ben Gindville searches police records for the complainant, finding they are known to police and have been transported for crisis assessment.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Ben Gindville"
+      ]
+    },
+    {
+      "date": "2023-03-09",
+      "title": "Incident closed as 'Information Only'",
+      "description": "The Philadelphia Division South Jersey Resident Agency closes the eGuardian report, deciding not to notify child abuse hotlines or local police, citing the complainant's adult status, lack of current abuse, and the deceased status of Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Nicole Canales",
+        "Cole Canales"
+      ]
+    }
+  ],
+  "locations": [
+    "West Plains, MO",
+    "Lindenwold, NJ 08021-1529",
+    "Clarksburg, WV (National Threat Operations Center, 1000 Custer Hollow Road)",
+    "Camden County, NJ"
+  ],
+  "keyFacts": [
+    "On March 4, 2023, the FBI NTOC received a tip from an adult male alleging he was taken to sex parties starting at age 1 by Jeffrey Epstein and a man using the name 'George Epstein,' whom the caller believed was using a fake name.",
+    "The FBI's assessment concluded the complaint did not warrant further investigation or mandatory reporting because the complainant was an adult, did not allege current abuse, and the primary subject (Jeffrey Epstein) was deceased.",
+    "Local law enforcement in New Jersey had previously categorized the complainant as an adult and transported him to CRISIS services for psychological assessment.",
+    "Database queries for 'Melissa Gillbom' returned no results, and queries for the complainant showed numerous prior contacts with law enforcement.",
+    "The document reveals the FBI's internal process for handling and triaging abuse allegations via the eGuardian system, including mandatory reporting assessments and inter-office transfers."
+  ],
+  "analyzedAt": "2026-02-19T18:31:36.779Z"
+}

@@ -1,0 +1,127 @@
+{
+  "fileName": "EFTA00149894.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-30",
+  "summary": "Internal FBI email chain from August 2019 discussing efforts to locate Ghislaine Maxwell. The emails show coordination between FBI New York and Boston field offices regarding surveillance and potential arrest planning, referencing a 'silent hit' in TECS and a desire to 'quietly put her in pocket'.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of FBI investigation",
+      "category": "key figure",
+      "context": "The primary subject of the FBI emails, with agents discussing efforts to locate her, monitor her movements, and eventually 'grab her' for arrest.",
+      "mentionCount": 5
+    },
+    {
+      "name": "SSA",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Supervisory Special Agent from New York corresponding with Boston field office regarding coordination on the Maxwell investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "A/SSA",
+      "role": "FBI Assistant Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Assistant Supervisory Special Agent from the Crimes Against Children squad introduced to assist with the Maxwell case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "A/ASAC",
+      "role": "FBI Assistant Special Agent in Charge",
+      "category": "law enforcement",
+      "context": "FBI Assistant Special Agent in Charge who was updated about Maxwell's potential presence in Manchester-by-the-Sea.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Local law enforcement detective",
+      "category": "law enforcement",
+      "context": "Unnamed detective from Manchester-by-the-Sea who initially reported information about Maxwell's potential presence to the FBI.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA",
+      "person2": "A/SSA",
+      "relationshipType": "colleague",
+      "description": "SSA introduces A/SSA from the Crimes Against Children squad to assist with the Maxwell investigation, indicating professional coordination.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA",
+      "person2": "SA",
+      "relationshipType": "colleague",
+      "description": "Both are FBI agents communicating about operational details regarding locating Ghislaine Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "SSA is actively involved in FBI efforts to locate and eventually arrest Ghislaine Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Detective",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The detective provided initial information to the FBI about Maxwell's potential presence in Manchester-by-the-Sea.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-27",
+      "title": "FBI seeks to nail down Maxwell's location",
+      "description": "FBI email indicates urgent need to determine Ghislaine Maxwell's location, specifically asking if she was 'still up there' (likely referencing New England area).",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SSA",
+        "SA",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-08-30",
+      "title": "FBI discusses 'silent hit' and arrest planning for Maxwell",
+      "description": "FBI emails reveal operational planning to 'quietly put her in pocket,' with a 'silent hit' on her in TECS (Traveler Enforcement Compliance System) and intent to 'grab her' when needed.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "SSA",
+        "SA",
+        "A/SSA",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-08-15",
+      "title": "FBI receives tip about Maxwell in Manchester-by-the-Sea",
+      "description": "FBI was updated about information regarding Maxwell's potential presence in Manchester-by-the-Sea, Massachusetts, prompting coordination between field offices.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "A/ASAC",
+        "SSA",
+        "Detective",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Manchester-by-the-Sea, Massachusetts",
+    "New York",
+    "Boston (implied as FBI field office AOR)"
+  ],
+  "keyFacts": [
+    "The FBI was actively tracking Ghislaine Maxwell's location in August 2019, weeks before any public action.",
+    "FBI had a 'silent hit' on Maxwell in TECS (Traveler Enforcement Compliance System) to monitor her movements discreetly.",
+    "Agents used the phrase 'put her in pocket' meaning to locate and be ready to apprehend her.",
+    "Coordination occurred between FBI New York and Boston field offices, with the Crimes Against Children squad taking lead.",
+    "Initial tip about Maxwell's location came from a detective in Manchester-by-the-Sea, Massachusetts."
+  ],
+  "analyzedAt": "2026-02-20T07:52:27.287Z"
+}

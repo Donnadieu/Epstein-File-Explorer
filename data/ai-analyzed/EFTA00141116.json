@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00141116.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-09",
+  "summary": "This is an FBI 302 form documenting an interview with a Bureau of Prisons Lieutenant conducted on August 30, 2019, regarding the circumstances at the Manhattan Correctional Center (MCC) surrounding Jeffrey Epstein's incarceration, suicide watch, and death. The lieutenant discusses protocols, his limited involvement, and the assignment of Epstein's cellmate.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate at MCC",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. The document discusses his placement on suicide watch, his cellmate assignment, and his subsequent death.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Reyes",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "associate",
+      "context": "An inmate who was initially assigned to be Jeffrey Epstein's cellmate while Epstein was on suicide watch. He was later removed from the cell for a court appearance and released from MCC.",
+      "mentionCount": 4
+    },
+    {
+      "name": "BOP Lieutenant",
+      "role": "Bureau of Prisons Lieutenant at MCC",
+      "category": "law enforcement",
+      "context": "The interviewee, a GS-11 Lieutenant working in the Special Housing Unit (SHU) and Operations at MCC. He describes his duties, the protocols for suicide watch, and his actions regarding Epstein's cell assignment.",
+      "mentionCount": 25
+    }
+  ],
+  "connections": [
+    {
+      "person1": "BOP Lieutenant",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "guard-inmate",
+      "description": "The lieutenant was a corrections supervisor at MCC where Epstein was held. He spoke with Epstein about his cellmate assignment and was aware of his status.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was assigned to be Epstein's cellmate while Epstein was on suicide watch, as per standard MCC protocol to prevent suicide.",
+      "strength": 3
+    },
+    {
+      "person1": "BOP Lieutenant",
+      "person2": "Reyes",
+      "relationshipType": "guard-inmate",
+      "description": "The lieutenant spoke with Reyes about the cellmate assignment and physically placed him into Epstein's cell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Cellmate Removed",
+      "description": "Epstein's assigned cellmate, Reyes, was removed from the cell for a court appearance and was subsequently released from MCC. Epstein was left without a cellmate.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Reyes",
+        "BOP Lieutenant"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein's Death Discovered",
+      "description": "The BOP Lieutenant, who was not working that day, heard about Jeffrey Epstein's death via news reports.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-30",
+      "title": "FBI Interview of BOP Lieutenant",
+      "description": "The FBI, OIG, and AUSAs interviewed a BOP Lieutenant at the SDNY USAO regarding the circumstances surrounding Epstein's incarceration and death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "BOP Lieutenant"
+      ]
+    }
+  ],
+  "locations": [
+    "Manhattan Correctional Center (MCC), 150 Park Row, New York, NY",
+    "United States Attorney's Office (USAO), Southern District of New York, 1 Saint Andrews Plaza, New York",
+    "26 Federal Plaza, New York, NY (Training Location)",
+    "Fort Dix, New Jersey (BOP facility)",
+    "Florence (BOP facility)",
+    "Englewood (BOP facility)"
+  ],
+  "keyFacts": [
+    "Standard MCC protocol for an inmate on suicide watch is to assign them a cellmate. Epstein was placed on such watch and assigned inmate Reyes as a cellmate.",
+    "On August 9, 2019, Reyes was removed from Epstein's cell for court and released. The BOP Lieutenant was aware Epstein was alone but did not inform the relieving shift or the Captain, believing the psychology unit or Captain would assign a new cellmate.",
+    "The lieutenant stated there is no nighttime SHU Lieutenant scheduled at MCC, unlike some other BOP facilities.",
+    "The lieutenant was shown an email from an AUSA (name redacted) during the interview, which he recalled receiving prior to assigning Reyes as Epstein's cellmate.",
+    "The tenth floor of MCC, where the SHU is located, is described as not a full floor, 'similar to an attic,' and is accessed via stairs from the ninth floor; the elevator does not stop there."
+  ],
+  "analyzedAt": "2026-02-20T00:13:10.206Z"
+}

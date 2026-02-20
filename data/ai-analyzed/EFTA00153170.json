@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA00153170.pdf",
+  "dataSet": "9",
+  "documentType": "internal memorandum",
+  "dateOriginal": "2020-10-19",
+  "summary": "This is a U.S. Attorney's Office memorandum from October 19, 2020, detailing the protocol for reviewing image and video files seized from Jeffrey Epstein's residences in New York and the Virgin Islands. The review is part of the investigation and prosecution of Ghislaine Maxwell, with the goal of identifying responsive materials for discovery by a court-ordered deadline.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation, property owner",
+      "category": "key figure",
+      "context": "The memorandum concerns the review of data from electronic devices seized from his residences in New York and the Virgin Islands. Images or videos of him are a primary category for seizure.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "She is the subject of the prosecution (Indictment 20 Cr. 330), charged with crimes involving the sexual abuse of minors. The data review is to produce discovery for her defense.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Judge Nathan",
+      "role": "Presiding Judge",
+      "category": "legal",
+      "context": "The judge who ordered that all discovery in the Maxwell case be completed by November 9, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The prosecutor responsible for the case, to be contacted by reviewers with questions about the protocol. Her contact details are redacted.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are central figures in the investigation; data from Epstein's devices is being reviewed for evidence relevant to Maxwell's prosecution.",
+      "strength": 4
+    },
+    {
+      "person1": "AUSA",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The AUSA is responsible for prosecuting Maxwell and managing the discovery process for her defense.",
+      "strength": 4
+    },
+    {
+      "person1": "FBI",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI executed search warrants on Epstein's residences and seized the electronic devices being reviewed.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "FBI searches Epstein's New York residence",
+      "description": "The FBI executed multiple search warrants on Jeffrey Epstein's New York residence, seizing dozens of electronic devices.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "FBI"
+      ]
+    },
+    {
+      "date": "2019-08",
+      "title": "FBI searches Epstein's Virgin Islands residence",
+      "description": "The FBI executed a search warrant on Jeffrey Epstein's Virgin Islands residence, seizing approximately dozens of additional electronic devices.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "FBI"
+      ]
+    },
+    {
+      "date": "2020-06-26",
+      "title": "New warrant issued for device review",
+      "description": "The FBI obtained a new warrant authorizing the review of data from a total of 62 devices seized from both the New York and Virgin Islands searches.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI"
+      ]
+    },
+    {
+      "date": "2020-07-02",
+      "title": "Ghislaine Maxwell arrested",
+      "description": "Ghislaine Maxwell was arrested on Indictment 20 Cr. 330, charging her with crimes involving the sexual abuse of minors.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-11-09",
+      "title": "Discovery deadline",
+      "description": "Judge Nathan ordered that all discovery in the Maxwell case be completed by this date.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Judge Nathan",
+        "Ghislaine Maxwell",
+        "AUSA"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York 10007 (U.S. Attorney's Office location)",
+    "New York residence of Jeffrey Epstein",
+    "Virgin Islands residence of Jeffrey Epstein"
+  ],
+  "keyFacts": [
+    "The FBI seized dozens of electronic devices from Jeffrey Epstein's New York residence in July 2019 and his Virgin Islands residence in August 2019.",
+    "A total of 62 devices were subject to a June 2020 warrant for data review in connection with the prosecution of Ghislaine Maxwell.",
+    "The review protocol specifically targets images/videos of Epstein, Maxwell, any female appearing under 30, travel documents, and screenshots of communications regarding females.",
+    "Files containing nudity were to be marked 'HIGHLY CONFIDENTIAL' and stored separately by the FBI, not directly produced to defense counsel.",
+    "The memorandum establishes a strict timeline, requiring the image/video review to be completed by October 31, 2020, to meet a November 9, 2020, court-ordered discovery deadline."
+  ],
+  "analyzedAt": "2026-02-20T10:51:25.745Z"
+}

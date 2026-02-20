@@ -1,0 +1,125 @@
+{
+  "fileName": "EFTA00141230.pdf",
+  "dataSet": "9",
+  "documentType": "interview transcript",
+  "dateOriginal": "2021-09-29",
+  "summary": "This is a transcript of a DOJ OIG interview conducted on September 29, 2021, with a Federal Bureau of Prisons employee (referred to as SUBJECT) regarding the investigation into the death of inmate Jeffrey Epstein. The interview focuses on technical failures of the camera recording system at the Metropolitan Correctional Center (MCC) in New York around the time of Epstein's death in August 2019, specifically addressing system failures, repair attempts, and interactions with FBI agents.",
+  "persons": [
+    {
+      "name": "Dennis Matulewcz",
+      "role": "DOJ OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "Conducting the official OIG interview, places the subject under oath, and leads the questioning about the MCC camera system failures.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ryan Geach",
+      "role": "DOJ OIG ASAC",
+      "category": "law enforcement",
+      "context": "Present in person at the interview as an Assistant Special Agent in Charge from the DOJ OIG.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lyeson",
+      "role": "DOJ OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Present by telephone during the OIG interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Deceased inmate whose death is the subject of the OIG investigation; the camera system failures occurred around the time of his death.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dennis Matulewcz",
+      "person2": "SUBJECT (BOP employee)",
+      "relationshipType": "interviewer-interviewee",
+      "description": "Matulewcz is the Senior Special Agent conducting the official OIG interview of the BOP employee regarding the camera system failures.",
+      "strength": 4
+    },
+    {
+      "person1": "Ryan Geach",
+      "person2": "SUBJECT (BOP employee)",
+      "relationshipType": "investigator-subject",
+      "description": "Geach is present as an OIG ASAC during the interview of the BOP employee.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-29",
+      "title": "Camera DVR System Failure",
+      "description": "The camera system at MCC experienced a system failure of DVR 2, which may have stopped cameras from recording.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SUBJECT (BOP employee)"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "Motherboard Failure and Camera Issue Discovery",
+      "description": "The motherboard on DVR 2 failed. The BOP employee learned the cameras were not recording and had conversations with supervisors (Lt. and AW) about fixing the issue immediately.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SUBJECT (BOP employee)",
+        "Lt. (MCC)",
+        "AW (MCC)",
+        "Captain (MCC)"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Hard Drive Replacement and FBI Arrival",
+      "description": "The BOP employee attempted to fix the camera system by replacing two failed hard drives. During the rebuild process, the FBI arrived at the MCC. Replacing both drives simultaneously risked corrupting the video database and wiping all prior data.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "SUBJECT (BOP employee)",
+        "FBI SA",
+        "Warden (MCC)"
+      ]
+    },
+    {
+      "date": "2021-09-29",
+      "title": "DOJ OIG Interview",
+      "description": "Official OIG interview conducted with a BOP employee regarding the camera system failures at MCC around the time of Jeffrey Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Dennis Matulewcz",
+        "Ryan Geach",
+        "Lyeson",
+        "SUBJECT (BOP employee)"
+      ]
+    },
+    {
+      "date": "2019-07-15",
+      "title": "Previous OIG Interview",
+      "description": "The BOP employee was previously interviewed by the OIG at the MCC.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "SUBJECT (BOP employee)"
+      ]
+    }
+  ],
+  "locations": [
+    "One Battery Park Plaza, New York, NY (DOJ OIG New York Field Office)",
+    "Metropolitan Correctional Center (MCC), New York (referenced as location of camera failures)"
+  ],
+  "keyFacts": [
+    "The camera recording system at the MCC experienced multiple failures: a system failure on July 29, 2019, a motherboard failure on August 8, 2019, and a hard drive failure on August 10, 2019.",
+    "On August 10, 2019, the BOP employee replaced two failed hard drives, an action that risked corrupting the video database and wiping all prior recorded data. The FBI was present during this activity.",
+    "The interview reveals potential inconsistencies, as the employee is questioned about previously stating they first learned of the camera issue on August 9, 2019, while evidence suggests they knew on August 8.",
+    "A similar 'Raid just crashed' system failure had occurred in February 2019, raising questions about whether corrective measures were taken to prevent the August 2019 failure.",
+    "The Warden wanted video preserved, but the technical process of replacing the drives to fix the system carried the risk of destroying the existing footage."
+  ],
+  "analyzedAt": "2026-02-20T00:21:54.186Z"
+}

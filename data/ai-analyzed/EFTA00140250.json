@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00140250.pdf",
+  "dataSet": "9",
+  "documentType": "internal prison correspondence",
+  "dateOriginal": "2019-07-24",
+  "summary": "An internal email from a forensic psychologist at the Metropolitan Correctional Center reporting an inmate's claim that guards told his cellmate to assault him. The email references inmate Jeffrey Epstein and his cellmate Tartaglione, and mentions prior claims of injury.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "Inmate #76318-054 who reported that his cellmate may have injured him, and is the subject of the reported threat from guards.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "other",
+      "context": "Inmate #78514-054, cellmate of Jeffrey Epstein, who allegedly was told by guards to assault Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were cellmates at the Metropolitan Correctional Center, with Epstein reporting Tartaglione may have injured him.",
+      "strength": 3
+    },
+    {
+      "person1": "Tartaglione",
+      "person2": "M.",
+      "relationshipType": "staff-inmate",
+      "description": "Forensic psychologist M. is reporting on a claim involving inmate Tartaglione's alleged instructions from guards.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "M.",
+      "relationshipType": "staff-inmate",
+      "description": "Forensic psychologist M. is documenting and reporting a threat claim made by inmate Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-24",
+      "title": "Report of Guard-Incited Assault Threat",
+      "description": "Forensic psychologist M. reports that inmate Epstein claimed his cellmate Tartaglione told him guards said they wouldn't file a report if Tartaglione beat Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione",
+        "M."
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Prior Injury Claim by Epstein",
+      "description": "Reference to recent claims by inmate Epstein that his cellmate may have injured him, though the cellmate denied it in an interview.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, New York 10007"
+  ],
+  "keyFacts": [
+    "An inmate (Epstein) reported that his cellmate (Tartaglione) said guards told him they would not file a report if he assaulted Epstein.",
+    "The email references prior claims by Epstein that his cellmate may have injured him, which the cellmate denied.",
+    "The document is an internal email from a forensic psychologist at the Metropolitan Correctional Center, highlighting potential misconduct or threats against inmate Jeffrey Epstein.",
+    "The email is dated July 24, 2019, shortly before Jeffrey Epstein's death in custody."
+  ],
+  "analyzedAt": "2026-02-19T23:17:10.530Z"
+}

@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA00153985.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-09",
+  "summary": "This is an email chain between FBI personnel discussing language for an official Department of Justice mailbox. It confirms the mailbox is no longer monitored and provides updated contact information for victim services and tips regarding Jeffrey Epstein and Ghislaine Maxwell.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York Field Office Child Exploitation",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the email approving language for the ODAG's mailbox, providing contact information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Program Manager FBI Victim Services Division",
+      "role": "FBI Program Manager",
+      "category": "law enforcement",
+      "context": "The recipient/author of the email chain, responsible for victim services and coordinating tip submissions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named as a subject for whom tips should be submitted to the FBI via the provided contact number.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named alongside Jeffrey Epstein as a subject for whom tips should be submitted to the FBI.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named together as subjects for FBI tip submissions, indicating their linked investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Special Agent FBI New York Field Office Child Exploitation",
+      "person2": "Program Manager FBI Victim Services Division",
+      "relationshipType": "professional",
+      "description": "Colleagues within the FBI coordinating on official communication language for a departmental mailbox.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-12-09",
+      "title": "Email coordination on DOJ mailbox language",
+      "description": "FBI personnel exchange emails to confirm language for the ODAG's mailbox, which is no longer monitored, and provide updated contact information.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent FBI New York Field Office Child Exploitation",
+        "Program Manager FBI Victim Services Division"
+      ]
+    }
+  ],
+  "locations": [
+    "FBI New York Field Office",
+    "FBI Victim Services Division Office"
+  ],
+  "keyFacts": [
+    "The ODAG (Office of the Deputy Attorney General) mailbox referenced is no longer monitored as of December 2020.",
+    "Updated contact information is provided: for victim services, contact VictimServices@fbi.gov; for tips about Jeffrey Epstein or Ghislaine Maxwell, contact 1-800-CALL-FBI.",
+    "The email confirms ongoing FBI investigations into Jeffrey Epstein and Ghislaine Maxwell, with a dedicated tip line.",
+    "The communication shows internal FBI coordination on public-facing messaging regarding victim services and tip submissions."
+  ],
+  "analyzedAt": "2026-02-20T11:52:51.586Z"
+}

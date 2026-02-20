@@ -1,0 +1,54 @@
+{
+  "fileName": "EFTA00148436.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-03-17",
+  "summary": "This document is an email chain from March 17, 2020, between FBI and DOJ officials regarding a request from the Attorney General's office for the FBI to contact an individual named Ms. [Redacted] who claims to have information on the Epstein matter. The email notes this is not her first time reaching out to DOJ leadership, but previous attempts to contact her have been unsuccessful.",
+  "persons": [
+    {
+      "name": "Dal",
+      "role": "DOJ Official",
+      "category": "legal",
+      "context": "Sent the initial email to the FBI relaying the AG office's request to contact Ms. [Redacted] regarding Epstein information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ms. [Redacted]",
+      "role": "Informant",
+      "category": "witness",
+      "context": "An individual who has contacted the AG's office claiming to have information on the Epstein case and has previously reached out to DOJ leadership.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dal",
+      "person2": "Ms. [Redacted]",
+      "relationshipType": "informant-contact",
+      "description": "Dal is relaying a request from the AG's office for the FBI to contact Ms. [Redacted] regarding her claimed information on Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03-17",
+      "title": "DOJ/FBI Coordination on Epstein Informant",
+      "description": "The Attorney General's office requests the FBI contact Ms. [Redacted], who claims to have information on the Epstein matter, following her direct outreach to DOJ leadership.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Dal",
+        "Ms. [Redacted]"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An individual named Ms. [Redacted] contacted the Attorney General's office claiming to have information on the Epstein case.",
+    "This was not Ms. [Redacted]'s first time reaching out directly to DOJ leadership; she had previously contacted them about purported information.",
+    "DOJ officials had previously attempted to contact Ms. [Redacted] to connect her with an agent, but she did not return calls or emails.",
+    "On March 17, 2020, the AG's office formally requested the FBI reach out to Ms. [Redacted] directly and confirm contact.",
+    "The email chain shows coordination between the DOJ and FBI regarding following up on potential leads in the Epstein investigation."
+  ],
+  "analyzedAt": "2026-02-20T06:55:31.419Z"
+}

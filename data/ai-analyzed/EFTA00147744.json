@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00147744.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-07-02",
+  "summary": "This is an email chain from July 2019 between FBI personnel and Assistant U.S. Attorneys from the Southern District of New York regarding the shipment of approximately 23 boxes of case records for scanning. The boxes contain materials from two FBI case files related to an investigation, with the shipment being coordinated via FedEx.",
+  "persons": [
+    {
+      "name": "Sean",
+      "role": "SSA Squad C-20 VCAC/Human Trafficking FBI New York",
+      "category": "law enforcement",
+      "context": "FBI Special Agent who provides the FedEx tracking number for the shipment of case record boxes and apologizes for a scheduling delay.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant U.S. Attorney Southern District of New York",
+      "category": "legal",
+      "context": "Prosecutor working on the investigation who provides contact information and details about the contents of the approximately 23 boxes of case records being shipped.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Sean",
+      "person2": "AUSA",
+      "relationshipType": "professional collaboration",
+      "description": "Coordinating the shipment of case records from the FBI to the U.S. Attorney's office for an investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-06-28",
+      "title": "Scheduled shipment of case records",
+      "description": "Boxes of case records were scheduled to be shipped via FedEx in the afternoon.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Sean",
+        "AUSA"
+      ]
+    },
+    {
+      "date": "2019-07-02",
+      "title": "FedEx pickup and tracking provided",
+      "description": "A FedEx pickup for the case records was completed with tracking number 4744 7647 0418, with expected delivery in Virginia the next day.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Sean"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Virginia"
+  ],
+  "keyFacts": [
+    "The document coordinates the shipment of approximately 23 boxes of case records for scanning, related to an ongoing investigation.",
+    "The boxes contain materials from two specific FBI case files: 72-MM-113327 (approximately 2 boxes) and 31E-MM-108062 (the remainder).",
+    "The correspondence involves FBI personnel from the VCAC/Human Trafficking squad in New York and Assistant U.S. Attorneys from the Southern District of New York.",
+    "The email chain shows procedural coordination for evidence handling in July 2019, with a FedEx tracking number provided.",
+    "Multiple email addresses are redacted, indicating standard operational security for law enforcement and prosecutorial communications."
+  ],
+  "analyzedAt": "2026-02-20T06:00:46.732Z"
+}

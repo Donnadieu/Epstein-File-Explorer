@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA00146799.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-19",
+  "summary": "This document is a chain of emails from August 2019 discussing an investigation into harassing emails sent to Mark Epstein. It involves FBI agents and private security analysts from T&M Protection Resources analyzing email headers and discussing a missing YouTube video link sent by 'Jeff' that allegedly contained a mock interview with Steve Bannon.",
+  "persons": [
+    {
+      "name": "Mark Epstein",
+      "role": "Recipient of harassing emails, brother of Jeffrey Epstein",
+      "category": "associate",
+      "context": "He is the subject of the email investigation, having received harassing emails and a YouTube video link from 'Jeff'. He is attempting to locate the original email and video.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Richard Frankel",
+      "role": "Attorney at T&M Protection Resources",
+      "category": "legal",
+      "context": "He forwarded the initial report about harassing emails to the FBI and is involved in the security investigation concerning Mark Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "William Barry",
+      "role": "Cyber Security Analyst at T&M Protection Resources",
+      "category": "staff",
+      "context": "He analyzed the email headers from the harassing emails sent to Mark Epstein and provided a zip file with the analysis and email copies.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Simon Ragona",
+      "role": "Managing Director of Cybersecurity at T&M Protection Resources",
+      "category": "staff",
+      "context": "He communicated with Mark Epstein to obtain the original emails, provided an update on the header analysis, and described the missing YouTube video involving Jeff and Steve Bannon.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff",
+      "role": "Sender of an email to Mark Epstein",
+      "category": "associate",
+      "context": "He allegedly sent Mark Epstein an email containing a YouTube link to a 'mock interview' between himself and Steve Bannon, which was later taken down.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steve Bannon",
+      "role": "Political figure",
+      "category": "political",
+      "context": "He was reportedly featured in a YouTube 'mock interview' with Jeff, which was sent to Mark Epstein and later became unavailable.",
+      "mentionCount": 2
+    },
+    {
+      "name": "William Weller",
+      "role": "Recipient of internal emails at T&M Protection Resources",
+      "category": "staff",
+      "context": "He is copied on internal emails discussing the investigation into the harassing emails sent to Mark Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steven Petronio",
+      "role": "Recipient of internal emails at T&M Protection Resources",
+      "category": "staff",
+      "context": "He is copied on internal emails discussing the investigation into the harassing emails sent to Mark Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Frankel",
+      "person2": "Mark Epstein",
+      "relationshipType": "attorney-client",
+      "description": "Richard Frankel, an attorney at T&M Protection Resources, is handling a security matter involving harassing emails sent to Mark Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Simon Ragona",
+      "person2": "Mark Epstein",
+      "relationshipType": "professional",
+      "description": "Simon Ragona communicated with Mark Epstein to obtain original emails for a cybersecurity investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff",
+      "person2": "Mark Epstein",
+      "relationshipType": "social",
+      "description": "Jeff sent Mark Epstein an email containing a YouTube video link, indicating some form of prior communication or acquaintance.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff",
+      "person2": "Steve Bannon",
+      "relationshipType": "social",
+      "description": "Jeff and Steve Bannon were reportedly featured together in a 'mock interview' on a YouTube video.",
+      "strength": 2
+    },
+    {
+      "person1": "William Barry",
+      "person2": "Simon Ragona",
+      "relationshipType": "colleague",
+      "description": "Both are employees of T&M Protection Resources working on the same cybersecurity investigation for Mark Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "Harassing emails reported",
+      "description": "Richard Frankel forwards emails about harassment targeting Mark Epstein to the FBI.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mark Epstein",
+        "Richard Frankel"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Email header analysis completed",
+      "description": "William Barry completes analysis of email headers from harassing emails sent to Mark Epstein, finding they routed through UK Yahoo servers.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "William Barry",
+        "Mark Epstein"
+      ]
+    },
+    {
+      "date": "2019 (approx. 3-4 months prior to August 2019)",
+      "title": "YouTube video sent to Mark Epstein",
+      "description": "Jeff sends Mark Epstein an email with a YouTube link to a 'mock interview' between Jeff and Steve Bannon, containing comments about Trump. The video was later taken down.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeff",
+        "Mark Epstein",
+        "Steve Bannon"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Mark Epstein, Jeffrey Epstein's brother, was the target of harassing emails in 2019, prompting an investigation by private security firm T&M Protection Resources and the FBI.",
+    "A key piece of evidence sought was a YouTube video link sent to Mark Epstein by 'Jeff', featuring a 'mock interview' with Steve Bannon that included comments about Trump and their relationship.",
+    "The harassing emails were traced through UK Yahoo email servers, but the YouTube video had been taken down and the original email/link from Jeff could not be located by Mark Epstein at the time of the investigation.",
+    "The email chain demonstrates post-Jeffrey Epstein's death (July 2019) investigative activity and concerns regarding his brother Mark and potential digital evidence."
+  ],
+  "analyzedAt": "2026-02-20T04:35:59.172Z"
+}

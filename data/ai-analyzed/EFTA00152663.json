@@ -1,0 +1,121 @@
+{
+  "fileName": "EFTA00152663.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-05",
+  "summary": "This is an internal FBI email chain from October 5, 2020, requesting and approving authority for an FBI Special Agent and an NYPD detective to travel to London to interview a witness in the Jeffrey Epstein and Ghislaine Maxwell investigation. The witness is a UK citizen represented by counsel Jill Greenfield.",
+  "persons": [
+    {
+      "name": "Paul Byrne",
+      "role": "NYPD Detective",
+      "category": "law enforcement",
+      "context": "NYPD detective who, along with an FBI Special Agent, requested travel to London to conduct interviews for the Epstein investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Subject of the FBI investigation for sexual exploitation and abuse of minors; charged and arrested in July 2019 for sex trafficking and conspiracy.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator",
+      "category": "key figure",
+      "context": "Co-conspirator investigated for assisting, facilitating, and contributing to Epstein's abuse of minors; charged and arrested in July 2020.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jill Greenfield",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Counsel representing a witness in London who has information on crimes committed by Epstein and Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Charles P. Spencer",
+      "role": "FBI (IOD)",
+      "category": "law enforcement",
+      "context": "FBI employee who approved the travel authority request in the email chain.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Illia",
+      "role": "ALAT (likely Assistant Legal Attaché)",
+      "category": "law enforcement",
+      "context": "Concurred with the travel request for the FBI and NYPD personnel to London.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is described as a co-conspirator who assisted, facilitated, and contributed to Epstein's abuse of minors.",
+      "strength": 5
+    },
+    {
+      "person1": "Paul Byrne",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Detective Byrne is part of the law enforcement team traveling to investigate crimes related to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jill Greenfield",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "attorney-client",
+      "description": "Jill Greenfield is counsel for a witness who has information on crimes committed by Maxwell and Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07",
+      "title": "Epstein Arrest",
+      "description": "Jeffrey Epstein was charged and arrested for sex trafficking and conspiracy.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-07",
+      "title": "Maxwell Arrest",
+      "description": "Ghislaine Maxwell was charged and arrested for enticement of a minor, transportation of a minor, conspiracy, and perjury.",
+      "category": "arrest",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-10",
+      "title": "Approval for London Travel",
+      "description": "FBI approved authority for an SA and NYPD Detective Paul Byrne to travel to London to interview a witness in the Epstein/Maxwell case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Paul Byrne",
+        "Charles P. Spencer",
+        "John Illia"
+      ]
+    }
+  ],
+  "locations": [
+    "London",
+    "UK",
+    "New York"
+  ],
+  "keyFacts": [
+    "In October 2020, the FBI and NYPD were coordinating to send investigators to London to interview a UK citizen witness in the Epstein/Maxwell case.",
+    "The witness was represented by attorney Jill Greenfield and had voluntarily agreed to speak with the FBI with counsel present.",
+    "The investigation involved coordination between FBI New York and the Southern District of New York's U.S. Attorney's Office.",
+    "Ghislaine Maxwell is explicitly described as a co-conspirator who recruited, groomed, and abused minors for Epstein.",
+    "The travel request required high-level approval (AD authority) and involved seeking a quarantine waiver from the U.S. embassy due to pandemic conditions."
+  ],
+  "analyzedAt": "2026-02-20T10:14:45.649Z"
+}

@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00139267.pdf",
+  "dataSet": "9",
+  "documentType": "prison operations report",
+  "dateOriginal": "2019-07-22",
+  "summary": "This is a Daily Activity Report from the Metropolitan Correctional Center (MCC) in New York for July 21, 2019. It details routine prison operations, staff shortages, and inmate counts. The report notes that unit 11 South remained on modified operations and lists an inmate (TIM) at a local hospice under USMS guard.",
+  "persons": [
+    {
+      "name": "Warden",
+      "role": "Prison Warden",
+      "category": "staff",
+      "context": "The report is addressed to the Warden as the primary recipient, indicating they are the head of the facility.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden (O)",
+      "role": "Associate Warden (Operations)",
+      "category": "staff",
+      "context": "Listed as a recipient of the daily activity report, responsible for operations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Associate Warden (P)",
+      "role": "Associate Warden (Programs)",
+      "category": "staff",
+      "context": "Listed as a recipient of the daily activity report, responsible for programs.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Executive Assistant",
+      "role": "Executive Assistant",
+      "category": "staff",
+      "context": "Listed as a recipient of the daily activity report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Captain",
+      "role": "Prison Captain",
+      "category": "staff",
+      "context": "Listed as a recipient of the daily activity report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lieutenants",
+      "role": "Prison Lieutenants",
+      "category": "staff",
+      "context": "Listed as recipients of the daily activity report; the Operations Lieutenant compiled the report.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Departments Heads",
+      "role": "Department Heads",
+      "category": "staff",
+      "context": "Listed as recipients of the daily activity report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "TIM",
+      "role": "Inmate",
+      "category": "other",
+      "context": "An inmate noted as being at a 'Local Hospice' under guard by the United States Marshals Service (USMS).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Warden",
+      "person2": "Associate Warden (O)",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The report is addressed to both, indicating a chain of command within the prison administration.",
+      "strength": 2
+    },
+    {
+      "person1": "Warden",
+      "person2": "Associate Warden (P)",
+      "relationshipType": "supervisor-subordinate",
+      "description": "The report is addressed to both, indicating a chain of command within the prison administration.",
+      "strength": 2
+    },
+    {
+      "person1": "TIM",
+      "person2": "Warden",
+      "relationshipType": "custodial",
+      "description": "TIM is an inmate under the custody and responsibility of the Warden's facility.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-21",
+      "title": "MCC Daily Operations Report",
+      "description": "Routine prison operations for the day, including staff shortages leading to vacated correctional assignments and an inmate (TIM) being held at an outside hospice.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Warden",
+        "Associate Warden (O)",
+        "Associate Warden (P)",
+        "Lieutenants",
+        "TIM"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, New York, NY 10007",
+    "Local Hospice (unspecified location)"
+  ],
+  "keyFacts": [
+    "The report is dated July 22, 2019, and details activities for July 21, 2019, at the Metropolitan Correctional Center (MCC) in New York.",
+    "Unit 11 South was reported to remain on 'modified operations until further notice' during the morning watch shift.",
+    "Staff shortages led to the vacating of several correctional assignments (10-South #2, SHU #3, SHU #4) throughout the day.",
+    "An inmate identified as 'TIM' was noted as being at a 'Local Hospice' under guard by the United States Marshals Service (USMS).",
+    "The total inmate population at the beginning of the morning watch shift on July 21, 2019, was 790."
+  ],
+  "analyzedAt": "2026-02-19T21:54:54.117Z"
+}

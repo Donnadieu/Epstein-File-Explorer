@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA00153485.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-01-16",
+  "summary": "This is an email from an FBI Special Agent providing additional identifiers (email addresses and Amazon transaction details) for Ghislaine Maxwell and Ghislaine Borgerson in response to a subpoena request. The document is part of a financial investigation into Maxwell's activities.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The primary subject for whom additional identifiers (email and Amazon transaction details) are being provided in response to a subpoena.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Borgerson",
+      "role": "Subject of investigation",
+      "category": "associate",
+      "context": "An additional subject for whom identifiers are being provided alongside Ghislaine Maxwell, suggesting a possible alias or separate entity of interest.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent FBI New York Child Exploitation/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The author of the email, providing transaction identifiers in response to a subpoena request related to the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Ghislaine Borgerson",
+      "relationshipType": "financial",
+      "description": "Both are listed as subjects for whom financial identifiers (Amazon transactions) are being provided in the same investigative subpoena request.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent FBI New York Child Exploitation/Human Trafficking",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is providing investigative data (transaction identifiers) for Maxwell in response to a subpoena.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-16",
+      "title": "FBI Agent Provides Financial Identifiers",
+      "description": "An FBI Special Agent emails additional identifiers (email and Amazon transaction details) for Ghislaine Maxwell and Ghislaine Borgerson in response to a subpoena request.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent FBI New York Child Exploitation/Human Trafficking",
+        "Ghislaine Maxwell",
+        "Ghislaine Borgerson"
+      ]
+    },
+    {
+      "date": "2019-08-15",
+      "title": "Amazon Transaction",
+      "description": "An Amazon transaction for $316.63 is listed as an identifier for the subjects.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Ghislaine Borgerson"
+      ]
+    },
+    {
+      "date": "2019-08-13",
+      "title": "Amazon Transaction",
+      "description": "An Amazon transaction for $96.99 is listed as an identifier for the subjects.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Ghislaine Borgerson"
+      ]
+    },
+    {
+      "date": "2019-11-23",
+      "title": "Amazon Transaction",
+      "description": "An Amazon transaction for $69.98 is listed as an identifier for the subjects.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Ghislaine Borgerson"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "The FBI was actively subpoenaing financial records related to Ghislaine Maxwell and an associated name, Ghislaine Borgerson, as of January 2020.",
+    "Specific Amazon transaction details from 2019 were provided as identifiers, indicating a focus on tracing financial activity.",
+    "The investigation was being handled by the FBI's New York Child Exploitation/Human Trafficking task force.",
+    "The document references a specific case or subpoena number: CRIM1048721 2020 DS."
+  ],
+  "analyzedAt": "2026-02-20T11:07:56.822Z"
+}

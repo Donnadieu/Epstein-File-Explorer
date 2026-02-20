@@ -1,0 +1,133 @@
+{
+  "fileName": "EFTA00128758.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-09-09",
+  "summary": "This is an FBI FD-302 interview report of EDWARD BERTRAND, a former employee of the Virgin Islands Water and Power Authority (WAPA), conducted on September 9, 2021. Bertrand provides information about alleged corruption involving former WAPA officials, including their private work using public resources and specific connections to electrical work on Jeffrey Epstein's islands.",
+  "persons": [
+    {
+      "name": "Edward Bertrand",
+      "role": "Former WAPA employee, interviewee",
+      "category": "witness",
+      "context": "Former employee of the Virgin Islands Water and Power Authority (WAPA) from 1990 to 2015, interviewed by the FBI about corruption and misuse of WAPA resources.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Clinton Hedrington",
+      "role": "Former Chief Operating Officer for Electric Systems at WAPA",
+      "category": "associate",
+      "context": "Former WAPA COO who, after retiring, began working directly for Haugland. Allegedly involved in 'double-dipping'—using WAPA materials and personnel for private electrical jobs, including work related to Jeffrey Epstein's properties.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Felix Rey",
+      "role": "Former WAPA electrician",
+      "category": "associate",
+      "context": "Former WAPA electrician who allegedly performed most of the electrical work on Jeffrey Epstein's islands, Little and Great St James. Accused of participating in 'double-dipping' schemes with Clinton Hedrington.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Niel Vanterpool",
+      "role": "Former WAPA employee",
+      "category": "associate",
+      "context": "Former WAPA employee who, along with others, is reportedly in charge of Haugland's contract for trenching and underground electrical line work.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Claude Richardson",
+      "role": "Former WAPA employee",
+      "category": "associate",
+      "context": "Former WAPA employee who, along with others, is reportedly in charge of Haugland's contract for trenching and underground electrical line work.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Property owner",
+      "category": "key figure",
+      "context": "Mentioned as the owner of Little St James and Great St James islands, where Felix Rey allegedly performed electrical work.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Clinton Hedrington",
+      "person2": "Felix Rey",
+      "relationshipType": "co-conspirator",
+      "description": "Allegedly worked together on 'double-dipping' schemes, using WAPA resources for private electrical jobs and bypassing meters to avoid billing.",
+      "strength": 4
+    },
+    {
+      "person1": "Clinton Hedrington",
+      "person2": "Niel Vanterpool",
+      "relationshipType": "associate",
+      "description": "Teamed up with Claude Richardson and Felix Rey to be in charge of Haugland's contract for trenching and underground electrical work.",
+      "strength": 3
+    },
+    {
+      "person1": "Clinton Hedrington",
+      "person2": "Claude Richardson",
+      "relationshipType": "associate",
+      "description": "Teamed up with Niel Vanterpool and Felix Rey to be in charge of Haugland's contract for trenching and underground electrical work.",
+      "strength": 3
+    },
+    {
+      "person1": "Felix Rey",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "service provider-client",
+      "description": "Rey is identified as the electrician who performed most of the electrical work on Epstein's islands, Little and Great St James.",
+      "strength": 3
+    },
+    {
+      "person1": "Edward Bertrand",
+      "person2": "Clinton Hedrington",
+      "relationshipType": "former colleague",
+      "description": "Both were employed by WAPA, though Bertrand provides information about Hedrington's alleged misconduct.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-09",
+      "title": "FBI Interview of Edward Bertrand",
+      "description": "Edward Bertrand is interviewed by FBI agents and a U.S. Attorney's Office representative at the St. Thomas FBI office regarding WAPA operations and alleged corruption.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Edward Bertrand"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": "Bertrand becomes Staking Engineer",
+      "description": "Edward Bertrand transitions from mapping power lines and water mains to becoming a Staking Engineer at WAPA, responsible for surveying new construction sites and determining electrical meter placements.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Edward Bertrand"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Alleged Double-Dipping Scheme",
+      "description": "Clinton Hedrington and Felix Rey allegedly use WAPA materials, equipment, and personnel to complete private electrical contracts while on paid WAPA time, and bypass meters to avoid billing.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Clinton Hedrington",
+        "Felix Rey"
+      ]
+    }
+  ],
+  "locations": [
+    "St. Thomas, Virgin Islands, United States",
+    "Little St James",
+    "Great St James"
+  ],
+  "keyFacts": [
+    "Felix Rey, a former WAPA electrician, performed most of the electrical work on Jeffrey Epstein's islands, Little St James and Great St James.",
+    "Clinton Hedrington and Felix Rey are accused of 'double-dipping'—using WAPA resources for private jobs and bypassing meters, leading to unbilled energy loss ('Line Loss') passed on to other customers.",
+    "The Virgin Islands Department of Planning and Natural Resources (DPNR) is noted as the repository for electrical permits, some of which were allegedly signed off by Hedrington and Rey for their private work.",
+    "Edward Bertrand worked for WAPA from 1990 to 2015, holding roles in mapping and as a Staking Engineer, and served as a Hurricane First Responder."
+  ],
+  "analyzedAt": "2026-02-19T18:02:58.427Z"
+}

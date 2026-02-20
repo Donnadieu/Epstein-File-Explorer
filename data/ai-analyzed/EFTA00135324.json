@@ -1,0 +1,222 @@
+{
+  "fileName": "EFTA00135324.pdf",
+  "dataSet": "9",
+  "documentType": "Bureau of Prisons psychology services clinical notes",
+  "dateOriginal": "2019-07-10 to 2019-07-24",
+  "summary": "A series of Bureau of Prisons psychology service notes documenting clinical observations and suicide risk assessments for inmate Jeffrey Epstein from July 10 to July 24, 2019. The notes detail his complaints about jail conditions, his psychological state, and the July 23 incident where he was found with a string around his neck, leading to a suicide watch. This document contains a series of Bureau of Prisons Psychology Services clinical intervention reports from July 24-28, 2019, detailing Jeffrey Epstein's mental state and conditions while incarcerated at the Metropolitan Correctional Center (MCC) New York. It documents his removal from suicide watch to psychological observation after an incident where he was found with marks on his neck, his repeated claims of having no memory of the event, his complaints about SHU conditions, and his denial of suicidal intent.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The primary subject of the psychological reports; an inmate at MCC New York who was placed on suicide watch after an incident involving marks on his neck, then stepped down to psychological observation. He denies memory of the incident and suicidal intent.",
+      "mentionCount": 100
+    },
+    {
+      "name": "PhD/Chief Psychologist",
+      "role": "Clinical Psychologist",
+      "category": "staff",
+      "context": "The primary provider writing most of the clinical notes, conducting observations, and addressing Epstein's concerns.",
+      "mentionCount": 15
+    },
+    {
+      "name": "PsyD",
+      "role": "Clinical Psychologist",
+      "category": "staff",
+      "context": "A psychologist (PsyD) who saw Epstein on July 27, 2019, provided supportive interventions and documented his mental status and complaints about SHU conditions.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Operations Lt.",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Contacted the on-call psychologist at about 2 AM on July 23, 2019, to inform them Epstein was being placed on suicide watch.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Captain",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Was informed by the psychologist about a notation in the staff log where Epstein allegedly said his cellmate tried to kill him; the Captain stated they were already aware.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SHU lieutenant",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Was informed by the psychologist about Epstein's complaints regarding not receiving soap, a spoon, and phone calls.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ph.D.",
+      "role": "Psychologist/Provider",
+      "category": "staff",
+      "context": "A psychologist (Ph.D.) who conducted clinical interviews with Epstein on July 24 and 25, 2019, documented his mental status, and recommended his removal from suicide watch.",
+      "mentionCount": 10
+    },
+    {
+      "name": "PhD/Chief",
+      "role": "Chief Psychologist",
+      "category": "staff",
+      "context": "The Chief Psychologist who conducted clinical interviews with Epstein on July 25 and 26, 2019, documented his complaints and maintained him on psychological observation.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Nick",
+      "role": "Cellmate",
+      "category": "other",
+      "context": "Epstein's former cellmate in the SHU. Epstein expressed a desire to speak with him to understand what happened during the incident that led to marks on his neck.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PhD/Chief Psychologist",
+      "relationshipType": "staff-inmate",
+      "description": "Clinical provider-patient relationship. The psychologist conducted regular psychological observations and addressed Epstein's complaints.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PsyD",
+      "relationshipType": "staff-inmate",
+      "description": "Clinical provider-patient relationship. The psychologist conducted a suicide risk assessment after the incident with the string.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Operations Lt.",
+      "relationshipType": "law enforcement-inmate",
+      "description": "The lieutenant initiated the suicide watch protocol after Epstein was found with a string around his neck.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Nick",
+      "relationshipType": "cellmate",
+      "description": "Epstein was housed with Nick in the Special Housing Unit (SHU). Epstein claimed Nick called him a 'pedophile' and was reading a newspaper article about him prior to the incident.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Ph.D.",
+      "relationshipType": "provider-patient",
+      "description": "Clinical relationship where the psychologist (Ph.D.) assessed Epstein's suicide risk, conducted interviews, and made recommendations regarding his observation status.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "PhD/Chief",
+      "relationshipType": "provider-patient",
+      "description": "Clinical relationship where the Chief Psychologist conducted follow-up assessments, provided interventions, and decided to maintain Epstein on psychological observation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-10",
+      "title": "Initial Psychological Observation",
+      "description": "Jeffrey Epstein is seen for a psychological observation contact. He expresses numerous complaints about jail conditions and states he is looking forward to his bail hearing.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PhD/Chief Psychologist"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Found with String Around Neck / Suicide Watch Initiated",
+      "description": "At about 2 AM, Epstein is found in his SHU cell with a string loosely hanging around his neck. He is placed on suicide watch. The incident's cause is unclear; Epstein claims no memory, but a staff log notes he said his cellmate tried to kill him.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Operations Lt.",
+        "PsyD",
+        "Captain"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Suicide Risk Assessment",
+      "description": "PsyD conducts a suicide risk assessment. Epstein denies suicidal ideation and memory of the string incident. The assessment notes a circular line on his neck and concludes with a moderate acute suicide risk.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "PsyD"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Suicide Watch Ended",
+      "description": "Epstein is removed from suicide watch after approximately 31 hours. A post-watch report notes he adamantly denies suicidality but expresses fear for his safety regarding his previous cellmate.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Ph.D."
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein placed on Suicide Watch",
+      "description": "An incident occurred resulting in Jeffrey Epstein being placed on Suicide Watch. He was found with marks on his neck, allegedly involving a bed sheet.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Nick"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Removal from Suicide Watch to Psychological Observation",
+      "description": "After review, Epstein was stepped down from Suicide Watch to Psychological Observation. He was provided hygiene products, a shower, and attended a legal visit.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Ph.D."
+      ]
+    },
+    {
+      "date": "2019-07-24 to 2019-07-27",
+      "title": "Daily Psychological Observations",
+      "description": "A series of daily clinical contacts where psychologists assessed Epstein's mental status, provided supportive interventions, and documented his complaints about SHU conditions and lack of memory about the neck injury incident.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Ph.D.",
+        "PhD/Chief",
+        "PsyD"
+      ]
+    }
+  ],
+  "locations": [
+    "NYM (Metropolitan Correctional Center, New York)",
+    "SHU (Special Housing Unit) at NYM",
+    "9S area (housing unit at NYM)",
+    "Psychological observation area",
+    "Attorney conference area",
+    "Metropolitan Correctional Center, New York (MCC NYM or NYM)",
+    "Special Housing Unit (SHU) at MCC NYM",
+    "Psychological Observation/Hospital area at MCC NYM"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, Jeffrey Epstein was found in his SHU cell with a string loosely tied around his neck, leading to his placement on suicide watch.",
+    "Epstein claimed to have no memory of the string incident, but a staff suicide watch log noted he told staff his cellmate tried to kill him.",
+    "Clinical notes from July 10-24 show Epstein was psychologically stable, denied suicidal ideation, but was vocal about complaints regarding jail conditions, uniforms, and property.",
+    "A suicide risk assessment on July 23 concluded Epstein's overall acute suicide risk was 'Moderate' despite his denials, due to the unexplained incident and static risk factors like his high-profile case.",
+    "Epstein expressed fear for his own safety if returned to his previous cellmate, as noted in the post-suicide watch report on July 24.",
+    "Jeffrey Epstein was found with marks on his neck in his SHU cell on or around July 23, 2019, leading to his placement on suicide watch.",
+    "Epstein consistently claimed to have no memory of how the marks on his neck occurred, stating his last memory was getting a drink of water before waking up on a stretcher hearing himself snore.",
+    "Epstein described his cellmate 'Nick' as agitated, claimed Nick called him a 'pedophile', and was reading a newspaper article about him prior to the incident.",
+    "Epstein was removed from suicide watch on July 24, 2019, and placed on psychological observation, where he remained through at least July 27, 2019, under daily psychology review.",
+    "Epstein repeatedly expressed a desire to be housed in general population rather than the SHU, citing noise, smells, feeling punished, and concerns about safety, including mention of MS-13 gang members."
+  ],
+  "analyzedAt": "2026-02-19T20:21:31.558Z"
+}

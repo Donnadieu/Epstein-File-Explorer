@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00126071.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-12-23",
+  "summary": "This is an FBI 302 interview report of a Federal Bureau of Prisons correctional guard regarding the events surrounding the death of Jeffrey Epstein at the Metropolitan Correctional Center on August 10, 2019. The guard describes hearing the body alarm, escorting EMS, following Epstein to the hospital, and his limited interactions with other staff.",
+  "persons": [
+    {
+      "name": "Timothy Parlatore",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present as the attorney for the correctional guard during the FBI interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "NOEL",
+      "role": "Correctional Staff",
+      "category": "staff",
+      "context": "A correctional staff member with whom the interviewed guard stated he had no interactions or discussions regarding Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "THOMAS",
+      "role": "Correctional Staff",
+      "category": "staff",
+      "context": "A correctional staff member who briefly spoke to the interviewed guard after Epstein's death, stating 'I'm ok'.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Timothy Parlatore",
+      "person2": "NOEL",
+      "relationshipType": "legal",
+      "description": "Parlatore was the attorney representing the correctional guard who was being interviewed about his actions and observations, which included a statement about having no interaction with NOEL.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein at MCC",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center. A body alarm sounded, EMS was called, and he was transported to a hospital where he was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-23",
+      "title": "FBI Interview of Correctional Guard",
+      "description": "The FBI, along with an OIG Special Agent and Assistant US Attorneys, interviewed a Bureau of Prisons correctional guard regarding the incident involving Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Timothy Parlatore"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center",
+    "Southern District of New York",
+    "NY Office of the Chief Medical Examiner"
+  ],
+  "keyFacts": [
+    "The interviewed correctional guard heard a body alarm go off around 6:38-6:40 AM on the day of Epstein's death.",
+    "The guard escorted EMS into the facility, followed the ambulance to the hospital, and remained with Epstein until doctors pronounced him dead at approximately 7:36 AM.",
+    "The guard stated he had no interactions with staff member NOEL regarding the death and only briefly spoke with THOMAS, who said 'I'm ok'.",
+    "The guard was interviewed in the presence of his attorney, Timothy Parlatore.",
+    "Epstein's body was released to the NY Office of the Chief Medical Examiner, and the guard returned to the MCC with Epstein's clothing."
+  ],
+  "analyzedAt": "2026-02-19T17:03:06.669Z"
+}

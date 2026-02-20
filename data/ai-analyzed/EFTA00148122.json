@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00148122.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-01-29",
+  "summary": "Internal FBI email chain discussing a press conference held by the U.S. Attorney's Office (USAO) in front of Jeffrey Epstein's house. The emails reveal a communication failure where victims were not notified, causing anger and frustration among them. FBI agents are trying to determine what happened and how to address the victims' concerns.",
+  "persons": [
+    {
+      "name": "S (NY) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Forwarded an email chain and asked how to respond regarding the press conference communication failure.",
+      "mentionCount": 2
+    },
+    {
+      "name": "ME, (SE) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Expressed frustration about the USAO's communication failure and sought guidance on directing victim concerns.",
+      "mentionCount": 2
+    },
+    {
+      "name": "L. (DO) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Relayed information that the press conference was not planned and that SDNY/FBI were unaware, mentioning a statement about Prince Andrew.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M, (SE) (FBI)",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Reported receiving irate communications from victims about not being notified of the press conference and sought information to address their concerns.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Mentioned as the subject of the press conference held in front of his brownstone.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Public Figure",
+      "category": "political",
+      "context": "Referenced as a topic the USAO was asked about during the impromptu press conference.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ME, (SE) (FBI)",
+      "person2": "M, (SE) (FBI)",
+      "relationshipType": "colleague",
+      "description": "Both are FBI agents in the Seattle Division, coordinating on victim communications regarding the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "L. (DO) (FBI)",
+      "person2": "ME, (SE) (FBI)",
+      "relationshipType": "colleague",
+      "description": "FBI agents communicating about the press conference incident and victim notification issues.",
+      "strength": 3
+    },
+    {
+      "person1": "S (NY) (FBI)",
+      "person2": "ME, (SE) (FBI)",
+      "relationshipType": "colleague",
+      "description": "FBI agents in different divisions discussing how to respond to the press conference communication failure.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-27",
+      "title": "USAO Press Conference at Epstein's House",
+      "description": "A press conference was held in front of Jeffrey Epstein's brownstone, co-sponsored/hosted by Safe Horizons, without prior notification to victims or the FBI.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Prince Andrew"
+      ]
+    },
+    {
+      "date": "2020-01-28",
+      "title": "FBI Internal Discussion on Press Conference",
+      "description": "FBI agents exchanged emails to address the communication breakdown and victim anger over not being notified of the press conference.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "ME, (SE) (FBI)",
+        "L. (DO) (FBI)",
+        "M, (SE) (FBI)"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's brownstone",
+    "New York (implied from SDNY/USAO context)"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office (USAO) held a press conference in front of Jeffrey Epstein's house without notifying victims or the FBI, causing significant anger among victims.",
+    "The press conference was co-sponsored/hosted by Safe Horizons, and the USAO made a statement about Prince Andrew during the event.",
+    "FBI agents described the incident as a 'clear communication failure' and sought to determine how to address victims' feelings of betrayal.",
+    "The SDNY/FBI claimed they had no prior knowledge that the press conference was going to happen."
+  ],
+  "analyzedAt": "2026-02-20T06:38:09.089Z"
+}

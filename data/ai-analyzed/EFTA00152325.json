@@ -1,0 +1,134 @@
+{
+  "fileName": "EFTA00152325.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-07-01",
+  "summary": "This document is a series of emails from July 1, 2020, between federal prosecutors and FBI agents discussing the preparation of search warrants for Ghislaine Maxwell's arrest and the search of a residence. It includes investigative details linking Maxwell to Scott Borgerson and a shared address in Manchester, MA.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant/Target of Investigation",
+      "category": "key figure",
+      "context": "The primary subject of the investigation and planned arrest; search warrants are being prepared for her seizure from a third-party residence.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Scott Borgerson",
+      "role": "Associate of Ghislaine Maxwell",
+      "category": "associate",
+      "context": "Publicly reported as Maxwell's boyfriend or former boyfriend; shares a joint bank account and home address with her.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Amanda",
+      "role": "Prosecutor/Legal Staff",
+      "category": "legal",
+      "context": "Mentioned as someone who would take the lead in drafting search warrants related to seizing Maxwell from a third-party premises.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Judge Johnstone",
+      "role": "Federal Judge",
+      "category": "legal",
+      "context": "The judge who would swear out the search warrant; her availability and cut-off times for warrant materials are discussed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Vince",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent (likely from the Boston Field Office) who forwarded information about Maxwell and Borgerson to the U.S. Attorney's Office in New Hampshire.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Scott Borgerson",
+      "relationshipType": "social/financial",
+      "description": "Publicly reported as boyfriend and girlfriend; they have a shared joint bank account since approximately October 2018 and a shared home address.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Scott Borgerson",
+      "relationshipType": "co-resident",
+      "description": "Bank and Accurint records show them sharing a home address at 301 Summer Street, Manchester, MA; Amazon packages were delivered to either until March 2020.",
+      "strength": 4
+    },
+    {
+      "person1": "M",
+      "person2": "Amanda",
+      "relationshipType": "professional/colleague",
+      "description": "M expects Amanda to take the lead in drafting search warrants for seizing Maxwell from a third-party premises.",
+      "strength": 2
+    },
+    {
+      "person1": "M",
+      "person2": "Judge Johnstone",
+      "relationshipType": "legal proceeding",
+      "description": "M is coordinating with the U.S. Attorney in New Hampshire to alert Judge Johnstone about the potential need for a search warrant and her availability.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-01",
+      "title": "Coordination for Maxwell Search Warrant",
+      "description": "Federal prosecutors and FBI agents exchange emails to prepare search warrants for Ghislaine Maxwell's arrest and the search of a residence, discussing legal requirements and judge availability.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "M",
+        "Judge Johnstone",
+        "Vince"
+      ]
+    },
+    {
+      "date": "2018-10",
+      "title": "Maxwell and Borgerson Joint Account Opened",
+      "description": "Ghislaine Maxwell and Scott Borgerson opened a shared joint bank account, as indicated by bank records.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Scott Borgerson"
+      ]
+    },
+    {
+      "date": "2020-03",
+      "title": "Last Amazon Delivery to Shared Address",
+      "description": "Amazon records show packages were delivered to either Ghislaine Maxwell or Scott Borgerson at 301 Summer Street, Manchester, MA, up until March 2020.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Scott Borgerson"
+      ]
+    },
+    {
+      "date": "2019-03 to 2019-05",
+      "title": "Borgerson's Purchases in New Hampshire",
+      "description": "Scott Borgerson's bank records show multiple purchases at various locations between Hooksett and Newbury, New Hampshire.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Scott Borgerson"
+      ]
+    }
+  ],
+  "locations": [
+    "301 Summer Street, Manchester, MA",
+    "Hooksett, New Hampshire",
+    "Newbury, New Hampshire"
+  ],
+  "keyFacts": [
+    "Investigators were actively preparing search warrants for Ghislaine Maxwell's arrest and the search of a residence as of July 1, 2020.",
+    "Ghislaine Maxwell and Scott Borgerson were publicly reported as being in a romantic relationship and shared a joint bank account since approximately October 2018.",
+    "Maxwell and Borgerson shared a home address at 301 Summer Street, Manchester, MA, with evidence of package deliveries there until March 2020.",
+    "Prosecutors cited the legal precedent United States v. Young (1st Cir. 2016) regarding the need for a separate search warrant when seizing a suspect from a third-party residence.",
+    "The FBI was working to pinpoint the specific building where Maxwell's phone was located to target the search warrant."
+  ],
+  "analyzedAt": "2026-02-20T09:45:42.629Z"
+}

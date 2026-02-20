@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00147392.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2019-08-17",
+  "summary": "This is an internal FBI email chain from August 2019 regarding the investigation into Jeffrey Epstein's death. It discusses the need for agents to be on standby to assist with interviews following the service of 16 subpoenas, indicating a surge in investigative activity.",
+  "persons": [
+    {
+      "name": "Assistant Special Agent in Charge",
+      "role": "FBI supervisor",
+      "category": "law enforcement",
+      "context": "Author of the initial email requesting 10 people to be on standby to assist with interviews for the Epstein death investigation after 16 subpoenas were served.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SSA",
+      "role": "Supervisory Special Agent, FBI New York",
+      "category": "law enforcement",
+      "context": "Recipient and forwarder of the email chain, coordinating with other agents regarding standby assistance for interviews.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent, New York Child Exploitation/Human Trafficking Task Force",
+      "category": "law enforcement",
+      "context": "Agent contacted to be on standby next week to help with interviews if needed as part of the Epstein death investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant Special Agent in Charge",
+      "person2": "SSA",
+      "relationshipType": "colleague",
+      "description": "Assistant Special Agent in Charge emails SSA requesting assistance with standby personnel for the Epstein death investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "SSA",
+      "person2": "Special Agent",
+      "relationshipType": "colleague",
+      "description": "SSA forwards the request to Special Agent, asking if they can be on standby to help with interviews.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-16",
+      "title": "Service of 16 subpoenas in Epstein death investigation",
+      "description": "The FBI team served 16 subpoenas as part of the investigation into Jeffrey Epstein's death, potentially leading to a surge of people needing interviews.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Assistant Special Agent in Charge",
+        "FBI team"
+      ]
+    },
+    {
+      "date": "2019-08-19 to 2019-08-20",
+      "title": "Planned interview surge",
+      "description": "Anticipated surge of people needing to be interviewed on Monday and/or Tuesday following the service of subpoenas.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant Special Agent in Charge",
+        "FBI team"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office"
+  ],
+  "keyFacts": [
+    "The FBI served 16 subpoenas as part of the investigation into Jeffrey Epstein's death in August 2019.",
+    "The investigation anticipated a surge of people needing interviews, requiring 10 FBI agents to be on standby.",
+    "The email chain shows internal FBI coordination within the New York Field Office's Child Exploitation/Human Trafficking Task Force.",
+    "The communication highlights the scale and active status of the death investigation shortly after Epstein died."
+  ],
+  "analyzedAt": "2026-02-20T05:31:25.641Z"
+}

@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00151624.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-05-14",
+  "summary": "This is an email chain between an FBI Special Agent and an Assistant United States Attorney from the Southern District of New York, discussing the identification of telecommunications service providers for several phone numbers associated with Jeffrey Epstein during a relevant investigation period.",
+  "persons": [
+    {
+      "name": "Special Agent FBI New York VCAC/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the email providing the identified service providers for phone numbers associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney Southern District of New York",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The recipient who initially requested the service provider information for phone numbers associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "The individual whose phone numbers (cell, home, and NY office) are the subject of the law enforcement inquiry for service provider information.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York VCAC/Human Trafficking",
+      "person2": "Assistant United States Attorney Southern District of New York",
+      "relationshipType": "professional collaboration",
+      "description": "Collaborating on an investigation, with the AUSA requesting information and the FBI agent providing it regarding phone records.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent FBI New York VCAC/Human Trafficking",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI agent is investigating Jeffrey Epstein, as evidenced by the agent providing data on Epstein's phone service providers.",
+      "strength": 3
+    },
+    {
+      "person1": "Assistant United States Attorney Southern District of New York",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-subject",
+      "description": "The AUSA is involved in a prosecution or investigation concerning Jeffrey Epstein, requesting his phone record details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-05-14",
+      "title": "Phone Record Provider Inquiry",
+      "description": "An Assistant United States Attorney requests, and an FBI Special Agent provides, the telecommunications service providers for phone numbers associated with Jeffrey Epstein for a relevant investigation period.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney Southern District of New York",
+        "Special Agent FBI New York VCAC/Human Trafficking",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10007",
+    "Epstein's NY office"
+  ],
+  "keyFacts": [
+    "Law enforcement was actively investigating Jeffrey Epstein's communications as of May 2019, specifically seeking his phone service providers.",
+    "The investigation involved collaboration between the FBI's VCAC/Human Trafficking unit in New York and the U.S. Attorney's Office for the Southern District of New York.",
+    "The inquiry covered multiple phone lines: a cell phone, a home phone, and the phone at Epstein's New York office.",
+    "The identified service providers were T-Mobile (cell), AT&T (home), Verizon (NY office), and AT&T (another cell phone)."
+  ],
+  "analyzedAt": "2026-02-20T09:03:03.994Z"
+}

@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00127394.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury transcript",
+  "dateOriginal": null,
+  "summary": "This document appears to be a transcript of a grand jury proceeding or deposition related to the investigation into Jeffrey Epstein's death in custody. The testimony focuses on the failure of surveillance cameras at the Metropolitan Correctional Center (MCC) on or around August 8, 2019, and the actions of staff members regarding the camera system and overtime approval.",
+  "persons": [
+    {
+      "name": "Daniel",
+      "role": "Communication technician or facilities staff",
+      "category": "staff",
+      "context": "Mentioned as the person responsible for the camera system who offered to work overtime to fix the cameras when they were discovered to be down.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ryan",
+      "role": "Staff member",
+      "category": "staff",
+      "context": "Mentioned as someone who stated they were not contacted about Daniel working overtime.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "AW",
+      "person2": "Daniel",
+      "relationshipType": "supervisor-subordinate",
+      "description": "AW is identified as Daniel's supervisor in the facilities department.",
+      "strength": 3
+    },
+    {
+      "person1": "Daniel",
+      "person2": "Ryan",
+      "relationshipType": "colleague",
+      "description": "Both appear to be staff members at the correctional facility, with Ryan possibly being in a supervisory role regarding overtime approval.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "Surveillance camera failure at MCC",
+      "description": "Surveillance cameras at the Metropolitan Correctional Center were discovered to be down, preventing review of footage. This occurred around 1:00 PM on August 8, 2019.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Daniel",
+        "AW"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Overtime approval for camera repair",
+      "description": "Daniel received approval to work overtime on Saturday (August 10, 2019) to fix the camera system, though the source of this approval is unclear from the testimony.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Daniel"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) - implied location where the camera failure occurred"
+  ],
+  "keyFacts": [
+    "Surveillance cameras at the correctional facility were discovered to be non-functional on August 8, 2019, around 1:00 PM.",
+    "Only one communication technician (Daniel) had regular access to the camera system service area at the time of the failure.",
+    "Daniel offered to work overtime to fix the cameras and claimed to have received approval for Saturday overtime work.",
+    "There is confusion about who approved Daniel's overtime, with Ryan and another supervisor denying they authorized it.",
+    "The testimony suggests possible tampering with the camera system, as the questioner asks if anyone could have intentionally taken the cameras offline."
+  ],
+  "analyzedAt": "2026-02-19T17:30:45.639Z"
+}

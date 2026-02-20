@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00153866.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-05",
+  "summary": "This document is an email chain between an FBI Special Agent and American Airlines Corporate Security regarding a Federal Grand Jury subpoena for travel records related to Ghislaine Maxwell. The FBI requests expedited production of passenger reservation records, ticket copies, and usage information, citing a child exploitation/human trafficking investigation and instructs the airline not to notify the subscriber.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The subpoena and attached records are specifically related to her travel on American Airlines as part of a child exploitation/human trafficking investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI agent from New York who sent the initial subpoena request to American Airlines Corporate Security on January 28, 2020, regarding the Ghislaine Maxwell investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Analyst",
+      "role": "Revenue Fraud Corporate Security Analyst",
+      "category": "staff",
+      "context": "The American Airlines analyst who responded to the FBI's subpoena, attaching the requested travel records for Ghislaine Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The FBI Special Agent is investigating Ghislaine Maxwell as part of a federal grand jury subpoena for her travel records in a child exploitation/human trafficking matter.",
+      "strength": 4
+    },
+    {
+      "person1": "Analyst",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "record custodian-subject",
+      "description": "The American Airlines analyst is the custodian of travel records for Ghislaine Maxwell and provided them to the FBI in response to the subpoena.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "Analyst",
+      "relationshipType": "law enforcement-corporate contact",
+      "description": "The FBI Special Agent issued the subpoena to American Airlines Corporate Security, and the Analyst responded by providing the requested travel records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-01-28",
+      "title": "FBI Issues Grand Jury Subpoena to American Airlines",
+      "description": "An FBI Special Agent from New York sends a Federal Grand Jury subpoena to American Airlines Corporate Security, requesting travel records for Ghislaine Maxwell related to a child exploitation/human trafficking investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Special Agent",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-02-05",
+      "title": "American Airlines Provides Travel Records",
+      "description": "An American Airlines Revenue Fraud Corporate Security Analyst responds to the FBI subpoena, attaching passenger reservation records, ticket copies, and ticket usage information for Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Analyst",
+        "Ghislaine Maxwell",
+        "Special Agent"
+      ]
+    },
+    {
+      "date": "2020-02-07",
+      "title": "Expedited Subpoena Due Date",
+      "description": "The FBI's subpoena to American Airlines had an expedited due date of February 7, 2020, for the production of records.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "The FBI issued a Federal Grand Jury subpoena to American Airlines for travel records specifically related to Ghislaine Maxwell.",
+    "The investigation is explicitly described as a 'child exploitation/human trafficking matter'.",
+    "The FBI requested expedited service by February 7, 2020, and instructed American Airlines not to notify the subscriber (likely Ghislaine Maxwell or an associate).",
+    "The records produced included passenger reservation records, ticket copies, and ticket usage information from American Airlines.",
+    "The correspondence demonstrates active federal investigation into Ghislaine Maxwell's travel activities as of early 2020."
+  ],
+  "analyzedAt": "2026-02-20T11:45:36.488Z"
+}

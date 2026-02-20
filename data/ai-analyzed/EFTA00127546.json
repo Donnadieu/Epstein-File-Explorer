@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00127546.pdf",
+  "dataSet": "9",
+  "documentType": "service request form",
+  "dateOriginal": "2019-11-13",
+  "summary": "This is a service request form from Signet Technologies to relocate recorders and AMS equipment and change IP addresses at 150 Park Row, New York, NY. The request was assigned to technicians Jeff Cranor, Jeff McKenzie, and Justin Houston.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request to relocate recorders and AMS equipment at 150 Park Row, New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request and left an out-of-office email comment. Also mentioned as the person who requested the service call.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request and commented about shutting down equipment to move it, coordinating with an unnamed contact.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Jeff McKenzie",
+      "relationshipType": "colleague",
+      "description": "Both assigned as service technicians to the same equipment relocation request.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both assigned as service technicians to the same equipment relocation request.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both assigned as service technicians; Houston commented on coordinating the move, possibly in response to McKenzie.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-13",
+      "title": "Service Request Created",
+      "description": "Service request #26408 created to relocate recorders and AMS equipment and change IP addresses at 150 Park Row, New York.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff Cranor",
+        "Jeff McKenzie",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-11-15",
+      "title": "Scheduled Service Appointment",
+      "description": "Service appointment scheduled from 8-11am to perform the equipment relocation and IP address changes.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff McKenzie"
+      ]
+    },
+    {
+      "date": "2019-11-15",
+      "title": "Equipment Shutdown for Move",
+      "description": "Justin Houston commented that they were shutting everything down to move the equipment, coordinating with an unnamed contact.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Justin Houston"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "New York"
+  ],
+  "keyFacts": [
+    "A service request was made to relocate 'recorders and AMS' and change their IP addresses at 150 Park Row, New York, NY 10007.",
+    "The request was assigned to Signet Technologies technicians Jeff Cranor, Jeff McKenzie, and Justin Houston.",
+    "The service was scheduled for November 15, 2019, between 8-11am.",
+    "Justin Houston's comment indicates coordination with an unnamed contact ('Talked with =and') to shut down equipment for the move.",
+    "The document is a routine service ticket with no direct mention of Epstein, crimes, or associated individuals."
+  ],
+  "analyzedAt": "2026-02-19T17:38:05.265Z"
+}

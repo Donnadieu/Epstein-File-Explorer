@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00155154.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-06-23",
+  "summary": "This document is a chain of emails from June 2021 between a U.S. Attorney's Office (SDNY) and the FBI regarding a request for financial documents related to a JP Morgan account held by Financial Trust Company. The emails specifically discuss obtaining a signature card and account statements to trace a $18,300,000 transfer to 'Maxwell' in October 1999.",
+  "persons": [
+    {
+      "name": "Comey, Maurene",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Appears as the sender of an email request for financial documents related to a JP Morgan account and a transfer to Maxwell.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Recipient of funds",
+      "category": "key figure",
+      "context": "Named as the recipient of an $18,300,000 transfer from a Financial Trust Company account at JP Morgan in October 1999.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Comey, Maurene",
+      "person2": "Maxwell",
+      "relationshipType": "investigative",
+      "description": "Comey, as an AUSA, is investigating a financial transfer to Maxwell, indicating a legal/investigative connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "1999-10",
+      "title": "$18.3M Transfer to Maxwell",
+      "description": "A transfer of $18,300,000 from a JP Morgan Financial Trust Company account to an entity or person named Maxwell.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell"
+      ]
+    },
+    {
+      "date": "2021-06-22",
+      "title": "Document Request Initiated",
+      "description": "AUSA Maurene Comey emails the FBI requesting the signature card for a specific JP Morgan account.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Comey, Maurene"
+      ]
+    },
+    {
+      "date": "2021-06-23",
+      "title": "Account Statement Provided",
+      "description": "An FBI contact provides an October 1999 account statement showing the $18.3M transfer to Maxwell and details its source from a money market fund sale.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York, NY 10007",
+    "One Saint Plaza, New York, NY"
+  ],
+  "keyFacts": [
+    "A $18,300,000 transfer was made to 'Maxwell' from a JP Morgan Financial Trust Company account in October 1999.",
+    "The source of the funds for this transfer was the sale of a 'JP Morgan Institutional Prime Money Market Fund.'",
+    "In 2021, the U.S. Attorney's Office (SDNY) was actively investigating this transaction, requesting signature cards and account statements.",
+    "The document is part of a larger document production related to financial accounts, referenced by Bates numbers (e.g., 36868, 1934)."
+  ],
+  "analyzedAt": "2026-02-20T13:15:11.966Z"
+}

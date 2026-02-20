@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00145713.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2023-05-05",
+  "summary": "This appears to be a Proton Mail interface screenshot showing an email thread between Brad Edwards and Adam Castellani. The key email from October 4, 2023, contains an attachment where Adam from JP Morgan is helping write something for Epstein, indicating ongoing connections to Epstein's network.",
+  "persons": [
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Appears as the recipient of emails in the thread, likely an attorney involved in Epstein-related matters.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Adam Castellani",
+      "role": "Correspondent",
+      "category": "associate",
+      "context": "Sender of an email on October 4, 2023, attaching a document where someone from JP Morgan is helping write something for Epstein.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Adam",
+      "role": "JP Morgan Employee",
+      "category": "financial",
+      "context": "Referred to as 'Adam from JP Morgan' who is helping write something for Epstein, mentioned in Adam Castellani's email.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject",
+      "category": "key figure",
+      "context": "Mentioned as the person for whom Adam from JP Morgan is helping write something, indicating posthumous financial or legal activity.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Adam Castellani",
+      "person2": "Brad Edwards",
+      "relationshipType": "correspondent",
+      "description": "Adam Castellani is emailing Brad Edwards with an attachment related to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Adam",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Adam from JP Morgan is helping write something for Epstein, indicating a financial or advisory connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Adam Castellani",
+      "person2": "Adam",
+      "relationshipType": "associate",
+      "description": "Adam Castellani references 'Adam from JP Morgan' as helping with writing for Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-10-04",
+      "title": "Email with Epstein-related attachment",
+      "description": "Adam Castellani emails Brad Edwards attaching a document where Adam from JP Morgan is helping write something for Epstein.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Adam Castellani",
+        "Brad Edwards",
+        "Adam",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An email from October 4, 2023, shows Adam Castellani contacting attorney Brad Edwards with an attachment related to Jeffrey Epstein.",
+    "The attachment involves 'Adam from JP Morgan' helping to write something for Epstein, indicating ongoing financial or legal activity connected to Epstein's estate.",
+    "The document is part of a larger email thread dating back to at least April 2023, suggesting continued communication about Epstein-related matters."
+  ],
+  "analyzedAt": "2026-02-20T04:19:25.075Z"
+}

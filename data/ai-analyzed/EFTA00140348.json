@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00140348.pdf",
+  "dataSet": "9",
+  "documentType": "incident report / prison memorandum",
+  "dateOriginal": "2019-07-23",
+  "summary": "This document is a collection of Bureau of Prisons memoranda from the Metropolitan Correctional Center in New York, detailing the events of July 23, 2019, when inmate Jeffrey Epstein was found with an orange cloth around his neck in his cell. The reports describe the response, Epstein's medical state, and his subsequent allegation that his cellmate, Nicholas Tartaglione, had attempted to kill him and had been extorting him.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate / Accused",
+      "category": "key figure",
+      "context": "The inmate found in his cell with an orange homemade rope around his neck; he later alleged his cellmate tried to kill and extort him.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Nicholas Tartaglione",
+      "role": "Inmate / Cellmate",
+      "category": "associate",
+      "context": "Epstein's cellmate who reported finding Epstein with a string around his neck; later accused by Epstein of attempted murder and extortion.",
+      "mentionCount": 10
+    },
+    {
+      "name": "M. Thomas",
+      "role": "Material Handler Supervisor",
+      "category": "staff",
+      "context": "BOP staff member who assisted in carrying Epstein to the HA-Unit on a stretcher.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Officer Masullo",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "BOP officer who applied restraints to inmate Tartaglione during the incident response.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Were housed together in cell Z05-124LAD; Epstein alleged Tartaglione attempted to kill him and had been extorting him for a week.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicholas Tartaglione",
+      "relationshipType": "victim-perpetrator (alleged)",
+      "description": "Epstein claimed Tartaglione tried to kill him by hanging and had threatened to beat him up if he didn't pay him money.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "D.",
+      "relationshipType": "witness-interviewer",
+      "description": "Officer D. took Epstein's statement after the incident where Epstein detailed the alleged threats and extortion by Tartaglione.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Noose in Cell",
+      "description": "At approximately 1:27 a.m., Jeffrey Epstein was found in his cell (Z05-124LAD) with an orange homemade rope/cloth around his neck, appearing unresponsive. Staff responded, removed the rope, and transported him to the HA-Unit for suicide watch.",
+      "category": "incident",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione",
+        "W.",
+        "Officer Masullo",
+        "D."
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Alleges Cellmate Attempted Murder and Extortion",
+      "description": "After becoming responsive, Epstein told Officer D. that his cellmate, Nicholas Tartaglione, had tried to kill him and had been extorting him for money, threatening violence if he didn't pay. Epstein claimed he had only reported this to his attorney.",
+      "category": "allegation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Nicholas Tartaglione",
+        "D."
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Medical Examination of Epstein",
+      "description": "Epstein was later examined by medical staff (MLP) and found to have a circular line of erythema (redness) at the base of his neck with friction marks, and a small erythema on his left knee.",
+      "category": "medical",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center, 150 Park Row, New York, New York 10007",
+    "Special Housing Unit (9-South), M Tier, Cell Z05-124LAD",
+    "HA-Unit (suicide watch area)"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, at approximately 1:27 a.m., Jeffrey Epstein was found in his prison cell with an orange homemade rope around his neck, appearing unresponsive.",
+    "Epstein later alleged that his cellmate, Nicholas Tartaglione, had attempted to kill him and had been extorting him for money, threatening to beat him up if he didn't pay.",
+    "Epstein stated he had only reported the threats to his attorney, not prison staff, because Tartaglione told him the officers would not report an assault due to Epstein's charges.",
+    "Medical examination after the incident revealed a circular line of redness and friction marks on Epstein's neck, consistent with a ligature.",
+    "The incident reports contain minor inconsistencies in the initial observations (e.g., whether Epstein was snoring/unresponsive) and the sequence of events during the response."
+  ],
+  "analyzedAt": "2026-02-19T23:27:52.170Z"
+}

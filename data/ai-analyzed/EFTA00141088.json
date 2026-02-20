@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA00141088.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-10-02",
+  "summary": "This is an FBI 302 interview report of a BOP Material Handler at the Metropolitan Correctional Center (MCC) in New York, conducted on September 30, 2019. The interviewee details his activities and observations during his shift on August 9, 2019, the night Jeffrey Epstein died, including the distribution of commissary and food in the Special Housing Unit (SHU).",
+  "persons": [
+    {
+      "name": "Material Handler",
+      "role": "Bureau of Prisons Material Handler at MCC",
+      "category": "staff",
+      "context": "The primary interviewee who worked his normal 8am-4pm shift and overtime in the SHU on August 9, 2019, helping with commissary and food distribution, including to Epstein's cell.",
+      "mentionCount": 20
+    },
+    {
+      "name": "FBI Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present for the interview of the Material Handler at the USAO, SDNY.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Office of the Inspector General SA",
+      "role": "OIG Special Agent",
+      "category": "law enforcement",
+      "context": "Present for the interview of the Material Handler at the USAO, SDNY.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Present for the interview, advised the proffer agreement was in effect.",
+      "mentionCount": 2
+    },
+    {
+      "name": "NOEL",
+      "role": "Correctional Officer at MCC",
+      "category": "staff",
+      "context": "A correctional officer working in the SHU on August 9, 2019, who informed the Material Handler about the 4pm count and assisted with the food feed.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate in the SHU's L-Tier who received food from the Material Handler on the night of his death.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Material Handler",
+      "person2": "NOEL",
+      "relationshipType": "co-worker",
+      "description": "Worked together during the SHU shift on August 9, 2019; NOEL informed him about the 4pm count and they worked on the food feed.",
+      "strength": 3
+    },
+    {
+      "person1": "Material Handler",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "The Material Handler delivered food to Epstein's cell on L-Tier for approximately 60 seconds on the night of August 9, 2019.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Last Day in SHU",
+      "description": "The Material Handler worked his normal 8am-4pm shift and overtime in the SHU, distributing commissary and food, including to Epstein's cell on L-Tier.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Material Handler",
+        "NOEL",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-30",
+      "title": "FBI Interview of Material Handler",
+      "description": "The Material Handler was interviewed by FBI and OIG agents and an AUSA at the USAO, SDNY, regarding his activities and observations on August 9, 2019.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Material Handler",
+        "FBI Special Agent",
+        "Office of the Inspector General SA",
+        "Assistant United States Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York",
+    "United States Attorneys Office (USAO), Southern District of New York (SDNY), New York, New York",
+    "Special Housing Unit (SHU) at MCC",
+    "L-Tier in the SHU at MCC"
+  ],
+  "keyFacts": [
+    "The Material Handler delivered food to Jeffrey Epstein's cell on L-Tier for no more than 60 seconds on the night of August 9, 2019.",
+    "The 4pm inmate count in the SHU on August 9 was conducted by officers already present, not by the Material Handler who arrived for overtime around 4:15pm.",
+    "The Material Handler stated it was against MCC policy for an officer to go down the tiers alone without another officer assisting.",
+    "The interview was conducted under a proffer agreement, indicating the Material Handler was providing information potentially in exchange for limited immunity.",
+    "The document records the Material Handler's uncertainty about specific times and whether other officers checked on Epstein later in the evening."
+  ],
+  "analyzedAt": "2026-02-20T00:08:29.016Z"
+}

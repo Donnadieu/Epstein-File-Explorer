@@ -1,0 +1,168 @@
+{
+  "fileName": "EFTA00135576.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-09-03",
+  "summary": "FBI 302 report documenting an interview with an inmate (INMATE 2) at the Metropolitan Correctional Center regarding the morning Jeffrey Epstein was found dead in his cell. The inmate describes witnessing a guard discover Epstein, attempts at resuscitation, and observations about Epstein's condition and the subsequent response by prison staff.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate found dead",
+      "category": "key figure",
+      "context": "The deceased inmate whose unresponsive body was discovered in his cell at the Metropolitan Correctional Center on the morning in question. The witness describes seeing him on the floor of his cell.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Amanda Moore",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI Special Agent present and attending the interview of INMATE 2 at the Southern District of New York on September 3, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Omar Daza",
+      "role": "Office of the Inspector General Special Agent",
+      "category": "law enforcement",
+      "context": "OIG Special Agent present and attending the interview of INMATE 2 at the Southern District of New York on September 3, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rebekah Donaleski",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Assistant United States Attorney present and attending the interview of INMATE 2 at the Southern District of New York on September 3, 2019.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andy Patel",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "One of the attorneys for INMATE 2, as noted in the report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Shellow",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "One of the attorneys for INMATE 2, as noted in the report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donald Yanella",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "One of the attorneys for INMATE 2, as noted in the report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "INMATE 2",
+      "role": "Witness inmate",
+      "category": "witness",
+      "context": "The primary source of the information, an inmate housed in the SHU at MCC who witnessed events related to the discovery of Jeffrey Epstein's body from his cell.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "INMATE 2",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-subject",
+      "description": "INMATE 2 witnessed the discovery and attempted resuscitation of Jeffrey Epstein from his adjacent cell in the SHU.",
+      "strength": 2
+    },
+    {
+      "person1": "INMATE 2",
+      "person2": "Andy Patel",
+      "relationshipType": "attorney-client",
+      "description": "Andy Patel is listed as one of the attorneys representing INMATE 2.",
+      "strength": 3
+    },
+    {
+      "person1": "INMATE 2",
+      "person2": "Jill Shellow",
+      "relationshipType": "attorney-client",
+      "description": "Jill Shellow is listed as one of the attorneys representing INMATE 2.",
+      "strength": 3
+    },
+    {
+      "person1": "INMATE 2",
+      "person2": "Donald Yanella",
+      "relationshipType": "attorney-client",
+      "description": "Donald Yanella is listed as one of the attorneys representing INMATE 2.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Moore",
+      "person2": "INMATE 2",
+      "relationshipType": "investigator-witness",
+      "description": "FBI SA Amanda Moore was present at the interview of witness INMATE 2.",
+      "strength": 2
+    },
+    {
+      "person1": "Omar Daza",
+      "person2": "INMATE 2",
+      "relationshipType": "investigator-witness",
+      "description": "OIG SA Omar Daza was present at the interview of witness INMATE 2.",
+      "strength": 2
+    },
+    {
+      "person1": "Rebekah Donaleski",
+      "person2": "INMATE 2",
+      "relationshipType": "prosecutor-witness",
+      "description": "AUSA Rebekah Donaleski was present at the interview of witness INMATE 2.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Jeffrey Epstein found dead in cell",
+      "description": "Jeffrey Epstein was found unresponsive in his cell at the Metropolitan Correctional Center. A guard discovered him, attempted resuscitation, and medical personnel responded, but Epstein was pronounced dead.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "INMATE 2"
+      ]
+    },
+    {
+      "date": "2019-09-03",
+      "title": "FBI interview of inmate witness",
+      "description": "INMATE 2 was interviewed by FBI SA Amanda Moore, OIG SA Omar Daza, and AUSA Rebekah Donaleski at the Southern District of New York regarding his observations of Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "INMATE 2",
+        "Amanda Moore",
+        "Omar Daza",
+        "Rebekah Donaleski",
+        "Andy Patel",
+        "Jill Shellow",
+        "Donald Yanella"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's last full day",
+      "description": "The day before his death, Epstein was with his lawyers all day. Upon return to the SHU that night, guards took him to J Tier before bringing him back to his cell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "Special Housing Unit (SHU) L Tier",
+    "Southern District of New York, 500 Pearl Street, New York, NY"
+  ],
+  "keyFacts": [
+    "An inmate witness (INMATE 2) observed a guard discover Jeffrey Epstein unresponsive in his cell and attempt CPR.",
+    "The witness stated Epstein appeared dead when he fell with the guard and saw no marks or rope around Epstein's neck.",
+    "After the incident, MCC personnel covered cell windows and brought dividers to block views from the witness's cell and a camera.",
+    "The witness's cellmate commented that Epstein 'didn't hang himself because he didn't have the typical injuries.'",
+    "The witness later saw a male come out of Epstein's cell with a sheet that had a loop and knot."
+  ],
+  "analyzedAt": "2026-02-19T20:29:13.821Z"
+}

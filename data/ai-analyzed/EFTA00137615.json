@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00137615.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Collected Item Log",
+  "dateOriginal": "2019-08-26",
+  "summary": "This is an FBI evidence collection log documenting the receipt of an Apple iPhone XS from Shannon Farrar, an associate at the Law Offices of Montell Figgins, on behalf of client Michael Thomas. The phone was collected as part of the Jeffrey Epstein death investigation (case 90A-NY-3151227). The document includes a signed consent form from Thomas authorizing the search of the device.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Death Investigation",
+      "category": "key figure",
+      "context": "The document is part of the FBI's death investigation case file for Jeffrey Epstein, referenced as case 90A-NY-3151227.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shannon Farrar",
+      "role": "Associate at Law Offices of Montell Figgins",
+      "category": "legal",
+      "context": "Farrar provided an Apple iPhone XS to the FBI on behalf of client Michael Thomas and witnessed Thomas's consent form for the device search.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael Thomas",
+      "role": "Client of Law Offices of Montell Figgins",
+      "category": "other",
+      "context": "Thomas is the owner of the iPhone XS collected by the FBI; he signed a consent form authorizing the search of the device on 8/26/2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Montell Figgins",
+      "role": "Attorney/Law Firm Principal",
+      "category": "legal",
+      "context": "Figgins is the named principal of the law firm (Law Offices of Montell Figgins) where Shannon Farrar works as an associate.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Shannon Farrar",
+      "person2": "Michael Thomas",
+      "relationshipType": "attorney-client",
+      "description": "Farrar, an associate at the Law Offices of Montell Figgins, acted on behalf of client Michael Thomas in providing his iPhone to the FBI and witnessing his consent form.",
+      "strength": 4
+    },
+    {
+      "person1": "Shannon Farrar",
+      "person2": "Montell Figgins",
+      "relationshipType": "employer-employee",
+      "description": "Farrar is identified as an associate at the Law Offices of Montell Figgins.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael Thomas",
+      "person2": "Montell Figgins",
+      "relationshipType": "attorney-client",
+      "description": "Thomas is represented by the Law Offices of Montell Figgins, as indicated by Farrar acting on his behalf.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-26",
+      "title": "Collection of Michael Thomas's iPhone",
+      "description": "FBI Special Agent received an Apple iPhone XS from Shannon Farrar on behalf of Michael Thomas. Thomas had signed a consent form authorizing the search of the device.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Shannon Farrar",
+        "Michael Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "NEW YORK (Holding Office for the FBI)"
+  ],
+  "keyFacts": [
+    "The FBI collected an Apple iPhone XS from Shannon Farrar of the Law Offices of Montell Figgins on August 26, 2019, as part of the Jeffrey Epstein death investigation (case 90A-NY-3151227).",
+    "The phone belonged to Michael Thomas, who signed a U.S. Department of Justice Office of the Inspector General consent form (OIG-Form 233/4) authorizing the search of the device.",
+    "Shannon Farrar witnessed Thomas's consent form and provided the unlocked iPhone to the FBI, after which the agent placed it in airplane mode and issued a property receipt.",
+    "The document is an FBI evidence collection log (FD-597) indicating standard procedure for seizing digital evidence in a federal investigation."
+  ],
+  "analyzedAt": "2026-02-19T21:12:25.068Z"
+}

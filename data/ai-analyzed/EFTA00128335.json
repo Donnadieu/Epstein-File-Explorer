@@ -1,0 +1,30 @@
+{
+  "fileName": "EFTA00128335.pdf",
+  "dataSet": "9",
+  "documentType": "forensic imaging log",
+  "dateOriginal": "2019-08-11",
+  "summary": "This is a forensic imaging log from a Tableau TD2 device, documenting the creation of a disk image from a Seagate hard drive (serial Z6E8K1EV) as part of the Epstein investigation. The log confirms successful imaging with verification hashes matching, indicating the evidence was properly preserved.",
+  "persons": [],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-08-11",
+      "title": "Forensic imaging of hard drive",
+      "description": "A Seagate hard drive (model ST500DM002-1BD142, serial Z6E8K1EV) was imaged using a Tableau TD2 forensic duplicator at the TD2 CRYSTAL CITY 2 location. The imaging process created 227 files totaling approximately 500.1 GB of data with zero errors and matching source/verification hashes.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "TD2 CRYSTAL CITY 2"
+  ],
+  "keyFacts": [
+    "A 500.1 GB Seagate hard drive (serial Z6E8K1EV) was forensically imaged on August 11, 2019 as part of the Epstein investigation.",
+    "The imaging was performed using a Tableau TD2 forensic duplicator at location 'TD2 CRYSTAL CITY 2'.",
+    "The process created 227 image files with matching SHA1 and MD5 hashes (SHA1: be9791bce5978ccdf3111a54eac84606739c0424, MD5: 48f956e5ddab702d48177534ec96d026), confirming data integrity.",
+    "The hard drive had firmware dated May 02, 2013 21:35:47, suggesting the drive was from around that time period.",
+    "The imaging was logged with Case ID 'Epstein case # pending', indicating this was part of the ongoing investigation."
+  ],
+  "analyzedAt": "2026-02-19T17:45:43.902Z"
+}

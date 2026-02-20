@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00151227.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-03",
+  "summary": "This document is an email chain between a PayPal law enforcement analyst and an external party regarding the fulfillment of subpoenas for records related to Jeffrey Epstein. It confirms the submission of subpoenas for PayPal/Venmo records for Epstein and Ghislaine Maxwell and establishes a point of contact for the investigation.",
+  "persons": [
+    {
+      "name": "Ashley Betzhold",
+      "role": "Analyst, Global Law Enforcement Fulfillment at PayPal",
+      "category": "law enforcement",
+      "context": "The primary correspondent from PayPal's Law Enforcement Fulfillment Team who processed and fulfilled subpoena requests for records related to Jeffrey Epstein and offers to be the point of contact for the investigation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The individual whose financial records are being subpoenaed from PayPal and Venmo, referenced by case number 791064.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named in the filename of one of the attached subpoena documents, indicating she is also a subject of the financial records request.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ashley Betzhold",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Betzhold, as a PayPal law enforcement analyst, is processing subpoenas for Epstein's financial records as part of an investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Ashley Betzhold",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "Betzhold is also processing subpoenas for Maxwell's financial records, as indicated by the attached filename.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as subjects of parallel financial subpoenas from the same investigation, implying a linked legal inquiry.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-30",
+      "title": "Initial PayPal subpoena fulfillment",
+      "description": "Ashley Betzhold from PayPal's Law Enforcement Fulfillment Team emails to confirm she has received and fulfilled an initial request for records related to Jeffrey Epstein (case 791064).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ashley Betzhold",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-03",
+      "title": "Submission of additional PayPal/Venmo subpoenas",
+      "description": "Attached subpoenas for PayPal and Venmo records for Jeffrey Epstein and Ghislaine Maxwell are submitted for processing via the PayPal Portal.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "PayPal, 9999 N. 90th St., Scottsdale, AZ 85258",
+      "context": "The listed address for PayPal's Global Law Enforcement Fulfillment team, from where the correspondence originates."
+    }
+  ],
+  "keyFacts": [
+    "PayPal's Law Enforcement Fulfillment Team was actively processing financial subpoenas related to Jeffrey Epstein in August-September 2019 under case reference 791064.",
+    "Subpoenas were issued not only for Jeffrey Epstein's records but also for those of Ghislaine Maxwell, indicating a parallel investigation into her financial activities.",
+    "The correspondence shows a formal, established process for law enforcement to request financial records from PayPal/Venmo via a dedicated portal and point of contact.",
+    "The email confirms the submission of specific subpoena documents: '2019-09-03,_subpoena_to_PayPayl_&_Venmo_(Marcinko).pdf' and '2019-09-03,_subpoena_to_PayPayl_&_Venmo_(Maxwell).pdf'."
+  ],
+  "analyzedAt": "2026-02-20T08:41:49.929Z"
+}

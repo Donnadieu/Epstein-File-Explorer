@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA00152138.pdf",
+  "dataSet": "9",
+  "documentType": "grand jury subpoena",
+  "dateOriginal": "2018-12-19",
+  "summary": "This document is a sealed grand jury subpoena and non-disclosure order issued to Microsoft Corporation by the U.S. Attorney's Office for the Southern District of New York. It commands Microsoft to produce all records for the email account 'jeffreyepstein@live.com' and prohibits Microsoft from notifying the subscriber about the subpoena for 365 days, citing risks to the investigation.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Issued the grand jury subpoena to Microsoft Corporation as the United States Attorney for the Southern District of New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Debra Freeman",
+      "role": "United States Magistrate Judge",
+      "category": "legal",
+      "context": "Signed the sealed non-disclosure order prohibiting Microsoft from notifying the subscriber about the subpoena.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subscriber/Target of Investigation",
+      "category": "key figure",
+      "context": "The subpoena seeks all records for the email account 'jeffreyepstein@live.com', identifying him as the central subject of the criminal investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-target",
+      "description": "Berman, as U.S. Attorney, is leading the grand jury investigation into Epstein, as evidenced by the subpoena for his email records.",
+      "strength": 4
+    },
+    {
+      "person1": "Debra Freeman",
+      "person2": "Geoffrey S. Berman",
+      "relationshipType": "legal",
+      "description": "Judge Freeman granted the government's (Berman's) application for a sealed non-disclosure order related to the Epstein subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-12-19",
+      "title": "Issuance of Sealed Grand Jury Subpoena",
+      "description": "The U.S. Attorney's Office issued a sealed grand jury subpoena to Microsoft for records related to Jeffrey Epstein's email account.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-01-04",
+      "title": "Scheduled Grand Jury Appearance/Record Production",
+      "description": "Microsoft was commanded to appear before the grand jury or produce the requested records by this date.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2018-12-19",
+      "title": "Court Issues Sealed Non-Disclosure Order",
+      "description": "Magistrate Judge Debra Freeman issued a sealed order prohibiting Microsoft from notifying Epstein or anyone else about the subpoena for 365 days.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Debra Freeman",
+        "Geoffrey S. Berman"
+      ]
+    }
+  ],
+  "locations": [
+    "Silvio J. Mollo Building, One Saint Andrew's Plaza, New York, New York 10007",
+    "United States Courthouse, 40 Foley Square, Room 220, Manhattan, New York, New York"
+  ],
+  "keyFacts": [
+    "The U.S. Attorney's Office was conducting a grand jury investigation into Jeffrey Epstein for suspected violations of federal sex trafficking laws (18 U.S.C. §§ 1591, 1594(c), 2422(b)).",
+    "The investigation sought comprehensive records for Epstein's Microsoft email account (jeffreyepstein@live.com), including subscriber info, session logs, payment methods, and correspondence.",
+    "A federal judge sealed the subpoena and issued a gag order, preventing Microsoft from notifying Epstein about the investigation for 365 days due to concerns about witness intimidation, evidence destruction, or flight risk.",
+    "The document is dated December 19, 2018, which is during the period of the Southern District of New York's investigation that ultimately led to Epstein's arrest in July 2019."
+  ],
+  "analyzedAt": "2026-02-20T09:28:20.957Z"
+}

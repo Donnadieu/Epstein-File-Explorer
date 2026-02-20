@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA00146783.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email chain",
+  "dateOriginal": "2019-08-22",
+  "summary": "This is an internal FBI email chain from August 22, 2019, providing updates on the investigation into Jeffrey Epstein's death at the Metropolitan Correctional Center (MCC). It details interviews with MCC guards and inmates, the issuance of grand jury subpoenas for bank records of two guards (Noel and Thomas), and the execution of search warrants on cell phone companies.",
+  "persons": [
+    {
+      "name": "Steven Lopez",
+      "role": "MCC Inmate",
+      "category": "witness",
+      "context": "Interviewed by FBI/NYOIG on August 20, 2019, regarding possible shredding of Epstein documents; stated he had no information or knowledge of any suspicious acts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Noel",
+      "role": "BOP MCC Guard",
+      "category": "law enforcement",
+      "context": "A Bureau of Prisons guard at the MCC. The FBI is awaiting financial records and bank account information via a grand jury subpoena as part of the investigation into Epstein's death.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Thomas",
+      "role": "BOP MCC Guard",
+      "category": "law enforcement",
+      "context": "A Bureau of Prisons guard at the MCC. The FBI is awaiting his financial records and plans to retrieve his cellular phone. He is a subject of the investigation into Epstein's death.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Noel",
+      "person2": "Thomas",
+      "relationshipType": "co-worker",
+      "description": "Both are BOP MCC guards who are subjects of the same FBI investigation into Epstein's death, with subpoenas issued for their financial records.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-20",
+      "title": "FBI Interviews MCC Inmate Steven Lopez",
+      "description": "FBINY/NYOIG interviewed MCC inmate Steven Lopez regarding possible shredding of Epstein documents. Lopez stated he had no information or knowledge of any suspicious acts.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Steven Lopez"
+      ]
+    },
+    {
+      "date": "2019-08-20",
+      "title": "Multiple FBI Interviews with MCC Guards",
+      "description": "FBINY/NYOIG conducted several interviews with BOP MCC guards. Some guards refused to answer questions and requested attorneys, while others provided no significant information or were not working when Epstein was found.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-20",
+      "title": "Search Warrants on Cell Phone Companies",
+      "description": "FBINY served search warrants on Sprint and Verizon for cellular phones belonging to certain individuals (names redacted) and the MCC for Call Detail Records (CDRs) and subscriber information.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-22",
+      "title": "Subpoenas for Guard Bank Records",
+      "description": "SDNY Grand Jury subpoenas were sent for bank account information for guards Noel and Thomas. The FBI is awaiting returns from the banks to analyze the results.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Noel",
+        "Thomas"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC)",
+    "SDNY (Southern District of New York)"
+  ],
+  "keyFacts": [
+    "The FBI was actively investigating the circumstances of Jeffrey Epstein's death, including potential evidence tampering (shredding of documents).",
+    "Multiple Bureau of Prisons guards at the MCC were interviewed; some invoked their right to an attorney and refused to cooperate.",
+    "Federal Grand Jury subpoenas were issued for the bank records of two specific MCC guards, Noel and Thomas, indicating a focus on their financial activities.",
+    "Search warrants were executed on major cell phone carriers (Sprint and Verizon) to obtain records related to specific phones and the MCC.",
+    "The document indicates coordination between the FBI's New York Office (FBINY) and the NY Office of the Inspector General (NYOIG) in this investigation."
+  ],
+  "analyzedAt": "2026-02-20T04:33:07.736Z"
+}

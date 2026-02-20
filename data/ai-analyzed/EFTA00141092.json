@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00141092.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-10-08",
+  "summary": "This FBI 302 report documents the discovery of a letter addressed to Larry Nassar, postmarked August 13, 2019, that was returned to the Metropolitan Correctional Center (MCC) as 'return to sender' because the addressee was no longer there. The letter was originally addressed to J. Epstein at MCC, indicating an attempt to correspond with Jeffrey Epstein. The report notes the stationery and stamp were not available for purchase at MCC and that no mail logs were kept for Epstein.",
+  "persons": [
+    {
+      "name": "Larry Nassar",
+      "role": "Addressee of returned letter",
+      "category": "other",
+      "context": "Named as the intended recipient of a letter that was returned to the Metropolitan Correctional Center (MCC) because he was 'no longer at this address' at a federal prison facility in Tucson, Arizona.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate at MCC",
+      "category": "key figure",
+      "context": "The letter was addressed to 'J. Epstein' at the Manhattan Correctional Center, and the report notes there were no logs kept regarding his incoming or outgoing mail at MCC.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Nassar",
+      "relationshipType": "other",
+      "description": "A letter addressed to Larry Nassar was returned to the MCC as 'return to sender' and had been originally addressed to J. Epstein, indicating a potential attempt at correspondence between the two individuals.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-13",
+      "title": "Letter to Nassar postmarked",
+      "description": "A letter addressed to Larry Nassar in Tucson, Arizona, was postmarked. It was later returned to the MCC as 'return to sender' because Nassar was no longer at that address.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Larry Nassar",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-25",
+      "title": "FBI notified of returned letter",
+      "description": "Special Investigative Section (SIS) Lieutenant contacted an FBI Special Agent regarding a 'return to sender' letter received by the Metropolitan Correctional Center (MCC) that was originally addressed to J. Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-09-26",
+      "title": "FBI retrieves letter from MCC",
+      "description": "FBI Special Agents picked up the returned letter from SIS Lieutenant at the Metropolitan Correctional Center for further investigation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York, New York",
+    "Manhattan Correctional, NYC, NY 10007",
+    "Tucson, Arizona, 85756 (Federal Bureau of Prisons facility)"
+  ],
+  "keyFacts": [
+    "A letter addressed to Larry Nassar was returned to the Metropolitan Correctional Center (MCC) as 'return to sender' and had been originally addressed to J. Epstein at MCC.",
+    "The letter was postmarked August 13, 2019, and the reason for return was that Nassar was 'no longer at this address' at a federal prison in Tucson, Arizona.",
+    "The stamp and stationery used for the letter were not available for purchase at MCC, according to the SIS Lieutenant.",
+    "There were no logs kept regarding incoming or outgoing mail for Jeffrey Epstein at MCC.",
+    "The FBI retrieved the letter on September 26, 2019, and scans of the envelope and letter contents were digitally attached to the report."
+  ],
+  "analyzedAt": "2026-02-20T00:08:56.728Z"
+}

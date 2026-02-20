@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00127470.pdf",
+  "dataSet": "9",
+  "documentType": "service request record",
+  "dateOriginal": "2019-08-08",
+  "summary": "This is a service request record from August 8, 2019, detailing a technical support case for a RAID system crash at a New York location. The document records troubleshooting steps, communications with a customer named Wally, and internal support comments regarding a NICE Vision Pro Unit NVR system.",
+  "persons": [
+    {
+      "name": "Wally",
+      "role": "Customer contact who reported the problem",
+      "category": "staff",
+      "context": "Reported the RAID system problem on August 8, 2019, and was involved in attempting to replace faulty drives.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff",
+      "role": "Support contact",
+      "category": "staff",
+      "context": "Addressed in an internal comment regarding RAID rebuild steps; likely a support engineer or technician.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Wally",
+      "person2": "Jeff",
+      "relationshipType": "service provider-client",
+      "description": "Wally is the customer reporting a technical issue, and Jeff appears to be a support contact providing technical guidance.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "RAID system crash reported",
+      "description": "Wally reported a RAID system showing 2 bad drives on a NICE Vision Pro Unit NVR at the New York location.",
+      "category": "technical",
+      "significance": 2,
+      "personsInvolved": [
+        "Wally"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Replacement drives located",
+      "description": "Wally located replacement drives for the RAID array after checking with local CSM.",
+      "category": "technical",
+      "significance": 1,
+      "personsInvolved": [
+        "Wally"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Phone support and failed rebuild attempt",
+      "description": "Wally called for phone support, attempted to replace drives, but the RAID rebuild failed and corrupted the video database.",
+      "category": "technical",
+      "significance": 2,
+      "personsInvolved": [
+        "Wally"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "12300 Ken CI Suite E, Betsy/le, MD 20705"
+  ],
+  "keyFacts": [
+    "A RAID system at 150 Park Row, New York, NY, crashed on August 8, 2019, showing 2 bad drives on a NICE Vision Pro Unit NVR.",
+    "The customer, Wally, reported the issue and attempted to replace drives, but improper shutdown during rebuild corrupted the video database.",
+    "Technical support comments indicate that losing 2 drives in a RAID 5 configuration typically requires a full rebuild and wipes all data.",
+    "The service request involves SigNet Technologies/Converge Federal Solutions, based in Maryland, providing support.",
+    "The document is a routine IT service record with no direct mention of Epstein, victims, or illegal activities."
+  ],
+  "analyzedAt": "2026-02-19T17:32:51.866Z"
+}

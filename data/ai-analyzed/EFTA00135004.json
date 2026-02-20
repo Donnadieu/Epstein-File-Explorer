@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00135004.pdf",
+  "dataSet": "9",
+  "documentType": "medical record",
+  "dateOriginal": "2019-07-23",
+  "summary": "This is a Bureau of Prisons Health Services Clinical Encounter form documenting an injury assessment for inmate Jeffrey Epstein on July 23, 2019, after he was found in his cell with a rope around his neck. The document records his medical evaluation, his statement that he did not know how the injury occurred, and notes he was placed on suicide watch.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate/Patient",
+      "category": "key figure",
+      "context": "The inmate who was found in his cell with a rope around his neck and is being assessed for injuries. He is the subject of the medical encounter.",
+      "mentionCount": 5
+    },
+    {
+      "name": "MLP",
+      "role": "Healthcare Provider",
+      "category": "staff",
+      "context": "The Mid-Level Practitioner (MLP) who conducted the clinical encounter, documented the inmate's injuries, vital signs, and assessment, and placed Epstein on suicide watch.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Operational Lt.",
+      "role": "Custody Staff",
+      "category": "law enforcement",
+      "context": "The operational lieutenant who requested the injury report for inmate Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "MLP",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "provider-patient",
+      "description": "MLP conducted the medical assessment and evaluation of Epstein's injuries.",
+      "strength": 4
+    },
+    {
+      "person1": "Operational Lt.",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "custody-inmate",
+      "description": "The operational lieutenant requested the injury report for Epstein after he was found in his cell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found with Rope in Cell",
+      "description": "Jeffrey Epstein was found in his cell (Special Housing Unit 205-Cell 124) with a rope around his neck, sitting on the floor, leading to an injury assessment and placement on suicide watch.",
+      "category": "incident",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Medical Evaluation and Suicide Watch",
+      "description": "Epstein received a medical evaluation for neck injuries described as a circular line of erythema. He was placed on suicide watch and scheduled for follow-up with psychology services.",
+      "category": "medical",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "MLP"
+      ]
+    }
+  ],
+  "locations": [
+    "Special Housing Unit 205-Cell 124 (at NYM - Metropolitan Correctional Center, New York)",
+    "NYM (Metropolitan Correctional Center, New York)"
+  ],
+  "keyFacts": [
+    "On July 23, 2019, Jeffrey Epstein was found in his cell (Special Housing Unit 205-Cell 124) with a rope around his neck, sitting on the floor.",
+    "Epstein told the medical provider (MLP) he did not know how the injury occurred, stating 'I do not know. Just went to drink a little water and wake up snorting.' He could not explain the marks on his neck and did not want to discuss the events leading to them.",
+    "The medical assessment noted a circular line of erythema (redness) at the base of his neck, approximately 2 inches wide, covering about two-thirds of the neck circumference, with signs of friction in the front.",
+    "Epstein was placed on suicide watch following this incident and was scheduled for follow-up with psychology services.",
+    "The document records that during the clinical encounter, Epstein was 'ambulatory, oriented x 3,' in 'no apparent distress,' and was even 'smiling.'"
+  ],
+  "analyzedAt": "2026-02-19T20:06:24.045Z"
+}

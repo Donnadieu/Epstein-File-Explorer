@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00153551.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-12",
+  "summary": "Email chain between an FBI Special Agent in New York and Expedia's LE Request team regarding a subpoena for information related to Maxwell. The FBI is seeking booking records using email addresses, but Expedia requires more identifying information to proceed.",
+  "persons": [
+    {
+      "name": "Michelle",
+      "role": "Expedia LE Request Team Member",
+      "category": "staff",
+      "context": "Correspondent from Expedia's LE Request team communicating with the FBI about the subpoena for Maxwell-related records, requesting additional identifying information.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Special Agent FBI New York",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "FBI agent from the New York Child Exploitation & Human Trafficking task force requesting Expedia to run searches on email addresses related to Maxwell.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent FBI New York",
+      "person2": "Michelle",
+      "relationshipType": "investigative contact",
+      "description": "Professional correspondence regarding a subpoena for records related to Maxwell, with the FBI agent making requests and Michelle responding with requirements.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-01",
+      "title": "Subpoena Received by Expedia",
+      "description": "Expedia's LE Request team received a subpoena from the FBI related to Maxwell.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent FBI New York",
+        "Michelle"
+      ]
+    },
+    {
+      "date": "2020-02-10",
+      "title": "Expedia Search Results",
+      "description": "Michelle from Expedia reports that searches using the provided email addresses did not locate any bookings.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Michelle",
+        "Special Agent FBI New York"
+      ]
+    },
+    {
+      "date": "2020-02-12",
+      "title": "FBI Follow-up Request",
+      "description": "FBI Special Agent requests Expedia to run additional email addresses for Maxwell-related information.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent FBI New York",
+        "Michelle"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "Bellevue, WA 98004 USA",
+    "333 108th Avenue NE, Bellevue, WA"
+  ],
+  "keyFacts": [
+    "The FBI's New York Child Exploitation & Human Trafficking task force was actively investigating Maxwell as of February 2020.",
+    "Expedia received a subpoena from the FBI on February 1, 2020, seeking booking records related to Maxwell.",
+    "Expedia's systems require email addresses, credit card numbers, or itinerary numbers to locate customer records, not just names and DOBs.",
+    "Initial email address searches by Expedia did not yield any booking records for Maxwell.",
+    "The correspondence shows ongoing investigative efforts to obtain travel records through legal process."
+  ],
+  "analyzedAt": "2026-02-20T11:16:32.309Z"
+}

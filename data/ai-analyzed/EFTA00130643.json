@@ -1,0 +1,242 @@
+{
+  "fileName": "EFTA00130643.pdf",
+  "dataSet": "9",
+  "documentType": "FBI CART Process Report",
+  "dateOriginal": "2019-09-10",
+  "summary": "This is an FBI Computer Analysis Response Team (CART) report detailing the forensic cloning and imaging of 18 hard drives from a surveillance system at the Metropolitan Correctional Center (MCC) in New York. The work was conducted in August 2019 as part of the death investigation of Jeffrey Epstein. Three of the 18 hard drives were found to be non-functional. This document contains an FBI 302 report of an interview with a Bureau of Prisons forensic psychologist regarding her evaluation of Jeffrey Epstein on July 24, 2019, after a prior incident. It includes her detailed suicide risk assessment report and an internal email about removing Epstein from psychological observation. The psychologist describes Epstein's mental state, his denial of suicidal intent, and the decision to step him down from suicide watch. This document contains an FBI 302 report detailing an interview with a Bureau of Prisons Material Handler regarding the night of Jeffrey Epstein's death, focusing on counts, rounds, and staff conduct at the Metropolitan Correctional Center. It also includes administrative worksheets and logs from the FBI's evidence response team documentation of the Special Housing Unit (SHU) where Epstein died, conducted at the request of Attorney General William Barr.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased Inmate / Subject of Investigation",
+      "category": "key figure",
+      "context": "Deceased inmate found in his cell in the Special Housing Unit (SHU) at the Metropolitan Correctional Center. The interview and scene documentation relate to the circumstances of his death.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate, accused",
+      "category": "key figure",
+      "context": "The inmate being evaluated for suicide risk after a neck injury incident in his cell. He is described as denying suicidal ideation, being future-oriented about his legal case, and expressing fear for his safety regarding his cell mate.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Dr. [Redacted]",
+      "role": "Forensic Psychologist",
+      "category": "staff",
+      "context": "A Bureau of Prisons forensic psychologist who interviewed Epstein on July 24, 2019, wrote the suicide watch report, and made the decision to step him down to psychological observation. She was interviewed by the FBI on September 6, 2019.",
+      "mentionCount": 17
+    },
+    {
+      "name": "SA [Redacted]",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the FBI Special Agents who conducted the interview with the forensic psychologist on September 6, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "AUSA [Redacted]",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "A second Assistant U.S. Attorney present during the FBI interview of the forensic psychologist on September 6, 2019.",
+      "mentionCount": 4
+    },
+    {
+      "name": "William Pelham Barr",
+      "role": "Attorney General",
+      "category": "political",
+      "context": "Requested the FBI Evidence Response Team to document the Special Housing Unit at the Metropolitan Correctional Center following Jeffrey Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "NOEL",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "Corrections officer who worked the SHU shift with the interviewee on August 9, 2019. She was the SHU officer and is implicated in the missed 10pm count.",
+      "mentionCount": 10
+    },
+    {
+      "name": "THOMAS",
+      "role": "Corrections Officer",
+      "category": "staff",
+      "context": "Officer who came in to relieve the interviewee at 10pm on August 9, 2019.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Dr. [Redacted]",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "professional evaluation",
+      "description": "Forensic psychologist who conducted a clinical evaluation of inmate Epstein for suicide risk on July 24, 2019.",
+      "strength": 4
+    },
+    {
+      "person1": "Dr. [Redacted]",
+      "person2": "Dr. [Redacted]",
+      "relationshipType": "professional consultation",
+      "description": "The psychologist discussed her decision regarding Epstein's suicide watch status with the Associate Warden, who concurred.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Unnamed Cell Mate",
+      "relationshipType": "victim-perpetrator (alleged)",
+      "description": "Epstein alleged his cell mate injured him, calling him a 'pedophile' and possibly being involved in the neck injury incident.",
+      "strength": 3
+    },
+    {
+      "person1": "NOEL",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "NOEL was the SHU officer responsible for monitoring Epstein's tier and assisted in feeding him on the night of his death.",
+      "strength": 3
+    },
+    {
+      "person1": "NOEL",
+      "person2": "THOMAS",
+      "relationshipType": "co-worker",
+      "description": "THOMAS relieved the interviewee at 10pm, leaving NOEL as the sole officer in the SHU with THOMAS.",
+      "strength": 2
+    },
+    {
+      "person1": "William Pelham Barr",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigation",
+      "description": "As Attorney General, Barr ordered the FBI to document the crime scene of Epstein's death.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-12 to 2019-08-15",
+      "title": "Forensic Processing of MCC Surveillance Hard Drives",
+      "description": "The FBI's Computer Analysis Response Team (CART) clones and creates forensic images of hard drives from a Nice Vision DVR2 surveillance system located at the Metropolitan Correctional Center (MCC) in New York.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Evidence Receipt and Cloning Initiation",
+      "description": "An FBI Special Agent requests CART support. A Forensic Examiner receives custody of 18 hard drives and begins the cloning process.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-08-15",
+      "title": "Evidence Return and Imaging Completion",
+      "description": "The physical evidence hard drives are returned to the Special Agent. The imaging process for the functional drives is completed, and all derivative evidence is entered into Evidence Control.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Epstein placed on Suicide Watch",
+      "description": "Jeffrey Epstein was placed on Suicide Watch at the Manhattan Correctional Center following an incident involving an injury to his neck.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Psychological evaluation of Epstein",
+      "description": "Forensic psychologist Dr. [Redacted] evaluated Epstein for approximately 30 minutes while he was on suicide watch. She decided to step him down to Psychological Observation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Dr. [Redacted]"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Email regarding Epstein's housing",
+      "description": "An internal email was sent stating inmate Epstein was being taken off Psychological Observation and needed to be housed with an appropriate cellmate.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein"
+      ]
+    },
+    {
+      "date": "2019-09-06",
+      "title": "FBI interview of psychologist",
+      "description": "FBI Special Agents and Assistant U.S. Attorneys interviewed the forensic psychologist regarding her evaluation of Epstein and the contents of her report.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Dr. [Redacted]",
+        "SA [Redacted]",
+        "AUSA [Redacted]",
+        "AUSA [Redacted]"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Night of Epstein's Death",
+      "description": "Jeffrey Epstein was housed in the SHU, L-Tier, cell 123. A 10pm institutional count was not conducted. Epstein was fed late, appeared normal, and was left alone in his cell after his cellmate was released.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "NOEL",
+        "THOMAS"
+      ]
+    },
+    {
+      "date": "2019-08-17",
+      "title": "FBI ERT Documents MCC SHU",
+      "description": "FBI Evidence Response Team documented the SHU at the Metropolitan Correctional Center, including the Multipurpose Room, Tier L hallway, and Tier M cell 123, using photography, 3D scanning, and measurements.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "William Pelham Barr"
+      ]
+    },
+    {
+      "date": "2019-09-11",
+      "title": "Interview of BOP Material Handler",
+      "description": "A BOP Material Handler was interviewed regarding his activities and knowledge of procedures on August 9, 2019, the night Epstein died. He discussed counts, rounds, and staff fatigue.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "NOEL",
+        "THOMAS"
+      ]
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), New York City, NY",
+    "26 Federal Plaza, New York, NY 10278 (FBI New York Field Office)",
+    "Manhattan Correctional Center (MCC), 150 Park Row, NY, NY",
+    "Federal Medical Center, Butner, NC",
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, New York",
+    "Special Housing Unit (SHU), Floor 9 South, MCC",
+    "United States Attorneys Office (USAO), Southern District of New York (SDNY), 1 St. Andrews Plaza, New York, New York",
+    "Federal Law Enforcement Training Center (FLETC), Glynco, GA"
+  ],
+  "keyFacts": [
+    "The FBI forensically processed 18 hard drives from a surveillance system at the Metropolitan Correctional Center (MCC) in New York in August 2019.",
+    "The processing was part of Case ID 90A-NY-3151227, a death investigation where Jeffrey Epstein is listed as the subject and victim.",
+    "Three of the 18 hard drives (evidence items 1B5, 1B13, and 1B14) were found to be non-functional ('dead') and could not be cloned or imaged.",
+    "The report is a technical record of the chain of custody and forensic duplication process, creating clone copies and forensic images (E01 files) of the drives for investigative analysis.",
+    "The document confirms active FBI evidence processing related to Epstein's death occurred shortly after it happened in August 2019.",
+    "On July 24, 2019, a forensic psychologist evaluated Jeffrey Epstein and found his overall acute suicide risk to be 'Low' and chronic risk 'Absent', leading to his removal from Suicide Watch to Psychological Observation.",
+    "Epstein reported a lack of memory about the incident that caused a scar on his neck, claimed his cell mate called him a 'pedophile', and expressed fear for his safety if returned to the same cell.",
+    "The psychologist's report noted Epstein's static risk factors included 'High Profile Crime', 'Lack of family connections', and 'Sex offender status'. Protective factors included his denial of suicidal intent and future orientation.",
+    "An internal email dated July 30, 2019, indicates Epstein was being taken off Psychological Observation and needed a new cellmate.",
+    "The psychologist stated she made the decision to step Epstein down with the consent of the Associate Warden and was cautious due to Epstein's vague self-reporting about the neck injury.",
+    "The 10pm institutional count in the SHU on August 9, 2019, was not conducted, as confirmed by the interviewed officer who left at 10pm and stated NOEL could not have done it alone.",
+    "Officer NOEL was the designated SHU officer and is indicated as having filled out the 30 Minute Check Sheet, though rounds were not consistently performed due to staff exhaustion and corner-cutting.",
+    "Jeffrey Epstein was alone in his cell on the night of his death after his cellmate was released; control center should have notified SHU staff by 4pm.",
+    "The FBI Evidence Response Team documented the SHU crime scene on August 17, 2019, at the direct request of Attorney General William Barr.",
+    "The interview reveals systemic issues at MCC including mandated overtime, officer fatigue, and failure to consistently perform required inmate checks and counts."
+  ],
+  "analyzedAt": "2026-02-19T19:05:23.065Z"
+}

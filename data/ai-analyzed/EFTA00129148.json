@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA00129148.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-15",
+  "summary": "An FBI 302 report documenting a phone interview with attorney Elizabeth Parker on behalf of her client Jessica Nicodemo. Nicodemo reported second-hand information from Tara Lordi, who worked as Glenn Straub's assistant, suggesting a wealthy Palm Beach businessman with a history of trouble involving underage girls had been a guest on Straub's yacht. Nicodemo believed this referred to Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Elizabeth Parker",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who provided information to the FBI on behalf of her client, Jessica Nicodemo, during a phone interview on August 15, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jessica Nicodemo",
+      "role": "Client/Informant",
+      "category": "witness",
+      "context": "Client of attorney Elizabeth Parker who provided second-hand information about a guest on Glenn Straub's yacht, believed to be Jeffrey Epstein, based on a statement from Tara Lordi.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tara Lordi",
+      "role": "Assistant to Glenn Straub",
+      "category": "staff",
+      "context": "Worked as Glenn Straub's assistant and advised Jessica Nicodemo that a wealthy Palm Beach businessman with a history of trouble involving underage girls had been a guest on Straub's yacht.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Glenn Straub",
+      "role": "Yacht Owner",
+      "category": "associate",
+      "context": "Individual who owned a yacht on which Tara Lordi, his assistant, reported a guest was a wealthy Palm Beach businessman with a history involving underage girls.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Wealthy businessman from Palm Beach with a history of legal trouble involving underage girls. Jessica Nicodemo believed the individual referenced by Tara Lordi was Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Elizabeth Parker",
+      "person2": "Jessica Nicodemo",
+      "relationshipType": "attorney-client",
+      "description": "Elizabeth Parker acted as the attorney for Jessica Nicodemo, providing information to the FBI on her behalf.",
+      "strength": 4
+    },
+    {
+      "person1": "Tara Lordi",
+      "person2": "Glenn Straub",
+      "relationshipType": "employer-employee",
+      "description": "Tara Lordi worked as an assistant to Glenn Straub.",
+      "strength": 4
+    },
+    {
+      "person1": "Tara Lordi",
+      "person2": "Jessica Nicodemo",
+      "relationshipType": "informant-source",
+      "description": "Tara Lordi advised Jessica Nicodemo about a guest on Glenn Straub's yacht.",
+      "strength": 3
+    },
+    {
+      "person1": "Glenn Straub",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Tara Lordi's statement suggested a wealthy Palm Beach businessman (believed by Nicodemo to be Epstein) had been a guest on Straub's yacht.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "FBI Interview with Attorney Elizabeth Parker",
+      "description": "Attorney Elizabeth Parker provided information to the FBI on behalf of her client Jessica Nicodemo regarding second-hand information about Jeffrey Epstein potentially being a guest on Glenn Straub's yacht.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Elizabeth Parker",
+        "Jessica Nicodemo"
+      ]
+    }
+  ],
+  "locations": [
+    "New Haven, Connecticut, United States",
+    "Palm Beach"
+  ],
+  "keyFacts": [
+    "Jessica Nicodemo, through her attorney Elizabeth Parker, provided second-hand information to the FBI on August 15, 2019.",
+    "The information originated from Tara Lordi, assistant to Glenn Straub, who stated a wealthy Palm Beach businessman with a history of trouble involving underage girls had been a guest on Straub's yacht.",
+    "Nicodemo believed the individual referenced by Lordi was Jeffrey Epstein, though she had no direct knowledge of Epstein being on the yacht.",
+    "The FBI investigation file number is 318B-NH-2050945-302."
+  ],
+  "analyzedAt": "2026-02-19T18:32:43.432Z"
+}

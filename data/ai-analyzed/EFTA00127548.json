@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00127548.pdf",
+  "dataSet": "9",
+  "documentType": "service request log",
+  "dateOriginal": "2019-08-15",
+  "summary": "This is a service request log from August 15, 2019, detailing a priority upgrade and installation of a Nice Vision surveillance system at the Metropolitan Correctional Center (MCC) in New York. The work was assigned to technicians Jeff Cranor, Jeff McKenzie, and Justin Houston, with training scheduled for 'Comm Ted'.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request for installing a Nice Vision system at the MCC New York. Scheduled to work on-site from August 12-16, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request and noted as being on-site installing the Nice Vision system at the MCC New York. Scheduled to work from August 12-16, 2019.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to the service request for installing a Nice Vision system at the MCC New York. Scheduled to work on-site from August 12-16, 2019.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Comm Ted",
+      "role": "MCC Communications Staff",
+      "category": "staff",
+      "context": "Mentioned as the individual scheduled to receive training on the newly installed Phase 1 of the Nice Vision surveillance system the following day.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Jeff McKenzie",
+      "relationshipType": "co-worker",
+      "description": "Both were assigned to the same service team installing the surveillance system at the MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Justin Houston",
+      "relationshipType": "co-worker",
+      "description": "Both were assigned to the same service team installing the surveillance system at the MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "co-worker",
+      "description": "Both were assigned to the same service team installing the surveillance system at the MCC New York.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Comm Ted",
+      "relationshipType": "trainer-trainee",
+      "description": "Jeff McKenzie (and team) were scheduled to train Comm Ted on the newly installed Phase 1 surveillance system.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-15",
+      "title": "Service Request for MCC Surveillance Upgrade",
+      "description": "A priority (P3) service request was created for the installation and upgrade of a Nice Vision surveillance system at the Metropolitan Correctional Center in New York.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeff Cranor",
+        "Jeff McKenzie",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-08-12 to 2019-08-16",
+      "title": "On-Site Installation Work Period",
+      "description": "Technicians Jeff Cranor, Jeff McKenzie, and Justin Houston were scheduled to be on-site at the MCC New York for a multi-day installation of the new surveillance system.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeff Cranor",
+        "Jeff McKenzie",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "Scheduled Training for MCC Staff",
+      "description": "Training was scheduled for 'Comm Ted' on the completed Phase 1 of the new Nice Vision surveillance system installation.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Comm Ted",
+        "Jeff McKenzie"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "Metropolitan Correctional Center (MCC) New York"
+  ],
+  "keyFacts": [
+    "A surveillance system (Nice Vision) was being installed at the Metropolitan Correctional Center (MCC) in New York in August 2019.",
+    "The installation was a priority (P3) service request, indicating it required next-day attention.",
+    "The work involved installing 4 servers, 1 decoder, 12 encoders, and connecting approximately 161 cameras, with about 110 correctly named and 20 non-functional at the time of the log.",
+    "The service was contracted to the Federal Bureau of Prisons (FBOP), with technicians Jeff Cranor, Jeff McKenzie, and Justin Houston assigned to the task.",
+    "Training for MCC communications staff ('Comm Ted') was scheduled for the day after the log was created."
+  ],
+  "analyzedAt": "2026-02-19T17:38:28.205Z"
+}

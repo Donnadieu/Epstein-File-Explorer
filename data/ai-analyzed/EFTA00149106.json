@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA00149106.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-29 to 2020-07-03",
+  "summary": "This document is a chain of emails from late June/early July 2020 regarding travel approval for an FBI/NYPD task force operation to arrest a target in the Epstein investigation believed to be in Massachusetts. The emails detail expense estimates and approvals for a four-person team.",
+  "persons": [
+    {
+      "name": "Detective NYPD FBI Child Exploitation Human Trafficking Task Force",
+      "role": "Law enforcement officer requesting travel approval",
+      "category": "law enforcement",
+      "context": "The primary author requesting approval for travel to Massachusetts to arrest a target in the Epstein investigation. Provides expense breakdowns for the trip.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SSA- Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "role": "FBI Supervisory Special Agent approving travel",
+      "category": "law enforcement",
+      "context": "Approves the travel request and provides the operational travel EAN (Expense Account Number) 564339.1 for the mission.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective NYPD FBI Child Exploitation Human Trafficking Task Force",
+      "person2": "MI",
+      "relationshipType": "professional",
+      "description": "Detective submits a travel request for operational approval to MI, who is likely a supervisor.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective NYPD FBI Child Exploitation Human Trafficking Task Force",
+      "person2": "SSA- Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+      "relationshipType": "professional",
+      "description": "The SSA approves the detective's travel request and provides funding authorization.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-30 to 2020-07-02",
+      "title": "Travel to Massachusetts for arrest operation",
+      "description": "A four-person law enforcement team (the detective, another officer, and two supervisors) travels to Massachusetts to arrest a target in the Epstein investigation, with plans to possibly escort the target back to New York.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Detective NYPD FBI Child Exploitation Human Trafficking Task Force",
+        "MI",
+        "SSA- Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS"
+      ]
+    },
+    {
+      "date": "2020-06-29",
+      "title": "Travel request submitted",
+      "description": "Initial email request sent seeking approval for travel to arrest a target in Massachusetts related to the Epstein investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Detective NYPD FBI Child Exploitation Human Trafficking Task Force",
+        "MI"
+      ]
+    },
+    {
+      "date": "2020-06-30",
+      "title": "Travel approval granted",
+      "description": "SSA from the FBI's Crimes Against Children and Human Trafficking Unit approves the travel request and provides an Expense Account Number (EAN 564339.1).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SSA- Crimes Against Children and Human Trafficking Unit FBIHQ/CID/VCS",
+        "Detective NYPD FBI Child Exploitation Human Trafficking Task Force"
+      ]
+    }
+  ],
+  "locations": [
+    "Massachusetts",
+    "New York"
+  ],
+  "keyFacts": [
+    "In late June/early July 2020, an active operation was underway to arrest a target in the Epstein investigation, believed to be located in Massachusetts.",
+    "The operation involved a four-person team from an NYPD/FBI Child Exploitation Human Trafficking Task Force, including two supervisors.",
+    "The team planned to drive, make the arrest, and possibly escort the target back to New York.",
+    "Travel was approved using the FBI's Crimes Against Children and Human Trafficking Unit operational funds (EAN 564339.1).",
+    "The email chain shows procedural coordination and expense management for a sensitive law enforcement operation years after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-20T07:10:08.051Z"
+}

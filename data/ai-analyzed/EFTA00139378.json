@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00139378.pdf",
+  "dataSet": "9",
+  "documentType": "internal email",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an internal email from August 12, 2019, regarding a log-keeping error at the Metropolitan Correctional Center (MCC) New York concerning Jeffrey Epstein. It states that the wrong logbook (WM companion log) was used instead of the required Staff Suicide Watch log for Epstein's watch on July 23-24, 2019. A second, correct log was created with identical entries.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The inmate at the Metropolitan Correctional Center (MCC) New York, registration number 73618-054, for whom a suicide watch log was required.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Thomas",
+      "role": "Staff assigned to watch",
+      "category": "staff",
+      "context": "A staff member assigned to the watch for Jeffrey Epstein on July 23-24, 2019, who initially used the wrong logbook.",
+      "mentionCount": 2
+    },
+    {
+      "name": "DTS",
+      "role": "Staff member",
+      "category": "staff",
+      "context": "A staff member (initials DTS) who discovered that the wrong logbook was being used for Epstein's suicide watch.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Thomas",
+      "person2": "Jeffrey Edward Epstein",
+      "relationshipType": "staff-inmate",
+      "description": "Thomas was the staff member assigned to conduct the suicide watch for inmate Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "DTS",
+      "person2": "Thomas",
+      "relationshipType": "colleague",
+      "description": "DTS discovered and corrected the logbook error made by Thomas regarding Epstein's watch.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Suicide Watch Log Error",
+      "description": "Staff member Thomas was assigned to a suicide watch for Jeffrey Epstein but used the wrong logbook (WM companion log) instead of the required Staff Suicide Watch log.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2019-07-24",
+      "title": "Correction of Epstein Watch Log",
+      "description": "The error in logbook usage for Epstein's suicide watch was discovered by DTS, who then completed a second, correct log with identical entries.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Edward Epstein",
+        "Thomas",
+        "DTS"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "Internal Email Reporting Log Error",
+      "description": "An internal email was sent documenting the logbook error and correction for Jeffrey Epstein's suicide watch on July 23-24, 2019.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York, 150 Park Row, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "A procedural error occurred in documenting the suicide watch for Jeffrey Epstein at MCC New York on July 23-24, 2019, where the wrong logbook was used.",
+    "The error was discovered by a staff member (DTS), who created a second, correct log with entries identical to the first.",
+    "The document is an internal email dated August 12, 2019, reporting this incident, highlighting internal oversight and record-keeping issues at the facility prior to Epstein's death."
+  ],
+  "analyzedAt": "2026-02-19T21:59:56.186Z"
+}

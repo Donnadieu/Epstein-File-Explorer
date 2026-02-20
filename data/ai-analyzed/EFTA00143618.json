@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00143618.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2017-04-20",
+  "summary": "This is an email chain from April 2017 involving a witness/victim, their attorney Brad Edwards, and a legal representative named Stan. The witness expresses anxiety about an upcoming trial, discusses travel arrangements for testifying in New York, and provides contact information for their parents to Stan and Edwards for assurance purposes.",
+  "persons": [
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing the witness/victim; copied on emails discussing trial preparation and witness support.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Privatestan",
+      "role": "Legal Representative/Associate",
+      "category": "legal",
+      "context": "Correspondent with the witness, coordinating with Brad Edwards, and contacting the witness's father to provide assurance regarding the legal process.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Privatestan",
+      "person2": "Brad Edwards",
+      "relationshipType": "professional",
+      "description": "Working together on the legal case, coordinating communication with the witness and their family.",
+      "strength": 4
+    },
+    {
+      "person1": "Privatestan",
+      "person2": "Brad Edwards",
+      "relationshipType": "attorney-client",
+      "description": "Both appear to be legal representatives for the witness, with Stan handling direct communication and Edwards as the attorney.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-04",
+      "title": "Witness Preparing for Trial Testimony",
+      "description": "The witness discusses needing to travel to New York to testify at a trial, expressing nervousness and requesting support from a loved one.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Privatestan",
+        "Brad Edwards"
+      ]
+    },
+    {
+      "date": "2017-03-31",
+      "title": "Provision of Parent Contact Information",
+      "description": "The witness provides contact details for their father, mother, and stepmother to Stan and Brad Edwards for assurance purposes.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Privatestan",
+        "Brad Edwards"
+      ]
+    }
+  ],
+  "locations": [
+    "New York",
+    "US"
+  ],
+  "keyFacts": [
+    "A witness is preparing to testify in a trial in New York and is anxious about the process, requesting a loved one accompany them.",
+    "The legal team (Stan and Brad Edwards) contacted the witness's father, who was supportive and not harmful to the witness's position.",
+    "Contact information for the witness's parents was provided to the legal team to give them assurance about not being compelled to speak to anyone.",
+    "The correspondence uses ProtonMail, a Swiss-based encrypted email service, indicating concerns about privacy/security."
+  ],
+  "analyzedAt": "2026-02-20T03:29:31.285Z"
+}

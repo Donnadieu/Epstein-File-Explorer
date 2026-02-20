@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA00147396.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 or internal email/memo",
+  "dateOriginal": "2019-08-16",
+  "summary": "This document is an internal FBI communication from 2019 regarding a follow-up on a former employee of Jeffrey Epstein from the 1990s. It references a 1996 complaint and a 2006 interview that could not be located, and mentions allegations against Epstein and Ghislaine Maxwell by the woman's younger sister. The FBI directs the inquiring attorney to use the FOIA process.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referred to as 'E in's' (likely Epstein's). The document states a woman 'cuddled' with him in the 1990s.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Co-conspirator",
+      "category": "key figure",
+      "context": "Referred to as 'Maxwell'. Allegedly rubbed a woman's breasts during a massage in the 1990s.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Austin",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent for whom travel authority was requested to interview a subject's sister in North Carolina.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named in allegations of sexual misconduct from the 1990s involving the same victim.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Austin",
+      "relationshipType": "investigator-subject",
+      "description": "Agent Austin was involved in the investigation, with travel authorized to interview a witness related to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "1990s",
+      "title": "Alleged Abuse Incident",
+      "description": "A woman (the younger sister of a former Epstein employee) stated she went to Epstein and 'cuddled' with him, and Maxwell allegedly rubbed her breasts during a massage.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "Reported Complaint",
+      "description": "A complaint was reportedly made in 1996, but the FBI could not locate any documentation of it.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2006",
+      "title": "FBI Interview",
+      "description": "The younger sister of a former Epstein employee was interviewed by the FBI in 2006 as part of an investigation (the 'MM case', likely referring to Ghislaine Maxwell).",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-08-16",
+      "title": "FBI Follow-up on Records Request",
+      "description": "The FBI followed up on an attorney's request for documentation regarding a 1996 complaint and 2006 interview, concluding no records were found and directing the attorney to FOIA.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "North Carolina",
+    "Miami"
+  ],
+  "keyFacts": [
+    "The FBI could not locate any documentation of a 1996 complaint or a 2006 interview 302 related to a former Epstein employee.",
+    "A 2006 FBI interview with the employee's younger sister revealed allegations that in the 1990s, she 'cuddled' with Jeffrey Epstein and Ghislaine Maxwell allegedly rubbed her breasts during a massage.",
+    "The FBI concluded that any victimization was likely outside the statute of limitations, and neither the sister nor the employee were pursued further.",
+    "The communication directs an attorney to seek documentation through the official FOIA process, noting it would be the responsibility of the FBI's Miami field office."
+  ],
+  "analyzedAt": "2026-02-20T05:32:17.465Z"
+}

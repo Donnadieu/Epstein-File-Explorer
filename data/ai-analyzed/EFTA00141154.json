@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA00141154.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-12",
+  "summary": "This is an FBI 302 form documenting the voluntary interview of a BOP Captain at the Metropolitan Correctional Center (MCC) in New York, conducted on August 12, 2019. The Captain details his role, his limited interactions with inmate Jeffrey Epstein, Epstein's housing status and manipulative behavior, the July 23, 2019 incident where Epstein was found unresponsive, and the circumstances leading up to and following Epstein's death on August 10, 2019, including failures in protocol regarding cellmate assignment and rounds.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The high-profile inmate at MCC whose housing, behavior, and death are the central subject of the interview. He is described as manipulative, requesting psychological assessments to avoid a cellmate, and being found unresponsive on July 23 and again on August 10, 2019.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Efrain Reyes",
+      "role": "Inmate, Epstein's cellmate",
+      "category": "associate",
+      "context": "The inmate selected to be Jeffrey Epstein's cellmate. He was out of the cell for court on August 9, 2019, and the removal of his belongings from the cell was a key factor in Epstein being left unaccompanied.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Daniels",
+      "role": "Camera Technician",
+      "category": "staff",
+      "context": "The camera technician who notified the interviewed Captain that he was working on the SHU camera system earlier in the week of Epstein's death.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Efrain Reyes",
+      "relationshipType": "cellmate",
+      "description": "Reyes was selected and housed as Epstein's cellmate in the SHU, as directed by the Warden to ensure Epstein was not left alone.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein Found Unresponsive in Cell",
+      "description": "Jeffrey Epstein was found unresponsive on the floor of his cell with a homemade piece of fabric on his chest. His cellmate flagged staff. Epstein later claimed his cellmate tried to kill him, leading to him being placed back on Suicide Watch.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein Left Without Cellmate",
+      "description": "Epstein's cellmate, Efrain Reyes, was out for court. Reyes's belongings were removed from the cell, indicating he would not return, but the Captain was not notified. Epstein was left alone in his cell, contrary to the Warden's directive.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Efrain Reyes"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Epstein Found Dead",
+      "description": "Jeffrey Epstein was found unresponsive in his cell in the SHU during the early morning hours. He did not have a cellmate at the time. Staff admitted to not completing 30-minute rounds and inmate counts.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-12",
+      "title": "FBI Interview of BOP Captain",
+      "description": "The BOP Captain was interviewed by FBI and OIG agents at the FBI New York Field Office regarding the circumstances surrounding Jeffrey Epstein's incarceration and death.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC), 150 Park Row, New York, NY 10007",
+    "FBI New York Field Office, 290 Broadway, New York, NY 10278",
+    "Metropolitan Detention Center (MDC), Brooklyn, NY"
+  ],
+  "keyFacts": [
+    "The interviewed BOP Captain stated that Jeffrey Epstein engaged in manipulative behavior to avoid having a cellmate, including requesting to see a psychologist, which led to him being placed on Suicide Watch and later Psychological Observation.",
+    "Despite a clear directive from the Warden that Epstein was to have a cellmate at all times, on August 9, 2019, Epstein's cellmate Efrain Reyes went to court and his belongings were removed from the cell, leaving Epstein alone. The Captain was not notified of this.",
+    "On the morning of August 10, 2019, staff admitted to not completing the required 30-minute rounds on Epstein's cell and failing to perform the 3:00 AM and 5:00 AM inmate counts.",
+    "The camera surveillance system in the Special Housing Unit (SHU) was reportedly down around the time of Epstein's death, and the Captain was not aware of the extent of the malfunction until he arrived on the morning of August 10th.",
+    "The Captain emphasized that he and his staff did their best to supervise Epstein, but the document reveals multiple procedural failures: informal communication of critical orders, lack of notification about cellmate removal, and failure to complete security rounds and counts."
+  ],
+  "analyzedAt": "2026-02-20T00:17:58.301Z"
+}

@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA00150943.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-06-30",
+  "summary": "This document consists of email chains from June 2020 between FBI personnel discussing investigative leads related to phone numbers, contacts, and potential IP masking. It references names like Yurasits, Isabel Maxwell, and Scott B, and appears to involve efforts to trace communications and subscriber information in connection with the Epstein case.",
+  "persons": [
+    {
+      "name": "Yurasits",
+      "role": "Contact from phone number analysis",
+      "category": "associate",
+      "context": "Mentioned as a name appearing in a contact list during analysis of common phone numbers in the investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Isabel Maxwell",
+      "role": "Contact from phone number analysis",
+      "category": "associate",
+      "context": "Identified as a contact in the analysis of phone numbers, suggesting a potential connection to the investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Scott B",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Described as a lawyer and a friend in the context of analyzing common phone numbers.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Isabel Maxwell",
+      "person2": "Yurasits",
+      "relationshipType": "social",
+      "description": "Both names appear as contacts in the analyzed phone number data, suggesting they may be connected through the same communication network.",
+      "strength": 2
+    },
+    {
+      "person1": "Scott B",
+      "person2": "Yurasits",
+      "relationshipType": "social",
+      "description": "Both are mentioned in the context of common phone numbers, with Scott B identified as a lawyer and friend.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-23",
+      "title": "FBI email exchange on phone number analysis",
+      "description": "FBI personnel exchange emails discussing subscriber information for a phone number, analysis of common contacts including Yurasits and Isabel Maxwell, and concerns about IP masking via VPN.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Yurasits",
+        "Isabel Maxwell",
+        "Scott B"
+      ]
+    },
+    {
+      "date": "2020-06-30",
+      "title": "Forwarding of investigative emails",
+      "description": "An email is forwarded containing previous discussions about phone number analysis and potential IP masking, indicating ongoing investigative coordination.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York, NY 10278",
+    "FBI New York Field Office"
+  ],
+  "keyFacts": [
+    "FBI agents in June 2020 were analyzing phone numbers and identified contacts including Yurasits and Isabel Maxwell.",
+    "The investigation involved concerns that a subject might be masking their IP address using a VPN, with one IP login traced to MT wireless.",
+    "A lawyer named Scott B was mentioned as a friend in the context of the common phone numbers being examined.",
+    "The emails show coordination between FBI personnel and a NYPD/FBI Child Exploitation Human Trafficking Task Force detective.",
+    "The document references attempts to obtain subscriber information for specific phone numbers as part of the investigation."
+  ],
+  "analyzedAt": "2026-02-20T08:27:20.244Z"
+}

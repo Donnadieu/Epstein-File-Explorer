@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00143510.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-06-25",
+  "summary": "Email correspondence between attorney Brad Edwards and an unidentified victim regarding the Epstein Victims' Compensation Program. Edwards explains the claim valuation process, noting the victim's prior $500k settlement against Epstein and how it affects potential additional compensation.",
+  "persons": [
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney communicating with a victim about the Epstein Victims' Compensation Program, explaining claim valuation procedures and referencing the victim's prior settlement.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sigrid",
+      "role": "Unknown associate",
+      "category": "other",
+      "context": "Mentioned by Brad Edwards as someone who presumably also explained the claim process to the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referenced as the perpetrator against whom the victim previously received a settlement.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brad Edwards",
+      "person2": "Unidentified Victim",
+      "relationshipType": "attorney-client",
+      "description": "Edwards is providing legal guidance to the victim regarding the compensation program claim process.",
+      "strength": 4
+    },
+    {
+      "person1": "Unidentified Victim",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim previously received a settlement from Epstein and is now seeking additional compensation through the victims' fund.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-25",
+      "title": "Victim learns of potential ineligibility for additional compensation",
+      "description": "An unidentified victim communicates devastation after being told they may not receive a settlement from the Epstein Victims' Compensation Program administrator.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Unidentified Victim",
+        "Brad Edwards"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Prior settlement against Jeffrey Epstein",
+      "description": "The victim previously received a $500,000 settlement from Jeffrey Epstein, described as 'one of the highest settlements' against him.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Unidentified Victim",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Fort Lauderdale, Florida 33301"
+  ],
+  "keyFacts": [
+    "A victim of Jeffrey Epstein previously received a $500,000 settlement, described as one of the highest settlements against him.",
+    "The victim is participating in the Epstein Victims' Compensation Program, where claims are reviewed and valued by an administrator.",
+    "The claim valuation process considers prior settlements; if the administrator values the claim at $500k or less, the victim receives no additional compensation.",
+    "Attorney Brad Edwards explains that if the claim is valued above $500k, the victim would receive the difference (e.g., $250k for a $750k valuation).",
+    "The victim expresses being 'devastated and inconsolable' upon learning they might not receive additional compensation."
+  ],
+  "analyzedAt": "2026-02-20T03:23:47.339Z"
+}

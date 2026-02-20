@@ -1,0 +1,123 @@
+{
+  "fileName": "EFTA00152548.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-09-25",
+  "summary": "This is an email exchange between FBI personnel discussing the need for international travel approval to interview an important witness in the Epstein/Maxwell investigation in London. The travel was originally planned for March 2020 but was canceled due to Covid-19, and the witness is only willing to speak at length in person.",
+  "persons": [
+    {
+      "name": "FBI Agent (CID/VCS)",
+      "role": "FBI Unit Supervisor",
+      "category": "law enforcement",
+      "context": "The sender from the FBIHQ Crimes Against Children and Human Trafficking Unit (CID/VCS) provides guidance on travel approval and cost estimates, noting they will be leaving the unit soon.",
+      "mentionCount": 2
+    },
+    {
+      "name": "FBI Agent (NY)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The initiator of the email from the FBI New York Field Office's Child Exploitation/Human Trafficking unit, seeking approval to travel to London to interview a witness in the Epstein/Maxwell case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unnamed AUSAs (2)",
+      "role": "Assistant United States Attorneys",
+      "category": "legal",
+      "context": "Two AUSAs from the Southern District of New York (SDNY) who were part of the planned travel to London to interview a witness in the Epstein/Maxwell investigation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Unnamed Witness",
+      "role": "Important Witness",
+      "category": "witness",
+      "context": "An important witness in the Epstein/Maxwell investigation located in London, who is not comfortable talking at length unless interviewed in person.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator/Accused",
+      "category": "key figure",
+      "context": "Mentioned as part of the 'Epstein/Maxwell investigation', indicating the ongoing legal case involving her.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Mentioned as part of the 'Epstein/Maxwell investigation', central to the case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "FBI Agent (NY)",
+      "person2": "Unnamed AUSAs (2)",
+      "relationshipType": "professional collaboration",
+      "description": "Planning to travel together to London to interview a witness in the Epstein/Maxwell investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "FBI Agent (NY)",
+      "person2": "Unnamed Witness",
+      "relationshipType": "investigator-witness",
+      "description": "Seeking to interview the witness in person in London as part of the Epstein/Maxwell investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Jointly referenced in the ongoing investigation, indicating their linked legal case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-03",
+      "title": "Planned London Travel Canceled",
+      "description": "FBI agents and AUSAs planned to travel to London to interview an important witness in the Epstein/Maxwell investigation, but the trip was canceled due to Covid-19.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (NY)",
+        "Unnamed AUSAs (2)",
+        "Unnamed Witness"
+      ]
+    },
+    {
+      "date": "2020-09-24",
+      "title": "Video Interview with Witness",
+      "description": "FBI agents briefly spoke with the important witness via video, but she is not comfortable talking at length unless it is in person.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (NY)",
+        "Unnamed Witness"
+      ]
+    },
+    {
+      "date": "2020-09-25",
+      "title": "Travel Approval Request",
+      "description": "FBI personnel discuss the process and approval needed for international travel to London to interview the witness in the Epstein/Maxwell investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (CID/VCS)",
+        "FBI Agent (NY)"
+      ]
+    }
+  ],
+  "locations": [
+    "London",
+    "FBI New York Field Office",
+    "FBIHQ/CID/VCS (likely Washington D.C. or Quantico)"
+  ],
+  "keyFacts": [
+    "FBI agents and SDNY AUSAs planned to travel to London in March 2020 to interview an important witness in the Epstein/Maxwell investigation, but Covid-19 prevented the trip.",
+    "As of September 2020, the witness was only willing to speak at length in person, not via video, prompting renewed travel approval requests.",
+    "The correspondence reveals ongoing international investigative efforts in the Epstein/Maxwell case, requiring coordination between FBI field offices and headquarters.",
+    "Approval for international travel involved cost estimates and sign-off from division SAC (Special Agent in Charge) and IOD (Inspection Operations Division).",
+    "The FBI's Crimes Against Children and Human Trafficking Unit (CID/VCS) was involved in overseeing the travel request."
+  ],
+  "analyzedAt": "2026-02-20T10:02:40.937Z"
+}

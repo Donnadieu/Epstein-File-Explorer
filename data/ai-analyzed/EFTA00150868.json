@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA00150868.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-09-06",
+  "summary": "This document is a chain of emails from September 2019 between federal prosecutors from the Southern District of New York and an attorney from the law firm Boies Schiller Flexner LLP, coordinating the scheduling of interviews and a video conference with a witness (likely a victim or associate) for the Epstein investigation. The emails discuss logistical challenges, including travel from Florida and a hurricane threat.",
+  "persons": [
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Represents the Southern District of New York in the Epstein investigation, coordinating interview scheduling with a witness's attorney.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Partner Boies Schiller Flexner LLP",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney from the law firm Boies Schiller Flexner LLP representing a witness, communicating with prosecutors to schedule interviews and a video conference.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Judge Preska",
+      "role": "Federal Judge",
+      "category": "legal",
+      "context": "Mentioned in relation to a hearing about document issues that the attorney has scheduled, impacting availability for witness interviews.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Partner Boies Schiller Flexner LLP",
+      "relationshipType": "legal-adversarial/cooperative",
+      "description": "Prosecutor and defense attorney coordinating the scheduling of witness interviews and video conferences for the Epstein investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Partner Boies Schiller Flexner LLP",
+      "person2": "Judge Preska",
+      "relationshipType": "attorney-judge",
+      "description": "Attorney has a hearing scheduled before Judge Preska regarding document issues, which affects their availability for witness interviews.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-09",
+      "title": "Scheduled Witness Interview/Video Conference",
+      "description": "Proposed date for a video conference interview with a witness (likely a victim or associate) in the Epstein case, coordinated between SDNY prosecutors and the witness's attorney.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Partner Boies Schiller Flexner LLP"
+      ]
+    },
+    {
+      "date": "2019-09-05",
+      "title": "Hearing Before Judge Preska",
+      "description": "Attorney mentions a hearing with Judge Preska in the morning regarding document issues, the duration of which is uncertain.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Partner Boies Schiller Flexner LLP",
+        "Judge Preska"
+      ]
+    },
+    {
+      "date": "2019-08-28",
+      "title": "Initial Meeting with Prosecutors",
+      "description": "Reference to an initial meeting between the prosecutors and the attorney/witness, which took place prior to this email chain.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "Partner Boies Schiller Flexner LLP"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York, 1 St. Andrew's Plaza, New York, NY 10007",
+    "Boies Schiller Flexner LLP, 401 E. Las Olas Blvd. Suite 1200, Fort Lauderdale, FL, 33301"
+  ],
+  "keyFacts": [
+    "Prosecutors from the Southern District of New York were actively scheduling interviews with a witness (represented by Boies Schiller Flexner LLP) in September 2019, shortly after Jeffrey Epstein's death.",
+    "The witness's attorney was based in Florida and faced logistical challenges including a hurricane threat and flight schedules, complicating in-person meetings.",
+    "The proposed method for the interview was a video conference, with the option to fly the witness back for further in-person meetings if needed.",
+    "The attorney also had a separate hearing before Judge Preska regarding document issues, indicating parallel legal proceedings related to the case."
+  ],
+  "analyzedAt": "2026-02-20T08:20:25.250Z"
+}

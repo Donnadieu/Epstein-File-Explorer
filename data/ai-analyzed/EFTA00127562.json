@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00127562.pdf",
+  "dataSet": "9",
+  "documentType": "service request record",
+  "dateOriginal": "2019-02-28",
+  "summary": "This is a service request record from SigNet Technologies/Convergint Federal Solutions for the Federal Bureau of Prisons at the Metropolitan Correctional Center (MCC) in New York. It documents a request to rebuild a RAID system, with the request initiated by Jeffrey McKenzie and assigned to Jeff Cranor and Justin Houston.",
+  "persons": [
+    {
+      "name": "Jeff Cranor",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned to work on the RAID system rebuild service request for the MCC New York facility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Senior Customer Support Technician",
+      "category": "staff",
+      "context": "Identified as the contact and requester for the RAID rebuild service at MCC New York; works for SigNet Technologies/Convergint Federal Solutions.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service Technician",
+      "category": "staff",
+      "context": "Assigned alongside Jeff Cranor to work on the RAID system rebuild service request.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cranor",
+      "relationshipType": "colleague",
+      "description": "Both involved in the same service request; McKenzie is the requester/contact, Cranor is assigned to perform the work.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both involved in the same service request; McKenzie is the requester/contact, Houston is assigned to perform the work.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeff Cranor",
+      "person2": "Justin Houston",
+      "relationshipType": "colleague",
+      "description": "Both service technicians assigned to work on the RAID rebuild request for MCC New York.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-02-28",
+      "title": "RAID System Service Request Created",
+      "description": "A service request (SR #22855) is created for the Federal Bureau of Prisons at MCC New York to rebuild a failed RAID system.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff McKenzie",
+        "Jeff Cranor",
+        "Justin Houston"
+      ]
+    },
+    {
+      "date": "2019-02-28 to 2019-03-08",
+      "title": "Service Request Assignment Period",
+      "description": "The service request for the RAID rebuild is assigned to Jeff Cranor, Justin Houston, and Jeff McKenzie for the period from February 28 to March 8, 2019.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Jeff Cranor",
+        "Justin Houston",
+        "Jeff McKenzie"
+      ]
+    }
+  ],
+  "locations": [
+    "MCC New York, NEW YORK, NY 10007",
+    "Beltsville, MD 20705 (SigNet Technologies/Convergint Federal Solutions office)"
+  ],
+  "keyFacts": [
+    "This document is a technical service request for the Federal Bureau of Prisons at the Metropolitan Correctional Center (MCC) in New York.",
+    "The request concerns rebuilding a RAID system (Serial Number 43144901, Product Type VISION) that had crashed.",
+    "The request was marked as a priority (P3), next-day, emergency request requiring a phone call the same day.",
+    "The service was managed by SigNet Technologies, part of Convergint Federal Solutions, under support contract #32765.",
+    "The primary contacts and technicians were Jeff McKenzie (requester), Jeff Cranor, and Justin Houston."
+  ],
+  "analyzedAt": "2026-02-19T17:40:12.496Z"
+}

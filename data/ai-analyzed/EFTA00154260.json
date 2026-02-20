@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA00154260.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-08",
+  "summary": "This is an internal FBI email chain from April 2021 regarding logistical arrangements for Ghislaine Maxwell and her defense team to review evidence at the 500 Pearl Street courthouse in New York. The emails coordinate FBI agent assistance for security and monitoring during the three-day review session scheduled for April 13-15, 2021, with AUSA Maurene Comey also present.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Maxwell is the inmate whose evidence review with her defense team is being coordinated; she will be produced by the Marshals and monitored by FBI agents.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maurene Comey",
+      "role": "Assistant United States Attorney (AUSA)",
+      "category": "legal",
+      "context": "Comey is the prosecutor who will be present for the evidence review and has reserved the proffer rooms at the courthouse.",
+      "mentionCount": 2
+    },
+    {
+      "name": "N. (NY) (FBI)",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the initial email requesting assistance from other FBI agents to provide security for Maxwell's evidence review.",
+      "mentionCount": 2
+    },
+    {
+      "name": " (NY) (FBI)",
+      "role": "FBI recipient/coordinator",
+      "category": "law enforcement",
+      "context": "The recipient of the initial request who responds about canvassing for agent assistance and possibly splitting duties across days.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Maurene Comey",
+      "relationshipType": "legal",
+      "description": "Prosecutor (Comey) overseeing evidence review for defendant (Maxwell) in her criminal case.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "N. (NY) (FBI)",
+      "relationshipType": "law enforcement",
+      "description": "FBI agent (N.) coordinating security and monitoring for Maxwell during her evidence review.",
+      "strength": 3
+    },
+    {
+      "person1": "N. (NY) (FBI)",
+      "person2": " (NY) (FBI)",
+      "relationshipType": "professional",
+      "description": "FBI colleagues coordinating logistics for agent assistance on the Maxwell case.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-13",
+      "title": "Start of Maxwell evidence review",
+      "description": "Ghislaine Maxwell and her defense team begin reviewing evidence at the 500 Pearl Street courthouse, with FBI agents providing security and monitoring.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Maurene Comey",
+        "N. (NY) (FBI)"
+      ]
+    },
+    {
+      "date": "2021-04-13 to 2021-04-15",
+      "title": "Three-day evidence review session",
+      "description": "Scheduled multi-day review of evidence by Maxwell's defense team at the courthouse, requiring FBI agent presence for inmate monitoring and security.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Maurene Comey"
+      ]
+    }
+  ],
+  "locations": [
+    "500 Pearl Street, New York, NY (courthouse, 5th floor proffer room area)"
+  ],
+  "keyFacts": [
+    "In April 2021, Ghislaine Maxwell's defense team was scheduled to review evidence in her criminal case at the 500 Pearl Street courthouse over three days (April 13-15).",
+    "FBI agents were required to provide security, monitor Maxwell (including escorting her to the bathroom), and maintain custody of her during the review sessions.",
+    "AUSA Maurene Comey was the prosecutor present for the evidence review and had reserved three proffer rooms for different purposes (evidence review, defense conferences, break area).",
+    "The logistics indicate Maxwell was in custody and being held by the Marshals, who would produce her to the courthouse each morning for the review."
+  ],
+  "analyzedAt": "2026-02-20T12:10:16.919Z"
+}

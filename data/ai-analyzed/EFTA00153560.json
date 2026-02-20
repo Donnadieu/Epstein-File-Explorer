@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00153560.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-02-10",
+  "summary": "This document is an email chain from February 2020 between law enforcement (LE Request) and an FBI agent (SAM) regarding a subpoena for records related to Maxwell. The FBI requests more identifying information (email addresses, credit card numbers, itinerary numbers) to locate bookings, as their databases lack sufficient DOB information to identify customers by name alone.",
+  "persons": [
+    {
+      "name": "Michelle",
+      "role": "Law Enforcement Correspondent",
+      "category": "law enforcement",
+      "context": "Correspondent from 'LE Request' who informs SAM that a search using provided emails did not locate any bookings and requests confirmation of correct emails.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SAM",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "FBI agent in New York Child Exploitation/Human Trafficking unit who is contacted by LE Request regarding a subpoena for Maxwell-related records and is asked to provide more identifying information.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michelle",
+      "person2": "SAM",
+      "relationshipType": "professional correspondence",
+      "description": "Michelle (LE Request) is communicating with SAM (FBI agent) regarding a subpoena and investigation into Maxwell, requesting and following up on identifying information.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-01",
+      "title": "Subpoena Received",
+      "description": "A subpoena related to Maxwell was received by law enforcement on February 1, 2020.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "SAM",
+        "Michelle"
+      ]
+    },
+    {
+      "date": "2020-02-10",
+      "title": "Email Follow-up on Maxwell Investigation",
+      "description": "Michelle follows up with SAM, indicating a search using provided emails did not locate any bookings and requests confirmation of correct emails.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Michelle",
+        "SAM"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A subpoena related to Maxwell was received by law enforcement on February 1, 2020.",
+    "Law enforcement databases lack sufficient date of birth information to identify customers by name alone, requiring email addresses, credit card numbers, or itinerary numbers to locate records.",
+    "An initial search using provided email addresses did not locate any bookings, prompting a request for confirmation of correct emails.",
+    "The correspondence involves the FBI New York Child Exploitation/Human Trafficking unit, indicating the investigation's focus.",
+    "If no response is received within 30 days, the matter will be considered closed, highlighting a procedural deadline."
+  ],
+  "analyzedAt": "2026-02-20T11:17:32.926Z"
+}

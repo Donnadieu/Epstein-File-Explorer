@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA00141221.pdf",
+  "dataSet": "9",
+  "documentType": "interview transcript",
+  "dateOriginal": "2021-12-02",
+  "summary": "This is a transcript of a DOJ Office of the Inspector General interview with a Federal Bureau of Prisons Associate Warden regarding the death of inmate Jeffrey Epstein at the Metropolitan Correctional Center (MCC) in August 2019. The interview focuses on the circumstances leading up to Epstein's death, including the July 23rd incident with inmate Tartaglione, Epstein's placement and removal from suicide watch, cellmate assignments, camera malfunctions, and the events of August 9-10, 2019.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Inmate",
+      "category": "key figure",
+      "context": "The deceased inmate at the center of the investigation. He was housed at the MCC and died on August 10, 2019.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Tartaglione",
+      "role": "Inmate",
+      "category": "associate",
+      "context": "Inmate who was Epstein's cellmate following the July 23rd, 2019 incident. The interview questions whether he attempted to harm Epstein.",
+      "mentionCount": 5
+    },
+    {
+      "name": "AW Edge",
+      "role": "Associate Warden",
+      "category": "law enforcement",
+      "context": "The interviewee, a Federal Bureau of Prisons Associate Warden at the MCC during July and August 2019. He is being questioned about his knowledge and responsibilities regarding Epstein's incarceration and death.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Dal",
+      "role": "DOJ OIG Senior Special Agent",
+      "category": "law enforcement",
+      "context": "The interviewer conducting the official DOJ OIG investigation into Epstein's death.",
+      "mentionCount": 3
+    },
+    {
+      "name": "SIS LT",
+      "role": "Lieutenant",
+      "category": "law enforcement",
+      "context": "Mentioned in relation to attempting to review SHU camera footage on August 8, 2019, and discovering it was not working.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Com Tech",
+      "role": "Communications Technician",
+      "category": "staff",
+      "context": "Individual spoken to about the malfunctioning SHU cameras, who agreed to fix them.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unit Manager",
+      "role": "MCC Unit Manager",
+      "category": "staff",
+      "context": "MCC staff member who facilitated a phone call for Epstein on the night of August 9, 2019, by taking him to a shower area and using a legal line.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tartaglione",
+      "relationshipType": "cellmate",
+      "description": "Tartaglione was Epstein's cellmate following the July 23rd, 2019 incident. The interview questions whether Tartaglione was an appropriate choice and if he attempted to harm Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "AW Edge",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "As an Associate Warden at the MCC, AW Edge was part of the executive staff responsible for Epstein's custody, cell assignments, and the procedures surrounding his death.",
+      "strength": 4
+    },
+    {
+      "person1": "Dal",
+      "person2": "AW Edge",
+      "relationshipType": "interviewer-interviewee",
+      "description": "Dal, a DOJ OIG Senior Special Agent, is conducting an official investigative interview of AW Edge regarding the circumstances of Epstein's death.",
+      "strength": 5
+    },
+    {
+      "person1": "Unit Manager",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "custodial",
+      "description": "The Unit Manager facilitated an unmonitored phone call for Epstein on August 9, 2019, which is described as a potential safety violation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-23",
+      "title": "Epstein-Tartaglione Incident",
+      "description": "An incident involving inmate Jeffrey Epstein and his cellmate, inmate Tartaglione, at the MCC. This led to Epstein being placed on suicide watch/psychological observation.",
+      "category": "incident",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tartaglione"
+      ]
+    },
+    {
+      "date": "2019-08-09",
+      "title": "Epstein's Unmonitored Phone Call",
+      "description": "Epstein requested a phone call to call his mother. Unit Manager took him to a SHU shower area, plugged a phone into a legal line, dialed the number, and left him unmonitored.",
+      "category": "procedural violation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Unit Manager"
+      ]
+    },
+    {
+      "date": "2019-08-10",
+      "title": "Death of Jeffrey Epstein",
+      "description": "At approximately 6:33 AM, a body alarm was activated in the SHU. Staff found inmate Epstein unresponsive in his cell. CPR was initiated, and he was pronounced dead at 7:36 AM.",
+      "category": "death",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-08",
+      "title": "SHU Camera Malfunction Discovery",
+      "description": "AW Edge and SIS LT attempted to review SHU video footage but discovered the cameras were not recording. They spoke with Com Tech, who agreed to fix them.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "AW Edge",
+        "SIS LT",
+        "Com Tech"
+      ]
+    },
+    {
+      "date": "2018-10",
+      "title": "Delivery of New Camera System",
+      "description": "New cameras, DVRs, and system parts were delivered to the MCC but were not installed until after Epstein's death in August 2019.",
+      "category": "procedural failure",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Metropolitan Correctional Center (MCC) New York",
+    "Special Housing Unit (SHU) at MCC",
+    "Cell 206-220LAD (SHU)"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein died in his cell at the MCC's Special Housing Unit (SHU) on August 10, 2019, at approximately 6:33 AM.",
+    "Following a July 23rd, 2019 incident with cellmate Tartaglione, Epstein was placed on suicide watch/psychological observation but was later removed and placed back in the SHU.",
+    "The SHU cameras were not recording on August 9-10, 2019, despite new camera equipment being on site since October 2018.",
+    "On the night of August 9, 2019, Epstein was allowed an unmonitored phone call via a legal line in a SHU shower area, which is questioned as a safety violation.",
+    "The interview investigates multiple procedural failures, including cellmate assignment after a transfer, inaccurate cell assignment records, and inadequate cell searches and rounds."
+  ],
+  "analyzedAt": "2026-02-20T00:21:28.483Z"
+}

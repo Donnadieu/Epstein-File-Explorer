@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00154238.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-04-08",
+  "summary": "This document is an email chain between FBI personnel coordinating logistics for Ghislaine Maxwell and her defense team to review evidence at the courthouse from April 13-15, 2021. It details scheduling, security protocols, and the roles of FBI agents and an AUSA.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The accused individual whose defense team is scheduled to review evidence; she will be transported by US Marshals and monitored by FBI agents during the review.",
+      "mentionCount": 4
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "The federal prosecutor who will be present all three days of the evidence review, meeting the agents and overseeing the process.",
+      "mentionCount": 4
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Special Agent or Support",
+      "category": "law enforcement",
+      "context": "An FBI personnel familiar with the case who will be present all three days and is available for agents to contact.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "AUSA",
+      "relationshipType": "legal",
+      "description": "Prosecutor overseeing the evidence review process for the defendant Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "FBI agents",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "law enforcement",
+      "description": "FBI agents are responsible for escorting and monitoring Maxwell during the evidence review, including bathroom escorts.",
+      "strength": 4
+    },
+    {
+      "person1": "SOS",
+      "person2": "FBI agents",
+      "relationshipType": "colleague",
+      "description": "SOS is an FBI colleague familiar with the case, available to assist other agents during the evidence review.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-13",
+      "title": "Start of Maxwell evidence review",
+      "description": "First day of a scheduled three-day evidence review for Ghislaine Maxwell and her defense team at the courthouse.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "AUSA",
+        "FBI agents",
+        "SOS"
+      ]
+    },
+    {
+      "date": "2021-04-14",
+      "title": "Second day of evidence review",
+      "description": "Continuation of the evidence review process for Maxwell's case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "AUSA",
+        "FBI agents",
+        "SOS"
+      ]
+    },
+    {
+      "date": "2021-04-15",
+      "title": "Third day of evidence review",
+      "description": "Final scheduled day of the evidence review for Maxwell's defense team.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "AUSA",
+        "FBI agents",
+        "SOS"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)",
+    "courthouse (5th floor proffer room area)"
+  ],
+  "keyFacts": [
+    "Ghislaine Maxwell's defense team was scheduled to review evidence from April 13-15, 2021, at a courthouse.",
+    "FBI agents were required to have a handcuff key and escort Maxwell, including to the bathroom, during the review.",
+    "An Assistant U.S. Attorney (AUSA) and an FBI agent/support (SOS) familiar with the case were present for all three days.",
+    "The evidence was transported by an evidence unit, and the review was to take place in reserved proffer rooms on the 5th floor.",
+    "The email chain shows logistical coordination between FBI personnel for security and monitoring during a critical pre-trial phase."
+  ],
+  "analyzedAt": "2026-02-20T12:07:35.919Z"
+}

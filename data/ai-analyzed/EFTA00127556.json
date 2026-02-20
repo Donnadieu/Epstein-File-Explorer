@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00127556.pdf",
+  "dataSet": "9",
+  "documentType": "service request form",
+  "dateOriginal": "2019-09-24",
+  "summary": "This is a service request form for technical support related to the installation of a Nice Vision system at the Metropolitan Correctional Center in New York, where Jeffrey Epstein was held. The document shows IT personnel working on a system installation issue.",
+  "persons": [
+    {
+      "name": "Jeff Cram",
+      "role": "Service technician",
+      "category": "staff",
+      "context": "Listed as assigned to the service request for installing a Nice Vision system at the Metropolitan Correctional Center.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeff McKenzie",
+      "role": "Service technician",
+      "category": "staff",
+      "context": "Assigned to work on the Nice Vision system installation issue at the correctional facility.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Justin Houston",
+      "role": "Service technician",
+      "category": "staff",
+      "context": "Assigned to the service request for technical installation support at the correctional center.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff Cranor",
+      "role": "Service technician",
+      "category": "staff",
+      "context": "Mentioned in assignment comments for the service request.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeff McKenzie",
+      "person2": "Jeff Cram",
+      "relationshipType": "colleague",
+      "description": "Both assigned to the same service request for technical installation at the correctional facility.",
+      "strength": 2
+    },
+    {
+      "person1": "Justin Houston",
+      "person2": "Jeff McKenzie",
+      "relationshipType": "colleague",
+      "description": "Both working on the same technical service request for system installation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-24",
+      "title": "Nice Vision system installation service request",
+      "description": "Service request created for installation of a Nice Vision system at the Metropolitan Correctional Center in New York, with technical errors encountered during installation.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeff Cram",
+        "Jeff McKenzie",
+        "Justin Houston",
+        "Jeff Cranor"
+      ]
+    }
+  ],
+  "locations": [
+    "150 PARK ROW NEW YORK, NY 10007",
+    "Metropolitan Correctional Center New York",
+    "FBOP MCC New York"
+  ],
+  "keyFacts": [
+    "This document is a service request form dated September 24, 2019 for technical support at the Metropolitan Correctional Center in New York.",
+    "The request involves installation of a 'Nice Vision system' which appears to be a surveillance or monitoring system.",
+    "The location (150 Park Row, New York, NY 10007) is the address of the Metropolitan Correctional Center where Jeffrey Epstein was held.",
+    "The document shows IT personnel (Jeff Cram, Jeff McKenzie, Justin Houston, Jeff Cranor) working on technical installation issues.",
+    "The timing (September 2019) is shortly after Jeffrey Epstein's death in August 2019 while in custody at this facility."
+  ],
+  "analyzedAt": "2026-02-19T17:39:28.788Z"
+}

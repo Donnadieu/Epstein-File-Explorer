@@ -1,0 +1,117 @@
+{
+  "fileName": "EFTA00153661.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-04-30",
+  "summary": "This is an email chain from April 30, 2020, forwarding a message about an OVS (Office for Victims of Crime) application for a potential victim of Jeffrey Epstein. The email discusses the application process and mentions the victim may receive treatment from Randee Kogan.",
+  "persons": [
+    {
+      "name": "Brittany Henderson",
+      "role": "Trial Attorney at Edwards Pottinger LLC",
+      "category": "legal",
+      "context": "She is the sender of the forwarded email, attaching an OVS application for a potential victim and coordinating with Angela.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney (likely at Edwards Pottinger LLC)",
+      "category": "legal",
+      "context": "He is copied on the original email regarding the OVS application for a potential Epstein victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Angela",
+      "role": "Recipient/Coordinator",
+      "category": "legal",
+      "context": "The primary recipient of the email, being asked to review the attached OVS application and provide further instructions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Randee Kogan",
+      "role": "Therapist/Treatment Provider",
+      "category": "other",
+      "context": "Mentioned as the intended treatment provider for the potential victim if the OVS application is approved.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the email chain, as the OVS application is for a potential victim of his.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Angela",
+      "relationshipType": "professional",
+      "description": "Henderson is sending an OVS application to Angela for review and coordination regarding a potential Epstein victim.",
+      "strength": 3
+    },
+    {
+      "person1": "Brittany Henderson",
+      "person2": "Brad Edwards",
+      "relationshipType": "colleague",
+      "description": "Both are associated with Edwards Pottinger LLC, and Edwards is copied on the email regarding the victim application.",
+      "strength": 3
+    },
+    {
+      "person1": "Potential Victim",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The OVS application is for a female individual who may have been a victim of Jeffrey Epstein in New York.",
+      "strength": 4
+    },
+    {
+      "person1": "Potential Victim",
+      "person2": "Randee Kogan",
+      "relationshipType": "service provider-client",
+      "description": "If the OVS application is approved, the potential victim is going to receive treatment from Randee Kogan.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-04-29",
+      "title": "OVS Application Submission",
+      "description": "Brittany Henderson emails Angela attaching an OVS (Office for Victims of Crime) application for a potential female victim of Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Brittany Henderson",
+        "Angela",
+        "Brad Edwards",
+        "Potential Victim"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Potential Treatment Arrangement",
+      "description": "Plans are mentioned for the potential victim to receive treatment from Randee Kogan if the OVS application is approved.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "Potential Victim",
+        "Randee Kogan"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "address": "425 North Andrews Avenue, Suite 2, Fort Lauderdale, Florida 33301",
+      "context": "The business address of Edwards Pottinger LLC, where Brittany Henderson works."
+    },
+    {
+      "location": "New York",
+      "context": "Mentioned as the location where the potential female victim may have been victimized by Jeffrey Epstein."
+    }
+  ],
+  "keyFacts": [
+    "An OVS (Office for Victims of Crime) application is being processed for a potential female victim of Jeffrey Epstein, specifically questioning if she was a victim in New York.",
+    "The legal firm Edwards Pottinger LLC, via attorney Brittany Henderson, is handling the victim's application and coordination.",
+    "If approved, the victim is slated to receive treatment from a therapist named Randee Kogan.",
+    "The email chain demonstrates ongoing legal and support efforts for Epstein's victims years after his initial prosecution and death."
+  ],
+  "analyzedAt": "2026-02-20T11:28:56.859Z"
+}

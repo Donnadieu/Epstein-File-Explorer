@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00135994.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-03-10",
+  "summary": "This document is a forwarded email chain from March 10, 2021, requesting FBI agent assistance from the NYPD/FBI Child Exploitation Human Trafficking Task Force for an upcoming review of digital images by Ghislaine Maxwell's defense team at 500 Pearl Street on March 18, 2021.",
+  "persons": [
+    {
+      "name": "Detective",
+      "role": "NYPD / FBI Child Exploitation Human Trafficking Task Force Detective",
+      "category": "law enforcement",
+      "context": "The detective sends the initial request for two agents to assist with bringing digital images to 500 Pearl Street for Ghislaine Maxwell's defense review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA",
+      "role": "Supervisory Special Agent, FBI New York Office",
+      "category": "law enforcement",
+      "context": "The SSA forwards the detective's request to other agents, asking those available to contact the detective and copy their respective SSA.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The email references a 'Maxwell request,' indicating the task is related to her legal defense's review of digital evidence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "SSA",
+      "relationshipType": "professional collaboration",
+      "description": "The detective requests assistance from the FBI, and the SSA forwards that request to FBI agents, indicating inter-agency cooperation on the Maxwell case.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The detective is part of the task force investigating Maxwell, as evidenced by the request to assist with her defense's evidence review.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-03-18",
+      "title": "Defense Review of Digital Images",
+      "description": "Planned all-day event for Ghislaine Maxwell's defense team to review digital images at 500 Pearl Street, requiring two FBI agents to assist with transporting and securing a hard drive.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "500 Pearl Street"
+  ],
+  "keyFacts": [
+    "The NYPD/FBI Child Exploitation Human Trafficking Task Force requested FBI agent assistance for a defense evidence review in the Ghislaine Maxwell case.",
+    "The task involved two agents transporting and securing a hard drive containing digital images for Maxwell's defense team to review at 500 Pearl Street.",
+    "The evidence review was scheduled for March 18, 2021, and was expected to be an all-day affair.",
+    "The email chain demonstrates inter-agency coordination between the NYPD and FBI on the Maxwell investigation in March 2021."
+  ],
+  "analyzedAt": "2026-02-19T20:39:48.145Z"
+}

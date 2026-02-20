@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA00153982.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-12-15",
+  "summary": "This document is a forwarded email chain from December 2020. It contains a message from an individual claiming to be a victim of Jeffrey Epstein, alleging she was raped by him in 1991 at Peter Joy's apartment. The email also makes serious allegations of corruption against the administrator of the Epstein victims fund, accusing them of excluding real victims, filing false claims, and laundering money.",
+  "persons": [
+    {
+      "name": "Angela",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "The email is forwarded to Angela, with the sender hoping she is well and providing an FYI on the content regarding an Epstein victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused perpetrator",
+      "category": "key figure",
+      "context": "The email's subject and content identify him. An individual claims to be a victim, stating 'He raped me at Peter joys apartment in 1991.'",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peter Joy",
+      "role": "Apartment owner/associate",
+      "category": "associate",
+      "context": "Mentioned as the person whose apartment was the location of an alleged rape by Jeffrey Epstein in 1991.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Peter Joy",
+      "relationshipType": "social",
+      "description": "Epstein allegedly raped the email sender at Peter Joy's apartment in 1991, indicating some form of connection or access to that location.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unnamed Victim (sender)",
+      "relationshipType": "victim-perpetrator",
+      "description": "The email sender explicitly states 'I am a victim of Jeff Epstein's. He raped me...'",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "1991",
+      "title": "Alleged rape at Peter Joy's apartment",
+      "description": "The email sender alleges that Jeffrey Epstein raped her at Peter Joy's apartment.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Peter Joy",
+        "Unnamed Victim (sender)"
+      ]
+    },
+    {
+      "date": "2020",
+      "title": "Allegations of corruption in Epstein Victims Fund",
+      "description": "The email sender alleges the fund administrator is corrupt, excluding real victims, filing false claims, and laundering money, causing further harm to survivors.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed Victim (sender)",
+        "Unnamed Fund Administrator"
+      ]
+    }
+  ],
+  "locations": [
+    "Peter Joy's apartment"
+  ],
+  "keyFacts": [
+    "An individual claims to be a victim of Jeffrey Epstein, alleging he raped her in 1991 at an apartment belonging to Peter Joy.",
+    "The email makes serious allegations of corruption against the administrator of the Jeffrey Epstein Victims Fund, accusing them of harming survivors, excluding real victims, and laundering money.",
+    "The correspondence highlights ongoing issues and distrust among victims regarding compensation and support mechanisms years after Epstein's death.",
+    "The document is a forwarded email chain from December 2020, indicating continued communication and concern about the case among involved parties."
+  ],
+  "analyzedAt": "2026-02-20T11:52:23.148Z"
+}

@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00143010.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-08-11",
+  "summary": "This is an email chain from August 11, 2019, discussing a Breitbart news report about prison guards skipping mandatory checks before Jeffrey Epstein's death. The sender, identified as 'GAG', requests a call before leaving on a trip with the 'AG' and expresses disbelief about the leaked information.",
+  "persons": [
+    {
+      "name": "GAG",
+      "role": "Email sender",
+      "category": "other",
+      "context": "The sender of the email, requesting a call before leaving on a trip with the 'AG' and commenting on a news report about Epstein's death.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Min",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Primary recipient of the email from 'GAG'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased inmate",
+      "category": "key figure",
+      "context": "The subject of the news report discussed in the email, concerning the circumstances of his death in prison.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "GAG",
+      "person2": "AG",
+      "relationshipType": "travel companion",
+      "description": "GAG mentions leaving for a trip with the AG, indicating they are traveling together.",
+      "strength": 2
+    },
+    {
+      "person1": "GAG",
+      "person2": "Min",
+      "relationshipType": "professional",
+      "description": "GAG is emailing Min to request a call, indicating a professional or working relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-10",
+      "title": "Breitbart Report on Epstein Death",
+      "description": "Breitbart publishes a report stating prison guards skipped mandatory checks before Jeffrey Epstein's death.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-08-11",
+      "title": "Email Discussion of Report",
+      "description": "Email correspondence discusses the Breitbart report and expresses disbelief about how the information was obtained.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "GAG",
+        "Min"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An email from August 11, 2019, discusses a Breitbart news report published the previous day about prison guards skipping mandatory checks before Jeffrey Epstein's death.",
+    "The email sender, 'GAG', expresses disbelief about how the information in the report was obtained, stating 'How do they have this info? Unbelieveable.'",
+    "GAG requests a call with the recipients before leaving on a trip with the 'AG' (Attorney General), indicating high-level coordination or awareness around the time of the report's publication."
+  ],
+  "analyzedAt": "2026-02-20T02:50:02.392Z"
+}
