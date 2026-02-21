@@ -1,0 +1,654 @@
+/**
+ * Extension Resolver — determines the true file type of DOJ URLs mislabeled as .pdf
+ *
+ * The DOJ Epstein archive serves URLs with .pdf extensions even when the underlying
+ * file is video, audio, image, or other media. This script strips the .pdf extension,
+ * probes all candidate extensions via HEAD requests, and verifies with magic bytes.
+ *
+ * Usage:
+ *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv
+ *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --headed
+ *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --concurrency 4
+ */
+
+import * as fs from "fs";
+import * as path from "path";
+import { fileURLToPath } from "url";
+import pLimit from "p-limit";
+import { getBrowserContext, extractCookieHeader, closeBrowser } from "./doj-scraper";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DATA_DIR = path.resolve(__dirname, "../../data");
+const DEFAULT_OUTPUT = path.join(DATA_DIR, "resolved.partial.csv");
+
+// ===== CONFIGURATION =====
+
+const BASE_INTERVAL_MS = 1500;
+const JITTER_MS = 1000;
+const DEFAULT_CONCURRENCY = 8;
+const BOT_BLOCK_PAUSE_MS = 60_000;
+const BOT_BLOCK_THRESHOLD = 5;
+const COOKIE_REFRESH_COOLDOWN_MS = 30_000;
+const REQUEST_TIMEOUT_MS = 10_000;
+
+// ===== EXTENSION TIERS =====
+// Media-first because the input set is "no images produced" — likely media files
+
+const PROBE_TIERS: string[][] = [
+  // Tier 1: Most likely for media files
+  ["mov", "mp4", "m4a", "mp3", "jpg", "jpeg", "png", "avi", "wav", "3gp", "wmv"],
+  // Tier 2: Other media formats
+  ["ogg", "opus", "webm", "flac", "aac", "wma", "gif", "mkv", "flv", "bmp", "tiff", "webp"],
+  // Tier 3: Documents
+  ["doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "rtf", "csv"],
+  // Tier 4: Archives
+  ["zip", "rar", "7z"],
+  // Tier 5: Original (check last)
+  ["pdf"],
+];
+
+const ALL_EXTENSIONS = PROBE_TIERS.flat();
+
+// ===== MAGIC BYTE SIGNATURES =====
+
+interface MagicSignature {
+  offset: number;
+  bytes: number[];
+  ext: string;
+  mime: string;
+  category: string;
+}
+
+const MAGIC_SIGNATURES: MagicSignature[] = [
+  // PDF
+  { offset: 0, bytes: [0x25, 0x50, 0x44, 0x46], ext: "pdf", mime: "application/pdf", category: "pdf" },
+  // JPEG
+  { offset: 0, bytes: [0xFF, 0xD8, 0xFF], ext: "jpg", mime: "image/jpeg", category: "image" },
+  // PNG
+  { offset: 0, bytes: [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A], ext: "png", mime: "image/png", category: "image" },
+  // GIF87a
+  { offset: 0, bytes: [0x47, 0x49, 0x46, 0x38, 0x37, 0x61], ext: "gif", mime: "image/gif", category: "image" },
+  // GIF89a
+  { offset: 0, bytes: [0x47, 0x49, 0x46, 0x38, 0x39, 0x61], ext: "gif", mime: "image/gif", category: "image" },
+  // BMP
+  { offset: 0, bytes: [0x42, 0x4D], ext: "bmp", mime: "image/bmp", category: "image" },
+  // TIFF (little-endian)
+  { offset: 0, bytes: [0x49, 0x49, 0x2A, 0x00], ext: "tiff", mime: "image/tiff", category: "image" },
+  // TIFF (big-endian)
+  { offset: 0, bytes: [0x4D, 0x4D, 0x00, 0x2A], ext: "tiff", mime: "image/tiff", category: "image" },
+  // MP4/MOV/M4A/3GP (ftyp container)
+  { offset: 4, bytes: [0x66, 0x74, 0x79, 0x70], ext: "mp4", mime: "video/mp4", category: "video" },
+  // RIFF container (AVI/WAV/WebP — disambiguated by bytes 8-11)
+  { offset: 0, bytes: [0x52, 0x49, 0x46, 0x46], ext: "riff", mime: "varies", category: "varies" },
+  // ZIP-based (ZIP/DOCX/XLSX/PPTX)
+  { offset: 0, bytes: [0x50, 0x4B, 0x03, 0x04], ext: "zip", mime: "application/zip", category: "archive" },
+  // OLE2 (DOC/XLS/PPT)
+  { offset: 0, bytes: [0xD0, 0xCF, 0x11, 0xE0, 0xA1, 0xB1, 0x1A, 0xE1], ext: "ole", mime: "application/x-ole-storage", category: "document" },
+  // MP3 with ID3 tag
+  { offset: 0, bytes: [0x49, 0x44, 0x33], ext: "mp3", mime: "audio/mpeg", category: "audio" },
+  // MP3 sync word (MPEG1 Layer 3)
+  { offset: 0, bytes: [0xFF, 0xFB], ext: "mp3", mime: "audio/mpeg", category: "audio" },
+  // MP3 sync word (MPEG2 Layer 3)
+  { offset: 0, bytes: [0xFF, 0xF3], ext: "mp3", mime: "audio/mpeg", category: "audio" },
+  // MP3 sync word (MPEG2.5 Layer 3)
+  { offset: 0, bytes: [0xFF, 0xF2], ext: "mp3", mime: "audio/mpeg", category: "audio" },
+  // Ogg (OggS)
+  { offset: 0, bytes: [0x4F, 0x67, 0x67, 0x53], ext: "ogg", mime: "audio/ogg", category: "audio" },
+  // FLAC (fLaC)
+  { offset: 0, bytes: [0x66, 0x4C, 0x61, 0x43], ext: "flac", mime: "audio/flac", category: "audio" },
+  // MKV/WebM (EBML)
+  { offset: 0, bytes: [0x1A, 0x45, 0xDF, 0xA3], ext: "mkv", mime: "video/x-matroska", category: "video" },
+  // ASF header (WMV/WMA)
+  { offset: 0, bytes: [0x30, 0x26, 0xB2, 0x75], ext: "wmv", mime: "video/x-ms-wmv", category: "video" },
+  // FLV
+  { offset: 0, bytes: [0x46, 0x4C, 0x56, 0x01], ext: "flv", mime: "video/x-flv", category: "video" },
+  // RAR
+  { offset: 0, bytes: [0x52, 0x61, 0x72, 0x21], ext: "rar", mime: "application/x-rar-compressed", category: "archive" },
+  // 7-Zip
+  { offset: 0, bytes: [0x37, 0x7A, 0xBC, 0xAF, 0x27, 0x1C], ext: "7z", mime: "application/x-7z-compressed", category: "archive" },
+];
+
+// ===== TYPES =====
+
+interface ProbeResult {
+  url: string;
+  ext: string;
+  contentType: string;
+  contentLength: number;
+  magicExt: string | null;
+  magicMime: string | null;
+  magicCategory: string | null;
+  notes: string;
+}
+
+interface CsvRow {
+  base_id: string;
+  original_url: string;
+  base_url: string;
+  status: string;
+  resolved_url: string;
+  extension: string;
+  file_type: string;
+  content_type: string;
+  content_length: number;
+  notes: string;
+}
+
+// ===== RATE LIMITING =====
+// Uses slot reservation to avoid burst behavior with concurrent tasks.
+// Each caller atomically reserves a future time slot before awaiting.
+
+let nextAllowedTime = 0;
+
+async function throttle(): Promise<void> {
+  const delay = BASE_INTERVAL_MS + Math.random() * JITTER_MS;
+  const now = Date.now();
+  const waitUntil = Math.max(now, nextAllowedTime);
+  nextAllowedTime = waitUntil + delay;
+  const sleepMs = waitUntil - now;
+  if (sleepMs > 0) {
+    await new Promise((r) => setTimeout(r, sleepMs));
+  }
+}
+
+// ===== COOKIE MANAGEMENT =====
+
+let currentCookieHeader = "";
+let cookieRefreshPromise: Promise<void> | null = null;
+let lastCookieRefreshTime = 0;
+
+async function refreshCookies(): Promise<void> {
+  const now = Date.now();
+
+  if (cookieRefreshPromise) {
+    await cookieRefreshPromise;
+    return;
+  }
+
+  if (now - lastCookieRefreshTime < COOKIE_REFRESH_COOLDOWN_MS) {
+    return;
+  }
+
+  cookieRefreshPromise = (async () => {
+    try {
+      console.log("\n  Cookies expired — re-acquiring Akamai cookies...");
+      await getBrowserContext();
+      const header = await extractCookieHeader();
+      await closeBrowser();
+      lastCookieRefreshTime = Date.now();
+      if (header) {
+        currentCookieHeader = header;
+        console.log(`  New cookie header obtained (${header.length} chars)\n`);
+      }
+    } catch (err: any) {
+      console.warn(`  Cookie refresh failed: ${err.message}`);
+    }
+  })();
+
+  try {
+    await cookieRefreshPromise;
+  } finally {
+    cookieRefreshPromise = null;
+  }
+}
+
+// ===== MAGIC BYTE DETECTION =====
+
+function matchMagicBytes(buf: Buffer): { ext: string; mime: string; category: string } | null {
+  for (const sig of MAGIC_SIGNATURES) {
+    if (sig.offset + sig.bytes.length > buf.length) continue;
+
+    let match = true;
+    for (let i = 0; i < sig.bytes.length; i++) {
+      if (buf[sig.offset + i] !== sig.bytes[i]) {
+        match = false;
+        break;
+      }
+    }
+    if (!match) continue;
+
+    // Disambiguate RIFF container (bytes 8-11)
+    if (sig.ext === "riff" && buf.length >= 12) {
+      const riffType = buf.subarray(8, 12).toString("ascii");
+      if (riffType === "AVI ") return { ext: "avi", mime: "video/x-msvideo", category: "video" };
+      if (riffType === "WAVE") return { ext: "wav", mime: "audio/wav", category: "audio" };
+      if (riffType === "WEBP") return { ext: "webp", mime: "image/webp", category: "image" };
+      return { ext: "riff", mime: "application/octet-stream", category: "other" };
+    }
+
+    // Disambiguate ftyp container (bytes 8-11)
+    if (sig.ext === "mp4" && sig.offset === 4 && buf.length >= 12) {
+      const brand = buf.subarray(8, 12).toString("ascii");
+      if (brand.startsWith("qt")) return { ext: "mov", mime: "video/quicktime", category: "video" };
+      if (brand === "M4A " || brand === "M4B ") return { ext: "m4a", mime: "audio/mp4", category: "audio" };
+      if (brand.startsWith("3gp")) return { ext: "3gp", mime: "video/3gpp", category: "video" };
+      // isom, mp41, mp42, avc1, dash etc → mp4
+      return { ext: "mp4", mime: "video/mp4", category: "video" };
+    }
+
+    return { ext: sig.ext, mime: sig.mime, category: sig.category };
+  }
+
+  return null;
+}
+
+function classifyExtension(ext: string): string {
+  const videoExts = new Set(["mp4", "mov", "avi", "mkv", "wmv", "webm", "flv", "3gp", "mpg", "mpeg"]);
+  const audioExts = new Set(["mp3", "m4a", "ogg", "opus", "wav", "flac", "aac", "wma"]);
+  const imageExts = new Set(["jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp"]);
+  const archiveExts = new Set(["zip", "rar", "7z", "tar", "gz"]);
+  const docExts = new Set(["doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "rtf", "csv", "ole"]);
+
+  if (ext === "pdf") return "pdf";
+  if (videoExts.has(ext)) return "video";
+  if (audioExts.has(ext)) return "audio";
+  if (imageExts.has(ext)) return "image";
+  if (archiveExts.has(ext)) return "archive";
+  if (docExts.has(ext)) return "document";
+  return "other";
+}
+
+// ===== HTTP PROBING =====
+
+const PROBE_HEADERS: Record<string, string> = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+  Accept: "application/octet-stream, */*",
+  "Accept-Language": "en-US,en;q=0.9",
+  "sec-fetch-dest": "document",
+  "sec-fetch-mode": "navigate",
+  "sec-fetch-site": "same-origin",
+};
+
+async function probeExtension(
+  baseUrl: string,
+  ext: string,
+  cookieHeader: string,
+): Promise<ProbeResult | null> {
+  const url = `${baseUrl}.${ext}`;
+  const headers: Record<string, string> = {
+    ...PROBE_HEADERS,
+    Cookie: cookieHeader,
+  };
+
+  try {
+    // Step 1: HEAD request
+    const headResp = await fetch(url, {
+      method: "HEAD",
+      headers,
+      redirect: "follow",
+      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    });
+
+    if (headResp.status === 401 || headResp.status === 403) {
+      throw new Error(`${headResp.status}`);
+    }
+
+    if (headResp.status !== 200) return null;
+
+    const contentType = headResp.headers.get("content-type") || "";
+    const contentLength = parseInt(headResp.headers.get("content-length") || "0", 10);
+
+    // Any text/html 200 on a file URL is a bot challenge or soft-404.
+    // Real files always have binary content types.
+    if (contentType.includes("text/html")) {
+      return { url, ext, contentType, contentLength, magicExt: null, magicMime: null, magicCategory: null, notes: "bot_challenge" };
+    }
+
+    // Step 2: Range request for magic bytes (first 16 bytes)
+    let magicBytes: Buffer | null = null;
+    try {
+      const rangeResp = await fetch(url, {
+        method: "GET",
+        headers: { ...headers, Range: "bytes=0-15" },
+        redirect: "follow",
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+      });
+
+      if (rangeResp.ok || rangeResp.status === 206) {
+        magicBytes = Buffer.from(await rangeResp.arrayBuffer());
+      }
+    } catch {
+      // Range not supported — proceed without magic byte verification
+    }
+
+    const detected = magicBytes ? matchMagicBytes(magicBytes) : null;
+    let notes = "confirmed";
+    if (!detected) {
+      notes = magicBytes ? "unknown_magic" : "no_range_support";
+    } else if (detected.ext !== ext) {
+      notes = `magic_says_${detected.ext}`;
+    }
+
+    return {
+      url,
+      ext,
+      contentType,
+      contentLength,
+      magicExt: detected?.ext ?? null,
+      magicMime: detected?.mime ?? null,
+      magicCategory: detected?.category ?? null,
+      notes,
+    };
+  } catch (err: any) {
+    if (err.message === "401" || err.message === "403") throw err;
+    return null;
+  }
+}
+
+// ===== CSV I/O =====
+
+const CSV_HEADER =
+  "base_id,original_url,base_url,status,resolved_url,extension,file_type,content_type,content_length,notes";
+
+function escapeCsvField(value: string): string {
+  if (value.includes(",") || value.includes('"') || value.includes("\n")) {
+    return `"${value.replace(/"/g, '""')}"`;
+  }
+  return value;
+}
+
+function rowToCsv(row: CsvRow): string {
+  return [
+    row.base_id,
+    escapeCsvField(row.original_url),
+    escapeCsvField(row.base_url),
+    row.status,
+    escapeCsvField(row.resolved_url),
+    row.extension,
+    row.file_type,
+    escapeCsvField(row.content_type),
+    String(row.content_length),
+    escapeCsvField(row.notes),
+  ].join(",");
+}
+
+function loadResolvedIds(outputPath: string): Set<string> {
+  const ids = new Set<string>();
+  if (!fs.existsSync(outputPath)) return ids;
+
+  const content = fs.readFileSync(outputPath, "utf-8");
+  const lines = content.split("\n").filter((l) => l.trim().length > 0);
+  // Skip header
+  for (let i = 1; i < lines.length; i++) {
+    const firstComma = lines[i].indexOf(",");
+    if (firstComma > 0) {
+      ids.add(lines[i].substring(0, firstComma));
+    }
+  }
+  return ids;
+}
+
+function initOutputCsv(outputPath: string): void {
+  if (!fs.existsSync(outputPath)) {
+    fs.writeFileSync(outputPath, CSV_HEADER + "\n");
+  }
+}
+
+function appendRow(outputPath: string, row: CsvRow): void {
+  fs.appendFileSync(outputPath, rowToCsv(row) + "\n");
+}
+
+// ===== INPUT PARSING =====
+
+function loadInputUrls(csvPath: string): string[] {
+  const content = fs.readFileSync(csvPath, "utf-8");
+  const lines = content
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0);
+
+  // Skip header line if it doesn't start with http
+  const startIdx = lines[0]?.toLowerCase().startsWith("http") ? 0 : 1;
+  return lines.slice(startIdx).filter((l) => l.startsWith("http"));
+}
+
+function extractBaseId(url: string): string {
+  const filename = url.split("/").pop() || "";
+  return filename.replace(/\.[^.]+$/, "");
+}
+
+// ===== MAIN RESOLVER =====
+
+async function resolveUrl(baseUrl: string): Promise<{
+  status: string;
+  resolved_url: string;
+  extension: string;
+  file_type: string;
+  content_type: string;
+  content_length: number;
+  notes: string;
+}> {
+  let consecutiveBotBlocks = 0;
+
+  for (let i = 0; i < ALL_EXTENSIONS.length; i++) {
+    const ext = ALL_EXTENSIONS[i];
+    await throttle();
+
+    try {
+      const result = await probeExtension(baseUrl, ext, currentCookieHeader);
+
+      if (result && result.notes === "bot_challenge") {
+        consecutiveBotBlocks++;
+        if (consecutiveBotBlocks >= BOT_BLOCK_THRESHOLD) {
+          console.log(`    ${BOT_BLOCK_THRESHOLD} consecutive bot blocks — pausing ${BOT_BLOCK_PAUSE_MS / 1000}s and refreshing cookies...`);
+          await new Promise((r) => setTimeout(r, BOT_BLOCK_PAUSE_MS));
+          await refreshCookies();
+          consecutiveBotBlocks = 0;
+          // Retry this extension with fresh cookies
+          i--;
+          continue;
+        }
+        continue;
+      }
+
+      consecutiveBotBlocks = 0;
+
+      if (result) {
+        const resolvedExt = result.magicExt ?? ext;
+        const fileType = result.magicCategory
+          ? result.magicCategory
+          : classifyExtension(resolvedExt);
+
+        return {
+          status: "resolved",
+          resolved_url: result.url,
+          extension: resolvedExt,
+          file_type: fileType,
+          content_type: result.contentType,
+          content_length: result.contentLength,
+          notes: result.notes,
+        };
+      }
+    } catch (err: any) {
+      // 401/403 — refresh cookies and retry this extension
+      if (err.message === "401" || err.message === "403") {
+        await refreshCookies();
+        i--; // retry this extension
+        continue;
+      }
+      // Other errors — skip this extension
+    }
+  }
+
+  return {
+    status: "not_found",
+    resolved_url: "",
+    extension: "",
+    file_type: "",
+    content_type: "",
+    content_length: 0,
+    notes: "probed_all_extensions",
+  };
+}
+
+async function resolveExtensions(inputCsvPath: string, outputPath: string, concurrency: number): Promise<void> {
+  console.log("\n=== DOJ Extension Resolver ===\n");
+  console.log(`Extensions to probe: ${ALL_EXTENSIONS.length} per URL`);
+  console.log(`Concurrency: ${concurrency}`);
+  console.log(`Output: ${outputPath}\n`);
+
+  // 1. Load input URLs
+  const urls = loadInputUrls(inputCsvPath);
+  console.log(`Loaded ${urls.length} URLs from ${inputCsvPath}`);
+
+  // 2. Load existing progress
+  initOutputCsv(outputPath);
+  const resolved = loadResolvedIds(outputPath);
+  console.log(`Already resolved: ${resolved.size} URLs`);
+
+  // 3. Filter to pending
+  const pending = urls.filter((u) => !resolved.has(extractBaseId(u)));
+  console.log(`Remaining: ${pending.length} URLs\n`);
+
+  if (pending.length === 0) {
+    console.log("All URLs already resolved.");
+    return;
+  }
+
+  // 4. Acquire Akamai cookies
+  console.log("Acquiring Akamai cookies...");
+  await getBrowserContext();
+  currentCookieHeader = await extractCookieHeader();
+  await closeBrowser();
+  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+
+  if (!currentCookieHeader) {
+    console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
+    return;
+  }
+
+  // 5. Process URLs with concurrency
+  const limit = pLimit(concurrency);
+  let completed = 0;
+  let found = 0;
+  let notFound = 0;
+  let errors = 0;
+  const startTime = Date.now();
+
+  const tasks = pending.map((originalUrl) =>
+    limit(async () => {
+      const baseId = extractBaseId(originalUrl);
+      const baseUrl = originalUrl.replace(/\.[^.]+$/, "");
+
+      try {
+        const result = await resolveUrl(baseUrl);
+
+        const row: CsvRow = {
+          base_id: baseId,
+          original_url: originalUrl,
+          base_url: baseUrl,
+          ...result,
+        };
+
+        appendRow(outputPath, row);
+        completed++;
+
+        if (result.status === "resolved") {
+          found++;
+          console.log(
+            `  [${completed}/${pending.length}] ${baseId} -> .${result.extension} (${result.file_type}) ${result.content_length > 0 ? `${(result.content_length / 1024).toFixed(0)}KB` : ""}`,
+          );
+        } else {
+          notFound++;
+          if (completed % 25 === 0) {
+            console.log(
+              `  [${completed}/${pending.length}] Progress: ${found} found, ${notFound} not found, ${errors} errors`,
+            );
+          }
+        }
+
+        // Periodic summary
+        if (completed % 100 === 0) {
+          const elapsed = (Date.now() - startTime) / 1000;
+          const rate = completed / elapsed;
+          const eta = ((pending.length - completed) / rate / 60).toFixed(1);
+          console.log(
+            `\n  === ${completed}/${pending.length} (${found} found) | ${rate.toFixed(1)} URLs/sec | ETA: ${eta}m ===\n`,
+          );
+        }
+      } catch (err: any) {
+        errors++;
+        const row: CsvRow = {
+          base_id: baseId,
+          original_url: originalUrl,
+          base_url: baseUrl,
+          status: "error",
+          resolved_url: "",
+          extension: "",
+          file_type: "",
+          content_type: "",
+          content_length: 0,
+          notes: err.message || "unknown_error",
+        };
+        appendRow(outputPath, row);
+        completed++;
+      }
+    }),
+  );
+
+  await Promise.all(tasks);
+
+  // 6. Summary
+  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  console.log("\n=== Resolution Summary ===");
+  console.log(`Total processed: ${completed}`);
+  console.log(`Resolved:        ${found}`);
+  console.log(`Not found:       ${notFound}`);
+  console.log(`Errors:          ${errors}`);
+  console.log(`Time:            ${elapsed}s`);
+  console.log(`Output:          ${outputPath}`);
+}
+
+// ===== CLI =====
+
+function parseArgs(): { inputCsv: string; outputCsv: string; concurrency: number } {
+  const args = process.argv.slice(2);
+  let inputCsv = "";
+  let outputCsv = DEFAULT_OUTPUT;
+  let concurrency = DEFAULT_CONCURRENCY;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === "--output" && args[i + 1]) {
+      outputCsv = args[++i];
+    } else if (args[i] === "--concurrency" && args[i + 1]) {
+      concurrency = parseInt(args[++i], 10);
+    } else if (args[i] === "--headed") {
+      // Handled by doj-scraper via process.argv
+    } else if (!args[i].startsWith("--") && !inputCsv) {
+      inputCsv = args[i];
+    }
+  }
+
+  if (!inputCsv) {
+    console.error("Usage: npx tsx scripts/pipeline/extension-resolver.ts <input.csv> [--output path] [--concurrency N] [--headed]");
+    process.exit(1);
+  }
+
+  // Resolve relative paths
+  if (!path.isAbsolute(inputCsv)) {
+    inputCsv = path.resolve(process.cwd(), inputCsv);
+  }
+  if (!path.isAbsolute(outputCsv)) {
+    outputCsv = path.resolve(process.cwd(), outputCsv);
+  }
+
+  if (!fs.existsSync(inputCsv)) {
+    console.error(`Input file not found: ${inputCsv}`);
+    process.exit(1);
+  }
+
+  return { inputCsv, outputCsv, concurrency };
+}
+
+if (process.argv[1]?.includes(path.basename(__filename))) {
+  const { inputCsv, outputCsv, concurrency } = parseArgs();
+  resolveExtensions(inputCsv, outputCsv, concurrency)
+    .then(() => process.exit(0))
+    .catch((err) => {
+      console.error("Fatal error:", err);
+      process.exit(1);
+    });
+}
