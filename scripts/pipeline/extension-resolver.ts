@@ -6,6 +6,9 @@
  * probes all candidate extensions via HEAD requests, and verifies with magic bytes.
  * Optionally downloads the resolved files.
  *
+ * Uses Playwright's context.request API to carry the browser's full Akamai session
+ * (cookies + TLS fingerprint) with every request, avoiding brittle cookie extraction.
+ *
  * Usage:
  *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv
  *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --download
@@ -21,6 +24,7 @@ import { pipeline } from "stream/promises";
 import { Readable } from "stream";
 import { fileURLToPath } from "url";
 import pLimit from "p-limit";
+import type { BrowserContext } from "playwright";
 import { getBrowserContext, extractCookieHeader, closeBrowser } from "./doj-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -33,11 +37,11 @@ const DEFAULT_OUTPUT = path.join(DATA_DIR, "resolved.partial.csv");
 
 const BASE_INTERVAL_MS = 1500;
 const JITTER_MS = 1000;
-const DEFAULT_CONCURRENCY = 8;
+const DEFAULT_CONCURRENCY = 2;
 const BOT_BLOCK_PAUSE_MS = 60_000;
 const BOT_BLOCK_THRESHOLD = 5;
-const COOKIE_REFRESH_COOLDOWN_MS = 30_000;
 const REQUEST_TIMEOUT_MS = 10_000;
+const MAX_SESSION_REFRESHES = 3;
 
 // Download mode
 const RESOLVED_DOWNLOADS_DIR = path.join(DATA_DIR, "downloads", "resolved");
@@ -166,44 +170,74 @@ async function throttle(): Promise<void> {
   }
 }
 
-// ===== COOKIE MANAGEMENT =====
+// ===== SESSION MANAGEMENT =====
+// Instead of extracting cookies for Node fetch(), we keep the browser context open
+// and use context.request which carries the full Akamai session automatically.
 
-let currentCookieHeader = "";
-let cookieRefreshPromise: Promise<void> | null = null;
-let lastCookieRefreshTime = 0;
+let sessionRefreshPromise: Promise<void> | null = null;
+let lastSessionRefreshTime = 0;
+const SESSION_REFRESH_COOLDOWN_MS = 30_000;
 
-async function refreshCookies(): Promise<void> {
+async function refreshSession(context: BrowserContext): Promise<void> {
   const now = Date.now();
 
-  if (cookieRefreshPromise) {
-    await cookieRefreshPromise;
+  if (sessionRefreshPromise) {
+    await sessionRefreshPromise;
     return;
   }
 
-  if (now - lastCookieRefreshTime < COOKIE_REFRESH_COOLDOWN_MS) {
+  if (now - lastSessionRefreshTime < SESSION_REFRESH_COOLDOWN_MS) {
     return;
   }
 
-  cookieRefreshPromise = (async () => {
+  sessionRefreshPromise = (async () => {
     try {
-      console.log("\n  Cookies expired — re-acquiring Akamai cookies...");
-      await getBrowserContext();
-      const header = await extractCookieHeader();
-      await closeBrowser();
-      lastCookieRefreshTime = Date.now();
-      if (header) {
-        currentCookieHeader = header;
-        console.log(`  New cookie header obtained (${header.length} chars)\n`);
+      console.log("\n  Session expired — navigating to re-authenticate with Akamai...");
+      // Navigate to a file URL to trigger Akamai's challenge/verification
+      const page = await context.newPage();
+      try {
+        await page.goto("https://www.justice.gov/epstein/files/DataSet%201/EFTA00003159.pdf", {
+          waitUntil: "load",
+          timeout: 30000,
+        });
+        // Wait for Akamai's invisible JS to complete
+        await page.waitForTimeout(5000);
+
+        // Check if we got authorization cookies
+        const cookies = await context.cookies();
+        const hasAuth = cookies.some(c => c.name.startsWith("authorization_"));
+
+        if (!hasAuth) {
+          const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--headed");
+          if (USE_HEADED) {
+            console.log("  >>> Please solve the bot challenge in the browser window <<<");
+            console.log("  Waiting up to 120s for authorization cookies...");
+            const deadline = Date.now() + 120_000;
+            while (Date.now() < deadline) {
+              await page.waitForTimeout(3000);
+              const updated = await context.cookies();
+              if (updated.some(c => c.name.startsWith("authorization_"))) {
+                console.log("  Akamai cookies obtained after manual solve!");
+                break;
+              }
+            }
+          }
+        } else {
+          console.log("  Akamai session refreshed successfully.\n");
+        }
+      } finally {
+        await page.close();
       }
+      lastSessionRefreshTime = Date.now();
     } catch (err: any) {
-      console.warn(`  Cookie refresh failed: ${err.message}`);
+      console.warn(`  Session refresh failed: ${err.message}`);
     }
   })();
 
   try {
-    await cookieRefreshPromise;
+    await sessionRefreshPromise;
   } finally {
-    cookieRefreshPromise = null;
+    sessionRefreshPromise = null;
   }
 }
 
@@ -263,7 +297,7 @@ function classifyExtension(ext: string): string {
   return "other";
 }
 
-// ===== HTTP PROBING =====
+// ===== HTTP PROBING (via Playwright context.request) =====
 
 const PROBE_HEADERS: Record<string, string> = {
   "User-Agent":
@@ -276,36 +310,29 @@ const PROBE_HEADERS: Record<string, string> = {
 };
 
 async function probeExtension(
+  context: BrowserContext,
   baseUrl: string,
   ext: string,
-  cookieHeader: string,
 ): Promise<ProbeResult | null> {
   const url = `${baseUrl}.${ext}`;
-  const headers: Record<string, string> = {
-    ...PROBE_HEADERS,
-    Cookie: cookieHeader,
-  };
 
   try {
-    // Step 1: HEAD request
-    const headResp = await fetch(url, {
-      method: "HEAD",
-      headers,
-      redirect: "follow",
-      signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+    // Step 1: HEAD request via Playwright (carries browser's full Akamai session)
+    const headResp = await context.request.head(url, {
+      headers: PROBE_HEADERS,
+      timeout: REQUEST_TIMEOUT_MS,
     });
 
-    if (headResp.status === 401 || headResp.status === 403) {
-      throw new Error(`${headResp.status}`);
+    if (headResp.status() === 401 || headResp.status() === 403) {
+      throw new Error(`${headResp.status()}`);
     }
 
-    if (headResp.status !== 200) return null;
+    if (headResp.status() !== 200) return null;
 
-    const contentType = headResp.headers.get("content-type") || "";
-    const contentLength = parseInt(headResp.headers.get("content-length") || "0", 10);
+    const contentType = headResp.headers()["content-type"] || "";
+    const contentLength = parseInt(headResp.headers()["content-length"] || "0", 10);
 
     // Any text/html 200 on a file URL is a bot challenge or soft-404.
-    // Real files always have binary content types.
     if (contentType.includes("text/html")) {
       return { url, ext, contentType, contentLength, magicExt: null, magicMime: null, magicCategory: null, notes: "bot_challenge" };
     }
@@ -313,15 +340,14 @@ async function probeExtension(
     // Step 2: Range request for magic bytes (first 16 bytes)
     let magicBytes: Buffer | null = null;
     try {
-      const rangeResp = await fetch(url, {
+      const rangeResp = await context.request.fetch(url, {
         method: "GET",
-        headers: { ...headers, Range: "bytes=0-15" },
-        redirect: "follow",
-        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+        headers: { ...PROBE_HEADERS, Range: "bytes=0-15" },
+        timeout: REQUEST_TIMEOUT_MS,
       });
 
-      if (rangeResp.ok || rangeResp.status === 206) {
-        magicBytes = Buffer.from(await rangeResp.arrayBuffer());
+      if (rangeResp.ok() || rangeResp.status() === 206) {
+        magicBytes = Buffer.from(await rangeResp.body());
       }
     } catch {
       // Range not supported — proceed without magic byte verification
@@ -425,7 +451,7 @@ function extractBaseId(url: string): string {
 
 // ===== MAIN RESOLVER =====
 
-async function resolveUrl(baseUrl: string): Promise<{
+async function resolveUrl(context: BrowserContext, baseUrl: string): Promise<{
   status: string;
   resolved_url: string;
   extension: string;
@@ -435,23 +461,40 @@ async function resolveUrl(baseUrl: string): Promise<{
   notes: string;
 }> {
   let consecutiveBotBlocks = 0;
+  let sessionRefreshes = 0;
+  const baseId = baseUrl.split("/").pop() || "";
 
   for (let i = 0; i < ALL_EXTENSIONS.length; i++) {
     const ext = ALL_EXTENSIONS[i];
     await throttle();
 
     try {
-      const result = await probeExtension(baseUrl, ext, currentCookieHeader);
+      const result = await probeExtension(context, baseUrl, ext);
 
       if (result && result.notes === "bot_challenge") {
         consecutiveBotBlocks++;
+        if (consecutiveBotBlocks === 1) {
+          console.log(`    ${baseId}: bot challenge on .${ext}`);
+        }
         if (consecutiveBotBlocks >= BOT_BLOCK_THRESHOLD) {
-          console.log(`    ${BOT_BLOCK_THRESHOLD} consecutive bot blocks — pausing ${BOT_BLOCK_PAUSE_MS / 1000}s and refreshing cookies...`);
+          if (sessionRefreshes >= MAX_SESSION_REFRESHES) {
+            console.log(`    ${baseId}: giving up after ${MAX_SESSION_REFRESHES} session refreshes — marking as bot_blocked`);
+            return {
+              status: "bot_blocked",
+              resolved_url: "",
+              extension: "",
+              file_type: "",
+              content_type: "",
+              content_length: 0,
+              notes: `bot_blocked_after_${sessionRefreshes}_refreshes`,
+            };
+          }
+          console.log(`    ${baseId}: ${BOT_BLOCK_THRESHOLD} consecutive bot blocks — pausing ${BOT_BLOCK_PAUSE_MS / 1000}s and refreshing session...`);
           await new Promise((r) => setTimeout(r, BOT_BLOCK_PAUSE_MS));
-          await refreshCookies();
+          await refreshSession(context);
+          sessionRefreshes++;
           consecutiveBotBlocks = 0;
-          // Retry this extension with fresh cookies
-          i--;
+          i--; // retry this extension
           continue;
         }
         continue;
@@ -476,9 +519,21 @@ async function resolveUrl(baseUrl: string): Promise<{
         };
       }
     } catch (err: any) {
-      // 401/403 — refresh cookies and retry this extension
       if (err.message === "401" || err.message === "403") {
-        await refreshCookies();
+        if (sessionRefreshes >= MAX_SESSION_REFRESHES) {
+          return {
+            status: "bot_blocked",
+            resolved_url: "",
+            extension: "",
+            file_type: "",
+            content_type: "",
+            content_length: 0,
+            notes: `auth_failed_after_${sessionRefreshes}_refreshes`,
+          };
+        }
+        console.log(`    ${baseId}: HTTP ${err.message} on .${ext} — refreshing session`);
+        await refreshSession(context);
+        sessionRefreshes++;
         i--; // retry this extension
         continue;
       }
@@ -521,19 +576,56 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
     return;
   }
 
-  // 4. Acquire Akamai cookies
-  console.log("Acquiring Akamai cookies...");
-  await getBrowserContext();
-  currentCookieHeader = await extractCookieHeader();
-  await closeBrowser();
-  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  // 4. Open browser and establish Akamai session.
+  // The browser context stays open for the entire run — context.request carries
+  // the browser's full session (cookies, TLS fingerprint) with every request.
+  console.log("Opening browser and establishing Akamai session...");
+  const context = await getBrowserContext();
 
-  if (!currentCookieHeader) {
-    console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
-    return;
+  // Navigate to trigger Akamai's challenge/verification flow
+  const page = await context.newPage();
+  try {
+    await page.goto("https://www.justice.gov/epstein/files/DataSet%201/EFTA00003159.pdf", {
+      waitUntil: "load",
+      timeout: 30000,
+    });
+    await page.waitForTimeout(5000); // Let Akamai's invisible JS complete
+
+    // Check for authorization cookies
+    let cookies = await context.cookies();
+    let hasAuth = cookies.some(c => c.name.startsWith("authorization_"));
+
+    if (!hasAuth) {
+      const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--headed");
+      if (USE_HEADED) {
+        console.log("  Akamai cookies not found after auto-solve.");
+        console.log("  >>> Please solve the bot challenge in the browser window <<<");
+        console.log("  Waiting up to 120s for authorization cookies...");
+        const deadline = Date.now() + 120_000;
+        while (Date.now() < deadline) {
+          await page.waitForTimeout(3000);
+          cookies = await context.cookies();
+          hasAuth = cookies.some(c => c.name.startsWith("authorization_"));
+          if (hasAuth) {
+            console.log("  Akamai cookies obtained!\n");
+            break;
+          }
+        }
+      }
+    }
+
+    if (hasAuth) {
+      console.log("  Akamai session established.\n");
+    } else {
+      console.log("  No authorization cookies found — will try probing anyway (context.request carries all session state).\n");
+    }
+  } catch (err: any) {
+    console.warn(`  Warning during session setup: ${err.message}. Will try probing anyway.\n`);
+  } finally {
+    await page.close();
   }
 
-  // 5. Process URLs with concurrency
+  // 5. Process URLs with concurrency — using context.request for all probes
   const limit = pLimit(concurrency);
   let completed = 0;
   let found = 0;
@@ -547,7 +639,7 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
       const baseUrl = originalUrl.replace(/\.[^.]+$/, "");
 
       try {
-        const result = await resolveUrl(baseUrl);
+        const result = await resolveUrl(context, baseUrl);
 
         const row: CsvRow = {
           base_id: baseId,
@@ -604,7 +696,9 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
 
   await Promise.all(tasks);
 
-  // 6. Summary
+  // 6. Close browser and summarize
+  try { await closeBrowser(); } catch {}
+
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log("\n=== Resolution Summary ===");
   console.log(`Total processed: ${completed}`);
@@ -692,6 +786,7 @@ function loadResolvedEntries(csvPath: string): ResolvedEntry[] {
 }
 
 async function downloadResolvedFile(
+  context: BrowserContext,
   entry: ResolvedEntry,
   progress: DownloadProgress,
 ): Promise<{ success: boolean; bytes: number }> {
@@ -712,6 +807,10 @@ async function downloadResolvedFile(
     delete progress.completed[entry.resolved_url];
   }
 
+  // Extract cookies from browser context for Node fetch() streaming downloads
+  const cookies = await context.cookies();
+  const cookieHeader = cookies.map(c => `${c.name}=${c.value}`).join("; ");
+
   for (let attempt = 1; attempt <= DOWNLOAD_RETRIES; attempt++) {
     try {
       await throttle();
@@ -720,10 +819,8 @@ async function downloadResolvedFile(
         ...PROBE_HEADERS,
         Accept: "application/octet-stream,*/*",
         "Accept-Encoding": "gzip, deflate, br",
+        Cookie: cookieHeader,
       };
-      if (currentCookieHeader) {
-        headers["Cookie"] = currentCookieHeader;
-      }
 
       const response = await fetch(entry.resolved_url, {
         headers,
@@ -738,8 +835,8 @@ async function downloadResolvedFile(
       }
 
       if (response.status === 401 || response.status === 403) {
-        console.warn(`  HTTP ${response.status} for ${filename} (attempt ${attempt}/${DOWNLOAD_RETRIES}) — refreshing cookies`);
-        await refreshCookies();
+        console.warn(`  HTTP ${response.status} for ${filename} (attempt ${attempt}/${DOWNLOAD_RETRIES}) — refreshing session`);
+        await refreshSession(context);
         if (attempt < DOWNLOAD_RETRIES) {
           await new Promise((r) => setTimeout(r, 2000));
           continue;
@@ -810,16 +907,49 @@ async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
     return;
   }
 
-  // 3. Acquire Akamai cookies
-  console.log("Acquiring Akamai cookies...");
-  await getBrowserContext();
-  currentCookieHeader = await extractCookieHeader();
-  await closeBrowser();
-  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  // 3. Open browser and establish Akamai session
+  console.log("Opening browser and establishing Akamai session...");
+  const context = await getBrowserContext();
 
-  if (!currentCookieHeader) {
-    console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
-    return;
+  const page = await context.newPage();
+  try {
+    await page.goto("https://www.justice.gov/epstein/files/DataSet%201/EFTA00003159.pdf", {
+      waitUntil: "load",
+      timeout: 30000,
+    });
+    await page.waitForTimeout(5000);
+
+    let cookies = await context.cookies();
+    let hasAuth = cookies.some(c => c.name.startsWith("authorization_"));
+
+    if (!hasAuth) {
+      const USE_HEADED = process.env.DOJ_HEADED === "1" || process.argv.includes("--headed");
+      if (USE_HEADED) {
+        console.log("  Akamai cookies not found after auto-solve.");
+        console.log("  >>> Please solve the bot challenge in the browser window <<<");
+        console.log("  Waiting up to 120s for authorization cookies...");
+        const deadline = Date.now() + 120_000;
+        while (Date.now() < deadline) {
+          await page.waitForTimeout(3000);
+          cookies = await context.cookies();
+          hasAuth = cookies.some(c => c.name.startsWith("authorization_"));
+          if (hasAuth) {
+            console.log("  Akamai cookies obtained!\n");
+            break;
+          }
+        }
+      }
+    }
+
+    if (hasAuth) {
+      console.log("  Akamai session established.\n");
+    } else {
+      console.log("  No authorization cookies found — will try downloading anyway.\n");
+    }
+  } catch (err: any) {
+    console.warn(`  Warning during session setup: ${err.message}. Will try downloading anyway.\n`);
+  } finally {
+    await page.close();
   }
 
   // 4. Download with concurrency
@@ -832,7 +962,7 @@ async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
 
   const tasks = pending.map((entry) =>
     limit(async () => {
-      const result = await downloadResolvedFile(entry, progress);
+      const result = await downloadResolvedFile(context, entry, progress);
       completed++;
 
       if (result.success) {
@@ -861,7 +991,9 @@ async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
   await Promise.all(tasks);
   saveDownloadProgress(progress);
 
-  // 5. Summary
+  // 5. Close browser and summarize
+  try { await closeBrowser(); } catch {}
+
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
   console.log("\n=== Download Summary ===");
   console.log(`Total processed: ${completed}`);
@@ -909,7 +1041,7 @@ function parseArgs(): {
       "Usage: npx tsx scripts/pipeline/extension-resolver.ts <input.csv> [options]\n\n" +
       "Options:\n" +
       "  --output PATH       Output CSV path (default: data/resolved.partial.csv)\n" +
-      "  --concurrency N     Max parallel URL resolutions (default: 8)\n" +
+      "  --concurrency N     Max parallel URL resolutions (default: 2)\n" +
       "  --download          Resolve extensions, then download resolved files\n" +
       "  --download-only     Skip resolution, download from existing CSV\n" +
       "  --headed            Show browser window for manual bot challenge solving"
