@@ -346,6 +346,7 @@ export interface DOJFile {
   sizeBytes?: number;
   dataSetId: number;
   pageCount?: number;
+  extensionResolved?: boolean;
 }
 
 export interface DOJCatalog {

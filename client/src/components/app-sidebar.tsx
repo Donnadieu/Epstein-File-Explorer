@@ -33,12 +33,13 @@ import {
   BookOpen,
   Image,
   Video,
+  VideoOff,
   Bookmark,
 } from "lucide-react";
 
 interface SidebarCounts {
   documents: { total: number; byType: Record<string, number> };
-  media: { images: number; videos: number };
+  media: { images: number; videos: number; hiddenVideos: number };
   persons: number;
   events: number;
   connections: number;
@@ -144,6 +145,7 @@ export function AppSidebar() {
   const mediaItems: NavItem[] = [
     { title: "Photos", url: "/documents?mediaType=image", icon: Image, count: counts?.media.images },
     { title: "Videos", url: "/documents?mediaType=video", icon: Video, count: counts?.media.videos },
+    { title: "Hidden Videos", url: "/documents?mediaType=video&tag=extension-resolved", icon: VideoOff, count: counts?.media.hiddenVideos },
   ].filter(item => item.count != null && item.count > 0);
 
   const investigationItems: NavItem[] = [

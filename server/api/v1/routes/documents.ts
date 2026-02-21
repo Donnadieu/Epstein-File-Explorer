@@ -19,9 +19,10 @@ router.get("/", async (req, res) => {
     const redacted = req.query.redacted as string | undefined;
     const mediaType = req.query.mediaType as string | undefined;
     const sort = req.query.sort as string | undefined;
+    const tag = req.query.tag as string | undefined;
 
     const result = await storage.getDocumentsFiltered({
-      page, limit, search, type, dataSet, redacted, mediaType, sort,
+      page, limit, search, type, dataSet, redacted, mediaType, sort, tag,
     });
 
     const data = result.data.map(stripInternalFields);

@@ -313,7 +313,7 @@ describe("GET /api/sidebar-counts", () => {
   it("returns sidebar counts", async () => {
     const counts = {
       documents: { total: 100, byType: { "legal-filing": 50 } },
-      media: { images: 10, videos: 5 },
+      media: { images: 10, videos: 5, hiddenVideos: 0 },
       persons: 200,
       events: 300,
       connections: 50,

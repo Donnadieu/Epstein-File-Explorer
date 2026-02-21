@@ -240,6 +240,7 @@ export default function DocumentsPage() {
     dataSet: "all",
     redacted: "all",
     mediaType: "all",
+    tag: "",
     page: "1",
     view: "grid",
   });
@@ -256,13 +257,16 @@ export default function DocumentsPage() {
   if (filters.dataSet !== "all") queryParams.set("dataSet", filters.dataSet);
   if (filters.redacted !== "all") queryParams.set("redacted", filters.redacted);
   if (filters.mediaType !== "all") queryParams.set("mediaType", filters.mediaType);
+  if (filters.tag) queryParams.set("tag", filters.tag);
   queryParams.set("sort", "popular");
 
-  const pageTitle = filters.type !== "all"
-    ? (pageTitles[filters.type] || filters.type.charAt(0).toUpperCase() + filters.type.slice(1))
-    : filters.mediaType !== "all"
-      ? (mediaTypeTitles[filters.mediaType] || filters.mediaType.charAt(0).toUpperCase() + filters.mediaType.slice(1))
-      : "Document Browser";
+  const pageTitle = filters.tag === "extension-resolved"
+    ? "Hidden Videos"
+    : filters.type !== "all"
+      ? (pageTitles[filters.type] || filters.type.charAt(0).toUpperCase() + filters.type.slice(1))
+      : filters.mediaType !== "all"
+        ? (mediaTypeTitles[filters.mediaType] || filters.mediaType.charAt(0).toUpperCase() + filters.mediaType.slice(1))
+        : "Document Browser";
 
   const { data: result, isLoading, isFetching } = useQuery<{ data: Document[]; total: number; page: number; totalPages: number }>({
     queryKey: [`/api/documents?${queryParams.toString()}`],
