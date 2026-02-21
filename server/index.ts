@@ -69,6 +69,9 @@ app.use((req, res, next) => {
 (async () => {
   await registerRoutes(httpServer, app);
 
+  const { createV1Router } = await import("./api/v1");
+  app.use("/api/v1", createV1Router());
+
   const { setupWebSocket } = await import("./ws");
   setupWebSocket(httpServer);
 
