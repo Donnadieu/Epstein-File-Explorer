@@ -7,13 +7,14 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     const { page, limit } = parsePageParams(req.query as any);
-    const allAnalyses = await storage.getAIAnalysisList();
-    const total = allAnalyses.length;
-    const totalPages = Math.ceil(total / limit);
-    const offset = (page - 1) * limit;
-    const paginated = allAnalyses.slice(offset, offset + limit);
+    const search = (req.query.search as string) || undefined;
+    const documentType = (req.query.documentType as string) || undefined;
+    const dataSet = (req.query.dataSet as string) || undefined;
 
-    res.json(envelope(paginated, { total, page, totalPages, limit }));
+    const { data, total } = await storage.getAIAnalysisList({ page, limit, search, documentType, dataSet });
+    const totalPages = Math.ceil(total / limit);
+
+    res.json(envelope(data, { total, page, totalPages, limit }));
   } catch (error) {
     sendError(res, 500, "INTERNAL_ERROR", "Failed to fetch AI analyses");
   }

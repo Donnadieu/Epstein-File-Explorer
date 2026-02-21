@@ -1,8 +1,7 @@
-import fs from "fs/promises";
-import path from "path";
 import {
   persons, documents, documentPages, connections, personDocuments, timelineEvents,
   pipelineJobs, budgetTracking, bookmarks, pageViews, documentVotes, personVotes, searchQueries,
+  aiAnalyses, aiAnalysisPersons,
   type Person, type InsertPerson,
   type Document, type InsertDocument,
   type Connection, type InsertConnection,
@@ -13,6 +12,7 @@ import {
   type DocumentVote, type InsertDocumentVote,
   type PersonVote, type InsertPersonVote,
   type AIAnalysisListItem, type AIAnalysisAggregate, type AIAnalysisDocument,
+  type AIAnalysisPerson, type AIAnalysisConnection, type AIAnalysisEvent,
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
@@ -121,7 +121,7 @@ export interface IStorage {
   getPipelineStats(): Promise<{ pending: number; running: number; completed: number; failed: number }>;
   getBudgetSummary(): Promise<{ totalCostCents: number; totalInputTokens: number; totalOutputTokens: number; byModel: Record<string, number> }>;
 
-  getAIAnalysisList(): Promise<AIAnalysisListItem[]>;
+  getAIAnalysisList(opts: { page: number; limit: number; search?: string; documentType?: string; dataSet?: string }): Promise<{ data: AIAnalysisListItem[]; total: number }>;
   getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null>;
   getAIAnalysisAggregate(): Promise<AIAnalysisAggregate>;
 
@@ -163,53 +163,6 @@ function createCache<T>(ttlMs: number) {
     },
     invalidate() { data = null; cachedAt = 0; },
   };
-}
-
-const AI_ANALYZED_DIR = path.resolve(process.cwd(), "data", "ai-analyzed");
-
-const CACHE_TTL = 300_000; // 5 min
-let filesCache: { data: AIAnalysisDocument[]; cachedAt: number } | null = null;
-let inflight: Promise<AIAnalysisDocument[]> | null = null;
-
-async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
-  if (filesCache && Date.now() - filesCache.cachedAt < CACHE_TTL) {
-    return filesCache.data;
-  }
-
-  if (inflight) return inflight;
-
-  inflight = (async () => {
-    let entries: string[];
-    try {
-      entries = await fs.readdir(AI_ANALYZED_DIR);
-    } catch {
-      return [];
-    }
-
-    const jsonFiles = entries.filter((f) => f.endsWith(".json"));
-    const settled = await Promise.allSettled(
-      jsonFiles.map(async (file) => {
-        const raw = await fs.readFile(path.join(AI_ANALYZED_DIR, file), "utf-8");
-        const data = JSON.parse(raw) as AIAnalysisDocument;
-        data.fileName = file;
-        return data;
-      })
-    );
-
-    const results: AIAnalysisDocument[] = [];
-    for (const result of settled) {
-      if (result.status === "fulfilled") {
-        results.push(result.value);
-      }
-    }
-
-    filesCache = { data: results, cachedAt: Date.now() };
-    return results;
-  })().finally(() => {
-    inflight = null;
-  });
-
-  return inflight;
 }
 
 /**
@@ -544,6 +497,7 @@ const COUNT_TTL = 60_000;
 
 // Cache for first-page unfiltered documents (dashboard + "All Documents" initial load)
 const firstPageDocsCache = createCache<Document[]>(5 * 60 * 1000);
+const aiAggregateCache = createCache<AIAnalysisAggregate>(5 * 60 * 1000);
 
 // Per-ID caches for detail pages
 const DETAIL_CACHE_TTL = 5 * 60 * 1000;
@@ -581,45 +535,50 @@ export interface PersonAIMentions {
 }
 
 async function getPersonAIMentions(personName: string, aliases: string[]): Promise<PersonAIMentions> {
-  const allFiles = await readAllAnalysisFiles();
   const normalizedTarget = normalizeName(personName);
   const normalizedAliases = (aliases ?? []).map(normalizeName);
-  const allNormalized = [normalizedTarget, ...normalizedAliases];
+  const allNormalized = [normalizedTarget, ...normalizedAliases].filter(Boolean);
+
+  if (allNormalized.length === 0) {
+    return { keyFacts: [], locations: [], mentionCount: 0, documentMentions: [] };
+  }
+
+  const rows = await db.select({
+    role: aiAnalysisPersons.role,
+    context: aiAnalysisPersons.context,
+    personMentionCount: aiAnalysisPersons.mentionCount,
+    fileName: aiAnalyses.fileName,
+    keyFacts: aiAnalyses.keyFacts,
+    locations: aiAnalyses.locations,
+  })
+    .from(aiAnalysisPersons)
+    .innerJoin(aiAnalyses, eq(aiAnalysisPersons.aiAnalysisId, aiAnalyses.id))
+    .where(inArray(aiAnalysisPersons.normalizedName, allNormalized));
 
   const keyFacts: string[] = [];
   const locationsSet = new Set<string>();
   const documentMentions: { fileName: string; context: string; role: string }[] = [];
   let mentionCount = 0;
 
-  for (const data of allFiles) {
-    if (!Array.isArray(data.persons)) continue;
-
-    const match = data.persons.find(p => {
-      const norm = normalizeName(p.name ?? "");
-      return allNormalized.some(target => target === norm);
-    });
-
-    if (!match) continue;
-
-    mentionCount += match.mentionCount ?? 1;
+  for (const row of rows) {
+    mentionCount += row.personMentionCount;
     documentMentions.push({
-      fileName: data.fileName ?? "",
-      context: (match as any).context ?? "",
-      role: match.role ?? "",
+      fileName: row.fileName,
+      context: row.context ?? "",
+      role: row.role ?? "",
     });
 
-    if (Array.isArray(data.keyFacts)) {
-      for (const fact of data.keyFacts) {
+    if (Array.isArray(row.keyFacts)) {
+      for (const fact of row.keyFacts as string[]) {
         if (typeof fact === "string" && fact.toLowerCase().includes(personName.toLowerCase())) {
           keyFacts.push(fact);
         }
       }
     }
 
-    if (Array.isArray(data.locations)) {
-      for (const loc of data.locations) {
-        const location = typeof loc === "string" ? loc : ((loc as any).location ?? (loc as any).name ?? "");
-        if (location) locationsSet.add(location);
+    if (Array.isArray(row.locations)) {
+      for (const loc of row.locations as string[]) {
+        if (typeof loc === "string" && loc) locationsSet.add(loc);
       }
     }
   }
@@ -1897,26 +1856,61 @@ export class DatabaseStorage implements IStorage {
     };
   }
 
-  async getAIAnalysisList(): Promise<AIAnalysisListItem[]> {
-    const allFiles = await readAllAnalysisFiles();
+  async getAIAnalysisList(opts: { page: number; limit: number; search?: string; documentType?: string; dataSet?: string }): Promise<{ data: AIAnalysisListItem[]; total: number }> {
+    const { page, limit, search, documentType, dataSet } = opts;
+    const conditions: SQL[] = [];
 
-    const items: AIAnalysisListItem[] = allFiles.map((data) => ({
-      fileName: data.fileName ?? "",
-      dataSet: data.dataSet ?? "",
-      documentType: data.documentType ?? "",
-      summary: (data.summary ?? "").slice(0, 200),
-      personCount: Array.isArray(data.persons) ? data.persons.length : 0,
-      connectionCount: Array.isArray(data.connections) ? data.connections.length : 0,
-      eventCount: Array.isArray(data.events) ? data.events.length : 0,
-      locationCount: Array.isArray(data.locations) ? data.locations.length : 0,
-      keyFactCount: Array.isArray(data.keyFacts) ? data.keyFacts.length : 0,
-      tier: data.tier ?? 0,
-      costCents: data.costCents ?? 0,
-      analyzedAt: data.analyzedAt ?? "",
-    }));
+    if (search) {
+      const pattern = `%${escapeLikePattern(search)}%`;
+      conditions.push(or(
+        ilike(aiAnalyses.fileName, pattern),
+        ilike(aiAnalyses.summary, pattern),
+      )!);
+    }
+    if (documentType) conditions.push(eq(aiAnalyses.documentType, documentType));
+    if (dataSet) conditions.push(eq(aiAnalyses.dataSet, dataSet));
 
-    items.sort((a, b) => (b.analyzedAt > a.analyzedAt ? 1 : b.analyzedAt < a.analyzedAt ? -1 : 0));
-    return items;
+    const where = conditions.length > 0 ? and(...conditions) : undefined;
+
+    const [[countResult], rows] = await Promise.all([
+      db.select({ count: sql<number>`count(*)::int` }).from(aiAnalyses).where(where),
+      db.select({
+        fileName: aiAnalyses.fileName,
+        dataSet: aiAnalyses.dataSet,
+        documentType: aiAnalyses.documentType,
+        summary: aiAnalyses.summary,
+        personCount: aiAnalyses.personCount,
+        connectionCount: aiAnalyses.connectionCount,
+        eventCount: aiAnalyses.eventCount,
+        locationCount: aiAnalyses.locationCount,
+        keyFactCount: aiAnalyses.keyFactCount,
+        tier: aiAnalyses.tier,
+        costCents: aiAnalyses.costCents,
+        analyzedAt: aiAnalyses.analyzedAt,
+      }).from(aiAnalyses)
+        .where(where)
+        .orderBy(desc(aiAnalyses.analyzedAt))
+        .limit(limit)
+        .offset((page - 1) * limit),
+    ]);
+
+    return {
+      data: rows.map(r => ({
+        fileName: r.fileName,
+        dataSet: r.dataSet ?? "",
+        documentType: r.documentType ?? "",
+        summary: (r.summary ?? "").slice(0, 200),
+        personCount: r.personCount,
+        connectionCount: r.connectionCount,
+        eventCount: r.eventCount,
+        locationCount: r.locationCount,
+        keyFactCount: r.keyFactCount,
+        tier: r.tier,
+        costCents: r.costCents,
+        analyzedAt: r.analyzedAt?.toISOString() ?? "",
+      })),
+      total: countResult.count,
+    };
   }
 
   async getAIAnalysis(fileName: string): Promise<AIAnalysisDocument | null> {
@@ -1924,87 +1918,88 @@ export class DatabaseStorage implements IStorage {
       return null;
     }
 
-    const sanitizedName = fileName.endsWith(".json") ? fileName : fileName + ".json";
-    const filePath = path.join(AI_ANALYZED_DIR, sanitizedName);
+    // Strip .json suffix if present (DB stores "EFTA00000019.pdf" not "EFTA00000019.pdf.json")
+    const cleanName = fileName.replace(/\.json$/, "");
 
-    if (!path.resolve(filePath).startsWith(AI_ANALYZED_DIR)) {
-      return null;
-    }
+    const [row] = await db.select().from(aiAnalyses)
+      .where(eq(aiAnalyses.fileName, cleanName))
+      .limit(1);
 
-    try {
-      const raw = await fs.readFile(filePath, "utf-8");
-      return JSON.parse(raw) as AIAnalysisDocument;
-    } catch {
-      return null;
-    }
+    if (!row) return null;
+
+    return {
+      fileName: row.fileName,
+      dataSet: row.dataSet ?? undefined,
+      documentType: row.documentType ?? undefined,
+      summary: row.summary ?? undefined,
+      persons: (row.persons as AIAnalysisPerson[]) ?? [],
+      connections: (row.connectionsData as AIAnalysisConnection[]) ?? [],
+      events: (row.events as AIAnalysisEvent[]) ?? [],
+      locations: (row.locations as string[]) ?? [],
+      keyFacts: (row.keyFacts as string[]) ?? [],
+      tier: row.tier,
+      costCents: row.costCents,
+      analyzedAt: row.analyzedAt?.toISOString(),
+    };
   }
 
   async getAIAnalysisAggregate(): Promise<AIAnalysisAggregate> {
-    // Totals from database (consistent with dashboard)
-    const [personCount, connectionCount, eventCount] = await Promise.all([
-      db.select({ count: sql<number>`count(*)::int` }).from(persons),
-      db.select({ count: sql<number>`count(*)::int` }).from(connections),
-      db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
-    ]);
+    return aiAggregateCache.get(async () => {
+      const [personCount, connectionCount, eventCount, totalDocs] = await Promise.all([
+        db.select({ count: sql<number>`count(*)::int` }).from(persons),
+        db.select({ count: sql<number>`count(*)::int` }).from(connections),
+        db.select({ count: sql<number>`count(*)::int` }).from(timelineEvents).where(sql`${timelineEvents.date} >= '1950' AND ${timelineEvents.significance} >= 3`),
+        db.select({ count: sql<number>`count(*)::int` }).from(aiAnalyses),
+      ]);
 
-    // Top persons from database (by document count)
-    const dbTopPersons = await db.select({
-      name: persons.name,
-      category: persons.category,
-      documentCount: persons.documentCount,
-      connectionCount: persons.connectionCount,
-    }).from(persons)
-      .orderBy(desc(persons.documentCount))
-      .limit(20);
+      const dbTopPersons = await db.select({
+        name: persons.name,
+        category: persons.category,
+        documentCount: persons.documentCount,
+        connectionCount: persons.connectionCount,
+      }).from(persons)
+        .orderBy(desc(persons.documentCount))
+        .limit(20);
 
-    // Connection types from database
-    const dbConnectionTypes = await db.select({
-      type: connections.connectionType,
-      count: sql<number>`count(*)::int`,
-    }).from(connections)
-      .groupBy(connections.connectionType)
-      .orderBy(sql`count(*) DESC`);
+      const dbConnectionTypes = await db.select({
+        type: connections.connectionType,
+        count: sql<number>`count(*)::int`,
+      }).from(connections)
+        .groupBy(connections.connectionType)
+        .orderBy(sql`count(*) DESC`);
 
-    // Documents Analyzed + document types + locations from JSON files
-    const allData = await readAllAnalysisFiles();
+      const docTypes = await db.select({
+        type: sql<string>`coalesce(${aiAnalyses.documentType}, 'unknown')`,
+        count: sql<number>`count(*)::int`,
+      }).from(aiAnalyses)
+        .groupBy(aiAnalyses.documentType)
+        .orderBy(sql`count(*) DESC`);
 
-    const locationMap = new Map<string, number>();
-    const documentTypeMap = new Map<string, number>();
+      const topLocRows = await db.execute<{ location: string; documentCount: number }>(sql`
+        SELECT loc AS location, count(DISTINCT id)::int AS "documentCount"
+        FROM ai_analyses, jsonb_array_elements_text(locations) AS loc
+        GROUP BY loc
+        ORDER BY count(DISTINCT id) DESC
+        LIMIT 20
+      `);
+      const topLocations = Array.isArray(topLocRows) ? topLocRows : ((topLocRows as any).rows ?? []);
 
-    for (const data of allData) {
-      if (Array.isArray(data.locations)) {
-        const seenInDoc = new Set<string>();
-        for (const loc of data.locations) {
-          const location = typeof loc === "string" ? loc : ((loc as any).location ?? (loc as any).name ?? "");
-          if (!location || seenInDoc.has(location)) continue;
-          seenInDoc.add(location);
-          locationMap.set(location, (locationMap.get(location) ?? 0) + 1);
-        }
-      }
-
-      const docType = data.documentType ?? "unknown";
-      documentTypeMap.set(docType, (documentTypeMap.get(docType) ?? 0) + 1);
-    }
-
-    return {
-      topPersons: dbTopPersons.map((p) => ({
-        name: p.name,
-        category: p.category,
-        mentionCount: p.documentCount ?? 0,
-        documentCount: p.documentCount ?? 0,
-      })),
-      topLocations: Array.from(locationMap.entries())
-        .map(([location, documentCount]) => ({ location, documentCount }))
-        .sort((a, b) => b.documentCount - a.documentCount)
-        .slice(0, 20),
-      connectionTypes: dbConnectionTypes.map((c) => ({ type: c.type, count: c.count })),
-      documentTypes: Array.from(documentTypeMap.entries())
-        .map(([type, count]) => ({ type, count })),
-      totalDocuments: allData.length,
-      totalPersons: personCount[0].count,
-      totalConnections: connectionCount[0].count,
-      totalEvents: eventCount[0].count,
-    };
+      return {
+        topPersons: dbTopPersons.map((p) => ({
+          name: p.name,
+          category: p.category,
+          mentionCount: p.documentCount ?? 0,
+          documentCount: p.documentCount ?? 0,
+        })),
+        topLocations,
+        connectionTypes: dbConnectionTypes.map((c) => ({ type: c.type, count: c.count })),
+        documentTypes: docTypes.map((d) => ({ type: d.type, count: d.count })),
+        totalDocuments: totalDocs[0].count,
+        totalPersons: personCount[0].count,
+        totalConnections: connectionCount[0].count,
+        totalEvents: eventCount[0].count,
+      };
+    });
   }
 
   async recordPageView(entityType: string, entityId: number, sessionId: string): Promise<void> {

@@ -2,9 +2,10 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { documents, pipelineJobs, budgetTracking } from "../../shared/schema";
+import { documents, pipelineJobs, budgetTracking, aiAnalyses, aiAnalysisPersons } from "../../shared/schema";
 import { eq, sql, and, desc, inArray } from "drizzle-orm";
 import { analyzeDocumentTiered, type AnalysisTier, type TieredAnalysisResult } from "./ai-analyzer";
+import { normalizeName } from "../../server/storage";
 import { getModelConfig, AVAILABLE_MODELS } from "../../server/chat/models";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -457,6 +458,52 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
         // Save to file
         const outFile = path.join(AI_OUTPUT_DIR, `${fileName}.json`);
         fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+
+        // Save to database (dual-write alongside JSON)
+        try {
+          const analysisValues = {
+            fileName,
+            dataSet,
+            documentType: result.documentType,
+            dateOriginal: result.dateOriginal,
+            summary: result.summary,
+            personCount: result.persons.length,
+            connectionCount: result.connections.length,
+            eventCount: result.events.length,
+            locationCount: result.locations.length,
+            keyFactCount: result.keyFacts.length,
+            tier,
+            costCents: Math.ceil(result.costCents),
+            inputTokens: result.inputTokens,
+            outputTokens: result.outputTokens,
+            persons: result.persons,
+            connectionsData: result.connections,
+            events: result.events,
+            locations: result.locations,
+            keyFacts: result.keyFacts,
+            analyzedAt: new Date(),
+          };
+          const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+            .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+            .returning({ id: aiAnalyses.id });
+
+          await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+          if (result.persons.length > 0) {
+            await db.insert(aiAnalysisPersons).values(
+              result.persons.map((p: any) => ({
+                aiAnalysisId: analysisRow.id,
+                name: p.name,
+                normalizedName: normalizeName(p.name),
+                role: p.role ?? null,
+                category: p.category ?? null,
+                context: p.context ?? null,
+                mentionCount: p.mentionCount ?? 1,
+              }))
+            );
+          }
+        } catch (dbErr) {
+          console.warn(`  DB write failed for ${fileName}: ${(dbErr as Error).message}`);
+        }
 
         // Update document status
         await db
