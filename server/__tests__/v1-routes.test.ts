@@ -558,6 +558,41 @@ describe("Error response format", () => {
   });
 });
 
+// -- Obsidian export --
+
+describe("GET /api/v1/export/obsidian", () => {
+  it("returns a zip file with correct headers", async () => {
+    mockedStorage.getPersons.mockResolvedValue([mockPerson]);
+    mockedStorage.getDocuments.mockResolvedValue([mockDocument]);
+    mockedStorage.getTimelineEvents.mockResolvedValue([{
+      ...mockEvent,
+      persons: [{ id: 1, name: "Test Person" }],
+      documents: [{ id: 1, title: "Test Document" }],
+    }]);
+    mockedStorage.getNetworkData.mockResolvedValue({
+      persons: [mockPerson],
+      connections: [mockConnection],
+      timelineYearRange: [1990, 2020],
+      personYears: {},
+    });
+
+    const res = await request(app)
+      .get("/api/v1/export/obsidian")
+      .buffer(true)
+      .parse((res, callback) => {
+        const chunks: Buffer[] = [];
+        res.on("data", (chunk: Buffer) => chunks.push(chunk));
+        res.on("end", () => callback(null, Buffer.concat(chunks)));
+      });
+    expect(res.status).toBe(200);
+    expect(res.headers["content-type"]).toContain("application/zip");
+    expect(res.headers["content-disposition"]).toContain("epstein-vault.zip");
+    // Response body should be non-empty binary data
+    expect(Buffer.isBuffer(res.body)).toBe(true);
+    expect(res.body.byteLength).toBeGreaterThan(0);
+  });
+});
+
 // -- OpenAPI spec --
 
 describe("GET /api/v1/openapi.json", () => {
