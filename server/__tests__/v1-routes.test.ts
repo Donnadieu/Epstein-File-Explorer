@@ -11,6 +11,7 @@ vi.mock("../storage", () => ({
     getPersonsPaginated: vi.fn(),
     getPersonWithDetails: vi.fn(),
     getDocuments: vi.fn(),
+    getDocumentsPaginated: vi.fn(),
     getDocumentsFiltered: vi.fn(),
     getDocumentFilters: vi.fn(),
     getDocumentWithDetails: vi.fn(),
@@ -563,7 +564,12 @@ describe("Error response format", () => {
 describe("GET /api/v1/export/obsidian", () => {
   it("returns a zip file with correct headers", async () => {
     mockedStorage.getPersons.mockResolvedValue([mockPerson]);
-    mockedStorage.getDocuments.mockResolvedValue([mockDocument]);
+    mockedStorage.getDocumentsPaginated.mockResolvedValue({
+      data: [mockDocument],
+      total: 1,
+      page: 1,
+      totalPages: 1,
+    });
     mockedStorage.getTimelineEvents.mockResolvedValue([{
       ...mockEvent,
       persons: [{ id: 1, name: "Test Person" }],

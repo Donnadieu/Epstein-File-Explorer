@@ -181,12 +181,13 @@ function connectionToMarkdown(conn: any): string {
   return lines.join("\n");
 }
 
+const DOC_BATCH_SIZE = 5000;
+
 export async function obsidianExportHandler(_req: Request, res: Response): Promise<void> {
   try {
-    // Fetch all data in parallel
-    const [persons, documents, events, networkData] = await Promise.all([
+    // Fetch cached data first (persons, events, network are all cached & small)
+    const [persons, events, networkData] = await Promise.all([
       storage.getPersons(),
-      storage.getDocuments(),
       storage.getTimelineEvents(),
       storage.getNetworkData(),
     ]);
@@ -194,9 +195,6 @@ export async function obsidianExportHandler(_req: Request, res: Response): Promi
     const connections = networkData.connections;
 
     // Build lookup maps for cross-referencing
-    const personMap = new Map(persons.map(p => [p.id, p.name]));
-
-    // Connections grouped by person ID
     const connectionsByPerson = new Map<number, any[]>();
     for (const c of connections) {
       if (!connectionsByPerson.has(c.personId1)) connectionsByPerson.set(c.personId1, []);
@@ -205,56 +203,60 @@ export async function obsidianExportHandler(_req: Request, res: Response): Promi
       connectionsByPerson.get(c.personId2)!.push(c);
     }
 
-    // Documents grouped by person (from timeline events personIds + document personIds)
-    // We don't have person-document mappings in bulk, so we skip deep cross-ref here
-    // and rely on timeline events for linking
+    // Pre-build docId → person names from timeline events (avoids O(docs*events) loop)
+    const docPersonNames = new Map<number, string[]>();
+    for (const event of events) {
+      if (!event.documentIds?.length || !event.persons?.length) continue;
+      for (const docId of event.documentIds) {
+        if (!docPersonNames.has(docId)) docPersonNames.set(docId, []);
+        const names = docPersonNames.get(docId)!;
+        for (const p of event.persons) {
+          if (!names.includes(p.name)) names.push(p.name);
+        }
+      }
+    }
+
     const docsByPerson = new Map<number, string[]>();
 
     // Set up streaming zip
-    const archive = archiver("zip", { zlib: { level: 6 } });
+    const archive = archiver("zip", { zlib: { level: 1 } });
 
     res.setHeader("Content-Type", "application/zip");
     res.setHeader("Content-Disposition", "attachment; filename=epstein-vault.zip");
 
     archive.pipe(res);
 
-    // Add persons
+    // Add persons (cached, ~8k)
     for (const person of persons) {
       const md = personToMarkdown(person, connectionsByPerson, docsByPerson);
-      const filename = `Persons/${sanitizeFilename(person.name)}.md`;
-      archive.append(md, { name: filename });
+      archive.append(md, { name: `Persons/${sanitizeFilename(person.name)}.md` });
     }
 
-    // Add documents
-    for (const doc of documents) {
-      // Find person names mentioned in this doc via timeline events
-      const mentionedPersonNames: string[] = [];
-      for (const event of events) {
-        if (event.documentIds?.includes(doc.id) && event.persons) {
-          for (const p of event.persons) {
-            if (!mentionedPersonNames.includes(p.name)) mentionedPersonNames.push(p.name);
-          }
-        }
+    // Add documents in batches to avoid loading 1.3M rows into memory
+    let docPage = 1;
+    let hasMore = true;
+    while (hasMore) {
+      const batch = await storage.getDocumentsPaginated(docPage, DOC_BATCH_SIZE);
+      for (const doc of batch.data) {
+        const mentioned = docPersonNames.get(doc.id) || [];
+        const md = documentToMarkdown(doc, mentioned);
+        archive.append(md, { name: `Documents/${sanitizeFilename(doc.title)}.md` });
       }
-
-      const md = documentToMarkdown(doc, mentionedPersonNames);
-      const filename = `Documents/${sanitizeFilename(doc.title)}.md`;
-      archive.append(md, { name: filename });
+      hasMore = docPage < batch.totalPages;
+      docPage++;
     }
 
-    // Add timeline events
+    // Add timeline events (cached, ~17k)
     for (const event of events) {
-      const md = eventToMarkdown(event);
       const dateStr = event.date || "unknown";
-      const filename = `Timeline/${sanitizeFilename(`${dateStr} - ${event.title}`)}.md`;
-      archive.append(md, { name: filename });
+      const md = eventToMarkdown(event);
+      archive.append(md, { name: `Timeline/${sanitizeFilename(`${dateStr} - ${event.title}`)}.md` });
     }
 
-    // Add connections
+    // Add connections (from cached network data, ~13k)
     for (const conn of connections) {
       const md = connectionToMarkdown(conn);
-      const filename = `Connections/${sanitizeFilename(`${conn.person1Name} - ${conn.person2Name}`)}.md`;
-      archive.append(md, { name: filename });
+      archive.append(md, { name: `Connections/${sanitizeFilename(`${conn.person1Name} - ${conn.person2Name}`)}.md` });
     }
 
     await archive.finalize();
