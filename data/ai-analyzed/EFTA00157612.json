@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA00157612.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-09-28",
+  "summary": "An FBI agent's note documenting a September 25, 2020, phone call with attorney John Reynolds, who represents Juan Alessi. The agent inquired about media reports that Alessi made statements on a podcast about Ghislaine Maxwell. Reynolds relayed that Alessi denied giving an interview but confirmed the truth of the story about Maxwell reported in the article.",
+  "persons": [
+    {
+      "name": "John Reynolds",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Attorney representing Juan Alessi. He communicated with the FBI agent about media reports concerning his client's alleged statements about Ghislaine Maxwell.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Juan Alessi",
+      "role": "Client/Subject",
+      "category": "associate",
+      "context": "Former employee of Jeffrey Epstein. Subject of FBI inquiry regarding alleged statements he made about Ghislaine Maxwell to a podcast, which he denied giving.",
+      "mentionCount": 9
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of Statements",
+      "category": "key figure",
+      "context": "The individual about whom Juan Alessi allegedly made statements. Alessi confirmed via his attorney that a story about her reported in the media was true.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "John Reynolds",
+      "person2": "Juan Alessi",
+      "relationshipType": "attorney-client",
+      "description": "John Reynolds is the legal representative for Juan Alessi, as he relayed Alessi's statements to the FBI agent.",
+      "strength": 4
+    },
+    {
+      "person1": "Juan Alessi",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Alessi confirmed a story about Ghislaine Maxwell was true, indicating prior knowledge or association.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-09-25",
+      "title": "FBI Agent Calls Juan Alessi's Attorney",
+      "description": "An FBI agent called attorney John Reynolds to inquire about media reports that his client, Juan Alessi, made statements about Ghislaine Maxwell on a podcast.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "John Reynolds",
+        "Juan Alessi"
+      ]
+    },
+    {
+      "date": "2020-09-25",
+      "title": "Attorney Relays Client's Denial and Confirmation",
+      "description": "John Reynolds called the FBI agent back after speaking with Juan Alessi. Alessi denied giving a podcast interview but confirmed the truth of a story about Ghislaine Maxwell reported in the media.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "John Reynolds",
+        "Juan Alessi",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Juan Alessi, through his attorney John Reynolds, denied giving an interview to a podcast about Ghislaine Maxwell.",
+    "Juan Alessi confirmed that a story about Ghislaine Maxwell reported in a media article was true, but claimed he had never told that story to anyone.",
+    "The FBI agent had previously visited Juan Alessi's home with a reporter, which Alessi recalled.",
+    "The document is an FBI investigative note (302) dated September 28, 2020, documenting calls from September 25, 2020."
+  ],
+  "analyzedAt": "2026-02-21T01:49:02.093Z"
+}

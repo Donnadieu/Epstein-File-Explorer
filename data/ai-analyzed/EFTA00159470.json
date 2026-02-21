@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA00159470.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-11-19",
+  "summary": "This is an email from a US Attorney's Office contractor summarizing a WebEx interview with Susan Shelling, a retired court reporter. The interview concerns her verification of her signature and certification on a deposition transcript (likely related to the Epstein case), her work history, and her recognition of names like Dahliah Wiess and Donnie Murrell.",
+  "persons": [
+    {
+      "name": "Sunny Drescher",
+      "role": "Contractor for US Attorney's Office for the Southern District of New York (USANYS)",
+      "category": "staff",
+      "context": "Sender of the email summarizing the WebEx interview with Susan Shelling.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Susan Shelling",
+      "role": "Retired Court Reporter",
+      "category": "witness",
+      "context": "Interviewed via WebEx regarding her past work, her signature/certification on a deposition transcript (document 3504-009), and her recognition of associated names.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Dahliah Wiess",
+      "role": "Attorney or Legal Professional",
+      "category": "legal",
+      "context": "Mentioned by Susan Shelling as someone she did a lot of deposition work with.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donnie Murrell",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Name remembered by Susan Shelling in association with the deposition work.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Susan Shelling",
+      "person2": "Dahliah Wiess",
+      "relationshipType": "professional",
+      "description": "Shelling states she did a lot of deposition work with Dahliah Wiess.",
+      "strength": 3
+    },
+    {
+      "person1": "Susan Shelling",
+      "person2": "Donnie Murrell",
+      "relationshipType": "professional",
+      "description": "Shelling remembers the name Donnie Murrell from her past work.",
+      "strength": 2
+    },
+    {
+      "person1": "Sunny Drescher",
+      "person2": "Susan Shelling",
+      "relationshipType": "interviewer-interviewee",
+      "description": "Drescher, a contractor for the US Attorney's Office, conducted or summarized a WebEx interview with Shelling.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-19",
+      "title": "WebEx Interview with Susan Shelling",
+      "description": "A WebEx interview was conducted with retired court reporter Susan Shelling regarding her verification of her signature on a deposition transcript and her work history.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Susan Shelling",
+        "Sunny Drescher"
+      ]
+    },
+    {
+      "date": "1993",
+      "title": "Shelling's Retirement to Florida",
+      "description": "Susan Shelling and her husband retired to Florida in 1993.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Susan Shelling"
+      ]
+    },
+    {
+      "date": "2001",
+      "title": "Shelling Returns to Work",
+      "description": "Susan Shelling returned to work as a freelance court reporter in 2001.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Susan Shelling"
+      ]
+    },
+    {
+      "date": "2015",
+      "title": "Shelling's Final Retirement",
+      "description": "Susan Shelling retired again in 2015 after 12-13 years working for US Legal Support.",
+      "category": "other",
+      "significance": 1,
+      "personsInvolved": [
+        "Susan Shelling"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida (WPB)",
+    "Brooklyn, New York",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "Susan Shelling, a retired court reporter, verified her signature and certification on a deposition transcript labeled 3504-009.",
+    "Shelling did a significant amount of deposition work with an attorney or legal professional named Dahliah Wiess.",
+    "Shelling remembered the name Donnie Murrell in connection with her past work.",
+    "The document is subject to a protective order covering specific paragraphs (7, 8, 9, 10, 15, and 17).",
+    "The interview was part of an investigation, likely by the US Attorney's Office for the Southern District of New York, into deposition records related to the Epstein case."
+  ],
+  "analyzedAt": "2026-02-21T03:24:38.528Z"
+}

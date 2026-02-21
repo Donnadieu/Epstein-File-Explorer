@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00157954.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-25",
+  "summary": "This is an email from an Assistant United States Attorney in the Southern District of New York, informing a colleague that they have provided contact information to an attorney for a potential witness (referred to as 'IMI') who may reach out directly for an interview. The document is subject to a protective order.",
+  "persons": [
+    {
+      "name": "IMI",
+      "role": "Potential Witness",
+      "category": "witness",
+      "context": "A person whom the prosecution team is seeking to interview; her attorney has been contacted and may have her call the team directly.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Author of the email, working in the Southern District of New York, coordinating contact with a potential witness via her attorney.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "IMI",
+      "relationshipType": "investigator-witness",
+      "description": "The AUSA is attempting to arrange an interview with IMI as part of an investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-25",
+      "title": "Coordination for Witness Interview",
+      "description": "An Assistant U.S. Attorney follows up on requests to interview a potential witness (IMI) and provides contact information to her attorney.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Assistant United States Attorney",
+        "IMI"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrew's Plaza, New York, NY 10007",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The prosecution team in the Southern District of New York was actively seeking to interview a witness referred to as 'IMI' as of February 2020.",
+    "Contact was made through the witness's attorney, who requested a direct number for the prosecution team.",
+    "The document is explicitly marked as subject to a protective order covering specific paragraphs, indicating sensitive information."
+  ],
+  "analyzedAt": "2026-02-21T02:06:59.368Z"
+}

@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA00158633.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-06-07",
+  "summary": "This document is an FBI 302 report summarizing an interview with a law enforcement officer (likely a detective) regarding the October 20, 2005 search of Jeffrey Epstein's Palm Beach residence. The officer reviews video and photographs from the search, recalling details about the property, seized items, and missing computers.",
+  "persons": [
+    {
+      "name": "M. AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Appears to be the prosecutor or legal official conducting or overseeing the interview/preparation of the witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Det",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "The primary subject of the interview, a detective (likely from Palm Beach Police Department) who participated in the 2005 search of Epstein's residence. He recalls details about the search, the property, and items seized.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Search Warrant",
+      "category": "key figure",
+      "context": "The owner of the Palm Beach residence that was searched on October 20, 2005.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Det",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The detective was part of the law enforcement team that executed a search warrant at Epstein's Palm Beach residence.",
+      "strength": 3
+    },
+    {
+      "person1": "M. AUSA",
+      "person2": "Det",
+      "relationshipType": "legal-interviewer",
+      "description": "The Assistant U.S. Attorney appears to be involved in interviewing or preparing the detective as part of the investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-10-20",
+      "title": "Search of Epstein's Palm Beach Residence",
+      "description": "The Palm Beach Police Department executed a search warrant at Jeffrey Epstein's Palm Beach residence. Items including message pads and an item labeled 'Twin Torpedoes' were seized.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Det"
+      ]
+    },
+    {
+      "date": "2021-06-07",
+      "title": "Witness Interview/Preparation",
+      "description": "A detective is interviewed/shown evidence (video and photographs) from the 2005 search to refresh his memory and confirm details for the ongoing investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Det",
+        "M. AUSA",
+        "SA"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "Jeffrey Epstein's Palm Beach residence",
+    "Intercoastal waterway (behind the property)"
+  ],
+  "keyFacts": [
+    "During the 2005 search of Epstein's Palm Beach house, the detective noted that about 80% of the photographs in the house depicted females.",
+    "The detective believed it was obvious that computers were missing from the house during the search.",
+    "The search included a 'massage room' within the residence and a separate apartment building where an employee lived.",
+    "Items seized during the search included message pads and an item labeled 'Twin Torpedoes' (Item #24)."
+  ],
+  "analyzedAt": "2026-02-21T02:36:26.327Z"
+}

@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA00156213.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-11-16",
+  "summary": "An FBI intake document recording a phone call from a nurse who cared for Jeffrey Epstein at the Surrey Hotel in Manhattan in August or September 2000. The caller, a nursing professor, reported having 'significant information' about Epstein and witnessing Ghislaine Maxwell visit him, but cited HIPAA concerns for not reporting sooner. She requested an in-person meeting with law enforcement.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Patient/Accused",
+      "category": "key figure",
+      "context": "The subject of the FBI intake report; the nurse caller stated she cared for him at the Surrey Hotel in Manhattan in August or September 2000.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Visitor/Associate",
+      "category": "associate",
+      "context": "Reported by the nurse caller to have visited Jeffrey Epstein while he was under her care at the Surrey Hotel.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Maxwell visited Epstein while he was staying at the Surrey Hotel and under the care of the nurse caller.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Epstein was visited by Maxwell while he was a patient at the Surrey Hotel.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2000-08",
+      "title": "Epstein's Stay at Surrey Hotel",
+      "description": "Jeffrey Epstein stayed at the Surrey Hotel in Manhattan, NY, and was cared for by a nurse for at least a 24-hour period. During this time, Ghislaine Maxwell visited him.",
+      "category": "other",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-11-16",
+      "title": "FBI Intake Call",
+      "description": "A nurse (and nursing professor) called the FBI National Threat Operations Center to report information about caring for Jeffrey Epstein in 2000 and witnessing Ghislaine Maxwell visit him.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Surrey Hotel, Manhattan, NY"
+  ],
+  "keyFacts": [
+    "A nurse cared for Jeffrey Epstein for at least 24 hours during his stay at the Surrey Hotel in Manhattan in August or September 2000.",
+    "The nurse reported that Ghislaine Maxwell visited Epstein during this period of care.",
+    "The caller, a nursing professor, stated she had 'significant information' that could 'help' the district attorney's office but wanted to speak in person.",
+    "The caller cited being bound by HIPAA guidelines as the reason for not reporting the information about Epstein sooner.",
+    "The FBI intake was created on November 16, 2021, based on a call received at 11:35 a.m. Eastern Time."
+  ],
+  "analyzedAt": "2026-02-21T00:12:08.735Z"
+}

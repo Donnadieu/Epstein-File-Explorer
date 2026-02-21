@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA00157546.pdf",
+  "dataSet": "9",
+  "documentType": "police report",
+  "dateOriginal": "2006-08-26",
+  "summary": "This is a Palm Beach Police Department Evidence/Property Tracking Report from August 26, 2006, documenting the chain of custody for a digital voice recorder seized as evidence in case 1-05-001079 (sexual battery). The report lists Jeffrey Epstein as the suspect and shows the recorder was released to investigators on November 15, 2005.",
+  "persons": [
+    {
+      "name": "Jeffrey Edward Epstein",
+      "role": "Suspect/Arrestee/Searched",
+      "category": "key figure",
+      "context": "Listed as the suspect/arrestee in the sexual battery case (1-05-001079). His address (358 El Brillo Way) and birth date (January 20, 1953) are recorded.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Other Person",
+      "category": "associate",
+      "context": "Listed as an 'OTHER PERSON' associated with the evidence/case. The initial property entry notes the voice recorder was received 'W/RODRIGUEZ & ALESSI'.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Juan P. Alessi",
+      "role": "Property Owner/Other Person",
+      "category": "staff",
+      "context": "Initially listed as the owner/name for the digital voice recorder evidence. Later also listed as an 'OTHER PERSON' in the name information section.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Juan P. Alessi",
+      "relationshipType": "associate",
+      "description": "Both are named in the same police evidence report for case 1-05-001079. Alessi was initially listed as the owner of the voice recorder evidence related to the investigation of Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Edward Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "associate",
+      "description": "Both are named in the same police evidence report. Rodriguez is listed as an 'OTHER PERSON' and was present with Alessi when the voice recorder evidence was initially handled.",
+      "strength": 2
+    },
+    {
+      "person1": "Juan P. Alessi",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "associate",
+      "description": "The evidence report notes the digital voice recorder was received 'W/RODRIGUEZ & ALESSI', indicating they were together when the property was initially logged.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-11-10",
+      "title": "Voice Recorder Seized as Evidence",
+      "description": "A digital voice recorder was seized as evidence in case 1-05-001079, a sexual battery investigation.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Juan P. Alessi",
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2005-11-15",
+      "title": "Evidence Released to Investigator",
+      "description": "The digital voice recorder evidence was released to an investigator from the Detective Bureau.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "358 El Brillo Way (Epstein's listed address)"
+  ],
+  "keyFacts": [
+    "A digital voice recorder was seized as evidence in Palm Beach Police case 1-05-001079, investigated as a sexual battery.",
+    "Jeffrey Epstein is explicitly listed as the 'SUSPECT/ARRESTEE/SEARCHED' in this case, with his full name, address, and date of birth recorded.",
+    "The evidence tracking report shows the voice recorder was initially received from or in the presence of Juan P. Alessi and Alfredo Rodriguez.",
+    "The document is subject to a protective order, indicating sensitive or restricted information.",
+    "The evidence was released to an investigator on November 15, 2005, for investigative purposes."
+  ],
+  "analyzedAt": "2026-02-21T01:41:12.246Z"
+}

@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA00156636.pdf",
+  "dataSet": "9",
+  "documentType": "USCIS Form I-914 Supplement B (Declaration of Law Enforcement Officer for Victim of Trafficking)",
+  "dateOriginal": null,
+  "summary": "This is a USCIS Form I-914 Supplement B, a law enforcement certification for a victim of trafficking. It is completed by the FBI and certifies that the applicant is a victim of sex trafficking by Jeffrey Epstein and Ghislaine Maxwell. The document details the victim's recruitment, harboring, and abuse, her cooperation with the investigation, and her expressed fear of retaliation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused trafficker",
+      "category": "key figure",
+      "context": "Identified as the individual who recruited, harbored, obtained, coerced, threatened, and forced the applicant into sexual slavery and subjected her to sex acts.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused co-conspirator",
+      "category": "key figure",
+      "context": "Identified alongside Jeffrey Epstein as a suspect/defendant in the criminal investigation; the applicant expressed fear of retaliation from individuals connected to her.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are named as suspects/defendants in the same criminal investigation for trafficking, and threats are attributed to individuals connected to both.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Applicant (Victim)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is described as having recruited, harbored, obtained, coerced, threatened, and forced the applicant into sexual slavery and sex acts.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Applicant (Victim)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell is implicated in the alleged criminal acts for which the applicant participated in the investigation, and the applicant fears retaliation from individuals connected to Maxwell.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Trafficking and Abuse of Applicant",
+      "description": "The applicant was recruited, harbored, and obtained by Jeffrey Epstein and others for sexual slavery. Epstein coerced, threatened, and forced her into submission for sex acts on numerous occasions, resulting in injuries.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Applicant (Victim)"
+      ]
+    },
+    {
+      "date": "2022-06-28",
+      "title": "Investigation/Prosecution Completion Date",
+      "description": "The date provided as when the investigation or prosecution was completed.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Applicant's Cooperation with Investigation",
+      "description": "The applicant participated in several telephonic and in-person meetings with the FBI office, responding to questions about alleged criminal activities by Epstein and Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Applicant (Victim)",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Threats and Fear of Retaliation",
+      "description": "The applicant and her family received threats during her participation in the investigation/prosecution of Epstein and Maxwell. She expressed fear of serious harm from individuals connected to them if removed from the U.S.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Applicant (Victim)",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "26 Federal Plaza, New York, NY (FBI office mailing address)",
+    "United States (context of removal fear)"
+  ],
+  "keyFacts": [
+    "A law enforcement officer from the Federal Bureau of Investigations certifies that the applicant is a victim of a severe form of sex trafficking by Jeffrey Epstein and others.",
+    "The applicant was recruited, harbored, and obtained for sexual slavery, and was coerced, threatened, and forced by Epstein into sex acts on numerous occasions, sustaining injuries.",
+    "The applicant participated in the investigation and prosecution of criminal charges against Jeffrey Epstein and Ghislaine Maxwell, cooperating with law enforcement.",
+    "The applicant and her family received threats during her involvement in the case, and she fears serious retaliation from individuals connected to Epstein and Maxwell if removed from the United States.",
+    "The cited statutes for the acts of trafficking include 18 USC 371 (Conspiracy), 18 USC 1591 (Sex Trafficking), 18 USC 1623 (False Declarations), 18 USC 2423(a) (Transportation of Minors), and NYPL 130.55 (NY Penal Law)."
+  ],
+  "analyzedAt": "2026-02-21T00:38:18.684Z"
+}

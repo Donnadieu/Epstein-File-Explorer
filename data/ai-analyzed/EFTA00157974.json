@@ -1,0 +1,151 @@
+{
+  "fileName": "EFTA00157974.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-01-19",
+  "summary": "This is an FBI 302 form documenting an interview with a female witness (name redacted) conducted on January 19, 2021. The witness describes her experiences as a minor providing massages to Jeffrey Epstein at his Palm Beach residence, detailing the roles of Ghislaine Maxwell and another associate in scheduling, payments, and attempts to recruit other young girls.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central subject of the investigation. The witness describes giving him massages, receiving money and gifts from him, and his requests for her to bring other young girls.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Acted as a scheduler and intermediary for Epstein, calling the witness to arrange massages, discussing recruitment of other girls, and being present during some of the witness's visits to Epstein's home.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Sarah",
+      "role": "Associate/Scheduler",
+      "category": "associate",
+      "context": "Another woman who called the witness to schedule massages with Epstein. She sometimes gave the witness money after the massages and was present during some interactions at Epstein's home.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present during the FBI interview of the witness, first in person and later via phone.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Present via phone during the FBI interview of the witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present via phone during the FBI interview of the witness.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell acted on Epstein's behalf to schedule massages with the witness, discussed recruiting other girls for him, and was present in his home.",
+      "strength": 5
+    },
+    {
+      "person1": "Sarah",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Sarah called to schedule massages for Epstein and sometimes gave the witness payment on his behalf.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Sarah",
+      "relationshipType": "associates",
+      "description": "Both were involved in scheduling the witness for Epstein. The witness noted that over time, the scheduling calls switched from Maxwell to Sarah.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell recruited the underage witness for Epstein, asked for her measurements to send lingerie, offered extra money for removing clothing, and touched her breast on one occasion.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein received massages from the underage witness, paid her, gave her gifts, and asked her to recruit other young girls.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "Witness's Initial FBI Interview",
+      "description": "The witness was previously interviewed by the FBI around 2006/2007, during which she provided the 'Massage for Dummies' book given to her by Epstein.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2021-01-19",
+      "title": "FBI Interview of Witness - Day 1",
+      "description": "The FBI, along with an AUSA and a detective, conducted a detailed interview with a witness regarding her experiences with Jeffrey Epstein and Ghislaine Maxwell when she was a minor.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness",
+        "Assistant United States Attorney",
+        "Detective",
+        "Special Agent"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Recruitment Attempt for Travel",
+      "description": "Ghislaine Maxwell and Jeffrey Epstein separately asked the 14-year-old witness if she would travel with them, inquiring about a passport, despite knowing her age.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Witness"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Photography Session with Sarah",
+      "description": "Sarah called the witness (then about 15) to take photos of her at Epstein's house, told her to bring a swimsuit, and commented on her body.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Sarah",
+        "Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "West Palm Beach, Florida",
+    "New York",
+    "Epstein's residence in Palm Beach"
+  ],
+  "keyFacts": [
+    "The witness was 14 years old when she began giving massages to Jeffrey Epstein, and both Epstein and Ghislaine Maxwell were aware of her age.",
+    "Ghislaine Maxwell offered the witness extra money ($100) to remove her bra during the massages and on one occasion touched the witness's breast while she was nude.",
+    "Epstein and Maxwell attempted to recruit the witness to find other younger girls for them, with Maxwell stating she could get extra money for doing so.",
+    "The witness received gifts from Epstein including Victoria's Secret lingerie, a 'Massage for Dummies' book, concert tickets, and flowers, often delivered to her home.",
+    "The witness admitted she did not disclose all details in her initial 2006/2007 FBI interview because she was scared and did not want to go to jail."
+  ],
+  "analyzedAt": "2026-02-21T02:09:38.357Z"
+}

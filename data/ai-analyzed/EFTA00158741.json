@@ -1,0 +1,156 @@
+{
+  "fileName": "EFTA00158741.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-10-08",
+  "summary": "This is an FBI 302 interview summary of a witness, referred to as 'Andrews Deserter', conducted on September 28, 2019. The witness describes being recruited by her sister's boss, Jeffrey Epstein, at age 16 in 1995, and details two trips: one to New York and one to a ranch in New Mexico, where she alleges inappropriate physical contact by Epstein and facilitation by Ghislaine Maxwell. The witness also mentions reporting the incidents to the FBI in 2006 and again in 2019.",
+  "persons": [
+    {
+      "name": "Andrews Deserter",
+      "role": "Witness/Interview Subject",
+      "category": "witness",
+      "context": "The primary subject of the FBI interview. She describes being recruited by her sister's boss, Jeffrey Epstein, at age 16, and details inappropriate physical contact during trips to New York and New Mexico.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as the boss of the witness's sister. He paid for the witness's travel, met with her in New York and New Mexico, and is alleged to have engaged in inappropriate physical contact (holding hands, rubbing arm/leg, spooning in bed).",
+      "mentionCount": 25
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Present at the New Mexico ranch. Described as Epstein's girlfriend and a 'big sister type'. Allegedly instructed the witness to give Epstein a foot massage, gave the witness a massage where she was partially nude, and was aware of Epstein's inappropriate conduct.",
+      "mentionCount": 15
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Present for the witness interview along with FBI agents.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Present for the witness interview.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the interviewing agents for the witness.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Andrews Deserter",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein, as the boss of the witness's sister, recruited the 16-year-old witness with promises of help with college, paid for her travel, and engaged in inappropriate physical contact on multiple occasions.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate/co-conspirator",
+      "description": "Maxwell is described as Epstein's girlfriend and was present with him at the New Mexico ranch. She facilitated interactions with the witness, including instructing her to massage Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Andrews Deserter",
+      "relationshipType": "facilitator-victim",
+      "description": "Maxwell acted as a chaperone and 'big sister' figure to the witness during the New Mexico trip, but also instructed her to massage Epstein and gave her an inappropriate massage herself.",
+      "strength": 4
+    },
+    {
+      "person1": "Andrews Deserter",
+      "person2": "Andrews Deserter's sister",
+      "relationshipType": "family",
+      "description": "The witness's sister worked for Jeffrey Epstein and was the initial connection between Epstein and the witness. The sister told the witness that Epstein was interested in meeting her.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1995-12",
+      "title": "Initial Contact and Recruitment",
+      "description": "The witness, age 16, is told by her sister that her boss, Jeffrey Epstein, is interested in meeting her and wants to fly her out to help with college.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Andrews Deserter",
+        "Jeffrey Epstein",
+        "Andrews Deserter's sister"
+      ]
+    },
+    {
+      "date": "1995-12 to 1996-01",
+      "title": "First Trip to New York",
+      "description": "Epstein flies the witness to New York after Christmas. She stays with her sister, meets Epstein at his townhouse, and goes to see 'Phantom of the Opera'. At a movie theater seeing '12 Monkeys', Epstein holds her hand, rubs her arm and leg, making her uncomfortable.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Andrews Deserter",
+        "Jeffrey Epstein",
+        "Andrews Deserter's sister"
+      ]
+    },
+    {
+      "date": "1996-04",
+      "title": "Trip to New Mexico Ranch",
+      "description": "The witness travels to a ranch in New Mexico where Epstein and Ghislaine Maxwell are present. Maxwell instructs her to give Epstein a foot massage. Maxwell gives the witness a massage where she is partially nude. One morning, Epstein gets into bed and spoons the witness.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Andrews Deserter",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2006",
+      "title": "First FBI Interview",
+      "description": "The witness speaks with the FBI about her experiences with Epstein and Maxwell.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Andrews Deserter"
+      ]
+    },
+    {
+      "date": "2019-09-28",
+      "title": "FBI Interview Summary",
+      "description": "The witness is interviewed again by the FBI, with an AUSA and a detective present. She provides detailed accounts of the 1995/1996 incidents and states she is willing to testify against Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Andrews Deserter",
+        "AUSA",
+        "Detective",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York (Interview location)",
+    "Phoenix, Arizona (Witness's hometown)",
+    "New York, New York (Location of Epstein's townhouse and first trip)",
+    "New Mexico (Location of the ranch visited in April 1996)"
+  ],
+  "keyFacts": [
+    "The witness was 16 years old when first contacted by Jeffrey Epstein in late 1995 through her sister who worked for him.",
+    "During a trip to New York, Epstein engaged in inappropriate physical contact with the witness at a movie theater, holding her hand and rubbing her arm and leg.",
+    "During a subsequent trip to a ranch in New Mexico, Ghislaine Maxwell instructed the witness to give Epstein a foot massage and later gave the witness a massage where she was partially nude.",
+    "At the New Mexico ranch, Epstein got into bed and spooned the witness one morning while she was in her pajamas.",
+    "The witness had previously spoken to the FBI in 2006 and was interviewed again in 2019, stating she is willing to testify in a potential case against Ghislaine Maxwell."
+  ],
+  "analyzedAt": "2026-02-21T02:46:11.580Z"
+}

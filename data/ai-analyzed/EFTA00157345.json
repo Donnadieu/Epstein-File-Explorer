@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA00157345.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-07-13",
+  "summary": "This is an email chain from July 2020 regarding FBI agents coordinating access to digital evidence systems (CART/CAIR) for a review of evidence related to the Epstein case. The primary request is to grant access to an agent referred to as 'SOS' to help review 'JE evidence items'.",
+  "persons": [
+    {
+      "name": "NY CART Coordinator Senior Forensic Examiner",
+      "role": "Forensic examiner and system coordinator",
+      "category": "law enforcement",
+      "context": "The recipient of the email chain, responsible for granting access to the CART/CAIR systems for evidence review.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Special Agent - FBI New York Field Office Child Exploitation/Human Trafficking",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the initial request, asking for system access for 'SOS' to review evidence related to the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "An FBI agent who has been working on the case and is requested to be granted access to the CART system to help review 'JE evidence items'.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent - FBI New York Field Office Child Exploitation/Human Trafficking",
+      "person2": "SOS",
+      "relationshipType": "colleague",
+      "description": "The Special Agent is requesting system access for SOS, indicating they are working together on the case.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent - FBI New York Field Office Child Exploitation/Human Trafficking",
+      "person2": "NY CART Coordinator Senior Forensic Examiner",
+      "relationshipType": "professional coordination",
+      "description": "The Special Agent is making a formal request to the Coordinator for system access for another agent.",
+      "strength": 2
+    },
+    {
+      "person1": "SOS",
+      "person2": "NY CART Coordinator Senior Forensic Examiner",
+      "relationshipType": "system access request",
+      "description": "SOS is the subject of an access request to the CART/CAIR systems managed by the Coordinator.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-13",
+      "title": "Request for evidence system access",
+      "description": "An email is sent requesting that FBI agent 'SOS' be added to the CART system to review evidence items related to 'JE' (likely Jeffrey Epstein).",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent - FBI New York Field Office Child Exploitation/Human Trafficking",
+        "SOS",
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2020-07-10",
+      "title": "Follow-up on system access",
+      "description": "Email exchanges regarding an agent not yet having received access to the CAIR system, with assurance it would be available by Monday.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2020-07-08",
+      "title": "Initial access inquiry",
+      "description": "An agent inquires about not having received access to CAIR, prompting the coordinator to look into it.",
+      "category": "investigation",
+      "significance": 1,
+      "personsInvolved": [
+        "NY CART Coordinator Senior Forensic Examiner"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office"
+  ],
+  "keyFacts": [
+    "The document is an internal FBI email chain from July 2020 concerning access to digital evidence systems (CART/CAIR) for the Epstein investigation.",
+    "A specific request is made to grant agent 'SOS' access to review 'JE evidence items', indicating ongoing evidence review work related to Jeffrey Epstein.",
+    "The correspondence shows procedural coordination within the FBI's New York Field Office, specifically the Child Exploitation/Human Trafficking unit.",
+    "The document is marked as 'SUBJECT TO PROTECTIVE ORDER' for specific paragraphs, indicating sensitive or restricted content."
+  ],
+  "analyzedAt": "2026-02-21T01:21:52.965Z"
+}

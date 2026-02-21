@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00158215.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-11-11",
+  "summary": "This document is an FBI 302 report summarizing a VTC call on November 11, 2021, where an individual (name redacted) voluntarily provided information about contacts in their cellphone related to Jeffrey Epstein and an individual named Guissela. The individual sent screenshots of these contacts to the FBI.",
+  "persons": [
+    {
+      "name": "AUSA Det. SA",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The FBI agent who participated in the VTC call and documented the information provided by the individual regarding cellphone contacts for Epstein and Guissela.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Epstein Jef",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Listed as a contact in the individual's cellphone, with the name appearing as 'Epstein Jef'. This contact was identified as potentially relevant and screenshotted for the FBI.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Guissela",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Listed as a contact in the individual's cellphone. The individual found this contact and identified it as potentially relevant, leading to a screenshot being sent to the FBI.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein Jef",
+      "person2": "Guissela",
+      "relationshipType": "social",
+      "description": "Both individuals were found as contacts in the same person's cellphone, suggesting a potential social or acquaintance link between them through the phone's owner.",
+      "strength": 2
+    },
+    {
+      "person1": "AUSA Det. SA",
+      "person2": "Epstein Jef",
+      "relationshipType": "investigation",
+      "description": "The FBI agent is documenting information related to Jeffrey Epstein as part of an ongoing investigation, based on evidence provided by a witness.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-11",
+      "title": "VTC Call Regarding Cellphone Contacts",
+      "description": "An individual participated in a VTC call with law enforcement and voluntarily reported finding contacts for 'Epstein Jef' and 'Guissela' in their cellphone. They screenshotted these contacts and sent them to the FBI.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "AUSA Det. SA",
+        "Epstein Jef",
+        "Guissela"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "On November 11, 2021, an individual voluntarily provided information to the FBI about contacts in their cellphone related to Jeffrey Epstein and a person named Guissela.",
+    "The individual found the contact saved as 'Epstein Jef' in their phone, which they identified as potentially relevant to the investigation.",
+    "The individual took screenshots of three contacts in their phone, including entries for Epstein and Guissela, and sent them to the FBI.",
+    "The document is an FBI 302 report, indicating it is an official record of an interview or information received during the investigation.",
+    "The document reference includes 'SUBJECT TO PROTECTIVE ORDER', indicating the information is legally restricted."
+  ],
+  "analyzedAt": "2026-02-21T02:15:24.594Z"
+}

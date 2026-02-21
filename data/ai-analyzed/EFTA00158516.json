@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA00158516.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-04-03",
+  "summary": "This document contains notes from an April 3, 2020 phone call with a victim, identified as 'A', regarding her recollections of traveling with and being abused by Jeffrey Epstein and Ghislaine Maxwell. The victim corrects the timeline of a specific trip to see 'The Lion King' but remains confident about the overall pattern of abuse starting when she was 14.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused Perpetrator",
+      "category": "key figure",
+      "context": "Described as bragging about knowing Julie Taymor and securing difficult-to-get theater tickets. The victim states she was abused by him during approximately 90% of her trips to New York.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused Co-conspirator",
+      "category": "key figure",
+      "context": "Described by the victim as being present and involved in the abuse from early on during the victim's trips to New York.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Julie Taymor",
+      "role": "Broadway Director",
+      "category": "other",
+      "context": "Mentioned as a person Epstein claimed to know and bragged about in an attempt to impress the victim during a trip to see 'The Lion King'.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "A",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is accused of sexually abusing 'A' during approximately 90% of her trips to New York, starting when she was 14.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "A",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell is described by 'A' as being present and involved in the abuse from early on during the trips.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are implicated by the victim in the coordinated sexual abuse during her trips to New York.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Julie Taymor",
+      "relationshipType": "social",
+      "description": "Epstein bragged to the victim that he knew Julie Taymor, the director of 'The Lion King', in an attempt to impress her.",
+      "strength": 1
+    }
+  ],
+  "events": [
+    {
+      "date": "1997",
+      "title": "Premiere of The Lion King on Broadway",
+      "description": "The Broadway show 'The Lion King' premiered. The victim initially associated a trip with this premiere but later realized her recollection of the timing was mistaken.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Trip to see The Lion King",
+      "description": "A trip to New York City where Epstein took the victim to see 'The Lion King'. Epstein bragged about knowing director Julie Taymor and having secured excellent, hard-to-get seats.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein",
+        "Julie Taymor"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Series of Abuse in New York",
+      "description": "The victim recalls that during approximately 90% (nine out of ten) of her trips to New York, she was sexually abused by Epstein or Epstein and Maxwell.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Notable Trip to New Mexico",
+      "description": "A trip to New Mexico that the victim specifically recalls as being notable and unusual because she was not sexually abused during it.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "A",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2020-04-03",
+      "title": "FBI Follow-up Phone Call with Victim",
+      "description": "The FBI team conducted a follow-up phone call with victim 'A' to clarify details of her testimony, including the timeline of a specific trip.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "A"
+      ]
+    }
+  ],
+  "locations": [
+    "New York City",
+    "New Mexico"
+  ],
+  "keyFacts": [
+    "The victim ('A') remains very confident that she started traveling to New York City to visit Jeffrey Epstein and Ghislaine Maxwell when she was 14 years old.",
+    "The victim states that during approximately 90% (nine out of ten) of her trips to New York, she was sexually abused by Epstein or by Epstein and Maxwell together.",
+    "The victim specifically recalls a trip to New Mexico as being notable because it was an unusual instance where she was not sexually abused.",
+    "The victim corrected her initial timeline, realizing a memorable trip to see 'The Lion King' on Broadway would have been after the show's 1997 premiere, not coinciding with it.",
+    "The document indicates ongoing FBI investigation and witness testimony clarification as of April 2020."
+  ],
+  "analyzedAt": "2026-02-21T02:30:33.191Z"
+}

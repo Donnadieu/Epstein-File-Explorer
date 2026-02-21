@@ -1,0 +1,138 @@
+{
+  "fileName": "EFTA00159835.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Intelligence Operations Report",
+  "dateOriginal": null,
+  "summary": "This document is a series of weekly intelligence operations reports from FBI Squad 1D-13, covering April through October 2021. It details the ongoing trial preparation for the Epstein/Maxwell investigation, focusing on the systematic review, categorization, and marking of digital images (including CSAM) for use as trial exhibits.",
+  "persons": [
+    {
+      "name": "Epstein",
+      "role": "Accused / Subject of Investigation",
+      "category": "key figure",
+      "context": "Named as a subject of the joint 'Epstein/Maxwell investigation' for which trial preparation is being conducted.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Maxwell",
+      "role": "Accused / Subject of Investigation",
+      "category": "key figure",
+      "context": "Named as a subject of the joint 'Epstein/Maxwell investigation' for which trial preparation is being conducted.",
+      "mentionCount": 8
+    },
+    {
+      "name": "SOS",
+      "role": "FBI Special Operations Specialist / Analyst",
+      "category": "law enforcement",
+      "context": "The primary FBI specialist conducting the review of images, meeting with case agents, and categorizing evidence for trial preparation.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement Detective",
+      "category": "law enforcement",
+      "context": "Works with the case agent and SOS regarding case updates and trial preparation for the Epstein/Maxwell investigation.",
+      "mentionCount": 8
+    },
+    {
+      "name": "AUSAs",
+      "role": "Assistant United States Attorneys",
+      "category": "legal",
+      "context": "Prosecutors who will determine which categorized images will be used for trial.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Jointly referenced as subjects of the same investigation, indicating their alleged involvement in connected criminal activities.",
+      "strength": 5
+    },
+    {
+      "person1": "SOS",
+      "person2": "SA",
+      "relationshipType": "colleague",
+      "description": "Work closely together on reviewing and categorizing digital evidence for the Epstein/Maxwell trial preparation.",
+      "strength": 5
+    },
+    {
+      "person1": "SOS",
+      "person2": "Detective",
+      "relationshipType": "colleague",
+      "description": "Regularly meet with the detective and case agent for updates and coordination on the investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "SA",
+      "person2": "Detective",
+      "relationshipType": "colleague",
+      "description": "Work together as the lead investigative team (case agent and detective) on the Epstein/Maxwell case.",
+      "strength": 4
+    },
+    {
+      "person1": "AUSAs",
+      "person2": "SOS",
+      "relationshipType": "investigative-support",
+      "description": "SOS categorizes evidence into groups necessary for the AUSAs to select trial exhibits.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-05",
+      "title": "Trial Prep Evidence Review Begins",
+      "description": "SOS begins assisting with reviewing evidence, specifically images, for the Epstein/Maxwell case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "SOS",
+        "SA"
+      ]
+    },
+    {
+      "date": "2021-08-16",
+      "title": "Discovery of CSAM During Evidence Review",
+      "description": "SOS, while reviewing devices processed by CART, comes across several images constituting Child Sexual Abuse Material (CSAM). SA advises on marking them, and some are reviewed together.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "SOS",
+        "SA"
+      ]
+    },
+    {
+      "date": "2021-08-20",
+      "title": "Completion of Initial Image Review",
+      "description": "SOS completes a priority review of approximately 38,934 images, marking them for categories like victims and individuals of interest.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "SOS"
+      ]
+    },
+    {
+      "date": "2021-09-13",
+      "title": "Trial Exhibit Selection Process",
+      "description": "SOS reviews a list of images selected for trial exhibits, matching them with evidence numbers, locations, and descriptions.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "SOS",
+        "SA",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "computer lab"
+  ],
+  "keyFacts": [
+    "During evidence review for the Epstein/Maxwell trial in August 2021, FBI specialists discovered several images constituting Child Sexual Abuse Material (CSAM) on processed devices.",
+    "By late August 2021, an FBI specialist had reviewed and marked approximately 38,934 images, categorizing them into folders for 'victims and individuals of interest' as part of trial preparation.",
+    "The document outlines a systematic, multi-month process from April to October 2021 where law enforcement reviewed and categorized digital evidence to build trial exhibits for the prosecution.",
+    "The investigation is consistently referred to as the 'Epstein/Maxwell investigation,' indicating their cases were being prepared jointly at this stage.",
+    "Marked CSAM images were to be sent to the National Center for Missing & Exploited Children (NCMEC) after review was completed."
+  ],
+  "analyzedAt": "2026-02-21T03:41:05.695Z"
+}

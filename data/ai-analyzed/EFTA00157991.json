@@ -1,0 +1,216 @@
+{
+  "fileName": "EFTA00157991.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-01-21",
+  "summary": "This is an FBI 302 form documenting the third day of an interview with a victim, referred to as [Victim-1]. The interview details her experiences with Jeffrey Epstein and Ghislaine Maxwell, including being recruited for massages as a minor, being pressured to bring other girls, and descriptions of sexual abuse. It also covers her interactions with other individuals and her emotional state.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central figure accused of sexual abuse. The victim describes being recruited to give him massages, which involved sexual acts, and being pressured by him to bring other young girls.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Recruiter",
+      "category": "key figure",
+      "context": "Described as initially scheduling the victim's massages with Epstein and later asking the victim to bring friends. The victim recounts uncomfortable personal conversations with Maxwell that preceded sexual abuse by Epstein.",
+      "mentionCount": 12
+    },
+    {
+      "name": "[Victim-1]",
+      "role": "Victim / Witness",
+      "category": "victim",
+      "context": "The primary interviewee. She describes being recruited around age 14/15, giving massages to Epstein that involved sexual abuse, being pressured to bring other girls, and her subsequent emotional trauma.",
+      "mentionCount": 50
+    },
+    {
+      "name": "[Friend-1]",
+      "role": "Friend of Victim / Potential Victim",
+      "category": "victim",
+      "context": "A friend brought by the victim to Epstein's home. The victim later lost contact with her and was worried about her after Epstein mentioned taking her on trips.",
+      "mentionCount": 10
+    },
+    {
+      "name": "[Friend-2]",
+      "role": "Friend of Victim / Potential Victim",
+      "category": "victim",
+      "context": "One of the girls the victim recalled bringing to Epstein's home prior to her own pregnancy. The document notes this person is now deceased.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[Friend-3]",
+      "role": "Friend of Victim / Potential Victim",
+      "category": "victim",
+      "context": "Another girl the victim recalled bringing to Epstein's home prior to her own pregnancy.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[Boyfriend]",
+      "role": "Boyfriend of Victim",
+      "category": "associate",
+      "context": "The victim's boyfriend at the time. He was involved in scheduling her visits to Epstein, answering calls, and pressuring her to go for money to buy weed.",
+      "mentionCount": 8
+    },
+    {
+      "name": "[Mother]",
+      "role": "Mother of Victim",
+      "category": "associate",
+      "context": "Mentioned in the context of phone numbers used to contact the victim for Epstein appointments. Recently tried to reconnect with the victim, which the victim attributed to the Epstein case.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present in person during the FBI interview of the victim.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "Law Enforcement",
+      "category": "law enforcement",
+      "context": "Present via phone during the FBI interview of the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present via phone during the FBI interview. The document contains agent notes.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell acted as a recruiter and scheduler for Epstein, calling the victim to arrange massages and later asking her to bring other girls on Epstein's behalf.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "[Victim-1]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell recruited the victim, engaged her in sexually explicit conversations, and facilitated her access to Epstein for abuse.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[Victim-1]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein was the recipient of massages from the victim that involved sexual abuse, including masturbation and attempted penetration. He also pressured her to bring other girls.",
+      "strength": 5
+    },
+    {
+      "person1": "[Victim-1]",
+      "person2": "[Friend-1]",
+      "relationshipType": "social",
+      "description": "The victim brought this friend to Epstein's home. They smoked weed together afterwards, and the victim later lost contact and was worried about her.",
+      "strength": 3
+    },
+    {
+      "person1": "[Victim-1]",
+      "person2": "[Boyfriend]",
+      "relationshipType": "social",
+      "description": "They were in a relationship. The boyfriend handled calls from Epstein's associates and pressured the victim to continue visits for money.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[Friend-1]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein told the victim he had taken this friend on trips, indicating a similar pattern of interaction and potential abuse.",
+      "strength": 3
+    },
+    {
+      "person1": "[Victim-1]",
+      "person2": "[Mother]",
+      "relationshipType": "familial",
+      "description": "Mother-daughter relationship. The mother's phone was used for Epstein-related calls, and she recently tried to reconnect with the victim.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-01-21",
+      "title": "FBI Interview of Victim - Day 3",
+      "description": "The third day of an FBI interview with a victim ([Victim-1]) regarding her experiences with Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim-1]",
+        "Assistant United States Attorney",
+        "Detective",
+        "Special Agent"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Recruitment and Initial Abuse",
+      "description": "The victim, around 14.5/15 years old, begins being called by Ghislaine Maxwell to schedule massages at Jeffrey Epstein's home, which involved sexual acts.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "[Victim-1]",
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Pressure to Recruit Others",
+      "description": "Both Epstein and Maxwell repeatedly asked the victim to bring friends her age or younger to Epstein's home, especially as she became pregnant and after giving birth.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim-1]",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "[Friend-1]",
+        "[Friend-2]",
+        "[Friend-3]"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Sexual Abuse with Object",
+      "description": "On a day when Maxwell questioned the victim about sex toys, Epstein attempted to use a massager-like object on her during a massage. The victim told him she was not comfortable.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim-1]",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Penetration During Threesome",
+      "description": "The victim recalls an incident where Epstein penetrated her twice during a threesome before she told him to stop. She did not previously disclose this as she did not consider it 'intercourse' in prior interviews.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "[Victim-1]",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "JEFFREY EPSTEIN's home",
+    "The massage room (where naked photographs of Maxwell were seen in a closet)",
+    "The kitchen and maid's quarters at Epstein's home",
+    "The trailer (where a photo with [Boyfriend] was taken)"
+  ],
+  "keyFacts": [
+    "The victim ([Victim-1]) was recruited around age 14.5/15, with Ghislaine Maxwell initially making the calls to schedule massages with Jeffrey Epstein.",
+    "Both Epstein and Maxwell pressured the victim to bring other girls her age or younger, with Maxwell making specific calls asking if she had found 'friends that would be interested in coming.'",
+    "The victim describes a direct link between a sexually explicit conversation with Maxwell about sex toys and Epstein's subsequent attempt to use a similar object on her during a massage the same day.",
+    "The victim disclosed a previously unreported incident of penetration by Epstein during a threesome, which she had not mentioned in prior interviews because she was not asked specifically about it and did not classify it as 'intercourse.'",
+    "The victim expressed ongoing severe emotional trauma, including fear for her own daughters and an inability to watch media about Epstein."
+  ],
+  "analyzedAt": "2026-02-21T02:10:49.517Z"
+}

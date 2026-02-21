@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA00157378.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-29",
+  "summary": "This is an email chain from July 2020 discussing the status of evidence review in the Epstein case, specifically concerning digital devices and data extraction. It involves coordination between the U.S. Attorney's Office for the Southern District of New York (USANYS) and the FBI's New York field office regarding device inventories, processing status, and an issue with approximately 71,000 zero-byte (empty) files found on seven initial devices.",
+  "persons": [
+    {
+      "name": "M. (NY) (FBI)",
+      "role": "FBI Senior Forensic Examiner / NYC CART Coordinator",
+      "category": "law enforcement",
+      "context": "Appears as the FBI point of contact providing an updated evidence spreadsheet, color-coded for clarity, and coordinating the delivery of remaining items. They are the sender of the initial status update on July 23, 2020.",
+      "mentionCount": 3
+    },
+    {
+      "name": "I. (NY) (FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "Listed as a recipient (Cc) on the July 23 email from M. (NY) (FBI) regarding the Epstein evidence status update.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M. (USANYS)",
+      "role": "U.S. Attorney's Office personnel",
+      "category": "legal",
+      "context": "Listed as a recipient (Cc) on the July 23 email from the USANYS sender regarding evidence status questions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "E. (USANYS)",
+      "role": "U.S. Attorney's Office personnel",
+      "category": "legal",
+      "context": "Listed as a recipient (Cc) on the July 23 email from the USANYS sender regarding evidence status questions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. (USANYS) [Contractor]",
+      "role": "Contractor for U.S. Attorney's Office",
+      "category": "legal",
+      "context": "Listed as a recipient (Cc) on the July 23 email from the USANYS sender, indicating contractor involvement in the evidence review process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M. (NY) (FBI)",
+      "person2": "Unnamed USANYS sender",
+      "relationshipType": "professional collaboration",
+      "description": "Engaged in direct email correspondence regarding the status and logistics of Epstein evidence processing and review, with M. providing spreadsheets and updates to the USANYS attorney.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-23",
+      "title": "FBI provides updated Epstein evidence spreadsheet",
+      "description": "FBI Senior Forensic Examiner M. sends an updated, color-coded spreadsheet detailing the status of evidence items to the U.S. Attorney's Office, noting 5 remaining items to be delivered.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M. (NY) (FBI)",
+        "Unnamed USANYS sender"
+      ]
+    },
+    {
+      "date": "2020-07-29",
+      "title": "Discovery of zero-byte files in Epstein evidence",
+      "description": "The U.S. Attorney's Office reports that a vendor reviewing seven initial devices from the Epstein evidence found approximately 71,000 documents that are zero bytes (empty files) and seeks clarification on whether this is accurate or an extraction issue.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed USANYS sender",
+        "Unnamed vendor"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY (implied from FBI NY field office and USANYS)",
+    "Southern District of New York (jurisdiction referenced)"
+  ],
+  "keyFacts": [
+    "Approximately 71,000 zero-byte (empty) files were discovered on seven initial digital devices submitted as evidence in the Epstein case, raising questions about data integrity or extraction errors.",
+    "The evidence review involves detailed tracking of numerous devices with specific NYC inventory numbers (e.g., NYCO24328, NYCO24367, NYCO27910, NYCO24376-380, NYCO24395).",
+    "Coordination between the U.S. Attorney's Office for the Southern District of New York and the FBI's New York field office was ongoing in July 2020 regarding the processing and delivery of digital evidence.",
+    "The document is subject to a protective order (paragraphs 7, 8, 9, 10, 15, and 17), indicating restricted access to its contents."
+  ],
+  "analyzedAt": "2026-02-21T01:24:50.989Z"
+}

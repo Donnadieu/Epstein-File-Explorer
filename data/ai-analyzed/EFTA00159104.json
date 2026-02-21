@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA00159104.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-20",
+  "summary": "This is an FBI FD-302 form documenting an amended inventory of two suitcases seized from 9 East 71st Street on July 11, 2019. The inventory details a large amount of cash, diamonds, jewelry, watches, passports, and electronic media found in the suitcases, including an Austrian passport in a false name with Jeffrey Epstein's photograph.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Individual who provided suitcases to FBI",
+      "category": "associate",
+      "context": "Provided two suitcases to Special Agent on July 11, 2019, during the execution of a search warrant at 9 East 71st Street.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Named on five expired U.S. passports found in a suitcase. His photograph was found in an Austrian passport issued under a different name.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Marius Robert Fortelni",
+      "role": "Name on fraudulent passport",
+      "category": "other",
+      "context": "Name listed on an Austrian passport that contained a photograph of Jeffrey Epstein, found in the blue suitcase.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Kahn provided suitcases from Epstein's residence (9 East 71st Street) to the FBI during a search warrant execution, suggesting a connection to Epstein's property or affairs.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Search Warrant Execution at 9 East 71st Street",
+      "description": "FBI executed a search warrant at Jeffrey Epstein's New York residence, during which two suitcases were received from Richard Kahn.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Amended Inventory of Seized Suitcases",
+      "description": "FBI Special Agents completed a thorough review and amended the inventory of items found in two suitcases seized from Epstein's residence.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York, United States",
+    "FBI New York Operations Center (NYOC)"
+  ],
+  "keyFacts": [
+    "An Austrian passport in the name of 'Marius Robert Fortelni' was found containing a photograph of Jeffrey Epstein, indicating possession of a fraudulent identity document.",
+    "The suitcases contained significant valuables including loose diamonds (48 total), over $70,000 in various currencies, expensive watches (Richard Mille, F.P. Journe), and two black hard drives.",
+    "Five expired U.S. passports in Jeffrey Epstein's name were found in the blue suitcase.",
+    "The inventory included a U.S. Department of Treasury Customs badge and an AT&T corporate card in the name 'Wexner Investment Co'.",
+    "The document corrects initial inventory errors, showing careful evidence handling and the discovery of the fraudulent passport."
+  ],
+  "analyzedAt": "2026-02-21T03:02:41.994Z"
+}

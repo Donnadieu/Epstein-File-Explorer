@@ -1,0 +1,183 @@
+{
+  "fileName": "EFTA00158636.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-27",
+  "summary": "This is an FBI 302 form documenting an interview with a victim/witness (name redacted) conducted on August 27, 2019. The witness provides detailed allegations of sexual abuse and exploitation by Jeffrey Epstein and Ghislaine Maxwell, including grooming, coercion, and specific abusive incidents in multiple locations. The document also mentions introductions to other high-profile individuals.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused, Epstein's associate",
+      "category": "key figure",
+      "context": "Described as Jeffrey Epstein's girlfriend who groomed and recruited the witness for sexual favors, minimized the witness's discomfort, and facilitated abuse.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The primary perpetrator described as sexually assaulting and coercing the witness, with Maxwell acting as his recruiter and facilitator.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Alan Dershowitz",
+      "role": "Attorney, social acquaintance",
+      "category": "legal",
+      "context": "Mentioned as being present at Epstein's Palm Beach property, where he was heard bragging with Epstein about legal matters. Described as 'creepy' but not touching the witness.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Businessman, social acquaintance",
+      "category": "political",
+      "context": "Introduced to the witness by Epstein and Maxwell in New York. Described as polite.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lesley Groff",
+      "role": "Epstein staff",
+      "category": "staff",
+      "context": "Identified as 'LESLEY' who contacted the witness via email to make travel arrangements for Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "O.J. Simpson",
+      "role": "Reference in conversation",
+      "category": "other",
+      "context": "Mentioned in a conversation between Epstein and Alan Dershowitz about getting him 'off' (presumably referring to his acquittal).",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell acted as Epstein's girlfriend and primary recruiter/groomer of young women for his sexual exploitation.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Interviewed Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell groomed, manipulated, and coerced the witness into providing sexual favors for Epstein, minimizing her discomfort.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Interviewed Witness",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted, coerced, and abused the witness on multiple occasions in various locations.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alan Dershowitz",
+      "relationshipType": "social",
+      "description": "Social acquaintances; Dershowitz was a guest at Epstein's Palm Beach property where they discussed legal cases.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Donald Trump",
+      "relationshipType": "social",
+      "description": "Epstein and Maxwell introduced the witness to Donald Trump in New York.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lesley Groff",
+      "relationshipType": "employer-employee",
+      "description": "Groff made travel arrangements for Epstein, as evidenced by emails to the witness.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-27",
+      "title": "FBI Interview of Victim/Witness",
+      "description": "The witness is interviewed by the FBI and an AUSA, providing detailed allegations of sexual abuse and exploitation by Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "testimony",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    },
+    {
+      "date": "Approx. 2000s",
+      "title": "Initial Grooming and First Assault",
+      "description": "The witness is introduced to Maxwell, then to Epstein. Maxwell gives Epstein a 'résumé' of the witness's attributes. The first massage/assault occurs where Epstein exposes himself and touches the witness.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    },
+    {
+      "date": "Approx. 2000s",
+      "title": "Palm Beach Schoolgirl Outfit Incident",
+      "description": "In Palm Beach, Maxwell places a schoolgirl uniform on the witness's bed and instructs her to wear it to take Epstein his tea. Epstein subsequently assaults her.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    },
+    {
+      "date": "Approx. 2000s",
+      "title": "Rape in Palm Beach",
+      "description": "Epstein throws the witness on a bed and rapes her while she cries and freezes. He then blames her for making him 'cheat' on Maxwell.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    },
+    {
+      "date": "Approx. 2000s",
+      "title": "Virgin Islands Trip",
+      "description": "The witness, Epstein, and Maxwell travel to the Virgin Islands. Epstein puts his hands down both women's bikinis on the beach. The witness sees a young girl being mistreated.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    },
+    {
+      "date": "2012-10-03",
+      "title": "Email from Lesley Groff",
+      "description": "Lesley Groff emails the witness, asking her to call Epstein at a provided number.",
+      "category": "correspondence",
+      "significance": 2,
+      "personsInvolved": [
+        "Lesley Groff",
+        "Jeffrey Epstein",
+        "Interviewed Witness"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York (interview location)",
+    "New York, New York (location of abuse and where Trump was introduced)",
+    "Palm Beach, Florida (location of multiple abuse incidents, schoolgirl outfit, and where Dershowitz was present)",
+    "Paris, France (location where Epstein assaulted the witness in front of a housekeeper)",
+    "Virgin Islands (location of a trip where abuse occurred and a young girl was seen)"
+  ],
+  "keyFacts": [
+    "The witness provides a detailed, first-person account of being groomed by Ghislaine Maxwell and sexually abused by Jeffrey Epstein across multiple locations (NY, Palm Beach, Paris, Virgin Islands).",
+    "Maxwell is depicted as an active and manipulative facilitator: she gave Epstein a 'résumé' of the witness, minimized her discomfort, instructed her to wear a schoolgirl outfit, and asked her to recruit other young girls for Epstein.",
+    "The document alleges a specific rape by Epstein in Palm Beach where he blamed the witness for making him 'cheat' on Maxwell.",
+    "High-profile individuals Alan Dershowitz and Donald Trump are mentioned in social contexts with Epstein and Maxwell.",
+    "The witness received a threatening phone call warning her to stay out of 'anything that is not her business,' which she interpreted as related to assisting with a case against Epstein."
+  ],
+  "analyzedAt": "2026-02-21T02:37:23.556Z"
+}

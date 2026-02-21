@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA00156564.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2023-01-24",
+  "summary": "This document is an email chain from January 2023 forwarding a civilian crime report received in October 2022. The report, from someone in Australia, references Maxwell and includes thumb drives, and is being passed to prosecutors in the Southern District of New York for potential review.",
+  "persons": [
+    {
+      "name": "Lam Pomerantz",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Email recipient; prosecutor in the Southern District of New York to whom a civilian crime report is being forwarded.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andrew Rohrbach",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Email recipient; prosecutor in the Southern District of New York to whom a civilian crime report is being forwarded.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Referenced Individual",
+      "category": "key figure",
+      "context": "Referenced in a civilian crime report letter from Australia, though the email sender notes it doesn't appear to have a direct connection to the case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lam Pomerantz",
+      "person2": "Andrew Rohrbach",
+      "relationshipType": "colleague",
+      "description": "Both are Assistant U.S. Attorneys in the Southern District of New York and are jointly receiving forwarded correspondence regarding a potential civilian crime report.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-10-20",
+      "title": "Receipt of Civilian Report from Australia",
+      "description": "A letter and thumb drives are received from someone in Australia making a civilian crime report that references Maxwell.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Maxwell"
+      ]
+    },
+    {
+      "date": "2023-01-24",
+      "title": "Forwarding of Report to Prosecutors",
+      "description": "An email is sent to SDNY prosecutors Pomerantz and Rohrbach, informing them of the civilian report and that it has been placed in an envelope for pick-up.",
+      "category": "legal",
+      "significance": 1,
+      "personsInvolved": [
+        "Lam Pomerantz",
+        "Andrew Rohrbach"
+      ]
+    }
+  ],
+  "locations": [
+    "Australia",
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "A civilian crime report was received from someone in Australia in October 2022, referencing Maxwell and including thumb drives.",
+    "The report was forwarded to SDNY prosecutors Lam Pomerantz and Andrew Rohrbach in January 2023 for potential review.",
+    "The email sender, a Deputy Chief in the Criminal Division, notes the report does not appear to have a direct connection to the Maxwell case.",
+    "The correspondence indicates an ongoing standard practice for handling unsolicited tips or reports related to the case."
+  ],
+  "analyzedAt": "2026-02-21T00:30:51.248Z"
+}

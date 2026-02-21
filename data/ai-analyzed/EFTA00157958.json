@@ -1,0 +1,227 @@
+{
+  "fileName": "EFTA00157958.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-07-17",
+  "summary": "This is an FBI 302 form documenting a video interview with a female victim, referred to as [Victim 1], regarding her sexual abuse by Jeffrey Epstein from ages 14 to 17. She describes the roles of Ghislaine Maxwell and another associate, [Sarah Kellen], in facilitating the abuse, details of the abuse at Epstein's Palm Beach residence, and Epstein's requests for her to recruit younger girls.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central perpetrator. The victim describes being recruited at age 14 to give him massages, which escalated to sexual encounters. He paid her, sent gifts, and pressured her to travel and recruit younger girls.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate/Recruiter",
+      "category": "associate",
+      "context": "Recruited and managed the victim. Answered the door, instructed her on procedures, paid her, asked her age, and discussed travel and recruiting younger friends. Was present in the home about 80% of the time.",
+      "mentionCount": 25
+    },
+    {
+      "name": "[Victim 1]",
+      "role": "Victim/Witness",
+      "category": "victim",
+      "context": "The interviewee. She was recruited around age 14, sexually abused by Epstein over 100 times from ages 14-17, and was asked by Epstein and Maxwell to recruit younger girls. She was paid $300 per visit.",
+      "mentionCount": 50
+    },
+    {
+      "name": "[Sarah Kellen]",
+      "role": "Epstein's Assistant/Recruiter",
+      "category": "associate",
+      "context": "Referred to as 'Sarah' in the document. Called the victim to schedule appointments for Epstein. The victim believed she was Epstein's secretary and felt more comfortable with her than with Maxwell.",
+      "mentionCount": 10
+    },
+    {
+      "name": "[Victim 1's Mother]",
+      "role": "Victim's Mother",
+      "category": "other",
+      "context": "The victim's mother, who had a drinking problem. Epstein and Maxwell discussed how to get around her to allow the victim to travel overseas.",
+      "mentionCount": 5
+    },
+    {
+      "name": "[Victim 1's Husband]",
+      "role": "Victim's Husband",
+      "category": "other",
+      "context": "Married to the victim. Watched the Netflix Epstein documentary and told the victim she was mentioned in it.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[Victim 1's Son's Father]",
+      "role": "Father of Victim's Child",
+      "category": "other",
+      "context": "Friends with the recruiter [Recruiter 1], who introduced the victim to the scheme.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[Recruiter 1]",
+      "role": "Initial Recruiter",
+      "category": "associate",
+      "context": "Girlfriend of the victim's son's father. She asked the victim if she wanted to make money and drove her to Epstein's residence for the first time.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Harvey Weinstein",
+      "role": "Alleged Associate/Perpetrator",
+      "category": "associate",
+      "context": "Identified by the victim from a photo as the 'famous actor' who fondled her while masturbating during a massage at Epstein's request.",
+      "mentionCount": 2
+    },
+    {
+      "name": "[Assistant US Attorney 1]",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present during the video interview of the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[Assistant US Attorney 2]",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present during the video interview of the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[Special Agent]",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present during the video interview of the victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "[Victim 1's Attorney]",
+      "role": "Defense Attorney",
+      "category": "legal",
+      "context": "Present during the victim's interview. Showed her photos for identification purposes.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[Victim 1]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused the victim over 100 times from when she was 14 to 17 years old, paid her $300 per visit, and sent her gifts.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "[Victim 1]",
+      "relationshipType": "recruiter-victim",
+      "description": "Maxwell recruited the victim, instructed her on procedures at Epstein's home, paid her, asked her age, and discussed her recruiting younger girls.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell acted as Epstein's associate, managing victims at his home, paying them, and participating in discussions about recruiting younger girls and international travel with victims.",
+      "strength": 5
+    },
+    {
+      "person1": "[Sarah Kellen]",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "[Sarah Kellen] acted as Epstein's assistant or secretary, making calls to schedule victims' appointments.",
+      "strength": 4
+    },
+    {
+      "person1": "[Sarah Kellen]",
+      "person2": "[Victim 1]",
+      "relationshipType": "recruiter-victim",
+      "description": "[Sarah Kellen] called the victim to schedule appointments for Epstein. The victim felt more comfortable with her than with Maxwell.",
+      "strength": 3
+    },
+    {
+      "person1": "[Recruiter 1]",
+      "person2": "[Victim 1]",
+      "relationshipType": "recruiter-victim",
+      "description": "[Recruiter 1] asked the victim if she wanted to make money and drove her to Epstein's residence for the first time.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Harvey Weinstein",
+      "relationshipType": "social/associate",
+      "description": "Epstein instructed the victim to give a massage to Weinstein, who then fondled her while masturbating.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2000s (approx 14-17 years old)",
+      "title": "Victim's Ongoing Abuse by Epstein",
+      "description": "The victim, [Victim 1], was sexually abused by Jeffrey Epstein over 100 times from approximately age 14 to 17 at his Palm Beach residence. Abuse included massages that escalated to sexual acts, sometimes with other girls present.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[Victim 1]",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-17",
+      "title": "FBI Interview of Victim",
+      "description": "The victim, [Victim 1], was interviewed via video conference by the FBI and Assistant US Attorneys, with her attorneys present. She provided detailed allegations against Epstein, Maxwell, and others.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim 1]",
+        "[Assistant US Attorney 1]",
+        "[Assistant US Attorney 2]",
+        "[Special Agent]",
+        "[Victim 1's Attorney]"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Prior Photo Identification Attempt",
+      "description": "The victim's attorney disclosed that in 2008, they had shown the victim a photo of [Sarah Kellen], but at that time she could not identify her.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "[Victim 1]",
+        "[Sarah Kellen]",
+        "[Victim 1's Attorney]"
+      ]
+    },
+    {
+      "date": "2020-07-17",
+      "title": "Photo Identification of Harvey Weinstein",
+      "description": "During the interview, the victim's attorney showed her a photo of Harvey Weinstein, whom she identified as the 'famous actor' who fondled her during a massage at Epstein's home.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim 1]",
+        "Harvey Weinstein",
+        "[Victim 1's Attorney]"
+      ]
+    },
+    {
+      "date": "Past unspecified",
+      "title": "Civil Lawsuit Deposition",
+      "description": "The victim stated she was involved in a civil lawsuit and gave a deposition related to Epstein, though she was unsure of the date.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "[Victim 1]"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida, United States (Interview location)",
+    "Epstein's Palm Beach residence (Primary abuse location, described with side kitchen door, massage room with closet, nude photos on walls)",
+    "New York (Origin of gifts sent via FedEx to the victim)",
+    "South Florida Fairgrounds (Location where victim received Incubus concert tickets from Epstein's associates)"
+  ],
+  "keyFacts": [
+    "The victim ([Victim 1]) was recruited at age 14 and sexually abused by Jeffrey Epstein over 100 times until she was about 17, for which she was paid $300 per visit.",
+    "Ghislaine Maxwell was directly involved in the recruitment, management, and payment of the victim, and discussed with her the recruitment of younger girls and international travel.",
+    "The victim identified Harvey Weinstein from a photo as a man who fondled her during a massage at Epstein's request.",
+    "Epstein and Maxwell pressured the victim to recruit younger friends for them, offering her extra money for each girl she brought.",
+    "The victim believed there were cameras in the clocks in the massage room at Epstein's Palm Beach residence."
+  ],
+  "analyzedAt": "2026-02-21T02:08:23.397Z"
+}

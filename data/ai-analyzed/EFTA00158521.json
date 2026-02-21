@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA00158521.pdf",
+  "dataSet": "9",
+  "documentType": "legal correspondence",
+  "dateOriginal": "2020-06-08",
+  "summary": "This is a Touhy request letter from an attorney representing a plaintiff (Jane Doe) in a civil case against Indyke et al. The letter, addressed to U.S. Attorney Geoffrey S. Berman, formally requests the U.S. Department of Justice to produce documentary and tangible evidence related to the government's investigation of Jeffrey Epstein's sexual abuse of the plaintiff. The request seeks items like photographs, flight logs, videos, correspondence, and trust documents pertaining to the victim.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney for the Southern District of New York",
+      "category": "legal",
+      "context": "Addressee of the Touhy request letter; the government official from whom evidence related to the Epstein investigation is being formally requested.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Accused, convicted sex offender",
+      "category": "key figure",
+      "context": "The central subject of the government investigation. The letter states he is a notorious pedophile and convicted sex offender who sexually abused the plaintiff (Jane Doe) for years, starting when she was a young girl.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Plaintiff, alleged victim",
+      "category": "victim",
+      "context": "The anonymous plaintiff in the civil case 'Jane Doe v. Indyke et al.'. The letter states she was Epstein's first known victim, meeting him at age 13 at a summer camp in Michigan and suffering years of abuse.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Indyke",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "A named defendant in the civil lawsuit referenced in the letter (Jane Doe v. Indyke et al.).",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jane Doe",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "The letter states Jane Doe was sexually abused by Jeffrey Epstein for years, starting when she was 13, making her his first known victim.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Geoffrey S. Berman",
+      "relationshipType": "legal",
+      "description": "Doe's attorney is making a formal legal request to Berman, in his official capacity as U.S. Attorney, for evidence from the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-08-08",
+      "title": "Creation of Epstein's 1953 Trust",
+      "description": "The letter specifically requests 'Jeffrey E. Epstein's Trust Agreement of The 1953 Trust dated August 8, 2019' as part of the evidence sought from the DOJ.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Filing of Civil Lawsuit",
+      "description": "The civil case 'Jane Doe v. Indyke et al.', S.D.N.Y. Case No. 1:20-cv-00484-JGK-DCF, has been filed and discovery is underway.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe",
+        "Indyke"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Establishment of Victim Compensation Fund",
+      "description": "The letter notes that a victim compensation fund has been recently established, which the plaintiff may elect to participate in.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jane Doe"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "86 Chambers Street, Third Floor, New York, New York 10007",
+    "Michigan (mentioned as location of summer camp where Doe met Epstein)"
+  ],
+  "keyFacts": [
+    "The plaintiff, Jane Doe, claims to be Jeffrey Epstein's first known victim, having met him at age 13 at a summer camp in Michigan.",
+    "The letter is a formal Touhy request under 28 C.F.R. § 16.21, seeking specific evidence from the DOJ's Epstein investigation for use in a civil case.",
+    "Requested evidence includes photos, flight logs, videos, correspondence, airline ticket records, and Epstein's 1953 Trust agreement dated August 8, 2019.",
+    "The plaintiff's attorney argues the request does not implicate prohibitions like grand jury secrecy, classified information, or revealing confidential informants.",
+    "The letter seeks an expedited response due to active litigation and the recent establishment of a victim compensation fund."
+  ],
+  "analyzedAt": "2026-02-21T02:31:16.431Z"
+}

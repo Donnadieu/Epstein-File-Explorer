@@ -1,0 +1,51 @@
+{
+  "fileName": "EFTA00157095.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-02-10",
+  "summary": "This document is an email chain from February 10, 2020, between FBI personnel regarding a request to decrypt a plist file from an iPad backup related to the Epstein case (31E-NY-3027571). The emails discuss password attempts and the status of the decryption request submitted in September 2019.",
+  "persons": [
+    {
+      "name": "Irving",
+      "role": "Potential password reference",
+      "category": "other",
+      "context": "Mentioned as one of two passwords (along with 'Konigsberg') that were recovered in a previous Filevault2 case in September 2019 and suggested for trying on the current plist file.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Konigsberg",
+      "role": "Potential password reference",
+      "category": "other",
+      "context": "Mentioned as one of two passwords (along with 'Irving') that were recovered in a previous Filevault2 case in September 2019 and suggested for trying on the current plist file.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2019-09",
+      "title": "Previous Filevault2 decryption case",
+      "description": "A prior case where the FBI's Secure Technologies Exploitation Unit recovered passwords 'Irving' and 'Konigsberg' for the requester.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-09",
+      "title": "Initial plist submission for Epstein case",
+      "description": "An iPad backup plist from the Epstein case (31E-NY-3027571) was submitted for decryption through an automated FBI site.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The FBI was actively working on decrypting an iPad backup (plist file) from the Epstein investigation as of February 2020.",
+    "The decryption request for case 31E-NY-3027571 was initially submitted in September 2019 and was still pending as of February 2020.",
+    "Two previously recovered passwords, 'Irving' and 'Konigsberg', were suggested for use in the decryption attempt.",
+    "The correspondence highlights the FBI's internal technical efforts and collaboration (CART, Secure Technologies Exploitation Unit) to access encrypted evidence.",
+    "The document is subject to a protective order restricting certain paragraphs."
+  ],
+  "analyzedAt": "2026-02-21T01:13:33.099Z"
+}

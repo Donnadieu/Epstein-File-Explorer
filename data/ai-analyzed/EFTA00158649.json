@@ -1,0 +1,144 @@
+{
+  "fileName": "EFTA00158649.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-12-15",
+  "summary": "This is an FBI 302 form documenting an interview with a victim of Jeffrey Epstein and Ghislaine Maxwell, conducted on December 15, 2019. The victim describes being groomed by Maxwell, meeting Epstein as a minor, being sexually assaulted, and details of the grooming tactics, gifts, and social dynamics within the group.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central perpetrator. The victim describes meeting him through Ghislaine Maxwell, being sexually assaulted by him at Maxwell's residence, and receiving gifts from him.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator, Groomer",
+      "category": "key figure",
+      "context": "Described as grooming the victim, introducing her to Epstein, facilitating and being present during sexual assaults, and using manipulative language similar to the victim's mother.",
+      "mentionCount": 20
+    },
+    {
+      "name": "AUSA",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Present for the FBI interview of the victim. Represents the U.S. Attorney's Office.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted the interview with the victim. Authored the FD-302 report.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Worked together to groom and traffic the victim. Maxwell introduced the victim to Epstein and facilitated the sexual assaults.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Victim (Interview Subject)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell groomed the victim, used manipulative language, and facilitated her sexual abuse by Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim (Interview Subject)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually assaulted the victim on multiple occasions, starting when she was a minor.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "1993-11",
+      "title": "Victim attends modeling school",
+      "description": "The victim attended a modeling school for 6 to 18-year-olds.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Victim (Interview Subject)"
+      ]
+    },
+    {
+      "date": "1994",
+      "title": "Victim meets Ghislaine Maxwell",
+      "description": "The victim met Ghislaine Maxwell before turning 17 years old.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Victim (Interview Subject)"
+      ]
+    },
+    {
+      "date": "1994",
+      "title": "Victim meets Jeffrey Epstein",
+      "description": "The victim met Jeffrey Epstein within the first couple of months of meeting Maxwell.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Victim (Interview Subject)"
+      ]
+    },
+    {
+      "date": "1995-1997",
+      "title": "First sexual assaults by Epstein",
+      "description": "The victim recalls approximately two assaults by Epstein at Maxwell's residence before she started traveling with them.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Victim (Interview Subject)"
+      ]
+    },
+    {
+      "date": "1997-1998",
+      "title": "Victim's 18th birthday gift",
+      "description": "The victim received a Miu Miu Prada handbag from Epstein and Maxwell for her 18th birthday, with a tag saying 'Love, Jeffrey and Ghislaine'.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Victim (Interview Subject)"
+      ]
+    },
+    {
+      "date": "2019-12-15",
+      "title": "FBI Interview of Victim",
+      "description": "The victim is interviewed by the FBI and an AUSA, providing detailed allegations against Epstein and Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (Interview Subject)",
+        "Special Agent",
+        "AUSA"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's island",
+    "New York, New York, United States",
+    "Maxwell's residence"
+  ],
+  "keyFacts": [
+    "The victim was groomed by Ghislaine Maxwell, who used manipulative phrases similar to those used by the victim's own mother to create comfort and compliance.",
+    "The victim describes a specific incident where Maxwell opened a door to reveal a naked Jeffrey Epstein, then left them alone, indicating Maxwell's active facilitation of abuse.",
+    "The victim received a luxury handbag (Miu Miu Prada) from Epstein and Maxwell for her 18th birthday, with a tag signed by both, indicating grooming through gifts.",
+    "Maxwell explicitly told the victim she needed to find someone to give Epstein a 'blowjob,' demonstrating the trafficking aspect of their operation.",
+    "The victim was part of a group messaging thread with other Epstein victims but removed herself because she did not want to constantly talk about Epstein."
+  ],
+  "analyzedAt": "2026-02-21T02:38:43.976Z"
+}

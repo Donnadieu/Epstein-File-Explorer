@@ -1,0 +1,184 @@
+{
+  "fileName": "EFTA00158236.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2007-02-02",
+  "summary": "This is an FBI 302 form documenting the interview of Janusz Banasiak, property manager for Jeffrey Epstein's Palm Beach residence, conducted on February 2, 2007. Banasiak provides details about Epstein's travel, staff, household operations, and the frequent massages at the residence, including petty cash payments to various individuals, some of which appear to be for massage providers.",
+  "persons": [
+    {
+      "name": "Janusz Banasiak",
+      "role": "Property Manager for Jeffrey Epstein",
+      "category": "staff",
+      "context": "Interviewed by the FBI regarding his employment at Epstein's Palm Beach residence. Described his duties, Epstein's travel habits, and the massage activities at the house.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation / Employer",
+      "category": "key figure",
+      "context": "The central figure in the federal investigation into the sexual exploitation of minors. Banasiak describes his travel patterns, residences, staff, and daily massage routines.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Michael Salnick",
+      "role": "Attorney for Janusz Banasiak",
+      "category": "legal",
+      "context": "Present during Banasiak's FBI interview as his legal counsel from the Law Offices of Salnick & Strisch, P.A.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lance Calloway",
+      "role": "Chef for Jeffrey Epstein",
+      "category": "staff",
+      "context": "Identified by Banasiak as Epstein's current chef who would travel with him and stay in the guest house in Palm Beach.",
+      "mentionCount": 2
+    },
+    {
+      "name": "David LNU",
+      "role": "Former Chef for Jeffrey Epstein",
+      "category": "staff",
+      "context": "Identified by Banasiak as the chef prior to Lance Calloway.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Mentioned as having signature authority on the household petty cash account. Banasiak states she or Epstein's assistants arranged massage appointments.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former Property Manager for Jeffrey Epstein",
+      "category": "staff",
+      "context": "Identified by Banasiak as his predecessor who was let go for poor performance.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jerome Pierre",
+      "role": "Laborer",
+      "category": "staff",
+      "context": "Received a $500 bonus for performing heavy work outside Epstein's Palm Beach house, as noted in the petty cash report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francis",
+      "role": "Cleaning Service",
+      "category": "staff",
+      "context": "Noted in the document as providing extra cleaning services for the residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Luba LNU",
+      "role": "Possible Masseuse",
+      "category": "staff",
+      "context": "Identified in the document as a possible Russian masseuse.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul LNU",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Came to the Palm Beach residence with an unnamed individual approximately three weeks before a state search warrant was executed and removed a computer tower.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Janusz Banasiak",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Banasiak was employed by Epstein as the property manager for his Palm Beach residence from February 2005.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Both had signature authority on the household petty cash account. Banasiak believed Maxwell helped arrange Epstein's appointments.",
+      "strength": 4
+    },
+    {
+      "person1": "Janusz Banasiak",
+      "person2": "Michael Salnick",
+      "relationshipType": "attorney-client",
+      "description": "Salnick was present as Banasiak's attorney during his FBI interview.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lance Calloway",
+      "relationshipType": "employer-employee",
+      "description": "Calloway was Epstein's chef and traveled with him to Palm Beach.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "former employer-employee",
+      "description": "Rodriguez was Banasiak's predecessor as property manager before being let go.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-02-02",
+      "title": "FBI Interview of Janusz Banasiak",
+      "description": "Janusz Banasiak, Epstein's Palm Beach property manager, is interviewed by the FBI regarding the federal investigation into the sexual exploitation of minors.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Janusz Banasiak",
+        "Michael Salnick"
+      ]
+    },
+    {
+      "date": "2005-02",
+      "title": "Banasiak Begins Employment",
+      "description": "Janusz Banasiak begins working as the property manager for Jeffrey Epstein's Palm Beach residence.",
+      "category": "other",
+      "significance": 2,
+      "personsInvolved": [
+        "Janusz Banasiak",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2006-03-19",
+      "title": "Purchase of Baby Gifts",
+      "description": "Banasiak is asked by an Epstein assistant to purchase toys from Toys R Us and Babies R Us as a baby gift, but the gifts were never delivered.",
+      "category": "financial",
+      "significance": 1,
+      "personsInvolved": [
+        "Janusz Banasiak"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Removal of Computer Tower",
+      "description": "Approximately three weeks before the execution of a state search warrant, an unnamed individual and Paul LNU came to the Palm Beach residence and removed a computer tower.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Paul LNU"
+      ]
+    }
+  ],
+  "locations": [
+    "West Palm Beach, Florida",
+    "Palm Beach, Florida (Epstein's residence)",
+    "U.S. Virgin Islands (Epstein's residence)",
+    "New Mexico (Epstein's residence)",
+    "Paris, France (Epstein's apartment)",
+    "New York (Epstein's office)",
+    "Colonial Bank on Worth Avenue, Palm Beach"
+  ],
+  "keyFacts": [
+    "Epstein's Palm Beach property manager, Janusz Banasiak, confirmed Epstein received one to three massages per day from females at the residence, and he assisted with cleanup afterward.",
+    "Banasiak maintained a petty cash fund with signatures from Epstein, Ghislaine Maxwell, and himself, and detailed numerous cash payments to individuals, some identified only by first names, which appear linked to massage services.",
+    "Epstein kept two guns and two shotguns in a safe at the Palm Beach house; one gun would be placed in a holster between his mattresses when he was in town.",
+    "Approximately three weeks before a state search warrant was executed, an associate and Paul LNU removed a computer tower from the Palm Beach residence.",
+    "Epstein traveled to Palm Beach on his private aircraft (Gulfstream or Boeing 727) 1-3 times per month, primarily with a small entourage including a chef and a female assistant."
+  ],
+  "analyzedAt": "2026-02-21T02:17:24.087Z"
+}

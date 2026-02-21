@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA00155979.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2022-01-03",
+  "summary": "This is an email exchange between law enforcement officials regarding an update on a defendant (likely Ghislaine Maxwell) wanting to plead guilty. The email discusses a scheduled plea hearing, potential delays due to access issues at the MDC (Metropolitan Detention Center), and a strategy to hold off on informing victims until the plea is more certain.",
+  "persons": [
+    {
+      "name": "Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Referenced as the subject of convictions, with an update that her attorney has indicated she wants to plead guilty, with a plea hearing scheduled.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Assistant United States Attorney",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Sender of the email providing an update on Maxwell's plea status and coordinating communication with victims.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force",
+      "role": "Law Enforcement Officer",
+      "category": "law enforcement",
+      "context": "Recipient of the email, thanked for a heads-up and updated on Maxwell's plea proceedings.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Assistant United States Attorney",
+      "person2": "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force",
+      "relationshipType": "professional collaboration",
+      "description": "Colleagues in law enforcement/legal prosecution coordinating on case updates regarding Maxwell's plea.",
+      "strength": 3
+    },
+    {
+      "person1": "Maxwell",
+      "person2": "Assistant United States Attorney",
+      "relationshipType": "prosecutor-defendant",
+      "description": "The prosecutor is providing an update on Maxwell's legal proceedings, including her potential guilty plea.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-01-07",
+      "title": "Scheduled Plea Hearing for Maxwell",
+      "description": "A plea hearing for Maxwell was scheduled for Friday at 10:30 AM, but subject to change due to access issues at MDC and attorney consultations.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Maxwell",
+        "Assistant United States Attorney"
+      ]
+    },
+    {
+      "date": "2021",
+      "title": "Maxwell Convictions",
+      "description": "Reference to recent convictions of Maxwell, with congratulations extended to law enforcement.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Maxwell",
+        "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force"
+      ]
+    }
+  ],
+  "locations": [
+    "Eastern District of New York",
+    "Brooklyn, NY 11201",
+    "MDC (Metropolitan Detention Center)"
+  ],
+  "keyFacts": [
+    "Maxwell's attorney indicated she wants to plead guilty, with a plea hearing scheduled for a Friday at 10:30 AM.",
+    "There were access issues at the MDC (Metropolitan Detention Center) that could delay or prevent the plea from moving forward.",
+    "Prosecutors planned to hold off on informing victims until the plea was more certain to proceed.",
+    "The email is dated January 3, 2022, referencing events shortly after Maxwell's convictions."
+  ],
+  "analyzedAt": "2026-02-21T00:02:43.581Z"
+}

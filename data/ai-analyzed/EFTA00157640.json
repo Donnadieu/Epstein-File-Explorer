@@ -1,0 +1,131 @@
+{
+  "fileName": "EFTA00157640.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2007-08-13",
+  "summary": "An FBI 302 form documenting an interview with a female victim (referred to as [Victim 1]) conducted on August 7, 2007. The victim details her sexual exploitation by Jeffrey Epstein, beginning when she was 14 years old, including descriptions of abuse, payment arrangements, recruitment of other girls, and gifts from Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation for sexual exploitation of minors. The victim describes multiple incidents of sexual abuse and financial transactions with him over several years.",
+      "mentionCount": 30
+    },
+    {
+      "name": "[Victim 1]",
+      "role": "Victim/Witness",
+      "category": "victim",
+      "context": "The primary interviewee. She describes being recruited at age 14, providing massages that escalated to sexual acts for money, and recruiting other girls for Epstein over approximately three years.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Andriano",
+      "role": "Associate/Friend of Victim",
+      "category": "associate",
+      "context": "A friend of the victim. The victim brought her to provide a massage to Epstein, and Epstein left concert tickets for her at an amphitheater.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Jackson",
+      "role": "Acquaintance",
+      "category": "other",
+      "context": "Mentioned briefly as someone the victim spoke to over the telephone during one of her visits to Epstein's residence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "[Victim 1]",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused and paid the victim for massages that involved sexual acts, beginning when she was 14. He also asked her to recruit other girls.",
+      "strength": 5
+    },
+    {
+      "person1": "[Victim 1]",
+      "person2": "Andriano",
+      "relationshipType": "social",
+      "description": "Friends. The victim brought Andriano to Epstein's residence to provide a massage, and Epstein left concert tickets for Andriano.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Andriano",
+      "relationshipType": "financial",
+      "description": "Epstein arranged for concert tickets to be left for Andriano, and the victim brought Andriano to provide a massage to him.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-08-07",
+      "title": "FBI Interview of Victim",
+      "description": "The victim is interviewed by FBI agents regarding the sexual exploitation of minors by Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "[Victim 1]"
+      ]
+    },
+    {
+      "date": "2003",
+      "title": "Start of Victim's Abuse",
+      "description": "The victim, at age 14, is introduced to Jeffrey Epstein and begins providing massages that involve sexual acts, continuing for approximately three years.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[Victim 1]"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Introduction of Unidentified Female",
+      "description": "During a massage session, Epstein introduces an unidentified female, and a sexual act occurs involving the victim, Epstein, and the unidentified female.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[Victim 1]"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Photography Session",
+      "description": "Epstein pays the victim $500 to pose for a series of nude photographs in various locations at his Palm Beach residence.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[Victim 1]"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Offer of Trip to Paris",
+      "description": "Epstein offers to take the victim to Paris, France, for business, but she declines.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "[Victim 1]"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, FL",
+    "Epstein's Palm Beach residence",
+    "New York",
+    "Paris, France",
+    "Sound Advice Amphitheater"
+  ],
+  "keyFacts": [
+    "The victim was 14 years old when first introduced to Jeffrey Epstein and began a three-year period of providing massages that involved sexual acts for payment.",
+    "Epstein paid the victim $300-$400 per session and offered her $100 to recruit other girls, paying $100 for each girl she brought.",
+    "The victim described specific sexual acts, including Epstein introducing an unidentified female for a sexual encounter during a massage.",
+    "Epstein gave the victim gifts including Victoria's Secret bras, underwear, massage oils, and a book titled 'Massage for Dummies,' which she provided to the FBI.",
+    "The victim stated Epstein paid her $500 to pose for nude photographs at his residence and that she felt there were hidden cameras, though she never saw them."
+  ],
+  "analyzedAt": "2026-02-21T01:52:41.128Z"
+}

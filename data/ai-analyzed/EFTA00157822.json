@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA00157822.pdf",
+  "dataSet": "9",
+  "documentType": "court filing",
+  "dateOriginal": "2009-03-05",
+  "summary": "This is a court filing from a civil case (08-CV-80811) in the Southern District of Florida, where the plaintiff serves an amended answer to an interrogatory. The amended answer reveals that the FBI has photos of the plaintiff taken at Jeffrey Epstein's home, and that Epstein himself had photos taken of the plaintiff at his home. The document includes a list of attorneys involved.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Named as a defendant in the civil case. The plaintiff's amended answer states that Epstein had photos taken of the plaintiff at his home.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jack A. Goldberger",
+      "role": "Attorney for Plaintiff(s)",
+      "category": "legal",
+      "context": "Listed as counsel for the plaintiff(s) from the law firm Atterbury, Goldberger & Weiss, P.A.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bruce E. Reinhart",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Listed as counsel, from Bruce E. Reinhart, P.A.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Robert Critton",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Listed as counsel, from the law firm Burman Critton Luttier & Coleman LLP.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Plaintiff",
+      "relationshipType": "legal adversary",
+      "description": "Epstein is the defendant in a civil lawsuit where the plaintiff is making claims against him.",
+      "strength": 5
+    },
+    {
+      "person1": "Jack A. Goldberger",
+      "person2": "Plaintiff",
+      "relationshipType": "attorney-client",
+      "description": "Goldberger is listed as an attorney representing the plaintiff(s) in the case.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Plaintiff",
+      "relationshipType": "victim-perpetrator",
+      "description": "The plaintiff's answer implies a non-consensual or controversial context by stating Epstein had photos taken of the plaintiff at his home, which is part of the legal controversy.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-01-16",
+      "title": "Service of First Interrogatories",
+      "description": "Defendant Jeffrey Epstein's first set of interrogatories were propounded (served) on the plaintiff.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Plaintiff"
+      ]
+    },
+    {
+      "date": "2009-03-05",
+      "title": "Filing of Amended Answer",
+      "description": "The plaintiff files a notice with the court that an amended answer to Interrogatory #13 has been furnished to Epstein's attorney.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Plaintiff",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Photos Taken at Epstein's Home",
+      "description": "The plaintiff states in the amended answer that the FBI has photos of them taken at Epstein's home, and that Epstein had photos taken of them at his home.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Plaintiff"
+      ]
+    }
+  ],
+  "locations": [
+    "Jeffrey Epstein's home",
+    "Southern District of Florida"
+  ],
+  "keyFacts": [
+    "The plaintiff states that the FBI possesses photos of the plaintiff taken at Jeffrey Epstein's home.",
+    "The plaintiff states that Jeffrey Epstein himself had photos taken of the plaintiff at his home.",
+    "This is part of a civil case (08-CV-80811) filed in the Southern District of Florida.",
+    "The document is subject to a protective order, indicating sensitive or confidential information.",
+    "The amended answer was served on March 5, 2009, in response to interrogatories propounded on January 16, 2009."
+  ],
+  "analyzedAt": "2026-02-21T02:01:41.527Z"
+}

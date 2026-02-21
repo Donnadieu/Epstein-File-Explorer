@@ -1,0 +1,102 @@
+{
+  "fileName": "EFTA00157482.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-27",
+  "summary": "This is an email chain from October 2020 between FBI personnel and a U.S. Attorney's Office paralegal regarding technical difficulties loading images from a drive (NYC024383) for review. The emails discuss troubleshooting the issue to ensure no responsive items are missed in the case.",
+  "persons": [
+    {
+      "name": "B. (NY) (FBI)",
+      "role": "FBI personnel, likely CART Coordinator",
+      "category": "law enforcement",
+      "context": "Appears as the sender of the forwarded email chain, coordinating access to a case on a machine for someone to view images from drive NYC024383.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M, I. (NY) (FBI)",
+      "role": "NY CART Coordinator, Senior Forensic Examiner",
+      "category": "law enforcement",
+      "context": "Discusses the technical issue with loading images from drive NYC024383, speculates it might be a partial image recovery, and arranges for someone to load the case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Heys (NY)(FBI)",
+      "role": "FBI personnel",
+      "category": "law enforcement",
+      "context": "Requests access to a device to view images from drive NYC024383 on their end, asking if they can view it the next morning.",
+      "mentionCount": 1
+    },
+    {
+      "name": "(USANYS) [Contractor]",
+      "role": "Paralegal Specialist, U.S. Attorney's Office SDNY",
+      "category": "legal",
+      "context": "Reports a problem loading images from drive NYC024383, describing images that load briefly before being covered by a solid block of color, and requests the FBI review the photos to ensure no responsive items are missed.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MI (USANYS)",
+      "role": "U.S. Attorney's Office personnel",
+      "category": "legal",
+      "context": "Listed as a recipient (Cc) in the email from the paralegal specialist regarding the image loading issue.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "B. (NY) (FBI)",
+      "person2": "M, I. (NY) (FBI)",
+      "relationshipType": "colleague",
+      "description": "Both are FBI personnel involved in coordinating technical forensic examination of evidence (drive NYC024383).",
+      "strength": 3
+    },
+    {
+      "person1": "(USANYS) [Contractor]",
+      "person2": "M, I. (NY) (FBI)",
+      "relationshipType": "professional",
+      "description": "The paralegal specialist from the U.S. Attorney's Office is communicating with the FBI's CART Coordinator about technical issues with evidence (drive NYC024383) for case review.",
+      "strength": 3
+    },
+    {
+      "person1": "(USANYS) [Contractor]",
+      "person2": "MI (USANYS)",
+      "relationshipType": "colleague",
+      "description": "Both are associated with the U.S. Attorney's Office for the Southern District of New York (SDNY), with the paralegal copying MI on the email about the evidence issue.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-26",
+      "title": "Report of Image Loading Issue on Drive NYC024383",
+      "description": "A paralegal specialist from the U.S. Attorney's Office reports to the FBI that many images on drive NYC024383 either do not load or load briefly before being obscured by a solid block of color, requesting FBI review.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "(USANYS) [Contractor]",
+        "M, I. (NY) (FBI)",
+        "MI (USANYS)"
+      ]
+    },
+    {
+      "date": "2020-10-27",
+      "title": "FBI Coordination to Access Drive NYC024383",
+      "description": "FBI personnel forward and discuss the email chain, arranging for someone to load the case on a machine to examine the problematic images from drive NYC024383.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "B. (NY) (FBI)",
+        "M, I. (NY) (FBI)",
+        "Heys (NY)(FBI)"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email chain concerning technical difficulties with loading images from a specific drive labeled NYC024383, which is part of an ongoing investigation.",
+    "The issue involves images that load for a fraction of a second before being covered by a solid block of color, potentially obscuring responsive evidence.",
+    "The communication is between the U.S. Attorney's Office for the Southern District of New York (SDNY) and the FBI's Computer Analysis and Response Team (CART), indicating collaborative evidence review.",
+    "The document is marked as 'SUBJECT TO PROTECTIVE ORDER' referencing specific paragraphs, indicating it contains sensitive or confidential case information.",
+    "The emails show active troubleshooting efforts in October 2020 to ensure no evidence is missed during the review of digital media."
+  ],
+  "analyzedAt": "2026-02-21T01:35:03.592Z"
+}

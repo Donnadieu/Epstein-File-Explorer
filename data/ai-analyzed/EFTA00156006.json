@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00156006.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2021-12-15",
+  "summary": "This is an email from an NYPD detective on a child exploitation and human trafficking task force, dated December 15, 2021, detailing attempts to contact a person named Igor. The detective reports that a female associate of Igor stated Igor did not want to talk, specifically asked if the contact was about Jeffrey Epstein, and claimed Igor was not a witness and not scheduled to testify for the defense.",
+  "persons": [
+    {
+      "name": "Igor",
+      "role": "Individual sought for contact regarding the Epstein case",
+      "category": "other",
+      "context": "The NYPD detective is attempting to contact Igor, but a female associate states Igor does not want to talk, is not a witness, and is not scheduled to testify for the defense.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Deceased financier and accused sex trafficker",
+      "category": "key figure",
+      "context": "The female associate of Igor specifically asks if the detective's contact attempt is about Jeffrey Epstein, indicating the context of the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Igor",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "The female associate's question linking Igor to Epstein suggests Igor may have some connection or knowledge relevant to the Epstein case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-12",
+      "title": "Initial contact attempt with Igor's associate",
+      "description": "An NYPD detective called a phone number associated with Igor and spoke with an unnamed female who said Igor was not home and she would pass along a message.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Igor",
+        "Unnamed female"
+      ]
+    },
+    {
+      "date": "2021-12-15",
+      "title": "Follow-up contact and statement about Epstein",
+      "description": "The detective called again, spoke with the same female, who stated Igor did not want to talk, asked if it was about Jeffrey Epstein, and said Igor was not a witness and not scheduled to testify for the defense.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Igor",
+        "Jeffrey Epstein",
+        "Unnamed female"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "An NYPD detective from a child exploitation and human trafficking task force was actively attempting to contact an individual named Igor in December 2021 regarding the Jeffrey Epstein case.",
+    "A female associate of Igor stated that Igor did not want to talk to anyone and specifically asked if the contact was about Jeffrey Epstein.",
+    "The female associate claimed, on Igor's behalf, that he was 'not a witness to anything' and was 'not scheduled to testify for the defense in this case'.",
+    "The communication indicates ongoing investigative efforts by law enforcement related to the Epstein case years after Epstein's death."
+  ],
+  "analyzedAt": "2026-02-21T00:05:47.605Z"
+}

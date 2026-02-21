@@ -1,0 +1,61 @@
+{
+  "fileName": "EFTA00158843.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-07-12",
+  "summary": "This document is an FBI 302 form (detective preparation memo) dated July 12, 2021, summarizing a witness's recollections for trial testimony. It details the witness's account of visiting Jeffrey Epstein's house for massages, the frequency of visits, payments received, and contact with a scheduler.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Referred to as 'JE'; the individual whose house the witness visited for massages.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "El",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "El visited Epstein's house for massages and received payments, indicating a transactional relationship centered around Epstein's alleged abuse.",
+      "strength": 4
+    },
+    {
+      "person1": "IN",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "IN was invited to Epstein's house, suggesting she was also a potential victim or associate in the context of the allegations.",
+      "strength": 3
+    },
+    {
+      "person1": "IN",
+      "person2": "am",
+      "relationshipType": "social",
+      "description": "IN was dating am, as mentioned in the context of am having a job.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-12",
+      "title": "Trial Testimony Preparation",
+      "description": "AUSAs and a detective prepared a memo summarizing a witness's (El's) recollections for upcoming trial testimony.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "El"
+      ]
+    }
+  ],
+  "locations": [
+    "JE's house"
+  ],
+  "keyFacts": [
+    "A witness (El) believed she was about 16 years old when first invited to Jeffrey Epstein's house.",
+    "The witness estimated visiting Epstein's house approximately once or twice a month for two months, then biweekly, then weekly.",
+    "The witness estimated receiving between $200 and $300 after each massage at Epstein's house.",
+    "The witness recalled a woman with a European (but not French) accent called to schedule appointments for visits to Epstein."
+  ],
+  "analyzedAt": "2026-02-21T02:54:52.280Z"
+}

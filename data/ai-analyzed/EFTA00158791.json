@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA00158791.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-09-17",
+  "summary": "This is an FBI 302 interview report from September 17, 2021, where a witness (referred to as [REDACTED]) is shown photographs and a photo book to identify individuals and recall events related to Jeffrey Epstein and Ghislaine Maxwell. The witness describes trips, photographs from her high school years, and specific interactions, including turning over physical evidence (cowboy boots) to the FBI.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Identified by the witness in photographs and discussed in relation to funding a trip, phone conversations, and a visit to a movie theater.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused Associate",
+      "category": "key figure",
+      "context": "Identified by the witness in a photograph and recalled as sitting next to Epstein at a movie theater in New Mexico.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Assistant United States Attorneys",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "Present during the FBI interview of the witness.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Present during the FBI interview and documented the report.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both were present with the witness at a movie theater in New Mexico, sitting on either side of Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness ([REDACTED])",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein flew the witness out on a trip, paid for it, had phone conversations with her, and took her to a movie theater.",
+      "strength": 4
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Witness ([REDACTED])",
+      "relationshipType": "social",
+      "description": "Maxwell was present with the witness and Epstein at a movie theater outing.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "FBI Request for Evidence",
+      "description": "The FBI had previously asked the witness for her cowboy boots as evidence.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness ([REDACTED])",
+        "FBI"
+      ]
+    },
+    {
+      "date": "2021-09-17",
+      "title": "FBI Interview and Evidence Turnover",
+      "description": "The witness was interviewed by the FBI and turned over her cowboy boots, which she had recently retrieved from storage.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness ([REDACTED])",
+        "Special Agent",
+        "Assistant United States Attorneys"
+      ]
+    },
+    {
+      "date": "2005-07",
+      "title": "Trip to New Mexico",
+      "description": "Epstein flew the witness out for a trip to New Mexico in July or early August, where she stayed in a villa, participated in activities like teaching English and learning a dance, and visited a movie theater with Epstein and Maxwell.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Witness ([REDACTED])"
+      ]
+    }
+  ],
+  "locations": [
+    "One Saint Andrews Plaza, New York, New York",
+    "New Mexico",
+    "Villa (in New Mexico, specific location not named)"
+  ],
+  "keyFacts": [
+    "A witness was shown photographs and a photo book by the FBI and identified Jeffrey Epstein and Ghislaine Maxwell.",
+    "The witness described a trip to New Mexico funded by Epstein in July or early August when she was a teenager, involving stays in a villa and activities like teaching English.",
+    "The witness recalled a specific outing to a movie theater in New Mexico where she sat next to Epstein and Maxwell sat on his other side.",
+    "The witness turned over physical evidence (cowboy boots) to the FBI in 2021, which had been requested by the FBI back in 2006.",
+    "The witness mentioned keeping a journal around the time of the trip but did not write in detail about what happened."
+  ],
+  "analyzedAt": "2026-02-21T02:50:14.540Z"
+}

@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA00157367.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-20",
+  "summary": "This is an email chain from July 2020 regarding the processing of digital evidence in the Epstein case. The sender follows up on a call about a hard drive containing files from seven devices, noting discrepancies in the inventory spreadsheet. The email references FBI forensic examiners and the transfer of evidence to a vendor for processing.",
+  "persons": [
+    {
+      "name": "Atilinifel",
+      "role": "Email recipient",
+      "category": "other",
+      "context": "Appears as the primary recipient (To:) of the follow-up email regarding device processing.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ma:ntCalEfill",
+      "role": "Email CC recipient",
+      "category": "other",
+      "context": "Appears as a CC recipient on the follow-up email, likely involved in the evidence handling process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Im, a (NY) (FBI)",
+      "role": "FBI Senior Forensic Examiner / CART Coordinator",
+      "category": "law enforcement",
+      "context": "Sent the original email with the spreadsheet, identifying themselves as the NYO CART Coordinator and Senior Forensic Examiner. They discuss the status of evidence processing and transfer.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Im, a (NY) (FBI)",
+      "person2": "Atilinifel",
+      "relationshipType": "professional",
+      "description": "Correspondence regarding the transfer and processing of digital evidence, indicating a working relationship on the case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-07-14",
+      "title": "Spreadsheet and evidence status email",
+      "description": "FBI Senior Forensic Examiner sends an email with a spreadsheet detailing evidence status, noting most items are at 'Southern' and discussing remaining devices to process.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Im, a (NY) (FBI)"
+      ]
+    },
+    {
+      "date": "2020-07-20",
+      "title": "Follow-up on device discrepancies",
+      "description": "Email follow-up regarding discrepancies in the evidence spreadsheet for seven devices, noting oddities in the inventory and planning to send folders to a vendor for processing.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Atilinifel",
+        "Ma:ntCalEfill",
+        "Im, a (NY) (FBI)"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Seven devices with NYC evidence numbers (NYC024363, NYC024392, NYC024328, NYC024365, NYC024366, NYC024371, NYC024383) were identified from a hard drive and were being sent to a vendor for processing into platform-readable files.",
+    "Discrepancies were noted in the evidence spreadsheet: NYC024392 was listed as 'not yet ready' but was received, and NYC024328 was not listed on the spreadsheet at all.",
+    "The correspondence is subject to a protective order (paragraphs 7, 8, 9, 10, 15, and 17), indicating sensitive or restricted information related to the Epstein case investigation."
+  ],
+  "analyzedAt": "2026-02-21T01:23:31.868Z"
+}

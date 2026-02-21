@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00157083.pdf",
+  "dataSet": "9",
+  "documentType": "FBI internal email chain",
+  "dateOriginal": "2019-09-04 to 2019-10-21",
+  "summary": "An email chain between FBI forensic examiners discussing efforts to crack passwords on multiple Apple computers seized in the Jeffrey Epstein investigation. The emails detail successful and unsuccessful attempts to access encrypted drives and user accounts, revealing specific passwords and technical challenges.",
+  "persons": [
+    {
+      "name": "Senior Forensic Examiner",
+      "role": "FBI Senior Forensic Examiner",
+      "category": "law enforcement",
+      "context": "Primary correspondent in the email chain, based in New York (NY), requesting password cracking assistance for Mac computers from the Epstein case and reporting on the results.",
+      "mentionCount": 8
+    },
+    {
+      "name": "IT Specialist / Senior Forensic Examiner",
+      "role": "IT Specialist / Senior Forensic Examiner, Secure Technologies Exploitation Unit (STXU)",
+      "category": "law enforcement",
+      "context": "Correspondent from the FBI's STXU in Miami, providing technical expertise and recovered passwords to assist the New York examiner in accessing the seized Mac computers.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "Referred to indirectly as the subject of the case (UCFN 3IE-NY-3027571) and as the likely user of the computers being examined, with a user account 'JEE'.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Senior Forensic Examiner",
+      "person2": "IT Specialist / Senior Forensic Examiner",
+      "relationshipType": "colleague",
+      "description": "Collaborative professional relationship within the FBI, with the Miami STXU specialist providing password cracking support to the New York-based examiner on the Epstein case.",
+      "strength": 3
+    },
+    {
+      "person1": "Senior Forensic Examiner",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The examiner is forensically analyzing digital evidence (multiple Mac computers) seized from or related to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "IT Specialist / Senior Forensic Examiner",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The specialist is providing technical support to decrypt data from devices associated with the Epstein investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-09-05",
+      "title": "Successful password recovery for Mac NYC024353",
+      "description": "The STXU specialist provides a list of passwords recovered from another system, including 'irving'. The New York examiner confirms the password 'irving' worked, granting access to the machine for imaging.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Senior Forensic Examiner",
+        "IT Specialist / Senior Forensic Examiner",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-10-16 to 2019-10-21",
+      "title": "Attempt to crack password on another MacBook Pro",
+      "description": "The New York examiner requests help for a second MacBook Pro (NYC024364) with password hint 'stroke4'. The STXU unit recovers a password ('asdfasdfasdfasdr'), which successfully unlocks the drive.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Senior Forensic Examiner",
+        "IT Specialist / Senior Forensic Examiner"
+      ]
+    },
+    {
+      "date": "2019-10-17",
+      "title": "Technical acquisition difficulties",
+      "description": "The New York examiner details difficulties acquiring a drive from a MacBook Pro, requiring removal of the drive and use of a TXI device, and notes uncertainty about whether the machine was used by Epstein or someone else.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Senior Forensic Examiner"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami (location of FBI STXU/OTD)",
+    "New York (location of the case and primary examiner)"
+  ],
+  "keyFacts": [
+    "FBI forensic examiners successfully cracked passwords on multiple Apple computers seized in the Epstein investigation, including one with a user account 'JEE' (Jeffrey E. Epstein).",
+    "Recovered passwords from Epstein's systems included 'irving', 'neptunemermaid', 'asdfasdfasdf' (for a Gmail account), and 'yes8\"tin' (for AirPort routers).",
+    "The forensic effort involved collaboration between the FBI's New York office and the Secure Technologies Exploitation Unit (STXU) in Miami.",
+    "The case is tracked under the unique case file number (UCFN) 3IE-NY-3027571.",
+    "Examiners noted the possibility that at least one system they examined was used by someone other than Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-21T01:13:09.042Z"
+}

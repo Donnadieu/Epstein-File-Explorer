@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA00155970.pdf",
+  "dataSet": "9",
+  "documentType": "FBI email correspondence",
+  "dateOriginal": "2021-12-15",
+  "summary": "An FBI Special Agent from the New York Field Office emails an FBI office in Los Angeles requesting assistance with conducting 'knock and talk' interviews at two residences in California. The individuals are potential defense witnesses in the ongoing Ghislaine Maxwell trial, and the prosecution seeks to contact them before they testify.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the ongoing trial mentioned in the email. The communication is related to her defense team's planned witnesses.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "The sender of the email from the FBI New York Field Office's Child Exploitation/Human Trafficking Desk, requesting assistance to contact potential defense witnesses in California.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Special Agent",
+      "relationshipType": "investigation-target",
+      "description": "The FBI Special Agent is involved in the investigation/trial proceedings against Ghislaine Maxwell, seeking to interview her potential defense witnesses.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-16",
+      "title": "Ghislaine Maxwell trial resumes",
+      "description": "The email states the trial is set to resume the morning after the email was sent.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-12-15",
+      "title": "FBI request for witness interviews",
+      "description": "An FBI agent requests assistance from LA field office to conduct 'knock and talk' interviews with two potential defense witnesses residing in California.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)",
+    "California (CA)",
+    "Los Angeles (LA) (implied as recipient location)"
+  ],
+  "keyFacts": [
+    "The FBI was actively seeking to interview potential defense witnesses for Ghislaine Maxwell's trial as late as December 2021.",
+    "The prosecution used 'knock and talk' tactics—visiting witnesses at their homes—to attempt to speak with them before testimony.",
+    "Two specific potential witnesses resided in California, though their identities are not disclosed in this email excerpt.",
+    "The communication shows coordination between FBI field offices (New York and Los Angeles) during the trial.",
+    "The defense had notified the prosecution of their witness list, including these two individuals."
+  ],
+  "analyzedAt": "2026-02-21T00:01:23.223Z"
+}

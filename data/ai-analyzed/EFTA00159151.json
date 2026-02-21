@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA00159151.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-11-02",
+  "summary": "This document is an FBI 302 form summarizing a witness interview conducted via Webex on November 2, 2021, in preparation for trial testimony. The witness, referred to as 'DM', provides details about her recruitment, a trip to New Mexico involving Jeffrey Epstein and Ghislaine Maxwell, and an incident of sexual abuse during a massage. The document clarifies previously undisclosed or different recollections.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused Perpetrator",
+      "category": "key figure",
+      "context": "Discussed as having a relationship with the witness's boyfriend ('II'), paying for a trip to New Mexico, and being present during a massage where sexual abuse occurred.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused Co-conspirator",
+      "category": "key figure",
+      "context": "Described as collecting the witness from the airport, hosting her in New Mexico, introducing her to 'professional massage', and participating in the sexual abuse during the massage.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Annie",
+      "role": "Associate of Witness",
+      "category": "associate",
+      "context": "A person the witness ('DM') communicates with about once a month. They have spoken about revisiting memories of the events but not in detail.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "DM",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell recruited DM, hosted her on a trip to New Mexico, introduced her to a massage, and participated in sexually abusing her during that massage.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "DM",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein paid for DM's trip to New Mexico and was present in the room during a massage where she was sexually abused. He or Maxwell touched her breasts.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "II",
+      "relationshipType": "social/financial",
+      "description": "Epstein had a relationship with II and was 'opening doors' for him. This relationship made the witness (DM) feel she couldn't disclose the abuse.",
+      "strength": 4
+    },
+    {
+      "person1": "DM",
+      "person2": "II",
+      "relationshipType": "social",
+      "description": "II was DM's boyfriend at the time of the events described. She felt confused and awkward about the abuse because of Epstein's relationship with II.",
+      "strength": 4
+    },
+    {
+      "person1": "DM",
+      "person2": "Annie",
+      "relationshipType": "social",
+      "description": "DM communicates with Annie about once a month. They have spoken about how strange it is to revisit memories but have not gone into detail.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both were involved in orchestrating DM's trip to New Mexico and were present during the sexual abuse incident in the massage room.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-02",
+      "title": "Witness Interview for Trial Prep",
+      "description": "An FBI interview conducted via Webex with witness 'DM' to prepare for trial testimony, clarifying her recollections of events involving Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "DM"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Trip to New Mexico",
+      "description": "A trip for which Jeffrey Epstein paid. DM was collected from the airport by Ghislaine Maxwell, who hosted her at a luxurious ranch. During this trip, DM was introduced to a 'professional massage' which led to sexual abuse.",
+      "category": "travel",
+      "significance": 5,
+      "personsInvolved": [
+        "DM",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Sexual Abuse During Massage in New Mexico",
+      "description": "During a massage at the New Mexico ranch, Ghislaine Maxwell began giving DM a massage and touched her breasts. Jeffrey Epstein entered the room unexpectedly. DM is unsure if Epstein or Maxwell was the one who touched her.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "DM",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2021-05-18",
+      "title": "Initial Phone Call Regarding Testimony",
+      "description": "A brief, non-substantive phone call to discuss the logistics of testifying at trial and trial preparation.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New Mexico",
+    "New York"
+  ],
+  "keyFacts": [
+    "Witness DM describes a trip to a ranch in New Mexico, paid for by Jeffrey Epstein, where she was hosted by Ghislaine Maxwell.",
+    "During this trip, Ghislaine Maxwell introduced DM to a 'professional massage,' which escalated into sexual abuse where DM's breasts were touched. Jeffrey Epstein was present in the room during this incident.",
+    "DM felt unable to tell her boyfriend ('II') about an earlier abusive incident in New York because of Jeffrey Epstein's beneficial relationship with him.",
+    "The document is an FBI 302 form summarizing witness interview notes, indicating it is part of official law enforcement preparation for a trial, likely the Ghislaine Maxwell trial.",
+    "The witness's recollections were clarified during this interview, suggesting evolving or previously undisclosed details were being formally recorded for the trial."
+  ],
+  "analyzedAt": "2026-02-21T03:05:55.632Z"
+}

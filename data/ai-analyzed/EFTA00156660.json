@@ -1,0 +1,54 @@
+{
+  "fileName": "EFTA00156660.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2023-08-25",
+  "summary": "This is an email chain between FBI personnel discussing the search for a government witness who previously testified as a 'metadata expert' in the Ghislaine Maxwell case. The SDNY is seeking this person to serve as an expert in the FTX case and is looking for case precedent. The emails identify the Maxwell case agent and confirm the involvement of the FBI NY Child Exploitation & Human Trafficking Task Force.",
+  "persons": [
+    {
+      "name": "SSA Clarke",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Identified as being with the FBI NY Child Exploitation & Human Trafficking Task Force and is copied on an email regarding the Maxwell case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "The subject of the 'Maxwell case' referenced throughout the emails, for which the SDNY is seeking a previous metadata expert witness.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "SSA Clarke",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "SSA Clarke is part of the FBI task force that handled the Maxwell case, indicating an investigative connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-08-25",
+      "title": "Email inquiry about Maxwell case expert",
+      "description": "FBI personnel exchange emails to identify a metadata expert who testified in the Ghislaine Maxwell case, as the SDNY seeks to use the same expert in the FTX case.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "SSA Clarke",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "The SDNY is seeking a government witness who previously testified as a metadata expert in the Ghislaine Maxwell case to support the FTX case.",
+    "The FBI NY Child Exploitation & Human Trafficking Task Force handled the Maxwell case, with SSA Clarke identified as involved.",
+    "The correspondence indicates an effort to find case precedent from the Maxwell prosecution for use in the unrelated FTX financial case."
+  ],
+  "analyzedAt": "2026-02-21T00:40:12.417Z"
+}

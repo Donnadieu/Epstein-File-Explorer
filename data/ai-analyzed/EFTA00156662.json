@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA00156662.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2023-08-25",
+  "summary": "This document is a chain of emails from August 25, 2023, between FBI and possibly DOJ personnel discussing the search for a government witness who previously testified as a metadata expert in the Ghislaine Maxwell case. The SDNY is seeking this person to serve as an expert in the FTX case and is looking for case precedent.",
+  "persons": [
+    {
+      "name": "SSA Nem",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Appears as the sender of the final email in the chain, thanking someone for a response.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steve",
+      "role": "Potential witness/expert",
+      "category": "witness",
+      "context": "Mentioned as someone who may have testified as a metadata expert in the Maxwell case and is being considered for the FTX case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "SSA Clarke",
+      "role": "FBI Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Identified as the case agent for the Maxwell case in an email response.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steve",
+      "person2": "SSA Clarke",
+      "relationshipType": "witness-case agent",
+      "description": "Steve was a potential witness/expert in the Maxwell case for which SSA Clarke was the case agent.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-08-25",
+      "title": "Email inquiry about Maxwell case expert",
+      "description": "SDNY prosecutors inquire with FBI personnel to identify a government witness who testified as a metadata expert in the Ghislaine Maxwell case, for potential use in the FTX case.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve",
+        "SSA Clarke"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office",
+    "FBI New York Field Office Child Exploitation/Human Trafficking",
+    "FBI NY Child Exploitation & Human Trafficking Task Force"
+  ],
+  "keyFacts": [
+    "The SDNY is seeking a metadata expert witness from the Ghislaine Maxwell case to potentially testify in the FTX case.",
+    "SSA Clarke is identified as the case agent for the Maxwell investigation.",
+    "The court in the Maxwell case did not allow law enforcement officers to give opinion testimony as experts under Rule 702, though one individual did testify regarding metadata.",
+    "The communication shows coordination between the USAO and FBI regarding witness testimony and case precedent.",
+    "The emails are dated August 2023, indicating ongoing legal preparations related to the FTX case."
+  ],
+  "analyzedAt": "2026-02-21T00:40:36.055Z"
+}

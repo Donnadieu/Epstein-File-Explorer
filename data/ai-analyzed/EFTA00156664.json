@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA00156664.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2023-07-27",
+  "summary": "This is an FBI internal email chain from July 27, 2023, documenting a public tip received by the FBI National Threat Operations Center (NTOC). The tipster, a complainant, alleges that a person named 'S' plans to file a $600 million lawsuit against the FBI for mishandling the Epstein case and claims that another individual, 'V', is lying about being an Epstein victim. The document records the tip for situational awareness and potential follow-up by the New York Field Office.",
+  "persons": [
+    {
+      "name": "Jennifer Freeman",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney with Marsh Law who is reportedly handling the planned lawsuit against the FBI mentioned by the complainant.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "FBI Point of Contact",
+      "category": "law enforcement",
+      "context": "Unnamed detective from the NY Field Office who was previously contacted by 'V' with video evidence, according to the complainant's report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Recipient of the forwarded tip information in the New York Field Office, asked if the information should be written up to the case file.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "S",
+      "person2": "V",
+      "relationshipType": "accuser-subject",
+      "description": "S is making allegations against V, claiming V is lying about being an Epstein victim and was hired by Epstein as an adult.",
+      "strength": 3
+    },
+    {
+      "person1": "S",
+      "person2": "Jennifer Freeman",
+      "relationshipType": "client-attorney",
+      "description": "S states that attorney Jennifer Freeman is handling the planned lawsuit against the FBI.",
+      "strength": 2
+    },
+    {
+      "person1": "V",
+      "person2": "Detective",
+      "relationshipType": "informant-contact",
+      "description": "V reportedly had a point of contact with an FBI detective and sent video evidence to him.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-07-27",
+      "title": "FBI NTOC Tip Received",
+      "description": "A complainant ('S') calls the FBI National Threat Operations Center to report plans for a lawsuit against the FBI and allegations about another individual's claims regarding the Epstein case.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "S",
+        "V",
+        "Jennifer Freeman"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)"
+  ],
+  "keyFacts": [
+    "A tipster ('S') informed the FBI of plans to file a $600 million lawsuit against the FBI for its alleged mishandling of the Epstein case.",
+    "The tipster made specific allegations that an individual ('V') is falsely claiming to be an Epstein victim and was instead hired as an adult by Epstein to create 'pedophilic art' of his victims.",
+    "Attorney Jennifer Freeman of Marsh Law is identified as handling the planned lawsuit.",
+    "The tip mentions that 'V' had previously sent video evidence to an FBI detective in the New York Field Office.",
+    "The document is an internal FBI record of a public tip, forwarded for situational awareness and potential action by the New York Division."
+  ],
+  "analyzedAt": "2026-02-21T00:40:54.489Z"
+}

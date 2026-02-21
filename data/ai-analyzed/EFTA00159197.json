@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA00159197.pdf",
+  "dataSet": "9",
+  "documentType": "court declaration",
+  "dateOriginal": "2020-07-01",
+  "summary": "This is a declaration by David Rodgers, a former pilot for Jeffrey Epstein, submitted in response to a subpoena in a civil lawsuit (Jane Doe v. Darren Indyke, et al.). Rodgers provides his flight logs from 1994-1997 and describes his record-keeping practices, noting the appearance of two specific names in the logs, though he has no specific recollection of the flights.",
+  "persons": [
+    {
+      "name": "David Rodgers",
+      "role": "Declarant, Former Pilot",
+      "category": "staff",
+      "context": "Submits this declaration in response to a subpoena. He worked as a pilot for Jeffrey Epstein and Epstein-affiliated entities beginning in 1991 and provides his flight logs from 1994-1997.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Employer, Client",
+      "category": "key figure",
+      "context": "Referred to as 'Mr. Jeffrey Epstein.' David Rodgers worked as a pilot for him and Epstein-affiliated entities beginning in 1991.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Named as a defendant in the civil lawsuit 'Jane Doe v. Darren Indyke, et al.' This declaration is part of that case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "Named as the plaintiff in the civil lawsuit 'Jane Doe v. Darren Indyke, et al.' The subpoena prompting this declaration was issued by the plaintiff.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "David Rodgers",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodgers worked as a pilot for Epstein and Epstein-affiliated entities beginning in 1991.",
+      "strength": 4
+    },
+    {
+      "person1": "David Rodgers",
+      "person2": "Jane Doe",
+      "relationshipType": "legal",
+      "description": "Rodgers is responding to a subpoena from the plaintiff, Jane Doe, in a civil lawsuit.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-06-10",
+      "title": "Subpoena Issued to David Rodgers",
+      "description": "The plaintiff, Jane Doe, issued a subpoena to David Rodgers directing him to produce documents and appear for a deposition.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jane Doe",
+        "David Rodgers"
+      ]
+    },
+    {
+      "date": "2020-07-01",
+      "title": "Execution of Declaration",
+      "description": "David Rodgers executed this declaration under penalty of perjury, submitting it in lieu of appearing for a deposition.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "David Rodgers"
+      ]
+    },
+    {
+      "date": "1994-1997",
+      "title": "Flight Log Period",
+      "description": "The period covered by the flight logs attached to the declaration, during which Rodgers regularly recorded passenger information.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "David Rodgers"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "David Rodgers, a pilot for Jeffrey Epstein since 1991, submitted flight logs from 1994-1997 as part of a civil lawsuit.",
+    "Rodgers' practice was to record passenger names in the flight log's 'Remarks' column if he knew or learned them, otherwise using generic descriptions like '1 Female'.",
+    "The declaration notes the first appearance of two specific names in the flight logs, but Rodgers states he has no specific recollection of those flights from over 23 years ago.",
+    "The document is subject to a protective order limiting the disclosure of certain paragraphs (7, 8, 9, 10, 15, and 17)."
+  ],
+  "analyzedAt": "2026-02-21T03:11:49.016Z"
+}

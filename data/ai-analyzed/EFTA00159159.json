@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA00159159.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-05-20",
+  "summary": "This document is an FBI 302 form summarizing a May 20, 2021, video teleconference (VTC) interview with a law enforcement officer (referred to as 'U'). The officer recounts their involvement in a 2005 investigation into Jeffrey Epstein, including a prior theft investigation at Epstein's home and the execution of a search warrant on October 20, 2005. The officer describes the search process, their impression that Epstein had been tipped off, and their later role in transferring evidence to the FBI.",
+  "persons": [
+    {
+      "name": "Sami",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Participated in the VTC interview as an AUSA.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation / Homeowner",
+      "category": "key figure",
+      "context": "Reported a burglary at his home between 2003-2005 where $12,000 was stolen. His residence was searched on October 20, 2005, pursuant to a warrant. The officer saw photos of him with the Pope and Fidel Castro in his home.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "U",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "U investigated a burglary at Epstein's home and later participated in the 2005 search warrant execution of Epstein's residence.",
+      "strength": 3
+    },
+    {
+      "person1": "Sami",
+      "person2": "U",
+      "relationshipType": "interviewer-interviewee",
+      "description": "AUSA Sami conducted the VTC interview with officer U regarding the 2005 Epstein investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-2005",
+      "title": "Burglary at Epstein's Home",
+      "description": "Jeffrey Epstein reported a burglary at his home early one morning, stating about $12,000 was stolen from a briefcase in his ground floor office. The investigation pointed to a former butler/valet. Officer U was called to investigate but was told to confine the investigation to the specific area where the money was taken.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "U"
+      ]
+    },
+    {
+      "date": "2005-10-20",
+      "title": "Search of Epstein's Residence",
+      "description": "Law enforcement, including officer U, executed a search warrant at Jeffrey Epstein's Palm Beach residence. The officer had a sense the place had been 'really cleaned' and that Epstein may have been tipped off. The search was video recorded, evidence was photographed and logged, and concluded around 3 PM.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "U"
+      ]
+    },
+    {
+      "date": "2021-05-20",
+      "title": "VTC Interview with Officer U",
+      "description": "A video teleconference interview was conducted with officer U by AUSAs, including Sami, to discuss U's involvement in the 2005 Epstein investigation.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": [
+        "U",
+        "Sami"
+      ]
+    }
+  ],
+  "locations": [
+    "Jeffrey Epstein's Palm Beach residence (the house searched on October 20, 2005)"
+  ],
+  "keyFacts": [
+    "Officer U investigated a theft at Jeffrey Epstein's home between 2003-2005, where $12,000 was stolen, allegedly by a former butler/valet.",
+    "During the 2005 theft investigation, U entered Epstein's home and saw photographs of Epstein with the Pope and with Fidel Castro.",
+    "During the October 20, 2005, search of Epstein's home, officer U had a sense the place had been 'really cleaned' and that Epstein may have been tipped off about the search.",
+    "Officer U's later role was to transfer all Palm Beach Police Department evidence from the 2005 Epstein investigation to the FBI.",
+    "The document references that a clip of the video from the 2005 search was included in episode three of the Netflix series 'Filthy Rich.'"
+  ],
+  "analyzedAt": "2026-02-21T03:06:44.823Z"
+}

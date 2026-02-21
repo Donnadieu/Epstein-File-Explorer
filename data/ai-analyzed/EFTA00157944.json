@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA00157944.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2011-03-12",
+  "summary": "This FBI document from March 2011 summarizes the ongoing investigation into Jeffrey Epstein for child prostitution, initiated in 2006. It details the recruitment of underage girls for massages and sexual acts, the identification of a victim, and her subsequent cooperation with investigators, including her allegations that Epstein instructed her to have sex with his associates.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The central figure in the child prostitution investigation. The document details his alleged procurement of underage girls for massages and sexual acts at his residence and his instructions to a victim to have sex with his associates.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Epstein's personal assistant",
+      "category": "associate",
+      "context": "Identified by a victim as Epstein's personal assistant who provided money to the victim and located additional females to provide massages.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Maxwell is identified as Epstein's personal assistant who facilitated his activities by providing money to victims and locating other females.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim (name redacted)",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein allegedly recruited the underage victim, paid her for massages/sexual acts, paid for her apartment, and instructed her to have sex with his associates.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Victim (name redacted)",
+      "relationshipType": "financial",
+      "description": "Maxwell provided money from Epstein to the victim.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-07",
+      "title": "FBI investigation initiated",
+      "description": "The Palm Beach Police Department requested FBI assistance for an ongoing investigation into Jeffrey Epstein procuring underage girls for massages and sexual acts.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Victim notification",
+      "description": "A victim was served a letter by the Legal Attaché (Legat) notifying her she was a victim of a crime.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim (name redacted)"
+      ]
+    },
+    {
+      "date": "2011-03-17",
+      "title": "Scheduled victim interview",
+      "description": "A victim interview was scheduled to occur at the U.S. Attorney's Office in West Palm Beach at 11:00 a.m.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim (name redacted)"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "Royal Palm Beach, Florida (apartment complex where Epstein paid for a victim's apartment)",
+    "West Palm Beach, Florida (U.S. Attorney's Office)"
+  ],
+  "keyFacts": [
+    "The FBI investigation into Jeffrey Epstein for child prostitution began in July 2006 at the request of the Palm Beach Police Department.",
+    "A victim alleged Epstein instructed her to have sex with his associates both in the United States and overseas, and she claimed to have records to support her allegations.",
+    "Ghislaine Maxwell is explicitly identified in the document as Epstein's personal assistant who provided money to a victim and located other females for massages.",
+    "Epstein allegedly paid for an apartment in Royal Palm Beach, Florida, for one of the victims.",
+    "The document shows ongoing investigative activity in 2011, including scheduling a victim interview, indicating the case was still active years after its initiation."
+  ],
+  "analyzedAt": "2026-02-21T02:05:55.241Z"
+}

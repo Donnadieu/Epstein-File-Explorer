@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA00157539.pdf",
+  "dataSet": "9",
+  "documentType": "police report",
+  "dateOriginal": "2006-07-13",
+  "summary": "This is a Palm Beach Police Department incident report from July 13, 2006, documenting attempts to interview former employees of Jeffrey Epstein. The report details unsuccessful attempts to locate Juan Alessi and Alfredo Rodriguez at their homes, followed by a phone call with Alessi who was then represented by an attorney who instructed police not to speak with him. The report concludes with plans to issue subpoenas to the former employees.",
+  "persons": [
+    {
+      "name": "Juan Alessi",
+      "role": "Former houseman of Jeffrey Epstein",
+      "category": "staff",
+      "context": "Former employee of Epstein who was contacted by police for an interview. He initially spoke with police but was later represented by an attorney who instructed police not to speak with him.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Former houseman of Jeffrey Epstein",
+      "category": "staff",
+      "context": "Former employee of Epstein whom police attempted to locate and interview at his home but were unsuccessful.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Donald Morrell",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who represented Juan Alessi and contacted police to instruct them not to speak with his client.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The former employer of Alessi and Rodriguez, who is the subject of the police investigation mentioned in the report.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Juan Alessi",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Alessi is identified as a former houseman (employee) of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez is identified as a former houseman (employee) of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Juan Alessi",
+      "person2": "Donald Morrell",
+      "relationshipType": "attorney-client",
+      "description": "Attorney Donald Morrell represented Juan Alessi and instructed police not to speak with his client.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-07-13",
+      "title": "Police attempt to interview former Epstein employees",
+      "description": "Palm Beach police officers traveled to the homes of Juan Alessi and Alfredo Rodriguez, former employees of Jeffrey Epstein, to interview them as part of an investigation. Neither was home, so business cards were left.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Juan Alessi",
+        "Alfredo Rodriguez"
+      ]
+    },
+    {
+      "date": "2006-07-13",
+      "title": "Attorney blocks interview with Alessi",
+      "description": "After police made telephone contact with Juan Alessi, attorney Donald Morrell called police to state he represented Alessi and did not want police speaking with his client.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Juan Alessi",
+        "Donald Morrell"
+      ]
+    },
+    {
+      "date": "2006-07-13",
+      "title": "Decision to issue subpoenas",
+      "description": "Following the blocked interview, police contacted the State Attorney's Office and confirmed that subpoenas would be issued to the former employees to assist in the investigation.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Police were actively investigating Jeffrey Epstein in July 2006 and sought to interview his former employees, Juan Alessi and Alfredo Rodriguez.",
+    "An attorney, Donald Morrell, intervened to prevent police from speaking with his client, Juan Alessi, indicating legal representation was quickly secured for potential witnesses.",
+    "The police report indicates the investigation was ongoing and that subpoenas would be issued to compel testimony from the former employees.",
+    "The document is subject to a protective order covering specific paragraphs (7, 8, 9, 10, 15, and 17), indicating sensitive or restricted information."
+  ],
+  "analyzedAt": "2026-02-21T01:39:57.302Z"
+}

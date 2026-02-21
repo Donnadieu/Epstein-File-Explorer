@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA00158594.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-09-02",
+  "summary": "This is an FBI 302 interview summary from September 2021, where an unnamed individual (likely a victim/witness) provides information about Jeffrey Epstein and Ghislaine Maxwell. The witness discusses being extorted, Epstein paying for her education and giving cash to teachers, and being contacted by attorneys including Alan Dershowitz. The document also references photographs of the witness at ages 14 and 19.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as paying for the witness's photo and education, giving her cash to give to teachers, and acting as a surrogate parent. The witness mentions media stuff regarding Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator",
+      "category": "key figure",
+      "context": "Described alongside Epstein as acting like a surrogate parent to the witness when she was 13, sending a driver to pick her up.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alan Dershowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Mentioned as someone the witness's extorter wanted to talk about after presenting a new bill. The witness said no.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Described together as acting like surrogate parents to the witness when she was 13, sending a driver for her.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alan Dershowitz",
+      "relationshipType": "legal",
+      "description": "The extorter mentioned wanting to talk about Alan Dershowitz in the context of dealing with media stuff regarding Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-09-02",
+      "title": "FBI Interview of Witness",
+      "description": "An unnamed witness was interviewed by an Assistant United States Attorney and an FBI Special Agent. The witness provided information about extortion, Epstein's financial support, and her childhood interactions with Epstein and Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The witness was extorted for money, with the extorter claiming they could make media issues regarding Jeffrey Epstein 'go away'.",
+    "Jeffrey Epstein gave the witness cash to give to her teachers and paid for her school tuition upfront, getting angry when she left after one semester.",
+    "When the witness was 13, Jeffrey Epstein and Ghislaine Maxwell acted as 'surrogate parents,' sending a driver to pick her up from school.",
+    "The extorter mentioned attorney Alan Dershowitz, wanting to talk about him after presenting a new bill to the witness.",
+    "The witness identified herself in two photographs: one at age 14 (paid for by Epstein) and one at age 19."
+  ],
+  "analyzedAt": "2026-02-21T02:33:05.306Z"
+}

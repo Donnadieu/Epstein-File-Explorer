@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA00156007.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2021-12-15",
+  "summary": "This is an email from an NYPD detective assigned to an FBI task force, reporting on attempts to contact an individual (name redacted) regarding the Jeffrey Epstein case. The detective spoke with the individual's wife, who relayed that the individual does not wish to speak, is not a witness, and is not scheduled to testify for the defense.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of investigation",
+      "category": "key figure",
+      "context": "The email concerns an investigation related to Jeffrey Epstein, and the contacted individual's wife specifically asks if the call is about him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "NYPD Detective / FBI Task Force",
+      "category": "law enforcement",
+      "context": "The sender of the email, who is attempting to contact an individual as part of the FBI's investigation into the Epstein case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "The detective is conducting an investigation related to Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-12-12",
+      "title": "Initial contact attempt",
+      "description": "The detective called a phone number associated with an individual and spoke with a female (later identified as the individual's wife) who said the individual was not home.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Detective"
+      ]
+    },
+    {
+      "date": "2021-12-15",
+      "title": "Follow-up call and refusal",
+      "description": "The detective called again and spoke with the same woman, who relayed that the individual does not wish to talk, is not a witness, and is not scheduled to testify for the defense in the Epstein case.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "A law enforcement officer attempted to contact an individual (name redacted) as part of the Epstein investigation in December 2021.",
+    "The individual's wife acted as an intermediary, stating the individual did not want to speak and was not a witness.",
+    "The wife specifically asked if the contact was about Jeffrey Epstein, indicating the case's notoriety.",
+    "The wife stated the individual was not scheduled to testify for the defense in the Epstein case.",
+    "The communication shows ongoing investigative activity related to the Epstein case years after his death."
+  ],
+  "analyzedAt": "2026-02-21T00:06:01.601Z"
+}

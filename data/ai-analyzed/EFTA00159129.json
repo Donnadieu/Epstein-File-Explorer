@@ -1,0 +1,127 @@
+{
+  "fileName": "EFTA00159129.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-04-29",
+  "summary": "This document is a note summarizing a telephone conference on April 29, 2021, with an FBI agent (C20) to prepare for trial testimony regarding the investigation of Jeffrey Epstein and Ghislaine Maxwell. The agent details her involvement in searches of Epstein's properties in New York and the US Virgin Islands, witness interviews, and interactions with Epstein's house manager and financial manager.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The subject of the investigation; his properties in New York and the US Virgin Islands were searched.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-accused",
+      "category": "key figure",
+      "context": "The investigation involves her alongside Epstein; the agent is preparing to testify at trial regarding the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Merwin Delacruz",
+      "role": "House Manager",
+      "category": "staff",
+      "context": "Epstein's house manager who informed FBI agents during a second search that he was instructed to give certain items to Richard Kahn.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Financial Manager",
+      "category": "associate",
+      "context": "Epstein's financial manager; the house manager was instructed to give seized items to him, and the agent had a phone conversation with him regarding a suitcase seized from the NY property.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both are subjects of the same investigation, with the agent preparing to testify at their trial.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Merwin Delacruz",
+      "relationshipType": "employer-employee",
+      "description": "Delacruz is identified as Epstein's house manager, responsible for managing his NY property.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Kahn",
+      "relationshipType": "financial",
+      "description": "Kahn is Epstein's financial manager, involved in handling items seized from Epstein's property.",
+      "strength": 3
+    },
+    {
+      "person1": "Merwin Delacruz",
+      "person2": "Richard Kahn",
+      "relationshipType": "professional",
+      "description": "Delacruz was instructed to give seized items from Epstein's property to Kahn, indicating a chain of custody for evidence.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-04-29",
+      "title": "Trial Preparation Phone Conference",
+      "description": "A phone conversation was held with an FBI agent to prepare for her testimony at the trial of Jeffrey Epstein and Ghislaine Maxwell regarding the search of Epstein's NY residence.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (C20)",
+        "AUSA"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Search of Epstein's NY Property",
+      "description": "The FBI conducted a search of Jeffrey Epstein's property in New York, seizing items including a suitcase.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI Agent (C20)",
+        "Jeffrey Epstein",
+        "Merwin Delacruz",
+        "Richard Kahn"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Search of Epstein's USVI Property",
+      "description": "The FBI conducted a search of Jeffrey Epstein's property in the US Virgin Islands as part of the investigation.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (C20)",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Second Search of NY Property",
+      "description": "The FBI returned for a second search of Epstein's NY property, during which house manager Merwin Delacruz stated he was instructed to give certain items to Richard Kahn.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "FBI Agent (C20)",
+        "Merwin Delacruz",
+        "Richard Kahn"
+      ]
+    }
+  ],
+  "locations": [
+    "New York (NY) - Location of Epstein's property that was searched",
+    "US Virgin Islands (USVI) - Location of Epstein's property that was searched"
+  ],
+  "keyFacts": [
+    "An FBI agent assisted with searches of Jeffrey Epstein's properties in New York and the US Virgin Islands, witness interviews, and evidence review for the Epstein/Maxwell investigation.",
+    "During a second search of Epstein's NY property, house manager Merwin Delacruz informed agents he was instructed to give seized items to Epstein's financial manager, Richard Kahn.",
+    "The agent had a phone conversation with Richard Kahn regarding a suitcase seized from the NY property, indicating Kahn's involvement in handling evidence.",
+    "The document is a trial preparation note, indicating ongoing legal proceedings against Epstein and Maxwell as of April 2021."
+  ],
+  "analyzedAt": "2026-02-21T03:04:12.777Z"
+}

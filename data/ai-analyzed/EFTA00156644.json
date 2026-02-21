@@ -1,0 +1,207 @@
+{
+  "fileName": "EFTA00156644.pdf",
+  "dataSet": "9",
+  "documentType": "email chain",
+  "dateOriginal": "2023-06-28 to 2023-07-05",
+  "summary": "An email chain between FBI agents and prosecutors discussing a new victim who came forward with allegations of sexual abuse by Leon Black, facilitated by Jeffrey Epstein and Ghislaine Maxwell via a coach named Mary. The document details the victim's allegations, investigative steps, and coordination between the FBI and the District Attorney's Office.",
+  "persons": [
+    {
+      "name": "Leon Black",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "A financier accused by a victim of a violent sexual assault in 2001 at Epstein's townhouse, introduced by Epstein for a massage.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused/Trafficker",
+      "category": "key figure",
+      "context": "Deceased financier who trafficked the victim, introduced her to Leon Black, and took money Black left after the assault.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Accused/Trafficker",
+      "category": "key figure",
+      "context": "Epstein's associate who was introduced to the victim by Mary and was controlling of the victim's body and travel.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Mary",
+      "role": "Coach/Trafficker",
+      "category": "associate",
+      "context": "Also known as Mary Small/Combs/Petit/Fleming, a gymnastics/cheer/dance coach who introduced the victim to Maxwell and Epstein, and was physically abusive.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Eddie Small",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Mary's significant other (Edward Charles Small) who drove the victim from Virginia to New York to Epstein's townhouse.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Adam Horowitz",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney who represented the victim in initial meetings with the District Attorney's Office regarding civil claims against Leon Black.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeanne Christensen",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Attorney representing the victim in connection with civil claims related to Epstein and others, including Leon Black.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Larry",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "A pilot who flew the victim and others to St. Thomas on Epstein's plane.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Staley",
+      "role": "Accused",
+      "category": "associate",
+      "context": "An individual the victim alleged also abused her, believed by investigators but without independent corroboration.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mary",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Mary introduced the victim to Ghislaine Maxwell, and they were both controlling of the victim's body and activities.",
+      "strength": 4
+    },
+    {
+      "person1": "Mary",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Mary introduced the victim to Jeffrey Epstein and would receive expensive gifts from him after the victim's trips.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Leon Black",
+      "relationshipType": "social/financial",
+      "description": "Epstein introduced the victim to Leon Black by name, telling her she would give him a massage, facilitating the alleged assault.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell and Epstein together trafficked the victim, flying her to various locations and controlling her.",
+      "strength": 5
+    },
+    {
+      "person1": "Mary",
+      "person2": "Eddie Small",
+      "relationshipType": "personal",
+      "description": "Mary's significant other who assisted in transporting the victim to Epstein's townhouse.",
+      "strength": 4
+    },
+    {
+      "person1": "Victim",
+      "person2": "Leon Black",
+      "relationshipType": "victim-perpetrator",
+      "description": "The victim alleges a violent sexual assault by Leon Black in 2001 at Epstein's townhouse, resulting in injury.",
+      "strength": 5
+    },
+    {
+      "person1": "Adam Horowitz",
+      "person2": "Victim",
+      "relationshipType": "attorney-client",
+      "description": "Horowitz represented the victim in initial meetings with the District Attorney's Office regarding civil claims.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeanne Christensen",
+      "person2": "Victim",
+      "relationshipType": "attorney-client",
+      "description": "Christensen represents the victim in connection with civil claims related to Epstein, Black, and Staley.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2001",
+      "title": "Alleged sexual assault by Leon Black",
+      "description": "The victim alleges a violent sexual assault by Leon Black at Jeffrey Epstein's New York townhouse, introduced by Epstein for a massage, resulting in bleeding and needing medical attention.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Leon Black",
+        "Jeffrey Epstein",
+        "Victim"
+      ]
+    },
+    {
+      "date": "2001/2002",
+      "title": "Introduction to Ghislaine Maxwell",
+      "description": "Mary introduced the victim to Ghislaine Maxwell when the victim was 17, as part of what was described as an apprentice program.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Mary",
+        "Ghislaine Maxwell",
+        "Victim"
+      ]
+    },
+    {
+      "date": "2023-01",
+      "title": "District Attorney's Office interview",
+      "description": "The victim spoke with the District Attorney's Office in January 2023, represented by attorney Adam Horowitz, regarding allegations against Leon Black.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim",
+        "Adam Horowitz"
+      ]
+    },
+    {
+      "date": "2023-06-28",
+      "title": "Memo to file call",
+      "description": "A call documented in a memo summarizing the victim's allegations, investigative steps, and coordination with the District Attorney's Office.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "FBI agents",
+        "Prosecutors"
+      ]
+    },
+    {
+      "date": "2022-02",
+      "title": "Civil complaint against Leon Black filed",
+      "description": "A civil complaint was filed against Leon Black with specific allegations about a massage and biting, though redacted at the time.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Leon Black",
+        "Victim",
+        "Adam Horowitz"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Field Office (FBI)",
+    "Vienna, VA",
+    "4386 Catlett Road, Midland VA",
+    "New York townhouse (Jeffrey Epstein's)",
+    "Palm Beach",
+    "St. Thomas",
+    "Vienna Youth Inc. (dance gym)"
+  ],
+  "keyFacts": [
+    "A new victim alleged a violent sexual assault by financier Leon Black in 2001 at Jeffrey Epstein's New York townhouse, facilitated by Epstein.",
+    "The victim was introduced to Epstein and Ghislaine Maxwell by her coach, Mary (aka Mary Small/Combs/Petit/Fleming), who was physically abusive and controlling.",
+    "The victim required medical attention after the alleged assault by Black, and Epstein took money Black left behind.",
+    "Investigators found medical records from 2011-2023 corroborating PTSD and anxiety from sexual assault, though independent corroboration of the Black allegation was not found.",
+    "The email chain shows ongoing coordination between the FBI and the District Attorney's Office in 2023 regarding this victim and potential investigation of other traffickers."
+  ],
+  "analyzedAt": "2026-02-21T00:39:31.789Z"
+}

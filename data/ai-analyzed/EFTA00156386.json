@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA00156386.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2022-06-27",
+  "summary": "This is an email chain forwarded to the FBI, in which Maria Hall (or Maria Fiallo) identifies herself as a victim of identity theft and robbery, and requests to speak with FBI staff about Ghislaine Maxwell. The email appears to be a report or tip from a potential victim or witness.",
+  "persons": [
+    {
+      "name": "Maria Hall",
+      "role": "Email sender, self-identified victim",
+      "category": "other",
+      "context": "Sends an email to the FBI identifying herself as a victim of identity theft and robbery related to Ghislaine Maxwell, and requests to speak with staff, preferably in Spanish.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maria Fiallo",
+      "role": "Referenced name, possibly same as Maria Hall",
+      "category": "other",
+      "context": "Referenced in the email subject line and body, likely an alternate name or misspelling for Maria Hall, identifying as a victim.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Subject of the report",
+      "category": "key figure",
+      "context": "Named by the email sender as the person connected to the alleged identity theft and robbery the sender is reporting.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Maria Hall",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maria Hall claims to be a victim of identity theft and robbery related to Ghislaine Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2022-06-27",
+      "title": "Email forwarded to FBI regarding Maxwell",
+      "description": "An email from Maria Hall is forwarded to the FBI per standard practice, reporting identity theft and robbery connected to Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Maria Hall",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Maria Hall (or Maria Fiallo) contacted the FBI in June 2022, claiming to be a victim of identity theft and robbery related to Ghislaine Maxwell.",
+    "The email was forwarded to the FBI per their standard practice for external tips or reports.",
+    "The sender requested to speak with FBI staff, preferably in Spanish, indicating a potential language preference or need."
+  ],
+  "analyzedAt": "2026-02-21T00:19:20.689Z"
+}

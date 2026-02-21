@@ -1,0 +1,177 @@
+{
+  "fileName": "EFTA00157608.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-02-19",
+  "summary": "This is an FBI FD-302 interview summary of Juan Alessi, a former employee of Jeffrey Epstein, conducted on February 19, 2020. Alessi describes his role as a driver and house manager, details about picking up young girls, the presence of Ghislaine Maxwell, and the change in Epstein's behavior after Maxwell's arrival. He also lists numerous high-profile visitors to Epstein's home.",
+  "persons": [
+    {
+      "name": "Juan Alessi",
+      "role": "Former employee/driver/house manager for Jeffrey Epstein",
+      "category": "staff",
+      "context": "The primary interviewee. He was employed by Jeffrey Epstein and describes his duties, including picking up young girls from school and home, and observing the household dynamics.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Employer, accused",
+      "category": "key figure",
+      "context": "The subject's former employer. Alessi describes his behavior, travel habits, interactions with young girls, and the change in his demeanor after Ghislaine Maxwell arrived.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Jeffrey Epstein",
+      "category": "key figure",
+      "context": "Described as arriving after Eva Andersson and changing the household dynamics. Alessi states most orders came from her and that younger girls came into the picture when she arrived.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Eva Andersson",
+      "role": "Former associate of Jeffrey Epstein",
+      "category": "associate",
+      "context": "Described as being pleasant and present before Ghislaine Maxwell. Alessi states she was there for about five months and that Epstein was pleasant before Maxwell arrived.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Prince Andrew",
+      "role": "Visitor to Epstein's home",
+      "category": "political",
+      "context": "Mentioned as a guest who arrived at the airport and was driven by Alessi. Also listed among the many different people seen at Epstein's home.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Visitor to Epstein's home",
+      "category": "political",
+      "context": "Listed among the many different people, including senators, seen at Epstein's home.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Robert Kennedy",
+      "role": "Visitor to Epstein's home",
+      "category": "political",
+      "context": "Listed among the many different people seen at Epstein's home. Likely refers to Robert F. Kennedy Jr.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ruby",
+      "role": "Friend of Maxwell and Epstein",
+      "category": "associate",
+      "context": "A British individual whose last name Alessi could not remember. Described as being around all the time and friends with Maxwell and Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Juan Alessi",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Alessi was employed by Epstein as a driver and house manager. He describes following orders from Epstein and Maxwell, and eventually leaving the employment because 'they wanted him to leave.'",
+      "strength": 5
+    },
+    {
+      "person1": "Juan Alessi",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Alessi received most of his orders from Maxwell after she arrived. He states her arrival changed everything and that 'younger girls came into the picture.'",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Maxwell is described as being with Epstein, giving orders to staff, and traveling with him. Alessi states they were always together with others, never alone.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eva Andersson",
+      "relationshipType": "associate",
+      "description": "Andersson was present before Maxwell. Alessi thought Epstein and Andersson remained friends and that she still visited him after marrying.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Eva Andersson",
+      "relationshipType": "associate",
+      "description": "Alessi thought they had a friendship but were not close, and that they may have hated each other.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Prince Andrew",
+      "relationshipType": "social",
+      "description": "Prince Andrew is listed as a guest who visited Epstein's home and was driven by Alessi from the airport.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Ruby",
+      "relationshipType": "social",
+      "description": "Ruby is described as a friend of Maxwell and Epstein who was around all the time.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-02-19",
+      "title": "FBI Interview of Juan Alessi",
+      "description": "The FBI conducted an in-person interview with former Epstein employee Juan Alessi regarding his knowledge of Epstein's activities, staff, and visitors.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Juan Alessi"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Alessi's Employment with Epstein Ends",
+      "description": "Alessi left Epstein's employment because 'they wanted him to leave.' He hated that he was not allowed to look Epstein in the eyes at the end.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Juan Alessi",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Arrival of Ghislaine Maxwell",
+      "description": "Alessi describes a significant change in the household when Ghislaine Maxwell arrived, stating 'everything went to hell' and that younger girls came into the picture.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein",
+        "Eva Andersson"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Frequent Movie Outings",
+      "description": "Epstein, Maxwell, and others, including young girls, went to high-class movie theaters in Boca Raton and West Palm Beach almost every night when Epstein was in town.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Epstein's home in Palm Beach",
+    "Boca Raton (movie theater location)",
+    "West Palm Beach (movie theater location)",
+    "Boynton Beach Cinema (mentioned theater)"
+  ],
+  "keyFacts": [
+    "Juan Alessi, a former Epstein employee, stated that when Ghislaine Maxwell arrived, 'everything went to hell' and 'younger girls came into the picture.'",
+    "Alessi described picking up young girls, including one from school, and driving them to Epstein's home at the direction of Epstein and Maxwell.",
+    "Alessi recalled seeing a 'black costume' in Maxwell's closet along with 'all kinds of toys in a basket.'",
+    "Alessi listed numerous high-profile visitors to Epstein's home, including Prince Andrew, Donald Trump, Robert Kennedy, and senators.",
+    "Alessi stated that Epstein told him he was 'helping' one of the young girls, and that the girl's mother told Epstein, 'Whatever you want to do with [her], she can come anytime.'"
+  ],
+  "analyzedAt": "2026-02-21T01:48:45.606Z"
+}

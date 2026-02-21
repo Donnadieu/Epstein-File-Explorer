@@ -1,0 +1,135 @@
+{
+  "fileName": "EFTA00158480.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-11-14",
+  "summary": "This is an FBI 302 interview report of a victim, referred to as 'Victim-1', conducted on November 14, 2019. The victim describes meeting Jeffrey Epstein and Ghislaine Maxwell as a teenager, details of travel arrangements and financial support, and recounts sexual abuse beginning at age 14, with Maxwell's involvement in facilitating and normalizing the abuse.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central perpetrator described by the victim. The victim recounts meeting him as a teenager, traveling on his private jet, and details of sexual abuse beginning when she was 14 years old.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Facilitator",
+      "category": "key figure",
+      "context": "Described as being present when the victim first met Epstein, arranging travel, and being present during sexual encounters. The victim states Maxwell helped facilitate the abuse and acted to normalize the situation.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Victim-1",
+      "role": "Victim / Witness",
+      "category": "victim",
+      "context": "The interviewee. She describes meeting Epstein and Maxwell around age 13-14, traveling on Epstein's private jet, receiving financial support for education, and being sexually abused by Epstein starting at age 14, with Maxwell's involvement.",
+      "mentionCount": 15
+    },
+    {
+      "name": "AUSA",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Present for the interview of Victim-1. Identified as an Assistant United States Attorney.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "co-conspirator",
+      "description": "Described as being together frequently, especially in Florida. Maxwell facilitated travel and appointments for the victim to see Epstein and was present during sexual encounters.",
+      "strength": 5
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell met the victim as a teenager, arranged her travel to see Epstein, was present during sexual abuse, and acted to normalize the abusive situation.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein met the victim as a teenager, paid for her education, arranged for her to travel to him, and initiated sexual contact with her when she was 14 years old.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "Approx. 2001-2002",
+      "title": "First meeting with Epstein and Maxwell",
+      "description": "Victim-1 first met Jeffrey Epstein and Ghislaine Maxwell while at summer camp in Interlochen, Michigan, around the time she was 13 turning 14 years old.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim-1",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "Approx. 2002",
+      "title": "First flight on Epstein's private jet",
+      "description": "When Victim-1 was 14 years old, she flew for the first time on Epstein's private jet from Florida to New York.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Victim-1",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "Approx. 2002",
+      "title": "First sexual contact with Epstein",
+      "description": "Jeffrey Epstein first had sexual contact with Victim-1 when she was 14 years old. Ghislaine Maxwell helped facilitate the situation and normalize it.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Victim-1",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "Approx. 2004-2005",
+      "title": "Travels to Santa Fe, New Mexico",
+      "description": "When Victim-1 was 17 turning 18, she traveled to Santa Fe, New Mexico with Epstein and Maxwell approximately three times.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Victim-1",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-11-14",
+      "title": "FBI Interview of Victim-1",
+      "description": "Victim-1 was interviewed by the FBI regarding her experiences with Jeffrey Epstein and Ghislaine Maxwell. An AUSA was present.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Victim-1",
+        "AUSA"
+      ]
+    }
+  ],
+  "locations": [
+    "Interlochen, Michigan",
+    "New York, New York",
+    "Florida",
+    "Santa Fe, New Mexico",
+    "JFK Airport"
+  ],
+  "keyFacts": [
+    "The victim first met Jeffrey Epstein and Ghislaine Maxwell around age 13-14 at summer camp in Interlochen, Michigan.",
+    "Sexual abuse by Jeffrey Epstein began when the victim was 14 years old.",
+    "Ghislaine Maxwell facilitated the abuse by arranging travel, being present during encounters, and acting to normalize the situation for the victim.",
+    "Epstein's office or drivers would contact the victim, often through her mother, to arrange visits, and travel tickets were purchased without asking her first.",
+    "The victim described at least one incident in New York where Maxwell was present in a 'dungeon like' room during sexual contact."
+  ],
+  "analyzedAt": "2026-02-21T02:27:20.468Z"
+}

@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA00159168.pdf",
+  "dataSet": "9",
+  "documentType": "trial preparation memo",
+  "dateOriginal": "2021-11-22",
+  "summary": "This document is a preparation memo for a virtual trial preparation conference (VTC Prep) involving an Assistant U.S. Attorney (AUSA), a Detective (Det.), and an FBI Special Agent (SA). It confirms travel logistics and funding arrangements for trial testimony from the U.S. Attorney's Office for the Southern District of New York (USAO SDNY).",
+  "persons": [
+    {
+      "name": "AUSA",
+      "role": "Assistant U.S. Attorney",
+      "category": "legal",
+      "context": "Participant in the virtual trial preparation conference (VTC Prep) and responsible for confirming travel logistics for trial.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Det.",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Participant in the virtual trial preparation conference (VTC Prep) and will receive travel logistics for trial.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "AUSA",
+      "person2": "Det.",
+      "relationshipType": "professional",
+      "description": "Collaborating on trial preparation and logistics as part of the prosecution team.",
+      "strength": 3
+    },
+    {
+      "person1": "AUSA",
+      "person2": "SA",
+      "relationshipType": "professional",
+      "description": "Collaborating on trial preparation and logistics as part of the prosecution team.",
+      "strength": 3
+    },
+    {
+      "person1": "Det.",
+      "person2": "SA",
+      "relationshipType": "professional",
+      "description": "Both are law enforcement participants in the trial preparation conference.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-11-22",
+      "title": "Virtual Trial Preparation Conference",
+      "description": "A virtual preparation conference (VTC Prep) was held involving an AUSA, a Detective, and an FBI Special Agent to prepare for trial testimony and confirm travel logistics.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "AUSA",
+        "Det.",
+        "SA"
+      ]
+    }
+  ],
+  "locations": [
+    "USAO SDNY (U.S. Attorney's Office for the Southern District of New York)"
+  ],
+  "keyFacts": [
+    "A trial preparation conference was held virtually on November 22, 2021.",
+    "Travel logistics (hotel, flight, car service, per diem) for trial testimony were confirmed and will be provided by the USAO SDNY.",
+    "The document is subject to a protective order covering specific paragraphs (7, 8, 9, 10, 15, and 17)."
+  ],
+  "analyzedAt": "2026-02-21T03:08:03.019Z"
+}

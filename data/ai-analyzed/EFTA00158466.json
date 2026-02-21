@@ -1,0 +1,119 @@
+{
+  "fileName": "EFTA00158466.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-09-02",
+  "summary": "An FBI 302 form documenting an interview with an individual (likely a witness or associate) conducted on September 2, 2021. The interviewee provides second-hand information about a woman's past relationship with Jeffrey Epstein and Ghislaine Maxwell, including allegations of coercion, financial support in exchange for sexual acts, and social interactions with prominent figures.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Described as a wealthy man who provided money to a woman in exchange for sexual acts, manipulated her, and hosted parties with other girls present. Mentioned in relation to the interviewee's partner's past.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Alleged Co-conspirator",
+      "category": "key figure",
+      "context": "Identified by the interviewee's partner as a woman who was with Epstein, would bring and coach girls, encouraging them. Her name was learned by the interviewee when Epstein went to jail more recently.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Donald Trump",
+      "role": "Social Contact",
+      "category": "political",
+      "context": "Mentioned by the interviewee's partner as someone she met with Epstein at Mar-A-Lago around age 15, where Epstein made a comment to Trump about her. Also described as a regular visitor at Epstein's.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Prince Albert",
+      "role": "Social Contact",
+      "category": "other",
+      "context": "Mentioned by the interviewee's partner as being at Epstein's 'a lot'.",
+      "mentionCount": 1
+    },
+    {
+      "name": "AUSA",
+      "role": "Federal Prosecutor",
+      "category": "legal",
+      "context": "Present for the FBI interview of the witness.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is described as being with Epstein, bringing girls, coaching them, and encouraging them.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Donald Trump",
+      "relationshipType": "social",
+      "description": "Trump was described as a regular visitor at Epstein's, and an interaction between them regarding a girl is recounted.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Prince Albert",
+      "relationshipType": "social",
+      "description": "Prince Albert was said to be at Epstein's 'a lot'.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-2009",
+      "title": "Witness begins paying attention to Epstein situation",
+      "description": "The interviewee states the situation came on his radar around 2008-2009, and his partner began telling him bits of information.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2021-09-02",
+      "title": "FBI Interview of Witness",
+      "description": "The FBI interviews a witness who provides second-hand information about Epstein, Maxwell, and alleged victims.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "AUSA"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Alleged coercive encounter at Epstein's",
+      "description": "The witness recounts a story told by his partner about a girl crying because she didn't want to go into 'the room' at Epstein's, but the partner would go in. The partner said she had to 'do things' and 'it wasn't fun' for the money received.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Meeting with Donald Trump at Mar-A-Lago",
+      "description": "The witness's partner claims she met Donald Trump with Epstein at Mar-A-Lago around age 15, where Epstein said 'Oh she's a good one right' and Trump responded 'Yeah'.",
+      "category": "social",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Donald Trump"
+      ]
+    }
+  ],
+  "locations": [
+    "Mar-A-Lago"
+  ],
+  "keyFacts": [
+    "A witness provides second-hand allegations that his partner received money from Jeffrey Epstein in exchange for sexual acts, which she described as not fun and something she 'had to do'.",
+    "The witness identifies Ghislaine Maxwell as the woman who was with Epstein, brought girls, and coached them, though he did not learn her real name until Epstein went to jail more recently.",
+    "The witness's partner alleged she met Donald Trump with Epstein at Mar-A-Lago around age 15 and that Trump was a regular visitor at Epstein's.",
+    "The partner's disclosures about her experiences with Epstein were often made when she was drunk, and she would regret them the next day.",
+    "The document indicates both the witness and his partner were meeting with government investigators around the time of this interview."
+  ],
+  "analyzedAt": "2026-02-21T02:26:02.020Z"
+}

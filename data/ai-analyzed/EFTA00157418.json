@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA00157418.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-10-08",
+  "summary": "This document is an email chain from October 2020 between an FBI forensic examiner and a federal prosecutor regarding the coordination and technical details of loading digital evidence (image and video files) from seized devices onto a drive for discovery in a case. The emails discuss CART evidence numbers, IB numbers, and device identification for items seized from New York and Virgin Islands searches, with a final discovery deadline of November 9, 2020.",
+  "persons": [
+    {
+      "name": "M, I. (NY) (FBI)",
+      "role": "NY CART Coordinator Senior Forensic Examiner",
+      "category": "law enforcement",
+      "context": "FBI forensic examiner coordinating the transfer and decoding of digital evidence from seized devices for discovery, providing technical details about evidence numbers and device identification.",
+      "mentionCount": 8
+    },
+    {
+      "name": "M, (USANYS)",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Federal prosecutor from the Southern District of New York managing discovery, requesting specific evidence numbers and device information to meet a November 9 deadline.",
+      "mentionCount": 6
+    },
+    {
+      "name": "(NYPD)",
+      "role": "NYPD representative",
+      "category": "law enforcement",
+      "context": "Copied on emails regarding evidence coordination between the FBI and the U.S. Attorney's office.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Special Agent FBI New York Field Office",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Introduced the forensic examiner and prosecutor to facilitate connection over discovery questions related to the case.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "M, I. (NY) (FBI)",
+      "person2": "M, (USANYS)",
+      "relationshipType": "professional collaboration",
+      "description": "Working together on evidence discovery, with the FBI examiner providing technical evidence details to the prosecutor for case preparation.",
+      "strength": 4
+    },
+    {
+      "person1": "M, I. (NY) (FBI)",
+      "person2": "(NYPD)",
+      "relationshipType": "inter-agency coordination",
+      "description": "Copied on evidence-related communications, indicating coordination between FBI and NYPD on the case.",
+      "strength": 2
+    },
+    {
+      "person1": "M, (USANYS)",
+      "person2": "(NYPD)",
+      "relationshipType": "inter-agency coordination",
+      "description": "Copied on emails regarding evidence discovery, showing coordination between the prosecutor's office and NYPD.",
+      "strength": 2
+    },
+    {
+      "person1": "Special Agent FBI New York Field Office",
+      "person2": "M, I. (NY) (FBI)",
+      "relationshipType": "colleague",
+      "description": "FBI colleagues; the special agent facilitated the connection between the forensic examiner and the prosecutor.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent FBI New York Field Office",
+      "person2": "M, (USANYS)",
+      "relationshipType": "professional collaboration",
+      "description": "Connected the prosecutor with the forensic examiner to address discovery questions.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-09",
+      "title": "Final discovery deadline",
+      "description": "Deadline for completing discovery reviews and productions in the case, as referenced by the prosecutor.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "M, (USANYS)"
+      ]
+    },
+    {
+      "date": "2020-10-08",
+      "title": "Evidence decoding and coordination",
+      "description": "FBI forensic examiner provides decoded evidence numbers for multiple devices and coordinates loading image and video files for discovery.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "M, I. (NY) (FBI)",
+        "M, (USANYS)"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York",
+    "New York (NY search)",
+    "Virgin Islands (VI search)",
+    "Bronx (evidence control location)"
+  ],
+  "keyFacts": [
+    "The document reveals active evidence processing and discovery coordination in October 2020 for a case involving devices seized from New York and Virgin Islands searches.",
+    "A final discovery deadline of November 9, 2020, was looming, creating time pressure for the prosecution team.",
+    "The FBI forensic examiner was decoding CART evidence numbers and IB numbers for numerous devices, including Macs, thumb drives, and external drives.",
+    "COVID-19 was cited as impacting efforts to rebuild/recover some drives, potentially hindering evidence recovery.",
+    "The email chain shows detailed inter-agency coordination (FBI, US Attorney's Office, NYPD) on technical evidence matters under a protective order."
+  ],
+  "analyzedAt": "2026-02-21T01:28:29.552Z"
+}

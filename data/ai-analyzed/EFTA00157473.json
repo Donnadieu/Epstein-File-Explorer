@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA00157473.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-26",
+  "summary": "This is an email chain from October 26, 2020, between FBI and NYPD personnel discussing the need for photos of hard drives (specifically Seagate path 100 drives and drives labeled 29, 30, 32) as part of an investigation, likely related to a search warrant. The communication is urgent, with a deadline to send the warrant to a judge by the end of the day.",
+  "persons": [
+    {
+      "name": "NY CART Coordinator Senior Forensic Examiner",
+      "role": "Forensic Examiner",
+      "category": "law enforcement",
+      "context": "The individual is asked to provide photos of hard drives taken during an investigation and notes they did not take photos of certain drives.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Detective",
+      "role": "Detective, NYPD / FBI Child Exploitation Human Trafficking Task Force",
+      "category": "law enforcement",
+      "context": "The detective is coordinating the request for hard drive photos and needs approval to send a warrant to a judge by the end of the day.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "Special Agent, FBI New York Field Office Child Exploitation/Human Trafficking",
+      "category": "law enforcement",
+      "context": "The special agent is following up on the request for photos and wants to schedule a call to discuss the warrant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Detective",
+      "person2": "NY CART Coordinator Senior Forensic Examiner",
+      "relationshipType": "colleague",
+      "description": "The detective is requesting forensic photos from the examiner as part of a joint investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Special Agent",
+      "person2": "NY CART Coordinator Senior Forensic Examiner",
+      "relationshipType": "colleague",
+      "description": "The special agent is also coordinating with the forensic examiner regarding the photos and a warrant.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective",
+      "person2": "Special Agent",
+      "relationshipType": "colleague",
+      "description": "Both are working on the same investigation involving hard drives and a warrant, indicating collaboration between NYPD and FBI.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-26",
+      "title": "Request for Hard Drive Photos",
+      "description": "Law enforcement officials urgently request photos of specific hard drives (Seagate path 100 and drives 29, 30, 32) to support a warrant submission to a judge.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Detective",
+        "NY CART Coordinator Senior Forensic Examiner",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email chain from October 26, 2020, showing active investigation coordination between FBI and NYPD on a child exploitation/human trafficking case.",
+    "Investigators are seeking photos of specific hard drives (Seagate path 100 and drives labeled 29, 30, 32) as evidence.",
+    "There is urgency to obtain these photos to get approval to send a warrant to a judge by the end of the day.",
+    "The forensic examiner states they did not take photos of certain hard drives, indicating potential gaps in evidence collection.",
+    "The communication is subject to a protective order, highlighting the sensitive nature of the investigation."
+  ],
+  "analyzedAt": "2026-02-21T01:34:17.134Z"
+}

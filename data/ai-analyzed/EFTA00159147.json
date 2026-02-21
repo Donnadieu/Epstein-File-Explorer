@@ -1,0 +1,161 @@
+{
+  "fileName": "EFTA00159147.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2021-01-29",
+  "summary": "This is an FBI 302 form documenting a video conference interview conducted on January 29, 2021, with an individual referred to as 'Doe'. The interviewee provides information about a close friend, referred to as 'Jane Doe', and her experiences with Jeffrey Epstein and Ghislaine Maxwell, including a trip to a ranch in New Mexico where an inappropriate massage and assault occurred, and a later incident in New York.",
+  "persons": [
+    {
+      "name": "Doe",
+      "role": "Interviewee / Friend of Victim",
+      "category": "witness",
+      "context": "Interviewed by the FBI via video conference. Provides second-hand information about his close friend 'Jane Doe' and her experiences with Jeffrey Epstein and Ghislaine Maxwell.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Jane Doe",
+      "role": "Victim / Friend of Interviewee",
+      "category": "victim",
+      "context": "The subject of the interview. Described as a close friend of the interviewee 'Doe' since high school. She recounted to him experiences of being massaged and assaulted by Jeffrey Epstein in New Mexico, and being inappropriately touched by him during a Broadway show in New York.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused Perpetrator",
+      "category": "key figure",
+      "context": "Described as a wealthy benefactor who arranged a trip for 'Jane Doe' to New Mexico. He was present during an inappropriate massage where 'Jane Doe' was fondled, and later crawled into bed with her. He also inappropriately touched her during a Broadway show in New York.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate of Epstein",
+      "category": "associate",
+      "context": "Described as charming and well put together. She picked up 'Jane Doe', took her shopping, arranged the trip to the New Mexico ranch, and was present during the inappropriate massage. She is presented as facilitating the encounter with Epstein.",
+      "mentionCount": 10
+    },
+    {
+      "name": "AUSA",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Mentioned as being present or advising on the interview of 'Doe'.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Conducted or was present for the interview of 'Doe'.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Doe",
+      "person2": "Jane Doe",
+      "relationshipType": "social",
+      "description": "Close friends since high school, dated on and off, and remained confidants. Doe was the person Jane Doe first told about the Epstein incidents.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein arranged a trip for Jane Doe and was the perpetrator of sexual assault during a massage and later in a bedroom in New Mexico, and inappropriate touching in New York.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "Maxwell facilitated Jane Doe's trip to New Mexico, picked her up, took her shopping, and was present during the inappropriate massage, acting as a facilitator for Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Maxwell is described as arranging the trip and being present with Epstein during the inappropriate massage of Jane Doe, indicating a collaborative role.",
+      "strength": 4
+    },
+    {
+      "person1": "Doe",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Doe's connection is indirect, through hearing about Epstein from his friend Jane Doe. He also met Epstein once during a trip to New York.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "Summer (Year not specified)",
+      "title": "Trip to New Mexico Ranch",
+      "description": "Jeffrey Epstein, presented as a wealthy benefactor, arranged a trip for Jane Doe to a ranch in New Mexico after her junior year of high school. She believed it was an enrichment program with other girls, but she was the only one there.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jane Doe",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "Summer (Year not specified)",
+      "title": "Inappropriate Massage and Assault in New Mexico",
+      "description": "At the New Mexico ranch, Ghislaine Maxwell took Jane Doe for a massage. During the massage, Jeffrey Epstein entered the room. Jane Doe was fondled. Later, Epstein followed her to her bedroom and got into bed to cuddle with her.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jane Doe",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "Late Fall/Winter (Year not specified)",
+      "title": "Jane Doe First Discloses Assault to Doe",
+      "description": "Jane Doe first told her friend Doe about the Epstein incident in New Mexico. She became emotional and cried while discussing it during a time they were becoming physically intimate.",
+      "category": "testimony",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe",
+        "Doe"
+      ]
+    },
+    {
+      "date": "Year not specified",
+      "title": "Broadway Show Incident in New York",
+      "description": "Jane Doe and Doe visited New York. During a Broadway show, Jeffrey Epstein sat between them and inappropriately touched Jane Doe's leg.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe",
+        "Jeffrey Epstein",
+        "Doe"
+      ]
+    },
+    {
+      "date": "2021-01-29",
+      "title": "FBI Interview of Doe",
+      "description": "The FBI conducted a video conference interview with Doe regarding his knowledge of his friend Jane Doe's experiences with Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Doe",
+        "AUSA",
+        "Special Agent"
+      ]
+    }
+  ],
+  "locations": [
+    "New Mexico (specifically a ranch)",
+    "New York, New York, United States"
+  ],
+  "keyFacts": [
+    "The document is an FBI 302 interview summary, indicating an active investigation into Epstein/Maxwell as of January 2021.",
+    "A victim ('Jane Doe') described a pattern where Ghislaine Maxwell facilitated a trip to a New Mexico ranch under false pretenses (promising an enrichment program with other girls), leading to an assault by Jeffrey Epstein.",
+    "The assault involved an inappropriate massage where both Epstein and Maxwell were present, followed by Epstein getting into bed with the victim.",
+    "A separate incident involved Epstein inappropriately touching the same victim during a Broadway show in New York, with her friend ('Doe') present.",
+    "The victim first disclosed the assault to her close friend ('Doe') in high school and revisited the topic emotionally years later, indicating lasting trauma."
+  ],
+  "analyzedAt": "2026-02-21T03:05:26.142Z"
+}

@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA00157455.pdf",
+  "dataSet": "9",
+  "documentType": "email correspondence",
+  "dateOriginal": "2020-10-26",
+  "summary": "This is an email chain from October 26, 2020, between FBI personnel and a NYPD detective regarding forensic examination of hard drives seized from a Seagate path. The emails discuss sending photos of the hard drives and coordinating a call to finalize a warrant for judicial approval.",
+  "persons": [
+    {
+      "name": "NY CART Coordinator Senior Forensic Examiner",
+      "role": "Forensic examiner",
+      "category": "law enforcement",
+      "context": "The individual is asked to send photos of hard drives taken during forensic examination and is coordinating a call with the FBI.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force Officer",
+      "role": "Task force detective",
+      "category": "law enforcement",
+      "context": "The detective is involved in the investigation, needs approval to send a warrant to a judge, and is coordinating with forensic examiners.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "role": "FBI special agent",
+      "category": "law enforcement",
+      "context": "The special agent is part of the email chain, involved in reviewing the warrant and coordinating the forensic examination process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "NY CART Coordinator Senior Forensic Examiner",
+      "person2": "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force Officer",
+      "relationshipType": "professional collaboration",
+      "description": "Coordinating on forensic examination of hard drives and warrant preparation for a child exploitation/human trafficking investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "NY CART Coordinator Senior Forensic Examiner",
+      "person2": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "relationshipType": "professional collaboration",
+      "description": "Communicating about sending photos of hard drives and scheduling a call related to the investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force Officer",
+      "person2": "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking",
+      "relationshipType": "professional collaboration",
+      "description": "Working together on a child exploitation/human trafficking case, with the detective needing the agent's go-ahead for a warrant.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-10-26",
+      "title": "Coordination for hard drive forensic photos and warrant",
+      "description": "FBI personnel and a NYPD detective coordinate via email to obtain photos of seized hard drives and finalize a warrant for judicial approval.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "NY CART Coordinator Senior Forensic Examiner",
+        "Detective NYPD / FBI Child Exploitation Human Trafficking Task Force Officer",
+        "Special Agent FBI New York Field Office Child Exploitation/Human Trafficking"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document is an email chain from October 26, 2020, related to an FBI/NYPD child exploitation and human trafficking investigation.",
+    "It references forensic examination of 9 Seagate path 100 hard drives, with a request for photos of the drives.",
+    "A warrant is being prepared and needs approval from the FBI before being sent to a judge.",
+    "The communication highlights coordination between forensic examiners, detectives, and special agents in a time-sensitive manner."
+  ],
+  "analyzedAt": "2026-02-21T01:32:31.471Z"
+}

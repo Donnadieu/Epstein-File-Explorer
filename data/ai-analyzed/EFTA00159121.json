@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA00159121.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302 / Evidence Inventory",
+  "dateOriginal": "2020-05-22",
+  "summary": "This document is an FBI evidence inventory and tracking email related to the Jeffrey Epstein case. It lists a large quantity of digital evidence seized, including computers, hard drives, USB drives, and other media from New York and an island location, likely Little St. James. The email from an FBI Special Agent coordinates evidence tracking between the original Florida case and the New York investigation.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Subject of Investigation / Accused",
+      "category": "key figure",
+      "context": "The entire evidence inventory is related to the investigation into Jeffrey Epstein. The case is referenced as the 'Epstein case' and 'Child Exploitation/Human Trafficking Task Force' matter.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steve",
+      "role": "Evidence Processor / Technician",
+      "category": "law enforcement",
+      "context": "Mentioned in the email as the person who provided a rundown on what evidence has been processed for the Epstein case to help coordinate evidence numbers.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Flatley",
+      "role": "Unspecified (likely law enforcement or technician)",
+      "category": "law enforcement",
+      "context": "Mentioned in the email regarding the status of Mac computer processing from the island evidence, indicating there were more that needed to be processed.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Steve",
+      "relationshipType": "investigation",
+      "description": "Steve processed digital evidence seized from Jeffrey Epstein as part of the FBI investigation.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Flatley",
+      "relationshipType": "investigation",
+      "description": "Flatley was involved in processing or managing evidence (specifically Mac computers) seized from an island location connected to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York",
+    "Island (context suggests Little St. James, US Virgin Islands)"
+  ],
+  "keyFacts": [
+    "A massive inventory of digital evidence was seized in the Epstein investigation, including at least 22+ hard drives, numerous desktop/laptop computers (Apple/Mac, Dell, HP, Lenovo, Toshiba, Sony), USB drives, cameras, voice recorders, servers, and over 100 assorted CDs/DVDs.",
+    "Evidence was categorized as originating from 'New York' and an 'Island' location, indicating seizures from multiple properties associated with Epstein.",
+    "The evidence is linked to the 'original Florida case,' showing continuity between the earlier Florida investigation and the subsequent New York federal case.",
+    "The document is an internal FBI coordination email aimed at syncing evidence item numbers from the Computer Analysis and Response Team (CART) with the case's serial numbers.",
+    "The evidence is subject to a protective order (paragraphs 7, 8, 9, 10, 15, and 17), restricting its public disclosure."
+  ],
+  "analyzedAt": "2026-02-21T03:03:48.964Z"
+}

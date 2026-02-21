@@ -1,0 +1,233 @@
+{
+  "fileName": "EFTA00160044.pdf",
+  "dataSet": "9",
+  "documentType": "search warrant application and affidavit",
+  "dateOriginal": "2019-07-06",
+  "summary": "This document is an FBI Special Agent's affidavit in support of a second search warrant for Jeffrey Epstein's New York residence at 9 East 71st Street, filed on July 6, 2019. It details the initial search conducted that day, observations corroborating a victim's account, and the basis for seeking a new warrant to seize specific evidence of sex trafficking crimes. The attached sealed indictment from July 2, 2019, charges Epstein with sex trafficking conspiracy and sex trafficking of minors.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Target Subject / Defendant",
+      "category": "key figure",
+      "context": "The financier and target of the investigation, charged with sex trafficking conspiracy and sex trafficking of minors. The affidavit states he owned, possessed, and controlled the New York residence where the abuse occurred.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Barbara Moses",
+      "role": "U.S. Magistrate Judge",
+      "category": "legal",
+      "context": "The judge who signed the initial search warrant on July 6, 2019, and before whom the affidavit was sworn.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "The U.S. Attorney who signed the sealed indictment against Jeffrey Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Victim-1",
+      "role": "Victim / Witness",
+      "category": "victim",
+      "context": "A victim of Epstein's sexual abuse between 2002-2005 at the New York residence. Provided detailed descriptions of the interior, including a torso bust, taxidermied dog, and massage room, which were corroborated during the search. She is also pursuing a civil claim against Epstein.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Employee-1",
+      "role": "Employee / Associate",
+      "category": "associate",
+      "context": "A New York-based employee of Epstein who, on his behalf, contacted victims like Minor Victim-1 to schedule appointments for sexual encounters at the New York residence.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Employee-2",
+      "role": "Employee / Associate",
+      "category": "associate",
+      "context": "An assistant of Epstein who, along with Employee-3, was responsible for scheduling sexual encounters with minor victims in Florida. Made calls from New York to victims in Florida to schedule appointments.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Employee-3",
+      "role": "Employee / Associate",
+      "category": "associate",
+      "context": "An assistant of Epstein who, along with Employee-2, was responsible for scheduling sexual encounters with minor victims. Placed calls to Minor Victim-3 to schedule appointments.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Minor Victim-1",
+      "role": "Victim / Recruiter",
+      "category": "victim",
+      "context": "A minor victim recruited in 2002, repeatedly abused by Epstein at the New York residence, paid hundreds per encounter. Epstein asked her age and she answered truthfully. She was also encouraged to recruit other girls.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Minor Victim-2",
+      "role": "Victim / Recruiter",
+      "category": "victim",
+      "context": "A minor victim recruited in 2004, repeatedly abused by Epstein at the Palm Beach residence, paid hundreds per encounter. She was also encouraged to recruit other girls.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Minor Victim-3",
+      "role": "Victim / Recruiter",
+      "category": "victim",
+      "context": "A minor victim recruited in 2005, repeatedly abused by Epstein at the Palm Beach residence, paid hundreds per encounter. Epstein asked her age and she answered truthfully. She was also encouraged to recruit other girls.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein sexually abused Victim-1 on multiple occasions at his New York residence between 2002-2005 when she was under 18.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-1",
+      "relationshipType": "employer-employee",
+      "description": "Employee-1, a New York-based employee, acted on Epstein's behalf to contact victims and schedule sexual encounters at the New York residence.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-2",
+      "relationshipType": "employer-employee",
+      "description": "Employee-2, an assistant, was responsible for scheduling sexual encounters with minor victims in Florida, making calls from New York on Epstein's behalf.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Employee-3",
+      "relationshipType": "employer-employee",
+      "description": "Employee-3, an assistant, was responsible for scheduling sexual encounters with minor victims, including placing calls to Minor Victim-3.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-1",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein abused Minor Victim-1 repeatedly at the New York residence, paid her, and encouraged her to recruit other girls. He asked and knew her age.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-2",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein abused Minor Victim-2 repeatedly at the Palm Beach residence, paid her, and encouraged her to recruit other girls.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Victim-3",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein abused Minor Victim-3 repeatedly at the Palm Beach residence, paid her, and encouraged her to recruit other girls. He asked and knew her age.",
+      "strength": 4
+    },
+    {
+      "person1": "Employee-1",
+      "person2": "Minor Victim-1",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-1 placed a phone call to Minor Victim-1 in 2004 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-2",
+      "person2": "Minor Victim-2",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-2 placed a phone call to Minor Victim-2 in 2005 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-2",
+      "person2": "Minor Victim-3",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-2 placed a phone call to Minor Victim-3 in Florida in 2005 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Employee-3",
+      "person2": "Minor Victim-3",
+      "relationshipType": "facilitator-victim",
+      "description": "Employee-3 placed a phone call to Minor Victim-3 in 2004 to schedule an appointment for her to engage in paid sex acts with Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-02",
+      "title": "Grand Jury Indictment of Jeffrey Epstein",
+      "description": "A grand jury in the Southern District of New York returned a sealed indictment charging Jeffrey Epstein with sex trafficking conspiracy and sex trafficking of minors.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Geoffrey S. Berman"
+      ]
+    },
+    {
+      "date": "2019-07-06",
+      "title": "Initial Search of 9 East 71st Street",
+      "description": "Law enforcement executed the first search warrant at Epstein's New York residence, commencing at approximately 6 p.m. They observed items corroborating Victim-1's account and froze the scene to seek a new warrant.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Barbara Moses"
+      ]
+    },
+    {
+      "date": "2002",
+      "title": "Beginning of Alleged Abuse Pattern",
+      "description": "The indictment alleges that from at least 2002, Epstein began enticing and recruiting dozens of minor girls to engage in sex acts with him at his New York and Palm Beach residences.",
+      "category": "abuse",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Minor Victim-1"
+      ]
+    },
+    {
+      "date": "2004",
+      "title": "Abuse and Recruitment of Minor Victims",
+      "description": "Specific overt acts in 2004 include Epstein enticing Minor Victim-1, Minor Victim-2, and Minor Victim-3, and Employee-1 calling Minor Victim-1 to schedule an appointment.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Minor Victim-1",
+        "Minor Victim-2",
+        "Minor Victim-3",
+        "Employee-1"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": "Continued Abuse and Scheduling",
+      "description": "Specific overt acts in 2005 include Employee-2 calling Minor Victim-2 and Minor Victim-3 to schedule appointments, and the recruitment and abuse of Minor Victim-3.",
+      "category": "abuse",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Minor Victim-2",
+        "Minor Victim-3",
+        "Employee-2"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York (Epstein's New York Residence)",
+    "Palm Beach Residence, Florida (Epstein's Florida estate)",
+    "Southern District of New York (jurisdiction for the legal proceedings)"
+  ],
+  "keyFacts": [
+    "The FBI sought a second search warrant for Epstein's NYC home on July 6, 2019, after an initial search that day found evidence corroborating a victim's detailed descriptions from 2002-2005.",
+    "Corroborated evidence included female torso busts in a bathroom, a taxidermied dog, a 'massage room' with nude artwork, and a binder labeled 'PB Girls' believed to refer to Palm Beach victims.",
+    "A sealed indictment charged Epstein with sex trafficking conspiracy and sex trafficking of minors, alleging he abused dozens of girls as young as 14 from 2002-2005 in NY and FL.",
+    "The modus operandi involved recruiting minors for 'massages' that escalated to sex acts, paying them hundreds in cash, and incentivizing victims to recruit other girls.",
+    "Epstein's employees (Employee-1, Employee-2, Employee-3) are identified as facilitators who contacted victims to schedule the sexual encounters."
+  ],
+  "analyzedAt": "2026-02-21T04:08:51.153Z"
+}

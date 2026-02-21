@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA00158817.pdf",
+  "dataSet": "9",
+  "documentType": "FBI 302",
+  "dateOriginal": "2020-08-24",
+  "summary": "This is an FBI 302 form documenting an interview conducted on August 24, 2020, with a witness (name redacted) about their knowledge of Jeffrey Epstein and Ghislaine Maxwell. The witness describes knowing Epstein starting around 1995, his relationship with Maxwell, and a concerning trip to New Mexico in 1996 involving the witness's friend, who was a student. The document details the friend's disturbing experience and subsequent fear of Maxwell and Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "The central subject of the investigation. The witness describes knowing him starting around 1995, receiving calls from him, and his sponsorship of student trips, including one to New Mexico in 1996.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-conspirator / Associate",
+      "category": "key figure",
+      "context": "Referred to by Epstein as his wife. Described as hosting and watching students during a trip to New Mexico. The witness's friend expressed fear of her, stating she was from a 'really bad family' and that Maxwell and Epstein were 'too rich and powerful to fight'.",
+      "mentionCount": 9
+    },
+    {
+      "name": "AUSA",
+      "role": "Prosecutor",
+      "category": "legal",
+      "context": "One of the officials conducting the interview of the witness on August 24, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "One of the officials conducting the interview of the witness on August 24, 2020.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Detective",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "One of the officials conducting the interview of the witness on August 24, 2020.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Epstein referred to Maxwell as his wife and acknowledged this relationship to the witness.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Both were involved in organizing and hosting a student trip to New Mexico, with Maxwell tasked with watching the students.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Witness (redacted)",
+      "relationshipType": "social",
+      "description": "Epstein called the witness starting around 1995, discussed trips, and sponsored student travel.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1995",
+      "title": "Initial Contact with Epstein",
+      "description": "The witness first heard of Jeffrey Epstein and began receiving phone calls from him around this time.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Witness (redacted)"
+      ]
+    },
+    {
+      "date": "1996",
+      "title": "New Mexico Student Trip",
+      "description": "Epstein sponsored a trip for 20-25 students to New Mexico. Ghislaine Maxwell was to host and watch the students. The witness's friend attended and returned upset, with new boots bought by Maxwell, and later expressed fear of Epstein and Maxwell.",
+      "category": "travel",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "Witness's friend (redacted)"
+      ]
+    },
+    {
+      "date": "2002-2003",
+      "title": "Media Interview Attempt",
+      "description": "A reporter contacted the witness's friend to conduct an interview about her experience. The friend was scared and sought permission from the witness. The article never materialized.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Witness (redacted)",
+        "Witness's friend (redacted)"
+      ]
+    },
+    {
+      "date": "2020-08-24",
+      "title": "FBI Interview of Witness",
+      "description": "The witness was interviewed by an AUSA, an FBI Special Agent, and a Detective via video conference regarding their knowledge of Jeffrey Epstein and Ghislaine Maxwell.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Witness (redacted)",
+        "AUSA",
+        "Special Agent",
+        "Detective"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, New York, United States",
+    "New Mexico"
+  ],
+  "keyFacts": [
+    "The witness knew Jeffrey Epstein starting around 1995 and he referred to Ghislaine Maxwell as his wife.",
+    "Epstein sponsored a trip for students to New Mexico in 1996 where Ghislaine Maxwell was to host and watch them.",
+    "The witness's friend who went on the trip returned upset and fearful, later stating Epstein and Maxwell were 'too rich and powerful to fight' and 'could make [her] disappear'.",
+    "The friend was so scared of Maxwell that she moved multiple times to get away.",
+    "The FBI interview was conducted in 2020, indicating ongoing investigation into historical events involving Epstein and Maxwell."
+  ],
+  "analyzedAt": "2026-02-21T02:52:21.952Z"
+}

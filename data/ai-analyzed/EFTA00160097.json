@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA00160097.pdf",
+  "dataSet": "9",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-11-18",
+  "summary": "An email from a Special Agent at the FBI's New York Office to an unnamed recipient, forwarding attachments related to Maxwell and offering to chat. The attachments appear to be documents about Maxwell from various sources.",
+  "persons": [
+    {
+      "name": "Maxwell",
+      "role": "Subject of investigation/documents",
+      "category": "key figure",
+      "context": "The subject of the email and the attached documents (SM_-_Lexis.pdf, SM_NYC_DOC.pdf, SM_Instagram.pdf).",
+      "mentionCount": 1
+    },
+    {
+      "name": "Special Agent",
+      "role": "Federal Bureau of Investigation Special Agent",
+      "category": "law enforcement",
+      "context": "Sender of the email from the FBI's New York Office, providing documents related to Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Special Agent",
+      "person2": "Maxwell",
+      "relationshipType": "investigator-subject",
+      "description": "The Special Agent is sending documents related to Maxwell, indicating an investigative interest.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2020-11-18",
+      "title": "Email correspondence regarding Maxwell documents",
+      "description": "A Special Agent sends an email with attached documents related to Maxwell to an unnamed recipient.",
+      "category": "investigation",
+      "significance": 2,
+      "personsInvolved": [
+        "Special Agent",
+        "Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York Office"
+  ],
+  "keyFacts": [
+    "An FBI Special Agent from the New York Office sent an email on November 18, 2020, regarding documents about Maxwell.",
+    "The email included three attachments: SM_-_Lexis.pdf, SM_NYC_DOC.pdf, and SM_Instagram.pdf, suggesting compiled information from legal, official, and social media sources.",
+    "The sender offers to 'chat whenever,' indicating ongoing communication or investigation.",
+    "The recipient is not named, referred to only as 'man'."
+  ],
+  "analyzedAt": "2026-02-21T04:11:25.534Z"
+}
