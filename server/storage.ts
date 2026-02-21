@@ -60,6 +60,11 @@ export interface IStorage {
   createDocument(document: InsertDocument): Promise<Document>;
 
   getConnections(): Promise<Connection[]>;
+  getConnectionsPaginated(opts: {
+    page: number; limit: number; type?: string; personId?: number; minStrength?: number;
+  }): Promise<{ data: (Connection & { person1Name: string; person2Name: string })[]; total: number; page: number; totalPages: number }>;
+  getConnectionById(id: number): Promise<(Connection & { person1Name: string; person2Name: string }) | null>;
+  getConnectionTypes(): Promise<{ type: string; count: number }[]>;
   createConnection(connection: InsertConnection): Promise<Connection>;
 
   createPersonDocument(pd: InsertPersonDocument): Promise<PersonDocument>;
@@ -849,6 +854,81 @@ export class DatabaseStorage implements IStorage {
 
   async getConnections(): Promise<Connection[]> {
     return db.select().from(connections);
+  }
+
+  async getConnectionsPaginated(opts: {
+    page: number; limit: number; type?: string; personId?: number; minStrength?: number;
+  }): Promise<{ data: (Connection & { person1Name: string; person2Name: string })[]; total: number; page: number; totalPages: number }> {
+    const p1 = db.select({ id: persons.id, name: persons.name }).from(persons).as("p1");
+    const p2 = db.select({ id: persons.id, name: persons.name }).from(persons).as("p2");
+
+    const conditions: SQL[] = [];
+    if (opts.type) conditions.push(eq(connections.connectionType, opts.type));
+    if (opts.personId) conditions.push(or(eq(connections.personId1, opts.personId), eq(connections.personId2, opts.personId))!);
+    if (opts.minStrength) conditions.push(sql`${connections.strength} >= ${opts.minStrength}`);
+    const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
+
+    const [countResult] = await db.select({ count: sql<number>`count(*)::int` }).from(connections).where(whereClause);
+    const total = countResult.count;
+    const totalPages = Math.ceil(total / opts.limit);
+    const offset = (opts.page - 1) * opts.limit;
+
+    const rows = await db
+      .select({
+        id: connections.id,
+        personId1: connections.personId1,
+        personId2: connections.personId2,
+        connectionType: connections.connectionType,
+        description: connections.description,
+        strength: connections.strength,
+        documentIds: connections.documentIds,
+        person1Name: sql<string>`p1.name`,
+        person2Name: sql<string>`p2.name`,
+      })
+      .from(connections)
+      .innerJoin(sql`${persons} as p1`, sql`p1.id = ${connections.personId1}`)
+      .innerJoin(sql`${persons} as p2`, sql`p2.id = ${connections.personId2}`)
+      .where(whereClause)
+      .orderBy(desc(connections.strength), asc(connections.id))
+      .limit(opts.limit)
+      .offset(offset);
+
+    return { data: rows as any, total, page: opts.page, totalPages };
+  }
+
+  async getConnectionById(id: number): Promise<(Connection & { person1Name: string; person2Name: string }) | null> {
+    const rows = await db
+      .select({
+        id: connections.id,
+        personId1: connections.personId1,
+        personId2: connections.personId2,
+        connectionType: connections.connectionType,
+        description: connections.description,
+        strength: connections.strength,
+        documentIds: connections.documentIds,
+        person1Name: sql<string>`p1.name`,
+        person2Name: sql<string>`p2.name`,
+      })
+      .from(connections)
+      .innerJoin(sql`${persons} as p1`, sql`p1.id = ${connections.personId1}`)
+      .innerJoin(sql`${persons} as p2`, sql`p2.id = ${connections.personId2}`)
+      .where(eq(connections.id, id))
+      .limit(1);
+
+    return rows.length > 0 ? rows[0] as any : null;
+  }
+
+  async getConnectionTypes(): Promise<{ type: string; count: number }[]> {
+    const rows = await db
+      .select({
+        type: connections.connectionType,
+        count: sql<number>`count(*)::int`,
+      })
+      .from(connections)
+      .groupBy(connections.connectionType)
+      .orderBy(sql`count(*) desc`);
+
+    return rows;
   }
 
   async createConnection(connection: InsertConnection): Promise<Connection> {
