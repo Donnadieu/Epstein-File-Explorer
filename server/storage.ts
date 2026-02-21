@@ -15,7 +15,7 @@ import {
   type AIAnalysisPerson, type AIAnalysisConnection, type AIAnalysisEvent,
 } from "@shared/schema";
 import { db } from "./db";
-import { eq, and, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
+import { eq, and, gt, ilike, or, sql, desc, asc, inArray, isNotNull, ne, type SQL } from "drizzle-orm";
 import { isR2Configured } from "./r2";
 import { isTypesenseConfigured, typesenseDocumentSearch, typesenseSearchPages, typesenseSearchPersons } from "./typesense";
 
@@ -90,6 +90,7 @@ export interface IStorage {
 
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentsCursor(afterId: number, limit: number): Promise<Document[]>;
   getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string; sort?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
   getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>;
   getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
@@ -1347,6 +1348,14 @@ export class DatabaseStorage implements IStorage {
     const offset = (page - 1) * limit;
     const data = await db.select().from(documents).where(r2Cond).orderBy(asc(documents.id)).limit(limit).offset(offset);
     return { data, total, page, totalPages };
+  }
+
+  async getDocumentsCursor(afterId: number, limit: number): Promise<Document[]> {
+    const conditions = [];
+    const r2Cond = r2Filter();
+    if (r2Cond) conditions.push(r2Cond);
+    conditions.push(gt(documents.id, afterId));
+    return db.select().from(documents).where(and(...conditions)).orderBy(asc(documents.id)).limit(limit);
   }
 
   async getDocumentsFiltered(opts: {

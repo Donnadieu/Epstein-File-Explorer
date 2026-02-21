@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
-import archiver from "archiver";
+import tar from "tar-stream";
+import { createGzip } from "zlib";
 import { storage } from "../../../storage";
 
 /** Sanitize a string for use as a filename */
@@ -181,7 +182,19 @@ function connectionToMarkdown(conn: any): string {
   return lines.join("\n");
 }
 
-const DOC_BATCH_SIZE = 5000;
+const DOC_BATCH_SIZE = 1000;
+
+/** Write a single entry to a tar pack stream with backpressure.
+ *  Resolves when the entry data has been fully written. */
+function packEntry(pack: tar.Pack, name: string, content: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const buf = Buffer.from(content);
+    pack.entry({ name, size: buf.byteLength }, buf, (err) => {
+      if (err) reject(err);
+      else resolve();
+    });
+  });
+}
 
 export async function obsidianExportHandler(_req: Request, res: Response): Promise<void> {
   try {
@@ -203,7 +216,7 @@ export async function obsidianExportHandler(_req: Request, res: Response): Promi
       connectionsByPerson.get(c.personId2)!.push(c);
     }
 
-    // Pre-build docId → person names from timeline events (avoids O(docs*events) loop)
+    // Pre-build docId → person names from timeline events
     const docPersonNames = new Map<number, string[]>();
     for (const event of events) {
       if (!event.documentIds?.length || !event.persons?.length) continue;
@@ -218,48 +231,54 @@ export async function obsidianExportHandler(_req: Request, res: Response): Promi
 
     const docsByPerson = new Map<number, string[]>();
 
-    // Set up streaming zip
-    const archive = archiver("zip", { zlib: { level: 1 } });
+    // Use tar-stream for true streaming — no central directory, no entry accumulation
+    const pack = tar.pack();
+    const gzip = createGzip({ level: 1 });
 
-    res.setHeader("Content-Type", "application/zip");
-    res.setHeader("Content-Disposition", "attachment; filename=epstein-vault.zip");
+    res.setHeader("Content-Type", "application/gzip");
+    res.setHeader("Content-Disposition", "attachment; filename=epstein-vault.tar.gz");
 
-    archive.pipe(res);
+    pack.pipe(gzip).pipe(res);
 
     // Add persons (cached, ~8k)
     for (const person of persons) {
       const md = personToMarkdown(person, connectionsByPerson, docsByPerson);
-      archive.append(md, { name: `Persons/${sanitizeFilename(person.name)}.md` });
+      await packEntry(pack, `epstein-vault/Persons/${sanitizeFilename(person.name)}.md`, md);
     }
 
-    // Add documents in batches to avoid loading 1.3M rows into memory
-    let docPage = 1;
-    let hasMore = true;
-    while (hasMore) {
-      const batch = await storage.getDocumentsPaginated(docPage, DOC_BATCH_SIZE);
-      for (const doc of batch.data) {
+    // Add documents using cursor-based pagination (no OFFSET penalty, no COUNT overhead)
+    let lastDocId = 0;
+    while (true) {
+      const batch = await storage.getDocumentsCursor(lastDocId, DOC_BATCH_SIZE);
+      if (batch.length === 0) break;
+      for (const doc of batch) {
         const mentioned = docPersonNames.get(doc.id) || [];
         const md = documentToMarkdown(doc, mentioned);
-        archive.append(md, { name: `Documents/${sanitizeFilename(doc.title)}.md` });
+        await packEntry(pack, `epstein-vault/Documents/${sanitizeFilename(doc.title)}.md`, md);
       }
-      hasMore = docPage < batch.totalPages;
-      docPage++;
+      lastDocId = batch[batch.length - 1].id;
     }
 
     // Add timeline events (cached, ~17k)
     for (const event of events) {
       const dateStr = event.date || "unknown";
       const md = eventToMarkdown(event);
-      archive.append(md, { name: `Timeline/${sanitizeFilename(`${dateStr} - ${event.title}`)}.md` });
+      await packEntry(pack, `epstein-vault/Timeline/${sanitizeFilename(`${dateStr} - ${event.title}`)}.md`, md);
     }
 
     // Add connections (from cached network data, ~13k)
     for (const conn of connections) {
       const md = connectionToMarkdown(conn);
-      archive.append(md, { name: `Connections/${sanitizeFilename(`${conn.person1Name} - ${conn.person2Name}`)}.md` });
+      await packEntry(pack, `epstein-vault/Connections/${sanitizeFilename(`${conn.person1Name} - ${conn.person2Name}`)}.md`, md);
     }
 
-    await archive.finalize();
+    pack.finalize();
+
+    // Wait for the stream pipeline to finish
+    await new Promise<void>((resolve, reject) => {
+      res.on("finish", resolve);
+      res.on("error", reject);
+    });
   } catch (error) {
     console.error("Obsidian export error:", error);
     if (!res.headersSent) {

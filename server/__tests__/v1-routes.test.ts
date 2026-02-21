@@ -12,6 +12,7 @@ vi.mock("../storage", () => ({
     getPersonWithDetails: vi.fn(),
     getDocuments: vi.fn(),
     getDocumentsPaginated: vi.fn(),
+    getDocumentsCursor: vi.fn(),
     getDocumentsFiltered: vi.fn(),
     getDocumentFilters: vi.fn(),
     getDocumentWithDetails: vi.fn(),
@@ -562,14 +563,10 @@ describe("Error response format", () => {
 // -- Obsidian export --
 
 describe("GET /api/v1/export/obsidian", () => {
-  it("returns a zip file with correct headers", async () => {
+  it("returns a tar.gz file with correct headers", async () => {
     mockedStorage.getPersons.mockResolvedValue([mockPerson]);
-    mockedStorage.getDocumentsPaginated.mockResolvedValue({
-      data: [mockDocument],
-      total: 1,
-      page: 1,
-      totalPages: 1,
-    });
+    mockedStorage.getDocumentsCursor.mockResolvedValueOnce([mockDocument]);
+    mockedStorage.getDocumentsCursor.mockResolvedValueOnce([]);
     mockedStorage.getTimelineEvents.mockResolvedValue([{
       ...mockEvent,
       persons: [{ id: 1, name: "Test Person" }],
@@ -591,8 +588,8 @@ describe("GET /api/v1/export/obsidian", () => {
         res.on("end", () => callback(null, Buffer.concat(chunks)));
       });
     expect(res.status).toBe(200);
-    expect(res.headers["content-type"]).toContain("application/zip");
-    expect(res.headers["content-disposition"]).toContain("epstein-vault.zip");
+    expect(res.headers["content-type"]).toContain("application/gzip");
+    expect(res.headers["content-disposition"]).toContain("epstein-vault.tar.gz");
     // Response body should be non-empty binary data
     expect(Buffer.isBuffer(res.body)).toBe(true);
     expect(res.body.byteLength).toBeGreaterThan(0);
