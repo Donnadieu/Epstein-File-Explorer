@@ -15,6 +15,8 @@ interface UseChatReturn {
   streamedCitations: ChatCitation[];
   error: string | null;
   clearChat: () => void;
+  model: string;
+  setModel: (model: string) => void;
 }
 
 export function useChat(): UseChatReturn {
@@ -23,9 +25,13 @@ export function useChat(): UseChatReturn {
   const [streamedContent, setStreamedContent] = useState("");
   const [streamedCitations, setStreamedCitations] = useState<ChatCitation[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [model, setModel] = useState("deepseek-chat");
 
   const messagesRef = useRef<ChatMessage[]>([]);
   messagesRef.current = messages;
+
+  const modelRef = useRef(model);
+  modelRef.current = model;
 
   const streamingRef = useRef(false);
 
@@ -58,7 +64,7 @@ export function useChat(): UseChatReturn {
         const response = await fetch("/api/chat/message", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ content, history }),
+          body: JSON.stringify({ content, history, model: modelRef.current }),
         });
 
         if (!response.ok) {
@@ -130,5 +136,5 @@ export function useChat(): UseChatReturn {
     [],
   );
 
-  return { messages, sendMessage, isStreaming, streamedContent, streamedCitations, error, clearChat };
+  return { messages, sendMessage, isStreaming, streamedContent, streamedCitations, error, clearChat, model, setModel };
 }

@@ -222,7 +222,7 @@ async function processOneJob(): Promise<void> {
     const today = new Date().toISOString().slice(0, 10);
     await db.insert(budgetTracking).values({
       date: today,
-      model: "deepseek-chat",
+      model: result.model,
       inputTokens: result.inputTokens,
       outputTokens: result.outputTokens,
       costCents: Math.ceil(result.costCents),

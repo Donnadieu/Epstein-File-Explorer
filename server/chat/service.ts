@@ -1,6 +1,6 @@
-import OpenAI from "openai";
 import type { ChatCitation } from "@shared/schema";
 import type { RetrievalResult } from "./retriever";
+import { getClient, getModelConfig } from "./models";
 
 const SYSTEM_PROMPT = `You are a research assistant specializing in the publicly released Epstein case files. Your role is to help users understand the documents, persons, connections, and events in the archive.
 
@@ -14,13 +14,6 @@ Rules:
 
 const MAX_HISTORY_MESSAGES = 10;
 
-function createDeepSeekClient(): OpenAI {
-  return new OpenAI({
-    baseURL: "https://api.deepseek.com",
-    apiKey: process.env.DEEPSEEK_API_KEY,
-  });
-}
-
 function buildUserMessage(userMessage: string, context: RetrievalResult): string {
   if (!context.contextText) return userMessage;
 
@@ -31,12 +24,14 @@ export async function* streamChatResponse(
   userMessage: string,
   conversationHistory: { role: string; content: string }[],
   context: RetrievalResult,
+  modelId?: string,
 ): AsyncGenerator<{ content?: string; done?: boolean; citations?: ChatCitation[] }> {
-  const client = createDeepSeekClient();
+  const client = getClient(modelId);
+  const config = getModelConfig(modelId);
 
   const recentHistory = conversationHistory.slice(-MAX_HISTORY_MESSAGES);
 
-  const messages: OpenAI.ChatCompletionMessageParam[] = [
+  const messages: Parameters<typeof client.chat.completions.create>[0]["messages"] = [
     { role: "system", content: SYSTEM_PROMPT },
     ...recentHistory.map((msg) => ({
       role: msg.role as "user" | "assistant",
@@ -46,7 +41,7 @@ export async function* streamChatResponse(
   ];
 
   const stream = await client.chat.completions.create({
-    model: "deepseek-chat",
+    model: config.model,
     messages,
     stream: true,
     max_tokens: 2048,
