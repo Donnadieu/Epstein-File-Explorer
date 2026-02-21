@@ -512,7 +512,7 @@ describe("GET /api/budget", () => {
 
 describe("GET /api/ai-analyses", () => {
   it("returns analysis list", async () => {
-    mockedStorage.getAIAnalysisList.mockResolvedValue([]);
+    mockedStorage.getAIAnalysisList.mockResolvedValue({ data: [], total: 0 });
 
     const res = await request(app).get("/api/ai-analyses");
     expect(res.status).toBe(200);
@@ -520,7 +520,7 @@ describe("GET /api/ai-analyses", () => {
   });
 
   it("supports pagination", async () => {
-    const items = Array.from({ length: 5 }, (_, i) => ({
+    const items = Array.from({ length: 2 }, (_, i) => ({
       fileName: `file${i}.json`,
       dataSet: "set-a",
       documentType: "legal-filing",
@@ -534,7 +534,7 @@ describe("GET /api/ai-analyses", () => {
       costCents: 5,
       analyzedAt: "2024-01-01",
     }));
-    mockedStorage.getAIAnalysisList.mockResolvedValue(items);
+    mockedStorage.getAIAnalysisList.mockResolvedValue({ data: items, total: 5 });
 
     const res = await request(app).get("/api/ai-analyses?page=1&limit=2");
     expect(res.status).toBe(200);

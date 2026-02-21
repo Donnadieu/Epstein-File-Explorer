@@ -251,7 +251,10 @@ export function getOpenAPISpec() {
           tags: ["AI Analyses"],
           parameters: [
             { name: "page", in: "query", schema: { type: "integer", default: 1 } },
-            { name: "limit", in: "query", schema: { type: "integer", default: 50 } },
+            { name: "limit", in: "query", schema: { type: "integer", default: 50, maximum: 100 } },
+            { name: "search", in: "query", schema: { type: "string" } },
+            { name: "documentType", in: "query", schema: { type: "string" } },
+            { name: "dataSet", in: "query", schema: { type: "string" } },
           ],
           responses: { "200": { description: "Paginated AI analysis list" } },
         },

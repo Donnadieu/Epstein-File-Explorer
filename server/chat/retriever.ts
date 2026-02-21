@@ -92,12 +92,13 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
 
   // Run LLM extraction in parallel with loading persons and analysis list
   let extracted: ExtractedQuery | null = null;
-  const [extractionResult, allPersons, analysisList] = await Promise.all([
+  const [extractionResult, allPersons, analysisResult] = await Promise.all([
     extractSearchQuery(query).catch(() => null),
     loadPersons(),
-    storage.getAIAnalysisList(),
+    storage.getAIAnalysisList({ page: 1, limit: 50, search: keywords.join(" ") }),
   ]);
   extracted = extractionResult;
+  const analysisList = analysisResult.data;
 
   // Build search terms: prefer LLM-extracted terms, fall back to keyword extraction
   const searchTerms =
@@ -149,7 +150,7 @@ export async function retrieveContext(query: string): Promise<RetrievalResult> {
     personIds.map((id) => storage.getPersonWithDetails(id)),
   );
 
-  // Step 3: Find matching analysis files
+  // Step 3: Find matching analysis files (DB already filtered by search, refine with keywords)
   const matchingAnalysisItems = analysisList.filter((item) =>
     matchesAnalysisItem(keywords, item),
   );

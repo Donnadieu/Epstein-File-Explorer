@@ -3,6 +3,10 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import { getAIPriority } from "./media-classifier";
 import { getClient, getModelConfig, calculateCostCents as calcCost, AVAILABLE_MODELS, DEFAULT_MODEL_ID } from "../../server/chat/models";
+import { db } from "../../server/db";
+import { aiAnalyses, aiAnalysisPersons } from "../../shared/schema";
+import { normalizeName } from "../../server/storage";
+import { eq } from "drizzle-orm";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -628,6 +632,48 @@ export async function runAIAnalysis(options: {
 
       const outFile = path.join(outputDir, `${entry.file}.json`);
       fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+
+      // Save to database (dual-write alongside JSON)
+      try {
+        const analysisValues = {
+          fileName,
+          dataSet: entry.dataSet,
+          documentType: result.documentType,
+          dateOriginal: result.dateOriginal,
+          summary: result.summary,
+          personCount: result.persons.length,
+          connectionCount: result.connections.length,
+          eventCount: result.events.length,
+          locationCount: result.locations.length,
+          keyFactCount: result.keyFacts.length,
+          persons: result.persons,
+          connectionsData: result.connections,
+          events: result.events,
+          locations: result.locations,
+          keyFacts: result.keyFacts,
+          analyzedAt: new Date(),
+        };
+        const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+          .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+          .returning({ id: aiAnalyses.id });
+
+        await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+        if (result.persons.length > 0) {
+          await db.insert(aiAnalysisPersons).values(
+            result.persons.map((p: any) => ({
+              aiAnalysisId: analysisRow.id,
+              name: p.name,
+              normalizedName: normalizeName(p.name),
+              role: p.role ?? null,
+              category: p.category ?? null,
+              context: p.context ?? null,
+              mentionCount: p.mentionCount ?? 1,
+            }))
+          );
+        }
+      } catch (dbErr) {
+        console.warn(`  DB write failed for ${fileName}: ${(dbErr as Error).message}`);
+      }
 
       results.push(result);
       processed++;
