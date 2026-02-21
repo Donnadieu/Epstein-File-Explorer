@@ -4,15 +4,21 @@
  * The DOJ Epstein archive serves URLs with .pdf extensions even when the underlying
  * file is video, audio, image, or other media. This script strips the .pdf extension,
  * probes all candidate extensions via HEAD requests, and verifies with magic bytes.
+ * Optionally downloads the resolved files.
  *
  * Usage:
  *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv
+ *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --download
+ *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --download-only
  *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --headed
  *   npx tsx scripts/pipeline/extension-resolver.ts data/no-images-produced.csv --concurrency 4
  */
 
 import * as fs from "fs";
 import * as path from "path";
+import * as crypto from "crypto";
+import { pipeline } from "stream/promises";
+import { Readable } from "stream";
 import { fileURLToPath } from "url";
 import pLimit from "p-limit";
 import { getBrowserContext, extractCookieHeader, closeBrowser } from "./doj-scraper";
@@ -32,6 +38,13 @@ const BOT_BLOCK_PAUSE_MS = 60_000;
 const BOT_BLOCK_THRESHOLD = 5;
 const COOKIE_REFRESH_COOLDOWN_MS = 30_000;
 const REQUEST_TIMEOUT_MS = 10_000;
+
+// Download mode
+const RESOLVED_DOWNLOADS_DIR = path.join(DATA_DIR, "downloads", "resolved");
+const RESOLVED_PROGRESS_FILE = path.join(DATA_DIR, "resolved-download-progress.json");
+const DOWNLOAD_CONCURRENCY = 2;
+const DOWNLOAD_RETRIES = 3;
+const STREAM_THRESHOLD = 10 * 1024 * 1024; // 10MB
 
 // ===== EXTENSION TIERS =====
 // Media-first because the input set is "no images produced" — likely media files
@@ -602,13 +615,278 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
   console.log(`Output:          ${outputPath}`);
 }
 
+// ===== DOWNLOAD MODE =====
+
+interface DownloadProgress {
+  completed: Record<string, { hash: string; localPath: string; bytes: number }>;
+  failed: string[];
+  totalBytes: number;
+  startedAt: string;
+  lastUpdated: string;
+}
+
+function loadDownloadProgress(): DownloadProgress {
+  if (fs.existsSync(RESOLVED_PROGRESS_FILE)) {
+    return JSON.parse(fs.readFileSync(RESOLVED_PROGRESS_FILE, "utf-8"));
+  }
+  return {
+    completed: {},
+    failed: [],
+    totalBytes: 0,
+    startedAt: new Date().toISOString(),
+    lastUpdated: new Date().toISOString(),
+  };
+}
+
+function saveDownloadProgress(progress: DownloadProgress): void {
+  progress.lastUpdated = new Date().toISOString();
+  fs.writeFileSync(RESOLVED_PROGRESS_FILE, JSON.stringify(progress, null, 2));
+}
+
+function computeHash(filePath: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const hash = crypto.createHash("sha256");
+    const stream = fs.createReadStream(filePath);
+    stream.on("data", (chunk) => hash.update(chunk));
+    stream.on("end", () => resolve(hash.digest("hex")));
+    stream.on("error", reject);
+  });
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes}B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)}KB`;
+  if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)}MB`;
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(2)}GB`;
+}
+
+interface ResolvedEntry {
+  base_id: string;
+  resolved_url: string;
+  extension: string;
+  file_type: string;
+}
+
+function loadResolvedEntries(csvPath: string): ResolvedEntry[] {
+  if (!fs.existsSync(csvPath)) return [];
+
+  const content = fs.readFileSync(csvPath, "utf-8");
+  const lines = content.split("\n").filter((l) => l.trim().length > 0);
+  const entries: ResolvedEntry[] = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const parts = lines[i].split(",");
+    if (parts.length < 7) continue;
+    const status = parts[3];
+    if (status !== "resolved") continue;
+
+    entries.push({
+      base_id: parts[0],
+      resolved_url: parts[4],
+      extension: parts[5],
+      file_type: parts[6],
+    });
+  }
+
+  return entries;
+}
+
+async function downloadResolvedFile(
+  entry: ResolvedEntry,
+  progress: DownloadProgress,
+): Promise<{ success: boolean; bytes: number }> {
+  const filename = `${entry.base_id}.${entry.extension}`;
+  fs.mkdirSync(RESOLVED_DOWNLOADS_DIR, { recursive: true });
+  const outputPath = path.join(RESOLVED_DOWNLOADS_DIR, filename);
+
+  // Resume: skip if already downloaded with valid hash
+  if (fs.existsSync(outputPath) && progress.completed[entry.resolved_url]) {
+    const existingHash = await computeHash(outputPath);
+    if (existingHash === progress.completed[entry.resolved_url].hash) {
+      return { success: true, bytes: progress.completed[entry.resolved_url].bytes };
+    }
+    fs.unlinkSync(outputPath);
+  }
+
+  if (progress.completed[entry.resolved_url] && !fs.existsSync(outputPath)) {
+    delete progress.completed[entry.resolved_url];
+  }
+
+  for (let attempt = 1; attempt <= DOWNLOAD_RETRIES; attempt++) {
+    try {
+      await throttle();
+
+      const headers: Record<string, string> = {
+        ...PROBE_HEADERS,
+        Accept: "application/octet-stream,*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+      };
+      if (currentCookieHeader) {
+        headers["Cookie"] = currentCookieHeader;
+      }
+
+      const response = await fetch(entry.resolved_url, {
+        headers,
+        redirect: "follow",
+      });
+
+      if (response.status === 429) {
+        const retryAfter = parseInt(response.headers.get("retry-after") || "5", 10);
+        console.warn(`  429 rate-limited on ${filename}, waiting ${retryAfter}s...`);
+        await new Promise((r) => setTimeout(r, retryAfter * 1000));
+        continue;
+      }
+
+      if (response.status === 401 || response.status === 403) {
+        console.warn(`  HTTP ${response.status} for ${filename} (attempt ${attempt}/${DOWNLOAD_RETRIES}) — refreshing cookies`);
+        await refreshCookies();
+        if (attempt < DOWNLOAD_RETRIES) {
+          await new Promise((r) => setTimeout(r, 2000));
+          continue;
+        }
+        return { success: false, bytes: 0 };
+      }
+
+      if (!response.ok) {
+        console.warn(`  HTTP ${response.status} for ${filename} (attempt ${attempt}/${DOWNLOAD_RETRIES})`);
+        if (attempt === DOWNLOAD_RETRIES) return { success: false, bytes: 0 };
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        continue;
+      }
+
+      const contentLength = parseInt(response.headers.get("content-length") || "0", 10);
+
+      if (contentLength > STREAM_THRESHOLD && response.body) {
+        const nodeStream = Readable.fromWeb(response.body as any);
+        const writeStream = fs.createWriteStream(outputPath);
+        await pipeline(nodeStream, writeStream);
+      } else {
+        const arrayBuf = await response.arrayBuffer();
+        fs.writeFileSync(outputPath, Buffer.from(arrayBuf));
+      }
+
+      const stat = fs.statSync(outputPath);
+      const fileHash = await computeHash(outputPath);
+
+      progress.completed[entry.resolved_url] = {
+        hash: fileHash,
+        localPath: outputPath,
+        bytes: stat.size,
+      };
+      progress.totalBytes += stat.size;
+
+      console.log(`  Downloaded: ${filename} (${formatBytes(stat.size)}, sha256:${fileHash.substring(0, 12)}...)`);
+      return { success: true, bytes: stat.size };
+    } catch (err: any) {
+      console.warn(`  Error downloading ${filename} (attempt ${attempt}/${DOWNLOAD_RETRIES}): ${err.message}`);
+      if (attempt === DOWNLOAD_RETRIES) return { success: false, bytes: 0 };
+      await new Promise((r) => setTimeout(r, 2000 * attempt));
+    }
+  }
+
+  return { success: false, bytes: 0 };
+}
+
+async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
+  console.log("\n=== DOJ Download Resolved Files ===\n");
+
+  // 1. Load resolved entries from CSV
+  const entries = loadResolvedEntries(resolvedCsvPath);
+  console.log(`Found ${entries.length} resolved entries in ${resolvedCsvPath}`);
+
+  if (entries.length === 0) {
+    console.log("No resolved entries to download. Run resolution first.");
+    return;
+  }
+
+  // 2. Load download progress
+  const progress = loadDownloadProgress();
+  const pending = entries.filter((e) => !progress.completed[e.resolved_url]);
+  console.log(`Already downloaded: ${entries.length - pending.length}`);
+  console.log(`Remaining: ${pending.length}\n`);
+
+  if (pending.length === 0) {
+    console.log("All resolved files already downloaded.");
+    return;
+  }
+
+  // 3. Acquire Akamai cookies
+  console.log("Acquiring Akamai cookies...");
+  await getBrowserContext();
+  currentCookieHeader = await extractCookieHeader();
+  await closeBrowser();
+  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+
+  if (!currentCookieHeader) {
+    console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
+    return;
+  }
+
+  // 4. Download with concurrency
+  const limit = pLimit(DOWNLOAD_CONCURRENCY);
+  let completed = 0;
+  let succeeded = 0;
+  let failed = 0;
+  let totalBytes = 0;
+  const startTime = Date.now();
+
+  const tasks = pending.map((entry) =>
+    limit(async () => {
+      const result = await downloadResolvedFile(entry, progress);
+      completed++;
+
+      if (result.success) {
+        succeeded++;
+        totalBytes += result.bytes;
+      } else {
+        failed++;
+        if (!progress.failed.includes(entry.resolved_url)) {
+          progress.failed.push(entry.resolved_url);
+        }
+      }
+
+      // Save progress every 10 downloads
+      if (completed % 10 === 0) {
+        saveDownloadProgress(progress);
+        const elapsed = (Date.now() - startTime) / 1000;
+        const rate = completed / elapsed;
+        const eta = ((pending.length - completed) / rate / 60).toFixed(1);
+        console.log(
+          `\n  === ${completed}/${pending.length} (${succeeded} ok, ${failed} failed) | ${formatBytes(totalBytes)} | ETA: ${eta}m ===\n`,
+        );
+      }
+    }),
+  );
+
+  await Promise.all(tasks);
+  saveDownloadProgress(progress);
+
+  // 5. Summary
+  const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+  console.log("\n=== Download Summary ===");
+  console.log(`Total processed: ${completed}`);
+  console.log(`Succeeded:       ${succeeded}`);
+  console.log(`Failed:          ${failed}`);
+  console.log(`Total size:      ${formatBytes(totalBytes)}`);
+  console.log(`Time:            ${elapsed}s`);
+  console.log(`Output:          ${RESOLVED_DOWNLOADS_DIR}`);
+}
+
 // ===== CLI =====
 
-function parseArgs(): { inputCsv: string; outputCsv: string; concurrency: number } {
+function parseArgs(): {
+  inputCsv: string;
+  outputCsv: string;
+  concurrency: number;
+  download: boolean;
+  downloadOnly: boolean;
+} {
   const args = process.argv.slice(2);
   let inputCsv = "";
   let outputCsv = DEFAULT_OUTPUT;
   let concurrency = DEFAULT_CONCURRENCY;
+  let download = false;
+  let downloadOnly = false;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--output" && args[i + 1]) {
@@ -617,13 +895,25 @@ function parseArgs(): { inputCsv: string; outputCsv: string; concurrency: number
       concurrency = parseInt(args[++i], 10);
     } else if (args[i] === "--headed") {
       // Handled by doj-scraper via process.argv
+    } else if (args[i] === "--download") {
+      download = true;
+    } else if (args[i] === "--download-only") {
+      downloadOnly = true;
     } else if (!args[i].startsWith("--") && !inputCsv) {
       inputCsv = args[i];
     }
   }
 
   if (!inputCsv) {
-    console.error("Usage: npx tsx scripts/pipeline/extension-resolver.ts <input.csv> [--output path] [--concurrency N] [--headed]");
+    console.error(
+      "Usage: npx tsx scripts/pipeline/extension-resolver.ts <input.csv> [options]\n\n" +
+      "Options:\n" +
+      "  --output PATH       Output CSV path (default: data/resolved.partial.csv)\n" +
+      "  --concurrency N     Max parallel URL resolutions (default: 8)\n" +
+      "  --download          Resolve extensions, then download resolved files\n" +
+      "  --download-only     Skip resolution, download from existing CSV\n" +
+      "  --headed            Show browser window for manual bot challenge solving"
+    );
     process.exit(1);
   }
 
@@ -640,12 +930,23 @@ function parseArgs(): { inputCsv: string; outputCsv: string; concurrency: number
     process.exit(1);
   }
 
-  return { inputCsv, outputCsv, concurrency };
+  return { inputCsv, outputCsv, concurrency, download, downloadOnly };
 }
 
 if (process.argv[1]?.includes(path.basename(__filename))) {
-  const { inputCsv, outputCsv, concurrency } = parseArgs();
-  resolveExtensions(inputCsv, outputCsv, concurrency)
+  const { inputCsv, outputCsv, concurrency, download, downloadOnly } = parseArgs();
+
+  (async () => {
+    // Step 1: Resolve extensions (unless --download-only)
+    if (!downloadOnly) {
+      await resolveExtensions(inputCsv, outputCsv, concurrency);
+    }
+
+    // Step 2: Download resolved files (if --download or --download-only)
+    if (download || downloadOnly) {
+      await downloadResolvedFiles(outputCsv);
+    }
+  })()
     .then(() => process.exit(0))
     .catch((err) => {
       console.error("Fatal error:", err);
