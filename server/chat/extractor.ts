@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import { getClient, getModelConfig } from "./models";
 
 export interface ExtractedQuery {
   searchTerms: string[];
@@ -23,20 +23,15 @@ Given a user question, return JSON with:
 
 Return ONLY valid JSON, no markdown fences or extra text.`;
 
-function createDeepSeekClient(): OpenAI {
-  return new OpenAI({
-    baseURL: "https://api.deepseek.com",
-    apiKey: process.env.DEEPSEEK_API_KEY,
-  });
-}
-
 export async function extractSearchQuery(
   userMessage: string,
+  modelId?: string,
 ): Promise<ExtractedQuery> {
-  const client = createDeepSeekClient();
+  const client = getClient(modelId);
+  const config = getModelConfig(modelId);
 
   const response = await client.chat.completions.create({
-    model: "deepseek-chat",
+    model: config.model,
     messages: [
       { role: "system", content: EXTRACTION_PROMPT },
       { role: "user", content: userMessage },
