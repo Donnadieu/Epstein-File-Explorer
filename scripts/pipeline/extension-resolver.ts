@@ -425,6 +425,8 @@ function extractBaseId(url: string): string {
 
 // ===== MAIN RESOLVER =====
 
+const MAX_COOKIE_REFRESHES = 3; // Give up after this many refresh attempts per URL
+
 async function resolveUrl(baseUrl: string): Promise<{
   status: string;
   resolved_url: string;
@@ -435,6 +437,8 @@ async function resolveUrl(baseUrl: string): Promise<{
   notes: string;
 }> {
   let consecutiveBotBlocks = 0;
+  let cookieRefreshes = 0;
+  const baseId = baseUrl.split("/").pop() || "";
 
   for (let i = 0; i < ALL_EXTENSIONS.length; i++) {
     const ext = ALL_EXTENSIONS[i];
@@ -445,13 +449,28 @@ async function resolveUrl(baseUrl: string): Promise<{
 
       if (result && result.notes === "bot_challenge") {
         consecutiveBotBlocks++;
+        if (consecutiveBotBlocks === 1) {
+          console.log(`    ${baseId}: bot challenge on .${ext}`);
+        }
         if (consecutiveBotBlocks >= BOT_BLOCK_THRESHOLD) {
-          console.log(`    ${BOT_BLOCK_THRESHOLD} consecutive bot blocks — pausing ${BOT_BLOCK_PAUSE_MS / 1000}s and refreshing cookies...`);
+          if (cookieRefreshes >= MAX_COOKIE_REFRESHES) {
+            console.log(`    ${baseId}: giving up after ${MAX_COOKIE_REFRESHES} cookie refreshes — marking as bot_blocked`);
+            return {
+              status: "bot_blocked",
+              resolved_url: "",
+              extension: "",
+              file_type: "",
+              content_type: "",
+              content_length: 0,
+              notes: `bot_blocked_after_${cookieRefreshes}_refreshes`,
+            };
+          }
+          console.log(`    ${baseId}: ${BOT_BLOCK_THRESHOLD} consecutive bot blocks — pausing ${BOT_BLOCK_PAUSE_MS / 1000}s and refreshing cookies...`);
           await new Promise((r) => setTimeout(r, BOT_BLOCK_PAUSE_MS));
           await refreshCookies();
+          cookieRefreshes++;
           consecutiveBotBlocks = 0;
-          // Retry this extension with fresh cookies
-          i--;
+          i--; // retry this extension
           continue;
         }
         continue;
@@ -476,9 +495,21 @@ async function resolveUrl(baseUrl: string): Promise<{
         };
       }
     } catch (err: any) {
-      // 401/403 — refresh cookies and retry this extension
       if (err.message === "401" || err.message === "403") {
+        if (cookieRefreshes >= MAX_COOKIE_REFRESHES) {
+          return {
+            status: "bot_blocked",
+            resolved_url: "",
+            extension: "",
+            file_type: "",
+            content_type: "",
+            content_length: 0,
+            notes: `auth_failed_after_${cookieRefreshes}_refreshes`,
+          };
+        }
+        console.log(`    ${baseId}: HTTP ${err.message} on .${ext} — refreshing cookies`);
         await refreshCookies();
+        cookieRefreshes++;
         i--; // retry this extension
         continue;
       }
@@ -531,6 +562,11 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
   if (!currentCookieHeader) {
     console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
     return;
+  }
+
+  if (!currentCookieHeader.includes("authorization_")) {
+    console.warn("WARNING: No Akamai authorization cookies found. Probes will likely be bot-blocked.");
+    console.warn("         Run with --headed to manually solve the bot challenge.\n");
   }
 
   // 5. Process URLs with concurrency
@@ -820,6 +856,11 @@ async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
   if (!currentCookieHeader) {
     console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
     return;
+  }
+
+  if (!currentCookieHeader.includes("authorization_")) {
+    console.warn("WARNING: No Akamai authorization cookies found. Downloads will likely fail.");
+    console.warn("         Run with --headed to manually solve the bot challenge.\n");
   }
 
   // 4. Download with concurrency
