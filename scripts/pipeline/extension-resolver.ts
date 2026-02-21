@@ -33,7 +33,7 @@ const DEFAULT_OUTPUT = path.join(DATA_DIR, "resolved.partial.csv");
 
 const BASE_INTERVAL_MS = 1500;
 const JITTER_MS = 1000;
-const DEFAULT_CONCURRENCY = 8;
+const DEFAULT_CONCURRENCY = 2;
 const BOT_BLOCK_PAUSE_MS = 60_000;
 const BOT_BLOCK_THRESHOLD = 5;
 const COOKIE_REFRESH_COOLDOWN_MS = 30_000;
@@ -189,7 +189,6 @@ async function refreshCookies(): Promise<void> {
       console.log("\n  Cookies expired — re-acquiring Akamai cookies...");
       await getBrowserContext();
       const header = await extractCookieHeader();
-      await closeBrowser();
       lastCookieRefreshTime = Date.now();
       if (header) {
         currentCookieHeader = header;
@@ -197,6 +196,8 @@ async function refreshCookies(): Promise<void> {
       }
     } catch (err: any) {
       console.warn(`  Cookie refresh failed: ${err.message}`);
+    } finally {
+      try { await closeBrowser(); } catch {}
     }
   })();
 
@@ -554,10 +555,15 @@ async function resolveExtensions(inputCsvPath: string, outputPath: string, concu
 
   // 4. Acquire Akamai cookies
   console.log("Acquiring Akamai cookies...");
-  await getBrowserContext();
-  currentCookieHeader = await extractCookieHeader();
-  await closeBrowser();
-  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  try {
+    await getBrowserContext();
+    currentCookieHeader = await extractCookieHeader();
+    console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  } catch (err: any) {
+    console.warn(`Warning: Could not obtain cookies (${err.message}).`);
+  } finally {
+    try { await closeBrowser(); } catch {}
+  }
 
   if (!currentCookieHeader) {
     console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
@@ -848,10 +854,15 @@ async function downloadResolvedFiles(resolvedCsvPath: string): Promise<void> {
 
   // 3. Acquire Akamai cookies
   console.log("Acquiring Akamai cookies...");
-  await getBrowserContext();
-  currentCookieHeader = await extractCookieHeader();
-  await closeBrowser();
-  console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  try {
+    await getBrowserContext();
+    currentCookieHeader = await extractCookieHeader();
+    console.log(`Cookie header obtained (${currentCookieHeader.length} chars)\n`);
+  } catch (err: any) {
+    console.warn(`Warning: Could not obtain cookies (${err.message}).`);
+  } finally {
+    try { await closeBrowser(); } catch {}
+  }
 
   if (!currentCookieHeader) {
     console.error("Failed to acquire cookies. Try running with --headed for manual solve.");
