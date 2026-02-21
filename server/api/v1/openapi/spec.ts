@@ -198,11 +198,11 @@ export function getOpenAPISpec() {
         get: {
           summary: "Export Obsidian vault",
           tags: ["Export"],
-          description: "Downloads a zip file containing a ready-to-use Obsidian vault with markdown files for persons, documents, timeline events, and connections, cross-referenced with [[wikilinks]].",
+          description: "Downloads a tar.gz archive containing a ready-to-use Obsidian vault with markdown files for persons, documents, timeline events, and connections, cross-referenced with [[wikilinks]]. Extract with: tar -xzf epstein-vault.tar.gz",
           responses: {
             "200": {
-              description: "Obsidian vault zip file",
-              content: { "application/zip": { schema: { type: "string", format: "binary" } } },
+              description: "Obsidian vault tar.gz archive",
+              content: { "application/gzip": { schema: { type: "string", format: "binary" } } },
             },
           },
         },
