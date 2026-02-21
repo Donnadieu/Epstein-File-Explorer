@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01284180.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2013-10-01",
+  "summary": "This document is a financial statement from Deutsche Bank Trust Company Americas detailing Jeffrey Epstein's account transactions for the month of October 2013. It includes information on incoming and outgoing funds, account balances, and various transactions, highlighting significant transfers and account activity during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this financial statement, showing his financial activities during October 2013.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barry Jay Josephson",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Barry Jay Josephson is mentioned in relation to a transaction involving the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "employer-employee",
+      "description": "Amanda Kirby is identified as a personal assistant to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Barry Jay Josephson",
+      "relationshipType": "financial",
+      "description": "Barry Jay Josephson is mentioned in connection with a transaction related to Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-11",
+      "title": "Incoming Funds Transfer",
+      "description": "A significant incoming funds transfer of $3,000,000.00 was recorded on this date.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2013-10-31",
+      "title": "Ending Balance Statement",
+      "description": "The ending balance for Epstein's account was reported as $1,078,334.22 as of October 31, 2013.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, B3, Saint Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $50.00 on October 1, 2013.",
+    "A total of $1,924,084.34 was debited from the account during October 2013.",
+    "Multiple transfers to various accounts were made, including significant amounts to BNP Paribas and other entities.",
+    "The document indicates a high level of financial activity, with numerous incoming and outgoing transactions.",
+    "There are mentions of redacted names in transactions, indicating potential undisclosed parties involved."
+  ],
+  "analyzedAt": "2026-02-21T14:09:21.727Z"
+}

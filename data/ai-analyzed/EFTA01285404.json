@@ -1,0 +1,45 @@
+{
+  "fileName": "EFTA01285404.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing account balances and transactions for a specified period in 2015. It includes information on deposits, withdrawals, and fees associated with the account, as well as instructions for addressing errors in transactions.",
+  "persons": [
+    {
+      "name": "Amanda Kirby",
+      "role": "Customer Service Representative",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gregory Riches",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Gregory Riches is referenced in connection with outgoing money transfers from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gregory Riches",
+      "person2": "Amanda Kirby",
+      "relationshipType": "customer-service",
+      "description": "Gregory Riches is the account holder who may seek assistance from Amanda Kirby, the customer service representative.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "575 Lexington Ave, 4th Fl, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The document details account balances and transactions for the period from March 1, 2015, to March 31, 2015.",
+    "The account had a beginning balance of $10,334.11 and an ending balance of $32,332.46.",
+    "Multiple transactions include preauthorized debits for taxes and fees, as well as outgoing transfers to Gregory Riches.",
+    "There are instructions for reporting errors in transactions within specified timeframes.",
+    "The document is marked as confidential and is part of a larger set of financial records."
+  ],
+  "analyzedAt": "2026-02-21T15:07:30.528Z"
+}

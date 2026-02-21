@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA01285681.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-08-01",
+  "summary": "This document is a summary of account balances and transactions for a Deutsche Bank account from August 1, 2015, to August 31, 2015. It details various debits and credits, including significant deposits and withdrawals, as well as service charges. The document highlights the financial activities during this period, which may be relevant to the Epstein case.",
+  "persons": [
+    {
+      "name": "Amanda Kirby",
+      "role": "Account Representative",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leighton Allenby",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Leighton Allenby is mentioned as the recipient of an outgoing money transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Leighton Allenby",
+      "relationshipType": "service provider-client",
+      "description": "Amanda Kirby serves as a representative for the Deutsche Bank account associated with Leighton Allenby.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-08-18",
+      "title": "Deposit",
+      "description": "A deposit of $150,000.00 was made to the account.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Leighton Allenby"
+      ]
+    },
+    {
+      "date": "2015-08-24",
+      "title": "Check Paid",
+      "description": "A check numbered 1043 was paid for the amount of $2,800.00.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Leighton Allenby"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $115,160.11 on August 1, 2015.",
+    "A total of $150,000.00 was deposited into the account on August 18, 2015.",
+    "Multiple preauthorized debits were made for tax payments and service fees throughout the month.",
+    "An outgoing money transfer of $12,151.15 was made to Leighton Allenby on August 7, 2015.",
+    "The ending balance of the account as of August 31, 2015, was $221,179.72."
+  ],
+  "analyzedAt": "2026-02-21T15:20:24.767Z"
+}

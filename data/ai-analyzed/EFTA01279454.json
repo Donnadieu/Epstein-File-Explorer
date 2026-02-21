@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01279454.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document appears to be a financial record related to UBS Financial Services, including a Letter of Authorization for duplicate recipient of tax records. It mentions individuals associated with the accounts and provides contact information, indicating a financial transaction or authorization process.",
+  "persons": [
+    {
+      "name": "Marian Samna",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Marian Samna is mentioned in relation to the authorization for duplicate recipient of tax records.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alan Blether",
+      "role": "Contact Person",
+      "category": "other",
+      "context": "Alan Blether is listed as a contact person with an address in New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned in the context of the financial document, indicating her association with the accounts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Marian Samna",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Marian Samna and Ghislaine Maxwell are connected through financial accounts at UBS.",
+      "strength": 3
+    },
+    {
+      "person1": "Alan Blether",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "contact",
+      "description": "Alan Blether is listed as a contact person related to Ghislaine Maxwell's financial dealings.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "685 Thal Avenue, New York, NY 10017"
+  ],
+  "keyFacts": [
+    "The document includes a Letter of Authorization for duplicate recipient of tax records.",
+    "Marian Samna is identified as an account holder.",
+    "Alan Blether is listed as a contact person with an address in New York.",
+    "Ghislaine Maxwell is mentioned in relation to the financial accounts.",
+    "The document is marked as CONFIDENTIAL."
+  ],
+  "analyzedAt": "2026-02-21T11:20:02.864Z"
+}

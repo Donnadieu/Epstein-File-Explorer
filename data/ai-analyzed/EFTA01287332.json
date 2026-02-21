@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA01287332.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains a summary of account balances and transactions for Deutsche Bank Trust Company Americas for the period of January 1, 2018, to January 31, 2018. It details various transactions including funds transfers, deposits, and fees, highlighting significant outgoing transfers and the ending balance.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as the contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ilene",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Ilene is referenced in the context of the account balance and transactions, though her full name is not provided.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Della Klein",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Della Klein is mentioned as a recipient of an outgoing money transfer from the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alpha Group Capital LLC",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Alpha Group Capital LLC is referenced as a recipient of an outgoing money transfer.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Valar Global Fund III LP",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Valar Global Fund III LP is mentioned as a recipient of a significant outgoing money transfer.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ilene",
+      "person2": "Stewart Oldfield",
+      "relationshipType": "client-staff",
+      "description": "Ilene is the account holder and Stewart Oldfield is the account manager providing assistance.",
+      "strength": 3
+    },
+    {
+      "person1": "Ilene",
+      "person2": "Della Klein",
+      "relationshipType": "financial",
+      "description": "Ilene is connected to Della Klein through a financial transaction where funds were transferred to Della Klein.",
+      "strength": 3
+    },
+    {
+      "person1": "Ilene",
+      "person2": "Alpha Group Capital LLC",
+      "relationshipType": "financial",
+      "description": "Ilene is connected to Alpha Group Capital LLC through a financial transaction involving an outgoing transfer.",
+      "strength": 3
+    },
+    {
+      "person1": "Ilene",
+      "person2": "Valar Global Fund III LP",
+      "relationshipType": "financial",
+      "description": "Ilene is connected to Valar Global Fund III LP through a significant outgoing funds transfer.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-01-01",
+      "title": "Account Opening",
+      "description": "The account balance begins at $3,998,713.22 as of January 1, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ilene"
+      ]
+    },
+    {
+      "date": "2018-01-31",
+      "title": "End of Month Balance",
+      "description": "The ending balance of the account is reported as $1,645,296.66 as of January 31, 2018.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Ilene"
+      ]
+    },
+    {
+      "date": "2018-01-10",
+      "title": "Outgoing Transfer to Della Klein",
+      "description": "A transfer of $200,000.00 is made to Della Klein.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ilene",
+        "Della Klein"
+      ]
+    },
+    {
+      "date": "2018-01-12",
+      "title": "Outgoing Transfer to Alpha Group Capital LLC",
+      "description": "A transfer of $54,165.00 is made to Alpha Group Capital LLC.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Ilene",
+        "Alpha Group Capital LLC"
+      ]
+    },
+    {
+      "date": "2018-01-05",
+      "title": "Outgoing Transfer to Valar Global Fund III LP",
+      "description": "A transfer of $1,500,000.00 is made to Valar Global Fund III LP.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Ilene",
+        "Valar Global Fund III LP"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details account transactions for Deutsche Bank Trust Company Americas for January 2018.",
+    "Ilene's account had a beginning balance of $3,998,713.22 and an ending balance of $1,645,296.66.",
+    "Significant outgoing transfers include $1,500,000.00 to Valar Global Fund III LP and $200,000.00 to Della Klein.",
+    "Stewart Oldfield is the contact person for account assistance.",
+    "There are multiple outgoing transfers totaling over $5 million during the month."
+  ],
+  "analyzedAt": "2026-02-21T16:44:25.147Z"
+}

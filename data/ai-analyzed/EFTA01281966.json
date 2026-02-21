@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01281966.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document outlines a KYC (Know Your Customer) case related to Jeffrey Epstein and his financial relationships. It details the accounts associated with Epstein, including the Butterfly Trust and Neptune LLC, and mentions the relationship manager Stewart Oldfield who was contacted by Epstein to open a new account.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein reached out to Stewart Oldfield to have a new account opened under this relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Relationship Manager",
+      "category": "associate",
+      "context": "Stewart Oldfield is the relationship manager who was contacted by Epstein to establish a new account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Karyna Shuhak",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Karyna Shuhak is listed as an account holder associated with the financial relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Stewart Oldfield",
+      "relationshipType": "client-manager",
+      "description": "Jeffrey Epstein is the client who reached out to Stewart Oldfield to open a new account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Karyna Shuhak",
+      "relationshipType": "account holder",
+      "description": "Karyna Shuhak is listed as an account holder in the financial relationship involving Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-03-07",
+      "title": "Account Opening Request",
+      "description": "Jeffrey Epstein contacted Stewart Oldfield to request the opening of a new account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Stewart Oldfield"
+      ]
+    }
+  ],
+  "locations": [
+    "New York"
+  ],
+  "keyFacts": [
+    "The document is a KYC case related to Jeffrey Epstein's financial relationships.",
+    "Stewart Oldfield is the relationship manager who was contacted by Epstein.",
+    "Karyna Shuhak is mentioned as an account holder associated with Epstein's financial dealings.",
+    "The Butterfly Trust and Neptune LLC are entities linked to Epstein's accounts.",
+    "The document indicates a periodic review of Epstein's financial relationships."
+  ],
+  "analyzedAt": "2026-02-21T13:05:00.152Z"
+}

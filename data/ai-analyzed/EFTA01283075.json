@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01283075.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": null,
+  "summary": "This document outlines a Power of Attorney authorization for accounts held with Deutsche Bank Securities Inc. It details the responsibilities of the agent appointed by the principal, including the authority to manage accounts and the legal implications of such authority. The document also includes internal communications regarding the onboarding of Jeffrey Epstein as a client and the specific requests related to his accounts.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Agent",
+      "category": "legal",
+      "context": "Darren Indyke is appointed as the agent for the principal to manage accounts with Deutsche Bank Securities Inc.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as a new client of Deutsche Bank who has transferred a significant amount of liquid assets across his accounts.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Fran Wickman",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Fran Wickman is involved in the internal communications regarding the Power of Attorney issues related to Epstein's accounts.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Zbynek Kozelsky",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Zbynek Kozelsky is part of the internal communications discussing the onboarding of Epstein as a client.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Vahe Stepanian",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Vahe Stepanian is involved in the internal communications regarding Epstein's account setup and Power of Attorney requests.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jean Anne Brennan",
+      "role": "Agent",
+      "category": "legal",
+      "context": "Jean Anne Brennan is mentioned as an agent who has been appointed Power of Attorney and is involved in the notarization process.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "agent-client",
+      "description": "Darren Indyke is appointed as the agent for Jeffrey Epstein to manage his accounts.",
+      "strength": 5
+    },
+    {
+      "person1": "Fran Wickman",
+      "person2": "Vahe Stepanian",
+      "relationshipType": "colleague",
+      "description": "Fran Wickman and Vahe Stepanian are colleagues discussing the Power of Attorney issues related to Epstein's accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Zbynek Kozelsky",
+      "person2": "Vahe Stepanian",
+      "relationshipType": "colleague",
+      "description": "Zbynek Kozelsky and Vahe Stepanian are colleagues involved in the internal communications regarding Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jean Anne Brennan",
+      "relationshipType": "agent-agent",
+      "description": "Darren Indyke and Jean Anne Brennan are both agents involved in the management of Epstein's accounts.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-21",
+      "title": "Onboarding of Jeffrey Epstein",
+      "description": "Internal communications regarding the onboarding of Jeffrey Epstein as a new client at Deutsche Bank.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Vahe Stepanian",
+        "Fran Wickman",
+        "Zbynek Kozelsky"
+      ]
+    }
+  ],
+  "locations": [
+    "Deutsche Bank Securities Inc., 345 Park Avenue, New York, NY"
+  ],
+  "keyFacts": [
+    "Darren Indyke is appointed as the agent for Jeffrey Epstein to manage his accounts.",
+    "Jeffrey Epstein transferred over $120 million in liquid assets to Deutsche Bank.",
+    "Internal communications reveal the need for exceptions regarding the Power of Attorney for Epstein's accounts.",
+    "Jean Anne Brennan is mentioned as an agent involved in the notarization process for the Power of Attorney.",
+    "The document emphasizes the legal responsibilities of agents under the Power of Attorney."
+  ],
+  "analyzedAt": "2026-02-21T13:35:44.891Z"
+}

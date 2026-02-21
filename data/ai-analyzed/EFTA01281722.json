@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01281722.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2018-05-08",
+  "summary": "This document is an overdraft notice from Fifth Third Bank addressed to Brian L. It details the account's overdraft situation as of May 7, 2018, including fees incurred and account activity leading to the overdraft.",
+  "persons": [
+    {
+      "name": "Brian L",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Brian L is the account holder who received the overdraft notice from Fifth Third Bank regarding his account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Cesar Taveras",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Cesar Taveras is mentioned as the relationship manager for Brian L's account, providing contact information for inquiries.",
+      "mentionCount": 1
+    },
+    {
+      "name": "P. Brian Moore",
+      "role": "Senior Vice President",
+      "category": "staff",
+      "context": "P. Brian Moore is the Senior Vice President at Fifth Third Bank who signed the overdraft notice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Brian L",
+      "person2": "Cesar Taveras",
+      "relationshipType": "client-manager",
+      "description": "Cesar Taveras is the relationship manager for Brian L's bank account, indicating a client-manager relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Brian L",
+      "person2": "P. Brian Moore",
+      "relationshipType": "client-executive",
+      "description": "P. Brian Moore, as Senior Vice President, represents the bank in communications with Brian L regarding his account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-05-07",
+      "title": "Account Overdrawn",
+      "description": "Brian L's account was overdrawn by $1,078.37, leading to an overdraft fee of $37.00.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Brian L"
+      ]
+    }
+  ],
+  "locations": [
+    "Cincinnati, OH",
+    "Thomasville, NC"
+  ],
+  "keyFacts": [
+    "Brian L's account was overdrawn on May 7, 2018, by $1,078.37.",
+    "An overdraft fee of $37.00 was assessed due to the overdrawn account.",
+    "Cesar Taveras is the relationship manager for Brian L's account.",
+    "P. Brian Moore signed the overdraft notice as Senior Vice President of Fifth Third Bank.",
+    "The account activity included significant withdrawals totaling $1,130.50."
+  ],
+  "analyzedAt": "2026-02-21T12:54:58.620Z"
+}

@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA01288288.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-03-31",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of March 2019. It includes transaction details such as deposits, withdrawals, and transfers, highlighting significant financial movements and balances during this period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder whose financial transactions are detailed throughout the document.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David J. Mitchell",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "David J. Mitchell is referenced multiple times as a source of incoming funds to Epstein's account.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Martin O. Weinberg",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Martin O. Weinberg is mentioned in connection with a financial transaction involving Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ann M. Rodriguez",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "Ann M. Rodriguez is referenced in a transaction related to Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David J. Mitchell",
+      "relationshipType": "financial",
+      "description": "David J. Mitchell is associated with multiple incoming money transfers to Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Martin O. Weinberg",
+      "relationshipType": "attorney-client",
+      "description": "Martin O. Weinberg is mentioned in relation to a financial transaction involving Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ann M. Rodriguez",
+      "relationshipType": "financial",
+      "description": "Ann M. Rodriguez is involved in a transaction related to Epstein's account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-03-01",
+      "title": "Beginning of Account Statement Period",
+      "description": "The financial statement begins with the account balance as of March 1, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-03-31",
+      "title": "End of Account Statement Period",
+      "description": "The financial statement concludes with the account balance as of March 31, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Qtr, B3, Saint Thomas, 00802, United States Virgin Islands",
+    "850 3rd Ave, New York, NY"
+  ],
+  "keyFacts": [
+    "The document details a financial statement for Jeffrey Epstein's account at Deutsche Bank for March 2019.",
+    "The account had a beginning balance of $5,147,847.83 and an ending balance of $3,376,651.24.",
+    "Significant transactions include multiple incoming transfers from David J. Mitchell and outgoing transfers to various banks.",
+    "The document includes numerous ATM withdrawals and service charges throughout the month.",
+    "There are references to checks and electronic transfers involving Epstein's account."
+  ],
+  "analyzedAt": "2026-02-21T17:29:50.642Z"
+}

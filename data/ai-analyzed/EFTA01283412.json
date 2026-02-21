@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01283412.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial records related to Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management. It includes transaction summaries, account balances, and investment details as of various dates in 2016 and 2019. The document highlights significant financial activities and account management practices associated with Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder referenced throughout the document, with detailed financial information related to his accounts.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Moms",
+      "role": "Primary Officer",
+      "category": "staff",
+      "context": "Paul Moms is identified as the primary officer managing Epstein's accounts at Deutsche Asset & Wealth Management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Arthur Tendler",
+      "role": "Custody Officer",
+      "category": "staff",
+      "context": "Arthur Tendler is mentioned as the custody officer associated with Epstein's accounts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Moms",
+      "relationshipType": "client-officer",
+      "description": "Paul Moms is the primary officer managing Epstein's accounts, indicating a client-officer relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Arthur Tendler",
+      "relationshipType": "client-officer",
+      "description": "Arthur Tendler is the custody officer for Epstein's accounts, indicating a client-officer relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-02-01",
+      "title": "Account Opening Balance",
+      "description": "The document references the opening balance of Epstein's account as of February 1, 2010.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2016-02-29",
+      "title": "Transaction Summary",
+      "description": "A summary of transactions for Epstein's account is provided, detailing various financial activities.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-01",
+      "title": "Detailed Portfolio Information",
+      "description": "The document includes detailed portfolio information for Epstein's accounts as of July 1, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "The document contains financial records for Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management.",
+    "Paul Moms is identified as the primary officer managing Epstein's accounts.",
+    "Arthur Tendler is mentioned as the custody officer for Epstein's accounts.",
+    "The document includes transaction summaries and account balances as of various dates in 2016 and 2019.",
+    "There are multiple references to the account name 'Jeffrey Epstein' throughout the document."
+  ],
+  "analyzedAt": "2026-02-21T13:44:17.774Z"
+}

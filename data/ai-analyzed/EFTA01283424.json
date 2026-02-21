@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA01283424.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial records related to Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management. It includes details about account balances, transactions, and asset allocations as of January 31, 2016. The records highlight significant financial activity and management of Epstein's wealth, which is relevant to the ongoing investigations into his financial dealings.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder referenced throughout the document, with multiple mentions regarding his financial activities and account details.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Primary Officer",
+      "category": "staff",
+      "context": "Paul Morris is identified as the primary officer managing Epstein's account at Deutsche Asset & Wealth Management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Arthur Temdlem",
+      "role": "Custody Officer",
+      "category": "staff",
+      "context": "Arthur Temdlem is mentioned as a custody officer associated with Epstein's account management.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-officer",
+      "description": "Paul Morris serves as the primary officer managing Epstein's financial accounts.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Arthur Temdlem",
+      "relationshipType": "client-officer",
+      "description": "Arthur Temdlem is a custody officer involved in the management of Epstein's accounts.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-01-31",
+      "title": "Account Summary",
+      "description": "Summary of Jeffrey Epstein's financial account status, including balances and transactions as of January 31, 2016.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "The document details financial transactions and account balances for Jeffrey Epstein as of January 31, 2016.",
+    "Paul Morris is identified as the primary officer managing Epstein's account.",
+    "Arthur Temdlem is mentioned as a custody officer associated with Epstein's financial management.",
+    "The document includes various financial metrics such as asset allocation and income estimates.",
+    "Multiple transactions and account activities are recorded, indicating significant financial operations."
+  ],
+  "analyzedAt": "2026-02-21T13:44:49.315Z"
+}

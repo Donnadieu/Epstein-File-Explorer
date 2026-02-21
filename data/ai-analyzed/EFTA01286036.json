@@ -1,0 +1,97 @@
+{
+  "fileName": "EFTA01286036.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of March 2016. It includes information on deposits, withdrawals, and transfers, highlighting significant transactions and the account balance at the end of the period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in the financial statement, showing various transactions and balances.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alan Dershowitz",
+      "role": "Consultant",
+      "category": "associate",
+      "context": "Alan Dershowitz is mentioned as a recipient of a payment from Epstein's account, indicating a financial relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tonja Haddad",
+      "role": "Trust Account Beneficiary",
+      "category": "associate",
+      "context": "Tonja Haddad is referenced in relation to a trust account that received a transfer from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jj Litchford",
+      "role": "Customer Service Representative",
+      "category": "staff",
+      "context": "Jj Litchford is listed as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alan Dershowitz",
+      "relationshipType": "financial",
+      "description": "Alan Dershowitz received consulting payments from Epstein's account, indicating a financial relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Tonja Haddad",
+      "relationshipType": "financial",
+      "description": "Tonja Haddad is associated with a trust account that received funds from Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-03-09",
+      "title": "Transfer of Funds",
+      "description": "A transfer of $2,354,094.95 was made from Epstein's account.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2016-03-21",
+      "title": "Payment to Alan Dershowitz",
+      "description": "A payment was made to Alan Dershowitz Consulting LLC from Epstein's account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Alan Dershowitz"
+      ]
+    },
+    {
+      "date": "2016-03-28",
+      "title": "Transfer to Tonja Haddad Trust Account",
+      "description": "A transfer of $61,930.00 was made to Tonja Haddad's trust account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Tonja Haddad"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, B3, Saint Thomas, 00802, United States Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details account activity for Jeffrey Epstein's account at Deutsche Bank for March 2016.",
+    "Significant transactions include a transfer of over $2.3 million and payments to Alan Dershowitz and Tonja Haddad.",
+    "The ending balance of the account as of March 31, 2016, was $2,085,261.32."
+  ],
+  "analyzedAt": "2026-02-21T15:38:28.833Z"
+}

@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01287020.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a summary of account balances and transactions for a Deutsche Bank account from August 1, 2017, to August 31, 2017. It details the beginning and ending balances, deposits, withdrawals, and service charges, including specific outgoing transfers to individuals and entities.",
+  "persons": [
+    {
+      "name": "Delia Klein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Delia Klein is mentioned as the recipient of a significant outgoing transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Delia Klein",
+      "person2": "Southern Trust Company",
+      "relationshipType": "financial",
+      "description": "Delia Klein received a transfer from the account to Southern Trust Company.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-08-21",
+      "title": "Outgoing Transfer to Delia Klein",
+      "description": "A transfer of $600,000.00 was made to Delia Klein's account at Southern Trust Company.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Delia Klein"
+      ]
+    },
+    {
+      "date": "2017-08-21",
+      "title": "Outgoing Transfer to FirstBank Puerto Rico",
+      "description": "A transfer of $150,000.00 was made to FirstBank Puerto Rico.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $2,661,352.64 and an ending balance of $1,911,962.93 as of August 31, 2017.",
+    "A total of $750,000.00 was debited from the account during the statement period.",
+    "Interest earned during the period was $610.29.",
+    "Delia Klein received a transfer of $600,000.00 from the account.",
+    "An additional transfer of $150,000.00 was made to FirstBank Puerto Rico."
+  ],
+  "analyzedAt": "2026-02-21T16:28:32.255Z"
+}

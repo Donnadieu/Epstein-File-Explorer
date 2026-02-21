@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01287288.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2018-01-01",
+  "summary": "This document is a financial statement from Deutsche Bank for Jeffrey Epstein's account, detailing transactions from January 1 to January 31, 2018. It includes information on account balances, deposits, withdrawals, and various fees associated with the account.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial records presented in this document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Steuart Oldfickt",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Steuart Oldfickt is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "George Brittain",
+      "role": "Business Associate",
+      "category": "associate",
+      "context": "George Brittain is mentioned in relation to transactions involving his company, Land Design Inc.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Steuart Oldfickt",
+      "relationshipType": "client-service",
+      "description": "Steuart Oldfickt is a representative of Deutsche Bank providing assistance to Jeffrey Epstein regarding his account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "George Brittain",
+      "relationshipType": "business",
+      "description": "George Brittain is associated with transactions related to Jeffrey Epstein's financial activities.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, St. Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details financial transactions for Jeffrey Epstein's account at Deutsche Bank for January 2018.",
+    "The account had a beginning balance of $106,449.59 and an ending balance of $258,355.74.",
+    "Multiple preauthorized debits and transfers are listed, including payroll and utility payments.",
+    "George Brittain's company, Land Design Inc., is mentioned in relation to outgoing money transfers.",
+    "Steuart Oldfickt is noted as a contact for assistance regarding the account."
+  ],
+  "analyzedAt": "2026-02-21T16:42:02.174Z"
+}

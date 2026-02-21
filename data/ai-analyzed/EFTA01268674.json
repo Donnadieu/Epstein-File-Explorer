@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01268674.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-27",
+  "summary": "This document consists of email correspondence regarding the purchase of a property located at 338 East Washington Road, Bradford, NH. Steve Marshal is coordinating with an attorney to finalize the title examination and due diligence for the property purchase, with discussions about deadlines and deposit releases.",
+  "persons": [
+    {
+      "name": "Steve Marshal",
+      "role": "Buyer",
+      "category": "other",
+      "context": "Steve Marshal is the buyer of the property and is communicating with the attorney regarding the title examination and due diligence process.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Attorney",
+      "role": "Real Estate Attorney",
+      "category": "legal",
+      "context": "An attorney is involved in handling the title examination and due diligence for the property purchase, providing legal advice to Steve Marshal.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ted",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Ted is mentioned as the attorney who will be sending analysis regarding the title examination to Steve Marshal.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steve Marshal",
+      "person2": "Attorney",
+      "relationshipType": "client-attorney",
+      "description": "Steve Marshal is seeking legal assistance from the attorney for the purchase of the property.",
+      "strength": 4
+    },
+    {
+      "person1": "Steve Marshal",
+      "person2": "Ted",
+      "relationshipType": "client-attorney",
+      "description": "Steve Marshal is in communication with Ted regarding the title examination for the property.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-20",
+      "title": "Effective Date of Purchase Agreement",
+      "description": "The effective date of the Purchase and Sale agreement for the property is established.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve Marshal",
+        "Attorney"
+      ]
+    },
+    {
+      "date": "2019-11-30",
+      "title": "Deadline for Title Due Diligence",
+      "description": "The deadline for completing satisfactory review of title due diligence is set to expire.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Steve Marshal",
+        "Attorney"
+      ]
+    }
+  ],
+  "locations": [
+    "338 East Washington Road, Bradford, NH"
+  ],
+  "keyFacts": [
+    "Steve Marshal is in the process of purchasing a property at 338 East Washington Road, Bradford, NH.",
+    "The effective date of the Purchase and Sale agreement is November 20, 2019.",
+    "The deadline for title due diligence is November 30, 2019.",
+    "The attorney is conducting the title examination and due diligence for the property.",
+    "There is a fraud alert regarding the verification of wire instructions before transmitting funds."
+  ],
+  "analyzedAt": "2026-02-21T06:40:16.745Z"
+}

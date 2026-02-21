@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA01283348.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial records related to Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management. It includes details about account balances, transactions, and portfolio summaries, highlighting significant financial activities and asset management strategies. The document is marked as confidential and is part of the evidence in the Epstein case.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder referenced throughout the document, with multiple mentions related to his financial activities and account management.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Moms",
+      "role": "Primary Officer",
+      "category": "staff",
+      "context": "Paul Moms is identified as the primary officer managing Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Arthur Templer",
+      "role": "Custody Officer",
+      "category": "staff",
+      "context": "Arthur Templer is mentioned as the custody officer associated with Epstein's accounts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Moms",
+      "relationshipType": "client-officer",
+      "description": "Paul Moms serves as the primary officer for Jeffrey Epstein's accounts, indicating a client-officer relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Arthur Templer",
+      "relationshipType": "client-officer",
+      "description": "Arthur Templer is the custody officer for Epstein's accounts, indicating a client-officer relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-05-31",
+      "title": "Account Summary",
+      "description": "A summary of Jeffrey Epstein's account as of May 31, 2015, detailing balances and transactions.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2015-05-01",
+      "title": "Opening Balance",
+      "description": "The document notes the opening balance of Epstein's account as of May 1, 2015.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document contains financial records related to Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management.",
+    "Paul Moms is identified as the primary officer managing Epstein's accounts.",
+    "Arthur Templer is mentioned as the custody officer for Epstein's accounts.",
+    "The account summary includes details about transactions and balances as of May 31, 2015.",
+    "The document is marked as confidential and is part of the evidence in the Epstein case."
+  ],
+  "analyzedAt": "2026-02-21T13:42:36.352Z"
+}

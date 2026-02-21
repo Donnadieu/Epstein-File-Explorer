@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA01287009.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a summary of account transactions for Jeffrey Epstein's account at Deutsche Bank for the month of August 2017. It details the account balance, deposits, withdrawals, and various transactions, including payments to individuals and companies. The document highlights significant financial activities during this period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial transactions detailed in the document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Cynthia Rodriguez",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Cynthia Rodriguez is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Art Lippman",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Art Lippman is referenced in connection with a funds transfer to his associated account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "E. Chavez",
+      "role": "Associate",
+      "category": "associate",
+      "context": "E. Chavez is mentioned in relation to a funds transfer to their account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Cynthia Rodriguez",
+      "relationshipType": "employer-employee",
+      "description": "Cynthia Rodriguez is identified as a personal assistant to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Art Lippman",
+      "relationshipType": "financial",
+      "description": "A funds transfer was made from Epstein's account to Art Lippman's associated account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "E. Chavez",
+      "relationshipType": "financial",
+      "description": "A funds transfer was made from Epstein's account to E. Chavez's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-08-01",
+      "title": "Account Balance Summary Start",
+      "description": "The account balance as of August 1, 2017, was summarized, showing a beginning balance of $398,969.22.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2017-08-31",
+      "title": "Account Balance Summary End",
+      "description": "The account balance as of August 31, 2017, was summarized, showing an ending balance of $282,161.18.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, St. Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details financial transactions for Jeffrey Epstein's account at Deutsche Bank for August 2017.",
+    "Cynthia Rodriguez is mentioned as a personal assistant for Epstein.",
+    "Significant transactions include payments to Art Lippman and E. Chavez.",
+    "The account had a beginning balance of $398,969.22 and an ending balance of $282,161.18.",
+    "Multiple preauthorized debits and outgoing transfers are documented throughout the month."
+  ],
+  "analyzedAt": "2026-02-21T16:27:57.841Z"
+}

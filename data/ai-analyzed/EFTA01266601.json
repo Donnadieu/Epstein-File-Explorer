@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01266601.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2020-07-01",
+  "summary": "This document contains correspondence from ClaimFox, Inc. to the US Attorney's Office for the Southern District of New York regarding the production of documents in response to a subpoena. It includes details about the handling of confidential claimant information and the inability of USAA Federal Savings Bank to provide a Business Records Affidavit due to operational circumstances. This document contains a series of bank statements and transaction records for Scott Borgerson and Ghislaine Maxwell, detailing account balances, transactions, and payments over several months. It includes information about various purchases, payments, and account management details, highlighting financial activities related to both individuals. This document is a correspondence from ClaimFox, Inc. to the US Attorney's Office for the Southern District of New York, indicating that there are no responsive records related to a subpoena for bank records from USAA Federal Savings Bank. It mentions the inability to identify accountholders and lists several entities for which no records exist.",
+  "persons": [
+    {
+      "name": "Alex Rossmiller",
+      "role": "AUSA",
+      "category": "legal",
+      "context": "Alex Rossmiller is mentioned as the Assistant United States Attorney receiving the correspondence from ClaimFox, Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Scott Borgerson",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Scott Borgerson is listed as a joint account holder with Ghislaine Maxwell, with multiple transactions and balances recorded under his name.",
+      "mentionCount": 25
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Ghislaine Maxwell is listed as a joint account holder with Scott Borgerson, with multiple transactions and balances recorded under her name.",
+      "mentionCount": 23
+    },
+    {
+      "name": "Noah C. Borgerson",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Noah C. Borgerson is mentioned in relation to transactions and account activities, indicating a connection to Scott Borgerson.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Scott Borgerson",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "joint account holders",
+      "description": "Scott Borgerson and Ghislaine Maxwell are listed as joint account holders on banking documents.",
+      "strength": 5
+    },
+    {
+      "person1": "Scott Borgerson",
+      "person2": "Noah C. Borgerson",
+      "relationshipType": "family",
+      "description": "Noah C. Borgerson is mentioned in connection with Scott Borgerson, indicating a familial relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-01",
+      "title": "Account Activity Start",
+      "description": "The account activity for Scott Borgerson and Ghislaine Maxwell begins, detailing various transactions.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Scott Borgerson",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2020-07-01",
+      "title": "Account Activity End",
+      "description": "The account activity for the specified period ends, summarizing the financial transactions and balances.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Scott Borgerson",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Ronkonkoma, NY",
+    "New York, NY",
+    "San Antonio, TX",
+    "Boston, MA",
+    "Gloucester, MA",
+    "905 Marconi Ave, Ronkonkoma, NY 11779",
+    "1 St. Andrew's Plaza, New York, NY 10007"
+  ],
+  "keyFacts": [
+    "ClaimFox, Inc. is a third-party vendor providing support in response to subpoenas for USAA Federal Savings Bank.",
+    "The document outlines the confidentiality of claimant information and the legal implications of unauthorized disclosure.",
+    "Scott Borgerson and Ghislaine Maxwell are identified as joint account holders in banking records.",
+    "Due to operational circumstances, USAA Federal Savings Bank could not provide a Business Records Affidavit with the document production.",
+    "The correspondence is dated July 1, 2020, and addressed to the US Attorney's Office.",
+    "Scott Borgerson and Ghislaine Maxwell are joint account holders with USAA Federal Savings Bank.",
+    "The account statements detail various transactions including payments to Comcast, National Grid, and other service providers.",
+    "Multiple payments and transactions indicate regular financial activity, including payments for utilities and personal expenses.",
+    "Noah C. Borgerson is mentioned in relation to the account, suggesting a familial connection.",
+    "The document includes a wire transfer of $3,560.59 to Scott Borgerson's account.",
+    "ClaimFox, Inc. is a third-party vendor for USAA Federal Savings Bank.",
+    "The document indicates that there are no responsive records to the subpoena.",
+    "The bank records for several entities including Terramar Project Inc., Ellmax LLC, Max Foundation, and Max Hotel Service Corp are missing or could not be identified.",
+    "The correspondence is dated July 6, 2020.",
+    "ClaimFox, Inc. offers assistance in response to subpoenas."
+  ],
+  "analyzedAt": "2026-02-21T06:10:51.886Z"
+}

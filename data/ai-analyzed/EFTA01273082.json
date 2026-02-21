@@ -1,0 +1,131 @@
+{
+  "fileName": "EFTA01273082.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains multiple entries of Fedwire credit advice transactions involving Jeepers Inc. and Fortress Value Recovery Fund I LLC. It details various monetary transfers to Jeepers Inc. from different banks, including amounts, dates, and originating banks, highlighting financial activities related to the company.",
+  "persons": [
+    {
+      "name": "Jeepers Inc",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Jeepers Inc is the beneficiary of multiple financial transactions detailed in the document.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Fortress Value Recovery Fund I LLC",
+      "role": "Originator",
+      "category": "other",
+      "context": "Fortress Value Recovery Fund I LLC is identified as the originator for several transactions sending funds to Jeepers Inc.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Pershing LLC",
+      "role": "Originator's Bank",
+      "category": "other",
+      "context": "Pershing LLC is mentioned as the bank for the originator in some transactions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bank of America, N.A.",
+      "role": "Originator's Bank",
+      "category": "other",
+      "context": "Bank of America, N.A. is listed as the originator's bank for transactions involving Fortress Value Recovery Fund I LLC.",
+      "mentionCount": 4
+    },
+    {
+      "name": "FirstBank Puerto Rico",
+      "role": "Receiving Bank",
+      "category": "other",
+      "context": "FirstBank Puerto Rico is mentioned as the receiving bank for the transactions.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeepers Inc",
+      "person2": "Fortress Value Recovery Fund I LLC",
+      "relationshipType": "financial",
+      "description": "Fortress Value Recovery Fund I LLC is sending funds to Jeepers Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeepers Inc",
+      "person2": "Bank of America, N.A.",
+      "relationshipType": "financial",
+      "description": "Bank of America, N.A. is involved in transactions sending funds to Jeepers Inc.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeepers Inc",
+      "person2": "FirstBank Puerto Rico",
+      "relationshipType": "financial",
+      "description": "FirstBank Puerto Rico is the receiving bank for transactions involving Jeepers Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeepers Inc",
+      "person2": "Pershing LLC",
+      "relationshipType": "financial",
+      "description": "Pershing LLC is the originator's bank for some transactions involving Jeepers Inc.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-04-27",
+      "title": "Transaction to Jeepers Inc",
+      "description": "A transaction of $10,000 was credited to Jeepers Inc.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeepers Inc"
+      ]
+    },
+    {
+      "date": "2019-11-18",
+      "title": "Investor Payment to Jeepers Inc",
+      "description": "An investor payment of $79,206.92 was credited to Jeepers Inc.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeepers Inc",
+        "Fortress Value Recovery Fund I LLC"
+      ]
+    },
+    {
+      "date": "2019-11-21",
+      "title": "Investor Payment to Jeepers Inc",
+      "description": "Another investor payment of $92,594.02 was credited to Jeepers Inc.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeepers Inc",
+        "Fortress Value Recovery Fund I LLC"
+      ]
+    },
+    {
+      "date": "2019-12-13",
+      "title": "Transaction Fee for Jeepers Inc",
+      "description": "A transaction fee of $15.00 was debited from Jeepers Inc.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeepers Inc"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter B 3 American Yacht Harbor St Thomas VI 00802",
+    "850 New Burton Road Suite 201 Dover, DE 19904, US",
+    "222 Broadway New York, NY 10038, United States of America",
+    "One Pershing Plaza Jersey City, NJ 07399, United States of America"
+  ],
+  "keyFacts": [
+    "Multiple financial transactions were made to Jeepers Inc, indicating significant financial activity.",
+    "Fortress Value Recovery Fund I LLC is a key originator of funds sent to Jeepers Inc.",
+    "Transactions involved various banks including Bank of America and Pershing LLC.",
+    "The document includes specific amounts and dates for each transaction, highlighting the financial dealings."
+  ],
+  "analyzedAt": "2026-02-21T07:39:07.826Z"
+}

@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01266932.pdf",
+  "dataSet": "10",
+  "documentType": "passenger manifest",
+  "dateOriginal": null,
+  "summary": "This document contains a series of passenger manifests for flights associated with N212JE JEGE, LLC. It lists crew members, passengers, flight times, and other flight-related details for various dates in 2013 and 2014. Notably, several passengers mentioned are linked to Jeffrey Epstein.",
+  "persons": [
+    {
+      "name": "Larry Visoski",
+      "role": "Pilot",
+      "category": "staff",
+      "context": "Larry Visoski is listed as a crew member on multiple flight manifests, indicating his role as a pilot for the flights.",
+      "mentionCount": 20
+    },
+    {
+      "name": "David Rodgers",
+      "role": "Co-pilot",
+      "category": "staff",
+      "context": "David Rodgers is mentioned as a crew member alongside Larry Visoski on several flight manifests, indicating his role as co-pilot.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Passenger",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as a passenger on multiple flights, indicating his involvement in the flights operated by N212JE JEGE, LLC.",
+      "mentionCount": 10
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Larry Visoski",
+      "person2": "David Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Larry Visoski and David Rodgers are both crew members on the same flights, indicating a professional relationship as pilot and co-pilot.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "passenger-crew",
+      "description": "Jeffrey Epstein is listed as a passenger on flights piloted by Larry Visoski, indicating a direct relationship during these flights.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Rodgers",
+      "relationshipType": "passenger-crew",
+      "description": "Jeffrey Epstein is listed as a passenger on flights co-piloted by David Rodgers, indicating a direct relationship during these flights.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-01-01",
+      "title": "Flight Departures",
+      "description": "Multiple flights operated by N212JE JEGE, LLC with various passengers including Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Larry Visoski",
+        "David Rodgers",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2014-01-01",
+      "title": "Flight Departures",
+      "description": "Continued operation of flights by N212JE JEGE, LLC with passengers including Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Larry Visoski",
+        "David Rodgers",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "N212JE JEGE, LLC",
+    "Various cities and states as listed in the manifests"
+  ],
+  "keyFacts": [
+    "Larry Visoski and David Rodgers are consistently listed as crew members on multiple flights.",
+    "Jeffrey Epstein is mentioned as a passenger on several flights operated by N212JE JEGE, LLC.",
+    "The manifests cover a range of dates in 2013 and 2014, indicating ongoing flight operations during this period."
+  ],
+  "analyzedAt": "2026-02-21T06:15:20.669Z"
+}

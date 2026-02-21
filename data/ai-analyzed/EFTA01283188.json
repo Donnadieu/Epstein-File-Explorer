@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01283188.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-12-31",
+  "summary": "This document contains financial records related to Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management as of December 31, 2014. It includes details on account balances, transaction summaries, and portfolio information, highlighting significant amounts and asset management details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder referenced throughout the document, with multiple accounts and significant financial transactions detailed.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Mom",
+      "role": "Primary Officer",
+      "category": "staff",
+      "context": "Paul Mom is identified as the primary officer managing Epstein's accounts at Deutsche Asset & Wealth Management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Arthur Tendler",
+      "role": "Custody Officer",
+      "category": "staff",
+      "context": "Arthur Tendler is mentioned as the custody officer responsible for overseeing Epstein's financial assets.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Mom",
+      "relationshipType": "client-officer",
+      "description": "Paul Mom serves as the primary officer for Jeffrey Epstein's accounts at Deutsche Asset & Wealth Management.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Arthur Tendler",
+      "relationshipType": "client-officer",
+      "description": "Arthur Tendler is the custody officer managing the assets of Jeffrey Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "345 Park Avenue, New York, NY"
+  ],
+  "keyFacts": [
+    "The document details various financial transactions and account balances for Jeffrey Epstein as of December 31, 2014.",
+    "Paul Mom is identified as the primary officer managing Epstein's accounts.",
+    "Arthur Tendler is noted as the custody officer overseeing Epstein's financial assets.",
+    "The document includes information on asset diversification and income estimates for Epstein's accounts.",
+    "Multiple references to confidential financial data are made throughout the document."
+  ],
+  "analyzedAt": "2026-02-21T13:38:53.494Z"
+}

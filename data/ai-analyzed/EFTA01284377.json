@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01284377.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2013-11-30",
+  "summary": "This document is a summary of account balances and transaction details for Jeffrey Epstein's account at Deutsche Bank for the period from November 8, 2013, to November 30, 2013. It includes details of deposits, withdrawals, and service charges, highlighting significant transactions and the account's ending balance.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial records detailed in this document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. McCorquodale",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "M. McCorquodale is mentioned in relation to a transaction involving a transfer of funds.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "client-banker",
+      "description": "Amanda Kirby is a bank representative providing assistance to Jeffrey Epstein regarding his account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "M. McCorquodale",
+      "relationshipType": "financial",
+      "description": "M. McCorquodale is involved in a financial transaction with Jeffrey Epstein, indicating a connection through banking activities.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-11-08",
+      "title": "Account Summary Start Date",
+      "description": "The account summary begins on this date, detailing the balance and transactions for the following weeks.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2013-11-30",
+      "title": "Account Summary End Date",
+      "description": "The account summary concludes on this date, showing the ending balance and final transactions.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The document details Jeffrey Epstein's account balance at Deutsche Bank, showing a beginning balance of $50.00 and an ending balance of $85,548.77.",
+    "Significant transactions include a transfer of $100,000 and various preauthorized debits for utility payments and taxes.",
+    "Amanda Kirby is noted as a contact for assistance regarding the account.",
+    "M. McCorquodale is mentioned in relation to a financial transaction involving Epstein's account.",
+    "The document is marked confidential and includes a disclaimer regarding the handling of errors in account statements."
+  ],
+  "analyzedAt": "2026-02-21T14:19:07.458Z"
+}

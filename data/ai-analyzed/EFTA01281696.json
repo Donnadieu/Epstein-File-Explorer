@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01281696.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Fifth Third Private Bank detailing account activity for the period of July 1, 2015, to July 31, 2015. It includes information on deposits, withdrawals, and account balances, as well as mentions of various transactions and payments made from the account.",
+  "persons": [
+    {
+      "name": "Helene Tokntino",
+      "role": "Private Banker",
+      "category": "staff",
+      "context": "Helene Tokntino is identified as the private banker associated with the account in question.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Zahan Billimoria",
+      "role": "Individual involved in transactions",
+      "category": "other",
+      "context": "Zahan Billimoria is mentioned in relation to a return payment and a web-initiated payment.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tammy Krigsfeld",
+      "role": "Individual involved in transactions",
+      "category": "other",
+      "context": "Tammy Krigsfeld is mentioned in relation to a fee payment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Hadl",
+      "role": "Individual involved in transactions",
+      "category": "other",
+      "context": "John Hadl is mentioned in relation to a debit card return.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Zahan Billimoria",
+      "person2": "Helene Tokntino",
+      "relationshipType": "banker-client",
+      "description": "Zahan Billimoria is involved in transactions related to the account managed by Helene Tokntino.",
+      "strength": 3
+    },
+    {
+      "person1": "Tammy Krigsfeld",
+      "person2": "Helene Tokntino",
+      "relationshipType": "banker-client",
+      "description": "Tammy Krigsfeld is involved in a fee payment related to the account managed by Helene Tokntino.",
+      "strength": 2
+    },
+    {
+      "person1": "John Hadl",
+      "person2": "Helene Tokntino",
+      "relationshipType": "banker-client",
+      "description": "John Hadl is mentioned in a transaction related to the account managed by Helene Tokntino.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document is a financial statement for an account at Fifth Third Private Bank covering the period from July 1, 2015, to July 31, 2015.",
+    "Helene Tokntino is the private banker associated with the account.",
+    "The account had significant transactions including outgoing wire transfers and various payments.",
+    "Several individuals are mentioned in relation to transactions, including Zahan Billimoria, Tammy Krigsfeld, and John Hadl.",
+    "The document highlights the importance of identity theft protection and banking services."
+  ],
+  "analyzedAt": "2026-02-21T12:53:12.434Z"
+}

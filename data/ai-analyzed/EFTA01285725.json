@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01285725.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-09-01",
+  "summary": "This document contains a summary of account balances and transaction details for a Deutsche Bank account from September 1, 2015, to September 30, 2015. It outlines various debits and credits, including payroll fees, tax payments, and transfers to other banks, indicating financial activity related to the account.",
+  "persons": [
+    {
+      "name": "Amanda Kirby",
+      "role": "Account Representative",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leighton Allenby",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Leighton Allenby is mentioned in connection with a transaction involving a transfer to a savings bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Diet Arda Beskardes",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Diet Arda Beskardes is mentioned as the recipient of a transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leighton Allenby",
+      "person2": "Diet Arda Beskardes",
+      "relationshipType": "financial",
+      "description": "Leighton Allenby is involved in a financial transaction that includes a transfer to Diet Arda Beskardes.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-09-01",
+      "title": "Account Summary Start",
+      "description": "The account summary begins with a balance and transaction details starting from September 1, 2015.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2015-09-30",
+      "title": "Account Summary End",
+      "description": "The account summary concludes with the ending balance as of September 30, 2015.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154"
+  ],
+  "keyFacts": [
+    "The document details account transactions for September 2015, including various debits and credits.",
+    "Amanda Kirby is listed as a contact for assistance regarding the account.",
+    "Leighton Allenby is involved in a transaction with a savings bank.",
+    "Diet Arda Beskardes is mentioned as the recipient of a $2,500 transfer.",
+    "The account had a significant number of preauthorized debits for payroll and tax services."
+  ],
+  "analyzedAt": "2026-02-21T15:22:50.934Z"
+}

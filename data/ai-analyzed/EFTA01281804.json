@@ -1,0 +1,47 @@
+{
+  "fileName": "EFTA01281804.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document appears to be a financial transaction record involving Dr. Ellie Wanly and WA Golf Company LLC. It includes instructions regarding the handling of the transaction and mentions a deposit made by Jessica, although the context is largely obscured by garbled text.",
+  "persons": [
+    {
+      "name": "Ellie Wanly",
+      "role": "Individual involved in transaction",
+      "category": "other",
+      "context": "Dr. Ellie Wanly is mentioned as a payee in a financial transaction involving WA Golf Company LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jessica",
+      "role": "Depositor",
+      "category": "other",
+      "context": "Jessica is mentioned as the individual who deposited the transaction related to WA Golf Company LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ellie Wanly",
+      "person2": "WA Golf Company LLC",
+      "relationshipType": "financial",
+      "description": "Ellie Wanly is the payee in a financial transaction involving WA Golf Company LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Jessica",
+      "person2": "WA Golf Company LLC",
+      "relationshipType": "financial",
+      "description": "Jessica is the individual who deposited funds related to WA Golf Company LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "Dr. Ellie Wanly is involved in a financial transaction with WA Golf Company LLC.",
+    "Jessica is noted as the individual who deposited funds for the transaction.",
+    "The document contains garbled text, making it difficult to extract further details."
+  ],
+  "analyzedAt": "2026-02-21T12:57:53.992Z"
+}

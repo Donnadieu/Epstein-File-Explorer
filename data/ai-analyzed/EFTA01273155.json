@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01273155.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains a series of Fedwire credit and debit advice transactions involving Southern Trust Company Inc. and various banks, primarily Deutsche Bank and FirstBank Puerto Rico. The transactions detail significant monetary transfers, including amounts received and debited, along with associated fees.",
+  "persons": [
+    {
+      "name": "IMAD",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "IMAD is mentioned as the beneficiary in multiple transactions involving Southern Trust Company Inc.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Darren K Indyke",
+      "role": "Originator",
+      "category": "legal",
+      "context": "Darren K Indyke is associated with a trust account that originates a significant transaction to Southern Trust Company.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Originator",
+      "category": "other",
+      "context": "Richard Kahn is mentioned as the originator of a transaction involving the Butterfly Trust.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Erika A Kellerhals",
+      "role": "Originator",
+      "category": "other",
+      "context": "Erika A Kellerhals is mentioned as a trustee associated with a transaction involving the Butterfly Trust.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren K Indyke",
+      "person2": "Southern Trust Company Inc",
+      "relationshipType": "originator-beneficiary",
+      "description": "Darren K Indyke originates a transaction to Southern Trust Company Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Southern Trust Company Inc",
+      "relationshipType": "originator-beneficiary",
+      "description": "Richard Kahn originates a transaction to Southern Trust Company Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Erika A Kellerhals",
+      "person2": "Southern Trust Company Inc",
+      "relationshipType": "originator-beneficiary",
+      "description": "Erika A Kellerhals originates a transaction to Southern Trust Company Inc.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-02-11",
+      "title": "Transaction Credit",
+      "description": "A credit transaction of $300,000.00 was received by Southern Trust Company Inc.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "IMAD"
+      ]
+    },
+    {
+      "date": "2019-11-20",
+      "title": "Large Transaction Credit",
+      "description": "A credit transaction of $5,566,408.92 was received by Southern Trust Company Inc.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Darren K Indyke"
+      ]
+    },
+    {
+      "date": "2019-12-12",
+      "title": "Multiple Transactions",
+      "description": "Several transactions totaling over $10 million were credited to Southern Trust Company Inc.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "IMAD",
+        "Richard Kahn",
+        "Erika A Kellerhals"
+      ]
+    }
+  ],
+  "locations": [
+    "RED HOOK QUARTER ST THOMAS VI",
+    "575 LEXINGTON AVENUE, 4TH FLOOR NEW YORK, NY 10022",
+    "FIRSTBANK PUERTO RICO SAN JUAN PR"
+  ],
+  "keyFacts": [
+    "The document details multiple financial transactions involving Southern Trust Company Inc. and various banks.",
+    "IMAD is consistently listed as the beneficiary in numerous transactions.",
+    "Darren K Indyke, Richard Kahn, and Erika A Kellerhals are identified as originators of significant transactions.",
+    "The transactions include large sums, with one notable credit of $5,566,408.92 on November 20, 2019.",
+    "Several transactions on December 12, 2019, total over $10 million, indicating substantial financial activity."
+  ],
+  "analyzedAt": "2026-02-21T07:41:46.276Z"
+}

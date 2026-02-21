@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA01283088.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial agreements and authorizations related to Jeffrey Epstein's accounts with Deutsche Bank. It includes details about option trading, risks associated with uncovered options, and a power of attorney for managing his accounts. The document highlights Epstein's financial status and investment strategies.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder for the financial agreements and option trading strategies detailed in the document.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Authorized Person",
+      "category": "associate",
+      "context": "Harry Beller is mentioned as an authorized person who can place orders on Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Authorized Person",
+      "category": "associate",
+      "context": "Jeanne Brennan is also listed as an authorized person who can place orders on Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jay Lipman",
+      "role": "Analyst",
+      "category": "staff",
+      "context": "Jay Lipman is an analyst at Deutsche Bank who communicates about the Epstein account and its coding.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Donna R Taylor",
+      "role": "Client Advisor",
+      "category": "staff",
+      "context": "Donna R Taylor is a client advisor at Deutsche Bank who is involved in the management of Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Harry Beller",
+      "relationshipType": "authorized person-account holder",
+      "description": "Harry Beller is authorized to place orders on Jeffrey Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "authorized person-account holder",
+      "description": "Jeanne Brennan is authorized to place orders on Jeffrey Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jay Lipman",
+      "person2": "Donna R Taylor",
+      "relationshipType": "colleagues",
+      "description": "Jay Lipman and Donna R Taylor are both staff members at Deutsche Bank discussing the Epstein account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": null,
+      "title": "Account Management and Options Trading",
+      "description": "The document outlines the management of Jeffrey Epstein's accounts and the strategies for options trading.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Harry Beller",
+        "Jeanne Brennan",
+        "Jay Lipman",
+        "Donna R Taylor"
+      ]
+    }
+  ],
+  "locations": [
+    "Little Saint James, St Thomas",
+    "6100 Red Hook Canter, B3, St Thomas, Virgin Islands, US"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the primary account holder with Deutsche Bank and has authorized Harry Beller and Jeanne Brennan to place orders on his account.",
+    "The document includes a detailed description of the risks associated with uncovered options trading.",
+    "Jay Lipman, an analyst at Deutsche Bank, communicates about the coding of Epstein's account.",
+    "The financial information indicates Epstein's significant wealth and investment strategies.",
+    "The document contains a power of attorney allowing designated agents to manage Epstein's accounts."
+  ],
+  "analyzedAt": "2026-02-21T13:36:19.261Z"
+}

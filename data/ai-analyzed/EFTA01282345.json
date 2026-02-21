@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA01282345.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial agreements and forms related to Jeffrey Epstein's accounts with Deutsche Bank, including a custody account agreement, power of attorney, and tax identification forms. It outlines the responsibilities of the bank and the client, as well as the terms for managing Epstein's assets.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the custody account at Deutsche Bank, as indicated throughout the document.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Agent",
+      "category": "associate",
+      "context": "Darren Indyke is named as an agent authorized to act on behalf of Jeffrey Epstein under the power of attorney.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Josh Rosen",
+      "role": "Account Opening Officer",
+      "category": "staff",
+      "context": "Josh Rosen is mentioned as the account opening officer for Epstein's accounts at Deutsche Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Private Banker/Client Advisor",
+      "category": "staff",
+      "context": "Paul Morris is identified as the private banker or client advisor for Epstein's accounts.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "principal-agent",
+      "description": "Darren Indyke is appointed as the agent for Jeffrey Epstein under the power of attorney.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Josh Rosen",
+      "relationshipType": "client-staff",
+      "description": "Josh Rosen is the account opening officer for Epstein's accounts at Deutsche Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-advisor",
+      "description": "Paul Morris serves as the private banker or client advisor for Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-04-08",
+      "title": "Custody Account Agreement Initiation",
+      "description": "The initiation of a custody account agreement for Jeffrey Epstein with Deutsche Bank.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Josh Rosen"
+      ]
+    },
+    {
+      "date": "2014-12-17",
+      "title": "Power of Attorney Execution",
+      "description": "Jeffrey Epstein executed a durable general power of attorney appointing Darren Indyke as his agent.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Darren Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter, B3, St. Thomas, USVI 00802",
+    "New York, New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the account holder for a custody account at Deutsche Bank.",
+    "Darren Indyke is appointed as Epstein's agent under a power of attorney.",
+    "Josh Rosen is identified as the account opening officer for Epstein's accounts.",
+    "Paul Morris serves as Epstein's private banker or client advisor.",
+    "The document includes various financial agreements and forms related to Epstein's accounts."
+  ],
+  "analyzedAt": "2026-02-21T13:17:19.954Z"
+}

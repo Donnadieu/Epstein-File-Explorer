@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA01269598.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial records and account opening procedures related to LSJ Employees LLC, a company associated with Jeffrey Epstein. It includes customer due diligence forms, account agreements, and certifications of beneficial ownership, detailing the company's structure, ownership, and banking relationships.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sole Member",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the Sole Member of LSJ Employees LLC, which is a limited liability company formed in the U.S. Virgin Islands.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Manager",
+      "category": "staff",
+      "context": "Jeanne Brennan is listed as the Manager of LSJ Employees LLC and is involved in the company's operations and banking agreements.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as the attorney for LSJ Employees LLC, involved in legal matters related to the company.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Accountant",
+      "category": "staff",
+      "context": "Harry Beller is identified as the accountant for LSJ Employees LLC, responsible for financial oversight.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "manager-member",
+      "description": "Jeffrey Epstein is the Sole Member of LSJ Employees LLC, while Jeanne Brennan serves as the Manager.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "attorney-client",
+      "description": "Darren Indyke acts as the attorney for Jeffrey Epstein in matters related to LSJ Employees LLC.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Harry Beller",
+      "relationshipType": "employer-employee",
+      "description": "Harry Beller is employed as the accountant for LSJ Employees LLC, which is owned by Jeffrey Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2011-10-27",
+      "title": "Formation of LSJ Employees LLC",
+      "description": "LSJ Employees LLC was officially formed and registered in the U.S. Virgin Islands.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2011-12-12",
+      "title": "Bank Authorization Agreement",
+      "description": "An authorization agreement was executed allowing FirstBank to accept instructions from designated individuals associated with LSJ Employees LLC.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter B3, St. Thomas, USVI 00802",
+    "9100 Havensight, Port of Sale, Suite 15-16, St. Thomas, USVI 00802",
+    "Little Saint James Island, St. Thomas, USVI 00802"
+  ],
+  "keyFacts": [
+    "LSJ Employees LLC was formed on October 27, 2011, with Jeffrey Epstein as the Sole Member.",
+    "The company is registered in the U.S. Virgin Islands and has no intention of conducting business beyond employing household employees.",
+    "Jeanne Brennan serves as the Manager of LSJ Employees LLC, while Darren Indyke is the attorney for the company.",
+    "The company has a bank account with FirstBank for corporate expenses.",
+    "The company has been described as a holding company with no active business operations."
+  ],
+  "analyzedAt": "2026-02-21T07:05:17.927Z"
+}

@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA01285044.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains a summary of account balances and transactions for Jeffrey Epstein's account at Deutsche Bank for the month of August 2014. It details various debits and credits, including payments to individuals and entities, as well as incoming and outgoing transfers.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial transactions detailed in the document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Mande Kirby",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Mande Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "W. Chester Brewer, Jr.",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "W. Chester Brewer, Jr. is referenced in connection with an outgoing money transfer from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mehmet Arda Beskardes",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Mehmet Arda Beskardes is mentioned in relation to an outgoing money transfer from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adam Bly",
+      "role": "Individual",
+      "category": "other",
+      "context": "Adam Bly is referenced in connection with an incoming money transfer to Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "W. Chester Brewer, Jr.",
+      "relationshipType": "client-attorney",
+      "description": "W. Chester Brewer, Jr. is identified as an attorney associated with an outgoing transfer from Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Mehmet Arda Beskardes",
+      "relationshipType": "client-attorney",
+      "description": "Mehmet Arda Beskardes is mentioned in relation to an outgoing transfer from Epstein's account, indicating a client-attorney relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Adam Bly",
+      "relationshipType": "financial",
+      "description": "Adam Bly is referenced in connection with an incoming money transfer to Epstein's account, suggesting a financial relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-08-01",
+      "title": "Account Summary Start",
+      "description": "The account summary begins with a balance of $52,639,793.74 as of August 1, 2014.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2014-08-31",
+      "title": "Account Summary End",
+      "description": "The account summary ends with an ending balance of $2,206,163.91 as of August 31, 2014.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2014-08-19",
+      "title": "Large Incoming Transfer",
+      "description": "A significant incoming money transfer of $2,500,000.00 is recorded on August 19, 2014.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, B3, Saint Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details financial transactions for Jeffrey Epstein's account at Deutsche Bank for August 2014.",
+    "The account had a beginning balance of $52,639,793.74 and an ending balance of $2,206,163.91.",
+    "Significant transactions include a $2,500,000.00 incoming transfer on August 19, 2014.",
+    "Mande Kirby is noted as a contact for personal assistance regarding the account.",
+    "Multiple outgoing transfers are made to various individuals and entities, including attorneys."
+  ],
+  "analyzedAt": "2026-02-21T14:49:56.626Z"
+}
