@@ -194,6 +194,19 @@ export function getOpenAPISpec() {
           responses: { "200": { description: "All persons, connections, and year ranges" } },
         },
       },
+      "/export/obsidian": {
+        get: {
+          summary: "Export Obsidian vault",
+          tags: ["Export"],
+          description: "Downloads a zip file containing a ready-to-use Obsidian vault with markdown files for persons, documents, timeline events, and connections, cross-referenced with [[wikilinks]].",
+          responses: {
+            "200": {
+              description: "Obsidian vault zip file",
+              content: { "application/zip": { schema: { type: "string", format: "binary" } } },
+            },
+          },
+        },
+      },
       "/export/persons": {
         get: {
           summary: "Export persons",
