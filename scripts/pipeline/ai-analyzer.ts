@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
-import OpenAI from "openai";
 import { getAIPriority } from "./media-classifier";
+import { getClient, getModelConfig, calculateCostCents as calcCost, AVAILABLE_MODELS, DEFAULT_MODEL_ID } from "../../server/chat/models";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,24 +11,8 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const AI_OUTPUT_DIR = path.join(DATA_DIR, "ai-analyzed");
 
-const DEEPSEEK_MODEL = "deepseek-chat";
 const MAX_CHUNK_CHARS = 24000;
 const MIN_TEXT_LENGTH = 200;
-
-// DeepSeek direct pricing per million tokens
-const DEEPSEEK_INPUT_COST_PER_M = 0.27; // cents per million input tokens
-const DEEPSEEK_OUTPUT_COST_PER_M = 1.10; // cents per million output tokens
-
-let _deepseek: OpenAI | null = null;
-function getDeepSeek(): OpenAI {
-  if (!_deepseek) {
-    _deepseek = new OpenAI({
-      baseURL: "https://api.deepseek.com",
-      apiKey: process.env.DEEPSEEK_API_KEY,
-    });
-  }
-  return _deepseek;
-}
 
 export interface AIAnalysisResult {
   fileName: string;
@@ -369,10 +353,8 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
   return merged;
 }
 
-function calculateCostCents(inputTokens: number, outputTokens: number): number {
-  const inputCost = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M;
-  const outputCost = (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
-  return Math.ceil((inputCost + outputCost) * 100) / 100; // round to nearest 0.01 cent
+function calculateCostCents(inputTokens: number, outputTokens: number, modelId?: string): number {
+  return calcCost(inputTokens, outputTokens, modelId);
 }
 
 interface AnalyzeChunkResult {
@@ -381,7 +363,9 @@ interface AnalyzeChunkResult {
   outputTokens: number;
 }
 
-async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet: string): Promise<{ result: AIAnalysisResult; inputTokens: number; outputTokens: number }> {
+async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet: string, modelId?: string): Promise<{ result: AIAnalysisResult; inputTokens: number; outputTokens: number }> {
+  const client = getClient(modelId);
+  const config = getModelConfig(modelId);
   const chunks = chunkText(text, MAX_CHUNK_CHARS);
   console.log(`  Analyzing ${fileName} (${text.length} chars, ${chunks.length} chunk(s))...`);
 
@@ -392,8 +376,8 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
     const chunkLabel = chunks.length > 1 ? ` (chunk ${i + 1}/${chunks.length})` : "";
 
     try {
-      const response = await getDeepSeek().chat.completions.create({
-        model: DEEPSEEK_MODEL,
+      const response = await client.chat.completions.create({
+        model: config.model,
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           {
@@ -401,7 +385,7 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
             content: `Analyze this Epstein case document text${chunkLabel}. File: ${fileName}, Data Set: ${dataSet}\n\n---\n${chunk}`,
           },
         ],
-        max_tokens: 4096,
+        max_tokens: config.maxTokens,
         temperature: 0.1,
       });
 
@@ -493,14 +477,15 @@ export async function analyzeDocumentTiered(
   fileName: string,
   dataSet: string,
   tier: AnalysisTier,
+  modelId?: string,
 ): Promise<TieredAnalysisResult> {
   if (tier === 0) {
     return analyzeDocumentTier0(text, fileName, dataSet);
   }
 
-  // Tier 1: DeepSeek API
-  const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(text, fileName, dataSet);
-  const costCents = calculateCostCents(inputTokens, outputTokens);
+  // Tier 1: AI API analysis
+  const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(text, fileName, dataSet, modelId);
+  const costCents = calculateCostCents(inputTokens, outputTokens, modelId);
 
   return {
     ...result,
@@ -526,6 +511,7 @@ export async function runAIAnalysis(options: {
   delayMs?: number;
   minPriority?: number;
   budget?: number;
+  model?: string;
 } = {}): Promise<AIAnalysisResult[]> {
   const {
     inputDir = EXTRACTED_DIR,
@@ -536,14 +522,18 @@ export async function runAIAnalysis(options: {
     delayMs = 1500,
     minPriority = 1,
     budget,
+    model: modelId,
   } = options;
+
+  const modelConfig = getModelConfig(modelId);
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  console.log("\n=== AI Document Analyzer (DeepSeek) ===\n");
-  console.log(`Model: ${DEEPSEEK_MODEL}`);
+  console.log(`\n=== AI Document Analyzer ===\n`);
+  console.log(`Model: ${modelConfig.label} (${modelConfig.model})`);
+  console.log(`Provider: ${modelConfig.provider}`);
   console.log(`Input: ${inputDir}`);
   console.log(`Output: ${outputDir}`);
   console.log(`Min priority: ${minPriority}${budget ? `, Budget: ${budget} cents ($${(budget / 100).toFixed(2)})` : ""}`);
@@ -632,8 +622,8 @@ export async function runAIAnalysis(options: {
         continue;
       }
 
-      const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(data.text, fileName, entry.dataSet);
-      const costCents = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M + (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
+      const { result, inputTokens, outputTokens } = await analyzeDocumentWithTokens(data.text, fileName, entry.dataSet, modelId);
+      const costCents = calculateCostCents(inputTokens, outputTokens, modelId);
       totalCostCents += costCents;
 
       const outFile = path.join(outputDir, `${entry.file}.json`);
@@ -690,6 +680,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.minPriority = parseInt(args[++i], 10);
     } else if (args[i] === "--budget" && args[i + 1]) {
       options.budget = parseInt(args[++i], 10);
+    } else if (args[i] === "--model" && args[i + 1]) {
+      options.model = args[++i];
     } else if (args[i] === "--no-skip") {
       options.skipExisting = false;
     }
