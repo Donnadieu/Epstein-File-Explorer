@@ -1,14 +1,7 @@
-import * as fs from "fs";
-import * as path from "path";
-import { fileURLToPath } from "url";
+import "dotenv/config";
 import { db } from "../../server/db";
-import { documents } from "../../shared/schema";
+import { documents, aiAnalyses } from "../../shared/schema";
 import { eq, and, sql } from "drizzle-orm";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const AI_ANALYZED_DIR = path.resolve(__dirname, "../../data/ai-analyzed");
 
 /**
  * Canonical document type mapping.
@@ -41,47 +34,32 @@ function parseEftaNumber(fileName: string): string | null {
   return match ? match[1].toUpperCase() : null;
 }
 
-interface AIAnalysis {
-  fileName?: string;
-  documentType?: string;
-}
-
 async function main() {
-  console.log("Reading AI-analyzed files...");
+  console.log("Reading AI analyses from database...");
 
-  let entries: string[];
-  try {
-    entries = fs.readdirSync(AI_ANALYZED_DIR).filter((f) => f.endsWith(".json"));
-  } catch {
-    console.error(`Cannot read directory: ${AI_ANALYZED_DIR}`);
-    process.exit(1);
-  }
+  const analyses = await db.select({
+    fileName: aiAnalyses.fileName,
+    documentType: aiAnalyses.documentType,
+  }).from(aiAnalyses);
 
-  console.log(`Found ${entries.length} AI analysis files`);
+  console.log(`Found ${analyses.length} AI analyses`);
 
   const updates: { eftaNumber: string; canonicalType: string }[] = [];
   const typeCounts = new Map<string, number>();
 
-  for (const file of entries) {
-    try {
-      const raw = fs.readFileSync(path.join(AI_ANALYZED_DIR, file), "utf-8");
-      const data: AIAnalysis = JSON.parse(raw);
+  for (const row of analyses) {
+    const eftaNumber = parseEftaNumber(row.fileName);
+    if (!eftaNumber) continue;
 
-      const eftaNumber = parseEftaNumber(file);
-      if (!eftaNumber) continue;
+    const aiType = row.documentType || "";
+    const canonical = normalizeDocumentType(aiType);
 
-      const aiType = data.documentType || "";
-      const canonical = normalizeDocumentType(aiType);
-
-      // Only queue updates for rows that would actually change
-      if (canonical !== "government record") {
-        updates.push({ eftaNumber, canonicalType: canonical });
-      }
-
-      typeCounts.set(canonical, (typeCounts.get(canonical) || 0) + 1);
-    } catch {
-      console.warn(`Skipping invalid file: ${file}`);
+    // Only queue updates for rows that would actually change
+    if (canonical !== "government record") {
+      updates.push({ eftaNumber, canonicalType: canonical });
     }
+
+    typeCounts.set(canonical, (typeCounts.get(canonical) || 0) + 1);
   }
 
   console.log("\nType distribution from AI analysis:");

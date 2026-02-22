@@ -1,18 +1,13 @@
 import "dotenv/config";
-import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { persons } from "../../shared/schema";
+import { persons, aiAnalyses } from "../../shared/schema";
 import { eq } from "drizzle-orm";
 import { normalizeName } from "../../server/storage";
 import type { AIAnalysisDocument } from "../../shared/schema";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const DATA_DIR = path.resolve(__dirname, "../../data");
-const AI_ANALYZED_DIR = path.join(DATA_DIR, "ai-analyzed");
 
 interface ProfileSection {
   id: string;
@@ -31,21 +26,21 @@ interface PersonAggregate {
   documentTypes: Map<string, number>;
 }
 
-function readAllAnalysisFiles(): AIAnalysisDocument[] {
-  if (!fs.existsSync(AI_ANALYZED_DIR)) return [];
-  const files = fs.readdirSync(AI_ANALYZED_DIR).filter(f => f.endsWith(".json"));
-  const results: AIAnalysisDocument[] = [];
-  for (const file of files) {
-    try {
-      const raw = fs.readFileSync(path.join(AI_ANALYZED_DIR, file), "utf-8");
-      const data = JSON.parse(raw) as AIAnalysisDocument;
-      data.fileName = file;
-      results.push(data);
-    } catch {
-      // skip invalid files
-    }
-  }
-  return results;
+async function readAllAnalysisFiles(): Promise<AIAnalysisDocument[]> {
+  const rows = await db.select().from(aiAnalyses);
+  return rows.map(row => ({
+    fileName: row.fileName,
+    dataSet: row.dataSet || "unknown",
+    documentType: row.documentType || "other",
+    dateOriginal: row.dateOriginal || null,
+    summary: row.summary || "",
+    persons: (row.persons as any[]) || [],
+    connections: (row.connectionsData as any[]) || [],
+    events: (row.events as any[]) || [],
+    locations: (row.locations as string[]) || [],
+    keyFacts: (row.keyFacts as string[]) || [],
+    analyzedAt: row.analyzedAt?.toISOString() || new Date().toISOString(),
+  })) as AIAnalysisDocument[];
 }
 
 function aggregatePersonData(
@@ -281,7 +276,7 @@ async function fetchWikipediaImage(name: string): Promise<{ imageUrl: string | n
 
 export async function generateProfiles() {
   console.log("Loading AI analysis files...");
-  const allFiles = readAllAnalysisFiles();
+  const allFiles = await readAllAnalysisFiles();
   console.log(`Loaded ${allFiles.length} analysis files`);
 
   console.log("Fetching all persons from database...");
