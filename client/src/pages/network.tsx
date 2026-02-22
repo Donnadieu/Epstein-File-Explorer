@@ -64,6 +64,10 @@ function FilterControls({
   minConnections,
   setMinConnections,
   maxConnections,
+  minStrength,
+  setMinStrength,
+  minDocumentCount,
+  setMinDocumentCount,
   timeRange,
   setTimeRange,
   yearRange,
@@ -81,6 +85,10 @@ function FilterControls({
   minConnections: number;
   setMinConnections: (v: number) => void;
   maxConnections: number;
+  minStrength: number;
+  setMinStrength: (v: number) => void;
+  minDocumentCount: number;
+  setMinDocumentCount: (v: number) => void;
   timeRange: [number, number] | null;
   setTimeRange: (v: [number, number]) => void;
   yearRange: [number, number] | null;
@@ -149,6 +157,46 @@ function FilterControls({
         </div>
       )}
 
+      {/* Min strength slider */}
+      <div>
+        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+          Min. Strength: {minStrength}
+        </Label>
+        <div className="px-1">
+          <Slider
+            min={1}
+            max={5}
+            step={1}
+            value={[minStrength]}
+            onValueChange={(v) => setMinStrength(v[0])}
+          />
+        </div>
+        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+          <span>1 (weak)</span>
+          <span>5 (strong)</span>
+        </div>
+      </div>
+
+      {/* Min source documents slider */}
+      <div>
+        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+          Min. Source Docs: {minDocumentCount}
+        </Label>
+        <div className="px-1">
+          <Slider
+            min={1}
+            max={10}
+            step={1}
+            value={[minDocumentCount]}
+            onValueChange={(v) => setMinDocumentCount(v[0])}
+          />
+        </div>
+        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+          <span>1</span>
+          <span>10+</span>
+        </div>
+      </div>
+
       {/* Connection type checkboxes */}
       <div>
         <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
@@ -214,6 +262,8 @@ export default function NetworkPage() {
   const [activeConnectionTypes, setActiveConnectionTypes] = useState<Set<string> | null>(null);
   const [keyword, setKeyword] = useState("");
   const [minConnections, setMinConnections] = useState(1);
+  const [minStrength, setMinStrength] = useState(2);
+  const [minDocumentCount, setMinDocumentCount] = useState(2);
   const [timeRange, setTimeRange] = useState<[number, number] | null>(null);
   const [graphReady, setGraphReady] = useState(false);
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
@@ -293,16 +343,30 @@ export default function NetworkPage() {
     );
   }, [data, effectiveConnectionTypes, categoryPersonIds]);
 
-  // 4. Keyword -> filter connections by description
+  // 4a. Strength filter -> drop weak connections
+  const strengthFilteredConnections = useMemo(() => {
+    if (minStrength <= 1) return typeFilteredConnections;
+    return typeFilteredConnections.filter((c) => c.strength >= minStrength);
+  }, [typeFilteredConnections, minStrength]);
+
+  // 4b. Document count filter -> require connections sourced from N+ documents
+  const docCountFilteredConnections = useMemo(() => {
+    if (minDocumentCount <= 1) return strengthFilteredConnections;
+    return strengthFilteredConnections.filter(
+      (c) => (c.documentIds?.length ?? 0) >= minDocumentCount,
+    );
+  }, [strengthFilteredConnections, minDocumentCount]);
+
+  // 5. Keyword -> filter connections by description
   const keywordFilteredConnections = useMemo(() => {
-    if (!keyword) return typeFilteredConnections;
+    if (!keyword) return docCountFilteredConnections;
     const kw = keyword.toLowerCase();
-    return typeFilteredConnections.filter(
+    return docCountFilteredConnections.filter(
       (c) => c.description && c.description.toLowerCase().includes(kw),
     );
-  }, [typeFilteredConnections, keyword]);
+  }, [docCountFilteredConnections, keyword]);
 
-  // 5. Derive persons from remaining connections
+  // 6. Derive persons from remaining connections
   const filteredConnections = keywordFilteredConnections;
   const connCountPerPerson = useMemo(() => {
     const counts: Record<number, number> = {};
@@ -313,7 +377,7 @@ export default function NetworkPage() {
     return counts;
   }, [filteredConnections]);
 
-  // 6. Apply min connections filter
+  // 7. Apply min connections filter
   const graphPersons = useMemo(() => {
     const ids = new Set<number>();
     filteredConnections.forEach((c) => {
@@ -338,6 +402,9 @@ export default function NetworkPage() {
     const vals = Object.values(connCountPerPerson);
     return vals.length > 0 ? Math.max(...vals) : 1;
   }, [connCountPerPerson]);
+
+  // Total unfiltered connection count for "X of Y" display
+  const totalConnectionCount = data?.connections.length ?? 0;
 
   // Document count: sum of documentCount across visible persons
   const totalDocs = useMemo(() => {
@@ -410,6 +477,16 @@ export default function NetworkPage() {
     setGraphReady(false);
   }, []);
 
+  const handleMinStrengthChange = useCallback((v: number) => {
+    setMinStrength(v);
+    setGraphReady(false);
+  }, []);
+
+  const handleMinDocumentCountChange = useCallback((v: number) => {
+    setMinDocumentCount(v);
+    setGraphReady(false);
+  }, []);
+
   // Mobile list data: persons sorted by connection count
   const mobileListPersons = useMemo(() => {
     return graphPersons
@@ -431,6 +508,10 @@ export default function NetworkPage() {
     minConnections,
     setMinConnections: handleMinConnectionsChange,
     maxConnections,
+    minStrength,
+    setMinStrength: handleMinStrengthChange,
+    minDocumentCount,
+    setMinDocumentCount: handleMinDocumentCountChange,
     timeRange,
     setTimeRange: handleTimeRangeChange,
     yearRange,
@@ -479,7 +560,7 @@ export default function NetworkPage() {
           </Badge>
           <Badge variant="secondary" className="gap-1.5 text-xs font-normal">
             <Link2 className="w-3 h-3" />
-            {graphConnections.length} Connections
+            {graphConnections.length} of {totalConnectionCount} Connections
           </Badge>
           <Badge variant="secondary" className="gap-1.5 text-xs font-normal">
             <FileText className="w-3 h-3" />
