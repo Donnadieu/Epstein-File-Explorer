@@ -3,7 +3,17 @@ import type { Server } from "http";
 import { log } from "./index";
 
 export function setupWebSocket(server: Server) {
-  const wss = new WebSocketServer({ server, path: "/ws" });
+  const wss = new WebSocketServer({ noServer: true });
+
+  server.on("upgrade", (req, socket, head) => {
+    const pathname = req.url?.split("?")[0];
+    if (pathname === "/ws") {
+      wss.handleUpgrade(req, socket, head, (ws) => {
+        wss.emit("connection", ws, req);
+      });
+    }
+    // Other paths (e.g. /vite-hmr) are left for Vite's handler
+  });
   let activeConnections = 0;
 
   function broadcast() {

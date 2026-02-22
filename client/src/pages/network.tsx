@@ -353,7 +353,7 @@ export default function NetworkPage() {
   const docCountFilteredConnections = useMemo(() => {
     if (minDocumentCount <= 1) return strengthFilteredConnections;
     return strengthFilteredConnections.filter(
-      (c) => (c.documentIds?.length ?? 0) >= minDocumentCount,
+      (c) => !c.documentIds || c.documentIds.length === 0 || c.documentIds.length >= minDocumentCount,
     );
   }, [strengthFilteredConnections, minDocumentCount]);
 
