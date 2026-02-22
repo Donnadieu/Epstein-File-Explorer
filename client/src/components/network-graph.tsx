@@ -10,7 +10,7 @@ import {
 } from "d3-force";
 import { scaleLinear } from "d3-scale";
 import { quadtree, type Quadtree } from "d3-quadtree";
-import type { Person, Connection } from "@shared/schema";
+import type { Connection } from "@shared/schema";
 
 export interface GraphNode extends SimulationNodeDatum {
   id: number;
@@ -73,7 +73,7 @@ function hslToCanvasColor(hsl: string, alpha = 1): string {
 }
 
 interface NetworkGraphProps {
-  persons: Person[];
+  persons: { id: number; name: string; category: string }[];
   connections: (Connection & { person1Name: string; person2Name: string })[];
   searchQuery: string;
   selectedPersonId: number | null;
