@@ -7,6 +7,7 @@ import { db } from "../../server/db";
 import { aiAnalyses, aiAnalysisPersons } from "../../shared/schema";
 import { normalizeName } from "../../server/storage";
 import { eq } from "drizzle-orm";
+import { GENERATED_TIER0_PERSONS } from "./tier0-persons-generated";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -127,6 +128,13 @@ const TIER0_KNOWN_PERSONS: [string, string, AIPersonMention["category"]][] = [
   ["chris tucker", "Associate", "associate"],
 ];
 
+// Merge hardcoded + generated lists. Hardcoded takes precedence for overlaps.
+const MERGED_KNOWN_PERSONS: typeof TIER0_KNOWN_PERSONS = (() => {
+  const hardcodedNames = new Set(TIER0_KNOWN_PERSONS.map(([name]) => name));
+  const generated = GENERATED_TIER0_PERSONS.filter(([name]) => !hardcodedNames.has(name));
+  return [...TIER0_KNOWN_PERSONS, ...generated];
+})();
+
 const DATE_PATTERN = /\b((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+\d{4}|\d{1,2}\/\d{1,2}\/\d{2,4}|\d{4}-\d{2}-\d{2})\b/gi;
 const LOCATION_PATTERNS = [
   /(?:Palm Beach|New York|Manhattan|Little St\.? James|U\.?S\.? Virgin Islands|Zorro Ranch|New Mexico|Teterboro|London|Paris)/gi,
@@ -169,7 +177,7 @@ function extractLocationsFromText(text: string): string[] {
 export function analyzeDocumentTier0(text: string, fileName: string, dataSet: string): TieredAnalysisResult {
   const persons: AIPersonMention[] = [];
 
-  for (const [name, role, category] of TIER0_KNOWN_PERSONS) {
+  for (const [name, role, category] of MERGED_KNOWN_PERSONS) {
     const regex = new RegExp(`\\b${escapeRegex(name)}\\b`, "gi");
     const matches = text.match(regex);
     if (matches && matches.length > 0) {

@@ -322,7 +322,7 @@ export default function DocumentsPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Search documents..."
+            placeholder='Search documents... Use "quotes" for exact phrases'
             value={filters.search}
             onChange={(e) => {
               setFilter("search", e.target.value);

@@ -259,16 +259,24 @@ function editDistance(a: string, b: string): number {
   return dp[a.length][b.length];
 }
 
-let _deepseek: OpenAI | null = null;
-function getDeepSeek(): OpenAI | null {
-  if (!process.env.DEEPSEEK_API_KEY) return null;
-  if (!_deepseek) {
-    _deepseek = new OpenAI({
+let _aiClient: OpenAI | null = null;
+let _aiModel: string = "deepseek-chat";
+
+function getAIClient(): { client: OpenAI; model: string } | null {
+  if (_aiClient) return { client: _aiClient, model: _aiModel };
+  if (process.env.OPENAI_API_KEY) {
+    _aiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    _aiModel = "gpt-4o-mini";
+  } else if (process.env.DEEPSEEK_API_KEY) {
+    _aiClient = new OpenAI({
       baseURL: "https://api.deepseek.com",
       apiKey: process.env.DEEPSEEK_API_KEY,
     });
+    _aiModel = "deepseek-chat";
+  } else {
+    return null;
   }
-  return _deepseek;
+  return { client: _aiClient, model: _aiModel };
 }
 
 export async function loadPersonsFromFile(filePath?: string): Promise<number> {
@@ -1639,6 +1647,10 @@ async function pass1ExactNormalized(
   return merged;
 }
 
+// Gender name lists shared by Pass 2 and Pass 3 for title-prefix filtering.
+const MALE_FIRST = new Set(["adam", "alan", "alex", "andrew", "barry", "benjamin", "bill", "bob", "brad", "brandon", "brian", "bruce", "carl", "chad", "charles", "chris", "christopher", "clay", "craig", "dale", "dan", "daniel", "darren", "dave", "david", "dean", "dennis", "don", "donald", "donnie", "doug", "douglas", "drew", "earl", "edward", "eli", "eric", "eugene", "frank", "gary", "gene", "george", "glen", "glenn", "grant", "greg", "gregory", "harold", "henry", "howard", "ivan", "jack", "jacob", "james", "jason", "jeff", "jeffrey", "jerry", "jim", "joe", "joel", "john", "jonathan", "jose", "joseph", "joshua", "juan", "justin", "keith", "kenneth", "kevin", "kirk", "kurt", "kyle", "lance", "larry", "lee", "leon", "lloyd", "marcus", "mark", "marshall", "martin", "matthew", "max", "michael", "mike", "neal", "neil", "nelson", "nicholas", "nick", "norman", "oliver", "omar", "oscar", "owen", "patrick", "paul", "percy", "perry", "peter", "philip", "ralph", "randy", "ray", "raymond", "reed", "rene", "rex", "richard", "rick", "robert", "roger", "roland", "ronald", "ross", "roy", "russell", "ryan", "samuel", "scott", "sean", "seth", "spencer", "stan", "stanley", "stephen", "steve", "steven", "stuart", "terry", "thomas", "timothy", "todd", "tom", "tony", "tracy", "travis", "troy", "tyler", "vernon", "victor", "wade", "walter", "warren", "wayne", "wesley", "william"]);
+const FEMALE_FIRST = new Set(["alice", "amanda", "amy", "andrea", "angela", "ann", "anna", "anne", "annie", "april", "ashley", "barbara", "betty", "blanche", "bonnie", "brenda", "carol", "carolyn", "catherine", "charlotte", "cherry", "christina", "christine", "claire", "constance", "crystal", "cynthia", "daisy", "dawn", "deborah", "debra", "denise", "diana", "diane", "dolores", "donna", "dorothy", "edith", "elaine", "elena", "elizabeth", "ellen", "emily", "emma", "ethel", "eva", "evelyn", "faith", "faye", "florence", "frances", "gail", "gloria", "grace", "gwen", "hazel", "heather", "helen", "holly", "hope", "irene", "iris", "ivy", "jade", "janet", "janice", "jean", "jennifer", "jessica", "joan", "joanne", "joy", "joyce", "judith", "judy", "julia", "julie", "june", "karen", "katherine", "kathleen", "kathy", "kay", "kelly", "kimberly", "lara", "laura", "lauren", "linda", "lisa", "lois", "lorraine", "lucy", "lynn", "mabel", "madison", "margaret", "maria", "marie", "marilyn", "martha", "mary", "maxine", "megan", "melissa", "michelle", "mildred", "miriam", "molly", "monica", "nancy", "natalie", "nicole", "norma", "olivia", "paige", "pamela", "patricia", "paula", "pearl", "penny", "phyllis", "rachel", "rebekah", "rebecca", "regina", "renee", "robin", "rose", "rosemary", "ruby", "ruth", "sally", "samantha", "sandra", "sarah", "shannon", "sharon", "shirley", "stacy", "stella", "stephanie", "susan", "sylvia", "tammy", "teresa", "theresa", "tina", "toni", "valerie", "vanessa", "vera", "vicki", "victoria", "violet", "virginia", "vivian", "wendy"]);
+
 // --- Pass 2: Single-Word → Dominant Multi-Word (Evidence-Based) ---
 async function pass2SingleWordEvidence(
   protectedNames: Set<string>,
@@ -1747,6 +1759,25 @@ async function pass2SingleWordEvidence(
       }
     }
     if (candidates.length === 0) continue;
+
+    // Gender filter: if the original name has a gendered title (Mrs./Ms./Mr.),
+    // exclude candidates whose first name conflicts.
+    // e.g. "Mrs. Epstein" should NOT match "Jeffrey Epstein" (male first name).
+    const isFemaleTitle = /^(ms\.?|mrs\.?)\s/i.test(single.name);
+    const isMaleTitle = /^mr\.?\s/i.test(single.name);
+    if (isFemaleTitle || isMaleTitle) {
+      for (let i = candidates.length - 1; i >= 0; i--) {
+        const firstName = normalizeName(candidates[i].name).split(" ").filter(Boolean)[0];
+        if (isFemaleTitle && MALE_FIRST.has(firstName)) {
+          candidateSource.delete(candidates[i].id);
+          candidates.splice(i, 1);
+        } else if (isMaleTitle && FEMALE_FIRST.has(firstName)) {
+          candidateSource.delete(candidates[i].id);
+          candidates.splice(i, 1);
+        }
+      }
+      if (candidates.length === 0) continue;
+    }
 
     // Score by shared evidence (shared docs weighted 2x, shared connections 1x)
     const singleDocs = docsByPerson.get(single.id) || new Set();
@@ -1865,9 +1896,6 @@ async function pass3DeleteSingleWord(
 
   // Separate title-prefixed names for merge attempts vs plain deletes
   const titlePrefixPattern = /^(mr\.?|ms\.?|mrs\.?|dr\.?|judge|prof\.?)\s+/i;
-  // Gender check: avoid merging "Ms. Arnold" (female) into "Dave Arnold" (male)
-  const MALE_FIRST = new Set(["adam", "alan", "alex", "andrew", "barry", "benjamin", "bill", "bob", "brad", "brandon", "brian", "bruce", "carl", "chad", "charles", "chris", "christopher", "clay", "craig", "dale", "dan", "daniel", "darren", "dave", "david", "dean", "dennis", "don", "donald", "donnie", "doug", "douglas", "drew", "earl", "edward", "eli", "eric", "eugene", "frank", "gary", "gene", "george", "glen", "glenn", "grant", "greg", "gregory", "harold", "henry", "howard", "ivan", "jack", "jacob", "james", "jason", "jeff", "jeffrey", "jerry", "jim", "joe", "joel", "john", "jonathan", "jose", "joseph", "joshua", "juan", "justin", "keith", "kenneth", "kevin", "kirk", "kurt", "kyle", "lance", "larry", "lee", "leon", "lloyd", "marcus", "mark", "marshall", "martin", "matthew", "max", "michael", "mike", "neal", "neil", "nelson", "nicholas", "nick", "norman", "oliver", "omar", "oscar", "owen", "patrick", "paul", "percy", "perry", "peter", "philip", "ralph", "randy", "ray", "raymond", "reed", "rene", "rex", "richard", "rick", "robert", "roger", "roland", "ronald", "ross", "roy", "russell", "ryan", "samuel", "scott", "sean", "seth", "spencer", "stan", "stanley", "stephen", "steve", "steven", "stuart", "terry", "thomas", "timothy", "todd", "tom", "tony", "tracy", "travis", "troy", "tyler", "vernon", "victor", "wade", "walter", "warren", "wayne", "wesley", "william"]);
-  const FEMALE_FIRST = new Set(["alice", "amanda", "amy", "andrea", "angela", "ann", "anna", "anne", "annie", "april", "ashley", "barbara", "betty", "blanche", "bonnie", "brenda", "carol", "carolyn", "catherine", "charlotte", "cherry", "christina", "christine", "claire", "constance", "crystal", "cynthia", "daisy", "dawn", "deborah", "debra", "denise", "diana", "diane", "dolores", "donna", "dorothy", "edith", "elaine", "elena", "elizabeth", "ellen", "emily", "emma", "ethel", "eva", "evelyn", "faith", "faye", "florence", "frances", "gail", "gloria", "grace", "gwen", "hazel", "heather", "helen", "holly", "hope", "irene", "iris", "ivy", "jade", "janet", "janice", "jean", "jennifer", "jessica", "joan", "joanne", "joy", "joyce", "judith", "judy", "julia", "julie", "june", "karen", "katherine", "kathleen", "kathy", "kay", "kelly", "kimberly", "lara", "laura", "lauren", "linda", "lisa", "lois", "lorraine", "lucy", "lynn", "mabel", "madison", "margaret", "maria", "marie", "marilyn", "martha", "mary", "maxine", "megan", "melissa", "michelle", "mildred", "miriam", "molly", "monica", "nancy", "natalie", "nicole", "norma", "olivia", "paige", "pamela", "patricia", "paula", "pearl", "penny", "phyllis", "rachel", "rebekah", "rebecca", "regina", "renee", "robin", "rose", "rosemary", "ruby", "ruth", "sally", "samantha", "sandra", "sarah", "shannon", "sharon", "shirley", "stacy", "stella", "stephanie", "susan", "sylvia", "tammy", "teresa", "theresa", "tina", "toni", "valerie", "vanessa", "vera", "vicki", "victoria", "violet", "virginia", "vivian", "wendy"]);
   const toDelete: (typeof persons.$inferSelect)[] = [];
 
   for (const p of singleWordPersons) {
@@ -2367,8 +2395,7 @@ async function pass5MiddleInitial(
       try {
         await mergePersonGroup(canonical, [duplicate.id], [duplicate.name]);
         merged++;
-        mergedInPass5.add(twoWord.id);
-        mergedInPass5.add(match.id);
+        usedAsDuplicate.add(duplicate.id);
         console.log(`  [P5] Merged "${duplicate.name}" → "${canonical.name}"`);
       } catch (err: any) {
         console.warn(
@@ -3357,9 +3384,9 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
   }
 
   // --- Classify uncached connections via AI or regex ---
-  const deepseek = getDeepSeek();
-  if (deepseek && uncached.length > 0) {
-    console.log("  Using AI to classify connection types...");
+  const ai = getAIClient();
+  if (ai && uncached.length > 0) {
+    console.log(`  Using AI (${ai.model}) to classify connection types...`);
     const BATCH_SIZE = 25;
 
     for (let i = 0; i < uncached.length; i += BATCH_SIZE) {
@@ -3372,8 +3399,8 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
           )
           .join("\n");
 
-        const response = await deepseek.chat.completions.create({
-          model: "deepseek-chat",
+        const response = await ai.client.chat.completions.create({
+          model: ai.model,
           messages: [
             {
               role: "system",

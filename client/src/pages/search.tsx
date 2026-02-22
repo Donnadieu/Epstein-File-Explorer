@@ -222,7 +222,7 @@ export default function SearchPage() {
             <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Start typing to search names, documents, events..."
+              placeholder='Search names, documents, events... Use "quotes" for exact phrases'
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {

@@ -18,6 +18,7 @@ import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
 import { migrateToR2 } from "./r2-migration";
 import { downloadTorrents } from "./torrent-downloader";
+import { generateTier0Persons } from "./generate-tier0-persons";
 import { scrapeWikipediaPersons } from "./wikipedia-scraper";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -48,6 +49,7 @@ const STAGES = [
   "process",
   "classify-media",
   "analyze-ai",
+  "generate-tier0",
   "load-persons",
   "load-documents",
   "import-downloads",
@@ -85,6 +87,7 @@ STAGES:
   process          Extract text from downloaded PDFs via OCR/parsing
   classify-media   Classify documents by media type and set AI priority
   analyze-ai       Run AI analysis on processed documents (default: DeepSeek, use --model to change)
+  generate-tier0   Generate top-300 known persons list from AI analysis data (no API calls)
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
@@ -100,10 +103,11 @@ SHORTCUTS:
                    (fastest way to populate app with comprehensive data)
   full-discovery   Run all scraping, downloading, processing, and loading stages
                    (scrape-wikipedia → download-torrent → upload-r2 → process →
-                    classify-media → analyze-ai → load-persons → load-documents →
-                    import-downloads → load-ai-results → extract-connections → update-counts)
+                    classify-media → analyze-ai → generate-tier0 → load-persons →
+                    load-documents → import-downloads → load-ai-results →
+                    extract-connections → update-counts)
   analyze-priority Run AI analysis on highest-priority unanalyzed documents
-                   (classify-media → analyze-ai → load-ai-results → update-counts)
+                   (classify-media → analyze-ai → generate-tier0 → load-ai-results → update-counts)
 
 OPTIONS:
   --data-sets 1,2,3    Only process specific data set IDs
@@ -151,6 +155,7 @@ DATA FLOW:
   2b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
   3. process           → data/extracted/ds{N}/*.json
   4. analyze-ai        → PostgreSQL ai_analyses table
+  4b. generate-tier0   → scripts/pipeline/tier0-persons-generated.ts (top 300 persons)
   5. load-*            → PostgreSQL database
 `);
 }
@@ -203,6 +208,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           budget: config.budget,
           model: config.model,
         });
+        break;
+
+      case "generate-tier0":
+        await generateTier0Persons();
         break;
 
       case "load-ai-results":
@@ -311,6 +320,7 @@ async function main() {
         "process",
         "classify-media",
         "analyze-ai",
+        "generate-tier0",
         "load-persons",
         "load-documents",
         "import-downloads",
@@ -322,6 +332,7 @@ async function main() {
       config.stages = [
         "classify-media",
         "analyze-ai",
+        "generate-tier0",
         "load-ai-results",
         "update-counts",
       ];

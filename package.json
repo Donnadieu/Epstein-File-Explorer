@@ -15,7 +15,8 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "typesense:index": "node dist/typesense-index.cjs"
+    "typesense:index": "node dist/typesense-index.cjs",
+    "tag-resolved": "node dist/tag-resolved.cjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.985.0",
