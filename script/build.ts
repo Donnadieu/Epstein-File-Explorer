@@ -80,6 +80,25 @@ async function buildAll() {
     logLevel: "info",
   });
 
+  console.log("building tag-resolved...");
+  await esbuild({
+    entryPoints: ["scripts/pipeline/tag-resolved.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/tag-resolved.cjs",
+    banner: {
+      js: 'var __pipeline_import_meta_url=require("url").pathToFileURL(require("path").join(process.cwd(),"scripts","pipeline","__bundled.cjs")).href;',
+    },
+    define: {
+      "import.meta.url": "__pipeline_import_meta_url",
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: true,
+    external: externals,
+    logLevel: "info",
+  });
+
   console.log("building typesense indexer...");
   await esbuild({
     entryPoints: ["scripts/typesense-index.ts"],
