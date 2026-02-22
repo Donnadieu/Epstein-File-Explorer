@@ -482,17 +482,18 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   let eventsUpdated = 0;
   let docLinksCreated = 0;
 
-  const existingPairs = new Set<string>();
+  const existingPairMap = new Map<string, { id: number; documentIds: number[] }>();
   const existingConns = await db
     .select({
+      id: connections.id,
       personId1: connections.personId1,
       personId2: connections.personId2,
+      documentIds: connections.documentIds,
     })
     .from(connections);
   for (const c of existingConns) {
-    existingPairs.add(
-      `${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`,
-    );
+    const key = `${Math.min(c.personId1, c.personId2)}-${Math.max(c.personId1, c.personId2)}`;
+    existingPairMap.set(key, { id: c.id, documentIds: c.documentIds ?? [] });
   }
 
   // Pre-load all persons by lowercase name for O(1) lookups
@@ -713,48 +714,6 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
         }
       }
 
-      // --- Connections ---
-      for (const conn of data.connections) {
-        if (typeof conn !== "object" || !conn?.person1 || !conn?.person2)
-          continue;
-        const person1 = findPerson(conn.person1);
-        const person2 = findPerson(conn.person2);
-
-        if (person1 && person2) {
-          if (person1.id === person2.id) continue;
-          const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
-
-          if (existingPairs.has(pairKey)) continue;
-
-          if (isDryRun) {
-            dryRunSummary!.connectionsToCreate.push({
-              person1: conn.person1,
-              person2: conn.person2,
-              type: normalizeConnectionType(conn.relationshipType),
-              strength: conn.strength,
-              description: (conn.description || "").substring(0, 200),
-              source: file,
-            });
-            connectionsCreated++;
-          } else {
-            try {
-              const newDesc = (conn.description || "").substring(0, 500);
-              await db.insert(connections).values({
-                personId1: person1.id,
-                personId2: person2.id,
-                connectionType: normalizeConnectionType(conn.relationshipType),
-                description: newDesc,
-                strength: conn.strength,
-              });
-              existingPairs.add(pairKey);
-              connectionsCreated++;
-            } catch {
-              /* skip */
-            }
-          }
-        }
-      }
-
       // --- Resolve source document ID for this analysis file ---
       const eventEfta = data.fileName
         .replace(/\.json$/i, "")
@@ -770,6 +729,64 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
           )
           .limit(1);
         sourceDocId = sourceDoc?.id;
+      }
+
+      // --- Connections ---
+      for (const conn of data.connections) {
+        if (typeof conn !== "object" || !conn?.person1 || !conn?.person2)
+          continue;
+        const person1 = findPerson(conn.person1);
+        const person2 = findPerson(conn.person2);
+
+        if (person1 && person2) {
+          if (person1.id === person2.id) continue;
+          const pairKey = `${Math.min(person1.id, person2.id)}-${Math.max(person1.id, person2.id)}`;
+
+          const existing = existingPairMap.get(pairKey);
+          if (existing) {
+            // Pair already exists — append sourceDocId if new
+            if (sourceDocId && !existing.documentIds.includes(sourceDocId)) {
+              if (!isDryRun) {
+                await db.update(connections)
+                  .set({ documentIds: [...existing.documentIds, sourceDocId] })
+                  .where(eq(connections.id, existing.id));
+              }
+              existing.documentIds.push(sourceDocId);
+            }
+            continue;
+          }
+
+          const connDocIds = sourceDocId ? [sourceDocId] : [];
+
+          if (isDryRun) {
+            dryRunSummary!.connectionsToCreate.push({
+              person1: conn.person1,
+              person2: conn.person2,
+              type: normalizeConnectionType(conn.relationshipType),
+              strength: conn.strength,
+              description: (conn.description || "").substring(0, 200),
+              source: file,
+              documentId: sourceDocId,
+            });
+            connectionsCreated++;
+          } else {
+            try {
+              const newDesc = (conn.description || "").substring(0, 500);
+              const [inserted] = await db.insert(connections).values({
+                personId1: person1.id,
+                personId2: person2.id,
+                connectionType: normalizeConnectionType(conn.relationshipType),
+                description: newDesc,
+                strength: conn.strength,
+                documentIds: connDocIds,
+              }).returning({ id: connections.id });
+              existingPairMap.set(pairKey, { id: inserted.id, documentIds: connDocIds });
+              connectionsCreated++;
+            } catch {
+              /* skip */
+            }
+          }
+        }
       }
 
       // --- Events ---
@@ -3265,6 +3282,23 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
     );
   }
 
+  // Build person→documentIds lookup for shared document computation
+  const allLinks = await db
+    .select({ personId: personDocuments.personId, documentId: personDocuments.documentId })
+    .from(personDocuments);
+  const personDocIds = new Map<number, Set<number>>();
+  for (const l of allLinks) {
+    if (!personDocIds.has(l.personId)) personDocIds.set(l.personId, new Set());
+    personDocIds.get(l.personId)!.add(l.documentId);
+  }
+
+  function sharedDocumentIds(p1: number, p2: number): number[] {
+    const d1 = personDocIds.get(p1);
+    const d2 = personDocIds.get(p2);
+    if (!d1 || !d2) return [];
+    return [...d1].filter(id => d2.has(id));
+  }
+
   // Collect all connection triples for potential AI classification
   const connectionTriples: {
     person1Id: number;
@@ -3362,6 +3396,7 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
           connectionType: hit.connectionType,
           description: hit.description.substring(0, 500),
           strength: hit.strength,
+          documentIds: sharedDocumentIds(triple.person1Id, triple.person2Id),
         });
         connectionsCreated++;
       } catch {
@@ -3444,6 +3479,7 @@ Respond with a JSON array only.`,
                 connectionType: cls.connectionType,
                 description: cls.description.substring(0, 500),
                 strength: cls.strength,
+                documentIds: sharedDocumentIds(triple.person1Id, triple.person2Id),
               });
               connectionsCreated++;
             } catch {
@@ -3471,6 +3507,7 @@ Respond with a JSON array only.`,
               connectionType,
               description: triple.context.substring(0, 500),
               strength,
+              documentIds: sharedDocumentIds(triple.person1Id, triple.person2Id),
             });
             connectionsCreated++;
           } catch {
@@ -3513,6 +3550,7 @@ Respond with a JSON array only.`,
           connectionType,
           description: triple.context.substring(0, 500),
           strength,
+          documentIds: sharedDocumentIds(triple.person1Id, triple.person2Id),
         });
         connectionsCreated++;
       } catch {

@@ -13,6 +13,7 @@ import {
   loadPersonsFromFile,
   updateDocumentCounts,
 } from "./db-loader";
+import { backfillConnectionDocs } from "./backfill-connection-docs";
 import { generateProfiles } from "./generate-profiles";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
@@ -251,6 +252,10 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "generate-profiles":
         await generateProfiles();
+        break;
+
+      case "backfill-connection-docs":
+        await backfillConnectionDocs();
         break;
 
       default:

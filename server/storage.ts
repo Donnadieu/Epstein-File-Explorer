@@ -81,7 +81,7 @@ export interface IStorage {
   createTimelineEvent(event: InsertTimelineEvent): Promise<TimelineEvent>;
 
   getStats(): Promise<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>;
-  getNetworkData(): Promise<{ persons: Person[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
+  getNetworkData(): Promise<{ persons: Pick<Person, 'id' | 'name' | 'category' | 'documentCount' | 'connectionCount' | 'imageUrl' | 'occupation'>[]; connections: any[]; timelineYearRange: [number, number]; personYears: Record<number, [number, number]> }>;
   search(query: string): Promise<{ persons: Person[]; documents: Document[]; events: TimelineEvent[] }>;
   searchPages(query: string, page: number, limit: number, useOrMode?: boolean, skipCount?: boolean): Promise<{
     results: { documentId: number; title: string; documentType: string; dataSet: string | null; pageNumber: number; headline: string; pageType: string | null }[];
@@ -482,7 +482,7 @@ const documentFiltersCache = createCache<{ types: string[]; dataSets: string[]; 
 const statsCache = createCache<{ personCount: number; documentCount: number; pageCount: number; connectionCount: number; eventCount: number }>(5 * 60 * 1000);
 
 const networkDataCache = createCache<{
-  persons: Person[];
+  persons: Pick<Person, 'id' | 'name' | 'category' | 'documentCount' | 'connectionCount' | 'imageUrl' | 'occupation'>[];
   connections: any[];
   timelineYearRange: [number, number];
   personYears: Record<number, [number, number]>;
@@ -1049,7 +1049,16 @@ export class DatabaseStorage implements IStorage {
 
   async getNetworkData() {
     return networkDataCache.get(async () => {
-    const allPersons = await this.getPersons();
+    // Slim person fields — only what the network graph needs
+    const allPersons = await db.select({
+      id: persons.id,
+      name: persons.name,
+      category: persons.category,
+      documentCount: persons.documentCount,
+      connectionCount: persons.connectionCount,
+      imageUrl: persons.imageUrl,
+      occupation: persons.occupation,
+    }).from(persons).orderBy(desc(persons.documentCount));
     const allConnections = await db.select().from(connections);
 
     const personMap = new Map(allPersons.map(p => [p.id, p]));

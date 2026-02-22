@@ -29,11 +29,21 @@ import {
   Link2,
   Focus,
 } from "lucide-react";
-import type { Person, Connection } from "@shared/schema";
+import type { Connection } from "@shared/schema";
 import NetworkGraph, { getCategoryColor } from "@/components/network-graph";
 
+interface NetworkPerson {
+  id: number;
+  name: string;
+  category: string;
+  documentCount: number;
+  connectionCount: number;
+  imageUrl: string | null;
+  occupation: string | null;
+}
+
 interface NetworkData {
-  persons: Person[];
+  persons: NetworkPerson[];
   connections: (Connection & { person1Name: string; person2Name: string })[];
   timelineYearRange: [number, number];
   personYears: Record<number, [number, number]>;
