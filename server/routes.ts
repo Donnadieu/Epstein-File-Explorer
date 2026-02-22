@@ -155,6 +155,19 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/analytics/zero-result-searches", async (req, res) => {
+    try {
+      const limit = Math.min(50, Math.max(1, parseInt(req.query.limit as string) || 20));
+      const days = Math.min(90, Math.max(1, parseInt(req.query.days as string) || 7));
+      const searches = await storage.getZeroResultSearches(limit, days);
+      res.set("Cache-Control", "public, max-age=300");
+      res.json(searches);
+    } catch (error) {
+      console.error("Failed to fetch zero-result searches:", error);
+      res.status(500).json({ error: "Failed to fetch zero-result searches" });
+    }
+  });
+
   app.get("/api/view-counts", async (req, res) => {
     try {
       const entityType = req.query.entityType as string;

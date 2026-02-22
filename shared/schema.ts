@@ -289,6 +289,7 @@ export const searchQueries = pgTable("search_queries", {
   index("idx_search_queries_query").on(table.query),
   index("idx_search_queries_created_at").on(table.createdAt),
   index("idx_search_queries_trending").on(table.query, table.createdAt),
+  index("idx_search_queries_zero_results").on(table.resultCount, table.createdAt).where(sql`result_count = 0`),
 ]);
 
 export const insertSearchQuerySchema = createInsertSchema(searchQueries).omit({ createdAt: true });

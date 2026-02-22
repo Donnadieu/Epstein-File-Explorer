@@ -13,6 +13,8 @@ import pg from "pg";
 import {
   COLLECTION_NAME, COLLECTION_SCHEMA,
   PERSONS_COLLECTION, PERSONS_SCHEMA,
+  DOCUMENT_PAGE_SYNONYMS, PERSONS_SYNONYMS,
+  upsertSynonyms, upsertOneWaySynonyms, buildAliasSynonyms,
 } from "../server/typesense";
 
 const BATCH_SIZE = 5000;
@@ -61,6 +63,22 @@ async function indexPersons(
     }
     await tsClient.collections().create(PERSONS_SCHEMA);
     console.log(`Created collection: ${PERSONS_COLLECTION}`);
+
+    // Upsert static synonyms
+    console.log("Upserting static synonyms for persons...");
+    await upsertSynonyms(tsClient, PERSONS_COLLECTION, PERSONS_SYNONYMS);
+
+    // Upsert alias-based one-way synonyms from DB
+    console.log("Building alias-based synonyms from persons table...");
+    const { rows: aliasRows } = await pool.query<{ id: number; name: string; aliases: string[] | null }>(
+      `SELECT id, name, aliases FROM persons WHERE aliases IS NOT NULL AND array_length(aliases, 1) > 0`,
+    );
+    const aliasSynonyms = buildAliasSynonyms(aliasRows);
+    if (aliasSynonyms.length > 0) {
+      console.log(`  Upserting ${aliasSynonyms.length} alias synonyms...`);
+      await upsertOneWaySynonyms(tsClient, PERSONS_COLLECTION, aliasSynonyms);
+    }
+    console.log("Synonyms configured for persons collection.");
   }
 
   const startTime = Date.now();
@@ -128,6 +146,22 @@ async function indexDocumentPages(
     }
     await tsClient.collections().create(COLLECTION_SCHEMA);
     console.log(`Created collection: ${COLLECTION_NAME}`);
+
+    // Upsert static synonyms
+    console.log("Upserting synonyms for document_pages...");
+    await upsertSynonyms(tsClient, COLLECTION_NAME, DOCUMENT_PAGE_SYNONYMS);
+
+    // Upsert alias-based one-way synonyms from persons table
+    console.log("Building alias-based synonyms from persons table...");
+    const { rows: aliasRows } = await pool.query<{ id: number; name: string; aliases: string[] | null }>(
+      `SELECT id, name, aliases FROM persons WHERE aliases IS NOT NULL AND array_length(aliases, 1) > 0`,
+    );
+    const aliasSynonyms = buildAliasSynonyms(aliasRows);
+    if (aliasSynonyms.length > 0) {
+      console.log(`  Upserting ${aliasSynonyms.length} alias synonyms...`);
+      await upsertOneWaySynonyms(tsClient, COLLECTION_NAME, aliasSynonyms);
+    }
+    console.log("Synonyms configured for document_pages collection.");
   }
 
   // Stream pages from PostgreSQL

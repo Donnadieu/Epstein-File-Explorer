@@ -36,6 +36,12 @@ const migrations: { name: string; sql: string }[] = [
     sql: `CREATE INDEX IF NOT EXISTS idx_timeline_events_title_trgm
            ON timeline_events USING gin (title gin_trgm_ops)`,
   },
+  {
+    name: "idx_search_queries_zero_results (partial index for zero-result analytics)",
+    sql: `CREATE INDEX IF NOT EXISTS idx_search_queries_zero_results
+           ON search_queries (result_count, created_at)
+           WHERE result_count = 0`,
+  },
 ];
 
 export async function runMigrations(pool: pg.Pool): Promise<void> {
