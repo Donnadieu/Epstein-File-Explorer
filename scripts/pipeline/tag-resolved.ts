@@ -3,7 +3,9 @@
  * 2. Tags extension-resolved documents by matching source URLs from resolved.partial.csv
  *
  * Usage: npx tsx scripts/pipeline/tag-resolved.ts
+ *   Prod: npm run tag-resolved
  */
+import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
@@ -17,6 +19,9 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const CSV_PATH = path.join(DATA_DIR, "resolved.partial.csv");
 
 export async function tagResolved() {
+  // Temporarily raise statement timeout for bulk updates
+  await db.execute(sql`SET statement_timeout = '300s'`);
+
   // --- Phase 1: Backfill efta_number from source_url ---
   console.log("=== Phase 1: Backfill efta_number ===\n");
 
@@ -114,6 +119,8 @@ export async function tagResolved() {
   }).from(documents).where(sql`${documents.tags} @> ARRAY['extension-resolved']`);
   console.log(`Total with tag: ${after.count}`);
 
+  // Restore default timeout
+  await db.execute(sql`SET statement_timeout = '30s'`);
 }
 
 // Allow direct execution

@@ -21,6 +21,7 @@ RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=build /app/dist ./dist
 COPY data/ai-analyzed ./data/ai-analyzed
+COPY data/resolved.partial.csv ./data/resolved.partial.csv
 
 EXPOSE 5000
 CMD ["node", "--max-old-space-size=768", "dist/index.cjs"]
