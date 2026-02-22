@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA01288082.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a summary of account balances and transactions for a Deutsche Bank account, detailing various incoming and outgoing transfers, including significant cash management transfers and payments to individuals. It provides insights into the financial activities associated with the account during December 2018.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Representative",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lesley Groff",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lesley Groff is noted as a recipient of an outgoing money transfer from the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lawrence P Visoski",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lawrence P Visoski is mentioned as a recipient of an outgoing money transfer.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David N Rodgers",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "David N Rodgers is listed as a recipient of an outgoing money transfer.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stewart Oldfield",
+      "person2": "Deutsche Bank",
+      "relationshipType": "employee-employer",
+      "description": "Stewart Oldfield is an account representative for Deutsche Bank.",
+      "strength": 5
+    },
+    {
+      "person1": "Lesley Groff",
+      "person2": "Deutsche Bank",
+      "relationshipType": "client-bank",
+      "description": "Lesley Groff is a recipient of funds transferred from a Deutsche Bank account.",
+      "strength": 3
+    },
+    {
+      "person1": "Lawrence P Visoski",
+      "person2": "Deutsche Bank",
+      "relationshipType": "client-bank",
+      "description": "Lawrence P Visoski is a recipient of funds transferred from a Deutsche Bank account.",
+      "strength": 3
+    },
+    {
+      "person1": "David N Rodgers",
+      "person2": "Deutsche Bank",
+      "relationshipType": "client-bank",
+      "description": "David N Rodgers is a recipient of funds transferred from a Deutsche Bank account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-12-01",
+      "title": "Account Balance Summary",
+      "description": "The document provides a summary of account balances as of December 1, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2018-12-19",
+      "title": "Significant Cash Management Transfers",
+      "description": "Multiple outgoing money transfers totaling $54,500,000.00 were made on this date.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Lesley Groff",
+        "Lawrence P Visoski",
+        "David N Rodgers"
+      ]
+    },
+    {
+      "date": "2018-12-31",
+      "title": "Ending Balance Report",
+      "description": "The document concludes with the ending balance of the account as of December 31, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "Doca Raton, FL 33496",
+    "Bermuda"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $5,487,706.86 on December 1, 2018.",
+    "A total of $54,500,000.00 was transferred out of the account on December 19, 2018.",
+    "The document lists multiple outgoing transfers to individuals including Lesley Groff, Lawrence P Visoski, and David N Rodgers.",
+    "The ending balance of the account as of December 31, 2018, was $915,216.85.",
+    "There are no service charges or overdraft fees reported for the statement period."
+  ],
+  "analyzedAt": "2026-02-21T17:21:55.309Z"
+}

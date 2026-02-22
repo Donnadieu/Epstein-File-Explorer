@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA01288348.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account transactions of Jeffrey Epstein for the month of April 2019. It includes various deposits, withdrawals, and transfers, highlighting significant financial activities and balances during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of the financial transactions detailed in this document, with numerous entries related to his account activities.",
+      "mentionCount": 20
+    },
+    {
+      "name": "David I Mitchell",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "David I Mitchell is mentioned as associated with transactions involving Epstein's account, indicating a connection through shared financial activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Clive C Rivers",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Clive C Rivers is referenced in relation to outgoing money transfers from Epstein's account, suggesting a legal or financial advisory role.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David I Mitchell",
+      "relationshipType": "financial",
+      "description": "David I Mitchell is associated with transactions in Epstein's account, indicating a financial relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Clive C Rivers",
+      "relationshipType": "attorney-client",
+      "description": "Clive C Rivers is mentioned in connection with financial transactions, suggesting he may be providing legal services to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-04-01",
+      "title": "Beginning of April Transactions",
+      "description": "The financial statement begins with a detailed account of transactions starting from April 1, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-04-09",
+      "title": "Significant Outgoing Transfers",
+      "description": "Multiple outgoing money transfers from Epstein's account, including large sums to various banks.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-04-30",
+      "title": "End of Month Balance",
+      "description": "The statement concludes with the ending balance of Epstein's account as of April 30, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, B3, Saint Thomas, US Virgin Islands",
+    "850 3rd Ave, New York, NY"
+  ],
+  "keyFacts": [
+    "The document details Jeffrey Epstein's financial transactions for April 2019, showing significant withdrawals and transfers.",
+    "David I Mitchell is associated with multiple transactions, indicating a financial relationship with Epstein.",
+    "Clive C Rivers is mentioned in connection with outgoing transfers, suggesting a legal advisory role.",
+    "The ending balance of Epstein's account as of April 30, 2019, is reported as $559,007.79.",
+    "Numerous ATM withdrawals and outgoing transfers highlight Epstein's financial activities during this period."
+  ],
+  "analyzedAt": "2026-02-21T17:32:22.207Z"
+}

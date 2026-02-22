@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01287569.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2018-05-31",
+  "summary": "This document is a financial statement from Deutsche Bank detailing account transactions for Jeffrey Epstein's account during May 2018. It includes information on deposits, withdrawals, and account balances, highlighting significant outgoing transfers and fees associated with the account.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial transactions detailed in the document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Steuart Oldfield",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Steuart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "George Britain",
+      "role": "Business Associate",
+      "category": "associate",
+      "context": "George Britain is referenced in relation to outgoing money transfers for business transactions.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Steuart Oldfield",
+      "relationshipType": "employer-employee",
+      "description": "Steuart Oldfield is identified as a personal assistant to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "George Britain",
+      "relationshipType": "business associate",
+      "description": "George Britain is associated with Jeffrey Epstein through financial transactions related to business.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Quarter, St. Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details account transactions for Jeffrey Epstein's account at Deutsche Bank for May 2018.",
+    "Significant outgoing transfers include payments to George Britain Land Design Inc.",
+    "The ending balance of the account as of May 31, 2018, is $562,229.38.",
+    "There are multiple preauthorized debits for payroll and utility payments.",
+    "Steuart Oldfield is listed as a contact for personal assistance regarding the account."
+  ],
+  "analyzedAt": "2026-02-21T16:56:53.513Z"
+}

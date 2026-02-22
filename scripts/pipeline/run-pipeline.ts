@@ -38,6 +38,7 @@ interface PipelineConfig {
   concurrency?: number;
   retryFailed?: boolean;
   dryRun?: boolean;
+  model?: string;
 }
 
 const STAGES = [
@@ -83,7 +84,7 @@ STAGES:
   upload-r2        Upload downloaded files to Cloudflare R2 storage
   process          Extract text from downloaded PDFs via OCR/parsing
   classify-media   Classify documents by media type and set AI priority
-  analyze-ai       Run AI analysis on processed documents (DeepSeek)
+  analyze-ai       Run AI analysis on processed documents (default: DeepSeek, use --model to change)
   load-persons     Load scraped persons into PostgreSQL database
   load-documents   Load document catalog into PostgreSQL database
   import-downloads Import downloaded PDFs from filesystem into database
@@ -114,6 +115,7 @@ OPTIONS:
   --priority 3         Minimum priority level for analyze-priority (1-5, default: 1)
   --batch-size 20      Number of documents per batch (default: 50)
   --concurrency 4      Max parallel operations (default: 1)
+  --model gpt-4o-mini  AI model for analysis (deepseek-chat or gpt-4o-mini)
 
 EXAMPLES:
   # Quick start: populate database with Wikipedia data
@@ -199,6 +201,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           delayMs: config.concurrency && config.concurrency > 1 ? 500 : 1500,
           minPriority: config.priority ?? 1,
           budget: config.budget,
+          model: config.model,
         });
         break;
 
@@ -285,6 +288,8 @@ async function main() {
       config.batchSize = parseInt(args[++i], 10);
     } else if (arg === "--concurrency" && args[i + 1]) {
       config.concurrency = parseInt(args[++i], 10);
+    } else if (arg === "--model" && args[i + 1]) {
+      config.model = args[++i];
     } else if (arg === "--retry-failed") {
       config.retryFailed = true;
     } else if (arg === "--dry-run") {

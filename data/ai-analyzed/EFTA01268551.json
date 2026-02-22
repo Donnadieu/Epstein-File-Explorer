@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01268551.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-25",
+  "summary": "This document consists of email exchanges regarding a real estate transaction involving Steve Marshal. The emails discuss the effective date of a purchase and sales agreement, title due diligence, and the need for an extension for the due diligence period. The correspondence highlights the urgency of the closing process and the involvement of various parties in the transaction.",
+  "persons": [
+    {
+      "name": "Steve Marshal",
+      "role": "Buyer",
+      "category": "other",
+      "context": "Steve Marshal is attempting to purchase a house in Bradford and is seeking assistance with the title search and closing process.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jen Marshal",
+      "role": "Spouse",
+      "category": "other",
+      "context": "Jen Marshal is mentioned as Steve Marshal's wife, who was contacted regarding the closing and title search.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Margie",
+      "role": "Real Estate Agent",
+      "category": "staff",
+      "context": "Margie is referenced as having provided instructions regarding the effective date and due diligence period for the real estate transaction.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steve Marshal",
+      "person2": "Jen Marshal",
+      "relationshipType": "spousal",
+      "description": "Steve Marshal is the husband of Jen Marshal, and they are both involved in the real estate transaction.",
+      "strength": 5
+    },
+    {
+      "person1": "Steve Marshal",
+      "person2": "Margie",
+      "relationshipType": "client-agent",
+      "description": "Steve Marshal is seeking assistance from Margie, a real estate agent, for his property purchase.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-11-20",
+      "title": "Effective Date of Purchase Agreement",
+      "description": "The effective date of the purchase and sales agreement was set for November 20, 2019.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve Marshal",
+        "Margie"
+      ]
+    },
+    {
+      "date": "2019-12-13",
+      "title": "Closing Date",
+      "description": "The closing for the property purchase is scheduled for December 13, 2019.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Steve Marshal"
+      ]
+    }
+  ],
+  "locations": [
+    "Bradford"
+  ],
+  "keyFacts": [
+    "Steve Marshal is in the process of purchasing a house in Bradford and is coordinating with real estate professionals.",
+    "The effective date of the purchase and sales agreement was initially set for November 20, 2019.",
+    "There is a request for an extension on the due diligence period due to time constraints.",
+    "The closing date for the property purchase is set for December 13, 2019.",
+    "Margie is involved in the transaction, providing guidance and assistance to Steve Marshal."
+  ],
+  "analyzedAt": "2026-02-21T06:35:12.050Z"
+}

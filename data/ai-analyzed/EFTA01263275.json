@@ -1,0 +1,142 @@
+{
+  "fileName": "EFTA01263275.pdf",
+  "dataSet": "10",
+  "documentType": "court filing",
+  "dateOriginal": "2019-02-05",
+  "summary": "This document is an application to unseal discovery materials related to the case of Jane Doe 43 v. Jeffrey Epstein, et al. The Assistant United States Attorney seeks permission for Boies Schiller & Flexner LLP to provide materials to the Government for a grand jury investigation, despite a protective order in place. The application emphasizes the need for confidentiality due to the ongoing investigation.",
+  "persons": [
+    {
+      "name": "Geoffrey S. Berman",
+      "role": "United States Attorney",
+      "category": "legal",
+      "context": "Geoffrey S. Berman is mentioned as the United States Attorney for the Southern District of New York, under whom the Assistant United States Attorney operates.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jane Doe 43",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "Jane Doe 43 is the plaintiff in the civil action against Jeffrey Epstein and others, alleging conspiracy to traffic minors for commercial sex acts.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is named as a defendant in the civil action and is the subject of the ongoing federal grand jury investigation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Ghislaine Maxwell is also named as a defendant in the civil action alongside Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sigrid McCawley",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Sigrid McCawley is mentioned as an attorney for Boies Schiller & Flexner LLP, representing Jane Doe 43 in the civil action.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sarah Ransome",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "Sarah Ransome is mentioned as a plaintiff in the related case against Jeffrey Epstein and Ghislaine Maxwell.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jane Doe 43",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "Jane Doe 43 alleges that Jeffrey Epstein participated in a conspiracy to traffic her and other minors for commercial sex acts.",
+      "strength": 5
+    },
+    {
+      "person1": "Jane Doe 43",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "victim-perpetrator",
+      "description": "Jane Doe 43's allegations include Ghislaine Maxwell as a co-defendant in the conspiracy to traffic minors.",
+      "strength": 5
+    },
+    {
+      "person1": "Sigrid McCawley",
+      "person2": "Jane Doe 43",
+      "relationshipType": "attorney-client",
+      "description": "Sigrid McCawley represents Jane Doe 43 in her civil action against Epstein and Maxwell.",
+      "strength": 4
+    },
+    {
+      "person1": "Geoffrey S. Berman",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "law enforcement-subject",
+      "description": "Geoffrey S. Berman, as the United States Attorney, oversees the investigation into Jeffrey Epstein for potential criminal activities.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-01-26",
+      "title": "Filing of Civil Action",
+      "description": "Jane Doe 43 filed a civil action against Jeffrey Epstein and others, alleging conspiracy to traffic minors.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jane Doe 43",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2018-11-29",
+      "title": "Protective Order Issued",
+      "description": "The Court issued a protective order in the civil action, restricting the disclosure of certain discovery materials.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jane Doe 43",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2018-12-20",
+      "title": "Settlement Agreement",
+      "description": "The parties entered into a settlement agreement and voluntarily dismissed the civil action.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Jane Doe 43",
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2019-02-05",
+      "title": "Application to Unseal Materials",
+      "description": "The Assistant United States Attorney filed an application to unseal discovery materials related to the ongoing grand jury investigation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Geoffrey S. Berman",
+        "Jane Doe 43",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Southern District of New York"
+  ],
+  "keyFacts": [
+    "The document is an application to unseal discovery materials related to the case of Jane Doe 43 v. Jeffrey Epstein.",
+    "The Assistant United States Attorney seeks permission for Boies Schiller & Flexner LLP to provide materials to the Government for a grand jury investigation.",
+    "A protective order was issued on November 29, 2018, restricting the disclosure of certain discovery materials.",
+    "Jane Doe 43 filed a civil action against Jeffrey Epstein and others on January 26, 2017, alleging conspiracy to traffic minors.",
+    "The application emphasizes the need for confidentiality due to the ongoing investigation."
+  ],
+  "analyzedAt": "2026-02-21T05:37:18.658Z"
+}

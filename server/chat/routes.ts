@@ -4,6 +4,7 @@ import { conversations, messages, documents, pipelineJobs } from "@shared/schema
 import { eq, desc, sql, and, inArray } from "drizzle-orm";
 import { retrieveContext } from "./retriever";
 import { streamChatResponse } from "./service";
+import { AVAILABLE_MODELS, DEFAULT_MODEL_ID, isModelAvailable } from "./models";
 
 async function queueUnanalyzedDocuments(documentIds: number[]): Promise<void> {
   if (documentIds.length === 0) return;
@@ -45,6 +46,17 @@ async function queueUnanalyzedDocuments(documentIds: number[]): Promise<void> {
 }
 
 export function registerChatRoutes(app: Express): void {
+  // List available AI models
+  app.get("/api/chat/models", (_req: Request, res: Response) => {
+    const models = Object.values(AVAILABLE_MODELS).map((m) => ({
+      id: m.id,
+      label: m.label,
+      provider: m.provider,
+      available: isModelAvailable(m.id),
+    }));
+    res.json({ models, default: DEFAULT_MODEL_ID });
+  });
+
   // List all conversations
   app.get("/api/chat/conversations", async (_req: Request, res: Response) => {
     try {
@@ -102,10 +114,13 @@ export function registerChatRoutes(app: Express): void {
   // Stateless chat — no DB persistence, history sent from client
   app.post("/api/chat/message", async (req: Request, res: Response) => {
     try {
-      const { content, history = [] } = req.body;
+      const { content, history = [], model } = req.body;
       if (!content || typeof content !== "string") {
         return res.status(400).json({ error: "Message content is required" });
       }
+
+      // Validate model if provided
+      const modelId = model && AVAILABLE_MODELS[model] ? model : undefined;
 
       const context = await retrieveContext(content);
 
@@ -113,7 +128,7 @@ export function registerChatRoutes(app: Express): void {
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
 
-      for await (const chunk of streamChatResponse(content, history, context)) {
+      for await (const chunk of streamChatResponse(content, history, context, modelId)) {
         if (chunk.content) {
           res.write(`data: ${JSON.stringify({ content: chunk.content })}\n\n`);
         }

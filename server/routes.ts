@@ -926,28 +926,20 @@ export async function registerRoutes(
 
   app.get("/api/ai-analyses", async (req, res) => {
     try {
-      const list = await storage.getAIAnalysisList();
+      const page = Math.max(1, parseInt(req.query.page as string) || 1);
+      const limit = Math.min(100, Math.max(1, parseInt(req.query.limit as string || "50") || 50));
+      const search = (req.query.search as string) || undefined;
+      const documentType = (req.query.documentType as string) || undefined;
+      const dataSet = (req.query.dataSet as string) || undefined;
 
-      const pageParam = req.query.page as string | undefined;
-      const limitParam = req.query.limit as string | undefined;
+      const { data, total } = await storage.getAIAnalysisList({ page, limit, search, documentType, dataSet });
 
-      if (pageParam) {
-        const page = Math.max(1, parseInt(pageParam) || 1);
-        const limit = Math.min(
-          100,
-          Math.max(1, parseInt(limitParam || "50") || 50),
-        );
-        const offset = (page - 1) * limit;
-        const paginated = list.slice(offset, offset + limit);
-        return res.json({
-          analyses: paginated,
-          total: list.length,
-          page,
-          totalPages: Math.ceil(list.length / limit),
-        });
-      }
-
-      res.json({ analyses: list, total: list.length });
+      res.json({
+        analyses: data,
+        total,
+        page,
+        totalPages: Math.ceil(total / limit),
+      });
     } catch (error) {
       console.error("GET /api/ai-analyses failed:", error);
       res.status(500).json({ error: "Failed to fetch AI analyses" });

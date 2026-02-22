@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA01287048.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a summary of account balances and transactions for a Deutsche Bank account, detailing deposits, withdrawals, and transfers during September 2017. It includes specific transactions involving large sums of money transferred to various entities and individuals.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as the contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Richard Kahn is mentioned as the recipient of a significant outgoing money transfer from the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren K Indyke",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Darren K Indyke is mentioned as another recipient of a large outgoing money transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Darren K Indyke",
+      "relationshipType": "financial",
+      "description": "Both individuals are recipients of large outgoing transfers from the same account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-09-01",
+      "title": "Account Summary for September 2017",
+      "description": "The document summarizes the account balance and transactions for the month of September 2017.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Stewart Oldfield",
+        "Richard Kahn",
+        "Darren K Indyke"
+      ]
+    },
+    {
+      "date": "2017-09-12",
+      "title": "Outgoing Money Transfer to PNC Bank",
+      "description": "A transfer of $698.00 was made to PNC Bank.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2017-09-27",
+      "title": "Outgoing Money Transfer to Richard Kahn",
+      "description": "A transfer of $475,000.00 was made to Richard Kahn.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard Kahn"
+      ]
+    },
+    {
+      "date": "2017-09-27",
+      "title": "Outgoing Money Transfer to Darren K Indyke",
+      "description": "A transfer of $475,000.00 was made to Darren K Indyke.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Darren K Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, St. Thomas, Virgin Islands, U.S."
+  ],
+  "keyFacts": [
+    "The document details account balances and transactions for a Deutsche Bank account for September 2017.",
+    "Stewart Oldfield is the contact person for account inquiries.",
+    "Significant outgoing transfers of $475,000.00 each were made to Richard Kahn and Darren K Indyke.",
+    "The account had a beginning balance of $963,187.55 and ended with a balance of $12,489.55.",
+    "There are multiple outgoing transfers listed, including one to PNC Bank for $698.00."
+  ],
+  "analyzedAt": "2026-02-21T16:29:59.538Z"
+}

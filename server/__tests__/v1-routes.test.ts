@@ -11,6 +11,8 @@ vi.mock("../storage", () => ({
     getPersonsPaginated: vi.fn(),
     getPersonWithDetails: vi.fn(),
     getDocuments: vi.fn(),
+    getDocumentsPaginated: vi.fn(),
+    getDocumentsCursor: vi.fn(),
     getDocumentsFiltered: vi.fn(),
     getDocumentFilters: vi.fn(),
     getDocumentWithDetails: vi.fn(),
@@ -495,7 +497,7 @@ describe("Export routes", () => {
 
 describe("GET /api/v1/ai-analyses", () => {
   it("returns paginated list", async () => {
-    const items = Array.from({ length: 5 }, (_, i) => ({
+    const items = Array.from({ length: 2 }, (_, i) => ({
       fileName: `file${i}.json`,
       dataSet: "set-a",
       documentType: "legal-filing",
@@ -509,7 +511,7 @@ describe("GET /api/v1/ai-analyses", () => {
       costCents: 5,
       analyzedAt: "2024-01-01",
     }));
-    mockedStorage.getAIAnalysisList.mockResolvedValue(items);
+    mockedStorage.getAIAnalysisList.mockResolvedValue({ data: items, total: 5 });
 
     const res = await request(app).get("/api/v1/ai-analyses?page=1&limit=2");
     expect(res.status).toBe(200);
@@ -555,6 +557,42 @@ describe("Error response format", () => {
     expect(res.body.error).toHaveProperty("message");
     expect(res.body).toHaveProperty("meta");
     expect(res.body.meta.apiVersion).toBe("v1");
+  });
+});
+
+// -- Obsidian export --
+
+describe("GET /api/v1/export/obsidian", () => {
+  it("returns a tar.gz file with correct headers", async () => {
+    mockedStorage.getPersons.mockResolvedValue([mockPerson]);
+    mockedStorage.getDocumentsCursor.mockResolvedValueOnce([mockDocument]);
+    mockedStorage.getDocumentsCursor.mockResolvedValueOnce([]);
+    mockedStorage.getTimelineEvents.mockResolvedValue([{
+      ...mockEvent,
+      persons: [{ id: 1, name: "Test Person" }],
+      documents: [{ id: 1, title: "Test Document" }],
+    }]);
+    mockedStorage.getNetworkData.mockResolvedValue({
+      persons: [mockPerson],
+      connections: [mockConnection],
+      timelineYearRange: [1990, 2020],
+      personYears: {},
+    });
+
+    const res = await request(app)
+      .get("/api/v1/export/obsidian")
+      .buffer(true)
+      .parse((res, callback) => {
+        const chunks: Buffer[] = [];
+        res.on("data", (chunk: Buffer) => chunks.push(chunk));
+        res.on("end", () => callback(null, Buffer.concat(chunks)));
+      });
+    expect(res.status).toBe(200);
+    expect(res.headers["content-type"]).toContain("application/gzip");
+    expect(res.headers["content-disposition"]).toContain("epstein-vault.tar.gz");
+    // Response body should be non-empty binary data
+    expect(Buffer.isBuffer(res.body)).toBe(true);
+    expect(res.body.byteLength).toBeGreaterThan(0);
   });
 });
 

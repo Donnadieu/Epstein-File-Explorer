@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA01283822.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Report",
+  "dateOriginal": "2013-09-05",
+  "summary": "This document is a Know Your Customer (KYC) report for Jeffrey Epstein, detailing his banking relationship with Deutsche Bank, including account information, sources of wealth, and associated individuals. It highlights Epstein's financial background, the purpose of his accounts, and the compliance checks performed by the bank.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of the KYC report, detailing his banking relationship and financial activities.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the relationship manager for Jeffrey Epstein at Deutsche Bank, responsible for managing his accounts.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Darren Indyke is identified as a trustee for The Haze Trust, associated with Jeffrey Epstein.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Mary Keaveney",
+      "role": "Office Director/Business Head",
+      "category": "staff",
+      "context": "Mary Keaveney is mentioned as the office director overseeing the KYC process for Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jacqueline Lightbody",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Jacqueline Lightbody is noted as a compliance officer involved in the KYC approval process for Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janice Franklin",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Janice Franklin is another compliance officer who reviewed the KYC documentation for Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the relationship manager for Jeffrey Epstein at Deutsche Bank.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Darren Indyke serves as a trustee for The Haze Trust, which is associated with Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Paul Morris",
+      "person2": "Mary Keaveney",
+      "relationshipType": "employer-employee",
+      "description": "Mary Keaveney is the office director overseeing Paul Morris's work as a relationship manager.",
+      "strength": 3
+    },
+    {
+      "person1": "Jacqueline Lightbody",
+      "person2": "Janice Franklin",
+      "relationshipType": "colleagues",
+      "description": "Both Jacqueline Lightbody and Janice Franklin are compliance officers involved in the KYC process.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-09-05",
+      "title": "KYC Approval for Jeffrey Epstein",
+      "description": "The KYC report for Jeffrey Epstein was approved by compliance officers at Deutsche Bank.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris",
+        "Mary Keaveney",
+        "Jacqueline Lightbody",
+        "Janice Franklin"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter B3, St Thomas, USVI 00802",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Deutsche Bank and has multiple accounts including The Haze Trust.",
+    "Paul Morris is the relationship manager for Epstein, having previously worked with him at JP Morgan.",
+    "Darren Indyke is identified as a trustee for The Haze Trust associated with Epstein.",
+    "The KYC report includes compliance checks that found no negative results for Epstein.",
+    "Epstein's estimated net worth is between $100 million and $500 million, with an estimated annual income of $10 million."
+  ],
+  "analyzedAt": "2026-02-21T13:53:50.504Z"
+}

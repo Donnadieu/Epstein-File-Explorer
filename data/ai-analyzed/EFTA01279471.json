@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01279471.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document appears to be a financial record from UBS Financial Services Inc. regarding the authorization for duplicate recipients of tax records. It includes instructions for notifying UBS about account management and mentions interested parties related to the accounts.",
+  "persons": [
+    {
+      "name": "Nate",
+      "role": "Account Representative",
+      "category": "staff",
+      "context": "Nate is mentioned in the context of managing accounts and authorizations at UBS Financial Services.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jody",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jody is referenced in relation to the authorization for duplicate tax records.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alan",
+      "role": "Interested Party",
+      "category": "other",
+      "context": "Alan is mentioned as an interested party in the context of account management.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nate",
+      "person2": "Jody",
+      "relationshipType": "employer-employee",
+      "description": "Nate is an account representative at UBS managing Jody's accounts.",
+      "strength": 3
+    },
+    {
+      "person1": "Jody",
+      "person2": "Alan",
+      "relationshipType": "financial",
+      "description": "Jody's accounts involve Alan as an interested party.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York City, NY"
+  ],
+  "keyFacts": [
+    "The document is a financial record from UBS Financial Services Inc.",
+    "It discusses the authorization for duplicate recipients of tax records.",
+    "Nate and Jody are involved in the management of accounts at UBS.",
+    "Alan is mentioned as an interested party related to the accounts.",
+    "The document contains instructions for notifying UBS about account management."
+  ],
+  "analyzedAt": "2026-02-21T11:22:05.889Z"
+}

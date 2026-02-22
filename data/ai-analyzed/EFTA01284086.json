@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA01284086.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Document",
+  "dateOriginal": "2016-12-12",
+  "summary": "This document outlines the Know Your Customer (KYC) details for Jeffrey Epstein and Darren Indyke in relation to their banking relationship with Deutsche Bank. It includes information about their roles, the purpose of their accounts, and their financial backgrounds.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "President",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the President of Gratitude America and is a current client of the bank. He is the sole manager and owner of Zorro Management, LLC.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Attorney",
+      "category": "associate",
+      "context": "Darren Indyke is mentioned as a contact person for the accounts and is associated with Jeffrey Epstein in the context of their banking relationship.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is the Relationship Manager at Deutsche Bank who was contacted by Epstein and Indyke to open a checking account.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with Jeffrey Epstein in a professional capacity, likely as his attorney.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Stewart Oldfield",
+      "relationshipType": "client-manager",
+      "description": "Stewart Oldfield is the Relationship Manager for Jeffrey Epstein at Deutsche Bank.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-12-12",
+      "title": "Account Opening Request",
+      "description": "Jeffrey Epstein and Darren Indyke reached out to Stewart Oldfield to open a checking account for Zorro Management, LLC.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Darren Indyke",
+        "Stewart Oldfield"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter, St. Thomas, US Virgin Islands",
+    "575 Lexington Ave, Livingston, NY, USA"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the President of Gratitude America and is a client of Deutsche Bank.",
+    "Darren Indyke is identified as an attorney and the primary contact for Epstein's accounts.",
+    "Zorro Management, LLC was established to manage the daily expenses of Epstein's business activities.",
+    "The document includes KYC details for both Epstein and Indyke, including their financial backgrounds and sources of wealth.",
+    "The account for Zorro Management, LLC was opened on December 12, 2016."
+  ],
+  "analyzedAt": "2026-02-21T14:04:29.504Z"
+}

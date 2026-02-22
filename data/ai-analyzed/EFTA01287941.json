@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA01287941.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2018-10-01",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account transactions of Jeffrey Epstein for the month of October 2018. It includes information on deposits, withdrawals, and transfers, highlighting significant financial activities and balances throughout the month.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of this financial record, detailing his account transactions and balances during October 2018.",
+      "mentionCount": 20
+    },
+    {
+      "name": "David Mitchell",
+      "role": "Associate",
+      "category": "associate",
+      "context": "David Mitchell is mentioned as a recipient of funds transferred from Epstein's account, indicating a financial relationship.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Stewart O'Field",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Stewart O'Field is listed as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Link Rockenbach",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Link Rockenbach is mentioned as a recipient of funds transferred from Epstein's account, indicating a professional relationship.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Mitchell",
+      "relationshipType": "financial",
+      "description": "David Mitchell received multiple transfers from Epstein's account, indicating a financial connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Link Rockenbach",
+      "relationshipType": "attorney-client",
+      "description": "Link Rockenbach is mentioned as an attorney receiving funds from Epstein, suggesting a legal relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-10-01",
+      "title": "Account Statement Start",
+      "description": "The financial statement begins detailing transactions from October 1, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2018-10-31",
+      "title": "Account Statement End",
+      "description": "The financial statement concludes with the ending balance as of October 31, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, B3, Saint Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details Jeffrey Epstein's account transactions for October 2018, showing significant financial activity.",
+    "Epstein's account had a beginning balance of $4,187,846.41 and an ending balance of $4,187,346.41.",
+    "Multiple transfers were made to David Mitchell and Link Rockenbach, indicating financial and legal relationships.",
+    "The document includes various debits and credits, including ATM withdrawals and payments to American Express.",
+    "There are several preauthorized debits listed, indicating regular payments from Epstein's account."
+  ],
+  "analyzedAt": "2026-02-21T17:15:29.945Z"
+}

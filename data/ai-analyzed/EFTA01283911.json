@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA01283911.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Case Document",
+  "dateOriginal": null,
+  "summary": "This document outlines the KYC (Know Your Customer) details for Jeffrey Epstein and associated accounts at Deutsche Bank. It includes information about account ownership, the purpose of accounts, and the relationships between Epstein and his financial advisors. The document also highlights the financial activities and expected inflows/outflows related to Epstein's accounts.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a client of Deutsche Bank, seeking to open new accounts for managing funds related to his personal expenses.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the relationship manager handling Epstein's accounts and has previously worked with him at JP Morgan.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Accountant",
+      "category": "associate",
+      "context": "Harry Beller is mentioned as a contact person related to Epstein's accounts, providing financial oversight.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Brian M. Biggar",
+      "role": "Office Director/Business Head",
+      "category": "staff",
+      "context": "Brian M. Biggar is noted as an approving authority for the KYC documentation related to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janice Franklin",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Janice Franklin is mentioned as a compliance officer who signed off on the KYC documentation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the relationship manager for Jeffrey Epstein at Deutsche Bank, having previously worked with him at JP Morgan.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Harry Beller",
+      "relationshipType": "financial oversight",
+      "description": "Harry Beller is involved in the financial management of Epstein's accounts.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Morris",
+      "person2": "Harry Beller",
+      "relationshipType": "professional association",
+      "description": "Both are involved in managing Epstein's financial affairs.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-21",
+      "title": "Client Meeting",
+      "description": "A meeting took place between Paul Morris and Jeffrey Epstein to discuss account management.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris"
+      ]
+    },
+    {
+      "date": "2013-10-22",
+      "title": "KYC Approval",
+      "description": "KYC documentation for Jeffrey Epstein was approved by Paul Morris.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris",
+        "Brian M. Biggar",
+        "Janice Franklin"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hock Quarter, B3 St Thomas 00802 USVI",
+    "New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Deutsche Bank, seeking to open new accounts for managing personal expenses.",
+    "Paul Morris has a history of working with Epstein at JP Morgan before managing his accounts at Deutsche Bank.",
+    "Harry Beller is involved in the financial oversight of Epstein's accounts.",
+    "The accounts are intended to cover costs associated with running Epstein's homes.",
+    "The KYC documentation indicates Epstein's estimated net worth is between $100 million and $500 million."
+  ],
+  "analyzedAt": "2026-02-21T13:57:23.519Z"
+}

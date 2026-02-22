@@ -1,0 +1,121 @@
+{
+  "fileName": "EFTA01287870.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activities of Jeffrey Epstein for the month of September 2018. It includes transaction details such as deposits, withdrawals, and transfers, highlighting significant financial movements and balances during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder whose financial transactions are detailed throughout the document.",
+      "mentionCount": 10
+    },
+    {
+      "name": "David Mitchell",
+      "role": "Recipient of Funds",
+      "category": "associate",
+      "context": "David Mitchell is mentioned as a recipient of outgoing money transfers from Epstein's account.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient of Funds",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as a recipient of outgoing money transfers from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Martin G. Weinberg",
+      "role": "Recipient of Funds",
+      "category": "associate",
+      "context": "Martin G. Weinberg is mentioned as a recipient of outgoing money transfers from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steuart OkIfiekt",
+      "role": "Contact for Assistance",
+      "category": "staff",
+      "context": "Steuart OkIfiekt is listed as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Mitchell",
+      "relationshipType": "financial",
+      "description": "David Mitchell is a recipient of funds transferred from Jeffrey Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "financial",
+      "description": "Larry Visoski is a recipient of funds transferred from Jeffrey Epstein's account.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Martin G. Weinberg",
+      "relationshipType": "financial",
+      "description": "Martin G. Weinberg is a recipient of funds transferred from Jeffrey Epstein's account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-09-01",
+      "title": "Beginning Balance",
+      "description": "The account begins with a balance of $2,274,689.37.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2018-09-30",
+      "title": "Ending Balance",
+      "description": "The account ends the month with a balance of $3,135,206.70.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2018-09-05",
+      "title": "Outgoing Transfers",
+      "description": "Multiple outgoing transfers totaling $25,000 were made to various accounts.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2018-09-17",
+      "title": "ATM Withdrawals",
+      "description": "Multiple ATM withdrawals were made totaling $1,000.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, B3, Saint Thomas, 00802, United States Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details financial transactions for Jeffrey Epstein's account at Deutsche Bank for September 2018.",
+    "Significant outgoing transfers include payments to David Mitchell, Larry Visoski, and Martin G. Weinberg.",
+    "The account balance fluctuated from $2,274,689.37 at the beginning of the month to $3,135,206.70 at the end.",
+    "Multiple ATM withdrawals and preauthorized debits were recorded throughout the month.",
+    "There are several redacted names in the transaction details, indicating other parties involved in the financial activities."
+  ],
+  "analyzedAt": "2026-02-21T17:12:32.634Z"
+}

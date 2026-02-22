@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01268633.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2019-11-25",
+  "summary": "This document consists of email exchanges regarding a real estate transaction involving a property in Bradford, NH. The correspondence discusses the need for a bill of sale for vehicles, requests for extensions on due diligence periods, and coordination for title searches and closings. The communication highlights the urgency of the transaction and the involvement of multiple parties.",
+  "persons": [
+    {
+      "name": "Steve Marshal",
+      "role": "Buyer",
+      "category": "other",
+      "context": "Steve Marshal is attempting to purchase a house in Bradford and is seeking assistance with the title search and related legal questions.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Margie",
+      "role": "Associate",
+      "category": "other",
+      "context": "Margie is mentioned as someone who is involved in the transaction and is coordinating details regarding the due diligence and inspection period.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Attorney",
+      "role": "Attorney at Law",
+      "category": "legal",
+      "context": "An unnamed attorney is involved in the legal aspects of the real estate transaction, providing advice and handling the title search.",
+      "mentionCount": 4
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steve Marshal",
+      "person2": "Attorney",
+      "relationshipType": "client-attorney",
+      "description": "Steve Marshal is seeking legal assistance from the attorney for his real estate transaction.",
+      "strength": 4
+    },
+    {
+      "person1": "Steve Marshal",
+      "person2": "Margie",
+      "relationshipType": "associate",
+      "description": "Margie is assisting Steve Marshal with the real estate transaction.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-13",
+      "title": "Closing Date",
+      "description": "The closing for the property purchase is scheduled for December 13, 2019.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Steve Marshal",
+        "Attorney"
+      ]
+    },
+    {
+      "date": "2019-11-20",
+      "title": "Effective Date Error",
+      "description": "A clerical error regarding the effective date of the purchase and sale agreement is noted, impacting the due diligence timeline.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Steve Marshal",
+        "Margie"
+      ]
+    }
+  ],
+  "locations": [
+    "Bradford, NH",
+    "New London, NH"
+  ],
+  "keyFacts": [
+    "Steve Marshal is trying to purchase a house in Bradford, NH.",
+    "There is a need for a bill of sale for vehicles involved in the transaction.",
+    "The attorney is coordinating title searches and legal questions related to the property.",
+    "An extension for due diligence is being requested due to the holiday schedule.",
+    "The closing date for the property is set for December 13, 2019."
+  ],
+  "analyzedAt": "2026-02-21T06:38:15.296Z"
+}

@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01288426.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-05-01",
+  "summary": "This document is a summary of account balances and transactions for a Deutsche Bank account for the period from May 1, 2019, to May 31, 2019. It details the beginning and ending balances, deposits, withdrawals, service charges, and specific transactions, including a significant outgoing transfer to Bella Klein. The document highlights the financial activities associated with the account during this timeframe.",
+  "persons": [
+    {
+      "name": "Bella Klein",
+      "role": "Account Recipient",
+      "category": "other",
+      "context": "Bella Klein is mentioned as the recipient of a significant outgoing money transfer from the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steuart OkIfickt",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Steuart OkIfickt is referenced in the context of personal assistance for the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steuart OkIfickt",
+      "person2": "Bella Klein",
+      "relationshipType": "financial",
+      "description": "Steuart OkIfickt is the account holder who made a significant outgoing transfer to Bella Klein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-05-03",
+      "title": "Outgoing Money Transfer",
+      "description": "An outgoing money transfer was made from the account to Bella Klein.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Steuart OkIfickt",
+        "Bella Klein"
+      ]
+    }
+  ],
+  "locations": [
+    "34S Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $91,098.69 on May 1, 2019.",
+    "A significant outgoing transfer of $91,098.69 was made to Bella Klein on May 3, 2019.",
+    "The ending balance of the account as of May 31, 2019, was $0.00 after the transfer.",
+    "Service charges and fees totaled $50.00 for the statement period.",
+    "The document includes instructions for reporting errors related to electronic and non-electronic funds transfers."
+  ],
+  "analyzedAt": "2026-02-21T17:35:30.933Z"
+}

@@ -1,0 +1,119 @@
+{
+  "fileName": "EFTA01268604.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-12-13",
+  "summary": "This document details the closing transaction for the purchase of a property located at 338 East Washington Road, Bradford, NH, by Granite Reality LLC from Richard Yospin, Trustee of the Richard Yospin Family Trust. It includes information about the involved parties, the purchase price, and the wire transfers related to the transaction.",
+  "persons": [
+    {
+      "name": "Jeffrey W. Roberts",
+      "role": "Manager",
+      "category": "legal",
+      "context": "Jeffrey W. Roberts is identified as the manager of Granite Reality LLC, the buyer in the property transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Yospin",
+      "role": "Trustee",
+      "category": "key figure",
+      "context": "Richard Yospin is the trustee of the Richard Yospin Family Trust and the seller of the property.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Margaret Weathers",
+      "role": "Broker Associate",
+      "category": "associate",
+      "context": "Margaret Weathers is identified as the broker associate for Four Seasons Sotheby's International Realty involved in the transaction.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rebecca Russo",
+      "role": "Processor",
+      "category": "staff",
+      "context": "Rebecca Russo is mentioned as the processor for the closing documents.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alex Garcia",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Alex Garcia is identified as the seller's attorney in the transaction.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey W. Roberts",
+      "person2": "Granite Reality LLC",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey W. Roberts is the manager of Granite Reality LLC, indicating an employer-employee relationship.",
+      "strength": 5
+    },
+    {
+      "person1": "Richard Yospin",
+      "person2": "Granite Reality LLC",
+      "relationshipType": "seller-buyer",
+      "description": "Richard Yospin sold the property to Granite Reality LLC, establishing a seller-buyer relationship.",
+      "strength": 5
+    },
+    {
+      "person1": "Margaret Weathers",
+      "person2": "Richard Yospin",
+      "relationshipType": "agent-client",
+      "description": "Margaret Weathers acted as the broker for Richard Yospin in the sale of the property.",
+      "strength": 4
+    },
+    {
+      "person1": "Rebecca Russo",
+      "person2": "Granite Reality LLC",
+      "relationshipType": "staff-client",
+      "description": "Rebecca Russo processed the closing documents for Granite Reality LLC, indicating a staff-client relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Alex Garcia",
+      "person2": "Richard Yospin",
+      "relationshipType": "attorney-client",
+      "description": "Alex Garcia served as the attorney for Richard Yospin in the property transaction.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-12-13",
+      "title": "Property Closing",
+      "description": "The closing of the property sale from Richard Yospin to Granite Reality LLC took place.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey W. Roberts",
+        "Richard Yospin",
+        "Margaret Weathers",
+        "Rebecca Russo",
+        "Alex Garcia"
+      ]
+    },
+    {
+      "date": "2019-12-12",
+      "title": "Incoming Wire Transfer Notification",
+      "description": "A wire transfer was received from Granite Reality LLC for the property purchase.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Rebecca Russo",
+        "Granite Reality LLC"
+      ]
+    }
+  ],
+  "locations": [
+    "338 East Washington Road, Bradford, NH 03221"
+  ],
+  "keyFacts": [
+    "The purchase price for the property was $1,070,750.00.",
+    "The closing date for the property transaction was December 13, 2019.",
+    "Richard Yospin is the trustee of the Richard Yospin Family Trust, which sold the property.",
+    "Granite Reality LLC is the buyer represented by Jeffrey W. Roberts.",
+    "A wire transfer of $994,279.12 was received from Granite Reality LLC on December 12, 2019."
+  ],
+  "analyzedAt": "2026-02-21T06:37:03.603Z"
+}

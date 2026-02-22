@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA01269393.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains customer due diligence information for business accounts associated with Jeffrey Epstein and Laurel Inc. It includes details about account numbers, business addresses, and identification information. The document highlights the financial activities and verification results related to Epstein's business dealings. This document contains various corporate records and legal requirements for Laurel, Inc., including articles of incorporation, bylaws, and resolutions. It details the structure, management, and operational guidelines of the corporation, including the roles of key individuals and the processes for financial transactions.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Business Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the owner of Laurel Inc., with details about his personal and business addresses, occupation, and identification.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Laurel Inc.",
+      "role": "Business Entity",
+      "category": "other",
+      "context": "Laurel Inc. is mentioned as a business entity associated with Epstein, including its account details and business information.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Authorized Signer",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as the Secretary of Laurel, Inc., responsible for maintaining corporate records and facilitating corporate resolutions.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Treasurer",
+      "category": "legal",
+      "context": "Richard Kahn is identified as the Treasurer of Laurel, Inc., involved in financial management and transactions.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Joanne Brennan",
+      "role": "Accountant",
+      "category": "staff",
+      "context": "Joanne Brennan is mentioned as an Accountant for Laurel, Inc., involved in financial operations.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Erika A. Kent-Mills",
+      "role": "Incorporator",
+      "category": "legal",
+      "context": "Erika A. Kent-Mills is listed as one of the incorporators of Laurel, Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gregory J. Ferguson",
+      "role": "Incorporator",
+      "category": "legal",
+      "context": "Gregory J. Ferguson is listed as one of the incorporators of Laurel, Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brett Geary",
+      "role": "Incorporator",
+      "category": "legal",
+      "context": "Brett Geary is listed as one of the incorporators of Laurel, Inc.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Laurel Inc.",
+      "relationshipType": "owner-entity",
+      "description": "Jeffrey Epstein is the owner of Laurel Inc., which is involved in financial transactions.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Darren Indyke is associated with Jeffrey Epstein as an authorized signer for his business accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey Epstein is the President of Laurel, Inc., and Darren Indyke serves as the Secretary.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Kahn",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey Epstein is the President of Laurel, Inc., and Richard Kahn serves as the Treasurer.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Joanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey Epstein is the President of Laurel, Inc., and Joanne Brennan is an Accountant.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Richard Kahn",
+      "relationshipType": "associate",
+      "description": "Darren Indyke and Richard Kahn are both officers of Laurel, Inc.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2011-11-22",
+      "title": "Incorporation of Laurel, Inc.",
+      "description": "Laurel, Inc. was officially incorporated in the Virgin Islands.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Erika A. Kent-Mills",
+        "Gregory J. Ferguson",
+        "Brett Geary"
+      ]
+    },
+    {
+      "date": "2012-04-05",
+      "title": "Corporate Resolutions Meeting",
+      "description": "A meeting of the Board of Directors of Laurel, Inc. was held to adopt various corporate resolutions.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Darren Indyke",
+        "Richard Kahn",
+        "Joanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "Red Hook Quarter B3, St. Thomas, VI 00802",
+    "Little St. James Island, USVI",
+    "6100 Red Hook Quarter B3, St. Thomas, VI 00802",
+    "9100 Havensight, Port of Sale, Suite 15-16, St. Thomas, U.S. Virgin Islands"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is identified as the owner of Laurel Inc., which was established on 11/20/2011.",
+    "The document includes financial details such as account numbers and verification results for Epstein's business activities.",
+    "Darren Indyke is listed as an authorized signer for accounts associated with Epstein.",
+    "Laurel Inc. has a physical address in Red Hook Quarter, St. Thomas, VI.",
+    "The document indicates that Epstein's business activities are under scrutiny, as evidenced by the due diligence checks.",
+    "Jeffrey Epstein is the President of Laurel, Inc.",
+    "Darren Indyke serves as the Secretary of Laurel, Inc.",
+    "Richard Kahn is the Treasurer of Laurel, Inc.",
+    "Laurel, Inc. was incorporated on November 22, 2011.",
+    "The corporation has a physical address in St. Thomas, U.S. Virgin Islands."
+  ],
+  "analyzedAt": "2026-02-21T06:58:28.087Z"
+}

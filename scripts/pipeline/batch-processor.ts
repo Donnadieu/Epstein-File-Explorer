@@ -2,9 +2,11 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { db } from "../../server/db";
-import { documents, pipelineJobs, budgetTracking } from "../../shared/schema";
+import { documents, pipelineJobs, budgetTracking, aiAnalyses, aiAnalysisPersons } from "../../shared/schema";
 import { eq, sql, and, desc, inArray } from "drizzle-orm";
 import { analyzeDocumentTiered, type AnalysisTier, type TieredAnalysisResult } from "./ai-analyzer";
+import { normalizeName } from "../../server/storage";
+import { getModelConfig, AVAILABLE_MODELS } from "../../server/chat/models";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -42,6 +44,7 @@ interface BatchConfig {
   dryRun: boolean;
   dataSets?: string[];
   limit?: number;
+  model?: string;
 }
 
 interface BatchProgress {
@@ -275,12 +278,14 @@ async function recordCost(
   costCents: number,
   inputTokens: number,
   outputTokens: number,
+  modelId?: string,
 ): Promise<void> {
   const today = new Date().toISOString().slice(0, 10);
+  const config = getModelConfig(modelId);
 
   await db.insert(budgetTracking).values({
     date: today,
-    model: "deepseek/deepseek-chat-v3-0324",
+    model: config.model,
     inputTokens,
     outputTokens,
     costCents: Math.round(costCents * 100) / 100,
@@ -417,7 +422,7 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
         }
 
         await markJobProcessing(job.jobId);
-        const result = await analyzeDocumentTiered("", fileName, dataSet, 0);
+        const result = await analyzeDocumentTiered("", fileName, dataSet, 0, config.model);
 
         const outFile = path.join(AI_OUTPUT_DIR, `${fileName}.json`);
         fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
@@ -448,11 +453,57 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
       await markJobProcessing(job.jobId);
 
       try {
-        const result = await analyzeDocumentTiered(text, fileName, dataSet, tier);
+        const result = await analyzeDocumentTiered(text, fileName, dataSet, tier, config.model);
 
         // Save to file
         const outFile = path.join(AI_OUTPUT_DIR, `${fileName}.json`);
         fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+
+        // Save to database (dual-write alongside JSON)
+        try {
+          const analysisValues = {
+            fileName,
+            dataSet,
+            documentType: result.documentType,
+            dateOriginal: result.dateOriginal,
+            summary: result.summary,
+            personCount: result.persons.length,
+            connectionCount: result.connections.length,
+            eventCount: result.events.length,
+            locationCount: result.locations.length,
+            keyFactCount: result.keyFacts.length,
+            tier,
+            costCents: Math.ceil(result.costCents),
+            inputTokens: result.inputTokens,
+            outputTokens: result.outputTokens,
+            persons: result.persons,
+            connectionsData: result.connections,
+            events: result.events,
+            locations: result.locations,
+            keyFacts: result.keyFacts,
+            analyzedAt: new Date(),
+          };
+          const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+            .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+            .returning({ id: aiAnalyses.id });
+
+          await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+          if (result.persons.length > 0) {
+            await db.insert(aiAnalysisPersons).values(
+              result.persons.map((p: any) => ({
+                aiAnalysisId: analysisRow.id,
+                name: p.name,
+                normalizedName: normalizeName(p.name),
+                role: p.role ?? null,
+                category: p.category ?? null,
+                context: p.context ?? null,
+                mentionCount: p.mentionCount ?? 1,
+              }))
+            );
+          }
+        } catch (dbErr) {
+          console.warn(`  DB write failed for ${fileName}: ${(dbErr as Error).message}`);
+        }
 
         // Update document status
         await db
@@ -465,7 +516,7 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
 
         // Track cost for Tier 1
         if (tier === 1 && result.costCents > 0) {
-          await recordCost(job.documentId, result.costCents, result.inputTokens, result.outputTokens);
+          await recordCost(job.documentId, result.costCents, result.inputTokens, result.outputTokens, config.model);
           currentBudgetRemaining -= result.costCents;
           progress.totalCostCents += result.costCents;
         }
@@ -529,11 +580,12 @@ OPTIONS:
   --dry-run           Show what would be processed without doing it
   --data-sets 9,1,5   Only process specific data sets
   --limit N           Max documents to process in this run
+  --model ID          AI model: deepseek-chat (default) or gpt-4o-mini
   --status            Show queue status and budget, then exit
 
 TIERS:
   0  FREE     Rule-based classification (person matching, doc type inference)
-  1  DeepSeek Full AI analysis (~$0.001/doc via deepseek-chat-v3)
+  1  PAID     Full AI analysis (model selected via --model flag)
 
 PRIORITY QUEUE (highest first):
   DS9  (100)  Private emails, DOJ NPA documents
@@ -666,10 +718,14 @@ async function main(): Promise<void> {
       config.dataSets = args[++i].split(",").map(s => s.trim());
     } else if (arg === "--limit" && args[i + 1]) {
       config.limit = parseInt(args[++i], 10);
+    } else if (arg === "--model" && args[i + 1]) {
+      config.model = args[++i];
     }
   }
 
+  const modelConfig = getModelConfig(config.model);
   console.log("\n=== Batch Processor: Tiered AI Analysis ===\n");
+  console.log(`Model: ${modelConfig.label} (${modelConfig.model})`);
   console.log(`Batch size: ${config.batchSize}`);
   console.log(`Monthly cap: ${formatCents(config.monthlyCapCents)}`);
   console.log(`Tier: ${config.forceTier !== undefined ? config.forceTier : "auto"}`);

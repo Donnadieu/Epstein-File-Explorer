@@ -1,8 +1,12 @@
 import { Router } from "express";
 import { storage } from "../../../storage";
 import { sendError } from "../types";
+import { obsidianExportHandler } from "./obsidian-export";
 
 const router = Router();
+
+// Obsidian vault export (zip)
+router.get("/obsidian", obsidianExportHandler);
 
 function toCsvRow(headers: string[], obj: Record<string, unknown>): string {
   return headers.map(h => {

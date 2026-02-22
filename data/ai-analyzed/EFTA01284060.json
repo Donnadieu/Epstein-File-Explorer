@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA01284060.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Report",
+  "dateOriginal": null,
+  "summary": "This document is a Know Your Customer (KYC) report for Jeffrey Epstein and associated accounts at Deutsche Bank. It details the relationships, account ownership, and financial activities related to Epstein and his entities, including Mort, Inc. The report includes information on account managers, financial inflows, and the nature of Epstein's wealth.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "President",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the President of Gratitude America and is a current client of Deutsche Bank. His financial activities and account details are extensively documented.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the Relationship Manager for Epstein's accounts at Deutsche Bank, responsible for managing the client relationship.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as a lawyer associated with Epstein, involved in the KYC process and account management.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the Relationship Manager for Jeffrey Epstein's accounts at Deutsche Bank.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "client-attorney",
+      "description": "Darren Indyke serves as a legal representative for Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York",
+    "US Virgin Islands",
+    "Saint Thomas"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Deutsche Bank and is identified as the President of Gratitude America.",
+    "The KYC report includes details about Epstein's financial activities, including account inflows and outflows.",
+    "Paul Morris is the Relationship Manager overseeing Epstein's accounts.",
+    "Darren Indyke is mentioned as a lawyer associated with Epstein.",
+    "The report indicates that Epstein's wealth primarily comes from his financial management career and investments."
+  ],
+  "analyzedAt": "2026-02-21T14:03:37.663Z"
+}

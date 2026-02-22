@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA01287138.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-10-01",
+  "summary": "This document is a summary of account balances and transactions for a specific account held at Deutsche Bank Trust Company Americas for the period from October 1, 2017, to October 31, 2017. It details various transactions including deposits, withdrawals, and transfers, highlighting significant outgoing transfers to other banks and accounts.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as the contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Richard Kahn is referenced as the recipient of a transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stewart Oldfield",
+      "person2": "Richard Kahn",
+      "relationshipType": "banker-client",
+      "description": "Stewart Oldfield serves as the account manager for Richard Kahn's account at Deutsche Bank.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-10-11",
+      "title": "Outgoing Money Transfer to Silicon Valley Bank",
+      "description": "A transfer of $2,250,000.00 was made to Silicon Valley Bank.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Richard Kahn"
+      ]
+    },
+    {
+      "date": "2017-10-20",
+      "title": "Outgoing Money Transfer to JPMorgan Chase Bank",
+      "description": "A transfer of $4,430.73 was made to JPMorgan Chase Bank, account of Richard Kahn.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Richard Kahn"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $3,797,351.55 on October 1, 2017.",
+    "A total of $6,000,774.89 was credited to the account during the statement period.",
+    "Significant outgoing transfers included $2,250,000.00 to Silicon Valley Bank and $600,000.00 to Southern Trust Company.",
+    "Interest earned during the period was $774.89.",
+    "The document includes instructions for reporting errors or inquiries regarding the account."
+  ],
+  "analyzedAt": "2026-02-21T16:35:14.815Z"
+}

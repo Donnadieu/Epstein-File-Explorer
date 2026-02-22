@@ -194,6 +194,19 @@ export function getOpenAPISpec() {
           responses: { "200": { description: "All persons, connections, and year ranges" } },
         },
       },
+      "/export/obsidian": {
+        get: {
+          summary: "Export Obsidian vault",
+          tags: ["Export"],
+          description: "Downloads a tar.gz archive containing a ready-to-use Obsidian vault with markdown files for persons, documents, timeline events, and connections, cross-referenced with [[wikilinks]]. Extract with: tar -xzf epstein-vault.tar.gz",
+          responses: {
+            "200": {
+              description: "Obsidian vault tar.gz archive",
+              content: { "application/gzip": { schema: { type: "string", format: "binary" } } },
+            },
+          },
+        },
+      },
       "/export/persons": {
         get: {
           summary: "Export persons",
@@ -251,7 +264,10 @@ export function getOpenAPISpec() {
           tags: ["AI Analyses"],
           parameters: [
             { name: "page", in: "query", schema: { type: "integer", default: 1 } },
-            { name: "limit", in: "query", schema: { type: "integer", default: 50 } },
+            { name: "limit", in: "query", schema: { type: "integer", default: 50, maximum: 100 } },
+            { name: "search", in: "query", schema: { type: "string" } },
+            { name: "documentType", in: "query", schema: { type: "string" } },
+            { name: "dataSet", in: "query", schema: { type: "string" } },
           ],
           responses: { "200": { description: "Paginated AI analysis list" } },
         },

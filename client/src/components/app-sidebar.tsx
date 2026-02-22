@@ -35,6 +35,7 @@ import {
   Video,
   VideoOff,
   Bookmark,
+  Code2,
 } from "lucide-react";
 
 interface SidebarCounts {
@@ -56,6 +57,7 @@ interface NavItem {
   url: string;
   icon: React.ComponentType<{ className?: string }>;
   count?: number;
+  external?: boolean;
 }
 
 function NavGroup({ label, items, location }: { label: string; items: NavItem[]; location: string }) {
@@ -73,10 +75,18 @@ function NavGroup({ label, items, location }: { label: string; items: NavItem[];
                   isActive={isActive}
                   data-testid={`nav-${item.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
-                  <Link href={item.url}>
-                    <item.icon className="w-4 h-4" />
-                    <span>{item.title}</span>
-                  </Link>
+                  {item.external ? (
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                      <item.icon className="w-4 h-4" />
+                      <span>{item.title}</span>
+                      <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    </a>
+                  ) : (
+                    <Link href={item.url}>
+                      <item.icon className="w-4 h-4" />
+                      <span>{item.title}</span>
+                    </Link>
+                  )}
                 </SidebarMenuButton>
                 {item.count != null && item.count > 0 && (
                   <SidebarMenuBadge>{formatCount(item.count)}</SidebarMenuBadge>
@@ -159,6 +169,7 @@ export function AppSidebar() {
     { title: "Search", url: "/search", icon: Search },
     { title: "Bookmarks", url: "/bookmarks", icon: Bookmark },
     { title: "Ask the Archive", url: "/ask-the-archive", icon: MessageSquare },
+    { title: "Public API", url: "/api/v1/docs", icon: Code2, external: true },
   ];
 
   return (

@@ -1,9 +1,17 @@
 import { useState, useRef, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useChat } from "@/hooks/use-chat";
 import { ChatMessage } from "@/components/chat-message";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Send, RotateCcw, Shield } from "lucide-react";
 
 const EXAMPLE_QUESTIONS = [
@@ -13,11 +21,29 @@ const EXAMPLE_QUESTIONS = [
   "What connections exist between Epstein and Prince Andrew?",
 ];
 
+interface ModelInfo {
+  id: string;
+  label: string;
+  provider: string;
+  available: boolean;
+}
+
 export default function AskArchivePage() {
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
-  const { messages, sendMessage, isStreaming, streamedContent, streamedCitations, error, clearChat } = useChat();
+  const { messages, sendMessage, isStreaming, streamedContent, streamedCitations, error, clearChat, model, setModel } = useChat();
+
+  const { data: modelsData } = useQuery<{ models: ModelInfo[]; default: string }>({
+    queryKey: ["/api/chat/models"],
+    queryFn: async () => {
+      const res = await fetch("/api/chat/models");
+      if (!res.ok) throw new Error("Failed to fetch models");
+      return res.json();
+    },
+  });
+
+  const availableModels = modelsData?.models?.filter((m) => m.available) ?? [];
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -44,16 +70,29 @@ export default function AskArchivePage() {
       {hasMessages && (
         <div className="flex items-center justify-between px-4 py-2 border-b">
           <h2 className="text-sm font-medium">Ask the Archive</h2>
-          <Button variant="ghost" size="sm" onClick={clearChat} disabled={isStreaming}>
-            <RotateCcw className="w-4 h-4 mr-1" />
-            New Chat
-          </Button>
+          <div className="flex items-center gap-2">
+            <ModelSelector
+              models={availableModels}
+              value={model}
+              onChange={setModel}
+              disabled={isStreaming}
+            />
+            <Button variant="ghost" size="sm" onClick={clearChat} disabled={isStreaming}>
+              <RotateCcw className="w-4 h-4 mr-1" />
+              New Chat
+            </Button>
+          </div>
         </div>
       )}
 
       <ScrollArea className="flex-1">
         {!hasMessages ? (
-          <WelcomeScreen onQuestionClick={(q) => handleSend(q)} />
+          <WelcomeScreen
+            onQuestionClick={(q) => handleSend(q)}
+            models={availableModels}
+            selectedModel={model}
+            onModelChange={setModel}
+          />
         ) : (
           <div className="p-6 max-w-3xl mx-auto w-full">
             {messages.map((msg, i) => (
@@ -123,7 +162,46 @@ export default function AskArchivePage() {
   );
 }
 
-function WelcomeScreen({ onQuestionClick }: { onQuestionClick: (q: string) => void }) {
+function ModelSelector({
+  models,
+  value,
+  onChange,
+  disabled,
+}: {
+  models: ModelInfo[];
+  value: string;
+  onChange: (value: string) => void;
+  disabled?: boolean;
+}) {
+  if (models.length <= 1) return null;
+
+  return (
+    <Select value={value} onValueChange={onChange} disabled={disabled}>
+      <SelectTrigger className="w-[160px] h-8 text-xs" data-testid="select-model">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        {models.map((m) => (
+          <SelectItem key={m.id} value={m.id}>
+            {m.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+}
+
+function WelcomeScreen({
+  onQuestionClick,
+  models,
+  selectedModel,
+  onModelChange,
+}: {
+  onQuestionClick: (q: string) => void;
+  models: ModelInfo[];
+  selectedModel: string;
+  onModelChange: (value: string) => void;
+}) {
   return (
     <div className="flex flex-col items-center justify-center h-full p-8" data-testid="welcome-screen">
       <div className="flex flex-col items-center gap-4 max-w-lg text-center">
@@ -135,6 +213,23 @@ function WelcomeScreen({ onQuestionClick }: { onQuestionClick: (q: string) => vo
           Ask questions about the publicly released Epstein case files. Get answers
           with citations to specific documents.
         </p>
+        {models.length > 1 && (
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-muted-foreground">Model:</span>
+            <Select value={selectedModel} onValueChange={onModelChange}>
+              <SelectTrigger className="w-[160px] h-8 text-xs">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {models.map((m) => (
+                  <SelectItem key={m.id} value={m.id}>
+                    {m.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
         <Separator className="my-2" />
         <p className="text-xs text-muted-foreground">Try asking:</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full">

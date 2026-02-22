@@ -347,6 +347,65 @@ export type InsertConversation = typeof conversations.$inferInsert;
 export type Message = typeof messages.$inferSelect;
 export type InsertMessage = typeof messages.$inferInsert;
 
+// AI Analysis tables (PostgreSQL-backed, replaces JSON file reads)
+export const aiAnalyses = pgTable("ai_analyses", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  fileName: text("file_name").notNull(),
+  dataSet: text("data_set"),
+  documentType: text("document_type"),
+  dateOriginal: text("date_original"),
+  summary: text("summary"),
+  personCount: integer("person_count").notNull().default(0),
+  connectionCount: integer("connection_count").notNull().default(0),
+  eventCount: integer("event_count").notNull().default(0),
+  locationCount: integer("location_count").notNull().default(0),
+  keyFactCount: integer("key_fact_count").notNull().default(0),
+  tier: integer("tier").notNull().default(0),
+  costCents: integer("cost_cents").notNull().default(0),
+  inputTokens: integer("input_tokens").notNull().default(0),
+  outputTokens: integer("output_tokens").notNull().default(0),
+  persons: jsonb("persons"),
+  connectionsData: jsonb("connections_data"),
+  events: jsonb("events"),
+  locations: jsonb("locations"),
+  keyFacts: jsonb("key_facts"),
+  analyzedAt: timestamp("analyzed_at"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+}, (table) => [
+  uniqueIndex("idx_ai_analyses_file_name").on(table.fileName),
+  index("idx_ai_analyses_data_set").on(table.dataSet),
+  index("idx_ai_analyses_document_type").on(table.documentType),
+  index("idx_ai_analyses_analyzed_at").on(table.analyzedAt),
+]);
+
+export const aiAnalysisPersons = pgTable("ai_analysis_persons", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  aiAnalysisId: integer("ai_analysis_id").notNull().references(() => aiAnalyses.id, { onDelete: "cascade" }),
+  name: text("name").notNull(),
+  normalizedName: text("normalized_name").notNull(),
+  role: text("role"),
+  category: text("category"),
+  context: text("context"),
+  mentionCount: integer("mention_count").notNull().default(1),
+}, (table) => [
+  index("idx_aap_ai_analysis_id").on(table.aiAnalysisId),
+  index("idx_aap_normalized_name").on(table.normalizedName),
+  index("idx_aap_name_trgm").using("gin", sql`${table.name} gin_trgm_ops`),
+]);
+
+export type AIAnalysis = typeof aiAnalyses.$inferSelect;
+export type InsertAIAnalysis = typeof aiAnalyses.$inferInsert;
+export type AIAnalysisPersonRow = typeof aiAnalysisPersons.$inferSelect;
+export type InsertAIAnalysisPersonRow = typeof aiAnalysisPersons.$inferInsert;
+
+export const aiAnalysesRelations = relations(aiAnalyses, ({ many }) => ({
+  personMentions: many(aiAnalysisPersons),
+}));
+
+export const aiAnalysisPersonsRelations = relations(aiAnalysisPersons, ({ one }) => ({
+  analysis: one(aiAnalyses, { fields: [aiAnalysisPersons.aiAnalysisId], references: [aiAnalyses.id] }),
+}));
+
 export interface ChatCitation {
   documentId: number;
   documentTitle: string;

@@ -1,0 +1,64 @@
+{
+  "fileName": "EFTA01287502.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2018-04-30",
+  "summary": "This document is a financial statement from Deutsche Bank detailing account balances and transactions for a specific account from April 1, 2018, to April 30, 2018. It includes information about deposits, withdrawals, and service charges, highlighting a significant outgoing transfer to an individual named Bella Klein.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bella Klein",
+      "role": "Recipient of Funds",
+      "category": "associate",
+      "context": "Bella Klein is referenced as the recipient of a significant outgoing money transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Klein",
+      "person2": "Deutsche Bank",
+      "relationshipType": "financial",
+      "description": "Bella Klein is the recipient of a financial transaction from the Deutsche Bank account.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-04-11",
+      "title": "Outgoing Money Transfer",
+      "description": "An outgoing money transfer of $100,000.00 was made to Bella Klein.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Bella Klein"
+      ]
+    },
+    {
+      "date": "2018-04-20",
+      "title": "Incoming Money Transfer",
+      "description": "An incoming money transfer of $30,000.00 was recorded.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter B3, St Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details account balances and transactions for a Deutsche Bank account from April 1, 2018, to April 30, 2018.",
+    "A significant outgoing transfer of $100,000.00 was made to Bella Klein on April 11, 2018.",
+    "An incoming transfer of $30,000.00 was recorded on April 20, 2018.",
+    "Stewart Oldfield is listed as a contact for personal assistance regarding the account.",
+    "The document includes various service charges and fees associated with the account."
+  ],
+  "analyzedAt": "2026-02-21T16:53:01.023Z"
+}

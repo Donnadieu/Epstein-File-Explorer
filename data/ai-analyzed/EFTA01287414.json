@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA01287414.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of March 2018. It includes information on deposits, withdrawals, and transfers, highlighting significant transactions and the account balance at the end of the month.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in the financial statement, showing various transactions and balances throughout March 2018.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David J. Mitchell",
+      "role": "Transaction Counterparty",
+      "category": "other",
+      "context": "David J. Mitchell is mentioned in relation to a funds transfer to his account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Matthew A. Goldberger",
+      "role": "Transaction Counterparty",
+      "category": "other",
+      "context": "Matthew A. Goldberger is referenced as a recipient of a funds transfer from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David J. Mitchell",
+      "relationshipType": "financial",
+      "description": "Epstein made a funds transfer to David J. Mitchell's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Matthew A. Goldberger",
+      "relationshipType": "financial",
+      "description": "Epstein made a funds transfer to Matthew A. Goldberger's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-03-31",
+      "title": "End of Month Account Summary",
+      "description": "The financial statement summarizes the account activity for March 2018, including deposits, withdrawals, and the ending balance.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Saint Thomas, United States Virgin Islands"
+  ],
+  "keyFacts": [
+    "The account balance for Jeffrey Epstein as of March 31, 2018, was $2,018,323.09.",
+    "Significant transactions included multiple large transfers, including $2,000,000 on March 5, 2018.",
+    "The document lists various preauthorized debits and withdrawals, indicating regular financial activity.",
+    "There are multiple references to transactions involving American Express payments.",
+    "The document includes contact information for Deutsche Bank for inquiries regarding account discrepancies."
+  ],
+  "analyzedAt": "2026-02-21T16:48:30.605Z"
+}

@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA01284148.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Review",
+  "dateOriginal": "2019-07-30",
+  "summary": "This document is a Know Your Customer (KYC) review for a financial relationship involving Deutsche Bank. It details the account ownership, individual details of account holders, and the compliance checks performed. Notably, it mentions a connection to Jeffrey Epstein, highlighting the scrutiny surrounding the account holders due to their past associations.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield III",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield III is the Relationship Manager overseeing the account associated with the Southern Financial Relationship.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Cynthia Rodriguez",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "Cynthia Rodriguez is mentioned as a contact for confirming details regarding the joint account and is identified as the sole provider of her household.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Kshitig Golan",
+      "role": "AML Compliance",
+      "category": "legal",
+      "context": "Kshitig Golan is involved in the AML compliance process and has signed off on the KYC review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Yoonsun Chung",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Yoonsun Chung is a compliance officer who has also signed off on the KYC review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Andrew F. Gallivan",
+      "role": "Regional Office Director",
+      "category": "staff",
+      "context": "Andrew F. Gallivan is the Regional Office Director who has signed off on the KYC review.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is referenced as a registered sex offender and former employer of one of the account holders, raising concerns during the KYC review.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "former employer-employee",
+      "description": "Cynthia Rodriguez used to work for Jeffrey Epstein, which is noted as a significant factor in the KYC review.",
+      "strength": 4
+    },
+    {
+      "person1": "Stewart Oldfield III",
+      "person2": "Cynthia Rodriguez",
+      "relationshipType": "employer-employee",
+      "description": "Stewart Oldfield III is the Relationship Manager for Cynthia Rodriguez's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Kshitig Golan",
+      "person2": "Yoonsun Chung",
+      "relationshipType": "colleagues",
+      "description": "Both are involved in the compliance process for the KYC review.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06",
+      "title": "Jeffrey Epstein Plea Deal",
+      "description": "Jeffrey Epstein was sentenced to 18 months for soliciting a minor under a plea deal.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2013-12-16",
+      "title": "Account Opening",
+      "description": "The account associated with the Southern Financial Relationship was opened.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Cynthia Rodriguez",
+        "Stewart Oldfield III"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "Kalif East 71 St, New York, NY"
+  ],
+  "keyFacts": [
+    "Cynthia Rodriguez is the sole provider for her household and has provided recent paychecks to confirm her income.",
+    "The KYC review indicates that one of the account holders used to work for Jeffrey Epstein, who is a registered sex offender.",
+    "The account holders have been clients of Deutsche Bank since 2013.",
+    "No negative results were found in the compliance checks performed on the account holders.",
+    "The account is classified as high risk due to its association with a former employee of Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-21T14:07:54.368Z"
+}

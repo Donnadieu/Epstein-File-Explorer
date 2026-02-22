@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA01265978.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document provides a transaction summary for various accounts associated with Epstein and related entities, detailing account openings, deposits, withdrawals, and transfers from April to July 2019. It highlights significant financial activities, including large incoming and outgoing wire transfers, check deposits, and investment transactions.",
+  "persons": [
+    {
+      "name": "Darren K Indyke",
+      "role": "Remitter",
+      "category": "associate",
+      "context": "Darren K Indyke is mentioned as a remitter for check deposits into the accounts.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michelle F Saipher",
+      "role": "Remitter",
+      "category": "associate",
+      "context": "Michelle F Saipher is also mentioned as a remitter for check deposits into the accounts.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Paul Barret",
+      "role": "Trader",
+      "category": "associate",
+      "context": "Paul Barret is mentioned as the trader and idea generator for Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marc Leon",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marc Leon is mentioned in relation to wire transfers that were attempted to be returned.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren K Indyke",
+      "person2": "Michelle F Saipher",
+      "relationshipType": "financial",
+      "description": "Both individuals are involved in financial transactions as remitters for check deposits.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Barret",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Paul Barret is identified as the trader for Epstein, indicating a professional relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Marc Leon",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "financial",
+      "description": "Marc Leon is mentioned in the context of wire transfers related to Epstein's accounts.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-04-19",
+      "title": "Account Opening",
+      "description": "The account 11481413 was opened on this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-10",
+      "title": "Transaction Summary Review",
+      "description": "The document summarizes transactions from account inception until this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-05-01",
+      "title": "Incoming Wire Transfer",
+      "description": "Multiple incoming wire transfers were recorded on this date, totaling significant amounts.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": []
+    },
+    {
+      "date": "2019-06-17",
+      "title": "Check Deposit",
+      "description": "A check deposit from Darren K Indyke was made on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren K Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "575 Lexington Avenue, 4th Floor, New York, NY 10022",
+    "6100 Red Hook Quarters, Suite B-3, St Thomas, VI 00802",
+    "FirstBank Puerto Rico"
+  ],
+  "keyFacts": [
+    "The document details transactions from accounts opened in April and May 2019.",
+    "Darren K Indyke and Michelle F Saipher are noted as remitters for significant check deposits.",
+    "Paul Barret is identified as a trader for Epstein, indicating a financial relationship.",
+    "Marc Leon is mentioned in connection with attempted wire transfers related to Epstein's accounts.",
+    "Multiple incoming wire transfers were recorded, indicating substantial financial activity."
+  ],
+  "analyzedAt": "2026-02-21T05:47:30.887Z"
+}

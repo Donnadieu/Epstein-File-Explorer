@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA01283044.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial agreements and forms related to Jeffrey Epstein's accounts with Deutsche Bank, including a Worldwide Custody Account Agreement, a Durable General Power of Attorney, and tax identification forms. It outlines the responsibilities of the bank and the client, as well as the powers granted to agents acting on behalf of Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the accounts and agreements detailed in the document.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Josh Rosen",
+      "role": "Director",
+      "category": "legal",
+      "context": "Josh Rosen is mentioned as a director involved in the management of Epstein's accounts.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Agent",
+      "category": "legal",
+      "context": "Darren Indyke is named as an agent authorized to act on behalf of Jeffrey Epstein under the Power of Attorney.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Carsten Kahl",
+      "role": "Authorized Signer",
+      "category": "legal",
+      "context": "Carsten Kahl is mentioned as an authorized signer related to the custody fee exception form.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Private Banker/Client Advisor",
+      "category": "associate",
+      "context": "Paul Morris is identified as the private banker or client advisor for Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "principal-agent",
+      "description": "Darren Indyke is authorized to act on behalf of Jeffrey Epstein under the Power of Attorney.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Josh Rosen",
+      "relationshipType": "employer-employee",
+      "description": "Josh Rosen is a director involved in managing Epstein's financial accounts.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-advisor",
+      "description": "Paul Morris serves as the private banker or client advisor for Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-04-08",
+      "title": "Custody Fee Exception Request",
+      "description": "A request for a custody fee exception was submitted for Epstein's accounts.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris",
+        "Josh Rosen",
+        "Carsten Kahl"
+      ]
+    },
+    {
+      "date": "2014-12-17",
+      "title": "Power of Attorney Execution",
+      "description": "Jeffrey Epstein executed a Durable General Power of Attorney granting authority to Darren Indyke.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Darren Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter, B3, St. Thomas, USVI 00802",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the account holder for multiple financial accounts with Deutsche Bank.",
+    "Darren Indyke is authorized to act on Epstein's behalf through a Durable General Power of Attorney.",
+    "Josh Rosen is involved in the management of Epstein's accounts as a director.",
+    "The document includes a request for a custody fee exception related to Epstein's financial assets.",
+    "The Power of Attorney executed by Epstein allows his agent to manage financial transactions and decisions."
+  ],
+  "analyzedAt": "2026-02-21T13:34:54.882Z"
+}

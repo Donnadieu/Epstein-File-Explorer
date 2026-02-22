@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01288299.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-03-01",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of March 2019. It includes transaction details, account balances, and various debits and credits associated with Epstein's account.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this financial statement, showing his account activity for March 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Steuart Oldfield",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Steuart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Elaine Businas",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Elaine Businas is mentioned in connection with the account statement, likely as a point of contact or involved in account management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "George Brittain",
+      "role": "Service Provider",
+      "category": "associate",
+      "context": "George Brittain is referenced multiple times as a recipient of outgoing money transfers from Epstein's account.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "George Brittain",
+      "relationshipType": "financial",
+      "description": "George Brittain is associated with Epstein through multiple outgoing money transfers from Epstein's account.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-03-01",
+      "title": "Account Statement Period",
+      "description": "This document summarizes the account activity for Jeffrey Epstein's account for the month of March 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, St. Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details the account balance and transactions for Jeffrey Epstein's account at Deutsche Bank for March 2019.",
+    "Significant transactions include multiple outgoing transfers to George Brittain Land Design Inc.",
+    "The ending balance of the account as of March 31, 2019, was $580,000.00.",
+    "The statement includes various service charges and debits related to payroll and utility payments.",
+    "There are mentions of preauthorized debits for payroll and tax payments, indicating regular financial activity."
+  ],
+  "analyzedAt": "2026-02-21T17:30:08.210Z"
+}

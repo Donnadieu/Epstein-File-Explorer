@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01285090.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains a summary of account balances and transaction details for Jeffrey Epstein's account at Deutsche Bank for the month of September 2014. It outlines various debits, credits, and the ending balance, highlighting significant transactions and transfers made during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial transactions detailed in this document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Bank Representative",
+      "category": "staff",
+      "context": "Amanda Kirby is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adam Bly",
+      "role": "Transaction Recipient",
+      "category": "other",
+      "context": "Adam Bly is mentioned in relation to a transaction involving an outgoing money transfer.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "client-service provider",
+      "description": "Amanda Kirby is a representative of Deutsche Bank providing assistance to Jeffrey Epstein regarding his account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Adam Bly",
+      "relationshipType": "financial transaction",
+      "description": "Adam Bly is involved in a transaction where funds were transferred from Jeffrey Epstein's account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-09-01",
+      "title": "Beginning of Account Period",
+      "description": "The account period begins with a balance of $187,085.36.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2014-09-30",
+      "title": "End of Account Period",
+      "description": "The account period ends with a balance of $2,761,677.49 after various transactions.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, B3, Saint Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's account had a beginning balance of $187,085.36 on September 1, 2014.",
+    "The account experienced significant transactions, including outgoing transfers to various banks and entities.",
+    "The ending balance of the account as of September 30, 2014, was $2,761,677.49.",
+    "Amanda Kirby is noted as a contact for personal assistance regarding the account.",
+    "Adam Bly is mentioned in relation to a transaction involving an outgoing money transfer."
+  ],
+  "analyzedAt": "2026-02-21T14:52:04.143Z"
+}

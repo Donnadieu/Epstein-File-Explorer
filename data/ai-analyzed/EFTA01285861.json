@@ -1,0 +1,77 @@
+{
+  "fileName": "EFTA01285861.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-12-01",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of December 2015. It includes information on deposits, withdrawals, and transfers, highlighting significant transactions and the ending balance at the end of the month.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this financial statement, showing significant financial activity throughout December 2015.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Martin O. Weinberg",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Martin O. Weinberg is mentioned as the recipient of a payment from Epstein's account, indicating his role as Epstein's legal counsel.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicola",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Nicola is mentioned as a recipient of a transfer from Epstein's account, but no further context is provided regarding their relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Martin O. Weinberg",
+      "relationshipType": "client-attorney",
+      "description": "Martin O. Weinberg is identified as an attorney receiving payments from Epstein's account, indicating a professional legal relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Nicola",
+      "relationshipType": "financial",
+      "description": "Nicola is mentioned as a recipient of funds transferred from Epstein's account, suggesting a financial connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-12-01",
+      "title": "Account Statement Start",
+      "description": "The financial statement begins with the account balance and transactions starting from December 1, 2015.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2015-12-31",
+      "title": "Account Statement End",
+      "description": "The statement concludes with the ending balance of the account as of December 31, 2015.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The account balance for Jeffrey Epstein as of December 31, 2015, was $54,197,605.92.",
+    "Significant outgoing transfers included $3,000,000.00 to Bank of America and $5,000,000.00 to another account.",
+    "Martin O. Weinberg received a payment of $33,733.00 from Epstein's account.",
+    "Multiple transactions indicate a high volume of financial activity, including numerous transfers to various banks.",
+    "The document includes details of service charges and fees associated with the account."
+  ],
+  "analyzedAt": "2026-02-21T15:29:04.138Z"
+}

@@ -1,10 +1,6 @@
-import OpenAI from "openai";
+import { getClient, getModelConfig, calculateCostCents } from "./models";
 
-const DEEPSEEK_MODEL = "deepseek-chat";
 const MAX_CHUNK_CHARS = 24_000;
-
-const DEEPSEEK_INPUT_COST_PER_M = 0.27;
-const DEEPSEEK_OUTPUT_COST_PER_M = 1.10;
 
 const ANALYSIS_PROMPT = `You are an expert analyst reviewing publicly released Epstein case documents from the US Department of Justice. Your job is to extract structured information from document text.
 
@@ -97,17 +93,7 @@ export interface DocumentAnalysisResult {
   inputTokens: number;
   outputTokens: number;
   costCents: number;
-}
-
-let _client: OpenAI | null = null;
-function getClient(): OpenAI {
-  if (!_client) {
-    _client = new OpenAI({
-      baseURL: "https://api.deepseek.com",
-      apiKey: process.env.DEEPSEEK_API_KEY,
-    });
-  }
-  return _client;
+  model: string;
 }
 
 function chunkText(text: string, maxChars: number): string[] {
@@ -127,16 +113,13 @@ function chunkText(text: string, maxChars: number): string[] {
   return chunks;
 }
 
-function calculateCostCents(inputTokens: number, outputTokens: number): number {
-  const inputCost = (inputTokens / 1_000_000) * DEEPSEEK_INPUT_COST_PER_M;
-  const outputCost = (outputTokens / 1_000_000) * DEEPSEEK_OUTPUT_COST_PER_M;
-  return Math.ceil((inputCost + outputCost) * 100) / 100;
-}
-
 export async function analyzeDocument(
   text: string,
   documentTitle: string,
+  modelId?: string,
 ): Promise<DocumentAnalysisResult> {
+  const client = getClient(modelId);
+  const config = getModelConfig(modelId);
   const chunks = chunkText(text, MAX_CHUNK_CHARS);
   let totalInput = 0;
   let totalOutput = 0;
@@ -154,8 +137,8 @@ export async function analyzeDocument(
     const chunk = chunks[i];
     const chunkLabel = chunks.length > 1 ? ` (chunk ${i + 1}/${chunks.length})` : "";
 
-    const response = await getClient().chat.completions.create({
-      model: DEEPSEEK_MODEL,
+    const response = await client.chat.completions.create({
+      model: config.model,
       messages: [
         { role: "system", content: ANALYSIS_PROMPT },
         {
@@ -163,7 +146,7 @@ export async function analyzeDocument(
           content: `Analyze this Epstein case document text${chunkLabel}. Document: ${documentTitle}\n\n---\n${chunk}`,
         },
       ],
-      max_tokens: 4096,
+      max_tokens: config.maxTokens,
       temperature: 0.1,
     });
 
@@ -220,6 +203,7 @@ export async function analyzeDocument(
     keyFacts: allKeyFacts,
     inputTokens: totalInput,
     outputTokens: totalOutput,
-    costCents: calculateCostCents(totalInput, totalOutput),
+    costCents: calculateCostCents(totalInput, totalOutput, modelId),
+    model: config.id,
   };
 }

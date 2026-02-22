@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01284036.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Record",
+  "dateOriginal": "2019-07-30",
+  "summary": "This document is a Know Your Customer (KYC) record for Jeffrey Epstein and related entities, detailing account ownership, purpose, and associated individuals. It outlines the financial relationships and account management details for Epstein's accounts at Deutsche Bank, including the establishment of LSJE, LLC for managing expenses related to his private residence.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a client of Deutsche Bank, seeking to open accounts for managing expenses related to his private residence.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as a related party and contact for the accounts associated with Jeffrey Epstein.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the relationship manager for the accounts being opened for Jeffrey Epstein.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is identified as a lawyer and associated with Southern Financial LLC, which is linked to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the relationship manager for Jeffrey Epstein's accounts at Deutsche Bank.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Little Saint James, Saint Thomas, US Virgin Islands",
+    "6100 Red Hook Quarter, B3, St Thomas, USVI 00802"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Deutsche Bank, seeking to open accounts for managing expenses related to his private residence.",
+    "The accounts are primarily for maintaining payroll and maintenance expenses with no significant business purpose.",
+    "Darren Indyke is identified as a lawyer associated with Epstein and serves as a contact for the accounts.",
+    "Paul Morris is the relationship manager overseeing Epstein's accounts at Deutsche Bank.",
+    "The document includes details about the financial activities and expected inflows/outflows for Epstein's accounts."
+  ],
+  "analyzedAt": "2026-02-21T14:02:42.272Z"
+}

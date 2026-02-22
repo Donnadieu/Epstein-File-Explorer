@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01286856.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing account transactions for a specific period in June 2017. It includes information on account balances, deposits, withdrawals, and service charges, indicating financial activity related to an account held by an individual or entity.",
+  "persons": [
+    {
+      "name": "Steuart OkIfiekl",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Steuart OkIfiekl is mentioned as the contact for personal assistance regarding the account statement.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rites S McCorquodale",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Rites S McCorquodale is mentioned in relation to outgoing money transfers from the account.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Steuart OkIfiekl",
+      "person2": "Rites S McCorquodale",
+      "relationshipType": "financial",
+      "description": "Both individuals are associated with the same account, with transactions involving outgoing transfers to Rites S McCorquodale.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-06-01",
+      "title": "Account Statement Period Begins",
+      "description": "The financial statement covers transactions from June 1, 2017, to June 30, 2017.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Steuart OkIfiekl",
+        "Rites S McCorquodale"
+      ]
+    },
+    {
+      "date": "2017-06-30",
+      "title": "Account Statement Period Ends",
+      "description": "The statement concludes with the ending balance as of June 30, 2017.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Steuart OkIfiekl",
+        "Rites S McCorquodale"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "St. Thomas, United States Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details account transactions for June 2017, including deposits, withdrawals, and service charges.",
+    "Steuart OkIfiekl is listed as a contact for assistance regarding the account.",
+    "Rites S McCorquodale is involved in outgoing money transfers from the account.",
+    "The account had a beginning balance of $504,955.01 and an ending balance of $339,788.72 as of June 30, 2017.",
+    "Multiple preauthorized debits and checks were processed during the statement period."
+  ],
+  "analyzedAt": "2026-02-21T16:20:44.106Z"
+}

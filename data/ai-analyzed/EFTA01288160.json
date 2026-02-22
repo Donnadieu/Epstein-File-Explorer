@@ -1,0 +1,123 @@
+{
+  "fileName": "EFTA01288160.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-01-31",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of January 2019. It includes transaction details such as deposits, withdrawals, and transfers, highlighting significant outgoing transfers and the account balance at the end of the month.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this financial statement, showing various transactions throughout January 2019.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Steuart Oldfield",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Steuart Oldfield is mentioned as a contact for personal assistance related to the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Mitchell",
+      "role": "Sender of Funds",
+      "category": "other",
+      "context": "David Mitchell is noted as the sender of a significant incoming transfer to Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Connie Mattes Goldberger",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Connie Mattes Goldberger is mentioned as a recipient of a transfer from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Martin G. Weinberg",
+      "role": "Recipient of Funds",
+      "category": "other",
+      "context": "Martin G. Weinberg is noted as a recipient of a transfer from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Mitchell",
+      "relationshipType": "financial",
+      "description": "David Mitchell is involved in a financial transaction with Epstein, sending funds to his account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Connie Mattes Goldberger",
+      "relationshipType": "financial",
+      "description": "Connie Mattes Goldberger is a recipient of funds transferred from Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Martin G. Weinberg",
+      "relationshipType": "financial",
+      "description": "Martin G. Weinberg is a recipient of funds transferred from Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-01-01",
+      "title": "Account Balance Summary",
+      "description": "The financial statement begins with a summary of the account balance as of January 1, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-01-04",
+      "title": "Significant Outgoing Transfer",
+      "description": "A significant outgoing transfer of $7,000,000.00 to IberiaBank is recorded.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-01-11",
+      "title": "Incoming Transfers",
+      "description": "Two incoming transfers totaling $770,009.42 are recorded on January 11.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "David Mitchell"
+      ]
+    },
+    {
+      "date": "2019-01-29",
+      "title": "Multiple Outgoing Transfers",
+      "description": "Several outgoing transfers totaling $1,200,000.00 are recorded on January 29.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Qtr, Saint Thomas, US Virgin Islands",
+    "850 3rd Ave, New York, NY"
+  ],
+  "keyFacts": [
+    "The document is a financial statement from Deutsche Bank for Jeffrey Epstein's account for January 2019.",
+    "Epstein's account had significant outgoing transfers, including a $7,000,000.00 transfer to IberiaBank.",
+    "Incoming transfers to Epstein's account included $100,000.00 and $670,009.42 on January 11.",
+    "The account balance fluctuated significantly throughout the month, with multiple ATM withdrawals and service charges.",
+    "Several individuals, including David Mitchell, Connie Mattes Goldberger, and Martin G. Weinberg, are noted in connection with financial transactions involving Epstein."
+  ],
+  "analyzedAt": "2026-02-21T17:25:01.408Z"
+}

@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01286392.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of September 2016. It includes information on deposits, withdrawals, service charges, and the ending balance of the account, highlighting significant transactions and account management details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this financial statement, which outlines his account activities during September 2016.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Steuart Okie",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Steuart Okie is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M Rites S McCorquodale",
+      "role": "Account Recipient",
+      "category": "other",
+      "context": "M Rites S McCorquodale is mentioned as a recipient of outgoing money transfers from Epstein's account.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "M Rites S McCorquodale",
+      "relationshipType": "financial",
+      "description": "Jeffrey Epstein made outgoing money transfers to M Rites S McCorquodale's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-09-01",
+      "title": "Account Statement Period Start",
+      "description": "The financial statement covers account activities starting from September 1, 2016.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2016-09-30",
+      "title": "Account Statement Period End",
+      "description": "The financial statement concludes with the account balance as of September 30, 2016.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "34 Park Avenue, New York, NY 10154",
+    "6100 Red Hook Quarter, St. Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details Jeffrey Epstein's business checking account balance and transactions for September 2016.",
+    "The ending balance of the account as of September 30, 2016, was $141,231.53.",
+    "Significant transactions included multiple outgoing transfers to M Rites S McCorquodale and various service charges.",
+    "Steuart Okie is listed as a contact for personal assistance regarding the account.",
+    "The document contains numerous preauthorized debits and checks paid during the statement period."
+  ],
+  "analyzedAt": "2026-02-21T15:55:22.411Z"
+}

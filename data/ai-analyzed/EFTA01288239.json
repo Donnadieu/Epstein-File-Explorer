@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01288239.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-02-01",
+  "summary": "This document is a summary of account balances and transaction details for Jeffrey Epstein's account at Deutsche Bank for the period from February 1, 2019, to February 28, 2019. It includes information on deposits, withdrawals, service charges, and the ending balance for the account.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with the account detailed in this document, which outlines his financial transactions during February 2019.",
+      "mentionCount": 5
+    },
+    {
+      "name": "George",
+      "role": "Associated Individual",
+      "category": "associate",
+      "context": "George is mentioned in connection with outgoing money transfers from Epstein's account to Brittain Land Design Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Stewart Oldliekl",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldliekl is referenced in relation to the management of the account balance and transactions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "George",
+      "relationshipType": "financial",
+      "description": "George is associated with outgoing money transfers from Epstein's account, indicating a financial relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Stewart Oldliekl",
+      "relationshipType": "employer-employee",
+      "description": "Stewart Oldliekl is involved in managing Epstein's account, suggesting an employer-employee relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-02-01",
+      "title": "Account Balance Summary",
+      "description": "The document provides a summary of the account balance for Jeffrey Epstein's account as of February 1, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-02-28",
+      "title": "Ending Balance Report",
+      "description": "The document concludes with the ending balance of Epstein's account as of February 28, 2019.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter, B3, St. Thomas, 00802, United States",
+    "Deutsche Bank Trust Company Americas, 345 Park Avenue, New York, NY 10154"
+  ],
+  "keyFacts": [
+    "The account balance for Jeffrey Epstein as of February 1, 2019, was $362,747.97.",
+    "Multiple preauthorized debits and outgoing transfers were made from Epstein's account during February 2019.",
+    "George is mentioned as a recipient of outgoing money transfers from Epstein's account.",
+    "Service charges and fees were applied to Epstein's account during the statement period.",
+    "The document includes instructions for addressing errors in account statements."
+  ],
+  "analyzedAt": "2026-02-21T17:27:44.365Z"
+}

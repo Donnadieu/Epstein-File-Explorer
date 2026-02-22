@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01287669.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a financial statement from Deutsche Bank detailing account transactions for a specific period in June 2018. It includes information on account balances, deposits, withdrawals, and fees, as well as instructions for addressing errors in the statement.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Richard Kahn is referenced in relation to a money transfer from the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bella Klein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Bella Klein is mentioned in connection with a money transfer to her account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Bella Klein",
+      "relationshipType": "financial",
+      "description": "Richard Kahn and Bella Klein are connected through a financial transaction involving a transfer of funds.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-06-01",
+      "title": "Account Activity Begins",
+      "description": "The financial statement begins with account activity starting from June 1, 2018, detailing various transactions.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Bella Klein"
+      ]
+    },
+    {
+      "date": "2018-06-30",
+      "title": "Ending Balance Reported",
+      "description": "The statement concludes with the ending balance of the account as of June 30, 2018.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Richard Kahn"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154"
+  ],
+  "keyFacts": [
+    "The document is a financial statement from Deutsche Bank covering the period from June 1 to June 30, 2018.",
+    "The beginning balance on June 1, 2018, was $232,732.38.",
+    "The ending balance on June 30, 2018, was $203,108.51.",
+    "Multiple preauthorized debits and transfers are detailed, including payments to ADP for payroll and taxes.",
+    "There are references to money transfers involving Richard Kahn and Bella Klein."
+  ],
+  "analyzedAt": "2026-02-21T17:02:12.740Z"
+}

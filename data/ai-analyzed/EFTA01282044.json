@@ -1,0 +1,170 @@
+{
+  "fileName": "EFTA01282044.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-07-11",
+  "summary": "This document contains Know Your Customer (KYC) information related to Jeffrey Epstein and various accounts associated with him, including the 2007 Jeffrey E. Epstein Insurance Trust and several entities managed by Darren K. Indyke. It details account ownership, purposes, expected inflows and outflows, and the relationships between Epstein, Indyke, and other trustees. This document provides a detailed account ownership summary for various accounts associated with the New York Strategy Group, LLC, including information about the individuals involved, their roles, and financial details. It highlights the relationships between the individuals and the accounts, as well as their sources of wealth and financial activities. This document contains detailed information regarding various legal entities associated with Jeffrey Epstein, including their ownership structures, purposes, and financial profiles. It highlights the roles of individuals such as Darren K. Indyke, Richard Kahn, and Harry Beller in relation to these entities, as well as their connections to Epstein. The document also includes compliance checks and risk assessments related to these entities.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as the grantor of the Jeffrey E. Epstein Insurance Trust and is central to the financial activities described in the document.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Darren K. Indyke",
+      "role": "Relationship Manager / Trustee",
+      "category": "legal",
+      "context": "Darren K. Indyke is identified as the sole member and owner of his law firm, and also serves as a trustee for the Jeffrey E. Epstein Insurance Trust.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is identified as the account manager for the New York Strategy Group, LLC.",
+      "mentionCount": 11
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Richard Kahn is identified as an accountant and co-owner of HBRK Associates, Inc., also serving as an in-house accountant for Southern Financial LLC.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Lawyer",
+      "category": "associate",
+      "context": "Darren Indyke is listed as a related party to the New York Strategy Group, LLC and has been an in-house lawyer for Jeffrey Epstein at Southern Financial LLC.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Accountant",
+      "category": "associate",
+      "context": "Harry Beller is identified as a 50% owner of HBRK Associates Inc. and works as an accountant for Jeffrey Epstein.",
+      "mentionCount": 7
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren K. Indyke",
+      "relationshipType": "client-lawyer",
+      "description": "Darren Indyke serves as the in-house lawyer for Jeffrey Epstein, managing legal matters related to his accounts.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Kahn",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Richard Kahn is a trustee for the 2007 Jeffrey E. Epstein Insurance Trust, overseeing the management of the trust's assets.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Paul Morris",
+      "relationshipType": "employer-employee",
+      "description": "Paul Morris is the relationship manager at Deutsche Bank for accounts associated with Darren Indyke.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke has been an in-house lawyer for Jeffrey Epstein at Southern Financial LLC for over 10 years.",
+      "strength": 5
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Richard Kahn",
+      "relationshipType": "business partners",
+      "description": "Harry Beller and Richard Kahn are co-owners of HBRK Associates, Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "New York Strategy Group, LLC",
+      "relationshipType": "owner-entity",
+      "description": "Darren Indyke is the sole member of New York Strategy Group, LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Southern Financial LLC",
+      "relationshipType": "employer-employee",
+      "description": "Harry Beller serves as the in-house accountant for Southern Financial LLC.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Southern Financial LLC",
+      "relationshipType": "employer-employee",
+      "description": "Richard Kahn is also an in-house accountant for Southern Financial LLC.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "trustee-grantor",
+      "description": "Darren K. Indyke serves as a trustee for the Jeffrey E. Epstein Insurance Trust, which is established by Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "trustee-grantor",
+      "description": "Richard Kahn is a trustee for the Jeffrey E. Epstein Insurance Trust, which is established by Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employee-employer",
+      "description": "Harry Beller is an accountant for Jeffrey Epstein, providing financial services.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Richard Kahn",
+      "relationshipType": "co-owner",
+      "description": "Darren K. Indyke and Richard Kahn are both identified as owners of their respective entities, with Indyke owning a law firm and Kahn being a co-owner of HBRK Associates Inc.",
+      "strength": 3
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Richard Kahn",
+      "relationshipType": "co-owner",
+      "description": "Harry Beller and Richard Kahn are both co-owners of HBRK Associates Inc.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Livingston, NJ",
+    "St. Thomas, US Virgin Islands",
+    "575 Lexington Avenue, New York, NY 10022, USA",
+    "575 Lexington Avenue, 4th Fl, New York, NY 10022, USA"
+  ],
+  "keyFacts": [
+    "The document outlines multiple accounts associated with Jeffrey Epstein, including the 2007 Jeffrey E. Epstein Insurance Trust.",
+    "Darren K. Indyke is identified as the primary contact and trustee for Epstein's accounts.",
+    "Paul Morris is the account manager for these accounts at Deutsche Bank.",
+    "Richard Kahn is also listed as a trustee for the 2007 Jeffrey E. Epstein Insurance Trust.",
+    "The accounts are expected to have regular inflows and outflows, with amounts ranging from $1,000 to $10,000.",
+    "Darren Indyke has been an in-house lawyer for Jeffrey Epstein for over 10 years.",
+    "Harry Beller and Richard Kahn are co-owners of HBRK Associates, Inc.",
+    "Jeffrey Epstein's estimated annual income is reported to be $10,000,000.",
+    "The New York Strategy Group, LLC is used for personal investments of Darren Indyke.",
+    "The document includes financial details about various accounts associated with the New York Strategy Group, LLC.",
+    "Darren K. Indyke is the sole member and owner of his law firm, which generates approximately $300,000 in gross receipts annually.",
+    "Richard Kahn and Harry Beller are both 50% owners of HBRK Associates Inc., which provides accounting services to Jeffrey Epstein.",
+    "The Jeffrey E. Epstein Insurance Trust was established by Epstein, with Indyke and Kahn serving as trustees.",
+    "The document includes compliance checks indicating no negative media or court cases for the individuals and entities mentioned.",
+    "The entities are primarily involved in legal and accounting services, with significant financial profiles outlined."
+  ],
+  "analyzedAt": "2026-02-21T13:07:03.921Z"
+}

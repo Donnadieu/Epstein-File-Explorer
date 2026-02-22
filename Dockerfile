@@ -20,7 +20,6 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
 COPY --from=build /app/dist ./dist
-COPY data/ai-analyzed ./data/ai-analyzed
 
 EXPOSE 5000
-CMD ["node", "dist/index.cjs"]
+CMD ["node", "--max-old-space-size=768", "dist/index.cjs"]

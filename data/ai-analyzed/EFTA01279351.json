@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA01279351.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains detailed records of outgoing wire transfers associated with ELLMAX, LLC, including transaction dates, amounts, and beneficiary information. The records indicate a pattern of cash transfers to R and C Ventures Inc, suggesting potential financial activities related to the Epstein case.",
+  "persons": [
+    {
+      "name": "ELLMAX, LLC",
+      "role": "Client",
+      "category": "other",
+      "context": "ELLMAX, LLC is identified as the client initiating multiple wire transfers detailed in the document.",
+      "mentionCount": 15
+    },
+    {
+      "name": "R and C Ventures Inc",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "R and C Ventures Inc is listed as the beneficiary for several wire transfers made by ELLMAX, LLC.",
+      "mentionCount": 15
+    }
+  ],
+  "connections": [
+    {
+      "person1": "ELLMAX, LLC",
+      "person2": "R and C Ventures Inc",
+      "relationshipType": "client-beneficiary",
+      "description": "ELLMAX, LLC is the client making payments to R and C Ventures Inc as the beneficiary of multiple wire transfers.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-02-27",
+      "title": "Incoming Wire Transfer",
+      "description": "An incoming wire transfer of $87,974.09 was recorded on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "ELLMAX, LLC"
+      ]
+    },
+    {
+      "date": "2016-12-15",
+      "title": "Outgoing Wire Transfer",
+      "description": "An outgoing wire transfer of $1,321.00 was completed on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "ELLMAX, LLC",
+        "R and C Ventures Inc"
+      ]
+    }
+  ],
+  "locations": [
+    "1000 Venetian Way Apt. 801, Miami Beach, FL 33139-1043",
+    "PO Box 308, Teaneck, NJ 07666-0308"
+  ],
+  "keyFacts": [
+    "Multiple wire transfers were made by ELLMAX, LLC to R and C Ventures Inc.",
+    "The document details transactions spanning from 2014 to 2017.",
+    "The amounts of the wire transfers vary, with some exceeding $1,000.",
+    "The records indicate a consistent pattern of financial transactions involving ELLMAX, LLC and R and C Ventures Inc."
+  ],
+  "analyzedAt": "2026-02-21T11:18:49.199Z"
+}

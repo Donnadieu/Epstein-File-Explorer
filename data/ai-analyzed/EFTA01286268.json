@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01286268.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2016-07-31",
+  "summary": "This document is a financial statement from Deutsche Bank detailing the account activity of Jeffrey Epstein for the month of July 2016. It includes information on deposits, withdrawals, and account balances, highlighting significant transactions and fees incurred during the period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the account holder for the financial transactions detailed in the document.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Personal Assistant",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as a contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brian Shown Arrandale",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Brian Shown Arrandale is mentioned as a recipient of a funds transfer from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Stewart Oldfield",
+      "relationshipType": "employer-employee",
+      "description": "Stewart Oldfield is identified as a personal assistant to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Brian Shown Arrandale",
+      "relationshipType": "financial",
+      "description": "Brian Shown Arrandale is mentioned as a recipient of a funds transfer from Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2016-07-01",
+      "title": "Account Statement Period Begins",
+      "description": "The financial statement covers account activity starting from July 1, 2016.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2016-07-31",
+      "title": "Account Statement Period Ends",
+      "description": "The financial statement concludes with the account balance as of July 31, 2016.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY 10154",
+    "6100 Red Quarter, St. Thomas 00802, United States"
+  ],
+  "keyFacts": [
+    "The document details Jeffrey Epstein's account balance and transactions for July 2016.",
+    "Significant transactions include multiple outgoing transfers to Brian Shown Arrandale and payments for services.",
+    "Stewart Oldfield is listed as a contact for personal assistance regarding the account.",
+    "The account had a beginning balance of $103,169.51 and an ending balance of $225,980.71.",
+    "Multiple fees were incurred during the month, including payroll fees and utility payments."
+  ],
+  "analyzedAt": "2026-02-21T15:49:21.187Z"
+}

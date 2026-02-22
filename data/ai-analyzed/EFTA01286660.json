@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA01286660.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-02-28",
+  "summary": "This document is a financial statement from Deutsche Bank detailing account balances and transactions for the period from February 1, 2017, to February 28, 2017. It includes information on deposits, withdrawals, service charges, and interest payments, highlighting significant transactions involving large sums of money.",
+  "persons": [
+    {
+      "name": "Stewart Oldfield",
+      "role": "Account Manager",
+      "category": "staff",
+      "context": "Stewart Oldfield is mentioned as the contact for personal assistance regarding the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter Fenwick",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Peter Fenwick is referenced in relation to an outgoing money transfer from the account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Stewart Oldfield",
+      "person2": "Peter Fenwick",
+      "relationshipType": "banker-client",
+      "description": "Stewart Oldfield serves as the account manager for Peter Fenwick's account at Deutsche Bank.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-02-07",
+      "title": "Check Payment",
+      "description": "A check payment of $50,000.00 was made from the account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Peter Fenwick"
+      ]
+    },
+    {
+      "date": "2017-02-21",
+      "title": "Outgoing Money Transfer",
+      "description": "An outgoing money transfer of $15,000.00 was made to Peter Fenwick's account.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Peter Fenwick"
+      ]
+    },
+    {
+      "date": "2017-02-28",
+      "title": "Interest Payment",
+      "description": "An interest payment of $11.89 was credited to the account.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "St Thomas, US Virgin Islands"
+  ],
+  "keyFacts": [
+    "The account had a beginning balance of $133,609.19 as of February 1, 2017.",
+    "A total of $50,000.00 was paid out via check on February 7, 2017.",
+    "An outgoing transfer of $15,000.00 was made to Peter Fenwick on February 21, 2017.",
+    "The account earned an interest payment of $11.89 by the end of the statement period.",
+    "The document is marked as confidential under Federal Rule of Criminal Procedure 6(e)."
+  ],
+  "analyzedAt": "2026-02-21T16:09:34.943Z"
+}
