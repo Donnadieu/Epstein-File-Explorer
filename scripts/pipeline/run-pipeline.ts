@@ -38,6 +38,7 @@ interface PipelineConfig {
   batchSize?: number;
   concurrency?: number;
   retryFailed?: boolean;
+  reprocessEmpty?: boolean;
   dryRun?: boolean;
   model?: string;
 }
@@ -120,6 +121,7 @@ OPTIONS:
   --batch-size 20      Number of documents per batch (default: 50)
   --concurrency 4      Max parallel operations (default: 1)
   --model gpt-4o-mini  AI model for analysis (deepseek-chat or gpt-4o-mini)
+  --reprocess-empty    Re-extract PDFs where text quality is poor (OCR fallback)
 
 EXAMPLES:
   # Quick start: populate database with Wikipedia data
@@ -193,6 +195,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
           fileTypes: config.fileTypes?.map((t) =>
             t.startsWith(".") ? t : `.${t}`,
           ),
+          reprocessEmpty: config.reprocessEmpty,
         });
         break;
 
@@ -301,6 +304,8 @@ async function main() {
       config.model = args[++i];
     } else if (arg === "--retry-failed") {
       config.retryFailed = true;
+    } else if (arg === "--reprocess-empty") {
+      config.reprocessEmpty = true;
     } else if (arg === "--dry-run") {
       config.dryRun = true;
     } else if (arg === "all") {
