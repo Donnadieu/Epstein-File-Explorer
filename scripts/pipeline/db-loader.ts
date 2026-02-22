@@ -364,7 +364,7 @@ export async function loadDocumentsFromCatalog(
           sourceUrl: file.url,
           datePublished: "2026-01-30",
           isRedacted: true,
-          tags: [file.fileType, `data-set-${dataSet.id}`],
+          tags: [file.fileType, `data-set-${dataSet.id}`, ...(file.extensionResolved ? ["extension-resolved"] : [])],
         });
         loaded++;
       } catch {
@@ -2898,6 +2898,18 @@ export async function importDownloadedFiles(
     return 0;
   }
 
+  // Load extension-resolved EFTA IDs for tagging
+  const resolvedIds = new Set<string>();
+  const resolvedCsvPath = path.join(DATA_DIR, "resolved.partial.csv");
+  if (fs.existsSync(resolvedCsvPath)) {
+    const lines = fs.readFileSync(resolvedCsvPath, "utf-8").split("\n");
+    for (let i = 1; i < lines.length; i++) {
+      const firstComma = lines[i].indexOf(",");
+      if (firstComma > 0) resolvedIds.add(lines[i].substring(0, firstComma));
+    }
+    console.log(`  Loaded ${resolvedIds.size} extension-resolved IDs for tagging`);
+  }
+
   const urlsDir = path.join(baseDir, "urls");
   let loaded = 0;
   let skipped = 0;
@@ -3066,6 +3078,7 @@ export async function importDownloadedFiles(
                     "DOJ disclosure",
                     info.fileTypeTag,
                     info.docType,
+                    ...(resolvedIds.has(info.efta) ? ["extension-resolved"] : []),
                   ],
                 })),
               )
@@ -3090,6 +3103,7 @@ export async function importDownloadedFiles(
                     "DOJ disclosure",
                     info.fileTypeTag,
                     info.docType,
+                    ...(resolvedIds.has(info.efta) ? ["extension-resolved"] : []),
                   ],
                 });
                 loaded++;

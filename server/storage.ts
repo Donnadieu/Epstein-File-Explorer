@@ -91,12 +91,12 @@ export interface IStorage {
   getPersonsPaginated(page: number, limit: number): Promise<{ data: Person[]; total: number; page: number; totalPages: number }>;
   getDocumentsPaginated(page: number, limit: number): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
   getDocumentsCursor(afterId: number, limit: number): Promise<Document[]>;
-  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string; sort?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
+  getDocumentsFiltered(opts: { page: number; limit: number; search?: string; type?: string; dataSet?: string; redacted?: string; mediaType?: string; sort?: string; tag?: string }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }>;
   getDocumentFilters(): Promise<{ types: string[]; dataSets: string[]; mediaTypes: string[] }>;
   getAdjacentDocumentIds(id: number): Promise<{ prev: number | null; next: number | null }>;
   getSidebarCounts(): Promise<{
     documents: { total: number; byType: Record<string, number> };
-    media: { images: number; videos: number };
+    media: { images: number; videos: number; hiddenVideos: number };
     persons: number;
     events: number;
     connections: number;
@@ -470,7 +470,7 @@ function deduplicatePersons(allPersons: Person[]): { deduped: Person[]; idMap: M
 // Server-side caches for expensive aggregate queries
 const sidebarCountsCache = createCache<{
   documents: { total: number; byType: Record<string, number> };
-  media: { images: number; videos: number };
+  media: { images: number; videos: number; hiddenVideos: number };
   persons: number;
   events: number;
   connections: number;
@@ -1367,6 +1367,7 @@ export class DatabaseStorage implements IStorage {
     redacted?: string;
     mediaType?: string;
     sort?: string;
+    tag?: string;
   }): Promise<{ data: Document[]; total: number; page: number; totalPages: number }> {
     const conditions = [];
     const r2Cond = r2Filter();
@@ -1403,11 +1404,15 @@ export class DatabaseStorage implements IStorage {
       conditions.push(eq(documents.mediaType, opts.mediaType));
     }
 
+    if (opts.tag) {
+      conditions.push(sql`${documents.tags} @> ARRAY[${opts.tag}]`);
+    }
+
     const whereClause = conditions.length > 0 ? and(...conditions) : undefined;
 
     // Check if user applied any filters beyond the automatic r2 filter
     // sort only changes ordering, not the result set count, so exclude it
-    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType);
+    const hasUserFilters = !!(opts.search || opts.type || opts.dataSet || opts.redacted || opts.mediaType || opts.tag);
 
     // For unfiltered queries, use the cached stats total to avoid COUNT(*) on 1.38M rows
     let total: number;
@@ -1457,6 +1462,7 @@ export class DatabaseStorage implements IStorage {
       if (opts.redacted === "redacted") conditions.push(sql`d.is_redacted = true`);
       else if (opts.redacted === "unredacted") conditions.push(sql`d.is_redacted = false`);
       if (opts.mediaType) conditions.push(sql`d.media_type = ${opts.mediaType}`);
+      if (opts.tag) conditions.push(sql`d.tags @> ARRAY[${opts.tag}]`);
       if (searchDocIds) {
         const idParams = searchDocIds.map(id => sql`${id}`);
         conditions.push(sql`d.id IN (${sql.join(idParams, sql`, `)})`);
@@ -1592,7 +1598,7 @@ export class DatabaseStorage implements IStorage {
 
   async getSidebarCounts(): Promise<{
     documents: { total: number; byType: Record<string, number> };
-    media: { images: number; videos: number };
+    media: { images: number; videos: number; hiddenVideos: number };
     persons: number;
     events: number;
     connections: number;
@@ -1610,6 +1616,7 @@ export class DatabaseStorage implements IStorage {
       db.select({
         images: sql<number>`count(*) filter (where ${documents.documentType} = 'photograph')::int`,
         videos: sql<number>`count(*) filter (where ${documents.documentType} = 'video')::int`,
+        hiddenVideos: sql<number>`count(*) filter (where ${documents.tags} @> ARRAY['extension-resolved'] AND ${documents.documentType} = 'video')::int`,
       }).from(documents).where(r2Cond),
 
       // Entity counts
@@ -1629,7 +1636,7 @@ export class DatabaseStorage implements IStorage {
 
     return {
       documents: { total, byType },
-      media: { images: mediaCounts[0].images, videos: mediaCounts[0].videos },
+      media: { images: mediaCounts[0].images, videos: mediaCounts[0].videos, hiddenVideos: mediaCounts[0].hiddenVideos },
       persons: entityCounts[0][0].count,
       events: entityCounts[1][0].count,
       connections: entityCounts[2][0].count,

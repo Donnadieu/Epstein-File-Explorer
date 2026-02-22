@@ -370,6 +370,7 @@ export async function downloadDocuments(options: {
   concurrency?: number;
   rateLimitMs?: number;
   retryFailed?: boolean;
+  extensionResolved?: boolean;
 }): Promise<void> {
   console.log("\n=== DOJ Document Downloader (Parallel) ===\n");
 
@@ -379,6 +380,7 @@ export async function downloadDocuments(options: {
     maxFiles = Infinity,
     concurrency = MAX_CONCURRENCY,
     retryFailed = false,
+    extensionResolved,
   } = options;
 
   if (!fs.existsSync(CATALOG_FILE)) {
@@ -398,6 +400,10 @@ export async function downloadDocuments(options: {
 
   if (fileTypes && fileTypes.length > 0) {
     files = files.filter((f) => fileTypes.includes(f.fileType.toLowerCase()));
+  }
+
+  if (extensionResolved) {
+    files = files.filter((f) => f.extensionResolved === true);
   }
 
   files = files.slice(0, maxFiles);
@@ -513,6 +519,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.concurrency = parseInt(args[++i], 10);
     } else if (args[i] === "--retry-failed") {
       options.retryFailed = true;
+    } else if (args[i] === "--extension-resolved") {
+      options.extensionResolved = true;
     }
   }
 
