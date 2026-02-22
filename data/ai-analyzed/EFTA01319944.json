@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01319944.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-08-01",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for transportation charges related to a shipment. The invoice details the charges, discounts, and payment information, indicating a total amount due of $45.82. It also includes shipment details and contact information for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating his involvement in shipping activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Eric Gant",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric Gant is mentioned as the sender of a package associated with the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeana Little St James",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeana Little St James is listed as the recipient of a shipment sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gant",
+      "relationshipType": "sender-recipient",
+      "description": "Eric Gant is identified as the sender of a package that Jeffrey Epstein is associated with in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeana Little St James",
+      "relationshipType": "sender-recipient",
+      "description": "Jeana Little St James is the recipient of a shipment sent by Jeffrey Epstein, indicating a direct shipping relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-07-20",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment associated with Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gant"
+      ]
+    },
+    {
+      "date": "2005-07-21",
+      "title": "Package Delivery",
+      "description": "The package sent by Jeffrey Epstein was delivered to Jeana Little St James.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jeana Little St James"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook, St Thomas 00802 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 1, 2005, and details charges for FedEx services.",
+    "Total charges amount to $45.82, with a discount of $1.28 applied.",
+    "The invoice includes shipment details indicating a package was picked up on July 20, 2005.",
+    "Eric Gant is identified as the sender of a package associated with Jeffrey Epstein.",
+    "Jeana Little St James is listed as the recipient of a shipment sent by Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:33:17.450Z"
+}

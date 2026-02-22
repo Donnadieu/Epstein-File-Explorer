@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01299563.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-02-10",
+  "summary": "This document appears to be a financial report detailing transactions involving various accounts, including those associated with Jeffrey Epstein. It lists multiple financial institutions and transactions, indicating significant monetary movements. The document is marked as confidential and includes references to various beneficiaries and accounts.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Beneficiary",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as a fiduciary and beneficiary in connection with various financial transactions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gerard Rotonda",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Gerard Rotonda is referenced in relation to a financial transfer and account management.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carol R. Larose",
+      "role": "Authorized Debtor",
+      "category": "other",
+      "context": "Carol R. Larose is mentioned as an authorized debtor in the financial transactions detailed in the document.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Gerard Rotonda",
+      "relationshipType": "financial",
+      "description": "Jeffrey Epstein is associated with financial transactions that involve Gerard Rotonda's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Carol R. Larose",
+      "relationshipType": "financial",
+      "description": "Carol R. Larose is mentioned in the context of transactions involving Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Brooklyn, NY"
+  ],
+  "keyFacts": [
+    "The document details financial transactions involving Jeffrey Epstein and various banks.",
+    "It includes references to significant monetary amounts being transferred.",
+    "Certain transactions are marked as confidential under federal regulations."
+  ],
+  "analyzedAt": "2026-02-21T22:54:30.241Z"
+}

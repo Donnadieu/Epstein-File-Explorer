@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA01319734.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-11-22",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details transportation charges, discounts, and the total amount due, along with shipment details including sender and recipient information.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Cecilia Jean",
+      "role": "Sender",
+      "category": "other",
+      "context": "Cecilia Jean is mentioned as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgers is mentioned as the sender of another package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jenne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jenne Brennan is mentioned as the sender associated with the financial trust company.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Cecilia Jean",
+      "relationshipType": "client-service provider",
+      "description": "Cecilia Jean is involved in a shipment sent to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "client-service provider",
+      "description": "Dave Rodgers is involved in a shipment sent to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jenne Brennan",
+      "relationshipType": "client-service provider",
+      "description": "Jenne Brennan is associated with a shipment sent to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-11-12",
+      "title": "Package Picked Up",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Cecilia Jean"
+      ]
+    },
+    {
+      "date": "2004-11-15",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rodgers"
+      ]
+    },
+    {
+      "date": "2004-11-16",
+      "title": "Package Delivered",
+      "description": "A package was delivered to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jenne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6643",
+    "6100 Red Hook Quarters, St Thomas, VI",
+    "P.O. Box 371461, Pittsburgh, PA 15250-7461"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 22, 2004, and totals $75.63.",
+    "Jeffrey Epstein is the primary recipient of the invoice for shipping services.",
+    "Multiple shipments were made to Jeffrey Epstein, with details of the sender and service type included.",
+    "The document includes specific charges for transportation and handling.",
+    "There are references to discounts applied to the total charges."
+  ],
+  "analyzedAt": "2026-02-22T10:20:41.226Z"
+}

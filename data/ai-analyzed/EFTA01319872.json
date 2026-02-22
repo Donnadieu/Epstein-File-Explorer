@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01319872.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-04-15",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the shipment, payment due date, and contact details for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Lauren L. Gille",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren L. Gille is listed as the sender associated with the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marilyn Selman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Marilyn Selman is identified as the recipient of the shipment in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Berry",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Berry is noted as the individual who signed for the delivery of the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-04-07",
+      "title": "Package Pickup",
+      "description": "The package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren L. Gille",
+        "Marilyn Selman"
+      ]
+    },
+    {
+      "date": "2005-04-08",
+      "title": "Package Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren L. Gille",
+        "Marilyn Selman",
+        "D. Berry"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-739-49828, dated April 15, 2005.",
+    "Total charges for the shipment amounted to USD $17.85.",
+    "The package was picked up on April 7, 2005, and delivered on April 8, 2005.",
+    "A fuel surcharge of $1.40 was included in the total charges.",
+    "The sender's account number is 2292.0750.4."
+  ],
+  "analyzedAt": "2026-02-22T10:28:42.251Z"
+}

@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA01313908.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-01-06",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details various charges, discounts, and shipment summaries for packages sent by Epstein, including dates of service and amounts due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, listed as both the billing and shipping address.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Henry Rosowsky",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Henry Rosowsky is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Larry Morrison is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carola Lano",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Carola Lano is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Henry Rosowsky",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Henry Rosowsky as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Larry Morrison as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Carola Lano",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Carola Lano as indicated in the shipment details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-12-27",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-30",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Henry Rosowsky.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Henry Rosowsky"
+      ]
+    },
+    {
+      "date": "2002-12-31",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Larry Morrison.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Morrison"
+      ]
+    },
+    {
+      "date": "2003-01-02",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-01-03",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Carola Lano.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Carola Lano"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "358 El Galloway, Palm Beach, FL 33480",
+    "10441 NW 28th Unit 107, Miami, FL 33172"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 6, 2003, and is for shipping services provided by FedEx.",
+    "Total charges on the invoice amount to USD 66.00.",
+    "Multiple packages were sent by Epstein to various recipients, including Henry Rosowsky, Larry Morrison, and Carola Lano.",
+    "The invoice includes details of discounts applied to the shipping charges.",
+    "The document contains references to specific shipment tracking IDs and delivery dates."
+  ],
+  "analyzedAt": "2026-02-22T05:43:00.003Z"
+}

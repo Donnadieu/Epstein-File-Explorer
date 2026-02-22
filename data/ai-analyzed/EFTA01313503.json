@@ -1,0 +1,131 @@
+{
+  "fileName": "EFTA01313503.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-03",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments. It includes information about discounts applied, total charges, and specific shipment details such as pickup and delivery dates. The invoice highlights Epstein's billing and shipping address, indicating his frequent use of FedEx services.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, indicating his use of FedEx services for shipping.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Darren Indyke is mentioned in relation to shipping charges and is associated with Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Associate",
+      "category": "associate",
+      "context": "John Alessi is mentioned in connection with a shipment sent to Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Siawer",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larry Siawer is mentioned as a recipient of a shipment sent from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Eric Gany is mentioned in relation to a shipment sent to Epstein's address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with Epstein's address, suggesting a close working relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "social",
+      "description": "John Alessi is mentioned in connection with shipments to Epstein, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Siawer",
+      "relationshipType": "social",
+      "description": "Larry Siawer is noted as a recipient of a shipment from Epstein, indicating a potential social connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "social",
+      "description": "Eric Gany is mentioned in relation to a shipment sent to Epstein's address, suggesting a connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-05-23",
+      "title": "Package Drop-off",
+      "description": "A package was dropped off at FedEx by Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-05-28",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-05-30",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-06-03",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Epstein for shipping services.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "87505",
+    "5360 N Jackson, US",
+    "2441 California Street NW, Washington, DC 20008",
+    "49 Zorro Ranch Road, Stanley, NM 87068"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 3, 2002, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to USD 91.11 after discounts.",
+    "Multiple shipments were made from Epstein's address, with specific details on pickup and delivery dates.",
+    "Darren Indyke, John Alessi, Larry Siawer, and Eric Gany are mentioned in relation to Epstein's shipping activities.",
+    "The document includes various FedEx service codes and charge definitions."
+  ],
+  "analyzedAt": "2026-02-22T05:22:17.837Z"
+}

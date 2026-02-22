@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01301570.pdf",
+  "dataSet": "10",
+  "documentType": "search warrant",
+  "dateOriginal": "2019-07-08",
+  "summary": "This document details the execution of a search warrant at the residence of Jeffrey Epstein on July 6, 2019, in connection with a child sex trafficking investigation. Various items were collected as evidence, including photographs, letters, and personal items. The warrant was approved by Judge Barbara Moses and executed by FBI agents.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of the search warrant executed at his residence in connection with child sex trafficking allegations.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Barbara Moses",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge Barbara Moses approved the search warrant that was executed at Epstein's residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steven D. Small",
+      "role": "Seizing Individual",
+      "category": "other",
+      "context": "Steven D. Small is mentioned as the individual who collected certain items during the search.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Barbara Moses",
+      "relationshipType": "legal",
+      "description": "Judge Barbara Moses issued the search warrant for Jeffrey Epstein's residence.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Steven D. Small",
+      "relationshipType": "employer-employee",
+      "description": "Steven D. Small collected items from Epstein's residence as part of the search warrant execution.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-06",
+      "title": "Search Warrant Execution",
+      "description": "A search warrant was executed at Jeffrey Epstein's residence, resulting in the collection of various items related to the investigation.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Barbara Moses",
+        "Steven D. Small"
+      ]
+    }
+  ],
+  "locations": [
+    "10021"
+  ],
+  "keyFacts": [
+    "The search warrant was executed on July 6, 2019, at Jeffrey Epstein's residence.",
+    "Judge Barbara Moses approved the search warrant.",
+    "Items collected included photographs, letters, and various personal items.",
+    "The search was part of an investigation into child sex trafficking.",
+    "Steven D. Small was involved in the collection of evidence during the search."
+  ],
+  "analyzedAt": "2026-02-22T01:33:18.214Z"
+}

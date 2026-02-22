@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01344230.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2014-08-20",
+  "summary": "This document is an email correspondence confirming the receipt of an incoming wire transfer from JPMorgan Chase into Southern Financial. The email involves Richard Kahn, Amanda Kirby, and Jeanne Brennan, discussing financial transactions and includes a confidentiality notice.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Sender",
+      "category": "other",
+      "context": "Richard Kahn is the sender of the email, confirming the receipt of a wire transfer.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Amanda Kirby is the recipient of the email, confirming the details of the incoming wire transfer.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "CC Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is CC'd in the email, indicating she is involved in the conversation regarding the wire transfer.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Amanda Kirby",
+      "relationshipType": "professional",
+      "description": "Richard Kahn and Amanda Kirby are communicating regarding a financial transaction.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "professional",
+      "description": "Amanda Kirby is confirming details to Jeanne Brennan about the wire transfer.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "575 Lexington Avenue, 4th Floor, New York, NY 10022",
+    "345 54-0004, New York, NY, USA"
+  ],
+  "keyFacts": [
+    "The email confirms the receipt of an incoming wire from JPMorgan Chase into Southern Financial.",
+    "Richard Kahn is associated with HBRIC Associates Inc.",
+    "Amanda Kirby is affiliated with Deutsche Bank Trust Company Americas.",
+    "The email contains a confidentiality notice indicating the communication is privileged.",
+    "The document is classified as confidential under Federal Rule of Criminal Procedure 6(e)."
+  ],
+  "analyzedAt": "2026-02-22T15:49:19.232Z"
+}

@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01319460.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-11-21",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details charges related to a shipment made on November 13, 2002, and includes information about customs fees and delivery details.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "other",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 5
+    },
+    {
+      "name": "COTRIN",
+      "role": "Shipper",
+      "category": "other",
+      "context": "COTRIN is mentioned as the shipper associated with the shipment referenced in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MRS SHERMAN",
+      "role": "Recipient",
+      "category": "other",
+      "context": "MRS SHERMAN is listed as the recipient of the shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "COTRIN",
+      "relationshipType": "employer-employee",
+      "description": "COTRIN is identified as the shipper for a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "MRS SHERMAN",
+      "relationshipType": "client-recipient",
+      "description": "MRS SHERMAN is the recipient of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-13",
+      "title": "Shipment Sent",
+      "description": "A shipment was sent by Jeffrey E. Epstein via FedEx, with delivery details provided in the invoice.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "MRS SHERMAN"
+      ]
+    },
+    {
+      "date": "2002-11-21",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "Paris, 75116, France"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-152-41155, dated November 21, 2002.",
+    "The total charges for the shipment amount to $137.13.",
+    "The shipment was sent on November 13, 2002, and delivered on November 10, 2002.",
+    "Customs fees and duties were included in the total charges of the invoice.",
+    "The invoice indicates that charges were paid to French Customs on behalf of Jeffrey E. Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:09:11.959Z"
+}

@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01313947.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-02-28",
+  "summary": "This document is an invoice from FedEx detailing charges for express services provided to NYSO LLC. The invoice includes transportation charges, special handling charges, and payment instructions, with a total amount due of $11.28. It also contains shipment details including sender and recipient information.",
+  "persons": [
+    {
+      "name": "Jeffery Schantz",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeffery Schantz is listed as the sender of a package in the FedEx shipment details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ed Spector",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Ed Spector is mentioned as the recipient of a package in the FedEx shipment details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Merrill Lynch",
+      "role": "Associated entity",
+      "category": "other",
+      "context": "Merrill Lynch is referenced in connection with the shipment details, indicating a business association.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2003-02-18",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffery Schantz",
+        "Ed Spector"
+      ]
+    },
+    {
+      "date": "2003-02-19",
+      "title": "Package Delivery",
+      "description": "The package was delivered and signed for by E. Torres.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffery Schantz",
+        "Ed Spector"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "2 World Financial Center, New York, NY 10281"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 28, 2003, with a total charge of $11.28.",
+    "The package was picked up on February 18, 2003, and delivered on February 19, 2003.",
+    "The sender is Jeffery Schantz and the recipient is Ed Spector.",
+    "The invoice includes a fuel surcharge and special handling charges.",
+    "NYSO LLC is listed as the account holder for the FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T05:44:47.079Z"
+}

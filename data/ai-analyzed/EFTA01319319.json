@@ -1,0 +1,127 @@
+{
+  "fileName": "EFTA01319319.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-09-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for services rendered. The invoice includes multiple entries for packages sent and received, along with associated costs and discounts. It highlights the billing and shipping addresses for Epstein, indicating his frequent use of FedEx services.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple packages sent and received under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Bella Epstein",
+      "role": "Associated Individual",
+      "category": "other",
+      "context": "Bella Epstein is mentioned in relation to a package sent from Jeffrey E. Epstein's address, indicating a possible connection or shared address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark Harberts",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Mark Harberts is mentioned as a recipient for one of the packages sent from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Larry is mentioned as a recipient for a package sent from Epstein's address, indicating a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nick Sound Experience",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nick Sound Experience is mentioned as a sender for a package delivered to Epstein, indicating a business or personal connection.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Bella Epstein",
+      "relationshipType": "social",
+      "description": "Bella Epstein is associated with Jeffrey E. Epstein through shared address details on the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mark Harberts",
+      "relationshipType": "social",
+      "description": "Mark Harberts is a recipient of a package sent from Epstein's address, indicating a connection through shipping activities.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry",
+      "relationshipType": "social",
+      "description": "Larry is a recipient of a package sent from Epstein's address, suggesting a connection through Epstein's shipping activities.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nick Sound Experience",
+      "relationshipType": "business",
+      "description": "Nick Sound Experience is mentioned as a sender of a package to Epstein, indicating a business or personal connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-08-29",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address by FedEx.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-09-04",
+      "title": "Package Delivery",
+      "description": "Multiple packages were delivered to Epstein's address.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-09-05",
+      "title": "Package Delivery",
+      "description": "Additional packages were delivered to Epstein's address.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-09-07",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 10, 2001, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the services rendered amount to USD $177.77.",
+    "Multiple packages were sent and received by Epstein, indicating frequent use of FedEx services.",
+    "Bella Epstein is associated with Epstein's address, suggesting a personal connection.",
+    "Several packages were delivered to Epstein's address on different dates in early September 2001."
+  ],
+  "analyzedAt": "2026-02-22T10:01:32.186Z"
+}

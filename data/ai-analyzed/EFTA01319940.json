@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01319940.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-08-22",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges for various shipments, including transportation and handling fees, and includes information about discounts applied. The invoice also references specific shipment details and recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the invoice is addressed, indicating he is the account holder for the FedEx services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as the recipient associated with one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein is the sender of a shipment addressed to Jeanne Brennan, indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-08-17",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-08-19",
+      "title": "FedEx Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered to a recipient in Brussels.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter Suite 8.3, St. Thomas, VI 00802",
+    "1050 Brussels, Belgium"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 22, 2005, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to $127.67, with discounts applied.",
+    "The invoice details multiple shipments, including one to Jeanne Brennan.",
+    "Shipments were picked up on August 17, 2005, and delivered on August 19, 2005.",
+    "There are references to various FedEx services and charges, including transportation and special handling fees."
+  ],
+  "analyzedAt": "2026-02-22T10:33:02.398Z"
+}

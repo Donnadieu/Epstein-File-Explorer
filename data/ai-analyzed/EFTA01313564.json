@@ -1,0 +1,119 @@
+{
+  "fileName": "EFTA01313564.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-08",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details various charges, discounts, and payment information related to shipments made by Epstein in July 2002. The invoice highlights the total amount due and provides a breakdown of transportation charges and discounts.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name and address.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Larry Viscorski",
+      "role": "Sender",
+      "category": "other",
+      "context": "Larry Viscorski is mentioned as a sender for one of the packages shipped by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amy Sobieraj",
+      "role": "Sender",
+      "category": "other",
+      "context": "Amy Sobieraj is mentioned as a sender for one of the packages shipped by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Hogan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "J. Hogan is noted as the person who signed for a package delivered to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "C. Snyder",
+      "role": "Recipient",
+      "category": "other",
+      "context": "C. Snyder is noted as the person who signed for a package delivered to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Viscorski",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Viscorski is identified as a sender for a package shipped to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Amy Sobieraj",
+      "relationshipType": "sender-recipient",
+      "description": "Amy Sobieraj is identified as a sender for a package shipped to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Hogan",
+      "relationshipType": "recipient-signer",
+      "description": "J. Hogan signed for a package delivered to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "C. Snyder",
+      "relationshipType": "recipient-signer",
+      "description": "C. Snyder signed for a package delivered to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-07-01",
+      "title": "Package Delivery",
+      "description": "Multiple packages were delivered to Jeffrey E. Epstein on this date.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "J. Hogan",
+        "C. Snyder"
+      ]
+    },
+    {
+      "date": "2002-06-27",
+      "title": "Package Pickup",
+      "description": "A package was picked up for delivery to Jeffrey E. Epstein.",
+      "category": "pickup",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-06-28",
+      "title": "Package Pickup",
+      "description": "Another package was picked up for delivery to Jeffrey E. Epstein.",
+      "category": "pickup",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 8, 2002, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $73.39.",
+    "The invoice includes details of multiple shipments made by Epstein in June and July 2002.",
+    "Several individuals signed for packages delivered to Epstein, including J. Hogan and C. Snyder.",
+    "There are multiple references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:25:10.378Z"
+}

@@ -1,0 +1,238 @@
+{
+  "fileName": "EFTA01299150.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": "2013-10-02",
+  "summary": "This document contains due diligence research results for Harry Beller, focusing on compliance with AML standards. It includes various searches for negative media, court cases, and personal information related to Beller, including vehicle registrations and legal cases. The document highlights the absence of significant negative findings but notes a settled court case involving Beller. This document discusses the dismissal of a plaintiff's claims under various civil rights statutes, including 42 U.S.C. §§ 1983, 1985, and 1986, due to failure to state a claim. The court allows the plaintiff to conduct limited discovery regarding Sherman Act claims but dismisses the civil rights claims with prejudice. This document details a court ruling regarding a personal injury case involving Steven Walker, who sustained severe injuries in an accident. The court found the defendant, Grant, liable and awarded damages to both Steven and his mother, Ann Walker Reisman, for medical expenses and other losses related to the injury.",
+  "persons": [
+    {
+      "name": "Harry Beller",
+      "role": "Environmental Microbiologist",
+      "category": "other",
+      "context": "Harry Beller is mentioned in the context of his research on biofuels and his role at the Joint BioEnergy Institute. He is also the subject of due diligence research.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ee-Been Goh",
+      "role": "Co-author",
+      "category": "other",
+      "context": "Ee-Been Goh is mentioned as a co-author of a paper with Harry Beller regarding bacterial enzymes for biofuel production.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jay Keasling",
+      "role": "Co-author",
+      "category": "other",
+      "context": "Jay Keasling is mentioned as a co-author alongside Harry Beller and Ee-Been Goh in a study about biofuels.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Anna Beller",
+      "role": "Plaintiff",
+      "category": "legal",
+      "context": "Anna Beller is mentioned as a co-plaintiff in a civil suit against the City Willets Point Contracting Corp.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Frand Mascali",
+      "role": "Defendant",
+      "category": "legal",
+      "context": "Frand Mascali is mentioned as a defendant in the civil suit involving Anna and Harry Beller.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Robert M. Stern Sr.",
+      "role": "Associate",
+      "category": "other",
+      "context": "Robert M. Stern Sr. is mentioned in relation to census data and as an associate of Harry Beller.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steven L. Walker",
+      "role": "Plaintiff",
+      "category": "victim",
+      "context": "Walker is the plaintiff in a case involving a motorcycle accident and is represented in the document as having claims against the defendants.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ann Walker Reisman",
+      "role": "Plaintiff's Guardian",
+      "category": "legal",
+      "context": "Reisman is mentioned as the natural guardian and legal guardian of Steven L. Walker, representing him in the case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Ralph J. Grant",
+      "role": "Defendant",
+      "category": "other",
+      "context": "Grant is identified as the defendant in the case, involved in the motorcycle accident with Steven L. Walker.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steven Walker",
+      "role": "Injured Plaintiff",
+      "category": "victim",
+      "context": "Steven Walker sustained a severe leg injury resulting in a compound fracture and subsequent complications, leading to a court case for damages.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Grant",
+      "role": "Defendant",
+      "category": "other",
+      "context": "Grant was found liable for the accident that caused Steven Walker's injuries.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dr. Harry B. Orringer",
+      "role": "Treating Physician",
+      "category": "medical",
+      "context": "Dr. Orringer treated Steven Walker and reported on the condition of his leg injury.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr. Harry Beller",
+      "role": "Court-appointed Physician",
+      "category": "medical",
+      "context": "Dr. Beller assessed Steven Walker's injury and recommended amputation of the leg.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Harry Beller",
+      "person2": "Anna Beller",
+      "relationshipType": "spousal",
+      "description": "Harry Beller and Anna Beller are co-plaintiffs in a civil suit.",
+      "strength": 5
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Ee-Been Goh",
+      "relationshipType": "co-author",
+      "description": "Harry Beller and Ee-Been Goh co-authored a research paper on biofuels.",
+      "strength": 4
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Jay Keasling",
+      "relationshipType": "co-author",
+      "description": "Harry Beller and Jay Keasling co-authored a research paper on biofuels.",
+      "strength": 4
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "Robert M. Stern Sr.",
+      "relationshipType": "associate",
+      "description": "Robert M. Stern Sr. is mentioned as an associate of Harry Beller in census data.",
+      "strength": 2
+    },
+    {
+      "person1": "Anna Beller",
+      "person2": "Frand Mascali",
+      "relationshipType": "plaintiff-defendant",
+      "description": "Anna Beller is a plaintiff in a civil suit against Frand Mascali.",
+      "strength": 5
+    },
+    {
+      "person1": "Steven L. Walker",
+      "person2": "Ann Walker Reisman",
+      "relationshipType": "guardian-ward",
+      "description": "Reisman is the legal guardian of Walker, representing him in the legal proceedings.",
+      "strength": 5
+    },
+    {
+      "person1": "Steven L. Walker",
+      "person2": "Ralph J. Grant",
+      "relationshipType": "victim-perpetrator",
+      "description": "Walker is the victim in the motorcycle accident involving Grant, who is the defendant in the case.",
+      "strength": 4
+    },
+    {
+      "person1": "Steven Walker",
+      "person2": "Ann Walker Reisman",
+      "relationshipType": "parent-child",
+      "description": "Ann Walker Reisman is the mother of Steven Walker, who is seeking damages for his injuries.",
+      "strength": 5
+    },
+    {
+      "person1": "Steven Walker",
+      "person2": "Grant",
+      "relationshipType": "victim-perpetrator",
+      "description": "Grant is the defendant found liable for the injuries sustained by Steven Walker.",
+      "strength": 4
+    },
+    {
+      "person1": "Steven Walker",
+      "person2": "Dr. Harry B. Orringer",
+      "relationshipType": "patient-physician",
+      "description": "Dr. Orringer treated Steven Walker for his leg injury.",
+      "strength": 3
+    },
+    {
+      "person1": "Steven Walker",
+      "person2": "Dr. Harry Beller",
+      "relationshipType": "patient-physician",
+      "description": "Dr. Beller evaluated Steven Walker's injury and recommended amputation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1987-06-30",
+      "title": "Civil Suit Settlement",
+      "description": "The civil suit Beller, Anna & Harry Beller v. City Willets Point Contracting Corp. was settled before trial.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Harry Beller",
+        "Anna Beller",
+        "Frand Mascali"
+      ]
+    },
+    {
+      "date": "1966-12-11",
+      "title": "Motorcycle Accident",
+      "description": "An accident occurred involving Steven L. Walker's motorcycle and Ralph J. Grant's vehicle.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Steven L. Walker",
+        "Ralph J. Grant"
+      ]
+    },
+    {
+      "date": null,
+      "title": "Court Ruling on Damages",
+      "description": "The court ruled on the liability of Grant and awarded damages to Steven Walker and his mother for medical expenses and suffering.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Steven Walker",
+        "Ann Walker Reisman",
+        "Grant"
+      ]
+    }
+  ],
+  "locations": [
+    "Rockland County, NY",
+    "Kings County, NY",
+    "Young's Circle, Hollywood, Florida"
+  ],
+  "keyFacts": [
+    "Harry Beller is involved in research on biofuels and is the subject of due diligence research.",
+    "There are no significant negative media results found for Harry Beller.",
+    "Harry Beller co-authored a paper on biofuel production with Ee-Been Goh and Jay Keasling.",
+    "Anna Beller and Harry Beller were co-plaintiffs in a civil suit that was settled before trial.",
+    "Robert M. Stern Sr. is noted as an associate of Harry Beller in census data.",
+    "The court dismissed the plaintiff's claims under 42 U.S.C. §§ 1983, 1985, and 1986 for failure to state a claim.",
+    "The plaintiff, Steven L. Walker, was involved in a motorcycle accident with defendant Ralph J. Grant.",
+    "Ann Walker Reisman is the legal guardian of Steven L. Walker.",
+    "The accident occurred on December 11, 1966, at Young's Circle in Hollywood, Florida.",
+    "Steven Walker sustained a compound fracture of the left tibia and fibula, leading to severe complications.",
+    "The court awarded Ann Walker Reisman $20,000 for medical expenses and care related to her son.",
+    "Steven Walker was awarded $80,000 for various losses, including past and future earnings and pain and suffering.",
+    "Dr. Harry Beller recommended amputation of Steven's leg due to the severity of the injury.",
+    "Steven Walker had a history of personality problems and anti-social behavior prior to the accident."
+  ],
+  "analyzedAt": "2026-02-21T22:23:14.095Z"
+}

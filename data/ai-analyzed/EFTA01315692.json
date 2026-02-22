@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01315692.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-04-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and payment information. The invoice highlights multiple transactions and the total amount due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is responsible for the shipping charges listed.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecilia Steen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Cecilia Steen is mentioned as a recipient for another shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan as indicated in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Cecilia Steen",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Cecilia Steen as indicated in the invoice.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-04-15",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx from Jeffrey E. Epstein on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-18",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-21",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Jeffrey E. Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, Suite B3, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 25, 2005, and details shipping charges totaling $322.17.",
+    "Jeffrey E. Epstein is the account holder responsible for the invoice.",
+    "Multiple shipments were made by Epstein, with various recipients including Jeanne Brennan and Cecilia Steen.",
+    "The invoice includes a discount of $9.17 applied to the total charges.",
+    "The document contains references to specific shipment tracking IDs and delivery dates."
+  ],
+  "analyzedAt": "2026-02-22T07:14:32.381Z"
+}

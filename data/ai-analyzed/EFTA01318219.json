@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA01318219.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-04-25",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on specific dates in April 2003. It includes information about the sender, recipient, and various charges associated with the shipments. The invoice highlights the total amount due and provides contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Lauren Kummer",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kummer is listed as the sender for one of the FedEx shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter Kaufman",
+      "role": "Sender",
+      "category": "other",
+      "context": "Peter Kaufman is mentioned as the sender for another FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Caryl Phillips",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Caryl Phillips is listed as the recipient for one of the FedEx shipments detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2003-04-17",
+      "title": "FedEx Pickup",
+      "description": "FedEx picked up a shipment from Lauren Kummer on this date.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kummer"
+      ]
+    },
+    {
+      "date": "2003-04-21",
+      "title": "FedEx Pickup",
+      "description": "FedEx picked up another shipment from Lauren Kummer on this date.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kummer"
+      ]
+    },
+    {
+      "date": "2003-04-22",
+      "title": "FedEx Delivery",
+      "description": "A shipment sent by Peter Kaufman was delivered on this date.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Peter Kaufman",
+        "Caryl Phillips"
+      ]
+    }
+  ],
+  "locations": [
+    "Pittsburgh, PA"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-676-91369, dated April 25, 2003.",
+    "Total charges for the services rendered amount to USD $23.30.",
+    "Shipments were picked up on April 17 and April 21, 2003.",
+    "Caryl Phillips is listed as the recipient for a shipment delivered on April 22, 2003.",
+    "The invoice includes a fuel surcharge applied to the transportation charges."
+  ],
+  "analyzedAt": "2026-02-22T09:02:53.406Z"
+}

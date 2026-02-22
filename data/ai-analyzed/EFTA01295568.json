@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01295568.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Print Page",
+  "dateOriginal": null,
+  "summary": "This document outlines the Know Your Customer (KYC) details for Jeffrey Epstein and his associated accounts at Deutsche Bank. It includes information about Epstein's financial background, account purposes, and relationships with other individuals involved in managing his finances.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a current client of Deutsche Bank, seeking to open new accounts for managing expenses related to his private residence.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Lawyer",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as a related party to Epstein's accounts, serving as a lawyer and associated with Southern Financial LLC.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the relationship manager handling Epstein's accounts at Deutsche Bank.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Kimberly Hart",
+      "role": "Office Director/Business Head",
+      "category": "staff",
+      "context": "Kimberly Hart is mentioned as an approving authority for the KYC documentation related to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gwen Hill",
+      "role": "AML Compliance",
+      "category": "staff",
+      "context": "Gwen Hill is noted as part of the compliance team that reviewed Epstein's KYC documentation.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Yoonsun Chung",
+      "role": "Compliance Officer",
+      "category": "staff",
+      "context": "Yoonsun Chung is mentioned as a compliance officer who signed off on the KYC documentation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is a lawyer for Jeffrey Epstein and is associated with Southern Financial LLC, which Epstein founded.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the relationship manager at Deutsche Bank for Jeffrey Epstein's accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Paul Morris",
+      "relationshipType": "professional",
+      "description": "Darren Indyke and Paul Morris are connected through their professional roles in managing Epstein's financial affairs.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-02-17",
+      "title": "Account Opening",
+      "description": "Jeffrey Epstein opened new accounts at Deutsche Bank for managing expenses related to his private residence.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter, B3 St. Thomas 00802 USVI",
+    "575 Lexington Avenue, 4th A Livingston NY USA 10022"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Deutsche Bank, seeking to open accounts for personal expenses.",
+    "Darren Indyke is identified as Epstein's lawyer and associated with Southern Financial LLC.",
+    "Paul Morris is the relationship manager for Epstein's accounts at Deutsche Bank.",
+    "The accounts are primarily for maintaining payroll and expenses related to Epstein's private residence.",
+    "The document includes KYC compliance checks and approvals from various Deutsche Bank staff."
+  ],
+  "analyzedAt": "2026-02-21T20:04:53.771Z"
+}

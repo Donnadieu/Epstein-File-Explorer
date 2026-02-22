@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA01304464.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": null,
+  "summary": "This document appears to be a personal letter expressing disappointment over a resignation and urging the recipient to reconsider their decision regarding a construction project. The author emphasizes the importance of completing the project and maintaining a friendship despite frustrations.",
+  "persons": [
+    {
+      "name": "Alberto",
+      "role": "Contractor",
+      "category": "associate",
+      "context": "Alberto is addressed in the letter regarding his resignation and the unfinished construction project.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jean",
+      "role": "Employee",
+      "category": "associate",
+      "context": "Jean is mentioned as someone who assured the author that the project would be completed by a certain date but has not contacted them.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Cabinet Pinto",
+      "role": "Contractor",
+      "category": "associate",
+      "context": "Cabinet Pinto is referenced as the entity with whom the author has a total relationship regarding the project.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alberto",
+      "person2": "Cabinet Pinto",
+      "relationshipType": "employer-employee",
+      "description": "Alberto is implied to be responsible for the project, which is overseen by Cabinet Pinto.",
+      "strength": 3
+    },
+    {
+      "person1": "Alberto",
+      "person2": "Jean",
+      "relationshipType": "employer-employee",
+      "description": "Jean is mentioned as an employee who has not fulfilled his obligations regarding the project.",
+      "strength": 3
+    },
+    {
+      "person1": "Alberto",
+      "person2": "the author",
+      "relationshipType": "friendship",
+      "description": "The author expresses a personal friendship with Alberto, despite the frustrations over the project.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The author expresses disappointment over Alberto's resignation and urges him to reconsider.",
+    "The author mentions that the construction project was promised to be completed by last Christmas but remains unfinished.",
+    "Jean is referenced as someone who assured the author about the project's completion but has not communicated since.",
+    "The author emphasizes the financial and emotional investment made in the project.",
+    "The letter conveys a sense of personal friendship and frustration over professional obligations."
+  ],
+  "analyzedAt": "2026-02-22T02:01:37.224Z"
+}

@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01315701.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-04-18",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, totaling $78.14, and provides information on payment due by May 3, 2005.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx, with his address listed in New York.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Natalia Anatoly Siodan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Natalia Anatoly Siodan is mentioned as the sender of a package shipped via FedEx, indicating involvement in the shipping transaction.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Natalia Anatoly Siodan",
+      "relationshipType": "sender-recipient",
+      "description": "Natalia Anatoly Siodan is identified as the sender of a package that was shipped to Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-04-04",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Natalia Anatoly Siodan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "Leninsky Prospect 83, Kaliningrad, RU 236 039"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 18, 2005, and details charges for shipping services provided to Jeffrey Epstein.",
+    "Total charges on the invoice amount to $78.14, with a payment due date of May 3, 2005.",
+    "The invoice includes a fuel surcharge of 6.12 and a base discount of 2.23.",
+    "The shipment was picked up on April 4, 2005, and was sent from Natalia Anatoly Siodan to Jeffrey Epstein.",
+    "The document contains multiple references to FedEx services and billing procedures."
+  ],
+  "analyzedAt": "2026-02-22T07:14:54.944Z"
+}

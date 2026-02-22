@@ -1,0 +1,154 @@
+{
+  "fileName": "EFTA01312857.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-05-17",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made on his behalf. The invoice includes specific charges, discounts, and shipment details, indicating Epstein's use of FedEx services for multiple packages sent to various recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a sender for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Juan Aznar",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Juan Aznar is listed as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marie Joseph Caperton",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Marie Joseph Caperton is mentioned as a recipient for another shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Finland Trust Company",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dale Finland Trust Company is mentioned as a sender for one of the shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Anne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Anne Brennan is mentioned as a sender for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "employer-employee",
+      "description": "Ghislaine Maxwell is associated with Jeffrey E. Epstein as a sender for shipments, indicating a close working relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Juan Aznar",
+      "relationshipType": "recipient-sender",
+      "description": "Juan Aznar is a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Caperton",
+      "relationshipType": "recipient-sender",
+      "description": "Marie Joseph Caperton is a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Finland Trust Company",
+      "relationshipType": "sender-receiver",
+      "description": "Dale Finland Trust Company is mentioned as a sender for one of the shipments associated with Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Anne Brennan",
+      "relationshipType": "sender-receiver",
+      "description": "Anne Brennan is mentioned as a sender for one of the shipments associated with Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-05-05",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx on May 5, 2004, for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-10",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered on May 10, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-11",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Epstein was delivered on May 11, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-12",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered on May 12, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-14",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered on May 14, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "Juan Bravo 3C, Palnta 7, Madrid 28006, ES",
+    "Avenue Louise 113, Brussels 1050, BE",
+    "Zollo Ranch Rd, St. Thomas 00802, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 17, 2004, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to USD 291.49.",
+    "Multiple shipments were sent by Epstein to various recipients, including Juan Aznar and Marie Joseph Caperton.",
+    "Ghislaine Maxwell is mentioned as a sender for one of the shipments.",
+    "The invoice includes detailed transportation charges and discounts applied to the shipments."
+  ],
+  "analyzedAt": "2026-02-22T04:51:27.602Z"
+}

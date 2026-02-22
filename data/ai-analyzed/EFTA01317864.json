@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA01317864.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-10-18",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on various dates in October 2002. It includes information about the sender, recipient, and specific charges associated with the shipments, as well as instructions for adjustments and payments.",
+  "persons": [
+    {
+      "name": "Lauren Kwininer",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwininer is listed as a sender associated with a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jamie Cornetus",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jamie Cornetus is mentioned as a sender for a package sent through FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Indyke is noted as a sender for a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barbara Weatherly",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Barbara Weatherly is mentioned as a recipient of a package sent through FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Hoffman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Paul Hoffman is listed as a recipient associated with a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-10-11",
+      "title": "Package Pickup",
+      "description": "Packages were picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwininer",
+        "Jamie Cornetus",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2002-10-14",
+      "title": "Package Delivery",
+      "description": "A package was delivered to the recipient.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwininer"
+      ]
+    },
+    {
+      "date": "2002-10-15",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to the recipient.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Barbara Weatherly",
+        "Paul Hoffman"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "41 42 Kongens Gade, St Thomas 00304 VI",
+    "8103 Red Hook Quarter, St Thomas 00802 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 18, 2002, and includes multiple charges for FedEx services.",
+    "Total charges for the invoice amount to USD 42.23 after discounts.",
+    "Packages were picked up on October 11, 2002, and delivered on October 14 and 15, 2002.",
+    "Darren Indyke, Lauren Kwininer, and Jamie Cornetus are identified as senders of packages.",
+    "Barbara Weatherly and Paul Hoffman are identified as recipients of packages."
+  ],
+  "analyzedAt": "2026-02-22T08:43:50.418Z"
+}

@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01334261.pdf",
+  "dataSet": "10",
+  "documentType": "subpoena",
+  "dateOriginal": "2005-09-30",
+  "summary": "This document is a subpoena issued by the State Attorney's Office in Palm Beach County, Florida, requiring the custodian of records from BellSouth to appear for interrogation regarding an ongoing investigation. It includes details about the compliance and the necessity for the recipient to provide requested information.",
+  "persons": [
+    {
+      "name": "Joe Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Joe Recarey is mentioned as a contact for the Palm Beach Police Department regarding the subpoena.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Cheryl Freiman",
+      "role": "Compliance Assistant",
+      "category": "legal",
+      "context": "Cheryl Freiman is identified as the Compliance Assistant who signed the return of information related to the subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Joe Recarey",
+      "person2": "Cheryl Freiman",
+      "relationshipType": "employer-employee",
+      "description": "Joe Recarey is a detective who is likely working with Cheryl Freiman, who is a Compliance Assistant at BellSouth, in relation to the subpoena.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-09-22",
+      "title": "Subpoena Issued",
+      "description": "A subpoena was issued to BellSouth for records related to an ongoing investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Joe Recarey",
+        "Cheryl Freiman"
+      ]
+    },
+    {
+      "date": "2005-09-30",
+      "title": "Subpoena Compliance",
+      "description": "BellSouth returned the requested information in compliance with the subpoena.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Cheryl Freiman"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, FL",
+    "BellSouth, Atlanta, GA",
+    "401 North Dixie Highway, West Palm Beach, Florida"
+  ],
+  "keyFacts": [
+    "The subpoena was issued on September 22, 2005, and required compliance by September 30, 2005.",
+    "Joe Recarey is a detective with the Palm Beach Police Department involved in the investigation.",
+    "Cheryl Freiman is the Compliance Assistant at BellSouth who handled the return of information related to the subpoena.",
+    "Failure to comply with the subpoena could result in contempt of court.",
+    "The document is subject to a protective order, indicating sensitive information may be involved."
+  ],
+  "analyzedAt": "2026-02-22T12:34:56.138Z"
+}

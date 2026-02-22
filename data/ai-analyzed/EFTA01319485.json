@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01319485.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-06-27",
+  "summary": "This document contains an invoice summary from FedEx addressed to Jeffrey E. Epstein for shipping services. It details charges incurred for shipments made on specific dates, including customs duties and taxes. The document highlights Epstein's shipping activities and financial transactions related to these services.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender/Importer",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx invoices, indicating his role as the sender and importer of goods.",
+      "mentionCount": 10
+    },
+    {
+      "name": "G. Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "G. Maxwell is mentioned as a sender in connection with shipments made by Epstein, suggesting a collaborative relationship in shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is listed as a recipient of one of the shipments sent by Epstein, indicating a business or personal connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Patricia",
+      "role": "Signer",
+      "category": "staff",
+      "context": "Patricia is mentioned as the person who signed for the delivery of a shipment, indicating her role in the logistics process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "G. Maxwell",
+      "relationshipType": "collaborator",
+      "description": "G. Maxwell is noted as a sender in shipments associated with Epstein, indicating a collaborative relationship in shipping activities.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "recipient-sender",
+      "description": "Alberto Pinto is listed as a recipient of a shipment sent by Epstein, suggesting a business or personal connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-06-23",
+      "title": "Shipment Sent",
+      "description": "A shipment was sent by Jeffrey E. Epstein to Alberto Pinto on June 23, 2003.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alberto Pinto"
+      ]
+    },
+    {
+      "date": "2003-06-26",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered on June 26, 2003, signed by Patricia.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Patricia"
+      ]
+    }
+  ],
+  "locations": [
+    "356 Ebrello Way, Palm Beach, FL",
+    "457 Madison Ave, FL 4, New York, NY",
+    "Hotel de la Victorie, 11 Rue d'Aboukir, Paris"
+  ],
+  "keyFacts": [
+    "The total charges for the FedEx invoice amount to $228.79.",
+    "Jeffrey E. Epstein is associated with multiple shipments, indicating significant shipping activity.",
+    "Customs duties and taxes are included in the charges, reflecting international shipping.",
+    "G. Maxwell is mentioned as a sender in connection with Epstein's shipments.",
+    "Alberto Pinto is identified as a recipient of one of Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T10:10:10.667Z"
+}

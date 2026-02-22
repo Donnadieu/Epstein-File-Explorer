@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA01318160.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-04-04",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent by NYSG LLC. It includes information about the sender, recipient, and charges incurred for shipping services. The invoice highlights multiple shipments and their respective costs, with a total amount due of $18.70.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwintner is identified as the sender associated with NYSG LLC for a shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Indyke is mentioned as the sender for another shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey A. Schantz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeffrey A. Schantz is listed as the sender for a shipment related to NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carol Bukantz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Carol Bukantz is identified as the recipient of a package sent by Darren Indyke.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ben Ginsburg",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ben Ginsburg is mentioned as the recipient of a package sent by Jeffrey A. Schantz.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwintner is associated with NYSO LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NYSO LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey A. Schantz",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey A. Schantz is associated with NYSO LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Carol Bukantz",
+      "relationshipType": "social",
+      "description": "Darren Indyke sent a package to Carol Bukantz.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey A. Schantz",
+      "person2": "Ben Ginsburg",
+      "relationshipType": "social",
+      "description": "Jeffrey A. Schantz sent a package to Ben Ginsburg.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-03-27",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for shipment by NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2003-03-28",
+      "title": "Package Picked Up",
+      "description": "Packages were picked up for shipment by FedEx from NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Jeffrey A. Schantz"
+      ]
+    },
+    {
+      "date": "2003-03-31",
+      "title": "Package Delivered",
+      "description": "Packages sent by Darren Indyke and Jeffrey A. Schantz were delivered to their respective recipients.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Carol Bukantz",
+        "Ben Ginsburg"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval, New Albany, OH 43064",
+    "225 Millburn Ave Ste 209, Millburn, NJ 07041",
+    "304 Russell Building, Washington, DC 20610"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 4, 2003, with a total amount due of $18.70.",
+    "Multiple shipments were made by NYSG LLC, with details of each shipment provided.",
+    "The document includes sender and recipient information for various packages.",
+    "Shipping charges included a fuel surcharge of 4.50% applied to the shipments.",
+    "The invoice indicates that payment is due by April 19, 2003."
+  ],
+  "analyzedAt": "2026-02-22T08:59:18.509Z"
+}

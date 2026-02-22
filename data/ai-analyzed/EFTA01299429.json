@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01299429.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2019-02-19",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions dated February 19, 2019. It includes various financial transactions involving multiple banks and individuals, highlighting significant amounts and accounts associated with trusts and investment funds.",
+  "persons": [
+    {
+      "name": "Francis J Jules",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Francis J Jules is mentioned as the trustee of a revocable trust and is involved in several financial transactions.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Kathleen Peters",
+      "role": "Legal Representative",
+      "category": "legal",
+      "context": "Kathleen Peters is mentioned in connection with a financial transaction related to the Red Oak Investment Fund.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Luciana Oihenez",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Luciana Oihenez is mentioned as a beneficiary associated with the Haze Trust in the financial transactions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Francis J Jules",
+      "person2": "Haze Trust",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Francis J Jules is the trustee managing the Haze Trust, which is involved in multiple financial transactions.",
+      "strength": 5
+    },
+    {
+      "person1": "Kathleen Peters",
+      "person2": "Red Oak Investment Fund",
+      "relationshipType": "legal-representative",
+      "description": "Kathleen Peters is mentioned in relation to a subscription cleared fund for the Red Oak Investment Fund.",
+      "strength": 3
+    },
+    {
+      "person1": "Luciana Oihenez",
+      "person2": "Haze Trust",
+      "relationshipType": "beneficiary-trust",
+      "description": "Luciana Oihenez is identified as a beneficiary of the Haze Trust, which is involved in financial transactions.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Santa Fe, NM",
+    "Brussels, Belgium",
+    "Tel Aviv, Israel",
+    "Chicago, IL",
+    "Dallas, TX",
+    "New York, NY"
+  ],
+  "keyFacts": [
+    "The document details various financial transactions involving significant amounts of money.",
+    "Francis J Jules is associated with a revocable trust and multiple financial transactions.",
+    "Kathleen Peters is linked to the Red Oak Investment Fund as a legal representative.",
+    "Luciana Oihenez is identified as a beneficiary of the Haze Trust.",
+    "Multiple banks are involved in the transactions, including Deutsche Bank and Euroclear Bank."
+  ],
+  "analyzedAt": "2026-02-21T22:43:10.025Z"
+}

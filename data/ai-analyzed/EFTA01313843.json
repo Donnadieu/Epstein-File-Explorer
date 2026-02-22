@@ -1,0 +1,140 @@
+{
+  "fileName": "EFTA01313843.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-11-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries, including specific transactions and recipients involved in the shipments.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Sherman Valoson Cotrin",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Sherman Valoson Cotrin is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kate Balerud",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Kate Balerud is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. Stewart",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "M. Stewart is noted as the person who signed for the delivery of packages sent by Jeffrey E. Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Aaron LSJ",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Aaron LSJ is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Sherman Valoson Cotrin",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Sherman Valoson Cotrin.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kate Balerud",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Kate Balerud.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Aaron LSJ",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Aaron LSJ.",
+      "strength": 4
+    },
+    {
+      "person1": "M. Stewart",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "employee-employer",
+      "description": "M. Stewart is a FedEx employee who handled deliveries for Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-13",
+      "title": "Package Drop-off",
+      "description": "Multiple packages were dropped off by Jeffrey E. Epstein at FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-11-18",
+      "title": "Package Delivery",
+      "description": "Packages sent by Jeffrey E. Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Sherman Valoson Cotrin",
+        "Kate Balerud",
+        "Jeanne Brennan",
+        "Aaron LSJ"
+      ]
+    },
+    {
+      "date": "2002-11-19",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Jeffrey E. Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan",
+        "Kate Balerud"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802",
+    "2000 E. Overland Rd, Meridian, ID 83642",
+    "22 Avenue Foch, Paris, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 25, 2002, and details shipping charges totaling USD 782.42.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services, with multiple shipments listed.",
+    "Several recipients are named, including Sherman Valoson Cotrin, Kate Balerud, and Jeanne Brennan.",
+    "The document includes specific details about shipment dates, weights, and charges for each package.",
+    "There are multiple references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:39:35.479Z"
+}

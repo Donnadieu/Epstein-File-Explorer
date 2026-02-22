@@ -1,0 +1,147 @@
+{
+  "fileName": "EFTA01315759.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-08-15",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment instructions, indicating a total amount due of $567.68. The invoice includes shipment details and references multiple shipments associated with Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his involvement in shipping activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as the sender of packages associated with Epstein, indicating her role in the shipping process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Rosemary Pitcher is mentioned as the sender of packages related to Epstein, further indicating the shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient Contact",
+      "category": "associate",
+      "context": "Miles Alexander is referenced in connection with a shipment sent to him, indicating a relationship with Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christophe Claie",
+      "role": "Recipient Reference",
+      "category": "associate",
+      "context": "Christophe Claie is mentioned in relation to a shipment, suggesting a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of packages, indicating involvement in the shipping process.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is involved in sending packages for Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "employer-employee",
+      "description": "Rosemary Pitcher is involved in sending packages for Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "social",
+      "description": "Miles Alexander is referenced in connection with a shipment sent to him, suggesting a social or business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christophe Claie",
+      "relationshipType": "social",
+      "description": "Christophe Claie is mentioned in relation to a shipment, indicating a possible social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "service-provider-client",
+      "description": "A. Rodriguez signed for deliveries related to Epstein, indicating a service relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-08-05",
+      "title": "Package Pickup",
+      "description": "Packages were picked up by FedEx for delivery to various locations.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2005-08-08",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to their respective recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2005-08-12",
+      "title": "Package Delivery",
+      "description": "Another set of packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2005-08-30",
+      "title": "Payment Due",
+      "description": "The payment for the invoice is due.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00602",
+    "1515 Perimeter Rd, West Palm Beach, FL 33406",
+    "49 Zorro Ranch Road, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 15, 2005, and totals $567.68.",
+    "Jeffrey E. Epstein is the primary account holder for the shipping services.",
+    "Multiple shipments are detailed, with various senders and recipients associated with Epstein.",
+    "A. Rodriguez is noted as the individual who signed for deliveries.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T07:18:34.449Z"
+}

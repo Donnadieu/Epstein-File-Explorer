@@ -1,0 +1,139 @@
+{
+  "fileName": "EFTA01319979.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-11-01",
+  "summary": "This document is an invoice from FedEx detailing shipping charges associated with Jeffrey Epstein's shipments. It includes various charges, discounts, and shipment details for multiple packages sent by Epstein and associated individuals. The invoice highlights the total amount due and provides a breakdown of the services rendered.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the shipments detailed in the invoice, indicating his role as the sender of multiple packages.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alfredo Rodriguez is mentioned as a recipient of packages sent by Jeffrey Epstein, indicating a connection in the shipping transactions.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Cecilia Epstein",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Cecilia Epstein is mentioned in connection with shipments sent by Jeffrey Epstein, suggesting a familial or close association.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Les Wexner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Les Wexner is noted as a recipient of a package sent by Jeffrey Epstein, indicating a business or personal relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Ramos",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "A. Ramos is mentioned as the individual who signed for the delivery of a package, indicating their role in the FedEx operations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "K. Kevin",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "K. Kevin is mentioned as the individual who signed for the delivery of a package, indicating their role in the FedEx operations.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "recipient-sender",
+      "description": "Alfredo Rodriguez is a recipient of packages sent by Jeffrey Epstein, indicating a shipping relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Cecilia Epstein",
+      "relationshipType": "family",
+      "description": "Cecilia Epstein is associated with shipments sent by Jeffrey Epstein, suggesting a familial connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Les Wexner",
+      "relationshipType": "business",
+      "description": "Les Wexner is noted as a recipient of a package sent by Jeffrey Epstein, indicating a business or personal relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-14",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Jeffrey Epstein for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-15",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-18",
+      "title": "Package Picked Up",
+      "description": "A package was picked up by FedEx for delivery, associated with Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-22",
+      "title": "Package Picked Up",
+      "description": "Another package was picked up by FedEx for delivery, associated with Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-25",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "New York City, NY 10021",
+    "Pittsburgh, PA 15250-7461",
+    "87109"
+  ],
+  "keyFacts": [
+    "The invoice details shipping charges totaling USD $277.07 for services rendered by FedEx.",
+    "Multiple packages were sent by Jeffrey Epstein, with various recipients including Alfredo Rodriguez and Les Wexner.",
+    "The invoice includes a breakdown of transportation charges, discounts, and special handling fees.",
+    "There are several instances of packages being picked up and delivered between October 14 and October 29, 2004.",
+    "The document contains references to FedEx's fuel surcharge applied to shipments."
+  ],
+  "analyzedAt": "2026-02-22T10:35:30.876Z"
+}

@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01308013.pdf",
+  "dataSet": "10",
+  "documentType": "court filing",
+  "dateOriginal": null,
+  "summary": "This document contains various docket entries related to the case against Jeffrey Epstein, detailing court events, filings, and procedural updates from 2006 to 2008. It includes information about arraignments, motions, and continuances, as well as the involvement of attorneys and judges in the case.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Defendant",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the defendant in the case, with multiple entries detailing his legal proceedings and filings.",
+      "mentionCount": 30
+    },
+    {
+      "name": "Sandra Mcsorley",
+      "role": "Judge",
+      "category": "legal",
+      "context": "Judge Sandra McSorley presides over the case, with multiple docket entries indicating her involvement in scheduling and ruling on motions.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jack Goldberger",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Jack Goldberger is listed as Epstein's attorney, filing various motions and appearing in court on behalf of Epstein.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Theodore Leopold",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Theodore Leopold is mentioned as an attorney involved in filing motions for Epstein.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jack Goldberger",
+      "relationshipType": "attorney-client",
+      "description": "Jack Goldberger represents Jeffrey Epstein as his attorney in the legal proceedings.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Sandra McSorley",
+      "relationshipType": "judge-defendant",
+      "description": "Judge Sandra McSorley oversees the case against Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Theodore Leopold",
+      "relationshipType": "attorney-client",
+      "description": "Theodore Leopold is mentioned as an attorney filing motions on behalf of Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-07-19",
+      "title": "Arraignment",
+      "description": "Jeffrey Epstein is arraigned in court.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Sandra McSorley"
+      ]
+    },
+    {
+      "date": "2006-08-22",
+      "title": "Plea of Not Guilty",
+      "description": "A plea of not guilty is entered on behalf of Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jack Goldberger"
+      ]
+    },
+    {
+      "date": "2008-07-02",
+      "title": "Non-Prosecution Agreement",
+      "description": "A non-prosecution agreement is sealed in court.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Sandra McSorley"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document contains multiple docket entries related to the case against Jeffrey Epstein from 2006 to 2008.",
+    "Judge Sandra McSorley is the presiding judge over the case.",
+    "Jack Goldberger is identified as Epstein's attorney, actively filing motions and representing him in court.",
+    "A non-prosecution agreement was sealed in court on July 2, 2008.",
+    "The document outlines various procedural events, including arraignments and continuances."
+  ],
+  "analyzedAt": "2026-02-22T03:20:05.986Z"
+}

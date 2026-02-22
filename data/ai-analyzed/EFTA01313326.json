@@ -1,0 +1,102 @@
+{
+  "fileName": "EFTA01313326.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-02-11",
+  "summary": "This document contains invoices from FedEx detailing shipping charges associated with Jeffrey E. Epstein and his business, Epstein Interests. The invoices outline various transportation charges, discounts, and handling fees for packages sent and received by Epstein, indicating a pattern of frequent shipping activity during early 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender/Recipient",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoices, appearing as both sender and recipient of multiple packages.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Isabel Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Isabel Maxwell is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sean Safer",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Sean Safer is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as a recipient of a package sent by a third party associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thomas Foley",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Thomas Foley is mentioned as the sender of a package to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark Cangelosi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Mark Cangelosi is mentioned as the sender of a package to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Isabel Maxwell",
+      "relationshipType": "recipient-sender",
+      "description": "Isabel Maxwell received a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Sean Safer",
+      "relationshipType": "recipient-sender",
+      "description": "Sean Safer received a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "recipient-sender",
+      "description": "Larry Visoski received a package sent by a third party associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Thomas Foley",
+      "relationshipType": "sender-recipient",
+      "description": "Thomas Foley sent a package to Jeffrey E. Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mark Cangelosi",
+      "relationshipType": "sender-recipient",
+      "description": "Mark Cangelosi sent a package to Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Palm Beach, FL",
+    "Stanley, NM"
+  ],
+  "keyFacts": [
+    "The document contains multiple invoices dated February 11, 2002, detailing shipping charges for packages sent and received by Jeffrey E. Epstein.",
+    "Total charges for the invoices amount to USD $318.96, with various discounts applied.",
+    "Packages were sent from and to various locations, including New York and Palm Beach.",
+    "The invoices indicate a pattern of frequent shipping activity by Epstein during early 2002.",
+    "Several individuals, including Isabel Maxwell and Sean Safer, are noted as recipients of packages sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:12:51.783Z"
+}

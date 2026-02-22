@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01313176.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-11-16",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NY SG LLC. It includes information about the shipping address, billing details, and the total amount due. The invoice also notes changes in package acceptance policies following September 11, which may affect delivery commitments.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwintner is listed as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Recipient",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the recipient of a package sent through FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kwintner sent a package to Jeffrey Epstein via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-11-05",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2001-11-06",
+      "title": "Package Delivery",
+      "description": "The package sent to Jeffrey Epstein was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "358 El Brillo Way, Palm Beach, FL 33460"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 16, 2001, and details shipping charges totaling $11.29.",
+    "The package was picked up on November 5, 2001, and delivered on November 6, 2001.",
+    "The invoice indicates that the sender is Lauren Kwintner and the recipient is Jeffrey Epstein.",
+    "The document mentions changes in package acceptance policies following September 11, which may affect delivery commitments."
+  ],
+  "analyzedAt": "2026-02-22T05:06:13.450Z"
+}

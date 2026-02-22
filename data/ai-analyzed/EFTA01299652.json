@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01299652.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2013-12-20",
+  "summary": "This document contains a report detailing incoming and outgoing wires, checks, and ACH transactions associated with various accounts on December 20, 2013. It includes references to multiple financial institutions and individuals, highlighting significant monetary transactions and account activities related to Jeffrey Epstein and others.",
+  "persons": [
+    {
+      "name": "Jeffrey E Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E Epstein is mentioned in connection with various financial transactions and accounts detailed in the report.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bruce Yablon",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Bruce Yablon is referenced as an account holder in transactions involving First Republic Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Marjorie D Lane",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Marjorie D Lane is mentioned in relation to transactions involving First Republic Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gerard Rotonda",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Gerard Rotonda is referenced as an account holder in transactions involving Deutsche Bank and State Street Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ruth Arnow",
+      "role": "Custodian",
+      "category": "other",
+      "context": "Ruth Arnow is mentioned as a custodian for an account related to Jacqueline Lacorbier.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joan G Connors",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Joan G Connors is referenced in relation to transactions involving checks.",
+      "mentionCount": 2
+    },
+    {
+      "name": "David A Deutsch",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "David A Deutsch is mentioned in connection with a check received.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E Epstein",
+      "person2": "Bruce Yablon",
+      "relationshipType": "financial",
+      "description": "Both individuals are associated with transactions at First Republic Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E Epstein",
+      "person2": "Gerard Rotonda",
+      "relationshipType": "financial",
+      "description": "Both individuals are mentioned in transactions involving Deutsche Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Ruth Arnow",
+      "person2": "Jacqueline Lacorbier",
+      "relationshipType": "custodian-beneficiary",
+      "description": "Ruth Arnow is the custodian for an account belonging to Jacqueline Lacorbier.",
+      "strength": 4
+    },
+    {
+      "person1": "Joan G Connors",
+      "person2": "David A Deutsch",
+      "relationshipType": "financial",
+      "description": "Both individuals are mentioned in relation to checks received.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "San Francisco, California",
+    "Brooklyn, NY",
+    "Ireland",
+    "Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details various financial transactions involving multiple banks, including Deutsche Bank and First Republic Bank.",
+    "Jeffrey Epstein is identified as a key figure in the financial activities documented.",
+    "Several individuals are mentioned as account holders or custodians in relation to Epstein's financial dealings.",
+    "The report includes specific amounts and types of transactions, indicating significant financial activity.",
+    "There are references to checks and account management, suggesting ongoing financial operations."
+  ],
+  "analyzedAt": "2026-02-21T23:03:45.225Z"
+}

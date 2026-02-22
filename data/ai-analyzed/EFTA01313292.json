@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA01313292.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-01-11",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC. It includes multiple entries for shipments, billing information, and payment details, indicating the shipping activities of the company during early January 2002.",
+  "persons": [
+    {
+      "name": "Lauren Kwinter",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwinter is identified as the sender associated with NYSG LLC, responsible for shipping activities detailed in the invoice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Yolanda Macolma",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Yolanda Macolma is mentioned as a recipient of a shipment sent to Morgan Stanley.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Deane",
+      "role": "Billing Reference",
+      "category": "other",
+      "context": "Deane is referenced in relation to pricing and fuel surcharge calculations but lacks a full name.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwinter",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Lauren Kwinter is associated with NYSG LLC as the sender of the shipments detailed in the invoice.",
+      "strength": 5
+    },
+    {
+      "person1": "Yolanda Macolma",
+      "person2": "Morgan Stanley",
+      "relationshipType": "recipient-sender",
+      "description": "Yolanda Macolma is noted as a recipient of a shipment sent to Morgan Stanley.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-01-02",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwinter"
+      ]
+    },
+    {
+      "date": "2002-01-03",
+      "title": "Multiple Package Pickups",
+      "description": "Multiple packages were picked up by FedEx for delivery on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwinter",
+        "Yolanda Macolma"
+      ]
+    },
+    {
+      "date": "2002-01-04",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwinter"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "49 Zarro Ranch Rd, Stanley, NM 87066"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 11, 2002, and details shipping charges for NYSG LLC.",
+    "Lauren Kwinter is the sender associated with the shipping activities.",
+    "Yolanda Macolma is mentioned as a recipient of a shipment to Morgan Stanley.",
+    "Multiple packages were picked up by FedEx on January 2, 3, and 4, 2002.",
+    "The invoice includes various transportation charges and surcharges applied by FedEx."
+  ],
+  "analyzedAt": "2026-02-22T05:11:06.472Z"
+}

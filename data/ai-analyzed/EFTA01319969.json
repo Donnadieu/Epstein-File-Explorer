@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01319969.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-09-16",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey Epstein and Dianne Canton-Reed. It includes information about the services provided, charges incurred, and payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dianne Canton-Reed",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dianne Canton-Reed is mentioned as the recipient for one of the packages sent via FedEx.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dianne Canton-Reed",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein is the sender of a package addressed to Dianne Canton-Reed.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-09-09",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey Epstein on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-09-12",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Dianne Canton-Reed on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Dianne Canton-Reed"
+      ]
+    },
+    {
+      "date": "2005-09-13",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx from a different sender.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The invoice is dated September 16, 2005, and includes charges for FedEx services.",
+    "Jeffrey Epstein is identified as the sender of a package.",
+    "Dianne Canton-Reed is identified as the recipient of a package.",
+    "The total amount due on the invoice is $44.64.",
+    "There are multiple entries for package pickups and deliveries on September 9, 12, and 13, 2005."
+  ],
+  "analyzedAt": "2026-02-22T10:34:43.234Z"
+}

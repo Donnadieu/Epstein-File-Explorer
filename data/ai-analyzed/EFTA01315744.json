@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA01315744.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-07-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries for multiple packages sent by Epstein, including specific dates and amounts due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is the client responsible for the shipping charges.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in multiple shipments associated with Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of several packages.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as a recipient of one of the packages sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Financial Trust Co",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dale Financial Trust Co is listed as a sender for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is noted as a sender for packages associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "recipient-sender",
+      "description": "Miles Alexander is mentioned as a recipient of a package sent by Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "employee-client",
+      "description": "A. Rodriguez is noted as the FedEx employee who signed for deliveries related to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Financial Trust Co",
+      "relationshipType": "sender-client",
+      "description": "Dale Financial Trust Co is listed as a sender for one of the shipments associated with Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-07-15",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to a recipient associated with Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2005-07-20",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to a recipient.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander"
+      ]
+    },
+    {
+      "date": "2005-07-21",
+      "title": "Package Delivery",
+      "description": "Another package sent by Epstein was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00602",
+    "301 East 61st Apt. 6100, New York, NY 10021"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 25, 2005, and details shipping charges totaling $215.38.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice, with multiple shipments listed.",
+    "A. Rodriguez is noted as the FedEx employee who signed for deliveries related to Epstein.",
+    "Jeanne Brennan is mentioned as a sender for packages associated with Epstein.",
+    "The document includes multiple references to shipment details and associated charges."
+  ],
+  "analyzedAt": "2026-02-22T07:17:37.660Z"
+}

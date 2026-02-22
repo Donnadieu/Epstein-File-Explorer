@@ -1,0 +1,140 @@
+{
+  "fileName": "EFTA01314261.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-08-01",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC, detailing various charges and shipment information. It includes billing and shipping addresses, invoice numbers, and payment due dates, indicating the financial transactions related to shipping activities.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Indyke is listed as the sender for multiple shipments associated with NYSG LLC.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeff Schantz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeff Schantz is mentioned as the sender for a shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sandy Berger",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Sandy Berger is mentioned as a recipient for a shipment sent by NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Silas Findley",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Silas Findley is mentioned as a recipient for a shipment sent by NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "P. Curley",
+      "role": "Signed by",
+      "category": "other",
+      "context": "P. Curley is noted as the individual who signed for a delivery associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Brown",
+      "role": "Signed by",
+      "category": "other",
+      "context": "J. Brown is noted as the individual who signed for a delivery associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "P. Uoland",
+      "role": "Signed by",
+      "category": "other",
+      "context": "P. Uoland is noted as the individual who signed for a delivery associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Signed by",
+      "category": "other",
+      "context": "D. Oakley is noted as the individual who signed for a delivery associated with NYSG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Darren Indyke is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeff Schantz",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Jeff Schantz is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Sandy Berger",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Sandy Berger is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Silas Findley",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Silas Findley is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-08-01",
+      "title": "FedEx Invoice Issued",
+      "description": "An invoice was issued by FedEx to NYSG LLC for shipping services rendered.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Jeff Schantz"
+      ]
+    },
+    {
+      "date": "2003-07-22",
+      "title": "Shipment Picked Up",
+      "description": "A shipment was picked up by FedEx from NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2003-07-23",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by NYSG LLC was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "P. Uoland"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The document is an invoice from FedEx to NYSG LLC dated August 1, 2003.",
+    "Darren Indyke and Jeff Schantz are identified as senders for shipments associated with NYSG LLC.",
+    "Multiple shipments were picked up and delivered between July 22, 2003, and July 28, 2003.",
+    "Sandy Berger and Silas Findley are mentioned as recipients of shipments sent by NYSG LLC.",
+    "The total amount due on the invoice is $34.80."
+  ],
+  "analyzedAt": "2026-02-22T05:59:45.409Z"
+}

@@ -1,0 +1,185 @@
+{
+  "fileName": "EFTA01319147.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-05-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates and amounts due for each service. The invoice highlights discounts applied and provides a summary of charges.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, receiving and sending multiple packages as detailed in the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mrs. Sherman",
+      "role": "Billing Address Recipient",
+      "category": "other",
+      "context": "Mrs. Sherman is listed as a recipient at the same address as Epstein, indicating a possible connection or shared residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Eric Gany is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alice Fortenbury",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Alice Fortenbury is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lesley Taylor",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lesley Taylor is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nancy Schwab",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Nancy Schwab is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jim Harrison",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jim Harrison is mentioned as a recipient associated with a package sent to a shipping department.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mrs. Sherman",
+      "relationshipType": "residential",
+      "description": "Both Epstein and Mrs. Sherman are associated with the same billing address, suggesting a residential connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "shipping",
+      "description": "Epstein sent a package to Eric Gany, indicating a shipping relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alice Fortenbury",
+      "relationshipType": "shipping",
+      "description": "Epstein sent a package to Alice Fortenbury, indicating a shipping relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lesley Taylor",
+      "relationshipType": "shipping",
+      "description": "Epstein sent a package to Lesley Taylor, indicating a shipping relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nancy Schwab",
+      "relationshipType": "shipping",
+      "description": "Epstein sent a package to Nancy Schwab, indicating a shipping relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jim Harrison",
+      "relationshipType": "shipping",
+      "description": "Epstein sent a package to Jim Harrison, indicating a shipping relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-04-30",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-05-01",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Eric Gany",
+        "Alice Fortenbury"
+      ]
+    },
+    {
+      "date": "2001-05-02",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Lesley Taylor"
+      ]
+    },
+    {
+      "date": "2001-05-03",
+      "title": "Package Delivery",
+      "description": "More packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-05-04",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jim Harrison"
+      ]
+    },
+    {
+      "date": "2001-05-05",
+      "title": "Package Delivery",
+      "description": "Final packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Palm Beach, FL 33480",
+    "Albuquerque, NM 87184",
+    "Los Angeles, CA 90067",
+    "Van Nuys, CA 91406",
+    "Valencia, CA 91355",
+    "Brooklyn, NY 11222"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 14, 2001, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is USD 189.17.",
+    "Multiple packages were sent and received by Epstein, with various recipients listed.",
+    "The invoice includes details of discounts applied to shipping charges.",
+    "There are several references to FedEx's policies regarding invoice adjustments and surcharges."
+  ],
+  "analyzedAt": "2026-02-22T09:53:02.394Z"
+}

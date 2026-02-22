@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA01326098.pdf",
+  "dataSet": "10",
+  "documentType": "FBI Electronic Communication",
+  "dateOriginal": "2019-01-10",
+  "summary": "This document is an electronic communication from the FBI requesting a copy of Alfredo Rodriguez's California driver's license as part of an obstruction of justice investigation. Rodriguez, a former employee of Jeffrey Epstein, is implicated in retaining an address book believed to contain names of underage girls linked to Epstein's activities.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "House Manager and Butler",
+      "category": "associate",
+      "context": "Rodriguez was employed by Jeffrey Epstein and is under investigation for obstruction of justice related to his retention of an address book containing names of potential underage victims.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Epstein is the subject of a child prostitution investigation and was previously convicted of lesser offenses in Florida state court.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Christina J. Pryor",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Pryor drafted the electronic communication requesting Rodriguez's driver's license.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael J. Donohoe",
+      "role": "FBI Supervisor",
+      "category": "law enforcement",
+      "context": "Donohoe approved the electronic communication regarding the request for Rodriguez's driver's license.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez worked as a house manager and butler for Epstein, which is relevant to the investigation into Epstein's activities.",
+      "strength": 5
+    },
+    {
+      "person1": "Christina J. Pryor",
+      "person2": "Michael J. Donohoe",
+      "relationshipType": "supervisor-subordinate",
+      "description": "Pryor drafted the communication that Donohoe approved, indicating a direct working relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "Child Prostitution Investigation",
+      "description": "An investigation into Jeffrey Epstein's activities began, focusing on allegations of child prostitution.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009-10",
+      "title": "Obstruction of Justice Case Opened",
+      "description": "The Miami Division opened an obstruction of justice case against Alfredo Rodriguez for failing to turn over an address book to law enforcement.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009-11",
+      "title": "Attempted Sale of Address Book",
+      "description": "Rodriguez attempted to sell an address book containing names of potential underage victims to an undercover agent posing as a plaintiff's attorney employee.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach County, Florida",
+    "Sacramento, California"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez was a house manager and butler for Jeffrey Epstein.",
+    "Rodriguez retained an address book believed to contain names of underage girls linked to Epstein's activities.",
+    "The FBI is investigating Rodriguez for obstruction of justice related to his failure to turn over the address book.",
+    "Epstein was previously convicted of lesser offenses in a child prostitution case in Florida.",
+    "Rodriguez attempted to sell the address book to an undercover agent in November 2009."
+  ],
+  "analyzedAt": "2026-02-22T11:18:15.058Z"
+}

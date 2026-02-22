@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01320297.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial statements related to the Epstein interests, detailing account balances, transactions, and portfolio holdings managed by Bear Stearns. It includes information on cash flow, dividends, and the market value of securities held in the account.",
+  "persons": [
+    {
+      "name": "Jeffery E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffery E. Epstein is identified as the primary account holder for the financial statements provided by Bear Stearns.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Mark L. Epstein is mentioned as a trustee associated with the Epstein interests in the financial documents.",
+      "mentionCount": 5
+    },
+    {
+      "name": "William Elkus",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "William Elkus is also mentioned as a trustee in connection with the Epstein interests.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ron Sweets",
+      "role": "Broker",
+      "category": "staff",
+      "context": "Ron Sweets is referenced in the context of servicing the account at Bear Stearns.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Zicherman, IRA",
+      "role": "Investment Professional",
+      "category": "staff",
+      "context": "Zicherman is mentioned as the investment professional managing the account.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffery E. Epstein",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "family",
+      "description": "Mark L. Epstein is identified as a trustee alongside Jeffery E. Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffery E. Epstein",
+      "person2": "William Elkus",
+      "relationshipType": "trustee",
+      "description": "William Elkus is mentioned as a trustee for the Epstein interests, indicating a fiduciary relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "William Elkus",
+      "relationshipType": "co-trustee",
+      "description": "Both Mark L. Epstein and William Elkus are trustees for the same account, indicating a collaborative relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-06-30",
+      "title": "Financial Summary Statement",
+      "description": "A financial summary statement detailing the account balances and transactions for the Epstein interests.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffery E. Epstein",
+        "Mark L. Epstein",
+        "William Elkus"
+      ]
+    },
+    {
+      "date": "2007-05-31",
+      "title": "Account Statement",
+      "description": "An account statement showing the financial activities and balances for the Epstein interests.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffery E. Epstein",
+        "Mark L. Epstein",
+        "William Elkus"
+      ]
+    }
+  ],
+  "locations": [
+    "383 Madison Avenue, New York, New York 10179"
+  ],
+  "keyFacts": [
+    "The document contains multiple financial statements for the Epstein interests managed by Bear Stearns.",
+    "Jeffery E. Epstein is the primary account holder, with Mark L. Epstein and William Elkus serving as trustees.",
+    "The financial statements detail cash flow, dividends, and market values of securities held in the account.",
+    "The account shows significant fluctuations in net equity over the reporting periods.",
+    "There are no pending buy or sell orders on file for the account."
+  ],
+  "analyzedAt": "2026-02-22T10:41:52.990Z"
+}

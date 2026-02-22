@@ -1,0 +1,168 @@
+{
+  "fileName": "EFTA01318597.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-10-27",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and delivery information for multiple packages sent internationally.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maxwell Jean Huguen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maxwell Jean Huguen is mentioned as a recipient for another shipment sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Marie Joseph Experton",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph Experton is listed as a recipient for a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rodney Casey",
+      "role": "Signer",
+      "category": "other",
+      "context": "Rodney Casey is noted as the person who signed for the delivery of one of the packages.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Patricia",
+      "role": "Signer",
+      "category": "other",
+      "context": "Patricia is mentioned as the person who signed for the delivery of a package sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "J. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "J. Epstein is referenced as the sender for one of the shipments, indicating a connection to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Alberto Pinto.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maxwell Jean Huguen",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Maxwell Jean Huguen.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Experton",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Marie Joseph Experton.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rodney Casey",
+      "relationshipType": "signer-sender",
+      "description": "Rodney Casey signed for a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Patricia",
+      "relationshipType": "signer-sender",
+      "description": "Patricia signed for a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-10-18",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Epstein for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-20",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alberto Pinto"
+      ]
+    },
+    {
+      "date": "2003-10-22",
+      "title": "Package Delivered",
+      "description": "Another package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Maxwell Jean Huguen"
+      ]
+    },
+    {
+      "date": "2003-10-24",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "Hotel de la Victoire, 11 Rue d'Aboukir, Paris, 75002, France",
+    "Little St. James, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 27, 2003, and details shipping charges totaling $413.04.",
+    "Multiple shipments were made by Jeffrey E. Epstein, with various recipients including Alberto Pinto and Maxwell Jean Huguen.",
+    "The invoice includes a breakdown of transportation charges, discounts, and delivery dates for each shipment.",
+    "Several packages were sent internationally, with specific details about delivery and customs entry dates.",
+    "There are multiple references to a fuel surcharge applied to the shipments."
+  ],
+  "analyzedAt": "2026-02-22T09:24:43.655Z"
+}

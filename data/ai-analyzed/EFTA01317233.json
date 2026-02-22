@@ -1,0 +1,136 @@
+{
+  "fileName": "EFTA01317233.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2001-11-30",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC. It includes multiple entries for pickups and deliveries, along with associated costs and billing information. The invoice highlights the importance of timely payments and notes potential delays due to security measures following September 11.",
+  "persons": [
+    {
+      "name": "Lauren Kwelther",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwelther is identified as the sender associated with NYSG LLC, responsible for shipping activities detailed in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Indyke is mentioned as a sender for shipments associated with NYSG LLC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Schalat",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeffrey Schalat is listed as a sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sheila McLan Gartland",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Sheila McLan Gartland is mentioned as a recipient for one of the packages sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barry Quirke",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Barry Quirke is identified as a recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Harry Beller is mentioned as a recipient for one of the packages sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwelther",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Lauren Kwelther is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Darren Indyke is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Schalat",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Jeffrey Schalat is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Sheila McLan Gartland",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Sheila McLan Gartland is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Barry Quirke",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Barry Quirke is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Harry Beller is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-11-15",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwelther"
+      ]
+    },
+    {
+      "date": "2001-11-19",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2001-11-26",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwelther"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 30, 2001, and details shipping charges for services rendered to NYSG LLC.",
+    "Multiple entries for pickups and deliveries are included, with specific dates and amounts charged.",
+    "The document emphasizes the importance of timely payments and notes potential delays due to security measures following September 11."
+  ],
+  "analyzedAt": "2026-02-22T08:10:08.543Z"
+}

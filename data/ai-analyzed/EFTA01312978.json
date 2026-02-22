@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA01312978.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-07-23",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered to NYSO LLC. It includes specific charges, discounts, and shipment details, indicating the financial transactions related to shipping services for the company.",
+  "persons": [
+    {
+      "name": "Manuela Stoner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Manuela Stoner is listed as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francois Goffinet",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Francois Goffinet is identified as the recipient of a package sent by FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Darren Indyke is mentioned as a recipient for another shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Crista Thor",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Crista Thor is noted as the sender for a shipment listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Manuela Stoner",
+      "person2": "Francois Goffinet",
+      "relationshipType": "sender-recipient",
+      "description": "Manuela Stoner sent a package to Francois Goffinet via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSO LLC",
+      "relationshipType": "employee-employer",
+      "description": "Darren Indyke is associated with NYSO LLC, receiving shipments on behalf of the company.",
+      "strength": 4
+    },
+    {
+      "person1": "Crista Thor",
+      "person2": "NYSO LLC",
+      "relationshipType": "employee-employer",
+      "description": "Crista Thor is associated with NYSO LLC, sending shipments on behalf of the company.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-07-19",
+      "title": "Package Delivery",
+      "description": "A package sent by Manuela Stoner was delivered to Francois Goffinet.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Manuela Stoner",
+        "Francois Goffinet"
+      ]
+    },
+    {
+      "date": "2004-07-21",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Darren Indyke.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice details transportation charges totaling $37.25 for services rendered by FedEx.",
+    "Manuela Stoner and Crista Thor are identified as senders for different shipments.",
+    "Francois Goffinet and Darren Indyke are recipients of packages sent via FedEx.",
+    "The invoice includes a discount of $17.85 applied to the total charges.",
+    "The document indicates specific dates for package pickups and deliveries."
+  ],
+  "analyzedAt": "2026-02-22T04:56:19.857Z"
+}

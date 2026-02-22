@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA01315436.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-09-06",
+  "summary": "This document is an invoice summary from FedEx for shipping services used by Jeffrey E. Epstein. It details various shipments, their charges, and discounts applied during the billing period. The document highlights multiple transactions and provides insights into Epstein's shipping activities during August and September 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice. The document lists his shipping address and various transactions associated with his account.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Patricia Ferrell",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Patricia Ferrell is mentioned as a recipient of a package sent from Epstein's address, indicating a shipping transaction involving her.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry",
+      "role": "Payor",
+      "category": "other",
+      "context": "Harry is referenced as a payor for some of the shipments, suggesting he may have been involved in the shipping process or payments.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Les Wexner",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Les Wexner is mentioned as a recipient of a package sent from Epstein's address, indicating a shipping transaction involving him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Ugliano",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Peg Ugliano is mentioned as a recipient of a package sent from Epstein's address, indicating a shipping transaction involving her.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Patricia Ferrell",
+      "relationshipType": "shipper-recipient",
+      "description": "Epstein shipped a package to Patricia Ferrell, indicating a direct shipping relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Les Wexner",
+      "relationshipType": "shipper-recipient",
+      "description": "Epstein shipped a package to Les Wexner, indicating a direct shipping relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Harry",
+      "relationshipType": "financial",
+      "description": "Harry is referenced as a payor for some shipments associated with Epstein, suggesting a financial connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peg Ugliano",
+      "relationshipType": "shipper-recipient",
+      "description": "Epstein shipped a package to Peg Ugliano, indicating a direct shipping relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-09",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-25",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Peg Ugliano from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Peg Ugliano"
+      ]
+    },
+    {
+      "date": "2004-08-27",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-30",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Les Wexner from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Les Wexner"
+      ]
+    },
+    {
+      "date": "2004-09-01",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Patricia Ferrell from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Patricia Ferrell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "358 El Brillo Way, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The document is an invoice summary from FedEx detailing shipping charges for Jeffrey E. Epstein.",
+    "Multiple shipments were made from Epstein's address during August and September 2004.",
+    "Significant discounts were applied to the shipping charges, totaling $521.73 saved during the billing period.",
+    "Several individuals, including Patricia Ferrell, Les Wexner, and Peg Ugliano, are mentioned as recipients of packages sent from Epstein's address.",
+    "The document includes specific details about shipment dates, weights, and charges for each transaction."
+  ],
+  "analyzedAt": "2026-02-22T06:59:26.373Z"
+}

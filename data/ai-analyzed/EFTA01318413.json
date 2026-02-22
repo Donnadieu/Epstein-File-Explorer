@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA01318413.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-07-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes information about multiple shipments made by Epstein, including dates, charges, and addresses involved in the transactions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, receiving and sending shipments as detailed in the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Linda Mand",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Linda Mand is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Fletcher Larkin",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Fletcher Larkin is mentioned as a sender associated with one of the shipments made by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. McDowell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "M. McDowell is mentioned as a sender associated with one of the shipments made by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Linda Mand",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Linda Mand as indicated in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Dave Rodgers as indicated in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Fletcher Larkin",
+      "relationshipType": "sender-recipient",
+      "description": "Fletcher Larkin is mentioned as a sender associated with a shipment made by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "M. McDowell",
+      "relationshipType": "sender-recipient",
+      "description": "M. McDowell is mentioned as a sender associated with a shipment made by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-07-21",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-07-22",
+      "title": "Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-07-23",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered to Linda Mand.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Linda Mand"
+      ]
+    },
+    {
+      "date": "2003-07-25",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered to Fletcher Larkin.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Fletcher Larkin"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, FL 4, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 28, 2003, and is addressed to Jeffrey E. Epstein.",
+    "The total charges for the invoice amount to $50.23.",
+    "Multiple shipments are detailed in the invoice, with specific pickup and delivery dates.",
+    "The invoice includes references to discounts applied to the shipping charges.",
+    "Several individuals are mentioned as recipients or senders of shipments associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T09:13:38.465Z"
+}

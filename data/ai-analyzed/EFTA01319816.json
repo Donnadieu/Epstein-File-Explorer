@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA01319816.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-02-21",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment due dates, indicating Epstein's use of FedEx services for multiple shipments in February 2005.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "other",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for FedEx shipping services, with multiple shipments listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned in connection with the financial trust company associated with Epstein's shipments.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "financial",
+      "description": "Jeanne Brennan is associated with the financial trust company that is linked to Epstein's shipping activities.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-02-21",
+      "title": "FedEx Invoice Issued",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for shipping services totaling $191.05.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-11",
+      "title": "Shipments Dropped Off",
+      "description": "Multiple shipments were dropped off by Jeffrey E. Epstein at FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-14",
+      "title": "Shipments Delivered",
+      "description": "Shipments sent by Jeffrey E. Epstein were delivered on February 14, 2005.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Nook Quarter, St. Thomas, VI 06002"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 21, 2005, and totals $191.05.",
+    "Jeffrey E. Epstein is listed as the client for the FedEx services.",
+    "Multiple shipments were made by Epstein, with some delivered on February 14, 2005.",
+    "Jeanne Brennan is associated with a financial trust company linked to Epstein's shipments.",
+    "The invoice includes details about discounts and charges for FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T10:25:49.959Z"
+}

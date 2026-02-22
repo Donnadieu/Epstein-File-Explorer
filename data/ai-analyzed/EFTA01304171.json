@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01304171.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": null,
+  "summary": "This document appears to be an emergency contact form for an employee named Cuthbert F. Titre, detailing personal health information and emergency contacts. It includes names and relationships of individuals to be contacted in case of an emergency.",
+  "persons": [
+    {
+      "name": "Cuthbert F Titre",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Cuthbert F. Titre is listed as the employee for whom the emergency contact form is filled out, indicating health concerns and emergency contacts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maria Juelle",
+      "role": "Doctor",
+      "category": "other",
+      "context": "Maria Juelle is mentioned as the doctor for Cuthbert F. Titre, indicating a medical relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sharon Titre",
+      "role": "Emergency Contact",
+      "category": "associate",
+      "context": "Sharon Titre is listed as an emergency contact for Cuthbert F. Titre, indicating a familial relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gerry Titre",
+      "role": "Emergency Contact",
+      "category": "associate",
+      "context": "Gerry Titre is mentioned as another emergency contact for Cuthbert F. Titre, indicating a familial relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cuthbert F Titre",
+      "person2": "Sharon Titre",
+      "relationshipType": "family",
+      "description": "Sharon Titre is listed as the sister of Cuthbert F. Titre, serving as an emergency contact.",
+      "strength": 4
+    },
+    {
+      "person1": "Cuthbert F Titre",
+      "person2": "Gerry Titre",
+      "relationshipType": "family",
+      "description": "Gerry Titre is listed as the brother of Cuthbert F. Titre, serving as an emergency contact.",
+      "strength": 4
+    },
+    {
+      "person1": "Cuthbert F Titre",
+      "person2": "Maria Juelle",
+      "relationshipType": "doctor-patient",
+      "description": "Maria Juelle is identified as the doctor for Cuthbert F. Titre, indicating a medical relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "Cuthbert F. Titre has high blood pressure and unspecified allergies or health concerns.",
+    "Maria Juelle is the doctor for Cuthbert F. Titre.",
+    "Sharon Titre is the sister of Cuthbert F. Titre and listed as an emergency contact.",
+    "Gerry Titre is the brother of Cuthbert F. Titre and also listed as an emergency contact."
+  ],
+  "analyzedAt": "2026-02-22T01:50:44.446Z"
+}

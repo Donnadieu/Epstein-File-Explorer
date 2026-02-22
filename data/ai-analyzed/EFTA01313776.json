@@ -1,0 +1,162 @@
+{
+  "fileName": "EFTA01313776.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-10-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates, charges, and recipients. The invoice highlights the total amount due and various shipment details.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Epstein is the primary individual associated with the invoice, indicating his use of FedEx services for shipping.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Donna Larsen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larsen is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Morrison is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "John N.",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "John N. is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Maxwell is mentioned as a sender in a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cristalle W. Mark",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Mark is mentioned as a sender in a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leslie N. Wexner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Wexner is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Donna Larsen",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Larsen.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Morrison.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John N.",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to John N.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Maxwell is associated with Epstein through shipments.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Cristalle W. Mark",
+      "relationshipType": "associate",
+      "description": "Mark is associated with Epstein through shipments.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Leslie N. Wexner",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Wexner.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-10-11",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-10-12",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Donna Larsen"
+      ]
+    },
+    {
+      "date": "2002-10-21",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Morrison"
+      ]
+    },
+    {
+      "date": "2002-10-22",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Leslie N. Wexner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "15.26 244, 0.38",
+    "1135 Pine Point Road, West Palm Beach, FL 33404",
+    "109 Legends Rd, Pooler, GA 31322"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 28, 2002, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $263.14.",
+    "Multiple shipments are detailed, with various recipients including Donna Larsen and Larry Morrison.",
+    "Ghislaine Maxwell is mentioned as a sender in one of the shipments.",
+    "Leslie N. Wexner is also listed as a recipient of a package sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:36:39.040Z"
+}

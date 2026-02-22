@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01317261.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-01-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing shipping charges and payment information. It includes specifics about the services rendered, discounts applied, and payment due dates.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Recipient",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Charge Account Holder",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the charge account holder for a service related to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Witter",
+      "role": "Recipient of Package",
+      "category": "other",
+      "context": "Richard Witter is noted as the recipient of a package sent via FedEx from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "financial",
+      "description": "Ghislaine Maxwell is associated with Jeffrey Epstein through a charge account for shipping services.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Witter",
+      "relationshipType": "shipping",
+      "description": "Richard Witter is the recipient of a package sent from Epstein's address.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-01-03",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Witter"
+      ]
+    },
+    {
+      "date": "2002-01-04",
+      "title": "Package Delivery",
+      "description": "The package sent from Epstein was delivered to Richard Witter.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Witter"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "356 El Brillo Way, Palm Beach, FL 33480",
+    "71 Wooster St, New York, NY 10012-4304"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 14, 2002, and is for shipping services provided to Jeffrey Epstein.",
+    "The total amount due on the invoice is $132.50.",
+    "Ghislaine Maxwell is listed as the charge account holder for the shipping services.",
+    "The package was picked up on January 3, 2002, and delivered on January 4, 2002.",
+    "The invoice indicates a discount of $38.70 applied to the total charges."
+  ],
+  "analyzedAt": "2026-02-22T08:11:30.138Z"
+}

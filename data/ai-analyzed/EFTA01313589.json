@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01313589.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-07-22",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes information about transportation charges, discounts, and payment due dates, indicating Epstein's use of FedEx services for shipping.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account detailed in the invoice, indicating his use of shipping services.",
+      "mentionCount": 10
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John Alessi is mentioned as a sender in the shipping details, indicating his involvement in the shipments associated with Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Eric Gary",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Gary is mentioned as a recipient in one of the shipping transactions, indicating a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "employer-employee",
+      "description": "John Alessi is involved in shipping transactions for Epstein, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gary",
+      "relationshipType": "social",
+      "description": "Eric Gary is listed as a recipient of shipments from Epstein, indicating a social or business connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-07-12",
+      "title": "Shipping Pickup",
+      "description": "FedEx picked up a shipment from Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-15",
+      "title": "Delivery Confirmation",
+      "description": "A shipment sent by Epstein was delivered.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-08-06",
+      "title": "Payment Due",
+      "description": "The invoice indicates that payment for the shipping services is due.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 22, 2002, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to $109.35.",
+    "Multiple shipments were picked up from Epstein's address between July 12 and July 16, 2002.",
+    "John Alessi is mentioned as a sender in the shipping details.",
+    "Eric Gary is listed as a recipient in one of the transactions."
+  ],
+  "analyzedAt": "2026-02-22T05:26:24.672Z"
+}

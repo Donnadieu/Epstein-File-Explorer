@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01299082.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Record",
+  "dateOriginal": "2013-08-26",
+  "summary": "This document is a Know Your Customer (KYC) record for Jeffrey Epstein, detailing his financial relationships, account ownership, and associated entities. It outlines the accounts held by Epstein, including Southern Financial LLC and Southern Trust Company, Inc., and provides insights into his wealth, business activities, and connections with Deutsche Bank. This document appears to be a Know Your Customer (KYC) printout related to financial compliance procedures at Deutsche Bank. It includes signatures from various professionals involved in the approval process, indicating due diligence and compliance with regulations regarding client relationships and potential risks associated with financial activities.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of this KYC record, detailing his financial activities and relationships with various entities.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is identified as the relationship manager for Jeffrey Epstein at Deutsche Bank.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paul Moms",
+      "role": "Client Facing Professional",
+      "category": "legal",
+      "context": "Paul Moms is identified as a Client Facing Professional who signed the KYC document on 2013-07-17.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brian M. Biggar",
+      "role": "Office Director/Business Head",
+      "category": "legal",
+      "context": "Brian M. Biggar is noted as the Office Director/Business Head who signed the KYC document on 2013-07-18.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Armen Brash",
+      "role": "AML Business Risk",
+      "category": "legal",
+      "context": "Armen Brash is mentioned as the AML Business Risk professional who signed the KYC document on 2013-08-20.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janice Franklin",
+      "role": "AML Compliance",
+      "category": "legal",
+      "context": "Janice Franklin is identified as the AML Compliance professional who signed the KYC document on 2013-08-21.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris manages the banking relationship for Jeffrey Epstein at Deutsche Bank.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Southern Financial LLC",
+      "relationshipType": "owner-entity",
+      "description": "Jeffrey Epstein is the sole shareholder of Southern Financial LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Southern Trust Company, Inc.",
+      "relationshipType": "owner-entity",
+      "description": "Jeffrey Epstein is the sole shareholder of Southern Trust Company, Inc.",
+      "strength": 5
+    },
+    {
+      "person1": "Southern Trust Company, Inc.",
+      "person2": "Southern Financial LLC",
+      "relationshipType": "parent-subsidiary",
+      "description": "Southern Trust Company, Inc. is the sole member of Southern Financial LLC.",
+      "strength": 5
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Little Saint James, Saint Thomas, US Virgin Islands",
+    "6100 Red Hook Quarter, St. Thomas, US Virgin Islands",
+    "New York, USA",
+    "Deutsche Bank Americas, New York"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is a client of Paul Morris at Deutsche Bank.",
+    "Epstein is the sole shareholder of both Southern Financial LLC and Southern Trust Company, Inc.",
+    "The KYC record indicates Epstein's estimated net worth is between $100 million and $500 million.",
+    "Epstein's primary source of wealth includes his financial management firm and investments.",
+    "The document notes that Epstein has been cleared of posing a reputational risk according to compliance checks.",
+    "The document is a KYC printout related to compliance procedures at Deutsche Bank.",
+    "It includes signatures from multiple professionals indicating their approval and due diligence.",
+    "The document emphasizes the importance of knowing the client and maintaining high standards of suitability and character."
+  ],
+  "analyzedAt": "2026-02-21T22:20:44.180Z"
+}

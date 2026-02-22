@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01315341.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-12-22",
+  "summary": "This document is an invoice from FedEx Express detailing charges incurred by Jeffrey E. Epstein for shipping services. The invoice includes a breakdown of fees, shipment details, and payment instructions, indicating a shipment made on December 15, 2004, and signed for on December 17, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual responsible for the FedEx account and the associated charges detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "David Byrne",
+      "role": "Recipient",
+      "category": "other",
+      "context": "David Byrne is listed as the recipient of a shipment sent by Jeffrey E. Epstein, with an address in London.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marshall",
+      "role": "Delivery Person",
+      "category": "other",
+      "context": "Marshall is noted as the individual who signed for the delivery of the shipment on December 17, 2004.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Byrne",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to David Byrne, who is the recipient listed on the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marshall",
+      "relationshipType": "delivery-signature",
+      "description": "Marshall signed for the delivery of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-15",
+      "title": "Shipment Sent",
+      "description": "A shipment was sent by Jeffrey E. Epstein via FedEx Express.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "David Byrne"
+      ]
+    },
+    {
+      "date": "2004-12-17",
+      "title": "Delivery Signed",
+      "description": "The shipment sent by Jeffrey E. Epstein was signed for by Marshall.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marshall"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "78 Mount St, Mayfair, London, W1K, GB"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 22, 2004, and details charges of $27.81 for FedEx Express services.",
+    "The shipment was sent on December 15, 2004, and delivered on December 17, 2004.",
+    "David Byrne is identified as the recipient of the shipment sent by Jeffrey E. Epstein.",
+    "Marshall is noted as the individual who signed for the delivery of the shipment.",
+    "The invoice includes a breakdown of duties, taxes, and other fees associated with the shipment."
+  ],
+  "analyzedAt": "2026-02-22T06:55:45.088Z"
+}

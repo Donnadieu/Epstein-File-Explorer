@@ -1,0 +1,56 @@
+{
+  "fileName": "EFTA01318968.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-01-29",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing shipping charges for services rendered on January 18, 2001. The total amount due is $19.66, with a payment deadline of February 13, 2001.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the sender of a package associated with the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is associated with Jeffrey Epstein as a sender of a package.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-01-18",
+      "title": "FedEx Shipment",
+      "description": "A package was picked up by FedEx for delivery, which is detailed in the invoice.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Villard House, New York"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 29, 2001, and is for shipping services provided by FedEx.",
+    "The total amount due on the invoice is $19.66, with a payment deadline of February 13, 2001.",
+    "The package was picked up on January 18, 2001.",
+    "Ghislaine Maxwell is identified as the sender of the package.",
+    "The invoice includes a fuel surcharge due to market conditions."
+  ],
+  "analyzedAt": "2026-02-22T09:42:38.715Z"
+}

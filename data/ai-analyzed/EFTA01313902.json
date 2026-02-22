@@ -1,0 +1,152 @@
+{
+  "fileName": "EFTA01313902.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-12-30",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries related to Epstein's account, including specific shipment details and payment information.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, receiving invoices for shipping services.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a sender in multiple shipments associated with Epstein's account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ray Perkins",
+      "role": "Sender",
+      "category": "other",
+      "context": "Ray Perkins is mentioned as a sender for one of the shipments associated with Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicole Junkermann",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nicole Junkermann is mentioned as a sender for a shipment associated with Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maree Glass",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Maree Glass is mentioned as a recipient for a shipment sent from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter Manderson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Peter Manderson is mentioned as a recipient for a shipment sent from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is listed as a sender for multiple shipments associated with Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ray Perkins",
+      "relationshipType": "sender-recipient",
+      "description": "Ray Perkins is listed as a sender for a shipment associated with Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nicole Junkermann",
+      "relationshipType": "sender-recipient",
+      "description": "Nicole Junkermann is listed as a sender for a shipment associated with Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maree Glass",
+      "relationshipType": "sender-recipient",
+      "description": "Maree Glass is mentioned as a recipient for a shipment sent from Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peter Manderson",
+      "relationshipType": "sender-recipient",
+      "description": "Peter Manderson is mentioned as a recipient for a shipment sent from Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-12-30",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-13",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off by Epstein on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-18",
+      "title": "Shipment Pick-up",
+      "description": "A shipment was picked up by FedEx from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-23",
+      "title": "Shipment Delivery",
+      "description": "A shipment was delivered to a recipient from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-12-27",
+      "title": "Shipment Delivery",
+      "description": "Another shipment was delivered to a recipient from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 30, 2002, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to $353.48.",
+    "Multiple shipments were made from Epstein's account, with various senders and recipients.",
+    "The document includes specific details about shipment dates, weights, and charges.",
+    "There are several references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:42:37.753Z"
+}

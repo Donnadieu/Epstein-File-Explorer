@@ -1,0 +1,96 @@
+{
+  "fileName": "EFTA01344285.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2013-09-02",
+  "summary": "This document is an email correspondence discussing a meeting involving Jeffrey Epstein and several individuals from a financial institution. The email outlines the participants and the purpose of the meeting, indicating Epstein's involvement in asset and wealth management discussions.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Epstein is the main subject of the email, seeking to meet with various individuals for discussions related to asset and wealth management.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Organizer",
+      "category": "associate",
+      "context": "Morris is coordinating the meeting and mentions other individuals who will be involved in discussions with Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Caroline Kididis",
+      "role": "Head of Key Clients Partners Group",
+      "category": "associate",
+      "context": "Kididis is mentioned as one of the attendees for the meeting with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tazia Smith",
+      "role": "Director of Key Clients Partners Group",
+      "category": "associate",
+      "context": "Smith is also mentioned as an attendee for the meeting with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Vinit Sahni",
+      "role": "Investment Banking Executive",
+      "category": "associate",
+      "context": "Sahni is referenced as someone who will meet with Epstein in the coming weeks, having recently transitioned to asset and wealth management.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-organizer",
+      "description": "Morris is organizing meetings for Epstein with various financial professionals.",
+      "strength": 4
+    },
+    {
+      "person1": "Paul Morris",
+      "person2": "Caroline Kididis",
+      "relationshipType": "employer-employee",
+      "description": "Morris is coordinating a meeting that includes Kididis, who works under him.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Morris",
+      "person2": "Tazia Smith",
+      "relationshipType": "employer-employee",
+      "description": "Morris is coordinating a meeting that includes Smith, who works under him.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Vinit Sahni",
+      "relationshipType": "future meeting",
+      "description": "Sahni is mentioned as someone who will meet with Epstein in the future.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-09-06",
+      "title": "Meeting with Paul Morris and Associates",
+      "description": "A meeting is scheduled for Epstein to meet with Paul Morris, Caroline Kididis, and Tazia Smith.",
+      "category": "business",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Morris",
+        "Caroline Kididis",
+        "Tazia Smith"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The email discusses a meeting scheduled for September 6, 2013, involving Jeffrey Epstein and several financial professionals.",
+    "Paul Morris is coordinating the meeting and mentions other individuals who will be involved.",
+    "Vinit Sahni is noted as someone who will meet with Epstein in the coming weeks."
+  ],
+  "analyzedAt": "2026-02-22T15:58:48.067Z"
+}

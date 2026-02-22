@@ -1,0 +1,144 @@
+{
+  "fileName": "EFTA01319890.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-05-02",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for transportation charges incurred on shipments made in April 2005. It details the charges, discounts, and shipment summaries, indicating Epstein's use of FedEx services for his business activities.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he is responsible for the charges listed for FedEx services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Erdman",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Erdman is mentioned as a sender in the shipment details, indicating her involvement in the logistics of Epstein's shipments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Steve Fox",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Steve Fox is listed as a recipient for one of the shipments, indicating a connection to Epstein's business activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in the shipment details, indicating her involvement in the logistics of Epstein's shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "Rodriguez is noted as the person who signed for the delivery of one of the shipments, indicating his role in the delivery process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "D. King",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "D. King is mentioned as the person who signed for the delivery of another shipment, indicating his role in the delivery process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Erdman",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Erdman is involved in the logistics of Epstein's shipments, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Steve Fox",
+      "relationshipType": "business",
+      "description": "Steve Fox is a recipient of one of Epstein's shipments, indicating a business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is involved in the logistics of Epstein's shipments, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rodriguez",
+      "relationshipType": "service-provider-client",
+      "description": "Rodriguez is noted as the delivery personnel for Epstein's shipments, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "D. King",
+      "relationshipType": "service-provider-client",
+      "description": "D. King is noted as the delivery personnel for Epstein's shipments, indicating a service relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-04-22",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-25",
+      "title": "Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx from Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-26",
+      "title": "Shipment Pickup",
+      "description": "A third shipment was picked up by FedEx from Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-05-02",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Epstein for transportation charges related to shipments made in April 2005.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "301 E 66th St Apt 11P, New York, NY 10021",
+    "6100 Red Hook Quarter, 4th Floor Suite 8-3, New York, NY 10022",
+    "Wickhams Lay Road Town, VG 3150"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 02, 2005, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to USD 123.13.",
+    "The invoice details multiple shipments made by Epstein in April 2005.",
+    "There are mentions of discounts applied to the charges, totaling USD 53.51.",
+    "Several individuals are noted in connection with the shipments, including Jeanne Erdman and Steve Fox."
+  ],
+  "analyzedAt": "2026-02-22T10:30:06.715Z"
+}

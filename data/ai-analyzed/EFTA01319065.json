@@ -1,0 +1,172 @@
+{
+  "fileName": "EFTA01319065.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-03-26",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes information about various shipments made by Epstein, including dates, charges, and recipients. The invoice highlights discounts applied and provides payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mrs. Sherman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Mrs. Sherman is mentioned as a shipping address associated with Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwintner is identified as the sender of a package sent via FedEx to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter H. Bem",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peter H. Bem is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Shannon Beula",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Shannon Beula is listed as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tim Ritchie",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tim Ritchie is identified as a recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mrs. Sherman",
+      "relationshipType": "associate",
+      "description": "Mrs. Sherman is associated with Epstein as a shipping address.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Kwintner",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kwintner sent a package to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peter H. Bem",
+      "relationshipType": "recipient-sender",
+      "description": "Peter H. Bem received a package sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Shannon Beula",
+      "relationshipType": "recipient-sender",
+      "description": "Shannon Beula received a package sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "recipient-sender",
+      "description": "Dave Rodgers received a package sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tim Ritchie",
+      "relationshipType": "recipient-sender",
+      "description": "Tim Ritchie received a package sent by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-03-13",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-03-14",
+      "title": "Package Delivery",
+      "description": "A package sent by Lauren Kwintner was delivered to Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2001-03-16",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-03-19",
+      "title": "Package Delivery",
+      "description": "A package sent by Tim Ritchie was delivered to Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Tim Ritchie"
+      ]
+    },
+    {
+      "date": "2001-03-20",
+      "title": "Package Delivery",
+      "description": "A package sent by Shannon Beula was delivered to Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Shannon Beula"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Patterson Plan Road, New York, NY 10022",
+    "Lake City, FL 32025",
+    "Columbus, OH 43218-1917",
+    "Lake Worth, FL 33467"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 26, 2001, and details shipping charges totaling $97.10.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx services listed.",
+    "Multiple packages were sent and received by Epstein during March 2001.",
+    "The invoice includes various discounts applied to the shipping charges.",
+    "There are several recipients mentioned in connection with Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T09:48:53.966Z"
+}

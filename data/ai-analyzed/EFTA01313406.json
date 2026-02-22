@@ -1,0 +1,178 @@
+{
+  "fileName": "EFTA01313406.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-04-01",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in March 2002. The total amount due is $333.48, with a breakdown of charges and discounts provided. The invoice includes multiple entries for different packages sent by Epstein, indicating his use of FedEx services during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgers is mentioned as the sender of a package sent via FedEx on March 25, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is listed as a sender for packages sent via FedEx, associated with the financial trust company.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kate Vaughan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Kate Vaughan is mentioned as the recipient of a package sent by Epstein on March 27, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Wig",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Wig is noted as the sender of a package sent via FedEx on March 27, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Sender",
+      "category": "other",
+      "context": "Alberto Pinto is mentioned as the sender of a package sent via FedEx on March 28, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tyson Jacobs",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Tyson Jacobs is noted as a recipient for a package sent via FedEx on March 28, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tim Cook",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Tim Cook is mentioned as a recipient for a package sent via FedEx on March 28, 2002.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is associated with the financial trust company linked to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kate Vaughan",
+      "relationshipType": "sender-recipient",
+      "description": "Kate Vaughan is a recipient of a package sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren Wig",
+      "relationshipType": "sender-recipient",
+      "description": "Darren Wig is a sender of a package sent via FedEx, indicating a business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Alberto Pinto is a sender of a package sent via FedEx, indicating a business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Tyson Jacobs",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "recipient-sender",
+      "description": "Tyson Jacobs is a recipient of a package sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Tim Cook",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "recipient-sender",
+      "description": "Tim Cook is a recipient of a package sent by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-03-23",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Epstein at FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-03-25",
+      "title": "Package Sent",
+      "description": "A package was sent by Dave Rodgers via FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Dave Rodgers",
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-03-27",
+      "title": "Package Sent",
+      "description": "A package was sent by Epstein to Kate Vaughan.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Kate Vaughan"
+      ]
+    },
+    {
+      "date": "2002-03-28",
+      "title": "Package Sent",
+      "description": "Multiple packages were sent by Epstein, including those to Alberto Pinto and others.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alberto Pinto",
+        "Tyson Jacobs",
+        "Tim Cook"
+      ]
+    },
+    {
+      "date": "2002-04-01",
+      "title": "Invoice Due",
+      "description": "The invoice for FedEx services is due.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "FedEx, Box 1140, Memphis, TN 38101-1140"
+  ],
+  "keyFacts": [
+    "The total amount due on the invoice is $333.48.",
+    "The invoice details multiple shipments made by Epstein in March 2002.",
+    "Discounts totaling $10.85 were applied to the invoice.",
+    "Several individuals are mentioned as senders or recipients of packages associated with Epstein.",
+    "The invoice is dated April 1, 2002, with payment due by April 16, 2002."
+  ],
+  "analyzedAt": "2026-02-22T05:17:16.384Z"
+}

@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01319189.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-06-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing charges for shipping services. It includes information about the billing and shipping addresses, total charges, and payment due date. The invoice also mentions a connection to Ghislaine Maxwell as a recipient of a package.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder for the FedEx services detailed in the invoice, with his billing and shipping address listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the recipient of a package sent from Epstein's address, indicating a connection between the two.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamy",
+      "role": "Billing Contact",
+      "category": "other",
+      "context": "Eric Gamy is listed as a billing contact associated with Epstein's FedEx account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Griffis",
+      "role": "Signer",
+      "category": "other",
+      "context": "S. Griffis is noted as the individual who signed for the delivery of a package, indicating involvement in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is noted as a recipient of a package sent from Epstein's address, suggesting a personal or professional relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gamy",
+      "relationshipType": "employer-employee",
+      "description": "Eric Gamy is listed as a billing contact for Epstein's FedEx account, indicating a professional relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-06-20",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2001-06-21",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Ghislaine Maxwell at the Villard House, New York.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6809",
+    "1013 Fountain St, Ann Arbor, MI 48103-1274"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 25, 2001, and details shipping charges totaling $93.11.",
+    "Jeffrey Epstein is the primary account holder for the FedEx services.",
+    "Ghislaine Maxwell is identified as a recipient of a package sent from Epstein's address.",
+    "Eric Gamy is listed as a billing contact for Epstein's FedEx account.",
+    "The document includes a delivery confirmation signed by S. Griffis."
+  ],
+  "analyzedAt": "2026-02-22T09:55:43.512Z"
+}

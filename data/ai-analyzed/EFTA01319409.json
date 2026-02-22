@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01319409.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-10-19",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered to NY SG LLC, with specific charges listed for various shipments. It includes payment details and reminders about past due amounts. The invoice highlights transactions involving notable individuals and their associated companies.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwintner is identified as the sender associated with NYSO LLC, which is linked to the address on the invoice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Karl Schwabe",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Karl Schwabe is mentioned as a recipient of a shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donna Larsen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Donna Larsen is noted as a recipient for a shipment sent to The Limited Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Johnson",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Michael Johnson is mentioned as a recipient for a shipment sent to Worth Builders.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark London",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Mark London is identified as a recipient for a shipment sent to an address in Columbus, OH.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Dany",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric Dany is mentioned as a sender for a shipment associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a sender for a shipment, linking him to the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwintner is associated with NYSO LLC as the sender of the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Eric Dany",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Eric Dany is mentioned as a sender in connection with Jeffrey Epstein's shipments.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval, New Albany, OH 43054",
+    "Three Limited Pkwy, Gahanna, OH 43230",
+    "1137 Clare Ave, West Palm Beach, FL 33401"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 19, 2001, and includes various transportation charges.",
+    "The total amount due on the invoice is $10.14, with a past due notice dated December 7, 2001.",
+    "Multiple individuals are mentioned as senders and recipients of shipments, including Lauren Kwintner and Jeffrey Epstein.",
+    "The invoice details specific FedEx services and associated charges for shipments sent from New York.",
+    "There are references to payments made and adjustments applied to the invoice balance."
+  ],
+  "analyzedAt": "2026-02-22T10:07:18.880Z"
+}

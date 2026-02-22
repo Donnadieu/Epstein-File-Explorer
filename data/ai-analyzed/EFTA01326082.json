@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA01326082.pdf",
+  "dataSet": "10",
+  "documentType": "FBI Electronic Communication",
+  "dateOriginal": "2019-01-10",
+  "summary": "This document details a request for $50,000 in 'Show Money' from the FBI Headquarters to be used in an investigation involving Alfredo Rodriguez. The request is linked to Rodriguez's refusal to comply with a federal subpoena unless compensated, raising concerns about potential obstruction of justice.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Subject of Investigation",
+      "category": "key figure",
+      "context": "Rodriguez is the main subject of the investigation, having been served with a federal subpoena and allegedly attempting to sell documents related to the case.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Mark E. Roach",
+      "role": "Finance Contact",
+      "category": "legal",
+      "context": "Roach is mentioned as the finance contact for the wire transfer request related to the case.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael J. Donohoe",
+      "role": "Supervisory Special Agent",
+      "category": "law enforcement",
+      "context": "Donohoe is referenced in relation to a telephone call regarding the 'Show Money' request.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Vincent P. Pankoke Jr.",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Pankoke is involved in the investigation and is mentioned as a contact for the finance department.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ann Marie Villa Fana",
+      "role": "Assistant United States Attorney",
+      "category": "legal",
+      "context": "Villa Fana is mentioned as having met with agents regarding the case and the subpoena served to Rodriguez.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brad Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Edwards is noted as the attorney representing Rodriguez and is involved in discussions about the subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Brad Edwards",
+      "relationshipType": "attorney-client",
+      "description": "Edwards is representing Rodriguez in legal matters, including the federal subpoena.",
+      "strength": 5
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Ann Marie Villa Fana",
+      "relationshipType": "subject-prosecutor",
+      "description": "Villa Fana is involved in the prosecution of Rodriguez, who is under investigation for obstruction.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael J. Donohoe",
+      "person2": "Vincent P. Pankoke Jr.",
+      "relationshipType": "colleagues",
+      "description": "Both are FBI agents involved in the investigation and communication regarding the case.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2009-10-27",
+      "title": "Federal Subpoena Served",
+      "description": "Alfredo Rodriguez was served with a federal subpoena for documents related to the investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Ann Marie Villa Fana",
+        "Brad Edwards"
+      ]
+    },
+    {
+      "date": "2009-10-28",
+      "title": "Request for Show Money",
+      "description": "The Miami FBI office requested $50,000 in 'Show Money' to facilitate the investigation involving Rodriguez.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez",
+        "Michael J. Donohoe",
+        "Vincent P. Pankoke Jr."
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Alfredo Rodriguez was served with a federal subpoena but refused to comply unless paid $50,000.",
+    "The FBI is concerned that Rodriguez may have lied during a previous interview regarding the documents.",
+    "The documents Rodriguez possesses may contain evidence against an individual suspected of soliciting minors for sex.",
+    "The Miami FBI office plans to introduce an undercover agent to meet with Rodriguez regarding the documents.",
+    "Rodriguez is expected to be arrested for obstruction of justice after producing the documents."
+  ],
+  "analyzedAt": "2026-02-22T11:16:19.479Z"
+}

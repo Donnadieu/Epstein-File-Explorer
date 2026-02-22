@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA01326145.pdf",
+  "dataSet": "10",
+  "documentType": "FBI Electronic Communication",
+  "dateOriginal": "2019-01-10",
+  "summary": "This document is an FBI electronic communication requesting an interview with an individual named Michael D. regarding his potential knowledge of Jeffrey Epstein's criminal conduct involving underage girls. It details the background of Alfredo Rodriguez, a former employee of Epstein, who has been implicated in obstruction of justice for attempting to sell information about additional victims.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "House Manager and Butler",
+      "category": "associate",
+      "context": "Rodriguez was previously employed by Jeffrey Epstein and is involved in an obstruction of justice case for attempting to sell information about additional victims.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Epstein is the central figure in the investigation, accused of bringing underage girls to his home for sexual acts and has a history of legal issues related to child prostitution.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Michael D.",
+      "role": "Potential Witness",
+      "category": "witness",
+      "context": "Michael D. is being requested for an interview due to his previous employment with Epstein and potential knowledge of Epstein's interactions with underage girls.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Bradley Edwards",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Edwards represented several victims of Epstein and deposed Rodriguez during the civil litigation process.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez worked as a house manager and butler for Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Bradley Edwards",
+      "relationshipType": "attorney-client",
+      "description": "Rodriguez was deposed by Edwards, who represented victims in the civil case against Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael D.",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Michael D. previously worked for Epstein and may have witnessed his interactions with underage girls.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2006",
+      "title": "Investigation of Jeffrey Epstein",
+      "description": "The Miami Division opened an investigation into Epstein for child prostitution.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2010-07",
+      "title": "Completion of Community Supervision",
+      "description": "Epstein completed his community supervision as a registered sex offender.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2009",
+      "title": "Rodriguez Attempts to Sell Information",
+      "description": "Rodriguez attempted to sell information about additional victims to an undercover agent for $50,000.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "U.S. Virgin Islands",
+    "New York, New York",
+    "Palm Springs, California",
+    "London, England",
+    "Paris, France"
+  ],
+  "keyFacts": [
+    "Alfredo Rodriguez was the house manager and butler for Jeffrey Epstein.",
+    "Rodriguez is involved in an obstruction of justice case for attempting to sell information about additional victims.",
+    "Epstein was accused of bringing underage girls to his home for sexual acts.",
+    "Rodriguez was deposed by attorney Bradley Edwards, who represented several of Epstein's victims.",
+    "Michael D. is being sought for an interview regarding his potential knowledge of Epstein's criminal conduct."
+  ],
+  "analyzedAt": "2026-02-22T11:21:40.808Z"
+}

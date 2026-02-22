@@ -1,0 +1,161 @@
+{
+  "fileName": "EFTA01316768.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-03-01",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries, including specific tracking information for packages sent by Epstein. The invoice highlights the total amount due and provides contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ethan L. Bornbecker",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ethan L. Bornbecker is mentioned as a recipient of a package sent by Epstein, indicating a business relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Guest",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a guest associated with Epstein, indicating a personal or social connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Morrison is mentioned in connection with a package sent by Epstein, suggesting a business or social relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Bordas",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "S. Bordas is noted as the individual who signed for the delivery of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "C. Monterey",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "C. Monterey is noted as the individual who signed for the delivery of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "P. Boyko",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "P. Boyko is noted as the individual who signed for the delivery of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ethan L. Bornbecker",
+      "relationshipType": "business",
+      "description": "Epstein sent a package to Ethan L. Bornbecker, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is mentioned as a guest associated with Epstein, indicating a personal connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "business",
+      "description": "Larry Morrison is mentioned in connection with a package sent by Epstein, suggesting a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "S. Bordas",
+      "relationshipType": "delivery",
+      "description": "S. Bordas signed for a package delivered to Epstein, indicating a transactional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "C. Monterey",
+      "relationshipType": "delivery",
+      "description": "C. Monterey signed for a package delivered to Epstein, indicating a transactional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "P. Boyko",
+      "relationshipType": "delivery",
+      "description": "P. Boyko signed for a package delivered to Epstein, indicating a transactional relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-02-20",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-02-21",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "S. Bordas"
+      ]
+    },
+    {
+      "date": "2004-02-23",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Ethan L. Bornbecker.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ethan L. Bornbecker"
+      ]
+    },
+    {
+      "date": "2004-02-24",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Ghislaine Maxwell.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "500 Stanton Christiana Rd, Newark, DE 19713-2107",
+    "9882 South Santa Monica Blvd, Beverly Hills, CA 90212"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 1, 2004, and details shipping charges totaling $277.86.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice.",
+    "Multiple packages were sent by Epstein to various recipients, including Ethan L. Bornbecker and Ghislaine Maxwell.",
+    "The document includes specific tracking information for packages sent by Epstein.",
+    "Several individuals signed for deliveries made to Epstein's address."
+  ],
+  "analyzedAt": "2026-02-22T07:46:53.651Z"
+}

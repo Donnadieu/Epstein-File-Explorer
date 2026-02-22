@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01316747.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-02-09",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and handling fees, and specifies the payment due date. The invoice reflects Epstein's address in New York and includes a summary of the shipment details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating his use of shipping services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Paul Hofrion",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paul Hofrion is mentioned as the sender of a package associated with the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Hofrion",
+      "relationshipType": "sender-recipient",
+      "description": "Paul Hofrion is identified as the sender of a package that was shipped to Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-02-03",
+      "title": "FedEx Shipment Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul Hofrion"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "4142 Mongers Lade, P.O. Box 870, St. Thomas 00804, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 9, 2004, and is for a total amount of $30.56.",
+    "The invoice includes details of transportation charges and special handling fees.",
+    "The payment for the invoice is due by February 24, 2004.",
+    "The shipment was picked up on February 3, 2004.",
+    "Paul Hofrion is listed as the sender of a package associated with the invoice."
+  ],
+  "analyzedAt": "2026-02-22T07:45:07.660Z"
+}

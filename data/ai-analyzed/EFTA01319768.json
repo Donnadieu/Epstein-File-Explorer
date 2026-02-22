@@ -1,0 +1,102 @@
+{
+  "fileName": "EFTA01319768.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-11-15",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for services rendered. It includes information about shipments, discounts applied, and total charges due. The invoice highlights specific shipment details and payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marie Joseph Experton",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Marie Joseph Experton is mentioned as another recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Experton",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Marie Joseph Experton via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-11-05",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from Jeffrey E. Epstein for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-11-08",
+      "title": "Package Delivery to Jeanne Brennan",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to Jeanne Brennan.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-11-09",
+      "title": "Package Pickup",
+      "description": "FedEx picked up another package from Jeffrey E. Epstein for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-11-12",
+      "title": "Package Delivery to Marie Joseph Experton",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to Marie Joseph Experton.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marie Joseph Experton"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "Ranch Road, Stanley, NM 97050"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 15, 2004, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to USD 137.09.",
+    "The invoice details multiple shipments sent by Epstein, including recipients Jeanne Brennan and Marie Joseph Experton.",
+    "The document includes specific dates for package pickups and deliveries.",
+    "There are discounts applied to the total charges, indicating savings for Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:22:59.771Z"
+}

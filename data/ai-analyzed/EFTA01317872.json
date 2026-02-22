@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01317872.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-11-01",
+  "summary": "This document is an invoice from FedEx for shipping services rendered on October 28, 2002. It details the charges, discounts, and payment information related to the shipment, including specific references to individuals involved in the shipping process.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender of the packages in the FedEx shipment details.",
+      "mentionCount": 2
+    },
+    {
+      "name": "David Bagot",
+      "role": "Sender",
+      "category": "associate",
+      "context": "David Bagot is also listed as the sender of the packages in the FedEx shipment details.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kelly",
+      "role": "Receiver",
+      "category": "other",
+      "context": "Kelly is mentioned as the individual who signed for the delivery of the packages.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "David Bagot",
+      "relationshipType": "co-senders",
+      "description": "Both Darren Indyke and David Bagot are listed as senders for the FedEx shipments.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-10-28",
+      "title": "FedEx Shipment",
+      "description": "Packages were dropped off for shipment by Darren Indyke and David Bagot.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "David Bagot"
+      ]
+    },
+    {
+      "date": "2002-10-31",
+      "title": "Package Delivery",
+      "description": "The packages were delivered and signed for by Kelly.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Kelly"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 1, 2002, and pertains to shipping services provided by FedEx.",
+    "Total charges for the services amounted to $37.08 after discounts.",
+    "Packages were dropped off on October 28, 2002, and delivered on October 31, 2002.",
+    "Darren Indyke and David Bagot are both identified as senders of the packages.",
+    "Kelly signed for the delivery of the packages."
+  ],
+  "analyzedAt": "2026-02-22T08:44:35.570Z"
+}

@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01317220.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-11-02",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered. It includes information about the account holder, payment due dates, and service details. The invoice reflects a total charge of $33.55, with discounts applied.",
+  "persons": [
+    {
+      "name": "Lauren Kummer",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Lauren Kummer is listed as the account holder for the FedEx services detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dan Lavendar",
+      "role": "Payer",
+      "category": "other",
+      "context": "Dan Lavendar is mentioned as the payer for the FedEx services on the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-10-25",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kummer",
+        "Dan Lavendar"
+      ]
+    },
+    {
+      "date": "2001-10-29",
+      "title": "Package Delivery",
+      "description": "The package was delivered on this date at 08:35.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kummer",
+        "Dan Lavendar"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 2, 2001, and details transportation charges from FedEx.",
+    "Total charges amount to $33.55 after discounts.",
+    "The invoice indicates a pickup date of October 25, 2001, and a delivery date of October 29, 2001.",
+    "Dan Lavendar is identified as the payer for the services rendered.",
+    "Lauren Kummer is the account holder associated with the FedEx account."
+  ],
+  "analyzedAt": "2026-02-22T08:09:01.033Z"
+}

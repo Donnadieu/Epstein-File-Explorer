@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01299642.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-11-23",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions related to various accounts. It lists multiple financial institutions and individuals involved in these transactions, highlighting significant monetary movements and account details.",
+  "persons": [
+    {
+      "name": "Michael Bollag",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Michael Bollag is mentioned as an account holder receiving checks and involved in transactions.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Richard B. Whiteley",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Richard B. Whiteley is referenced in connection with transactions involving Middleburg Bank.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Tanuja H. Tharani",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Tanuja H. Tharani is mentioned as an account holder with transactions at TD Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Haresh Tharani",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Haresh Tharani is mentioned alongside Tanuja H. Tharani in transactions at TD Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Eli Ungar",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Eli Ungar is referenced in transactions involving Deutsche Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Daniel Barkan",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Daniel Barkan is mentioned in relation to a revocable trust agreement.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael Bollag",
+      "person2": "Richard B. Whiteley",
+      "relationshipType": "financial",
+      "description": "Both individuals are involved in transactions with Middleburg Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Tanuja H. Tharani",
+      "person2": "Haresh Tharani",
+      "relationshipType": "financial",
+      "description": "Both individuals are account holders at TD Bank and are mentioned together in transactions.",
+      "strength": 4
+    },
+    {
+      "person1": "Eli Ungar",
+      "person2": "Daniel Barkan",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Daniel Barkan is associated with a trust agreement involving Eli Ungar.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "570 Lexington Avenue, Floor 37, New York, NY 10022-6860",
+    "25 Columbus Circle, Suite 628, New York, NY 10019-1107",
+    "60 Columbus Circle, 18th Floor, New York, NY 10023",
+    "3003 Tasman Drive, Santa Clara, CA 95054",
+    "1 Pershing Plaza, Jersey City, NJ"
+  ],
+  "keyFacts": [
+    "The document details various financial transactions involving multiple banks including Citibank, Deutsche Bank, and Wells Fargo.",
+    "Michael Bollag and Richard B. Whiteley are involved in transactions with Middleburg Bank.",
+    "Tanuja H. Tharani and Haresh Tharani are mentioned as account holders at TD Bank.",
+    "Eli Ungar is associated with transactions at Deutsche Bank.",
+    "Daniel Barkan is referenced in relation to a revocable trust agreement."
+  ],
+  "analyzedAt": "2026-02-21T23:02:36.017Z"
+}

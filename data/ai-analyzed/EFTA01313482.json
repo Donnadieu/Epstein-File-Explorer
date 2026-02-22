@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA01313482.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-05-20",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes various shipping transactions, discounts, and total charges, indicating Epstein's use of FedEx services for multiple shipments during May 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "other",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx invoice, listed as both the billing and shipping address.",
+      "mentionCount": 12
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgers is mentioned as a sender in one of the transactions listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kimberly Foley",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Kimberly Foley is noted as a recipient in one of the shipments associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Larry Visoski is mentioned as a recipient in multiple transactions related to Epstein's shipments.",
+      "mentionCount": 3
+    },
+    {
+      "name": "C. Foley",
+      "role": "Sender",
+      "category": "other",
+      "context": "C. Foley is listed as a sender in one of the transactions involving Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M. Kelly",
+      "role": "Recipient",
+      "category": "other",
+      "context": "M. Kelly is mentioned as a recipient in one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Epstein",
+      "role": "Sender",
+      "category": "other",
+      "context": "J. Epstein is mentioned as a sender in one of the transactions listed in the invoice.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Dave Rodgers is noted as a sender in a shipment associated with Epstein, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kimberly Foley",
+      "relationshipType": "recipient-sender",
+      "description": "Kimberly Foley is listed as a recipient in a shipment sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "recipient-sender",
+      "description": "Larry Visoski is mentioned as a recipient in multiple shipments sent by Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "C. Foley",
+      "relationshipType": "recipient-sender",
+      "description": "C. Foley is noted as a sender in a shipment associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "M. Kelly",
+      "relationshipType": "recipient-sender",
+      "description": "M. Kelly is mentioned as a recipient in a shipment sent by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "Zorro Ranch, 49 Zorro Ranch Rd, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 20, 2002, and details shipping charges totaling $749.42.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice, with multiple shipments listed.",
+    "The invoice includes various recipients and senders, indicating Epstein's extensive use of FedEx services.",
+    "Several shipments were made to and from Epstein's residences in New York and Florida.",
+    "The document contains multiple references to discounts applied to shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:21:32.225Z"
+}

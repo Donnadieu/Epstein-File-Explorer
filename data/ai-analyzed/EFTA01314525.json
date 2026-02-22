@@ -1,0 +1,134 @@
+{
+  "fileName": "EFTA01314525.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-03-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and delivery dates. The invoice highlights a total amount due and provides a breakdown of the services used.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Janusz Banaszak",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Janusz Banaszak is mentioned as a sender in one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry",
+      "role": "Reference",
+      "category": "other",
+      "context": "Harry is referenced in connection with some shipments, indicating a possible relationship or involvement in the shipping process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "John Kerry",
+      "role": "Recipient",
+      "category": "other",
+      "context": "John Kerry is mentioned as a recipient in one of the shipments, suggesting a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maluela Stotter",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Maluela Stotter is mentioned as a recipient in one of the shipments, indicating involvement in Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Hasan Khan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Hasan Khan is mentioned as a recipient in one of the shipments, indicating involvement in Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Janusz Banaszak",
+      "relationshipType": "sender-recipient",
+      "description": "Janusz Banaszak is listed as a sender in a shipment associated with Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Kerry",
+      "relationshipType": "recipient-sender",
+      "description": "John Kerry is mentioned as a recipient in a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maluela Stotter",
+      "relationshipType": "recipient-sender",
+      "description": "Maluela Stotter is mentioned as a recipient in a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Hasan Khan",
+      "relationshipType": "recipient-sender",
+      "description": "Hasan Khan is mentioned as a recipient in a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-03-01",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-03-04",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off by Jeffrey E. Epstein for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-03-07",
+      "title": "Multiple Shipments Delivered",
+      "description": "Multiple shipments sent by Jeffrey E. Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-03-08",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 14, 2005, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $282.95.",
+    "The invoice details multiple shipments made by Epstein, with various delivery dates and charges.",
+    "Several individuals are mentioned as recipients of shipments sent by Epstein, including Janusz Banaszak, John Kerry, Maluela Stotter, and Hasan Khan.",
+    "The invoice includes a breakdown of transportation charges, discounts, and special handling fees."
+  ],
+  "analyzedAt": "2026-02-22T06:13:24.492Z"
+}

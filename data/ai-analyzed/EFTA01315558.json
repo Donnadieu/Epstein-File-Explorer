@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA01315558.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-12-24",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the invoice number, account details, and specific charges related to transportation and special handling. The invoice also notes a temporary suspension of the Money-Back Guarantee for certain FedEx services during the holiday season.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender associated with the shipping charges on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thomas A. Raver",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Thomas A. Raver is mentioned as the recipient of the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Thorstein Ssons",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Thorstein Ssons is also mentioned as a recipient associated with the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Thomas A. Raver",
+      "relationshipType": "sender-recipient",
+      "description": "Darren Indyke is the sender of the shipment that was delivered to Thomas A. Raver.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Thorstein Ssons",
+      "relationshipType": "sender-recipient",
+      "description": "Darren Indyke is the sender of the shipment that was delivered to Thorstein Ssons.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-16",
+      "title": "FedEx Shipment Pickup",
+      "description": "The FedEx shipment was picked up on December 16, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2004-12-17",
+      "title": "Customs Entry",
+      "description": "The customs entry for the shipment occurred on December 17, 2004.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2004-12-24",
+      "title": "Invoice Issued",
+      "description": "The invoice for the shipping services was issued on December 24, 2004.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "181 Ray Street, Suite 3300, Toronto, ON JAW 21S, CA"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-687-85567, dated December 24, 2004.",
+    "Total charges for the shipping services amount to USD $17.80.",
+    "Darren Indyke is associated with NYSG LLC, the sender of the shipment.",
+    "The invoice includes a note about the temporary suspension of the Money-Back Guarantee for certain FedEx services during the holiday season.",
+    "The shipment was picked up on December 16, 2004, and customs entry occurred on December 17, 2004."
+  ],
+  "analyzedAt": "2026-02-22T07:06:34.057Z"
+}

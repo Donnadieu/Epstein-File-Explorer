@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01315754.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-08-08",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey Epstein. It includes information on various shipments, their costs, and discounts applied. The invoice highlights multiple transactions and provides a summary of charges due.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender for multiple FedEx shipments detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Vanessa Mocely Saint Denis",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Vanessa Mocely Saint Denis is mentioned as a recipient for one of the shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a recipient for another shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Barwood",
+      "role": "Recipient",
+      "category": "other",
+      "context": "John Barwood is mentioned as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Vanessa Mocely Saint Denis",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Vanessa Mocely Saint Denis.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jeanne Brennan.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "John Barwood",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to John Barwood.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-07-27",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-08-02",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-08-04",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "St. Thomas, VI",
+    "Pittsburgh, PA"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments sent by Jeffrey Epstein through FedEx.",
+    "Total charges for the invoice amount to $314.88.",
+    "Discounts applied to the shipments totaled $58.78.",
+    "Shipments were sent to various recipients including Vanessa Mocely Saint Denis and Jeanne Brennan.",
+    "The document includes specific dates for shipment pickups and deliveries."
+  ],
+  "analyzedAt": "2026-02-22T07:18:12.842Z"
+}

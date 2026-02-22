@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01315598.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-12-06",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges for multiple shipments, including transportation charges, discounts, and special handling fees, totaling $177.00. The invoice also includes information about the shipment details and payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his involvement in shipping activities.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Karen L. Galion",
+      "role": "Sender",
+      "category": "other",
+      "context": "Karen L. Galion is mentioned as the sender of a package shipped via FedEx, indicating her involvement in the shipping process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Sender",
+      "category": "other",
+      "context": "Miles Alexander is mentioned as the sender of a package shipped via FedEx, indicating his involvement in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Karen L. Galion",
+      "relationshipType": "shipping sender-recipient",
+      "description": "Karen L. Galion is identified as the sender of a package that Jeffrey E. Epstein received, indicating a shipping relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "shipping sender-recipient",
+      "description": "Miles Alexander is identified as the sender of a package that Jeffrey E. Epstein received, indicating a shipping relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-11-30",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered on November 30, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Karen L. Galion"
+      ]
+    },
+    {
+      "date": "2004-12-03",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered on December 3, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "St. Thomas, VI 00802-1348"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 6, 2004, and totals $177.00 for shipping services.",
+    "Jeffrey E. Epstein is the primary account holder listed on the invoice.",
+    "The invoice includes details of multiple shipments sent by Epstein, with specific delivery dates.",
+    "There are mentions of discounts applied to the total charges, amounting to $54.94.",
+    "The document includes contact information for FedEx Revenue Services for invoice inquiries."
+  ],
+  "analyzedAt": "2026-02-22T07:08:56.705Z"
+}

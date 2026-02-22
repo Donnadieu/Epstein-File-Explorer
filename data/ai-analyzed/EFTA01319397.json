@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01319397.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": null,
+  "summary": "This document appears to be an invoice summary from FedEx detailing transportation charges for services rendered. It includes information about various shipments, including pickup and delivery dates, charges, and sender information. The document is marked as confidential and contains multiple references to account numbers and payment details.",
+  "persons": [
+    {
+      "name": "Nathan Hamilton",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nathan Hamilton is listed as the sender for one of the packages in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Schantz",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeffrey Schantz is mentioned as the sender for another package in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Anne Hailey",
+      "role": "Sender",
+      "category": "other",
+      "context": "Anne Hailey is also listed as a sender for one of the packages in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Obrust Buncie",
+      "role": "Receiver",
+      "category": "other",
+      "context": "Obrust Buncie is noted as the person who signed for the delivery of one of the packages.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Davidson",
+      "role": "Receiver",
+      "category": "other",
+      "context": "Davidson is mentioned as the person who signed for another package delivery.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-09-24",
+      "title": "Package Pickup",
+      "description": "Packages were picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Nathan Hamilton",
+        "Jeffrey Schantz",
+        "Anne Hailey"
+      ]
+    },
+    {
+      "date": "2001-09-25",
+      "title": "Package Delivery",
+      "description": "Packages were delivered to the recipients.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Obrust Buncie",
+        "Davidson"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The invoice details transportation charges totaling $42.24.",
+    "Packages were picked up on September 24, 2001, and delivered on September 25, 2001.",
+    "Nathan Hamilton, Jeffrey Schantz, and Anne Hailey are listed as senders for different packages.",
+    "Obrust Buncie and Davidson signed for the delivery of the packages.",
+    "The document is marked as confidential."
+  ],
+  "analyzedAt": "2026-02-22T10:06:26.691Z"
+}

@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01314574.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-07-29",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. The invoice details the charges for transportation and special handling, along with shipment details including pickup and delivery dates.",
+  "persons": [
+    {
+      "name": "Lauren Paul Burk",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Paul Burk is identified as the sender associated with the FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "D. Oakley is mentioned as the individual who signed for the delivery of the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-07-21",
+      "title": "FedEx Pickup",
+      "description": "The package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Paul Burk"
+      ]
+    },
+    {
+      "date": "2005-07-22",
+      "title": "FedEx Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "D. Oakley"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "8000 Wattson Pkwy Ste 100, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-504-66113, dated July 29, 2005.",
+    "Total charges for the shipment amounted to $7.82.",
+    "The package was picked up on July 21, 2005, and delivered on July 22, 2005.",
+    "The sender's address is listed as NYSG LLC, 457 Madison Ave, New York, NY.",
+    "D. Oakley signed for the delivery of the package."
+  ],
+  "analyzedAt": "2026-02-22T06:15:43.718Z"
+}

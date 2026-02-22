@@ -1,0 +1,135 @@
+{
+  "fileName": "EFTA01318362.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-07-07",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes information about multiple shipments, their costs, and discounts applied. It highlights Epstein's shipping activities during June and July 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Morrison is mentioned as a sender in the shipment details associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Patrick",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Patrick is mentioned as a sender in one of the shipment details related to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "K. Duffy",
+      "role": "Receiver",
+      "category": "other",
+      "context": "K. Duffy is noted as the person who signed for a delivery associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "K. Grenes",
+      "role": "Receiver",
+      "category": "other",
+      "context": "K. Grenes is mentioned as the person who signed for a delivery associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Fuentes",
+      "role": "Receiver",
+      "category": "other",
+      "context": "S. Fuentes is noted as the person who signed for a delivery associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "employer-employee",
+      "description": "Larry Morrison is identified as a sender in shipments related to Epstein, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Patrick",
+      "relationshipType": "employer-employee",
+      "description": "Patrick is mentioned as a sender in a shipment detail associated with Epstein, indicating a possible working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "K. Duffy",
+      "relationshipType": "recipient-signer",
+      "description": "K. Duffy signed for a delivery associated with Epstein, indicating a connection through the shipping process.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "K. Grenes",
+      "relationshipType": "recipient-signer",
+      "description": "K. Grenes signed for a delivery associated with Epstein, indicating a connection through the shipping process.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "S. Fuentes",
+      "relationshipType": "recipient-signer",
+      "description": "S. Fuentes signed for a delivery associated with Epstein, indicating a connection through the shipping process.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-06-27",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-30",
+      "title": "Multiple Shipments Delivered",
+      "description": "Several shipments were delivered to or from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Morrison"
+      ]
+    },
+    {
+      "date": "2003-07-01",
+      "title": "Multiple Shipments Delivered",
+      "description": "Additional shipments were delivered to or from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Patrick"
+      ]
+    }
+  ],
+  "locations": [
+    "Memphis, TN",
+    "33461",
+    "33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 7, 2003, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $94.53.",
+    "The invoice details multiple shipments made by Epstein, with specific dates of pickup and delivery.",
+    "Several individuals signed for deliveries associated with Epstein, indicating active shipping operations.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T09:11:06.432Z"
+}

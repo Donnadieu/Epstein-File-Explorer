@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA01322570.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial statements related to accounts associated with Jeffrey Epstein and Bear Stearns. It includes details about repurchase agreements, account balances, and institutional interests. The statements are dated between May 25, 2001, and March 30, 2001, indicating financial activities and transactions during that period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as the account holder for various financial transactions and agreements with Bear Stearns.",
+      "mentionCount": 5
+    },
+    {
+      "name": "James E. Cayne",
+      "role": "Account Executive",
+      "category": "staff",
+      "context": "James E. Cayne is identified as the account executive servicing Epstein's accounts at Bear Stearns.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanie Brennan",
+      "role": "Account Representative",
+      "category": "staff",
+      "context": "Jeanie Brennan is mentioned as the representative for Epstein's accounts at Bear Stearns.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "James E. Cayne",
+      "relationshipType": "client-service provider",
+      "description": "James E. Cayne is the account executive managing Epstein's financial accounts at Bear Stearns.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanie Brennan",
+      "relationshipType": "client-service provider",
+      "description": "Jeanie Brennan is the account representative for Epstein's accounts at Bear Stearns.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-05-25",
+      "title": "Account Statement Issued",
+      "description": "An account statement for Jeffrey Epstein was issued detailing various financial transactions and balances.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "James E. Cayne",
+        "Jeanie Brennan"
+      ]
+    },
+    {
+      "date": "2001-03-30",
+      "title": "Account Statement Issued",
+      "description": "Another account statement for Jeffrey Epstein was issued, showing the financial activities up to that date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "James E. Cayne",
+        "Jeanie Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "245 Park Avenue, New York, New York 10167",
+    "6100 Red Hook Quarter Ste B-3, St Thomas VI 00802"
+  ],
+  "keyFacts": [
+    "The document contains multiple financial statements related to Jeffrey Epstein's accounts with Bear Stearns.",
+    "James E. Cayne is identified as the account executive managing Epstein's accounts.",
+    "Jeanie Brennan is mentioned as the account representative for Epstein's accounts.",
+    "The statements detail various repurchase agreements and account balances.",
+    "The document spans financial activities from May 25, 2001, to March 30, 2001."
+  ],
+  "analyzedAt": "2026-02-22T10:52:24.130Z"
+}

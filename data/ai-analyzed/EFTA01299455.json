@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01299455.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-06-03",
+  "summary": "This document contains financial transaction details, including incoming and outgoing wires, checks, and account information related to various beneficiaries and trusts. It highlights transactions involving significant amounts and multiple financial institutions, indicating complex financial activities possibly linked to the Epstein case.",
+  "persons": [
+    {
+      "name": "Nancy Tate Jones",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Nancy Tate Jones is mentioned as a trustee associated with various financial transactions and accounts.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Diana M. Tate",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Diana M. Tate is referenced as a trustee in connection with Nancy Tate Jones.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Geoffrey H. Palmer",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Geoffrey H. Palmer is mentioned in relation to trust accounts and financial distributions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Serdar Bilgili",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Serdar Bilgili is noted as a beneficiary in the financial transactions detailed in the document.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Nancy Tate Jones",
+      "person2": "Diana M. Tate",
+      "relationshipType": "trustee-trustee",
+      "description": "Both individuals are trustees associated with the same trust accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Nancy Tate Jones",
+      "person2": "Geoffrey H. Palmer",
+      "relationshipType": "trustee-trustee",
+      "description": "Nancy Tate Jones and Geoffrey H. Palmer are both mentioned as trustees in the financial records.",
+      "strength": 4
+    },
+    {
+      "person1": "Nancy Tate Jones",
+      "person2": "Serdar Bilgili",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Nancy Tate Jones is involved in transactions that benefit Serdar Bilgili.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Istanbul, Turkey"
+  ],
+  "keyFacts": [
+    "The document details multiple financial transactions involving significant amounts of money.",
+    "Nancy Tate Jones is a key figure as a trustee in various accounts mentioned.",
+    "Diana M. Tate and Geoffrey H. Palmer are also trustees linked to the financial activities.",
+    "Serdar Bilgili is identified as a beneficiary in the transactions.",
+    "The document indicates complex financial dealings possibly related to the Epstein case."
+  ],
+  "analyzedAt": "2026-02-21T22:45:34.192Z"
+}

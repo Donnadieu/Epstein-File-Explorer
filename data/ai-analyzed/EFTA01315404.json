@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA01315404.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "1999-04-22",
+  "summary": "This document is an invoice from FedEx addressed to Epstein & Co Inc for transportation charges incurred on April 22, 1999. The invoice details a total charge of $13.23, which was rebated to the account of Epstein & Co Inc. It includes information about the sender and recipient of the package, as well as payment details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the owner of Epstein & Co Inc, which is the entity billed for the FedEx services.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miranda J Ellison",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Miranda J Ellison is noted as the sender of the package that incurred the transportation charges.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Beverly Levy",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Beverly Levy is identified as the recipient of the package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Miranda J Ellison",
+      "relationshipType": "employer-employee",
+      "description": "Miranda J Ellison is associated with Epstein & Co Inc, indicating a possible employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Miranda J Ellison",
+      "person2": "Beverly Levy",
+      "relationshipType": "business",
+      "description": "Miranda J Ellison sent a package to Beverly Levy, indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "21B Mediterranean Rd, Palm Beach, FL 33480",
+    "17 State St, New York City, NY 10034"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 22, 1999, and details transportation charges of $13.23.",
+    "The charges were initially billed to a different payor and were rebated to Epstein & Co Inc.",
+    "The sender of the package was Miranda J Ellison, and the recipient was Beverly Levy.",
+    "The invoice indicates that payment is due by May 7, 1999.",
+    "The document includes multiple pages detailing the charges and payment type."
+  ],
+  "analyzedAt": "2026-02-22T06:57:44.570Z"
+}

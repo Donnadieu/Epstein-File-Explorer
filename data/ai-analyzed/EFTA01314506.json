@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01314506.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-02-18",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. The invoice details charges for transportation and special handling, along with payment instructions and a summary of the shipment details.",
+  "persons": [
+    {
+      "name": "Laureen Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Laureen Kwintner is listed as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nery Forman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Nery Forman is listed as the recipient of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Walker",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "D. Walker is mentioned as the individual who processed the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-02-10",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Laureen Kwintner",
+        "Nery Forman"
+      ]
+    },
+    {
+      "date": "2005-02-11",
+      "title": "Package Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Laureen Kwintner",
+        "Nery Forman"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "52 East Gay St, Columbus, OH 43215"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-378-21077, dated February 18, 2005.",
+    "The total charges for the shipment amount to $7.61.",
+    "The package was picked up on February 10, 2005, and delivered on February 11, 2005.",
+    "Laureen Kwintner is identified as the sender and Nery Forman as the recipient of the package.",
+    "D. Walker is noted as the FedEx employee who processed the shipment."
+  ],
+  "analyzedAt": "2026-02-22T06:12:13.208Z"
+}

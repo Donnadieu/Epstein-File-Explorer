@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01319688.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-10-11",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments. It includes information on discounts applied, total charges, and shipment details, indicating Epstein's use of FedEx services for shipping items internationally and domestically.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Brennan is mentioned as a recipient in connection with shipments related to a financial trust.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Eric",
+      "role": "Shipper Reference",
+      "category": "other",
+      "context": "Eric is referenced in the context of a shipment but no further details are provided.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stuart Craig",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Craig is mentioned as a sender in one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "financial",
+      "description": "Brennan is associated with a financial trust that Epstein is connected to, as evidenced by the shipments.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Stuart Craig",
+      "relationshipType": "employer-employee",
+      "description": "Craig is mentioned as a sender in shipments related to Epstein, suggesting a working relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-01",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx for Epstein on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-04",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-06",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Epstein was delivered on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Stuart Craig"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "22 Avenue Foch, Paris, 75116, France",
+    "6100 Red Hook Quarter Suite 8-3, St. Thomas, 00602, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 11, 2004, and details charges totaling $232.55 for FedEx services.",
+    "Epstein is identified as the primary client for the shipments listed in the invoice.",
+    "Shipments were sent to various locations, including Paris and St. Thomas, indicating international shipping.",
+    "The invoice includes multiple references to discounts applied to the shipping charges.",
+    "There are mentions of other individuals, such as Jeanne Brennan and Stuart Craig, in connection with shipments related to Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:18:06.802Z"
+}

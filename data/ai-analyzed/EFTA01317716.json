@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA01317716.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-08-09",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC, with multiple entries for shipments associated with individuals including Jeffrey Epstein. The invoice includes various charges, payment details, and references to specific shipments made in late July and early August 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender for multiple shipments in the invoice, indicating his involvement in shipping activities during this period.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Laure Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Laure Kwintner is mentioned as the sender for one of the shipments, indicating a possible business relationship with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Agnes O'Donnell",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Agnes O'Donnell is listed as the recipient for one of the shipments, suggesting she was involved in the logistics of the deliveries.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "NYSG LLC",
+      "relationshipType": "business",
+      "description": "Jeffrey Epstein is associated with NYSG LLC as a sender for shipments, indicating a business relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Laure Kwintner",
+      "person2": "NYSG LLC",
+      "relationshipType": "business",
+      "description": "Laure Kwintner is identified as a sender for a shipment associated with NYSG LLC, indicating a business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Agnes O'Donnell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "recipient-sender",
+      "description": "Agnes O'Donnell is listed as a recipient for a shipment sent by Jeffrey Epstein, indicating a logistical connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-08-02",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Agnes O'Donnell"
+      ]
+    },
+    {
+      "date": "2002-08-01",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for delivery on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-29",
+      "title": "Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Laure Kwintner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "317 South Ashland Ave, La Grange, IL 60525",
+    "103 Shields Bldg, University Park, PA 16032",
+    "El Brillo Way, Palm Beach, FL"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 9, 2002, and includes multiple entries for shipments.",
+    "Jeffrey Epstein is mentioned as the sender for several shipments, indicating his active involvement in shipping logistics.",
+    "Laure Kwintner and Agnes O'Donnell are also mentioned, suggesting they were involved in the shipping process.",
+    "The total charges for the services rendered amount to several hundred dollars, indicating significant shipping activity.",
+    "Multiple shipments were picked up and delivered in late July and early August 2002."
+  ],
+  "analyzedAt": "2026-02-22T08:35:14.824Z"
+}

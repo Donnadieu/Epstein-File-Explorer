@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA01317223.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": null,
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered to NYSG LLC. It includes information about discounts applied, payment due dates, and service details, indicating a financial transaction related to shipping services.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lauren Kwintner is listed as the recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecilie De Lono",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Cecilie De Lono is also listed as a recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Pina",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Pina is mentioned as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jen Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jen Brennan is mentioned as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-11-09",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Cecilie De Lono"
+      ]
+    },
+    {
+      "date": "2001-11-12",
+      "title": "Package Delivery",
+      "description": "A package was delivered by FedEx.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Eric Pina",
+        "Jen Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, Suite 03, St Thomas 00602, VI"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-026-80553, dated November 16, 2001.",
+    "Total charges for the services rendered amount to $50.44.",
+    "Discounts totaling $32.33 were applied to the invoice.",
+    "Packages were picked up on November 9, 2001, and delivered on November 12, 2001.",
+    "The invoice includes multiple recipients and senders associated with FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T08:09:12.606Z"
+}

@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA01314501.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-12-08",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey Epstein and others. It includes information on discounts, total charges, and shipment details, indicating various transactions made in December 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is listed as a sender for multiple shipments detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "G. Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "G. Maxwell is mentioned as a sender in connection with shipments alongside Jeffrey E. Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "David Tang",
+      "role": "Sender",
+      "category": "associate",
+      "context": "David Tang is listed as a sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brian Jorison",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Brian Jorison is mentioned as a recipient for a shipment related to the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "G. Maxwell",
+      "relationshipType": "co-sender",
+      "description": "Both individuals are listed as senders for multiple shipments in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Tang",
+      "relationshipType": "co-sender",
+      "description": "Jeffrey E. Epstein and David Tang are both mentioned as senders for shipments in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Brian Jorison",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "recipient-sender",
+      "description": "Brian Jorison is listed as a recipient for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-12-02",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date, associated with Jeffrey E. Epstein and others.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "G. Maxwell",
+        "David Tang"
+      ]
+    },
+    {
+      "date": "2003-12-05",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Jeffrey E. Epstein and others were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "G. Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Pittsburgh, PA",
+    "London",
+    "St. Thomas, USVI"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments associated with Jeffrey E. Epstein and others.",
+    "Total charges for the invoice amount to USD $371.33.",
+    "Shipments were picked up on December 2, 2003, and delivered on December 5, 2003.",
+    "G. Maxwell and David Tang are also involved in the shipments alongside Epstein.",
+    "The document includes various charges, discounts, and shipment details for FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T06:12:02.368Z"
+}

@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01326150.pdf",
+  "dataSet": "10",
+  "documentType": "FBI Electronic Communication",
+  "dateOriginal": "2019-01-10",
+  "summary": "This document is an electronic communication from the FBI requesting the administrative closure of a case involving Alfredo Rodriguez. It states that all investigative and prosecutorial issues have been resolved, and the case is to be closed.",
+  "persons": [
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Alfredo Rodriguez is the subject of the case mentioned in the document, which is being requested for administrative closure.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Michael J. Donohoe",
+      "role": "FBI Agent",
+      "category": "law enforcement",
+      "context": "Michael J. Donohoe is the approving agent for the request to close the case involving Alfredo Rodriguez.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gavin Gumbinner",
+      "role": "FBI Special Agent",
+      "category": "law enforcement",
+      "context": "Gavin Gumbinner drafted the request for administrative closure of the case involving Alfredo Rodriguez.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Michael J. Donohoe",
+      "relationshipType": "investigator-subject",
+      "description": "Michael J. Donohoe is the approving agent for the case involving Alfredo Rodriguez.",
+      "strength": 3
+    },
+    {
+      "person1": "Alfredo Rodriguez",
+      "person2": "Gavin Gumbinner",
+      "relationshipType": "investigator-subject",
+      "description": "Gavin Gumbinner drafted the request for administrative closure regarding Alfredo Rodriguez.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2011-08-29",
+      "title": "Case Investigation",
+      "description": "The document references the ongoing investigation into Alfredo Rodriguez, which is now being requested for closure.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Alfredo Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "Miami"
+  ],
+  "keyFacts": [
+    "The document is a request for administrative closure of a case involving Alfredo Rodriguez.",
+    "All investigative and prosecutorial issues related to the case have been resolved.",
+    "The request was drafted by FBI Special Agent Gavin Gumbinner and approved by Michael J. Donohoe."
+  ],
+  "analyzedAt": "2026-02-22T11:22:19.906Z"
+}

@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01315034.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-06-08",
+  "summary": "This document is an invoice from FedEx dated June 8, 2001, detailing shipping charges for services rendered to Jeffrey Epstein. The invoice includes billing and shipping addresses, payment details, and a summary of charges.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is listed as the account holder for the FedEx services detailed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "other",
+      "context": "Bella Tsukeman is mentioned as the billing contact associated with the account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gany is noted as the sender of the package that was shipped via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Bella Tsukeman",
+      "relationshipType": "billing contact",
+      "description": "Bella Tsukeman is the billing contact for the FedEx account held by Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "sender-recipient",
+      "description": "Eric Gany is identified as the sender of a package associated with Jeffrey Epstein's FedEx account.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-05-29",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany"
+      ]
+    },
+    {
+      "date": "2001-05-31",
+      "title": "Package Delivery",
+      "description": "The package sent by Eric Gany was delivered on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 8, 2001, and pertains to shipping services provided by FedEx.",
+    "Jeffrey Epstein is listed as the account holder for the FedEx services.",
+    "Bella Tsukeman is identified as the billing contact for the account.",
+    "Eric Gany is noted as the sender of a package shipped via FedEx.",
+    "The total charges for the services rendered amount to $11.90."
+  ],
+  "analyzedAt": "2026-02-22T06:39:47.953Z"
+}

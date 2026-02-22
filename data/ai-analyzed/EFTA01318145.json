@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01318145.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-03-17",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and provides a summary of the shipment's details, including sender and recipient information.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the individual to whom the invoice is addressed, indicating he is the account holder for the FedEx services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Marie Joseph Expert",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Marie Joseph Expert is listed as the recipient of a shipment sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamy",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gamy is mentioned as the sender of the package shipped by Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Marie Joseph Expert",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Marie Joseph Expert as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gamy",
+      "relationshipType": "sender-sender",
+      "description": "Eric Gamy is identified as the sender of the package associated with Jeffrey Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-03-12",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Jeffrey Epstein for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2003-03-14",
+      "title": "Package Delivered",
+      "description": "The package sent by Jeffrey Epstein was delivered to the recipient, Marie Joseph Expert.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Marie Joseph Expert"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "Avenue Louise 113, Brussels 1050, Belgium"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 17, 2003, and is for shipping services provided by FedEx.",
+    "Total charges for the services rendered amount to USD $29.65.",
+    "The package was dropped off on March 12, 2003, and delivered on March 14, 2003.",
+    "Jeffrey Epstein is the account holder for the FedEx services used for the shipment.",
+    "Marie Joseph Expert is the recipient of the package sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T08:58:29.008Z"
+}

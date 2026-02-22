@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA01317377.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-02-04",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total amount due of $435.65. The invoice includes multiple entries for shipments made by Epstein, highlighting the logistics of his shipping activities during early 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Eric Gary Jeanne",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gary Jeanne is mentioned as the sender of a package shipped via FedEx, associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Jensen",
+      "role": "Sender",
+      "category": "other",
+      "context": "Larry Jensen is mentioned as the sender of a package shipped via FedEx, associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tina Cock",
+      "role": "Sender",
+      "category": "other",
+      "context": "Tina Cock is mentioned as the sender of a package shipped via FedEx, associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jean Brennan",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Jean Brennan is mentioned in connection with a financial trust associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gary Jeanne",
+      "relationshipType": "sender-recipient",
+      "description": "Eric Gary Jeanne is identified as the sender of a package shipped to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Jensen",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Jensen is identified as the sender of a package shipped to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tina Cock",
+      "relationshipType": "sender-recipient",
+      "description": "Tina Cock is identified as the sender of a package shipped to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jean Brennan",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Jean Brennan is mentioned in connection with a financial trust associated with Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 4, 2002, and details shipping charges totaling $435.65.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx services listed in the invoice.",
+    "Multiple shipments are referenced, indicating Epstein's use of FedEx for logistics.",
+    "The invoice includes discounts applied to the total charges, amounting to $13.34.",
+    "Several individuals are mentioned as senders of packages associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T08:17:10.714Z"
+}

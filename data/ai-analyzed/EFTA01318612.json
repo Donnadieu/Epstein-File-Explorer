@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01318612.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-11-21",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details the charges incurred, including transportation and fuel surcharges, and provides instructions for payment and adjustment requests.",
+  "persons": [
+    {
+      "name": "William Karr",
+      "role": "Recipient",
+      "category": "other",
+      "context": "William Karr is listed as the recipient of the FedEx shipment in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Panther",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Panther is mentioned as the sender of the package in the shipment details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "William Karr",
+      "person2": "Lauren Panther",
+      "relationshipType": "business",
+      "description": "William Karr is the recipient of a package sent by Lauren Panther.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-11-17",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "William Karr",
+        "Lauren Panther"
+      ]
+    },
+    {
+      "date": "2003-11-18",
+      "title": "Customs Entry",
+      "description": "The package entered customs on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "William Karr",
+        "Lauren Panther"
+      ]
+    },
+    {
+      "date": "2003-11-21",
+      "title": "Invoice Issued",
+      "description": "The invoice for the shipping services was issued on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "William Karr",
+        "Lauren Panther"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "18 Havensight Way, New York, NY 10022-4843"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-963-12823, dated November 21, 2003.",
+    "Total charges for the shipment amounted to $18.54 after discounts.",
+    "The package was picked up on November 17, 2003, and entered customs on November 18, 2003.",
+    "William Karr is associated with NYSG LLC, which is the billed entity.",
+    "Lauren Panther is identified as the sender of the package."
+  ],
+  "analyzedAt": "2026-02-22T09:25:13.823Z"
+}

@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01313004.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-08-02",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and shipment summaries for various packages sent by Epstein. The invoice indicates a total amount due of $177.21, with a payment deadline of August 17, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the invoice is addressed, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Nicole Junkerman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Nicole Junkerman is mentioned as a recipient of one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of another shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Financial Trust Co",
+      "role": "Payor",
+      "category": "other",
+      "context": "Dale Financial Trust Co is mentioned as the payor for one of the shipments, indicating a financial relationship with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nicole Junkerman",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Nicole Junkerman, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jeanne Brennan, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Financial Trust Co",
+      "relationshipType": "financial",
+      "description": "Dale Financial Trust Co is involved in the payment for one of Epstein's shipments, indicating a financial connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-07-26",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-07-28",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Nicole Junkerman",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-08-02",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "RUE FRANKLIN 1/0147REUIL CEDEX 93518, FR",
+    "6100 RED HOOK QUARTER B3, ST THOMAS 006021346 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 2, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $177.21, with a payment deadline of August 17, 2004.",
+    "The invoice details multiple shipments sent by Epstein, including recipients Nicole Junkerman and Jeanne Brennan.",
+    "Dale Financial Trust Co is mentioned as a payor for one of the shipments.",
+    "The document includes various shipping details, including pickup and delivery dates."
+  ],
+  "analyzedAt": "2026-02-22T04:57:41.998Z"
+}

@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01313817.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-11-18",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges associated with a shipment, including transportation and special handling fees, and specifies the payment due date.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the individual to whom the invoice is addressed, indicating he is the account holder for the shipping services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the recipient of a package sent by Jeffrey Epstein, indicating a connection between the two.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is noted as the recipient of a package sent by Jeffrey Epstein, suggesting a personal or social connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-01",
+      "title": "Package Shipment",
+      "description": "A package was picked up by FedEx for shipment from Jeffrey Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2002-11-04",
+      "title": "Package Delivery",
+      "description": "The package sent by Jeffrey Epstein was delivered to Ghislaine Maxwell.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6525 West Campus Drive Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 18, 2002, and is for shipping services provided by FedEx.",
+    "Jeffrey Epstein is the account holder for the shipping services, with a total charge of $14.37.",
+    "Ghislaine Maxwell is identified as the recipient of a package sent by Epstein.",
+    "The package was picked up on November 1, 2002, and delivered on November 4, 2002.",
+    "The invoice includes details about transportation charges and discounts applied."
+  ],
+  "analyzedAt": "2026-02-22T05:38:29.294Z"
+}

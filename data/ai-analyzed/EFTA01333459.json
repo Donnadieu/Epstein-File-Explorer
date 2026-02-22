@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01333459.pdf",
+  "dataSet": "10",
+  "documentType": "police report",
+  "dateOriginal": null,
+  "summary": "This document contains surveillance observations and police call records related to Jeffrey Epstein's residence at 358 El Brillo Way, Palm Beach, Florida. It details various vehicles observed at the property and police responses to alarms and incidents at the location.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the owner of the property at 358 El Brillo Way, Palm Beach, Florida, where multiple police calls and surveillance activities were recorded.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Josef Torres",
+      "role": "Caller",
+      "category": "witness",
+      "context": "Josef Torres is mentioned as a caller reporting incidents at Epstein's residence, specifically related to an accident and alarm responses.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Becca Weir",
+      "role": "Requestor",
+      "category": "other",
+      "context": "Becca Weir is noted as the requestor of the TAR report related to the surveillance and police activity at Epstein's residence.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Josef Torres",
+      "relationshipType": "witness-reporting",
+      "description": "Josef Torres reported incidents occurring at Epstein's residence, indicating a connection through police activity.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-03-31",
+      "title": "Surveillance of Epstein's Residence",
+      "description": "Surveillance was conducted at Epstein's residence, noting various vehicles parked at the property throughout the day.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-01",
+      "title": "Police Response to Alarm",
+      "description": "Police responded to an alarm at Epstein's residence, documenting the presence of multiple vehicles.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Josef Torres"
+      ]
+    },
+    {
+      "date": "2005-04-02",
+      "title": "Continued Surveillance",
+      "description": "Further surveillance noted the same vehicles at Epstein's residence, indicating ongoing activity.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 El Brillo Way, Palm Beach, FL"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the owner of the property at 358 El Brillo Way, where multiple police calls were made.",
+    "Josef Torres reported incidents at Epstein's residence, including an accident and alarm responses.",
+    "Surveillance documented various vehicles associated with Epstein's residence over several days.",
+    "The document includes police responses to alarms and incidents at Epstein's property.",
+    "There are multiple mentions of vehicles parked at Epstein's residence, indicating frequent activity."
+  ],
+  "analyzedAt": "2026-02-22T12:14:29.273Z"
+}

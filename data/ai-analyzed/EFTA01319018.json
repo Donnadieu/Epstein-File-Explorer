@@ -1,0 +1,159 @@
+{
+  "fileName": "EFTA01319018.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-02-16",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent by NYSG LLC. It includes multiple entries for different shipments, with specific charges and details about the sender and recipients. The invoice highlights the total amount due and provides payment instructions.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "other",
+      "context": "Bella Tsukeman is listed as the billing contact for NYSG LLC on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren K. Wintner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren K. Wintner is identified as the sender for multiple shipments listed in the invoice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Abigail S. Wexner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Abigail S. Wexner is mentioned as a recipient for one of the packages sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Karl Schwabe",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Karl Schwabe is listed as a recipient for one of the shipments in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gary",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Gary is mentioned as a recipient for a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter H. Betti",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peter H. Betti is listed as a recipient for one of the packages sent.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren K. Wintner",
+      "person2": "Bella Tsukeman",
+      "relationshipType": "employer-employee",
+      "description": "Lauren K. Wintner is associated with NYSG LLC, where Bella Tsukeman is the billing contact.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren K. Wintner",
+      "person2": "Abigail S. Wexner",
+      "relationshipType": "social",
+      "description": "Lauren K. Wintner sent a package to Abigail S. Wexner, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren K. Wintner",
+      "person2": "Karl Schwabe",
+      "relationshipType": "social",
+      "description": "Lauren K. Wintner sent a package to Karl Schwabe, suggesting a social or business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren K. Wintner",
+      "person2": "Eric Gary",
+      "relationshipType": "social",
+      "description": "Lauren K. Wintner sent a package to Eric Gary, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren K. Wintner",
+      "person2": "Peter H. Betti",
+      "relationshipType": "social",
+      "description": "Lauren K. Wintner sent a package to Peter H. Betti, suggesting a social or business connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-02-02",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx on this date for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Wintner"
+      ]
+    },
+    {
+      "date": "2001-02-11",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Peter H. Betti on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Wintner",
+        "Peter H. Betti"
+      ]
+    },
+    {
+      "date": "2001-02-12",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Eric Gary on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Wintner",
+        "Eric Gary"
+      ]
+    },
+    {
+      "date": "2001-02-13",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Karl Schwabe on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Wintner",
+        "Karl Schwabe"
+      ]
+    },
+    {
+      "date": "2001-02-16",
+      "title": "Invoice Issued",
+      "description": "The invoice was issued detailing the shipping charges for various packages.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Bella Tsukeman",
+        "Lauren K. Wintner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "One Whiteman Rd, New Albany, OH 43054",
+    "12593 Mallet Cir, West Palm Beach, FL 33414",
+    "301 Patterson Plank Rd, Carlstadt, NJ 07072-2307",
+    "Zorro Ranch Rd, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 16, 2001, and includes multiple entries for shipping charges.",
+    "Lauren K. Wintner is the sender for several packages listed in the invoice.",
+    "Bella Tsukeman is the billing contact for NYSG LLC.",
+    "The total amount due on the invoice is $95.02.",
+    "Multiple recipients are mentioned, including Abigail S. Wexner, Karl Schwabe, Eric Gary, and Peter H. Betti."
+  ],
+  "analyzedAt": "2026-02-22T09:45:37.510Z"
+}

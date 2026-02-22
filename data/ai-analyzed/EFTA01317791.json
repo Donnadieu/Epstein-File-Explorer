@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01317791.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-09-27",
+  "summary": "This document is an invoice from FedEx detailing charges for express services provided on September 20, 2002. It includes information about the sender, recipient, and payment details, as well as a summary of the charges incurred.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Indyke is listed as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barbara Guftafson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Barbara Guftafson is mentioned as the recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Clifton Timms",
+      "role": "Sender",
+      "category": "other",
+      "context": "Clifton Timms is noted as the sender who signed for the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Clifton Timms",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with Clifton Timms as the sender of the package.",
+      "strength": 3
+    },
+    {
+      "person1": "Clifton Timms",
+      "person2": "Barbara Guftafson",
+      "relationshipType": "sender-recipient",
+      "description": "Clifton Timms sent a package to Barbara Guftafson.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-20",
+      "title": "Package Sent",
+      "description": "A package was sent via FedEx from Darren Indyke to Barbara Guftafson.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Barbara Guftafson",
+        "Clifton Timms"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 27, 2002, and details charges for a package sent on September 20, 2002.",
+    "Total charges for the FedEx services amounted to $18.45.",
+    "Darren Indyke and Clifton Timms are associated with the shipment as senders.",
+    "Barbara Guftafson is identified as the recipient of the package.",
+    "The invoice includes a fuel surcharge and discounts applied to the total charges."
+  ],
+  "analyzedAt": "2026-02-22T08:39:32.682Z"
+}

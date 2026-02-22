@@ -1,0 +1,154 @@
+{
+  "fileName": "EFTA01319792.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-01-24",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates, charges, and recipient information.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jenine Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jenine Brennan is listed as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Valdson Cotrin",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Valdson Cotrin is mentioned as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marie Joseph",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph is listed as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kundece",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kundece is mentioned as the sender for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jean Huguen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jean Huguen is listed as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jenine Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jenine Brennan as indicated in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Valdson Cotrin",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Valdson Cotrin as indicated in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Marie Joseph as indicated in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Kundece",
+      "relationshipType": "sender-sender",
+      "description": "Lauren Kundece is mentioned as a sender for a shipment associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jean Huguen",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jean Huguen as indicated in the invoice.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-10",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein on this date.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-10",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein on this date.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-13",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off by Epstein at FedEx on this date.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-17",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein on this date.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-19",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein on this date.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "301 E 66th St Apt 111, New York, NY 10021-6217",
+    "6100 Red Hook Quarter, St. Thomas, 00802 VI",
+    "22 Avenue Foch, Paris, 75116 FR"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 24, 2005, and is addressed to Jeffrey E. Epstein.",
+    "The total charges for the invoice amount to $285.55.",
+    "Multiple shipments are detailed in the invoice, with various recipients and pickup dates.",
+    "The invoice includes specific details about transportation charges, discounts, and fuel surcharges.",
+    "There are several recipients listed for shipments sent by Epstein, indicating a network of connections."
+  ],
+  "analyzedAt": "2026-02-22T10:24:34.604Z"
+}

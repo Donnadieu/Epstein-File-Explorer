@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01313676.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-09-27",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered. It includes information about the sender, recipient, and payment details, as well as a summary of charges and discounts applied. The invoice is dated September 27, 2002, and outlines a total amount due of $18.45.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Indyke is listed as the sender associated with the FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barbara Clifton",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Barbara Clifton is mentioned as the recipient of the FedEx shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-09-20",
+      "title": "FedEx Pickup",
+      "description": "The package was picked up by FedEx on September 20, 2002.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Barbara Clifton"
+      ]
+    },
+    {
+      "date": "2002-09-23",
+      "title": "FedEx Delivery",
+      "description": "The package was delivered on September 23, 2002, at 10:47 AM.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Barbara Clifton"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-395-08301, dated September 27, 2002.",
+    "The total amount due for the FedEx services is $18.45.",
+    "The invoice indicates a discount of $10.00 applied to the total charges.",
+    "The package was picked up on September 20, 2002, and delivered on September 23, 2002.",
+    "Darren Indyke and Barbara Clifton are the sender and recipient, respectively, of the shipment."
+  ],
+  "analyzedAt": "2026-02-22T05:30:43.372Z"
+}

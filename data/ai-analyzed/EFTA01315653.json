@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01315653.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-01-14",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered to NYSG LLC. It includes information about the shipment, sender, recipient, and total charges, along with a breakdown of discounts applied.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender associated with NYSG LLC for the FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Recipient",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the recipient of the FedEx shipment, with his address listed as Little St. James.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NYSG LLC, which is linked to Jeffrey Epstein as the recipient of the shipment.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-01-11",
+      "title": "FedEx Shipment Pickup",
+      "description": "A FedEx shipment was picked up on January 11, 2005, destined for Jeffrey Epstein.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "Little St. James, 6100 Red Hook Quarters, St. Thomas 00602, VI"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-718-12391, dated January 14, 2005.",
+    "Total charges for the shipment amounted to $38.30.",
+    "Darren Indyke is associated with NYSG LLC, which is linked to the shipment.",
+    "Jeffrey Epstein is the recipient of the shipment, with a specific address on Little St. James.",
+    "The shipment was picked up on January 11, 2005, and was scheduled for delivery on January 12, 2005."
+  ],
+  "analyzedAt": "2026-02-22T07:12:07.465Z"
+}

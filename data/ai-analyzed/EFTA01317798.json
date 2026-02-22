@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA01317798.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-09-09",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for transportation charges incurred on various shipments. It details the charges, discounts, and payment information, indicating a total amount due of $180.35. The invoice includes multiple entries for shipments sent to and from Epstein's addresses.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as the sender for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is listed as the sender for two shipments associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tim Cook",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tim Cook is mentioned as the recipient for one of the shipments, indicating a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "employer-employee",
+      "description": "Alberto Pinto is associated with a shipment sent by Epstein, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is associated with shipments sent by Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tim Cook",
+      "relationshipType": "social",
+      "description": "Tim Cook is mentioned as a recipient for one of Epstein's shipments, suggesting a social or business connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-09",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for transportation charges totaling $180.35.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-08-22",
+      "title": "Shipment Pickup",
+      "description": "A shipment associated with Epstein was picked up by FedEx.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alberto Pinto"
+      ]
+    },
+    {
+      "date": "2002-09-03",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered to its destination.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2002-09-05",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Epstein was delivered.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "11 Rue D Aboukir, Paris, 750002, France",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 9, 2002, and totals $180.35.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx services.",
+    "Multiple shipments are detailed in the invoice, including those sent to and from Epstein's various addresses.",
+    "Tim Cook is mentioned as a recipient for one of the shipments, indicating a potential connection.",
+    "There are several entries for shipments involving different senders associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T08:40:00.218Z"
+}

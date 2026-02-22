@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01340317.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2005-10-07",
+  "summary": "This memorandum from Ghislaine Maxwell to Maria Manino at JP Morgan Chase Bank requests the removal of Eric Gany's signature from certain accounts and the addition of Harry Beller to those accounts. The document is marked confidential and is subject to a protective order.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Ghislaine Maxwell is the sender of the memorandum requesting changes to bank account signatures.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maria Manino",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Maria Manino is the recipient of the memorandum from Ghislaine Maxwell at JP Morgan Chase Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Eric Gany is mentioned in the context of having his signature removed from the accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Harry Beller is mentioned as being added to the accounts in the memorandum.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Maria Manino",
+      "relationshipType": "client-banker",
+      "description": "Ghislaine Maxwell is communicating with Maria Manino regarding account management at JP Morgan Chase Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Eric Gany",
+      "relationshipType": "account holder",
+      "description": "Eric Gany is associated with the accounts from which his signature is being removed.",
+      "strength": 2
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Harry Beller",
+      "relationshipType": "account holder",
+      "description": "Harry Beller is being added to the accounts managed by Ghislaine Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "Ghislaine Maxwell requested the removal of Eric Gany's signature from certain accounts.",
+    "Ghislaine Maxwell requested the addition of Harry Beller to the same accounts.",
+    "The memorandum is marked confidential and is subject to a protective order."
+  ],
+  "analyzedAt": "2026-02-22T13:47:59.121Z"
+}

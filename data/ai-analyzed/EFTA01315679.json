@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01315679.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-03-28",
+  "summary": "This document is an invoice from FedEx Express detailing transportation charges for a shipment. It includes information about discounts applied, total charges, and shipment details such as pickup and delivery dates. The invoice highlights the financial aspects of the shipment, including a fuel surcharge and the total amount due.",
+  "persons": [
+    {
+      "name": "Cecilia Jeffrey",
+      "role": "Shipper",
+      "category": "other",
+      "context": "Cecilia Jeffrey is listed as the shipper for the FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "A. Rodriguez is mentioned as the individual who expedited the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-03-18",
+      "title": "Shipment Pickup",
+      "description": "The FedEx shipment was picked up on March 18, 2005.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Cecilia Jeffrey"
+      ]
+    },
+    {
+      "date": "2005-03-21",
+      "title": "Shipment Delivery",
+      "description": "The FedEx shipment was delivered on March 21, 2005.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Cecilia Jeffrey"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843, US",
+    "6100 Red Hook Waters, St. Thomas 00802, VI"
+  ],
+  "keyFacts": [
+    "The total charges for the shipment amounted to USD 66.04.",
+    "A fuel surcharge of 8.50% was applied to the shipment.",
+    "The invoice indicates a discount of USD 1.88 was applied.",
+    "The shipment was picked up on March 18, 2005, and delivered on March 21, 2005.",
+    "Cecilia Jeffrey is identified as the shipper for the package."
+  ],
+  "analyzedAt": "2026-02-22T07:13:39.474Z"
+}

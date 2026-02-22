@@ -1,0 +1,123 @@
+{
+  "fileName": "EFTA01317599.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for transportation charges incurred on June 10, 2002. The invoice details various charges, discounts, and payment information related to shipping services provided to Epstein, including multiple shipments and their respective costs.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jean Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jean Brennan is mentioned as a recipient of a package sent via FedEx by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gale Stott",
+      "role": "Sender Reference",
+      "category": "other",
+      "context": "Gale Stott is referenced in the context of a sender for one of the shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a recipient of a package sent via FedEx by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "W. Wallace",
+      "role": "Customs Official",
+      "category": "law enforcement",
+      "context": "W. Wallace is noted as the individual who signed for a package delivered on May 31, 2002.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jean Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Jean Brennan via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Ghislaine Maxwell via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "W. Wallace",
+      "relationshipType": "transactional",
+      "description": "W. Wallace signed for a package sent by Epstein, indicating a transaction involving shipping.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-05-30",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Epstein for shipping.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-05-31",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered and signed for by W. Wallace.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "W. Wallace"
+      ]
+    },
+    {
+      "date": "2002-06-03",
+      "title": "Package Picked Up",
+      "description": "Another package was picked up by Epstein for shipping.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-06-06",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "St. Thomas, US Virgin Islands",
+    "Avenue Foch Apartment 200, Paris, 75116, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 10, 2002, and details charges totaling $247.09 for FedEx services.",
+    "Jeffrey E. Epstein is the primary account holder and recipient of the invoice.",
+    "Multiple shipments are referenced, including those sent to Jean Brennan and Ghislaine Maxwell.",
+    "The document includes details of transportation charges, discounts, and payment due dates.",
+    "There are references to customs and delivery confirmations involving Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T08:29:41.332Z"
+}

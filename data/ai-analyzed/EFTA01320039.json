@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01320039.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-01-07",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSO LLC. It details the charges for transportation and handling, along with payment instructions and adjustments. The invoice indicates a shipment picked up on December 16, 2004, and delivered on December 17, 2004.",
+  "persons": [
+    {
+      "name": "Lauren Kwentner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwentner is listed as the sender associated with the FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lorena Schneider",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lorena Schneider is identified as the recipient of the FedEx shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwentner",
+      "person2": "Lorena Schneider",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kwentner sent a package to Lorena Schneider via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-16",
+      "title": "FedEx Shipment Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwentner",
+        "Lorena Schneider"
+      ]
+    },
+    {
+      "date": "2004-12-17",
+      "title": "FedEx Shipment Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwentner",
+        "Lorena Schneider"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "28180 Curtis-Wright Pkwy, Cleveland, OH 44143"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 7, 2005, and pertains to a shipment made on December 16, 2004.",
+    "The total charge for the shipment was $8.00.",
+    "The shipment was delivered on December 17, 2004.",
+    "The invoice includes a fuel surcharge of 13.00%.",
+    "NYSO LLC is the billing account associated with the shipment."
+  ],
+  "analyzedAt": "2026-02-22T10:37:47.988Z"
+}

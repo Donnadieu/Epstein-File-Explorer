@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01319607.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "1999-05-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein & Co. Inc. for transportation charges incurred on May 14, 1999. The invoice details the charges, payment information, and includes references to a third-party payer.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeffrey Epstein is listed as the sender of the package and the account holder for the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Elizabeth Ross Johnson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Elizabeth Ross Johnson is mentioned as the recipient of the package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Elizabeth Ross Johnson",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Elizabeth Ross Johnson via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1999-04-14",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey Epstein's address.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "1999-04-15",
+      "title": "Package Delivery",
+      "description": "The package sent by Jeffrey Epstein was delivered to Elizabeth Ross Johnson.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Elizabeth Ross Johnson"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Harvard University, History-Science, Oxford St FL 2, Cambridge, MA 02138-2901"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 14, 1999, and details transportation charges of $13.72.",
+    "Jeffrey Epstein is the sender of the package and the account holder for the invoice.",
+    "Elizabeth Ross Johnson is identified as the recipient of the package.",
+    "The package was picked up on April 14, 1999, and delivered on April 15, 1999.",
+    "The invoice indicates that charges were initially billed to a different payor."
+  ],
+  "analyzedAt": "2026-02-22T10:14:06.057Z"
+}

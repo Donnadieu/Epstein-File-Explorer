@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01299700.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-03-31",
+  "summary": "This document contains a series of financial transactions, including outgoing wires and checks, associated with various beneficiaries and banks. It details amounts transferred and the institutions involved, indicating potential financial activities related to the Epstein case.",
+  "persons": [
+    {
+      "name": "E. Ferrell",
+      "role": "Trustee",
+      "category": "other",
+      "context": "E. Ferrell is mentioned in connection with a trust account, indicating involvement in financial transactions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Charles Sonar",
+      "role": "Business Associate",
+      "category": "associate",
+      "context": "Charles Sonar is referenced in relation to a financial transaction, suggesting a business connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ricardo Gorman",
+      "role": "Resource Center Director",
+      "category": "other",
+      "context": "Ricardo Gorman is mentioned as part of a financial transaction, indicating his involvement in the financial activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carolyn Mills",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Carolyn Mills is referenced in connection with a family trust, indicating her role in managing financial assets.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Joanna Mills",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Joanna Mills is mentioned alongside Carolyn Mills, suggesting a familial or trust relationship.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff Lotman",
+      "role": "Financial Associate",
+      "category": "associate",
+      "context": "Jeff Lotman is mentioned in relation to Deutsche Bank transactions, indicating his involvement in financial dealings.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "E. Ferrell",
+      "person2": "Carolyn Mills",
+      "relationshipType": "trustee-beneficiary",
+      "description": "E. Ferrell is involved with a trust that includes Carolyn Mills as a beneficiary.",
+      "strength": 3
+    },
+    {
+      "person1": "Carolyn Mills",
+      "person2": "Joanna Mills",
+      "relationshipType": "family",
+      "description": "Carolyn Mills and Joanna Mills are connected through a family trust.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeff Lotman",
+      "person2": "Charles Sonar",
+      "relationshipType": "business associate",
+      "description": "Jeff Lotman and Charles Sonar are mentioned in the context of financial transactions, indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Atlanta, GA",
+    "Leawood, KS",
+    "Jefferson City, MO"
+  ],
+  "keyFacts": [
+    "Multiple financial transactions are recorded, including outgoing wires and checks.",
+    "E. Ferrell is associated with a trust account, indicating involvement in financial management.",
+    "Carolyn Mills and Joanna Mills are connected through a family trust.",
+    "Jeff Lotman is involved in transactions with Deutsche Bank, suggesting financial dealings related to the case.",
+    "Charles Sonar is mentioned in the context of financial transactions, indicating a business relationship."
+  ],
+  "analyzedAt": "2026-02-21T23:07:07.525Z"
+}

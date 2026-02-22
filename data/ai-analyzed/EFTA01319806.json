@@ -1,0 +1,125 @@
+{
+  "fileName": "EFTA01319806.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-02-07",
+  "summary": "This document is an invoice summary from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for shipments made on various dates in February 2005. It includes specific charges, discounts, and shipment details, indicating Epstein's use of FedEx services for multiple packages.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "M.F.",
+      "role": "Contact for Invoice Questions",
+      "category": "other",
+      "context": "M.F. is mentioned as a contact for invoice questions, providing a phone number for inquiries.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Pascal Lapabra",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Pascal Lapabra is listed as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Miles Alexander is mentioned as a recipient for another shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jenne Brennan",
+      "role": "Trust Company Representative",
+      "category": "other",
+      "context": "Jenne Brennan is associated with the financial trust company mentioned in the shipment details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Pascal Lapabra",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Pascal Lapabra using FedEx services.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Miles Alexander using FedEx services.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jenne Brennan",
+      "relationshipType": "financial-trustee",
+      "description": "Jenne Brennan is associated with a financial trust company linked to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-02-01",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-02",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-03",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Pascal Lapabra"
+      ]
+    },
+    {
+      "date": "2005-02-04",
+      "title": "Package Delivery",
+      "description": "Another package sent by Epstein was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "301 E 66th St Apt 11P, New York, NY 10021-6217",
+    "6100 Red Hook Quarter B-3, St Thomas, 00602 VI",
+    "P.O. Box 371461, Pittsburgh, PA 15250-7461"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 7, 2005, and includes multiple shipments made by Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 467.70, with discounts applied.",
+    "Shipments were sent to various recipients, including Pascal Lapabra and Miles Alexander.",
+    "The document details specific transportation charges and discounts for FedEx services.",
+    "There are references to multiple package pickups and deliveries occurring between February 1 and February 4, 2005."
+  ],
+  "analyzedAt": "2026-02-22T10:25:16.269Z"
+}

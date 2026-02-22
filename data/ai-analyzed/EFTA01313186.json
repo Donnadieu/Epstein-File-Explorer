@@ -1,0 +1,133 @@
+{
+  "fileName": "EFTA01313186.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2001-11-30",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent from NYSG LLC, located at 457 Madison Ave, New York, NY. The invoice includes multiple entries for different shipments, their pickup dates, and associated costs, highlighting the financial transactions related to shipping services used by NYSG LLC.",
+  "persons": [
+    {
+      "name": "Lauren KwiNter",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren KwiNter is identified as the sender for multiple shipments listed in the invoice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Sheila McLan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Sheila McLan is mentioned as a recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Schant",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeffrey Schant is listed as a recipient for one of the packages sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Indyke is mentioned as the sender for one of the shipments in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Harry Beller is identified as the sender for one of the packages listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Uglano",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Peg Uglano is mentioned as a recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren KwiNter",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren KwiNter is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Harry Beller",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Harry Beller is associated with NYSG LLC as a sender for shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Sheila McLan",
+      "person2": "Lauren KwiNter",
+      "relationshipType": "recipient-sender",
+      "description": "Sheila McLan is a recipient of a shipment sent by Lauren KwiNter.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Schant",
+      "person2": "Lauren KwiNter",
+      "relationshipType": "recipient-sender",
+      "description": "Jeffrey Schant is a recipient of a shipment sent by Lauren KwiNter.",
+      "strength": 3
+    },
+    {
+      "person1": "Peg Uglano",
+      "person2": "Harry Beller",
+      "relationshipType": "recipient-sender",
+      "description": "Peg Uglano is a recipient of a shipment sent by Harry Beller.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-11-15",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren KwiNter",
+        "Darren Indyke",
+        "Harry Beller"
+      ]
+    },
+    {
+      "date": "2001-11-30",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice for shipping services rendered to NYSG LLC.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Lauren KwiNter",
+        "Darren Indyke",
+        "Harry Beller"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6525 West Capapus Oval, New Albany, OH 43054",
+    "100 South Saunders Road, Lake Forest, IL 60045"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 30, 2001, and includes multiple entries for shipments.",
+    "Shipping charges total USD 43.49, with various fees detailed for each shipment.",
+    "Several individuals are identified as senders and recipients of the packages.",
+    "The document includes a note about potential delays in package delivery due to security measures following September 11."
+  ],
+  "analyzedAt": "2026-02-22T05:06:59.214Z"
+}

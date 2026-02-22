@@ -1,0 +1,156 @@
+{
+  "fileName": "EFTA01315749.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-08-01",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details transportation charges, discounts, and payment information, indicating multiple shipments made by Epstein in July 2005. The invoice highlights the total amount due and provides a summary of charges for various shipments.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the FedEx invoice, indicating he utilized their shipping services for multiple shipments.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Thomas",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Thomas is mentioned as the person who signed for a delivery addressed to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "other",
+      "context": "A. Rodriguez is noted as the individual who signed for a delivery related to Epstein's shipments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecilia Steen",
+      "role": "Sender",
+      "category": "other",
+      "context": "Cecilia Steen is noted as the sender of a shipment addressed to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Tang",
+      "role": "Recipient",
+      "category": "other",
+      "context": "David Tang is mentioned as the recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Thomas",
+      "relationshipType": "recipient-signer",
+      "description": "Thomas signed for a delivery addressed to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "recipient-signer",
+      "description": "A. Rodriguez signed for a delivery related to Epstein's shipments.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is noted as the recipient of a shipment sent by Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Cecilia Steen",
+      "relationshipType": "sender-recipient",
+      "description": "Cecilia Steen is noted as the sender of a shipment addressed to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Tang",
+      "relationshipType": "sender-recipient",
+      "description": "David Tang is mentioned as the recipient of a shipment sent by Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-07-25",
+      "title": "Shipment Picked Up",
+      "description": "A shipment was picked up by FedEx for delivery to Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-07-26",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off for delivery to Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-07-27",
+      "title": "Delivery Signed",
+      "description": "A delivery addressed to Jeffrey E. Epstein was signed for by Thomas.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Thomas"
+      ]
+    },
+    {
+      "date": "2005-07-27",
+      "title": "Delivery Signed",
+      "description": "A delivery addressed to Jeffrey E. Epstein was signed for by A. Rodriguez.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2005-08-01",
+      "title": "Invoice Issued",
+      "description": "An invoice was issued to Jeffrey E. Epstein detailing shipping charges.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "3 Rue Franklin, Montreuil Cedex 93518, France",
+    "6100 Red Hook Quarter Suite 0-3, St. Thomas 00602, VI",
+    "Room 1112 Jardine House, Central Hong Kong"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 1, 2005, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 200.72.",
+    "Multiple shipments were made by Epstein in July 2005, with specific details on transportation charges and discounts.",
+    "Signatures from delivery personnel indicate successful deliveries to Epstein's address.",
+    "The document includes references to various recipients and senders associated with Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T07:17:59.572Z"
+}

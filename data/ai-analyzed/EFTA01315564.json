@@ -1,0 +1,128 @@
+{
+  "fileName": "EFTA01315564.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-10-18",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries for multiple packages sent by Epstein, including the dates of service and amounts due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Paul Hoffman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Paul Hoffman is mentioned as a recipient of a package sent via FedEx from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bella Jamie",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Bella Jamie is mentioned as a recipient of a package sent via FedEx from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dante Ferretti",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dante Ferretti is mentioned as a recipient of a package sent via FedEx from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of a package sent via FedEx from Epstein's address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Paul Hoffman",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Paul Hoffman via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Bella Jamie",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Bella Jamie via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dante Ferretti",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Dante Ferretti via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Jeanne Brennan via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-08",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Epstein for FedEx shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-12",
+      "title": "Package Picked Up",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-13",
+      "title": "Package Delivered",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-14",
+      "title": "Package Delivered",
+      "description": "Additional packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 18, 2004, and is for a total amount of $295.34.",
+    "The invoice includes details of multiple shipments sent by Epstein, with various recipients.",
+    "There are multiple references to fuel surcharges applied to the shipments.",
+    "The document indicates that Epstein saved $58.35 in discounts during this billing period.",
+    "Several packages were sent to recipients including Paul Hoffman, Bella Jamie, Dante Ferretti, and Jeanne Brennan."
+  ],
+  "analyzedAt": "2026-02-22T07:07:00.319Z"
+}

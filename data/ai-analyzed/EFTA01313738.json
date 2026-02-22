@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01313738.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-10-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. The invoice details charges, discounts, and payment information, indicating a total amount due of $14.09. It also includes shipment details and references to other individuals involved in the shipping process.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder for the FedEx invoice, indicating his use of shipping services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Richard Gotten",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Richard Gotten is mentioned as a recipient of a shipment associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Charles Miller",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Charles Miller is mentioned as the sender of a shipment related to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Brock",
+      "role": "Authorized Signatory",
+      "category": "staff",
+      "context": "S. Brock is noted as the individual who signed the invoice on behalf of FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Gotten",
+      "relationshipType": "recipient-sender",
+      "description": "Richard Gotten is listed as the recipient of a shipment sent by Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Charles Miller",
+      "relationshipType": "sender-recipient",
+      "description": "Charles Miller is identified as the sender of a shipment associated with Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-10-22",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off by Jeffrey Epstein at FedEx on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Gotten",
+        "Charles Miller"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "2 Hamilton Ave Ste 207, New Rochelle, NY 10001"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 28, 2002, and is for shipping services provided to Jeffrey Epstein.",
+    "The total amount due on the invoice is $14.09 after discounts.",
+    "The shipment was dropped off on October 22, 2002.",
+    "Richard Gotten is mentioned as a recipient of a shipment related to Epstein.",
+    "Charles Miller is identified as the sender of a shipment associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:34:28.290Z"
+}

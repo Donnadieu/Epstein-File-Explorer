@@ -1,0 +1,138 @@
+{
+  "fileName": "EFTA01315459.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-09-20",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple shipment details, charges, and discounts applied to Epstein's account, indicating a total amount due of $314.84. The invoice highlights various shipments made by Epstein, including dates and charges for each shipment.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, as indicated by the invoice details and shipping addresses.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Nicole Hessen",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "Nicole Hessen is mentioned as the person who signed for a delivery made to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Ramire",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "J. Ramire is noted as the individual who signed for a delivery made to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christophe Gaze",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Christophe Gaze is mentioned as the sender of a package shipped to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alfredo Rodriguez is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry",
+      "role": "Reference",
+      "category": "other",
+      "context": "Harry is referenced in connection with a shipment made by Epstein, but no further details are provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nicole Hessen",
+      "relationshipType": "service provider-client",
+      "description": "Nicole Hessen signed for a delivery made to Jeffrey E. Epstein, indicating a service provider-client relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christophe Gaze",
+      "relationshipType": "sender-recipient",
+      "description": "Christophe Gaze is noted as the sender of a package shipped to Jeffrey E. Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "sender-recipient",
+      "description": "Alfredo Rodriguez is mentioned as a recipient of a package sent by Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-09",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-10",
+      "title": "Package Pickup",
+      "description": "Another package was picked up from Epstein's address by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-13",
+      "title": "Package Delivery",
+      "description": "A package sent to Epstein was delivered and signed for by Nicole Hessen.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Nicole Hessen"
+      ]
+    },
+    {
+      "date": "2004-09-14",
+      "title": "Package Delivery",
+      "description": "A package sent to Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-15",
+      "title": "Package Delivery",
+      "description": "Multiple packages sent to Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6643"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 20, 2004, and details shipping charges for services provided to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $314.84.",
+    "Multiple shipments are detailed, with specific pickup and delivery dates.",
+    "Nicole Hessen and J. Ramire are mentioned as FedEx employees who signed for deliveries to Epstein.",
+    "There are references to other individuals such as Christophe Gaze and Alfredo Rodriguez in connection with shipments to and from Epstein."
+  ],
+  "analyzedAt": "2026-02-22T07:00:31.093Z"
+}

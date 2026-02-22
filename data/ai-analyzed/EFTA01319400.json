@@ -1,0 +1,61 @@
+{
+  "fileName": "EFTA01319400.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-10-05",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on October 2, 2001. It includes information about the sender and recipient, as well as payment details and a summary of charges.",
+  "persons": [
+    {
+      "name": "Lauren Kwininer",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwininer is listed as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecile De Jangh",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Cecile De Jangh is mentioned as the recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-10-02",
+      "title": "FedEx Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kwininer",
+        "Cecile De Jangh"
+      ]
+    },
+    {
+      "date": "2001-10-01",
+      "title": "Customs Entry Date",
+      "description": "The customs entry for the package was recorded.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kwininer",
+        "Cecile De Jangh"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "P.O. Box 1140, Memphis, TN 38101-1140",
+    "Red Hook, NY"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 5, 2001, and pertains to a FedEx shipment.",
+    "Total charges for the shipment amount to $27.04.",
+    "The package was picked up on October 2, 2001.",
+    "A fuel surcharge of $1.09 was applied to the shipment.",
+    "The invoice includes references to confidential information and account numbers."
+  ],
+  "analyzedAt": "2026-02-22T10:06:37.380Z"
+}

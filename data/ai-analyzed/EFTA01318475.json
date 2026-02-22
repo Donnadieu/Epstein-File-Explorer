@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01318475.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-09-19",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC. It includes information about various shipments, their costs, and billing details, indicating the financial transactions related to shipping services provided to the company.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwintner is identified as the sender for multiple shipments listed in the invoice, associated with NYSG LLC.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jackie Mason",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jackie Mason is mentioned as a recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Darren Indyke is listed as a recipient for another shipment in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Scott Indyke",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Scott Indyke is mentioned as a recipient for a shipment in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Lauren Kwintner is associated with NYSG LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Jackie Mason",
+      "person2": "Lauren Kwintner",
+      "relationshipType": "recipient-sender",
+      "description": "Jackie Mason is a recipient of a shipment sent by Lauren Kwintner.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Lauren Kwintner",
+      "relationshipType": "recipient-sender",
+      "description": "Darren Indyke is a recipient of a shipment sent by Lauren Kwintner.",
+      "strength": 3
+    },
+    {
+      "person1": "Scott Indyke",
+      "person2": "Lauren Kwintner",
+      "relationshipType": "recipient-sender",
+      "description": "Scott Indyke is a recipient of a shipment sent by Lauren Kwintner.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-09-11",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2003-09-12",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Lauren Kwintner were delivered to recipients on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Jackie Mason",
+        "Darren Indyke",
+        "Scott Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "Three Limited Parkway, Gahanna, OH 43230",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43054",
+    "239 New Rd Ste A108, Parsippany, NJ 07054"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 19, 2003, and includes multiple shipments sent by NYSG LLC.",
+    "Lauren Kwintner is the primary sender associated with the shipments listed in the invoice.",
+    "The total amount due on the invoice is $28.92, with various charges detailed for transportation and fuel surcharges.",
+    "Multiple recipients are mentioned, including Jackie Mason, Darren Indyke, and Scott Indyke.",
+    "The document includes specific details about shipment pickups and deliveries, indicating the operational aspects of FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T09:17:43.557Z"
+}

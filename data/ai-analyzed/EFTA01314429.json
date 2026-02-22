@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01314429.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-10-20",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and shipment specifics, including dates and package types. The invoice indicates a total amount due of $340.85, with a payment deadline of November 4, 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, with multiple shipments listed under his account.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in the shipment details associated with Epstein's account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is referenced in connection with shipments sent to him, indicating a relationship with Epstein's shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosemary Pitcher is mentioned as a recipient of a shipment related to Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is involved in the shipping activities related to Epstein's account, suggesting a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "social",
+      "description": "Miles Alexander is associated with shipments sent to him from Epstein, indicating a social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "social",
+      "description": "Rosemary Pitcher is mentioned as a recipient of a shipment related to Epstein, indicating a potential social connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-10-10",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-14",
+      "title": "Shipment Delivery",
+      "description": "A shipment was delivered to Miles Alexander.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander"
+      ]
+    },
+    {
+      "date": "2003-10-20",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Epstein for shipping services totaling $340.85.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 20, 2003, with a total amount due of $340.85.",
+    "Multiple shipments were picked up from Epstein's address on October 10, 2003.",
+    "The invoice includes details of transportation charges, discounts, and special handling fees.",
+    "The payment for the invoice is due by November 4, 2003.",
+    "There are references to multiple recipients and senders associated with Epstein's shipping activities."
+  ],
+  "analyzedAt": "2026-02-22T06:08:24.438Z"
+}

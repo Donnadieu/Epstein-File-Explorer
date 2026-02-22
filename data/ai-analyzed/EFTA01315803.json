@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA01315803.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2006-09-02",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the shipment, charges, and payment due date.",
+  "persons": [
+    {
+      "name": "Lauren Kwanther",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwanther is listed as the sender of a package in the shipment details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Johnny Ciampi",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Johnny Ciampi is listed as the recipient of a package in the shipment details.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-08-29",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwanther",
+        "Johnny Ciampi"
+      ]
+    },
+    {
+      "date": "2005-08-30",
+      "title": "Package Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwanther",
+        "Johnny Ciampi"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "1075 West Georgia Street, Vancouver, BC"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-794-13843, dated September 2, 2005.",
+    "Total charges for the shipment amounted to USD $18.51.",
+    "The package was picked up on August 29, 2005, and delivered on August 30, 2005.",
+    "The sender is associated with NYSG LLC, located at 457 Madison Ave, New York.",
+    "The recipient's address is listed as 1075 West Georgia Street, Vancouver, BC."
+  ],
+  "analyzedAt": "2026-02-22T07:20:49.146Z"
+}

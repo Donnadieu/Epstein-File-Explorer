@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01318149.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-03-07",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC, detailing transportation charges and discounts. It includes shipment details, payment instructions, and adjustment request information.",
+  "persons": [
+    {
+      "name": "Gabriel Perahia",
+      "role": "Sender",
+      "category": "other",
+      "context": "Gabriel Perahia is listed as the sender associated with the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aluren Kyantener",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Aluren Kyantener is mentioned as the recipient of the shipment in the FedEx invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2003-02-28",
+      "title": "Shipment Drop-off",
+      "description": "The package was dropped off at FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Gabriel Perahia",
+        "Aluren Kyantener"
+      ]
+    },
+    {
+      "date": "2003-03-01",
+      "title": "Customs Entry Date",
+      "description": "The customs entry for the shipment occurred on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "Geneva, CH 1201"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-628-04760 and the invoice date is March 7, 2003.",
+    "Total charges for the shipment amount to $20.80 after discounts.",
+    "The shipment was dropped off on February 28, 2003, and included a fuel surcharge.",
+    "Gabriel Perahia is identified as the sender and Aluren Kyantener as the recipient of the shipment.",
+    "The invoice includes instructions for requesting adjustments and details about the shipment's transportation charges."
+  ],
+  "analyzedAt": "2026-02-22T08:58:40.168Z"
+}

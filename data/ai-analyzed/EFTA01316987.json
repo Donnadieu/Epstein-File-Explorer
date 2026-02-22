@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA01316987.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-07-12",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries related to Epstein's account, including multiple shipments and their respective costs.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account detailed in the invoice, receiving shipments at his New York address.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a sender in one of the shipments associated with Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Koen L. Gadan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Koen L. Gadan is mentioned as a recipient of a shipment sent by a third party associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Roduguz",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Roduguz is noted as the individual who signed for the delivery of shipments.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgers is mentioned as a sender in a shipment associated with Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Koen L. Gadan",
+      "relationshipType": "sender-recipient",
+      "description": "Koen L. Gadan is mentioned as a recipient of a shipment sent by a third party associated with Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-07-01",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off by Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-07-06",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered and signed for.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Roduguz"
+      ]
+    },
+    {
+      "date": "2004-07-08",
+      "title": "Shipment Delivered",
+      "description": "Another shipment sent by Jeffrey E. Epstein was delivered and signed for.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Roduguz"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas, VI 00602"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 12, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total charges for the invoice amount to USD 300.55.",
+    "Multiple shipments are detailed, with various recipients and senders associated with Epstein.",
+    "A. Roduguz is noted as the signer for deliveries related to Epstein's shipments.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T07:56:45.082Z"
+}

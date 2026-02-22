@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA01315618.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-01-17",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey E. Epstein and his financial trust company. It includes information about multiple shipments, their costs, and relevant dates, highlighting the financial transactions related to Epstein's activities.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is identified as the sender for multiple shipments listed in the invoice, indicating his involvement in the transactions.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Marie Joseph Experton",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph Experton is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein, indicating a connection between them.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is listed as a recipient for one of the shipments sent by Jeffrey E. Epstein, suggesting a business relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Experton",
+      "relationshipType": "business",
+      "description": "Jeffrey E. Epstein sent a shipment to Marie Joseph Experton, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan, indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-01-10",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered on January 10, 2005.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-01-13",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein to Marie Joseph Experton was delivered on January 13, 2005.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marie Joseph Experton"
+      ]
+    },
+    {
+      "date": "2005-01-11",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein to Jeanne Brennan was delivered on January 11, 2005.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10022",
+    "St. Thomas 00802"
+  ],
+  "keyFacts": [
+    "The invoice details transportation charges totaling $160.66 for multiple shipments.",
+    "Jeffrey E. Epstein is the sender for all shipments listed in the invoice.",
+    "Marie Joseph Experton and Jeanne Brennan are recipients of shipments sent by Epstein.",
+    "The invoice includes specific dates of shipment deliveries, indicating active shipping during January 2005.",
+    "There are references to discounts applied to the transportation charges."
+  ],
+  "analyzedAt": "2026-02-22T07:10:20.307Z"
+}

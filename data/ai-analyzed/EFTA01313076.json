@@ -1,0 +1,91 @@
+{
+  "fileName": "EFTA01313076.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-05-06",
+  "summary": "This document is an invoice from FedEx for services rendered to NYSG LLC, detailing transportation and special handling charges. It includes shipment details, billing information, and payment instructions, indicating a due date for payment.",
+  "persons": [
+    {
+      "name": "Frederick L. White",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Frederick L. White is mentioned as the attorney associated with a shipment related to the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lauren is referenced multiple times as the recipient of packages shipped via FedEx.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lauren Warren",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lauren Warren is mentioned as the recipient of a package shipped to a specific address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Frederick L. White",
+      "person2": "Lauren",
+      "relationshipType": "attorney-client",
+      "description": "Frederick L. White is the attorney associated with shipments that include Lauren as a recipient.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren",
+      "person2": "Lauren Warren",
+      "relationshipType": "recipient",
+      "description": "Both names refer to the same individual involved in receiving packages.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-02",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren"
+      ]
+    },
+    {
+      "date": "2005-05-03",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Lauren's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren"
+      ]
+    },
+    {
+      "date": "2005-05-04",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Lauren's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Warren"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "8700 West Bryn Mawr Ave, Chicago, IL 80831",
+    "2 Kent Court, Livingston, NJ 07039"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 06, 2005, and is for a total of $15.97.",
+    "Frederick L. White is identified as an attorney associated with the invoice.",
+    "Multiple shipments were picked up and delivered to Lauren's address.",
+    "The document includes detailed billing information and payment instructions.",
+    "There are references to adjustments and reasons for potential invoice disputes."
+  ],
+  "analyzedAt": "2026-02-22T05:01:04.701Z"
+}

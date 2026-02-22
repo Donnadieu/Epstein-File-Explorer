@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01334095.pdf",
+  "dataSet": "10",
+  "documentType": "subpoena",
+  "dateOriginal": "2006-01-04",
+  "summary": "This document is a subpoena issued by the State Attorney's Office in Palm Beach County, Florida, commanding BellSouth Telecommunications to provide subscriber information for a specific telephone number as part of an ongoing investigation. The document emphasizes the importance of confidentiality and the legal consequences of non-compliance.",
+  "persons": [
+    {
+      "name": "Joe Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Detective Joe Recarey is mentioned as the officer to whom materials may be supplied in compliance with the subpoena.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Sharon Bock",
+      "role": "Clerk",
+      "category": "legal",
+      "context": "Sharon Bock is identified as the Clerk of the Court who has signed the subpoena.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lyn Callin",
+      "role": "Notary Public",
+      "category": "legal",
+      "context": "Lyn Callin is mentioned as the Notary Public who swore to and subscribed the document.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Joe Recarey",
+      "person2": "Sharon Bock",
+      "relationshipType": "employer-employee",
+      "description": "Joe Recarey, as a detective, works under the jurisdiction of the State Attorney's Office, where Sharon Bock serves as Clerk.",
+      "strength": 3
+    },
+    {
+      "person1": "Joe Recarey",
+      "person2": "Lyn Callin",
+      "relationshipType": "official",
+      "description": "Lyn Callin notarized the document which involves Detective Joe Recarey as part of the investigation.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-01-04",
+      "title": "Issuance of Subpoena",
+      "description": "A subpoena was issued to BellSouth Telecommunications for subscriber information as part of an investigation.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Joe Recarey",
+        "Sharon Bock",
+        "Lyn Callin"
+      ]
+    }
+  ],
+  "locations": [
+    "345 South County Road, Palm Beach, FL 33480",
+    "401 North Dixie Highway, West Palm Beach, Florida",
+    "122 East Lake Drive, Suite 300, Decatur, GA 30030"
+  ],
+  "keyFacts": [
+    "The subpoena commands BellSouth Telecommunications to provide subscriber information for a specific telephone number.",
+    "The document emphasizes that failure to comply may result in contempt of court.",
+    "The subpoena is part of an official investigation by the Town of Palm Beach Police Department."
+  ],
+  "analyzedAt": "2026-02-22T12:29:13.007Z"
+}

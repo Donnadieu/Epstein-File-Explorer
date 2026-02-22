@@ -1,0 +1,53 @@
+{
+  "fileName": "EFTA01299722.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-08-04",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions related to accounts associated with Epstein. It details specific transactions, including amounts and beneficiary information, indicating financial activities linked to Epstein and other individuals or entities.",
+  "persons": [
+    {
+      "name": "J Seb",
+      "role": "Client",
+      "category": "other",
+      "context": "J Seb is mentioned as the client from whom a payment was made, indicating involvement in a financial transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David F Ellison",
+      "role": "Beneficiary",
+      "category": "associate",
+      "context": "David F Ellison is listed as a beneficiary in a financial transaction, suggesting a financial relationship with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Epstein",
+      "person2": "J Seb",
+      "relationshipType": "client-service provider",
+      "description": "J Seb is identified as a client in a transaction involving Epstein, indicating a financial relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Epstein",
+      "person2": "David F Ellison",
+      "relationshipType": "financial",
+      "description": "David F Ellison is noted as a beneficiary in a transaction involving Epstein, indicating a financial connection.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Malibu, CA",
+    "Stockholm, Sweden"
+  ],
+  "keyFacts": [
+    "A payment of $25,000 was made from a client identified as J Seb to Epstein.",
+    "David F Ellison is mentioned as a beneficiary in a transaction involving Epstein.",
+    "The document includes financial transactions processed through The Bank of New York Mellon and JPMorgan Chase.",
+    "The report indicates multiple transactions with varying amounts, suggesting ongoing financial activities.",
+    "Certain details in the document are marked as confidential under federal rules."
+  ],
+  "analyzedAt": "2026-02-21T23:08:57.862Z"
+}

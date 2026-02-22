@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01315041.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-06-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing shipping charges and payment information. It includes information about the services provided, discounts applied, and payment due date.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder for the FedEx services detailed in the invoice, with his billing and shipping addresses listed.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Gany is mentioned as a recipient associated with the shipping address on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the sender of a package that was delivered on June 21, 2001.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Griffis",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "S. Griffis is noted as the individual who signed for the delivery of the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey Epstein is associated with Eric Gany through the shipping address listed on the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is connected to Jeffrey Epstein as a sender of a package to him.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-06-20",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2001-06-21",
+      "title": "Package Delivery",
+      "description": "A package sent by Ghislaine Maxwell was delivered to Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell",
+        "S. Griffis"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6809"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 25, 2001, and details shipping charges totaling $93.11.",
+    "Jeffrey Epstein is listed as both the billing and shipping address.",
+    "Eric Gany is mentioned as a recipient associated with the shipping address.",
+    "Ghislaine Maxwell is noted as the sender of a package delivered to Epstein.",
+    "The invoice indicates a payment due date of July 10, 2001."
+  ],
+  "analyzedAt": "2026-02-22T06:40:13.615Z"
+}

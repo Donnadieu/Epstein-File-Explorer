@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01299723.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-08-19",
+  "summary": "This document contains financial transaction reports from Wells Fargo Bank and JP Morgan Chase Bank, detailing incoming and outgoing wires, checks, and account information related to Jeffrey Epstein and various beneficiaries. It highlights significant monetary transactions and the involvement of multiple individuals and entities.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as an account holder in connection with various financial transactions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Gumming",
+      "role": "Beneficiary",
+      "category": "associate",
+      "context": "David Gumming is listed as a beneficiary in the financial transactions associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Susan Gumming",
+      "role": "Beneficiary",
+      "category": "associate",
+      "context": "Susan Gumming is also listed as a beneficiary in the financial transactions associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Pamela Lorraine Corlon",
+      "role": "Account Holder",
+      "category": "associate",
+      "context": "Pamela Lorraine Corlon is mentioned in relation to financial transactions at Wells Fargo Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Deanna Rotterweck",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Deanna Rotterweck is mentioned as a trustee in connection with financial transactions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Gumming",
+      "relationshipType": "beneficiary-account holder",
+      "description": "David Gumming is listed as a beneficiary of financial transactions associated with Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Susan Gumming",
+      "relationshipType": "beneficiary-account holder",
+      "description": "Susan Gumming is also listed as a beneficiary of financial transactions associated with Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Pamela Lorraine Corlon",
+      "person2": "Deanna Rotterweck",
+      "relationshipType": "trustee-account holder",
+      "description": "Deanna Rotterweck is mentioned in connection with financial transactions involving Pamela Lorraine Corlon.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Wells Fargo Bank, 444 Market Street, San Francisco, CA",
+    "JP Morgan Chase Bank, New York City, NY"
+  ],
+  "keyFacts": [
+    "The document details financial transactions involving Jeffrey Epstein and various beneficiaries.",
+    "Significant amounts of money are mentioned, including transactions of $2,500,000 and $200,000.",
+    "Multiple individuals are listed as beneficiaries in connection with Epstein's accounts.",
+    "The document includes references to various financial institutions, including Wells Fargo and JP Morgan Chase.",
+    "There are mentions of trusts and accounts associated with individuals like Deanna Rotterweck and Pamela Lorraine Corlon."
+  ],
+  "analyzedAt": "2026-02-21T23:09:13.568Z"
+}

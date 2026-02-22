@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA01299719.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-07-06",
+  "summary": "This document contains a report detailing incoming and outgoing wires, checks, and ACH transactions associated with various accounts on July 6, 2017. It includes information about beneficiaries, amounts, and issuers, highlighting financial activities linked to individuals and entities.",
+  "persons": [
+    {
+      "name": "Rajat P Mundkur",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Rajat P Mundkur is mentioned as a joint account holder with Christine A Mundkur in transactions involving Citibank.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Christine A Mundkur",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Christine A Mundkur is mentioned as a joint account holder with Rajat P Mundkur in transactions involving Citibank.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Anna Claire Seymour",
+      "role": "Payee",
+      "category": "other",
+      "context": "Anna Claire Seymour is mentioned as the payee for a check received on June 29, 2017.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Steve Ferriss",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Steve Ferriss is mentioned in relation to the Ferriss Family Trust, which is involved in transactions with Deutsche Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Henry Ritchotte",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Henry Ritchotte is mentioned in connection with a revocable trust established in 2008.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joelle Benioff",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Joelle Benioff is mentioned as a beneficiary in transactions involving Bank of America.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Rajat P Mundkur",
+      "person2": "Christine A Mundkur",
+      "relationshipType": "joint account holders",
+      "description": "Rajat P Mundkur and Christine A Mundkur are joint account holders in transactions involving Citibank.",
+      "strength": 5
+    },
+    {
+      "person1": "Steve Ferriss",
+      "person2": "Ferriss Family Trust",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Steve Ferriss is associated with the Ferriss Family Trust, which is involved in financial transactions.",
+      "strength": 4
+    },
+    {
+      "person1": "Henry Ritchotte",
+      "person2": "Henry Ritchotte 2008 Revocable Trust",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Henry Ritchotte is the trustee of a revocable trust established in 2008.",
+      "strength": 4
+    },
+    {
+      "person1": "Joelle Benioff",
+      "person2": "Bank of America",
+      "relationshipType": "beneficiary-account holder",
+      "description": "Joelle Benioff is mentioned as a beneficiary in transactions involving Bank of America.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-06-29",
+      "title": "Check Received",
+      "description": "A check was received by Anna Claire Seymour.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Anna Claire Seymour"
+      ]
+    },
+    {
+      "date": "2017-06-28",
+      "title": "Multiple Checks Received",
+      "description": "Several checks were received on June 28, 2017, with varying amounts.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "San Juan, PR",
+    "New York, NY",
+    "Boston, MA",
+    "Key Biscayne, FL",
+    "Englewood Cliffs, NJ"
+  ],
+  "keyFacts": [
+    "The document details financial transactions including incoming and outgoing wires and checks.",
+    "Rajat P Mundkur and Christine A Mundkur are joint account holders in transactions involving Citibank.",
+    "Anna Claire Seymour is identified as a payee for a check received on June 29, 2017.",
+    "Steve Ferriss is associated with the Ferriss Family Trust, which is involved in transactions with Deutsche Bank.",
+    "Henry Ritchotte is mentioned in connection with a revocable trust established in 2008."
+  ],
+  "analyzedAt": "2026-02-21T23:08:43.167Z"
+}

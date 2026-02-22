@@ -1,0 +1,56 @@
+{
+  "fileName": "EFTA01313286.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-12-21",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered on December 21, 2001. It includes information about the sender, recipient, and the total amount due for the shipping services provided.",
+  "persons": [
+    {
+      "name": "Lauren Kt/Miner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kt/Miner is listed as the sender of the package associated with this invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Runde ID",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Runde ID is noted as the individual who signed for the delivery on December 11, 2001.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Oakley is mentioned as the person who signed for the delivery of the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-12-11",
+      "title": "Package Delivery",
+      "description": "A package was delivered and signed for by D. Oakley.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kt/Miner",
+        "D. Oakley"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43064"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 21, 2001, and details shipping charges totaling $7.08.",
+    "The sender's address is listed as 457 Madison Ave, New York, NY.",
+    "The recipient of the package is associated with New Albany Property Inc.",
+    "A fuel surcharge of 2.00% was applied to the shipping charges.",
+    "The payment for the invoice is due by January 5, 2002."
+  ],
+  "analyzedAt": "2026-02-22T05:10:45.417Z"
+}

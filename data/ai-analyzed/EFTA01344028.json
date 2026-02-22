@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA01344028.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2013-09-27",
+  "summary": "This document contains email correspondence between Amanda Kirby and Lesley Groff regarding scheduling a meeting with Jeffrey. The communication indicates that they are trying to coordinate a breakfast meeting and that Jeffrey is hesitant to make a decision until the following week.",
+  "persons": [
+    {
+      "name": "Amanda Kirby",
+      "role": "Associate",
+      "category": "staff",
+      "context": "Amanda Kirby is coordinating a meeting with Jeffrey and is communicating with Lesley Groff about scheduling.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Lesley Groff",
+      "role": "Assistant",
+      "category": "staff",
+      "context": "Lesley Groff is responding to Amanda Kirby regarding the scheduling of a meeting with Jeffrey.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Jeffrey is the individual with whom Amanda and Lesley are trying to schedule a meeting, but his full name is not provided.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Caroline",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Caroline is mentioned as having an assistant who is involved in scheduling the meeting, but her full name is not provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Lesley Groff",
+      "relationshipType": "colleagues",
+      "description": "Amanda and Lesley are working together to schedule a meeting with Jeffrey.",
+      "strength": 4
+    },
+    {
+      "person1": "Lesley Groff",
+      "person2": "Jeffrey",
+      "relationshipType": "assistant-principal",
+      "description": "Lesley is assisting in scheduling a meeting for Jeffrey.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Jeffrey",
+      "relationshipType": "unknown",
+      "description": "Amanda is trying to schedule a meeting with Jeffrey, but the nature of their relationship is not specified.",
+      "strength": 2
+    },
+    {
+      "person1": "Lesley Groff",
+      "person2": "Caroline",
+      "relationshipType": "assistant-principal",
+      "description": "Lesley is mentioned in relation to Caroline's assistant, indicating a professional connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-10",
+      "title": "Tentative Meeting Scheduling",
+      "description": "Amanda Kirby and Lesley Groff discuss scheduling a breakfast meeting with Jeffrey on October 10.",
+      "category": "other",
+      "significance": 3,
+      "personsInvolved": [
+        "Amanda Kirby",
+        "Lesley Groff",
+        "Jeffrey"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, 27th Fl, New York, NY 10154-0004"
+  ],
+  "keyFacts": [
+    "Amanda Kirby is an associate at Deutsche Bank Trust Company Americas.",
+    "Lesley Groff is involved in scheduling a meeting with Jeffrey.",
+    "The meeting is tentatively set for October 10, 2013.",
+    "Caroline's assistant confirmed availability for a breakfast meeting.",
+    "Jeffrey is hesitant to make a decision about the meeting until the following week."
+  ],
+  "analyzedAt": "2026-02-22T15:14:11.942Z"
+}

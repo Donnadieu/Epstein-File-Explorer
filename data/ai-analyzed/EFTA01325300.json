@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01325300.pdf",
+  "dataSet": "10",
+  "documentType": "FBI 302",
+  "dateOriginal": "2006-10-17",
+  "summary": "This document details the service of a Grand Jury subpoena at the Dalton School regarding Jeffrey Epstein's employment records. The Head of School, Ellen Stein, was informed of the subpoena and indicated she would consult with the school's attorneys before releasing any information.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the subject of the Grand Jury subpoena related to his employment at the Dalton School.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ellen Stein",
+      "role": "Head of School",
+      "category": "staff",
+      "context": "Ellen Stein is mentioned as the Head of School at the Dalton School who received the Grand Jury subpoena and stated she would consult with the school's attorneys.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Drew",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "Drew is one of the Special Agents who served the Grand Jury subpoena at the Dalton School.",
+      "mentionCount": 1
+    },
+    {
+      "name": "McAndrew",
+      "role": "Special Agent",
+      "category": "law enforcement",
+      "context": "McAndrew is another Special Agent who accompanied Drew to serve the Grand Jury subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ellen Stein",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Ellen Stein is the Head of School at the Dalton School where Jeffrey Epstein was employed.",
+      "strength": 3
+    },
+    {
+      "person1": "Drew",
+      "person2": "McAndrew",
+      "relationshipType": "colleagues",
+      "description": "Drew and McAndrew are both Special Agents working together on the investigation.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-10-06",
+      "title": "Grand Jury Subpoena Issued",
+      "description": "A Grand Jury subpoena was issued by the United States District Court for records regarding Jeffrey Epstein's employment.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2006-10-16",
+      "title": "Grand Jury Subpoena Served",
+      "description": "The Grand Jury subpoena was served at the Dalton School by Special Agents Drew and McAndrew.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Ellen Stein",
+        "Drew",
+        "McAndrew"
+      ]
+    }
+  ],
+  "locations": [
+    "Dalton School, 108 East 89 Street, New York, New York",
+    "701 Clematis Street, West Palm Beach, Florida"
+  ],
+  "keyFacts": [
+    "A Grand Jury subpoena was issued on 10/06/2006 for records related to Jeffrey Epstein's employment at the Dalton School.",
+    "The subpoena was served at the Dalton School on 10/16/2006.",
+    "Ellen Stein, the Head of School, indicated she would consult with the school's attorneys before releasing any information.",
+    "If the records were not provided by 10/20/2006, Ellen Stein would be required to appear in court.",
+    "The document indicates that no further action will be taken by the New York Office at this time."
+  ],
+  "analyzedAt": "2026-02-22T11:08:54.282Z"
+}

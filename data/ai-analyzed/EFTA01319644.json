@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA01319644.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-07",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and payment information. The invoice highlights the total amount due and provides a breakdown of transportation charges and special handling fees.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, as it is addressed to him and details his shipping activities.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Florena Rueda",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Florena Rueda is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Florena Rueda",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Florena Rueda as indicated in the shipment details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-27",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-01",
+      "title": "Shipment Pickup",
+      "description": "Additional shipments were picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-02",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Jeffrey E. Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan",
+        "Florena Rueda"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 7, 2004, and totals $710.02.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice, with multiple shipments listed.",
+    "Shipments were picked up on August 27, 2004, and September 1, 2004.",
+    "The invoice includes details of transportation charges, discounts, and special handling fees.",
+    "Jeanne Brennan and Florena Rueda are identified as recipients of shipments sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:15:50.590Z"
+}

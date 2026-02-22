@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA01314297.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-08-18",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to Jeffrey E. Epstein. It includes various shipment details, charges, and discounts applied to Epstein's account for multiple shipments made around August 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as a sender for some of the shipments associated with Epstein's account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Eric O'Leary",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric O'Leary is listed as a recipient for one of the shipments sent from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a sender for shipments associated with Epstein's account.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Catherine",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Catherine is mentioned as a recipient for one of the shipments sent from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell Zorro",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maxwell Zorro is mentioned as a recipient for one of the shipments sent from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Larry Visoski is associated with Epstein as a sender for shipments, indicating a working relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric O'Leary",
+      "relationshipType": "client-recipient",
+      "description": "Eric O'Leary is a recipient of shipments sent from Epstein's account, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Dave Rodgers is mentioned as a sender for shipments associated with Epstein's account, indicating a working relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-08-11",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up from Epstein's address on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    },
+    {
+      "date": "2003-08-12",
+      "title": "Shipment Delivery",
+      "description": "Several shipments sent from Epstein's account were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Eric O'Leary",
+        "Catherine"
+      ]
+    },
+    {
+      "date": "2003-08-13",
+      "title": "Shipment Delivery",
+      "description": "Additional shipments sent from Epstein's account were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Dave Rodgers"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "358 Ebrello Way, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice details shipping charges totaling USD 335.00 for services rendered to Jeffrey E. Epstein.",
+    "Multiple shipments were made from Epstein's New York address during August 2003.",
+    "Discounts totaling USD 537.80 were applied to Epstein's account during this billing period."
+  ],
+  "analyzedAt": "2026-02-22T06:01:42.589Z"
+}

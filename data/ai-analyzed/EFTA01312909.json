@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA01312909.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-06-25",
+  "summary": "This document is an invoice from FedEx to NYSG LLC dated June 25, 2004, detailing shipping charges and payment information. It includes multiple pages with shipment details, charges, and contact information for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Lauren K. Witmer",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren K. Witmer is listed as the sender for a FedEx shipment associated with NYSG LLC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeff Schantz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeff Schantz is mentioned as a sender for a FedEx shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "D. Oakley is mentioned as a recipient for a FedEx shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren K. Witmer",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Lauren K. Witmer is associated with NYSG LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeff Schantz",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Jeff Schantz is associated with NYSG LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "D. Oakley",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "D. Oakley is mentioned as a recipient for shipments sent by NYSG LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06-25",
+      "title": "FedEx Invoice Issued",
+      "description": "FedEx issued an invoice to NYSG LLC for shipping services rendered.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Witmer",
+        "Jeff Schantz",
+        "D. Oakley"
+      ]
+    },
+    {
+      "date": "2004-06-16",
+      "title": "Package Picked Up",
+      "description": "A package was picked up by FedEx for shipment associated with NYSG LLC.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren K. Witmer"
+      ]
+    },
+    {
+      "date": "2004-06-21",
+      "title": "Package Picked Up",
+      "description": "Another package was picked up by FedEx for shipment associated with NYSG LLC.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeff Schantz"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice number is 1-847-51358, dated June 25, 2004.",
+    "Total charges on the invoice amount to USD $14.05.",
+    "The invoice includes details of shipments picked up on June 16, 2004, and June 21, 2004.",
+    "The sender and recipient addresses are both listed as NYSG LLC at 457 Madison Ave, New York, NY.",
+    "There are multiple references to FedEx services and charges throughout the document."
+  ],
+  "analyzedAt": "2026-02-22T04:53:36.504Z"
+}

@@ -1,0 +1,109 @@
+{
+  "fileName": "EFTA01319130.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-04-06",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent by NYSG LLC. It includes billing information, service charges, and payment details, indicating transactions related to shipments made in March 2001.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "staff",
+      "context": "Bella Tsukeman is listed as the billing contact for NYSG LLC on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Peg Ugland is mentioned as the sender for some of the packages listed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the sender for several packages in the invoice.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Bella Tsukeman is associated with NYSG LLC as the billing contact.",
+      "strength": 4
+    },
+    {
+      "person1": "Peg Ugland",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Peg Ugland is associated with NYSG LLC as a sender for shipments.",
+      "strength": 3
+    },
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Ghislaine Maxwell is associated with NYSG LLC as a sender for shipments.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-03-22",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Peg Ugland"
+      ]
+    },
+    {
+      "date": "2001-03-23",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Peg Ugland"
+      ]
+    },
+    {
+      "date": "2001-03-28",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2001-03-30",
+      "title": "Package Delivery",
+      "description": "A package sent by Ghislaine Maxwell was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "6525 West Campus Oval, New Albany, OH 43050",
+    "2870 Janitell Rd, Colorado Springs, CO 80906",
+    "3425 Morse Crossing, Columbus, OH 43299"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 6, 2001, and includes multiple shipping transactions.",
+    "Bella Tsukeman is identified as the billing contact for NYSG LLC.",
+    "Ghislaine Maxwell is mentioned multiple times as a sender for packages.",
+    "Peg Ugland is also identified as a sender for some shipments.",
+    "The total amount due on the invoice is USD $59.33."
+  ],
+  "analyzedAt": "2026-02-22T09:51:58.522Z"
+}

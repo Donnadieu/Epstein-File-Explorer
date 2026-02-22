@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA01319340.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-08-24",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on August 24, 2001. It includes information about the sender, recipient, and payment details, as well as instructions for invoice adjustments.",
+  "persons": [
+    {
+      "name": "Lauren Kvintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kvintner is listed as the sender associated with the FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Hoffman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Paul Hoffman is mentioned as the recipient of the package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-08-23",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx on August 23, 2001, for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kvintner",
+        "Paul Hoffman"
+      ]
+    },
+    {
+      "date": "2001-08-24",
+      "title": "Package Delivery",
+      "description": "The package was delivered on August 24, 2001, at 13:59.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kvintner",
+        "Paul Hoffman"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "St. Thomas, VI 00804"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-933-02196, dated August 24, 2001.",
+    "Total charges for the FedEx services amounted to $27.04.",
+    "The package was picked up on August 23, 2001, and delivered on August 24, 2001.",
+    "Lauren Kvintner is identified as the sender and Paul Hoffman as the recipient.",
+    "The invoice includes instructions for requesting adjustments under the Money-back Guarantee."
+  ],
+  "analyzedAt": "2026-02-22T10:02:48.483Z"
+}

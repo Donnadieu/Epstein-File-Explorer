@@ -1,0 +1,76 @@
+{
+  "fileName": "EFTA01308010.pdf",
+  "dataSet": "10",
+  "documentType": "court filing",
+  "dateOriginal": "2008-06-27",
+  "summary": "This document is a fax cover sheet from the Palm Beach Police Department to the FBI, along with a criminal information filing against Jeffrey E. Epstein for procuring a person under 18 for prostitution. It includes details about the charges and the involvement of the State Attorney's office in Palm Beach County.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is charged with procuring a person under the age of 18 for prostitution in the State of Florida.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Barry E. Krischer",
+      "role": "State Attorney",
+      "category": "legal",
+      "context": "Barry E. Krischer is the State Attorney for the Fifteenth Judicial Circuit, who is prosecuting the case against Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lanna Belohlavek",
+      "role": "Assistant State Attorney",
+      "category": "legal",
+      "context": "Lanna Belohlavek is an Assistant State Attorney who has sworn to the allegations against Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Barry E. Krischer",
+      "person2": "Lanna Belohlavek",
+      "relationshipType": "employer-employee",
+      "description": "Barry E. Krischer is the State Attorney who oversees Lanna Belohlavek, the Assistant State Attorney working on the Epstein case.",
+      "strength": 5
+    },
+    {
+      "person1": "Barry E. Krischer",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Barry E. Krischer is prosecuting Jeffrey E. Epstein for the charges of procuring a minor for prostitution.",
+      "strength": 5
+    },
+    {
+      "person1": "Lanna Belohlavek",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Lanna Belohlavek, as an Assistant State Attorney, is involved in the prosecution of Jeffrey E. Epstein.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-01",
+      "title": "Procuring Minor for Prostitution",
+      "description": "Jeffrey E. Epstein is charged with procuring a person under the age of 18 for prostitution between August 1, 2004, and October 9, 2005.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, FL"
+  ],
+  "keyFacts": [
+    "Jeffrey E. Epstein is charged with procuring a person under 18 for prostitution.",
+    "The charges are based on events occurring between August 1, 2004, and October 9, 2005.",
+    "Barry E. Krischer is the State Attorney overseeing the prosecution.",
+    "Lanna Belohlavek is the Assistant State Attorney who has sworn to the allegations.",
+    "The document includes a fax cover sheet indicating communication between the Palm Beach Police Department and the FBI."
+  ],
+  "analyzedAt": "2026-02-22T03:19:48.773Z"
+}

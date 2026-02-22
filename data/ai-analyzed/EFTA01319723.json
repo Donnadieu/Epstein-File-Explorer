@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA01319723.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "1999-08-09",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered to J Epstein & Co Inc. It includes multiple entries for shipments made between July 27 and August 2, 1999, with various individuals associated with the company listed as senders and recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the owner of J Epstein & Co Inc, which is the account holder for the FedEx services detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Michelle Healy",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Michelle Healy is mentioned as a sender for several shipments made by J Epstein & Co Inc.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lainie Kelsch",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Lainie Kelsch is listed as a sender for multiple packages sent by J Epstein & Co Inc.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lauren Mintier",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Lauren Mintier is mentioned as a sender for a shipment made by J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Employee",
+      "category": "staff",
+      "context": "John Alessi is noted as a sender for several packages associated with J Epstein & Co Inc.",
+      "mentionCount": 3
+    },
+    {
+      "name": "David Ross",
+      "role": "Recipient",
+      "category": "other",
+      "context": "David Ross is mentioned as a recipient for a package sent from J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Eric Gany is listed as a sender for a shipment made by J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gerald Edelman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Gerald Edelman is mentioned as a recipient for a package sent from J Epstein & Co Inc.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Michelle Healy",
+      "relationshipType": "employer-employee",
+      "description": "Michelle Healy is an employee of J Epstein & Co Inc, which is owned by Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lainie Kelsch",
+      "relationshipType": "employer-employee",
+      "description": "Lainie Kelsch is an employee of J Epstein & Co Inc, which is owned by Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "employer-employee",
+      "description": "John Alessi is an employee of J Epstein & Co Inc, which is owned by Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "employer-employee",
+      "description": "Eric Gany is an employee of J Epstein & Co Inc, which is owned by Jeffrey Epstein.",
+      "strength": 5
+    },
+    {
+      "person1": "John Alessi",
+      "person2": "David Ross",
+      "relationshipType": "social",
+      "description": "John Alessi is noted as a sender for a package sent to David Ross.",
+      "strength": 3
+    },
+    {
+      "person1": "John Alessi",
+      "person2": "Gerald Edelman",
+      "relationshipType": "social",
+      "description": "John Alessi is noted as a sender for a package sent to Gerald Edelman.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "1999-07-27",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery, initiated by J Epstein & Co Inc.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Michelle Healy"
+      ]
+    },
+    {
+      "date": "1999-07-28",
+      "title": "Multiple Package Pickups",
+      "description": "Several packages were picked up by FedEx for delivery, initiated by J Epstein & Co Inc.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lainie Kelsch",
+        "John Alessi"
+      ]
+    },
+    {
+      "date": "1999-08-02",
+      "title": "Package Delivery",
+      "description": "Packages sent from J Epstein & Co Inc were delivered to various recipients.",
+      "category": "transportation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany",
+        "Gerald Edelman"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809"
+  ],
+  "keyFacts": [
+    "The invoice details transportation charges totaling $263.92 for services rendered to J Epstein & Co Inc.",
+    "Multiple employees of J Epstein & Co Inc are listed as senders for various packages.",
+    "The invoice includes several entries for packages picked up and delivered between July 27 and August 2, 1999."
+  ],
+  "analyzedAt": "2026-02-22T10:20:19.748Z"
+}

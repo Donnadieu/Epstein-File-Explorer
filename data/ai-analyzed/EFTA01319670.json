@@ -1,0 +1,136 @@
+{
+  "fileName": "EFTA01319670.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-27",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges, discounts, and shipment summaries for various packages sent by Epstein, including dates and recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is the account holder for the shipping services.",
+      "mentionCount": 10
+    },
+    {
+      "name": "David Mullen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "David Mullen is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "B. Larson",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "B. Larson is noted as the individual who signed for a package delivered to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Locke",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "J. Locke is mentioned as the individual who signed for a package delivered to Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Clive Husband",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Clive Husband is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Mullen",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to David Mullen, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "B. Larson",
+      "relationshipType": "service-provider",
+      "description": "B. Larson is a FedEx employee who signed for a package delivered to Epstein, indicating a service-provider relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Locke",
+      "relationshipType": "service-provider",
+      "description": "J. Locke is a FedEx employee who signed for a package delivered to Epstein, indicating a service-provider relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Clive Husband",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Clive Husband, indicating a sender-recipient relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-20",
+      "title": "Package Drop-off",
+      "description": "Epstein dropped off packages for shipment at FedEx.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-21",
+      "title": "Package Delivery",
+      "description": "Multiple packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "David Mullen",
+        "B. Larson",
+        "J. Locke"
+      ]
+    },
+    {
+      "date": "2004-09-22",
+      "title": "Package Pick-up",
+      "description": "Epstein had packages picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-09-23",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Clive Husband",
+        "J. Locke"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "9 East 71 St, New York City, NY 10021",
+    "140 N Mitchell St 200, Addison, IL 60101",
+    "1050 Lee Wagener Rd Ste 201, Fort Lauderdale, FL 33315",
+    "6525 West Campus Oval, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 27, 2004, and details shipping charges totaling $102.64.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services, with multiple packages sent and received.",
+    "The document includes specific details about the shipment dates, recipients, and FedEx employees involved in the delivery process.",
+    "There are multiple references to discounts applied to the shipping charges.",
+    "Several packages were sent to various individuals, indicating Epstein's active use of FedEx services for shipping."
+  ],
+  "analyzedAt": "2026-02-22T10:17:13.043Z"
+}

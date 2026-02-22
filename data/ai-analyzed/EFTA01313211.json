@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01313211.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-01-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services. It details the charges incurred, including transportation charges, discounts, and total amount due. The invoice indicates that payment is due by January 28, 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx, with his billing and shipping address listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Richard Witter",
+      "role": "Sender",
+      "category": "other",
+      "context": "Richard Witter is mentioned in connection with a package sent via FedEx, indicating involvement in the shipping process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as associated with a package sent to her address, indicating a connection to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is associated with a package sent to her address, indicating a personal connection to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Witter",
+      "relationshipType": "employer-employee",
+      "description": "Richard Witter is involved in the shipping process for Epstein, suggesting a professional relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "71 Wooster St, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 14, 2002, and is for shipping services provided to Jeffrey Epstein.",
+    "Total charges on the invoice amount to $132.50, with discounts applied.",
+    "Payment is due by January 28, 2002.",
+    "The invoice includes details of a package sent to Ghislaine Maxwell's address.",
+    "Richard Witter is mentioned in connection with the shipping process."
+  ],
+  "analyzedAt": "2026-02-22T05:08:12.839Z"
+}

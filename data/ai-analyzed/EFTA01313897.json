@@ -1,0 +1,137 @@
+{
+  "fileName": "EFTA01313897.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-01-24",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent from NY SG LLC located at 457 Madison Ave, New York, NY. It includes shipment details, charges, and contact information for FedEx Revenue Services.",
+  "persons": [
+    {
+      "name": "Lauren Vintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Vintner is listed as the sender for multiple shipments originating from NY SG LLC.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Chris Gaze",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Chris Gaze is mentioned as a recipient for a package delivered to Boynton Beach, FL.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francis Ward",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Francis Ward is noted as a recipient for a package sent to West Palm Beach, FL.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Juan P Alessi",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Juan P Alessi is mentioned as a recipient for a package sent to Jeffrey E Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey E Epstein",
+      "role": "Recipient",
+      "category": "key figure",
+      "context": "Jeffrey E Epstein is listed as a recipient for a package sent to his address at 457 Madison Ave.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamey",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Eric Gamey is mentioned as a recipient for a package sent to NY SG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Vintner",
+      "person2": "Jeffrey E Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Vintner is associated with NY SG LLC, which is linked to Jeffrey E Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Vintner",
+      "person2": "Chris Gaze",
+      "relationshipType": "social",
+      "description": "Lauren Vintner sent a package to Chris Gaze, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Vintner",
+      "person2": "Francis Ward",
+      "relationshipType": "social",
+      "description": "Lauren Vintner sent a package to Francis Ward, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Vintner",
+      "person2": "Juan P Alessi",
+      "relationshipType": "social",
+      "description": "Lauren Vintner sent a package to Juan P Alessi, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Vintner",
+      "person2": "Eric Gamey",
+      "relationshipType": "social",
+      "description": "Lauren Vintner sent a package to Eric Gamey, indicating a social or business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-01-15",
+      "title": "Package Pickup",
+      "description": "Packages were picked up by FedEx from NY SG LLC on January 15, 2003.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Vintner"
+      ]
+    },
+    {
+      "date": "2003-01-16",
+      "title": "Package Delivery",
+      "description": "Packages were delivered to various recipients including Chris Gaze and Francis Ward.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Vintner",
+        "Chris Gaze",
+        "Francis Ward"
+      ]
+    },
+    {
+      "date": "2003-01-17",
+      "title": "Package Delivery",
+      "description": "Additional packages were delivered to recipients including Juan P Alessi and Jeffrey E Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Vintner",
+        "Juan P Alessi",
+        "Jeffrey E Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "Boynton Beach, FL",
+    "West Palm Beach, FL"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 24, 2003, and includes multiple shipments sent from NY SG LLC.",
+    "Lauren Vintner is the sender for several packages listed in the invoice.",
+    "Jeffrey E Epstein is identified as a recipient for a package sent to his address.",
+    "The document details shipping charges and includes contact information for FedEx Revenue Services.",
+    "Multiple recipients are mentioned, indicating a network of relationships involving NY SG LLC."
+  ],
+  "analyzedAt": "2026-02-22T05:42:17.217Z"
+}

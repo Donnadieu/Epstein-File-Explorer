@@ -1,0 +1,111 @@
+{
+  "fileName": "EFTA01318390.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-07-25",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered on July 17 and July 18, 2003. It includes information about the sender, recipient, and charges associated with the shipments.",
+  "persons": [
+    {
+      "name": "Darren K. Indyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren K. Indyke is listed as the sender for the FedEx shipments detailed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Sender",
+      "category": "other",
+      "context": "Peg Ugland is mentioned as a sender for one of the FedEx shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael T. Rogers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Michael T. Rogers is identified as the sender for another FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Recipient",
+      "category": "other",
+      "context": "D. Oakley is mentioned as the person who signed for the delivery of one of the packages.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Loprimo",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Loprimo is noted as the person who signed for another package delivery.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Peg Ugland",
+      "relationshipType": "employer-employee",
+      "description": "Both are listed as senders for FedEx shipments, indicating a possible working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Michael T. Rogers",
+      "relationshipType": "employer-employee",
+      "description": "Both are senders for different shipments, suggesting they may work together.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "D. Oakley",
+      "relationshipType": "recipient-sender",
+      "description": "D. Oakley signed for a package sent by Darren K. Indyke.",
+      "strength": 4
+    },
+    {
+      "person1": "Michael T. Rogers",
+      "person2": "Loprimo",
+      "relationshipType": "recipient-sender",
+      "description": "Loprimo signed for a package sent by Michael T. Rogers.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-07-17",
+      "title": "FedEx Shipment Pickup",
+      "description": "FedEx shipments were picked up by the sender on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren K. Indyke",
+        "Peg Ugland",
+        "Michael T. Rogers"
+      ]
+    },
+    {
+      "date": "2003-07-18",
+      "title": "FedEx Shipment Delivery",
+      "description": "Packages sent by Michael T. Rogers were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Michael T. Rogers",
+        "Loprimo"
+      ]
+    }
+  ],
+  "locations": [
+    "NEW YORK NY 10022-6843",
+    "NEW ALBANY OH 43064"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 25, 2003, and details shipping charges totaling $12.65.",
+    "Darren K. Indyke, Peg Ugland, and Michael T. Rogers are identified as senders for various shipments.",
+    "D. Oakley and Loprimo are noted as recipients who signed for deliveries.",
+    "The shipments were picked up on July 17, 2003, and delivered on July 18, 2003.",
+    "The document includes a breakdown of transportation charges and service types."
+  ],
+  "analyzedAt": "2026-02-22T09:12:17.121Z"
+}

@@ -1,0 +1,113 @@
+{
+  "fileName": "EFTA01318239.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-04-14",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in early April 2003. The invoice includes specific charges, discounts, and shipment details, indicating Epstein's use of FedEx services for both personal and business-related deliveries.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, as indicated by the invoice details and shipment records.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Eric",
+      "role": "Reference",
+      "category": "other",
+      "context": "Eric is mentioned as a reference for some shipments, indicating a possible connection to Epstein's shipping activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is listed as a recipient for some shipments associated with Epstein, suggesting a business or personal connection.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Shannon Jeanie/Jamie",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Shannon Jeanie/Jamie is mentioned as a recipient for shipments sent by Epstein, indicating a possible personal or business relationship.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lawrence Usoski",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lawrence Usoski is mentioned as a sender for one of the shipments, indicating involvement in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is listed as a recipient for shipments sent by Epstein, indicating a business or personal connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Shannon Jeanie/Jamie",
+      "relationshipType": "business",
+      "description": "Shannon Jeanie/Jamie is mentioned as a recipient for shipments sent by Epstein, suggesting a possible personal or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric",
+      "relationshipType": "reference",
+      "description": "Eric is referenced in connection with some shipments, indicating a possible connection to Epstein's shipping activities.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-04-02",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date, associated with Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-04-07",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered on this date, indicating the completion of the shipping process.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-04-10",
+      "title": "Shipment Delivery",
+      "description": "Another shipment associated with Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas 00802 VI",
+    "Avenue Louise 113, Brussels 1050 BE"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 14, 2003, and details charges totaling $407.24 for FedEx services.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice.",
+    "Shipments were made to various locations, including Brussels and St. Thomas, indicating international shipping activities.",
+    "Multiple recipients are associated with Epstein's shipments, suggesting a network of contacts.",
+    "The document includes references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T09:04:14.814Z"
+}

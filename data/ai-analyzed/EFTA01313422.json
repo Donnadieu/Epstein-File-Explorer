@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01313422.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-04-12",
+  "summary": "This document is an invoice from FedEx for services rendered to NYSG LLC, detailing transportation charges and payment information. It includes multiple pages of billing details, including sender and recipient information, service types, and charges incurred. The invoice is dated April 12, 2002, and outlines various FedEx services used by the company.",
+  "persons": [
+    {
+      "name": "Lauren Kwiitner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwiitner is identified as the sender associated with NYSG LLC, responsible for the shipping charges detailed in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Paul Burkhardt is mentioned as the recipient of the services provided by FedEx, associated with New Albany Property Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Signatory",
+      "category": "other",
+      "context": "D. Oakley is noted as the individual who signed for the delivery of packages on multiple occasions.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwiitner",
+      "person2": "Paul Burkhardt",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwiitner, as the sender from NYSG LLC, is connected to Paul Burkhardt, who is associated with New Albany Property Inc., indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-04-01",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from NYSG LLC on April 1, 2002.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwiitner"
+      ]
+    },
+    {
+      "date": "2002-04-03",
+      "title": "Package Pickup",
+      "description": "Another package was picked up from NYSG LLC on April 3, 2002.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwiitner"
+      ]
+    },
+    {
+      "date": "2002-04-05",
+      "title": "Package Pickup",
+      "description": "A third package was picked up from NYSG LLC on April 5, 2002.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwiitner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval, Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 12, 2002, and is associated with NYSG LLC.",
+    "Lauren Kwiitner is the sender listed on the invoice.",
+    "Paul Burkhardt is identified as the recipient associated with New Albany Property Inc.",
+    "Multiple package pickups occurred on April 1, April 3, and April 5, 2002.",
+    "The total charges on the invoice amount to USD 23.52."
+  ],
+  "analyzedAt": "2026-02-22T05:18:15.880Z"
+}

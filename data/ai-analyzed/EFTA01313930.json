@@ -1,0 +1,219 @@
+{
+  "fileName": "EFTA01313930.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-02-03",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates, charges, and recipients involved in the transactions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Epstein is the primary individual associated with the FedEx account, receiving and sending multiple shipments as detailed in the invoice.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Visoski is mentioned as a signatory for several shipments, indicating his involvement in Epstein's shipping activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Patrick O.",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Patrick O. is listed as a recipient for shipments sent by Epstein, indicating a connection in the shipping process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rhona Sanwa",
+      "role": "Sender",
+      "category": "other",
+      "context": "Sanwa is mentioned as a sender for one of the packages shipped by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Yuni Lee",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lee is noted as a sender for a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christopher O.",
+      "role": "Recipient",
+      "category": "other",
+      "context": "O. is mentioned as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Coleen DiFonzo",
+      "role": "Recipient",
+      "category": "other",
+      "context": "DiFonzo is listed as a recipient for one of the packages sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Rodgers",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Rodgers is mentioned as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joanna Moskal",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Moskal is noted as a recipient for a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Helen",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Helen is mentioned as a recipient for a shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Visoski appears to be an employee involved in managing Epstein's shipping activities.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Patrick O.",
+      "relationshipType": "shipping recipient",
+      "description": "O. is a recipient of shipments sent by Epstein, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rhona Sanwa",
+      "relationshipType": "shipping sender",
+      "description": "Sanwa is noted as a sender for a package associated with Epstein, indicating a shipping relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Yuni Lee",
+      "relationshipType": "shipping sender",
+      "description": "Lee is mentioned as a sender for a shipment associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christopher O.",
+      "relationshipType": "shipping recipient",
+      "description": "O. is a recipient of shipments sent by Epstein, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Coleen DiFonzo",
+      "relationshipType": "shipping recipient",
+      "description": "DiFonzo is listed as a recipient for one of the packages sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Rodgers",
+      "relationshipType": "shipping recipient",
+      "description": "Rodgers is mentioned as a recipient for a shipment sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Joanna Moskal",
+      "relationshipType": "shipping recipient",
+      "description": "Moskal is noted as a recipient for a shipment associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Helen",
+      "relationshipType": "shipping recipient",
+      "description": "Helen is mentioned as a recipient for a shipment sent by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-01-20",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx for delivery, associated with Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    },
+    {
+      "date": "2003-01-25",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to a recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Patrick O."
+      ]
+    },
+    {
+      "date": "2003-01-27",
+      "title": "Package Delivery",
+      "description": "Multiple packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Christopher O.",
+        "Helen"
+      ]
+    },
+    {
+      "date": "2003-01-28",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "David Rodgers",
+        "Joanna Moskal"
+      ]
+    },
+    {
+      "date": "2003-01-29",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Coleen DiFonzo"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "1131 Pine Point Road, West Palm Beach, FL 33404",
+    "116 East 65th Street, New York, NY 10021",
+    "6102 Wheatley Ct, Boynton Beach, FL 33474",
+    "75 Lower Welden Street, St Albans, VT 06079",
+    "1401 S Radler Or, 209 West Palm Beach, FL 33401"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 3, 2003, and is associated with Jeffrey E. Epstein.",
+    "Multiple shipments were sent and received by Epstein, with various recipients listed.",
+    "Larry Visoski is frequently mentioned as a signatory for shipments, indicating his role in Epstein's shipping activities.",
+    "The invoice details various shipping charges, discounts, and total amounts due.",
+    "Several recipients of Epstein's shipments are noted, indicating a network of individuals involved in his shipping activities."
+  ],
+  "analyzedAt": "2026-02-22T05:44:28.753Z"
+}

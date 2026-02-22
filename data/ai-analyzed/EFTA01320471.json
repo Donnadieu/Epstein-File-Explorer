@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01320471.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial statements related to the Epstein Interests account managed by Bear Stearns & Co. Inc. It details cash flow analysis, portfolio holdings, and transaction activities for various dates in 2002. The statements highlight significant cash balances, investment activities, and account management details.",
+  "persons": [
+    {
+      "name": "Jeffery E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffery E. Epstein is identified as the account holder for the Epstein Interests account at Bear Stearns.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Trustee",
+      "category": "key figure",
+      "context": "Mark L. Epstein is listed as a trustee for the Epstein Interests account.",
+      "mentionCount": 10
+    },
+    {
+      "name": "William Elkus",
+      "role": "Trustee",
+      "category": "key figure",
+      "context": "William Elkus is mentioned as a trustee for the Epstein Interests account.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Naomi",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Naomi is mentioned in the context of account management and statements.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Zicherman, Ira",
+      "role": "Account Executive",
+      "category": "staff",
+      "context": "Ira Zicherman is identified as the account executive servicing the Epstein Interests account.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffery E. Epstein",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "family",
+      "description": "Mark L. Epstein is the brother of Jeffery E. Epstein and is listed as a trustee for the account.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffery E. Epstein",
+      "person2": "William Elkus",
+      "relationshipType": "trustee-client",
+      "description": "William Elkus serves as a trustee for the Epstein Interests account held by Jeffery E. Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Mark L. Epstein",
+      "person2": "William Elkus",
+      "relationshipType": "trustee-client",
+      "description": "William Elkus is a trustee alongside Mark L. Epstein for the Epstein Interests account.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-12-31",
+      "title": "End of Year Financial Summary",
+      "description": "The financial summary for the Epstein Interests account as of December 31, 2002, shows a net credit balance and details of portfolio holdings.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffery E. Epstein",
+        "Mark L. Epstein",
+        "William Elkus"
+      ]
+    },
+    {
+      "date": "2002-11-30",
+      "title": "Account Activity Summary",
+      "description": "Summary of account activities including deposits and withdrawals for the month of November 2002.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffery E. Epstein",
+        "Mark L. Epstein",
+        "William Elkus"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Avenue, 4th Floor, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The Epstein Interests account is managed by Bear Stearns & Co. Inc.",
+    "Jeffery E. Epstein, Mark L. Epstein, and William Elkus are listed as key figures associated with the account.",
+    "The account shows significant cash balances and investment activities throughout 2002.",
+    "There are no 'Stop Loss' orders or pending buy/sell orders on file for the account.",
+    "The document includes multiple financial summaries and transaction details for various dates."
+  ],
+  "analyzedAt": "2026-02-22T10:43:03.795Z"
+}

@@ -1,0 +1,158 @@
+{
+  "fileName": "EFTA01317670.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-07-08",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in June 2002. The invoice includes information about discounts applied, total charges, and specific details about the packages sent, including recipients and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of a package sent by Epstein via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Inoyke",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Darren Inoyke is listed as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marie Joseph Expertor",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph Expertor is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is noted as a sender of a package to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosa Monckton",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosa Monckton is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tyson C. Jacobs",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tyson C. Jacobs is listed as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Jeanne Brennan via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren Inoyke",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Darren Inoyke via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Expertor",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Marie Joseph Expertor via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is noted as a sender of a package to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosa Monckton",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Rosa Monckton via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tyson C. Jacobs",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Tyson C. Jacobs via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-06-19",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-06-21",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Jeanne Brennan.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2002-06-28",
+      "title": "Multiple Package Pickups",
+      "description": "Several packages were picked up from Epstein's address.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-01",
+      "title": "Package Deliveries",
+      "description": "Packages sent by Epstein were delivered to multiple recipients including Darren Inoyke and Marie Joseph Expertor.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Darren Inoyke",
+        "Marie Joseph Expertor"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments made by Jeffrey E. Epstein through FedEx in June 2002.",
+    "Total charges for the invoice amount to USD 933.67.",
+    "Discounts applied to the invoice totaled USD 328.20.",
+    "Packages were sent to various individuals including associates and recipients connected to Epstein.",
+    "The document includes specific details about the transportation charges and delivery dates for each package."
+  ],
+  "analyzedAt": "2026-02-22T08:33:01.255Z"
+}

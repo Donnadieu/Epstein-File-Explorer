@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA01312829.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-05-03",
+  "summary": "This document is an invoice summary from FedEx detailing transportation charges related to shipments associated with Jeffrey E. Epstein Financial Trust Company. It includes information on various shipments, their costs, and the discounts applied. The invoice indicates multiple shipments made in April 2004, with specific details on charges and recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Owner",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is associated with the financial trust company mentioned in the invoice, indicating his involvement in the shipments.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is listed as a recipient of a shipment sent from the Jeffrey E. Epstein Financial Trust Company.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a sender in one of the shipments associated with the trust company.",
+      "mentionCount": 1
+    },
+    {
+      "name": "C. Dejon",
+      "role": "Signer",
+      "category": "other",
+      "context": "C. Dejon signed for a package delivered on April 23, 2004.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Rodriguez signed for a package delivered on April 28, 2004.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Illouz",
+      "role": "Signer",
+      "category": "other",
+      "context": "J. Illouz signed for a package delivered on April 29, 2004.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein is the sender associated with shipments that include Jeanne Brennan as a recipient.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "employer-employee",
+      "description": "Dave Rodgers is mentioned as a sender in shipments related to Jeffrey E. Epstein's financial trust.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "C. Dejon",
+      "relationshipType": "transactional",
+      "description": "C. Dejon signed for a package sent by Jeffrey E. Epstein's financial trust.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "transactional",
+      "description": "A. Rodriguez signed for a package sent by Jeffrey E. Epstein's financial trust.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Illouz",
+      "relationshipType": "transactional",
+      "description": "J. Illouz signed for a package sent by Jeffrey E. Epstein's financial trust.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-22",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for shipment by Jeffrey E. Epstein Financial Trust Company.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-04-23",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein Financial Trust Company was delivered and signed by C. Dejon.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "C. Dejon"
+      ]
+    },
+    {
+      "date": "2004-04-28",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein Financial Trust Company was delivered and signed by A. Rodriguez.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2004-04-29",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein Financial Trust Company was delivered and signed by J. Illouz.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "J. Illouz"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10022",
+    "St. Thomas, VI 00802",
+    "Montreuil Cedex, France 93518"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments made by the Jeffrey E. Epstein Financial Trust Company.",
+    "Total charges for the invoice amount to $154.27.",
+    "Discounts applied to the invoice total $54.53.",
+    "Several individuals signed for packages delivered in April 2004.",
+    "The document includes references to specific tracking IDs for the shipments."
+  ],
+  "analyzedAt": "2026-02-22T04:49:13.939Z"
+}

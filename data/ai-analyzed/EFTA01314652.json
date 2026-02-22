@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA01314652.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-09-09",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC. It includes information about the shipping address, account number, and various charges associated with the shipments. The invoice also mentions specific individuals who signed for deliveries.",
+  "persons": [
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Larry Visoski is mentioned as the recipient who signed for a FedEx delivery.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gene Ritter",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Gene Ritter is mentioned as the recipient who signed for a FedEx delivery.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. Warren",
+      "role": "Recipient",
+      "category": "other",
+      "context": "M. Warren is mentioned as the recipient who signed for a FedEx delivery.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sandra Thorson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Sandra Thorson is mentioned as the recipient who signed for a FedEx delivery.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-08-31",
+      "title": "FedEx Pickup",
+      "description": "FedEx picked up packages for shipment on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": []
+    },
+    {
+      "date": "2005-09-01",
+      "title": "FedEx Delivery",
+      "description": "Packages were delivered by FedEx on this date, signed by various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Larry Visoski",
+        "Gene Ritter",
+        "M. Warren",
+        "Sandra Thorson"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 9, 2005, and includes multiple shipments made by NYSG LLC.",
+    "Total charges for the invoice amount to $24.29.",
+    "Larry Visoski, Gene Ritter, M. Warren, and Sandra Thorson are all mentioned as recipients who signed for deliveries.",
+    "The document includes details about shipping charges, including fuel surcharges and service types.",
+    "The invoice indicates that payment is due by September 24, 2005."
+  ],
+  "analyzedAt": "2026-02-22T06:19:19.569Z"
+}

@@ -1,0 +1,132 @@
+{
+  "fileName": "EFTA01314039.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-03-24",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total amount due of $706.31. The invoice includes shipment details and references multiple shipments made by Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender/Recipient",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is both the sender and recipient of the shipments.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Bella K. Klein",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Bella K. Klein is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgers is mentioned as the sender of a shipment to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aaron Tyson",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Aaron Tyson is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Bella K. Klein",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Bella K. Klein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jeanne Brennan.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgers sent a shipment to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Aaron Tyson",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Aaron Tyson.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-03-24",
+      "title": "FedEx Invoice Issued",
+      "description": "An invoice was issued to Jeffrey E. Epstein for shipping services totaling $706.31.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-03-12",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered to Bella K. Klein.",
+      "category": "delivery",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Bella K. Klein"
+      ]
+    },
+    {
+      "date": "2003-03-19",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered to Jeanne Brennan.",
+      "category": "delivery",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-03-21",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered to Aaron Tyson.",
+      "category": "delivery",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Aaron Tyson"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, FL 4, New York, NY 10022",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The total amount due on the invoice is $706.31.",
+    "The invoice includes multiple shipments sent by Epstein to various recipients.",
+    "Shipments were delivered to Bella K. Klein, Jeanne Brennan, and Aaron Tyson on specific dates in March 2003.",
+    "The invoice was issued on March 24, 2003, with a payment due date of April 8, 2003.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:49:10.763Z"
+}

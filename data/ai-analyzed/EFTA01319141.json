@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA01319141.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-05-07",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific charges and discounts applied. The invoice highlights various transactions and the total amount due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Mrs. Sherman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Mrs. Sherman is mentioned as a shipping address associated with Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender/Recipient",
+      "category": "associate",
+      "context": "John Alessi is mentioned as both a sender and recipient in the shipping details of the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned in relation to a shipment involving Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lesley Taylor",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lesley Taylor is mentioned as a sender in one of the shipping transactions listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Sterrett",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jill Sterrett is mentioned as a sender in a shipment addressed to the San Francisco Museum of Modern Art.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mrs. Sherman",
+      "relationshipType": "associate",
+      "description": "Mrs. Sherman is listed as a shipping address associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "social",
+      "description": "John Alessi is involved in shipping transactions with Epstein, indicating a social or business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is mentioned in connection with Epstein's shipping activities.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lesley Taylor",
+      "relationshipType": "associate",
+      "description": "Lesley Taylor is mentioned as a sender in a shipment involving Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jill Sterrett",
+      "relationshipType": "associate",
+      "description": "Jill Sterrett is mentioned as a sender in a shipment addressed to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-04-25",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery, associated with Jeffrey E. Epstein.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-04-30",
+      "title": "Package Delivery",
+      "description": "Multiple packages were delivered to and from Epstein's address.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Alessi"
+      ]
+    },
+    {
+      "date": "2001-05-01",
+      "title": "Package Drop-off",
+      "description": "A package was dropped off by Epstein for FedEx delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-05-02",
+      "title": "Package Delivery",
+      "description": "A package sent to the San Francisco Museum of Modern Art was delivered.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jill Sterrett"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "358 El Ballo Way, Palm Beach, FL 33480",
+    "151 Third Street, San Francisco, CA 94103",
+    "115E 66th St, New York, NY 10021"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 07, 2001, and includes multiple shipping transactions associated with Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to $202.91, with various discounts applied.",
+    "Multiple individuals, including John Alessi and Ghislaine Maxwell, are mentioned in relation to Epstein's shipping activities.",
+    "The document outlines specific shipping dates and details for packages sent and received by Epstein.",
+    "There are references to FedEx's policies regarding invoice adjustments and handling surcharges effective from April 2001."
+  ],
+  "analyzedAt": "2026-02-22T09:52:37.450Z"
+}

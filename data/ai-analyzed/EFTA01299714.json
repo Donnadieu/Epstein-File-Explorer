@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA01299714.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-06-19",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions dated June 19, 2014. It includes various financial institutions and individuals involved in the transactions, highlighting significant amounts and connections between accounts.",
+  "persons": [
+    {
+      "name": "David Ellison",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "David Ellison is mentioned multiple times in relation to borrowing and account transactions.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Martin Kobinger",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Martin Kobinger is referenced in connection with transactions involving Deutsche Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christopher K Jones",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Christopher K Jones is mentioned as an account holder in the financial transactions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Vincent Caracci",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Vincent Caracci is noted in relation to a wire transfer and account details.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "David Ellison",
+      "person2": "Martin Kobinger",
+      "relationshipType": "financial",
+      "description": "Both individuals are mentioned in the context of transactions involving Deutsche Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "David Ellison",
+      "person2": "Christopher K Jones",
+      "relationshipType": "financial",
+      "description": "David Ellison and Christopher K Jones are both referenced as account holders in the financial report.",
+      "strength": 2
+    },
+    {
+      "person1": "Vincent Caracci",
+      "person2": "Martin Kobinger",
+      "relationshipType": "financial",
+      "description": "Vincent Caracci and Martin Kobinger are both mentioned in relation to financial transactions.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Walnut Creek, CA",
+    "Cleveland, OH",
+    "San Juan, PR"
+  ],
+  "keyFacts": [
+    "The document details financial transactions involving multiple individuals and banks.",
+    "David Ellison is a prominent figure in the transactions, appearing multiple times.",
+    "Transactions include significant amounts, such as a $200,000 transfer.",
+    "Multiple financial institutions are involved, including Deutsche Bank and Bank of America.",
+    "Certain sections of the document are marked as confidential under federal rules."
+  ],
+  "analyzedAt": "2026-02-21T23:08:11.113Z"
+}

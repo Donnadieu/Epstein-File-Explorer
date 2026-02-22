@@ -1,0 +1,121 @@
+{
+  "fileName": "EFTA01315548.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-11-22",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and provides a summary of shipments made on specific dates. The invoice indicates a total amount due and includes contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating he utilized their shipping services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Cecilia Jeanie",
+      "role": "Sender",
+      "category": "other",
+      "context": "Cecilia Jeanie is mentioned as the sender of a package shipped via FedEx to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgeres",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgeres is mentioned as the sender of a package shipped via FedEx to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanine Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanine Brennan is mentioned as the sender of a package shipped via FedEx to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of packages addressed to Jeffrey Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Cecilia Jeanie",
+      "relationshipType": "sender-recipient",
+      "description": "Cecilia Jeanie sent a package to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rodgeres",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgeres sent a package to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanine Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanine Brennan sent a package to Jeffrey Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "delivery-signature",
+      "description": "A. Rodriguez signed for the delivery of packages addressed to Jeffrey Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-11-12",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Cecilia Jeanie"
+      ]
+    },
+    {
+      "date": "2004-11-15",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey Epstein, signed by A. Rodriguez.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2004-11-16",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Jeffrey Epstein, signed by A. Rodriguez.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "A. Rodriguez"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, St Thomas, VI 00602"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 22, 2004, and is addressed to Jeffrey Epstein.",
+    "Total charges on the invoice amount to $75.63.",
+    "Multiple packages were sent to Jeffrey Epstein from different senders, including Cecilia Jeanie, Dave Rodgeres, and Jeanine Brennan.",
+    "A. Rodriguez signed for the delivery of packages addressed to Jeffrey Epstein.",
+    "The invoice indicates a due date for payment of December 7, 2004."
+  ],
+  "analyzedAt": "2026-02-22T07:06:02.045Z"
+}

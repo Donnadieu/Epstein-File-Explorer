@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01314451.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-11-03",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including transportation charges, discounts, and specific shipment details such as pickup and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice and is responsible for the shipping charges detailed within it.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Sender",
+      "category": "other",
+      "context": "Miles Alexander is mentioned as the sender for some of the shipments listed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Alberto Pinto is mentioned as the recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the sender for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "employer-employee",
+      "description": "Miles Alexander is listed as the sender for shipments associated with Jeffrey E. Epstein, indicating a possible employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "recipient-sender",
+      "description": "Alberto Pinto is noted as the recipient for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is mentioned as the sender for a shipment associated with Jeffrey E. Epstein, indicating a possible employer-employee relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-10-21",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx for Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-27",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Jeffrey E. Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-30",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802",
+    "Hotel de Las Victoires, 11 Rue de Aboukir, Paris 75002, FR"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 3, 2003, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 837.34.",
+    "Multiple shipments were made by Epstein, with various pickup and delivery dates.",
+    "The invoice includes references to lighting fixtures as the shipment content.",
+    "There are several mentions of fuel surcharges applied to the shipments."
+  ],
+  "analyzedAt": "2026-02-22T06:09:37.928Z"
+}

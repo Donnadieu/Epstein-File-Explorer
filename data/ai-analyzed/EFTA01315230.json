@@ -1,0 +1,174 @@
+{
+  "fileName": "EFTA01315230.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-10-29",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates and amounts due. The document highlights the total charges and discounts applied during the billing period.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Shipper",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as the shipper for a package sent by Epstein, indicating a connection in the shipping process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "John Alessi is noted as a recipient for one of the packages sent by Epstein, suggesting a business or personal relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is listed as a recipient for a package sent by Epstein, indicating a connection between them.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Philip Levine",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Philip Levine is mentioned as a recipient for a package sent by Epstein, suggesting a possible business or personal relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwinther",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lauren Kwinther is listed as a recipient for a package sent by Epstein, indicating a connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Schulten",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Richard Schulten is mentioned as a recipient for a package sent by Epstein, suggesting a relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Larry Visoski is involved in shipping packages for Epstein, indicating an employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "social",
+      "description": "John Alessi is a recipient of a package sent by Epstein, suggesting a social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is a recipient of a package sent by Epstein, indicating a personal connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Philip Levine",
+      "relationshipType": "social",
+      "description": "Philip Levine is a recipient of a package sent by Epstein, suggesting a social or business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Kwinther",
+      "relationshipType": "social",
+      "description": "Lauren Kwinther is a recipient of a package sent by Epstein, indicating a connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Richard Schulten",
+      "relationshipType": "social",
+      "description": "Richard Schulten is a recipient of a package sent by Epstein, suggesting a relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-10-15",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    },
+    {
+      "date": "2001-10-16",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Santa Fe Jet Center.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-10-19",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to John Alessi.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Alessi"
+      ]
+    },
+    {
+      "date": "2001-10-22",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-10-23",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ghislaine Maxwell",
+        "Philip Levine",
+        "Lauren Kwinther"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "Santa Fe Jet Center, 445 Airport Road, NM 87057",
+    "358 El Galloway, Palm Beach, FL 33480",
+    "1165 65th St, New York, NY 10021",
+    "Lake City Airport, Lake City, FL 32055"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 29, 2001, and details shipping charges for services provided to Jeffrey E. Epstein.",
+    "Multiple shipments are listed, with specific dates of pickup and delivery.",
+    "The total amount due on the invoice is $146.88, with discounts applied.",
+    "Several named individuals are recipients of packages sent by Epstein, indicating various connections.",
+    "The document includes a warning about potential delays in package delivery due to security measures following September 11."
+  ],
+  "analyzedAt": "2026-02-22T06:51:17.620Z"
+}

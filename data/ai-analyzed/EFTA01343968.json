@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA01343968.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": null,
+  "summary": "This document is an email communication from Amanda Kirby, an associate at Deutsche Bank, discussing a meeting request from Jeffrey Epstein to set up a meeting with Paul and the Deutsche Bank team managing his accounts. The email indicates the meeting is to be scheduled for the week of October 8 when Epstein returns to New York City.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein requested a meeting with Paul and the Deutsche Bank team managing his accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Associate",
+      "category": "staff",
+      "context": "Amanda Kirby is the sender of the email, coordinating the meeting request on behalf of Deutsche Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul",
+      "role": "Team Member",
+      "category": "other",
+      "context": "Paul is mentioned as a member of the Deutsche Bank team who will be managing Epstein's accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry",
+      "role": "Contact",
+      "category": "other",
+      "context": "Harry is mentioned as the person who informed Amanda Kirby about Epstein's meeting request.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "client-service provider",
+      "description": "Jeffrey Epstein is a client of Deutsche Bank, and Amanda Kirby is the associate managing his account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul",
+      "relationshipType": "client-service provider",
+      "description": "Jeffrey Epstein is seeking to meet with Paul, who is part of the Deutsche Bank team managing his accounts.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Harry",
+      "relationshipType": "colleague",
+      "description": "Amanda Kirby and Harry are colleagues at Deutsche Bank, with Harry providing information about Epstein's request.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2023-10",
+      "title": "Meeting Request",
+      "description": "Jeffrey Epstein requested a meeting with Paul and the Deutsche Bank team for the week of October 8.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Paul",
+        "Amanda Kirby"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, 27th Fl, New York, NY, US 10154-0004"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein requested a meeting with the Deutsche Bank team managing his accounts.",
+    "Amanda Kirby is the associate at Deutsche Bank coordinating the meeting.",
+    "The meeting is to be scheduled for the week of October 8 when Epstein returns to NYC.",
+    "Harry informed Amanda Kirby about Epstein's request."
+  ],
+  "analyzedAt": "2026-02-22T15:00:27.494Z"
+}

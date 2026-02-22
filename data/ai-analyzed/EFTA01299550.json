@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA01299550.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-04-04",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions involving various financial institutions and individuals. It highlights transactions related to accounts held at Deutsche Bank, HSBC, and other banks, along with beneficiaries and amounts involved.",
+  "persons": [
+    {
+      "name": "Howard G Lepow",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Howard G Lepow is mentioned as a beneficiary in transactions involving Deutsche Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sally Lepow",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Sally Lepow is mentioned alongside Howard G Lepow as a beneficiary in transactions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marvin Glickman",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Marvin Glickman is referenced in relation to trusts and accounts managed for beneficiaries.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Daniel S",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Daniel S is mentioned as the account holder for a transaction involving Synovus Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Randolph Brown",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Randolph Brown is mentioned in connection with a living trust and related accounts.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Howard G Lepow",
+      "person2": "Sally Lepow",
+      "relationshipType": "family",
+      "description": "Howard G Lepow and Sally Lepow are mentioned together as beneficiaries in financial transactions.",
+      "strength": 3
+    },
+    {
+      "person1": "Marvin Glickman",
+      "person2": "Daniel S",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Marvin Glickman is referenced as a trustee for accounts related to Daniel S.",
+      "strength": 3
+    },
+    {
+      "person1": "Randolph Brown",
+      "person2": "Marvin Glickman",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Randolph Brown is mentioned in connection with trusts that involve Marvin Glickman.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Santa Clara, CA",
+    "Boston, MA",
+    "Dublin, Ireland",
+    "Pawling, NY",
+    "Marco Island, FL",
+    "Vero Beach, FL",
+    "New Rochelle, NY"
+  ],
+  "keyFacts": [
+    "The document details financial transactions involving multiple banks including Deutsche Bank and HSBC.",
+    "Howard G Lepow and Sally Lepow are identified as beneficiaries in transactions.",
+    "Marvin Glickman is mentioned multiple times in relation to trusts and accounts.",
+    "Randolph Brown is associated with a living trust and financial transactions.",
+    "Daniel S is noted as an account holder for a transaction with Synovus Bank."
+  ],
+  "analyzedAt": "2026-02-21T22:53:18.696Z"
+}

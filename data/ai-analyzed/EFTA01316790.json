@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01316790.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-03-15",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services. It details charges for a shipment made on March 11, 2004, including transportation and handling fees, and provides a summary of the payment due.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Eric Gamy",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Eric Gamy is listed as the recipient of a package sent via FedEx by Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jejune Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jejune Brennan is also listed as a recipient associated with the package sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gamy",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Eric Gamy via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jejune Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Jejune Brennan via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03-11",
+      "title": "FedEx Shipment",
+      "description": "A package was picked up by FedEx from Jeffrey Epstein for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gamy",
+        "Jejune Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "451 Madison Ave R. 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 15, 2004, for shipping services provided to Jeffrey Epstein.",
+    "The total amount due on the invoice is $30.99.",
+    "The shipment was picked up on March 11, 2004, and delivered to Eric Gamy and Jejune Brennan.",
+    "The invoice includes a fuel surcharge and discounts applied to the total charges.",
+    "There are multiple references to FedEx's policies regarding invoice adjustments."
+  ],
+  "analyzedAt": "2026-02-22T07:47:37.096Z"
+}

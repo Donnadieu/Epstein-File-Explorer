@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01317012.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-08-13",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered on August 9 and 10, 2004. It includes information about the sender, recipient, and charges associated with the shipments, as well as instructions for payment and adjustment requests.",
+  "persons": [
+    {
+      "name": "Lauren Kwoitner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwoitner is identified as the sender of packages shipped via FedEx, with a billing address listed in New York.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeff Schantz",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeff Schantz is mentioned as the recipient of a package sent via FedEx, with an address in New York.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Paul Burkhardt is mentioned as the recipient of another package sent via FedEx, with an address in New Albany, Ohio.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2004-08-09",
+      "title": "FedEx Shipment Pickup",
+      "description": "Packages were picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwoitner",
+        "Jeff Schantz"
+      ]
+    },
+    {
+      "date": "2004-08-10",
+      "title": "FedEx Shipment Pickup",
+      "description": "Another package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwoitner",
+        "Paul Burkhardt"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "1257 Veeder Street, Heylett, NY 11557",
+    "6625 West Capital Oval, Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice number is 1-943-52024, dated August 13, 2004.",
+    "Total charges for the invoice amount to $17.01.",
+    "Packages were shipped from New York to recipients in New York and Ohio.",
+    "The document includes instructions for requesting adjustments to the invoice.",
+    "There are multiple references to FedEx services and charges, including a fuel surcharge."
+  ],
+  "analyzedAt": "2026-02-22T07:58:03.704Z"
+}

@@ -1,0 +1,56 @@
+{
+  "fileName": "EFTA01298464.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document is a signature card from Deutsche Bank Wealth Management related to Jeffrey Epstein's accounts. It includes names of individuals associated with the account and indicates the account holder's details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the account holder for the Deutsche Bank Wealth Management account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Power of Attorney",
+      "category": "legal",
+      "context": "Darren Indyke is mentioned as a person associated with the account, acting in the capacity of Power of Attorney.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Signatory",
+      "category": "staff",
+      "context": "Jeanne Brennan is listed as another individual associated with the account, likely as a signatory.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "power of attorney",
+      "description": "Darren Indyke is acting as Power of Attorney for Jeffrey Epstein regarding the account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "signatory",
+      "description": "Jeanne Brennan is a signatory on the account held by Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document is a signature card from Deutsche Bank Wealth Management.",
+    "Jeffrey Epstein is identified as the account holder.",
+    "Darren Indyke is listed as Power of Attorney for Epstein.",
+    "Jeanne Brennan is mentioned as a signatory on the account.",
+    "The document includes account details but lacks specific dates or transaction information."
+  ],
+  "analyzedAt": "2026-02-21T21:49:37.493Z"
+}

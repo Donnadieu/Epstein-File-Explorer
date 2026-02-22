@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01301611.pdf",
+  "dataSet": "10",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-07-23",
+  "summary": "This document details the seizure of items from a safe located at 9 East 71st Street, New York, NY, as part of the investigation into Jeffrey Epstein's child sex trafficking case. The items collected included hard drives and binders containing multiple discs, which were removed by the house manager and taken to Richard Kahn.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the central figure in the investigation regarding child sex trafficking.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Richard Kahn",
+      "role": "Collector",
+      "category": "other",
+      "context": "Richard Kahn received the items that were seized from Epstein's safe.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Merwin Delacruz",
+      "role": "House Manager",
+      "category": "staff",
+      "context": "Merwin Delacruz was responsible for removing the items from the safe.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Merwin Delacruz",
+      "person2": "Richard Kahn",
+      "relationshipType": "employer-employee",
+      "description": "Merwin Delacruz, as the house manager, removed items from Epstein's safe and handed them over to Richard Kahn.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Richard Kahn",
+      "relationshipType": "property-owner-collector",
+      "description": "Richard Kahn collected items from the property of Jeffrey Epstein as part of the investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Collection of Seized Items",
+      "description": "Items including hard drives and binders with discs were collected from Epstein's safe.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Kahn",
+        "Merwin Delacruz"
+      ]
+    },
+    {
+      "date": "2019-07-23",
+      "title": "Seizure of Items",
+      "description": "The document records the formal seizure of items from Epstein's safe.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Richard Kahn",
+        "Merwin Delacruz"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, NY"
+  ],
+  "keyFacts": [
+    "Items were seized from a safe belonging to Jeffrey Epstein at 9 East 71st Street.",
+    "The seizure included two black hard drives and two binders containing 58 discs.",
+    "Merwin Delacruz, the house manager, was responsible for removing the items.",
+    "Richard Kahn received the seized items as part of the investigation.",
+    "The collection of items occurred on July 11, 2019, and the document was finalized on July 23, 2019."
+  ],
+  "analyzedAt": "2026-02-22T01:34:36.213Z"
+}

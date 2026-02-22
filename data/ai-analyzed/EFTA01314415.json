@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA01314415.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-10-13",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein detailing transportation charges for various shipments made on his behalf. The invoice includes specific charges, discounts, and shipment details, indicating Epstein's use of FedEx services for shipping packages to multiple locations.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Jeanne Brennan is associated with the financial trust company mentioned in the invoice, indicating a financial relationship with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jean Marie Burtel",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jean Marie Burtel is listed as a recipient of one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Rosemary Pitcher is identified as the sender for one of the shipments related to Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Jeanne Brennan is associated with the financial trust company that is linked to Epstein, indicating a fiduciary relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jean Marie Burtel",
+      "relationshipType": "recipient-sender",
+      "description": "Jean Marie Burtel is a recipient of a shipment sent by Epstein, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "sender-recipient",
+      "description": "Rosemary Pitcher is identified as the sender for a shipment related to Epstein, indicating a shipping relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-10-03",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date for delivery to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-10-06",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered on this date, with details of the recipients and contents.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jean Marie Burtel"
+      ]
+    },
+    {
+      "date": "2003-10-09",
+      "title": "Shipment Delivery",
+      "description": "Another shipment associated with Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, 4th Floor, New York, NY 10032",
+    "6100 Red Hook Quarter, Suite G3, St. Thomas, VI 00802",
+    "112 Rue du Faubourg St. Honore, Paris, 75008, France"
+  ],
+  "keyFacts": [
+    "The invoice details a total charge of $1,560.46 for FedEx services used by Jeffrey E. Epstein.",
+    "Multiple shipments were made from Epstein's New York address to various recipients, including international destinations.",
+    "The invoice indicates that Epstein saved $546.66 in discounts during this billing period.",
+    "Jeanne Brennan is associated with a financial trust company linked to Epstein, suggesting a financial relationship.",
+    "Several shipments were delivered on specific dates, indicating Epstein's active use of FedEx services during this time."
+  ],
+  "analyzedAt": "2026-02-22T06:07:36.073Z"
+}

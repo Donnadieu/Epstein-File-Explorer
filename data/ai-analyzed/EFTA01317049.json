@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01317049.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-08-23",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and specifies the payment due date. The invoice also includes shipment details and contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating he utilized their shipping services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Gave Rogers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Gave Rogers is mentioned as the sender associated with a shipment linked to Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Breman",
+      "role": "Financial Trustee",
+      "category": "other",
+      "context": "Jeanne Breman is listed as the financial trustee associated with a shipment to Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Gave Rogers",
+      "relationshipType": "sender-recipient",
+      "description": "Gave Rogers is the sender of a shipment that was delivered to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Breman",
+      "relationshipType": "financial-trustee",
+      "description": "Jeanne Breman is identified as a financial trustee associated with Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-14",
+      "title": "FedEx Shipment Drop-off",
+      "description": "A shipment was dropped off at FedEx for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Gave Rogers"
+      ]
+    },
+    {
+      "date": "2004-08-15",
+      "title": "Customs Entry Date",
+      "description": "The customs entry date for a shipment associated with Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters Suite B-3, St. Thomas 00632 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 23, 2004, and is addressed to Jeffrey Epstein.",
+    "Total charges on the invoice amount to USD $31.14.",
+    "The invoice includes a due date for payment by September 7, 2004.",
+    "A shipment was dropped off on August 14, 2004, for delivery to Epstein.",
+    "Jeanne Breman is identified as a financial trustee related to Epstein's shipping activities."
+  ],
+  "analyzedAt": "2026-02-22T08:00:24.943Z"
+}

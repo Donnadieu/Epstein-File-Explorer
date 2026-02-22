@@ -1,0 +1,61 @@
+{
+  "fileName": "EFTA01319272.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-07-06",
+  "summary": "This document is an invoice from FedEx detailing charges for express services provided on July 2, 2001. It includes transportation charges, special handling charges, and payment details, indicating a total amount due of $27.04. The invoice also mentions changes to the process for requesting invoice adjustments.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwintner is listed as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Fkkia Theaker",
+      "role": "Sender",
+      "category": "other",
+      "context": "Fkkia Theaker is also listed as a sender of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-07-02",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for FedEx express delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Fkkia Theaker"
+      ]
+    },
+    {
+      "date": "2001-07-03",
+      "title": "Package Delivered",
+      "description": "The package was delivered on July 3, 2001, at 14:56.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Fkkia Theaker"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Anchorage Center, 2nd Floor, New York, NY 10022-6809",
+    "Grand Cayman"
+  ],
+  "keyFacts": [
+    "The total amount due on the invoice is $27.04.",
+    "The invoice is dated July 6, 2001.",
+    "The package was delivered on July 3, 2001.",
+    "There are changes to the FedEx invoice adjustment process effective August 1, 2001.",
+    "The invoice includes a fuel surcharge of $10.30."
+  ],
+  "analyzedAt": "2026-02-22T09:59:37.689Z"
+}

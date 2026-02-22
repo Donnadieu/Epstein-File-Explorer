@@ -1,0 +1,98 @@
+{
+  "fileName": "EFTA01319343.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-08-31",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered in August 2001. It includes information about the sender, recipient, and the total amount due, along with instructions for payment and adjustments to the invoice.",
+  "persons": [
+    {
+      "name": "Lauren K. Vomer",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren K. Vomer is listed as the sender associated with NYSO LLC on the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Paul Burkhardt is mentioned as the recipient associated with the New Albany property.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Oakley is noted as the person who signed for the delivery on August 22, 2001.",
+      "mentionCount": 1
+    },
+    {
+      "name": "G. Groves",
+      "role": "Signer",
+      "category": "other",
+      "context": "G. Groves is noted as the person who signed for the delivery on August 24, 2001.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-08-21",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren K. Vomer",
+        "Paul Burkhardt"
+      ]
+    },
+    {
+      "date": "2001-08-22",
+      "title": "Package Delivery",
+      "description": "The package was delivered to the New Albany property.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Vomer",
+        "Paul Burkhardt",
+        "D. Oakley"
+      ]
+    },
+    {
+      "date": "2001-08-23",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren K. Vomer",
+        "Paul Burkhardt"
+      ]
+    },
+    {
+      "date": "2001-08-24",
+      "title": "Package Delivery",
+      "description": "The second package was delivered to the New Albany property.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K. Vomer",
+        "Paul Burkhardt",
+        "G. Groves"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "New Albany Property"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 31, 2001, and includes shipping charges totaling USD $32.24.",
+    "Packages were picked up on August 21 and August 23, 2001, and delivered on August 22 and August 24, 2001.",
+    "Lauren K. Vomer is associated with NYSO LLC and is the sender of the packages.",
+    "Paul Burkhardt is the recipient of the packages delivered to the New Albany property.",
+    "D. Oakley and G. Groves are noted as signers for the deliveries."
+  ],
+  "analyzedAt": "2026-02-22T10:03:03.656Z"
+}

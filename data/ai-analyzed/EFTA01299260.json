@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA01299260.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2017-07-10",
+  "summary": "This document is an internal email correspondence regarding alerts related to Southern Financial LLC, which is linked to Jeffrey Epstein. The alerts were reviewed by AML Compliance and determined to be false positives, as the legal names and locations did not match the client. The document highlights Epstein's role as the ultimate beneficial owner of Southern Financial LLC.",
+  "persons": [
+    {
+      "name": "Cynthia Rodriguez",
+      "role": "Assistant Vice President",
+      "category": "legal",
+      "context": "Cynthia Rodriguez is involved in the AML compliance review process and communicates about the alerts related to Southern Financial LLC.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Kshitij Golani",
+      "role": "Vice President, AML Compliance Officer",
+      "category": "legal",
+      "context": "Kshitij Golani reviews the alerts and communicates the clearance of the alerts as false positives.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Ultimate Beneficial Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the ultimate beneficial owner of Southern Financial LLC, which is the subject of the alerts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carl Timcke",
+      "role": "Not specified",
+      "category": "other",
+      "context": "Carl Timcke forwards the alert information to Kshitij Golani.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Kshitij Golani",
+      "relationshipType": "employer-employee",
+      "description": "Cynthia Rodriguez and Kshitij Golani work together at Deutsche Bank, with Rodriguez providing information to Golani regarding the alerts.",
+      "strength": 4
+    },
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "client-beneficial owner",
+      "description": "Cynthia Rodriguez identifies Jeffrey Epstein as the ultimate beneficial owner of Southern Financial LLC in her communication.",
+      "strength": 3
+    },
+    {
+      "person1": "Kshitij Golani",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "client-beneficial owner",
+      "description": "Kshitij Golani is involved in the compliance review process concerning Jeffrey Epstein's ownership of Southern Financial LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "6100 Red Hook Quarter B3, US Virgin Islands 00802",
+    "345 4th Fl, 10154-0004 New York, NY, USA",
+    "60 836 New York, NY, USA"
+  ],
+  "keyFacts": [
+    "Cynthia Rodriguez states that the alerts regarding Southern Financial LLC are false positives.",
+    "Jeffrey Epstein is identified as the ultimate beneficial owner of Southern Financial LLC.",
+    "Southern Financial LLC was incorporated on February 25, 2013, which is after the activities referenced in the alerts.",
+    "The alerts referenced multiple entities with similar names that were involved in fraudulent activities.",
+    "The document is classified for internal use only."
+  ],
+  "analyzedAt": "2026-02-21T22:29:49.974Z"
+}

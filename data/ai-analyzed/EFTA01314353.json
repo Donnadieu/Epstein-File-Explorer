@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA01314353.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-09-08",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for services rendered. The invoice includes a summary of charges, adjustments, and shipment details, indicating Epstein's use of FedEx services for shipping items. It highlights the total amount due and provides contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned in relation to a package sent via FedEx, indicating her involvement in the shipping process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Signer",
+      "category": "staff",
+      "context": "A. Rodriguez is noted as the person who signed for the delivery of a package addressed to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Wallace",
+      "role": "Signer",
+      "category": "staff",
+      "context": "D. Wallace is mentioned as the person who signed for the delivery of another package related to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is associated with a package sent to Jeffrey E. Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "signer-recipient",
+      "description": "A. Rodriguez signed for a package delivered to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "D. Wallace",
+      "relationshipType": "signer-recipient",
+      "description": "D. Wallace signed for a package delivered to Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-09-03",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey E. Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-08-25",
+      "title": "Package Drop-off",
+      "description": "A package was dropped off for shipment to Jeffrey E. Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, 4th Floor, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00602"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 8, 2003, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to $98.87.",
+    "The invoice includes details of multiple shipments and associated transportation charges.",
+    "There are references to discounts applied to the charges, totaling $52.96 saved.",
+    "Several individuals are noted as signers for packages delivered to Epstein, including A. Rodriguez and D. Wallace."
+  ],
+  "analyzedAt": "2026-02-22T06:04:43.118Z"
+}

@@ -1,0 +1,151 @@
+{
+  "fileName": "EFTA01315246.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-10-19",
+  "summary": "This document is an invoice from FedEx detailing shipping charges and payments related to various shipments made by NY SG LLC and other individuals. It includes information about past due amounts and specific transactions involving notable individuals, including Jeffrey Epstein. The invoice highlights the financial transactions and shipping activities associated with Epstein and his associates.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwintner is listed as the sender for multiple shipments associated with NY SG LLC.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Karl Schwabe",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Karl Schwabe is mentioned as a recipient for a shipment sent by NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donna Larsen",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Donna Larsen is noted as a recipient for a shipment sent by NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Johnson",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Michael Johnson is mentioned as a recipient for a shipment sent by NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mark London",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Mark London is listed as a recipient for a shipment sent by NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamy Jeffrey E Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a sender for a shipment associated with NY SG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Jeffrey E Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwintner is associated with NY SG LLC, which is linked to Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Karl Schwabe",
+      "relationshipType": "shipping",
+      "description": "Lauren Kwintner sent a shipment to Karl Schwabe.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Donna Larsen",
+      "relationshipType": "shipping",
+      "description": "Lauren Kwintner sent a shipment to Donna Larsen.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Michael Johnson",
+      "relationshipType": "shipping",
+      "description": "Lauren Kwintner sent a shipment to Michael Johnson.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Mark London",
+      "relationshipType": "shipping",
+      "description": "Lauren Kwintner sent a shipment to Mark London.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-10-10",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Jeffrey E Epstein"
+      ]
+    },
+    {
+      "date": "2001-10-11",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by NY SG LLC were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Karl Schwabe",
+        "Donna Larsen"
+      ]
+    },
+    {
+      "date": "2001-10-12",
+      "title": "Shipment Delivery",
+      "description": "Additional shipments sent by NY SG LLC were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Michael Johnson"
+      ]
+    },
+    {
+      "date": "2001-10-15",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by NY SG LLC was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Mark London"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "P.O. Box 1140, Memphis, TN 38101-1140",
+    "Three Limited Pkwy, Gahanna, OH 43230",
+    "1137 Clare Ave, West Palm Beach, FL 33401",
+    "170 South Parkview Avenue, Columbus, OH 43209",
+    "6525 West Campus Oval, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 19, 2001, and includes various shipping charges.",
+    "Jeffrey Epstein is identified as a sender for a shipment associated with NY SG LLC.",
+    "The invoice indicates that payments were made and adjustments applied to specific airbills.",
+    "Multiple individuals are listed as recipients of shipments sent by NY SG LLC.",
+    "The account is noted as past due, with a total amount of $10.14 outstanding."
+  ],
+  "analyzedAt": "2026-02-22T06:52:10.513Z"
+}

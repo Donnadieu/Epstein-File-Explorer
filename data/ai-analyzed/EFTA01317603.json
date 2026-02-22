@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA01317603.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-17",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and the total amount due, along with shipment information involving other individuals such as Ghislaine Maxwell and Elizabeth Maxwell.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a recipient of a package sent via FedEx from Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Elizabeth Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Elizabeth Maxwell is mentioned as a recipient of a package sent via FedEx from Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Marie Joseph Experton",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph Experton is mentioned as a recipient of a package sent via FedEx from Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Brennan Financial Trust Company",
+      "role": "Payer",
+      "category": "other",
+      "context": "J. Brennan Financial Trust Company is mentioned as the payer for a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is a recipient of a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Elizabeth Maxwell",
+      "relationshipType": "social",
+      "description": "Elizabeth Maxwell is a recipient of a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph Experton",
+      "relationshipType": "social",
+      "description": "Marie Joseph Experton is a recipient of a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Brennan Financial Trust Company",
+      "relationshipType": "financial",
+      "description": "J. Brennan Financial Trust Company is involved in a financial transaction related to a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-06-06",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein to Marie Joseph Experton was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marie Joseph Experton"
+      ]
+    },
+    {
+      "date": "2002-06-10",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein to Ghislaine Maxwell was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2002-06-11",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein to J. Brennan Financial Trust Company was delivered.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "J. Brennan Financial Trust Company"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "68 Boulevard de Courcelles, Paris 75017, France",
+    "6100 Red Wok Olmater Sure, St Thomas 00802, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 17, 2002, and is for a total of $177.49.",
+    "Multiple packages were sent by Jeffrey E. Epstein to various recipients including Ghislaine Maxwell and Marie Joseph Experton.",
+    "The invoice includes details of transportation charges, discounts, and fuel surcharges for the shipments."
+  ],
+  "analyzedAt": "2026-02-22T08:29:59.431Z"
+}

@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01318453.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-08-18",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and specific shipment information, including recipients and tracking IDs for various packages sent by Epstein. The total amount due is $108.17, with a payment deadline of September 2, 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of packages sent by Epstein, indicating a connection in shipping activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Morris",
+      "role": "Contact Person",
+      "category": "other",
+      "context": "Morris is referenced in the context of an adjustment request, but no further details are provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "shipping recipient",
+      "description": "Jeanne Brennan is listed as a recipient of packages sent by Jeffrey E. Epstein through FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-08-08",
+      "title": "Package Pickup",
+      "description": "Packages were picked up by FedEx for delivery, with specific details on the shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-08-11",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to the recipient, Jeanne Brennan.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-08-12",
+      "title": "Package Delivery",
+      "description": "Another package sent by Epstein was delivered, with details on the transportation charges.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-08-13",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery, again involving Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-08-14",
+      "title": "Package Delivery",
+      "description": "A final package sent by Epstein was delivered, completing the shipping transactions detailed in the invoice.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 18, 2003, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the services rendered amount to $108.17.",
+    "The invoice includes details of multiple shipments sent by Epstein, with specific tracking IDs.",
+    "Payment for the invoice is due by September 2, 2003.",
+    "There are references to adjustments and reasons for potential billing discrepancies."
+  ],
+  "analyzedAt": "2026-02-22T09:16:09.361Z"
+}

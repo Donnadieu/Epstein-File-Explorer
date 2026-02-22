@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01333877.pdf",
+  "dataSet": "10",
+  "documentType": "subpoena compliance correspondence",
+  "dateOriginal": "2006-05-16",
+  "summary": "This document contains correspondence from Jenny Park of Sprint Nextel regarding compliance with a subpoena related to the Epstein case. It includes subscriber information for various phone numbers and details about the compliance process. The document highlights the involvement of Detective Joe Recarey from the Palm Beach Police Department in the investigation.",
+  "persons": [
+    {
+      "name": "Jenny Park",
+      "role": "Subpoena Compliance Coordinator",
+      "category": "legal",
+      "context": "Jenny Park is responsible for providing subpoena compliance information related to the Epstein case.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Joe Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Detective Joe Recarey is mentioned as the recipient of the subpoena compliance information from Sprint Nextel.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Mary Ann Camardese",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Mary Ann Camardese is identified as the account holder for one of the phone numbers related to the subpoena.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jesus",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jesus is identified as the account holder for another phone number related to the subpoena.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jenny Park",
+      "person2": "Joe Recarey",
+      "relationshipType": "subpoena compliance",
+      "description": "Jenny Park provides subpoena compliance information to Detective Joe Recarey as part of the investigation.",
+      "strength": 4
+    },
+    {
+      "person1": "Mary Ann Camardese",
+      "person2": "Joe Recarey",
+      "relationshipType": "account holder-investigator",
+      "description": "Mary Ann Camardese's account information is provided to Detective Joe Recarey as part of the subpoena compliance.",
+      "strength": 3
+    },
+    {
+      "person1": "Jesus",
+      "person2": "Joe Recarey",
+      "relationshipType": "account holder-investigator",
+      "description": "Jesus's account information is provided to Detective Joe Recarey as part of the subpoena compliance.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-05-15",
+      "title": "Subpoena Compliance Request",
+      "description": "Sprint Nextel provides requested subscriber information for specified phone numbers as part of a subpoena compliance.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jenny Park",
+        "Joe Recarey",
+        "Mary Ann Camardese",
+        "Jesus"
+      ]
+    }
+  ],
+  "locations": [
+    "Overland Park, KS",
+    "Palm Beach, FL",
+    "Cooper City, FL"
+  ],
+  "keyFacts": [
+    "The document includes subscriber information for multiple phone numbers related to the Epstein case.",
+    "Jenny Park is the point of contact for subpoena compliance at Sprint Nextel.",
+    "Detective Joe Recarey is actively involved in the investigation and receives information from Sprint.",
+    "Mary Ann Camardese and Jesus are identified as account holders for phone numbers relevant to the case.",
+    "The document is subject to protective orders, indicating sensitive information is involved."
+  ],
+  "analyzedAt": "2026-02-22T12:19:35.417Z"
+}

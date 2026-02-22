@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA01313849.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-12-02",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details various charges, discounts, and shipment summaries for multiple packages sent by Epstein, including recipients and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, listed as both the sender and the billing account holder for the FedEx services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Leslie H. Wexner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Leslie H. Wexner is mentioned as a recipient of a package sent by Epstein, indicating a connection between the two individuals.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christina Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Christina Maxwell is noted as a recipient of a package sent by Epstein, suggesting a social or business relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Evelina Simmons",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Evelina Simmons is mentioned as a recipient of a package sent by Epstein, indicating a connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric W. Epstein",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric W. Epstein is mentioned in relation to a shipment, indicating a familial or business connection to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kathee Elliott",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Kathee Elliott is listed as a recipient of a package sent by Epstein, suggesting a connection.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Leslie H. Wexner",
+      "relationshipType": "social",
+      "description": "Epstein sent a package to Wexner, indicating a social or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christina Maxwell",
+      "relationshipType": "social",
+      "description": "Maxwell received a package from Epstein, suggesting a connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Evelina Simmons",
+      "relationshipType": "social",
+      "description": "Simmons is noted as a recipient of a package sent by Epstein, indicating a connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric W. Epstein",
+      "relationshipType": "family",
+      "description": "Eric W. Epstein is mentioned in relation to a shipment, indicating a familial connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kathee Elliott",
+      "relationshipType": "social",
+      "description": "Elliott is listed as a recipient of a package sent by Epstein, suggesting a connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-19",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-11-20",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Leslie H. Wexner.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Leslie H. Wexner"
+      ]
+    },
+    {
+      "date": "2002-11-21",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-11-22",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Christina Maxwell.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Christina Maxwell"
+      ]
+    },
+    {
+      "date": "2002-11-25",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval, New Albany, OH 43054",
+    "2400 N Florida Mango Rd, West Palm Beach, FL 33409"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 2, 2002, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $149.13.",
+    "Multiple packages were sent by Epstein to various recipients, including Leslie H. Wexner and Christina Maxwell.",
+    "The invoice includes details of shipping charges, discounts, and delivery dates.",
+    "There are several instances of packages being picked up and delivered between November 19 and November 27, 2002."
+  ],
+  "analyzedAt": "2026-02-22T05:40:01.712Z"
+}

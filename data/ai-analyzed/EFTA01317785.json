@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA01317785.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-09-27",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NY SG LLC. It includes various charges, payment details, and references to multiple shipments made by the company. The invoice highlights the billing account and shipping address, along with specific transportation charges and surcharges.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender associated with NY SG LLC, responsible for shipping activities detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Lauren Kwinter",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lauren Kwinter is mentioned as a recipient for one of the shipments detailed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Yvonne Akin",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Yvonne Akin is noted as a recipient for a shipment listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Staley",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Michael Staley is mentioned as a recipient for a shipment detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "NY SG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NY SG LLC as the sender of the shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Lauren Kwinter",
+      "relationshipType": "shipping",
+      "description": "Darren Indyke is responsible for sending shipments to Lauren Kwinter.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Yvonne Akin",
+      "relationshipType": "shipping",
+      "description": "Darren Indyke is responsible for sending shipments to Yvonne Akin.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Michael Staley",
+      "relationshipType": "shipping",
+      "description": "Darren Indyke is responsible for sending shipments to Michael Staley.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-13",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2002-09-16",
+      "title": "Delivery of Shipments",
+      "description": "Shipments sent by Darren Indyke were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Lauren Kwinter",
+        "Yvonne Akin"
+      ]
+    },
+    {
+      "date": "2002-09-18",
+      "title": "Delivery of Shipments",
+      "description": "Additional shipments sent by Darren Indyke were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Michael Staley"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "91 County Rd 36, Estancia, NM 87016",
+    "2003 Palm Beach Lakes Blvd, West Palm Beach, FL 33409",
+    "49 Zorro Ranch Rd, Stanley, NM 87056",
+    "3024 Highway 411, Moriarty, NM 87005",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 27, 2002, and includes multiple shipping charges.",
+    "Darren Indyke is the primary sender associated with the shipments listed in the invoice.",
+    "The total amount due on the invoice is $66.23, with a payment due date of October 12, 2002.",
+    "Multiple recipients are mentioned, including Lauren Kwinter, Yvonne Akin, and Michael Staley.",
+    "The invoice details various transportation charges and surcharges applied by FedEx."
+  ],
+  "analyzedAt": "2026-02-22T08:39:22.626Z"
+}

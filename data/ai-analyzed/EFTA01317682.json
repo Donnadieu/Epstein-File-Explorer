@@ -1,0 +1,154 @@
+{
+  "fileName": "EFTA01317682.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-07-15",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in June and July 2002. The invoice includes specific charges, discounts, and payment details, indicating Epstein's frequent use of FedEx services during this period.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, indicating he is the client responsible for the charges listed.",
+      "mentionCount": 10
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John Alessi is mentioned as the sender of a package to Jeffrey Epstein, indicating a business or personal relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is listed as a recipient for some shipments, suggesting a connection to Epstein's activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kristoffersen",
+      "role": "Delivery Person",
+      "category": "staff",
+      "context": "Kristoffersen is mentioned as the individual who signed for a delivery, indicating involvement in the logistics of Epstein's shipments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "J. Stewart",
+      "role": "Delivery Person",
+      "category": "staff",
+      "context": "J. Stewart is noted as the person who signed for a delivery, further indicating the logistics surrounding Epstein's shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "F. Fontanilla",
+      "role": "Delivery Person",
+      "category": "staff",
+      "context": "F. Fontanilla is mentioned as the individual who signed for a delivery, showing the involvement of multiple delivery personnel in Epstein's shipments.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "social",
+      "description": "John Alessi is noted as the sender of a package to Jeffrey Epstein, indicating a personal or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "social",
+      "description": "Jeanne Brennan is listed as a recipient for some shipments, suggesting a connection to Epstein's activities.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kristoffersen",
+      "relationshipType": "employer-employee",
+      "description": "Kristoffersen signed for a delivery to Epstein, indicating a logistical connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Stewart",
+      "relationshipType": "employer-employee",
+      "description": "J. Stewart signed for a delivery to Epstein, indicating a logistical connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "F. Fontanilla",
+      "relationshipType": "employer-employee",
+      "description": "F. Fontanilla signed for a delivery to Epstein, indicating a logistical connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-06-28",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-01",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey Epstein, signed by Kristoffersen.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Kristoffersen"
+      ]
+    },
+    {
+      "date": "2002-07-02",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Jeffrey Epstein, signed by K. VanHott.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-03",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey Epstein, signed by W. Wallace.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-07-06",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey Epstein, signed by J. Fontanilla.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, Suite 132, St. Thomas, VI 00602",
+    "71 Rue Dessanits Peres, 2 Mae Etacene, Paris, 75006, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 15, 2002, and details charges for various shipments made by Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 420.51.",
+    "Multiple individuals are mentioned as delivery personnel, indicating the logistics involved in Epstein's shipments.",
+    "The invoice includes various discounts and surcharges applied to the shipments.",
+    "Several packages were delivered to Epstein's New York address during June and July 2002."
+  ],
+  "analyzedAt": "2026-02-22T08:33:48.298Z"
+}

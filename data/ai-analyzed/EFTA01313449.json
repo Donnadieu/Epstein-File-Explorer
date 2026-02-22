@@ -1,0 +1,70 @@
+{
+  "fileName": "EFTA01313449.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-04-29",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for transportation charges incurred on April 22, 2002. The total amount due is $27.43, with details on discounts and handling charges included.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for FedEx services, indicating his use of the shipping service.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Associate",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a signer for the delivery, indicating her involvement in the transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kimberly Foley",
+      "role": "Sender",
+      "category": "other",
+      "context": "Kimberly Foley is listed in the payment type detail, possibly as a contact related to the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nick Simmonds",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nick Simmonds is also listed in the payment type detail, indicating involvement in the shipment process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell signed for the delivery associated with Jeffrey E. Epstein, indicating a personal or professional connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-04-22",
+      "title": "FedEx Shipment",
+      "description": "A shipment was picked up by FedEx for Jeffrey E. Epstein, with delivery completed on April 25, 2002.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 29, 2002, and pertains to services rendered on April 22, 2002.",
+    "The total amount due on the invoice is $27.43.",
+    "Ghislaine Maxwell is noted as having signed for the delivery.",
+    "The invoice indicates a discount of $0.84 applied to the total charges.",
+    "The document includes multiple references to FedEx's billing and adjustment procedures."
+  ],
+  "analyzedAt": "2026-02-22T05:19:14.143Z"
+}

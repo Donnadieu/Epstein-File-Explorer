@@ -1,0 +1,138 @@
+{
+  "fileName": "EFTA01317408.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-02-25",
+  "summary": "This document is an invoice from FedEx detailing shipping charges associated with Jeffrey E. Epstein's account. It includes various transportation charges, discounts, and payment details for services rendered on multiple dates in February 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for some of the packages sent via FedEx, indicating her involvement in the shipping activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric Gany is listed as a sender for one of the packages, showing a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nicole Juwermann",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Nicole Juwermann is mentioned as a recipient for a package sent by Epstein, indicating her involvement in the shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tyson Jacobs",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Tyson Jacobs is mentioned as a sender for one of the packages, showing a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent packages to Jeanne Brennan as indicated in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nicole Juwermann",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent packages to Nicole Juwermann as indicated in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "sender-recipient",
+      "description": "Eric Gany is listed as a sender for a package associated with Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tyson Jacobs",
+      "relationshipType": "sender-recipient",
+      "description": "Tyson Jacobs is listed as a sender for a package associated with Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-02-15",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery associated with Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-02-18",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-02-19",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-02-22",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-02-25",
+      "title": "Invoice Date",
+      "description": "The invoice was generated detailing the shipping charges for services rendered.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice details shipping charges totaling USD $367.07 for services rendered by FedEx.",
+    "Multiple packages were sent and received by Jeffrey E. Epstein during February 2002.",
+    "Discounts totaling $11.34 were applied to the shipping charges.",
+    "The invoice includes specific details about package weights, delivery dates, and recipients.",
+    "There are several mentions of adjustments and reasons for potential invoice changes."
+  ],
+  "analyzedAt": "2026-02-22T08:19:05.096Z"
+}

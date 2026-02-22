@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01307727.pdf",
+  "dataSet": "10",
+  "documentType": "FBI 302",
+  "dateOriginal": "2019-08-20",
+  "summary": "This document details the amended inventory of two suitcases seized during a search warrant executed at Jeffrey Epstein's residence. The inventory includes various items such as cash, jewelry, and passports, highlighting the significant assets associated with Epstein. The document also corrects previous inaccuracies regarding the contents of the suitcases.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Informant",
+      "category": "associate",
+      "context": "Richard Kahn provided the suitcases to the FBI during the execution of a search warrant at Epstein's residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of the investigation, with various items belonging to him found in the suitcases.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Marius Robert Fortelni",
+      "role": "Name on passport",
+      "category": "other",
+      "context": "An expired Austrian passport in the name of Marius Robert Fortelni was found in the suitcase, but it contained a photo of Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "associate",
+      "description": "Richard Kahn provided suitcases containing items belonging to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Marius Robert Fortelni",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "identity",
+      "description": "Marius Robert Fortelni's name appeared on a passport that had a photo of Jeffrey Epstein, indicating a possible connection or alias.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-11",
+      "title": "Search Warrant Execution",
+      "description": "FBI executed a search warrant at Jeffrey Epstein's residence and seized two suitcases.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2019-07-31",
+      "title": "Amended Suitcase Inventory",
+      "description": "FBI agents completed a thorough review and amended the inventory of the suitcases seized from Epstein's residence.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York, New York, United States"
+  ],
+  "keyFacts": [
+    "Two suitcases were seized from Jeffrey Epstein's residence during a search warrant execution.",
+    "The black suitcase contained loose diamonds, cash in various currencies, and several envelopes with large sums of money.",
+    "An expired Austrian passport in the name of Marius Robert Fortelni was found, which had a photo of Jeffrey Epstein.",
+    "The inventory included various luxury items such as watches and cuff links, indicating Epstein's wealth.",
+    "There were discrepancies in the initial inventory regarding the contents of the suitcases that were later corrected."
+  ],
+  "analyzedAt": "2026-02-22T03:15:10.935Z"
+}

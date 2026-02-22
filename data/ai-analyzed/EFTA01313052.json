@@ -1,0 +1,58 @@
+{
+  "fileName": "EFTA01313052.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-06",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details various charges for express services, including transportation and special handling fees, with a total amount due of $34.15. The invoice includes shipment details and payment instructions.",
+  "persons": [
+    {
+      "name": "Lauren Kwinter",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwinter is listed as the sender for multiple shipments detailed in the invoice.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Darren Indyke is mentioned as the recipient for several shipments in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Jeff Schontz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeff Schontz is mentioned as the sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kodi Kannapell",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Kodi Kannapell is mentioned as the sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwinter",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwinter and Darren Indyke are associated as sender and recipient in multiple shipments, indicating a working relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 6, 2004, and has an invoice number of 1-991-26637.",
+    "Total charges for the services rendered amount to $34.15.",
+    "The invoice includes details of multiple shipments with specific dates and charges.",
+    "There are references to fuel surcharges applied to the shipments.",
+    "The document includes contact information for FedEx Revenue Services."
+  ],
+  "analyzedAt": "2026-02-22T04:59:44.556Z"
+}

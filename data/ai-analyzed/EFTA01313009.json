@@ -1,0 +1,108 @@
+{
+  "fileName": "EFTA01313009.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-07-26",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges for transportation, discounts applied, and the total amount due. The invoice includes shipment details and references multiple transactions involving Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his involvement in shipping activities.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric Gany is mentioned as a sender in the shipment details, indicating a connection to Epstein's shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeannie",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeannie is listed as a recipient in the shipment details, suggesting involvement in the transactions related to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecilied Jongh",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Cecilied Jongh is mentioned as a recipient in one of the shipments, indicating a connection to Epstein's financial trust activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "business",
+      "description": "Eric Gany is involved in the shipping transactions associated with Epstein, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeannie",
+      "relationshipType": "business",
+      "description": "Jeannie is listed as a recipient in the shipping details, suggesting a business connection to Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Cecilied Jongh",
+      "relationshipType": "business",
+      "description": "Cecilied Jongh is mentioned as a recipient in a shipment related to Epstein's financial trust, indicating a business relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-07-16",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment associated with Jeffrey Epstein was picked up by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany"
+      ]
+    },
+    {
+      "date": "2004-07-20",
+      "title": "FedEx Shipment Pickup",
+      "description": "Another shipment associated with Jeffrey Epstein was picked up by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany"
+      ]
+    },
+    {
+      "date": "2004-07-21",
+      "title": "FedEx Shipment Delivery",
+      "description": "A shipment was delivered to Jeffrey Epstein, indicating ongoing shipping activities.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jeannie",
+        "Cecilied Jongh"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, St Thomas, VI 4806"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 26, 2004, and is addressed to Jeffrey Epstein.",
+    "Total charges on the invoice amount to $119.14.",
+    "The invoice includes details of multiple shipments involving Epstein.",
+    "Eric Gany and Jeannie are mentioned in connection with shipments to and from Epstein.",
+    "Cecilied Jongh is noted as a recipient in one of the shipments related to Epstein's financial trust."
+  ],
+  "analyzedAt": "2026-02-22T04:57:54.752Z"
+}

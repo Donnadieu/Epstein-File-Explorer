@@ -1,0 +1,157 @@
+{
+  "fileName": "EFTA01317073.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2006-05-02",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific dates, charges, and recipient information. The invoice highlights the total amount due and various shipment details, including discounts and surcharges.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, indicating his use of FedEx services for shipping.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Wesley Clark",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Wesley Clark is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larry Morrison is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janusz Banaszak",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Janusz Banaszak is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Doyle",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "J. Doyle is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jacquie Hoover",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jacquie Hoover is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Wesley Clark",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Wesley Clark as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Larry Morrison as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Janusz Banaszak",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Janusz Banaszak as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Doyle",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to J. Doyle as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jacquie Hoover",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Jacquie Hoover as indicated in the shipment details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-04-12",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-19",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-04-27",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Wesley Clark.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Wesley Clark"
+      ]
+    },
+    {
+      "date": "2005-04-28",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Larry Morrison.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Morrison"
+      ]
+    },
+    {
+      "date": "2005-04-29",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Janusz Banaszak.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Janusz Banaszak"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "301 E 66th St Apt 11P, New York, NY 10021",
+    "601 Pennsylvania Ave NW 720, Washington, DC 20004",
+    "358 El Brillo Way, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 02, 2005, and details shipping charges for services provided by FedEx.",
+    "Total charges on the invoice amount to USD $361.99.",
+    "Multiple shipments are listed, with various recipients including Wesley Clark and Larry Morrison.",
+    "The invoice includes discounts and surcharges applied to the shipping charges.",
+    "Several packages were picked up and delivered between April 12, 2005, and April 29, 2005."
+  ],
+  "analyzedAt": "2026-02-22T08:02:16.455Z"
+}

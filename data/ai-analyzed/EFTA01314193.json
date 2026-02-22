@@ -1,0 +1,122 @@
+{
+  "fileName": "EFTA01314193.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-06-16",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment information, including multiple packages sent to different recipients. The total amount due is $317.72, with a payment deadline of July 1, 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his involvement in shipping activities.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of packages sent via FedEx, indicating her association with Epstein's shipping activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Darren",
+      "role": "Shipper Reference",
+      "category": "associate",
+      "context": "Darren is referenced in connection with a shipment, suggesting a possible business or personal relationship with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as a recipient of a package sent via FedEx, indicating his association with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as a recipient of a package sent via FedEx, indicating his association with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is a recipient of packages sent by Epstein, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren",
+      "relationshipType": "business",
+      "description": "Darren is referenced in connection with a shipment, suggesting a business relationship with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "business",
+      "description": "Miles Alexander is a recipient of a package sent by Epstein, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "business",
+      "description": "Dave Rodgers is a recipient of a package sent by Epstein, indicating a business relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-06-06",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipping, with Jeffrey E. Epstein listed as the shipper.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-09",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to Jeanne Brennan.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-06-12",
+      "title": "Multiple Package Deliveries",
+      "description": "Several packages sent by Epstein were delivered to various recipients including Miles Alexander and Dave Rodgers.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander",
+        "Dave Rodgers"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, 4th Floor, Suite 8-3, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00602"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 16, 2003, with a total amount due of $317.72.",
+    "The invoice includes details of multiple shipments sent by Jeffrey E. Epstein.",
+    "The payment is due by July 1, 2003.",
+    "Several recipients are mentioned, indicating Epstein's involvement in shipping activities.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:56:26.749Z"
+}

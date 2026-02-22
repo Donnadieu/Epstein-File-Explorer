@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01304177.pdf",
+  "dataSet": "10",
+  "documentType": "employee emergency contact form",
+  "dateOriginal": "2018-03-20",
+  "summary": "This document is an emergency contact form for an employee named Gerry Titre, detailing personal information such as contact details, marital status, health concerns, and emergency contacts. It serves to ensure the safety of the employee and others in case of an emergency.",
+  "persons": [
+    {
+      "name": "Gerry Titre",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Gerry Titre is listed as an employee with details about his position and personal information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Valerie",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Valerie is listed as Gerry Titre's wife and emergency contact.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Girrycia",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Girrycia is listed as Gerry Titre's daughter and emergency contact.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Gerry Titre",
+      "person2": "Valerie",
+      "relationshipType": "spouse",
+      "description": "Valerie is identified as the wife of Gerry Titre.",
+      "strength": 5
+    },
+    {
+      "person1": "Gerry Titre",
+      "person2": "Girrycia",
+      "relationshipType": "parent-child",
+      "description": "Girrycia is identified as the daughter of Gerry Titre.",
+      "strength": 5
+    }
+  ],
+  "events": [],
+  "locations": [
+    "6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "Gerry Titre is employed in a maintenance position.",
+    "Gerry Titre has high blood pressure and other unspecified health concerns.",
+    "The emergency contacts listed are his wife Valerie and daughter Girrycia.",
+    "The document is dated March 20, 2018."
+  ],
+  "analyzedAt": "2026-02-22T01:51:39.717Z"
+}

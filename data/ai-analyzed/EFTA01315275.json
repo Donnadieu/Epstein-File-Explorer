@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA01315275.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-02-13",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details charges related to customs, duties, and other fees associated with a shipment made on February 7, 2002, and includes references to Maxwell Xavier Rothschild as a recipient.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Shipper",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the invoice is addressed, indicating he is the shipper of the package.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Maxwell Xavier Rothschild",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maxwell Xavier Rothschild is mentioned as the recipient of the shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maxwell Xavier Rothschild",
+      "relationshipType": "shipper-recipient",
+      "description": "Jeffrey E. Epstein shipped a package to Maxwell Xavier Rothschild, as indicated in the invoice.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-02-07",
+      "title": "Shipment Date",
+      "description": "A shipment was sent by Jeffrey E. Epstein on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Maxwell Xavier Rothschild"
+      ]
+    },
+    {
+      "date": "2002-02-13",
+      "title": "Invoice Issued",
+      "description": "The invoice for the shipping services was issued on this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "9 Ave Foch, St Tropez, 83990, France"
+  ],
+  "keyFacts": [
+    "The invoice total is $161.94, covering shipping and customs fees.",
+    "The shipment was delivered on February 13, 2002.",
+    "The invoice includes detailed charges for duties and taxes paid to French Customs on behalf of Epstein."
+  ],
+  "analyzedAt": "2026-02-22T06:53:31.174Z"
+}

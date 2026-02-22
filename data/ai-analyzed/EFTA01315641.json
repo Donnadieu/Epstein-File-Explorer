@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01315641.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-02-21",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and shipment summaries for multiple packages sent by Epstein. The invoice highlights the total amount due and provides information on shipment dates and recipients.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, listed as the sender for multiple shipments.",
+      "mentionCount": 8
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "other",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of packages sent by Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Dale Gordon",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dale Gordon is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Gordon",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Dale Gordon as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "delivery-signature",
+      "description": "A. Rodriguez signed for the delivery of packages sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-02-11",
+      "title": "Package Drop-off",
+      "description": "Packages were dropped off by Epstein for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-14",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered and signed for by A. Rodriguez.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Rodriguez"
+      ]
+    },
+    {
+      "date": "2005-02-17",
+      "title": "Package Pick-up",
+      "description": "Another package was picked up by FedEx for delivery from Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter Suite 8-3, St. Thomas, VI 00602",
+    "301 E 66th St Apt 11P, New York, NY 10021"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 21, 2005, and details shipping charges totaling $191.05.",
+    "Jeffrey E. Epstein is the sender for multiple shipments listed in the invoice.",
+    "Jeanne Brennan and Dale Gordon are mentioned as recipients of packages sent by Epstein.",
+    "A. Rodriguez signed for the delivery of packages sent by Epstein.",
+    "The invoice includes details of discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T07:11:36.469Z"
+}

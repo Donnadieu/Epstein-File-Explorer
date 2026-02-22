@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA01317503.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-03-15",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for various shipments made by NY SG LLC. It includes information about the sender, recipient, and specific charges associated with the services provided. The invoice highlights multiple transactions and their respective details, including dates and amounts due.",
+  "persons": [
+    {
+      "name": "Darren Menke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Menke is listed as the sender for one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Daniel Blesberg",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Daniel Blesberg is noted as the recipient for a shipment sent by Darren Menke.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Craig Gibson",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Craig Gibson is mentioned as the recipient for another shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwitner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwitner is listed as the sender for multiple shipments in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peg Ugland is mentioned as the recipient for a shipment sent by Lauren Kwitner.",
+      "mentionCount": 1
+    },
+    {
+      "name": "K Haviland",
+      "role": "Signer",
+      "category": "staff",
+      "context": "K Haviland is noted as the individual who signed for one of the deliveries.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Menke",
+      "person2": "Daniel Blesberg",
+      "relationshipType": "sender-recipient",
+      "description": "Darren Menke sent a shipment to Daniel Blesberg as detailed in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren Menke",
+      "person2": "Craig Gibson",
+      "relationshipType": "sender-recipient",
+      "description": "Darren Menke sent a shipment to Craig Gibson as noted in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Kwitner",
+      "person2": "Peg Ugland",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kwitner sent a shipment to Peg Ugland as detailed in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Kwitner",
+      "person2": "K Haviland",
+      "relationshipType": "signer-sender",
+      "description": "K Haviland signed for a delivery sent by Lauren Kwitner.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-02-28",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Menke",
+        "Lauren Kwitner"
+      ]
+    },
+    {
+      "date": "2002-03-01",
+      "title": "Delivery of Shipments",
+      "description": "Shipments sent by Darren Menke and Lauren Kwitner were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Menke",
+        "Lauren Kwitner"
+      ]
+    },
+    {
+      "date": "2002-03-06",
+      "title": "Additional Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Kwitner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "1511 167th St, Santa Monica, CA 90404",
+    "2322 Main St, Bridgehampton, NY 11932",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments sent by NY SG LLC from 457 Madison Ave, New York.",
+    "Darren Menke and Lauren Kwitner are identified as senders for various shipments.",
+    "The invoice includes specific transportation charges for each shipment.",
+    "Multiple recipients are noted, including Daniel Blesberg, Craig Gibson, and Peg Ugland.",
+    "The document indicates that payments are due by March 30, 2002."
+  ],
+  "analyzedAt": "2026-02-22T08:24:16.709Z"
+}

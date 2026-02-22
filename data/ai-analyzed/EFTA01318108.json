@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA01318108.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-03-07",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSO LLC. It includes information about the services rendered, billing details, and contact information for inquiries. The invoice reflects multiple shipments and associated costs, indicating the financial transactions related to shipping services.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwintner is identified as the sender associated with NYSO LLC, responsible for the shipping transactions detailed in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Carol Bukantz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Carol Bukantz is mentioned as the recipient of a shipment from NYSO LLC, indicating a business relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Oakley is noted as the individual who signed for a delivery, indicating their involvement in the receipt of the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M.K. Rick",
+      "role": "Signer",
+      "category": "other",
+      "context": "M.K. Rick is mentioned as the individual who signed for another delivery, indicating their role in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Carol Bukantz",
+      "relationshipType": "business",
+      "description": "Lauren Kwintner is the sender from NYSO LLC, while Carol Bukantz is the recipient of a shipment, indicating a business transaction between them.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-02-25",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for delivery, as noted in the invoice details.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2003-02-26",
+      "title": "Delivery Confirmation",
+      "description": "The shipment was delivered and signed for by D. Oakley, confirming the completion of the shipping process.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "D. Oakley"
+      ]
+    },
+    {
+      "date": "2003-03-03",
+      "title": "Second Shipment Drop-off",
+      "description": "A second shipment was dropped off for delivery, as detailed in the invoice.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2003-03-04",
+      "title": "Second Shipment Delivery Confirmation",
+      "description": "The second shipment was delivered and signed for by M.K. Rick, indicating successful completion of the shipping process.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "M.K. Rick"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 7, 2003, and includes multiple shipments handled by FedEx.",
+    "Lauren Kwintner is the sender associated with NYSO LLC, which is responsible for the shipping charges.",
+    "Carol Bukantz is identified as a recipient of one of the shipments.",
+    "D. Oakley and M.K. Rick are mentioned as individuals who signed for deliveries, indicating their involvement in the shipping process.",
+    "The total amount due on the invoice is $12.80, with a payment due date of March 22, 2003."
+  ],
+  "analyzedAt": "2026-02-22T08:56:51.506Z"
+}

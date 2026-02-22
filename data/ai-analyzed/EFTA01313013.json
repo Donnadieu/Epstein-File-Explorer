@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01313013.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-08-09",
+  "summary": "This document is an invoice from FedEx to NYSG LLC for shipping services rendered. It details the charges for transportation and special handling, along with payment instructions and contact information for inquiries. The invoice indicates a total amount due of $6.86, with a due date of August 20, 2004.",
+  "persons": [
+    {
+      "name": "Lauren Wander",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Lauren Wander is listed as the recipient associated with NYSG LLC for the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeff Schantz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeff Schantz is mentioned as the sender of the shipment, with an address provided in Hewlett, NY.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2004-07-29",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for NYSG LLC.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Wander",
+        "Jeff Schantz"
+      ]
+    },
+    {
+      "date": "2004-07-30",
+      "title": "FedEx Shipment Delivery",
+      "description": "The shipment was delivered to NYSG LLC on July 30, 2004.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Lauren Wander"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "1257 Veeder Street, Hewlett, NY 11557"
+  ],
+  "keyFacts": [
+    "The invoice number is 1-942-94202, dated August 9, 2004.",
+    "The total amount due for the invoice is $6.86, with a payment due date of August 20, 2004.",
+    "The shipment was picked up on July 29, 2004, and delivered on July 30, 2004.",
+    "The invoice includes a fuel surcharge of 7.50% applied to the shipment.",
+    "Contact information for FedEx Revenue Services is provided for invoice inquiries."
+  ],
+  "analyzedAt": "2026-02-22T04:58:03.233Z"
+}

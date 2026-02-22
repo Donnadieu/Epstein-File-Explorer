@@ -1,0 +1,173 @@
+{
+  "fileName": "EFTA01318856.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2000-11-27",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to J Epstein & Co Inc. The invoice includes various transportation charges, special handling fees, and details about the shipments made by Jeffrey Epstein and his associates. It highlights the financial transactions related to shipping services over a specified period.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Shipper",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the shipper for multiple packages sent through FedEx, indicating his involvement in the shipping activities detailed in the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Shannon Epstein",
+      "role": "Shipper",
+      "category": "associate",
+      "context": "Shannon Epstein is mentioned as a shipper for certain packages, indicating a connection to the shipping activities of J Epstein & Co Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lauren Minden",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lauren Minden is listed as a recipient for packages sent by J Epstein & Co Inc, suggesting a business or personal connection.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peg Ugland is mentioned as a recipient for packages, indicating a relationship with Epstein's business activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "David Rodgers",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "David Rodgers is listed as a recipient for a package, suggesting a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rita Colwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rita Colwell is mentioned as a recipient for a package, indicating a potential professional relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visgaki",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larry Visgaki is mentioned as a recipient for a package, suggesting a connection to Epstein's business dealings.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Shannon Epstein",
+      "relationshipType": "employer-employee",
+      "description": "Shannon Epstein is involved in the shipping activities of J Epstein & Co Inc, indicating a familial or business relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Lauren Minden",
+      "relationshipType": "social",
+      "description": "Lauren Minden is a recipient of packages sent by Epstein, suggesting a personal or business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Peg Ugland",
+      "relationshipType": "social",
+      "description": "Peg Ugland is a recipient of packages sent by Epstein, indicating a potential business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "David Rodgers",
+      "relationshipType": "social",
+      "description": "David Rodgers is mentioned as a recipient of a package, suggesting a connection to Epstein's activities.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Rita Colwell",
+      "relationshipType": "social",
+      "description": "Rita Colwell is listed as a recipient for a package, indicating a possible professional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Larry Visgaki",
+      "relationshipType": "social",
+      "description": "Larry Visgaki is mentioned as a recipient for a package, suggesting a connection to Epstein's business dealings.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2000-11-14",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from J Epstein & Co Inc.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Shannon Epstein"
+      ]
+    },
+    {
+      "date": "2000-11-15",
+      "title": "Package Delivery",
+      "description": "Packages sent by J Epstein & Co Inc were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lauren Minden",
+        "Peg Ugland"
+      ]
+    },
+    {
+      "date": "2000-11-16",
+      "title": "Package Delivery",
+      "description": "Additional packages were delivered to recipients associated with Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Rita Colwell",
+        "David Rodgers"
+      ]
+    },
+    {
+      "date": "2000-11-17",
+      "title": "Package Delivery",
+      "description": "Further deliveries were made to recipients linked to Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Larry Visgaki"
+      ]
+    },
+    {
+      "date": "2000-11-22",
+      "title": "Final Package Delivery",
+      "description": "The last set of packages for this invoice was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "49 Zorro Ranch Rd, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice details shipping charges totaling $453.70 for services rendered to J Epstein & Co Inc.",
+    "Multiple packages were shipped and delivered to various recipients associated with Jeffrey Epstein.",
+    "The document includes specific dates of package pickups and deliveries, indicating active shipping operations.",
+    "There are mentions of temporary fuel surcharges applied to the shipping costs due to market conditions.",
+    "Several named individuals are associated with the shipping activities, indicating potential business or personal relationships."
+  ],
+  "analyzedAt": "2026-02-22T09:37:13.076Z"
+}

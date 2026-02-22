@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01315031.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-06-01",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for services rendered to NYSG LLC. It includes information about the billing account, service types, and payment details, along with specific charges for transportation and fuel surcharges.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "staff",
+      "context": "Bella Tsukeman is listed as the billing contact for NYSG LLC in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwintner is mentioned as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Ugland",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peg Ugland is identified as the recipient of a package sent through FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John S. Biddle",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John S. Biddle is mentioned as the sender of another package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Moyne",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Darren Moyne is identified as the recipient of a package sent through FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Bella Tsukeman is associated with NYSG LLC as the billing contact.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "Peg Ugland",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kwintner sent a package to Peg Ugland via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "John S. Biddle",
+      "person2": "Darren Moyne",
+      "relationshipType": "sender-recipient",
+      "description": "John S. Biddle sent a package to Darren Moyne via FedEx.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-05-21",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Peg Ugland"
+      ]
+    },
+    {
+      "date": "2001-05-17",
+      "title": "Package Delivery",
+      "description": "A package sent by John S. Biddle was delivered to Darren Moyne.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "John S. Biddle",
+        "Darren Moyne"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43050",
+    "201 Beavertail Rd, Jamestown, RI 02205"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 1, 2001, and details shipping charges totaling $35.10.",
+    "Bella Tsukeman is the billing contact for NYSG LLC, which is the account holder.",
+    "Multiple packages were shipped via FedEx, with specific details about pickup and delivery dates.",
+    "Charges include transportation and fuel surcharges, reflecting market conditions.",
+    "There are references to changes in FedEx's invoice adjustment policies effective April 1, 2001."
+  ],
+  "analyzedAt": "2026-02-22T06:39:35.564Z"
+}

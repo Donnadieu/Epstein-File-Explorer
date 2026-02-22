@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA01319832.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-03-07",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services. It details the charges incurred for a shipment, including transportation charges, discounts, and special handling fees. The invoice indicates a total amount due of $72.03, with a payment deadline of March 22, 2005.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx, with his address listed in New York.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Elisabeth Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Elisabeth Maxwell is mentioned as the sender of a package associated with the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ian Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ian Maxwell is listed as a sender associated with the shipment, indicating a connection to Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Elisabeth Maxwell",
+      "relationshipType": "social",
+      "description": "Elisabeth Maxwell is identified as a sender in a shipment involving Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ian Maxwell",
+      "relationshipType": "social",
+      "description": "Ian Maxwell is also identified as a sender in a shipment involving Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-02-26",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for delivery, with details provided in the invoice.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Elisabeth Maxwell",
+        "Ian Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "40 Portman Square, London W1H 9FH, GB"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 7, 2005, and is for shipping services provided by FedEx.",
+    "The total amount due on the invoice is $72.03, with a payment deadline of March 22, 2005.",
+    "The shipment was picked up on February 26, 2005.",
+    "Elisabeth Maxwell and Ian Maxwell are associated with the shipment as senders.",
+    "The invoice includes a discount of $1.43 applied to the total charges."
+  ],
+  "analyzedAt": "2026-02-22T10:26:33.477Z"
+}

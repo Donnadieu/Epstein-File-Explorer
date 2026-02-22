@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA01313821.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-11-29",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details the charges incurred for a shipment made on November 22, 2002, and includes information about the billing and shipping addresses, as well as the total amount due.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the recipient of the FedEx shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Walter Novembre",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Walter Novembre is identified as the sender of the FedEx shipment referenced in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Walter Novembre",
+      "relationshipType": "sender-recipient",
+      "description": "Walter Novembre sent a package to Darren Indyke as detailed in the FedEx invoice.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-22",
+      "title": "FedEx Shipment",
+      "description": "A shipment was sent via FedEx from Walter Novembre to Darren Indyke.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Walter Novembre"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 29, 2002, and pertains to a shipment made on November 22, 2002.",
+    "The total charges for the shipment amount to $17.22.",
+    "Darren Indyke is listed as the recipient of the shipment, while Walter Novembre is the sender.",
+    "The shipping address is associated with NYSG LLC, located at 457 Madison Ave, New York, NY."
+  ],
+  "analyzedAt": "2026-02-22T05:38:37.909Z"
+}

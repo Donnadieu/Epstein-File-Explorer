@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01301498.pdf",
+  "dataSet": "10",
+  "documentType": "police report",
+  "dateOriginal": "1997-11-10",
+  "summary": "This document is a police report detailing a complaint of criminal mischief involving graffiti on property located at 9 East 71st Street, New York City. The report includes information about the complainant, the nature of the offense, and the responding officers.",
+  "persons": [
+    {
+      "name": "Liebstein Wex",
+      "role": "Complainant",
+      "category": "victim",
+      "context": "Liebstein Wex reported that unknown individuals spray-painted graffiti on property, causing damage.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Barnett",
+      "role": "Reporter",
+      "category": "witness",
+      "context": "Richard Barnett is noted as the reporter of the incident, providing information to the police.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Louis Juste",
+      "role": "Police Officer",
+      "category": "law enforcement",
+      "context": "Officer Louis Juste is listed as the reporting officer for the complaint.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eileen Camarda",
+      "role": "Police Officer",
+      "category": "law enforcement",
+      "context": "Officer Eileen Camarda entered the complaint report into the system.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Liebstein Wex",
+      "person2": "Richard Barnett",
+      "relationshipType": "reporter-witness",
+      "description": "Richard Barnett reported the incident involving Liebstein Wex's property damage.",
+      "strength": 3
+    },
+    {
+      "person1": "Louis Juste",
+      "person2": "Eileen Camarda",
+      "relationshipType": "employer-employee",
+      "description": "Both are police officers involved in the investigation and reporting of the incident.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "1997-11-10",
+      "title": "Graffiti Incident Report",
+      "description": "A report was filed regarding graffiti vandalism on property at 9 East 71st Street.",
+      "category": "abuse",
+      "significance": 3,
+      "personsInvolved": [
+        "Liebstein Wex",
+        "Richard Barnett",
+        "Louis Juste",
+        "Eileen Camarda"
+      ]
+    }
+  ],
+  "locations": [
+    "9 East 71st Street, New York City, NY"
+  ],
+  "keyFacts": [
+    "The incident involved unknown perpetrators spray-painting graffiti on property.",
+    "The complaint was classified as criminal mischief.",
+    "The report was filed on November 10, 1997, and was marked as completed.",
+    "Liebstein Wex is identified as the victim of the graffiti incident.",
+    "The report was entered by Officer Eileen Camarda and approved by Officer Louis Juste."
+  ],
+  "analyzedAt": "2026-02-22T01:31:05.796Z"
+}

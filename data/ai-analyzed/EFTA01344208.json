@@ -1,0 +1,103 @@
+{
+  "fileName": "EFTA01344208.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2014-02-28",
+  "summary": "This document is an email correspondence regarding a wire transfer from JPMorgan to DB Hyperion Air Inc. Richard Kahn is seeking clarification on the status of the funds, while Janet Young confirms the wire was sent and is following up with another contact at DB. The email highlights the communication between financial professionals regarding account management.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Sender",
+      "category": "other",
+      "context": "Richard Kahn is inquiring about a wire transfer and is seeking assistance regarding the status of the funds.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Amanda Kirby is mentioned as being out of the office and is the intended recipient of Richard Kahn's inquiry.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janet Young",
+      "role": "Vice President",
+      "category": "legal",
+      "context": "Janet Young confirms the wire transfer was sent and is following up on the receipt of the funds.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lisa Hurd",
+      "role": "Contact",
+      "category": "other",
+      "context": "Lisa Hurd is mentioned as a contact at DB who Janet Young is trying to reach for further information.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gina Magliocco",
+      "role": "Alternate contact",
+      "category": "other",
+      "context": "Gina Magliocco is listed as an alternate contact for Janet Young at J.P. Morgan.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jason Grosse",
+      "role": "Alternate contact",
+      "category": "other",
+      "context": "Jason Grosse is also listed as an alternate contact for Janet Young at J.P. Morgan.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Janet Young",
+      "relationshipType": "client-banker",
+      "description": "Richard Kahn is seeking information from Janet Young regarding a wire transfer, indicating a client-banker relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Janet Young",
+      "person2": "Lisa Hurd",
+      "relationshipType": "professional contact",
+      "description": "Janet Young is attempting to contact Lisa Hurd for information about the wire transfer, indicating a professional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Janet Young",
+      "person2": "Gina Magliocco",
+      "relationshipType": "colleague",
+      "description": "Gina Magliocco is mentioned as an alternate contact for Janet Young, indicating they work together at J.P. Morgan.",
+      "strength": 2
+    },
+    {
+      "person1": "Janet Young",
+      "person2": "Jason Grosse",
+      "relationshipType": "colleague",
+      "description": "Jason Grosse is mentioned as an alternate contact for Janet Young, indicating they work together at J.P. Morgan.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-02-25",
+      "title": "Wire Transfer Sent",
+      "description": "A wire transfer from JPMorgan to DB Hyperion Air Inc. was confirmed to have been sent on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Richard Kahn",
+        "Janet Young"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "Richard Kahn is inquiring about a wire transfer that was supposed to be received by DB Hyperion Air Inc.",
+    "Janet Young confirms that the wire transfer was sent on February 25, 2014.",
+    "Lisa Hurd is contacted by Janet Young to track down the receipt of the funds.",
+    "Amanda Kirby is mentioned as being out of the office during this correspondence.",
+    "The email correspondence indicates ongoing financial transactions and communication between financial professionals."
+  ],
+  "analyzedAt": "2026-02-22T15:45:54.678Z"
+}

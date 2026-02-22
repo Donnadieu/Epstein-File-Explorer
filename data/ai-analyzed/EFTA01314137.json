@@ -1,0 +1,132 @@
+{
+  "fileName": "EFTA01314137.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-05-19",
+  "summary": "This document contains invoice details for shipments made by Jeffrey E. Epstein Financial Trust Company through FedEx. It includes information on transportation charges, discounts, and shipment summaries for various packages sent between New York and St. Thomas. The document highlights the financial transactions related to these shipments.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is identified as the sender for multiple FedEx shipments listed in the invoice details.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender for several packages in the shipment details.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Tyson C. Jacobs",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tyson C. Jacobs is mentioned as a recipient for one of the shipments detailed in the document.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aaron",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Aaron is referenced as a recipient for one of the shipments in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Wallace",
+      "role": "Signer",
+      "category": "staff",
+      "context": "D. Wallace is mentioned as the person who signed for the delivery of one of the packages.",
+      "mentionCount": 1
+    },
+    {
+      "name": "P. Larry",
+      "role": "Signer",
+      "category": "staff",
+      "context": "P. Larry is noted as the person who signed for the delivery of another package.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. Misak",
+      "role": "Signer",
+      "category": "staff",
+      "context": "M. Misak is mentioned as the person who signed for the delivery of a package.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Wallace",
+      "role": "Signer",
+      "category": "staff",
+      "context": "A. Wallace is noted as the person who signed for the delivery of a package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey E. Epstein is associated with Jeanne Brennan as she is listed as a sender for packages related to his financial trust.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tyson C. Jacobs",
+      "relationshipType": "recipient-sender",
+      "description": "Tyson C. Jacobs is identified as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Aaron",
+      "relationshipType": "recipient-sender",
+      "description": "Aaron is mentioned as a recipient for one of the shipments sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-05-09",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-05-12",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "D. Wallace"
+      ]
+    },
+    {
+      "date": "2003-05-19",
+      "title": "Invoice Issuance",
+      "description": "An invoice detailing multiple shipments was issued.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Avenue, 4th Floor, New York, NY 10022, US",
+    "6100 Red Hook Quarter, St. Thomas 00802, VI"
+  ],
+  "keyFacts": [
+    "The document is an invoice dated May 19, 2003, detailing shipments made by Jeffrey E. Epstein Financial Trust Company.",
+    "Multiple shipments were sent from New York to St. Thomas, with various charges and discounts applied.",
+    "Several individuals are noted as signers for the delivery of packages, indicating a network of staff involved in the shipping process."
+  ],
+  "analyzedAt": "2026-02-22T05:54:01.365Z"
+}

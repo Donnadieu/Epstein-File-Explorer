@@ -1,0 +1,49 @@
+{
+  "fileName": "EFTA01314974.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-04-20",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided on April 19, 2001. It includes information about transportation charges, handling surcharges, and payment details, indicating a due date for payment by May 5, 2001.",
+  "persons": [
+    {
+      "name": "Eric Gany",
+      "role": "Shipper",
+      "category": "other",
+      "context": "Eric Gany is listed as the shipper on the FedEx invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the recipient of the package shipped via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-04-19",
+      "title": "FedEx Shipment Delivery",
+      "description": "A package was delivered via FedEx on April 19, 2001.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Eric Gany",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "St. Thomas, 00802, VI"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-789-50506, dated April 20, 2001.",
+    "Total charges for the shipment amount to USD 37.44.",
+    "The payment is due by May 5, 2001.",
+    "A fuel surcharge of 1.44 was applied to the shipment.",
+    "The package was picked up on April 18, 2001, and delivered on April 19, 2001."
+  ],
+  "analyzedAt": "2026-02-22T06:35:42.937Z"
+}

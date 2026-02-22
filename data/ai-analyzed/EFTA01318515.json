@@ -1,0 +1,69 @@
+{
+  "fileName": "EFTA01318515.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-09-08",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and provides a summary of shipments made under Epstein's account. The invoice highlights the total amount due and includes instructions for payment.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his use of their services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the sender of a package associated with Epstein's account, indicating her involvement in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is involved in the shipping process for packages sent under Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-09-03",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery under Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2003-09-04",
+      "title": "Package Delivery",
+      "description": "A package sent via FedEx International Priority was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "45 Madison Avenue, 6100 Red Hook Quarter, New York, NY 10022",
+    "49 Zorro Ranch Road, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 8, 2003, and is for a total of $98.87.",
+    "The invoice includes charges for transportation and special handling services.",
+    "Two shipments are detailed in the invoice, with specific charges outlined for each.",
+    "The invoice indicates that payment is due by September 23, 2003.",
+    "There are references to multiple addresses associated with Epstein's shipping activities."
+  ],
+  "analyzedAt": "2026-02-22T09:19:22.898Z"
+}

@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01321686.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial statements from Bear Stearns for an account managed by Financial Trust Company. It details the portfolio holdings, transaction activities, and market values over various periods, highlighting significant changes in equity and net worth.",
+  "persons": [
+    {
+      "name": "Bear Stearns",
+      "role": "Financial Institution",
+      "category": "other",
+      "context": "Bear Stearns is mentioned as the institution servicing the account detailed in the financial statements.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Financial Trust Company",
+      "role": "Account Manager",
+      "category": "other",
+      "context": "Financial Trust Company is referenced as the entity managing the account and providing the financial statements.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Walt Disney Co",
+      "role": "Investment Holding",
+      "category": "other",
+      "context": "Walt Disney Co is mentioned as part of the investment portfolio, indicating transactions involving its stock.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Zicherman, Ira",
+      "role": "Account Executive",
+      "category": "staff",
+      "context": "Ira Zicherman is identified as the account executive responsible for the account at Bear Stearns.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Financial Trust Company",
+      "person2": "Bear Stearns",
+      "relationshipType": "service-provider-client",
+      "description": "Financial Trust Company manages the account serviced by Bear Stearns.",
+      "strength": 5
+    },
+    {
+      "person1": "Ira Zicherman",
+      "person2": "Bear Stearns",
+      "relationshipType": "employer-employee",
+      "description": "Ira Zicherman is an account executive working for Bear Stearns.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-30",
+      "title": "Portfolio Statement Date",
+      "description": "The financial statement reflects the portfolio's value and transactions as of April 30, 2004.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Bear Stearns",
+        "Financial Trust Company"
+      ]
+    },
+    {
+      "date": "2004-02-20",
+      "title": "Investment Activity",
+      "description": "Investment activity involving Walt Disney Co is recorded, indicating a transaction on this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Walt Disney Co",
+        "Financial Trust Company"
+      ]
+    }
+  ],
+  "locations": [
+    "1 Canada Square, London, E14 5AD",
+    "6100 Red Hook Quarter, Suite 8-3, St Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The total value of securities in the account was reported as $3,923,430.",
+    "There were no pending buy or sell orders on file for the account.",
+    "The account experienced a change in net equity of -$3,923,430 since the last statement.",
+    "Ira Zicherman is the account executive managing the account at Bear Stearns.",
+    "Walt Disney Co is listed as a significant holding in the investment portfolio."
+  ],
+  "analyzedAt": "2026-02-22T10:48:40.493Z"
+}

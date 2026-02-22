@@ -1,0 +1,138 @@
+{
+  "fileName": "EFTA01319905.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-05-31",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries for multiple packages sent by Epstein and associated parties. The invoice highlights the total amount due and provides a breakdown of transportation charges and discounts.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is responsible for the shipping charges listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in the shipment details, indicating her involvement in the shipping process.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is listed as a recipient for one of the shipments, suggesting a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Nicker",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosemary Nicker is mentioned as a recipient for another shipment, indicating her involvement in the transactions.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Contact",
+      "category": "associate",
+      "context": "Miles Alexander is referenced in connection with Rosemary Nicker, suggesting he may be involved in the shipping or receiving process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of packages, indicating their role in the shipping process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "D. Wallace",
+      "role": "Delivery Personnel",
+      "category": "staff",
+      "context": "D. Wallace is mentioned as the individual who signed for the delivery of packages, indicating their role in the shipping process.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is involved in sending packages on behalf of Jeffrey E. Epstein, indicating a business relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "recipient-sender",
+      "description": "Alberto Pinto is listed as a recipient for one of Epstein's shipments, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Nicker",
+      "relationshipType": "recipient-sender",
+      "description": "Rosemary Nicker is mentioned as a recipient for a shipment sent by Epstein, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Rosemary Nicker",
+      "person2": "Miles Alexander",
+      "relationshipType": "associate",
+      "description": "Miles Alexander is associated with Rosemary Nicker in the context of a shipment, suggesting a connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-20",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx for delivery, initiated by Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-05-23",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients, including Jeanne Brennan and Alberto Pinto.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan",
+        "Alberto Pinto"
+      ]
+    },
+    {
+      "date": "2005-05-26",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Epstein were delivered, with confirmation of receipt by delivery personnel.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "D. Wallace"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "49 Zotto Ranch Rd, Stanley, NM 87055",
+    "15 Perimeter Rd, West Palm Beach, FL 33406-1463",
+    "75002 Paris, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 31, 2005, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the shipping services amount to $813.25.",
+    "Multiple shipments were made by Epstein, with various recipients including Jeanne Brennan and Alberto Pinto.",
+    "The document includes details of discounts applied to the shipping charges.",
+    "There are several references to delivery personnel who signed for the packages, indicating the completion of the shipping process."
+  ],
+  "analyzedAt": "2026-02-22T10:31:02.589Z"
+}

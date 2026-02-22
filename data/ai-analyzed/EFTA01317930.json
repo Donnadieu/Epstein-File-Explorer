@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01317930.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-11-18",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for a shipment associated with Jeffrey Epstein. It includes information about discounts applied, total charges, and shipment details such as pickup and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the sender of a shipment, with details of the transportation charges associated with his account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as the recipient of a shipment sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Oakley",
+      "role": "Discount Provider",
+      "category": "other",
+      "context": "D. Oakley is referenced in relation to a discount applied to the shipment charges.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Jeffrey Epstein is sending a shipment to Ghislaine Maxwell, indicating a personal or business relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "D. Oakley",
+      "relationshipType": "financial",
+      "description": "D. Oakley is associated with providing a discount on the shipment charges for Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-11-01",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx on November 1, 2002, associated with Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2002-11-04",
+      "title": "Shipment Delivery",
+      "description": "The shipment was delivered on November 4, 2002, to Ghislaine Maxwell.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "Pittsburgh, PA"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 18, 2002, and details transportation charges of $14.37.",
+    "The shipment was picked up on November 1, 2002, and delivered on November 4, 2002.",
+    "Jeffrey Epstein is identified as the sender, while Ghislaine Maxwell is the recipient of the shipment.",
+    "A discount of $3.18 was applied to the total charges for the shipment.",
+    "D. Oakley is mentioned in relation to the discount provided on the shipment."
+  ],
+  "analyzedAt": "2026-02-22T08:47:38.578Z"
+}

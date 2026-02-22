@@ -1,0 +1,182 @@
+{
+  "fileName": "EFTA01314224.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-07-07",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details various shipments made by Epstein, including charges, discounts, and delivery information. The invoice highlights Epstein's shipping activities and associated costs during July 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Morrison is mentioned as a sender for some of the packages shipped by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "K. Duffy",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "K. Duffy is noted as the person who signed for the delivery of one of the packages.",
+      "mentionCount": 1
+    },
+    {
+      "name": "K. Groves",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "K. Groves is mentioned as the person who signed for another package delivery.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Fuentes",
+      "role": "FedEx Employee",
+      "category": "staff",
+      "context": "S. Fuentes is noted as the person who signed for the delivery of multiple packages.",
+      "mentionCount": 2
+    },
+    {
+      "name": "John Dinz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "John Dinz is listed as the recipient of a package sent to the Federal Aviation Administration.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lesley NY Strategy Group",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lesley NY Strategy Group is mentioned as a recipient of one of the packages sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Uglan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peg Uglan is noted as the recipient of a package sent to a property address in New Albany, OH.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Patrick",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Patrick is mentioned as a sender for one of the packages shipped by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "employer-employee",
+      "description": "Larry Morrison is identified as a sender for packages shipped by Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "K. Duffy",
+      "relationshipType": "service-provider-client",
+      "description": "K. Duffy signed for a package delivered to Epstein, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "K. Groves",
+      "relationshipType": "service-provider-client",
+      "description": "K. Groves signed for a package delivered to Epstein, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "S. Fuentes",
+      "relationshipType": "service-provider-client",
+      "description": "S. Fuentes signed for multiple packages delivered to Epstein, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Dinz",
+      "relationshipType": "client-recipient",
+      "description": "John Dinz is a recipient of a package sent by Epstein, indicating a transactional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lesley NY Strategy Group",
+      "relationshipType": "client-recipient",
+      "description": "Lesley NY Strategy Group is a recipient of a package sent by Epstein, indicating a transactional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peg Uglan",
+      "relationshipType": "client-recipient",
+      "description": "Peg Uglan is a recipient of a package sent by Epstein, indicating a transactional relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-06-27",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-30",
+      "title": "Package Delivery",
+      "description": "Multiple packages were delivered to various recipients, including the Federal Aviation Administration.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Dinz"
+      ]
+    },
+    {
+      "date": "2003-07-01",
+      "title": "Package Delivery",
+      "description": "Additional packages were delivered to recipients including Lesley NY Strategy Group.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Lesley NY Strategy Group"
+      ]
+    },
+    {
+      "date": "2003-07-01",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to Peg Uglan.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Peg Uglan"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, FL 4, New York, NY 10022",
+    "1050 Lee Wagener Rd Ste 201, Fort Lauderdale, FL 33315",
+    "6625 West Campus Oval, New Albany, OH 43054"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 7, 2003, and details shipping charges totaling $94.53.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice.",
+    "Multiple packages were shipped by Epstein, with various recipients including government and business entities.",
+    "The invoice includes discounts applied to the shipping charges, totaling $10.16.",
+    "Several FedEx employees are mentioned as having signed for deliveries related to Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T05:58:00.509Z"
+}

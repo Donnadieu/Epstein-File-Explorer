@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01314372.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-10-10",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC, detailing transportation charges and adjustments. It includes information about the shipment, payment due date, and contact details for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Epstein",
+      "role": "Sender",
+      "category": "other",
+      "context": "Epstein is listed as the sender for a shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nkomo",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nkomo is mentioned as the sender for a shipment referenced in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Georgieva",
+      "role": "Signer",
+      "category": "other",
+      "context": "Georgieva is noted as the individual who signed for the delivery of the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2003-10-01",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Epstein",
+        "Nkomo"
+      ]
+    },
+    {
+      "date": "2003-10-06",
+      "title": "Shipment Delivery",
+      "description": "The shipment was delivered successfully.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Epstein",
+        "Nkomo",
+        "Georgieva"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 10, 2003, and pertains to FedEx services for NYSG LLC.",
+    "Total charges for the invoice amount to USD $41.40.",
+    "The shipment was picked up on October 1, 2003, and delivered on October 6, 2003.",
+    "A fuel surcharge of $1.40 was applied to the shipment.",
+    "The invoice includes a discount of $30.25 for this period."
+  ],
+  "analyzedAt": "2026-02-22T06:05:20.424Z"
+}

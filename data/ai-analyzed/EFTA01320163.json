@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA01320163.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial statements related to Jeffrey E. Epstein's accounts at Bear Stearns, detailing portfolio holdings, transactions, and account balances over various periods. It highlights significant financial activities, including dividends, cash flow analysis, and market values of securities.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Epstein is the primary account holder mentioned in the financial statements, with various transactions and portfolio details outlined.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Mark L. Epstein",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Mark L. Epstein is mentioned as a trustee associated with Jeffrey E. Epstein's accounts.",
+      "mentionCount": 5
+    },
+    {
+      "name": "William Elkus",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "William Elkus is also mentioned as a trustee for Epstein's accounts.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Zicherman",
+      "role": "Account Executive",
+      "category": "staff",
+      "context": "Zicherman is identified as the account executive servicing Epstein's accounts at Bear Stearns.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Mark L. Epstein",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Mark L. Epstein serves as a trustee for Jeffrey E. Epstein's accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "William Elkus",
+      "relationshipType": "trustee-beneficiary",
+      "description": "William Elkus is another trustee for Jeffrey E. Epstein's accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Zicherman",
+      "relationshipType": "client-staff",
+      "description": "Zicherman is the account executive managing Epstein's financial accounts.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-12-30",
+      "title": "Portfolio Summary",
+      "description": "Summary of Epstein's portfolio holdings and transactions as of December 30, 2005.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Mark L. Epstein",
+        "William Elkus"
+      ]
+    },
+    {
+      "date": "2005-11-30",
+      "title": "Account Activity",
+      "description": "Details of account activity for Epstein's accounts, including dividends and cash flow.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "383 Madison Avenue, New York, NY 10179"
+  ],
+  "keyFacts": [
+    "Jeffrey E. Epstein's accounts at Bear Stearns show significant financial activity, including dividends and cash flow.",
+    "Mark L. Epstein and William Elkus are trustees associated with Epstein's financial accounts.",
+    "Zicherman is the account executive managing Epstein's accounts at Bear Stearns."
+  ],
+  "analyzedAt": "2026-02-22T10:40:57.000Z"
+}

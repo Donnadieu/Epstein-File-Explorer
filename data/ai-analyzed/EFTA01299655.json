@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01299655.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-01-07",
+  "summary": "This document contains financial transaction reports detailing incoming and outgoing wires, checks, and ACH transactions associated with various accounts. It includes references to multiple banks and individuals involved in these transactions, highlighting significant monetary amounts and account details.",
+  "persons": [
+    {
+      "name": "Barbara Wollak",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Barbara Wollak is mentioned as an account holder associated with Deutsche Bank Trust Company.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michelle Kew",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Michelle Kew is referenced as an account holder with Webster Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Crocker",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "John Crocker is mentioned as an account holder associated with JP Morgan Chase Bank.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Martin Kosiwar",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Martin Kosiwar is identified as a trustee in relation to an account with Bank of America.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Monique A. Kobinger",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Monique A. Kobinger is mentioned as a trustee alongside Martin Kosiwar.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Martin Kosiwar",
+      "person2": "Monique A. Kobinger",
+      "relationshipType": "trustee-trustee",
+      "description": "Both individuals are trustees for the same account at Bank of America.",
+      "strength": 5
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Brooklyn, NY",
+    "New York, NY",
+    "San Francisco, CA"
+  ],
+  "keyFacts": [
+    "The document includes multiple financial transactions involving significant amounts of money.",
+    "Barbara Wollak is associated with Deutsche Bank Trust Company.",
+    "Michelle Kew is linked to Webster Bank.",
+    "John Crocker is connected to JP Morgan Chase Bank.",
+    "Martin Kosiwar and Monique A. Kobinger are both trustees for an account at Bank of America."
+  ],
+  "analyzedAt": "2026-02-21T23:03:57.056Z"
+}

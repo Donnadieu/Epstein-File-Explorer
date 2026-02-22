@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01319657.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-13",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and provides a summary of the shipment details. The invoice indicates a total amount due and includes contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the individual to whom the invoice is addressed, indicating he is the account holder for the FedEx services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodgers is mentioned as the sender of a package associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Financial Trust Representative",
+      "category": "other",
+      "context": "Jeanne Brennan is referenced in connection with a financial trust related to the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgers is identified as the sender of a package that Jeffrey Epstein received.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "financial trust-representative",
+      "description": "Jeanne Brennan is associated with a financial trust that is linked to Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-07",
+      "title": "FedEx Shipment Drop-off",
+      "description": "A shipment was dropped off at FedEx on September 7, 2004, for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rodgers"
+      ]
+    },
+    {
+      "date": "2004-09-06",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Jeffrey Epstein on September 6, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rodgers"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "P.O. Box 371461, Pittsburgh, PA 15250-7461",
+    "Red Hook, St. Thomas, 00802, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 13, 2004, and is for a total of $31.57.",
+    "Jeffrey Epstein is listed as the account holder for the FedEx services.",
+    "The invoice includes details of a shipment that was dropped off on September 7, 2004.",
+    "Dave Rodgers is mentioned as the sender of a package delivered to Epstein.",
+    "Jeanne Brennan is associated with a financial trust linked to Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:16:12.936Z"
+}

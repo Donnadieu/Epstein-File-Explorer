@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01324702.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains financial statements and transaction details for Jeffrey Epstein's accounts at Bear Stearns, detailing portfolio holdings, cash flow analysis, and investment activities over various periods. It highlights significant transactions, including large withdrawals and investments, as well as the overall market value of his portfolio.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary account holder whose financial activities are detailed throughout the document, including portfolio holdings and transactions.",
+      "mentionCount": 50
+    },
+    {
+      "name": "Jeanne Brenan",
+      "role": "Account Servicing Agent",
+      "category": "staff",
+      "context": "Jeanne Brenan is mentioned as the contact person for the financial trust company servicing Epstein's account.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Harry Beller",
+      "role": "Account Servicing Agent",
+      "category": "staff",
+      "context": "Harry Beller is mentioned as another contact for Epstein's account at the financial trust company.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Brenan",
+      "relationshipType": "client-service provider",
+      "description": "Jeanne Brenan is the account servicing agent for Jeffrey Epstein's financial accounts.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Harry Beller",
+      "relationshipType": "client-service provider",
+      "description": "Harry Beller is another account servicing agent for Jeffrey Epstein's financial accounts.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2007-06-30",
+      "title": "Portfolio Holdings Statement",
+      "description": "A statement detailing the market value of Epstein's portfolio as of June 30, 2007, showing a total value of $4,740,261.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2007-07-31",
+      "title": "Portfolio Holdings Statement",
+      "description": "A statement detailing the market value of Epstein's portfolio as of July 31, 2007, showing a total value of $4,883,437.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2007-06-29",
+      "title": "Transaction Summary",
+      "description": "A summary of transactions including dividends and cash flow analysis for Epstein's accounts.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "383 Madison Avenue, New York, New York 10179",
+    "6100 Red Hook Quater B-3, St Thomas, VI 00802-1348"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein's portfolio had a market value of $4,740,261 as of June 30, 2007.",
+    "There were significant transactions including a $7,400,000 withdrawal on June 15, 2007.",
+    "The document includes multiple references to Bear Stearns as the financial institution managing Epstein's accounts.",
+    "The account statements indicate no pending buy or sell orders on file for Epstein's accounts.",
+    "The document contains multiple mentions of dividends and cash management activities related to Epstein's investments."
+  ],
+  "analyzedAt": "2026-02-22T10:56:23.620Z"
+}

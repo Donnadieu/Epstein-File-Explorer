@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA01314053.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-04-07",
+  "summary": "This document is an invoice from FedEx detailing shipping charges associated with various shipments made by Jeffrey E. Epstein. It includes information on transportation charges, discounts, and specific shipment details, including recipients and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the shipments detailed in the invoice, indicating his involvement in sending packages.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Douglas Schoettle",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Douglas Schoettle is mentioned as a sender in relation to some of the shipments listed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Joan Hamphreys",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Joan Hamphreys is listed as a recipient of one of the packages sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Barnett",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Richard Barnett is mentioned as a sender in relation to one of the shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Rosemary Pitcher is mentioned as a sender in relation to one of the shipments.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Douglas Schoettle",
+      "relationshipType": "employer-employee",
+      "description": "Douglas Schoettle is associated with Jeffrey E. Epstein as a sender in the context of shipments.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Joan Hamphreys",
+      "relationshipType": "sender-recipient",
+      "description": "Joan Hamphreys is a recipient of a package sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Richard Barnett",
+      "relationshipType": "sender-recipient",
+      "description": "Richard Barnett is mentioned as a sender in relation to shipments involving Jeffrey E. Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "sender-recipient",
+      "description": "Rosemary Pitcher is mentioned as a sender in relation to shipments involving Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-04-01",
+      "title": "Package Delivery",
+      "description": "Multiple packages sent by Jeffrey E. Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Joan Hamphreys"
+      ]
+    },
+    {
+      "date": "2003-04-02",
+      "title": "Package Delivery",
+      "description": "Packages sent by Jeffrey E. Epstein and others were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Richard Barnett",
+        "Rosemary Pitcher"
+      ]
+    },
+    {
+      "date": "2003-04-03",
+      "title": "Package Delivery",
+      "description": "Packages sent by Jeffrey E. Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The invoice details shipping charges totaling USD 170.15 for various packages sent by Jeffrey E. Epstein.",
+    "Multiple shipments were made on dates including March 31, April 1, April 2, and April 3, 2003.",
+    "Discounts totaling USD 19.50 were applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:49:44.761Z"
+}

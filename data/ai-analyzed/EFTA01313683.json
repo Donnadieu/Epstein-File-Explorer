@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01313683.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-09-09",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for services rendered in September 2002. It includes information about various shipments, discounts applied, and payment details.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as the sender of a package shipped via FedEx to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as the sender of packages shipped to Jeffrey E. Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Tim Cook",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tim Cook is referenced in relation to a shipment, indicating he is involved in the shipping process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Alberto Pinto sent a package to Jeffrey E. Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan sent packages to Jeffrey E. Epstein via FedEx.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tim Cook",
+      "relationshipType": "recipient-sender",
+      "description": "Tim Cook is mentioned in relation to a shipment involving Jeffrey E. Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-09-01",
+      "title": "Package Delivery",
+      "description": "A package sent by Alberto Pinto was delivered to Jeffrey E. Epstein.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Alberto Pinto"
+      ]
+    },
+    {
+      "date": "2002-09-04",
+      "title": "Package Delivery",
+      "description": "Packages sent by Jeanne Brennan were delivered to Jeffrey E. Epstein.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2002-09-06",
+      "title": "Package Delivery",
+      "description": "Another package sent by Jeanne Brennan was delivered to Jeffrey E. Epstein.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 9, 2002, and details charges for FedEx services.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx account.",
+    "Multiple packages were sent to Jeffrey E. Epstein from Alberto Pinto and Jeanne Brennan.",
+    "The total charges for the invoice amount to $180.35.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T05:31:08.437Z"
+}

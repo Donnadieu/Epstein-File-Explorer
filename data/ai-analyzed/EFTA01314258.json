@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA01314258.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-07-25",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on July 17, 2003. It includes information about the sender, recipient, and payment details, as well as a breakdown of charges and discounts applied.",
+  "persons": [
+    {
+      "name": "John Manning",
+      "role": "Sender",
+      "category": "other",
+      "context": "John Manning is listed as the sender of the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "B.E. Erger",
+      "role": "Signer",
+      "category": "other",
+      "context": "B.E. Erger is noted as the individual who signed for the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2003-07-17",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx on July 17, 2003.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "John Manning"
+      ]
+    },
+    {
+      "date": "2003-07-18",
+      "title": "Customs Entry Date",
+      "description": "The customs entry for the shipment occurred on July 18, 2003.",
+      "category": "legal",
+      "significance": 2,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-818-26177 and the invoice date is July 25, 2003.",
+    "Total charges for the shipment amount to $54.59 after discounts.",
+    "The shipment was picked up on July 17, 2003, and had a fuel surcharge of $1.59.",
+    "John Manning is identified as the sender of the shipment.",
+    "B.E. Erger signed for the shipment upon delivery."
+  ],
+  "analyzedAt": "2026-02-22T05:59:26.907Z"
+}

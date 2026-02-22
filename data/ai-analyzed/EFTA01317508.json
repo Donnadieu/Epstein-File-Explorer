@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA01317508.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-03-22",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on specific dates in March 2002. It includes information about the sender, recipient, and payment details, along with adjustments and discounts applied to the charges.",
+  "persons": [
+    {
+      "name": "Paul Hoffman",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paul Hoffman is mentioned as the sender of packages in the invoice, indicating his involvement in the shipping process.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwintner is also listed as a sender of packages in the invoice, indicating participation in the shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "M. Maciel",
+      "role": "Recipient",
+      "category": "other",
+      "context": "M. Maciel is noted as the individual who signed for the delivery of a package, indicating their role in receiving shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Vanrenclds",
+      "role": "Recipient",
+      "category": "other",
+      "context": "J. Vanrenclds is mentioned as the individual who signed for another delivery, indicating their involvement in the receipt of packages.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-03-15",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Paul Hoffman",
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2002-03-18",
+      "title": "Package Delivery",
+      "description": "A package was delivered and signed for by M. Maciel.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "M. Maciel"
+      ]
+    },
+    {
+      "date": "2002-03-20",
+      "title": "Package Delivery",
+      "description": "Another package was delivered and signed for by J. Vanrenclds.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "J. Vanrenclds"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "P.O. Box 1140, Memphis, TN 38101-1140",
+    "6100 Red Hook Quarter, Suite 133, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-164-94312, dated March 22, 2002.",
+    "Total charges for the services rendered amount to $50.91 after discounts.",
+    "Packages were picked up on March 15 and March 19, 2002, and delivered on March 18 and March 20, 2002.",
+    "M. Maciel and J. Vanrenclds signed for the deliveries, indicating their roles in the receipt of the packages.",
+    "The invoice includes a detailed breakdown of transportation charges and adjustments."
+  ],
+  "analyzedAt": "2026-02-22T08:24:28.166Z"
+}

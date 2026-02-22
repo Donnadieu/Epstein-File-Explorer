@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA01318123.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-02-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made by him. The invoice includes specific charges, discounts, and shipment details, indicating Epstein's frequent use of FedEx services for shipping packages.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account detailed in the invoice, indicating his shipping activities.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for one of the shipments sent by Epstein, indicating a connection to his shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as a recipient for a shipment sent by Epstein, indicating a connection to his shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Christine Maxwell is mentioned as a recipient for one of the shipments sent by Epstein, indicating a connection to his shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Alberto Pinto, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christine Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Christine Maxwell, indicating a sender-recipient relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-01-27",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off by Jeffrey E. Epstein at FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-02-04",
+      "title": "Multiple Shipments Picked Up",
+      "description": "Multiple shipments were picked up by Jeffrey E. Epstein from FedEx.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-02-06",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "45 Zero Ranch Rd, Stanley, NM 67108"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 10, 2003, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to USD 318.51.",
+    "The invoice details multiple shipments made by Epstein, with specific charges and discounts listed.",
+    "Several recipients are mentioned in connection with Epstein's shipments, including Jeanne Brennan, Alberto Pinto, and Christine Maxwell.",
+    "The document indicates Epstein's frequent use of FedEx services for shipping packages."
+  ],
+  "analyzedAt": "2026-02-22T08:57:27.313Z"
+}

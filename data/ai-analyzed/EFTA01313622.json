@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA01313622.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2002-08-23",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on August 15, 2002. It includes information about discounts applied, payment due date, and sender details, indicating a financial transaction related to shipping services.",
+  "persons": [
+    {
+      "name": "Darreen L. Noyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darreen L. Noyke is listed as the sender of the package associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maria Hodge",
+      "role": "Sender",
+      "category": "other",
+      "context": "Maria Hodge is also listed as a sender associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "R. Francois",
+      "role": "Signer",
+      "category": "other",
+      "context": "R. Francois is noted as the individual who signed for the delivery on August 16, 2002.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-08-15",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for shipment on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darreen L. Noyke",
+        "Maria Hodge"
+      ]
+    },
+    {
+      "date": "2002-08-16",
+      "title": "Package Delivered",
+      "description": "The package was delivered on this date and signed for by R. Francois.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "R. Francois"
+      ]
+    }
+  ],
+  "locations": [
+    "Pittsburgh, PA"
+  ],
+  "keyFacts": [
+    "The invoice number is 4-347-16247, dated August 23, 2002.",
+    "Total charges for the FedEx services amounted to USD 18.36 after discounts.",
+    "The payment for the invoice is due by September 7, 2002.",
+    "The package was dropped off on August 15, 2002, and delivered on August 16, 2002.",
+    "R. Francois signed for the delivery of the package."
+  ],
+  "analyzedAt": "2026-02-22T05:27:50.896Z"
+}

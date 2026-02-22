@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01334118.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2006-01-06",
+  "summary": "This document contains a cover sheet and subscriber information related to Cingular Wireless accounts associated with Jeffrey Epstein and others. It includes details about account statuses, billing addresses, and a subpoena for information related to an ongoing investigation. The document is marked as confidential and subject to protective orders.",
+  "persons": [
+    {
+      "name": "J. Epstein",
+      "role": "Financially Liable Party",
+      "category": "key figure",
+      "context": "J. Epstein is listed as the financially liable party for a Cingular Wireless account with an active status since November 29, 2004.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Thomas Husband",
+      "role": "Financially Liable Party",
+      "category": "other",
+      "context": "Thomas Husband is mentioned as a financially liable party for another Cingular Wireless account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janusz B",
+      "role": "User",
+      "category": "other",
+      "context": "Janusz B is listed as a user of a Cingular Wireless account associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joe Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Detective Joe Recarey is mentioned as the recipient of the fax and is involved in the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "J. Epstein",
+      "person2": "Janusz B",
+      "relationshipType": "user-account",
+      "description": "Janusz B is listed as a user of the Cingular Wireless account associated with J. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Joe Recarey",
+      "person2": "J. Epstein",
+      "relationshipType": "investigator-subject",
+      "description": "Detective Joe Recarey is involved in the investigation concerning J. Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-01-14",
+      "title": "Subpoena Compliance",
+      "description": "A subpoena was issued for Cingular Wireless to provide subscriber information related to the investigation.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Joe Recarey"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, 14, New York, NY 10022",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "West Palm Beach, FL",
+    "Palm Beach County, FL"
+  ],
+  "keyFacts": [
+    "J. Epstein is associated with a Cingular Wireless account that has been active since November 29, 2004.",
+    "The document includes a subpoena for information related to the investigation involving Epstein.",
+    "Thomas Husband is mentioned as a financially liable party for another account.",
+    "Janusz B is listed as a user of the account associated with Epstein.",
+    "The document is marked as confidential and subject to protective orders."
+  ],
+  "analyzedAt": "2026-02-22T12:30:08.650Z"
+}

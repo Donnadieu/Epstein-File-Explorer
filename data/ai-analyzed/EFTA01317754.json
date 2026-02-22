@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01317754.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-08-19",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered on August 19, 2002. It details transportation charges, discounts, and payment information, indicating a total amount due of $298.93. The invoice includes references to multiple shipments and their respective charges.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the FedEx invoice, indicating he utilized their shipping services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Alberto Pinto Maxwell",
+      "role": "Sender",
+      "category": "other",
+      "context": "Alberto Pinto Maxwell is mentioned as the sender of one of the packages shipped by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the recipient of a package sent by Epstein to the Financial Trust Company.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Alberto Pinto Maxwell is identified as the sender of a package associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is the recipient of a package sent by Epstein to the Financial Trust Company.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, St Thomas 00602, VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 19, 2002, and details shipping charges totaling $298.93.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice.",
+    "The invoice includes multiple shipments and their respective charges.",
+    "Alberto Pinto Maxwell is mentioned as the sender of one of the packages.",
+    "Jeanne Brennan is noted as the recipient of a package sent to the Financial Trust Company."
+  ],
+  "analyzedAt": "2026-02-22T08:36:51.084Z"
+}

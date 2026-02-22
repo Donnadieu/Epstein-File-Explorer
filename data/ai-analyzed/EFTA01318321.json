@@ -1,0 +1,168 @@
+{
+  "fileName": "EFTA01318321.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-06-16",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments, charges, and discounts applied to Epstein's account, highlighting the total amount due and the payment deadline.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, receiving invoices for shipping services.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for several shipments sent from Epstein's account.",
+      "mentionCount": 4
+    },
+    {
+      "name": "D. Wallace",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Wallace is noted as the individual who signed for one of the deliveries associated with Epstein's shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "O. Antonio",
+      "role": "Signer",
+      "category": "other",
+      "context": "O. Antonio is mentioned as the signer for another delivery related to Epstein's shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Radingry",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Radingry is noted as the signer for multiple deliveries associated with Epstein's shipments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rodgers is mentioned as the sender for one of the shipments sent from Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as a recipient for one of the shipments sent from Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent multiple shipments to Jeanne Brennan, indicating a sender-recipient relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "D. Wallace",
+      "relationshipType": "signer-delivery",
+      "description": "D. Wallace signed for a delivery associated with Epstein's shipments, indicating a connection through the delivery process.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "O. Antonio",
+      "relationshipType": "signer-delivery",
+      "description": "O. Antonio signed for a delivery associated with Epstein's shipments, indicating a connection through the delivery process.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Radingry",
+      "relationshipType": "signer-delivery",
+      "description": "A. Radingry signed for multiple deliveries associated with Epstein's shipments, indicating a connection through the delivery process.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgers is mentioned as a sender for one of the shipments sent from Epstein's account, indicating a sender-recipient relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "sender-recipient",
+      "description": "Miles Alexander is mentioned as a recipient for one of the shipments sent from Epstein's account, indicating a sender-recipient relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-06-06",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-10",
+      "title": "Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-12",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein's account.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-06-13",
+      "title": "Delivery Confirmation",
+      "description": "A shipment was delivered and signed for by A. Radingry.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Radingry"
+      ]
+    },
+    {
+      "date": "2003-06-16",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarter, Suite 8-3, St. Thomas 00602 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 16, 2003, and details shipping charges totaling $317.72.",
+    "Jeffrey E. Epstein is the account holder for the FedEx account associated with the invoice.",
+    "Multiple shipments were sent from Epstein's account to various recipients, including Jeanne Brennan and Miles Alexander.",
+    "The document includes details of shipping charges, discounts, and delivery confirmations.",
+    "Several individuals signed for deliveries associated with Epstein's shipments, indicating active shipping operations."
+  ],
+  "analyzedAt": "2026-02-22T09:08:35.207Z"
+}

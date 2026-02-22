@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01315948.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2007-02-05",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for express services rendered. It details charges for shipping and includes references to other transactions involving Epstein, indicating his use of FedEx services for international shipments.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual mentioned in the invoice, indicating he is the account holder for the FedEx services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Carolyn Conquest",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Carolyn Conquest is mentioned as a sender in one of the FedEx shipments listed in the document.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andy Orr",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Andy Orr is mentioned as the recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Carolyn Conquest",
+      "relationshipType": "sender-recipient",
+      "description": "Carolyn Conquest sent a package to Andy Orr, which is associated with Jeffrey E. Epstein's account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Andy Orr",
+      "relationshipType": "sender-recipient",
+      "description": "Andy Orr received a package sent by Carolyn Conquest, which is linked to Epstein's account.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave Fl 4, New York, NY 10022-6843",
+    "Goderich Aircraft Inc., Hanger, Heron Park, ON"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 5, 2007, and is for a total of $9.13.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice.",
+    "Carolyn Conquest is mentioned as the sender of a package associated with Epstein's account.",
+    "Andy Orr is noted as the recipient of a package sent via FedEx.",
+    "The document includes references to international shipping and customs duties."
+  ],
+  "analyzedAt": "2026-02-22T07:26:16.878Z"
+}

@@ -1,0 +1,145 @@
+{
+  "fileName": "EFTA01319925.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-06-20",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges for multiple shipments, including transportation and special handling fees, and provides a summary of the total amount due.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, with multiple shipments listed under his account.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Marie Joseph",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Marie Joseph is mentioned as the recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Rodriguez is noted as the person who signed for the delivery of a shipment.",
+      "mentionCount": 2
+    },
+    {
+      "name": "L. Strachenborn",
+      "role": "Signer",
+      "category": "other",
+      "context": "L. Strachenborn is noted as the person who signed for the delivery of a shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Financial",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dale Financial is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Joseph",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Marie Joseph.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Jeanne Brennan.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Financial",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Dale Financial.",
+      "strength": 4
+    },
+    {
+      "person1": "A. Rodriguez",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "signer-sender",
+      "description": "A. Rodriguez signed for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "L. Strachenborn",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "signer-sender",
+      "description": "L. Strachenborn signed for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-06-09",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-06-13",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered and signed for.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marie Joseph"
+      ]
+    },
+    {
+      "date": "2005-06-14",
+      "title": "Multiple Shipments",
+      "description": "Multiple shipments were picked up from Jeffrey E. Epstein on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-06-16",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Jeffrey E. Epstein was delivered and signed for.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "L. Strachenborn"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "Zorro Development, 09 Zorro Rada Rd, Stanley, NM 87058"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 20, 2005, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $198.41.",
+    "The invoice includes details of multiple shipments sent by Jeffrey E. Epstein, with specific charges for transportation and special handling.",
+    "Several individuals are noted as recipients of shipments sent by Jeffrey E. Epstein, including Marie Joseph and Jeanne Brennan.",
+    "There are multiple signers for the deliveries, including A. Rodriguez and L. Strachenborn."
+  ],
+  "analyzedAt": "2026-02-22T10:32:21.716Z"
+}

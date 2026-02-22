@@ -1,0 +1,127 @@
+{
+  "fileName": "EFTA01293532.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains a series of checks issued by Zorro Development Corp. to various entities and individuals, detailing amounts, dates, and purposes of payment. The checks are dated between June and August 2014 and include payments to companies such as Aspen Landscaping LLC and Belleau Groundwater, Inc.",
+  "persons": [
+    {
+      "name": "Aaron Landscaping LLC",
+      "role": "Payee",
+      "category": "other",
+      "context": "Aaron Landscaping LLC is mentioned as a payee for a check issued by Zorro Development Corp.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brice Gordon",
+      "role": "Payee",
+      "category": "other",
+      "context": "Brice Gordon is mentioned as a payee for a check issued by Zorro Development Corp.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Belleau Groundwater, Inc.",
+      "role": "Payee",
+      "category": "other",
+      "context": "Belleau Groundwater, Inc. is mentioned multiple times as a payee for checks issued by Zorro Development Corp.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Karen L Cordon",
+      "role": "Payee",
+      "category": "other",
+      "context": "Karen L Cordon is mentioned as a payee for a check issued by Zorro Development Corp.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aspen Landscaping LLC",
+      "role": "Payee",
+      "category": "other",
+      "context": "Aspen Landscaping LLC is mentioned multiple times as a payee for checks issued by Zorro Development Corp.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Zorro Development Corp.",
+      "person2": "Aaron Landscaping LLC",
+      "relationshipType": "employer-employee",
+      "description": "Zorro Development Corp. issued a check to Aaron Landscaping LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Zorro Development Corp.",
+      "person2": "Brice Gordon",
+      "relationshipType": "employer-employee",
+      "description": "Zorro Development Corp. issued a check to Brice Gordon.",
+      "strength": 3
+    },
+    {
+      "person1": "Zorro Development Corp.",
+      "person2": "Belleau Groundwater, Inc.",
+      "relationshipType": "employer-employee",
+      "description": "Zorro Development Corp. issued multiple checks to Belleau Groundwater, Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Zorro Development Corp.",
+      "person2": "Karen L Cordon",
+      "relationshipType": "employer-employee",
+      "description": "Zorro Development Corp. issued a check to Karen L Cordon.",
+      "strength": 3
+    },
+    {
+      "person1": "Zorro Development Corp.",
+      "person2": "Aspen Landscaping LLC",
+      "relationshipType": "employer-employee",
+      "description": "Zorro Development Corp. issued multiple checks to Aspen Landscaping LLC.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2014-06-30",
+      "title": "Check Issued to Aspen Landscaping LLC",
+      "description": "A check was issued to Aspen Landscaping LLC for $3,490.10.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Zorro Development Corp.",
+        "Aspen Landscaping LLC"
+      ]
+    },
+    {
+      "date": "2014-08-12",
+      "title": "Check Issued to Belleau Groundwater, Inc.",
+      "description": "A check was issued to Belleau Groundwater, Inc. for $2,480.00.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Zorro Development Corp.",
+        "Belleau Groundwater, Inc."
+      ]
+    },
+    {
+      "date": "2014-07-23",
+      "title": "Check Issued to Karen L Cordon",
+      "description": "A check was issued to Karen L Cordon for $1,223.77.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Zorro Development Corp.",
+        "Karen L Cordon"
+      ]
+    }
+  ],
+  "locations": [
+    "St. Thomas, USVI",
+    "Santa Fe, NM",
+    "Albuquerque, NM"
+  ],
+  "keyFacts": [
+    "Multiple checks were issued by Zorro Development Corp. to various payees.",
+    "The checks detail payments for services rendered, including landscaping and groundwater services.",
+    "The checks are dated between June and August 2014."
+  ],
+  "analyzedAt": "2026-02-21T19:24:51.358Z"
+}

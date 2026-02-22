@@ -1,0 +1,60 @@
+{
+  "fileName": "EFTA01312711.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-03-19",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details the charges for a shipment made on March 11, 2004, and includes information about the sender and recipient, as well as payment instructions.",
+  "persons": [
+    {
+      "name": "Cecilia Nysol LLC",
+      "role": "Sender",
+      "category": "other",
+      "context": "Cecilia Nysol LLC is listed as the sender of the shipment in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Uglano",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Peg Uglano is identified as the recipient of the shipment detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2004-03-11",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from the sender on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Cecilia Nysol LLC",
+        "Peg Uglano"
+      ]
+    },
+    {
+      "date": "2004-03-12",
+      "title": "Shipment Delivery",
+      "description": "The shipment was delivered to the recipient on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Cecilia Nysol LLC",
+        "Peg Uglano"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval, New Albany, OH 43064"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 19, 2004, and details charges for a shipment.",
+    "The total amount due on the invoice is $6.87.",
+    "The shipment was picked up on March 11, 2004, and delivered on March 12, 2004.",
+    "Cecilia Nysol LLC is the sender, and Peg Uglano is the recipient of the shipment.",
+    "The invoice includes instructions for payment and adjustment requests."
+  ],
+  "analyzedAt": "2026-02-22T04:44:41.710Z"
+}

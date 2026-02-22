@@ -1,0 +1,67 @@
+{
+  "fileName": "EFTA01315466.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-07",
+  "summary": "This document is an invoice from FedEx for shipping services provided to Max Hotel Services Corp. It details the charges incurred for a shipment, including transportation and special handling fees, and includes payment instructions and contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Olivia Tiernan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Olivia Tiernan is listed as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jean Tatge",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jean Tatge is identified as the recipient of the shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bradley Evants",
+      "role": "Sender",
+      "category": "other",
+      "context": "Bradley Evants is mentioned as part of the sender's address for the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2004-08-26",
+      "title": "FedEx Shipment Drop-off",
+      "description": "A package was dropped off at FedEx for shipment.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Olivia Tiernan",
+        "Jean Tatge"
+      ]
+    },
+    {
+      "date": "2004-08-27",
+      "title": "FedEx Delivery",
+      "description": "The package was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Olivia Tiernan",
+        "Jean Tatge"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "One West Avenue Ste 212, Larchmont, NY 10538"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-604-88703, dated September 7, 2004.",
+    "Total charges for the shipment amounted to USD 24.28.",
+    "The shipment was dropped off on August 26, 2004, and delivered on August 27, 2004.",
+    "The payment is due by September 22, 2004.",
+    "A credit card transaction for payment was declined."
+  ],
+  "analyzedAt": "2026-02-22T07:00:42.254Z"
+}

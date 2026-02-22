@@ -1,0 +1,74 @@
+{
+  "fileName": "EFTA01315476.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-24",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for a shipment. It includes information about the charges, discounts applied, and the recipient of the shipment. The invoice is dated September 24, 2004, and outlines the total amount due and payment instructions.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Darren Indyke is listed as the recipient of the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Johnny Cramp",
+      "role": "Sender",
+      "category": "other",
+      "context": "Johnny Cramp is identified as the sender associated with the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "S. Berry",
+      "role": "Signer",
+      "category": "other",
+      "context": "S. Berry is noted as the individual who signed the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Johnny Cramp",
+      "relationshipType": "sender-recipient",
+      "description": "Johnny Cramp is the sender of the shipment that was received by Darren Indyke.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-21",
+      "title": "Shipment Dropped Off",
+      "description": "The shipment was dropped off at FedEx on September 21, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Johnny Cramp"
+      ]
+    },
+    {
+      "date": "2004-09-22",
+      "title": "Delivery of Shipment",
+      "description": "The shipment was delivered on September 22, 2004, at 10:15 AM.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10022",
+    "Vancouver, BC 416E 3C9 CA"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-639-09197, dated September 24, 2004.",
+    "Total charges for the shipment amounted to USD $21.42.",
+    "Darren Indyke is listed as the recipient of the shipment.",
+    "Johnny Cramp is identified as the sender associated with the shipment.",
+    "S. Berry signed the invoice."
+  ],
+  "analyzedAt": "2026-02-22T07:01:16.898Z"
+}

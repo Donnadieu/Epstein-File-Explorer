@@ -1,0 +1,79 @@
+{
+  "fileName": "EFTA01299446.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-04-30",
+  "summary": "This document contains a series of financial transaction reports detailing incoming and outgoing wires, checks, and ACH transactions associated with various accounts. It includes references to multiple financial institutions and individuals involved in these transactions, highlighting the flow of funds and the entities managing these accounts.",
+  "persons": [
+    {
+      "name": "Kurt Butenhoff",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Kurt Butenhoff is mentioned as a trustee in connection with financial transactions involving various accounts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jacqueline C. Leventhal",
+      "role": "Trustee",
+      "category": "legal",
+      "context": "Jacqueline C. Leventhal is referenced as a trustee for the Leventhal Family Trust, involved in financial transactions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael E. Horowitz",
+      "role": "Custodian",
+      "category": "legal",
+      "context": "Michael E. Horowitz is mentioned as a custodian for various accounts, indicating his role in managing these financial assets.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Gerard Rotonda",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Gerard Rotonda is mentioned in relation to account transactions, indicating his involvement in the financial activities detailed in the document.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Kurt Butenhoff",
+      "person2": "Jacqueline C. Leventhal",
+      "relationshipType": "trustee-client",
+      "description": "Both individuals are trustees managing different family trusts, indicating a professional relationship in financial management.",
+      "strength": 3
+    },
+    {
+      "person1": "Michael E. Horowitz",
+      "person2": "Jacqueline C. Leventhal",
+      "relationshipType": "custodian-client",
+      "description": "Michael E. Horowitz acts as a custodian for accounts associated with Jacqueline C. Leventhal, indicating a financial management relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Gerard Rotonda",
+      "person2": "Michael E. Horowitz",
+      "relationshipType": "account holder-custodian",
+      "description": "Gerard Rotonda is an account holder for which Michael E. Horowitz serves as custodian, indicating a direct financial relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "New York, NY",
+    "Orlando, FL",
+    "Canaan, CT",
+    "Santa Clara, CA",
+    "Denver, CO",
+    "Millburn, NJ",
+    "West Chester, NY",
+    "Virgin Islands"
+  ],
+  "keyFacts": [
+    "The document details multiple financial transactions involving various accounts and beneficiaries.",
+    "Kurt Butenhoff, Jacqueline C. Leventhal, and Michael E. Horowitz are identified as key individuals involved in the management of trusts and accounts.",
+    "There are numerous references to financial institutions such as Deutsche Bank, Citibank, and First Republic Bank.",
+    "Several transactions involve significant amounts, indicating substantial financial activity.",
+    "Redacted names are present in the document, indicating confidentiality in certain transactions."
+  ],
+  "analyzedAt": "2026-02-21T22:44:58.345Z"
+}

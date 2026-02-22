@@ -1,0 +1,84 @@
+{
+  "fileName": "EFTA01299231.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2013-09-04",
+  "summary": "This document consists of internal communications regarding an alert related to Richard D. Kahn, who is identified as a trustee for a trust associated with Jeffrey Epstein. The alert was cleared by AML Compliance, indicating that there were no reputational risks associated with Kahn in relation to the bank's client onboarding process.",
+  "persons": [
+    {
+      "name": "Richard D Kahn",
+      "role": "Trustee",
+      "category": "associate",
+      "context": "Richard D. Kahn is mentioned as the trustee for a trust related to Jeffrey Epstein. The document discusses compliance alerts concerning him.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is referenced as the settlor of the trust for which Richard D. Kahn is the trustee. The document indicates that Epstein is a current client of the bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Michael Front",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Michael Front is involved in the communication regarding the clearance of the alert related to Richard D. Kahn.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Amanda Kirby is mentioned in the context of deleting attachments related to the compliance alert for Richard D. Kahn.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Urvashi",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Urvashi is involved in the communication regarding the compliance alert and KYC approval process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard D Kahn",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "trustee-settlor",
+      "description": "Richard D. Kahn is the trustee of a trust for which Jeffrey Epstein is the settlor.",
+      "strength": 5
+    },
+    {
+      "person1": "Richard D Kahn",
+      "person2": "Michael Front",
+      "relationshipType": "employer-employee",
+      "description": "Michael Front is involved in the compliance process concerning Richard D. Kahn's alert.",
+      "strength": 3
+    },
+    {
+      "person1": "Richard D Kahn",
+      "person2": "Amanda Kirby",
+      "relationshipType": "employer-employee",
+      "description": "Amanda Kirby is involved in the compliance process regarding Richard D. Kahn's alert.",
+      "strength": 3
+    },
+    {
+      "person1": "Richard D Kahn",
+      "person2": "Urvashi",
+      "relationshipType": "employer-employee",
+      "description": "Urvashi is involved in the compliance process regarding Richard D. Kahn's alert.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document discusses an alert related to Richard D. Kahn, who is the trustee for a trust associated with Jeffrey Epstein.",
+    "AML Compliance cleared the alert, indicating no reputational risk associated with Richard D. Kahn.",
+    "Jeffrey Epstein is identified as a current client of the bank.",
+    "The alert was generated due to a regulatory proceeding involving a trustee in an NYSE ARCA, Inc case.",
+    "There were multiple internal communications regarding the compliance alert and KYC approval process."
+  ],
+  "analyzedAt": "2026-02-21T22:27:29.346Z"
+}

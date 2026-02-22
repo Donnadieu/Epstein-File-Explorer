@@ -1,0 +1,165 @@
+{
+  "fileName": "EFTA01314321.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-08-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in August 2003. It includes information about discounts applied, shipment details, and payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Dave Rodgers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rodgers is listed as the sender for one of the shipments associated with Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosemary Pitcher is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christophe Cape",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Christophe Cape is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rouguez",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Rouguez is noted as the person who signed for the delivery of one of the shipments.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent shipments to Jeanne Brennan as indicated in the invoice.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodgers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodgers is listed as the sender for a shipment associated with Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "sender-recipient",
+      "description": "Rosemary Pitcher is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "sender-recipient",
+      "description": "Miles Alexander is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Christophe Cape",
+      "relationshipType": "sender-recipient",
+      "description": "Christophe Cape is mentioned as a recipient for shipments sent from Jeffrey E. Epstein's account.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-08-15",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off by Jeffrey E. Epstein on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-08-18",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Dave Rodgers"
+      ]
+    },
+    {
+      "date": "2003-08-20",
+      "title": "Multiple Shipments Delivered",
+      "description": "Several shipments associated with Jeffrey E. Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan",
+        "Rosemary Pitcher"
+      ]
+    },
+    {
+      "date": "2003-08-21",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander"
+      ]
+    },
+    {
+      "date": "2003-08-22",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Christophe Cape"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "57 Madison Avenue, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 25, 2003, and details charges for shipments made by Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to $1,373.20.",
+    "Multiple recipients are listed for shipments sent from Epstein's account, including Jeanne Brennan and Rosemary Pitcher.",
+    "Shipments were made to various locations, including New York and St. Thomas.",
+    "There are several references to fuel surcharges applied to the shipments."
+  ],
+  "analyzedAt": "2026-02-22T06:03:19.812Z"
+}

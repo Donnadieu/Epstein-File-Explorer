@@ -1,0 +1,78 @@
+{
+  "fileName": "EFTA01313045.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-08-23",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges, discounts, and payment information related to a shipment made on August 14, 2004. The invoice highlights the total amount due and provides contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating his engagement in shipping activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Dave Rogers",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dave Rogers is mentioned as the sender of a package associated with Jeffrey Epstein's FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Breman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Breman is identified as the recipient associated with the financial trust company in the shipment details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Cornelius",
+      "role": "Signer",
+      "category": "staff",
+      "context": "J. Cornelius is noted as the individual who signed the FedEx shipment detail.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rogers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rogers is the sender of a package that was shipped to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jeanne Breman",
+      "relationshipType": "financial",
+      "description": "Jeanne Breman is associated with the financial trust company involved in the shipment related to Jeffrey Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-14",
+      "title": "FedEx Shipment",
+      "description": "A package was shipped via FedEx from Dave Rogers to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rogers"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters Suite B-3, St. Thomas 00632 VI"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 23, 2004, and pertains to shipping charges of $31.14.",
+    "The shipment was dropped off on August 14, 2004.",
+    "Jeffrey Epstein is the account holder for the FedEx services.",
+    "The invoice includes a fuel surcharge and discounts applied to the total charges.",
+    "There are references to a financial trust company associated with the shipment."
+  ],
+  "analyzedAt": "2026-02-22T04:59:29.714Z"
+}

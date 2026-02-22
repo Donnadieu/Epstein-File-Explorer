@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA01317858.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-10-18",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for various shipments associated with NYSG LLC. It includes billing information, service details, and payment instructions, indicating a business relationship involving shipping services.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender for multiple shipments associated with NYSG LLC.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeff Schontz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeff Schontz is mentioned as a recipient for one of the shipments sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maria Corvino",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maria Corvino is listed as a recipient for a shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "James Brown",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "James Brown is mentioned as a recipient for one of the shipments.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Yvonne Akin",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Yvonne Akin is listed as a recipient for a shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Mintier",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Mintier is mentioned as a sender for a shipment associated with NYSG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NYSG LLC as a sender for multiple shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeff Schontz",
+      "person2": "NYSG LLC",
+      "relationshipType": "client-service",
+      "description": "Jeff Schontz is a recipient of shipments sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Maria Corvino",
+      "person2": "NYSG LLC",
+      "relationshipType": "client-service",
+      "description": "Maria Corvino is a recipient of shipments sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "James Brown",
+      "person2": "NYSG LLC",
+      "relationshipType": "client-service",
+      "description": "James Brown is a recipient of shipments sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Yvonne Akin",
+      "person2": "NYSG LLC",
+      "relationshipType": "client-service",
+      "description": "Yvonne Akin is a recipient of shipments sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Lauren Mintier",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Mintier is associated with NYSG LLC as a sender for a shipment.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-10-09",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2002-10-10",
+      "title": "Shipment Delivery",
+      "description": "Several shipments were delivered on this date, including those sent by Darren Indyke.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "James Brown",
+        "Yvonne Akin"
+      ]
+    },
+    {
+      "date": "2002-10-11",
+      "title": "Shipment Delivery",
+      "description": "Additional shipments were delivered on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Lauren Mintier"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "1535 Old Country Rd, Plainview, NY 11803",
+    "408 Sunset Rd, Brenham, TX 77833",
+    "91 County Rd A036, Estancia, NM 87016",
+    "2737 Zapala Rd, La Grange, TX 78945",
+    "5205 Rancho Verde Pkwy, Crowley, TX 76036"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 18, 2002, and includes various transportation charges.",
+    "Darren Indyke is a prominent sender associated with NYSG LLC, involved in multiple shipments.",
+    "The document details several recipients of shipments, indicating a network of business relationships.",
+    "Multiple shipments were picked up and delivered on specific dates, showcasing the logistics operations of NYSG LLC.",
+    "There are references to adjustments and reasons for invoice discrepancies, indicating ongoing financial management."
+  ],
+  "analyzedAt": "2026-02-22T08:43:33.963Z"
+}

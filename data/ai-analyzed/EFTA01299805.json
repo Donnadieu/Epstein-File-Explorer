@@ -1,0 +1,82 @@
+{
+  "fileName": "EFTA01299805.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-10-07",
+  "summary": "This document contains financial transaction details including incoming and outgoing wires, checks, and ACH transactions related to various accounts. It lists several financial institutions and individuals involved in these transactions, highlighting the flow of funds and the entities associated with them.",
+  "persons": [
+    {
+      "name": "Fred Bete Miller",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Fred Bete Miller is mentioned as a beneficiary in the context of financial transactions involving various banks.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Barbara Wollak",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Barbara Wollak is referenced in relation to account transactions and checks received.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jacqueline C. Levrithal",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jacqueline C. Levrithal is mentioned in the context of financial transactions and checks.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Groom",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "John Groom is referenced in relation to transactions involving JP Morgan Chase Bank.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Fred Bete Miller",
+      "person2": "JP Morgan Chase Bank",
+      "relationshipType": "financial",
+      "description": "Fred Bete Miller is involved in transactions processed through JP Morgan Chase Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Barbara Wollak",
+      "person2": "Deutsche Bank",
+      "relationshipType": "financial",
+      "description": "Barbara Wollak is associated with transactions involving Deutsche Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "Jacqueline C. Levrithal",
+      "person2": "JP Morgan Chase Bank",
+      "relationshipType": "financial",
+      "description": "Jacqueline C. Levrithal is mentioned in transactions processed through JP Morgan Chase Bank.",
+      "strength": 3
+    },
+    {
+      "person1": "John Groom",
+      "person2": "JP Morgan Chase Bank",
+      "relationshipType": "financial",
+      "description": "John Groom is referenced in transactions involving JP Morgan Chase Bank.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Scarsdale, NY",
+    "New York, NY",
+    "Brooklyn, NY",
+    "Boston, MA"
+  ],
+  "keyFacts": [
+    "The document details multiple financial transactions including incoming and outgoing wires and checks.",
+    "Fred Bete Miller, Barbara Wollak, Jacqueline C. Levrithal, and John Groom are named individuals involved in these transactions.",
+    "Various financial institutions such as JP Morgan Chase Bank, Deutsche Bank, and State Street Bank are mentioned.",
+    "The transactions date back to October 7, 2014, indicating a historical financial record.",
+    "Several amounts and account details are provided, indicating the flow of funds between different entities."
+  ],
+  "analyzedAt": "2026-02-21T23:10:58.537Z"
+}

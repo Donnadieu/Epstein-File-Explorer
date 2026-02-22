@@ -1,0 +1,73 @@
+{
+  "fileName": "EFTA01314908.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-04-09",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services. It details charges for transportation and special handling, along with payment instructions and service messages. The invoice indicates a total charge of $12.92, with a due date of April 24, 2001.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Billing Contact",
+      "category": "associate",
+      "context": "Eric Gany is listed as a billing contact associated with Jeffrey Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Edward Nguyen",
+      "role": "Sender",
+      "category": "other",
+      "context": "Edward Nguyen is mentioned as the sender of a package that was shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a recipient associated with Jeffrey Epstein's shipping address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "billing contact",
+      "description": "Eric Gany is listed as a billing contact for Jeffrey Epstein's FedEx account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is associated with Jeffrey Epstein's shipping address.",
+      "strength": 3
+    },
+    {
+      "person1": "Edward Nguyen",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "shipping recipient",
+      "description": "Edward Nguyen is the sender of a package that was addressed to Ghislaine Maxwell.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6809",
+    "10 Liberty Ship Way, Sausalito, CA 94985-3312"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 9, 2001, and is for shipping services provided by FedEx.",
+    "The total amount due on the invoice is $12.92, with a payment due date of April 24, 2001.",
+    "Eric Gany is listed as a billing contact for Jeffrey Epstein's account.",
+    "Ghislaine Maxwell is mentioned as a recipient associated with Epstein's shipping address.",
+    "Edward Nguyen is identified as the sender of a package shipped to Ghislaine Maxwell."
+  ],
+  "analyzedAt": "2026-02-22T06:31:31.003Z"
+}

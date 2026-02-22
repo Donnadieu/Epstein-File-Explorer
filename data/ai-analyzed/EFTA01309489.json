@@ -1,0 +1,282 @@
+{
+  "fileName": "EFTA01309489.pdf",
+  "dataSet": "10",
+  "documentType": "boat log",
+  "dateOriginal": null,
+  "summary": "This document contains a detailed log of boat trips made by Captain Carlos and Captain Tap, including staff movements and various activities related to Little St. James (LSJ) and Great St. James (GSJ) islands. It also includes notes on maintenance and cleaning activities at the properties, as well as a list of tasks and priorities for staff. This document appears to be a log of various maintenance and operational activities related to boats and equipment, including repairs, inspections, and crew attendance. It includes references to specific individuals involved in these activities, as well as details about equipment and logistical operations.",
+  "persons": [
+    {
+      "name": "Carlos",
+      "role": "Captain",
+      "category": "staff",
+      "context": "Captain Carlos is responsible for operating the boat and managing staff trips between Redhook, LSJ, and GSJ.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Jeffers",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Mr. Jeffers is mentioned as an employee involved in transportation to St. Thomas.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Garth",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Garth is mentioned multiple times in the context of staff trips to LSJ and GSJ.",
+      "mentionCount": 9
+    },
+    {
+      "name": "Kevin",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Kevin is involved in crew activities and is mentioned multiple times in the context of boat operations.",
+      "mentionCount": 9
+    },
+    {
+      "name": "Jermaine Ruan",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Jermaine Ruan is mentioned in the context of staff trips and activities on LSJ.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Liston Thomas",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Liston Thomas is mentioned in relation to staff movements and tasks on LSJ.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Miosotis",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Miosotis is mentioned in the context of staff activities on GSJ.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Philito",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Philito is mentioned as part of the crew traveling to GSJ.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maurice",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Maurice is mentioned in the context of maintenance and cleaning tasks.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Sylvester",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Sylvester is mentioned in relation to maintenance tasks and priorities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Patrick",
+      "role": "Crew Member",
+      "category": "staff",
+      "context": "Patrick is mentioned in relation to crew activities and maintenance logs.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Randy",
+      "role": "Crew Member",
+      "category": "staff",
+      "context": "Randy is involved in various crew activities and is mentioned multiple times in the context of boat operations.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Stephen Shillingford",
+      "role": "Manager",
+      "category": "staff",
+      "context": "Stephen is mentioned in the context of managing operations.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Sylvester Gaillard",
+      "role": "Crew Member",
+      "category": "staff",
+      "context": "Sylvester is mentioned in the context of crew activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Vanessa Mercado",
+      "role": "Staff",
+      "category": "staff",
+      "context": "Vanessa is mentioned in the context of staff activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Daphne Wallace",
+      "role": "Executive Assistant",
+      "category": "staff",
+      "context": "Daphne is mentioned in the context of administrative tasks and communication.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Myla Trestiza",
+      "role": "Property Manager",
+      "category": "staff",
+      "context": "Myla is mentioned in the context of property management.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Carlos",
+      "person2": "Jeffers",
+      "relationshipType": "employer-employee",
+      "description": "Carlos is the captain overseeing Jeffers as an employee involved in transportation.",
+      "strength": 4
+    },
+    {
+      "person1": "Garth",
+      "person2": "Kevin",
+      "relationshipType": "co-workers",
+      "description": "Garth and Kevin are mentioned together multiple times in staff movements.",
+      "strength": 4
+    },
+    {
+      "person1": "Jermaine Ruan",
+      "person2": "Liston Thomas",
+      "relationshipType": "co-workers",
+      "description": "Jermaine and Liston are both staff members involved in activities on LSJ.",
+      "strength": 3
+    },
+    {
+      "person1": "Maurice",
+      "person2": "Sylvester",
+      "relationshipType": "co-workers",
+      "description": "Maurice and Sylvester are mentioned in the context of maintenance tasks.",
+      "strength": 3
+    },
+    {
+      "person1": "Patrick",
+      "person2": "Randy",
+      "relationshipType": "crew members",
+      "description": "Patrick and Randy are both mentioned as part of the crew involved in various boat operations.",
+      "strength": 4
+    },
+    {
+      "person1": "Carlos",
+      "person2": "Garth",
+      "relationshipType": "crew members",
+      "description": "Carlos and Garth are both involved in crew activities and logistics.",
+      "strength": 3
+    },
+    {
+      "person1": "Stephen Shillingford",
+      "person2": "Daphne Wallace",
+      "relationshipType": "manager-assistant",
+      "description": "Stephen is a manager and Daphne is his executive assistant, indicating a professional relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2019-07-26",
+      "title": "Boat Trip to LSJ",
+      "description": "Staff and mold workers transported from Redhook to LSJ.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "staff"
+      ]
+    },
+    {
+      "date": "2019-07-27",
+      "title": "Boat Trip to LSJ",
+      "description": "Staff transported from Redhook to LSJ and back.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "staff"
+      ]
+    },
+    {
+      "date": "2019-07-30",
+      "title": "Staff Runs",
+      "description": "Multiple staff runs to LSJ and back to Redhook.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "staff"
+      ]
+    },
+    {
+      "date": "2019-08-01",
+      "title": "Staff Runs",
+      "description": "Continued staff runs to LSJ and back.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "staff"
+      ]
+    },
+    {
+      "date": "2019-08-02",
+      "title": "Security Runs",
+      "description": "Security personnel transported from Redhook to LSJ and GSJ.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "security"
+      ]
+    },
+    {
+      "date": "2019-06-09",
+      "title": "Boat Maintenance and Repairs",
+      "description": "Various maintenance activities and repairs were logged for boats and equipment.",
+      "category": "maintenance",
+      "significance": 3,
+      "personsInvolved": [
+        "Patrick",
+        "Randy",
+        "Carlos",
+        "Garth",
+        "Kevin"
+      ]
+    },
+    {
+      "date": "2019-07-26",
+      "title": "Boat Trip Log",
+      "description": "Logs of crew activities and boat trips were recorded, detailing movements and tasks.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Carlos",
+        "Garth",
+        "Kevin"
+      ]
+    }
+  ],
+  "locations": [
+    "Little St. James (LSJ)",
+    "Great St. James (GSJ)",
+    "Redhook",
+    "St. Thomas (STT)",
+    "LSJ",
+    "STT",
+    "GSJ"
+  ],
+  "keyFacts": [
+    "The document contains a detailed log of boat trips made by Captain Carlos and Captain Tap.",
+    "Staff movements between Redhook, LSJ, and GSJ are recorded with specific times.",
+    "Various maintenance and cleaning tasks are noted for the properties on LSJ and GSJ.",
+    "Security personnel are mentioned as being transported to and from LSJ and GSJ.",
+    "Multiple staff members are involved in the operations and maintenance of the properties.",
+    "Multiple crew members are involved in the maintenance and operation of boats.",
+    "Logs detail specific dates and activities related to boat repairs and crew attendance.",
+    "There are references to equipment issues and repairs needed for various boats."
+  ],
+  "analyzedAt": "2026-02-22T03:38:01.868Z"
+}

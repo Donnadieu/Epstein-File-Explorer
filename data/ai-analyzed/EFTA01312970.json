@@ -1,0 +1,89 @@
+{
+  "fileName": "EFTA01312970.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains invoices from FedEx detailing transportation charges for services rendered in July 2004. It includes information about discounts applied, total charges, and shipment details. The invoices are addressed to NYSG LLC and reference various account numbers.",
+  "persons": [
+    {
+      "name": "Cecile De Jongh",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Cecile De Jongh is mentioned as the financial trustee associated with a shipment in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Reduguz",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Reduguz is noted as the individual who signed the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Laura Kunin",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Laura Kunin is listed as the recipient of a shipment detailed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cecile De Jongh",
+      "person2": "NYSG LLC",
+      "relationshipType": "financial",
+      "description": "Cecile De Jongh is associated with the financial trust that is linked to NYSG LLC as indicated in the invoice.",
+      "strength": 3
+    },
+    {
+      "person1": "Laura Kunin",
+      "person2": "NYSG LLC",
+      "relationshipType": "recipient-sender",
+      "description": "Laura Kunin is the recipient of a shipment sent by NYSG LLC as per the invoice details.",
+      "strength": 3
+    },
+    {
+      "person1": "A. Reduguz",
+      "person2": "FedEx",
+      "relationshipType": "employee-employer",
+      "description": "A. Reduguz is identified as the signer for the FedEx invoice, indicating a connection to the company.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-07-02",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off at FedEx on July 2, 2004.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Cecile De Jongh",
+        "Laura Kunin"
+      ]
+    },
+    {
+      "date": "2004-07-09",
+      "title": "Invoice Issuance",
+      "description": "An invoice was issued for transportation charges related to services provided by FedEx.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Cecile De Jongh",
+        "A. Reduguz"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6100 Red Hook Quarter, St Thomas, 00802 VI"
+  ],
+  "keyFacts": [
+    "The total charges for the FedEx services amounted to $39.96.",
+    "A discount of $29.63 was applied to the invoice.",
+    "The invoice is associated with NYSG LLC and includes multiple references to FedEx services.",
+    "Cecile De Jongh is connected to a financial trust mentioned in the invoice.",
+    "The document includes details about a shipment that was dropped off on July 2, 2004."
+  ],
+  "analyzedAt": "2026-02-22T04:56:01.345Z"
+}

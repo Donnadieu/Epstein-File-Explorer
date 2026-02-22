@@ -1,0 +1,130 @@
+{
+  "fileName": "EFTA01318022.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-01-24",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages sent to and from NY SG LLC at 457 Madison Ave, New York, NY. It includes shipment details, charges, and payment information, indicating multiple transactions involving individuals associated with Epstein.",
+  "persons": [
+    {
+      "name": "Lauren Kwinter",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwinter is mentioned as a sender for multiple packages sent from NY SG LLC.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Chris Gaze",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Chris Gaze is listed as a sender for a package sent from NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francis Ward",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Francis Ward is mentioned as a recipient for a package delivered to him.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Juan P. Alessi",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Juan P. Alessi is noted as a recipient for a package sent to him from NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Recipient",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is mentioned as a recipient for a package delivered to him at NY SG LLC.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamey",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Eric Gamey is mentioned as a sender for a package sent from NY SG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwinter",
+      "person2": "NY SG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwinter is associated with NY SG LLC as a sender of packages.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "NY SG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Jeffrey E. Epstein is connected to NY SG LLC as a recipient of packages.",
+      "strength": 4
+    },
+    {
+      "person1": "Juan P. Alessi",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "associate",
+      "description": "Juan P. Alessi is mentioned in connection with Jeffrey E. Epstein as a recipient of a package.",
+      "strength": 3
+    },
+    {
+      "person1": "Francis Ward",
+      "person2": "NY SG LLC",
+      "relationshipType": "client-service",
+      "description": "Francis Ward is noted as a recipient of a package sent from NY SG LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-01-15",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up from NY SG LLC on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwinter",
+        "Chris Gaze"
+      ]
+    },
+    {
+      "date": "2003-01-16",
+      "title": "Package Delivery",
+      "description": "Packages were delivered to various recipients including Jeffrey E. Epstein and others.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Juan P. Alessi"
+      ]
+    },
+    {
+      "date": "2003-01-17",
+      "title": "Package Delivery",
+      "description": "Additional packages were delivered to recipients including Lauren Kwinter and others.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwinter",
+        "Francis Ward"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "Boynton Beach, FL 33436",
+    "Aspen, CO 81611",
+    "West Palm Beach, FL 33401"
+  ],
+  "keyFacts": [
+    "The invoice details shipping charges for multiple packages sent to and from NY SG LLC.",
+    "Jeffrey E. Epstein is listed as a recipient for a package delivered to him.",
+    "Lauren Kwinter is frequently mentioned as a sender for packages associated with NY SG LLC.",
+    "Several packages were delivered on January 16, 2003, to various individuals.",
+    "The document includes multiple references to FedEx services and charges."
+  ],
+  "analyzedAt": "2026-02-22T08:51:40.121Z"
+}

@@ -1,0 +1,65 @@
+{
+  "fileName": "EFTA01318608.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-11-17",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC, detailing charges for transportation and special handling. The invoice includes shipment details, payment instructions, and contact information for inquiries.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender of a package shipped via FedEx, indicating his involvement in the logistics of the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bernard Indyke",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Bernard Indyke is noted as the recipient of the package sent via FedEx, suggesting a connection to the shipping activities of NYSG LLC.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "Bernard Indyke",
+      "relationshipType": "social",
+      "description": "Darren Indyke is the sender and Bernard Indyke is the recipient of a package, indicating a personal or familial relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-11-11",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2003-11-12",
+      "title": "Package Delivery",
+      "description": "The package sent by Darren Indyke was delivered to Bernard Indyke.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren Indyke",
+        "Bernard Indyke"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 17, 2003, and details charges totaling $6.90 for FedEx services.",
+    "The package was picked up on November 11, 2003, and delivered on November 12, 2003.",
+    "Darren Indyke is identified as the sender and Bernard Indyke as the recipient of the shipment.",
+    "The invoice is associated with NYSG LLC, located at 457 Madison Ave, New York, NY."
+  ],
+  "analyzedAt": "2026-02-22T09:25:02.445Z"
+}

@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01325313.pdf",
+  "dataSet": "10",
+  "documentType": "FBI 302",
+  "dateOriginal": "2008-05-29",
+  "summary": "This document details an interview conducted by FBI agents with an unnamed individual at her residence regarding a Grand Jury subpoena related to Jeffrey Epstein. The individual expressed a desire to consult her attorney before proceeding with the interview and was informed about the implications of not appearing before the Grand Jury.",
+  "persons": [
+    {
+      "name": "Diarmuid",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Diarmuid is mentioned as the attorney for the unnamed individual who was interviewed by the FBI agents.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is referenced as the subject of the investigation for which the unnamed individual was being interviewed.",
+      "mentionCount": 2
+    },
+    {
+      "name": "John",
+      "role": "Husband",
+      "category": "associate",
+      "context": "John is mentioned as the husband of the unnamed individual, who may accompany her during travel.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Unnamed Individual",
+      "person2": "Diarmuid",
+      "relationshipType": "client-attorney",
+      "description": "The unnamed individual is represented by attorney Diarmuid, as she provided his business card to the FBI agents.",
+      "strength": 4
+    },
+    {
+      "person1": "Unnamed Individual",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "witness-victim",
+      "description": "The unnamed individual is being interviewed in relation to Jeffrey Epstein, indicating a potential witness status.",
+      "strength": 3
+    },
+    {
+      "person1": "Unnamed Individual",
+      "person2": "John",
+      "relationshipType": "spousal",
+      "description": "John is mentioned as the husband of the unnamed individual, indicating a familial relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2008-06-03",
+      "title": "Grand Jury Appearance",
+      "description": "The unnamed individual was subpoenaed to appear before the Grand Jury in Florida.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Unnamed Individual"
+      ]
+    },
+    {
+      "date": "2008-05-29",
+      "title": "FBI Interview",
+      "description": "FBI agents conducted an interview with the unnamed individual regarding her potential testimony related to Jeffrey Epstein.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Unnamed Individual",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "148 E. 78th Street, New York, NY 10075",
+    "701 Clematis Street, West Palm Beach, Florida 33401"
+  ],
+  "keyFacts": [
+    "The unnamed individual was advised of her rights and the purpose of the FBI interview.",
+    "She expressed a desire to consult her attorney before speaking to the agents.",
+    "The document notes that the unnamed individual was not a target of the investigation.",
+    "She was subpoenaed to appear before the Grand Jury on June 3, 2008.",
+    "The document contains redacted information regarding the unnamed individual and her family."
+  ],
+  "analyzedAt": "2026-02-22T11:09:55.577Z"
+}

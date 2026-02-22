@@ -1,0 +1,157 @@
+{
+  "fileName": "EFTA01314346.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-09-02",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes multiple entries for shipments made by Epstein, with specific charges, discounts, and delivery details. It highlights the total amount due and provides a breakdown of transportation charges and special handling fees.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Brennan is mentioned as a recipient in the shipment details associated with Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Visoski is mentioned as a recipient in one of the shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Pitcher is mentioned as a sender in the shipment details associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander Little",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Little is mentioned as a recipient in the shipment details associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maxwell is mentioned as a recipient in the shipment details associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Brennan is listed as a recipient for shipments sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "sender-recipient",
+      "description": "Visoski is listed as a recipient for shipments sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "sender-recipient",
+      "description": "Pitcher is mentioned as a sender in shipments associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander Little",
+      "relationshipType": "sender-recipient",
+      "description": "Little is listed as a recipient for shipments sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Maxwell is listed as a recipient for shipments sent by Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-09-02",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-08-25",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-08-26",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan",
+        "Miles Alexander Little"
+      ]
+    },
+    {
+      "date": "2003-08-27",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    },
+    {
+      "date": "2003-08-29",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 2, 2003, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $467.96.",
+    "The invoice details multiple shipments made by Epstein, with specific charges and discounts.",
+    "Several individuals are mentioned as recipients of shipments sent by Epstein.",
+    "There are multiple references to FedEx services and charges related to Epstein's account."
+  ],
+  "analyzedAt": "2026-02-22T06:04:27.642Z"
+}

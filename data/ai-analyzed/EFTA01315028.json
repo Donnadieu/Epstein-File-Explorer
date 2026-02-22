@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA01315028.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2001-05-18",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about transportation charges, handling surcharges, and payment details, indicating the financial transactions related to shipping activities on specific dates in May 2001.",
+  "persons": [
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gany is listed as a sender associated with the financial trust company in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a sender in connection with the financial trust company in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "L. Casey",
+      "role": "Signer",
+      "category": "other",
+      "context": "L. Casey is noted as the individual who signed for the delivery of the packages.",
+      "mentionCount": 2
+    },
+    {
+      "name": "NYSG LLC",
+      "role": "Recipient",
+      "category": "other",
+      "context": "NYSG LLC is the recipient of the FedEx services, with multiple mentions related to the shipping address.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2001-05-10",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Eric Gany",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2001-05-14",
+      "title": "Package Delivery",
+      "description": "A package was delivered to the recipient, NYSG LLC.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Eric Gany",
+        "Jeanne Brennan",
+        "L. Casey"
+      ]
+    },
+    {
+      "date": "2001-05-16",
+      "title": "Package Delivery",
+      "description": "Another package was delivered to the recipient, NYSG LLC.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Eric Gany",
+        "Jeanne Brennan",
+        "L. Casey"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 18, 2001, and details shipping charges totaling $115.02.",
+    "NYSG LLC is the recipient of the services provided by FedEx.",
+    "Eric Gany and Jeanne Brennan are identified as senders associated with the financial trust company.",
+    "L. Casey is noted as the individual who signed for the delivery of the packages.",
+    "The document outlines specific dates for package pickups and deliveries in May 2001."
+  ],
+  "analyzedAt": "2026-02-22T06:39:18.294Z"
+}

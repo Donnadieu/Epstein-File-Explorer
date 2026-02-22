@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA01317431.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-02-22",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered. It includes billing information, service details, and payment instructions. The invoice highlights multiple shipments and their respective charges, indicating the sender and recipients involved.",
+  "persons": [
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwintner is listed as the sender for multiple FedEx shipments detailed in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Paul Burkhardt is mentioned as a recipient for one of the shipments, with an address in New Albany, Ohio.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter H. Beim",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Peter H. Beim is mentioned as a recipient for another shipment, with an address in Carlstadt, New Jersey.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Sutton",
+      "role": "Recipient",
+      "category": "other",
+      "context": "D. Sutton is noted as the individual who signed for one of the deliveries.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Carrie Tillman",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Carrie Tillman is mentioned as a recipient for one of the shipments, with an address in Wilmington, Delaware.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-02-11",
+      "title": "Pickup of Shipment",
+      "description": "A shipment was picked up by FedEx for delivery.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner"
+      ]
+    },
+    {
+      "date": "2002-02-12",
+      "title": "Delivery of Shipment",
+      "description": "Multiple shipments were delivered on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Paul Burkhardt",
+        "D. Sutton",
+        "Carrie Tillman"
+      ]
+    },
+    {
+      "date": "2002-02-13",
+      "title": "Delivery of Shipment",
+      "description": "Additional shipments were delivered on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Peter H. Beim"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6525 West Campus Oval, New Albany, OH 43054",
+    "303 Patterson Plank Road, Carlstadt, NJ 07072",
+    "103 Foulk Rd Ste 200, Wilmington, DE 19803"
+  ],
+  "keyFacts": [
+    "The invoice is dated February 22, 2002, and includes multiple shipments.",
+    "Lauren Kwintner is the sender for all shipments listed in the invoice.",
+    "The total charges for the services rendered amount to $16.74.",
+    "Shipments were picked up on February 11 and delivered on February 12 and 13, 2002.",
+    "Several recipients are named, including Paul Burkhardt, Peter H. Beim, D. Sutton, and Carrie Tillman."
+  ],
+  "analyzedAt": "2026-02-22T08:20:09.913Z"
+}

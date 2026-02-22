@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA01314063.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-04-11",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details transportation charges, discounts, and payment instructions, indicating a total amount due of $39.71. The invoice includes shipment details involving named individuals and companies.",
+  "persons": [
+    {
+      "name": "Lauren Kvantner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kvantner is listed as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gabriel Perahia",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Gabriel Perahia is identified as the recipient of a package sent by Lauren Kvantner.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren K. Novice",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren K. Novice is mentioned as the sender of another package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Christian",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "A. Christian is noted as the recipient of a package sent by Darren K. Novice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kvantner",
+      "person2": "Gabriel Perahia",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kvantner sent a package to Gabriel Perahia via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren K. Novice",
+      "person2": "A. Christian",
+      "relationshipType": "sender-recipient",
+      "description": "Darren K. Novice sent a package to A. Christian via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-04-03",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from Lauren Kvantner on April 3, 2003.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kvantner"
+      ]
+    },
+    {
+      "date": "2003-04-04",
+      "title": "Customs Entry Date",
+      "description": "Customs entry for a package sent by Lauren Kvantner was recorded on April 4, 2003.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kvantner"
+      ]
+    },
+    {
+      "date": "2003-04-05",
+      "title": "Package Pickup",
+      "description": "FedEx picked up a package from Darren K. Novice on April 5, 2003.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren K. Novice"
+      ]
+    },
+    {
+      "date": "2003-04-07",
+      "title": "Package Delivery",
+      "description": "A package sent by Lauren Kvantner was delivered on April 7, 2003.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Lauren Kvantner",
+        "Gabriel Perahia"
+      ]
+    },
+    {
+      "date": "2003-04-07",
+      "title": "Package Delivery",
+      "description": "A package sent by Darren K. Novice was delivered on April 7, 2003.",
+      "category": "travel",
+      "significance": 4,
+      "personsInvolved": [
+        "Darren K. Novice",
+        "A. Christian"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "82 Place Ou Lac, Geneva, Switzerland",
+    "1340 Tasaneberg Drive, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 11, 2003, and details charges for shipping services.",
+    "Total charges amount to $39.71 after discounts.",
+    "Packages were sent from New York to locations in Switzerland and the Virgin Islands.",
+    "The document includes specific tracking IDs for the shipments.",
+    "There are references to adjustments and reasons for potential invoice changes."
+  ],
+  "analyzedAt": "2026-02-22T05:50:01.963Z"
+}

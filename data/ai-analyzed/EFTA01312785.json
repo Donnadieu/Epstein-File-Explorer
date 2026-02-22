@@ -1,0 +1,94 @@
+{
+  "fileName": "EFTA01312785.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-04-26",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple shipment details, charges, and discounts applied to Epstein's account. The invoice indicates a total amount due of $310.62, with a payment deadline of May 11, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he is responsible for the shipping charges detailed within.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Keith Blumberg",
+      "role": "Sender",
+      "category": "other",
+      "context": "Keith Blumberg is mentioned as a sender in one of the shipment details associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael Fromm",
+      "role": "Sender",
+      "category": "other",
+      "context": "Michael Fromm is mentioned as a sender in one of the shipment details associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "G. Maxwell",
+      "role": "Associate",
+      "category": "associate",
+      "context": "G. Maxwell is mentioned in relation to a shipment sent to Epstein, indicating a connection.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Keith Blumberg",
+      "relationshipType": "sender-recipient",
+      "description": "Keith Blumberg is identified as a sender of a package to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Michael Fromm",
+      "relationshipType": "sender-recipient",
+      "description": "Michael Fromm is identified as a sender of a package to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "G. Maxwell",
+      "relationshipType": "associate",
+      "description": "G. Maxwell is associated with a shipment sent to Jeffrey E. Epstein, indicating a connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-26",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-11",
+      "title": "Payment Due Date",
+      "description": "The payment for the invoice is due by this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "358 El Brillo Way, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice number is 1-713-90779, dated April 26, 2004.",
+    "Total charges on the invoice amount to $310.62.",
+    "The invoice includes multiple shipment details and associated charges.",
+    "The payment is due by May 11, 2004.",
+    "Several shipments are linked to Jeffrey E. Epstein, indicating frequent use of FedEx services."
+  ],
+  "analyzedAt": "2026-02-22T04:47:28.266Z"
+}

@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01304169.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": "2018-03-22",
+  "summary": "This document is an emergency contact form for Bonitace Loudat, detailing personal information such as address, emergency contacts, and health concerns. It serves to ensure safety in case of emergencies.",
+  "persons": [
+    {
+      "name": "Bonitace Loudat",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Bonitace Loudat is the employee for whom the emergency contact form is filled out.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nell Leudat",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Nell Leudat is listed as the emergency contact for Bonitace Loudat.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dodglas",
+      "role": "Doctor",
+      "category": "other",
+      "context": "Dodglas is mentioned as the doctor for Bonitace Loudat, although no further details are provided.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bonitace Loudat",
+      "person2": "Nell Leudat",
+      "relationshipType": "family",
+      "description": "Nell Leudat is listed as the wife of Bonitace Loudat.",
+      "strength": 5
+    },
+    {
+      "person1": "Bonitace Loudat",
+      "person2": "Dodglas",
+      "relationshipType": "patient-doctor",
+      "description": "Dodglas is the doctor for Bonitace Loudat.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "6100 Red Hook Quarters Suite B-3 St. Thomas, VI 00802",
+    "Bo vont 16-3G iv'TPI. St Thomas"
+  ],
+  "keyFacts": [
+    "The document is an emergency contact form dated 03/22/18.",
+    "Bonitace Loudat is married and has listed Nell Leudat as his emergency contact.",
+    "Dodglas is mentioned as Bonitace Loudat's doctor, but no specific details are provided about the medical relationship."
+  ],
+  "analyzedAt": "2026-02-22T01:50:21.575Z"
+}

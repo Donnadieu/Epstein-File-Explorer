@@ -1,0 +1,135 @@
+{
+  "fileName": "EFTA01317040.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-08-23",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made in August 2004. The total amount due is $228.39, and the invoice indicates that the account is past due as of October 3, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the FedEx invoice is addressed, indicating he is responsible for the account and the payments due.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Ryan Wisehart",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ryan Wisehart is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Brian Moseley",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Brian Moseley is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francois Goefinet",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Francois Goefinet is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Cornelius",
+      "role": "Signer",
+      "category": "other",
+      "context": "J. Cornelius is noted as the person who signed for a package delivered to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Fraguela",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Fraguela is noted as the person who signed for a package delivered to Ryan Wisehart.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Rodriguez is noted as the person who signed for a package delivered to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "L. Casey",
+      "role": "Signer",
+      "category": "other",
+      "context": "L. Casey is noted as the person who signed for a package delivered to Zorro Ranch.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ryan Wisehart",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Ryan Wisehart, as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Brian Moseley",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Brian Moseley, as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Francois Goefinet",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Francois Goefinet, as indicated in the shipment details.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-13",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-17",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to Ryan Wisehart.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ryan Wisehart"
+      ]
+    },
+    {
+      "date": "2004-08-19",
+      "title": "Package Delivery",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to Francois Goefinet.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Francois Goefinet"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "St. Thomas, VI",
+    "Zorro Ranch"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 23, 2004, and is for a total of $228.39.",
+    "The account is noted as past due as of October 3, 2004.",
+    "Multiple shipments were made by Jeffrey E. Epstein during August 2004, with various recipients.",
+    "The document includes details of transportation charges and discounts applied to the shipments.",
+    "Several individuals signed for packages delivered to Epstein and his associates."
+  ],
+  "analyzedAt": "2026-02-22T07:59:59.315Z"
+}

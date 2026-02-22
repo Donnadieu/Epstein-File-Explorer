@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01293176.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains various financial transactions involving checks issued by Darren K. Indyke PLLC, primarily to individuals and organizations, including payments for legal services and insurance. The checks detail amounts, dates, and recipients, indicating a pattern of financial activity related to legal and insurance matters.",
+  "persons": [
+    {
+      "name": "Darren K. Indyke",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Darren K. Indyke is mentioned multiple times as the issuer of checks for various payments, indicating his role in managing financial transactions related to legal services.",
+      "mentionCount": 20
+    },
+    {
+      "name": "Jessica Cadwell",
+      "role": "Legal Support & Investigation",
+      "category": "staff",
+      "context": "Jessica Cadwell is mentioned as a recipient of a payment for legal support services, indicating her involvement in the legal proceedings.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Patina Belominskaya",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Patina Belominskaya is frequently mentioned as a recipient of payments, suggesting her involvement in services related to the legal matters handled by Indyke.",
+      "mentionCount": 6
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Jessica Cadwell",
+      "relationshipType": "employer-employee",
+      "description": "Darren K. Indyke employs Jessica Cadwell for legal support and investigation services.",
+      "strength": 4
+    },
+    {
+      "person1": "Darren K. Indyke",
+      "person2": "Patina Belominskaya",
+      "relationshipType": "client-service provider",
+      "description": "Darren K. Indyke makes payments to Patina Belominskaya for services rendered, indicating a client-service provider relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2015-10-02",
+      "title": "Payment to Insurance Office",
+      "description": "A check for $9,559.00 was issued to the Insurance Office of Central Ohio.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren K. Indyke"
+      ]
+    },
+    {
+      "date": "2015-03-17",
+      "title": "Payment to Jessica Cadwell",
+      "description": "A check for $248.98 was issued to Jessica Cadwell for legal support services.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Darren K. Indyke",
+        "Jessica Cadwell"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY",
+    "West Palm Beach, FL",
+    "Jackson Heights, NY",
+    "Albany, NY"
+  ],
+  "keyFacts": [
+    "Darren K. Indyke is the primary individual issuing checks for various payments.",
+    "Payments include legal services and insurance-related transactions.",
+    "Jessica Cadwell is involved in legal support and receives payments from Indyke.",
+    "Patina Belominskaya is a recurring recipient of payments for services related to the legal matters handled by Indyke.",
+    "The document contains multiple instances of financial transactions dated between 2014 and 2015."
+  ],
+  "analyzedAt": "2026-02-21T19:20:51.579Z"
+}

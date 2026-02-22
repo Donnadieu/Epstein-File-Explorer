@@ -1,0 +1,75 @@
+{
+  "fileName": "EFTA01299633.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-11-12",
+  "summary": "This document contains financial transaction records involving various entities and individuals, primarily focusing on outgoing and incoming wires, checks, and ACH transactions. It highlights transactions related to Aquiline Holdings LLC and other financial services, with specific amounts and beneficiary details.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned as the account holder for various transactions, indicating his involvement in financial activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Gary Barber",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Gary Barber is mentioned in relation to a living trust, indicating a financial connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Michael J. Muldoon",
+      "role": "Loan Division Respondent",
+      "category": "other",
+      "context": "Michael J. Muldoon is referenced in the context of loan transactions, suggesting his involvement in financial dealings.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Christine Manna",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Christine Manna is mentioned in relation to financial transactions, indicating her involvement in the financial activities documented.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Christine Manna",
+      "relationshipType": "financial",
+      "description": "Both are involved in financial transactions, indicating a possible financial relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Gary Barber",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Gary Barber is associated with a living trust that includes Jeffrey Epstein, indicating a fiduciary relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Michael J. Muldoon",
+      "relationshipType": "financial",
+      "description": "Michael J. Muldoon is mentioned in the context of loan transactions related to Epstein's financial activities.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Jersey City, NJ",
+    "New York, NY",
+    "Bedford Hills, NY",
+    "Los Angeles, CA"
+  ],
+  "keyFacts": [
+    "The document details multiple financial transactions involving outgoing and incoming wires, checks, and ACH transactions.",
+    "Jeffrey Epstein is identified as the account holder for several transactions, indicating his active role in financial dealings.",
+    "Gary Barber is mentioned in connection with a living trust associated with Epstein.",
+    "Michael J. Muldoon is referenced in relation to loan transactions, suggesting his involvement in Epstein's financial activities.",
+    "Christine Manna is also mentioned in the context of financial transactions, indicating her connection to the financial dealings documented."
+  ],
+  "analyzedAt": "2026-02-21T23:01:42.094Z"
+}

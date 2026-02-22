@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01299312.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2018-08-21",
+  "summary": "This document is an email correspondence regarding a compliance alert related to a client of Deutsche Bank. The alert was generated due to concerns about the identity of an authorized signor for Zorro Management, LLC. The compliance team reviewed the alert and determined that it could be cleared based on the information provided.",
+  "persons": [
+    {
+      "name": "Mayur Rathod",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Mayur Rathod is the recipient of the email and is involved in the compliance review process for the RDC alert.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Velmir Vejzovic",
+      "role": "AML Compliance Officer",
+      "category": "legal",
+      "context": "Velmir Vejzovic is the sender of the email who provides information regarding the clearance of the RDC alert.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Krishna Dadhich",
+      "role": "Analyst",
+      "category": "legal",
+      "context": "Krishna Dadhich is mentioned as the sender of a previous email regarding the RDC alert and is involved in the compliance process.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Mayur Rathod",
+      "person2": "Velmir Vejzovic",
+      "relationshipType": "employer-employee",
+      "description": "Mayur Rathod and Velmir Vejzovic are both part of the compliance team at Deutsche Bank, working together on the RDC alert.",
+      "strength": 4
+    },
+    {
+      "person1": "Mayur Rathod",
+      "person2": "Krishna Dadhich",
+      "relationshipType": "employer-employee",
+      "description": "Mayur Rathod and Krishna Dadhich are both involved in the compliance process at Deutsche Bank, with Krishna sending alerts to Mayur.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2018-08-17",
+      "title": "RDC Alert Generation",
+      "description": "An RDC alert was generated concerning an authorized signor for Zorro Management, LLC.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Mayur Rathod",
+        "Krishna Dadhich"
+      ]
+    },
+    {
+      "date": "2018-08-21",
+      "title": "RDC Alert Clearance",
+      "description": "The compliance team reviewed and cleared the RDC alert based on the information provided.",
+      "category": "investigation",
+      "significance": 4,
+      "personsInvolved": [
+        "Mayur Rathod",
+        "Velmir Vejzovic"
+      ]
+    }
+  ],
+  "locations": [
+    "Stanley, NM",
+    "Tompkinsville, KY",
+    "Monroe, Kentucky, United States"
+  ],
+  "keyFacts": [
+    "An RDC alert was generated on August 17, 2018, concerning an authorized signor for Zorro Management, LLC.",
+    "The compliance team determined that the age, location, and occupation of the party did not match the alert subjects.",
+    "Velmir Vejzovic cleared the alert from a compliance aspect.",
+    "The email correspondence emphasizes the importance of compliance clearance before proceeding with KYC.",
+    "There are multiple mentions of compliance procedures and the roles of the individuals involved."
+  ],
+  "analyzedAt": "2026-02-21T22:35:22.753Z"
+}

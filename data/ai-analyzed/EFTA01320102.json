@@ -1,0 +1,106 @@
+{
+  "fileName": "EFTA01320102.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-10-03",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total amount due of $408.31. The invoice includes shipment details and references multiple shipments associated with Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the invoice is addressed, indicating he is the account holder for the FedEx services.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Rosemary Pitcher is mentioned as a recipient of one of the shipments sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Demitry Simmons",
+      "role": "Sender",
+      "category": "other",
+      "context": "Demitry Simmons is mentioned as the sender of a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Contact",
+      "category": "other",
+      "context": "Miles Alexander is referenced in connection with Jet Aviation, indicating a possible business relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "recipient-sender",
+      "description": "Rosemary Pitcher is listed as the recipient of a shipment sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Demitry Simmons",
+      "relationshipType": "sender-recipient",
+      "description": "Demitry Simmons is mentioned as the sender of a shipment associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "business contact",
+      "description": "Miles Alexander is mentioned in connection with Jet Aviation, which is associated with Epstein's shipping activities.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-09-23",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date for delivery.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-09-26",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Rosemary Pitcher"
+      ]
+    },
+    {
+      "date": "2005-09-29",
+      "title": "Shipment Delivery",
+      "description": "Another shipment associated with Epstein was delivered on this date.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "1515 Perimeter Rd, West Palm Beach, FL 33406"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 3, 2005, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $408.31.",
+    "The invoice details multiple shipments, including those sent to Rosemary Pitcher and associated with Demitry Simmons.",
+    "Shipments were picked up on September 23, 2005, and delivered on September 26 and 29, 2005.",
+    "The invoice includes a breakdown of transportation charges, discounts, and special handling fees."
+  ],
+  "analyzedAt": "2026-02-22T10:40:36.408Z"
+}

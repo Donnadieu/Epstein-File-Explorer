@@ -1,0 +1,211 @@
+{
+  "fileName": "EFTA01313467.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-05-13",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services. It details various charges, discounts, and payment information related to shipments made by Epstein. The invoice includes multiple entries for different packages sent and received, along with their respective charges.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, as indicated by the billing and shipping addresses on the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Richard Barnett",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Richard Barnett is mentioned as the sender of a package shipped via FedEx on May 1, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Cocigns",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "David Cocigns is listed as the recipient of a package sent by Epstein on May 1, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John Alessi is mentioned as the sender of a package shipped via FedEx on May 2, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Barbara Goldman",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Barbara Goldman is listed as the recipient of a package sent by Epstein on May 2, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Bella Mince",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Bella Mince is mentioned as the recipient of a package sent by Epstein on May 6, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ellen Goldberg",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ellen Goldberg is listed as the recipient of a package sent by Epstein on May 7, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as the sender of a package shipped via FedEx on May 9, 2002.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Martin Nowak",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Martin Nowak is mentioned as the sender of a package shipped via FedEx on May 6, 2002.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Richard Barnett",
+      "relationshipType": "employer-employee",
+      "description": "Richard Barnett is associated with Epstein as a sender of packages, indicating a potential employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Cocigns",
+      "relationshipType": "social",
+      "description": "David Cocigns is a recipient of a package sent by Epstein, suggesting a social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "social",
+      "description": "John Alessi is a sender of a package associated with Epstein, indicating a social or business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Barbara Goldman",
+      "relationshipType": "social",
+      "description": "Barbara Goldman is a recipient of a package sent by Epstein, indicating a social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Bella Mince",
+      "relationshipType": "social",
+      "description": "Bella Mince is a recipient of a package sent by Epstein, suggesting a social or business relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ellen Goldberg",
+      "relationshipType": "social",
+      "description": "Ellen Goldberg is a recipient of a package sent by Epstein, indicating a social or business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Larry Visoski is associated with Epstein as a sender of packages, indicating a potential employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Martin Nowak",
+      "relationshipType": "social",
+      "description": "Martin Nowak is a sender of a package associated with Epstein, indicating a social or business relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-05-01",
+      "title": "Package Shipment",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Richard Barnett",
+        "David Cocigns"
+      ]
+    },
+    {
+      "date": "2002-05-02",
+      "title": "Package Shipment",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Alessi",
+        "Barbara Goldman"
+      ]
+    },
+    {
+      "date": "2002-05-03",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-05-06",
+      "title": "Package Shipment",
+      "description": "Multiple packages were picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Bella Mince",
+        "Martin Nowak"
+      ]
+    },
+    {
+      "date": "2002-05-07",
+      "title": "Package Shipment",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ellen Goldberg"
+      ]
+    },
+    {
+      "date": "2002-05-09",
+      "title": "Package Shipment",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 13, 2002, and is associated with Jeffrey E. Epstein's FedEx account.",
+    "Total charges on the invoice amount to $145.81.",
+    "Multiple packages were shipped and received by Epstein during early May 2002.",
+    "The invoice includes detailed shipping charges, discounts, and payment due dates.",
+    "Several individuals are mentioned as senders and recipients of packages associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:20:44.258Z"
+}

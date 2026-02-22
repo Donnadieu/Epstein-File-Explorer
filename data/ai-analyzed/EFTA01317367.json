@@ -1,0 +1,159 @@
+{
+  "fileName": "EFTA01317367.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-01-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total amount due of $212.53. The invoice includes multiple entries for shipments made by Epstein, along with tracking information and delivery dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, as it is addressed to him and details charges for services he utilized.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Lawrence Stroll",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lawrence Stroll is mentioned as the recipient of one of the packages sent by Epstein, indicating a business or personal connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gamy",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Gamy is noted as the recipient of another package sent by Epstein, suggesting a possible business relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brewan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brewan is listed as a recipient for one of the shipments, indicating a connection to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as the recipient of a package sent by Epstein, further indicating his network of associates.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Codfinilods",
+      "role": "Signer",
+      "category": "other",
+      "context": "J. Codfinilods is noted as the individual who signed for the delivery of one of the packages, indicating their involvement in the transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Oliveiri",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Oliveiri is mentioned as the signer for another delivery, indicating their role in the receipt of Epstein's shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Mackenzie",
+      "role": "Sender",
+      "category": "other",
+      "context": "J. Mackenzie is listed as another sender for a package associated with Epstein, suggesting collaboration or shared interests.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lawrence Stroll",
+      "relationshipType": "social",
+      "description": "Epstein sent a package to Lawrence Stroll, indicating a personal or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gamy",
+      "relationshipType": "social",
+      "description": "Epstein sent a package to Eric Gamy, suggesting a connection between them.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brewan",
+      "relationshipType": "social",
+      "description": "Epstein sent a package to Jeanne Brewan, indicating a possible personal or business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander",
+      "relationshipType": "social",
+      "description": "Epstein sent a package to Miles Alexander, suggesting a connection.",
+      "strength": 3
+    },
+    {
+      "person1": "J. Mackenzie",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "employer-employee",
+      "description": "J. Mackenzie is listed as a sender for a package associated with Epstein, indicating a working relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-01-23",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery, associated with Epstein.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-01-24",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered and signed for by J. Codfinilods.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "J. Codfinilods"
+      ]
+    },
+    {
+      "date": "2002-01-25",
+      "title": "Package Delivery",
+      "description": "Another package sent by Epstein was delivered and signed for by A. Oliveiri.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Oliveiri"
+      ]
+    },
+    {
+      "date": "2002-01-26",
+      "title": "Package Drop-off",
+      "description": "A package was dropped off by Epstein for shipment.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "7077 Avenue du Parc Suite 502, Montreal, PO H3N IX7, CA"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 28, 2002, and details shipping charges totaling $212.53.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice, with multiple shipments listed.",
+    "Lawrence Stroll, Eric Gamy, Jeanne Brewan, and Miles Alexander are mentioned as recipients of packages sent by Epstein.",
+    "The document includes specific dates for package pickups and deliveries, indicating active shipping during January 2002.",
+    "There are several references to discounts applied to the shipping charges, totaling $36.20 saved."
+  ],
+  "analyzedAt": "2026-02-22T08:16:37.329Z"
+}

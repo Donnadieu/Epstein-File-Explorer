@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA01333488.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": null,
+  "summary": "This document contains rental car transaction details for Janusz Banasiak, including vehicle information, rental dates, and charges. It also references communications regarding vehicle rentals related to an ongoing investigation.",
+  "persons": [
+    {
+      "name": "Janusz Banasiak",
+      "role": "Renter",
+      "category": "other",
+      "context": "Janusz Banasiak is mentioned as the individual renting a vehicle, specifically a Nissan Sentra, during the specified dates.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Karen Scandizzo",
+      "role": "Correspondent",
+      "category": "legal",
+      "context": "Karen Scandizzo is involved in email correspondence regarding the rental vehicle and requests for assistance related to the investigation.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Nancy Mion",
+      "role": "Correspondent",
+      "category": "legal",
+      "context": "Nancy Mion is included in the email correspondence discussing the rental vehicle and the investigation.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Joe Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Detective Joe Recarey is mentioned as part of the Palm Beach Police Department involved in the investigation.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Janusz Banasiak",
+      "person2": "Karen Scandizzo",
+      "relationshipType": "client-counsel",
+      "description": "Janusz Banasiak is seeking assistance from Karen Scandizzo regarding vehicle rentals in relation to an investigation.",
+      "strength": 3
+    },
+    {
+      "person1": "Karen Scandizzo",
+      "person2": "Nancy Mion",
+      "relationshipType": "colleagues",
+      "description": "Karen Scandizzo and Nancy Mion are communicating about the investigation and vehicle rentals.",
+      "strength": 3
+    },
+    {
+      "person1": "Janusz Banasiak",
+      "person2": "Joe Recarey",
+      "relationshipType": "investigator-subject",
+      "description": "Janusz Banasiak is the subject of an investigation that involves Detective Joe Recarey.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-12-12",
+      "title": "Vehicle Rental Start",
+      "description": "Janusz Banasiak rented a Nissan Sentra with Florida Tag W19GGS.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Janusz Banasiak"
+      ]
+    },
+    {
+      "date": "2006-01-01",
+      "title": "Vehicle Rental End",
+      "description": "The rental of the Nissan Sentra by Janusz Banasiak ended.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Janusz Banasiak"
+      ]
+    }
+  ],
+  "locations": [
+    "358 El Brillo Way, Palm Beach, Florida 33480"
+  ],
+  "keyFacts": [
+    "Janusz Banasiak rented a Nissan Sentra from 12/12/2005 to 01/01/2006.",
+    "The rental vehicle had a Florida tag number W19GGS.",
+    "Karen Scandizzo and Nancy Mion are involved in communications regarding the vehicle rental.",
+    "Detective Joe Recarey is part of the investigation related to Janusz Banasiak.",
+    "The document is subject to a protective order."
+  ],
+  "analyzedAt": "2026-02-22T12:15:16.383Z"
+}

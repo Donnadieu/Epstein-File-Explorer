@@ -1,0 +1,116 @@
+{
+  "fileName": "EFTA01312843.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-05-10",
+  "summary": "This document is an invoice from FedEx detailing shipping charges associated with Jeffrey E. Epstein. It includes multiple shipments, their costs, and discounts applied. The invoice highlights the total amount due and provides a breakdown of transportation charges and special handling fees.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient of one of the shipments sent via FedEx by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "MANTHIDA THARANGSEE",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Manthida Tharangsee is mentioned as a recipient of another shipment sent via FedEx by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Roduges",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Roduges is noted as the person who signed for the delivery of packages sent by Jeffrey E. Epstein.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Manthida Tharangsee",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Manthida Tharangsee via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Roduges",
+      "relationshipType": "associated with delivery",
+      "description": "A. Roduges signed for the delivery of packages sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-30",
+      "title": "Package Picked Up",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-01",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Roduges"
+      ]
+    },
+    {
+      "date": "2004-05-05",
+      "title": "Package Delivered",
+      "description": "Another package sent by Jeffrey E. Epstein was delivered to Jeanne Brennan.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-05-06",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "A. Roduges"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 10, 2004, and details shipping charges for services provided by FedEx.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services, with multiple shipments listed.",
+    "The total amount due on the invoice is $184.51.",
+    "Several shipments were sent to different recipients, including Jeanne Brennan and Manthida Tharangsee.",
+    "A. Roduges is noted as the signer for deliveries associated with Epstein's shipments."
+  ],
+  "analyzedAt": "2026-02-22T04:49:54.084Z"
+}

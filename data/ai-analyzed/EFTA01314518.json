@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA01314518.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-02-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes information about multiple shipments made by Epstein, including dates, charges, and recipients. The invoice highlights the total amount due and provides a breakdown of transportation charges and discounts.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, receiving and sending multiple shipments as detailed in the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Geoffrey Kirkini",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Geoffrey Kirkini is mentioned as the recipient of a package sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janusz Banasiak",
+      "role": "Sender",
+      "category": "other",
+      "context": "Janusz Banasiak is mentioned as the sender of a package to Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Sender",
+      "category": "other",
+      "context": "Larry Visoski is mentioned as the sender of a package to Jeffrey E. Epstein.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Geoffrey Kirkini",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Geoffrey Kirkini as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Janusz Banasiak",
+      "relationshipType": "sender-recipient",
+      "description": "Janusz Banasiak sent a package to Jeffrey E. Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Visoski sent a package to Jeffrey E. Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-02-28",
+      "title": "FedEx Invoice Issued",
+      "description": "FedEx issued an invoice to Jeffrey E. Epstein detailing shipping charges for various shipments.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-16",
+      "title": "Package Picked Up",
+      "description": "A package was picked up by FedEx from Jeffrey E. Epstein on this date.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-02-18",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered to Geoffrey Kirkini.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Geoffrey Kirkini"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "301 E 66th St Apt 11P, New York, NY 10021"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-392-56428, dated February 28, 2005.",
+    "Total charges on the invoice amount to USD 309.14.",
+    "The invoice includes details of multiple shipments made by Jeffrey E. Epstein, including dates and charges.",
+    "Several shipments were sent to and from Epstein, with specific recipients mentioned.",
+    "There are discounts applied to the total charges, amounting to USD 531.14 saved during the period."
+  ],
+  "analyzedAt": "2026-02-22T06:13:04.098Z"
+}

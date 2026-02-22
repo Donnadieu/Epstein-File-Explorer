@@ -1,0 +1,71 @@
+{
+  "fileName": "EFTA01300166.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2009-06-18",
+  "summary": "This document contains an email exchange between Jes Staley and Jeffrey Epstein discussing plans for the weekend. Staley mentions being in Boston and Epstein refers to someone named Peter staying at a location over the weekend, suggesting organizing a visit.",
+  "persons": [
+    {
+      "name": "Jes Staley",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jes Staley is coordinating weekend plans and mentions his location in Boston.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is discussing arrangements for someone named Peter and suggests organizing a visit.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peter",
+      "role": "Mentioned individual",
+      "category": "other",
+      "context": "Peter is mentioned as staying at a location over the weekend, but no further details are provided.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jamie",
+      "role": "Mentioned individual",
+      "category": "other",
+      "context": "Jamie is mentioned as a potential companion for the visit, but no further details are provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jes Staley",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "social",
+      "description": "Jes Staley and Jeffrey Epstein are communicating about weekend plans, indicating a social relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Peter",
+      "relationshipType": "social",
+      "description": "Jeffrey Epstein mentions Peter staying at a location, suggesting a social connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jamie",
+      "relationshipType": "social",
+      "description": "Jeffrey Epstein mentions Jamie as a potential companion for the visit with Peter, indicating a social connection.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Boston",
+    "71 st"
+  ],
+  "keyFacts": [
+    "Jes Staley is in Boston and is considering weekend plans.",
+    "Jeffrey Epstein mentions that Peter will be staying at a location over the weekend.",
+    "Epstein suggests organizing a visit with either Jes Staley or Jes and Jamie."
+  ],
+  "analyzedAt": "2026-02-21T23:28:04.419Z"
+}

@@ -1,0 +1,66 @@
+{
+  "fileName": "EFTA01319742.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-10-29",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for a shipment associated with NYSO LLC. It includes information about the sender, recipient, and the charges incurred for the shipment, along with a summary of discounts applied.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender of a FedEx shipment in this invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is identified as the recipient of the FedEx shipment, with an address in Paris.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Alberto Pinto via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-26",
+      "title": "FedEx Shipment Drop-off",
+      "description": "A FedEx shipment was dropped off by Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-28",
+      "title": "FedEx Shipment Delivery",
+      "description": "The FedEx shipment was delivered to Alberto Pinto.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Alberto Pinto"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "11 Rue Dabsukir, Paris, 75002, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 29, 2004, and details charges for a FedEx shipment.",
+    "Jeffrey Epstein is identified as the sender of the shipment.",
+    "Alberto Pinto is listed as the recipient of the shipment.",
+    "The total charges for the shipment amounted to $20.70.",
+    "The shipment was dropped off on October 26, 2004, and delivered on October 28, 2004."
+  ],
+  "analyzedAt": "2026-02-22T10:21:12.410Z"
+}

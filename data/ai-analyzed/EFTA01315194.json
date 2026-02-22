@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01315194.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2001-09-20",
+  "summary": "This document is an invoice from FedEx detailing transportation charges incurred by Jeffrey E. Epstein for various shipments. The invoice includes multiple entries for services rendered, discounts applied, and total charges due. It highlights Epstein's frequent use of FedEx services for shipping packages, with specific dates and amounts listed.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, listed as the sender for multiple shipments and responsible for the payment of the charges.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a recipient for some of the shipments, indicating her involvement in the transactions.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Eric Gant",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Gant is listed as a recipient for one of the shipments, showing his connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a sender for one of the packages, indicating her involvement in Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lyn Fontanilla",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lyn Fontanilla is mentioned as a recipient for several shipments, indicating her connection to Epstein's transactions.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein is the sender for packages addressed to Jeanne Brennan, indicating a transactional relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Gant",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein is the sender for a package addressed to Eric Gant, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "associate",
+      "description": "Ghislaine Maxwell is mentioned as a sender for a package associated with Jeffrey E. Epstein, indicating a connection between them.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lyn Fontanilla",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein is the sender for packages addressed to Lyn Fontanilla, indicating a transactional relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "22 Ave Foch Apt 200, Paris, 75118, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 20, 2001, and includes multiple entries for shipping services.",
+    "Total charges for the invoice amount to $866.68.",
+    "Jeffrey E. Epstein is the primary individual associated with the invoice, appearing multiple times as sender.",
+    "Ghislaine Maxwell is mentioned as a sender for one of the packages.",
+    "Lyn Fontanilla is mentioned as a recipient for several shipments, indicating her connection to Epstein."
+  ],
+  "analyzedAt": "2026-02-22T06:48:58.269Z"
+}

@@ -1,0 +1,93 @@
+{
+  "fileName": "EFTA01319930.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-07-11",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries related to Epstein's account, indicating multiple shipments and their respective costs.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his use of their services for multiple shipments.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in the shipment details, indicating her involvement in the shipping process related to Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as a recipient of one of the shipments, indicating a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is involved in the shipping process for Epstein, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "recipient-sender",
+      "description": "Larry Visoski is a recipient of a shipment sent by Epstein, indicating a direct connection in the context of shipping.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-07-01",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off by Epstein on July 1, 2005, for FedEx delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-07-05",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered on July 5, 2005.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Visoski"
+      ]
+    },
+    {
+      "date": "2005-07-06",
+      "title": "Shipment Delivered",
+      "description": "Another shipment sent by Epstein was delivered on July 6, 2005.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "301 E 66th St Apt 11P, New York, NY 10021-6217",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "49 Zorro Ranch Rd, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 11, 2005, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to $171.94.",
+    "Multiple shipments are detailed, with specific dates of drop-off and delivery.",
+    "Jeanne Brennan is mentioned as a sender in connection with Epstein's shipments.",
+    "Larry Visoski is noted as a recipient of one of the shipments sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T10:32:35.254Z"
+}

@@ -1,0 +1,102 @@
+{
+  "fileName": "EFTA01317106.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-06-06",
+  "summary": "This document contains an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey Epstein. It includes information about discounts, total charges, and shipment details, including sender and recipient information.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender for multiple shipments detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Bruce Iskowitz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Bruce Iskowitz is mentioned as the recipient of one of the shipments sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Janusz Banaszak",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Janusz Banaszak is mentioned as the sender for one of the shipments associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M Garcia",
+      "role": "Signer",
+      "category": "staff",
+      "context": "M Garcia is noted as the person who signed for one of the shipments.",
+      "mentionCount": 1
+    },
+    {
+      "name": "L Roman",
+      "role": "Signer",
+      "category": "staff",
+      "context": "L Roman is noted as the person who signed for another shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J Pazora",
+      "role": "Sender",
+      "category": "associate",
+      "context": "J Pazora is mentioned as the sender for one of the shipments associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Bruce Iskowitz",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a shipment to Bruce Iskowitz.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Janusz Banaszak",
+      "relationshipType": "sender-sender",
+      "description": "Both Jeffrey Epstein and Janusz Banaszak are listed as senders for different shipments.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "J Pazora",
+      "relationshipType": "sender-sender",
+      "description": "Both Jeffrey Epstein and J Pazora are involved in the shipment process.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-31",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Bruce Iskowitz",
+        "Janusz Banaszak",
+        "J Pazora"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10021",
+    "West Palm Beach, FL 33401",
+    "Carrollton, TX 75007"
+  ],
+  "keyFacts": [
+    "The invoice details transportation charges totaling USD 83.92 for shipments sent by Jeffrey Epstein.",
+    "Shipments were picked up on May 31, 2005, and included multiple packages.",
+    "Discounts were applied to the total charges, amounting to USD 9.27.",
+    "The invoice includes signatures from staff members M Garcia and L Roman.",
+    "There are references to additional shipment details and adjustments that can be requested."
+  ],
+  "analyzedAt": "2026-02-22T08:03:35.094Z"
+}

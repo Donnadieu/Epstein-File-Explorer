@@ -1,0 +1,118 @@
+{
+  "fileName": "EFTA01319354.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-10-01",
+  "summary": "This document is an invoice from FedEx detailing shipping charges associated with Jeffrey E. Epstein's account. It includes multiple entries for packages sent and received, along with associated costs and discounts. The invoice highlights Epstein's billing address and provides a summary of transportation charges.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account detailed in the invoice, with multiple entries for shipping charges related to his address.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Sender",
+      "category": "other",
+      "context": "Larry Morrison is mentioned as the sender of a package associated with Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "other",
+      "context": "John Alessi is mentioned as the sender of a package associated with Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Deidre Stratton",
+      "role": "Sender",
+      "category": "other",
+      "context": "Deidre Stratton is mentioned as the sender of a package associated with Epstein's account.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Morrison sent a package to Jeffrey E. Epstein's address.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "sender-recipient",
+      "description": "John Alessi sent a package to Jeffrey E. Epstein's address.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Deidre Stratton",
+      "relationshipType": "sender-recipient",
+      "description": "Deidre Stratton sent a package to Jeffrey E. Epstein's address.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-09-07",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Larry Morrison"
+      ]
+    },
+    {
+      "date": "2001-09-19",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Alessi"
+      ]
+    },
+    {
+      "date": "2001-09-20",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "John Alessi"
+      ]
+    },
+    {
+      "date": "2001-09-24",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Deidre Stratton"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "457 Madison Ave, Moonachie, NJ 07074"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 1, 2001, and details shipping charges for Jeffrey E. Epstein's FedEx account.",
+    "Total charges for the invoice amount to $85.88, with discounts applied.",
+    "Multiple packages were sent and received at Epstein's address during September 2001.",
+    "The document includes references to various individuals who sent packages to Epstein.",
+    "There are discrepancies in the address formatting and some text is garbled, indicating potential redactions or errors."
+  ],
+  "analyzedAt": "2026-02-22T10:03:45.099Z"
+}

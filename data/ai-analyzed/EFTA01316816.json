@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01316816.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-03-22",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey E. Epstein and Jeanne Breman Financial Trust Company. It includes specific shipment details, charges, and discounts applied to various packages sent between March 12 and March 19, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is listed as the sender for multiple shipments detailed in the invoice, indicating his involvement in the transactions.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Breman",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Breman is associated with the Jeanne Breman Financial Trust Company, which is mentioned as a sender in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Bill Karr",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Bill Karr is mentioned as a recipient for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Breman",
+      "relationshipType": "business",
+      "description": "Jeffrey E. Epstein is associated with the Jeanne Breman Financial Trust Company, indicating a business relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Bill Karr",
+      "relationshipType": "recipient-sender",
+      "description": "Bill Karr is a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-03-12",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date, associated with Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-03-15",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Jeffrey E. Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-03-19",
+      "title": "Final Shipment Delivery",
+      "description": "The last of the shipments listed in the invoice was delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter B-3, St. Thomas, 00602, VI",
+    "Sib Havensight Way, St. Thomas, 03802, VI"
+  ],
+  "keyFacts": [
+    "The invoice details a total charge of USD 327.54 for various shipments.",
+    "Shipments were sent from St. Thomas, indicating Epstein's connection to the Virgin Islands.",
+    "Multiple shipments were sent between March 12 and March 19, 2004, with specific details on transportation charges and discounts."
+  ],
+  "analyzedAt": "2026-02-22T07:48:38.069Z"
+}

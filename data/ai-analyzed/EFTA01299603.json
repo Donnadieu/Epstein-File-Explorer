@@ -1,0 +1,83 @@
+{
+  "fileName": "EFTA01299603.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2015-07-09",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions related to various accounts. It lists several individuals and entities involved in financial transactions, including amounts and account details, indicating potential financial activities linked to Jeffrey Epstein and others.",
+  "persons": [
+    {
+      "name": "Matthew Kaplan",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Matthew Kaplan is mentioned as a joint account holder with Karen Kaplan, indicating a financial relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Karen Kaplan",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Karen Kaplan is mentioned as a joint account holder with Matthew Kaplan, indicating a financial relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is mentioned in connection with various financial transactions, indicating his involvement in significant monetary activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Stephen A. Ferriss",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Stephen A. Ferriss is mentioned as an account holder involved in financial transactions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Ritva M. Ferriss",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Ritva M. Ferriss is mentioned as an account holder associated with Stephen A. Ferriss.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Meta Smith",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Meta Smith is mentioned as an account holder involved in financial transactions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Matthew Kaplan",
+      "person2": "Karen Kaplan",
+      "relationshipType": "joint account holders",
+      "description": "Matthew and Karen Kaplan are listed as joint account holders, indicating a shared financial relationship.",
+      "strength": 5
+    },
+    {
+      "person1": "Stephen A. Ferriss",
+      "person2": "Ritva M. Ferriss",
+      "relationshipType": "joint account holders",
+      "description": "Stephen A. Ferriss and Ritva M. Ferriss are mentioned as joint account holders, indicating a shared financial relationship.",
+      "strength": 5
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Lake Forest, IL",
+    "Beverly Hills, CA",
+    "Palm Beach, FL",
+    "New York, NY",
+    "Key Biscayne, FL"
+  ],
+  "keyFacts": [
+    "The document details various financial transactions involving significant amounts of money.",
+    "Jeffrey Epstein is directly mentioned in connection with financial activities.",
+    "Matthew and Karen Kaplan are identified as joint account holders.",
+    "Stephen A. Ferriss and Ritva M. Ferriss are also identified as joint account holders.",
+    "Several financial institutions are referenced, including Deutsche Bank and Citibank."
+  ],
+  "analyzedAt": "2026-02-21T22:58:29.267Z"
+}

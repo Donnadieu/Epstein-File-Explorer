@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01317676.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-07-15",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided on various dates in July 2002. It includes information about transportation charges, discounts, and payment due dates, indicating Epstein's use of FedEx services for shipping packages.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Eric Dany Epstein",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Dany Epstein is mentioned as a recipient for one of the packages sent via FedEx, indicating a familial or close relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John Alessi is listed as a sender for one of the packages sent by Epstein, suggesting a business or personal connection.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Charles Miller",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Charles Miller is mentioned as a recipient for a package sent by Epstein, indicating a possible business relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adam Arfisan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Adam Arfisan is listed as a recipient for one of the packages sent by Epstein, suggesting a connection to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Dany Epstein",
+      "relationshipType": "family",
+      "description": "Eric Dany Epstein is listed as a recipient for a package sent by Jeffrey E. Epstein, indicating a familial relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "business",
+      "description": "John Alessi is mentioned as a sender for a package sent by Epstein, indicating a business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Charles Miller",
+      "relationshipType": "business",
+      "description": "Charles Miller is listed as a recipient for a package sent by Epstein, suggesting a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Adam Arfisan",
+      "relationshipType": "business",
+      "description": "Adam Arfisan is mentioned as a recipient for a package sent by Epstein, indicating a possible business connection.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843, US",
+    "P.O. Box 371461, Pittsburgh, PA 15250-7461, US",
+    "2601 Cerrillos Rd, Santa Fe, NM 87505, US",
+    "2 Hamilton Ave Ste 207, New Rochelle, NY 10801, US",
+    "49 Zorro Ranch Rd, Stanley, NM 87055, US"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 15, 2002, and details various shipping charges incurred by Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD $169.44 after discounts.",
+    "Multiple recipients are listed for packages sent by Epstein, indicating a network of associates.",
+    "The document includes specific details about transportation charges, discounts, and payment due dates.",
+    "There are references to various FedEx services and shipping details, including tracking numbers and delivery dates."
+  ],
+  "analyzedAt": "2026-02-22T08:33:20.854Z"
+}

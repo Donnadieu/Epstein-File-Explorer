@@ -1,0 +1,146 @@
+{
+  "fileName": "EFTA01315715.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-05-31",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various charges, discounts, and shipment summaries for multiple packages sent by Epstein. The invoice highlights the total amount due and provides a breakdown of transportation charges and discounts.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his engagement in shipping activities.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Jeanne Brennan is mentioned as a sender in the shipment details, indicating her involvement in sending packages on behalf of Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Marie Experton",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Marie Experton is listed as a sender for one of the shipments, suggesting her role in Epstein's shipping activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as a recipient of a shipment sent by Epstein, indicating a connection in the shipping process.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosemary Pitcher is noted as a recipient for a shipment, further illustrating Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Financial Trust Co",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Dale Financial Trust Co is mentioned as a sender for one of the shipments, indicating a financial connection to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "employer-employee",
+      "description": "Jeanne Brennan is involved in sending packages on behalf of Epstein, suggesting an employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marie Experton",
+      "relationshipType": "employer-employee",
+      "description": "Marie Experton is noted as a sender for shipments, indicating a working relationship with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "business",
+      "description": "Alberto Pinto is a recipient of a shipment sent by Epstein, indicating a business connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "business",
+      "description": "Rosemary Pitcher is a recipient of a shipment, suggesting a business relationship with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Financial Trust Co",
+      "relationshipType": "business",
+      "description": "Dale Financial Trust Co is involved in sending shipments, indicating a financial connection to Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-20",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-05-23",
+      "title": "Shipment Delivery",
+      "description": "Shipments sent by Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2005-05-26",
+      "title": "Shipment Delivery",
+      "description": "Additional shipments sent by Epstein were delivered on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marie Experton"
+      ]
+    },
+    {
+      "date": "2005-05-31",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "11 Rue Chaboukir, Paris, 75002, France",
+    "Little St. James, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 31, 2005, and totals USD 813.25.",
+    "Jeffrey E. Epstein is the primary account holder for the shipping services.",
+    "Multiple shipments were sent to various recipients, including Jeanne Brennan and Marie Experton.",
+    "The document includes detailed charges and discounts for shipping services provided by FedEx.",
+    "There are references to several locations associated with Epstein, including his New York address and locations in St. Thomas."
+  ],
+  "analyzedAt": "2026-02-22T07:15:53.959Z"
+}

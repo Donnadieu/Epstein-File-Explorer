@@ -1,0 +1,92 @@
+{
+  "fileName": "EFTA01299437.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2014-03-12",
+  "summary": "This document contains a report of incoming and outgoing wires, checks, and ACH transactions dated March 12, 2014. It lists various financial transactions involving multiple individuals and entities, including amounts and account details, indicating financial activities related to the Epstein case.",
+  "persons": [
+    {
+      "name": "Andrew Jacobson",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Andrew Jacobson is mentioned as a beneficiary in transactions involving JP Morgan Chase Bank.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Marina Jacobson",
+      "role": "Beneficiary",
+      "category": "other",
+      "context": "Marina Jacobson is mentioned alongside Andrew Jacobson as a beneficiary in transactions.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Charles Randolph Wooten",
+      "role": "Trustee",
+      "category": "other",
+      "context": "Charles Randolph Wooten is identified as a trustee of a revocable trust mentioned in the document.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Donald Summer",
+      "role": "Individual",
+      "category": "other",
+      "context": "Donald Summer is mentioned in relation to a financial transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Etan Y Pokrenze",
+      "role": "Individual",
+      "category": "other",
+      "context": "Etan Y Pokrenze is mentioned in connection with a check transaction.",
+      "mentionCount": 1
+    },
+    {
+      "name": "George J Zahringer III",
+      "role": "Individual",
+      "category": "other",
+      "context": "George J Zahringer III is mentioned in relation to a transaction with First Republic Bank.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Andrew Jacobson",
+      "person2": "Marina Jacobson",
+      "relationshipType": "family",
+      "description": "Andrew and Marina Jacobson are mentioned together as beneficiaries in financial transactions.",
+      "strength": 5
+    },
+    {
+      "person1": "Charles Randolph Wooten",
+      "person2": "Andrew Jacobson",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Charles Randolph Wooten is the trustee of a revocable trust that includes Andrew Jacobson as a beneficiary.",
+      "strength": 4
+    },
+    {
+      "person1": "Charles Randolph Wooten",
+      "person2": "Marina Jacobson",
+      "relationshipType": "trustee-beneficiary",
+      "description": "Charles Randolph Wooten is the trustee of a revocable trust that includes Marina Jacobson as a beneficiary.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "4 MetroTech Center, 8th Floor, Brooklyn, N.Y. 11245",
+    "6100 Red Hook Quarter B3, St Thomas 00802, Virgin Islands (U.S.)",
+    "2554 Lincoln Blvd., 1016, Venice CA 90291-5043",
+    "399 Park Avenue, New York, New York 10043",
+    "500 Stanton Christiana Rd, Newark DE 19713-2105",
+    "1 New York Plaza, 7th Floor",
+    "San Juan PR"
+  ],
+  "keyFacts": [
+    "The document details financial transactions involving multiple individuals and entities.",
+    "Andrew and Marina Jacobson are listed as beneficiaries in transactions with JP Morgan Chase Bank.",
+    "Charles Randolph Wooten is identified as a trustee of a revocable trust.",
+    "Donald Summer and Etan Y Pokrenze are mentioned in connection with specific financial transactions.",
+    "George J Zahringer III is associated with a transaction at First Republic Bank."
+  ],
+  "analyzedAt": "2026-02-21T22:43:56.978Z"
+}

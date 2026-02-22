@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA01315612.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-01-03",
+  "summary": "This document contains a summary of FedEx invoices related to shipments made by Jeffrey E. Epstein and his associated entities. It details transportation charges, discounts, and shipment specifics for various packages sent around late December 2004. The document highlights the financial transactions and logistics involved in Epstein's shipping activities.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is mentioned as the sender of multiple shipments, indicating his involvement in the logistics and financial transactions detailed in the invoices.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jamie Financial Trust Company",
+      "role": "Recipient",
+      "category": "other",
+      "context": "This entity is listed as a recipient for some of the shipments, indicating a financial connection to Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Miles Alexander Little",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Miles Alexander Little is mentioned as a recipient for one of the shipments, suggesting a connection to Epstein's shipping activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Shipper",
+      "category": "other",
+      "context": "Rosemary Pitcher is listed as the shipper for one of the packages, indicating her involvement in the logistics.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Delivery Person",
+      "category": "staff",
+      "context": "A. Rodriguez is mentioned as the person who signed for the delivery of several packages, indicating their role in the shipping process.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jamie Financial Trust Company",
+      "relationshipType": "financial",
+      "description": "Epstein is associated with the Jamie Financial Trust Company as a sender of shipments, indicating a financial relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander Little",
+      "relationshipType": "recipient-sender",
+      "description": "Epstein sent a shipment to Miles Alexander Little, indicating a direct shipping relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rosemary Pitcher",
+      "relationshipType": "shipper-sender",
+      "description": "Rosemary Pitcher is listed as the shipper for one of Epstein's packages, indicating a logistical connection.",
+      "strength": 3
+    },
+    {
+      "person1": "A. Rodriguez",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "employee-employer",
+      "description": "A. Rodriguez signed for deliveries related to Epstein's shipments, indicating a role in the logistics of Epstein's operations.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-12-22",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off at FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-12-27",
+      "title": "Pickup of Shipments",
+      "description": "Multiple shipments were picked up by FedEx for delivery.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-12-29",
+      "title": "Delivery of Shipments",
+      "description": "Shipments sent by Epstein were delivered to their respective recipients.",
+      "category": "shipping",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Miles Alexander Little"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY 10022",
+    "St. Thomas, VI 00802",
+    "Pittsburgh, PA 15250-7461"
+  ],
+  "keyFacts": [
+    "The document contains multiple invoices dated January 3, 2005, detailing shipments made by Jeffrey E. Epstein.",
+    "Epstein's shipments included various packages sent to different recipients, indicating a network of logistics.",
+    "A total of 5 shipments were summarized in the document, with total charges amounting to $262.13.",
+    "The document highlights the involvement of FedEx in Epstein's shipping activities, including specific charges and discounts applied.",
+    "Several individuals and entities are mentioned in connection with Epstein's shipments, indicating potential business relationships."
+  ],
+  "analyzedAt": "2026-02-22T07:10:03.924Z"
+}

@@ -1,0 +1,139 @@
+{
+  "fileName": "EFTA01319738.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-10-11",
+  "summary": "This document contains invoices from FedEx detailing shipping charges for various shipments associated with NYSO LLC. It includes information about the sender, recipient, and charges incurred for services rendered. The invoices highlight multiple transactions and adjustments related to shipping services.",
+  "persons": [
+    {
+      "name": "Lauren Kwanter",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwanter is identified as the sender for multiple shipments listed in the FedEx invoices.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Darren Indyke is mentioned as the sender for one of the shipments detailed in the invoices.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Christophe Clarie",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Christophe Clarie is identified as the recipient of a shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Kurt Gearhart",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Kurt Gearhart is mentioned as the recipient for another shipment detailed in the invoices.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leslie Werner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Leslie Werner is identified as the recipient for a shipment sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Kwanter",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Kwanter is associated with NYSO LLC as the sender of shipments.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "NYSO LLC",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with NYSO LLC as the sender of a shipment.",
+      "strength": 5
+    },
+    {
+      "person1": "Christophe Clarie",
+      "person2": "NYSO LLC",
+      "relationshipType": "client-service",
+      "description": "Christophe Clarie is a recipient of a shipment sent by NYSO LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Kurt Gearhart",
+      "person2": "NYSO LLC",
+      "relationshipType": "client-service",
+      "description": "Kurt Gearhart is a recipient of a shipment sent by NYSO LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Leslie Werner",
+      "person2": "NYSO LLC",
+      "relationshipType": "client-service",
+      "description": "Leslie Werner is a recipient of a shipment sent by NYSO LLC.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-28",
+      "title": "Shipment Pickup",
+      "description": "Multiple shipments were picked up by FedEx on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwanter",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2004-09-30",
+      "title": "Delivery of Shipment",
+      "description": "A shipment was delivered to Christophe Clarie on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Christophe Clarie"
+      ]
+    },
+    {
+      "date": "2004-10-04",
+      "title": "Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwanter",
+        "Darren Indyke"
+      ]
+    },
+    {
+      "date": "2004-10-05",
+      "title": "Delivery of Shipment",
+      "description": "A shipment was delivered to Leslie Werner on this date.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Leslie Werner"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "West Palm Beach, FL 33406",
+    "105 Dearborn St, Bank One Plaza, Chicago, IL 60603",
+    "60 Lincoln Center Pl2, New York City, NY 10023"
+  ],
+  "keyFacts": [
+    "The invoices detail shipping charges totaling $29.70 for services rendered by FedEx.",
+    "Multiple shipments were sent from NYSO LLC, with various recipients including Christophe Clarie, Kurt Gearhart, and Leslie Werner.",
+    "The document includes specific dates for shipment pickups and deliveries, indicating a timeline of shipping activities.",
+    "Darren Indyke and Lauren Kwanter are both identified as senders for different shipments associated with NYSO LLC.",
+    "There are references to adjustments and reasons for potential invoice discrepancies, indicating ongoing financial management."
+  ],
+  "analyzedAt": "2026-02-22T10:21:02.728Z"
+}

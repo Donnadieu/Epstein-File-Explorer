@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01313516.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes multiple entries for shipments made by Epstein, with a total amount due of $393.01. It highlights various transportation charges, discounts, and service details for packages sent from Epstein's address in New York.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he used FedEx services for shipping. His address is listed multiple times throughout the document.",
+      "mentionCount": 15
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "associate",
+      "context": "John Alessi is mentioned as a sender for some of the packages associated with Epstein's account.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Lauren Wintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Wintner is identified as a sender for a package sent from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Visoski is mentioned as a sender for a package associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Eric Dany",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Dany is noted as a recipient for a package sent from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peg Uglan",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peg Uglan is mentioned as a recipient for one of the packages sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Alessi",
+      "relationshipType": "employer-employee",
+      "description": "John Alessi is identified as a sender for packages associated with Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Wintner",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Wintner is noted as a sender for a package sent from Epstein's address, suggesting a connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "employer-employee",
+      "description": "Larry Visoski is mentioned as a sender for a package associated with Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Dany",
+      "relationshipType": "employer-employee",
+      "description": "Eric Dany is noted as a recipient for a package sent from Epstein's address, indicating a connection.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peg Uglan",
+      "relationshipType": "employer-employee",
+      "description": "Peg Uglan is mentioned as a recipient for one of the packages sent by Epstein, indicating a connection.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "358 El Brillo Way, Palm Beach, FL 33480",
+    "116 East 65th St, New York, NY 10021",
+    "49 Zorro Ranch Road, Stanley, NM 87065",
+    "500 Ross St, Pittsburgh, PA 15262"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 10, 2002, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $393.01.",
+    "The invoice details multiple shipments made by Epstein, including various service types and charges.",
+    "Several individuals are mentioned as senders and recipients of packages associated with Epstein.",
+    "The document includes references to FedEx services and shipping details."
+  ],
+  "analyzedAt": "2026-02-22T05:22:47.107Z"
+}

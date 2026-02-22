@@ -1,0 +1,166 @@
+{
+  "fileName": "EFTA01314100.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2003-05-05",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific charges, discounts, and delivery details. The invoice reflects Epstein's shipping activities during April and May 2003.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Lauren Minder",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Lauren Minder is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Sender",
+      "category": "other",
+      "context": "Larry Visoski is mentioned as a sender in one of the shipments associated with Jeffrey E. Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Francis Ward",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Francis Ward is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Enoyke",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Darren Enoyke is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "B. Rawer",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "B. Rawer is mentioned as the person who signed for the delivery of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Zeke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Zeke is mentioned in the context of a shipment sent to a business address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Langschultz",
+      "role": "Recipient",
+      "category": "other",
+      "context": "John Langschultz is mentioned as a recipient of a shipment sent by Jeffrey E. Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Minder",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Lauren Minder.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Visoski",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Visoski is mentioned as a sender in a shipment associated with Jeffrey E. Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Francis Ward",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Francis Ward.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren Enoyke",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to Darren Enoyke.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "John Langschultz",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a shipment to John Langschultz.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-04-24",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-04-25",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-04-28",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-04-29",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Jeffrey E. Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-05-01",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Ave, FL 4, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 5, 2003, and details shipping charges for services provided to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 282.17.",
+    "Multiple shipments are listed, with various recipients and delivery details.",
+    "The invoice includes discounts applied to the shipping charges.",
+    "Several individuals are mentioned as recipients of shipments sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:52:40.686Z"
+}

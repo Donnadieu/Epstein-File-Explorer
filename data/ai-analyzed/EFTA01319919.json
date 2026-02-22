@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01319919.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-06-03",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on specific dates in May 2005. It includes information about shipments involving Jeffrey Epstein and other individuals, along with associated costs and adjustments.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the sender for a FedEx shipment, indicating his involvement in the logistics of the package.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alberto Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alberto Pinto is mentioned as the recipient of a shipment sent by Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kvanter",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kvanter is listed as the sender for another FedEx shipment, indicating her involvement in the logistics of that package.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Nina Lows Sherioans",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Nina Lows Sherioans is mentioned as the recipient of a shipment sent by Lauren Kvanter.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alberto Pinto",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey Epstein sent a package to Alberto Pinto as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Lauren Kvanter",
+      "person2": "Nina Lows Sherioans",
+      "relationshipType": "sender-recipient",
+      "description": "Lauren Kvanter sent a package to Nina Lows Sherioans as indicated in the shipment details.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-25",
+      "title": "FedEx Pickup",
+      "description": "A package was picked up by FedEx from Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-05-26",
+      "title": "FedEx Pickup",
+      "description": "Another package was picked up by FedEx from Jeffrey Epstein.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2005-05-31",
+      "title": "FedEx Delivery",
+      "description": "A package sent by Lauren Kvanter was delivered to Nina Lows Sherioans.",
+      "category": "travel",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kvanter",
+        "Nina Lows Sherioans"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "11 Rue Da Boukir, Paris 75002, France",
+    "Alfred Place, London, GB"
+  ],
+  "keyFacts": [
+    "The invoice details transportation charges totaling USD 107.32 for services rendered by FedEx.",
+    "Jeffrey Epstein is identified as a sender for shipments, indicating his involvement in logistics.",
+    "Alberto Pinto and Nina Lows Sherioans are identified as recipients of shipments sent by Epstein and Kvanter, respectively.",
+    "The invoice includes specific dates of pickup and delivery for the shipments.",
+    "There are adjustments and reasons for potential invoice changes mentioned, but no specific adjustments were requested in this document."
+  ],
+  "analyzedAt": "2026-02-22T10:31:45.129Z"
+}

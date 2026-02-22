@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01312958.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-06-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and special handling fees, and provides a summary of shipments made. The invoice indicates a total amount due and includes payment instructions.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the recipient of the invoice for shipping services provided by FedEx, indicating his involvement in shipping activities.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gany is mentioned as the sender in one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dave Rogers",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rogers is mentioned as the sender in another shipment listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jenne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jenne Brennan is mentioned as the sender in a shipment associated with the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "sender-recipient",
+      "description": "Eric Gany is identified as the sender of a package to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Dave Rogers",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rogers is identified as the sender of a package to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Jenne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jenne Brennan is identified as the sender of a package to Jeffrey Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06-18",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery to Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Eric Gany"
+      ]
+    },
+    {
+      "date": "2004-06-21",
+      "title": "Package Delivery",
+      "description": "A package sent to Jeffrey Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Dave Rogers"
+      ]
+    },
+    {
+      "date": "2004-06-22",
+      "title": "Package Delivery",
+      "description": "Another package sent to Jeffrey Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Jenne Brennan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 28, 2004, and is addressed to Jeffrey Epstein.",
+    "Total charges on the invoice amount to $92.44.",
+    "The invoice includes details of multiple shipments sent to Jeffrey Epstein.",
+    "The invoice indicates a payment due date of July 13, 2004.",
+    "Several individuals are identified as senders of packages to Jeffrey Epstein."
+  ],
+  "analyzedAt": "2026-02-22T04:55:35.169Z"
+}

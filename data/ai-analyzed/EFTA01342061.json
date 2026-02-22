@@ -1,0 +1,56 @@
+{
+  "fileName": "EFTA01342061.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": "2018-03-19",
+  "summary": "This document is an emergency contact form for an employee named Leida. It includes personal information such as marital status, emergency contacts, and health-related details.",
+  "persons": [
+    {
+      "name": "Leida",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Leida is listed as an employee with a housekeeping position, but further details are not provided.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Porliria Ortiz",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Porliria Ortiz is listed as an emergency contact for Leida, indicating a personal relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dransisco Hernandez",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Dransisco Hernandez is listed as another emergency contact for Leida, indicating a familial relationship.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Leida",
+      "person2": "Porliria Ortiz",
+      "relationshipType": "family",
+      "description": "Porliria Ortiz is listed as an emergency contact and is noted to have a marital relationship with Leida.",
+      "strength": 4
+    },
+    {
+      "person1": "Leida",
+      "person2": "Dransisco Hernandez",
+      "relationshipType": "family",
+      "description": "Dransisco Hernandez is listed as an emergency contact and is noted to be the son of Leida.",
+      "strength": 5
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document is an emergency contact form dated March 19, 2018.",
+    "Leida is employed in a housekeeping position.",
+    "Leida is married and has a son named Dransisco Hernandez.",
+    "Porliria Ortiz is listed as an emergency contact and is married to Leida.",
+    "Health information such as blood type and current medication is noted but not specified."
+  ],
+  "analyzedAt": "2026-02-22T14:08:21.850Z"
+}

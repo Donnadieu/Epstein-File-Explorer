@@ -1,0 +1,115 @@
+{
+  "fileName": "EFTA01312954.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-07-06",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for shipments associated with Jeffrey E. Epstein and various recipients. It includes information about shipment dates, charges, and discounts applied. The invoice highlights multiple shipments and their respective costs, indicating Epstein's involvement in shipping activities during this period.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Sender",
+      "category": "key figure",
+      "context": "Epstein is identified as the sender of multiple shipments detailed in the invoice, indicating his involvement in shipping activities.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Brennan is listed as a recipient of one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Francois Goffinet",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Goffinet is mentioned as a recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dale Financial Trust Company",
+      "role": "Recipient",
+      "category": "other",
+      "context": "This entity is listed as a recipient of a shipment, indicating a financial connection to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Jeanne Brennan, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Francois Goffinet",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Francois Goffinet, indicating a transactional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dale Financial Trust Company",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a shipment to Dale Financial Trust Company, indicating a transactional relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-06-28",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx from Epstein on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-06-29",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent by Epstein was delivered on this date.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-06-30",
+      "title": "Customs Entry",
+      "description": "Customs entry for a shipment sent by Epstein was recorded on this date.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Francois Goffinet"
+      ]
+    },
+    {
+      "date": "2004-06-25",
+      "title": "Shipment Drop-off",
+      "description": "A shipment was dropped off by Epstein on this date.",
+      "category": "transportation",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "6100 Red Hook Quarter Suite B3 St Thomas 00802 VI"
+  ],
+  "keyFacts": [
+    "The invoice details multiple shipments sent by Jeffrey E. Epstein with a total charge of $123.29.",
+    "The invoice includes discounts totaling $53.60 for the period.",
+    "Shipments were sent to various recipients including Jeanne Brennan and Francois Goffinet.",
+    "The invoice indicates specific pickup and delivery dates for the shipments.",
+    "There are references to a financial trust company associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T04:55:20.638Z"
+}

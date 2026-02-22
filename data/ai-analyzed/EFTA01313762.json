@@ -1,0 +1,158 @@
+{
+  "fileName": "EFTA01313762.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-10-22",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple pages of shipment details, charges, and adjustments related to Epstein's account, indicating various packages sent and received during October 2002.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the FedEx account, as indicated by the billing and shipping addresses on the invoice.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Paula Epstein",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paula Epstein is mentioned as a sender for one of the packages shipped from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tom Barrack",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Tom Barrack is listed as a recipient for one of the packages sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Wrangham",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Eric Wrangham is mentioned as a recipient for a package sent from Epstein's address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Pierre",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "J. Pierre is noted as the person who signed for the delivery of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "W. Doulins",
+      "role": "Delivery Signatory",
+      "category": "other",
+      "context": "W. Doulins is mentioned as the signatory for the delivery of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "J. Alessi",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "J. Alessi is listed as a recipient for one of the packages sent from Epstein's address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Paula Epstein",
+      "relationshipType": "family",
+      "description": "Paula Epstein is associated with Jeffrey E. Epstein as a sender of a package from his address.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tom Barrack",
+      "relationshipType": "business",
+      "description": "Tom Barrack is noted as a recipient of a package sent by Epstein, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eric Wrangham",
+      "relationshipType": "business",
+      "description": "Eric Wrangham is mentioned as a recipient for a package sent from Epstein's address, suggesting a business connection.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Pierre",
+      "relationshipType": "service",
+      "description": "J. Pierre signed for a package delivered to Epstein, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "W. Doulins",
+      "relationshipType": "service",
+      "description": "W. Doulins signed for a package delivered to Epstein, indicating a service relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "J. Alessi",
+      "relationshipType": "business",
+      "description": "J. Alessi is noted as a recipient for a package sent from Epstein's address, suggesting a business connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2002-10-10",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-10-11",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to a recipient in New Albany, OH.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Tom Barrack"
+      ]
+    },
+    {
+      "date": "2002-10-16",
+      "title": "Package Pickup",
+      "description": "Another package was picked up from Epstein's address for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2002-10-17",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered to a recipient in New York, NY.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6525 West Campus Oval, New Albany, OH 43054",
+    "Zorro Ranch Road, Stanley, NM 67066"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 22, 2002, and is associated with Jeffrey E. Epstein's FedEx account.",
+    "The total amount due on the invoice is $268.37.",
+    "Multiple packages were shipped from Epstein's address during October 2002, with various recipients.",
+    "The document includes details of shipping charges, discounts, and delivery signatories.",
+    "Several individuals are mentioned as recipients or signatories for packages sent from Epstein's address."
+  ],
+  "analyzedAt": "2026-02-22T05:35:54.988Z"
+}

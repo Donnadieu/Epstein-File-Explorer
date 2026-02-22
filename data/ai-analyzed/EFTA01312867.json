@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA01312867.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-05-28",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the shipment, billing, and payment due dates, indicating a financial transaction related to the Epstein case.",
+  "persons": [
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Darren Indyke is listed as the sender associated with the shipment referenced in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Welder",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "John Welder is mentioned as the recipient of the shipment detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Yorys Skier",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Yorys Skier is also mentioned as a recipient associated with the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Seymour Pease",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Seymour Pease is mentioned as a recipient in the context of the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Darren Indyke",
+      "person2": "John Welder",
+      "relationshipType": "business",
+      "description": "Darren Indyke is the sender of the shipment that John Welder is receiving.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Yorys Skier",
+      "relationshipType": "business",
+      "description": "Darren Indyke is the sender of the shipment that Yorys Skier is receiving.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Seymour Pease",
+      "relationshipType": "business",
+      "description": "Darren Indyke is the sender of the shipment that Seymour Pease is receiving.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-05-25",
+      "title": "Shipment Pickup",
+      "description": "The shipment was picked up by FedEx on May 25, 2004.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Darren Indyke",
+        "John Welder",
+        "Yorys Skier",
+        "Seymour Pease"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 28, 2004, and details charges for FedEx services.",
+    "The total amount due on the invoice is USD 7.36.",
+    "The shipment was picked up on May 25, 2004.",
+    "Darren Indyke is identified as the sender of the shipment.",
+    "Multiple recipients are listed, including John Welder, Yorys Skier, and Seymour Pease."
+  ],
+  "analyzedAt": "2026-02-22T04:51:46.113Z"
+}

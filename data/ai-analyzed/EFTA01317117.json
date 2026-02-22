@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01317117.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2005-06-17",
+  "summary": "This document is an invoice from FedEx for shipping services provided to NYSG LLC. It details various charges for shipments made in June 2005, including transportation and fuel surcharges, and includes specific shipment details such as pickup dates and delivery addresses.",
+  "persons": [
+    {
+      "name": "Lauren Bill Hammond",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Bill Hammond is mentioned as the sender for multiple FedEx shipments listed in the invoice.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Wendy Swf",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Wendy Swf is mentioned as the recipient for one of the FedEx shipments detailed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paul Burkhardt is mentioned as the sender for another FedEx shipment listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lauren Bill Hammond",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Lauren Bill Hammond is associated with NYSG LLC as a sender for shipments.",
+      "strength": 4
+    },
+    {
+      "person1": "Wendy Swf",
+      "person2": "NYSG LLC",
+      "relationshipType": "client-service",
+      "description": "Wendy Swf is a recipient of a shipment sent by NYSG LLC.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Burkhardt",
+      "person2": "NYSG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Paul Burkhardt is associated with NYSG LLC as a sender for shipments.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-06-13",
+      "title": "FedEx Shipment Pickup",
+      "description": "A FedEx shipment was picked up by NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Bill Hammond"
+      ]
+    },
+    {
+      "date": "2005-06-14",
+      "title": "FedEx Shipment Pickup",
+      "description": "Multiple FedEx shipments were picked up by NYSG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Bill Hammond",
+        "Wendy Swf",
+        "Paul Burkhardt"
+      ]
+    },
+    {
+      "date": "2005-06-17",
+      "title": "Invoice Issuance",
+      "description": "FedEx issued an invoice for services rendered to NYSG LLC.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "NYSG LLC"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "16 Lawrence Ave, Highland Park, NJ 06904"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 17, 2005, and details charges totaling $25.69.",
+    "Multiple shipments were picked up by NYSG LLC on June 13 and June 14, 2005.",
+    "The invoice includes specific details about transportation and fuel surcharges applied to the shipments.",
+    "Lauren Bill Hammond and Paul Burkhardt are identified as senders for the shipments.",
+    "Wendy Swf is mentioned as a recipient for one of the shipments."
+  ],
+  "analyzedAt": "2026-02-22T08:04:22.415Z"
+}

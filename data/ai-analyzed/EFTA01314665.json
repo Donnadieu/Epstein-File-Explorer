@@ -1,0 +1,136 @@
+{
+  "fileName": "EFTA01314665.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-09-19",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for shipments made by Epstein, with specific charges, discounts, and delivery details. The total amount due is $834.48, with a payment deadline of October 4, 2005.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, receiving shipping services from FedEx.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ted Waitt",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ted Waitt is mentioned as a recipient for some of the packages shipped by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Janusz Banasia",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Janusz Banasia is mentioned as a recipient for packages sent by Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "G. Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "G. Maxwell is mentioned in relation to shipments sent from Epstein's address.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kate Balerud",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Kate Balerud is mentioned as a recipient for a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alan Cook",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alan Cook is mentioned as a recipient for a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ted Waitt",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent packages to Ted Waitt as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Janusz Banasia",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent packages to Janusz Banasia as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "G. Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "G. Maxwell is mentioned in relation to shipments sent from Epstein's address.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Kate Balerud",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Kate Balerud as indicated in the shipment details.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alan Cook",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Alan Cook as indicated in the shipment details.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-09-08",
+      "title": "Package Pickup",
+      "description": "FedEx picked up packages from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2005-09-10",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Ted Waitt",
+        "Janusz Banasia",
+        "Kate Balerud",
+        "Alan Cook"
+      ]
+    },
+    {
+      "date": "2005-10-04",
+      "title": "Payment Due",
+      "description": "The payment for the invoice is due.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "301 E 66th St Apt 11P, New York, NY 10021-6217"
+  ],
+  "keyFacts": [
+    "The total amount due on the invoice is $834.48.",
+    "The invoice is dated September 19, 2005, with a payment due date of October 4, 2005.",
+    "Multiple shipments were made by Epstein, with various recipients including Ted Waitt and Janusz Banasia.",
+    "The invoice includes detailed charges for FedEx services, including transportation and handling fees.",
+    "There are several references to fuel surcharges applied to the shipments."
+  ],
+  "analyzedAt": "2026-02-22T06:19:48.138Z"
+}

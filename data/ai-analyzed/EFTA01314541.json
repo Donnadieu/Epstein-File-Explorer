@@ -1,0 +1,80 @@
+{
+  "fileName": "EFTA01314541.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-03-25",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the account, billing, and specific shipment details, including dates and charges associated with the services rendered.",
+  "persons": [
+    {
+      "name": "Lauren Kvantner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kvantner is mentioned as the sender of a package shipped via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "David Eisenberger",
+      "role": "Recipient",
+      "category": "other",
+      "context": "David Eisenberger is listed as the recipient of a shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Henry Jareck",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Henry Jareck is mentioned as the recipient of a shipment sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "D. Dudley",
+      "role": "Signer",
+      "category": "other",
+      "context": "D. Dudley is noted as the individual who signed for a package delivered via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Falconwood Management Partners",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Falconwood Management Partners is mentioned as the recipient of a shipment sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-03-16",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipping.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kvantner"
+      ]
+    },
+    {
+      "date": "2005-03-17",
+      "title": "Package Delivery",
+      "description": "A package was delivered by FedEx and signed for by D. Dudley.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "D. Dudley"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "1865 Palmer Avenue, Ste 201, Larchmont, NY 10536",
+    "67 Irmo Place, 12th Floor, New York City, NY 10601"
+  ],
+  "keyFacts": [
+    "The invoice number is 5-440-53980, dated March 25, 2005.",
+    "The total amount due on the invoice is USD $11.82.",
+    "The invoice includes details of multiple shipments and their respective charges.",
+    "Packages were picked up on March 16, 2005, and delivered on March 17, 2005.",
+    "Several individuals and companies are listed as senders and recipients of the shipments."
+  ],
+  "analyzedAt": "2026-02-22T06:14:12.055Z"
+}

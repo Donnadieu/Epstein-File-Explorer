@@ -1,0 +1,45 @@
+{
+  "fileName": "EFTA01317237.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-11-30",
+  "summary": "This document is an invoice from FedEx dated November 30, 2001, detailing transportation charges for services rendered. It includes billing information, payment details, and discounts applied to the total charges.",
+  "persons": [
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gany is listed as the sender associated with the FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Payor",
+      "category": "other",
+      "context": "Jeanne Brennan is identified as the payor for the FedEx services, linked to the Financial Trust Company.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Eric Gany",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "financial",
+      "description": "Eric Gany is the sender of the package, while Jeanne Brennan is the payor for the shipping charges.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6100 Reo Hook Quarter Suite B-3, St Thomas 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated November 30, 2001, with an account number of 2292-0750-4.",
+    "Total charges for the FedEx services amount to USD 23.69 after discounts.",
+    "The sender's address is listed as 457 Madison Avenue, 4th Floor, New York, NY 10022.",
+    "Jeanne Brennan is associated with the Financial Trust Company located in St Thomas.",
+    "The invoice includes a fuel surcharge and details about the shipment's pickup and delivery dates."
+  ],
+  "analyzedAt": "2026-02-22T08:10:16.502Z"
+}

@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01342063.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": "2018-04-09",
+  "summary": "This document is an emergency contact form for an employee named Onel Pierresaint. It includes personal information such as emergency contacts, medical concerns, and the employee's doctor.",
+  "persons": [
+    {
+      "name": "Onel Pierresaint",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Onel Pierresaint is the employee for whom the emergency contact form is filled out.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosal Joselito",
+      "role": "Doctor",
+      "category": "other",
+      "context": "Rosal Joselito is listed as the doctor for Onel Pierresaint.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rose Marie Jean Baptiste",
+      "role": "Wife",
+      "category": "other",
+      "context": "Rose Marie Jean Baptiste is listed as the emergency contact and wife of Onel Pierresaint.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Robenio Joseph",
+      "role": "Friend",
+      "category": "other",
+      "context": "Robenio Joseph is listed as an emergency contact and friend of Onel Pierresaint.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Onel Pierresaint",
+      "person2": "Rose Marie Jean Baptiste",
+      "relationshipType": "spouse",
+      "description": "Rose Marie Jean Baptiste is the wife of Onel Pierresaint.",
+      "strength": 5
+    },
+    {
+      "person1": "Onel Pierresaint",
+      "person2": "Robenio Joseph",
+      "relationshipType": "friend",
+      "description": "Robenio Joseph is a friend of Onel Pierresaint.",
+      "strength": 3
+    },
+    {
+      "person1": "Onel Pierresaint",
+      "person2": "Rosal Joselito",
+      "relationshipType": "patient-doctor",
+      "description": "Rosal Joselito is the doctor for Onel Pierresaint.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The document is an emergency contact form dated April 9, 2018.",
+    "Onel Pierresaint has a medical concern regarding Losartan Potassium.",
+    "Emergency contacts listed include his wife, Rose Marie Jean Baptiste, and friend, Robenio Joseph."
+  ],
+  "analyzedAt": "2026-02-22T14:08:46.528Z"
+}

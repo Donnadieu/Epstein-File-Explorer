@@ -1,0 +1,156 @@
+{
+  "fileName": "EFTA01314600.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2000-07-24",
+  "summary": "This document is an invoice from FedEx for shipping services provided to J Epstein & Co Inc. It details various charges for transportation and special handling, along with the dates of service and recipients involved. The invoice highlights multiple shipments made by the company during July 2000.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Owner",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is listed as the owner of J Epstein & Co Inc, which is the entity responsible for the shipping charges detailed in the invoice.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwintner is mentioned as a sender for one of the packages shipped by J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John Alessi",
+      "role": "Sender",
+      "category": "staff",
+      "context": "John Alessi is mentioned as a sender for packages associated with J Epstein & Co Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Antonette Shannon",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Antonette Shannon is listed as a recipient for one of the packages sent by J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Karl Hofmann",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Karl Hofmann is mentioned as a sender for a package associated with J Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Visoski",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Larry Visoski is mentioned as a recipient for one of the packages sent by J Epstein & Co Inc.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "owner-entity",
+      "description": "Jeffrey Epstein is the owner of J Epstein & Co Inc, which is responsible for the shipping services detailed in the invoice.",
+      "strength": 5
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "employee-employer",
+      "description": "Lauren Kwintner is an employee who sent packages on behalf of J Epstein & Co Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "John Alessi",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "employee-employer",
+      "description": "John Alessi is an employee who sent packages on behalf of J Epstein & Co Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Antonette Shannon",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "recipient-sender",
+      "description": "Antonette Shannon is a recipient of a package sent by J Epstein & Co Inc.",
+      "strength": 3
+    },
+    {
+      "person1": "Karl Hofmann",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "employee-employer",
+      "description": "Karl Hofmann is an employee who sent packages on behalf of J Epstein & Co Inc.",
+      "strength": 4
+    },
+    {
+      "person1": "Larry Visoski",
+      "person2": "J Epstein & Co Inc",
+      "relationshipType": "recipient-sender",
+      "description": "Larry Visoski is a recipient of a package sent by J Epstein & Co Inc.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2000-07-07",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipping.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2000-07-12",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Antonette Shannon.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Antonette Shannon",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2000-07-17",
+      "title": "Package Delivery",
+      "description": "A package was delivered to John Alessi.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "John Alessi",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2000-07-19",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for shipping.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Zorro Ranch, 220 Zorro Ranch Road, Stanley, NM 87056",
+    "158 El Galloway, Palm Beach, FL 33480",
+    "2441 California St NW, Washington, DC 20008",
+    "87505",
+    "80625",
+    "33461"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 24, 2000, and details shipping charges for J Epstein & Co Inc.",
+    "Total charges for the services rendered amount to USD 174.78.",
+    "Multiple packages were shipped during July 2000, with various recipients and senders involved.",
+    "The document includes references to fuel surcharges applied by FedEx.",
+    "Several individuals associated with J Epstein & Co Inc are mentioned as senders and recipients of packages."
+  ],
+  "analyzedAt": "2026-02-22T06:17:20.370Z"
+}

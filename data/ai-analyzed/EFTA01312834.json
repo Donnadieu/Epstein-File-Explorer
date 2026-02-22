@@ -1,0 +1,155 @@
+{
+  "fileName": "EFTA01312834.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-05-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided on various dates in April and May 2004. It includes information about transportation charges, discounts, and specific shipments made by Epstein, indicating his frequent use of FedEx services during this period.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Client",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, as it details shipping services billed to him.",
+      "mentionCount": 15
+    },
+    {
+      "name": "Marc Lundberg",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Marc Lundberg is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Leslie Groff",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Leslie Groff is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dr. Jerome Kagen",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Dr. Jerome Kagen is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eugene Ksa",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Eugene Ksa is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Harry",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Harry is mentioned as a reference for a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Indyke is mentioned as a sender in relation to a shipment involving Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marc Lundberg",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Marc Lundberg.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Leslie Groff",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Leslie Groff.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dr. Jerome Kagen",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Dr. Jerome Kagen.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Eugene Ksa",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Eugene Ksa.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "associate",
+      "description": "Darren Indyke is associated with Epstein in the context of shipping.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-30",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-01",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Leslie Groff",
+        "Eugene Ksa"
+      ]
+    },
+    {
+      "date": "2004-05-03",
+      "title": "Package Delivery",
+      "description": "Additional packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Dr. Jerome Kagen"
+      ]
+    },
+    {
+      "date": "2004-05-04",
+      "title": "Package Delivery",
+      "description": "More packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Marc Lundberg"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "457 Jackson Ave FL 4, New York, NY 10022-6843",
+    "6625 West Campus Oval Ste 106, New Albany, OH 43054",
+    "Harvard University, Dept of Psychology, Cambridge, MA 02138"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 10, 2004, and is addressed to Jeffrey E. Epstein.",
+    "Total charges for the invoice amount to USD 308.02.",
+    "The invoice details multiple shipments made by Epstein, with specific dates and recipients.",
+    "Epstein frequently used FedEx services for shipping during this period.",
+    "Several recipients of Epstein's packages are mentioned, including Dr. Jerome Kagen and Leslie Groff."
+  ],
+  "analyzedAt": "2026-02-22T04:49:36.061Z"
+}

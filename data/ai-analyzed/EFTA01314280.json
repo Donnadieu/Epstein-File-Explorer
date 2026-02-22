@@ -1,0 +1,129 @@
+{
+  "fileName": "EFTA01314280.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2003-07-28",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes multiple shipments made by Epstein, with a total amount due of $619.36, and outlines various transportation charges and discounts applied.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he utilized FedEx services for shipping.",
+      "mentionCount": 7
+    },
+    {
+      "name": "Dave Rodger",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dave Rodger is mentioned as a sender for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a sender for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander Little",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Miles Alexander Little is mentioned as a recipient for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Aaron",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Aaron is mentioned as a recipient for one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dave Rodger",
+      "relationshipType": "sender-recipient",
+      "description": "Dave Rodger is identified as the sender for a shipment sent to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is identified as the sender for a shipment sent to Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Miles Alexander Little",
+      "relationshipType": "sender-recipient",
+      "description": "Miles Alexander Little is identified as the recipient for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Aaron",
+      "relationshipType": "sender-recipient",
+      "description": "Aaron is identified as the recipient for a shipment sent by Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-07-16",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-07-21",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent to Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-07-22",
+      "title": "Shipment Delivery",
+      "description": "Another shipment sent to Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2003-07-24",
+      "title": "Shipment Delivery",
+      "description": "A shipment sent to Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 Ebrello Way, Palm Beach, FL 33480",
+    "457 Madison Avenue, New York, NY 10022",
+    "6100 Red Hook Quarters, St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 28, 2003, with a total amount due of $619.36.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice.",
+    "Multiple shipments were made by Epstein, with various senders and recipients involved.",
+    "The invoice includes detailed charges for transportation, discounts, and special handling.",
+    "There are several references to shipments being picked up and delivered on specific dates."
+  ],
+  "analyzedAt": "2026-02-22T06:00:33.715Z"
+}

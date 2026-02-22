@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA01319009.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2001-02-09",
+  "summary": "This document contains invoice details from FedEx for services rendered to NY SG LLC, including shipping charges and payment information. It lists various transactions, including pickup and delivery dates, charges, and addresses associated with the company and its representatives.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "staff",
+      "context": "Bella Tsukeman is listed as the billing contact for NY SG LLC, with an address provided for invoicing.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Lauren Kwintner is mentioned as the sender for a package shipped via FedEx, associated with NY SG LLC.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Peg Uglan",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Peg Uglan is also mentioned as a sender for packages shipped via FedEx, linked to NY SG LLC.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "NY SG LLC",
+      "relationshipType": "employer-employee",
+      "description": "Bella Tsukeman is the billing contact for NY SG LLC, indicating an employer-employee relationship.",
+      "strength": 5
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "NY SG LLC",
+      "relationshipType": "associate-employer",
+      "description": "Lauren Kwintner is associated with NY SG LLC as a sender for packages, indicating a working relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Peg Uglan",
+      "person2": "NY SG LLC",
+      "relationshipType": "associate-employer",
+      "description": "Peg Uglan is associated with NY SG LLC as a sender for packages, indicating a working relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-01-30",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for NY SG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Peg Uglan"
+      ]
+    },
+    {
+      "date": "2001-01-31",
+      "title": "Package Delivery",
+      "description": "A package sent via FedEx was delivered to NY SG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Peg Uglan"
+      ]
+    },
+    {
+      "date": "2001-02-01",
+      "title": "Package Delivery",
+      "description": "Another package sent via FedEx was delivered to NY SG LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kwintner",
+        "Peg Uglan"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43054",
+    "69 Zorro Ranch Rd, New York, NY 10022-6809"
+  ],
+  "keyFacts": [
+    "The document contains multiple invoices dated February 9, 2001, for services provided by FedEx to NY SG LLC.",
+    "Bella Tsukeman is identified as the billing contact for NY SG LLC.",
+    "Packages were picked up on January 30, 2001, and delivered on January 31 and February 1, 2001.",
+    "Charges for the services include transportation and fuel surcharges, totaling various amounts across different invoices.",
+    "There are references to multiple addresses associated with NY SG LLC and its representatives."
+  ],
+  "analyzedAt": "2026-02-22T09:45:06.378Z"
+}

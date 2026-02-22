@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01315800.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-08-26",
+  "summary": "This document is an invoice from FedEx detailing shipping charges and services provided. It includes information about shipments, discounts, and payment due dates. The invoice references multiple shipments and associated costs.",
+  "persons": [
+    {
+      "name": "Lauren Kivantner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kivantner is listed as the sender associated with the shipments detailed in the invoice.",
+      "mentionCount": 2
+    },
+    {
+      "name": "James Casner",
+      "role": "Sender",
+      "category": "other",
+      "context": "James Casner is mentioned as the sender for one of the shipments in the invoice.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-08-18",
+      "title": "Shipment Pickup",
+      "description": "A shipment was picked up by FedEx.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kivantner",
+        "James Casner"
+      ]
+    },
+    {
+      "date": "2005-08-19",
+      "title": "Shipment Delivery",
+      "description": "A shipment was delivered and signed for by an individual named ILBETHUNE.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kivantner",
+        "James Casner"
+      ]
+    },
+    {
+      "date": "2005-08-22",
+      "title": "Second Shipment Pickup",
+      "description": "Another shipment was picked up by FedEx.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kivantner",
+        "James Casner"
+      ]
+    },
+    {
+      "date": "2005-08-23",
+      "title": "Second Shipment Delivery",
+      "description": "The second shipment was delivered and signed for by ILBETHUNE.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Kivantner",
+        "James Casner"
+      ]
+    }
+  ],
+  "locations": [
+    "P.O. Box 371461, Pittsburgh, PA 15250-7461"
+  ],
+  "keyFacts": [
+    "The invoice number is 7-794-02452, dated August 26, 2005.",
+    "Total charges for the invoice amount to USD $44.44.",
+    "The invoice includes details of multiple shipments with associated pickup and delivery dates.",
+    "Discounts totaling $523.50 were applied during this billing period.",
+    "The document contains references to adjustments and reasons for billing discrepancies."
+  ],
+  "analyzedAt": "2026-02-22T07:20:39.417Z"
+}

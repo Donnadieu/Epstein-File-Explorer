@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA01334241.pdf",
+  "dataSet": "10",
+  "documentType": "police report",
+  "dateOriginal": "2005-12-21",
+  "summary": "This document details the execution of a search warrant at Jeffrey Epstein's residence on October 20, 2005. The report outlines the discovery and securing of various computer hardware and media devices, as well as the absence of certain expected media storage items during the search.",
+  "persons": [
+    {
+      "name": "Curtis D. Krauel",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Curtis D. Krauel reported on the execution of the search warrant at Jeffrey Epstein's residence and detailed the findings during the search.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Nickie A. Altomaro",
+      "role": "Officer",
+      "category": "law enforcement",
+      "context": "Nickie A. Altomaro entered the report regarding the search warrant execution at Epstein's residence.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Joseph Recarey",
+      "role": "Detective",
+      "category": "law enforcement",
+      "context": "Detective Joseph Recarey was the case agent directing the search and instructing officers on what to secure during the operation.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as the resident of the property being searched under the warrant.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Curtis D. Krauel",
+      "person2": "Joseph Recarey",
+      "relationshipType": "employer-employee",
+      "description": "Curtis D. Krauel was directed by Detective Joseph Recarey during the search operation.",
+      "strength": 4
+    },
+    {
+      "person1": "Nickie A. Altomaro",
+      "person2": "Curtis D. Krauel",
+      "relationshipType": "employer-employee",
+      "description": "Nickie A. Altomaro entered the report created by Curtis D. Krauel regarding the search.",
+      "strength": 3
+    },
+    {
+      "person1": "Joseph Recarey",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "investigator-accused",
+      "description": "Detective Joseph Recarey was involved in the investigation of Jeffrey Epstein's residence.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-10-20",
+      "title": "Search Warrant Execution",
+      "description": "A search warrant was executed at Jeffrey Epstein's residence, leading to the discovery of various computer hardware and media devices.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Curtis D. Krauel",
+        "Joseph Recarey",
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "358 El Brillo Way, Palm Beach, Florida"
+  ],
+  "keyFacts": [
+    "The search warrant was executed at Jeffrey Epstein's residence on October 20, 2005.",
+    "Multiple computers and media devices were secured during the search, including a Dell Dimension and a Premio CPU.",
+    "No media storage devices such as CDs or floppy disks were found in the areas searched.",
+    "Detective Joseph Recarey directed the search and instructed officers on what to secure.",
+    "The report indicates that some computers had been recently removed from the premises."
+  ],
+  "analyzedAt": "2026-02-22T12:33:25.837Z"
+}

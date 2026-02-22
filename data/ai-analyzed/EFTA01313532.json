@@ -1,0 +1,87 @@
+{
+  "fileName": "EFTA01313532.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-17",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details the charges incurred, including transportation charges, discounts, and total amounts due. The invoice also includes information about adjustments and payment due dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for FedEx services, indicating his use of shipping services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Marie Joseph Experton Berlioz",
+      "role": "Sender",
+      "category": "other",
+      "context": "Marie Joseph Experton Berlioz is mentioned as the sender of a package shipped via FedEx, which is referenced in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a recipient of a package sent by Jeffrey E. Epstein, indicating a connection between them.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Elizabeth Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Elizabeth Maxwell is also mentioned as a recipient of a package sent by Jeffrey E. Epstein, indicating a familial or close relationship.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the sender of another package shipped via FedEx, referenced in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Ghislaine Maxwell is noted as a recipient of a package sent by Jeffrey E. Epstein, suggesting a personal connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Elizabeth Maxwell",
+      "relationshipType": "social",
+      "description": "Elizabeth Maxwell is noted as a recipient of a package sent by Jeffrey E. Epstein, indicating a personal connection.",
+      "strength": 4
+    },
+    {
+      "person1": "Marie Joseph Experton Berlioz",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "business",
+      "description": "Marie Joseph Experton Berlioz is mentioned in connection with a package sent via FedEx, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeanne Brennan",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "business",
+      "description": "Jeanne Brennan is mentioned as a sender of a package, indicating a business relationship with Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "P.O. Box 1140, Memphis, TN 38101-1140"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 17, 2002, and is addressed to Jeffrey E. Epstein.",
+    "Total charges on the invoice amount to $177.49.",
+    "The invoice includes details of transportation charges, discounts, and special handling fees.",
+    "Ghislaine Maxwell and Elizabeth Maxwell are mentioned as recipients of packages sent by Epstein.",
+    "Marie Joseph Experton Berlioz and Jeanne Brennan are also mentioned as senders of packages related to Epstein."
+  ],
+  "analyzedAt": "2026-02-22T05:23:22.263Z"
+}

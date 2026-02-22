@@ -1,0 +1,150 @@
+{
+  "fileName": "EFTA01314970.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-04-13",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for various packages associated with NYSG LLC. It includes information on transportation charges, special handling fees, and payment details, indicating the shipping activities related to the account of NYSG LLC during April 2001.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "other",
+      "context": "Bella Tsukeman is listed as the billing contact for NYSG LLC on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Kwintner is mentioned multiple times as the sender of packages shipped via FedEx.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Richard Raggenkaup",
+      "role": "Sender",
+      "category": "other",
+      "context": "Richard Raggenkaup is mentioned as the sender for one of the packages in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeffrey Schontz",
+      "role": "Sender",
+      "category": "other",
+      "context": "Jeffrey Schontz is mentioned as the sender for another package in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Sender",
+      "category": "other",
+      "context": "Eric Gany is mentioned as the sender for a package in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren K. Inoyke",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren K. Inoyke is mentioned as the sender for a package in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Paul Burkhardt",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paul Burkhardt is mentioned as the sender for a package in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "NYSG LLC",
+      "relationshipType": "billing contact-account",
+      "description": "Bella Tsukeman is the billing contact for the account associated with NYSG LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Lauren Kwintner",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Lauren Kwintner is a sender of packages associated with the NYSG LLC account.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Raggenkaup",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Richard Raggenkaup is a sender of a package associated with the NYSG LLC account.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Schontz",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Jeffrey Schontz is a sender of a package associated with the NYSG LLC account.",
+      "strength": 3
+    },
+    {
+      "person1": "Eric Gany",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Eric Gany is a sender of a package associated with the NYSG LLC account.",
+      "strength": 3
+    },
+    {
+      "person1": "Darren K. Inoyke",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Darren K. Inoyke is a sender of a package associated with the NYSG LLC account.",
+      "strength": 3
+    },
+    {
+      "person1": "Paul Burkhardt",
+      "person2": "NYSG LLC",
+      "relationshipType": "sender-account",
+      "description": "Paul Burkhardt is a sender of a package associated with the NYSG LLC account.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-04-13",
+      "title": "Invoice Issued",
+      "description": "An invoice was issued by FedEx for shipping services provided to NYSG LLC.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Bella Tsukeman",
+        "Lauren Kwintner",
+        "Richard Raggenkaup",
+        "Jeffrey Schontz",
+        "Eric Gany",
+        "Darren K. Inoyke",
+        "Paul Burkhardt"
+      ]
+    },
+    {
+      "date": "2001-04-28",
+      "title": "Payment Due",
+      "description": "The payment for the invoice is due by this date.",
+      "category": "financial",
+      "significance": 2,
+      "personsInvolved": [
+        "Bella Tsukeman"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "New Albany, OH 43050",
+    "Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 13, 2001, and includes various shipping charges.",
+    "Bella Tsukeman is the billing contact for NYSG LLC.",
+    "Multiple individuals are listed as senders for packages associated with NYSG LLC.",
+    "The total amount due on the invoice is $146.24, with payment due by April 28, 2001.",
+    "The document includes details about FedEx's policies regarding invoice adjustments and surcharges."
+  ],
+  "analyzedAt": "2026-02-22T06:35:34.543Z"
+}

@@ -1,0 +1,145 @@
+{
+  "fileName": "EFTA01319757.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-10-25",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total amount due of $153.22. The invoice includes shipment details and references multiple shipments associated with Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Manuela Stuffer",
+      "role": "Sender",
+      "category": "other",
+      "context": "Manuela Stuffer is mentioned as the sender of a shipment associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Tim Peck",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Tim Peck is mentioned as the recipient of a shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as the recipient of another shipment sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "A. Rodriguez",
+      "role": "Signer",
+      "category": "other",
+      "context": "A. Rodriguez is noted as the individual who signed for the delivery of shipments associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Dale Thailand Trust Co.",
+      "role": "Sender",
+      "category": "other",
+      "context": "Dale Thailand Trust Co. is mentioned as the sender of a shipment related to Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Manuela Stuffer",
+      "relationshipType": "sender-recipient",
+      "description": "Manuela Stuffer is the sender of a shipment associated with Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Tim Peck",
+      "relationshipType": "sender-recipient",
+      "description": "Tim Peck is the recipient of a shipment sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeanne Brennan is the recipient of another shipment sent by Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "A. Rodriguez",
+      "relationshipType": "signer-deliverer",
+      "description": "A. Rodriguez signed for the delivery of shipments associated with Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Dale Thailand Trust Co.",
+      "person2": "Jeffrey E. Epstein",
+      "relationshipType": "sender-recipient",
+      "description": "Dale Thailand Trust Co. is mentioned as the sender of a shipment related to Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-18",
+      "title": "Shipment Dropped Off",
+      "description": "A shipment was dropped off by Epstein at FedEx.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-21",
+      "title": "Shipment Picked Up",
+      "description": "A shipment was picked up by Epstein from FedEx.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-22",
+      "title": "Shipment Delivered",
+      "description": "A shipment sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-10-15",
+      "title": "Shipment Dropped Off",
+      "description": "Another shipment was dropped off by a third party associated with Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Dale Thailand Trust Co.",
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "6100 Red Hook Quarter, St. Thomas, VI 00802",
+    "49 Zoro Ranch Road, Stanley, NM 87056"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 25, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $153.22.",
+    "The invoice details multiple shipments sent by Epstein, including one to Jeanne Brennan.",
+    "A shipment was dropped off on October 18, 2004, and another was picked up on October 21, 2004.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T10:22:10.720Z"
+}

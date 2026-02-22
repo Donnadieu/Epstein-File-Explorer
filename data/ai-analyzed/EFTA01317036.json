@@ -1,0 +1,124 @@
+{
+  "fileName": "EFTA01317036.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-08-16",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating multiple shipments made by Epstein during August 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice for shipping services provided by FedEx, with multiple shipments listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Francois Goffimet",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Francois Goffimet is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kvaintker",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lauren Kvaintker is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Daphne Financial Trust Company",
+      "role": "Sender",
+      "category": "other",
+      "context": "Daphne Financial Trust Company is mentioned as the sender of a package associated with Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Francois Goffimet",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Francois Goffimet as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Kvaintker",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Lauren Kvaintker as indicated in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Daphne Financial Trust Company",
+      "relationshipType": "financial",
+      "description": "Daphne Financial Trust Company is associated with Epstein in the context of a shipment.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-08-05",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-10",
+      "title": "Package Pickup",
+      "description": "Another package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-11",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-12",
+      "title": "Package Delivery",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-08-13",
+      "title": "Package Delivery",
+      "description": "Another package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "6100 Red Hook Quarter Suite B-3, St Thomas 00002"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 16, 2004, and details shipping charges totaling $198.21.",
+    "Jeffrey E. Epstein is the primary account holder for the FedEx services.",
+    "Multiple shipments were made by Epstein during August 2004, with specific pickup and delivery dates listed.",
+    "Francois Goffimet and Lauren Kvaintker are identified as recipients of packages sent by Epstein.",
+    "Daphne Financial Trust Company is mentioned in connection with a shipment associated with Epstein."
+  ],
+  "analyzedAt": "2026-02-22T07:59:36.727Z"
+}

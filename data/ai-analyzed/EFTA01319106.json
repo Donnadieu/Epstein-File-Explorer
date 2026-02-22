@@ -1,0 +1,181 @@
+{
+  "fileName": "EFTA01319106.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-04-23",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. It includes multiple entries for packages sent by Epstein, with specific dates, charges, and recipients. The invoice highlights the total amount due and provides information on discounts and surcharges applicable to the services rendered.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Shannon Beula",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Shannon Beula is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwiatner",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lauren Kwiatner is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Peter H. Betti",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Peter H. Betti is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lance",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Lance is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Larry Morrison",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Larry Morrison is mentioned as a sender of a package to Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Mrs. Sherman",
+      "role": "Billing Contact",
+      "category": "other",
+      "context": "Mrs. Sherman is listed as a billing contact for Epstein's account.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Maxwell is mentioned as a recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Shannon Beula",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Shannon Beula.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lauren Kwiatner",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Lauren Kwiatner.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Peter H. Betti",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Peter H. Betti.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Lance",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Lance.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Larry Morrison",
+      "relationshipType": "sender-recipient",
+      "description": "Larry Morrison sent a package to Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Maxwell.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-04-06",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off by Epstein for shipment.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2001-04-07",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Shannon Beula"
+      ]
+    },
+    {
+      "date": "2001-04-12",
+      "title": "Multiple Packages Delivered",
+      "description": "Several packages sent by Epstein were delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Lauren Kwiatner",
+        "Peter H. Betti"
+      ]
+    },
+    {
+      "date": "2001-04-13",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Lance"
+      ]
+    },
+    {
+      "date": "2001-04-16",
+      "title": "Package Delivered",
+      "description": "A package sent by Epstein was delivered.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "358 El Balloway, Palm Beach, FL 33480",
+    "301 East 66th Apt, New York, NY 10022",
+    "143 Concorde Ave, Lexington, MA 02421",
+    "Zorro Ranch Rd, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated April 23, 2001, and details shipping charges for services provided to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $243.16.",
+    "Multiple packages were sent by Epstein to various recipients, including Shannon Beula and Lauren Kwiatner.",
+    "The invoice includes information about discounts and surcharges applicable to the services rendered.",
+    "There are several entries detailing the dates of package drop-offs and deliveries."
+  ],
+  "analyzedAt": "2026-02-22T09:50:40.920Z"
+}

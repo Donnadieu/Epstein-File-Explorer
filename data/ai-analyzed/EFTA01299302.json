@@ -1,0 +1,107 @@
+{
+  "fileName": "EFTA01299302.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2016-10-14",
+  "summary": "This document is an email correspondence regarding a high-risk Know Your Customer (KYC) case involving Jeffrey Epstein and the Butterfly Trust. Cynthia Rodriguez requests approval for updates to the trust's beneficiaries due to Epstein's legal issues, including past court cases and a history of fraud. The document highlights the financial relationship between Epstein and Deutsche Bank, emphasizing the bank's compliance review process.",
+  "persons": [
+    {
+      "name": "Cynthia Rodriguez",
+      "role": "Assistant Vice President",
+      "category": "legal",
+      "context": "Cynthia Rodriguez is requesting approval for updates to the Butterfly Trust associated with Jeffrey Epstein due to his high-risk status.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Patrick Campion",
+      "role": "Managing Director, Head of Wealth Management America",
+      "category": "legal",
+      "context": "Patrick Campion responds to Cynthia Rodriguez's request, confirming that the client was presented to RRC and cleared.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Armen Brash",
+      "role": "not specified",
+      "category": "other",
+      "context": "Armen Brash is copied on the email correspondence regarding the KYC case.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Grantor",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the grantor of the Butterfly Trust, which is under review due to his high-risk status and legal history.",
+      "mentionCount": 4
+    },
+    {
+      "name": "Stewart Oldfield",
+      "role": "Relationship Manager",
+      "category": "other",
+      "context": "Stewart Oldfield is mentioned as the Relationship Manager associated with the KYC case for Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Patrick Campion",
+      "relationshipType": "employer-employee",
+      "description": "Cynthia Rodriguez is seeking approval from her superior, Patrick Campion, regarding the KYC case.",
+      "strength": 4
+    },
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "client-service provider",
+      "description": "Cynthia Rodriguez is managing the KYC case for Jeffrey Epstein, who is a client of Deutsche Bank.",
+      "strength": 4
+    },
+    {
+      "person1": "Patrick Campion",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "client-service provider",
+      "description": "Patrick Campion, as a Managing Director at Deutsche Bank, is involved in the approval process for Jeffrey Epstein's trust.",
+      "strength": 3
+    },
+    {
+      "person1": "Cynthia Rodriguez",
+      "person2": "Stewart Oldfield",
+      "relationshipType": "employer-employee",
+      "description": "Cynthia Rodriguez references Stewart Oldfield as the Relationship Manager for the KYC case.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-22",
+      "title": "SEC Civil Fraud Action",
+      "description": "The SEC filed a settled civil fraud action against Jeffrey Epstein for illegal insider trading, resulting in a final judgment and financial penalties.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2008",
+      "title": "Epstein Sentencing",
+      "description": "Jeffrey Epstein was sentenced to 21 months in federal prison for multiple counts of fraud and sexual offenses.",
+      "category": "legal",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, New York, NY, USA"
+  ],
+  "keyFacts": [
+    "Cynthia Rodriguez is requesting approval for updates to the Butterfly Trust associated with Jeffrey Epstein due to his high-risk status.",
+    "Jeffrey Epstein has a history of legal issues, including a settled SEC civil fraud action and a prison sentence for fraud and sexual offenses.",
+    "The Butterfly Trust has been an existing relationship with Deutsche Bank since August 26, 2013, with significant assets under management.",
+    "The document indicates that all previous alerts regarding Epstein were false positives, and no new negative media has emerged.",
+    "The relationship with Epstein is deemed high risk due to his legal history, but compliance has not recommended discontinuation."
+  ],
+  "analyzedAt": "2026-02-21T22:34:11.804Z"
+}

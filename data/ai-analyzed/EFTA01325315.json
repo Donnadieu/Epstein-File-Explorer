@@ -1,0 +1,104 @@
+{
+  "fileName": "EFTA01325315.pdf",
+  "dataSet": "10",
+  "documentType": "FBI 302",
+  "dateOriginal": "2008-02-06",
+  "summary": "This document outlines the investigation by the FBI into Jeffrey Epstein and Ghislaine Maxwell regarding allegations of child prostitution. It details the methods used to recruit underage girls for sexual massages and the subsequent investigation, including interviews with victims and the execution of a search warrant at Epstein's residence.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Accused",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary subject of the investigation, accused of paying underage girls for sexual massages and engaging in sexual acts with them.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Co-accused",
+      "category": "key figure",
+      "context": "Ghislaine Maxwell is mentioned as an associate of Epstein, involved in the recruitment of girls for sexual activities.",
+      "mentionCount": 3
+    },
+    {
+      "name": "City of Palm Beach Police Department",
+      "role": "Law enforcement",
+      "category": "law enforcement",
+      "context": "The Palm Beach Police Department provided information that initiated the investigation into Epstein's activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Palm Beach County Resident Agency",
+      "role": "Investigating Agency",
+      "category": "law enforcement",
+      "context": "The Palm Beach County Resident Agency of the FBI began the investigation into Epstein's activities based on reports from the local police.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Minor Female Victims",
+      "role": "Victims",
+      "category": "victim",
+      "context": "Several underage girls are mentioned as victims who were allegedly paid by Epstein for sexual massages.",
+      "mentionCount": 5
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "co-conspirator",
+      "description": "Ghislaine Maxwell is implicated as an associate of Epstein in the recruitment of underage girls for sexual activities.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Minor Female Victims",
+      "relationshipType": "victim-perpetrator",
+      "description": "Epstein is accused of engaging in sexual acts with the minor female victims who were paid for massages.",
+      "strength": 5
+    },
+    {
+      "person1": "City of Palm Beach Police Department",
+      "person2": "Palm Beach County Resident Agency",
+      "relationshipType": "collaborative",
+      "description": "The City of Palm Beach Police Department collaborated with the Palm Beach County Resident Agency of the FBI in the investigation.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-07-24",
+      "title": "Investigation Initiation",
+      "description": "The FBI began investigating Jeffrey Epstein based on reports of sexual abuse involving underage girls.",
+      "category": "investigation",
+      "significance": 5,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2008-02-06",
+      "title": "Search Warrant Execution",
+      "description": "A search warrant was executed at Epstein's home, leading to the recovery of evidence related to the investigation.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "Palm Beach, Florida",
+    "New York, NY",
+    "U.S. Virgin Islands",
+    "New Mexico"
+  ],
+  "keyFacts": [
+    "The investigation revealed that Epstein paid underage girls between $200 and $300 for sexual massages.",
+    "Victims reported that they were contacted primarily by Epstein's assistant to arrange appointments.",
+    "Epstein's modus operandi involved instructing girls on how to massage him while engaging in sexual acts.",
+    "Evidence collected included telephone message pads with arrangements for 'massages' and flight manifests for Epstein's private planes.",
+    "Several minor females were identified as having participated in similar activities with Epstein in both Florida and New York."
+  ],
+  "analyzedAt": "2026-02-22T11:10:15.496Z"
+}

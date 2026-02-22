@@ -1,0 +1,85 @@
+{
+  "fileName": "EFTA01343990.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2013-09-27",
+  "summary": "This document contains email correspondence involving Amanda Kirby, discussing scheduling a breakfast meeting with Jeffrey and Caroline Kitidis. It highlights the coordination of schedules and the involvement of other individuals in the planning process.",
+  "persons": [
+    {
+      "name": "Amanda Kirby",
+      "role": "Associate",
+      "category": "staff",
+      "context": "Amanda Kirby is coordinating a breakfast meeting involving Jeffrey and Caroline Kitidis, indicating her role in managing schedules.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Caroline Kitidis",
+      "role": "Assistant",
+      "category": "associate",
+      "context": "Caroline Kitidis is mentioned as someone who has previously met with Jeffrey and is involved in the scheduling of the meeting.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Jeffrey is the individual for whom the breakfast meeting is being scheduled, though his full name is not provided.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Paul",
+      "role": "Unknown",
+      "category": "other",
+      "context": "Paul is mentioned as someone whose schedule is being considered for the meeting, but no further details are provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Jeffrey",
+      "relationshipType": "employer-employee",
+      "description": "Amanda Kirby is coordinating a meeting for Jeffrey, indicating a professional relationship.",
+      "strength": 4
+    },
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Caroline Kitidis",
+      "relationshipType": "associate",
+      "description": "Amanda is communicating with Caroline regarding the scheduling of a meeting with Jeffrey.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey",
+      "person2": "Caroline Kitidis",
+      "relationshipType": "previous acquaintance",
+      "description": "Caroline has previously met with Jeffrey, suggesting a prior relationship.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-10-10",
+      "title": "Breakfast Meeting",
+      "description": "A breakfast meeting is proposed to be held on October 10, 2013.",
+      "category": "social",
+      "significance": 3,
+      "personsInvolved": [
+        "Amanda Kirby",
+        "Jeffrey",
+        "Caroline Kitidis",
+        "Paul"
+      ]
+    }
+  ],
+  "locations": [
+    "345 Park Avenue, 27th Fl, New York, NY, US"
+  ],
+  "keyFacts": [
+    "Amanda Kirby is coordinating a breakfast meeting for Jeffrey and Caroline Kitidis.",
+    "The meeting is proposed for October 10, 2013, at 8 AM.",
+    "Paul's schedule is also being considered for the meeting.",
+    "Caroline Kitidis has previously met with Jeffrey."
+  ],
+  "analyzedAt": "2026-02-22T15:05:57.856Z"
+}

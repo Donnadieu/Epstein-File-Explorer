@@ -1,0 +1,99 @@
+{
+  "fileName": "EFTA01299294.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2013-08-12",
+  "summary": "This document consists of internal communications regarding AML compliance alerts related to prospective client Jeffrey Epstein. It discusses the clearance of alerts based on reputational concerns and the approval process for onboarding Epstein as a client. The document highlights the distinction between two individuals with similar names and the compliance team's decision to proceed with Epstein's account opening.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Prospective Client",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the main subject of the compliance alerts being discussed, with concerns raised about his reputation.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Chip Packard",
+      "role": "Senior Management",
+      "category": "legal",
+      "context": "Chip Packard provided approval from a legal perspective to onboard Jeffrey Epstein despite the alerts.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Andrew J. Kisz",
+      "role": "Compliance Officer",
+      "category": "staff",
+      "context": "Andrew Kisz is the AML Compliance Officer who reviewed the alerts and communicated the clearance decision.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Associate",
+      "category": "staff",
+      "context": "Amanda Kirby is involved in the communication regarding the clearance of the alerts and the onboarding process for Epstein.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Chip Packard",
+      "relationshipType": "client-approver",
+      "description": "Chip Packard approved the onboarding of Jeffrey Epstein as a client despite the alerts raised.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Andrew J. Kisz",
+      "relationshipType": "client-compliance officer",
+      "description": "Andrew Kisz, as the compliance officer, reviewed the alerts related to Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Amanda Kirby",
+      "relationshipType": "client-associate",
+      "description": "Amanda Kirby is an associate handling the onboarding process for Jeffrey Epstein.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2013-05-28",
+      "title": "RDC and PCR Alerts Review",
+      "description": "AML Compliance reviewed alerts pertaining to Jeffrey Epstein, determining some were false positives.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Andrew J. Kisz",
+        "Amanda Kirby"
+      ]
+    },
+    {
+      "date": "2013-08-12",
+      "title": "Client Onboarding Approval",
+      "description": "Approval was sought to move forward with opening accounts for Jeffrey Epstein.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Chip Packard",
+        "Amanda Kirby"
+      ]
+    }
+  ],
+  "locations": [
+    "New York, NY, USA",
+    "Florida, USA",
+    "Massachusetts, USA",
+    "Jacksonville, FL, USA"
+  ],
+  "keyFacts": [
+    "The document discusses AML compliance alerts related to Jeffrey Epstein, indicating a review of his reputation.",
+    "Two individuals with similar names were distinguished, with alerts pertaining to Jeffrey S. Epstein being cleared as false positives.",
+    "Chip Packard's approval was crucial for proceeding with Epstein as a client despite the alerts.",
+    "The document emphasizes the importance of compliance clearance before onboarding clients with reputational concerns."
+  ],
+  "analyzedAt": "2026-02-21T22:33:27.370Z"
+}

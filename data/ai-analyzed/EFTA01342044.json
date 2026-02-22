@@ -1,0 +1,72 @@
+{
+  "fileName": "EFTA01342044.pdf",
+  "dataSet": "10",
+  "documentType": "other",
+  "dateOriginal": "2018-03-22",
+  "summary": "This document appears to be an employee emergency contact form for Bunitace Loudat, detailing personal information such as address, emergency contacts, and health concerns. It includes names of emergency contacts but lacks significant context related to the Epstein case.",
+  "persons": [
+    {
+      "name": "Bunitace Loudat",
+      "role": "Employee",
+      "category": "staff",
+      "context": "Bunitace Loudat is listed as an employee with personal and emergency contact information provided.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Neli Leudat",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Neli Leudat is listed as an emergency contact for Bunitace Loudat.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jackie Xavier",
+      "role": "Emergency Contact",
+      "category": "other",
+      "context": "Jackie Xavier is also listed as an emergency contact for Bunitace Loudat.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dodglas",
+      "role": "Doctor",
+      "category": "other",
+      "context": "Dodglas is mentioned as the doctor for Bunitace Loudat.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bunitace Loudat",
+      "person2": "Neli Leudat",
+      "relationshipType": "family",
+      "description": "Neli Leudat is listed as an emergency contact, suggesting a familial or close relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Bunitace Loudat",
+      "person2": "Jackie Xavier",
+      "relationshipType": "friend",
+      "description": "Jackie Xavier is listed as an emergency contact, indicating a friendship or close acquaintance.",
+      "strength": 3
+    },
+    {
+      "person1": "Bunitace Loudat",
+      "person2": "Dodglas",
+      "relationshipType": "patient-doctor",
+      "description": "Dodglas is identified as the doctor for Bunitace Loudat, indicating a patient-doctor relationship.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Quarters Suite B-3 St. Thomas, VI 00802"
+  ],
+  "keyFacts": [
+    "The document is an emergency contact form for Bunitace Loudat.",
+    "Bunitace Loudat's start date is listed as 03/22/18.",
+    "Emergency contacts include Neli Leudat and Jackie Xavier.",
+    "Dodglas is mentioned as the doctor for Bunitace Loudat.",
+    "No significant health concerns or allergies are noted."
+  ],
+  "analyzedAt": "2026-02-22T14:05:41.799Z"
+}

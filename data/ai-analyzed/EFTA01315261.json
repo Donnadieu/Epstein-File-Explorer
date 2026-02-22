@@ -1,0 +1,59 @@
+{
+  "fileName": "EFTA01315261.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-07-24",
+  "summary": "This document is an invoice from Federal Express addressed to Jeffrey E. Epstein, detailing charges related to customs duties and taxes for a shipment. The invoice includes various charges totaling USD 202.39, which were paid to French Customs on Epstein's behalf. It also contains instructions for claiming refunds for duties and taxes.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Importer",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the recipient of the invoice, indicating he is responsible for the customs duties and taxes associated with a shipment.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Jean Albert Pinto",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jean Albert Pinto is mentioned as a recipient associated with the shipment, indicating a connection to Epstein's import activities.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Jill Magos",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Jill Magos is mentioned as another recipient associated with the shipment, indicating a connection to Epstein's import activities.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jean Albert Pinto",
+      "relationshipType": "importer-recipient",
+      "description": "Jeffrey E. Epstein is the importer responsible for the shipment that includes Jean Albert Pinto as a recipient.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jill Magos",
+      "relationshipType": "importer-recipient",
+      "description": "Jeffrey E. Epstein is the importer responsible for the shipment that includes Jill Magos as a recipient.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Nacoson Ave, New York, NY 10022",
+    "125 Avenue Louis Roche, 92238 Gennevilliers, France"
+  ],
+  "keyFacts": [
+    "The invoice is dated July 24, 2001, and is associated with customs duties and taxes.",
+    "The total amount due on the invoice is USD 202.39.",
+    "The invoice indicates that Federal Express paid duties and taxes to French Customs on behalf of Epstein.",
+    "Claims for refunds of duties and taxes must be submitted by the importer, which in this case is Epstein.",
+    "The document includes multiple references to customs duties and taxes related to a shipment."
+  ],
+  "analyzedAt": "2026-02-22T06:53:04.018Z"
+}

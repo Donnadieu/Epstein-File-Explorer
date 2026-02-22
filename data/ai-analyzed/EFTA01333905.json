@@ -1,0 +1,95 @@
+{
+  "fileName": "EFTA01333905.pdf",
+  "dataSet": "10",
+  "documentType": "police report",
+  "dateOriginal": "2005-09-22",
+  "summary": "This document contains a summary of interactions and intelligence reports related to Jeffrey Epstein and individuals associated with him. It details a suspicious vehicle incident at Epstein's residence, mentions a young woman involved in potentially illicit activities, and discusses the influence Epstein had over young girls and possible connections to law enforcement.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Homeowner",
+      "category": "key figure",
+      "context": "Epstein is identified as the homeowner at 358 El Brillo Way, where suspicious activities involving young girls are reported.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Property Manager",
+      "category": "associate",
+      "context": "Rodriguez reported a suspicious vehicle at Epstein's residence and provided insights into Epstein's activities.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Unknown Individual",
+      "role": "Witness",
+      "category": "victim",
+      "context": "An unnamed young woman is mentioned as having been involved with Epstein and potentially receiving money for sexual acts.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Unknown Individual",
+      "role": "Witness",
+      "category": "victim",
+      "context": "Another unnamed young woman is referenced who was willing to provide information about Epstein's activities.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "employer-employee",
+      "description": "Rodriguez is the property manager for Epstein's residence.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unknown Individual",
+      "relationshipType": "victim-perpetrator",
+      "description": "The unnamed individual is suggested to have been involved in sexual acts with Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Unknown Individual",
+      "relationshipType": "victim-perpetrator",
+      "description": "Another unnamed individual is indicated to have been involved with Epstein and is willing to provide information about him.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-11-28",
+      "title": "Suspicious Vehicle Report",
+      "description": "Alfredo Rodriguez reported a suspicious vehicle parked at Epstein's residence.",
+      "category": "investigation",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Alfredo Rodriguez",
+        "Unknown Individual"
+      ]
+    },
+    {
+      "date": "2005-09-11",
+      "title": "Arrest for Marijuana Possession",
+      "description": "An unnamed individual was arrested for possession of marijuana during a traffic stop.",
+      "category": "arrest",
+      "significance": 2,
+      "personsInvolved": [
+        "Unknown Individual"
+      ]
+    }
+  ],
+  "locations": [
+    "358 El Brillo Way, Palm Beach, FL"
+  ],
+  "keyFacts": [
+    "Epstein is reported to have many young girls visiting his residence.",
+    "Rodriguez indicated that Epstein allows individuals to use his house and pool.",
+    "An unnamed individual mentioned that Epstein has influence and possibly police officers working for him.",
+    "There are indications that Epstein may have paid young individuals for sexual acts.",
+    "The document references a protective order regarding certain paragraphs."
+  ],
+  "analyzedAt": "2026-02-22T12:20:15.802Z"
+}

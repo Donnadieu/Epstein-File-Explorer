@@ -1,0 +1,90 @@
+{
+  "fileName": "EFTA01319034.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-03-26",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing charges for shipping services. It includes information about the account, billing, and payment due dates, as well as a summary of transportation charges and discounts.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is the primary individual associated with this FedEx invoice, indicating he is the account holder for shipping services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Eric Gany",
+      "role": "Billing Contact",
+      "category": "associate",
+      "context": "Eric Gany is listed as a billing contact for the FedEx account associated with Jeffrey Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cathy Jenkins",
+      "role": "Sender",
+      "category": "other",
+      "context": "Cathy Jenkins is mentioned as the sender of a package associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is mentioned as a sender of a package associated with the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Eric Gany",
+      "relationshipType": "employer-employee",
+      "description": "Eric Gany is listed as a billing contact for Jeffrey Epstein's FedEx account, indicating a professional relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Cathy Jenkins",
+      "person2": "Ghislaine Maxwell",
+      "relationshipType": "social",
+      "description": "Both Cathy Jenkins and Ghislaine Maxwell are mentioned as senders of packages, suggesting a possible social or professional connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-03-15",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery, associated with Jeffrey Epstein's account.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Cathy Jenkins",
+        "Ghislaine Maxwell"
+      ]
+    },
+    {
+      "date": "2001-04-10",
+      "title": "Payment Due",
+      "description": "The payment for the invoice is due by this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6809",
+    "16365 James Madison Hwy, Gordonsville, VA 229124501",
+    "Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated March 26, 2001, and is associated with Jeffrey Epstein's FedEx account.",
+    "Eric Gany is listed as a billing contact for the account.",
+    "Cathy Jenkins and Ghislaine Maxwell are mentioned as senders of a package.",
+    "The total charges on the invoice amount to USD 37.15.",
+    "Payment for the invoice is due by April 10, 2001."
+  ],
+  "analyzedAt": "2026-02-22T09:47:04.034Z"
+}

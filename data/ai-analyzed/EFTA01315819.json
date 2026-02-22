@@ -1,0 +1,141 @@
+{
+  "fileName": "EFTA01315819.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-10-26",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and payment due dates.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Brian Sunell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Brian Sunell is mentioned as the recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Alfredo Rodriguez is mentioned as a sender in one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Maria Forgo",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Maria Forgo is mentioned as a sender in one of the shipments associated with Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Javier Cuevedo",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Javier Cuevedo is mentioned as the recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Ghislapie Maxwell Jack",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Ghislapie Maxwell Jack is mentioned as the recipient of a package sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Brian Sunell",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Brian Sunell as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein is listed as the sender for a package associated with Alfredo Rodriguez.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maria Forgo",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein is listed as the sender for a package associated with Maria Forgo.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Javier Cuevedo",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein sent a package to Javier Cuevedo as indicated in the shipment details.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Ghislapie Maxwell Jack",
+      "relationshipType": "sender-recipient",
+      "description": "Epstein is listed as the sender for a package associated with Ghislapie Maxwell Jack.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-10-15",
+      "title": "Package Pickup",
+      "description": "Multiple packages were picked up by FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-10-18",
+      "title": "Package Delivery",
+      "description": "Packages sent by Epstein were delivered to various recipients.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Brian Sunell",
+        "Alfredo Rodriguez",
+        "Maria Forgo",
+        "Javier Cuevedo",
+        "Ghislapie Maxwell Jack"
+      ]
+    },
+    {
+      "date": "2004-10-26",
+      "title": "Invoice Issued",
+      "description": "FedEx issued an invoice to Epstein for shipping services rendered.",
+      "category": "financial",
+      "significance": 4,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "1293 North Plano Rd, Richardson, TX 75061",
+    "1209 Central Terrace, Lake Worth, FL 33460",
+    "315 East Haman, Aspen, CO 81611",
+    "23610 N 20th Drive Suite 10, Phoenix, AZ 85027",
+    "1940 N.E. 135th Street, Miami, FL 33181"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 26, 2004, and details shipping charges totaling $334.75.",
+    "Jeffrey E. Epstein is the account holder for the FedEx services detailed in the invoice.",
+    "Multiple shipments were made by Epstein, with various recipients listed.",
+    "The invoice includes a due date for payment of November 10, 2004.",
+    "Several individuals are mentioned as recipients of packages sent by Epstein."
+  ],
+  "analyzedAt": "2026-02-22T07:21:54.067Z"
+}

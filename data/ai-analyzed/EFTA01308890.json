@@ -1,0 +1,100 @@
+{
+  "fileName": "EFTA01308890.pdf",
+  "dataSet": "10",
+  "documentType": "police report",
+  "dateOriginal": "2006-06-22",
+  "summary": "This document details a meeting between Assistant State Attorney Lana Belohlavic and law enforcement regarding the arrest warrant request for Jeffrey Epstein. The discussion revolves around the charges against Epstein, the implications of his residency in the Virgin Islands, and the credibility of a victim named SG. The document highlights disagreements over the charges and the process of submitting a new probable cause affidavit.",
+  "persons": [
+    {
+      "name": "Lana Belohlavic",
+      "role": "Assistant State Attorney",
+      "category": "legal",
+      "context": "Lana Belohlavic is involved in discussions regarding the charges against Jeffrey Epstein and the implications of those charges.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Barry Krisher",
+      "role": "State Attorney",
+      "category": "legal",
+      "context": "Barry Krisher is mentioned as having met with Epstein's defense counsel to discuss the charges and the implications of Epstein's residency.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Dean",
+      "role": "Sergeant",
+      "category": "law enforcement",
+      "context": "Sgt Dean is briefed on the discussions regarding the charges against Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Gudger",
+      "role": "Captain",
+      "category": "law enforcement",
+      "context": "Capt Gudger is also briefed on the discussions regarding the charges against Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Lana Belohlavic",
+      "person2": "Barry Krisher",
+      "relationshipType": "employer-employee",
+      "description": "Lana Belohlavic and Barry Krisher work together in the State Attorney's Office, discussing legal strategies regarding Epstein's charges.",
+      "strength": 4
+    },
+    {
+      "person1": "Barry Krisher",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "prosecutor-defendant",
+      "description": "Barry Krisher is the State Attorney involved in the prosecution of Jeffrey Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "SG",
+      "person2": "Jeffrey Epstein",
+      "relationshipType": "victim-perpetrator",
+      "description": "SG is identified as a victim in the case against Jeffrey Epstein.",
+      "strength": 3
+    },
+    {
+      "person1": "Lana Belohlavic",
+      "person2": "SG",
+      "relationshipType": "legal representation-victim",
+      "description": "Lana Belohlavic, as an Assistant State Attorney, is involved in the legal proceedings concerning SG's allegations against Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2006-06-16",
+      "title": "Meeting Regarding Epstein's Charges",
+      "description": "A meeting took place to discuss the arrest warrant request for Jeffrey Epstein and the implications of the charges.",
+      "category": "legal",
+      "significance": 4,
+      "personsInvolved": [
+        "Lana Belohlavic",
+        "Barry Krisher",
+        "Jeffrey Epstein"
+      ]
+    },
+    {
+      "date": "2006-06-19",
+      "title": "Follow-up Contact",
+      "description": "A telephone contact was made to discuss the Florida State Statute for charging Epstein.",
+      "category": "legal",
+      "significance": 3,
+      "personsInvolved": [
+        "Lana Belohlavic"
+      ]
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The original charges against Epstein would classify him as a sexual offender in the Virgin Islands.",
+    "The State Attorney agreed to seek a felony solicitation of prostitution charge instead.",
+    "Defense counsel argued that the victim SG was not credible based on her personal profile on a social media site.",
+    "There was disagreement over the necessity of submitting a new probable cause affidavit for Epstein.",
+    "The statute discussed for solicitation of prostitution was interpreted differently by the involved parties."
+  ],
+  "analyzedAt": "2026-02-22T03:30:22.626Z"
+}

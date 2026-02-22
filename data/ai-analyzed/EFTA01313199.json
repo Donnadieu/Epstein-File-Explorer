@@ -1,0 +1,44 @@
+{
+  "fileName": "EFTA01313199.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-12-21",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein, detailing shipping charges and payment information. The invoice includes various charges for express services and discounts applied, with a total amount due of $25.72. It also provides contact information for FedEx account services.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the individual to whom the FedEx invoice is addressed, indicating he is the account holder responsible for the shipping charges.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paul Hoffman",
+      "role": "Sender",
+      "category": "other",
+      "context": "Paul Hoffman is mentioned as the sender associated with the shipping charges on the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Hoffman",
+      "relationshipType": "client-service",
+      "description": "Paul Hoffman is listed as the sender for a package associated with Jeffrey Epstein's FedEx account.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Memphis, TN"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 21, 2001, and is for shipping services provided by FedEx.",
+    "Total charges on the invoice amount to $25.72 after discounts.",
+    "The invoice includes a due date for payment of January 5, 2002.",
+    "Shipping charges include a transportation charge of $26.00 and special handling charges.",
+    "The invoice mentions a fuel surcharge and various discounts applied to the total amount."
+  ],
+  "analyzedAt": "2026-02-22T05:07:46.388Z"
+}

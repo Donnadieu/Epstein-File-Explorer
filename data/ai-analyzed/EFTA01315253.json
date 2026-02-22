@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01315253.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2000-12-25",
+  "summary": "This document is an invoice from Epstein & Co Inc dated December 25, 2000, detailing international service charges and duty fees. It includes payment information and references to shipments made on December 19, 2000, and delivery on December 21, 2000.",
+  "persons": [
+    {
+      "name": "John Alessi",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "John Alessi is mentioned as a recipient of a package shipped by Epstein & Co Inc.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Pamela Boulet",
+      "role": "Shipper",
+      "category": "associate",
+      "context": "Pamela Boulet is listed as a shipper associated with the package sent by Epstein & Co Inc.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Karin Models",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Karin Models is mentioned as another recipient of the package sent by Epstein & Co Inc.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "John Alessi",
+      "person2": "Karin Models",
+      "relationshipType": "business",
+      "description": "Both are recipients of packages sent by Epstein & Co Inc, indicating a business relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Pamela Boulet",
+      "person2": "John Alessi",
+      "relationshipType": "business",
+      "description": "Pamela Boulet is identified as the shipper for the package sent to John Alessi.",
+      "strength": 3
+    },
+    {
+      "person1": "Pamela Boulet",
+      "person2": "Karin Models",
+      "relationshipType": "business",
+      "description": "Pamela Boulet is the shipper for the package sent to Karin Models, indicating a business connection.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2000-12-19",
+      "title": "Package Shipment",
+      "description": "A package was shipped by Epstein & Co Inc to recipients including John Alessi and Karin Models.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "John Alessi",
+        "Karin Models",
+        "Pamela Boulet"
+      ]
+    },
+    {
+      "date": "2000-12-21",
+      "title": "Package Delivery",
+      "description": "The package shipped on December 19, 2000, was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "John Alessi",
+        "Karin Models"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "9 Ave North, Paris, 75008"
+  ],
+  "keyFacts": [
+    "The invoice is dated December 25, 2000, and details charges totaling USD $185.60.",
+    "The invoice references a shipment made on December 19, 2000, and delivered on December 21, 2000.",
+    "John Alessi and Karin Models are both listed as recipients of packages sent by Epstein & Co Inc."
+  ],
+  "analyzedAt": "2026-02-22T06:52:43.881Z"
+}

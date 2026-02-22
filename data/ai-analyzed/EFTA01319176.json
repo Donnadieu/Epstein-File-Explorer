@@ -1,0 +1,120 @@
+{
+  "fileName": "EFTA01319176.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-06-01",
+  "summary": "This document is an invoice from FedEx detailing charges for shipping services provided to NYSG LLC. It includes information about the billing account, service charges, and payment details, indicating a transaction involving shipping services in May 2001.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Bella Tsukeman is listed as the account holder for NYSG LLC, which is the entity receiving the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwintner",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Lauren Kwintner is mentioned as associated with NYSG LLC, indicating a connection to the billing address.",
+      "mentionCount": 1
+    },
+    {
+      "name": "John S. Biodle",
+      "role": "Sender",
+      "category": "other",
+      "context": "John S. Biodle is mentioned as the sender of a package associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Darren Novice",
+      "role": "Sender",
+      "category": "other",
+      "context": "Darren Novice is mentioned as another sender of a package associated with the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "KGroves",
+      "role": "Recipient",
+      "category": "other",
+      "context": "KGroves is noted as the person who signed for a delivery, indicating their role in receiving the shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "W. Doulin",
+      "role": "Recipient",
+      "category": "other",
+      "context": "W. Doulin is noted as the person who signed for another delivery, indicating their role in receiving the shipment.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "Lauren Kwintner",
+      "relationshipType": "employer-employee",
+      "description": "Both are associated with NYSG LLC, indicating a potential employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "John S. Biodle",
+      "person2": "Darren Novice",
+      "relationshipType": "co-senders",
+      "description": "Both are mentioned as senders of packages related to the invoice, indicating they may be working together.",
+      "strength": 3
+    },
+    {
+      "person1": "KGroves",
+      "person2": "W. Doulin",
+      "relationshipType": "recipient-signature",
+      "description": "Both signed for deliveries, indicating they are involved in the receipt of shipments.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2001-05-21",
+      "title": "Package Pickup",
+      "description": "A package was picked up by FedEx for delivery.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "John S. Biodle",
+        "Darren Novice"
+      ]
+    },
+    {
+      "date": "2001-05-22",
+      "title": "Package Delivery",
+      "description": "A package was delivered and signed for by KGroves.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "KGroves"
+      ]
+    },
+    {
+      "date": "2001-05-17",
+      "title": "Package Delivery",
+      "description": "Another package was delivered and signed for by W. Doulin.",
+      "category": "travel",
+      "significance": 2,
+      "personsInvolved": [
+        "W. Doulin"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6809",
+    "Memphis, TN 38101-1140",
+    "Jamestown, RI 02835"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 1, 2001, and details shipping charges totaling $35.10.",
+    "Bella Tsukeman is identified as the account holder for NYSG LLC.",
+    "The invoice includes details of multiple packages sent and received, with specific dates of pickup and delivery.",
+    "There are references to additional handling and delivery area surcharges effective from April 16, 2001.",
+    "Several individuals are mentioned in connection with the shipping services, including senders and recipients."
+  ],
+  "analyzedAt": "2026-02-22T09:54:33.816Z"
+}

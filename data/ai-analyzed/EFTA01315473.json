@@ -1,0 +1,57 @@
+{
+  "fileName": "EFTA01315473.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-09-17",
+  "summary": "This document is an invoice from FedEx detailing transportation charges for services rendered on September 8, 2004. It includes information about the sender and recipient, as well as the total charges and discounts applied.",
+  "persons": [
+    {
+      "name": "Ghislaine Maxwell",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Ghislaine Maxwell is listed as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Adriana Figueredo",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Adriana Figueredo is mentioned as the recipient of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Ghislaine Maxwell",
+      "person2": "Adriana Figueredo",
+      "relationshipType": "sender-recipient",
+      "description": "Ghislaine Maxwell sent a package to Adriana Figueredo via FedEx.",
+      "strength": 4
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-09-08",
+      "title": "FedEx Shipment",
+      "description": "A package was picked up by FedEx for shipment.",
+      "category": "transportation",
+      "significance": 3,
+      "personsInvolved": [
+        "Ghislaine Maxwell",
+        "Adriana Figueredo"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "Rua Domingos Leme 284, Vila Nova Conceicao, Sao Paulo, 64510-040, BR"
+  ],
+  "keyFacts": [
+    "The invoice is dated September 17, 2004.",
+    "Total charges for the shipment were $51.31.",
+    "Ghislaine Maxwell is identified as the sender of the package.",
+    "Adriana Figueredo is identified as the recipient of the package.",
+    "The package was picked up on September 8, 2004."
+  ],
+  "analyzedAt": "2026-02-22T07:01:04.369Z"
+}

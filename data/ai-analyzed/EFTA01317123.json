@@ -1,0 +1,68 @@
+{
+  "fileName": "EFTA01317123.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-07-01",
+  "summary": "This document is an invoice from FedEx to NYSO LLC for shipping services rendered. It details the charges for transportation and handling, along with the billing and shipping addresses. The invoice indicates a total amount due and provides instructions for payment.",
+  "persons": [
+    {
+      "name": "Lauren Pedolano",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Pedolano is listed as the sender associated with the FedEx shipment.",
+      "mentionCount": 1
+    },
+    {
+      "name": "James A. Bleler",
+      "role": "Recipient",
+      "category": "other",
+      "context": "James A. Bleler is mentioned as the recipient associated with the insurance agency in Allentown, PA.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2005-06-27",
+      "title": "FedEx Pickup",
+      "description": "FedEx picked up a shipment from NYSO LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Pedolano"
+      ]
+    },
+    {
+      "date": "2005-06-28",
+      "title": "FedEx Pickup",
+      "description": "FedEx picked up another shipment from NYSO LLC.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren Pedolano"
+      ]
+    },
+    {
+      "date": "2005-06-29",
+      "title": "FedEx Delivery",
+      "description": "FedEx delivered a shipment to the recipient.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "James A. Bleler"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "615 N 20th St, Allentown, PA 18101"
+  ],
+  "keyFacts": [
+    "The invoice number is 3-907-96196, dated July 1, 2005.",
+    "Total charges on the invoice amount to $13.42.",
+    "The invoice includes details of multiple shipments picked up on June 27 and June 28, 2005.",
+    "Lauren Pedolano is identified as the sender for the shipments.",
+    "James A. Bleler is associated with the recipient's address in Allentown, PA."
+  ],
+  "analyzedAt": "2026-02-22T08:04:39.400Z"
+}

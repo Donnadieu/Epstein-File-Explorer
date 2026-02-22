@@ -1,0 +1,159 @@
+{
+  "fileName": "EFTA01312613.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2004-01-05",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing shipping charges and services provided. The invoice includes multiple shipments made by Epstein, with specific charges and discounts applied. It highlights the total amount due and provides a summary of the services rendered.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with this invoice, indicating he is responsible for the shipping charges listed.",
+      "mentionCount": 10
+    },
+    {
+      "name": "T. Marsh",
+      "role": "Courier",
+      "category": "staff",
+      "context": "T. Marsh is mentioned as the courier who delivered packages associated with Epstein's account.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Catherine",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Catherine is noted as a recipient of shipments sent from Epstein's address.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Maxwell",
+      "role": "Sender",
+      "category": "other",
+      "context": "Maxwell is mentioned as a sender for one of the packages delivered to Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Marcla Phillips",
+      "role": "Sender",
+      "category": "other",
+      "context": "Marcla Phillips is noted as a sender for a package associated with Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Rich Ford",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Rich Ford is mentioned as a recipient of a shipment sent from Epstein's address.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "T. Marsh",
+      "relationshipType": "employer-employee",
+      "description": "T. Marsh is the courier who delivered packages for Epstein, indicating an employer-employee relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Catherine",
+      "relationshipType": "recipient-sender",
+      "description": "Catherine is a recipient of shipments sent from Epstein's address, indicating a sender-recipient relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Maxwell",
+      "relationshipType": "sender-recipient",
+      "description": "Maxwell is noted as a sender for one of the packages delivered to Epstein, indicating a sender-recipient relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Marcla Phillips",
+      "relationshipType": "sender-recipient",
+      "description": "Marcla Phillips is noted as a sender for a package associated with Epstein, indicating a sender-recipient relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Rich Ford",
+      "relationshipType": "recipient-sender",
+      "description": "Rich Ford is mentioned as a recipient of a shipment sent from Epstein's address, indicating a sender-recipient relationship.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2003-12-09",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "T. Marsh"
+      ]
+    },
+    {
+      "date": "2003-12-24",
+      "title": "Package Pickup",
+      "description": "A package was picked up from Epstein's address by FedEx.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "T. Marsh"
+      ]
+    },
+    {
+      "date": "2003-12-29",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Catherine from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Catherine"
+      ]
+    },
+    {
+      "date": "2003-12-31",
+      "title": "Package Drop-off",
+      "description": "A package was dropped off at FedEx from Epstein's address.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Maxwell"
+      ]
+    },
+    {
+      "date": "2004-01-02",
+      "title": "Package Delivery",
+      "description": "A package was delivered to Epstein from Maxwell.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843",
+    "5004 Night Hawk Dr, Rio Rancho, NM 87144",
+    "355 El Brillo Way, Palm Beach, FL 33480",
+    "8601 Lcoas NE, Albuquerque, NM 87112"
+  ],
+  "keyFacts": [
+    "The invoice is dated January 5, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is USD $155.97.",
+    "The invoice details multiple shipments made by Epstein, with specific charges and discounts applied.",
+    "Several individuals are mentioned as senders or recipients of packages associated with Epstein.",
+    "The document includes specific dates of package pickups and deliveries related to Epstein's account."
+  ],
+  "analyzedAt": "2026-02-22T04:40:26.170Z"
+}

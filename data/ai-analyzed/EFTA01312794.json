@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA01312794.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-05-03",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey Epstein for shipping services rendered. It details the charges incurred, including transportation and handling fees, and specifies a due date for payment.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Jeffrey Epstein is the recipient of the invoice for FedEx services, indicating he utilized their shipping services.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Lauren Minder",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren Minder is mentioned as a sender in the shipment detail section of the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Katarina Seolakava Srasarova",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Katarina Seolakava Srasarova is listed as a recipient in the shipment detail section of the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2004-04-21",
+      "title": "FedEx Shipment Pickup",
+      "description": "A shipment was picked up by FedEx for Jeffrey Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey Epstein",
+        "Lauren Minder"
+      ]
+    },
+    {
+      "date": "2004-04-22",
+      "title": "Customs Entry Date",
+      "description": "The customs entry for the shipment was recorded.",
+      "category": "shipping",
+      "significance": 2,
+      "personsInvolved": [
+        "Jeffrey Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6843"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 3, 2004, and is for a total amount of $72.66.",
+    "The invoice includes details of transportation charges and discounts applied.",
+    "The shipment was picked up on April 21, 2004, and involved multiple parties including Lauren Minder and Katarina Seolakava Srasarova."
+  ],
+  "analyzedAt": "2026-02-22T04:47:38.470Z"
+}

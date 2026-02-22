@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01332625.pdf",
+  "dataSet": "10",
+  "documentType": "Aircraft Registration Document",
+  "dateOriginal": "2021-07-22",
+  "summary": "This document contains various records related to the registration and ownership of the Gulfstream Aerospace GV-SP (G550) aircraft with serial number 5173. It includes details about the aircraft's registration, ownership by N550GP LLC, and various FAA forms and agreements related to its operation and registration status.",
+  "persons": [
+    {
+      "name": "Kevin R. West",
+      "role": "Acting Manager",
+      "category": "legal",
+      "context": "Kevin R. West is mentioned as the Acting Manager of the Aircraft Registration Branch at the FAA, responsible for signing the temporary certificate of registration.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Amy Shilling",
+      "role": "Filed by",
+      "category": "staff",
+      "context": "Amy Shilling is noted as the person who filed the registration documents for the aircraft.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Richard Munkvold",
+      "role": "Manager",
+      "category": "staff",
+      "context": "Richard Munkvold is identified as the Manager of N550GP LLC, signing various documents related to the aircraft's registration.",
+      "mentionCount": 3
+    }
+  ],
+  "connections": [
+    {
+      "person1": "N550GP, LLC",
+      "person2": "Bank of Hope",
+      "relationshipType": "borrower-lender",
+      "description": "N550GP, LLC is borrowing from Bank of Hope, as evidenced by the Aircraft Security Agreement.",
+      "strength": 5
+    },
+    {
+      "person1": "N550GP, LLC",
+      "person2": "Richard Munkvold",
+      "relationshipType": "owner-manager",
+      "description": "Richard Munkvold is the Manager of N550GP, LLC, indicating a direct ownership and management relationship.",
+      "strength": 5
+    }
+  ],
+  "events": [
+    {
+      "date": "2021-07-22",
+      "title": "Temporary Certificate of Registration Issued",
+      "description": "A temporary certificate of registration for the Gulfstream Aerospace GV-SP (G550) aircraft was issued, valid until August 21, 2021.",
+      "category": "registration",
+      "significance": 4,
+      "personsInvolved": [
+        "Kevin R. West",
+        "N550GP, LLC"
+      ]
+    },
+    {
+      "date": "2021-05-11",
+      "title": "Aircraft Security Agreement Signed",
+      "description": "N550GP, LLC entered into an Aircraft Security Agreement with Bank of Hope, granting a security interest in the aircraft.",
+      "category": "financial",
+      "significance": 5,
+      "personsInvolved": [
+        "N550GP, LLC",
+        "Bank of Hope",
+        "Richard Munkvold"
+      ]
+    }
+  ],
+  "locations": [
+    "2151 E Convention Center Way Ste 222, Ontario, CA 91764",
+    "3200 Wilshire Blvd, 7th Floor, Los Angeles, CA 90010"
+  ],
+  "keyFacts": [
+    "The aircraft is registered under N550GP LLC, located at 2151 E Convention Center Way, Ontario, CA.",
+    "The aircraft's serial number is 5173, and it is a Gulfstream Aerospace GV-SP (G550).",
+    "Richard Munkvold is the Manager of N550GP LLC and has signed multiple documents related to the aircraft's registration."
+  ],
+  "analyzedAt": "2026-02-22T11:58:13.383Z"
+}

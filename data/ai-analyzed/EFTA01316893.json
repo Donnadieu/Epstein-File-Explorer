@@ -1,0 +1,110 @@
+{
+  "fileName": "EFTA01316893.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-05-10",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details transportation charges, discounts, and payment information, indicating a total due of $184.51 by May 25, 2004. The invoice includes shipment details and references multiple packages sent by Epstein.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the individual to whom the invoice is addressed, indicating he is responsible for the shipping charges listed.",
+      "mentionCount": 6
+    },
+    {
+      "name": "Jeanne Brennan",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Jeanne Brennan is mentioned as a recipient of one of the packages sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "M. Roduges",
+      "role": "Signer",
+      "category": "other",
+      "context": "M. Roduges is noted as the individual who signed for the delivery of packages.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Nanthida Tharancisee",
+      "role": "Sender",
+      "category": "other",
+      "context": "Nanthida Tharancisee is mentioned as the sender of a package sent via FedEx.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Jeanne Brennan",
+      "relationshipType": "sender-recipient",
+      "description": "Jeffrey E. Epstein sent a package to Jeanne Brennan via FedEx.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Nanthida Tharancisee",
+      "relationshipType": "sender-recipient",
+      "description": "Nanthida Tharancisee is noted as a sender of a package associated with Jeffrey E. Epstein.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2004-04-30",
+      "title": "Package Dropped Off",
+      "description": "A package was dropped off for shipment by Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-01",
+      "title": "Package Delivered",
+      "description": "A package sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "Jeanne Brennan"
+      ]
+    },
+    {
+      "date": "2004-05-04",
+      "title": "Package Picked Up",
+      "description": "A package was picked up for shipment by Jeffrey E. Epstein.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    },
+    {
+      "date": "2004-05-06",
+      "title": "Package Delivered",
+      "description": "Another package sent by Jeffrey E. Epstein was delivered.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022",
+    "St. Thomas, 00802, VI",
+    "San Francisco, CA 94416",
+    "Paris, 75116, FR"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 10, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $184.51, with a payment deadline of May 25, 2004.",
+    "The invoice details multiple shipments sent by Epstein, including their pickup and delivery dates.",
+    "M. Roduges signed for the delivery of packages associated with Epstein.",
+    "There are references to discounts applied to the shipping charges."
+  ],
+  "analyzedAt": "2026-02-22T07:52:19.969Z"
+}

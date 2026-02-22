@@ -1,0 +1,81 @@
+{
+  "fileName": "EFTA01295812.pdf",
+  "dataSet": "10",
+  "documentType": "KYC Document",
+  "dateOriginal": "2016-01-05",
+  "summary": "This document is a Know Your Customer (KYC) report for Jeffrey Epstein and associated entities, detailing account relationships, ownership structures, and compliance checks. It highlights Epstein's role as President of Mort, Inc. and his financial background, along with connections to other individuals such as Darren Indyke. The document also includes compliance signatures and approval statuses.",
+  "persons": [
+    {
+      "name": "Jeffrey Epstein",
+      "role": "President",
+      "category": "key figure",
+      "context": "Jeffrey Epstein is identified as a current client of Deutsche Bank and the President of Mort, Inc., with a significant financial background.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Darren Indyke",
+      "role": "Lawyer",
+      "category": "associate",
+      "context": "Darren Indyke is mentioned as a related party to Epstein and is also associated with Southern Financial LLC.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Paul Morris",
+      "role": "Relationship Manager",
+      "category": "staff",
+      "context": "Paul Morris is the Relationship Manager for Epstein's accounts at Deutsche Bank.",
+      "mentionCount": 5
+    },
+    {
+      "name": "Gwen Hill",
+      "role": "Compliance Officer",
+      "category": "legal",
+      "context": "Gwen Hill is noted for compliance signatures related to the KYC process for Epstein.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Andrew F Gallivan",
+      "role": "Office Director/Business Head",
+      "category": "legal",
+      "context": "Andrew F Gallivan is mentioned as an approving authority in the KYC process.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Darren Indyke",
+      "relationshipType": "employer-employee",
+      "description": "Darren Indyke is associated with Southern Financial LLC, which is linked to Epstein.",
+      "strength": 4
+    },
+    {
+      "person1": "Jeffrey Epstein",
+      "person2": "Paul Morris",
+      "relationshipType": "client-manager",
+      "description": "Paul Morris is the Relationship Manager for Epstein's accounts at Deutsche Bank.",
+      "strength": 5
+    },
+    {
+      "person1": "Darren Indyke",
+      "person2": "Paul Morris",
+      "relationshipType": "professional association",
+      "description": "Both are involved in the management of Epstein's financial affairs.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [
+    "Little Saint James, Saint Thomas, US Virgin Islands",
+    "6100 Red Hook Quarter, B3 St, Thomas, US Virgin Islands",
+    "575 Lexington Ave, 4th Fl, New York, NY, USA"
+  ],
+  "keyFacts": [
+    "Jeffrey Epstein is the President of Mort, Inc., a company registered in the US Virgin Islands.",
+    "Darren Indyke is identified as a lawyer and associated with Southern Financial LLC.",
+    "Paul Morris is the Relationship Manager handling Epstein's accounts at Deutsche Bank.",
+    "The KYC process for Epstein included compliance checks with no negative results found.",
+    "The document outlines Epstein's significant financial background and estimated net worth."
+  ],
+  "analyzedAt": "2026-02-21T20:12:37.998Z"
+}

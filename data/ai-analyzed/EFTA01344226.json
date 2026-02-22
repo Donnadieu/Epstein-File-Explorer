@@ -1,0 +1,63 @@
+{
+  "fileName": "EFTA01344226.pdf",
+  "dataSet": "10",
+  "documentType": "correspondence",
+  "dateOriginal": "2014-07-15",
+  "summary": "This document is an email correspondence between Richard Kahn and Amanda Kirby discussing a wire transfer related to Leon Black or one of his entities. The conversation indicates a pending transaction and questions about its origin, suggesting a financial context tied to Epstein's associates.",
+  "persons": [
+    {
+      "name": "Richard Kahn",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Richard Kahn is discussing a wire transfer with Amanda Kirby, indicating a financial transaction related to Leon Black.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Amanda Kirby",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Amanda Kirby is responding to Richard Kahn about a wire transfer, indicating her involvement in the financial dealings.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Leon Black",
+      "role": "Entity Owner",
+      "category": "associate",
+      "context": "Leon Black is mentioned as a potential source of the incoming wire transfer, linking him to the financial discussions.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Richard Kahn",
+      "person2": "Amanda Kirby",
+      "relationshipType": "professional",
+      "description": "Richard Kahn and Amanda Kirby are discussing financial transactions, indicating a professional relationship in the context of banking or finance.",
+      "strength": 4
+    },
+    {
+      "person1": "Richard Kahn",
+      "person2": "Leon Black",
+      "relationshipType": "financial",
+      "description": "Leon Black is referenced in relation to a wire transfer, suggesting a financial connection to Richard Kahn.",
+      "strength": 3
+    },
+    {
+      "person1": "Amanda Kirby",
+      "person2": "Leon Black",
+      "relationshipType": "financial",
+      "description": "Leon Black is mentioned in the context of a wire transfer that Amanda Kirby is monitoring, indicating a financial connection.",
+      "strength": 3
+    }
+  ],
+  "events": [],
+  "locations": [],
+  "keyFacts": [
+    "The email discusses a wire transfer that is expected to come from Leon Black or one of his entities.",
+    "Richard Kahn is associated with HBRK Associates Inc.",
+    "Amanda Kirby is affiliated with Deutsche Bank Trust Company Americas.",
+    "The correspondence is marked as confidential, indicating the sensitive nature of the information.",
+    "There is a question about whether the funds are leftover from JPMorgan, suggesting a connection to previous financial dealings."
+  ],
+  "analyzedAt": "2026-02-22T15:48:48.688Z"
+}

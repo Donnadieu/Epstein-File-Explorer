@@ -1,0 +1,86 @@
+{
+  "fileName": "EFTA01319680.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2004-10-11",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein for shipping services rendered. It details various shipments made by Epstein, including charges, discounts, and payment information, indicating a total amount due of $272.09 by October 26, 2004.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary individual associated with the invoice, indicating he is responsible for the shipping charges listed.",
+      "mentionCount": 10
+    },
+    {
+      "name": "Alfredo Rodriguez",
+      "role": "Sender",
+      "category": "associate",
+      "context": "Alfredo Rodriguez is mentioned as a sender in multiple shipments associated with Epstein.",
+      "mentionCount": 3
+    },
+    {
+      "name": "Alan Dershowitz",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Alan Dershowitz is listed as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Manuelo Stouter",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Manuelo Stouter is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Dante Ferretti",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Dante Ferretti is mentioned as a recipient for one of the shipments sent by Epstein.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alfredo Rodriguez",
+      "relationshipType": "employer-employee",
+      "description": "Alfredo Rodriguez is mentioned as a sender for shipments associated with Epstein, indicating a working relationship.",
+      "strength": 3
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Alan Dershowitz",
+      "relationshipType": "client-attorney",
+      "description": "Alan Dershowitz is listed as a recipient for a shipment, suggesting a professional relationship.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Manuelo Stouter",
+      "relationshipType": "client-recipient",
+      "description": "Manuelo Stouter is mentioned as a recipient for a shipment sent by Epstein.",
+      "strength": 2
+    },
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "Dante Ferretti",
+      "relationshipType": "client-recipient",
+      "description": "Dante Ferretti is mentioned as a recipient for a shipment sent by Epstein.",
+      "strength": 2
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022"
+  ],
+  "keyFacts": [
+    "The invoice is dated October 11, 2004, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $272.09, with a payment deadline of October 26, 2004.",
+    "The invoice details multiple shipments made by Epstein, including transportation charges and discounts.",
+    "Alfredo Rodriguez is frequently mentioned as a sender for shipments associated with Epstein.",
+    "Several recipients of shipments include Alan Dershowitz, Manuelo Stouter, and Dante Ferretti."
+  ],
+  "analyzedAt": "2026-02-22T10:17:50.401Z"
+}

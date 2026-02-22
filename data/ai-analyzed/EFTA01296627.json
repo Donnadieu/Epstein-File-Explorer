@@ -1,0 +1,101 @@
+{
+  "fileName": "EFTA01296627.pdf",
+  "dataSet": "10",
+  "documentType": "financial record",
+  "dateOriginal": "2017-06-22",
+  "summary": "This document contains transaction records from Deutsche Bank Wealth Management for the account of LSJE, LLC, detailing various money transfers and transactions between January 3, 2017, and June 22, 2017. It includes transfers to multiple banks and entities, highlighting significant financial activity during this period.",
+  "persons": [
+    {
+      "name": "Michael R Ross",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Michael R Ross is mentioned as a recipient of funds in transactions involving money transfers.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Kimberly M Ross",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "Kimberly M Ross is mentioned alongside Michael R Ross in transactions involving money transfers.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Mehmet Arda Beskardes",
+      "role": "Attorney",
+      "category": "legal",
+      "context": "Mehmet Arda Beskardes is mentioned as a recipient of a funds transfer.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lee McKenzie",
+      "role": "Consultant",
+      "category": "other",
+      "context": "Lee McKenzie is mentioned multiple times as a recipient of funds in various transactions.",
+      "mentionCount": 5
+    },
+    {
+      "name": "John Christensen",
+      "role": "Account Holder",
+      "category": "other",
+      "context": "John Christensen is mentioned as a recipient of funds in transactions.",
+      "mentionCount": 2
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Michael R Ross",
+      "person2": "Kimberly M Ross",
+      "relationshipType": "joint account holders",
+      "description": "Michael R Ross and Kimberly M Ross are mentioned together in the context of account transactions.",
+      "strength": 5
+    },
+    {
+      "person1": "Lee McKenzie",
+      "person2": "Michael R Ross",
+      "relationshipType": "consultant-client",
+      "description": "Lee McKenzie is mentioned as a recipient of funds from transactions involving Michael R Ross.",
+      "strength": 3
+    },
+    {
+      "person1": "Lee McKenzie",
+      "person2": "Kimberly M Ross",
+      "relationshipType": "consultant-client",
+      "description": "Lee McKenzie is mentioned as a recipient of funds from transactions involving Kimberly M Ross.",
+      "strength": 3
+    },
+    {
+      "person1": "John Christensen",
+      "person2": "Lee McKenzie",
+      "relationshipType": "consultant-client",
+      "description": "John Christensen is mentioned in transactions involving payments to Lee McKenzie.",
+      "strength": 3
+    }
+  ],
+  "events": [
+    {
+      "date": "2017-01-03",
+      "title": "Start of Transaction Period",
+      "description": "The document records transactions starting from this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    },
+    {
+      "date": "2017-06-22",
+      "title": "End of Transaction Period",
+      "description": "The document records transactions ending on this date.",
+      "category": "financial",
+      "significance": 3,
+      "personsInvolved": []
+    }
+  ],
+  "locations": [],
+  "keyFacts": [
+    "The document details financial transactions from January 3, 2017, to June 22, 2017.",
+    "Multiple money transfers were made to various banks including Bank of America, Wells Fargo, and JPMorgan Chase.",
+    "Lee McKenzie is mentioned multiple times as a recipient of funds, indicating a significant financial relationship.",
+    "Michael R Ross and Kimberly M Ross are joint account holders involved in several transactions.",
+    "Mehmet Arda Beskardes is noted as an attorney receiving funds."
+  ],
+  "analyzedAt": "2026-02-21T20:43:07.193Z"
+}

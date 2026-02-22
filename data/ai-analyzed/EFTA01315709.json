@@ -1,0 +1,105 @@
+{
+  "fileName": "EFTA01315709.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2005-05-23",
+  "summary": "This document is an invoice from FedEx addressed to Jeffrey E. Epstein, detailing transportation charges for various shipments made on May 13, 2005. The total amount due is $472.82, with a breakdown of charges and discounts provided for multiple shipments.",
+  "persons": [
+    {
+      "name": "Jeffrey E. Epstein",
+      "role": "Account Holder",
+      "category": "key figure",
+      "context": "Jeffrey E. Epstein is the primary account holder for the FedEx services detailed in the invoice, with multiple shipments listed under his name.",
+      "mentionCount": 6
+    },
+    {
+      "name": "David Rubin",
+      "role": "Sender",
+      "category": "associate",
+      "context": "David Rubin is mentioned as a sender in one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Rosemary Pitcher",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Rosemary Pitcher is mentioned as a recipient for one of the shipments sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Miles Alexander",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "Miles Alexander is mentioned as a recipient associated with Rosemary Pitcher in the shipment details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "G. Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "G. Maxwell is mentioned as a recipient for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "O. Maxwell",
+      "role": "Recipient",
+      "category": "associate",
+      "context": "O. Maxwell is mentioned as a recipient for one of the shipments listed in the invoice.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Jeffrey E. Epstein",
+      "person2": "David Rubin",
+      "relationshipType": "employer-employee",
+      "description": "David Rubin is associated with Jeffrey E. Epstein as a sender in the shipment details.",
+      "strength": 3
+    },
+    {
+      "person1": "Rosemary Pitcher",
+      "person2": "Miles Alexander",
+      "relationshipType": "social",
+      "description": "Miles Alexander is mentioned in connection with Rosemary Pitcher as a recipient for a shipment.",
+      "strength": 2
+    },
+    {
+      "person1": "G. Maxwell",
+      "person2": "O. Maxwell",
+      "relationshipType": "social",
+      "description": "G. Maxwell and O. Maxwell are both mentioned as recipients for shipments, indicating a possible connection.",
+      "strength": 2
+    }
+  ],
+  "events": [
+    {
+      "date": "2005-05-13",
+      "title": "Multiple Shipments Processed",
+      "description": "Several shipments were processed and sent via FedEx, with details provided in the invoice.",
+      "category": "shipping",
+      "significance": 3,
+      "personsInvolved": [
+        "Jeffrey E. Epstein",
+        "David Rubin",
+        "Rosemary Pitcher",
+        "Miles Alexander",
+        "G. Maxwell",
+        "O. Maxwell"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave FL 4, New York, NY 10022-6643",
+    "85 Medinat Hayehudim St, Herzliya Pituach, Israel",
+    "Little St. James, U.S. Virgin Islands",
+    "358 Eirillo Way, Palm Beach, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated May 23, 2005, and is addressed to Jeffrey E. Epstein.",
+    "The total amount due on the invoice is $472.82.",
+    "Multiple shipments were processed on May 13, 2005, with various recipients and senders listed.",
+    "Discounts totaling $13.19 were applied to the invoice.",
+    "Several individuals are mentioned as recipients of shipments, indicating a network of connections."
+  ],
+  "analyzedAt": "2026-02-22T07:15:29.225Z"
+}

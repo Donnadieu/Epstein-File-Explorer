@@ -1,0 +1,55 @@
+{
+  "fileName": "EFTA01317701.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2002-06-28",
+  "summary": "This document is an invoice from FedEx for services rendered on June 28, 2002, detailing transportation charges and discounts applied. It includes payment instructions and contact information for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Lauren K Wintner",
+      "role": "Sender",
+      "category": "other",
+      "context": "Lauren K Wintner is listed as the sender of a package in the invoice details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Cecile De Joigh",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Cecile De Joigh is mentioned as the recipient of a package in the invoice details.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Manuel",
+      "role": "Signer",
+      "category": "other",
+      "context": "Manuel is noted as the person who signed for the delivery of the package.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [],
+  "events": [
+    {
+      "date": "2002-06-26",
+      "title": "Package Delivery",
+      "description": "A package was delivered on June 26, 2002, and signed for by Manuel.",
+      "category": "delivery",
+      "significance": 3,
+      "personsInvolved": [
+        "Lauren K Wintner",
+        "Cecile De Joigh",
+        "Manuel"
+      ]
+    }
+  ],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022",
+    "6100 Red Hook Warrior, Devilest, JRBSTT, New York, NY 10022-6543"
+  ],
+  "keyFacts": [
+    "The invoice is dated June 28, 2002, and includes a total charge of $18.45.",
+    "A discount of $9.50 was applied to the transportation charges.",
+    "The package was delivered on June 26, 2002, and signed for by an individual named Manuel."
+  ],
+  "analyzedAt": "2026-02-22T08:34:37.448Z"
+}

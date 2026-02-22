@@ -1,0 +1,88 @@
+{
+  "fileName": "EFTA01319325.pdf",
+  "dataSet": "10",
+  "documentType": "invoice",
+  "dateOriginal": "2001-08-03",
+  "summary": "This document is an invoice from FedEx detailing shipping charges for NYSG LLC, with billing information and payment instructions. It includes multiple entries for services rendered, along with contact information for invoice inquiries.",
+  "persons": [
+    {
+      "name": "Bella Tsukeman",
+      "role": "Billing Contact",
+      "category": "staff",
+      "context": "Bella Tsukeman is listed as the billing contact for NYSG LLC on the invoice.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Lauren Kwitner",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Lauren Kwitner is identified as the sender associated with NYSG LLC in the invoice details.",
+      "mentionCount": 2
+    },
+    {
+      "name": "Jeffrey A Schantz",
+      "role": "Sender",
+      "category": "staff",
+      "context": "Jeffrey A Schantz is mentioned as a sender in the invoice, associated with a package sent via FedEx.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Vickie Sweigart",
+      "role": "Recipient",
+      "category": "staff",
+      "context": "Vickie Sweigart is noted as a recipient in the invoice details for a package sent to Chris Craft Industries.",
+      "mentionCount": 1
+    },
+    {
+      "name": "Chris Craft Industries Inc",
+      "role": "Recipient",
+      "category": "other",
+      "context": "Chris Craft Industries Inc is mentioned as the company receiving a package, with a specific address provided.",
+      "mentionCount": 1
+    }
+  ],
+  "connections": [
+    {
+      "person1": "Bella Tsukeman",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Bella Tsukeman is the billing contact for NYSG LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Lauren Kwitner",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Lauren Kwitner is identified as a sender associated with NYSG LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Jeffrey A Schantz",
+      "person2": "NYSG LLC",
+      "relationshipType": "employee-employer",
+      "description": "Jeffrey A Schantz is mentioned as a sender for a package related to NYSG LLC.",
+      "strength": 5
+    },
+    {
+      "person1": "Vickie Sweigart",
+      "person2": "Chris Craft Industries Inc",
+      "relationshipType": "recipient-sender",
+      "description": "Vickie Sweigart is noted as a recipient for a package sent to Chris Craft Industries Inc.",
+      "strength": 4
+    }
+  ],
+  "events": [],
+  "locations": [
+    "457 Madison Ave, New York, NY 10022-6843",
+    "6525 West Campus Oval Ste 105, New Albany, OH 43064",
+    "5355 Town Center Suite 200, Boca Raton, FL 33480"
+  ],
+  "keyFacts": [
+    "The invoice is dated August 3, 2001, and includes multiple shipping charges.",
+    "Bella Tsukeman is the billing contact for NYSG LLC.",
+    "Lauren Kwitner and Jeffrey A Schantz are identified as senders for packages associated with NYSG LLC.",
+    "Vickie Sweigart is mentioned as a recipient for a package sent to Chris Craft Industries Inc.",
+    "The document outlines payment instructions and due dates for the invoice."
+  ],
+  "analyzedAt": "2026-02-22T10:01:48.778Z"
+}
