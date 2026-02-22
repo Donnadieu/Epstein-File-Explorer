@@ -78,6 +78,93 @@ export const PERSONS_SCHEMA: CollectionCreateSchema = {
   token_separators: ["-", "_", "."],
 };
 
+// --- Synonym Definitions ---
+
+/** Static synonyms applied to the document_pages collection */
+export const DOCUMENT_PAGE_SYNONYMS = [
+  {
+    id: "lolita-express",
+    synonyms: ["Lolita Express", "N908JE"],
+  },
+  {
+    id: "little-st-james",
+    synonyms: ["Little St. James", "LSJ", "the island", "private island"],
+  },
+  {
+    id: "virginia-roberts-giuffre",
+    synonyms: ["Virginia Roberts", "Virginia Giuffre", "Virginia Roberts Giuffre"],
+  },
+  {
+    id: "npa",
+    synonyms: ["NPA", "Non-Prosecution Agreement"],
+  },
+];
+
+/** Static synonyms applied to the persons collection */
+export const PERSONS_SYNONYMS = [
+  {
+    id: "virginia-roberts-giuffre",
+    synonyms: ["Virginia Roberts", "Virginia Giuffre", "Virginia Roberts Giuffre"],
+  },
+  {
+    id: "npa",
+    synonyms: ["NPA", "Non-Prosecution Agreement"],
+  },
+];
+
+/**
+ * Upsert multi-way synonyms to a Typesense collection.
+ */
+export async function upsertSynonyms(
+  tsClient: Client,
+  collectionName: string,
+  synonyms: { id: string; synonyms: string[] }[],
+): Promise<void> {
+  for (const syn of synonyms) {
+    await tsClient.collections(collectionName).synonyms().upsert(syn.id, {
+      synonyms: syn.synonyms,
+    });
+  }
+}
+
+/**
+ * Build one-way synonyms from person aliases.
+ * Each alias maps to the canonical person name so searching by alias finds the person.
+ */
+export function buildAliasSynonyms(
+  persons: Array<{ id: number; name: string; aliases: string[] | null }>,
+): { id: string; root: string; synonyms: string[] }[] {
+  const result: { id: string; root: string; synonyms: string[] }[] = [];
+  for (const person of persons) {
+    const aliases = person.aliases?.filter(
+      (a) => a.toLowerCase() !== person.name.toLowerCase(),
+    );
+    if (!aliases || aliases.length === 0) continue;
+    result.push({
+      id: `person-alias-${person.id}`,
+      root: person.name,
+      synonyms: aliases,
+    });
+  }
+  return result;
+}
+
+/**
+ * Upsert one-way synonyms (alias → canonical name) to a Typesense collection.
+ */
+export async function upsertOneWaySynonyms(
+  tsClient: Client,
+  collectionName: string,
+  synonyms: { id: string; root: string; synonyms: string[] }[],
+): Promise<void> {
+  for (const syn of synonyms) {
+    await tsClient.collections(collectionName).synonyms().upsert(syn.id, {
+      root: syn.root,
+      synonyms: syn.synonyms,
+    });
+  }
+}
+
 // --- Types ---
 
 export interface TypesensePageResult {
@@ -216,7 +303,7 @@ export async function typesenseSearchPages(
       filter_by: filterBy,
       facet_by: "document_type,data_set",
       max_facet_values: 50,
-      num_typos: 1,
+      num_typos: 2,
       typo_tokens_threshold: 2,
       drop_tokens_threshold: 1,
     });
@@ -257,7 +344,7 @@ export async function typesenseSearchInstant(
       per_page: limit,
       page: 1,
       filter_by: filterBy,
-      num_typos: 1,
+      num_typos: 2,
       prefix: true,
     });
 
@@ -297,7 +384,7 @@ export async function typesenseDocumentSearch(
       filter_by: filterBy,
       group_by: "document_id",
       group_limit: 1,
-      num_typos: 1,
+      num_typos: 2,
     });
 
   // Grouped results come in grouped_hits

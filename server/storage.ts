@@ -133,6 +133,7 @@ export interface IStorage {
 
   recordSearchQuery(query: string, sessionId: string, resultCount: number): Promise<void>;
   getTrendingSearches(limit: number): Promise<{ query: string; searchCount: number }[]>;
+  getZeroResultSearches(limit: number, days?: number): Promise<{ query: string; searchCount: number; lastSearched: string }[]>;
 }
 
 function escapeLikePattern(input: string): string {
@@ -2159,7 +2160,7 @@ export class DatabaseStorage implements IStorage {
 
   async recordSearchQuery(query: string, sessionId: string, resultCount: number): Promise<void> {
     const normalized = query.toLowerCase().trim();
-    if (normalized.length < 2 || resultCount === 0) return;
+    if (normalized.length < 2) return;
 
     // Dedup: skip if same session searched same query in last 5 minutes
     const [existing] = await db.select({ id: searchQueries.id })
@@ -2195,6 +2196,29 @@ export class DatabaseStorage implements IStorage {
         searchCount: Number(r.search_count),
       }));
     });
+  }
+
+  async getZeroResultSearches(
+    limit: number,
+    days: number = 7,
+  ): Promise<{ query: string; searchCount: number; lastSearched: string }[]> {
+    const result: any = await db.execute(sql`
+      SELECT query,
+             COUNT(*)::int AS search_count,
+             MAX(created_at) AS last_searched
+      FROM search_queries
+      WHERE result_count = 0
+        AND created_at > NOW() - INTERVAL '1 day' * ${days}
+      GROUP BY query
+      ORDER BY search_count DESC, last_searched DESC
+      LIMIT ${limit}
+    `);
+    const rows: any[] = result.rows ?? result;
+    return rows.map((r: any) => ({
+      query: r.query as string,
+      searchCount: Number(r.search_count),
+      lastSearched: new Date(r.last_searched).toISOString(),
+    }));
   }
 }
 
