@@ -258,16 +258,24 @@ function editDistance(a: string, b: string): number {
   return dp[a.length][b.length];
 }
 
-let _deepseek: OpenAI | null = null;
-function getDeepSeek(): OpenAI | null {
-  if (!process.env.DEEPSEEK_API_KEY) return null;
-  if (!_deepseek) {
-    _deepseek = new OpenAI({
+let _aiClient: OpenAI | null = null;
+let _aiModel: string = "deepseek-chat";
+
+function getAIClient(): { client: OpenAI; model: string } | null {
+  if (_aiClient) return { client: _aiClient, model: _aiModel };
+  if (process.env.OPENAI_API_KEY) {
+    _aiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    _aiModel = "gpt-4o-mini";
+  } else if (process.env.DEEPSEEK_API_KEY) {
+    _aiClient = new OpenAI({
       baseURL: "https://api.deepseek.com",
       apiKey: process.env.DEEPSEEK_API_KEY,
     });
+    _aiModel = "deepseek-chat";
+  } else {
+    return null;
   }
-  return _deepseek;
+  return { client: _aiClient, model: _aiModel };
 }
 
 export async function loadPersonsFromFile(filePath?: string): Promise<number> {
@@ -3371,9 +3379,9 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
   }
 
   // --- Classify uncached connections via AI or regex ---
-  const deepseek = getDeepSeek();
-  if (deepseek && uncached.length > 0) {
-    console.log("  Using AI to classify connection types...");
+  const ai = getAIClient();
+  if (ai && uncached.length > 0) {
+    console.log(`  Using AI (${ai.model}) to classify connection types...`);
     const BATCH_SIZE = 25;
 
     for (let i = 0; i < uncached.length; i += BATCH_SIZE) {
@@ -3386,8 +3394,8 @@ export async function extractConnectionsFromDescriptions(): Promise<number> {
           )
           .join("\n");
 
-        const response = await deepseek.chat.completions.create({
-          model: "deepseek-chat",
+        const response = await ai.client.chat.completions.create({
+          model: ai.model,
           messages: [
             {
               role: "system",
