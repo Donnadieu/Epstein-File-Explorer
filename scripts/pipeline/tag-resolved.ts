@@ -48,7 +48,7 @@ async function main() {
         COALESCE(array_remove(tags, 'extension-resolved'), ARRAY[]::text[]),
         'extension-resolved'
       )
-      WHERE efta_number = ANY(${batch})
+      WHERE efta_number = ANY(${sql`${batch}::text[]`})
         AND (tags IS NULL OR NOT tags @> ARRAY['extension-resolved'])
     `);
     tagged += (result as any).rowCount ?? 0;
