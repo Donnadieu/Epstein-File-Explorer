@@ -3,6 +3,7 @@ import * as path from "path";
 import { fileURLToPath } from "url";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.mjs";
 import { createRequire } from "module";
+import { createCanvas } from "canvas";
 
 // Prevent corrupted PDFs from crashing the process with unhandled rejections
 process.on("unhandledRejection", (reason: any) => {
@@ -18,6 +19,12 @@ const DATA_DIR = path.resolve(__dirname, "../../data");
 const DOWNLOADS_DIR = path.join(DATA_DIR, "downloads");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
 const EXTRACTION_LOG = path.join(DATA_DIR, "extraction-log.json");
+
+// OCR fallback configuration
+const OCR_DPI = 200;
+const OCR_SCALE = OCR_DPI / 72; // PDF default is 72 DPI
+const CHARS_PER_PAGE_THRESHOLD = 50;
+const SINGLE_PAGE_CHARS_THRESHOLD = 20;
 
 export interface ExtractedDocument {
   filePath: string;
@@ -71,6 +78,32 @@ function saveLog(log: ExtractionLog) {
 
 function getOutputPath(outputDir: string, dataSetId: number, fileName: string): string {
   return path.join(outputDir, `ds${dataSetId}`, `${path.basename(fileName, ".pdf")}.json`);
+}
+
+function isTextQualityPoor(text: string, pageCount: number): boolean {
+  const totalChars = text.trim().length;
+  if (pageCount <= 1) return totalChars < SINGLE_PAGE_CHARS_THRESHOLD;
+  return (totalChars / pageCount) < CHARS_PER_PAGE_THRESHOLD;
+}
+
+// Lazy Tesseract worker — created on first use, reused across documents
+let tesseractWorker: any = null;
+
+async function getTesseractWorker(): Promise<any> {
+  if (!tesseractWorker) {
+    console.log("    Initializing Tesseract OCR worker...");
+    const Tesseract = await import("tesseract.js");
+    tesseractWorker = await Tesseract.createWorker("eng");
+    console.log("    Tesseract worker ready.");
+  }
+  return tesseractWorker;
+}
+
+async function terminateTesseractWorker(): Promise<void> {
+  if (tesseractWorker) {
+    await tesseractWorker.terminate();
+    tesseractWorker = null;
+  }
 }
 
 async function extractPdfText(filePath: string): Promise<{ text: string; pageCount: number; metadata: Record<string, any> }> {
@@ -131,12 +164,84 @@ async function extractPdfText(filePath: string): Promise<{ text: string; pageCou
   }
 }
 
+async function extractPdfTextWithOCR(filePath: string): Promise<{ text: string; pageCount: number; metadata: Record<string, any> }> {
+  const buffer = fs.readFileSync(filePath);
+  const data = new Uint8Array(buffer);
+
+  let doc: any = null;
+  try {
+    const loadingTask = pdfjsLib.getDocument({
+      data,
+      useSystemFonts: true,
+      standardFontDataUrl: STANDARD_FONT_DATA_URL,
+      disableAutoFetch: true,
+      isEvalSupported: false,
+    });
+    loadingTask.onUnsupportedFeature = () => {};
+    doc = await loadingTask.promise;
+
+    const pageCount = doc.numPages;
+    const worker = await getTesseractWorker();
+    let fullText = "";
+
+    for (let i = 1; i <= pageCount; i++) {
+      let page: any = null;
+      try {
+        page = await doc.getPage(i);
+        const viewport = page.getViewport({ scale: OCR_SCALE });
+        const width = Math.floor(viewport.width);
+        const height = Math.floor(viewport.height);
+
+        const canvas = createCanvas(width, height);
+        const ctx = canvas.getContext("2d");
+
+        await page.render({ canvasContext: ctx as any, viewport }).promise;
+
+        const pngBuffer = canvas.toBuffer("image/png");
+        const { data: ocrResult } = await worker.recognize(pngBuffer);
+        const pageText = ocrResult.text.trim();
+
+        if (pageText.length > 0) {
+          fullText += pageText + "\n\n";
+        }
+
+        page.cleanup();
+        page = null;
+      } catch (pageError: any) {
+        console.warn(`    OCR page ${i} error: ${pageError.message?.substring(0, 100)}`);
+        if (page) page.cleanup();
+      }
+    }
+
+    let metadata: Record<string, any> = {};
+    try {
+      const meta = await doc.getMetadata();
+      metadata = {
+        title: (meta?.info as any)?.Title || "",
+        author: (meta?.info as any)?.Author || "",
+        creator: (meta?.info as any)?.Creator || "",
+        producer: (meta?.info as any)?.Producer || "",
+      };
+    } catch {
+    }
+    metadata.ocrDpi = OCR_DPI;
+
+    return { text: fullText.trim(), pageCount, metadata };
+  } catch (error: any) {
+    console.warn(`    OCR extraction error: ${error.message?.substring(0, 100)}`);
+    return { text: "", pageCount: 0, metadata: { error: error.message } };
+  } finally {
+    if (doc) doc.destroy();
+  }
+}
+
 export async function processDocuments(options: {
   inputDir?: string;
   dataSetIds?: number[];
   fileTypes?: string[];
   maxFiles?: number;
   outputDir?: string;
+  reprocessEmpty?: boolean;
 }): Promise<ExtractedDocument[]> {
   console.log("\n=== PDF Text Extractor ===\n");
 
@@ -157,9 +262,46 @@ export async function processDocuments(options: {
     : [];
 
   const log = loadLog();
+
+  // Pre-pass: remove low-quality extractions so they get re-extracted with OCR
+  if (options.reprocessEmpty) {
+    console.log("  Scanning for low-quality extractions to reprocess...");
+    let removedCount = 0;
+
+    for (const dir of dirs) {
+      const dsMatch = dir.match(/data-set-(\d+)/);
+      if (!dsMatch) continue;
+      const dsId = parseInt(dsMatch[1], 10);
+      if (options.dataSetIds && !options.dataSetIds.includes(dsId)) continue;
+
+      const dsOutputDir = path.join(outputDir, `ds${dsId}`);
+      if (!fs.existsSync(dsOutputDir)) continue;
+
+      const jsonFiles = fs.readdirSync(dsOutputDir).filter(f => f.endsWith(".json"));
+      for (const jsonFile of jsonFiles) {
+        const jsonPath = path.join(dsOutputDir, jsonFile);
+        try {
+          const doc: ExtractedDocument = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
+          if (doc.method === "ocr") continue; // Already OCR'd, skip
+          if (isTextQualityPoor(doc.text, doc.pageCount)) {
+            log.totalPages -= doc.pageCount;
+            log.totalChars -= doc.text.length;
+            log.totalProcessed--;
+            fs.unlinkSync(jsonPath);
+            removedCount++;
+          }
+        } catch {
+          // Skip malformed JSON
+        }
+      }
+    }
+
+    console.log(`  Removed ${removedCount} low-quality extractions for reprocessing`);
+  }
   let processed = 0;
   let skipped = 0;
   let failed = 0;
+  let ocrCount = 0;
   let totalFiles = 0;
 
   for (const dir of dirs) {
@@ -192,15 +334,32 @@ export async function processDocuments(options: {
         const stats = fs.statSync(filePath);
         const extracted = await extractPdfText(filePath);
 
+        let method: ExtractedDocument["method"] = "pdfjs";
+        let finalExtracted = extracted;
+
+        // OCR fallback when pdf.js yields poor text
+        if (isTextQualityPoor(extracted.text, extracted.pageCount) && extracted.pageCount > 0) {
+          console.log(`    Low text quality for ${fileName} (${extracted.text.length} chars, ${extracted.pageCount} pages) - trying OCR...`);
+          const ocrResult = await extractPdfTextWithOCR(filePath);
+          if (ocrResult.text.length > extracted.text.length) {
+            finalExtracted = ocrResult;
+            method = "ocr";
+            ocrCount++;
+            console.log(`    OCR improved: ${extracted.text.length} → ${ocrResult.text.length} chars`);
+          } else {
+            console.log(`    OCR did not improve results (${ocrResult.text.length} chars), keeping pdfjs output`);
+          }
+        }
+
         const result: ExtractedDocument = {
           filePath,
           fileName,
           dataSetId: dsId,
-          text: extracted.text,
-          pageCount: extracted.pageCount,
-          metadata: extracted.metadata,
+          text: finalExtracted.text,
+          pageCount: finalExtracted.pageCount,
+          metadata: finalExtracted.metadata,
           extractedAt: new Date().toISOString(),
-          method: "pdfjs",
+          method,
           fileType: "pdf",
           fileSizeBytes: stats.size,
         };
@@ -209,8 +368,8 @@ export async function processDocuments(options: {
         if (!fs.existsSync(dsOutputDir)) fs.mkdirSync(dsOutputDir, { recursive: true });
         fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
 
-        log.totalPages += extracted.pageCount;
-        log.totalChars += extracted.text.length;
+        log.totalPages += finalExtracted.pageCount;
+        log.totalChars += finalExtracted.text.length;
         log.totalProcessed++;
         processed++;
       } catch (error: any) {
@@ -226,11 +385,12 @@ export async function processDocuments(options: {
     }
   }
 
+  await terminateTesseractWorker();
   saveLog(log);
 
   console.log("\n=== Extraction Summary ===");
   console.log(`Total PDFs found: ${totalFiles}`);
-  console.log(`Extracted: ${processed}`);
+  console.log(`Extracted: ${processed} (${ocrCount} via OCR)`);
   console.log(`Skipped (already done): ${skipped}`);
   console.log(`Failed: ${failed}`);
   console.log(`Total pages: ${log.totalPages}`);
@@ -253,6 +413,8 @@ if (process.argv[1]?.includes(path.basename(__filename))) {
       options.maxFiles = parseInt(args[++i], 10);
     } else if (args[i] === "--output" && args[i + 1]) {
       options.outputDir = args[++i];
+    } else if (args[i] === "--reprocess-empty") {
+      options.reprocessEmpty = true;
     }
   }
 
