@@ -60,28 +60,166 @@ const connectionTypeColors: Record<string, string> = {
   "victim testimony": "bg-chart-4/10 text-chart-4",
 };
 
-function FilterControls({
-  searchQuery,
-  setSearchQuery,
-  allCategories,
-  activeCategories,
-  toggleCategory,
-  activeConnectionTypes,
-  toggleConnectionType,
-  connectionTypes,
-  keyword,
-  setKeyword,
-  minConnections,
-  setMinConnections,
-  maxConnections,
-  minStrength,
-  setMinStrength,
-  minDocumentCount,
-  setMinDocumentCount,
-  timeRange,
-  setTimeRange,
-  yearRange,
-}: {
+function FilterControlsSidebar(props: FilterControlsProps) {
+  return (
+    <div className="flex flex-col gap-5">
+      <FilterSearchInputs {...props} />
+      <FilterCategoryCheckboxes {...props} />
+      <FilterSliders {...props} />
+      <FilterConnectionTypes {...props} />
+      <FilterTimeRange {...props} />
+    </div>
+  );
+}
+
+function FilterBar(props: FilterControlsProps) {
+  const [showCategories, setShowCategories] = useState(false);
+  const [showConnectionTypes, setShowConnectionTypes] = useState(false);
+
+  return (
+    <div className="border border-border rounded-lg bg-card p-4 flex flex-col gap-3">
+      {/* Row 1: Search inputs */}
+      <div className="flex gap-3">
+        <div className="flex-1 relative">
+          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
+          <Input
+            type="search"
+            placeholder="Search by name..."
+            value={props.searchQuery}
+            onChange={(e) => props.setSearchQuery(e.target.value)}
+            className="pl-8 h-8 text-sm"
+            data-testid="input-network-search"
+          />
+        </div>
+        <div className="flex-1">
+          <Input
+            type="search"
+            placeholder="Filter by keyword..."
+            value={props.keyword}
+            onChange={(e) => props.setKeyword(e.target.value)}
+            className="h-8 text-sm"
+          />
+        </div>
+      </div>
+
+      {/* Row 2: Sliders */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {props.maxConnections > 1 && (
+          <div>
+            <Label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
+              Min. Connections: {props.minConnections}
+            </Label>
+            <Slider
+              min={1}
+              max={props.maxConnections}
+              step={1}
+              value={[props.minConnections]}
+              onValueChange={(v) => props.setMinConnections(v[0])}
+            />
+          </div>
+        )}
+        <div>
+          <Label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
+            Min. Strength: {props.minStrength}
+          </Label>
+          <Slider
+            min={1}
+            max={5}
+            step={1}
+            value={[props.minStrength]}
+            onValueChange={(v) => props.setMinStrength(v[0])}
+          />
+        </div>
+        <div>
+          <Label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
+            Min. Source Docs: {props.minDocumentCount}
+          </Label>
+          <Slider
+            min={1}
+            max={10}
+            step={1}
+            value={[props.minDocumentCount]}
+            onValueChange={(v) => props.setMinDocumentCount(v[0])}
+          />
+        </div>
+        {props.yearRange && props.timeRange && (
+          <div>
+            <Label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5 block">
+              Time: {props.timeRange[0]}–{props.timeRange[1]}
+            </Label>
+            <Slider
+              min={props.yearRange[0]}
+              max={props.yearRange[1]}
+              step={1}
+              value={props.timeRange}
+              onValueChange={(v) => props.setTimeRange(v as [number, number])}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Row 3: Expandable category & connection type toggles */}
+      <div className="flex gap-2 flex-wrap">
+        <Button
+          variant="outline"
+          size="sm"
+          className="h-7 text-xs"
+          onClick={() => setShowCategories(!showCategories)}
+        >
+          Categories
+          <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${showCategories ? "rotate-90" : ""}`} />
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          className="h-7 text-xs"
+          onClick={() => setShowConnectionTypes(!showConnectionTypes)}
+        >
+          Connection Types
+          <ChevronRight className={`w-3 h-3 ml-1 transition-transform ${showConnectionTypes ? "rotate-90" : ""}`} />
+        </Button>
+      </div>
+
+      {/* Expandable: Categories */}
+      {showCategories && (
+        <div className="flex flex-wrap gap-2">
+          {props.allCategories.map((cat) => (
+            <label key={cat} className="flex items-center gap-1.5 cursor-pointer bg-accent/50 rounded-md px-2 py-1">
+              <Checkbox
+                checked={props.activeCategories.has(cat)}
+                onCheckedChange={() => props.toggleCategory(cat)}
+                className="h-3.5 w-3.5"
+              />
+              <span
+                className="w-2 h-2 rounded-full shrink-0"
+                style={{ backgroundColor: getCategoryColor(cat) }}
+              />
+              <span className="text-xs capitalize">{cat}</span>
+            </label>
+          ))}
+        </div>
+      )}
+
+      {/* Expandable: Connection Types */}
+      {showConnectionTypes && (
+        <div className="flex flex-wrap gap-2">
+          {props.connectionTypes.map((type) => (
+            <label key={type} className="flex items-center gap-1.5 cursor-pointer bg-accent/50 rounded-md px-2 py-1">
+              <Checkbox
+                checked={props.activeConnectionTypes.has(type)}
+                onCheckedChange={() => props.toggleConnectionType(type)}
+                className="h-3.5 w-3.5"
+              />
+              <span className="text-xs capitalize">{type}</span>
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+interface FilterControlsProps {
   searchQuery: string;
   setSearchQuery: (v: string) => void;
   allCategories: string[];
@@ -102,10 +240,11 @@ function FilterControls({
   timeRange: [number, number] | null;
   setTimeRange: (v: [number, number]) => void;
   yearRange: [number, number] | null;
-}) {
+}
+
+function FilterSearchInputs({ searchQuery, setSearchQuery, keyword, setKeyword }: FilterControlsProps) {
   return (
-    <div className="flex flex-col gap-5">
-      {/* Entity search */}
+    <>
       <div>
         <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
           Search People
@@ -122,110 +261,6 @@ function FilterControls({
           />
         </div>
       </div>
-
-      {/* Category checkboxes */}
-      <div>
-        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-          Categories
-        </Label>
-        <div className="flex flex-col gap-1.5">
-          {allCategories.map((cat) => (
-            <label key={cat} className="flex items-center gap-2 cursor-pointer py-0.5">
-              <Checkbox
-                checked={activeCategories.has(cat)}
-                onCheckedChange={() => toggleCategory(cat)}
-              />
-              <span
-                className="w-2 h-2 rounded-full shrink-0"
-                style={{ backgroundColor: getCategoryColor(cat) }}
-              />
-              <span className="text-sm capitalize">{cat}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {/* Min connections slider */}
-      {maxConnections > 1 && (
-        <div>
-          <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-            Min. Connections: {minConnections}
-          </Label>
-          <div className="px-1">
-            <Slider
-              min={1}
-              max={maxConnections}
-              step={1}
-              value={[minConnections]}
-              onValueChange={(v) => setMinConnections(v[0])}
-            />
-          </div>
-          <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
-            <span>1</span>
-            <span>{maxConnections}</span>
-          </div>
-        </div>
-      )}
-
-      {/* Min strength slider */}
-      <div>
-        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-          Min. Strength: {minStrength}
-        </Label>
-        <div className="px-1">
-          <Slider
-            min={1}
-            max={5}
-            step={1}
-            value={[minStrength]}
-            onValueChange={(v) => setMinStrength(v[0])}
-          />
-        </div>
-        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
-          <span>1 (weak)</span>
-          <span>5 (strong)</span>
-        </div>
-      </div>
-
-      {/* Min source documents slider */}
-      <div>
-        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-          Min. Source Docs: {minDocumentCount}
-        </Label>
-        <div className="px-1">
-          <Slider
-            min={1}
-            max={10}
-            step={1}
-            value={[minDocumentCount]}
-            onValueChange={(v) => setMinDocumentCount(v[0])}
-          />
-        </div>
-        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
-          <span>1</span>
-          <span>10+</span>
-        </div>
-      </div>
-
-      {/* Connection type checkboxes */}
-      <div>
-        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-          Connection Types
-        </Label>
-        <div className="flex flex-col gap-1.5">
-          {connectionTypes.map((type) => (
-            <label key={type} className="flex items-center gap-2 cursor-pointer py-0.5">
-              <Checkbox
-                checked={activeConnectionTypes.has(type)}
-                onCheckedChange={() => toggleConnectionType(type)}
-              />
-              <span className="text-sm capitalize">{type}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-      {/* Keyword filter */}
       <div>
         <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
           Keyword Filter
@@ -238,28 +273,121 @@ function FilterControls({
           className="h-8 text-sm"
         />
       </div>
+    </>
+  );
+}
 
-      {/* Time range slider */}
-      {yearRange && timeRange && (
+function FilterCategoryCheckboxes({ allCategories, activeCategories, toggleCategory }: FilterControlsProps) {
+  return (
+    <div>
+      <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+        Categories
+      </Label>
+      <div className="flex flex-col gap-1.5">
+        {allCategories.map((cat) => (
+          <label key={cat} className="flex items-center gap-2 cursor-pointer py-0.5">
+            <Checkbox
+              checked={activeCategories.has(cat)}
+              onCheckedChange={() => toggleCategory(cat)}
+            />
+            <span
+              className="w-2 h-2 rounded-full shrink-0"
+              style={{ backgroundColor: getCategoryColor(cat) }}
+            />
+            <span className="text-sm capitalize">{cat}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FilterSliders({ minConnections, setMinConnections, maxConnections, minStrength, setMinStrength, minDocumentCount, setMinDocumentCount }: FilterControlsProps) {
+  return (
+    <>
+      {maxConnections > 1 && (
         <div>
           <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
-            Time Range
+            Min. Connections: {minConnections}
           </Label>
           <div className="px-1">
-            <Slider
-              min={yearRange[0]}
-              max={yearRange[1]}
-              step={1}
-              value={timeRange}
-              onValueChange={(v) => setTimeRange(v as [number, number])}
-            />
+            <Slider min={1} max={maxConnections} step={1} value={[minConnections]} onValueChange={(v) => setMinConnections(v[0])} />
           </div>
           <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
-            <span>{timeRange[0]}</span>
-            <span>{timeRange[1]}</span>
+            <span>1</span>
+            <span>{maxConnections}</span>
           </div>
         </div>
       )}
+      <div>
+        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+          Min. Strength: {minStrength}
+        </Label>
+        <div className="px-1">
+          <Slider min={1} max={5} step={1} value={[minStrength]} onValueChange={(v) => setMinStrength(v[0])} />
+        </div>
+        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+          <span>1 (weak)</span>
+          <span>5 (strong)</span>
+        </div>
+      </div>
+      <div>
+        <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+          Min. Source Docs: {minDocumentCount}
+        </Label>
+        <div className="px-1">
+          <Slider min={1} max={10} step={1} value={[minDocumentCount]} onValueChange={(v) => setMinDocumentCount(v[0])} />
+        </div>
+        <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+          <span>1</span>
+          <span>10+</span>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function FilterConnectionTypes({ connectionTypes, activeConnectionTypes, toggleConnectionType }: FilterControlsProps) {
+  return (
+    <div>
+      <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+        Connection Types
+      </Label>
+      <div className="flex flex-col gap-1.5">
+        {connectionTypes.map((type) => (
+          <label key={type} className="flex items-center gap-2 cursor-pointer py-0.5">
+            <Checkbox
+              checked={activeConnectionTypes.has(type)}
+              onCheckedChange={() => toggleConnectionType(type)}
+            />
+            <span className="text-sm capitalize">{type}</span>
+          </label>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FilterTimeRange({ timeRange, setTimeRange, yearRange }: FilterControlsProps) {
+  if (!yearRange || !timeRange) return null;
+  return (
+    <div>
+      <Label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 block">
+        Time Range
+      </Label>
+      <div className="px-1">
+        <Slider
+          min={yearRange[0]}
+          max={yearRange[1]}
+          step={1}
+          value={timeRange}
+          onValueChange={(v) => setTimeRange(v as [number, number])}
+        />
+      </div>
+      <div className="flex justify-between mt-1.5 text-xs text-muted-foreground">
+        <span>{timeRange[0]}</span>
+        <span>{timeRange[1]}</span>
+      </div>
     </div>
   );
 }
@@ -363,7 +491,7 @@ export default function NetworkPage() {
   const docCountFilteredConnections = useMemo(() => {
     if (minDocumentCount <= 1) return strengthFilteredConnections;
     return strengthFilteredConnections.filter(
-      (c) => !c.documentIds || c.documentIds.length === 0 || c.documentIds.length >= minDocumentCount,
+      (c) => (c.documentIds?.length ?? 0) >= minDocumentCount,
     );
   }, [strengthFilteredConnections, minDocumentCount]);
 
@@ -551,7 +679,7 @@ export default function NetworkPage() {
                 <SheetDescription>Refine the network graph</SheetDescription>
               </SheetHeader>
               <div className="mt-4">
-                <FilterControls {...filterProps} />
+                <FilterControlsSidebar {...filterProps} />
               </div>
             </SheetContent>
           </Sheet>
@@ -606,12 +734,11 @@ export default function NetworkPage() {
         </div>
       ) : (
         <>
-          {/* Desktop: Filter sidebar + Graph + optional detail sidebar */}
+          {/* Desktop: Filter bar on top + Graph + optional detail sidebar */}
+          <div className="hidden md:block">
+            <FilterBar {...filterProps} />
+          </div>
           <div className="hidden md:flex flex-1 gap-4 min-h-[500px]">
-            {/* Filter sidebar */}
-            <div className="w-[240px] shrink-0 border border-border rounded-lg bg-card p-4 overflow-y-auto max-h-[calc(100vh-260px)]">
-              <FilterControls {...filterProps} />
-            </div>
 
             {/* Graph area */}
             <div className={`flex-1 relative transition-all ${selectedPersonData ? "md:w-2/3" : "w-full"}`}>
