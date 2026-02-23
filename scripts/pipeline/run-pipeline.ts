@@ -61,6 +61,7 @@ const STAGES = [
   "dedup-connections",
   "update-counts",
   "generate-profiles",
+  "backfill-connection-docs",
 ];
 
 function printUsage() {
