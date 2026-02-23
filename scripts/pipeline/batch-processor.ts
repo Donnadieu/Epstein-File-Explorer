@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
-const AI_OUTPUT_DIR = path.join(DATA_DIR, "ai-analyzed");
+// AI analysis results are stored in the ai_analyses PostgreSQL table (no more JSON files)
 
 // Priority queue: DS9 (emails) > DS1 (flights) > DS5 (grand jury) > rest
 const DATASET_PRIORITY: Record<string, number> = {
@@ -338,11 +338,6 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
     startTime: Date.now(),
   };
 
-  // Ensure output directory exists
-  if (!fs.existsSync(AI_OUTPUT_DIR)) {
-    fs.mkdirSync(AI_OUTPUT_DIR, { recursive: true });
-  }
-
   // Ensure jobs exist in queue
   await ensureJobsExist(config);
 
@@ -424,8 +419,47 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
         await markJobProcessing(job.jobId);
         const result = await analyzeDocumentTiered("", fileName, dataSet, 0, config.model);
 
-        const outFile = path.join(AI_OUTPUT_DIR, `${fileName}.json`);
-        fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+        // Save to database
+        const analysisValues = {
+          fileName,
+          dataSet,
+          documentType: result.documentType,
+          dateOriginal: result.dateOriginal,
+          summary: result.summary,
+          personCount: result.persons.length,
+          connectionCount: result.connections.length,
+          eventCount: result.events.length,
+          locationCount: result.locations.length,
+          keyFactCount: result.keyFacts.length,
+          tier: 0 as number,
+          costCents: 0,
+          inputTokens: result.inputTokens,
+          outputTokens: result.outputTokens,
+          persons: result.persons,
+          connectionsData: result.connections,
+          events: result.events,
+          locations: result.locations,
+          keyFacts: result.keyFacts,
+          analyzedAt: new Date(),
+        };
+        const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+          .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+          .returning({ id: aiAnalyses.id });
+
+        await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+        if (result.persons.length > 0) {
+          await db.insert(aiAnalysisPersons).values(
+            result.persons.map((p: any) => ({
+              aiAnalysisId: analysisRow.id,
+              name: p.name,
+              normalizedName: normalizeName(p.name),
+              role: p.role ?? null,
+              category: p.category ?? null,
+              context: p.context ?? null,
+              mentionCount: p.mentionCount ?? 1,
+            }))
+          );
+        }
 
         await db
           .update(documents)
@@ -455,54 +489,46 @@ async function processBatch(config: BatchConfig): Promise<BatchProgress> {
       try {
         const result = await analyzeDocumentTiered(text, fileName, dataSet, tier, config.model);
 
-        // Save to file
-        const outFile = path.join(AI_OUTPUT_DIR, `${fileName}.json`);
-        fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+        // Save to database
+        const analysisValues = {
+          fileName,
+          dataSet,
+          documentType: result.documentType,
+          dateOriginal: result.dateOriginal,
+          summary: result.summary,
+          personCount: result.persons.length,
+          connectionCount: result.connections.length,
+          eventCount: result.events.length,
+          locationCount: result.locations.length,
+          keyFactCount: result.keyFacts.length,
+          tier,
+          costCents: Math.ceil(result.costCents),
+          inputTokens: result.inputTokens,
+          outputTokens: result.outputTokens,
+          persons: result.persons,
+          connectionsData: result.connections,
+          events: result.events,
+          locations: result.locations,
+          keyFacts: result.keyFacts,
+          analyzedAt: new Date(),
+        };
+        const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+          .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+          .returning({ id: aiAnalyses.id });
 
-        // Save to database (dual-write alongside JSON)
-        try {
-          const analysisValues = {
-            fileName,
-            dataSet,
-            documentType: result.documentType,
-            dateOriginal: result.dateOriginal,
-            summary: result.summary,
-            personCount: result.persons.length,
-            connectionCount: result.connections.length,
-            eventCount: result.events.length,
-            locationCount: result.locations.length,
-            keyFactCount: result.keyFacts.length,
-            tier,
-            costCents: Math.ceil(result.costCents),
-            inputTokens: result.inputTokens,
-            outputTokens: result.outputTokens,
-            persons: result.persons,
-            connectionsData: result.connections,
-            events: result.events,
-            locations: result.locations,
-            keyFacts: result.keyFacts,
-            analyzedAt: new Date(),
-          };
-          const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
-            .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
-            .returning({ id: aiAnalyses.id });
-
-          await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
-          if (result.persons.length > 0) {
-            await db.insert(aiAnalysisPersons).values(
-              result.persons.map((p: any) => ({
-                aiAnalysisId: analysisRow.id,
-                name: p.name,
-                normalizedName: normalizeName(p.name),
-                role: p.role ?? null,
-                category: p.category ?? null,
-                context: p.context ?? null,
-                mentionCount: p.mentionCount ?? 1,
-              }))
-            );
-          }
-        } catch (dbErr) {
-          console.warn(`  DB write failed for ${fileName}: ${(dbErr as Error).message}`);
+        await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+        if (result.persons.length > 0) {
+          await db.insert(aiAnalysisPersons).values(
+            result.persons.map((p: any) => ({
+              aiAnalysisId: analysisRow.id,
+              name: p.name,
+              normalizedName: normalizeName(p.name),
+              role: p.role ?? null,
+              category: p.category ?? null,
+              context: p.context ?? null,
+              mentionCount: p.mentionCount ?? 1,
+            }))
+          );
         }
 
         // Update document status

@@ -14,6 +14,7 @@ import {
   persons,
   timelineEvents,
 } from "../../shared/schema";
+import { aiAnalyses } from "../../shared/schema";
 import type { AIAnalysisResult } from "./ai-analyzer";
 import type { DOJCatalog } from "./doj-scraper";
 import { classifyAllDocuments } from "./media-classifier";
@@ -436,19 +437,14 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
         docsToMark: [] as { efta: string; documentType: string }[],
       }
     : null;
-  const aiDir = path.join(DATA_DIR, "ai-analyzed");
-  if (!fs.existsSync(aiDir)) {
-    console.error(`AI results directory not found: ${aiDir}`);
+  // Load all AI analyses from the database
+  const allAnalysisRows = await db.select().from(aiAnalyses);
+  if (allAnalysisRows.length === 0) {
+    console.log("No AI analysis results found in database.");
     return { persons: 0, connections: 0, events: 0, docLinks: 0 };
   }
 
-  const allFiles = fs.readdirSync(aiDir).filter((f) => f.endsWith(".json"));
-  if (allFiles.length === 0) {
-    console.log("No AI analysis results found.");
-    return { persons: 0, connections: 0, events: 0, docLinks: 0 };
-  }
-
-  // Skip files whose documents are already marked as loaded
+  // Skip analyses whose documents are already marked as loaded
   const loadedDocs = await db
     .select({ title: documents.title, sourceUrl: documents.sourceUrl })
     .from(documents)
@@ -459,12 +455,10 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
     if (doc.sourceUrl) loadedEftas.add(doc.sourceUrl.toLowerCase());
   }
 
-  const files = allFiles.filter((f) => {
-    const efta = f
-      .replace(/\.json$/i, "")
+  const analysisRows = allAnalysisRows.filter((row) => {
+    const efta = row.fileName
       .replace(/\.pdf$/i, "")
       .toLowerCase();
-    // Check if any loaded doc title/sourceUrl contains this EFTA
     for (const key of loadedEftas) {
       if (key.includes(efta)) return false;
     }
@@ -472,7 +466,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   });
 
   console.log(
-    `Loading AI results: ${files.length} new files (${allFiles.length - files.length} already loaded, ${allFiles.length} total)`,
+    `Loading AI results: ${analysisRows.length} new analyses (${allAnalysisRows.length - analysisRows.length} already loaded, ${allAnalysisRows.length} total)`,
   );
 
   let personsCreated = 0;
@@ -583,17 +577,28 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   }
   console.log(`  Pre-loaded ${docByEfta.size} EFTA→doc mappings`);
 
-  for (let fi = 0; fi < files.length; fi++) {
-    const file = files[fi];
+  for (let fi = 0; fi < analysisRows.length; fi++) {
+    const row = analysisRows[fi];
     if (fi % 100 === 0) {
       console.log(
-        `  [${fi}/${files.length}] ${personsCreated}p ${connectionsCreated}c ${eventsCreated}e ${docLinksCreated}d`,
+        `  [${fi}/${analysisRows.length}] ${personsCreated}p ${connectionsCreated}c ${eventsCreated}e ${docLinksCreated}d`,
       );
     }
     try {
-      const data: AIAnalysisResult = JSON.parse(
-        fs.readFileSync(path.join(aiDir, file), "utf-8"),
-      );
+      // Map DB row to AIAnalysisResult shape
+      const data: AIAnalysisResult = {
+        fileName: row.fileName,
+        dataSet: row.dataSet || "unknown",
+        documentType: row.documentType || "other",
+        dateOriginal: row.dateOriginal || null,
+        summary: row.summary || "",
+        persons: (row.persons as any[]) || [],
+        connections: (row.connectionsData as any[]) || [],
+        events: (row.events as any[]) || [],
+        locations: (row.locations as string[]) || [],
+        keyFacts: (row.keyFacts as string[]) || [],
+        analyzedAt: row.analyzedAt?.toISOString() || new Date().toISOString(),
+      };
 
       // --- Persons ---
       for (const mention of data.persons) {
@@ -943,7 +948,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
         }
       }
     } catch (error: any) {
-      console.warn(`  Error processing ${file}: ${error.message}`);
+      console.warn(`  Error processing ${row.fileName}: ${error.message}`);
     }
   }
 
@@ -951,7 +956,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
     const planPath = path.join(DATA_DIR, "ai-results-dry-run.json");
     const output = {
       generatedAt: new Date().toISOString(),
-      filesProcessed: files.length,
+      filesProcessed: analysisRows.length,
       summary: {
         personsToCreate: dryRunSummary.personsToCreate.length,
         personsToUpdate: dryRunSummary.personsToUpdate.length,

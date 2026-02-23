@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, "../../data");
 const EXTRACTED_DIR = path.join(DATA_DIR, "extracted");
-const AI_OUTPUT_DIR = path.join(DATA_DIR, "ai-analyzed");
+// AI analysis results are stored in the ai_analyses PostgreSQL table (no more JSON files)
 
 const MAX_CHUNK_CHARS = 24000;
 const MIN_TEXT_LENGTH = 200;
@@ -516,7 +516,6 @@ function sleep(ms: number): Promise<void> {
 
 export async function runAIAnalysis(options: {
   inputDir?: string;
-  outputDir?: string;
   minTextLength?: number;
   limit?: number;
   skipExisting?: boolean;
@@ -527,7 +526,6 @@ export async function runAIAnalysis(options: {
 } = {}): Promise<AIAnalysisResult[]> {
   const {
     inputDir = EXTRACTED_DIR,
-    outputDir = AI_OUTPUT_DIR,
     minTextLength = MIN_TEXT_LENGTH,
     limit,
     skipExisting = true,
@@ -539,15 +537,11 @@ export async function runAIAnalysis(options: {
 
   const modelConfig = getModelConfig(modelId);
 
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-  }
-
   console.log(`\n=== AI Document Analyzer ===\n`);
   console.log(`Model: ${modelConfig.label} (${modelConfig.model})`);
   console.log(`Provider: ${modelConfig.provider}`);
   console.log(`Input: ${inputDir}`);
-  console.log(`Output: ${outputDir}`);
+  console.log(`Output: PostgreSQL (ai_analyses table)`);
   console.log(`Min priority: ${minPriority}${budget ? `, Budget: ${budget} cents ($${(budget / 100).toFixed(2)})` : ""}`);
 
   // Phase 1: Scan for file paths only (no text loaded) to avoid OOM
@@ -575,13 +569,15 @@ export async function runAIAnalysis(options: {
   console.log(`\nFound ${filePaths.length} extracted files on disk`);
 
   // Phase 2: Filter out already-analyzed files
-  // Pre-scan output directory into a Set for O(1) lookups (avoids N existsSync calls)
+  // Query ai_analyses table for existing file_name values
   const existingOutputs = new Set<string>();
-  if (fs.existsSync(outputDir)) {
-    for (const f of fs.readdirSync(outputDir)) {
-      if (f.endsWith(".json")) {
-        existingOutputs.add(f.replace(/\.json$/, ""));
-      }
+  if (skipExisting) {
+    const existingRows = await db.select({ fileName: aiAnalyses.fileName }).from(aiAnalyses);
+    for (const r of existingRows) {
+      // Store both with and without .pdf suffix for matching
+      const base = r.fileName.replace(/\.pdf$/i, "");
+      existingOutputs.add(base);
+      existingOutputs.add(r.fileName);
     }
   }
 
@@ -638,49 +634,42 @@ export async function runAIAnalysis(options: {
       const costCents = calculateCostCents(inputTokens, outputTokens, modelId);
       totalCostCents += costCents;
 
-      const outFile = path.join(outputDir, `${entry.file}.json`);
-      fs.writeFileSync(outFile, JSON.stringify(result, null, 2));
+      // Save to database
+      const analysisValues = {
+        fileName,
+        dataSet: entry.dataSet,
+        documentType: result.documentType,
+        dateOriginal: result.dateOriginal,
+        summary: result.summary,
+        personCount: result.persons.length,
+        connectionCount: result.connections.length,
+        eventCount: result.events.length,
+        locationCount: result.locations.length,
+        keyFactCount: result.keyFacts.length,
+        persons: result.persons,
+        connectionsData: result.connections,
+        events: result.events,
+        locations: result.locations,
+        keyFacts: result.keyFacts,
+        analyzedAt: new Date(),
+      };
+      const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
+        .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
+        .returning({ id: aiAnalyses.id });
 
-      // Save to database (dual-write alongside JSON)
-      try {
-        const analysisValues = {
-          fileName,
-          dataSet: entry.dataSet,
-          documentType: result.documentType,
-          dateOriginal: result.dateOriginal,
-          summary: result.summary,
-          personCount: result.persons.length,
-          connectionCount: result.connections.length,
-          eventCount: result.events.length,
-          locationCount: result.locations.length,
-          keyFactCount: result.keyFacts.length,
-          persons: result.persons,
-          connectionsData: result.connections,
-          events: result.events,
-          locations: result.locations,
-          keyFacts: result.keyFacts,
-          analyzedAt: new Date(),
-        };
-        const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
-          .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
-          .returning({ id: aiAnalyses.id });
-
-        await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
-        if (result.persons.length > 0) {
-          await db.insert(aiAnalysisPersons).values(
-            result.persons.map((p: any) => ({
-              aiAnalysisId: analysisRow.id,
-              name: p.name,
-              normalizedName: normalizeName(p.name),
-              role: p.role ?? null,
-              category: p.category ?? null,
-              context: p.context ?? null,
-              mentionCount: p.mentionCount ?? 1,
-            }))
-          );
-        }
-      } catch (dbErr) {
-        console.warn(`  DB write failed for ${fileName}: ${(dbErr as Error).message}`);
+      await db.delete(aiAnalysisPersons).where(eq(aiAnalysisPersons.aiAnalysisId, analysisRow.id));
+      if (result.persons.length > 0) {
+        await db.insert(aiAnalysisPersons).values(
+          result.persons.map((p: any) => ({
+            aiAnalysisId: analysisRow.id,
+            name: p.name,
+            normalizedName: normalizeName(p.name),
+            role: p.role ?? null,
+            category: p.category ?? null,
+            context: p.context ?? null,
+            mentionCount: p.mentionCount ?? 1,
+          }))
+        );
       }
 
       results.push(result);
@@ -714,7 +703,7 @@ export async function runAIAnalysis(options: {
   console.log(`Total connections found: ${totalConnections}`);
   console.log(`Total events found: ${totalEvents}`);
   console.log(`Total cost: ${totalCostCents.toFixed(2)} cents ($${(totalCostCents / 100).toFixed(4)})`);
-  console.log(`Output directory: ${outputDir}`);
+  console.log(`Output: PostgreSQL ai_analyses table`);
 
   return results;
 }

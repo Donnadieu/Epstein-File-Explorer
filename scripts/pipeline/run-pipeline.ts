@@ -158,7 +158,7 @@ DATA FLOW:
   2. download-torrent  → data/downloads/data-set-{N}/ (via BitTorrent + aria2c)
   2b. upload-r2        → Cloudflare R2 (data-set-{N}/{filename})
   3. process           → data/extracted/ds{N}/*.json
-  4. analyze-ai        → data/ai-analyzed/*.json
+  4. analyze-ai        → PostgreSQL ai_analyses table
   4b. generate-tier0   → scripts/pipeline/tier0-persons-generated.ts (top 300 persons)
   5. load-*            → PostgreSQL database
 `);
