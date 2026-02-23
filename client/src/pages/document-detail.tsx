@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useBookmarks } from "@/hooks/use-bookmarks";
 import { useTrackView } from "@/hooks/use-track-view";
-import type { AIAnalysisDocument, Document, Person, PublicDocument } from "@shared/schema";
+import type { AIAnalysisConnection, AIAnalysisDocument, AIAnalysisEvent, AIAnalysisPerson, Document, Person, PublicDocument } from "@shared/schema";
 import { useQuery } from "@tanstack/react-query";
 import {
   AlertTriangle,
@@ -23,10 +23,13 @@ import {
   ExternalLink,
   Eye,
   FileText,
+  Globe,
   Hash,
   Image as ImageIcon,
   Layers,
+  Link2,
   Loader2,
+  MapPin,
   Scale,
   Sparkles,
   Users,
@@ -398,11 +401,8 @@ export default function DocumentDetailPage() {
         <>
           <Separator />
 
-          {aiAnalysis?.summary && (
-            <AISummarySection
-              summary={aiAnalysis.summary}
-              keyFacts={aiAnalysis.keyFacts}
-            />
+          {aiAnalysis && (
+            <AIAnalysisSection analysis={aiAnalysis} />
           )}
 
           <div className="flex flex-col gap-2">
@@ -550,53 +550,234 @@ export default function DocumentDetailPage() {
   );
 }
 
-function AISummarySection({
-  summary,
-  keyFacts,
-}: {
-  summary: string;
-  keyFacts?: string[];
-}) {
+function AIAnalysisSection({ analysis }: { analysis: AIAnalysisDocument }) {
   const [factsOpen, setFactsOpen] = useState(false);
+  const [connectionsOpen, setConnectionsOpen] = useState(false);
+  const [eventsOpen, setEventsOpen] = useState(false);
+  const [locationsOpen, setLocationsOpen] = useState(false);
+  const [personsOpen, setPersonsOpen] = useState(false);
+
+  const hasPersons = analysis.persons && analysis.persons.length > 0;
+  const hasConnections = analysis.connections && analysis.connections.length > 0;
+  const hasEvents = analysis.events && analysis.events.length > 0;
+  const hasLocations = analysis.locations && analysis.locations.length > 0;
+  const hasKeyFacts = analysis.keyFacts && analysis.keyFacts.length > 0;
+
+  if (!analysis.summary && !hasPersons && !hasConnections && !hasEvents && !hasLocations && !hasKeyFacts) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col gap-2">
       <h2 className="text-sm font-semibold flex items-center gap-2">
-        <Sparkles className="w-4 h-4 text-primary" /> AI Summary
+        <Sparkles className="w-4 h-4 text-primary" /> AI Analysis
       </h2>
       <Card className="bg-muted/30">
-        <CardContent className="p-4 flex flex-col gap-3">
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {summary}
-          </p>
-          {keyFacts && keyFacts.length > 0 && (
-            <div>
-              <button
-                type="button"
-                onClick={() => setFactsOpen(!factsOpen)}
-                className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform ${factsOpen ? "rotate-180" : ""}`}
-                />
-                Key Facts ({keyFacts.length})
-              </button>
-              {factsOpen && (
-                <ul className="mt-2 space-y-1.5 pl-5">
-                  {keyFacts.map((fact, i) => (
-                    <li
-                      key={i}
-                      className="text-xs text-muted-foreground list-disc leading-relaxed"
-                    >
-                      {fact}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
+        <CardContent className="p-4 flex flex-col gap-4">
+          {analysis.summary && (
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {analysis.summary}
+            </p>
+          )}
+
+          {/* Stat badges */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {hasPersons && (
+              <Badge variant="secondary" className="text-[10px] gap-1">
+                <Users className="w-3 h-3" /> {analysis.persons!.length} people
+              </Badge>
+            )}
+            {hasConnections && (
+              <Badge variant="secondary" className="text-[10px] gap-1">
+                <Link2 className="w-3 h-3" /> {analysis.connections!.length} connections
+              </Badge>
+            )}
+            {hasEvents && (
+              <Badge variant="secondary" className="text-[10px] gap-1">
+                <Clock className="w-3 h-3" /> {analysis.events!.length} events
+              </Badge>
+            )}
+            {hasLocations && (
+              <Badge variant="secondary" className="text-[10px] gap-1">
+                <MapPin className="w-3 h-3" /> {analysis.locations!.length} locations
+              </Badge>
+            )}
+            {hasKeyFacts && (
+              <Badge variant="secondary" className="text-[10px] gap-1">
+                <BookOpen className="w-3 h-3" /> {analysis.keyFacts!.length} key facts
+              </Badge>
+            )}
+          </div>
+
+          {/* Key Facts */}
+          {hasKeyFacts && (
+            <CollapsibleList
+              label="Key Facts"
+              count={analysis.keyFacts!.length}
+              open={factsOpen}
+              onToggle={() => setFactsOpen(!factsOpen)}
+            >
+              <ul className="space-y-1.5 pl-5">
+                {analysis.keyFacts!.map((fact, i) => (
+                  <li key={i} className="text-xs text-muted-foreground list-disc leading-relaxed">
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            </CollapsibleList>
+          )}
+
+          {/* Persons identified by AI */}
+          {hasPersons && (
+            <CollapsibleList
+              label="People Identified"
+              count={analysis.persons!.length}
+              open={personsOpen}
+              onToggle={() => setPersonsOpen(!personsOpen)}
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {analysis.persons!.map((person, i) => (
+                  <div key={i} className="flex items-center gap-2 rounded-md border border-border/50 px-2.5 py-1.5">
+                    <div className="flex flex-col min-w-0 flex-1">
+                      <span className="text-xs font-medium truncate">{person.name}</span>
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {person.role && (
+                          <span className="text-[10px] text-muted-foreground truncate">{person.role}</span>
+                        )}
+                        {person.category && (
+                          <Badge variant="outline" className="text-[9px] px-1 py-0">{person.category}</Badge>
+                        )}
+                      </div>
+                    </div>
+                    {person.mentionCount != null && person.mentionCount > 1 && (
+                      <span className="text-[10px] text-muted-foreground shrink-0">{person.mentionCount}x</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CollapsibleList>
+          )}
+
+          {/* Connections */}
+          {hasConnections && (
+            <CollapsibleList
+              label="Connections"
+              count={analysis.connections!.length}
+              open={connectionsOpen}
+              onToggle={() => setConnectionsOpen(!connectionsOpen)}
+            >
+              <div className="space-y-1.5">
+                {analysis.connections!.map((conn, i) => (
+                  <div key={i} className="flex items-center gap-2 text-xs">
+                    <span className="font-medium">{conn.person1}</span>
+                    <span className="text-muted-foreground">—</span>
+                    <span className="text-muted-foreground italic truncate flex-1">
+                      {conn.relationshipType || conn.type || "connected"}
+                    </span>
+                    <span className="text-muted-foreground">—</span>
+                    <span className="font-medium">{conn.person2}</span>
+                    {conn.strength != null && (
+                      <span className="text-[10px] text-muted-foreground shrink-0">
+                        ({conn.strength}/10)
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CollapsibleList>
+          )}
+
+          {/* Events */}
+          {hasEvents && (
+            <CollapsibleList
+              label="Events"
+              count={analysis.events!.length}
+              open={eventsOpen}
+              onToggle={() => setEventsOpen(!eventsOpen)}
+            >
+              <div className="space-y-2">
+                {analysis.events!.map((event, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    {event.date && (
+                      <span className="text-[10px] font-mono text-muted-foreground shrink-0 pt-0.5">
+                        {event.date}
+                      </span>
+                    )}
+                    <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                      <span className="text-xs font-medium">{event.title}</span>
+                      {event.description && (
+                        <span className="text-[11px] text-muted-foreground leading-relaxed">
+                          {event.description}
+                        </span>
+                      )}
+                    </div>
+                    {event.significance != null && (
+                      <Badge variant="outline" className="text-[9px] px-1 py-0 shrink-0">
+                        {event.significance}/10
+                      </Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CollapsibleList>
+          )}
+
+          {/* Locations */}
+          {hasLocations && (
+            <CollapsibleList
+              label="Locations"
+              count={analysis.locations!.length}
+              open={locationsOpen}
+              onToggle={() => setLocationsOpen(!locationsOpen)}
+            >
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {analysis.locations!.map((loc, i) => (
+                  <Badge key={i} variant="outline" className="text-[10px] gap-1">
+                    <MapPin className="w-2.5 h-2.5" /> {loc}
+                  </Badge>
+                ))}
+              </div>
+            </CollapsibleList>
+          )}
+
+          {/* Analysis metadata */}
+          {analysis.analyzedAt && (
+            <span className="text-[10px] text-muted-foreground/60 pt-1">
+              Analyzed {new Date(analysis.analyzedAt).toLocaleDateString()}
+            </span>
           )}
         </CardContent>
       </Card>
+    </div>
+  );
+}
+
+function CollapsibleList({
+  label,
+  count,
+  open,
+  onToggle,
+  children,
+}: {
+  label: string;
+  count: number;
+  open: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ChevronDown
+          className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`}
+        />
+        {label} ({count})
+      </button>
+      {open && <div className="mt-2">{children}</div>}
     </div>
   );
 }
