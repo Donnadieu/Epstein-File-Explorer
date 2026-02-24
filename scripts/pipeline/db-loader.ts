@@ -561,21 +561,27 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   }
   console.log(`  Pre-loaded ${existingLinks.size} person↔doc links`);
 
-  // Pre-load document EFTA→ID map for O(1) source doc resolution
-  console.log("  Pre-loading EFTA→doc mappings...");
-  const allDocs = await db
-    .select({
-      id: documents.id,
-      title: documents.title,
-      sourceUrl: documents.sourceUrl,
-    })
-    .from(documents);
-  const docByEfta = new Map<string, number>();
-  for (const d of allDocs) {
-    const match = (d.title || d.sourceUrl || "").match(/EFTA\d+/i);
-    if (match) docByEfta.set(match[0].toLowerCase(), d.id);
+  // Build EFTA→ID map via SQL substring match (avoids loading 1.3M docs into memory)
+  console.log("  Building EFTA→doc mappings from analysis filenames...");
+  const eftaNumbers: string[] = [];
+  for (const row of analysisRows) {
+    const efta = row.fileName.replace(/\.json$/i, "").replace(/\.pdf$/i, "");
+    if (efta) eftaNumbers.push(efta);
   }
-  console.log(`  Pre-loaded ${docByEfta.size} EFTA→doc mappings`);
+  const docByEfta = new Map<string, number>();
+  // Batch lookup using substring() for exact prefix match — much faster than ILIKE
+  for (let i = 0; i < eftaNumbers.length; i += 2000) {
+    const batch = eftaNumbers.slice(i, i + 2000);
+    const pgArray = sql`ARRAY[${sql.join(batch.map(e => sql`${e}`), sql`, `)}]::text[]`;
+    const rows = await db.select({ id: documents.id, title: documents.title })
+      .from(documents)
+      .where(sql`substring(${documents.title} from '^[A-Za-z0-9]+') = ANY(${pgArray})`);
+    for (const d of rows) {
+      const match = d.title?.match(/EFTA\d+/i);
+      if (match) docByEfta.set(match[0].toLowerCase(), d.id);
+    }
+  }
+  console.log(`  Resolved ${docByEfta.size} EFTA→doc mappings`);
 
   for (let fi = 0; fi < analysisRows.length; fi++) {
     const row = analysisRows[fi];
