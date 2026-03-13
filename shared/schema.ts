@@ -370,6 +370,9 @@ export const aiAnalyses = pgTable("ai_analyses", {
   events: jsonb("events"),
   locations: jsonb("locations"),
   keyFacts: jsonb("key_facts"),
+  entities: jsonb("entities"),
+  entityCount: integer("entity_count").notNull().default(0),
+  schemaVersion: integer("schema_version").notNull().default(1),
   analyzedAt: timestamp("analyzed_at"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 }, (table) => [
@@ -405,6 +408,64 @@ export const aiAnalysesRelations = relations(aiAnalyses, ({ many }) => ({
 
 export const aiAnalysisPersonsRelations = relations(aiAnalysisPersons, ({ one }) => ({
   analysis: one(aiAnalyses, { fields: [aiAnalysisPersons.aiAnalysisId], references: [aiAnalyses.id] }),
+}));
+
+// --- Entity tables (non-person entities: organizations, properties, aircraft, etc.) ---
+
+export const entities = pgTable("entities", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  name: text("name").notNull(),
+  entityType: text("entity_type").notNull(),
+  aliases: text("aliases").array(),
+  description: text("description"),
+  attributes: jsonb("attributes"),
+  documentCount: integer("document_count").notNull().default(0),
+  connectionCount: integer("connection_count").notNull().default(0),
+}, (table) => [
+  index("idx_entities_entity_type").on(table.entityType),
+  index("idx_entities_name_trgm").using("gin", sql`${table.name} gin_trgm_ops`),
+]);
+
+export const entityDocuments = pgTable("entity_documents", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  entityId: integer("entity_id").notNull().references(() => entities.id, { onDelete: "cascade" }),
+  documentId: integer("document_id").notNull().references(() => documents.id, { onDelete: "cascade" }),
+  context: text("context"),
+}, (table) => [
+  index("idx_entity_documents_entity_id").on(table.entityId),
+  index("idx_entity_documents_document_id").on(table.documentId),
+]);
+
+export const entityConnections = pgTable("entity_connections", {
+  id: integer("id").primaryKey().generatedAlwaysAsIdentity(),
+  entityId: integer("entity_id").notNull().references(() => entities.id, { onDelete: "cascade" }),
+  personId: integer("person_id").references(() => persons.id, { onDelete: "cascade" }),
+  otherEntityId: integer("other_entity_id").references(() => entities.id, { onDelete: "cascade" }),
+  connectionType: text("connection_type").notNull(),
+  description: text("description"),
+  strength: integer("strength").notNull().default(1),
+  documentIds: integer("document_ids").array(),
+}, (table) => [
+  index("idx_entity_connections_entity_id").on(table.entityId),
+  index("idx_entity_connections_person_id").on(table.personId),
+  index("idx_entity_connections_other_entity_id").on(table.otherEntityId),
+]);
+
+export type Entity = typeof entities.$inferSelect;
+export type InsertEntity = typeof entities.$inferInsert;
+export type EntityDocument = typeof entityDocuments.$inferSelect;
+export type InsertEntityDocument = typeof entityDocuments.$inferInsert;
+export type EntityConnection = typeof entityConnections.$inferSelect;
+export type InsertEntityConnection = typeof entityConnections.$inferInsert;
+
+export const entitiesRelations = relations(entities, ({ many }) => ({
+  entityDocuments: many(entityDocuments),
+  entityConnections: many(entityConnections),
+}));
+
+export const entityDocumentsRelations = relations(entityDocuments, ({ one }) => ({
+  entity: one(entities, { fields: [entityDocuments.entityId], references: [entities.id] }),
+  document: one(documents, { fields: [entityDocuments.documentId], references: [documents.id] }),
 }));
 
 export interface ChatCitation {

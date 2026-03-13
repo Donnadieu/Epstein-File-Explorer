@@ -10,6 +10,9 @@ import type { Person } from "../../shared/schema";
 import {
   connections,
   documents,
+  entities,
+  entityConnections,
+  entityDocuments,
   personDocuments,
   persons,
   timelineEvents,
@@ -111,35 +114,38 @@ function normalizeType(aiType: string): string {
   return "government record";
 }
 
-// --- Canonical connection-type normalization ---
+// --- Canonical connection-type normalization (18 categories) ---
 
 const CANONICAL_CONNECTION_TYPE_MAP: [string, RegExp][] = [
-  [
-    "legal",
-    /legal|attorney|lawyer|judge|counsel|prosecutor|defendant|court|judicial|adversar|co-counsel|co-defendant/i,
-  ],
-  [
-    "employment",
-    /employ|colleague|co-worker|supervisor|subordinate|staff|hierarchi/i,
-  ],
-  [
-    "social",
-    /social|personal|family|familial|friend|cellmate|co-inmate|fellow inmate|mentor|acquaintance|romantic|sibling|spouse/i,
-  ],
-  [
-    "financial",
-    /financial|business|investor|fiduciary|donor|trustee|transaction/i,
-  ],
-  ["travel", /travel|flight|companion/i],
-  [
-    "correspondence",
-    /correspond|letter|email|recipient|sender|media|journalist|informant/i,
-  ],
-  [
-    "victim-related",
-    /victim|perpetrator|accuser|accused|recruiter|abuser|traffick/i,
-  ],
-  ["political", /politic|advocate|government|regulatory|oversight|official/i],
+  // Legal relationships (more specific patterns first)
+  ["attorney-client", /attorney.client|lawyer.client|legal.represent|defense.counsel|retained.*counsel|represent.*legal/i],
+  ["co-defendant", /co-defendant|co.conspirator|co-accused|conspirator/i],
+  ["legal-adversary", /prosecutor.*v|adversar|opposing.*counsel|plaintiff.*defendant/i],
+  ["legal-proceeding", /legal|judge|court|judicial|subpoena|witness.*testimony|counsel|attorney|lawyer/i],
+
+  // Employment & Professional
+  ["employer-employee", /employ|hire[dr]|work.*for|subordinate|supervisor|staff|assistant|secretary|housekeeper|butler|pilot|chauffeur/i],
+  ["business-partner", /business.*partner|co.founder|joint.venture|investor|shareholder|partner.*business/i],
+  ["professional", /colleague|co-worker|peer|collaborat|professional/i],
+
+  // Financial
+  ["financial-client", /financial.*client|bank.*client|account.*holder|trustee|fiduciary|financial.*advis/i],
+  ["financial-transaction", /transaction|wire.*transfer|payment|donation|fund.*transfer|financial/i],
+
+  // Social & Personal
+  ["family", /family|familial|spouse|sibling|parent|child|married|brother|sister|son|daughter|wife|husband|mother|father|nephew|niece|uncle|aunt/i],
+  ["romantic", /romantic|girlfriend|boyfriend|lover|dating|intimate|sexual.*partner/i],
+  ["friend-social", /friend|social|acquaintance|dinner|party|guest|personal|cellmate|co.inmate|fellow.inmate|mentor/i],
+
+  // Case-specific
+  ["travel-companion", /travel|flight|companion|passenger|flew.*with/i],
+  ["victim-perpetrator", /victim|perpetrator|accuser|accused|abuser|traffick/i],
+  ["recruitment", /recruit|procur|bring.*girl|introduce.*minor|groom/i],
+
+  // Institutional
+  ["political", /politic|government|official|diplomat|campaign|donor.*politic|advocate|regulatory|oversight/i],
+  ["correspondence", /correspond|letter|email|recipient|sender|phone|call|message|contact/i],
+  ["media-coverage", /media|journalist|reporter|interview|article|press|informant/i],
 ];
 
 function normalizeConnectionType(aiType: string): string {
@@ -391,6 +397,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   connections: number;
   events: number;
   docLinks: number;
+  entities: number;
 }> {
   const isDryRun = options?.dryRun === true;
   const dryRunSummary = isDryRun
@@ -434,6 +441,22 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
           documentId: number;
           source: string;
         }[],
+        entitiesToCreate: [] as {
+          name: string;
+          entityType: string;
+          source: string;
+        }[],
+        entityConnsToCreate: [] as {
+          entity: string;
+          target: string;
+          type: string;
+          source: string;
+        }[],
+        entityDocLinksToCreate: [] as {
+          entity: string;
+          documentId: number;
+          source: string;
+        }[],
         docsToMark: [] as { efta: string; documentType: string }[],
       }
     : null;
@@ -441,7 +464,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   const allAnalysisRows = await db.select().from(aiAnalyses);
   if (allAnalysisRows.length === 0) {
     console.log("No AI analysis results found in database.");
-    return { persons: 0, connections: 0, events: 0, docLinks: 0 };
+    return { persons: 0, connections: 0, events: 0, docLinks: 0, entities: 0 };
   }
 
   // Skip analyses whose documents are already marked as loaded
@@ -472,6 +495,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   let personsCreated = 0;
   let personsUpdated = 0;
   let connectionsCreated = 0;
+  let entitiesCreated = 0;
+  let entityDocLinksCreated = 0;
+  let entityConnsCreated = 0;
   let eventsCreated = 0;
   let eventsUpdated = 0;
   let docLinksCreated = 0;
@@ -561,6 +587,44 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
   }
   console.log(`  Pre-loaded ${existingLinks.size} person↔doc links`);
 
+  // Pre-load entities by lowercase name+type for deduplication
+  console.log("  Pre-loading entities...");
+  const allEntitiesList = await db.select().from(entities);
+  const entitiesByKey = new Map<string, typeof entities.$inferSelect>();
+  for (const e of allEntitiesList) {
+    entitiesByKey.set(`${e.name.toLowerCase()}|${e.entityType}`, e);
+  }
+  console.log(`  Pre-loaded ${entitiesByKey.size} entities`);
+
+  // Pre-load entity↔doc links
+  const allEntityDocLinks = await db
+    .select({ entityId: entityDocuments.entityId, documentId: entityDocuments.documentId })
+    .from(entityDocuments);
+  const existingEntityDocLinks = new Set<string>();
+  for (const l of allEntityDocLinks) {
+    existingEntityDocLinks.add(`${l.entityId}-${l.documentId}`);
+  }
+
+  // Pre-load entity connections for deduplication
+  const allEntityConns = await db
+    .select({
+      entityId: entityConnections.entityId,
+      personId: entityConnections.personId,
+      otherEntityId: entityConnections.otherEntityId,
+      connectionType: entityConnections.connectionType,
+    })
+    .from(entityConnections);
+  const existingEntityConns = new Set<string>();
+  for (const ec of allEntityConns) {
+    // Key: entityId|targetType|targetId|connectionType
+    if (ec.otherEntityId) {
+      existingEntityConns.add(`${ec.entityId}|e|${ec.otherEntityId}|${ec.connectionType}`);
+    } else if (ec.personId) {
+      existingEntityConns.add(`${ec.entityId}|p|${ec.personId}|${ec.connectionType}`);
+    }
+  }
+  console.log(`  Pre-loaded ${existingEntityConns.size} entity connections`);
+
   // Build EFTA→ID map via SQL substring match (avoids loading 1.3M docs into memory)
   console.log("  Building EFTA→doc mappings from analysis filenames...");
   const eftaNumbers: string[] = [];
@@ -601,6 +665,7 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
         persons: (row.persons as any[]) || [],
         connections: (row.connectionsData as any[]) || [],
         events: (row.events as any[]) || [],
+        entities: ((row as any).entities as any[]) || [],
         locations: (row.locations as string[]) || [],
         keyFacts: (row.keyFacts as string[]) || [],
         analyzedAt: row.analyzedAt?.toISOString() || new Date().toISOString(),
@@ -933,6 +998,176 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
           }
         }
       }
+      // --- Entities (non-person: organizations, properties, aircraft, etc.) ---
+      if (data.entities && data.entities.length > 0) {
+        for (const ent of data.entities) {
+          if (!ent.name || ent.name.length < 2) continue;
+          const entKey = `${ent.name.toLowerCase()}|${ent.entityType}`;
+          let entityRow = entitiesByKey.get(entKey);
+
+          if (!entityRow) {
+            if (isDryRun) {
+              dryRunSummary!.entitiesToCreate.push({
+                name: ent.name,
+                entityType: ent.entityType,
+                source: file,
+              });
+              entitiesCreated++;
+            } else {
+              try {
+                const [inserted] = await db.insert(entities).values({
+                  name: ent.name,
+                  entityType: ent.entityType,
+                  description: (ent.context || "").substring(0, 500),
+                  attributes: ent.attributes || null,
+                  documentCount: 0,
+                  connectionCount: 0,
+                }).returning();
+                entityRow = inserted;
+                entitiesByKey.set(entKey, inserted);
+                entitiesCreated++;
+              } catch {
+                /* skip duplicates */
+              }
+            }
+          } else {
+            if (!isDryRun) {
+              // Update description if richer
+              if (ent.context && ent.context.length > (entityRow.description?.length || 0)) {
+                await db.update(entities)
+                  .set({ description: ent.context.substring(0, 500) })
+                  .where(eq(entities.id, entityRow.id));
+              }
+              // Merge attributes
+              if (ent.attributes && Object.keys(ent.attributes).length > 0) {
+                const merged = { ...(entityRow.attributes as Record<string, string> || {}), ...ent.attributes };
+                await db.update(entities)
+                  .set({ attributes: merged })
+                  .where(eq(entities.id, entityRow.id));
+              }
+            }
+          }
+
+          // Create entity↔document link
+          if (sourceDocId) {
+            if (isDryRun) {
+              dryRunSummary!.entityDocLinksToCreate.push({
+                entity: ent.name,
+                documentId: sourceDocId,
+                source: file,
+              });
+              entityDocLinksCreated++;
+            } else if (entityRow) {
+              const edKey = `${entityRow.id}-${sourceDocId}`;
+              if (!existingEntityDocLinks.has(edKey)) {
+                try {
+                  await db.insert(entityDocuments).values({
+                    entityId: entityRow.id,
+                    documentId: sourceDocId,
+                    context: (ent.context || "").substring(0, 500),
+                  });
+                  existingEntityDocLinks.add(edKey);
+                  entityDocLinksCreated++;
+                } catch {
+                  /* skip */
+                }
+              }
+            }
+          }
+        }
+
+        // Create entity↔person connections from AI connections that reference entities
+        for (const conn of data.connections) {
+          if (!conn?.person1 || !conn?.person2) continue;
+          const e1Type = (conn as any).entity1Type;
+          const e2Type = (conn as any).entity2Type;
+          // Only handle connections where at least one side is an entity
+          if (!e1Type || e1Type === "person") {
+            if (!e2Type || e2Type === "person") continue;
+          }
+
+          const connType = normalizeConnectionType(conn.relationshipType);
+
+          if (isDryRun) {
+            dryRunSummary!.entityConnsToCreate.push({
+              entity: (e1Type && e1Type !== "person") ? conn.person1 : conn.person2,
+              target: (e1Type && e1Type !== "person") ? conn.person2 : conn.person1,
+              type: connType,
+              source: file,
+            });
+            entityConnsCreated++;
+            continue;
+          }
+
+          // Determine which side is entity and which is person
+          if (e1Type && e1Type !== "person") {
+            const entKey = `${conn.person1.toLowerCase()}|${e1Type}`;
+            const entityRow = entitiesByKey.get(entKey);
+            if (!entityRow) continue;
+
+            if (e2Type && e2Type !== "person") {
+              // entity↔entity
+              const entKey2 = `${conn.person2.toLowerCase()}|${e2Type}`;
+              const entityRow2 = entitiesByKey.get(entKey2);
+              if (!entityRow2) continue;
+              const ecKey = `${entityRow.id}|e|${entityRow2.id}|${connType}`;
+              if (existingEntityConns.has(ecKey)) continue;
+              try {
+                await db.insert(entityConnections).values({
+                  entityId: entityRow.id,
+                  otherEntityId: entityRow2.id,
+                  connectionType: connType,
+                  description: (conn.description || "").substring(0, 500),
+                  strength: conn.strength || 1,
+                  documentIds: sourceDocId ? [sourceDocId] : [],
+                });
+                existingEntityConns.add(ecKey);
+                entityConnsCreated++;
+              } catch { /* skip */ }
+            } else {
+              // entity↔person
+              const person = findPerson(conn.person2);
+              if (!person) continue;
+              const ecKey = `${entityRow.id}|p|${person.id}|${connType}`;
+              if (existingEntityConns.has(ecKey)) continue;
+              try {
+                await db.insert(entityConnections).values({
+                  entityId: entityRow.id,
+                  personId: person.id,
+                  connectionType: connType,
+                  description: (conn.description || "").substring(0, 500),
+                  strength: conn.strength || 1,
+                  documentIds: sourceDocId ? [sourceDocId] : [],
+                });
+                existingEntityConns.add(ecKey);
+                entityConnsCreated++;
+              } catch { /* skip */ }
+            }
+          } else if (e2Type && e2Type !== "person") {
+            // person1 is person, person2 is entity
+            const person = findPerson(conn.person1);
+            if (!person) continue;
+            const entKey = `${conn.person2.toLowerCase()}|${e2Type}`;
+            const entityRow = entitiesByKey.get(entKey);
+            if (!entityRow) continue;
+            const ecKey = `${entityRow.id}|p|${person.id}|${connType}`;
+            if (existingEntityConns.has(ecKey)) continue;
+            try {
+              await db.insert(entityConnections).values({
+                entityId: entityRow.id,
+                personId: person.id,
+                connectionType: connType,
+                description: (conn.description || "").substring(0, 500),
+                strength: conn.strength || 1,
+                documentIds: sourceDocId ? [sourceDocId] : [],
+              });
+              existingEntityConns.add(ecKey);
+              entityConnsCreated++;
+            } catch { /* skip */ }
+          }
+        }
+      }
+
       // --- Mark document as AI-analyzed + update documentType from AI ---
       if (sourceDocId) {
         if (isDryRun) {
@@ -970,6 +1205,9 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
         eventsToCreate: dryRunSummary.eventsToCreate.length,
         eventsToUpdate: dryRunSummary.eventsToUpdate.length,
         docLinksToCreate: dryRunSummary.docLinksToCreate.length,
+        entitiesToCreate: dryRunSummary.entitiesToCreate.length,
+        entityConnsToCreate: dryRunSummary.entityConnsToCreate.length,
+        entityDocLinksToCreate: dryRunSummary.entityDocLinksToCreate.length,
         docsToMark: dryRunSummary.docsToMark.length,
       },
       ...dryRunSummary,
@@ -979,6 +1217,11 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
     console.log(
       `  Would create: ${dryRunSummary.personsToCreate.length} persons, ${dryRunSummary.connectionsToCreate.length} connections, ${dryRunSummary.eventsToCreate.length} events, ${dryRunSummary.docLinksToCreate.length} doc-links`,
     );
+    if (dryRunSummary.entitiesToCreate.length > 0 || dryRunSummary.entityConnsToCreate.length > 0) {
+      console.log(
+        `  Would create: ${dryRunSummary.entitiesToCreate.length} entities, ${dryRunSummary.entityDocLinksToCreate.length} entity↔doc links, ${dryRunSummary.entityConnsToCreate.length} entity connections`,
+      );
+    }
     console.log(
       `  Would update: ${dryRunSummary.personsToUpdate.length} persons, ${dryRunSummary.eventsToUpdate.length} events`,
     );
@@ -990,12 +1233,18 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
     console.log(
       `  AI Results: ${personsCreated} persons created, ${personsUpdated} updated | ${connectionsCreated} connections created (dupes skipped) | ${eventsCreated} events created, ${eventsUpdated} updated | ${docLinksCreated} doc-links created`,
     );
+    if (entitiesCreated > 0 || entityDocLinksCreated > 0 || entityConnsCreated > 0) {
+      console.log(
+        `  Entities: ${entitiesCreated} created | ${entityDocLinksCreated} entity↔doc links | ${entityConnsCreated} entity connections`,
+      );
+    }
   }
   return {
     persons: personsCreated + personsUpdated,
     connections: connectionsCreated,
     events: eventsCreated + eventsUpdated,
     docLinks: docLinksCreated,
+    entities: entitiesCreated,
   };
 }
 
