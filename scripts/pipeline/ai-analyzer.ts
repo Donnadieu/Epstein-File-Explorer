@@ -28,6 +28,7 @@ export interface AIAnalysisResult {
   persons: AIPersonMention[];
   connections: AIConnection[];
   events: AIEvent[];
+  entities: AIEntityMention[];
   locations: string[];
   keyFacts: string[];
   analyzedAt: string;
@@ -39,11 +40,24 @@ export interface AIPersonMention {
   category: "key figure" | "associate" | "victim" | "witness" | "legal" | "political" | "law enforcement" | "staff" | "other";
   context: string;
   mentionCount: number;
+  confidence?: number;
+}
+
+export interface AIEntityMention {
+  name: string;
+  entityType: "financial_institution" | "shell_company" | "law_firm" | "property" |
+              "aircraft" | "vessel" | "government_agency" | "media_outlet" |
+              "educational_institution" | "other_organization";
+  context: string;
+  attributes?: Record<string, string>;
+  confidence?: number;
 }
 
 export interface AIConnection {
   person1: string;
   person2: string;
+  entity1Type?: string;
+  entity2Type?: string;
   relationshipType: string;
   description: string;
   strength: number;
@@ -210,6 +224,7 @@ export function analyzeDocumentTier0(text: string, fileName: string, dataSet: st
     persons,
     connections: [],
     events: [],
+    entities: [],
     locations,
     keyFacts: [],
     analyzedAt: new Date().toISOString(),
@@ -232,12 +247,15 @@ For each document, identify:
    - category: One of: key figure, associate, victim, witness, legal, political, law enforcement, staff, other
    - context: 1-2 sentence summary of how they appear in this document
    - mentionCount: Approximate number of times mentioned
+   - confidence: 0.0-1.0 (1.0=name clearly printed/stated, 0.5=partially legible or inferred, 0.1=very uncertain)
 
-2. CONNECTIONS: Relationships between people mentioned in the document:
-   - person1, person2: Names of the two people
-   - relationshipType: Type like "employer-employee", "attorney-client", "co-conspirator", "social", "financial", "travel companion", "victim-perpetrator"
+2. CONNECTIONS: Relationships between persons and/or entities mentioned in the document:
+   - person1, person2: Names of the two persons or entities
+   - entity1Type: If person1 is an organization/entity, specify its type (e.g., "financial_institution", "law_firm"). Omit or set to "person" if it's a person.
+   - entity2Type: Same as entity1Type but for person2.
+   - relationshipType: Be specific. Use types like: "attorney-client", "co-defendant", "employer-employee", "business-partner", "financial-client", "financial-transaction", "family", "romantic", "friend-social", "travel-companion", "victim-perpetrator", "recruitment", "political", "correspondence", "media-coverage", "professional"
    - description: Brief description of the relationship as evidenced in this document
-   - strength: 1-5 (1=mentioned together, 5=deeply connected)
+   - strength: 1-5 (1=mentioned together once, 2=referenced in same context, 3=described relationship, 4=active interaction documented, 5=deeply connected with extensive evidence)
 
 3. EVENTS: Notable events, dates, or incidents referenced:
    - date: Date if mentioned (YYYY-MM-DD format, or YYYY-MM, or YYYY if only year known)
@@ -256,13 +274,21 @@ For each document, identify:
 
 6. KEY FACTS: 3-5 most important factual claims or revelations from this document
 
+7. ENTITIES: Organizations, companies, financial institutions, properties, vehicles, and other non-person entities mentioned:
+   - name: Entity name as it appears
+   - entityType: One of: financial_institution, shell_company, law_firm, property, aircraft, vessel, government_agency, media_outlet, educational_institution, other_organization
+   - context: 1-2 sentence summary of how this entity relates to the case or document
+   - attributes: Key-value pairs of notable details (e.g., {"address": "9 East 71st Street", "tail_number": "N908JE", "account_number": "..."})
+   - confidence: 0.0-1.0 (same scale as persons)
+
 IMPORTANT RULES:
 - Only include REAL named individuals, not redacted names or "Jane Doe" type references
-- Do NOT include organizational names as persons (FBI, DOJ, Grand Jury, etc.)
+- Do NOT include organizational names as persons — extract them under ENTITIES instead (e.g., FBI, DOJ, JP Morgan, Deutsche Bank, MC2 Model Management)
 - Do NOT include locations, document references, or legal terms as persons
 - If a name is clearly redacted (shown as blank or dots), note it in key facts but don't list as a person
 - Focus on factual extraction, not interpretation
 - If the text is too garbled or minimal to analyze, return empty arrays
+- For CONNECTIONS, you may link persons to entities (e.g., "Jeffrey Epstein" → "JP Morgan" with entity2Type: "financial_institution")
 
 Respond with valid JSON only, matching this structure:
 {
@@ -273,7 +299,8 @@ Respond with valid JSON only, matching this structure:
   "connections": [...],
   "events": [...],
   "locations": [...],
-  "keyFacts": [...]
+  "keyFacts": [...],
+  "entities": [...]
 }`;
 
 function chunkText(text: string, maxChars: number): string[] {
@@ -304,11 +331,13 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
     persons: [],
     connections: [],
     events: [],
+    entities: [],
     locations: [],
     keyFacts: [],
   };
 
   const personMap = new Map<string, AIPersonMention>();
+  const entityMap = new Map<string, AIEntityMention>();
   const connSet = new Set<string>();
   const eventSet = new Set<string>();
   const locSet = new Set<string>();
@@ -323,8 +352,29 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
         if (p.context.length > existing.context.length) {
           existing.context = p.context;
         }
+        if (p.confidence != null && (existing.confidence == null || p.confidence > existing.confidence)) {
+          existing.confidence = p.confidence;
+        }
       } else {
         personMap.set(key, { ...p });
+      }
+    }
+
+    for (const ent of (r.entities || [])) {
+      const key = ent.name.toLowerCase() + "|" + ent.entityType;
+      if (entityMap.has(key)) {
+        const existing = entityMap.get(key)!;
+        if (ent.context.length > existing.context.length) {
+          existing.context = ent.context;
+        }
+        if (ent.attributes) {
+          existing.attributes = { ...existing.attributes, ...ent.attributes };
+        }
+        if (ent.confidence != null && (existing.confidence == null || ent.confidence > existing.confidence)) {
+          existing.confidence = ent.confidence;
+        }
+      } else {
+        entityMap.set(key, { ...ent });
       }
     }
 
@@ -360,6 +410,7 @@ function mergeAnalyses(results: AIAnalysisResult[]): AIAnalysisResult {
   }
 
   merged.persons = Array.from(personMap.values());
+  merged.entities = Array.from(entityMap.values());
   merged.summary = results.map(r => r.summary).filter(Boolean).join(" ");
 
   return merged;
@@ -436,6 +487,7 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
           persons: (parsed.persons || []).filter((p: any) => p.name && p.name.length > 2),
           connections: parsed.connections || [],
           events: parsed.events || [],
+          entities: (parsed.entities || []).filter((e: any) => e.name && e.name.length > 1),
           locations: parsed.locations || [],
           keyFacts: parsed.keyFacts || [],
           analyzedAt: new Date().toISOString(),
@@ -468,6 +520,7 @@ async function analyzeDocumentWithTokens(text: string, fileName: string, dataSet
         persons: [],
         connections: [],
         events: [],
+        entities: [],
         locations: [],
         keyFacts: [],
         analyzedAt: new Date().toISOString(),
@@ -600,6 +653,7 @@ export async function runAIAnalysis(options: {
   const results: AIAnalysisResult[] = [];
   let processed = 0;
   let totalPersons = 0;
+  let totalEntities = 0;
   let totalConnections = 0;
   let totalEvents = 0;
   let skippedShort = 0;
@@ -635,7 +689,7 @@ export async function runAIAnalysis(options: {
       totalCostCents += costCents;
 
       // Save to database
-      const analysisValues = {
+      const analysisValues: Record<string, any> = {
         fileName,
         dataSet: entry.dataSet,
         documentType: result.documentType,
@@ -653,6 +707,11 @@ export async function runAIAnalysis(options: {
         keyFacts: result.keyFacts,
         analyzedAt: new Date(),
       };
+      // Include entity data if the schema supports it (Phase 3)
+      if (result.entities && result.entities.length > 0) {
+        analysisValues.entities = result.entities;
+        analysisValues.entityCount = result.entities.length;
+      }
       const [analysisRow] = await db.insert(aiAnalyses).values(analysisValues)
         .onConflictDoUpdate({ target: aiAnalyses.fileName, set: analysisValues })
         .returning({ id: aiAnalyses.id });
@@ -675,12 +734,18 @@ export async function runAIAnalysis(options: {
       results.push(result);
       processed++;
       totalPersons += result.persons.length;
+      totalEntities += result.entities?.length ?? 0;
       totalConnections += result.connections.length;
       totalEvents += result.events.length;
 
       const personNames = result.persons.map(p => p.name).slice(0, 5).join(", ");
-      console.log(`  [${processed}/${toProcess.length}] ${fileName} (pri ${priority}): ${result.persons.length} persons, ${result.connections.length} connections, ${result.events.length} events [${costCents.toFixed(3)}¢, total: ${totalCostCents.toFixed(2)}¢]`);
+      const entityCount = result.entities?.length ?? 0;
+      console.log(`  [${processed}/${toProcess.length}] ${fileName} (pri ${priority}): ${result.persons.length} persons, ${entityCount} entities, ${result.connections.length} connections, ${result.events.length} events [${costCents.toFixed(3)}¢, total: ${totalCostCents.toFixed(2)}¢]`);
       if (personNames) console.log(`    People: ${personNames}${result.persons.length > 5 ? "..." : ""}`);
+      if (entityCount > 0) {
+        const entityNames = result.entities.map(e => `${e.name} (${e.entityType})`).slice(0, 5).join(", ");
+        console.log(`    Entities: ${entityNames}${entityCount > 5 ? "..." : ""}`);
+      }
 
       if (processed < toProcess.length) {
         await sleep(delayMs);
@@ -700,6 +765,7 @@ export async function runAIAnalysis(options: {
   console.log("\n=== AI Analysis Summary ===");
   console.log(`Documents analyzed: ${processed}`);
   console.log(`Total persons found: ${totalPersons}`);
+  console.log(`Total entities found: ${totalEntities}`);
   console.log(`Total connections found: ${totalConnections}`);
   console.log(`Total events found: ${totalEvents}`);
   console.log(`Total cost: ${totalCostCents.toFixed(2)} cents ($${(totalCostCents / 100).toFixed(4)})`);
