@@ -14,6 +14,7 @@ import {
   updateDocumentCounts,
 } from "./db-loader";
 import { backfillConnectionDocs } from "./backfill-connection-docs";
+import { backfillEntities } from "./backfill-entities";
 import { generateProfiles } from "./generate-profiles";
 import { classifyAllDocuments } from "./media-classifier";
 import { processDocuments } from "./pdf-processor";
@@ -42,6 +43,7 @@ interface PipelineConfig {
   reprocessEmpty?: boolean;
   dryRun?: boolean;
   model?: string;
+  schemaVersion?: number;
 }
 
 const STAGES = [
@@ -62,6 +64,7 @@ const STAGES = [
   "update-counts",
   "generate-profiles",
   "backfill-connection-docs",
+  "backfill-entities",
 ];
 
 function printUsage() {
@@ -220,7 +223,7 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
         break;
 
       case "load-ai-results":
-        await loadAIResults({ dryRun: config.dryRun });
+        await loadAIResults({ dryRun: config.dryRun, schemaVersion: config.schemaVersion });
         break;
 
       case "load-persons":
@@ -260,6 +263,16 @@ async function runStage(stage: string, config: PipelineConfig): Promise<void> {
 
       case "backfill-connection-docs":
         await backfillConnectionDocs();
+        break;
+
+      case "backfill-entities":
+        await backfillEntities({
+          budget: config.budget,
+          limit: config.batchSize,
+          dryRun: config.dryRun ?? false,
+          model: config.model,
+          delayMs: 1500,
+        });
         break;
 
       default:
@@ -314,6 +327,8 @@ async function main() {
       config.reprocessEmpty = true;
     } else if (arg === "--dry-run") {
       config.dryRun = true;
+    } else if (arg === "--schema-version" && args[i + 1]) {
+      config.schemaVersion = parseInt(args[++i], 10);
     } else if (arg === "all") {
       config.stages = [...STAGES];
     } else if (arg === "quick") {
