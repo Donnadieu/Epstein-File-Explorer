@@ -303,7 +303,7 @@ Respond with valid JSON only, matching this structure:
   "entities": [...]
 }`;
 
-function chunkText(text: string, maxChars: number): string[] {
+export function chunkText(text: string, maxChars: number): string[] {
   if (text.length <= maxChars) return [text];
 
   const chunks: string[] = [];

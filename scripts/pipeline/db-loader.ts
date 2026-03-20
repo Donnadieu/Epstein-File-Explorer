@@ -392,7 +392,7 @@ export async function loadDocumentsFromCatalog(
   return loaded;
 }
 
-export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
+export async function loadAIResults(options?: { dryRun?: boolean; schemaVersion?: number }): Promise<{
   persons: number;
   connections: number;
   events: number;
@@ -467,26 +467,33 @@ export async function loadAIResults(options?: { dryRun?: boolean }): Promise<{
     return { persons: 0, connections: 0, events: 0, docLinks: 0, entities: 0 };
   }
 
-  // Skip analyses whose documents are already marked as loaded
-  const loadedDocs = await db
-    .select({ title: documents.title, sourceUrl: documents.sourceUrl })
-    .from(documents)
-    .where(eq(documents.aiAnalysisStatus, "completed"));
-  const loadedEftas = new Set<string>();
-  for (const doc of loadedDocs) {
-    if (doc.title) loadedEftas.add(doc.title.toLowerCase());
-    if (doc.sourceUrl) loadedEftas.add(doc.sourceUrl.toLowerCase());
-  }
-
-  const analysisRows = allAnalysisRows.filter((row) => {
-    const efta = row.fileName
-      .replace(/\.pdf$/i, "")
-      .toLowerCase();
-    for (const key of loadedEftas) {
-      if (key.includes(efta)) return false;
+  // Filter analyses to process
+  let analysisRows: typeof allAnalysisRows;
+  if (options?.schemaVersion != null) {
+    // When schemaVersion is specified, filter by it (bypass "already loaded" check)
+    analysisRows = allAnalysisRows.filter((row) => row.schemaVersion === options.schemaVersion);
+  } else {
+    // Default: skip analyses whose documents are already marked as loaded
+    const loadedDocs = await db
+      .select({ title: documents.title, sourceUrl: documents.sourceUrl })
+      .from(documents)
+      .where(eq(documents.aiAnalysisStatus, "completed"));
+    const loadedEftas = new Set<string>();
+    for (const doc of loadedDocs) {
+      if (doc.title) loadedEftas.add(doc.title.toLowerCase());
+      if (doc.sourceUrl) loadedEftas.add(doc.sourceUrl.toLowerCase());
     }
-    return true;
-  });
+
+    analysisRows = allAnalysisRows.filter((row) => {
+      const efta = row.fileName
+        .replace(/\.pdf$/i, "")
+        .toLowerCase();
+      for (const key of loadedEftas) {
+        if (key.includes(efta)) return false;
+      }
+      return true;
+    });
+  }
 
   console.log(
     `Loading AI results: ${analysisRows.length} new analyses (${allAnalysisRows.length - analysisRows.length} already loaded, ${allAnalysisRows.length} total)`,
